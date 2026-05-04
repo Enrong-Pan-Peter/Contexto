@@ -3,6 +3,8 @@
 from __future__ import annotations
 
 import re
+import json
+import time
 from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass
 from datetime import datetime
@@ -28,9 +30,11 @@ class SolverLLMConfig:
     initial_categories: int
     starter_words_per_category: int
     mutations_per_generation: int
+    max_active_hypotheses: int
     trace_dir: str
     run_label: str
     llm_workers: int = 4
+    local_search_rank_threshold: int = 100
 
 
 class SolverLLM:
@@ -71,6 +75,7 @@ class SolverLLM:
 
     def run_generation(self) -> bool:
         self.generation += 1
+        self._cap_active_hypotheses()
         self._evaluate_candidates(self._generate_candidates())
         if self.game.is_solved():
             self._log_solved()
@@ -89,16 +94,47 @@ class SolverLLM:
         if self.game.is_solved():
             self._log_solved()
             return True
+        self._deduplicate_hypotheses()
+        self._cap_active_hypotheses()
 
         return False
 
     def solve(self, max_generations: int | None = None) -> dict[str, Any]:
         generation_limit = max_generations or self.config.max_generations
+        #region agent log
+        _agent_debug_log(
+            "contexto_solver/solver_llm.py:solve",
+            "solve started",
+            {
+                "requestedMaxGenerations": max_generations,
+                "configuredMaxGenerations": self.config.max_generations,
+                "effectiveGenerationLimit": generation_limit,
+                "localSearchRankThreshold": self.config.local_search_rank_threshold,
+                "initialHypotheses": len(self.hypotheses),
+            },
+            "H1,H5",
+        )
+        #endregion
         solved = self.initialize()
         while not solved and self.generation < generation_limit:
             solved = self.run_generation()
 
         if not solved:
+            #region agent log
+            _agent_debug_log(
+                "contexto_solver/solver_llm.py:solve",
+                "solve failed at generation limit",
+                {
+                    "generation": self.generation,
+                    "generationLimit": generation_limit,
+                    "bestWord": self.best_word,
+                    "bestRank": self.best_rank,
+                    "totalGuesses": self.game.total_guesses(),
+                    "activeHypotheses": _hypothesis_summary(self._active_hypotheses()),
+                },
+                "H1,H2,H3,H5",
+            )
+            #endregion
             self.logger.log(
                 self.generation,
                 "FAILED",
@@ -136,6 +172,7 @@ class SolverLLM:
                         hypothesis.words_tried,
                         self.invalid_guesses,
                         self.config.candidates_per_hypothesis,
+                        self.game.guesses if hasattr(self.game, "guesses") else None,
                     ),
                 )
                 for hypothesis in active_hypotheses
@@ -143,14 +180,39 @@ class SolverLLM:
 
             proposed_words = [(hypothesis, future.result()) for hypothesis, future in futures]
 
+        raw_count = 0
+        rejected_invalid = 0
+        rejected_duplicate = 0
         for hypothesis, words in proposed_words:
             for word in words:
+                raw_count += 1
                 cleaned_word = _clean_word(word)
-                if not cleaned_word or cleaned_word in planned_words:
+                if not cleaned_word:
+                    rejected_invalid += 1
+                    continue
+                if cleaned_word in planned_words:
+                    rejected_duplicate += 1
                     continue
                 planned_words.add(cleaned_word)
                 candidates.append((hypothesis, cleaned_word))
 
+        #region agent log
+        _agent_debug_log(
+            "contexto_solver/solver_llm.py:_generate_candidates",
+            "candidate filtering summary",
+            {
+                "generation": self.generation,
+                "activeHypotheses": _hypothesis_summary(active_hypotheses),
+                "rawCount": raw_count,
+                "acceptedCount": len(candidates),
+                "rejectedInvalid": rejected_invalid,
+                "rejectedDuplicate": rejected_duplicate,
+                "bestWord": self.best_word,
+                "bestRank": self.best_rank,
+            },
+            "H2,H3,H4",
+        )
+        #endregion
         self.logger.log(
             self.generation,
             "CANDIDATES",
@@ -189,7 +251,7 @@ class SolverLLM:
 
     def _select(self) -> None:
         ranked = sorted(self.hypotheses, key=lambda hypothesis: hypothesis.best_rank)
-        keep_count = max(1, len(ranked) // 2)
+        keep_count = min(max(1, len(ranked) // 2), self.config.max_active_hypotheses)
         kept = set(id(hypothesis) for hypothesis in ranked[:keep_count])
         elite = ranked[0] if ranked else None
         if elite is not None:
@@ -204,11 +266,28 @@ class SolverLLM:
                 "kept": [hypothesis.category_name for hypothesis in ranked[:keep_count]],
                 "discarded": [hypothesis.category_name for hypothesis in ranked[keep_count:]],
                 "elite": elite.category_name if elite else None,
+                "max_active_hypotheses": self.config.max_active_hypotheses,
                 "best_word": self.best_word,
                 "best_rank": self.best_rank,
                 "total_guesses": self.game.total_guesses(),
             },
         )
+        #region agent log
+        _agent_debug_log(
+            "contexto_solver/solver_llm.py:_select",
+            "selection summary",
+            {
+                "generation": self.generation,
+                "keepCount": keep_count,
+                "maxActiveHypotheses": self.config.max_active_hypotheses,
+                "kept": _hypothesis_summary(ranked[:keep_count]),
+                "bestDiscarded": _hypothesis_summary(ranked[keep_count : keep_count + 5]),
+                "bestWord": self.best_word,
+                "bestRank": self.best_rank,
+            },
+            "H3",
+        )
+        #endregion
 
     def _mutate(self) -> None:
         top_hypotheses = sorted(self._active_hypotheses(), key=lambda hypothesis: hypothesis.best_rank)[:2]
@@ -257,6 +336,59 @@ class SolverLLM:
             if self.game.is_solved():
                 return
 
+    def _deduplicate_hypotheses(self) -> None:
+        kept: list[Hypothesis] = []
+        merged_events: list[dict[str, Any]] = []
+
+        for hypothesis in sorted(self.hypotheses, key=lambda item: item.best_rank):
+            duplicate = next((existing for existing in kept if _are_duplicate_hypotheses(existing, hypothesis)), None)
+            if duplicate is None:
+                kept.append(hypothesis)
+                continue
+
+            survivor, discarded = (
+                (duplicate, hypothesis)
+                if duplicate.best_rank <= hypothesis.best_rank
+                else (hypothesis, duplicate)
+            )
+            survivor.words_tried.update(discarded.words_tried)
+            survivor.status = "active" if survivor.status == "active" or discarded.status == "active" else "dormant"
+            if survivor is hypothesis:
+                kept.remove(duplicate)
+                kept.append(survivor)
+
+            merged_events.append(
+                {
+                    "survivor": survivor.category_name,
+                    "discarded": discarded.category_name,
+                    "survivor_best_rank": survivor.best_rank,
+                    "discarded_best_rank": discarded.best_rank,
+                }
+            )
+
+        self.hypotheses = kept
+        if merged_events:
+            self._cap_active_hypotheses()
+            self.logger.log(
+                self.generation,
+                "DEDUPLICATE",
+                {
+                    "merged": merged_events,
+                    "remaining_hypotheses": len(self.hypotheses),
+                    "active_hypotheses": len(self._active_hypotheses()),
+                    "best_word": self.best_word,
+                    "best_rank": self.best_rank,
+                    "total_guesses": self.game.total_guesses(),
+                },
+            )
+
+    def _cap_active_hypotheses(self) -> None:
+        active = sorted(self._active_hypotheses(), key=lambda hypothesis: hypothesis.best_rank)
+        allowed = set(id(hypothesis) for hypothesis in active[: self.config.max_active_hypotheses])
+        for hypothesis in active:
+            if id(hypothesis) not in allowed:
+                hypothesis.status = "dormant"
+
     def _crossover(self) -> None:
         active = sorted(self._active_hypotheses(), key=lambda hypothesis: hypothesis.best_rank)
         if len(active) < 2:
@@ -296,11 +428,26 @@ class SolverLLM:
 
     def _local_search(self) -> None:
         best_word, best_rank = self.game.best_so_far()
-        if best_word is None or best_rank is None or best_rank >= 50:
+        if best_word is None or best_rank is None or best_rank >= self.config.local_search_rank_threshold:
+            #region agent log
+            _agent_debug_log(
+                "contexto_solver/solver_llm.py:_local_search",
+                "local search skipped",
+                {
+                    "generation": self.generation,
+                    "bestWord": best_word,
+                    "bestRank": best_rank,
+                    "threshold": self.config.local_search_rank_threshold,
+                },
+                "H2",
+            )
+            #endregion
             return
 
-        words = self.llm_client.local_search(best_word, best_rank, n=5)
+        planned_words = set(self.game.guesses) | self.invalid_guesses if hasattr(self.game, "guesses") else set(self.invalid_guesses)
         guessed = []
+        requested_attempts = []
+        skipped_already_tried = 0
         local_hypothesis = Hypothesis(
             category_name=f"local search around {best_word}",
             description=f"Fine-grained guesses near {best_word}",
@@ -308,14 +455,25 @@ class SolverLLM:
             origin="local_search",
         )
         self.hypotheses.append(local_hypothesis)
-        for word in words:
-            cleaned_word = _clean_word(word)
-            if not cleaned_word or cleaned_word in self.invalid_guesses:
-                continue
-            rank = self._guess_and_update(cleaned_word, local_hypothesis)
-            if rank != -1:
-                guessed.append({"word": cleaned_word, "rank": rank})
-            if self.game.is_solved():
+        for attempt in range(2):
+            words = self.llm_client.local_search(best_word, best_rank, n=5, all_guesses=planned_words)
+            requested_attempts.append(words)
+            attempt_guessed = 0
+            for word in words:
+                cleaned_word = _clean_word(word)
+                if not cleaned_word or cleaned_word in self.invalid_guesses:
+                    continue
+                if cleaned_word in planned_words:
+                    skipped_already_tried += 1
+                    continue
+                planned_words.add(cleaned_word)
+                rank = self._guess_and_update(cleaned_word, local_hypothesis)
+                if rank != -1:
+                    attempt_guessed += 1
+                    guessed.append({"word": cleaned_word, "rank": rank})
+                if self.game.is_solved():
+                    break
+            if attempt_guessed > 0 or self.game.is_solved():
                 break
 
         self.logger.log(
@@ -325,11 +483,30 @@ class SolverLLM:
                 "center_word": best_word,
                 "center_rank": best_rank,
                 "guesses": guessed,
+                "attempts": requested_attempts,
                 "best_word": self.best_word,
                 "best_rank": self.best_rank,
                 "total_guesses": self.game.total_guesses(),
             },
         )
+        #region agent log
+        _agent_debug_log(
+            "contexto_solver/solver_llm.py:_local_search",
+            "local search completed",
+            {
+                "generation": self.generation,
+                "centerWord": best_word,
+                "centerRank": best_rank,
+                "requestedAttempts": requested_attempts,
+                "guesses": guessed,
+                "skippedAlreadyTried": skipped_already_tried,
+                "bestWord": self.best_word,
+                "bestRank": self.best_rank,
+                "totalGuesses": self.game.total_guesses(),
+            },
+            "H2,H4",
+        )
+        #endregion
 
     def _active_hypotheses(self) -> list[Hypothesis]:
         return [hypothesis for hypothesis in self.hypotheses if hypothesis.status == "active"]
@@ -383,3 +560,55 @@ def _clean_word(word: Any) -> str:
     if not re.fullmatch(r"[a-z]+", cleaned_word):
         return ""
     return cleaned_word
+
+
+def _are_duplicate_hypotheses(a: Hypothesis, b: Hypothesis) -> bool:
+    shared_words = set(a.words_tried) & set(b.words_tried)
+    if len(shared_words) >= 2:
+        return True
+
+    a_name = a.category_name.lower().strip()
+    b_name = b.category_name.lower().strip()
+    if not a_name or not b_name:
+        return False
+    if a_name in b_name or b_name in a_name:
+        return True
+
+    a_words = set(a_name.split())
+    b_words = set(b_name.split())
+    if not a_words or not b_words:
+        return False
+    jaccard = len(a_words & b_words) / len(a_words | b_words)
+    if jaccard > 0.6:
+        return True
+    return len(a_words ^ b_words) <= 1
+
+
+def _hypothesis_summary(hypotheses: list[Hypothesis]) -> list[dict[str, Any]]:
+    return [
+        {
+            "name": hypothesis.category_name,
+            "bestWord": hypothesis.best_word,
+            "bestRank": hypothesis.best_rank,
+            "status": hypothesis.status,
+            "origin": hypothesis.origin,
+        }
+        for hypothesis in hypotheses
+    ]
+
+
+def _agent_debug_log(location: str, message: str, data: dict[str, object], hypothesis_id: str) -> None:
+    try:
+        payload = {
+            "sessionId": "0eedb7",
+            "runId": "pre-fix",
+            "hypothesisId": hypothesis_id,
+            "location": location,
+            "message": message,
+            "data": data,
+            "timestamp": int(time.time() * 1000),
+        }
+        with open("debug-0eedb7.log", "a", encoding="utf-8") as log_file:
+            log_file.write(json.dumps(payload, separators=(",", ":")) + "\n")
+    except Exception:
+        pass

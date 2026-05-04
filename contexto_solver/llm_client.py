@@ -25,7 +25,7 @@ PROPOSE_WORDS_PROMPT = """Return only JSON, no markdown or explanation.
 Contexto ranks words by semantic closeness. Rank 1 is correct. Lower is better.
 Current hypothesis: {name}
 Description: {description}
-Words already tried in this hypothesis with ranks: {words_tried}
+Words already tried in this hypothesis with ranks: {hypothesis_words_tried}
 Global best word: {best_word}
 Global best rank: {best_rank}
 Avoid all already tried words: {all_guesses}
@@ -38,19 +38,25 @@ JSON schema:
 ["word1", "word2", "word3"]"""
 
 SPECIALIZE_PROMPT = """Return only JSON, no markdown or explanation.
-Given this Contexto hypothesis, create {n} narrower semantic subcategories.
-Hypothesis: {name}
-Description: {description}
-Words tried with ranks: {words_tried}
-Prefer directions suggested by lower-ranked words.
-Each subcategory must include 3 starter words that have not already been tried.
+The category "{name}" had these results: {words_tried}.
+The word "{best_word}" scored best with rank {best_rank}.
+
+Suggest {n} new directions to explore. These should NOT all be sub-categories
+of "{name}". At least one should be a genuinely different interpretation of
+why "{best_word}" might have scored well.
+
+For example, if the category was "food" and "bite" scored well, one direction
+could be "small food portions" but another could be "animals that bite" since
+"bite" has multiple meanings.
+
+Each direction must include exactly 3 starter words that have not already been tried.
 Every word must be one common lowercase dictionary word.
 Do not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.
 Avoid these words: {all_guesses}
 Avoid these invalid or unrecognized words: {invalid_guesses}
 Invalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.
 JSON schema:
-[{{"name": "subcategory name", "description": "short description", "words": ["word1", "word2", "word3"]}}]"""
+[{{"name": "direction name", "description": "short description", "words": ["word1", "word2", "word3"]}}]"""
 
 CROSSOVER_PROMPT = """Return only JSON, no markdown or explanation.
 Category A is {a_name} with results {a_words}.
@@ -63,8 +69,13 @@ JSON schema:
 
 LOCAL_SEARCH_PROMPT = """Return only JSON, no markdown or explanation.
 The word {word} has rank {rank} in a word similarity game, meaning it is close to the target.
-Suggest {n} words that are very semantically close to {word}.
+Suggest {n} words that could be even closer to the hidden target than {word}.
+Do not only return synonyms, group members, or subtypes of {word}.
+Explore multiple relation types: synonyms, common adjectives/descriptors, collocations,
+associated people or groups, causes/effects, and words that commonly appear near {word}.
+If {word} is a noun, include plausible adjectives or descriptors associated with it.
 Every word must be one common lowercase dictionary word.
+Avoid these already tried words: {all_guesses}
 JSON schema:
 ["word1", "word2", "word3"]"""
 
@@ -102,18 +113,20 @@ class LLMClient:
     def propose_words(
         self,
         hypothesis: Hypothesis,
-        all_guesses: dict[str, int],
+        hypothesis_guesses: dict[str, int],
         invalid_guesses: set[str] | None = None,
         n: int = 3,
+        global_guesses: dict[str, int] | None = None,
     ) -> list[str]:
-        best_word, best_rank = self._global_best(all_guesses)
+        guesses_to_avoid = global_guesses if global_guesses is not None else hypothesis_guesses
+        best_word, best_rank = self._global_best(guesses_to_avoid)
         prompt = PROPOSE_WORDS_PROMPT.format(
             name=hypothesis.category_name,
             description=hypothesis.description,
-            words_tried=json.dumps(hypothesis.words_tried, sort_keys=True),
+            hypothesis_words_tried=json.dumps(hypothesis_guesses, sort_keys=True),
             best_word=best_word,
             best_rank=best_rank,
-            all_guesses=json.dumps(sorted(all_guesses)),
+            all_guesses=json.dumps(sorted(guesses_to_avoid)),
             invalid_guesses=json.dumps(sorted(invalid_guesses or set())),
             n=n,
         )
@@ -126,10 +139,13 @@ class LLMClient:
         invalid_guesses: set[str] | None = None,
         n: int = 2,
     ) -> list[dict[str, Any]]:
+        best_word, best_rank = self._global_best(hypothesis.words_tried)
         prompt = SPECIALIZE_PROMPT.format(
             name=hypothesis.category_name,
             description=hypothesis.description,
             words_tried=json.dumps(hypothesis.words_tried, sort_keys=True),
+            best_word=best_word,
+            best_rank=best_rank,
             all_guesses=json.dumps(sorted(all_guesses)),
             invalid_guesses=json.dumps(sorted(invalid_guesses or set())),
             n=n,
@@ -151,8 +167,13 @@ class LLMClient:
         )
         return self._json_request_with_retry(prompt)
 
-    def local_search(self, word: str, rank: int, n: int = 5) -> list[str]:
-        prompt = LOCAL_SEARCH_PROMPT.format(word=word, rank=rank, n=n)
+    def local_search(self, word: str, rank: int, n: int = 5, all_guesses: set[str] | None = None) -> list[str]:
+        prompt = LOCAL_SEARCH_PROMPT.format(
+            word=word,
+            rank=rank,
+            n=n,
+            all_guesses=json.dumps(sorted(all_guesses or set())),
+        )
         return self._json_request_with_retry(prompt)
 
     def _json_request_with_retry(self, prompt: str) -> Any:

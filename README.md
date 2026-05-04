@@ -15,17 +15,21 @@ Implemented:
 - Manual terminal play for the local game.
 - LLM-based evolutionary solver.
 - Embedding-neighbor baseline solver.
+- Batch local experiment runner with JSON and CSV summaries.
 - Real Contexto API wrapper.
 - Shared game interface used by both local and API games.
 - JSON trace logging for solver runs.
 - Parallel LLM generation with configurable worker count.
+- Separate local game and solver embedding paths for aligned/non-aligned tests.
+- Experiment log in `docs/experiment_log.md`.
+- Performance mitigations for LLM search drift, duplicate hypotheses, ambiguous
+  high-scoring words, and repeated invalid guesses.
 
 Not yet implemented:
 
-- Batch experiment runner for many targets/games.
-- Separate game and solver embedding paths for aligned vs non-aligned local
-  embedding experiments.
-- Aggregated CSV/JSON comparison tables across many runs.
+- Additional embedding models beyond GloVe.
+- Batch experiment runner for real API games.
+- Automated aggregate reports across local and API benchmark sets.
 
 ## Architecture
 
@@ -45,6 +49,7 @@ contexto_solver/
 
 main.py                  Root wrapper for contexto_solver.main
 play.py                  Root wrapper for contexto_solver.play
+docs/experiment_log.md   Human-readable record of completed runs
 traces/                  Generated JSON traces
 data/                    Local embedding files, not committed
 ```
@@ -102,7 +107,16 @@ OPENAI_API_KEY=
 ANTHROPIC_API_KEY=
 LLM_WORKERS=4
 GLOVE_PATH=data/glove.6B.300d.txt
+GAME_EMBEDDING_PATH=data/glove.6B.300d.txt
+SOLVER_EMBEDDING_PATH=data/glove.6B.300d.txt
 TRACE_DIR=traces
+MAX_GENERATIONS=20
+MAX_ACTIVE_HYPOTHESES=5
+LOCAL_SEARCH_RANK_THRESHOLD=100
+EMBEDDING_SEED_COUNT=12
+EMBEDDING_ACTIVE_COUNT=5
+EMBEDDING_NEIGHBORS_PER_WORD=10
+RANDOM_SEED=
 ```
 
 For OpenAI, set either `LLM_API_KEY` or `OPENAI_API_KEY`.
@@ -137,6 +151,18 @@ You can increase parallel LLM calls:
 python main.py --game local --target cat --solver llm --llm-workers 8
 ```
 
+The current LLM solver includes several mitigations added after early slow and
+wandering runs:
+
+- Active hypotheses are capped at `MAX_ACTIVE_HYPOTHESES`.
+- Near-duplicate hypotheses are merged.
+- Mutation prompts ask for divergent interpretations of strong clues, not only
+  narrower sub-categories.
+- Candidate prompts receive global guess history to reduce duplicate proposals.
+- Local search starts when the best rank is below
+  `LOCAL_SEARCH_RANK_THRESHOLD`.
+- Invalid or unrecognized guesses are remembered and avoided.
+
 ### Embedding Solver Against Local Game
 
 ```powershell
@@ -145,6 +171,11 @@ python main.py --game local --target cat --solver embedding
 
 This uses the same GloVe model for the local game and for generating nearest
 neighbor guesses. This is the current aligned embedding baseline.
+
+At the moment, GloVe is the only embedding model that has been introduced and
+validated in the repository. The separate `GAME_EMBEDDING_PATH` and
+`SOLVER_EMBEDDING_PATH` settings are scaffolding for later aligned vs
+non-aligned model comparisons.
 
 ### LLM Solver Against Real Contexto API
 
@@ -176,8 +207,46 @@ game likely uses a different embedding model.
 --model MODEL                   LLM model name
 --api-key API_KEY               LLM API key override
 --glove-path PATH               GloVe embedding file path
+--game-embedding-path PATH      Embedding file used by LocalGame
+--solver-embedding-path PATH    Embedding file used by SolverEmbedding
 --llm-workers N                 Parallel LLM generation calls
+--seed-count N                  Random seed words for embedding solver
+--active-count N                Active words retained by embedding solver
+--neighbors-per-word N          Nearest neighbors queried per active word
+--random-seed N                 Reproducible embedding solver seed
 ```
+
+## Batch Experiments
+
+Run local aligned embedding experiments:
+
+```powershell
+python -m contexto_solver.experiment --targets cat,dog,ivory --mode aligned --solver embedding --random-seed 123
+```
+
+Run local non-aligned embedding experiments by using different embedding files
+for the local game and solver:
+
+```powershell
+python -m contexto_solver.experiment --targets cat,dog,ivory --mode non_aligned --solver embedding --game-embedding-path data/glove.6B.300d.txt --solver-embedding-path data/other_vectors.txt
+```
+
+This command shows the intended comparison workflow. It requires you to provide
+a second compatible embedding file at `data/other_vectors.txt`; the project has
+not yet added or validated another embedding model beyond GloVe.
+
+The experiment runner writes:
+
+- One trace JSON file per run in `traces/`.
+- One summary JSON file.
+- One summary CSV file.
+
+Current batch experiments focus on local games. Real API batch experiments are
+left for future work because they need stricter rate-limit and game-selection
+controls.
+
+For a human-readable record of individual runs and qualitative observations,
+see `docs/experiment_log.md`.
 
 ## Traces
 
@@ -223,14 +292,29 @@ Total guesses: 468
 Generations: 13
 ```
 
+Recent documented runs show the current behavior more clearly:
+
+- Real API game `1314` solved as `ivory` in 165 guesses over 7 generations.
+- Real API game `1323` solved as `sponges` in 254 guesses over 15 generations.
+- Local GloVe target `house` solved in 107 guesses over 4 generations.
+- Local GloVe target `notorious` remained difficult: recent runs reached
+  `gang` at rank 4 but did not solve within 20 generations.
+
 ## Notes For Future Work
 
-The next planned update is an experiment mode that can run multiple targets and
-compare:
+The local batch experiment runner can now compare:
 
 - LLM solver on local game.
 - Embedding solver with aligned game/solver embeddings.
 - Embedding solver with non-aligned game/solver embeddings.
-- Embedding solver or LLM solver against the real API.
 
-That update should add batch summary outputs such as JSON and CSV tables.
+The non-aligned embedding comparison is a placeholder until another embedding
+model is downloaded, configured, and validated.
+
+Future work should extend batch experiments to real API games, add broader
+aggregate reports across local and API benchmark sets, and test additional
+embedding models such as Word2Vec or transformer-based vectors.
+
+See `progress_and_decisions.md`, `docs/progress_and_decisions.md`, and
+`docs/experiment_log.md` for fuller records of implementation progress,
+research-relevant design decisions, and completed runs.

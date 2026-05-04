@@ -29,6 +29,7 @@ class SolverEmbeddingConfig:
     seed_count: int = 12
     active_count: int = 5
     neighbors_per_word: int = 10
+    random_seed: int | None = None
 
 
 class SolverEmbedding:
@@ -41,7 +42,8 @@ class SolverEmbedding:
         self.generation = 0
 
     def initialize(self) -> bool:
-        seeds = random.sample(self.embedding_model.vocabulary(), k=min(self.config.seed_count, len(self.embedding_model.words)))
+        rng = random.Random(self.config.random_seed)
+        seeds = rng.sample(self.embedding_model.vocabulary(), k=min(self.config.seed_count, len(self.embedding_model.words)))
         for word in seeds:
             self._guess(word, "INIT")
             if self.game.is_solved():
