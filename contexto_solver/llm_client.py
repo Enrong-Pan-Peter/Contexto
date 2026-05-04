@@ -1,0 +1,262 @@
+"""LLM API wrapper used to generate Contexto search hypotheses."""
+
+from __future__ import annotations
+
+import json
+import re
+import time
+from typing import Any
+
+import requests
+
+from .hypothesis import Hypothesis
+
+
+INITIAL_CATEGORIES_PROMPT = """Return only JSON, no markdown or explanation.
+Generate {n} broad semantic categories for exploring a Contexto puzzle.
+Each category must include exactly {starter_words} common starter words.
+Every word must be one common lowercase dictionary word.
+Do not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.
+Invalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.
+JSON schema:
+[{{"name": "category name", "description": "short description", "words": ["word1", "word2", "word3"]}}]"""
+
+PROPOSE_WORDS_PROMPT = """Return only JSON, no markdown or explanation.
+Contexto ranks words by semantic closeness. Rank 1 is correct. Lower is better.
+Current hypothesis: {name}
+Description: {description}
+Words already tried in this hypothesis with ranks: {words_tried}
+Global best word: {best_word}
+Global best rank: {best_rank}
+Avoid all already tried words: {all_guesses}
+Avoid these invalid or unrecognized words: {invalid_guesses}
+Suggest {n} new single-word guesses for this hypothesis.
+Every guess must be one common lowercase dictionary word.
+Do not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.
+Invalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.
+JSON schema:
+["word1", "word2", "word3"]"""
+
+SPECIALIZE_PROMPT = """Return only JSON, no markdown or explanation.
+Given this Contexto hypothesis, create {n} narrower semantic subcategories.
+Hypothesis: {name}
+Description: {description}
+Words tried with ranks: {words_tried}
+Prefer directions suggested by lower-ranked words.
+Each subcategory must include 3 starter words that have not already been tried.
+Every word must be one common lowercase dictionary word.
+Do not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.
+Avoid these words: {all_guesses}
+Avoid these invalid or unrecognized words: {invalid_guesses}
+Invalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.
+JSON schema:
+[{{"name": "subcategory name", "description": "short description", "words": ["word1", "word2", "word3"]}}]"""
+
+CROSSOVER_PROMPT = """Return only JSON, no markdown or explanation.
+Category A is {a_name} with results {a_words}.
+Category B is {b_name} with results {b_words}.
+Suggest one new category that captures the intersection or overlap of A and B.
+Include exactly 3 candidate words.
+Every word must be one common lowercase dictionary word.
+JSON schema:
+{{"name": "category name", "description": "short description", "words": ["word1", "word2", "word3"]}}"""
+
+LOCAL_SEARCH_PROMPT = """Return only JSON, no markdown or explanation.
+The word {word} has rank {rank} in a word similarity game, meaning it is close to the target.
+Suggest {n} words that are very semantically close to {word}.
+Every word must be one common lowercase dictionary word.
+JSON schema:
+["word1", "word2", "word3"]"""
+
+
+class LLMClient:
+    def __init__(self, provider: str, api_key: str, model: str) -> None:
+        self.provider = provider.lower().strip()
+        self.api_key = api_key.strip()
+        self.model = model
+
+        if self.provider not in {"openai", "anthropic"}:
+            raise ValueError("LLM provider must be 'openai' or 'anthropic'.")
+        #region agent log
+        _agent_debug_log(
+            "contexto_solver/llm_client.py:LLMClient.__init__",
+            "llm client configured",
+            {
+                "provider": self.provider,
+                "model": self.model,
+                "apiKeyPresent": bool(self.api_key),
+                "apiKeyLength": len(self.api_key),
+                "apiKeyPlaceholder": self.api_key.startswith("replace-with"),
+                "apiKeyHasOpenAIShape": self.api_key.startswith(("sk-", "sk-proj-")),
+            },
+            "H1,H2,H3,H4",
+        )
+        #endregion
+        if not self.api_key or self.api_key.startswith("replace-with"):
+            raise ValueError(f"Missing API key for provider '{self.provider}'. Update your .env file.")
+
+    def generate_initial_categories(self, n: int = 6, starter_words: int = 3) -> list[dict[str, Any]]:
+        prompt = INITIAL_CATEGORIES_PROMPT.format(n=n, starter_words=starter_words)
+        return self._json_request_with_retry(prompt)
+
+    def propose_words(
+        self,
+        hypothesis: Hypothesis,
+        all_guesses: dict[str, int],
+        invalid_guesses: set[str] | None = None,
+        n: int = 3,
+    ) -> list[str]:
+        best_word, best_rank = self._global_best(all_guesses)
+        prompt = PROPOSE_WORDS_PROMPT.format(
+            name=hypothesis.category_name,
+            description=hypothesis.description,
+            words_tried=json.dumps(hypothesis.words_tried, sort_keys=True),
+            best_word=best_word,
+            best_rank=best_rank,
+            all_guesses=json.dumps(sorted(all_guesses)),
+            invalid_guesses=json.dumps(sorted(invalid_guesses or set())),
+            n=n,
+        )
+        return self._json_request_with_retry(prompt)
+
+    def specialize(
+        self,
+        hypothesis: Hypothesis,
+        all_guesses: dict[str, int],
+        invalid_guesses: set[str] | None = None,
+        n: int = 2,
+    ) -> list[dict[str, Any]]:
+        prompt = SPECIALIZE_PROMPT.format(
+            name=hypothesis.category_name,
+            description=hypothesis.description,
+            words_tried=json.dumps(hypothesis.words_tried, sort_keys=True),
+            all_guesses=json.dumps(sorted(all_guesses)),
+            invalid_guesses=json.dumps(sorted(invalid_guesses or set())),
+            n=n,
+        )
+        return self._json_request_with_retry(prompt)
+
+    def crossover(
+        self,
+        hypothesis_a_name: str,
+        hypothesis_b_name: str,
+        a_words_with_ranks: dict[str, int],
+        b_words_with_ranks: dict[str, int],
+    ) -> dict[str, Any]:
+        prompt = CROSSOVER_PROMPT.format(
+            a_name=hypothesis_a_name,
+            b_name=hypothesis_b_name,
+            a_words=json.dumps(a_words_with_ranks, sort_keys=True),
+            b_words=json.dumps(b_words_with_ranks, sort_keys=True),
+        )
+        return self._json_request_with_retry(prompt)
+
+    def local_search(self, word: str, rank: int, n: int = 5) -> list[str]:
+        prompt = LOCAL_SEARCH_PROMPT.format(word=word, rank=rank, n=n)
+        return self._json_request_with_retry(prompt)
+
+    def _json_request_with_retry(self, prompt: str) -> Any:
+        last_error: Exception | None = None
+        for _ in range(2):
+            text = self._complete(prompt)
+            try:
+                return json.loads(_strip_code_fences(text))
+            except json.JSONDecodeError as exc:
+                last_error = exc
+
+        raise ValueError(f"LLM did not return valid JSON after retry: {last_error}")
+
+    def _complete(self, prompt: str) -> str:
+        if self.provider == "openai":
+            return self._complete_openai(prompt)
+        return self._complete_anthropic(prompt)
+
+    def _complete_openai(self, prompt: str) -> str:
+        response = requests.post(
+            "https://api.openai.com/v1/chat/completions",
+            headers={
+                "Authorization": f"Bearer {self.api_key}",
+                "Content-Type": "application/json",
+            },
+            json={
+                "model": self.model,
+                "messages": [{"role": "user", "content": prompt}],
+                "temperature": 0.8,
+            },
+            timeout=60,
+        )
+        error_data: Any = None
+        if response.status_code >= 400:
+            try:
+                error_data = response.json().get("error", {})
+            except ValueError:
+                error_data = {"bodyPrefix": response.text[:160]}
+            #region agent log
+            _agent_debug_log(
+                "contexto_solver/llm_client.py:_complete_openai",
+                "openai response failed",
+                {
+                    "statusCode": response.status_code,
+                    "requestId": response.headers.get("x-request-id", ""),
+                    "contentType": response.headers.get("content-type", ""),
+                    "error": error_data,
+                },
+                "H3,H4",
+            )
+            #endregion
+        response.raise_for_status()
+        data = response.json()
+        return data["choices"][0]["message"]["content"]
+
+    def _complete_anthropic(self, prompt: str) -> str:
+        response = requests.post(
+            "https://api.anthropic.com/v1/messages",
+            headers={
+                "x-api-key": self.api_key,
+                "anthropic-version": "2023-06-01",
+                "Content-Type": "application/json",
+            },
+            json={
+                "model": self.model,
+                "max_tokens": 1200,
+                "messages": [{"role": "user", "content": prompt}],
+                "temperature": 0.8,
+            },
+            timeout=60,
+        )
+        response.raise_for_status()
+        data = response.json()
+        return "".join(block.get("text", "") for block in data.get("content", []))
+
+    @staticmethod
+    def _global_best(all_guesses: dict[str, int]) -> tuple[str | None, int | None]:
+        if not all_guesses:
+            return None, None
+        best_word = min(all_guesses, key=all_guesses.get)
+        return best_word, all_guesses[best_word]
+
+
+def _strip_code_fences(text: str) -> str:
+    cleaned = text.strip()
+    fence_match = re.fullmatch(r"```(?:json)?\s*(.*?)\s*```", cleaned, flags=re.DOTALL)
+    if fence_match:
+        return fence_match.group(1).strip()
+    return cleaned
+
+
+def _agent_debug_log(location: str, message: str, data: dict[str, object], hypothesis_id: str) -> None:
+    try:
+        payload = {
+            "sessionId": "0eedb7",
+            "runId": "pre-fix",
+            "hypothesisId": hypothesis_id,
+            "location": location,
+            "message": message,
+            "data": data,
+            "timestamp": int(time.time() * 1000),
+        }
+        with open("debug-0eedb7.log", "a", encoding="utf-8") as log_file:
+            log_file.write(json.dumps(payload, separators=(",", ":")) + "\n")
+    except Exception:
+        pass
+
