@@ -5,6 +5,50 @@ Contexto evolutionary solver project. Entries are in reverse chronological
 order (newest first).
 
 
+## 2026-05-05 — Repeated local LLM runs for `herbaceous`
+
+**Setup:** Local GloVe game (`glove.6B.300d`), LLM evolutionary solver with
+the same configured LLM and same local backend. The target word was
+`herbaceous` in all three runs.
+
+**Runs:**
+- `python main.py --game local --target herbaceous --solver llm`
+  - Result: solved in 101 guesses over 4 generations.
+  - Trace: `traces/llm_local_herbaceous_20260505_122620.json`
+  - Final path: the solver guessed `herbaceous` from the `plant types`
+    hypothesis.
+- `python main.py --game local --target herbaceous --solver llm`
+  - Result: not solved after 311 guesses over 20 generations.
+  - Trace: `traces/llm_local_herbaceous_20260505_130240.json`
+  - Best word: `shrub`, rank 3.
+  - Notable behavior: by generation 4 the solver reached `shrub` at rank 3,
+    then stayed at `shrub` through generation 20 without converging to
+    `herbaceous`.
+- `python main.py --game local --target herbaceous --solver llm`
+  - Result: solved in 215 guesses over 10 generations.
+  - Trace: `traces/llm_local_herbaceous_20260505_130555.json`
+  - Final path: after reaching `shrub` at rank 3, the solver eventually
+    explored `small plants` and guessed `herbaceous`.
+
+**Observations:**
+- These three runs used the same target, same local game, and same LLM setup,
+  but produced very different outcomes: fast solve, rank-3 stall, and later
+  solve.
+- The second run is especially interesting because `shrub` at rank 3 is very
+  close to the answer, but the search still failed to make the final semantic
+  jump.
+- This suggests that the remaining variance is not only about finding a good
+  neighborhood. The solver also needs a more reliable way to pivot from a very
+  close clue to the exact target relation or descriptor.
+
+**Possible follow-up:**
+- Compare the traces around the first appearance of `shrub` across all three
+  runs to identify what made one run choose `herbaceous` quickly while another
+  stayed stuck.
+- Use this target as a small case study for stochastic LLM variance,
+  exploration/exploitation balance, and local-search failure modes.
+
+
 ## 2026-05-04 — Performance after fixes (cap, dedup, pivot-aware mutation)
 
 **Setup:** Tested both online Contexto API and local GloVe game with LLM
@@ -152,4 +196,3 @@ Stage 2b features enabled (crossover, local search, elitism).
    scored well. This should help the solver pivot when it is stuck in the
    wrong semantic area.
 
-**Next:** Re-run with these fixes and compare guess count.

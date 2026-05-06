@@ -184,6 +184,50 @@ replacement for those traces.
   weakness is not just when local search starts, but how the solver pivots from
   a close noun (`gang`) to associated descriptors or reputational adjectives.
 
+### 2026-05-05, 12:26 — LLM Local Game, `herbaceous`, Fast Solve
+
+- Command: `python main.py --game local --target herbaceous --solver llm`
+- Trace: `traces/llm_local_herbaceous_20260505_122620.json`
+- Result: solved.
+- Final answer: `herbaceous`.
+- Total guesses: 101.
+- Generations: 4.
+- Important path: the solver reached plant-related hypotheses quickly and
+  guessed `herbaceous` from `plant types`.
+- Interpretation: this is the best of the three repeated `herbaceous` runs and
+  shows the solver can solve this local GloVe target efficiently when the LLM
+  takes the right plant-category path.
+
+### 2026-05-05, 13:02 — LLM Local Game, `herbaceous`, Rank-3 Stall
+
+- Command: `python main.py --game local --target herbaceous --solver llm`
+- Trace: `traces/llm_local_herbaceous_20260505_130240.json`
+- Result: not solved.
+- Best word: `shrub`.
+- Best rank: 3.
+- Total guesses: 311.
+- Generations: 20.
+- Important path: the runtime summaries showed `shrub` at rank 3 by generation
+  4, then the run stayed at `shrub` through generation 20.
+- Interpretation: this is a strong example of local convergence failure. The
+  solver found an extremely close clue but did not make the final jump to the
+  descriptor `herbaceous`.
+
+### 2026-05-05, 13:05 — LLM Local Game, `herbaceous`, Later Solve
+
+- Command: `python main.py --game local --target herbaceous --solver llm`
+- Trace: `traces/llm_local_herbaceous_20260505_130555.json`
+- Result: solved.
+- Final answer: `herbaceous`.
+- Total guesses: 215.
+- Generations: 10.
+- Important path: the run reached `vine` at rank 83, then `foliage` at rank
+  47, then `shrub` at rank 3, and eventually guessed `herbaceous` from the
+  `small plants` hypothesis.
+- Interpretation: this run sits between the fast solve and the stall. It
+  confirms that reaching `shrub` rank 3 can still lead to the target, but only
+  if the solver explores the right descriptor relation afterward.
+
 ## Cross-Run Observations
 
 - Local search is valuable when the best clue is extremely close. The `cat`
@@ -199,6 +243,9 @@ replacement for those traces.
 - The online API appears easier for the LLM evolutionary solver than the local
   GloVe game in several current runs, even though the solver does not directly
   inspect either backend's embedding model.
+- Repeated same-target local runs can vary sharply. Three `herbaceous` runs
+  with the same local game and LLM setup produced a fast solve, a rank-3 stall,
+  and a later solve.
 - Single-run outcomes are highly variable. The same solver can solve trivial
   cases during initialization, solve semantic pivots in a few generations, or
   remain stuck near a strong clue.

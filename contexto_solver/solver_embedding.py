@@ -98,8 +98,10 @@ class SolverEmbedding:
     def solve(self, max_generations: int | None = None) -> dict[str, Any]:
         generation_limit = max_generations or self.config.max_generations
         solved = self.initialize()
+        self._print_generation_summary()
         while not solved and self.generation < generation_limit:
             solved = self.run_generation()
+            self._print_generation_summary()
 
         if not solved:
             self.logger.log(
@@ -167,6 +169,9 @@ class SolverEmbedding:
     def _save_trace(self) -> Path:
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         return self.logger.save(Path(self.config.trace_dir) / f"{self.config.run_label}_{timestamp}.json")
+
+    def _print_generation_summary(self) -> None:
+        print(f"Generation {self.generation}: best word={self.best_word}, best rank={self.best_rank}")
 
     @property
     def best_word(self) -> str | None:
