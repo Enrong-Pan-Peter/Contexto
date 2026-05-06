@@ -33,6 +33,7 @@ Avoid these invalid or unrecognized words: {invalid_guesses}
 Suggest {n} new single-word guesses for this hypothesis.
 Every guess must be one common lowercase dictionary word.
 Do not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.
+Do not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.
 Invalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.
 JSON schema:
 ["word1", "word2", "word3"]"""
@@ -54,6 +55,7 @@ Every word must be one common lowercase dictionary word.
 Do not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.
 Avoid these words: {all_guesses}
 Avoid these invalid or unrecognized words: {invalid_guesses}
+Do not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.
 Invalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.
 JSON schema:
 [{{"name": "direction name", "description": "short description", "words": ["word1", "word2", "word3"]}}]"""
@@ -76,8 +78,67 @@ associated people or groups, causes/effects, and words that commonly appear near
 If {word} is a noun, include plausible adjectives or descriptors associated with it.
 Every word must be one common lowercase dictionary word.
 Avoid these already tried words: {all_guesses}
+Do not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.
 JSON schema:
 ["word1", "word2", "word3"]"""
+
+PIVOT_MORPHOLOGY_PROMPT = """Return only JSON, no markdown or explanation.
+The word {word} has rank {rank}, so it is very close to the hidden target.
+Suggest {n} candidate words that pivot across morphology, word forms, parts of speech,
+botanical/scientific terms, descriptors, hypernyms, and hyponyms.
+For example, from shrub, useful candidates could include shrubby, shrubland,
+herbaceous, woody, perennial, bush, foliage.
+Every word must be one common lowercase dictionary word.
+Do not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.
+Avoid these already tried words: {all_guesses}
+Do not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.
+JSON schema:
+["word1", "word2", "word3"]"""
+
+PIVOT_REGISTER_SHIFT_PROMPT = """Return only JSON, no markdown or explanation.
+The hidden target is semantically close to {word}, which has rank {rank}, but it may be
+in a different lexical register: more technical, more general, more specific, or a
+different part of speech.
+Suggest {n} candidate single lowercase words across these registers.
+Every word must be one common lowercase dictionary word.
+Do not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.
+Avoid these already tried words: {all_guesses}
+Do not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.
+JSON schema:
+["word1", "word2", "word3"]"""
+
+PIVOT_ADJACENT_CATEGORY_PROMPT = """Return only JSON, no markdown or explanation.
+The current best word is {word} with rank {rank}.
+Current category: {category_name}
+Category description: {category_description}
+Words already explored near this category: {words_tried}
+
+Suggest one adjacent but distinct category that might contain the hidden target.
+For example, if the current category is "types of plants" and the best word is "shrub",
+use an adjacent category such as "plant descriptors", "botanical terminology", or "growth habits".
+Include exactly {n} candidate words for that category.
+Every word must be one common lowercase dictionary word.
+Do not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.
+Avoid these already tried words: {all_guesses}
+Do not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.
+JSON schema:
+{{"name": "category name", "description": "short description", "words": ["word1", "word2", "word3"]}}"""
+
+PIVOT_FRESH_ADJACENT_CATEGORY_PROMPT = """Return only JSON, no markdown or explanation.
+The solver is stalled and needs a fresh semantic direction.
+Current best word: {word}
+Current best rank: {rank}
+Existing active categories: {active_categories}
+
+Suggest one broad but relevant adjacent category that is unlike the existing active categories
+and could still lead toward the hidden target.
+Include exactly {n} candidate words for that category.
+Every word must be one common lowercase dictionary word.
+Do not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.
+Avoid these already tried words: {all_guesses}
+Do not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.
+JSON schema:
+{{"name": "category name", "description": "short description", "words": ["word1", "word2", "word3"]}}"""
 
 
 class LLMClient:
@@ -173,6 +234,62 @@ class LLMClient:
             rank=rank,
             n=n,
             all_guesses=json.dumps(sorted(all_guesses or set())),
+        )
+        return self._json_request_with_retry(prompt)
+
+    def pivot_morphology(self, word: str, rank: int, all_guesses: set[str], n: int = 10) -> list[str]:
+        prompt = PIVOT_MORPHOLOGY_PROMPT.format(
+            word=word,
+            rank=rank,
+            n=n,
+            all_guesses=json.dumps(sorted(all_guesses)),
+        )
+        return self._json_request_with_retry(prompt)
+
+    def pivot_register_shift(self, word: str, rank: int, all_guesses: set[str], n: int = 10) -> list[str]:
+        prompt = PIVOT_REGISTER_SHIFT_PROMPT.format(
+            word=word,
+            rank=rank,
+            n=n,
+            all_guesses=json.dumps(sorted(all_guesses)),
+        )
+        return self._json_request_with_retry(prompt)
+
+    def pivot_adjacent_category(
+        self,
+        word: str,
+        rank: int,
+        category_name: str,
+        category_description: str,
+        words_tried: dict[str, int],
+        all_guesses: set[str],
+        n: int = 10,
+    ) -> dict[str, Any]:
+        prompt = PIVOT_ADJACENT_CATEGORY_PROMPT.format(
+            word=word,
+            rank=rank,
+            category_name=category_name,
+            category_description=category_description,
+            words_tried=json.dumps(words_tried, sort_keys=True),
+            all_guesses=json.dumps(sorted(all_guesses)),
+            n=n,
+        )
+        return self._json_request_with_retry(prompt)
+
+    def pivot_fresh_adjacent_category(
+        self,
+        word: str,
+        rank: int,
+        active_categories: list[str],
+        all_guesses: set[str],
+        n: int = 10,
+    ) -> dict[str, Any]:
+        prompt = PIVOT_FRESH_ADJACENT_CATEGORY_PROMPT.format(
+            word=word,
+            rank=rank,
+            active_categories=json.dumps(active_categories),
+            all_guesses=json.dumps(sorted(all_guesses)),
+            n=n,
         )
         return self._json_request_with_retry(prompt)
 

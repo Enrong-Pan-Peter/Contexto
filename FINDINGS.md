@@ -5,6 +5,50 @@ Contexto evolutionary solver project. Entries are in reverse chronological
 order (newest first).
 
 
+## 2026-05-06 — `herbaceous` runs expose singular/plural stall
+
+**Setup:** Local GloVe game (`glove.6B.300d`), LLM evolutionary solver on the
+`stall` branch, target `herbaceous`.
+
+**Runs:**
+- `python main.py --game local --target herbaceous --solver llm`
+  - Result: not solved after 274 guesses over 20 generations.
+  - Trace: `traces/llm_local_herbaceous_20260506_141417.json`
+  - Best word: `shrubs`, rank 2.
+  - Path: `tree -> plant -> vegetation -> shrub -> shrubs`, then stalled at
+    `shrubs` from generation 5 through generation 20.
+- `python main.py --game local --target herbaceous --solver llm`
+  - Result: solved in 219 guesses over 10 generations.
+  - Trace: `traces/llm_local_herbaceous_20260506_142033.json`
+  - Path: reached `shrub` at rank 3 by generation 4, then later guessed
+    `herbaceous` from the `plant forms` hypothesis.
+- `python main.py --game local --target herbaceous --solver llm`
+  - Result: not solved after 345 guesses over 20 generations.
+  - Trace: `traces/llm_local_herbaceous_20260506_142357.json`
+  - Best word: `shrub`, rank 3.
+  - Path: reached `shrub` at generation 4 and stayed there through generation
+    20.
+
+**Observations:**
+- The first run is especially important because `shrubs` is only the plural of
+  `shrub`. Contexto effectively treats singular/plural forms as the same guess,
+  so spending search effort on `shrub -> shrubs` is not a meaningful semantic
+  pivot.
+- The run that solved did so by entering a descriptor/register path (`plant
+  forms`) and eventually guessing `herbaceous`, not by staying inside simple
+  noun variants.
+- This suggests the stall pivot mechanism needs to avoid singular/plural
+  variants and focus on relation changes such as descriptors, botanical
+  terminology, growth habit, and lexical register shifts.
+
+**Change motivated by this finding:**
+- Updated LLM prompts to tell the model not to propose singular/plural variants
+  of already tried words.
+- Added lightweight singular/plural family filtering in the LLM solver so
+  obvious variants like `shrub`/`shrubs`, `bush`/`bushes`, and
+  `berry`/`berries` are treated as redundant during candidate acceptance.
+
+
 ## 2026-05-05 — Repeated local LLM runs for `herbaceous`
 
 **Setup:** Local GloVe game (`glove.6B.300d`), LLM evolutionary solver with
