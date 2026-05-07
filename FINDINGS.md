@@ -5,6 +5,43 @@ Contexto evolutionary solver project. Entries are in reverse chronological
 order (newest first).
 
 
+## 2026-05-06 — `superficial` shows misleading close neighborhoods
+
+**Setup:** Local GloVe game (`glove.6B.300d`), LLM evolutionary solver, target
+`superficial`.
+
+**Runs:**
+- `traces/llm_local_superficial_20260506_150023.json`
+  - Result: not solved after 383 guesses over 20 generations.
+  - Best word: `obvious`, rank 8.
+  - Notable behavior: the run spent effort around `subtle`/`obvious`, which are
+    strongly ranked but did not lead to the target.
+- `traces/llm_local_superficial_20260506_151008.json`
+  - Result: not solved after 316 guesses over 20 generations.
+  - Best word: `visceral`, rank 41.
+  - Notable behavior: the run moved through anatomy terms (`pelvis`,
+    `abdomen`, `visceral`). The rank feedback looked locally promising, but the
+    direction was semantically wrong for `superficial`.
+- `traces/llm_local_superficial_20260506_151506.json`
+  - Result: not solved after 348 guesses over 20 generations.
+  - Best word: `subtle`, rank 13.
+  - Notable behavior: the run reached `subtle` by generation 13 and stayed
+    there through generation 20.
+
+**Observations:**
+- `superficial` is a useful stress target because the local GloVe neighborhood
+  exposes multiple misleading routes: abstract contrast words like `subtle` and
+  `obvious`, and body/depth contrast words like `visceral`.
+- The anatomy run is especially important. It shows that good rank feedback can
+  still pull the LLM into the wrong explanatory frame when the embedding
+  relation is based on contrast or association rather than the exact target
+  descriptor.
+- A future pivot strategy should distinguish "near because contrast/antonym"
+  from "near because same descriptor family." For this target, the useful pivot
+  is likely toward surface/depth descriptors rather than deeper anatomy terms or
+  generic subtlety/obviousness.
+
+
 ## 2026-05-06 — `herbaceous` runs expose singular/plural stall
 
 **Setup:** Local GloVe game (`glove.6B.300d`), LLM evolutionary solver on the

@@ -26,6 +26,8 @@ def main() -> None:
 
     game_embedding_path = args.game_embedding_path or args.glove_path or config.GAME_EMBEDDING_PATH
     solver_embedding_path = args.solver_embedding_path or args.glove_path or config.SOLVER_EMBEDDING_PATH
+    llm_provider = args.provider or config.LLM_PROVIDER
+    llm_model = _model_for_provider(llm_provider, args.model, args.ollama_model)
     if args.mode == "aligned" and args.solver == "embedding" and game_embedding_path != solver_embedding_path:
         raise ValueError("aligned embedding experiments require the same game and solver embedding path.")
     if args.mode == "non_aligned" and args.solver == "embedding" and game_embedding_path == solver_embedding_path:
@@ -43,9 +45,12 @@ def main() -> None:
     output_path = Path(args.output or _default_output_path(args.solver, args.mode))
     output_path.parent.mkdir(parents=True, exist_ok=True)
 
-    rows: list[dict[str, Any]] = []
+    rows: list[dict[str, Any]] = _load_existing_rows(output_path) if args.resume else []
+    completed = {(row["target"], row["run_index"]) for row in rows}
     for run_index in range(args.runs_per_target):
         for target in targets:
+            if (target, run_index) in completed:
+                continue
             rows.append(
                 _run_local_target(
                     target=target,
@@ -55,9 +60,27 @@ def main() -> None:
                     solver_embedding_model=solver_embedding_model,
                     game_embedding_path=game_embedding_path,
                     solver_embedding_path=solver_embedding_path,
+                    llm_provider=llm_provider,
+                    llm_model=llm_model,
                 )
             )
+            _write_outputs(output_path, args, targets, game_embedding_path, solver_embedding_path, rows)
 
+    _write_outputs(output_path, args, targets, game_embedding_path, solver_embedding_path, rows)
+
+    print(f"Wrote JSON summary: {output_path}")
+    print(f"Wrote CSV summary: {output_path.with_suffix('.csv')}")
+    print(json.dumps(_aggregate(rows), indent=2))
+
+
+def _write_outputs(
+    output_path: Path,
+    args: argparse.Namespace,
+    targets: list[str],
+    game_embedding_path: str,
+    solver_embedding_path: str,
+    rows: list[dict[str, Any]],
+) -> None:
     summary = {
         "metadata": {
             "created_at": datetime.now().isoformat(timespec="seconds"),
@@ -68,6 +91,12 @@ def main() -> None:
             "game_embedding_path": game_embedding_path,
             "solver_embedding_path": solver_embedding_path,
             "max_generations": args.max_generations,
+            "llm_provider": (args.provider or config.LLM_PROVIDER) if args.solver == "llm" else None,
+            "llm_model": (
+                _model_for_provider(args.provider or config.LLM_PROVIDER, args.model, args.ollama_model)
+                if args.solver == "llm"
+                else None
+            ),
             "random_seed": args.random_seed,
             "enable_pivot": config.ENABLE_PIVOT if args.solver == "llm" else None,
             "stall_no_improvement_generations": config.STALL_NO_IMPROVEMENT_GENERATIONS if args.solver == "llm" else None,
@@ -83,10 +112,6 @@ def main() -> None:
     output_path.write_text(json.dumps(summary, indent=2), encoding="utf-8")
     _write_csv(output_path.with_suffix(".csv"), rows)
 
-    print(f"Wrote JSON summary: {output_path}")
-    print(f"Wrote CSV summary: {output_path.with_suffix('.csv')}")
-    print(json.dumps(summary["aggregate"], indent=2))
-
 
 def _run_local_target(
     target: str,
@@ -96,6 +121,8 @@ def _run_local_target(
     solver_embedding_model: EmbeddingModel | None,
     game_embedding_path: str,
     solver_embedding_path: str,
+    llm_provider: str,
+    llm_model: str,
 ) -> dict[str, Any]:
     game = LocalGame(game_embedding_model, target)
     logger = Logger()
@@ -114,6 +141,8 @@ def _run_local_target(
             "solver_embedding_path": solver_embedding_path,
             "alignment": alignment,
             "max_generations": args.max_generations,
+            "llm_provider": llm_provider if args.solver == "llm" else None,
+            "llm_model": llm_model if args.solver == "llm" else None,
             "random_seed": _run_seed(args.random_seed, run_index),
             "enable_pivot": config.ENABLE_PIVOT if args.solver == "llm" else None,
             "stall_no_improvement_generations": config.STALL_NO_IMPROVEMENT_GENERATIONS if args.solver == "llm" else None,
@@ -144,9 +173,9 @@ def _run_local_target(
         )
     else:
         llm_client = LLMClient(
-            provider=args.provider or config.LLM_PROVIDER,
-            api_key=args.api_key or _api_key_for_provider(args.provider or config.LLM_PROVIDER),
-            model=args.model or config.LLM_MODEL,
+            provider=llm_provider,
+            api_key=args.api_key or _api_key_for_provider(llm_provider),
+            model=llm_model,
         )
         solver = SolverLLM(
             game,
@@ -186,6 +215,8 @@ def _run_local_target(
         "total_guesses": result["total_guesses"],
         "generations": result["generations"],
         "trace_path": result["trace_path"],
+        "llm_provider": llm_provider if args.solver == "llm" else None,
+        "llm_model": llm_model if args.solver == "llm" else None,
         "game_embedding_path": game_embedding_path,
         "solver_embedding_path": solver_embedding_path,
         "alignment": alignment,
@@ -204,6 +235,16 @@ def _load_targets(args: argparse.Namespace) -> list[str]:
             if line.strip() and not line.startswith("#")
         )
     return list(dict.fromkeys(targets))
+
+
+def _load_existing_rows(output_path: Path) -> list[dict[str, Any]]:
+    if not output_path.exists():
+        return []
+    data = json.loads(output_path.read_text(encoding="utf-8"))
+    rows = data.get("runs", [])
+    if not isinstance(rows, list):
+        raise ValueError(f"Cannot resume from {output_path}: runs is not a list.")
+    return rows
 
 
 def _aggregate(rows: list[dict[str, Any]]) -> dict[str, Any]:
@@ -242,6 +283,8 @@ def _write_csv(path: Path, rows: list[dict[str, Any]]) -> None:
         "total_guesses",
         "generations",
         "trace_path",
+        "llm_provider",
+        "llm_model",
         "alignment",
     ]
     with path.open("w", newline="", encoding="utf-8") as csv_file:
@@ -263,9 +306,17 @@ def _run_seed(seed: int | None, run_index: int) -> int | None:
 
 
 def _api_key_for_provider(provider: str) -> str:
+    if provider == "ollama":
+        return "ollama"
     if provider == "anthropic":
         return config.ANTHROPIC_API_KEY
     return config.LLM_API_KEY or config.OPENAI_API_KEY
+
+
+def _model_for_provider(provider: str, cli_model: str | None, cli_ollama_model: str | None) -> str:
+    if provider == "ollama":
+        return cli_ollama_model or cli_model or config.OLLAMA_MODEL
+    return cli_model or config.LLM_MODEL
 
 
 def _parse_args() -> argparse.Namespace:
@@ -284,10 +335,12 @@ def _parse_args() -> argparse.Namespace:
     parser.add_argument("--active-count", type=int, default=config.EMBEDDING_ACTIVE_COUNT)
     parser.add_argument("--neighbors-per-word", type=int, default=config.EMBEDDING_NEIGHBORS_PER_WORD)
     parser.add_argument("--llm-workers", type=int, default=config.LLM_WORKERS)
-    parser.add_argument("--provider", choices=["openai", "anthropic"])
+    parser.add_argument("--provider", choices=["openai", "anthropic", "ollama"])
     parser.add_argument("--model")
+    parser.add_argument("--ollama-model", help="Ollama model name. Defaults to OLLAMA_MODEL when --provider=ollama.")
     parser.add_argument("--api-key")
     parser.add_argument("--output", help="Path to JSON summary output.")
+    parser.add_argument("--resume", action="store_true", help="Skip runs already present in the output JSON.")
     return parser.parse_args()
 
 

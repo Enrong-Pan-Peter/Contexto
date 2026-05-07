@@ -228,6 +228,68 @@ replacement for those traces.
   confirms that reaching `shrub` rank 3 can still lead to the target, but only
   if the solver explores the right descriptor relation afterward.
 
+### 2026-05-06, 15:00 — LLM Local Game, `superficial`, Obvious/Subtle Stall
+
+- Command: `python main.py --game local --target superficial --solver llm`
+- Trace: `traces/llm_local_superficial_20260506_150023.json`
+- Result: not solved.
+- Best word: `obvious`.
+- Best rank: 8.
+- Total guesses: 383.
+- Generations: 20.
+- Important path: the run moved into the `subtle`/`obvious` neighborhood and
+  held strong ranks there, but did not make the final jump to `superficial`.
+- Interpretation: the solver found antonym/contrast vocabulary that is close
+  in the local embedding space, but the feedback did not reliably guide it
+  toward the target adjective.
+
+### 2026-05-06, 15:10 — LLM Local Game, `superficial`, Anatomy Drift
+
+- Command: `python main.py --game local --target superficial --solver llm`
+- Trace: `traces/llm_local_superficial_20260506_151008.json`
+- Result: not solved.
+- Best word: `visceral`.
+- Best rank: 41.
+- Total guesses: 316.
+- Generations: 20.
+- Important path: the run went through anatomy/body terms: `head`, `thigh`,
+  `pelvis`, `abdomen`, and then `visceral`.
+- Interpretation: this is a misleading-rank case. The local GloVe backend gave
+  useful-looking feedback for an anatomy/internal-organ direction, but that
+  trajectory was semantically wrong for the target `superficial`.
+
+### 2026-05-06, 15:15 — LLM Local Game, `superficial`, Subtle Stall
+
+- Command: `python main.py --game local --target superficial --solver llm`
+- Trace: `traces/llm_local_superficial_20260506_151506.json`
+- Result: not solved.
+- Best word: `subtle`.
+- Best rank: 13.
+- Total guesses: 348.
+- Generations: 20.
+- Important path: the run moved from consequence/implication language into
+  `subtle`, then stayed at `subtle` from generation 13 through generation 20.
+- Interpretation: like the 15:00 run, this found a plausible abstract adjective
+  neighborhood but failed to pivot from related contrast language to the exact
+  surface/depth relation.
+
+### 2026-05-07, 13:33 — LLM Local Game, `superficial`, Ollama Solve
+
+- Command: `python main.py --game local --target superficial --solver llm --provider ollama --ollama-model qwen3:14b`
+- Trace: `traces/llm_local_superficial_20260507_133325.json`
+- Result: solved.
+- Final answer: `superficial`.
+- Total guesses: 388.
+- Generations: 15.
+- Configuration: provider `ollama`, model `qwen3:14b`, `max_generations=50`.
+- Important path: the run moved from broad emotion/body clues through `skin`
+  rank 40 and `epidermis` rank 21, then reached `vein` at rank 3. Local search
+  around `vein` proposed `superficial` and solved the target.
+- Interpretation: the local Ollama path can solve a previously stalled local
+  target when given a larger generation budget. The successful bridge came
+  through an anatomy/surface-depth relation rather than the earlier
+  `subtle`/`obvious` adjective neighborhood.
+
 ## Cross-Run Observations
 
 - Local search is valuable when the best clue is extremely close. The `cat`

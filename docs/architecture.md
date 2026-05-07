@@ -10,10 +10,11 @@ games, solvers, configuration, logging, and experiment workflows.
 - Keep solver logic independent from whether ranks come from the real Contexto
   API or the local embedding game.
 - Keep LLM-based search separate from embedding-neighbor search.
+- Keep LLM provider selection isolated from solver logic.
 - Preserve traceability: every solver run should produce readable JSON traces
   that explain the search process.
 - Support local experiments without rate limits while respecting rate limits
-  for the real Contexto API.
+  for the real Contexto API and paid LLM APIs.
 
 ## Main Runtime Flow
 
@@ -37,8 +38,9 @@ python -m contexto_solver.experiment
   -> load target list
   -> load game embedding model once
   -> optionally load separate solver embedding model
+  -> choose LLM provider/model when using the LLM solver
   -> run LocalGame + selected solver repeatedly
-  -> write per-run traces plus JSON/CSV summary
+  -> write per-run traces plus resumable JSON/CSV summary
 ```
 
 Manual local play goes through this path:
@@ -80,7 +82,7 @@ Main function:
 - Loads embeddings only when required.
 - Constructs either `LocalGame` or `ContextoAPI`.
 - Constructs either `SolverLLM` or `SolverEmbedding`.
-- Logs `RUN_CONFIG`.
+- Logs `RUN_CONFIG`, including LLM provider/model for LLM runs.
 - Prints final status, best word/rank, total guesses, generation count, and
   trace path.
 
@@ -88,6 +90,8 @@ Main interactions:
 - Reads defaults from `config`.
 - Uses `EmbeddingModel` for local games and embedding solvers.
 - Uses `LLMClient` only for LLM solver runs.
+- Selects `openai`, `anthropic`, or `ollama` through the existing
+  `--provider`/`LLM_PROVIDER` setting.
 - Passes a shared `Logger` into the selected solver.
 
 Subtleties:
@@ -95,6 +99,8 @@ Subtleties:
   aligned and non-aligned embedding experiments.
 - If the local game and embedding solver use the same path, the embedding model
   instance is reused to avoid loading GloVe twice.
+- `--ollama-model` is a convenience override for Ollama runs; `--model` remains
+  the generic model override.
 - `_default(value, default)` preserves explicit `0` CLI values; do not replace
   it with `value or default`.
 
@@ -115,6 +121,12 @@ Main interactions:
 Subtleties:
 - `.env` values do not overwrite variables already present in the process
   environment.
+- `LLM_PROVIDER` is the provider selector for OpenAI, Anthropic, and Ollama.
+  Provider-specific defaults include `LLM_MODEL` for cloud providers and
+  `OLLAMA_BASE_URL`, `OLLAMA_MODEL`, and `OLLAMA_REQUEST_TIMEOUT_SECONDS` for
+  local Ollama.
+- The default generation budget is `MAX_GENERATIONS=50`; CLI flags can still
+  lower it to `0` for smoke tests or raise/lower it per run.
 - GloVe is currently the only validated embedding model, even though separate
   embedding paths are already supported.
 
@@ -186,24 +198,33 @@ Subtleties:
 LLM provider wrapper and prompt owner.
 
 Main function:
-- Supports OpenAI and Anthropic chat APIs.
+- Supports OpenAI, Anthropic, and Ollama chat APIs.
 - Owns prompt templates for initial categories, word proposals, mutation,
-  crossover, and local search.
-- Requests JSON-only responses and parses JSON, retrying once after JSON parse
-  failure.
+  crossover, local search, and pivot operators.
+- Requests JSON-only responses and parses JSON. JSON parse failures retry the
+  generation request; retryable provider failures use bounded backoff.
 
 Main interactions:
 - Used only by `SolverLLM`.
 - Receives `Hypothesis` state and rank feedback from the solver.
 - Uses invalid/global guess sets supplied by `SolverLLM` to reduce repeated or
   unusable words.
+- Receives the selected provider, API key placeholder/key, and resolved model
+  from `main` or `experiment`.
 
 Subtleties:
 - Prompts enforce single lowercase words because Contexto rejects phrases,
   punctuation, and hyphenated guesses.
 - `local_search()` is LLM-based; it does not use the local game's embedding
   model. This preserves separation between LLM solver and game internals.
-- Provider errors are raised by `requests` after response status checks.
+- OpenAI and Anthropic use raw `requests` calls to their native APIs. Ollama
+  uses raw `requests` against its OpenAI-compatible
+  `{OLLAMA_BASE_URL}/chat/completions` endpoint; no extra Ollama SDK is used.
+- Ollama does not require a real API key. If the local server is unreachable or
+  the selected model is missing, `LLMClient` raises a clear error instead of
+  falling back to a cloud provider.
+- Provider errors are raised by `requests` after response status checks unless
+  they are converted into clearer local Ollama errors first.
 
 ### `contexto_solver.hypothesis.Hypothesis`
 
@@ -240,7 +261,8 @@ Main function:
   - selects active hypotheses with elitism,
   - mutates strong hypotheses,
   - performs crossover,
-  - deduplicates similar hypotheses.
+  - deduplicates similar hypotheses,
+  - detects stalls and can run pivot operators.
 - Prints best word/rank after generation `0` and each completed generation.
 - Saves a JSON trace at the end.
 
@@ -256,6 +278,8 @@ Subtleties:
   duplicates across hypotheses.
 - Local search is triggered by `local_search_rank_threshold`; it is not a
   replacement for category exploration in all cases.
+- Pivoting is still LLM-based. It adds morphology, register-shift, and adjacent
+  category directions when the stall detector fires.
 - The active hypothesis cap and deduplication are important performance
   safeguards. Changes to selection/mutation should consider their impact on
   diversity and convergence.
@@ -314,16 +338,22 @@ Main function:
 - Supports `llm` and `embedding` solvers.
 - Supports `aligned` and `non_aligned` embedding modes.
 - Writes per-run traces plus aggregate JSON and CSV summaries.
+- Can resume an existing summary with `--resume`, skipping target/run pairs
+  already present in the output.
 
 Main interactions:
 - Always uses `LocalGame`.
 - Reuses `EmbeddingModel` instances when possible.
 - Constructs `SolverLLM` or `SolverEmbedding` similarly to `main`.
+- Records LLM provider/model in experiment metadata, per-run rows, CSV output,
+  and each run's `RUN_CONFIG` trace event for LLM experiments.
 
 Subtleties:
 - Real API batch experiments are intentionally not handled here.
 - Alignment validation is enforced for embedding solver runs.
 - `random_seed` is offset by run index for repeated embedding experiments.
+- Summary files are rewritten after each completed run so interrupted batches
+  can be resumed without losing completed results.
 
 ### `contexto_solver.play`
 
@@ -374,6 +404,8 @@ Current outputs:
 - Per-run JSON traces from solvers.
 - Batch experiment JSON summaries.
 - Batch experiment CSV summaries.
+- LLM experiment outputs include `llm_provider` and `llm_model` so local and
+  cloud model results are distinguishable during analysis.
 
 Subtleties:
 - Trace files are evidence for experiments, but they can be large.
@@ -431,6 +463,9 @@ Before modifying a component, check these likely dependents:
   `EmbeddingModel`, `LocalGame`, `SolverEmbedding`, README, and docs.
 - LLM prompts or JSON schemas: update `LLMClient`, `SolverLLM` parsing/cleaning,
   trace expectations, and experiment notes.
+- LLM provider routing or defaults: update `config`, `main`, `experiment`,
+  `LLMClient`, `RUN_CONFIG` metadata, experiment summary fields, and smoke
+  tests for both selected provider behavior and provider-specific errors.
 - Selection, mutation, local search, or deduplication: update `SolverLLM`,
   verify traces, and consider effects on convergence/diversity.
 - Experiment summary fields: update `experiment`, CSV fieldnames, downstream
@@ -444,6 +479,10 @@ Before modifying a component, check these likely dependents:
 - Invalid/unavailable guesses use `-1` at the game interface.
 - Local games should not use API rate limiting.
 - LLM solver should not access local embedding vectors.
+- LLM provider choice should not change solver, hypothesis, game, or trace event
+  interfaces beyond run-level provider/model metadata.
+- A selected LLM provider should fail clearly on provider-specific errors; do
+  not silently fall back to a different provider.
 - Embedding solver should only use its configured solver embedding model.
 - Root wrappers should remain thin.
 - Generated traces and experiment summaries should not become required inputs
