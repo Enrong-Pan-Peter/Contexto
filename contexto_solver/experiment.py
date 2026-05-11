@@ -51,19 +51,35 @@ def main() -> None:
         for target in targets:
             if (target, run_index) in completed:
                 continue
-            rows.append(
-                _run_local_target(
-                    target=target,
-                    run_index=run_index,
-                    args=args,
-                    game_embedding_model=game_embedding_model,
-                    solver_embedding_model=solver_embedding_model,
-                    game_embedding_path=game_embedding_path,
-                    solver_embedding_path=solver_embedding_path,
-                    llm_provider=llm_provider,
-                    llm_model=llm_model,
+            try:
+                rows.append(
+                    _run_local_target(
+                        target=target,
+                        run_index=run_index,
+                        args=args,
+                        game_embedding_model=game_embedding_model,
+                        solver_embedding_model=solver_embedding_model,
+                        game_embedding_path=game_embedding_path,
+                        solver_embedding_path=solver_embedding_path,
+                        llm_provider=llm_provider,
+                        llm_model=llm_model,
+                    )
                 )
-            )
+            except Exception as exc:
+                error_message = f"{type(exc).__name__}: {exc}"
+                print(f"Run failed for target={target} run_index={run_index}: {error_message}")
+                rows.append(
+                    _failed_run_row(
+                        target=target,
+                        run_index=run_index,
+                        args=args,
+                        game_embedding_path=game_embedding_path,
+                        solver_embedding_path=solver_embedding_path,
+                        llm_provider=llm_provider,
+                        llm_model=llm_model,
+                        error=error_message,
+                    )
+                )
             _write_outputs(output_path, args, targets, game_embedding_path, solver_embedding_path, rows)
 
     _write_outputs(output_path, args, targets, game_embedding_path, solver_embedding_path, rows)
@@ -215,6 +231,39 @@ def _run_local_target(
         "total_guesses": result["total_guesses"],
         "generations": result["generations"],
         "trace_path": result["trace_path"],
+        "error": None,
+        "llm_provider": llm_provider if args.solver == "llm" else None,
+        "llm_model": llm_model if args.solver == "llm" else None,
+        "game_embedding_path": game_embedding_path,
+        "solver_embedding_path": solver_embedding_path,
+        "alignment": alignment,
+    }
+
+
+def _failed_run_row(
+    target: str,
+    run_index: int,
+    args: argparse.Namespace,
+    game_embedding_path: str,
+    solver_embedding_path: str,
+    llm_provider: str,
+    llm_model: str,
+    error: str,
+) -> dict[str, Any]:
+    alignment = "aligned" if game_embedding_path == solver_embedding_path else "non_aligned"
+    return {
+        "solver": args.solver,
+        "mode": args.mode,
+        "target": target,
+        "run_index": run_index,
+        "solved": False,
+        "answer": target,
+        "best_word": None,
+        "best_rank": None,
+        "total_guesses": None,
+        "generations": None,
+        "trace_path": None,
+        "error": error,
         "llm_provider": llm_provider if args.solver == "llm" else None,
         "llm_model": llm_model if args.solver == "llm" else None,
         "game_embedding_path": game_embedding_path,
@@ -250,6 +299,7 @@ def _load_existing_rows(output_path: Path) -> list[dict[str, Any]]:
 def _aggregate(rows: list[dict[str, Any]]) -> dict[str, Any]:
     solved_rows = [row for row in rows if row["solved"]]
     best_ranks = [row["best_rank"] for row in rows if row["best_rank"] is not None]
+    generations = [row["generations"] for row in rows if row["generations"] is not None]
     return {
         "total_runs": len(rows),
         "solved_runs": len(solved_rows),
@@ -261,8 +311,8 @@ def _aggregate(rows: list[dict[str, Any]]) -> dict[str, Any]:
         ),
         "average_best_rank": sum(best_ranks) / len(best_ranks) if best_ranks else None,
         "average_generations": (
-            sum(row["generations"] for row in rows) / len(rows)
-            if rows
+            sum(generations) / len(generations)
+            if generations
             else None
         ),
     }
@@ -283,6 +333,7 @@ def _write_csv(path: Path, rows: list[dict[str, Any]]) -> None:
         "total_guesses",
         "generations",
         "trace_path",
+        "error",
         "llm_provider",
         "llm_model",
         "alignment",

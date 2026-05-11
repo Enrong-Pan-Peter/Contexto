@@ -5,6 +5,82 @@ Contexto evolutionary solver project. Entries are in reverse chronological
 order (newest first).
 
 
+## 2026-05-08 — Evaluation criteria for the pivot matrix
+
+**Setup:** The pivot mechanism is being evaluated with a paired local-game
+matrix rather than isolated single runs. The current design compares
+`ENABLE_PIVOT=false` and `ENABLE_PIVOT=true` using the same targets
+(`notorious`, `herbaceous`, `superficial`), five repeats per target, Ollama
+`qwen3:14b`, and a maximum budget of 50 generations.
+
+**Evaluation criteria:**
+- Use paired comparisons by `(target, run_index)` so each pivot-enabled run is
+  compared with the corresponding no-pivot run.
+- Report solve rate per condition and per target.
+- Report median and IQR of guesses-to-solution using solved runs only, since
+  unsolved runs do not have a true guess-to-solution value.
+- For unsolved runs, report the best rank reached rather than folding those
+  runs into solved-run guess statistics.
+- Use Wilcoxon signed-rank tests for paired differences and Cliff's delta as a
+  nonparametric effect-size estimate.
+
+**Reasoning:** This avoids overinterpreting individual stochastic LLM runs. It
+also separates two different outcomes that matter scientifically: whether the
+solver reaches the target at all, and how close it gets when it fails.
+
+
+## 2026-05-08 — Qualitative failure modes across stagnation-prone targets
+
+**Setup:** The difficult local targets studied so far include `notorious`,
+`herbaceous`, and `superficial`. These targets repeatedly produce strong but
+incomplete clues under the local GloVe game.
+
+**Observed failure modes:**
+- **Neighborhood lock-in:** For `notorious`, several runs moved into crime or
+  organized-group language (`crime`, `gang`, `gangster`, `mafia`) but did not
+  reliably pivot to the reputational adjective.
+- **Descriptor miss after a close noun:** For `herbaceous`, the solver can reach
+  `shrub` or `shrubs` at rank 2-3, but still fail to identify the botanical
+  descriptor relation needed for `herbaceous`.
+- **Misleading contrast or association:** For `superficial`, good ranks can come
+  from contrastive or associated words such as `subtle`, `obvious`, and
+  `visceral`, which pull the LLM into plausible but incorrect explanatory
+  frames.
+
+**Interpretation:** These failures suggest that stagnation is not a single
+problem. The solver needs to detect when a high-ranking word is close by class
+membership, by descriptor relation, by antonymy/contrast, or by loose
+association. The pivot mechanism is therefore best understood as a test of
+whether explicit relation-shifting can overcome these different forms of local
+convergence.
+
+
+## 2026-05-07 — Ollama `qwen3:14b` validates local LLM experimentation
+
+**Setup:** Local GloVe game (`glove.6B.300d`), LLM evolutionary solver using
+Ollama with model `qwen3:14b`, target `superficial`, maximum generation budget
+set to 50.
+
+**Run:**
+- `python main.py --game local --target superficial --solver llm --provider ollama --ollama-model qwen3:14b`
+  - Result: solved in 388 guesses over 15 generations.
+  - Trace: `traces/llm_local_superficial_20260507_133325.json`
+  - Path: the run moved through body/surface clues including `skin`,
+    `epidermis`, and `vein`; local search around `vein` eventually proposed
+    `superficial`.
+
+**Observations:**
+- This run shows that the local Ollama backend is viable for long local
+  experiments and can solve a target that previously produced repeated stalls.
+- The successful path was not the abstract `subtle`/`obvious` neighborhood seen
+  in earlier failures. It used a surface/depth anatomy relation, which appears
+  more directly aligned with the target.
+- This should not be treated as a stable performance estimate, because it is a
+  single stochastic run. Its value is mainly methodological: it confirms that
+  local LLM experiments can proceed without cloud API quota limits and that
+  `superficial` remains a useful stress target for relation-shifting behavior.
+
+
 ## 2026-05-06 — `superficial` shows misleading close neighborhoods
 
 **Setup:** Local GloVe game (`glove.6B.300d`), LLM evolutionary solver, target

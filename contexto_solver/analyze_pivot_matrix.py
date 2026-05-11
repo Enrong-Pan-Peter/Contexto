@@ -13,7 +13,7 @@ from typing import Any, Iterable
 from scipy.stats import wilcoxon
 
 
-METRICS = ("total_guesses", "best_rank", "generations")
+PAIRED_METRICS = ("solved_total_guesses", "best_rank", "generations")
 
 
 @dataclass(frozen=True)
@@ -23,10 +23,12 @@ class ConditionSummary:
     runs: int
     solved: int
     solve_rate: float
-    total_guesses_median: float | None
-    total_guesses_iqr: float | None
-    best_rank_median: float | None
-    best_rank_iqr: float | None
+    solved_total_guesses_median: float | None
+    solved_total_guesses_iqr: float | None
+    unsolved_best_rank_median: float | None
+    unsolved_best_rank_iqr: float | None
+    all_best_rank_median: float | None
+    all_best_rank_iqr: float | None
     generations_median: float | None
     generations_iqr: float | None
 
@@ -138,17 +140,21 @@ def _condition_summaries(rows: list[dict[str, Any]]) -> list[ConditionSummary]:
             condition_rows = [row for row in scoped if row["condition"] == condition]
             if not condition_rows:
                 continue
+            solved_rows = [row for row in condition_rows if row["solved"]]
+            unsolved_rows = [row for row in condition_rows if not row["solved"]]
             summaries.append(
                 ConditionSummary(
                     condition=condition,
                     target=target,
                     runs=len(condition_rows),
-                    solved=sum(1 for row in condition_rows if row["solved"]),
-                    solve_rate=sum(1 for row in condition_rows if row["solved"]) / len(condition_rows),
-                    total_guesses_median=_median(_values(condition_rows, "total_guesses")),
-                    total_guesses_iqr=_iqr(_values(condition_rows, "total_guesses")),
-                    best_rank_median=_median(_values(condition_rows, "best_rank")),
-                    best_rank_iqr=_iqr(_values(condition_rows, "best_rank")),
+                    solved=len(solved_rows),
+                    solve_rate=len(solved_rows) / len(condition_rows),
+                    solved_total_guesses_median=_median(_values(solved_rows, "total_guesses")),
+                    solved_total_guesses_iqr=_iqr(_values(solved_rows, "total_guesses")),
+                    unsolved_best_rank_median=_median(_values(unsolved_rows, "best_rank")),
+                    unsolved_best_rank_iqr=_iqr(_values(unsolved_rows, "best_rank")),
+                    all_best_rank_median=_median(_values(condition_rows, "best_rank")),
+                    all_best_rank_iqr=_iqr(_values(condition_rows, "best_rank")),
                     generations_median=_median(_values(condition_rows, "generations")),
                     generations_iqr=_iqr(_values(condition_rows, "generations")),
                 )
@@ -165,9 +171,8 @@ def _paired_summaries(
         scoped_pairs = [
             pair for (pair_target, _), pair in pairs.items() if target == "ALL" or pair_target == target
         ]
-        for metric in METRICS:
-            off_values = _metric_values([off for off, _ in scoped_pairs], metric)
-            on_values = _metric_values([on for _, on in scoped_pairs], metric)
+        for metric in PAIRED_METRICS:
+            off_values, on_values = _paired_metric_values(scoped_pairs, metric)
             differences = [on - off for off, on in zip(off_values, on_values)]
             statistic, p_value = _wilcoxon(differences)
             summaries.append(
@@ -186,6 +191,24 @@ def _paired_summaries(
                 )
             )
     return summaries
+
+
+def _paired_metric_values(
+    pairs: list[tuple[dict[str, Any], dict[str, Any]]], metric: str
+) -> tuple[list[float], list[float]]:
+    off_values: list[float] = []
+    on_values: list[float] = []
+    for off, on in pairs:
+        if metric == "solved_total_guesses" and (not off["solved"] or not on["solved"]):
+            continue
+        value_metric = "total_guesses" if metric == "solved_total_guesses" else metric
+        off_value = off.get(value_metric)
+        on_value = on.get(value_metric)
+        if off_value is None or on_value is None:
+            continue
+        off_values.append(float(off_value))
+        on_values.append(float(on_value))
+    return off_values, on_values
 
 
 def _metric_values(rows: list[dict[str, Any]], metric: str) -> list[float]:
@@ -262,6 +285,9 @@ def _write_combined_runs(path: Path, rows: list[dict[str, Any]]) -> None:
         "total_guesses",
         "generations",
         "trace_path",
+        "error",
+        "llm_provider",
+        "llm_model",
         "alignment",
     ]
     _write_csv(path, fieldnames, rows)
@@ -303,10 +329,11 @@ def _print_summary(
                 summary.runs,
                 summary.solved,
                 _fmt(summary.solve_rate),
-                _fmt(summary.total_guesses_median),
-                _fmt(summary.total_guesses_iqr),
-                _fmt(summary.best_rank_median),
-                _fmt(summary.best_rank_iqr),
+                _fmt(summary.solved_total_guesses_median),
+                _fmt(summary.solved_total_guesses_iqr),
+                _fmt(summary.unsolved_best_rank_median),
+                _fmt(summary.unsolved_best_rank_iqr),
+                _fmt(summary.all_best_rank_median),
             ]
             for summary in condition_stats
         ],
@@ -316,10 +343,11 @@ def _print_summary(
             "runs",
             "solved",
             "solve_rate",
-            "guess_med",
-            "guess_iqr",
-            "rank_med",
-            "rank_iqr",
+            "solved_guess_med",
+            "solved_guess_iqr",
+            "unsolved_rank_med",
+            "unsolved_rank_iqr",
+            "all_rank_med",
         ],
     )
     print()
