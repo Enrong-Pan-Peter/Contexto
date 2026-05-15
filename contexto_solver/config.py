@@ -13,6 +13,13 @@ def _env_bool(name: str, default: bool) -> bool:
     return value.lower().strip() in {"1", "true", "yes", "on"}
 
 
+def _env_value(name: str, default: str) -> str:
+    value = os.getenv(name)
+    if value is None or value.strip() == "":
+        return default
+    return value
+
+
 def load_dotenv(path: str | Path = ".env") -> None:
     """Load simple KEY=VALUE pairs into the process environment if absent."""
     env_path = Path(path)
@@ -31,10 +38,22 @@ def load_dotenv(path: str | Path = ".env") -> None:
 load_dotenv()
 
 # Paths
-GLOVE_PATH = os.getenv("GLOVE_PATH", "data/glove.6B.300d.txt")
-GAME_EMBEDDING_PATH = os.getenv("GAME_EMBEDDING_PATH", GLOVE_PATH)
-SOLVER_EMBEDDING_PATH = os.getenv("SOLVER_EMBEDDING_PATH", GLOVE_PATH)
-TRACE_DIR = os.getenv("TRACE_DIR", "traces")
+GLOVE_PATH = _env_value("GLOVE_PATH", "data/glove.6B.300d.txt")
+EMBEDDING_CACHE_DIR = _env_value("EMBEDDING_CACHE_DIR", "data/embeddings")
+MINILM_EMBEDDING_PATH = _env_value(
+    "MINILM_EMBEDDING_PATH",
+    f"{EMBEDDING_CACHE_DIR}/all-MiniLM-L6-v2.npz",
+)
+MPNET_EMBEDDING_PATH = _env_value(
+    "MPNET_EMBEDDING_PATH",
+    f"{EMBEDDING_CACHE_DIR}/all-mpnet-base-v2.npz",
+)
+DEFAULT_LOCAL_EMBEDDING_PATH = (
+    MINILM_EMBEDDING_PATH if Path(MINILM_EMBEDDING_PATH).exists() else GLOVE_PATH
+)
+GAME_EMBEDDING_PATH = _env_value("GAME_EMBEDDING_PATH", DEFAULT_LOCAL_EMBEDDING_PATH)
+SOLVER_EMBEDDING_PATH = _env_value("SOLVER_EMBEDDING_PATH", GAME_EMBEDDING_PATH)
+TRACE_DIR = _env_value("TRACE_DIR", "traces")
 
 # Real API
 API_BASE_URL = os.getenv("API_BASE_URL", "https://api.contexto.me/machado/en/game")

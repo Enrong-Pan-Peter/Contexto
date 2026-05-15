@@ -35,17 +35,18 @@ so solver stopping behavior is backend-independent.
 Research relevance: rank normalization prevents backend-specific solved logic
 from confounding comparisons.
 
-## Local GloVe Game
+## Local Embedding Game
 
 Decision: the local game precomputes cosine similarity from the target word to
-the full embedding vocabulary and assigns ranks over that vocabulary.
+the configured embedding vocabulary and assigns ranks over that vocabulary.
 
 Rationale: this creates a deterministic offline approximation of Contexto with a
 known ranking function.
 
 Research relevance: local games allow repeated experiments without API costs or
 rate limits, while still preserving a black-box rank-feedback interface for the
-solver.
+solver. Replacing GloVe with a MiniLM cache as the default backend gives the
+local game a stronger modern semantic space without changing the game contract.
 
 ## LLM Solver as Backend-Agnostic Hypothesis Generator
 
@@ -70,7 +71,11 @@ the game backend.
 
 Research relevance: aligned experiments approximate an upper-bound specialist
 condition; non-aligned experiments better resemble unknown-backend settings.
-Only GloVe has been validated so far, so non-aligned claims remain future work.
+The current embedding set is GloVe as a legacy/static baseline,
+`all-MiniLM-L6-v2` as the lightweight default local backend after cache
+generation, and `all-mpnet-base-v2` as a heavier quality-oriented option. The
+transformer models are precomputed into static caches so aligned and
+non-aligned comparisons use the same runtime interface.
 
 ## Traceability as an Explainability Mechanism
 

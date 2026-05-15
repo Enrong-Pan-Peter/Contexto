@@ -113,8 +113,8 @@ Central configuration module.
 
 Main function:
 - Loads simple `.env` key/value pairs into environment variables if absent.
-- Defines defaults for paths, API settings, LLM settings, solver budgets, and
-  local-game target.
+- Defines defaults for paths, named embedding caches, API settings, LLM
+  settings, solver budgets, and local-game target.
 
 Main interactions:
 - Imported by CLI modules, experiment runner, and manual play.
@@ -130,15 +130,18 @@ Subtleties:
   local Ollama.
 - The default generation budget is `MAX_GENERATIONS=50`; CLI flags can still
   lower it to `0` for smoke tests or raise/lower it per run.
-- GloVe is currently the only validated embedding model, even though separate
-  embedding paths are already supported.
+- Named embedding paths include legacy GloVe plus transformer caches for
+  MiniLM and MPNet. MiniLM becomes the default local embedding backend once its
+  cache exists; otherwise the default falls back to GloVe so a fresh checkout
+  still works with the existing validated file.
 
 ### `contexto_solver.embeddings.EmbeddingModel`
 
 Embedding loader and nearest-neighbor query engine.
 
 Main function:
-- Loads text embeddings from disk into `numpy` arrays.
+- Loads text embeddings or compressed `.npz` embedding caches from disk into
+  `numpy` arrays.
 - Stores `words`, `vectors`, `norms`, and `word_to_index`.
 - Provides vector lookup, vocabulary access, nearest neighbors for a word, and
   nearest neighbors to an arbitrary vector.
@@ -149,11 +152,36 @@ Main interactions:
 - Loaded by `main`, `experiment`, and `play`.
 
 Subtleties:
-- Loading GloVe is expensive and prints progress; avoid loading more than
-  necessary.
-- The expected local file is currently `data/glove.6B.300d.txt`.
-- Any future embedding model must provide the same text-vector format or this
-  loader must be generalized carefully.
+- Loading large embedding matrices is expensive and prints progress for text
+  files; avoid loading more than necessary.
+- Text files remain compatible with GloVe-style static vectors.
+- `.npz` caches must contain `words` and `vectors` arrays. Optional
+  `metadata_json` is used for provenance only, not solver behavior.
+- Runtime components should depend on this interface, not on transformer model
+  APIs directly.
+
+### `contexto_solver.build_embedding_cache`
+
+Static cache builder for transformer embedding models.
+
+Main function:
+- Reads a fixed vocabulary file, including GloVe-style embedding files where
+  the first whitespace-delimited field is the word.
+- Encodes each word with a sentence-transformer model such as
+  `sentence-transformers/all-MiniLM-L6-v2` or
+  `sentence-transformers/all-mpnet-base-v2`.
+- Writes a compressed `.npz` cache compatible with `EmbeddingModel`.
+
+Main interactions:
+- Used offline before local-game or embedding-solver runs.
+- Produces files under `data/embeddings/` by convention.
+- Does not participate in live solving or experiment ranking loops.
+
+Subtleties:
+- The vocabulary is fixed at build time. This preserves reproducibility and
+  avoids contextual drift between runs.
+- Encoded words are treated as static lexical vectors. The local game should
+  never call sentence-transformer models dynamically.
 
 ### `contexto_solver.local_game.LocalGame`
 
@@ -397,7 +425,11 @@ Subtleties:
 Local embedding files live here and are not committed.
 
 Current assumption:
-- `data/glove.6B.300d.txt` is the validated embedding file.
+- `data/glove.6B.300d.txt` remains the legacy validated embedding file.
+- `data/embeddings/all-MiniLM-L6-v2.npz` is the intended default local-game
+  backend after cache generation.
+- `data/embeddings/all-mpnet-base-v2.npz` is the heavier quality-oriented
+  solver/backend option after cache generation.
 
 ### `traces/`
 

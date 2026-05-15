@@ -2,7 +2,9 @@
 
 from __future__ import annotations
 
+import json
 from pathlib import Path
+from typing import Any
 
 import numpy as np
 
@@ -10,27 +12,55 @@ import numpy as np
 class EmbeddingModel:
     def __init__(self, path: str | Path) -> None:
         self.path = Path(path)
-        self.words: list[str] = []
-        vectors: list[np.ndarray] = []
-
         print(f"Loading embeddings from {self.path}...")
-        with self.path.open("r", encoding="utf-8") as embedding_file:
+        if self.path.suffix.lower() == ".npz":
+            self.words, self.vectors, self.metadata = self._load_npz(self.path)
+        else:
+            self.words, self.vectors, self.metadata = self._load_text(self.path)
+
+        self.vectors = np.asarray(self.vectors, dtype=np.float32)
+        if self.vectors.ndim != 2:
+            raise ValueError(f"Embedding matrix from {self.path} must be 2-dimensional.")
+        if len(self.words) != self.vectors.shape[0]:
+            raise ValueError(
+                f"Word count ({len(self.words)}) does not match vector rows ({self.vectors.shape[0]})."
+            )
+        if not self.words:
+            raise ValueError(f"No embeddings loaded from {self.path}")
+
+        self.norms = np.linalg.norm(self.vectors, axis=1)
+        self.word_to_index = {word: index for index, word in enumerate(self.words)}
+        print(f"Loaded {len(self.words):,} embeddings with dimension {self.vectors.shape[1]}.")
+
+    @staticmethod
+    def _load_text(path: Path) -> tuple[list[str], np.ndarray, dict[str, Any]]:
+        words: list[str] = []
+        vectors: list[np.ndarray] = []
+        with path.open("r", encoding="utf-8") as embedding_file:
             for line_number, line in enumerate(embedding_file, start=1):
                 parts = line.rstrip().split(" ")
                 if len(parts) < 2:
                     continue
-                self.words.append(parts[0])
+                words.append(parts[0])
                 vectors.append(np.asarray(parts[1:], dtype=np.float32))
                 if line_number % 100_000 == 0:
                     print(f"Loaded {line_number:,} embeddings...")
 
         if not vectors:
-            raise ValueError(f"No embeddings loaded from {self.path}")
+            raise ValueError(f"No embeddings loaded from {path}")
+        return words, np.vstack(vectors), {"format": "text", "path": str(path)}
 
-        self.vectors = np.vstack(vectors)
-        self.norms = np.linalg.norm(self.vectors, axis=1)
-        self.word_to_index = {word: index for index, word in enumerate(self.words)}
-        print(f"Loaded {len(self.words):,} embeddings.")
+    @staticmethod
+    def _load_npz(path: Path) -> tuple[list[str], np.ndarray, dict[str, Any]]:
+        with np.load(path, allow_pickle=False) as data:
+            if "words" not in data or "vectors" not in data:
+                raise ValueError(f"{path} must contain 'words' and 'vectors' arrays.")
+            words = [str(word) for word in data["words"].tolist()]
+            vectors = np.asarray(data["vectors"], dtype=np.float32)
+            metadata: dict[str, Any] = {"format": "npz", "path": str(path)}
+            if "metadata_json" in data:
+                metadata.update(json.loads(str(data["metadata_json"].item())))
+        return words, vectors, metadata
 
     def get_vector(self, word: str) -> np.ndarray | None:
         index = self.word_to_index.get(word.lower().strip())
