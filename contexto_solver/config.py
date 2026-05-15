@@ -6,6 +6,13 @@ import os
 from pathlib import Path
 
 
+def _env_bool(name: str, default: bool) -> bool:
+    value = os.getenv(name)
+    if value is None:
+        return default
+    return value.lower().strip() in {"1", "true", "yes", "on"}
+
+
 def load_dotenv(path: str | Path = ".env") -> None:
     """Load simple KEY=VALUE pairs into the process environment if absent."""
     env_path = Path(path)
@@ -36,20 +43,30 @@ GAME_NUMBER = int(os.getenv("GAME_NUMBER", "1314"))
 
 # LLM
 LLM_PROVIDER = os.getenv("LLM_PROVIDER", "openai").lower()
-LLM_MODEL = os.getenv("LLM_MODEL", "gpt-4o")
+LLM_MODEL = os.getenv("LLM_MODEL", "gpt-5.4-mini")
+OLLAMA_BASE_URL = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434/v1")
+OLLAMA_MODEL = os.getenv("OLLAMA_MODEL", "qwen3:14b")
+OLLAMA_REQUEST_TIMEOUT_SECONDS = int(os.getenv("OLLAMA_REQUEST_TIMEOUT_SECONDS", "120"))
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")
 ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY", "")
 LLM_API_KEY = os.getenv("LLM_API_KEY", OPENAI_API_KEY if LLM_PROVIDER == "openai" else ANTHROPIC_API_KEY)
 LLM_WORKERS = int(os.getenv("LLM_WORKERS", "4"))
 
 # Solver
-MAX_GENERATIONS = int(os.getenv("MAX_GENERATIONS", "20"))
+MAX_GENERATIONS = int(os.getenv("MAX_GENERATIONS", "50"))
 INITIAL_CATEGORIES = int(os.getenv("INITIAL_CATEGORIES", "6"))
 CANDIDATES_PER_HYPOTHESIS = int(os.getenv("CANDIDATES_PER_HYPOTHESIS", "3"))
 STARTER_WORDS_PER_CATEGORY = int(os.getenv("STARTER_WORDS_PER_CATEGORY", "3"))
 MUTATIONS_PER_GENERATION = int(os.getenv("MUTATIONS_PER_GENERATION", "2"))
 MAX_ACTIVE_HYPOTHESES = int(os.getenv("MAX_ACTIVE_HYPOTHESES", "5"))
 LOCAL_SEARCH_RANK_THRESHOLD = int(os.getenv("LOCAL_SEARCH_RANK_THRESHOLD", "100"))
+STALL_NO_IMPROVEMENT_GENERATIONS = int(os.getenv("STALL_NO_IMPROVEMENT_GENERATIONS", "3"))
+STALL_CLOSE_RANK_THRESHOLD = int(os.getenv("STALL_CLOSE_RANK_THRESHOLD", "30"))
+STALL_CLOSE_GENERATIONS_LIMIT = int(os.getenv("STALL_CLOSE_GENERATIONS_LIMIT", "5"))
+MAX_PIVOT_ATTEMPTS_PER_RUN = int(os.getenv("MAX_PIVOT_ATTEMPTS_PER_RUN", "5"))
+PIVOT_CANDIDATE_WORDS_PER_OPERATOR = int(os.getenv("PIVOT_CANDIDATE_WORDS_PER_OPERATOR", "10"))
+PIVOT_RESOLUTION_WINDOW = int(os.getenv("PIVOT_RESOLUTION_WINDOW", "2"))
+ENABLE_PIVOT = _env_bool("ENABLE_PIVOT", True)
 EMBEDDING_SEED_COUNT = int(os.getenv("EMBEDDING_SEED_COUNT", "12"))
 EMBEDDING_ACTIVE_COUNT = int(os.getenv("EMBEDDING_ACTIVE_COUNT", "5"))
 EMBEDDING_NEIGHBORS_PER_WORD = int(os.getenv("EMBEDDING_NEIGHBORS_PER_WORD", "10"))

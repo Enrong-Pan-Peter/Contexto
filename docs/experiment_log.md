@@ -1,252 +1,82 @@
 # Experiment Log
 
-This document collects the project's completed solver runs in one place. It is
-intended as a readable companion to the raw JSON traces in `traces/`, not a
-replacement for those traces.
+This document is a compact register of completed non-smoke experiments and their
+evidence artifacts. It is not a findings document. Paper-facing interpretations
+belong in `docs/findings.md`; algorithmic rationale belongs in
+`docs/design_decisions.md`.
 
 ## How To Read This Log
 
-- `Solved` means the solver reached rank `1` in the local game, or the
-  equivalent solved rank reported through the game interface.
-- `Best rank` is the closest word found when a run did not solve the game.
+- `Solved` means the solver reached rank `1` through the shared game interface.
+- `Best rank` is the closest rank reached when a run did not solve.
 - Local-game experiments use `data/glove.6B.300d.txt` unless otherwise noted.
-- LLM runs are stochastic. Single runs are useful for debugging behavior, but
-  paper-level claims should use the batch experiment runner over multiple
-  targets and repeated runs.
+- Single LLM runs are stochastic and should be treated as qualitative evidence
+  unless repeated or included in a batch analysis.
+- Smoke tests and zero-generation plumbing checks are intentionally omitted.
 
-## Completed Runs
+## Single-Run Experiments
 
-### 2026-05-04, 12:12 — LLM Local Game, `cat`
+| Date/time | Backend | Solver/model | Target/game | Result | Guesses | Generations | Best word/rank | Evidence |
+|---|---|---|---|---|---:|---:|---|---|
+| 2026-05-04 12:12 | local GloVe | LLM | `cat` | solved | 468 | 13 | `cat` / 1 | `traces/llm_local_cat_20260504_121840.json` |
+| 2026-05-04 12:49 | real API | LLM | game `1314` | not solved | 290 | 15 | `rug` / 8 | `traces/llm_api_1314_20260504_124906.json` |
+| 2026-05-04 14:00 | local GloVe | LLM | `cat` | solved | 2 | 0 | `cat` / 1 | `traces/llm_local_cat_20260504_140013.json` |
+| 2026-05-04 14:01 | local GloVe | LLM | `house` | solved | 107 | 4 | `house` / 1 | `traces/llm_local_house_20260504_140109.json` |
+| 2026-05-04 14:15 | real API | LLM | game `1314` | solved | 165 | 7 | `ivory` / 1 | `traces/llm_api_1314_20260504_141552.json` |
+| 2026-05-04 14:38 | local GloVe | LLM | `notorious` | not solved | 291 | 15 | `crime` / 19 | `traces/llm_local_notorious_20260504_143848.json` |
+| 2026-05-04 15:22 | local GloVe | LLM | `notorious` | not solved | 281 | 20 | `gang` / 4 | `traces/llm_local_notorious_20260504_152234.json` |
+| 2026-05-04 15:38 | local GloVe | LLM | `notorious` | not solved | 380 | 20 | `gang` / 4 | `traces/llm_local_notorious_20260504_153816.json` |
+| 2026-05-04 15:54 | real API | LLM | game `1323` | solved | 254 | 15 | `sponges` / 1 | `traces/llm_api_1323_20260504_155456.json` |
+| 2026-05-04 16:26 | local GloVe | LLM | `notorious` | not solved | 387 | 20 | `gang` / 4 | `traces/llm_local_notorious_20260504_162627.json` |
+| 2026-05-05 12:26 | local GloVe | LLM | `herbaceous` | solved | 101 | 4 | `herbaceous` / 1 | `traces/llm_local_herbaceous_20260505_122620.json` |
+| 2026-05-05 13:02 | local GloVe | LLM | `herbaceous` | not solved | 311 | 20 | `shrub` / 3 | `traces/llm_local_herbaceous_20260505_130240.json` |
+| 2026-05-05 13:05 | local GloVe | LLM | `herbaceous` | solved | 215 | 10 | `herbaceous` / 1 | `traces/llm_local_herbaceous_20260505_130555.json` |
+| 2026-05-06 14:14 | local GloVe | LLM | `herbaceous` | not solved | 274 | 20 | `shrubs` / 2 | `traces/llm_local_herbaceous_20260506_141417.json` |
+| 2026-05-06 14:20 | local GloVe | LLM | `herbaceous` | solved | 219 | 10 | `herbaceous` / 1 | `traces/llm_local_herbaceous_20260506_142033.json` |
+| 2026-05-06 14:23 | local GloVe | LLM | `herbaceous` | not solved | 345 | 20 | `shrub` / 3 | `traces/llm_local_herbaceous_20260506_142357.json` |
+| 2026-05-06 15:00 | local GloVe | LLM | `superficial` | not solved | 383 | 20 | `obvious` / 8 | `traces/llm_local_superficial_20260506_150023.json` |
+| 2026-05-06 15:10 | local GloVe | LLM | `superficial` | not solved | 316 | 20 | `visceral` / 41 | `traces/llm_local_superficial_20260506_151008.json` |
+| 2026-05-06 15:15 | local GloVe | LLM | `superficial` | not solved | 348 | 20 | `subtle` / 13 | `traces/llm_local_superficial_20260506_151506.json` |
+| 2026-05-07 13:33 | local GloVe | Ollama `qwen3:14b` | `superficial` | solved | 388 | 15 | `superficial` / 1 | `traces/llm_local_superficial_20260507_133325.json` |
 
-- Command: `python main.py --game local --target cat --solver llm`
-- Trace: `traces/llm_local_cat_20260504_121840.json`
-- Result: solved.
-- Final answer: `cat`.
-- Total guesses: 468.
-- Generations: 13.
-- Important path: the solver found `dog` at rank 2, then local search around
-  `dog` guessed `cat` at rank 1.
-- Interpretation: local search works well once the LLM reaches a nearby word,
-  but the broader evolutionary search spent many guesses in less useful food,
-  cooking, and measurement hypotheses before reaching the animal neighborhood.
+## Batch Experiments
 
-### 2026-05-04, 12:49 — LLM Real API Game, Game `1314`
+### 2026-05-13 — Pivot Evaluation Matrix, Qwen3 14B
 
-- Command: `python main.py --game api --game-number 1314 --solver llm`
-- Trace: `traces/llm_api_1314_20260504_124906.json`
-- Result: not solved.
-- Best word: `rug`.
-- Best rank: 8.
-- Total guesses: 290.
-- Generations: 15.
-- Important path: the solver converged on household/floor-covering language,
-  with `rug` as a strong clue, but did not reach the answer before the
-  generation limit.
-- Interpretation: strong near-miss. This run motivated better control over
-  hypothesis growth and better local exploitation.
+- Evidence level: batch-level repeated-run comparison, 15 paired runs across
+  three targets (`notorious`, `herbaceous`, `superficial`) with pivot off/on,
+  Ollama `qwen3:14b`, aligned local GloVe game, and a 50-generation cap.
+- Command pattern: `python -m contexto_solver.experiment --solver llm --provider ollama --ollama-model qwen3:14b --mode aligned --targets notorious,herbaceous,superficial --runs-per-target 5 --max-generations 50 --llm-workers 1 --output traces/pivot_matrix_<condition>.json --resume`.
+- Condition summaries: [`pivot_matrix_off.json`](../traces/pivot_matrix_off.json),
+  [`pivot_matrix_off.csv`](../traces/pivot_matrix_off.csv),
+  [`pivot_matrix_on.json`](../traces/pivot_matrix_on.json),
+  [`pivot_matrix_on.csv`](../traces/pivot_matrix_on.csv).
+- Analysis outputs: [`pivot_matrix_analysis.json`](../traces/pivot_matrix_analysis.json),
+  [`pivot_matrix_condition_stats.csv`](../traces/pivot_matrix_condition_stats.csv),
+  [`pivot_matrix_paired_stats.csv`](../traces/pivot_matrix_paired_stats.csv),
+  [`pivot_matrix_combined_runs.csv`](../traces/pivot_matrix_combined_runs.csv).
+- Aggregate result from `pivot_matrix_condition_stats.csv`: pivot off solved
+  8/15 runs (53%), median 582 solved-run guesses, and median 41 generations.
+  Pivot on solved 10/15 runs (67%), median 247 solved-run guesses, and median
+  12 generations.
+- Per-target result from `pivot_matrix_condition_stats.csv`: `herbaceous` solved
+  4/5 in both conditions, but pivot on was roughly 3x faster by medians
+  (220 vs 645 solved-run guesses, 9 vs 34 generations). `superficial` improved
+  from 3/5 solved with pivot off to 5/5 solved with pivot on, with median
+  generations dropping from 38 to 9. `notorious` stayed difficult: both
+  conditions solved 1/5 and had median 50 generations, while failed pivot-off
+  runs had median best rank 35 (IQR 60.5) and failed pivot-on runs had median
+  best rank 7 (IQR 0.5).
+- Paired statistics from `pivot_matrix_paired_stats.csv`: generations improved
+  with Wilcoxon p=0.0497 and Cliff's delta -0.42, a medium effect. Solved-run
+  guesses improved with Wilcoxon p=0.09375 and Cliff's delta -0.72, a large
+  effect estimate, but only six paired solved-run comparisons were available.
+- Finding link: [`docs/findings.md`](findings.md#2026-05-13--pivot-matrix-shows-faster-stall-recovery-but-not-a-complete-unblock).
 
-### 2026-05-04, 13:37 — Embedding Smoke Test, Aligned, `cat`
+## Finding Links
 
-- Command: batch experiment smoke run, aligned embedding mode.
-- Summary: `traces/experiment_smoke.json`
-- CSV: `traces/experiment_smoke.csv`
-- Run trace: `traces/embedding_aligned_cat_run1_20260504_133724.json`
-- Result: not solved.
-- Best word: `rind`.
-- Best rank: 24523.
-- Total guesses: 4.
-- Generations: 0.
-- Configuration: solver `embedding`, mode `aligned`, target `cat`,
-  `max_generations=0`, `random_seed=123`.
-- Interpretation: this was a pipeline smoke test rather than a real benchmark.
-  It verified that the batch experiment runner can produce JSON and CSV output.
-
-### 2026-05-04, 14:00 — LLM Local Game, `cat`, After Stage 2b Fixes
-
-- Command: `python main.py --game local --target cat --solver llm`
-- Trace: `traces/llm_local_cat_20260504_140013.json`
-- Result: solved.
-- Final answer: `cat`.
-- Total guesses: 2.
-- Generations: 0.
-- Important path: the initial `animals` category tried `dog` at rank 2 and
-  then `cat` at rank 1 immediately.
-- Interpretation: confirms immediate stopping works, but this is not a useful
-  convergence benchmark because the target appeared in the starter words.
-
-### 2026-05-04, 14:01 — LLM Local Game, `house`, After Stage 2b Fixes
-
-- Command: `python main.py --game local --target house --solver llm`
-- Trace: `traces/llm_local_house_20260504_140109.json`
-- Result: solved.
-- Final answer: `house`.
-- Total guesses: 107.
-- Generations: 4.
-- Important path: mutation discovered a legislative-body interpretation;
-  `senate` reached rank 3 and then `house` reached rank 1.
-- Interpretation: a better stress test than `cat`. It shows pivot-aware
-  mutation can move from a broad clue to a different sense of the target.
-
-### 2026-05-04, 14:15 — LLM Real API Game, Game `1314`
-
-- Command: `python main.py --game api --game-number 1314 --solver llm`
-- Trace: `traces/llm_api_1314_20260504_141552.json`
-- Result: solved.
-- Final answer: `ivory`.
-- Total guesses: 165.
-- Generations: 7.
-- Important path: `bead` reached rank 19, then mutation explored smooth white
-  objects and guessed `ivory`.
-- Interpretation: confirms the post-fix LLM evolutionary pipeline can solve a
-  real Contexto game and stop immediately after the correct answer is found.
-
-### 2026-05-04, 14:38 — LLM Local Game, `notorious`, 15 Generations
-
-- Command: `python main.py --game local --target notorious --solver llm`
-- Trace: `traces/llm_local_notorious_20260504_143848.json`
-- Result: not solved.
-- Best word: `crime`.
-- Best rank: 19.
-- Total guesses: 291.
-- Generations: 15.
-- Important path: the solver converged on law enforcement and crime language,
-  but local search around `crime` proposed narrow legal terms such as
-  `offense`, `felony`, `misdemeanor`, `theft`, and `burglary`.
-- Interpretation: this run showed that the old default generation budget could
-  stop the search while it was still near the target neighborhood.
-
-### 2026-05-04, 15:22 — LLM Local Game, `notorious`, 20 Generations
-
-- Command: `python main.py --game local --target notorious --solver llm`
-- Trace: `traces/llm_local_notorious_20260504_152234.json`
-- Result: not solved.
-- Best word: `gang`.
-- Best rank: 4.
-- Total guesses: 281.
-- Generations: 20.
-- Important path: increasing `MAX_GENERATIONS` from 15 to 20 allowed the run
-  to improve from `crime` rank 19 to `gang` rank 4.
-- Observed issue: later generations wasted proposals on duplicates. Debug logs
-  showed examples such as generation 13 with `rawCount=15`, `acceptedCount=0`,
-  and `rejectedDuplicate=15`.
-- Observed issue: local search around `gang` repeatedly suggested close group
-  nouns such as `crew`, `group`, `clique`, `mob`, and `pack`, but did not
-  explore enough descriptor-style words.
-- Follow-up change: the local-search prompt was broadened to ask for related
-  descriptors, collocations, associated people/groups, causes/effects, and
-  nearby-context words. Candidate generation also now passes the global guess
-  history to the LLM so it can avoid words already tried by other hypotheses.
-- Verification status: completed in the follow-up runs below.
-
-### 2026-05-04, 15:38 — LLM Local Game, `notorious`, Broader Local Search
-
-- Command: `python main.py --game local --target notorious --solver llm`
-- Trace: `traces/llm_local_notorious_20260504_153816.json`
-- Result: not solved.
-- Best word: `gang`.
-- Best rank: 4.
-- Total guesses: 380.
-- Generations: 20.
-- Important path: the broader prompt and global avoid list helped the solver
-  find better intermediate clues, including `smuggler` rank 42 and `gangster`
-  rank 9, but the run still converged to `gang` rank 4.
-- Interpretation: local search improved exploration quality but still tended
-  to circle around criminal-group nouns once it reached the `gang` area.
-
-### 2026-05-04, 15:54 — LLM Real API Game, Game `1323`
-
-- Command: `python -m contexto_solver.main --game-number 1323 --max-generations 15`
-- Trace: `traces/llm_api_1323_20260504_155456.json`
-- Result: solved.
-- Final answer: `sponges`.
-- Total guesses: 254.
-- Generations: 15.
-- Important path: the solver reached `coral` at rank 10, explored reef and
-  ocean-related hypotheses, and then guessed `sponges` from the `reef animals`
-  hypothesis.
-- Interpretation: the online API solver can still solve after the recent
-  control changes, but this example exceeded the desired sub-200 guess range.
-
-### 2026-05-04, 16:26 — LLM Local Game, `notorious`, Earlier Local Search
-
-- Command: `python main.py --game local --target notorious --solver llm`
-- Trace: `traces/llm_local_notorious_20260504_162627.json`
-- Result: not solved.
-- Best word: `gang`.
-- Best rank: 4.
-- Total guesses: 387.
-- Generations: 20.
-- Important path: after raising the local-search threshold to 100 and adding a
-  retry for duplicate-only local-search responses, the solver still converged
-  to organized-crime language. The final active area included `gang`, `kingpin`,
-  `gangster`, and `mafia`, but not the target `notorious`.
-- Interpretation: earlier local search did not solve this target. The remaining
-  weakness is not just when local search starts, but how the solver pivots from
-  a close noun (`gang`) to associated descriptors or reputational adjectives.
-
-### 2026-05-05, 12:26 — LLM Local Game, `herbaceous`, Fast Solve
-
-- Command: `python main.py --game local --target herbaceous --solver llm`
-- Trace: `traces/llm_local_herbaceous_20260505_122620.json`
-- Result: solved.
-- Final answer: `herbaceous`.
-- Total guesses: 101.
-- Generations: 4.
-- Important path: the solver reached plant-related hypotheses quickly and
-  guessed `herbaceous` from `plant types`.
-- Interpretation: this is the best of the three repeated `herbaceous` runs and
-  shows the solver can solve this local GloVe target efficiently when the LLM
-  takes the right plant-category path.
-
-### 2026-05-05, 13:02 — LLM Local Game, `herbaceous`, Rank-3 Stall
-
-- Command: `python main.py --game local --target herbaceous --solver llm`
-- Trace: `traces/llm_local_herbaceous_20260505_130240.json`
-- Result: not solved.
-- Best word: `shrub`.
-- Best rank: 3.
-- Total guesses: 311.
-- Generations: 20.
-- Important path: the runtime summaries showed `shrub` at rank 3 by generation
-  4, then the run stayed at `shrub` through generation 20.
-- Interpretation: this is a strong example of local convergence failure. The
-  solver found an extremely close clue but did not make the final jump to the
-  descriptor `herbaceous`.
-
-### 2026-05-05, 13:05 — LLM Local Game, `herbaceous`, Later Solve
-
-- Command: `python main.py --game local --target herbaceous --solver llm`
-- Trace: `traces/llm_local_herbaceous_20260505_130555.json`
-- Result: solved.
-- Final answer: `herbaceous`.
-- Total guesses: 215.
-- Generations: 10.
-- Important path: the run reached `vine` at rank 83, then `foliage` at rank
-  47, then `shrub` at rank 3, and eventually guessed `herbaceous` from the
-  `small plants` hypothesis.
-- Interpretation: this run sits between the fast solve and the stall. It
-  confirms that reaching `shrub` rank 3 can still lead to the target, but only
-  if the solver explores the right descriptor relation afterward.
-
-## Cross-Run Observations
-
-- Local search is valuable when the best clue is extremely close. The `cat`
-  run solved immediately from `dog` rank 2, and the real API run reached
-  `ivory` after moving through nearby smooth/white-object clues.
-- Pivot-aware mutation matters. The `house` run succeeded because the solver
-  moved from ordinary categories into the legislative sense of `house`.
-- Generation budget matters for difficult targets. `notorious` improved from
-  rank 19 at 15 generations to rank 4 at 20 generations.
-- Duplicate proposals become a major efficiency problem late in a run. This is
-  especially visible after the solver converges on a strong neighborhood and
-  keeps asking the LLM for more words in that same area.
-- The online API appears easier for the LLM evolutionary solver than the local
-  GloVe game in several current runs, even though the solver does not directly
-  inspect either backend's embedding model.
-- Repeated same-target local runs can vary sharply. Three `herbaceous` runs
-  with the same local game and LLM setup produced a fast solve, a rank-3 stall,
-  and a later solve.
-- Single-run outcomes are highly variable. The same solver can solve trivial
-  cases during initialization, solve semantic pivots in a few generations, or
-  remain stuck near a strong clue.
+- Near-target stagnation and misleading neighborhoods: `docs/findings.md`.
+- Design rationale for local search, deduplication, and pivoting:
+  `docs/design_decisions.md`.
+- Chronological context: `docs/research_timeline.md`.
 

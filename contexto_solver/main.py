@@ -18,6 +18,8 @@ def main() -> None:
     args = _parse_args()
     game_embedding_path = args.game_embedding_path or args.glove_path or config.GAME_EMBEDDING_PATH
     solver_embedding_path = args.solver_embedding_path or args.glove_path or config.SOLVER_EMBEDDING_PATH
+    llm_provider = args.provider or config.LLM_PROVIDER
+    llm_model = _model_for_provider(llm_provider, args.model, args.ollama_model)
     game_embedding_model = None
     solver_embedding_model = None
 
@@ -59,7 +61,17 @@ def main() -> None:
             "solver_embedding_path": solver_embedding_path if args.solver == "embedding" else None,
             "alignment": _alignment(args.game, args.solver, game_embedding_path, solver_embedding_path),
             "max_generations": _default(args.max_generations, config.MAX_GENERATIONS),
+            "llm_provider": llm_provider if args.solver == "llm" else None,
+            "llm_model": llm_model if args.solver == "llm" else None,
             "llm_workers": _default(args.llm_workers, config.LLM_WORKERS) if args.solver == "llm" else None,
+            "local_search_rank_threshold": config.LOCAL_SEARCH_RANK_THRESHOLD if args.solver == "llm" else None,
+            "enable_pivot": config.ENABLE_PIVOT if args.solver == "llm" else None,
+            "stall_no_improvement_generations": config.STALL_NO_IMPROVEMENT_GENERATIONS if args.solver == "llm" else None,
+            "stall_close_rank_threshold": config.STALL_CLOSE_RANK_THRESHOLD if args.solver == "llm" else None,
+            "stall_close_generations_limit": config.STALL_CLOSE_GENERATIONS_LIMIT if args.solver == "llm" else None,
+            "max_pivot_attempts_per_run": config.MAX_PIVOT_ATTEMPTS_PER_RUN if args.solver == "llm" else None,
+            "pivot_candidate_words_per_operator": config.PIVOT_CANDIDATE_WORDS_PER_OPERATOR if args.solver == "llm" else None,
+            "pivot_resolution_window": config.PIVOT_RESOLUTION_WINDOW if args.solver == "llm" else None,
             "seed_count": _default(args.seed_count, config.EMBEDDING_SEED_COUNT) if args.solver == "embedding" else None,
             "active_count": _default(args.active_count, config.EMBEDDING_ACTIVE_COUNT) if args.solver == "embedding" else None,
             "neighbors_per_word": _default(args.neighbors_per_word, config.EMBEDDING_NEIGHBORS_PER_WORD) if args.solver == "embedding" else None,
@@ -68,11 +80,10 @@ def main() -> None:
     )
 
     if args.solver == "llm":
-        provider = args.provider or config.LLM_PROVIDER
         llm_client = LLMClient(
-            provider=provider,
-            api_key=args.api_key or _api_key_for_provider(provider),
-            model=args.model or config.LLM_MODEL,
+            provider=llm_provider,
+            api_key=args.api_key or _api_key_for_provider(llm_provider),
+            model=llm_model,
         )
         solver = SolverLLM(
             game,
@@ -89,6 +100,13 @@ def main() -> None:
                 run_label=f"llm_{game_label}",
                 llm_workers=_default(args.llm_workers, config.LLM_WORKERS),
                 local_search_rank_threshold=config.LOCAL_SEARCH_RANK_THRESHOLD,
+                enable_pivot=config.ENABLE_PIVOT,
+                stall_no_improvement_generations=config.STALL_NO_IMPROVEMENT_GENERATIONS,
+                stall_close_rank_threshold=config.STALL_CLOSE_RANK_THRESHOLD,
+                stall_close_generations_limit=config.STALL_CLOSE_GENERATIONS_LIMIT,
+                max_pivot_attempts_per_run=config.MAX_PIVOT_ATTEMPTS_PER_RUN,
+                pivot_candidate_words_per_operator=config.PIVOT_CANDIDATE_WORDS_PER_OPERATOR,
+                pivot_resolution_window=config.PIVOT_RESOLUTION_WINDOW,
             ),
         )
     else:
@@ -126,8 +144,9 @@ def _parse_args() -> argparse.Namespace:
     parser.add_argument("--target", help="Target word for local game.")
     parser.add_argument("--game-number", type=int, help="Contexto game number to solve.")
     parser.add_argument("--max-generations", type=int, help="Maximum generations to run.")
-    parser.add_argument("--provider", choices=["openai", "anthropic"], help="LLM provider.")
+    parser.add_argument("--provider", choices=["openai", "anthropic", "ollama"], help="LLM provider.")
     parser.add_argument("--model", help="LLM model name.")
+    parser.add_argument("--ollama-model", help="Ollama model name. Defaults to OLLAMA_MODEL when --provider=ollama.")
     parser.add_argument("--api-key", help="LLM API key. Prefer using .env for local runs.")
     parser.add_argument("--glove-path", help="Path to a GloVe text embedding file.")
     parser.add_argument("--game-embedding-path", help="Embedding file used by the local game.")
@@ -141,9 +160,17 @@ def _parse_args() -> argparse.Namespace:
 
 
 def _api_key_for_provider(provider: str) -> str:
+    if provider == "ollama":
+        return "ollama"
     if provider == "anthropic":
         return config.ANTHROPIC_API_KEY
     return config.LLM_API_KEY or config.OPENAI_API_KEY
+
+
+def _model_for_provider(provider: str, cli_model: str | None, cli_ollama_model: str | None) -> str:
+    if provider == "ollama":
+        return cli_ollama_model or cli_model or config.OLLAMA_MODEL
+    return cli_model or config.LLM_MODEL
 
 
 def _alignment(game: str, solver: str, game_embedding_path: str, solver_embedding_path: str) -> str:

@@ -1,0 +1,197 @@
+# Research Timeline
+
+This document reconstructs the project timeline from repository documentation,
+trace names, and recorded experiment notes. It is intended to help recover the
+sequence of implementation decisions and experiments for a future research
+report. Dates are only included where supported by existing files, trace names,
+or logs.
+
+## Project Goal
+
+The project studies automated strategies for solving Contexto-like word guessing
+games. A game returns a semantic rank for each guessed word; lower ranks indicate
+higher semantic closeness to the hidden target. The current codebase compares:
+
+- LLM-generated semantic hypotheses and candidate words.
+- Embedding-neighbor search baselines.
+- Local games where the ranking model is known (`glove.6B.300d`).
+- Real Contexto API games where the ranking model is unknown.
+
+## Timeline
+
+### 2026-04-28 — Early Local Embedding Validation
+
+Evidence: early local embedding traces such as
+`traces/embedding_local_cat_20260428_130247.json`.
+
+Milestones:
+- Loaded GloVe vectors.
+- Built an offline Contexto-style local game.
+- Validated the shared rank behavior for simple words such as `cat`, `dog`, and
+  unknown guesses.
+
+Research value: this established a deterministic local backend for unrestricted
+experiments without real API rate limits.
+
+### 2026-05-04 — LLM Evolutionary Solver and Early Failure Analysis
+
+Evidence: `traces/llm_local_cat_20260504_121840.json` and early API/local traces
+listed in `docs/experiment_log.md`.
+
+Milestones:
+- The LLM evolutionary solver solved local target `cat` in 468 guesses over 13
+  generations.
+- Trace inspection showed hypothesis bloat and near-duplicate mutation paths.
+- Real API rank normalization was validated through later API solves.
+- The shared game interface was treated as an invariant: solvers see rank `1` as
+  solved regardless of backend.
+
+Design response:
+- Cap active hypotheses.
+- Deduplicate near-identical hypotheses.
+- Encourage mutation toward divergent interpretations of strong clues.
+
+### 2026-05-04 — Batch Experiment Runner and Embedding Baseline
+
+Evidence: `traces/experiment_smoke.json`, `traces/experiment_smoke.csv`, and
+`contexto_solver/experiment.py`.
+
+Milestones:
+- Added a local batch experiment runner that writes JSON and CSV summaries.
+- Added support for repeated runs over target sets.
+- Added scaffolding for aligned and non-aligned embedding experiments.
+- Added an embedding-neighbor solver baseline.
+
+Research value: this created the infrastructure needed for repeated local
+comparisons rather than isolated single-run anecdotes.
+
+### 2026-05-04 — Local Search and Generation-Budget Observations
+
+Evidence: `notorious` runs documented in `docs/experiment_log.md`.
+
+Milestones:
+- `notorious` remained unsolved at 15 generations with best word `crime`, rank
+  19.
+- Increasing the budget to 20 generations improved to `gang`, rank 4, but did
+  not solve.
+- Broader local-search prompts and global avoid lists improved exploration but
+  did not reliably escape the crime/group noun neighborhood.
+
+Research value: this exposed local semantic stagnation near strong but
+incomplete clues.
+
+### 2026-05-05 — Same-Target Variance on `herbaceous`
+
+Evidence:
+- `traces/llm_local_herbaceous_20260505_122620.json`
+- `traces/llm_local_herbaceous_20260505_130240.json`
+- `traces/llm_local_herbaceous_20260505_130555.json`
+
+Milestones:
+- Same target and setup produced a fast solve, a rank-3 stall, and a later solve.
+- Reaching `shrub` at rank 3 did not guarantee the solver would discover
+  `herbaceous`.
+
+Research value: this showed that reaching the right neighborhood is not enough;
+the solver must also identify the right semantic relation.
+
+### 2026-05-06 — Singular/Plural Redundancy and `superficial` Failure Modes
+
+Evidence:
+- `traces/llm_local_herbaceous_20260506_141417.json`
+- `traces/llm_local_superficial_20260506_150023.json`
+- `traces/llm_local_superficial_20260506_151008.json`
+- `traces/llm_local_superficial_20260506_151506.json`
+
+Milestones:
+- `herbaceous` exposed `shrub -> shrubs` as a redundant but high-ranking move.
+- `superficial` exposed misleading neighborhoods around `subtle`, `obvious`,
+  and `visceral`.
+
+Design response:
+- Added prompt instructions to avoid singular/plural variants.
+- Added lightweight singular/plural family filtering.
+- Strengthened the motivation for explicit stall-pivot behavior.
+
+### 2026-05-06 to 2026-05-07 — Stall Pivot Mechanism and Ollama Backend
+
+Evidence:
+- `docs/architecture.md`
+- `contexto_solver/solver_llm.py`
+- `contexto_solver/llm_client.py`
+- commit messages including `Mitigation for stalling around a word` and `Add
+  local LLM backend for stall experiments`.
+
+Milestones:
+- Added a stall detector.
+- Added LLM-backed pivot operators for morphology, register shift, adjacent
+  category jumps, and fresh diversity.
+- Added Ollama provider support with `--provider ollama` and `--ollama-model`.
+- Validated an Ollama `qwen3:14b` local run on `superficial`.
+
+Research value: this created a local, quota-free evaluation path for long LLM
+experiments and introduced a concrete intervention for near-target stagnation.
+
+### 2026-05-08 to 2026-05-11 — Pivot Matrix Evaluation In Progress
+
+Evidence:
+- `traces/pivot_matrix_off.json`
+- `traces/pivot_matrix_off.csv`
+- terminal output in the active experiment terminal
+- `contexto_solver/analyze_pivot_matrix.py`
+
+Milestones:
+- Began a paired evaluation matrix using Ollama `qwen3:14b`, targets
+  `notorious`, `herbaceous`, and `superficial`, five repeats per target, and
+  max generation budget 50.
+- The pivot-off condition was observed in progress/completion during this
+  interval.
+- At this point in the timeline, the pivot-on condition and final analysis
+  outputs were not yet available.
+
+Research value: this started the first planned batch-level evaluation of the
+pivot mechanism. The completed 2026-05-13 milestone below records the resulting
+batch-level conclusion.
+
+### 2026-05-13 — Pivot Evaluation Matrix Completed
+
+Evidence:
+- [`traces/pivot_matrix_off.json`](../traces/pivot_matrix_off.json)
+- [`traces/pivot_matrix_on.json`](../traces/pivot_matrix_on.json)
+- [`traces/pivot_matrix_off.csv`](../traces/pivot_matrix_off.csv)
+- [`traces/pivot_matrix_on.csv`](../traces/pivot_matrix_on.csv)
+- [`traces/pivot_matrix_analysis.json`](../traces/pivot_matrix_analysis.json)
+- [`traces/pivot_matrix_condition_stats.csv`](../traces/pivot_matrix_condition_stats.csv)
+- [`traces/pivot_matrix_paired_stats.csv`](../traces/pivot_matrix_paired_stats.csv)
+- [`traces/pivot_matrix_combined_runs.csv`](../traces/pivot_matrix_combined_runs.csv)
+- [`docs/experiment_log.md`](experiment_log.md#2026-05-13--pivot-evaluation-matrix-qwen3-14b)
+- [`docs/findings.md`](findings.md#2026-05-13--pivot-matrix-shows-faster-stall-recovery-but-not-a-complete-unblock)
+
+Milestones:
+- Completed the paired pivot evaluation matrix: three targets, five repeats per
+  target, pivot off/on, Ollama `qwen3:14b`, aligned local GloVe game, and a
+  50-generation cap.
+- Confirmed batch-level evidence that pivots improve solver speed and narrow
+  failed-run outcomes on the tested matrix.
+- Confirmed the limitation that `notorious` remains hard: both conditions solved
+  1/5 and hit the 50-generation median cap.
+- Decision pending on continuous pivot direction; supervisor question has been
+  sent.
+
+Research value: this moves pivoting from single-run and repeated-run evidence to
+batch-level evidence, while preserving a clear open decision about whether the
+next step should continue pivot work or shift to another diversity mechanism.
+
+## Current Open Questions
+
+- Should work continue directly on pivot direction selection, given the completed
+  matrix's speed gains but persistent `notorious` failures?
+- Are pivot effects stable beyond `notorious`, `herbaceous`, and `superficial`
+  under a larger target set?
+- Are misleading neighborhoods caused mainly by GloVe geometry, LLM proposal
+  bias, or the evolutionary selection loop?
+- Would an archive or MAP-Elites-inspired diversity mechanism improve over the
+  current active-set plus reactive-pivot design? This is only a future idea at
+  present; no explicit MAP-Elites plan or implementation exists in the repo.
+- How do LLM-guided search, aligned embedding search, and non-aligned embedding
+  search compare under repeated local benchmarks?

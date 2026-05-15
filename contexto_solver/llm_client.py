@@ -9,6 +9,7 @@ from typing import Any
 
 import requests
 
+from . import config
 from .hypothesis import Hypothesis
 
 
@@ -33,6 +34,7 @@ Avoid these invalid or unrecognized words: {invalid_guesses}
 Suggest {n} new single-word guesses for this hypothesis.
 Every guess must be one common lowercase dictionary word.
 Do not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.
+Do not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.
 Invalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.
 JSON schema:
 ["word1", "word2", "word3"]"""
@@ -54,6 +56,7 @@ Every word must be one common lowercase dictionary word.
 Do not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.
 Avoid these words: {all_guesses}
 Avoid these invalid or unrecognized words: {invalid_guesses}
+Do not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.
 Invalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.
 JSON schema:
 [{{"name": "direction name", "description": "short description", "words": ["word1", "word2", "word3"]}}]"""
@@ -76,18 +79,79 @@ associated people or groups, causes/effects, and words that commonly appear near
 If {word} is a noun, include plausible adjectives or descriptors associated with it.
 Every word must be one common lowercase dictionary word.
 Avoid these already tried words: {all_guesses}
+Do not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.
 JSON schema:
 ["word1", "word2", "word3"]"""
+
+PIVOT_MORPHOLOGY_PROMPT = """Return only JSON, no markdown or explanation.
+The word {word} has rank {rank}, so it is very close to the hidden target.
+Suggest {n} candidate words that pivot across morphology, word forms, parts of speech,
+botanical/scientific terms, descriptors, hypernyms, and hyponyms.
+For example, from shrub, useful candidates could include shrubby, shrubland,
+herbaceous, woody, perennial, bush, foliage.
+Every word must be one common lowercase dictionary word.
+Do not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.
+Avoid these already tried words: {all_guesses}
+Do not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.
+JSON schema:
+["word1", "word2", "word3"]"""
+
+PIVOT_REGISTER_SHIFT_PROMPT = """Return only JSON, no markdown or explanation.
+The hidden target is semantically close to {word}, which has rank {rank}, but it may be
+in a different lexical register: more technical, more general, more specific, or a
+different part of speech.
+Suggest {n} candidate single lowercase words across these registers.
+Every word must be one common lowercase dictionary word.
+Do not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.
+Avoid these already tried words: {all_guesses}
+Do not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.
+JSON schema:
+["word1", "word2", "word3"]"""
+
+PIVOT_ADJACENT_CATEGORY_PROMPT = """Return only JSON, no markdown or explanation.
+The current best word is {word} with rank {rank}.
+Current category: {category_name}
+Category description: {category_description}
+Words already explored near this category: {words_tried}
+
+Suggest one adjacent but distinct category that might contain the hidden target.
+For example, if the current category is "types of plants" and the best word is "shrub",
+use an adjacent category such as "plant descriptors", "botanical terminology", or "growth habits".
+Include exactly {n} candidate words for that category.
+Every word must be one common lowercase dictionary word.
+Do not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.
+Avoid these already tried words: {all_guesses}
+Do not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.
+JSON schema:
+{{"name": "category name", "description": "short description", "words": ["word1", "word2", "word3"]}}"""
+
+PIVOT_FRESH_ADJACENT_CATEGORY_PROMPT = """Return only JSON, no markdown or explanation.
+The solver is stalled and needs a fresh semantic direction.
+Current best word: {word}
+Current best rank: {rank}
+Existing active categories: {active_categories}
+
+Suggest one broad but relevant adjacent category that is unlike the existing active categories
+and could still lead toward the hidden target.
+Include exactly {n} candidate words for that category.
+Every word must be one common lowercase dictionary word.
+Do not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.
+Avoid these already tried words: {all_guesses}
+Do not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.
+JSON schema:
+{{"name": "category name", "description": "short description", "words": ["word1", "word2", "word3"]}}"""
 
 
 class LLMClient:
     def __init__(self, provider: str, api_key: str, model: str) -> None:
         self.provider = provider.lower().strip()
-        self.api_key = api_key.strip()
+        self.api_key = api_key.strip() or ("ollama" if self.provider == "ollama" else "")
         self.model = model
+        self.ollama_base_url = config.OLLAMA_BASE_URL
+        self.ollama_timeout_seconds = config.OLLAMA_REQUEST_TIMEOUT_SECONDS
 
-        if self.provider not in {"openai", "anthropic"}:
-            raise ValueError("LLM provider must be 'openai' or 'anthropic'.")
+        if self.provider not in {"openai", "anthropic", "ollama"}:
+            raise ValueError("LLM provider must be 'openai', 'anthropic', or 'ollama'.")
         #region agent log
         _agent_debug_log(
             "contexto_solver/llm_client.py:LLMClient.__init__",
@@ -103,7 +167,7 @@ class LLMClient:
             "H1,H2,H3,H4",
         )
         #endregion
-        if not self.api_key or self.api_key.startswith("replace-with"):
+        if self.provider != "ollama" and (not self.api_key or self.api_key.startswith("replace-with")):
             raise ValueError(f"Missing API key for provider '{self.provider}'. Update your .env file.")
 
     def generate_initial_categories(self, n: int = 6, starter_words: int = 3) -> list[dict[str, Any]]:
@@ -176,10 +240,74 @@ class LLMClient:
         )
         return self._json_request_with_retry(prompt)
 
+    def pivot_morphology(self, word: str, rank: int, all_guesses: set[str], n: int = 10) -> list[str]:
+        prompt = PIVOT_MORPHOLOGY_PROMPT.format(
+            word=word,
+            rank=rank,
+            n=n,
+            all_guesses=json.dumps(sorted(all_guesses)),
+        )
+        return self._json_request_with_retry(prompt)
+
+    def pivot_register_shift(self, word: str, rank: int, all_guesses: set[str], n: int = 10) -> list[str]:
+        prompt = PIVOT_REGISTER_SHIFT_PROMPT.format(
+            word=word,
+            rank=rank,
+            n=n,
+            all_guesses=json.dumps(sorted(all_guesses)),
+        )
+        return self._json_request_with_retry(prompt)
+
+    def pivot_adjacent_category(
+        self,
+        word: str,
+        rank: int,
+        category_name: str,
+        category_description: str,
+        words_tried: dict[str, int],
+        all_guesses: set[str],
+        n: int = 10,
+    ) -> dict[str, Any]:
+        prompt = PIVOT_ADJACENT_CATEGORY_PROMPT.format(
+            word=word,
+            rank=rank,
+            category_name=category_name,
+            category_description=category_description,
+            words_tried=json.dumps(words_tried, sort_keys=True),
+            all_guesses=json.dumps(sorted(all_guesses)),
+            n=n,
+        )
+        return self._json_request_with_retry(prompt)
+
+    def pivot_fresh_adjacent_category(
+        self,
+        word: str,
+        rank: int,
+        active_categories: list[str],
+        all_guesses: set[str],
+        n: int = 10,
+    ) -> dict[str, Any]:
+        prompt = PIVOT_FRESH_ADJACENT_CATEGORY_PROMPT.format(
+            word=word,
+            rank=rank,
+            active_categories=json.dumps(active_categories),
+            all_guesses=json.dumps(sorted(all_guesses)),
+            n=n,
+        )
+        return self._json_request_with_retry(prompt)
+
     def _json_request_with_retry(self, prompt: str) -> Any:
         last_error: Exception | None = None
-        for _ in range(2):
-            text = self._complete(prompt)
+        max_attempts = 5
+        for attempt in range(max_attempts):
+            try:
+                text = self._complete(prompt)
+            except requests.RequestException as exc:
+                last_error = exc
+                if not _is_retryable_provider_error(exc) or attempt == max_attempts - 1:
+                    raise
+                time.sleep(_retry_delay_seconds(exc, attempt))
+                continue
             try:
                 return json.loads(_strip_code_fences(text))
             except json.JSONDecodeError as exc:
@@ -190,6 +318,8 @@ class LLMClient:
     def _complete(self, prompt: str) -> str:
         if self.provider == "openai":
             return self._complete_openai(prompt)
+        if self.provider == "ollama":
+            return self._complete_ollama(prompt)
         return self._complete_anthropic(prompt)
 
     def _complete_openai(self, prompt: str) -> str:
@@ -249,6 +379,33 @@ class LLMClient:
         data = response.json()
         return "".join(block.get("text", "") for block in data.get("content", []))
 
+    def _complete_ollama(self, prompt: str) -> str:
+        url = f"{self.ollama_base_url.rstrip('/')}/chat/completions"
+        try:
+            response = requests.post(
+                url,
+                headers={"Content-Type": "application/json"},
+                json={
+                    "model": self.model,
+                    "messages": [{"role": "user", "content": prompt}],
+                    "temperature": 0.8,
+                },
+                timeout=self.ollama_timeout_seconds,
+            )
+        except requests.ConnectionError as exc:
+            raise RuntimeError(
+                f"Ollama server not reachable at {self.ollama_base_url}. "
+                "Is ollama running? Try ollama list to confirm models are pulled."
+            ) from exc
+
+        if response.status_code >= 400:
+            response_text = response.text
+            if _is_ollama_model_not_found(response.status_code, response_text, self.model):
+                raise ValueError(f"Model {self.model} not found. Run ollama pull {self.model}.")
+        response.raise_for_status()
+        data = response.json()
+        return data["choices"][0]["message"]["content"]
+
     @staticmethod
     def _global_best(all_guesses: dict[str, int]) -> tuple[str | None, int | None]:
         if not all_guesses:
@@ -263,6 +420,30 @@ def _strip_code_fences(text: str) -> str:
     if fence_match:
         return fence_match.group(1).strip()
     return cleaned
+
+
+def _is_retryable_provider_error(exc: requests.RequestException) -> bool:
+    response = getattr(exc, "response", None)
+    if response is None:
+        return isinstance(exc, (requests.ConnectionError, requests.Timeout))
+    return response.status_code in {429, 500, 502, 503, 504}
+
+
+def _retry_delay_seconds(exc: requests.RequestException, attempt: int) -> float:
+    response = getattr(exc, "response", None)
+    if response is not None:
+        retry_after = response.headers.get("retry-after")
+        if retry_after:
+            try:
+                return max(float(retry_after), 1.0)
+            except ValueError:
+                pass
+    return min(5.0 * (2**attempt), 60.0)
+
+
+def _is_ollama_model_not_found(status_code: int, response_text: str, model: str) -> bool:
+    normalized = response_text.lower()
+    return status_code == 404 and "not found" in normalized and model.lower() in normalized
 
 
 def _agent_debug_log(location: str, message: str, data: dict[str, object], hypothesis_id: str) -> None:
