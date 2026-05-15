@@ -1,8 +1,11 @@
 # Project Architecture
 
 This document records the current architecture of the Contexto solver project.
-Use it as a reference before changing code so updates remain consistent across
-games, solvers, configuration, logging, and experiment workflows.
+Use it as the primary reference before creating, debugging, or refactoring code
+so updates remain consistent across games, solvers, configuration, logging, and
+experiment workflows. Research findings, chronological progress, and paper notes
+belong in the other docs; this file should stay focused on code structure and
+architectural invariants.
 
 ## Architectural Goals
 
@@ -417,11 +420,10 @@ Project documentation and research notes live here.
 
 Current important docs:
 - `docs/architecture.md`: this architecture reference.
-- `docs/experiment_log.md`: human-readable experiment register.
-- `docs/progress_and_decisions.md`: implementation progress and research
-  decisions.
-
-Root-level `FINDINGS.md` is the newest-first findings log.
+- `docs/design_decisions.md`: algorithmic and experimental design rationale.
+- `docs/experiment_log.md`: compact experiment register and evidence index.
+- `docs/findings.md`: paper-facing findings and evidence-quality notes.
+- `docs/research_timeline.md`: chronological project timeline.
 
 ## Legacy Modules
 

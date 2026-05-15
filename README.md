@@ -1,11 +1,12 @@
 # Contexto Evolutionary Solver
 
-This project experiments with automated solvers for
+This project studies automated solvers for
 [Contexto](https://contexto.me/), a word guessing game where each guess receives
-a semantic rank. Lower ranks are closer to the answer.
+a semantic rank. Lower ranks are closer to the hidden answer.
 
-The goal is to compare different search strategies while keeping the reasoning
-process readable through JSON traces.
+The current research codebase compares LLM-guided evolutionary search,
+embedding-neighbor baselines, local GloVe-backed games, and real Contexto API
+games while preserving readable JSON traces of the search process.
 
 ## Current Status
 
@@ -15,21 +16,22 @@ Implemented:
 - Manual terminal play for the local game.
 - LLM-based evolutionary solver.
 - Embedding-neighbor baseline solver.
-- Batch local experiment runner with JSON and CSV summaries.
-- Real Contexto API wrapper.
+- Batch local experiment runner with resumable JSON/CSV summaries.
+- Pivot-matrix analysis tooling for paired pivot-on/off experiments.
+- Real Contexto API wrapper with rank normalization.
+- OpenAI, Anthropic, and Ollama LLM provider support.
 - Shared game interface used by both local and API games.
 - JSON trace logging for solver runs.
 - Parallel LLM generation with configurable worker count.
 - Separate local game and solver embedding paths for aligned/non-aligned tests.
-- Experiment log in `docs/experiment_log.md`.
-- Performance mitigations for LLM search drift, duplicate hypotheses, ambiguous
-  high-scoring words, and repeated invalid guesses.
+- Mitigations for duplicate hypotheses, invalid guesses, singular/plural
+  redundancy, and local semantic stagnation.
 
-Not yet implemented:
+Not yet complete:
 
-- Additional embedding models beyond GloVe.
+- Additional validated embedding models beyond GloVe.
 - Batch experiment runner for real API games.
-- Automated aggregate reports across local and API benchmark sets.
+- Completed pivot-on/off matrix analysis.
 
 ## Architecture
 
@@ -41,7 +43,7 @@ contexto_solver/
   game_api.py            Real Contexto API wrapper
   solver_llm.py          Evolutionary solver using an LLM
   solver_embedding.py    Evolutionary solver using embedding neighbors
-  llm_client.py          OpenAI/Anthropic API wrapper
+  llm_client.py          OpenAI/Anthropic/Ollama API wrapper
   hypothesis.py          Hypothesis/category model for LLM solver
   logger.py              JSON trace logger
   config.py              Environment and default settings
@@ -49,7 +51,7 @@ contexto_solver/
 
 main.py                  Root wrapper for contexto_solver.main
 play.py                  Root wrapper for contexto_solver.play
-docs/experiment_log.md   Human-readable record of completed runs
+docs/                    Architecture, findings, timeline, and experiment docs
 traces/                  Generated JSON traces
 data/                    Local embedding files, not committed
 ```
@@ -102,6 +104,9 @@ Use `.env.example` as a starting point:
 ```env
 LLM_PROVIDER=openai
 LLM_MODEL=gpt-5.4-mini
+OLLAMA_BASE_URL=http://localhost:11434/v1
+OLLAMA_MODEL=qwen3:14b
+OLLAMA_REQUEST_TIMEOUT_SECONDS=120
 LLM_API_KEY=
 OPENAI_API_KEY=
 ANTHROPIC_API_KEY=
@@ -110,7 +115,7 @@ GLOVE_PATH=data/glove.6B.300d.txt
 GAME_EMBEDDING_PATH=data/glove.6B.300d.txt
 SOLVER_EMBEDDING_PATH=data/glove.6B.300d.txt
 TRACE_DIR=traces
-MAX_GENERATIONS=20
+MAX_GENERATIONS=50
 MAX_ACTIVE_HYPOTHESES=5
 LOCAL_SEARCH_RANK_THRESHOLD=100
 EMBEDDING_SEED_COUNT=12
@@ -119,7 +124,8 @@ EMBEDDING_NEIGHBORS_PER_WORD=10
 RANDOM_SEED=
 ```
 
-For OpenAI, set either `LLM_API_KEY` or `OPENAI_API_KEY`.
+For OpenAI, set either `LLM_API_KEY` or `OPENAI_API_KEY`. Ollama runs use the
+local Ollama server and do not require a cloud API key.
 
 ## Manual Local Game
 
@@ -151,8 +157,8 @@ You can increase parallel LLM calls:
 python main.py --game local --target cat --solver llm --llm-workers 8
 ```
 
-The current LLM solver includes several mitigations added after early slow and
-wandering runs:
+The current LLM solver includes several mitigations added after early slow,
+wandering, and stalled runs:
 
 - Active hypotheses are capped at `MAX_ACTIVE_HYPOTHESES`.
 - Near-duplicate hypotheses are merged.
@@ -161,6 +167,9 @@ wandering runs:
 - Candidate prompts receive global guess history to reduce duplicate proposals.
 - Local search starts when the best rank is below
   `LOCAL_SEARCH_RANK_THRESHOLD`.
+- A stall detector can trigger pivot operators for morphology, register shifts,
+  and adjacent-category jumps.
+- Singular/plural variants of already tried words are filtered as redundant.
 - Invalid or unrecognized guesses are remembered and avoided.
 
 ### Embedding Solver Against Local Game
@@ -183,8 +192,8 @@ non-aligned model comparisons.
 python main.py --game api --game-number 1314 --solver llm
 ```
 
-The real API uses a rate limit of 2 hits/sec from `API_RATE_LIMIT` in `config.py`. Local games
-do not use this delay.
+The real API uses `API_RATE_LIMIT` in `config.py`. Local games do not use this
+delay.
 
 ### Embedding Solver Against Real Contexto API
 
@@ -203,8 +212,10 @@ game likely uses a different embedding model.
 --target TARGET                 Target word for local game
 --game-number GAME_NUMBER       Real Contexto game number
 --max-generations N             Generation budget
---provider {openai,anthropic}   LLM provider
+--provider {openai,anthropic,ollama}
+                                  LLM provider
 --model MODEL                   LLM model name
+--ollama-model MODEL            Ollama model name
 --api-key API_KEY               LLM API key override
 --glove-path PATH               GloVe embedding file path
 --game-embedding-path PATH      Embedding file used by LocalGame
@@ -245,8 +256,16 @@ Current batch experiments focus on local games. Real API batch experiments are
 left for future work because they need stricter rate-limit and game-selection
 controls.
 
-For a human-readable record of individual runs and qualitative observations,
-see `docs/experiment_log.md`.
+Pivot-on/off local LLM matrices can be analyzed with:
+
+```powershell
+python -m contexto_solver.analyze_pivot_matrix --off traces/pivot_matrix_off.json --on traces/pivot_matrix_on.json --output-prefix traces/pivot_matrix
+```
+
+For run evidence and research-facing interpretation, see:
+
+- `docs/experiment_log.md`
+- `docs/findings.md`
 
 ## Traces
 
@@ -300,6 +319,14 @@ Recent documented runs show the current behavior more clearly:
 - Local GloVe target `notorious` remained difficult: recent runs reached
   `gang` at rank 4 but did not solve within 20 generations.
 
+## Documentation Map
+
+- `docs/architecture.md`: source of truth for project structure and invariants.
+- `docs/design_decisions.md`: algorithmic and experimental design rationale.
+- `docs/experiment_log.md`: compact run and batch evidence register.
+- `docs/findings.md`: paper-facing findings and evidence-quality notes.
+- `docs/research_timeline.md`: chronological project timeline.
+
 ## Notes For Future Work
 
 The local batch experiment runner can now compare:
@@ -314,7 +341,3 @@ model is downloaded, configured, and validated.
 Future work should extend batch experiments to real API games, add broader
 aggregate reports across local and API benchmark sets, and test additional
 embedding models such as Word2Vec or transformer-based vectors.
-
-See `progress_and_decisions.md`, `docs/progress_and_decisions.md`, and
-`docs/experiment_log.md` for fuller records of implementation progress,
-research-relevant design decisions, and completed runs.
