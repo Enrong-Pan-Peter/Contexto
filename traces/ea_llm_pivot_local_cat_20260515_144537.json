@@ -1,0 +1,933 @@
+[
+  {
+    "generation": -1,
+    "event": "RUN_CONFIG",
+    "timestamp": "2026-05-15T14:39:51",
+    "details": {
+      "game": "local",
+      "solver": "llm",
+      "method": "ea_llm_pivot",
+      "target": "cat",
+      "game_number": null,
+      "game_embedding_path": "data/embeddings/all-MiniLM-L6-v2.npz",
+      "solver_embedding_path": null,
+      "alignment": "not_applicable",
+      "max_generations": 1,
+      "llm_provider": "ollama",
+      "llm_model": "qwen3:14b",
+      "llm_workers": 1,
+      "local_search_rank_threshold": 100,
+      "enable_pivot": true,
+      "ea_llm_pivot_stall_no_improvement_generations": 3,
+      "ea_llm_pivot_stall_close_rank_threshold": 30,
+      "ea_llm_pivot_stall_close_generations_limit": 5,
+      "ea_llm_pivot_max_attempts_per_run": 5,
+      "ea_llm_pivot_candidate_words_per_operator": 10,
+      "ea_llm_pivot_resolution_window": 2,
+      "seed_count": null,
+      "active_count": null,
+      "neighbors_per_word": null,
+      "random_seed": null
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-05-15T14:41:38",
+    "details": {
+      "word": "happy",
+      "rank": 58407,
+      "hypothesis": "emotions_and_feelings",
+      "best_word": "happy",
+      "best_rank": 58407,
+      "total_guesses": 1
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-05-15T14:41:38",
+    "details": {
+      "word": "sad",
+      "rank": 225472,
+      "hypothesis": "emotions_and_feelings",
+      "best_word": "happy",
+      "best_rank": 58407,
+      "total_guesses": 2
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-05-15T14:41:38",
+    "details": {
+      "word": "angry",
+      "rank": 9228,
+      "hypothesis": "emotions_and_feelings",
+      "best_word": "angry",
+      "best_rank": 9228,
+      "total_guesses": 3
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-05-15T14:41:38",
+    "details": {
+      "word": "tree",
+      "rank": 2788,
+      "hypothesis": "nature_and_environment",
+      "best_word": "tree",
+      "best_rank": 2788,
+      "total_guesses": 4
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-05-15T14:41:38",
+    "details": {
+      "word": "river",
+      "rank": 13247,
+      "hypothesis": "nature_and_environment",
+      "best_word": "tree",
+      "best_rank": 2788,
+      "total_guesses": 5
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-05-15T14:41:38",
+    "details": {
+      "word": "mountain",
+      "rank": 7379,
+      "hypothesis": "nature_and_environment",
+      "best_word": "tree",
+      "best_rank": 2788,
+      "total_guesses": 6
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-05-15T14:41:38",
+    "details": {
+      "word": "work",
+      "rank": 12709,
+      "hypothesis": "daily_activities",
+      "best_word": "tree",
+      "best_rank": 2788,
+      "total_guesses": 7
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-05-15T14:41:38",
+    "details": {
+      "word": "eat",
+      "rank": 19348,
+      "hypothesis": "daily_activities",
+      "best_word": "tree",
+      "best_rank": 2788,
+      "total_guesses": 8
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-05-15T14:41:38",
+    "details": {
+      "word": "sleep",
+      "rank": 35845,
+      "hypothesis": "daily_activities",
+      "best_word": "tree",
+      "best_rank": 2788,
+      "total_guesses": 9
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-05-15T14:41:38",
+    "details": {
+      "word": "book",
+      "rank": 9516,
+      "hypothesis": "objects_and_tools",
+      "best_word": "tree",
+      "best_rank": 2788,
+      "total_guesses": 10
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-05-15T14:41:38",
+    "details": {
+      "word": "pen",
+      "rank": 21747,
+      "hypothesis": "objects_and_tools",
+      "best_word": "tree",
+      "best_rank": 2788,
+      "total_guesses": 11
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-05-15T14:41:38",
+    "details": {
+      "word": "knife",
+      "rank": 5883,
+      "hypothesis": "objects_and_tools",
+      "best_word": "tree",
+      "best_rank": 2788,
+      "total_guesses": 12
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-05-15T14:41:38",
+    "details": {
+      "word": "hand",
+      "rank": 42955,
+      "hypothesis": "body_parts_and_functions",
+      "best_word": "tree",
+      "best_rank": 2788,
+      "total_guesses": 13
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-05-15T14:41:38",
+    "details": {
+      "word": "eye",
+      "rank": 1358,
+      "hypothesis": "body_parts_and_functions",
+      "best_word": "eye",
+      "best_rank": 1358,
+      "total_guesses": 14
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-05-15T14:41:38",
+    "details": {
+      "word": "ear",
+      "rank": 12331,
+      "hypothesis": "body_parts_and_functions",
+      "best_word": "eye",
+      "best_rank": 1358,
+      "total_guesses": 15
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-05-15T14:41:38",
+    "details": {
+      "word": "hour",
+      "rank": 99495,
+      "hypothesis": "time_and_measurement",
+      "best_word": "eye",
+      "best_rank": 1358,
+      "total_guesses": 16
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-05-15T14:41:38",
+    "details": {
+      "word": "day",
+      "rank": 15744,
+      "hypothesis": "time_and_measurement",
+      "best_word": "eye",
+      "best_rank": 1358,
+      "total_guesses": 17
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-05-15T14:41:38",
+    "details": {
+      "word": "year",
+      "rank": 8455,
+      "hypothesis": "time_and_measurement",
+      "best_word": "eye",
+      "best_rank": 1358,
+      "total_guesses": 18
+    }
+  },
+  {
+    "generation": 0,
+    "event": "INIT",
+    "timestamp": "2026-05-15T14:41:38",
+    "details": {
+      "hypotheses": [
+        {
+          "category_name": "emotions_and_feelings",
+          "description": "basic human emotions",
+          "words_tried": {
+            "angry": 9228,
+            "happy": 58407,
+            "sad": 225472
+          },
+          "best_word": "angry",
+          "best_rank": 9228,
+          "status": "active",
+          "parent": null,
+          "origin": "init"
+        },
+        {
+          "category_name": "nature_and_environment",
+          "description": "natural elements",
+          "words_tried": {
+            "tree": 2788,
+            "mountain": 7379,
+            "river": 13247
+          },
+          "best_word": "tree",
+          "best_rank": 2788,
+          "status": "active",
+          "parent": null,
+          "origin": "init"
+        },
+        {
+          "category_name": "daily_activities",
+          "description": "routine actions",
+          "words_tried": {
+            "work": 12709,
+            "eat": 19348,
+            "sleep": 35845
+          },
+          "best_word": "work",
+          "best_rank": 12709,
+          "status": "active",
+          "parent": null,
+          "origin": "init"
+        },
+        {
+          "category_name": "objects_and_tools",
+          "description": "common items",
+          "words_tried": {
+            "knife": 5883,
+            "book": 9516,
+            "pen": 21747
+          },
+          "best_word": "knife",
+          "best_rank": 5883,
+          "status": "active",
+          "parent": null,
+          "origin": "init"
+        },
+        {
+          "category_name": "body_parts_and_functions",
+          "description": "anatomical features",
+          "words_tried": {
+            "eye": 1358,
+            "ear": 12331,
+            "hand": 42955
+          },
+          "best_word": "eye",
+          "best_rank": 1358,
+          "status": "active",
+          "parent": null,
+          "origin": "init"
+        },
+        {
+          "category_name": "time_and_measurement",
+          "description": "temporal units",
+          "words_tried": {
+            "year": 8455,
+            "day": 15744,
+            "hour": 99495
+          },
+          "best_word": "year",
+          "best_rank": 8455,
+          "status": "active",
+          "parent": null,
+          "origin": "init"
+        }
+      ],
+      "best_word": "eye",
+      "best_rank": 1358,
+      "total_guesses": 18
+    }
+  },
+  {
+    "generation": 1,
+    "event": "CANDIDATES",
+    "timestamp": "2026-05-15T14:44:13",
+    "details": {
+      "count": 15,
+      "candidates": [
+        {
+          "hypothesis": "emotions_and_feelings",
+          "word": "fear"
+        },
+        {
+          "hypothesis": "emotions_and_feelings",
+          "word": "disgust"
+        },
+        {
+          "hypothesis": "emotions_and_feelings",
+          "word": "surprise"
+        },
+        {
+          "hypothesis": "nature_and_environment",
+          "word": "forest"
+        },
+        {
+          "hypothesis": "nature_and_environment",
+          "word": "ocean"
+        },
+        {
+          "hypothesis": "nature_and_environment",
+          "word": "grass"
+        },
+        {
+          "hypothesis": "objects_and_tools",
+          "word": "chair"
+        },
+        {
+          "hypothesis": "objects_and_tools",
+          "word": "cup"
+        },
+        {
+          "hypothesis": "objects_and_tools",
+          "word": "table"
+        },
+        {
+          "hypothesis": "body_parts_and_functions",
+          "word": "nose"
+        },
+        {
+          "hypothesis": "body_parts_and_functions",
+          "word": "liver"
+        },
+        {
+          "hypothesis": "body_parts_and_functions",
+          "word": "knee"
+        },
+        {
+          "hypothesis": "time_and_measurement",
+          "word": "minute"
+        },
+        {
+          "hypothesis": "time_and_measurement",
+          "word": "week"
+        },
+        {
+          "hypothesis": "time_and_measurement",
+          "word": "month"
+        }
+      ]
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-05-15T14:44:13",
+    "details": {
+      "word": "fear",
+      "rank": 25843,
+      "hypothesis": "emotions_and_feelings",
+      "best_word": "eye",
+      "best_rank": 1358,
+      "total_guesses": 19
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-05-15T14:44:13",
+    "details": {
+      "word": "disgust",
+      "rank": 47708,
+      "hypothesis": "emotions_and_feelings",
+      "best_word": "eye",
+      "best_rank": 1358,
+      "total_guesses": 20
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-05-15T14:44:13",
+    "details": {
+      "word": "surprise",
+      "rank": 81963,
+      "hypothesis": "emotions_and_feelings",
+      "best_word": "eye",
+      "best_rank": 1358,
+      "total_guesses": 21
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-05-15T14:44:13",
+    "details": {
+      "word": "forest",
+      "rank": 25324,
+      "hypothesis": "nature_and_environment",
+      "best_word": "eye",
+      "best_rank": 1358,
+      "total_guesses": 22
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-05-15T14:44:13",
+    "details": {
+      "word": "ocean",
+      "rank": 61733,
+      "hypothesis": "nature_and_environment",
+      "best_word": "eye",
+      "best_rank": 1358,
+      "total_guesses": 23
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-05-15T14:44:13",
+    "details": {
+      "word": "grass",
+      "rank": 3416,
+      "hypothesis": "nature_and_environment",
+      "best_word": "eye",
+      "best_rank": 1358,
+      "total_guesses": 24
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-05-15T14:44:13",
+    "details": {
+      "word": "chair",
+      "rank": 6787,
+      "hypothesis": "objects_and_tools",
+      "best_word": "eye",
+      "best_rank": 1358,
+      "total_guesses": 25
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-05-15T14:44:13",
+    "details": {
+      "word": "cup",
+      "rank": 2489,
+      "hypothesis": "objects_and_tools",
+      "best_word": "eye",
+      "best_rank": 1358,
+      "total_guesses": 26
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-05-15T14:44:13",
+    "details": {
+      "word": "table",
+      "rank": 40666,
+      "hypothesis": "objects_and_tools",
+      "best_word": "eye",
+      "best_rank": 1358,
+      "total_guesses": 27
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-05-15T14:44:13",
+    "details": {
+      "word": "nose",
+      "rank": 782,
+      "hypothesis": "body_parts_and_functions",
+      "best_word": "nose",
+      "best_rank": 782,
+      "total_guesses": 28
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-05-15T14:44:13",
+    "details": {
+      "word": "liver",
+      "rank": 10805,
+      "hypothesis": "body_parts_and_functions",
+      "best_word": "nose",
+      "best_rank": 782,
+      "total_guesses": 29
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-05-15T14:44:13",
+    "details": {
+      "word": "knee",
+      "rank": 25100,
+      "hypothesis": "body_parts_and_functions",
+      "best_word": "nose",
+      "best_rank": 782,
+      "total_guesses": 30
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-05-15T14:44:13",
+    "details": {
+      "word": "minute",
+      "rank": 130109,
+      "hypothesis": "time_and_measurement",
+      "best_word": "nose",
+      "best_rank": 782,
+      "total_guesses": 31
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-05-15T14:44:13",
+    "details": {
+      "word": "week",
+      "rank": 47955,
+      "hypothesis": "time_and_measurement",
+      "best_word": "nose",
+      "best_rank": 782,
+      "total_guesses": 32
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-05-15T14:44:13",
+    "details": {
+      "word": "month",
+      "rank": 67135,
+      "hypothesis": "time_and_measurement",
+      "best_word": "nose",
+      "best_rank": 782,
+      "total_guesses": 33
+    }
+  },
+  {
+    "generation": 1,
+    "event": "SELECT",
+    "timestamp": "2026-05-15T14:44:13",
+    "details": {
+      "kept": [
+        "body_parts_and_functions",
+        "objects_and_tools",
+        "nature_and_environment"
+      ],
+      "discarded": [
+        "time_and_measurement",
+        "emotions_and_feelings",
+        "daily_activities"
+      ],
+      "elite": "body_parts_and_functions",
+      "max_active_hypotheses": 5,
+      "best_word": "nose",
+      "best_rank": 782,
+      "total_guesses": 33
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-05-15T14:44:46",
+    "details": {
+      "word": "smell",
+      "rank": 6068,
+      "hypothesis": "olfactory_associations",
+      "best_word": "nose",
+      "best_rank": 782,
+      "total_guesses": 34
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-05-15T14:44:46",
+    "details": {
+      "word": "scent",
+      "rank": 14371,
+      "hypothesis": "olfactory_associations",
+      "best_word": "nose",
+      "best_rank": 782,
+      "total_guesses": 35
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-05-15T14:44:46",
+    "details": {
+      "word": "odor",
+      "rank": 10825,
+      "hypothesis": "olfactory_associations",
+      "best_word": "nose",
+      "best_rank": 782,
+      "total_guesses": 36
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-05-15T14:44:46",
+    "details": {
+      "word": "spout",
+      "rank": 136509,
+      "hypothesis": "object_features",
+      "best_word": "nose",
+      "best_rank": 782,
+      "total_guesses": 37
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-05-15T14:44:46",
+    "details": {
+      "word": "tip",
+      "rank": 130785,
+      "hypothesis": "object_features",
+      "best_word": "nose",
+      "best_rank": 782,
+      "total_guesses": 38
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-05-15T14:44:46",
+    "details": {
+      "word": "front",
+      "rank": 28859,
+      "hypothesis": "object_features",
+      "best_word": "nose",
+      "best_rank": 782,
+      "total_guesses": 39
+    }
+  },
+  {
+    "generation": 1,
+    "event": "MUTATE",
+    "timestamp": "2026-05-15T14:44:46",
+    "details": {
+      "parent": "body_parts_and_functions",
+      "children": [
+        "olfactory_associations",
+        "object_features"
+      ],
+      "best_word": "nose",
+      "best_rank": 782,
+      "total_guesses": 39
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-05-15T14:44:46",
+    "details": {
+      "word": "measure",
+      "rank": 134299,
+      "hypothesis": "measurement_units",
+      "best_word": "nose",
+      "best_rank": 782,
+      "total_guesses": 40
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-05-15T14:44:46",
+    "details": {
+      "word": "tablespoon",
+      "rank": 292515,
+      "hypothesis": "measurement_units",
+      "best_word": "nose",
+      "best_rank": 782,
+      "total_guesses": 41
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-05-15T14:44:46",
+    "details": {
+      "word": "ingredient",
+      "rank": 175241,
+      "hypothesis": "measurement_units",
+      "best_word": "nose",
+      "best_rank": 782,
+      "total_guesses": 42
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-05-15T14:44:46",
+    "details": {
+      "word": "ceremony",
+      "rank": 227651,
+      "hypothesis": "ceremonial_objects",
+      "best_word": "nose",
+      "best_rank": 782,
+      "total_guesses": 43
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-05-15T14:44:46",
+    "details": {
+      "word": "symbol",
+      "rank": 37301,
+      "hypothesis": "ceremonial_objects",
+      "best_word": "nose",
+      "best_rank": 782,
+      "total_guesses": 44
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-05-15T14:44:46",
+    "details": {
+      "word": "offering",
+      "rank": 223724,
+      "hypothesis": "ceremonial_objects",
+      "best_word": "nose",
+      "best_rank": 782,
+      "total_guesses": 45
+    }
+  },
+  {
+    "generation": 1,
+    "event": "MUTATE",
+    "timestamp": "2026-05-15T14:44:46",
+    "details": {
+      "parent": "objects_and_tools",
+      "children": [
+        "measurement_units",
+        "ceremonial_objects"
+      ],
+      "best_word": "nose",
+      "best_rank": 782,
+      "total_guesses": 45
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-05-15T14:45:37",
+    "details": {
+      "word": "pen",
+      "rank": 21747,
+      "hypothesis": "tools_associated_with_body_parts",
+      "best_word": "nose",
+      "best_rank": 782,
+      "total_guesses": 45
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-05-15T14:45:37",
+    "details": {
+      "word": "knife",
+      "rank": 5883,
+      "hypothesis": "tools_associated_with_body_parts",
+      "best_word": "nose",
+      "best_rank": 782,
+      "total_guesses": 45
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-05-15T14:45:37",
+    "details": {
+      "word": "cup",
+      "rank": 2489,
+      "hypothesis": "tools_associated_with_body_parts",
+      "best_word": "nose",
+      "best_rank": 782,
+      "total_guesses": 45
+    }
+  },
+  {
+    "generation": 1,
+    "event": "CROSSOVER",
+    "timestamp": "2026-05-15T14:45:37",
+    "details": {
+      "parents": [
+        "body_parts_and_functions",
+        "objects_and_tools"
+      ],
+      "child": {
+        "category_name": "tools_associated_with_body_parts",
+        "description": "objects commonly used in conjunction with body parts",
+        "words_tried": {
+          "cup": 2489,
+          "knife": 5883,
+          "pen": 21747
+        },
+        "best_word": "cup",
+        "best_rank": 2489,
+        "status": "active",
+        "parent": "body_parts_and_functions+objects_and_tools",
+        "origin": "crossover"
+      },
+      "best_word": "nose",
+      "best_rank": 782,
+      "total_guesses": 45
+    }
+  },
+  {
+    "generation": 1,
+    "event": "DEDUPLICATE",
+    "timestamp": "2026-05-15T14:45:37",
+    "details": {
+      "merged": [
+        {
+          "survivor": "objects_and_tools",
+          "discarded": "tools_associated_with_body_parts",
+          "survivor_best_rank": 2489,
+          "discarded_best_rank": 2489
+        }
+      ],
+      "remaining_hypotheses": 10,
+      "active_hypotheses": 5,
+      "best_word": "nose",
+      "best_rank": 782,
+      "total_guesses": 45
+    }
+  },
+  {
+    "generation": 1,
+    "event": "FAILED",
+    "timestamp": "2026-05-15T14:45:37",
+    "details": {
+      "best_word": "nose",
+      "best_rank": 782,
+      "total_guesses": 45
+    }
+  }
+]

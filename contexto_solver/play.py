@@ -18,11 +18,16 @@ RESET = "\033[0m"
 def main() -> None:
     parser = argparse.ArgumentParser(description="Play the local Contexto game.")
     parser.add_argument("target", nargs="?", help="Target word. Defaults to a random vocabulary word.")
-    parser.add_argument("--glove-path", default=config.GLOVE_PATH, help="Path to a GloVe text embedding file.")
+    parser.add_argument(
+        "--embedding-path",
+        default=config.GAME_EMBEDDING_PATH,
+        help="Path to a text or .npz embedding file for the local game.",
+    )
+    parser.add_argument("--glove-path", dest="embedding_path", help=argparse.SUPPRESS)
     args = parser.parse_args()
 
     print("Loading embeddings...")
-    model = EmbeddingModel(args.glove_path)
+    model = EmbeddingModel(args.embedding_path)
     target = args.target.lower().strip() if args.target else random.choice(model.vocabulary())
     game = LocalGame(model, target)
 

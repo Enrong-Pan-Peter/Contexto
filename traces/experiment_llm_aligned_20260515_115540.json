@@ -1,0 +1,53 @@
+{
+  "metadata": {
+    "created_at": "2026-05-15T12:17:07",
+    "solver": "llm",
+    "mode": "aligned",
+    "targets": [
+      "superficial"
+    ],
+    "runs_per_target": 1,
+    "game_embedding_path": "data/glove.6B.300d.txt",
+    "solver_embedding_path": "data/glove.6B.300d.txt",
+    "max_generations": 10,
+    "llm_provider": "ollama",
+    "llm_model": "qwen3:14b",
+    "random_seed": null,
+    "enable_pivot": true,
+    "stall_no_improvement_generations": 3,
+    "stall_close_rank_threshold": 30,
+    "stall_close_generations_limit": 5,
+    "max_pivot_attempts_per_run": 5,
+    "pivot_candidate_words_per_operator": 10,
+    "pivot_resolution_window": 2
+  },
+  "aggregate": {
+    "total_runs": 1,
+    "solved_runs": 1,
+    "solve_rate": 1.0,
+    "average_guesses_solved": 227.0,
+    "average_best_rank": 1.0,
+    "average_generations": 9.0
+  },
+  "runs": [
+    {
+      "solver": "llm",
+      "mode": "aligned",
+      "target": "superficial",
+      "run_index": 0,
+      "solved": true,
+      "answer": "superficial",
+      "best_word": "superficial",
+      "best_rank": 1,
+      "total_guesses": 227,
+      "generations": 9,
+      "trace_path": "traces\\llm_aligned_superficial_run1_20260515_121707.json",
+      "error": null,
+      "llm_provider": "ollama",
+      "llm_model": "qwen3:14b",
+      "game_embedding_path": "data/glove.6B.300d.txt",
+      "solver_embedding_path": "data/glove.6B.300d.txt",
+      "alignment": "aligned"
+    }
+  ]
+}

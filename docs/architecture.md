@@ -28,9 +28,9 @@ main.py
   -> contexto_solver.main
     -> config
     -> choose game backend: LocalGame or ContextoAPI
-    -> choose solver: SolverLLM or SolverEmbedding
+    -> choose method: llm_only, ea_llm, ea_llm_pivot, or embedding
     -> Logger records RUN_CONFIG and solver events
-    -> solver.solve()
+    -> method.solve()
     -> trace JSON written to traces/
 ```
 
@@ -41,8 +41,8 @@ python -m contexto_solver.experiment
   -> load target list
   -> load game embedding model once
   -> optionally load separate solver embedding model
-  -> choose LLM provider/model when using the LLM solver
-  -> run LocalGame + selected solver repeatedly
+  -> choose LLM provider/model when using an LLM method
+  -> run LocalGame + selected method repeatedly
   -> write per-run traces plus resumable JSON/CSV summary
 ```
 
@@ -84,7 +84,7 @@ Main function:
 - Parses CLI arguments.
 - Loads embeddings only when required.
 - Constructs either `LocalGame` or `ContextoAPI`.
-- Constructs either `SolverLLM` or `SolverEmbedding`.
+- Constructs the selected method from `contexto_solver.methods`.
 - Logs `RUN_CONFIG`, including LLM provider/model for LLM runs.
 - Prints final status, best word/rank, total guesses, generation count, and
   trace path.
@@ -92,7 +92,7 @@ Main function:
 Main interactions:
 - Reads defaults from `config`.
 - Uses `EmbeddingModel` for local games and embedding solvers.
-- Uses `LLMClient` only for LLM solver runs.
+- Uses `LLMClient` only for LLM-family method runs.
 - Selects `openai`, `anthropic`, or `ollama` through the existing
   `--provider`/`LLM_PROVIDER` setting.
 - Passes a shared `Logger` into the selected solver.
@@ -104,6 +104,11 @@ Subtleties:
   instance is reused to avoid loading GloVe twice.
 - `--ollama-model` is a convenience override for Ollama runs; `--model` remains
   the generic model override.
+- `--method` is the method selector. The `solver` metadata field is retained as
+  a compatibility family value (`llm` or `embedding`) so existing traces and
+  analysis scripts can continue to group runs at a coarse level. In particular,
+  `solver=llm` can now mean `method=llm_only`, `method=ea_llm`, or
+  `method=ea_llm_pivot`.
 - `_default(value, default)` preserves explicit `0` CLI values; do not replace
   it with `value or default`.
 
@@ -113,8 +118,8 @@ Central configuration module.
 
 Main function:
 - Loads simple `.env` key/value pairs into environment variables if absent.
-- Defines defaults for paths, API settings, LLM settings, solver budgets, and
-  local-game target.
+- Defines defaults for paths, named embedding caches, API settings, LLM
+  settings, solver budgets, and local-game target.
 
 Main interactions:
 - Imported by CLI modules, experiment runner, and manual play.
@@ -130,15 +135,21 @@ Subtleties:
   local Ollama.
 - The default generation budget is `MAX_GENERATIONS=50`; CLI flags can still
   lower it to `0` for smoke tests or raise/lower it per run.
-- GloVe is currently the only validated embedding model, even though separate
-  embedding paths are already supported.
+- Named embedding paths include legacy GloVe plus transformer caches for
+  MiniLM and MPNet. MiniLM becomes the default local embedding backend once its
+  cache exists; otherwise the default falls back to GloVe so a fresh checkout
+  still works with the existing validated file.
+- Pivot-only settings are namespaced with `EA_LLM_PIVOT_*` and only apply to
+  `method=ea_llm_pivot`. There is no global `ENABLE_PIVOT` flag; pivot behavior
+  is selected by method.
 
 ### `contexto_solver.embeddings.EmbeddingModel`
 
 Embedding loader and nearest-neighbor query engine.
 
 Main function:
-- Loads text embeddings from disk into `numpy` arrays.
+- Loads text embeddings or compressed `.npz` embedding caches from disk into
+  `numpy` arrays.
 - Stores `words`, `vectors`, `norms`, and `word_to_index`.
 - Provides vector lookup, vocabulary access, nearest neighbors for a word, and
   nearest neighbors to an arbitrary vector.
@@ -149,11 +160,36 @@ Main interactions:
 - Loaded by `main`, `experiment`, and `play`.
 
 Subtleties:
-- Loading GloVe is expensive and prints progress; avoid loading more than
-  necessary.
-- The expected local file is currently `data/glove.6B.300d.txt`.
-- Any future embedding model must provide the same text-vector format or this
-  loader must be generalized carefully.
+- Loading large embedding matrices is expensive and prints progress for text
+  files; avoid loading more than necessary.
+- Text files remain compatible with GloVe-style static vectors.
+- `.npz` caches must contain `words` and `vectors` arrays. Optional
+  `metadata_json` is used for provenance only, not solver behavior.
+- Runtime components should depend on this interface, not on transformer model
+  APIs directly.
+
+### `contexto_solver.build_embedding_cache`
+
+Static cache builder for transformer embedding models.
+
+Main function:
+- Reads a fixed vocabulary file, including GloVe-style embedding files where
+  the first whitespace-delimited field is the word.
+- Encodes each word with a sentence-transformer model such as
+  `sentence-transformers/all-MiniLM-L6-v2` or
+  `sentence-transformers/all-mpnet-base-v2`.
+- Writes a compressed `.npz` cache compatible with `EmbeddingModel`.
+
+Main interactions:
+- Used offline before local-game or embedding-solver runs.
+- Produces files under `data/embeddings/` by convention.
+- Does not participate in live solving or experiment ranking loops.
+
+Subtleties:
+- The vocabulary is fixed at build time. This preserves reproducibility and
+  avoids contextual drift between runs.
+- Encoded words are treated as static lexical vectors. The local game should
+  never call sentence-transformer models dynamically.
 
 ### `contexto_solver.local_game.LocalGame`
 
@@ -202,15 +238,15 @@ LLM provider wrapper and prompt owner.
 
 Main function:
 - Supports OpenAI, Anthropic, and Ollama chat APIs.
-- Owns prompt templates for initial categories, word proposals, mutation,
-  crossover, local search, and pivot operators.
+- Owns prompt templates for initial categories, pure LLM next guesses, word
+  proposals, mutation, crossover, local search, and pivot operators.
 - Requests JSON-only responses and parses JSON. JSON parse failures retry the
   generation request; retryable provider failures use bounded backoff.
 
 Main interactions:
-- Used only by `SolverLLM`.
-- Receives `Hypothesis` state and rank feedback from the solver.
-- Uses invalid/global guess sets supplied by `SolverLLM` to reduce repeated or
+- Used only by LLM-family methods.
+- Receives `Hypothesis` state and rank feedback from EA methods.
+- Uses invalid/global guess sets supplied by methods to reduce repeated or
   unusable words.
 - Receives the selected provider, API key placeholder/key, and resolved model
   from `main` or `experiment`.
@@ -218,6 +254,8 @@ Main interactions:
 Subtleties:
 - Prompts enforce single lowercase words because Contexto rejects phrases,
   punctuation, and hyphenated guesses.
+- `next_guess()` supports the pure `llm_only` baseline by conditioning on the
+  running `(word, rank)` history.
 - `local_search()` is LLM-based; it does not use the local game's embedding
   model. This preserves separation between LLM solver and game internals.
 - OpenAI and Anthropic use raw `requests` calls to their native APIs. Ollama
@@ -250,66 +288,52 @@ Subtleties:
 - `parent` and `origin` are traceability fields; preserve them when adding new
   hypothesis-generation operations.
 
-### `contexto_solver.solver_llm.SolverLLM`
+### `contexto_solver.methods`
 
-LLM-guided evolutionary solver.
-
-Main function:
-- Initializes broad semantic hypotheses from the LLM.
-- In each generation:
-  - caps active hypotheses,
-  - asks the LLM for candidate words,
-  - evaluates candidates against the game,
-  - optionally performs LLM local search near strong clues,
-  - selects active hypotheses with elitism,
-  - mutates strong hypotheses,
-  - performs crossover,
-  - deduplicates similar hypotheses,
-  - detects stalls and can run pivot operators.
-- Prints best word/rank after generation `0` and each completed generation.
-- Saves a JSON trace at the end.
-
-Main interactions:
-- Depends on the shared game interface, `LLMClient`, `Hypothesis`, and `Logger`.
-- Does not directly depend on `EmbeddingModel`, `LocalGame`, or `ContextoAPI`.
-
-Subtleties:
-- This solver must remain backend-agnostic. It should use only ranks returned by
-  the game interface, not embedding vectors or local target internals.
-- Invalid guesses return `-1` and are remembered to avoid repeated proposals.
-- Candidate generation uses global guess history when available to reduce
-  duplicates across hypotheses.
-- Local search is triggered by `local_search_rank_threshold`; it is not a
-  replacement for category exploration in all cases.
-- Pivoting is still LLM-based. It adds morphology, register-shift, and adjacent
-  category directions when the stall detector fires.
-- The active hypothesis cap and deduplication are important performance
-  safeguards. Changes to selection/mutation should consider their impact on
-  diversity and convergence.
-
-### `contexto_solver.solver_embedding.SolverEmbedding`
-
-Embedding-neighbor evolutionary baseline.
+Method package for automatic solvers.
 
 Main function:
-- Samples initial seed words from the solver embedding vocabulary.
-- Keeps the best active words by rank.
-- In each generation, proposes nearest neighbors of active words and wider
-  neighbors around the current best word.
-- Prints best word/rank after generation `0` and each completed generation.
-- Saves a JSON trace at the end.
+- Hosts one module per experimental method.
+- Gives each method a `.solve(max_generations=None) -> dict` interface.
+- Keeps method implementations separate from game backend construction and CLI
+  dispatch.
+
+Current method modules:
+- `methods/llm_only.py`: pure LLM baseline. It asks the LLM for one
+  history-conditioned guess per step and uses no hypotheses, mutation,
+  crossover, or local search.
+- `methods/ea_core.py`: shared EA+LLM core for hypothesis initialization,
+  candidate generation, local search, selection, mutation, crossover,
+  deduplication, trace saving, and the post-generation hook contract.
+- `methods/ea_llm.py`: EA+LLM without stall-pivot operators.
+- `methods/ea_llm_pivot.py`: EA+LLM with the stall detector and pivot A/B/C
+  operators. Pivot settings are read from `EA_LLM_PIVOT_*` config values.
+- `methods/embedding.py`: embedding nearest-neighbor baseline.
+- `methods/base.py`: shared `Game` and `SolverMethod` protocols.
 
 Main interactions:
-- Depends on the shared game interface, `EmbeddingModel`, and `Logger`.
-- Can run against `LocalGame` or `ContextoAPI`.
+- `main` and `experiment` select a method with `--method`.
+- LLM-family methods use `LLMClient` and keep `solver=llm` compatibility
+  metadata.
+- The embedding method uses its configured `EmbeddingModel` and keeps
+  `solver=embedding` compatibility metadata.
 
 Subtleties:
-- When solver and game embedding paths match, this is an aligned condition.
-- When paths differ, it is a non-aligned condition.
-- Current non-aligned support is architectural scaffolding; only GloVe has been
-  validated so far.
-- This solver can know its own solver embedding model, but it should not assume
-  the game backend uses the same model unless explicitly configured that way.
+- `BaseEALLMMethod._after_generation_update()` is a method-specific hook. Hooks
+  may mutate shared solver state, log events, or update trackers; its return
+  value only means whether the hook solved the game and the loop should stop.
+- `ea_llm_pivot` is a subclass of the EA core because pivoting is attached at
+  one post-generation hook point but needs access to EA internals such as
+  hypotheses, known guesses, and guess/update logging.
+- `solver=llm` is no longer a unique method. Analysis scripts should inspect
+  `method` when distinguishing `llm_only`, `ea_llm`, and `ea_llm_pivot`.
+- The `enable_pivot` metadata field remains only as a compatibility field for
+  pivot matrix analysis: `ea_llm` writes `False`, `ea_llm_pivot` writes `True`,
+  and other methods write `None`.
+- All methods must remain backend-agnostic. LLM methods use only rank feedback,
+  not local embedding vectors or target internals.
+- The embedding method can know its own solver embedding model, but it should
+  not assume the game backend uses the same model unless explicitly configured.
 
 ### `contexto_solver.logger.Logger`
 
@@ -338,7 +362,7 @@ Batch local experiment runner.
 
 Main function:
 - Runs repeated local experiments over targets from CLI or target file.
-- Supports `llm` and `embedding` solvers.
+- Supports `llm_only`, `ea_llm`, `ea_llm_pivot`, and `embedding` methods.
 - Supports `aligned` and `non_aligned` embedding modes.
 - Writes per-run traces plus aggregate JSON and CSV summaries.
 - Can resume an existing summary with `--resume`, skipping target/run pairs
@@ -347,13 +371,13 @@ Main function:
 Main interactions:
 - Always uses `LocalGame`.
 - Reuses `EmbeddingModel` instances when possible.
-- Constructs `SolverLLM` or `SolverEmbedding` similarly to `main`.
+- Constructs the selected method similarly to `main`.
 - Records LLM provider/model in experiment metadata, per-run rows, CSV output,
   and each run's `RUN_CONFIG` trace event for LLM experiments.
 
 Subtleties:
 - Real API batch experiments are intentionally not handled here.
-- Alignment validation is enforced for embedding solver runs.
+- Alignment validation is enforced for embedding method runs.
 - `random_seed` is offset by run index for repeated embedding experiments.
 - Summary files are rewritten after each completed run so interrupted batches
   can be resumed without losing completed results.
@@ -397,7 +421,11 @@ Subtleties:
 Local embedding files live here and are not committed.
 
 Current assumption:
-- `data/glove.6B.300d.txt` is the validated embedding file.
+- `data/glove.6B.300d.txt` remains the legacy validated embedding file.
+- `data/embeddings/all-MiniLM-L6-v2.npz` is the intended default local-game
+  backend after cache generation.
+- `data/embeddings/all-mpnet-base-v2.npz` is the heavier quality-oriented
+  solver/backend option after cache generation.
 
 ### `traces/`
 
@@ -446,12 +474,12 @@ Older LLM solver implementation.
 
 Status:
 - Not used by the current `contexto_solver.main` path.
-- Superseded by `contexto_solver.solver_llm`, which uses the shared game
-  interface and newer performance mitigations.
+- Superseded by `contexto_solver.methods`, which uses the shared game interface
+  and method-based dispatch.
 
 Guidance:
-- Future LLM solver changes should target `solver_llm.py`, not this legacy
-  module, unless the project explicitly decides to remove or revive it.
+- Future LLM method changes should target `contexto_solver.methods`, not this
+  legacy module, unless the project explicitly decides to remove or revive it.
 
 ## Change-Impact Checklist
 
@@ -459,17 +487,18 @@ Before modifying a component, check these likely dependents:
 
 - Game rank behavior: update/verify `LocalGame`, `ContextoAPI`, both solvers,
   and trace interpretation.
-- Game interface shape: update `SolverLLM`, `SolverEmbedding`, `main`,
-  `experiment`, and `play` if needed.
+- Game interface shape: update methods, `main`, `experiment`, and `play` if
+  needed.
 - Embedding loading or paths: update `config`, `main`, `experiment`,
-  `EmbeddingModel`, `LocalGame`, `SolverEmbedding`, README, and docs.
-- LLM prompts or JSON schemas: update `LLMClient`, `SolverLLM` parsing/cleaning,
-  trace expectations, and experiment notes.
+  `EmbeddingModel`, `LocalGame`, `methods/embedding.py`, README, and docs.
+- LLM prompts or JSON schemas: update `LLMClient`, LLM methods'
+  parsing/cleaning, trace expectations, and experiment notes.
 - LLM provider routing or defaults: update `config`, `main`, `experiment`,
   `LLMClient`, `RUN_CONFIG` metadata, experiment summary fields, and smoke
   tests for both selected provider behavior and provider-specific errors.
-- Selection, mutation, local search, or deduplication: update `SolverLLM`,
-  verify traces, and consider effects on convergence/diversity.
+- Selection, mutation, local search, or deduplication: update
+  `methods/ea_core.py`, verify traces, and consider effects on
+  convergence/diversity.
 - Experiment summary fields: update `experiment`, CSV fieldnames, downstream
   docs, and any scripts that read summaries.
 - Trace event names/details: update solvers, `Logger` consumers, documentation,
@@ -480,12 +509,12 @@ Before modifying a component, check these likely dependents:
 - Solvers see rank `1` as solved regardless of backend.
 - Invalid/unavailable guesses use `-1` at the game interface.
 - Local games should not use API rate limiting.
-- LLM solver should not access local embedding vectors.
+- LLM methods should not access local embedding vectors.
 - LLM provider choice should not change solver, hypothesis, game, or trace event
   interfaces beyond run-level provider/model metadata.
 - A selected LLM provider should fail clearly on provider-specific errors; do
   not silently fall back to a different provider.
-- Embedding solver should only use its configured solver embedding model.
+- Embedding method should only use its configured solver embedding model.
 - Root wrappers should remain thin.
 - Generated traces and experiment summaries should not become required inputs
   for normal single-run solving.
