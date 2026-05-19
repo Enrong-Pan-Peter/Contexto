@@ -1,0 +1,90 @@
+[
+  {
+    "generation": -1,
+    "event": "RUN_CONFIG",
+    "timestamp": "2026-05-15T14:39:12",
+    "details": {
+      "game": "local",
+      "solver": "llm",
+      "method": "llm_only",
+      "target": "cat",
+      "game_number": null,
+      "game_embedding_path": "data/embeddings/all-MiniLM-L6-v2.npz",
+      "solver_embedding_path": null,
+      "alignment": "not_applicable",
+      "max_generations": 3,
+      "llm_provider": "ollama",
+      "llm_model": "qwen3:14b",
+      "llm_workers": null,
+      "local_search_rank_threshold": null,
+      "enable_pivot": null,
+      "ea_llm_pivot_stall_no_improvement_generations": null,
+      "ea_llm_pivot_stall_close_rank_threshold": null,
+      "ea_llm_pivot_stall_close_generations_limit": null,
+      "ea_llm_pivot_max_attempts_per_run": null,
+      "ea_llm_pivot_candidate_words_per_operator": null,
+      "ea_llm_pivot_resolution_window": null,
+      "seed_count": null,
+      "active_count": null,
+      "neighbors_per_word": null,
+      "random_seed": null
+    }
+  },
+  {
+    "generation": 0,
+    "event": "INIT",
+    "timestamp": "2026-05-15T14:39:12",
+    "details": {
+      "history": {},
+      "best_word": null,
+      "best_rank": null,
+      "total_guesses": 0
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-05-15T14:41:46",
+    "details": {
+      "word": "water",
+      "rank": 25143,
+      "best_word": "water",
+      "best_rank": 25143,
+      "total_guesses": 1
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-05-15T14:42:52",
+    "details": {
+      "word": "liquid",
+      "rank": 97054,
+      "best_word": "water",
+      "best_rank": 25143,
+      "total_guesses": 2
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-05-15T14:43:15",
+    "details": {
+      "word": "aqueous",
+      "rank": 207019,
+      "best_word": "water",
+      "best_rank": 25143,
+      "total_guesses": 3
+    }
+  },
+  {
+    "generation": 3,
+    "event": "FAILED",
+    "timestamp": "2026-05-15T14:43:15",
+    "details": {
+      "best_word": "water",
+      "best_rank": 25143,
+      "total_guesses": 3
+    }
+  }
+]

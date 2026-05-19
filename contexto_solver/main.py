@@ -10,8 +10,11 @@ from .game_api import ContextoAPI
 from .local_game import LocalGame
 from .llm_client import LLMClient
 from .logger import Logger
-from .solver_embedding import SolverEmbedding, SolverEmbeddingConfig
-from .solver_llm import SolverLLM, SolverLLMConfig
+from .methods.ea_core import EALLMConfig
+from .methods.ea_llm import EALLMMethod
+from .methods.ea_llm_pivot import EALLMPivotConfig, EALLMPivotMethod
+from .methods.embedding import EmbeddingConfig, EmbeddingMethod
+from .methods.llm_only import LLMOnlyConfig, LLMOnlyMethod
 
 
 def main() -> None:
@@ -25,7 +28,9 @@ def main() -> None:
 
     if args.game == "local":
         game_embedding_model = EmbeddingModel(game_embedding_path)
-    if args.solver == "embedding":
+    method_family = _method_family(args.method)
+
+    if args.method == "embedding":
         if args.game == "local" and solver_embedding_path == game_embedding_path:
             solver_embedding_model = game_embedding_model
         else:
@@ -54,69 +59,57 @@ def main() -> None:
         "RUN_CONFIG",
         {
             "game": args.game,
-            "solver": args.solver,
+            "solver": method_family,
+            "method": args.method,
             "target": target,
             "game_number": game_number,
             "game_embedding_path": game_embedding_path if args.game == "local" else None,
-            "solver_embedding_path": solver_embedding_path if args.solver == "embedding" else None,
-            "alignment": _alignment(args.game, args.solver, game_embedding_path, solver_embedding_path),
+            "solver_embedding_path": solver_embedding_path if args.method == "embedding" else None,
+            "alignment": _alignment(args.game, args.method, game_embedding_path, solver_embedding_path),
             "max_generations": _default(args.max_generations, config.MAX_GENERATIONS),
-            "llm_provider": llm_provider if args.solver == "llm" else None,
-            "llm_model": llm_model if args.solver == "llm" else None,
-            "llm_workers": _default(args.llm_workers, config.LLM_WORKERS) if args.solver == "llm" else None,
-            "local_search_rank_threshold": config.LOCAL_SEARCH_RANK_THRESHOLD if args.solver == "llm" else None,
-            "enable_pivot": config.ENABLE_PIVOT if args.solver == "llm" else None,
-            "stall_no_improvement_generations": config.STALL_NO_IMPROVEMENT_GENERATIONS if args.solver == "llm" else None,
-            "stall_close_rank_threshold": config.STALL_CLOSE_RANK_THRESHOLD if args.solver == "llm" else None,
-            "stall_close_generations_limit": config.STALL_CLOSE_GENERATIONS_LIMIT if args.solver == "llm" else None,
-            "max_pivot_attempts_per_run": config.MAX_PIVOT_ATTEMPTS_PER_RUN if args.solver == "llm" else None,
-            "pivot_candidate_words_per_operator": config.PIVOT_CANDIDATE_WORDS_PER_OPERATOR if args.solver == "llm" else None,
-            "pivot_resolution_window": config.PIVOT_RESOLUTION_WINDOW if args.solver == "llm" else None,
-            "seed_count": _default(args.seed_count, config.EMBEDDING_SEED_COUNT) if args.solver == "embedding" else None,
-            "active_count": _default(args.active_count, config.EMBEDDING_ACTIVE_COUNT) if args.solver == "embedding" else None,
-            "neighbors_per_word": _default(args.neighbors_per_word, config.EMBEDDING_NEIGHBORS_PER_WORD) if args.solver == "embedding" else None,
+            "llm_provider": llm_provider if method_family == "llm" else None,
+            "llm_model": llm_model if method_family == "llm" else None,
+            "llm_workers": _default(args.llm_workers, config.LLM_WORKERS) if args.method in {"ea_llm", "ea_llm_pivot"} else None,
+            "local_search_rank_threshold": config.LOCAL_SEARCH_RANK_THRESHOLD if args.method in {"ea_llm", "ea_llm_pivot"} else None,
+            "enable_pivot": _enable_pivot_metadata(args.method),
+            "ea_llm_pivot_stall_no_improvement_generations": (
+                config.EA_LLM_PIVOT_STALL_NO_IMPROVEMENT_GENERATIONS if args.method == "ea_llm_pivot" else None
+            ),
+            "ea_llm_pivot_stall_close_rank_threshold": (
+                config.EA_LLM_PIVOT_STALL_CLOSE_RANK_THRESHOLD if args.method == "ea_llm_pivot" else None
+            ),
+            "ea_llm_pivot_stall_close_generations_limit": (
+                config.EA_LLM_PIVOT_STALL_CLOSE_GENERATIONS_LIMIT if args.method == "ea_llm_pivot" else None
+            ),
+            "ea_llm_pivot_max_attempts_per_run": (
+                config.EA_LLM_PIVOT_MAX_ATTEMPTS_PER_RUN if args.method == "ea_llm_pivot" else None
+            ),
+            "ea_llm_pivot_candidate_words_per_operator": (
+                config.EA_LLM_PIVOT_CANDIDATE_WORDS_PER_OPERATOR if args.method == "ea_llm_pivot" else None
+            ),
+            "ea_llm_pivot_resolution_window": config.EA_LLM_PIVOT_RESOLUTION_WINDOW if args.method == "ea_llm_pivot" else None,
+            "seed_count": _default(args.seed_count, config.EMBEDDING_SEED_COUNT) if args.method == "embedding" else None,
+            "active_count": _default(args.active_count, config.EMBEDDING_ACTIVE_COUNT) if args.method == "embedding" else None,
+            "neighbors_per_word": _default(args.neighbors_per_word, config.EMBEDDING_NEIGHBORS_PER_WORD) if args.method == "embedding" else None,
             "random_seed": _random_seed(args.random_seed),
         },
     )
 
-    if args.solver == "llm":
+    if method_family == "llm":
         llm_client = LLMClient(
             provider=llm_provider,
             api_key=args.api_key or _api_key_for_provider(llm_provider),
             model=llm_model,
         )
-        solver = SolverLLM(
-            game,
-            llm_client,
-            logger,
-            SolverLLMConfig(
-                max_generations=_default(args.max_generations, config.MAX_GENERATIONS),
-                candidates_per_hypothesis=config.CANDIDATES_PER_HYPOTHESIS,
-                initial_categories=config.INITIAL_CATEGORIES,
-                starter_words_per_category=config.STARTER_WORDS_PER_CATEGORY,
-                mutations_per_generation=config.MUTATIONS_PER_GENERATION,
-                max_active_hypotheses=config.MAX_ACTIVE_HYPOTHESES,
-                trace_dir=config.TRACE_DIR,
-                run_label=f"llm_{game_label}",
-                llm_workers=_default(args.llm_workers, config.LLM_WORKERS),
-                local_search_rank_threshold=config.LOCAL_SEARCH_RANK_THRESHOLD,
-                enable_pivot=config.ENABLE_PIVOT,
-                stall_no_improvement_generations=config.STALL_NO_IMPROVEMENT_GENERATIONS,
-                stall_close_rank_threshold=config.STALL_CLOSE_RANK_THRESHOLD,
-                stall_close_generations_limit=config.STALL_CLOSE_GENERATIONS_LIMIT,
-                max_pivot_attempts_per_run=config.MAX_PIVOT_ATTEMPTS_PER_RUN,
-                pivot_candidate_words_per_operator=config.PIVOT_CANDIDATE_WORDS_PER_OPERATOR,
-                pivot_resolution_window=config.PIVOT_RESOLUTION_WINDOW,
-            ),
-        )
+        solver = _build_llm_method(args.method, game, llm_client, logger, f"{args.method}_{game_label}", args)
     else:
         if solver_embedding_model is None:
             raise RuntimeError("Embedding model is required for embedding solver.")
-        solver = SolverEmbedding(
+        solver = EmbeddingMethod(
             game,
             solver_embedding_model,
             logger,
-            SolverEmbeddingConfig(
+            EmbeddingConfig(
                 max_generations=_default(args.max_generations, config.MAX_GENERATIONS),
                 trace_dir=config.TRACE_DIR,
                 run_label=f"embedding_{game_label}",
@@ -140,7 +133,12 @@ def main() -> None:
 def _parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Solve Contexto with evolutionary search.")
     parser.add_argument("--game", choices=["local", "api"], default="api", help="Game backend.")
-    parser.add_argument("--solver", choices=["llm", "embedding"], default="llm", help="Solver strategy.")
+    parser.add_argument(
+        "--method",
+        choices=["llm_only", "ea_llm", "ea_llm_pivot", "embedding"],
+        default="ea_llm_pivot",
+        help="Solver method.",
+    )
     parser.add_argument("--target", help="Target word for local game.")
     parser.add_argument("--game-number", type=int, help="Contexto game number to solve.")
     parser.add_argument("--max-generations", type=int, help="Maximum generations to run.")
@@ -173,12 +171,69 @@ def _model_for_provider(provider: str, cli_model: str | None, cli_ollama_model: 
     return cli_model or config.LLM_MODEL
 
 
-def _alignment(game: str, solver: str, game_embedding_path: str, solver_embedding_path: str) -> str:
+def _build_llm_method(method: str, game, llm_client: LLMClient, logger: Logger, run_label: str, args: argparse.Namespace):
+    if method == "llm_only":
+        return LLMOnlyMethod(
+            game,
+            llm_client,
+            logger,
+            LLMOnlyConfig(
+                max_generations=_default(args.max_generations, config.MAX_GENERATIONS),
+                trace_dir=config.TRACE_DIR,
+                run_label=run_label,
+            ),
+        )
+
+    ea_kwargs = {
+        "max_generations": _default(args.max_generations, config.MAX_GENERATIONS),
+        "candidates_per_hypothesis": config.CANDIDATES_PER_HYPOTHESIS,
+        "initial_categories": config.INITIAL_CATEGORIES,
+        "starter_words_per_category": config.STARTER_WORDS_PER_CATEGORY,
+        "mutations_per_generation": config.MUTATIONS_PER_GENERATION,
+        "max_active_hypotheses": config.MAX_ACTIVE_HYPOTHESES,
+        "trace_dir": config.TRACE_DIR,
+        "run_label": run_label,
+        "llm_workers": _default(args.llm_workers, config.LLM_WORKERS),
+        "local_search_rank_threshold": config.LOCAL_SEARCH_RANK_THRESHOLD,
+    }
+    if method == "ea_llm":
+        return EALLMMethod(game, llm_client, logger, EALLMConfig(**ea_kwargs))
+    if method == "ea_llm_pivot":
+        return EALLMPivotMethod(
+            game,
+            llm_client,
+            logger,
+            EALLMPivotConfig(
+                **ea_kwargs,
+                stall_no_improvement_generations=config.EA_LLM_PIVOT_STALL_NO_IMPROVEMENT_GENERATIONS,
+                stall_close_rank_threshold=config.EA_LLM_PIVOT_STALL_CLOSE_RANK_THRESHOLD,
+                stall_close_generations_limit=config.EA_LLM_PIVOT_STALL_CLOSE_GENERATIONS_LIMIT,
+                max_pivot_attempts_per_run=config.EA_LLM_PIVOT_MAX_ATTEMPTS_PER_RUN,
+                pivot_candidate_words_per_operator=config.EA_LLM_PIVOT_CANDIDATE_WORDS_PER_OPERATOR,
+                pivot_resolution_window=config.EA_LLM_PIVOT_RESOLUTION_WINDOW,
+            ),
+        )
+    raise ValueError(f"Unknown LLM method: {method}")
+
+
+def _alignment(game: str, method: str, game_embedding_path: str, solver_embedding_path: str) -> str:
     if game == "api":
         return "api_unknown"
-    if solver != "embedding":
+    if method != "embedding":
         return "not_applicable"
     return "aligned" if game_embedding_path == solver_embedding_path else "non_aligned"
+
+
+def _method_family(method: str) -> str:
+    return "embedding" if method == "embedding" else "llm"
+
+
+def _enable_pivot_metadata(method: str) -> bool | None:
+    if method == "ea_llm_pivot":
+        return True
+    if method == "ea_llm":
+        return False
+    return None
 
 
 def _random_seed(cli_seed: int | None) -> int | None:

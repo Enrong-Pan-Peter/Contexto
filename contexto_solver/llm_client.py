@@ -141,6 +141,19 @@ Do not suggest singular or plural forms of already tried words; Contexto treats 
 JSON schema:
 {{"name": "category name", "description": "short description", "words": ["word1", "word2", "word3"]}}"""
 
+NEXT_GUESS_PROMPT = """Return only JSON, no markdown or explanation.
+You are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.
+Guess history with ranks: {history}
+Invalid or unavailable guesses to avoid: {invalid_guesses}
+
+Suggest exactly one new single-word guess that could be closer to the hidden target.
+Every guess must be one common lowercase dictionary word.
+Do not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.
+Do not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.
+Invalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.
+JSON schema:
+{{"word": "guess"}}"""
+
 
 class LLMClient:
     def __init__(self, provider: str, api_key: str, model: str) -> None:
@@ -295,6 +308,16 @@ class LLMClient:
             n=n,
         )
         return self._json_request_with_retry(prompt)
+
+    def next_guess(self, history: dict[str, int], invalid_guesses: set[str] | None = None) -> str:
+        prompt = NEXT_GUESS_PROMPT.format(
+            history=json.dumps(history, sort_keys=True),
+            invalid_guesses=json.dumps(sorted(invalid_guesses or set())),
+        )
+        response = self._json_request_with_retry(prompt)
+        if isinstance(response, dict):
+            return str(response.get("word", ""))
+        return str(response)
 
     def _json_request_with_retry(self, prompt: str) -> Any:
         last_error: Exception | None = None

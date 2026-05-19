@@ -1,0 +1,55 @@
+{
+  "metadata": {
+    "created_at": "2026-05-15T14:04:02",
+    "solver": "llm",
+    "method": "ea_llm",
+    "mode": "aligned",
+    "targets": [
+      "cat"
+    ],
+    "runs_per_target": 1,
+    "game_embedding_path": "data/embeddings/all-MiniLM-L6-v2.npz",
+    "solver_embedding_path": "data/embeddings/all-MiniLM-L6-v2.npz",
+    "max_generations": 0,
+    "llm_provider": "ollama",
+    "llm_model": "qwen3:14b",
+    "random_seed": null,
+    "enable_pivot": false,
+    "ea_llm_pivot_stall_no_improvement_generations": null,
+    "ea_llm_pivot_stall_close_rank_threshold": null,
+    "ea_llm_pivot_stall_close_generations_limit": null,
+    "ea_llm_pivot_max_attempts_per_run": null,
+    "ea_llm_pivot_candidate_words_per_operator": null,
+    "ea_llm_pivot_resolution_window": null
+  },
+  "aggregate": {
+    "total_runs": 1,
+    "solved_runs": 0,
+    "solve_rate": 0.0,
+    "average_guesses_solved": null,
+    "average_best_rank": 1358.0,
+    "average_generations": 0.0
+  },
+  "runs": [
+    {
+      "solver": "llm",
+      "method": "ea_llm",
+      "mode": "aligned",
+      "target": "cat",
+      "run_index": 0,
+      "solved": false,
+      "answer": null,
+      "best_word": "eye",
+      "best_rank": 1358,
+      "total_guesses": 18,
+      "generations": 0,
+      "trace_path": "traces\\ea_llm_aligned_cat_run1_20260515_140402.json",
+      "error": null,
+      "llm_provider": "ollama",
+      "llm_model": "qwen3:14b",
+      "game_embedding_path": "data/embeddings/all-MiniLM-L6-v2.npz",
+      "solver_embedding_path": "data/embeddings/all-MiniLM-L6-v2.npz",
+      "alignment": "aligned"
+    }
+  ]
+}

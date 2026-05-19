@@ -1,0 +1,53 @@
+{
+  "metadata": {
+    "created_at": "2026-05-15T14:19:43",
+    "solver": "llm",
+    "mode": "aligned",
+    "targets": [
+      "superficial"
+    ],
+    "runs_per_target": 1,
+    "game_embedding_path": "data/embeddings/all-MiniLM-L6-v2.npz",
+    "solver_embedding_path": "data/embeddings/all-MiniLM-L6-v2.npz",
+    "max_generations": 10,
+    "llm_provider": "ollama",
+    "llm_model": "qwen3:14b",
+    "random_seed": null,
+    "enable_pivot": true,
+    "stall_no_improvement_generations": 3,
+    "stall_close_rank_threshold": 30,
+    "stall_close_generations_limit": 5,
+    "max_pivot_attempts_per_run": 5,
+    "pivot_candidate_words_per_operator": 10,
+    "pivot_resolution_window": 2
+  },
+  "aggregate": {
+    "total_runs": 1,
+    "solved_runs": 0,
+    "solve_rate": 0.0,
+    "average_guesses_solved": null,
+    "average_best_rank": 5.0,
+    "average_generations": 10.0
+  },
+  "runs": [
+    {
+      "solver": "llm",
+      "mode": "aligned",
+      "target": "superficial",
+      "run_index": 0,
+      "solved": false,
+      "answer": null,
+      "best_word": "thin",
+      "best_rank": 5,
+      "total_guesses": 297,
+      "generations": 10,
+      "trace_path": "traces\\llm_aligned_superficial_run1_20260515_141943.json",
+      "error": null,
+      "llm_provider": "ollama",
+      "llm_model": "qwen3:14b",
+      "game_embedding_path": "data/embeddings/all-MiniLM-L6-v2.npz",
+      "solver_embedding_path": "data/embeddings/all-MiniLM-L6-v2.npz",
+      "alignment": "aligned"
+    }
+  ]
+}

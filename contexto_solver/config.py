@@ -6,13 +6,6 @@ import os
 from pathlib import Path
 
 
-def _env_bool(name: str, default: bool) -> bool:
-    value = os.getenv(name)
-    if value is None:
-        return default
-    return value.lower().strip() in {"1", "true", "yes", "on"}
-
-
 def _env_value(name: str, default: str) -> str:
     value = os.getenv(name)
     if value is None or value.strip() == "":
@@ -79,13 +72,16 @@ STARTER_WORDS_PER_CATEGORY = int(os.getenv("STARTER_WORDS_PER_CATEGORY", "3"))
 MUTATIONS_PER_GENERATION = int(os.getenv("MUTATIONS_PER_GENERATION", "2"))
 MAX_ACTIVE_HYPOTHESES = int(os.getenv("MAX_ACTIVE_HYPOTHESES", "5"))
 LOCAL_SEARCH_RANK_THRESHOLD = int(os.getenv("LOCAL_SEARCH_RANK_THRESHOLD", "100"))
-STALL_NO_IMPROVEMENT_GENERATIONS = int(os.getenv("STALL_NO_IMPROVEMENT_GENERATIONS", "3"))
-STALL_CLOSE_RANK_THRESHOLD = int(os.getenv("STALL_CLOSE_RANK_THRESHOLD", "30"))
-STALL_CLOSE_GENERATIONS_LIMIT = int(os.getenv("STALL_CLOSE_GENERATIONS_LIMIT", "5"))
-MAX_PIVOT_ATTEMPTS_PER_RUN = int(os.getenv("MAX_PIVOT_ATTEMPTS_PER_RUN", "5"))
-PIVOT_CANDIDATE_WORDS_PER_OPERATOR = int(os.getenv("PIVOT_CANDIDATE_WORDS_PER_OPERATOR", "10"))
-PIVOT_RESOLUTION_WINDOW = int(os.getenv("PIVOT_RESOLUTION_WINDOW", "2"))
-ENABLE_PIVOT = _env_bool("ENABLE_PIVOT", True)
+EA_LLM_PIVOT_STALL_NO_IMPROVEMENT_GENERATIONS = int(
+    os.getenv("EA_LLM_PIVOT_STALL_NO_IMPROVEMENT_GENERATIONS", "3")
+)
+EA_LLM_PIVOT_STALL_CLOSE_RANK_THRESHOLD = int(os.getenv("EA_LLM_PIVOT_STALL_CLOSE_RANK_THRESHOLD", "30"))
+EA_LLM_PIVOT_STALL_CLOSE_GENERATIONS_LIMIT = int(os.getenv("EA_LLM_PIVOT_STALL_CLOSE_GENERATIONS_LIMIT", "5"))
+EA_LLM_PIVOT_MAX_ATTEMPTS_PER_RUN = int(os.getenv("EA_LLM_PIVOT_MAX_ATTEMPTS_PER_RUN", "5"))
+EA_LLM_PIVOT_CANDIDATE_WORDS_PER_OPERATOR = int(
+    os.getenv("EA_LLM_PIVOT_CANDIDATE_WORDS_PER_OPERATOR", "10")
+)
+EA_LLM_PIVOT_RESOLUTION_WINDOW = int(os.getenv("EA_LLM_PIVOT_RESOLUTION_WINDOW", "2"))
 EMBEDDING_SEED_COUNT = int(os.getenv("EMBEDDING_SEED_COUNT", "12"))
 EMBEDDING_ACTIVE_COUNT = int(os.getenv("EMBEDDING_ACTIVE_COUNT", "5"))
 EMBEDDING_NEIGHBORS_PER_WORD = int(os.getenv("EMBEDDING_NEIGHBORS_PER_WORD", "10"))

@@ -14,8 +14,11 @@ from .embeddings import EmbeddingModel
 from .llm_client import LLMClient
 from .local_game import LocalGame
 from .logger import Logger
-from .solver_embedding import SolverEmbedding, SolverEmbeddingConfig
-from .solver_llm import SolverLLM, SolverLLMConfig
+from .methods.ea_core import EALLMConfig
+from .methods.ea_llm import EALLMMethod
+from .methods.ea_llm_pivot import EALLMPivotConfig, EALLMPivotMethod
+from .methods.embedding import EmbeddingConfig, EmbeddingMethod
+from .methods.llm_only import LLMOnlyConfig, LLMOnlyMethod
 
 
 def main() -> None:
@@ -28,21 +31,22 @@ def main() -> None:
     solver_embedding_path = args.solver_embedding_path or args.glove_path or config.SOLVER_EMBEDDING_PATH
     llm_provider = args.provider or config.LLM_PROVIDER
     llm_model = _model_for_provider(llm_provider, args.model, args.ollama_model)
-    if args.mode == "aligned" and args.solver == "embedding" and game_embedding_path != solver_embedding_path:
+    method_family = _method_family(args.method)
+    if args.mode == "aligned" and args.method == "embedding" and game_embedding_path != solver_embedding_path:
         raise ValueError("aligned embedding experiments require the same game and solver embedding path.")
-    if args.mode == "non_aligned" and args.solver == "embedding" and game_embedding_path == solver_embedding_path:
+    if args.mode == "non_aligned" and args.method == "embedding" and game_embedding_path == solver_embedding_path:
         raise ValueError("non_aligned embedding experiments require different game and solver embedding paths.")
 
     game_embedding_model = EmbeddingModel(game_embedding_path)
     solver_embedding_model = None
-    if args.solver == "embedding":
+    if args.method == "embedding":
         solver_embedding_model = (
             game_embedding_model
             if solver_embedding_path == game_embedding_path
             else EmbeddingModel(solver_embedding_path)
         )
 
-    output_path = Path(args.output or _default_output_path(args.solver, args.mode))
+    output_path = Path(args.output or _default_output_path(args.method, args.mode))
     output_path.parent.mkdir(parents=True, exist_ok=True)
 
     rows: list[dict[str, Any]] = _load_existing_rows(output_path) if args.resume else []
@@ -100,27 +104,38 @@ def _write_outputs(
     summary = {
         "metadata": {
             "created_at": datetime.now().isoformat(timespec="seconds"),
-            "solver": args.solver,
+            "solver": _method_family(args.method),
+            "method": args.method,
             "mode": args.mode,
             "targets": targets,
             "runs_per_target": args.runs_per_target,
             "game_embedding_path": game_embedding_path,
             "solver_embedding_path": solver_embedding_path,
             "max_generations": args.max_generations,
-            "llm_provider": (args.provider or config.LLM_PROVIDER) if args.solver == "llm" else None,
+            "llm_provider": (args.provider or config.LLM_PROVIDER) if _method_family(args.method) == "llm" else None,
             "llm_model": (
                 _model_for_provider(args.provider or config.LLM_PROVIDER, args.model, args.ollama_model)
-                if args.solver == "llm"
+                if _method_family(args.method) == "llm"
                 else None
             ),
             "random_seed": args.random_seed,
-            "enable_pivot": config.ENABLE_PIVOT if args.solver == "llm" else None,
-            "stall_no_improvement_generations": config.STALL_NO_IMPROVEMENT_GENERATIONS if args.solver == "llm" else None,
-            "stall_close_rank_threshold": config.STALL_CLOSE_RANK_THRESHOLD if args.solver == "llm" else None,
-            "stall_close_generations_limit": config.STALL_CLOSE_GENERATIONS_LIMIT if args.solver == "llm" else None,
-            "max_pivot_attempts_per_run": config.MAX_PIVOT_ATTEMPTS_PER_RUN if args.solver == "llm" else None,
-            "pivot_candidate_words_per_operator": config.PIVOT_CANDIDATE_WORDS_PER_OPERATOR if args.solver == "llm" else None,
-            "pivot_resolution_window": config.PIVOT_RESOLUTION_WINDOW if args.solver == "llm" else None,
+            "enable_pivot": _enable_pivot_metadata(args.method),
+            "ea_llm_pivot_stall_no_improvement_generations": (
+                config.EA_LLM_PIVOT_STALL_NO_IMPROVEMENT_GENERATIONS if args.method == "ea_llm_pivot" else None
+            ),
+            "ea_llm_pivot_stall_close_rank_threshold": (
+                config.EA_LLM_PIVOT_STALL_CLOSE_RANK_THRESHOLD if args.method == "ea_llm_pivot" else None
+            ),
+            "ea_llm_pivot_stall_close_generations_limit": (
+                config.EA_LLM_PIVOT_STALL_CLOSE_GENERATIONS_LIMIT if args.method == "ea_llm_pivot" else None
+            ),
+            "ea_llm_pivot_max_attempts_per_run": (
+                config.EA_LLM_PIVOT_MAX_ATTEMPTS_PER_RUN if args.method == "ea_llm_pivot" else None
+            ),
+            "ea_llm_pivot_candidate_words_per_operator": (
+                config.EA_LLM_PIVOT_CANDIDATE_WORDS_PER_OPERATOR if args.method == "ea_llm_pivot" else None
+            ),
+            "ea_llm_pivot_resolution_window": config.EA_LLM_PIVOT_RESOLUTION_WINDOW if args.method == "ea_llm_pivot" else None,
         },
         "aggregate": _aggregate(rows),
         "runs": rows,
@@ -143,13 +158,15 @@ def _run_local_target(
     game = LocalGame(game_embedding_model, target)
     logger = Logger()
     alignment = "aligned" if game_embedding_path == solver_embedding_path else "non_aligned"
-    run_label = f"{args.solver}_{alignment}_{target}_run{run_index + 1}"
+    run_label = f"{args.method}_{alignment}_{target}_run{run_index + 1}"
+    method_family = _method_family(args.method)
     logger.log(
         -1,
         "RUN_CONFIG",
         {
             "game": "local",
-            "solver": args.solver,
+            "solver": method_family,
+            "method": args.method,
             "mode": args.mode,
             "target": target,
             "run_index": run_index,
@@ -157,27 +174,37 @@ def _run_local_target(
             "solver_embedding_path": solver_embedding_path,
             "alignment": alignment,
             "max_generations": args.max_generations,
-            "llm_provider": llm_provider if args.solver == "llm" else None,
-            "llm_model": llm_model if args.solver == "llm" else None,
+            "llm_provider": llm_provider if method_family == "llm" else None,
+            "llm_model": llm_model if method_family == "llm" else None,
             "random_seed": _run_seed(args.random_seed, run_index),
-            "enable_pivot": config.ENABLE_PIVOT if args.solver == "llm" else None,
-            "stall_no_improvement_generations": config.STALL_NO_IMPROVEMENT_GENERATIONS if args.solver == "llm" else None,
-            "stall_close_rank_threshold": config.STALL_CLOSE_RANK_THRESHOLD if args.solver == "llm" else None,
-            "stall_close_generations_limit": config.STALL_CLOSE_GENERATIONS_LIMIT if args.solver == "llm" else None,
-            "max_pivot_attempts_per_run": config.MAX_PIVOT_ATTEMPTS_PER_RUN if args.solver == "llm" else None,
-            "pivot_candidate_words_per_operator": config.PIVOT_CANDIDATE_WORDS_PER_OPERATOR if args.solver == "llm" else None,
-            "pivot_resolution_window": config.PIVOT_RESOLUTION_WINDOW if args.solver == "llm" else None,
+            "enable_pivot": _enable_pivot_metadata(args.method),
+            "ea_llm_pivot_stall_no_improvement_generations": (
+                config.EA_LLM_PIVOT_STALL_NO_IMPROVEMENT_GENERATIONS if args.method == "ea_llm_pivot" else None
+            ),
+            "ea_llm_pivot_stall_close_rank_threshold": (
+                config.EA_LLM_PIVOT_STALL_CLOSE_RANK_THRESHOLD if args.method == "ea_llm_pivot" else None
+            ),
+            "ea_llm_pivot_stall_close_generations_limit": (
+                config.EA_LLM_PIVOT_STALL_CLOSE_GENERATIONS_LIMIT if args.method == "ea_llm_pivot" else None
+            ),
+            "ea_llm_pivot_max_attempts_per_run": (
+                config.EA_LLM_PIVOT_MAX_ATTEMPTS_PER_RUN if args.method == "ea_llm_pivot" else None
+            ),
+            "ea_llm_pivot_candidate_words_per_operator": (
+                config.EA_LLM_PIVOT_CANDIDATE_WORDS_PER_OPERATOR if args.method == "ea_llm_pivot" else None
+            ),
+            "ea_llm_pivot_resolution_window": config.EA_LLM_PIVOT_RESOLUTION_WINDOW if args.method == "ea_llm_pivot" else None,
         },
     )
 
-    if args.solver == "embedding":
+    if args.method == "embedding":
         if solver_embedding_model is None:
             raise RuntimeError("Embedding solver requires a solver embedding model.")
-        solver = SolverEmbedding(
+        solver = EmbeddingMethod(
             game,
             solver_embedding_model,
             logger,
-            SolverEmbeddingConfig(
+            EmbeddingConfig(
                 max_generations=args.max_generations,
                 trace_dir=config.TRACE_DIR,
                 run_label=run_label,
@@ -193,34 +220,12 @@ def _run_local_target(
             api_key=args.api_key or _api_key_for_provider(llm_provider),
             model=llm_model,
         )
-        solver = SolverLLM(
-            game,
-            llm_client,
-            logger,
-            SolverLLMConfig(
-                max_generations=args.max_generations,
-                candidates_per_hypothesis=config.CANDIDATES_PER_HYPOTHESIS,
-                initial_categories=config.INITIAL_CATEGORIES,
-                starter_words_per_category=config.STARTER_WORDS_PER_CATEGORY,
-                mutations_per_generation=config.MUTATIONS_PER_GENERATION,
-                max_active_hypotheses=config.MAX_ACTIVE_HYPOTHESES,
-                trace_dir=config.TRACE_DIR,
-                run_label=run_label,
-                llm_workers=args.llm_workers,
-                local_search_rank_threshold=config.LOCAL_SEARCH_RANK_THRESHOLD,
-                enable_pivot=config.ENABLE_PIVOT,
-                stall_no_improvement_generations=config.STALL_NO_IMPROVEMENT_GENERATIONS,
-                stall_close_rank_threshold=config.STALL_CLOSE_RANK_THRESHOLD,
-                stall_close_generations_limit=config.STALL_CLOSE_GENERATIONS_LIMIT,
-                max_pivot_attempts_per_run=config.MAX_PIVOT_ATTEMPTS_PER_RUN,
-                pivot_candidate_words_per_operator=config.PIVOT_CANDIDATE_WORDS_PER_OPERATOR,
-                pivot_resolution_window=config.PIVOT_RESOLUTION_WINDOW,
-            ),
-        )
+        solver = _build_llm_method(args.method, game, llm_client, logger, run_label, args)
 
     result = solver.solve()
     return {
-        "solver": args.solver,
+        "solver": method_family,
+        "method": args.method,
         "mode": args.mode,
         "target": target,
         "run_index": run_index,
@@ -232,8 +237,8 @@ def _run_local_target(
         "generations": result["generations"],
         "trace_path": result["trace_path"],
         "error": None,
-        "llm_provider": llm_provider if args.solver == "llm" else None,
-        "llm_model": llm_model if args.solver == "llm" else None,
+        "llm_provider": llm_provider if method_family == "llm" else None,
+        "llm_model": llm_model if method_family == "llm" else None,
         "game_embedding_path": game_embedding_path,
         "solver_embedding_path": solver_embedding_path,
         "alignment": alignment,
@@ -252,7 +257,8 @@ def _failed_run_row(
 ) -> dict[str, Any]:
     alignment = "aligned" if game_embedding_path == solver_embedding_path else "non_aligned"
     return {
-        "solver": args.solver,
+        "solver": _method_family(args.method),
+        "method": args.method,
         "mode": args.mode,
         "target": target,
         "run_index": run_index,
@@ -264,8 +270,8 @@ def _failed_run_row(
         "generations": None,
         "trace_path": None,
         "error": error,
-        "llm_provider": llm_provider if args.solver == "llm" else None,
-        "llm_model": llm_model if args.solver == "llm" else None,
+        "llm_provider": llm_provider if _method_family(args.method) == "llm" else None,
+        "llm_model": llm_model if _method_family(args.method) == "llm" else None,
         "game_embedding_path": game_embedding_path,
         "solver_embedding_path": solver_embedding_path,
         "alignment": alignment,
@@ -323,6 +329,7 @@ def _write_csv(path: Path, rows: list[dict[str, Any]]) -> None:
         return
     fieldnames = [
         "solver",
+        "method",
         "mode",
         "target",
         "run_index",
@@ -345,9 +352,9 @@ def _write_csv(path: Path, rows: list[dict[str, Any]]) -> None:
             writer.writerow({field: row.get(field) for field in fieldnames})
 
 
-def _default_output_path(solver: str, mode: str) -> str:
+def _default_output_path(method: str, mode: str) -> str:
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    return f"{config.TRACE_DIR}/experiment_{solver}_{mode}_{timestamp}.json"
+    return f"{config.TRACE_DIR}/experiment_{method}_{mode}_{timestamp}.json"
 
 
 def _run_seed(seed: int | None, run_index: int) -> int | None:
@@ -370,12 +377,65 @@ def _model_for_provider(provider: str, cli_model: str | None, cli_ollama_model: 
     return cli_model or config.LLM_MODEL
 
 
+def _build_llm_method(method: str, game, llm_client: LLMClient, logger: Logger, run_label: str, args: argparse.Namespace):
+    if method == "llm_only":
+        return LLMOnlyMethod(
+            game,
+            llm_client,
+            logger,
+            LLMOnlyConfig(max_generations=args.max_generations, trace_dir=config.TRACE_DIR, run_label=run_label),
+        )
+
+    ea_kwargs = {
+        "max_generations": args.max_generations,
+        "candidates_per_hypothesis": config.CANDIDATES_PER_HYPOTHESIS,
+        "initial_categories": config.INITIAL_CATEGORIES,
+        "starter_words_per_category": config.STARTER_WORDS_PER_CATEGORY,
+        "mutations_per_generation": config.MUTATIONS_PER_GENERATION,
+        "max_active_hypotheses": config.MAX_ACTIVE_HYPOTHESES,
+        "trace_dir": config.TRACE_DIR,
+        "run_label": run_label,
+        "llm_workers": args.llm_workers,
+        "local_search_rank_threshold": config.LOCAL_SEARCH_RANK_THRESHOLD,
+    }
+    if method == "ea_llm":
+        return EALLMMethod(game, llm_client, logger, EALLMConfig(**ea_kwargs))
+    if method == "ea_llm_pivot":
+        return EALLMPivotMethod(
+            game,
+            llm_client,
+            logger,
+            EALLMPivotConfig(
+                **ea_kwargs,
+                stall_no_improvement_generations=config.EA_LLM_PIVOT_STALL_NO_IMPROVEMENT_GENERATIONS,
+                stall_close_rank_threshold=config.EA_LLM_PIVOT_STALL_CLOSE_RANK_THRESHOLD,
+                stall_close_generations_limit=config.EA_LLM_PIVOT_STALL_CLOSE_GENERATIONS_LIMIT,
+                max_pivot_attempts_per_run=config.EA_LLM_PIVOT_MAX_ATTEMPTS_PER_RUN,
+                pivot_candidate_words_per_operator=config.EA_LLM_PIVOT_CANDIDATE_WORDS_PER_OPERATOR,
+                pivot_resolution_window=config.EA_LLM_PIVOT_RESOLUTION_WINDOW,
+            ),
+        )
+    raise ValueError(f"Unknown LLM method: {method}")
+
+
+def _method_family(method: str) -> str:
+    return "embedding" if method == "embedding" else "llm"
+
+
+def _enable_pivot_metadata(method: str) -> bool | None:
+    if method == "ea_llm_pivot":
+        return True
+    if method == "ea_llm":
+        return False
+    return None
+
+
 def _parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Run local Contexto solver experiments.")
     parser.add_argument("--targets", help="Comma-separated local target words.")
     parser.add_argument("--target-file", help="File containing one target word per line.")
     parser.add_argument("--mode", choices=["aligned", "non_aligned"], default="aligned")
-    parser.add_argument("--solver", choices=["embedding", "llm"], default="embedding")
+    parser.add_argument("--method", choices=["llm_only", "ea_llm", "ea_llm_pivot", "embedding"], default="embedding")
     parser.add_argument("--glove-path", help="Shortcut path used for both game and solver embeddings.")
     parser.add_argument("--game-embedding-path", help="Embedding file used by LocalGame.")
     parser.add_argument("--solver-embedding-path", help="Embedding file used by the embedding solver.")

@@ -4,9 +4,9 @@ This project studies automated solvers for
 [Contexto](https://contexto.me/), a word guessing game where each guess receives
 a semantic rank. Lower ranks are closer to the hidden answer.
 
-The current research codebase compares LLM-guided evolutionary search,
-embedding-neighbor baselines, local GloVe-backed games, and real Contexto API
-games while preserving readable JSON traces of the search process.
+The current research codebase compares several solver methods, embedding-neighbor
+baselines, local embedding-backed games, and real Contexto API games while
+preserving readable JSON traces of the search process.
 
 ## Current Status
 
@@ -14,7 +14,8 @@ Implemented:
 
 - Local offline Contexto-style game using static embedding matrices.
 - Manual terminal play for the local game.
-- LLM-based evolutionary solver.
+- Method-based solver architecture with pure LLM, EA+LLM, EA+LLM+pivot, and
+  embedding-neighbor methods.
 - Embedding-neighbor baseline solver.
 - Batch local experiment runner with resumable JSON/CSV summaries.
 - Pivot-matrix analysis tooling for paired pivot-on/off experiments.
@@ -32,7 +33,7 @@ Not yet complete:
 
 - Full-size MiniLM and MPNet cache generation/benchmarking.
 - Batch experiment runner for real API games.
-- Completed pivot-on/off matrix analysis.
+- Continuous pivot strategy.
 
 ## Architecture
 
@@ -44,8 +45,12 @@ contexto_solver/
   local_game.py          Offline Contexto-style game using embeddings
   play.py                Manual terminal interface for the local game
   game_api.py            Real Contexto API wrapper
-  solver_llm.py          Evolutionary solver using an LLM
-  solver_embedding.py    Evolutionary solver using embedding neighbors
+  methods/
+    llm_only.py          Pure LLM baseline, one history-conditioned guess at a time
+    ea_llm.py            EA+LLM method without stall pivots
+    ea_llm_pivot.py      EA+LLM method with stall-pivot operators
+    embedding.py         Embedding-neighbor baseline
+    ea_core.py           Shared EA+LLM core
   llm_client.py          OpenAI/Anthropic/Ollama API wrapper
   hypothesis.py          Hypothesis/category model for LLM solver
   logger.py              JSON trace logger
@@ -59,7 +64,7 @@ traces/                  Generated JSON traces
 data/                    Local embedding files, not committed
 ```
 
-Both solvers talk to a game object through this shared interface:
+All automatic methods talk to a game object through this shared interface:
 
 ```python
 guess(word) -> int
@@ -145,6 +150,12 @@ TRACE_DIR=traces
 MAX_GENERATIONS=50
 MAX_ACTIVE_HYPOTHESES=5
 LOCAL_SEARCH_RANK_THRESHOLD=100
+EA_LLM_PIVOT_STALL_NO_IMPROVEMENT_GENERATIONS=3
+EA_LLM_PIVOT_STALL_CLOSE_RANK_THRESHOLD=30
+EA_LLM_PIVOT_STALL_CLOSE_GENERATIONS_LIMIT=5
+EA_LLM_PIVOT_MAX_ATTEMPTS_PER_RUN=5
+EA_LLM_PIVOT_CANDIDATE_WORDS_PER_OPERATOR=10
+EA_LLM_PIVOT_RESOLUTION_WINDOW=2
 EMBEDDING_SEED_COUNT=12
 EMBEDDING_ACTIVE_COUNT=5
 EMBEDDING_NEIGHBORS_PER_WORD=10
@@ -168,12 +179,27 @@ Useful commands while playing:
 - Type `hint` to see your best guessed words so far.
 - Type `quit` to reveal the target.
 
-## Automatic Solvers
+## Automatic Methods
 
-### LLM Solver Against Local Game
+### Available Methods
+
+- `llm_only`: pure LLM baseline. It asks the LLM for one new guess from the
+  running `(word, rank)` history. No hypotheses, mutation, crossover, or local
+  search.
+- `ea_llm`: evolutionary LLM method with hypotheses, selection, mutation,
+  crossover, deduplication, and LLM local search. No stall-pivot operators.
+- `ea_llm_pivot`: `ea_llm` plus stall detection and pivot operators for
+  morphology, register shifts, and adjacent-category jumps.
+- `embedding`: embedding nearest-neighbor baseline.
+
+The `solver` field in traces remains a broad compatibility label (`llm` or
+`embedding`). Use the `method` field to distinguish `llm_only`, `ea_llm`, and
+`ea_llm_pivot`.
+
+### EA+LLM Against Local Game
 
 ```powershell
-python main.py --game local --target cat --solver llm
+python main.py --game local --target cat --method ea_llm_pivot
 ```
 
 This uses the configured local embedding backend, but the guesses (categories
@@ -184,10 +210,10 @@ otherwise the project falls back to GloVe.
 You can increase parallel LLM calls:
 
 ```powershell
-python main.py --game local --target cat --solver llm --llm-workers 8
+python main.py --game local --target cat --method ea_llm_pivot --llm-workers 8
 ```
 
-The current LLM solver includes several mitigations added after early slow,
+The current EA+LLM methods include several mitigations added after early slow,
 wandering, and stalled runs:
 
 - Active hypotheses are capped at `MAX_ACTIVE_HYPOTHESES`.
@@ -197,15 +223,24 @@ wandering, and stalled runs:
 - Candidate prompts receive global guess history to reduce duplicate proposals.
 - Local search starts when the best rank is below
   `LOCAL_SEARCH_RANK_THRESHOLD`.
-- A stall detector can trigger pivot operators for morphology, register shifts,
+- `ea_llm_pivot` can trigger pivot operators for morphology, register shifts,
   and adjacent-category jumps.
 - Singular/plural variants of already tried words are filtered as redundant.
 - Invalid or unrecognized guesses are remembered and avoided.
 
-### Embedding Solver Against Local Game
+### Pure LLM Against Local Game
 
 ```powershell
-python main.py --game local --target cat --solver embedding
+python main.py --game local --target cat --method llm_only
+```
+
+This is the simplest LLM baseline. It is useful as a comparison point because it
+uses rank history only and does not run the evolutionary pipeline.
+
+### Embedding Method Against Local Game
+
+```powershell
+python main.py --game local --target cat --method embedding
 ```
 
 This uses the same configured embedding model for the local game and for
@@ -220,19 +255,19 @@ Available embedding choices are:
 The separate `GAME_EMBEDDING_PATH` and `SOLVER_EMBEDDING_PATH` settings support
 aligned and non-aligned comparisons.
 
-### LLM Solver Against Real Contexto API
+### LLM Method Against Real Contexto API
 
 ```powershell
-python main.py --game api --game-number 1314 --solver llm
+python main.py --game api --game-number 1314 --method ea_llm_pivot
 ```
 
 The real API uses `API_RATE_LIMIT` in `config.py`. Local games do not use this
 delay.
 
-### Embedding Solver Against Real Contexto API
+### Embedding Method Against Real Contexto API
 
 ```powershell
-python main.py --game api --game-number 1314 --solver embedding
+python main.py --game api --game-number 1314 --method embedding
 ```
 
 This tests whether local GloVe neighbors can still guide search when the real
@@ -242,7 +277,8 @@ game likely uses a different embedding model.
 
 ```text
 --game {local,api}              Game backend
---solver {llm,embedding}        Solver strategy
+--method {llm_only,ea_llm,ea_llm_pivot,embedding}
+                                  Solver method
 --target TARGET                 Target word for local game
 --game-number GAME_NUMBER       Real Contexto game number
 --max-generations N             Generation budget
@@ -253,7 +289,7 @@ game likely uses a different embedding model.
 --api-key API_KEY               LLM API key override
 --glove-path PATH               GloVe embedding file path
 --game-embedding-path PATH      Embedding file used by LocalGame
---solver-embedding-path PATH    Embedding file used by SolverEmbedding
+--solver-embedding-path PATH    Embedding file used by embedding method
 --llm-workers N                 Parallel LLM generation calls
 --seed-count N                  Random seed words for embedding solver
 --active-count N                Active words retained by embedding solver
@@ -266,14 +302,14 @@ game likely uses a different embedding model.
 Run local aligned embedding experiments:
 
 ```powershell
-python -m contexto_solver.experiment --targets cat,dog,ivory --mode aligned --solver embedding --random-seed 123
+python -m contexto_solver.experiment --targets cat,dog,ivory --mode aligned --method embedding --random-seed 123
 ```
 
 Run local non-aligned embedding experiments by using different embedding files
 for the local game and solver:
 
 ```powershell
-python -m contexto_solver.experiment --targets cat,dog,ivory --mode non_aligned --solver embedding --game-embedding-path data/embeddings/all-MiniLM-L6-v2.npz --solver-embedding-path data/glove.6B.300d.txt
+python -m contexto_solver.experiment --targets cat,dog,ivory --mode non_aligned --method embedding --game-embedding-path data/embeddings/all-MiniLM-L6-v2.npz --solver-embedding-path data/glove.6B.300d.txt
 ```
 
 This compares a MiniLM local-game backend against a GloVe embedding solver. You
@@ -296,6 +332,11 @@ Pivot-on/off local LLM matrices can be analyzed with:
 python -m contexto_solver.analyze_pivot_matrix --off traces/pivot_matrix_off.json --on traces/pivot_matrix_on.json --output-prefix traces/pivot_matrix
 ```
 
+After the method refactor, use `--method ea_llm` for pivot-off and
+`--method ea_llm_pivot` for pivot-on. The experiment summaries still include
+`enable_pivot` compatibility metadata so the existing analysis script can pair
+and analyze them.
+
 For run evidence and research-facing interpretation, see:
 
 - `docs/experiment_log.md`
@@ -310,9 +351,11 @@ Trace events include:
 - `INIT`: initial categories or seed words.
 - `GUESS`: a submitted word and returned rank.
 - `SELECT`: selected active hypotheses or words.
-- `MUTATE`: specialized child hypotheses from LLM solver.
-- `CROSSOVER`: combined hypotheses from LLM solver.
+- `MUTATE`: specialized child hypotheses from EA+LLM methods.
+- `CROSSOVER`: combined hypotheses from EA+LLM methods.
 - `LOCAL_SEARCH`: focused guesses near a strong word.
+- `PIVOT_TRIGGERED`: pivot operator results for `ea_llm_pivot`.
+- `PIVOT_RESOLUTION`: whether a pivot was followed by rank improvement.
 - `SOLVED`: answer found.
 - `FAILED`: generation budget exhausted.
 
@@ -337,7 +380,7 @@ STAGE1_VALIDATION_OK
 A local LLM run also solved target `cat`:
 
 ```text
-python main.py --game local --target cat --solver llm
+python main.py --game local --target cat --method ea_llm_pivot
 Status: SOLVED
 Best word: cat
 Best rank: 1
@@ -365,9 +408,9 @@ Recent documented runs show the current behavior more clearly:
 
 The local batch experiment runner can now compare:
 
-- LLM solver on local game.
-- Embedding solver with aligned game/solver embeddings.
-- Embedding solver with non-aligned game/solver embeddings.
+- Pure LLM, EA+LLM, EA+LLM+pivot, and embedding methods on local games.
+- Embedding method with aligned game/solver embeddings.
+- Embedding method with non-aligned game/solver embeddings.
 - GloVe, MiniLM, and MPNet embedding choices once the corresponding caches are
   available.
 
