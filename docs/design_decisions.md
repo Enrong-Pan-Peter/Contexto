@@ -162,9 +162,11 @@ Rationale: several difficult targets produced near-target stagnation where the
 solver found a strong clue but failed to identify the target relation.
 
 Research relevance: the pivot mechanism is a concrete intervention for local
-semantic stagnation. Its effectiveness is currently being evaluated in a paired
-pivot-on/off matrix; no final result should be claimed until that analysis is
-complete.
+semantic stagnation. The local and HPC pivot matrices now provide batch-level
+evidence that pivots improve aggregate speed and reduce failed-run variance, but
+they do not reliably solve `notorious`; target-level claims remain limited by
+n=5 per target. See `docs/findings.md` and `docs/experiment_log.md` for evidence
+and interpretation.
 
 ## Ollama Local LLM Backend
 

@@ -41,6 +41,34 @@ belong in `docs/findings.md`; algorithmic rationale belongs in
 
 ## Batch Experiments
 
+### 2026-05-19 — HPC Pivot Evaluation Matrix, Qwen3 14B
+
+- Evidence level: replicated batch-level comparison on cloud compute resources,
+  15 paired runs across `notorious`, `herbaceous`, and `superficial`, pivot
+  off/on, Ollama `qwen3:14b`, aligned local game, and a 50-generation cap.
+- Analysis outputs:
+  [`pivot_matrix_20260519_hpc_analysis.json`](../traces/pivot_matrix_20260519_hpc_analysis.json),
+  [`pivot_matrix_20260519_hpc_condition_stats.csv`](../traces/pivot_matrix_20260519_hpc_condition_stats.csv),
+  [`pivot_matrix_20260519_hpc_paired_stats.csv`](../traces/pivot_matrix_20260519_hpc_paired_stats.csv),
+  and [`pivot_matrix_20260519_hpc_combined_runs.csv`](../traces/pivot_matrix_20260519_hpc_combined_runs.csv).
+- Aggregate result from `pivot_matrix_20260519_hpc_condition_stats.csv`: pivot
+  off solved 9/15 runs (60%), median 633 solved-run guesses, and median 41
+  generations. Pivot on solved 10/15 runs (67%), median 270 solved-run guesses,
+  and median 18 generations.
+- Paired statistics from `pivot_matrix_20260519_hpc_paired_stats.csv`: solved-run
+  guesses improved with Wilcoxon p=0.03125 and Cliff's delta -0.796 over seven
+  paired solved comparisons. Generations improved with Wilcoxon p=0.04977 and
+  Cliff's delta -0.356 over all 15 pairs.
+- Per-target result from `pivot_matrix_20260519_hpc_condition_stats.csv`:
+  `herbaceous` strengthened under pivot on (4/5 -> 5/5 solved; median
+  generations 41 -> 8). `notorious` remained hard in both conditions (1/5 solved
+  and median 50 generations), but failed-run best-rank spread narrowed
+  substantially (unsolved best-rank IQR 60.5 -> 2.5). `superficial` was more
+  mixed than in the earlier local matrix (both conditions solved 4/5; median
+  generations 29 -> 12).
+- Finding link:
+  [`docs/findings.md`](findings.md#2026-05-19--hpc-pivot-replication-strengthens-aggregate-speed-claim-but-weakens-per-target-certainty).
+
 ### 2026-05-13 — Pivot Evaluation Matrix, Qwen3 14B
 
 - Evidence level: batch-level repeated-run comparison, 15 paired runs across
