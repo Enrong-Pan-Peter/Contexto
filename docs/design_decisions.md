@@ -193,6 +193,34 @@ runs, provider/model metadata, per-target breakdowns, solved-only guess
 statistics, unsolved best-rank summaries, Wilcoxon signed-rank tests, and
 Cliff's delta.
 
+## Trace Visualization as Post-Hoc Analysis
+
+Decision: trajectory plots live in `contexto_solver.plot_trajectory` as a
+standalone analysis script, separate from solvers, methods, game backends, and
+the trace schema.
+
+Rationale: visualizations are useful for diagnosing search behavior, but they
+should not affect solver decisions or require new fields in existing traces.
+The plotting module therefore reconstructs best-so-far, active-hypothesis, and
+population-level trajectories from already-recorded events.
+
+Projection rationale: PCA is deterministic and reports explained variance, but
+single-run checks on `superficial` showed low two-component variance in the
+target neighborhood. UMAP and PaCMAP were added as qualitative projection
+options for inspection, with fixed `random_state=42` and a fit-then-transform
+workflow. The plotting code projects each unique word once and reuses that
+coordinate so repeated words land at the same position.
+
+Rank and distance rationale: rank trajectories preserve the game-facing signal
+without requiring embeddings. Cosine-distance trajectories use the embedding
+model that produced the local trace to show whether rank improvements correspond
+to movement toward the target in that model's geometry.
+
+Research relevance: these plots are diagnostic evidence for individual runs and
+small comparisons, not performance estimates by themselves. Claims based on
+figures should cite the underlying traces and distinguish qualitative single-run
+inspection from repeated-run or batch-level summaries.
+
 ## Future Diversity Direction
 
 Observation: the project has discussed exploration/exploitation balance and

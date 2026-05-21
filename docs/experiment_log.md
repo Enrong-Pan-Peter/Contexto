@@ -39,6 +39,36 @@ belong in `docs/findings.md`; algorithmic rationale belongs in
 | 2026-05-06 15:15 | local GloVe | LLM | `superficial` | not solved | 348 | 20 | `subtle` / 13 | `traces/llm_local_superficial_20260506_151506.json` |
 | 2026-05-07 13:33 | local GloVe | Ollama `qwen3:14b` | `superficial` | solved | 388 | 15 | `superficial` / 1 | `traces/llm_local_superficial_20260507_133325.json` |
 
+## Analysis Artifacts
+
+### 2026-05-21 — Trajectory Visualizations for `superficial` Traces
+
+- Evidence level: qualitative single-run visualization, not a repeated-run or
+  batch-level performance result.
+- Code: [`contexto_solver/plot_trajectory.py`](../contexto_solver/plot_trajectory.py).
+- Compared traces:
+  [`llm_local_superficial_20260507_133325.json`](../traces/llm_local_superficial_20260507_133325.json)
+  solved with Ollama `qwen3:14b`, and
+  [`llm_local_superficial_20260506_151008.json`](../traces/llm_local_superficial_20260506_151008.json)
+  failed with best word `visceral`, rank 41.
+- Generated rank plots:
+  [`llm_local_superficial_20260507_133325_rank.png`](../figures/llm_local_superficial_20260507_133325_rank.png)
+  and
+  [`llm_local_superficial_20260506_151008_rank.png`](../figures/llm_local_superficial_20260506_151008_rank.png).
+- Generated distance plots using `data/glove.6B.300d.txt`:
+  [`llm_local_superficial_20260507_133325_distance.png`](../figures/llm_local_superficial_20260507_133325_distance.png)
+  and
+  [`llm_local_superficial_20260506_151008_distance.png`](../figures/llm_local_superficial_20260506_151008_distance.png).
+- Generated PaCMAP trajectory plots using `data/glove.6B.300d.txt`:
+  [`llm_local_superficial_20260507_133325_pacmap.png`](../figures/llm_local_superficial_20260507_133325_pacmap.png)
+  and
+  [`llm_local_superficial_20260506_151008_pacmap.png`](../figures/llm_local_superficial_20260506_151008_pacmap.png).
+- Visual checks: the solved rank plot reaches rank 1, the solved distance plot
+  reaches cosine distance 0, and the solved PaCMAP run reported a target/guess
+  coordinate delta of 0 for `superficial`. These are consistency checks for the
+  visualization pipeline and the two selected traces, not general claims about
+  solver performance.
+
 ## Batch Experiments
 
 ### 2026-05-19 — HPC Pivot Evaluation Matrix, Qwen3 14B

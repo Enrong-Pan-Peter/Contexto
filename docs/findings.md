@@ -8,6 +8,37 @@ belongs in `docs/design_decisions.md`.
 Entries are in reverse chronological order. Claims are phrased according to the
 current evidence level; unresolved or incomplete results are marked explicitly.
 
+## 2026-05-21 — Trajectory Visualizations Clarify Two `superficial` Runs, But Remain Qualitative
+
+The new trajectory plots provide a clearer qualitative view of two local GloVe
+`superficial` runs: one solved Ollama run and one earlier unsolved LLM run. The
+rank and distance plots confirm the expected endpoint behavior for these traces:
+the solved run reaches rank 1 and cosine distance 0, while the unsolved run
+plateaus above the target. The projection plots are useful for inspection, but
+they should not be treated as quantitative evidence by themselves.
+
+Evidence:
+- Analysis log entry:
+  [`2026-05-21 trajectory visualizations`](experiment_log.md#2026-05-21--trajectory-visualizations-for-superficial-traces).
+- Code:
+  [`contexto_solver/plot_trajectory.py`](../contexto_solver/plot_trajectory.py).
+- Solved trace:
+  [`llm_local_superficial_20260507_133325.json`](../traces/llm_local_superficial_20260507_133325.json).
+- Unsolved trace:
+  [`llm_local_superficial_20260506_151008.json`](../traces/llm_local_superficial_20260506_151008.json).
+- Generated figures:
+  [`solved rank`](../figures/llm_local_superficial_20260507_133325_rank.png),
+  [`solved distance`](../figures/llm_local_superficial_20260507_133325_distance.png),
+  [`solved PaCMAP`](../figures/llm_local_superficial_20260507_133325_pacmap.png),
+  [`unsolved rank`](../figures/llm_local_superficial_20260506_151008_rank.png),
+  [`unsolved distance`](../figures/llm_local_superficial_20260506_151008_distance.png),
+  and [`unsolved PaCMAP`](../figures/llm_local_superficial_20260506_151008_pacmap.png).
+
+Interpretation: these plots support trace-level diagnosis of how a run moves
+through rank space and embedding space. They do not add a batch-level result.
+Any claim that projection geometry explains success or failure remains uncertain
+until repeated traces are compared systematically.
+
 ## 2026-05-19 — HPC Pivot Replication Strengthens Aggregate Speed Claim But Weakens Per-Target Certainty
 
 The cloud-compute replication of the pivot matrix supports the same aggregate

@@ -382,6 +382,48 @@ Subtleties:
 - Summary files are rewritten after each completed run so interrupted batches
   can be resumed without losing completed results.
 
+### `contexto_solver.plot_trajectory`
+
+Standalone trace-visualization and trajectory-analysis script.
+
+Main function:
+- Reads existing solver trace JSON files from `traces/`.
+- Loads embeddings through `EmbeddingModel` only when a plot needs geometry.
+- Computes target-neighborhood explained variance with PCA.
+- Projects single-run search trajectories into 2D with PCA, UMAP, or PaCMAP.
+- Plots rank trajectories and cosine-distance-to-target trajectories directly
+  from traces.
+- Writes figures to `figures/` by default, or to a user-specified `--output`.
+
+Main interactions:
+- Consumes generated traces; it does not participate in solving or batch
+  execution.
+- Uses `config.GAME_EMBEDDING_PATH` as the default embedding path for
+  embedding-dependent analyses.
+- Uses `EmbeddingModel` for GloVe text files and `.npz` embedding caches.
+- Uses trace event fields such as `RUN_CONFIG.details.target`, `GUESS`,
+  per-event `best_word`/`best_rank`, and serialized hypotheses to reconstruct
+  trajectories.
+
+Subtleties:
+- `--plot-type single` is the default CLI mode. Additional modes are `multi`,
+  `rank`, `distance`, and `variance`; the older `--variance` shortcut remains
+  supported.
+- `rank` plots need only a trace. `distance`, `single`, `multi`, and projection
+  variance checks need an embedding model matching the trace's local-game
+  embedding when interpreting geometric paths.
+- UMAP and PaCMAP are fitted on the target neighborhood and then all projected
+  words are transformed through a shared per-word coordinate cache. This keeps
+  repeated words, such as a target that is later guessed, at identical
+  coordinates.
+- Active-hypothesis centroid, rank, and distance trajectories are reconstructed
+  from trace events. Because traces store category names rather than stable
+  hypothesis IDs, duplicate category names produce a warning and make those
+  reconstructed population-level lines approximate.
+- Plotting dependencies are intentionally local to the analysis module; solver
+  code should not import Matplotlib, UMAP, PaCMAP, or scikit-learn projection
+  APIs.
+
 ### `contexto_solver.play`
 
 Manual local-game terminal interface.
@@ -441,6 +483,20 @@ Current outputs:
 Subtleties:
 - Trace files are evidence for experiments, but they can be large.
 - Generated traces should not be treated as source modules.
+
+### `figures/`
+
+Generated visualization outputs live here.
+
+Current outputs:
+- Single-run trajectory plots from `contexto_solver.plot_trajectory`.
+- Rank and distance trajectory plots for trace inspection.
+- Projection comparison figures for PCA, UMAP, or PaCMAP views.
+
+Subtleties:
+- Figures are analysis artifacts, not runtime inputs.
+- They should be cited as evidence for qualitative inspection only unless tied
+  to repeated-run summaries or batch-level statistics.
 
 ### `docs/`
 
@@ -503,6 +559,9 @@ Before modifying a component, check these likely dependents:
   docs, and any scripts that read summaries.
 - Trace event names/details: update solvers, `Logger` consumers, documentation,
   and any manual analysis assumptions.
+- Analysis visualizations: update `contexto_solver.plot_trajectory`,
+  `requirements.txt`, and docs when trace interpretation, projection methods, or
+  generated figure conventions change.
 
 ## Preserved Invariants
 
@@ -518,3 +577,5 @@ Before modifying a component, check these likely dependents:
 - Root wrappers should remain thin.
 - Generated traces and experiment summaries should not become required inputs
   for normal single-run solving.
+- Analysis scripts may read traces and embeddings, but they must not modify
+  solver behavior, game backends, or trace schemas.

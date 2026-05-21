@@ -206,6 +206,29 @@ Research value: this replication makes the aggregate pivot-speed claim more
 defensible while clarifying that per-target effects at n=5 should remain
 illustrative rather than definitive.
 
+### 2026-05-21 — Trace Trajectory Visualization Tools
+
+Evidence:
+- [`contexto_solver/plot_trajectory.py`](../contexto_solver/plot_trajectory.py)
+- [`figures/llm_local_superficial_20260507_133325_rank.png`](../figures/llm_local_superficial_20260507_133325_rank.png)
+- [`figures/llm_local_superficial_20260507_133325_distance.png`](../figures/llm_local_superficial_20260507_133325_distance.png)
+- [`figures/llm_local_superficial_20260507_133325_pacmap.png`](../figures/llm_local_superficial_20260507_133325_pacmap.png)
+- [`figures/llm_local_superficial_20260506_151008_rank.png`](../figures/llm_local_superficial_20260506_151008_rank.png)
+- [`figures/llm_local_superficial_20260506_151008_distance.png`](../figures/llm_local_superficial_20260506_151008_distance.png)
+- [`figures/llm_local_superficial_20260506_151008_pacmap.png`](../figures/llm_local_superficial_20260506_151008_pacmap.png)
+
+Milestones:
+- Added a standalone trajectory plotting module for existing trace JSON files.
+- Added target-neighborhood variance checks, single-run 2D projections, rank
+  trajectories, cosine-distance trajectories, and PCA/UMAP/PaCMAP projection
+  options.
+- Verified the visualization pipeline on one solved and one unsolved
+  `superficial` trace generated with the local GloVe game.
+
+Research value: these plots improve qualitative trace diagnosis and help compare
+individual trajectories, but they are not a substitute for repeated-run or
+batch-level evidence.
+
 ## Current Open Questions
 
 - Should work continue directly on pivot direction selection, given the completed
