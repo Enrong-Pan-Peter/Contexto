@@ -8,6 +8,71 @@ belongs in `docs/design_decisions.md`.
 Entries are in reverse chronological order. Claims are phrased according to the
 current evidence level; unresolved or incomplete results are marked explicitly.
 
+## 2026-05-19 — HPC Pivot Replication Strengthens Aggregate Speed Claim But Weakens Per-Target Certainty
+
+The cloud-compute replication of the pivot matrix supports the same aggregate
+direction as the earlier local matrix: enabling pivots reduces solved-run guess
+counts, reduces generation counts, and narrows failed-run variance. The strongest
+paper-level claim is therefore aggregate and batch-level: on these two small
+matrices, the stall-pivot method appears to improve speed and stabilize failures,
+but it does not reliably solve the hardest target.
+
+Evidence:
+- Experiment log entry:
+  [`2026-05-19 HPC Pivot Evaluation Matrix`](experiment_log.md#2026-05-19--hpc-pivot-evaluation-matrix-qwen3-14b).
+- HPC analysis outputs:
+  [`pivot_matrix_20260519_hpc_analysis.json`](../traces/pivot_matrix_20260519_hpc_analysis.json),
+  [`pivot_matrix_20260519_hpc_condition_stats.csv`](../traces/pivot_matrix_20260519_hpc_condition_stats.csv),
+  [`pivot_matrix_20260519_hpc_paired_stats.csv`](../traces/pivot_matrix_20260519_hpc_paired_stats.csv), and
+  [`pivot_matrix_20260519_hpc_combined_runs.csv`](../traces/pivot_matrix_20260519_hpc_combined_runs.csv).
+- Earlier local comparison outputs:
+  [`pivot_matrix_analysis.json`](../traces/pivot_matrix_analysis.json),
+  [`pivot_matrix_condition_stats.csv`](../traces/pivot_matrix_condition_stats.csv),
+  [`pivot_matrix_paired_stats.csv`](../traces/pivot_matrix_paired_stats.csv), and
+  [`pivot_matrix_combined_runs.csv`](../traces/pivot_matrix_combined_runs.csv).
+- Aggregate HPC condition stats: pivot off solved 9/15 runs with median 633
+  solved-run guesses and median 41 generations; pivot on solved 10/15 runs with
+  median 270 solved-run guesses and median 18 generations.
+- Aggregate HPC paired stats: solved-run guesses improved with Wilcoxon p=0.03125
+  and Cliff's delta -0.796 over seven paired solved comparisons. Generations
+  improved with Wilcoxon p=0.04977 and Cliff's delta -0.356 over all 15 paired
+  runs.
+- Compared with the earlier local matrix, solve rates stayed within one run
+  (`8/15 -> 10/15` locally, `9/15 -> 10/15` on HPC), and the generations effect
+  stayed directionally consistent (median difference -19 locally, -11 on HPC;
+  both p approximately 0.05).
+
+Robust patterns across the local and HPC matrices:
+- Aggregate speed improvement is the most stable result. The solved-guess paired
+  test strengthened from borderline local evidence (p=0.09375, Cliff's delta
+  -0.72, six pairs) to statistically significant HPC evidence (p=0.03125,
+  Cliff's delta -0.796, seven pairs).
+- `notorious` remains unsolved by the pivot mechanism as a hard case: both
+  matrices show 1/5 solved in both conditions and median 50 generations. The more
+  stable observation is variance collapse among failed `notorious` runs, not
+  reliable solving.
+- `herbaceous` is the cleanest per-target illustration of the pivot effect in the
+  HPC data: solve rate improved from 4/5 to 5/5, median generations dropped from
+  41 to 8, and the generation Cliff's delta was -1.0.
+
+Unstable or weaker patterns:
+- `superficial` is not a robust per-target success claim. In the earlier local
+  matrix it was the strongest pivot result; in the HPC matrix both conditions
+  solved 4/5, and the generation effect attenuated to median difference -4 with
+  Cliff's delta -0.40.
+- `notorious` solved-run guess counts are too unstable to quote as a target-level
+  performance estimate. The pivot-on condition has only one solved run in each
+  matrix, and the solved count changed from 159 locally to 657 on HPC.
+- Per-target solve rates are still noisy at n=5 per target. They should be used
+  as illustrative evidence, not as standalone claims.
+
+Interpretation: the HPC matrix strengthens the aggregate claim that pivots help
+speed and failure stability, and it gives one aggregate metric with p<0.05 where
+the local matrix was borderline. At the same time, the `superficial` swing shows
+that narrow per-target claims are underpowered. The writeup should emphasize the
+aggregate paired result and use target-level outcomes as explanatory examples
+rather than definitive target-specific conclusions.
+
 ## 2026-05-13 — Pivot Matrix Shows Faster Stall Recovery But Not a Complete Unblock
 
 The completed pivot evaluation matrix provides batch-level evidence that the

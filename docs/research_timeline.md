@@ -182,6 +182,30 @@ Research value: this moves pivoting from single-run and repeated-run evidence to
 batch-level evidence, while preserving a clear open decision about whether the
 next step should continue pivot work or shift to another diversity mechanism.
 
+### 2026-05-19 — HPC Pivot Matrix Replication
+
+Evidence:
+- [`traces/pivot_matrix_20260519_hpc_analysis.json`](../traces/pivot_matrix_20260519_hpc_analysis.json)
+- [`traces/pivot_matrix_20260519_hpc_condition_stats.csv`](../traces/pivot_matrix_20260519_hpc_condition_stats.csv)
+- [`traces/pivot_matrix_20260519_hpc_paired_stats.csv`](../traces/pivot_matrix_20260519_hpc_paired_stats.csv)
+- [`traces/pivot_matrix_20260519_hpc_combined_runs.csv`](../traces/pivot_matrix_20260519_hpc_combined_runs.csv)
+- [`docs/experiment_log.md`](experiment_log.md#2026-05-19--hpc-pivot-evaluation-matrix-qwen3-14b)
+- [`docs/findings.md`](findings.md#2026-05-19--hpc-pivot-replication-strengthens-aggregate-speed-claim-but-weakens-per-target-certainty)
+
+Milestones:
+- Re-ran the pivot off/on matrix on cloud compute resources for the same target
+  set and 50-generation cap.
+- Replicated the aggregate direction of the local matrix: pivots reduced
+  solved-run guesses and generations, while narrowing failed-run variance.
+- Strengthened the aggregate solved-guess evidence from borderline local
+  evidence to a statistically significant HPC paired result.
+- Identified instability in per-target conclusions: `herbaceous` strengthened,
+  `superficial` weakened, and `notorious` remained difficult.
+
+Research value: this replication makes the aggregate pivot-speed claim more
+defensible while clarifying that per-target effects at n=5 should remain
+illustrative rather than definitive.
+
 ## Current Open Questions
 
 - Should work continue directly on pivot direction selection, given the completed
