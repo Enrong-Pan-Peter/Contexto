@@ -17,6 +17,7 @@ from .logger import Logger
 from .methods.ea_core import EALLMConfig
 from .methods.ea_llm import EALLMMethod
 from .methods.ea_llm_pivot import EALLMPivotConfig, EALLMPivotMethod
+from .methods.ea_llm_self_adaptive import EALLMSelfAdaptiveConfig, EALLMSelfAdaptiveMethod
 from .methods.embedding import EmbeddingConfig, EmbeddingMethod
 from .methods.llm_only import LLMOnlyConfig, LLMOnlyMethod
 
@@ -120,6 +121,11 @@ def _write_outputs(
             ),
             "random_seed": args.random_seed,
             "enable_pivot": _enable_pivot_metadata(args.method),
+            "self_adaptive_mu": config.SELF_ADAPTIVE_MU if args.method == "ea_llm_self_adaptive" else None,
+            "self_adaptive_concentration": (
+                config.SELF_ADAPTIVE_CONCENTRATION if args.method == "ea_llm_self_adaptive" else None
+            ),
+            "self_adaptive_sigma_floor": config.SELF_ADAPTIVE_SIGMA_FLOOR if args.method == "ea_llm_self_adaptive" else None,
             "ea_llm_pivot_stall_no_improvement_generations": (
                 config.EA_LLM_PIVOT_STALL_NO_IMPROVEMENT_GENERATIONS if args.method == "ea_llm_pivot" else None
             ),
@@ -178,6 +184,11 @@ def _run_local_target(
             "llm_model": llm_model if method_family == "llm" else None,
             "random_seed": _run_seed(args.random_seed, run_index),
             "enable_pivot": _enable_pivot_metadata(args.method),
+            "self_adaptive_mu": config.SELF_ADAPTIVE_MU if args.method == "ea_llm_self_adaptive" else None,
+            "self_adaptive_concentration": (
+                config.SELF_ADAPTIVE_CONCENTRATION if args.method == "ea_llm_self_adaptive" else None
+            ),
+            "self_adaptive_sigma_floor": config.SELF_ADAPTIVE_SIGMA_FLOOR if args.method == "ea_llm_self_adaptive" else None,
             "ea_llm_pivot_stall_no_improvement_generations": (
                 config.EA_LLM_PIVOT_STALL_NO_IMPROVEMENT_GENERATIONS if args.method == "ea_llm_pivot" else None
             ),
@@ -400,6 +411,19 @@ def _build_llm_method(method: str, game, llm_client: LLMClient, logger: Logger, 
     }
     if method == "ea_llm":
         return EALLMMethod(game, llm_client, logger, EALLMConfig(**ea_kwargs))
+    if method == "ea_llm_self_adaptive":
+        return EALLMSelfAdaptiveMethod(
+            game,
+            llm_client,
+            logger,
+            EALLMSelfAdaptiveConfig(
+                **ea_kwargs,
+                mu=config.SELF_ADAPTIVE_MU,
+                concentration=config.SELF_ADAPTIVE_CONCENTRATION,
+                sigma_floor=config.SELF_ADAPTIVE_SIGMA_FLOOR,
+                random_seed=args.random_seed,
+            ),
+        )
     if method == "ea_llm_pivot":
         return EALLMPivotMethod(
             game,
@@ -425,7 +449,7 @@ def _method_family(method: str) -> str:
 def _enable_pivot_metadata(method: str) -> bool | None:
     if method == "ea_llm_pivot":
         return True
-    if method == "ea_llm":
+    if method in {"ea_llm", "ea_llm_self_adaptive"}:
         return False
     return None
 
@@ -435,7 +459,11 @@ def _parse_args() -> argparse.Namespace:
     parser.add_argument("--targets", help="Comma-separated local target words.")
     parser.add_argument("--target-file", help="File containing one target word per line.")
     parser.add_argument("--mode", choices=["aligned", "non_aligned"], default="aligned")
-    parser.add_argument("--method", choices=["llm_only", "ea_llm", "ea_llm_pivot", "embedding"], default="embedding")
+    parser.add_argument(
+        "--method",
+        choices=["llm_only", "ea_llm", "ea_llm_pivot", "ea_llm_self_adaptive", "embedding"],
+        default="embedding",
+    )
     parser.add_argument("--glove-path", help="Shortcut path used for both game and solver embeddings.")
     parser.add_argument("--game-embedding-path", help="Embedding file used by LocalGame.")
     parser.add_argument("--solver-embedding-path", help="Embedding file used by the embedding solver.")

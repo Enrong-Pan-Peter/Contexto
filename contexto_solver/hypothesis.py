@@ -3,6 +3,12 @@
 from __future__ import annotations
 
 from dataclasses import dataclass, field
+from uuid import uuid4
+
+import numpy as np
+
+
+N_OPERATOR_SIGMA_COMPONENTS = 4
 
 
 @dataclass
@@ -15,6 +21,12 @@ class Hypothesis:
     status: str = "active"
     parent: str | None = None
     origin: str = "init"
+    hypothesis_id: str = field(default_factory=lambda: uuid4().hex)
+    parent_id: str | None = None
+    sigma: np.ndarray = field(default_factory=lambda: np.full(N_OPERATOR_SIGMA_COMPONENTS, 0.25, dtype=np.float64))
+
+    def __post_init__(self) -> None:
+        self.sigma = self._validate_sigma(self.sigma)
 
     @property
     def best_rank(self) -> int:
@@ -31,8 +43,12 @@ class Hypothesis:
     def update(self, word: str, rank: int) -> None:
         self.words_tried[word.lower().strip()] = rank
 
+    def set_sigma(self, sigma: np.ndarray) -> None:
+        self.sigma = self._validate_sigma(sigma)
+
     def to_dict(self) -> dict:
         return {
+            "hypothesis_id": self.hypothesis_id,
             "category_name": self.category_name,
             "description": self.description,
             "words_tried": dict(sorted(self.words_tried.items(), key=lambda item: item[1])),
@@ -40,6 +56,15 @@ class Hypothesis:
             "best_rank": self.best_rank,
             "status": self.status,
             "parent": self.parent,
+            "parent_id": self.parent_id,
             "origin": self.origin,
+            "sigma": [float(value) for value in self.sigma],
         }
+
+    @staticmethod
+    def _validate_sigma(sigma: np.ndarray) -> np.ndarray:
+        sigma = np.asarray(sigma, dtype=np.float64)
+        assert sigma.shape == (N_OPERATOR_SIGMA_COMPONENTS,)
+        assert np.isclose(sigma.sum(), 1.0, atol=1e-6)
+        return sigma
 

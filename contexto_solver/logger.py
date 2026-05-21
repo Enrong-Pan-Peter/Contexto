@@ -21,6 +21,42 @@ class Logger:
         }
         self.trace.append(entry)
 
+    def log_operator_sampled(
+        self,
+        generation: int,
+        parent_id: str,
+        child_id: str,
+        sigma_snapshot: list[float] | None,
+        sampled_op: str,
+        method: str,
+    ) -> None:
+        self.log(
+            generation,
+            "OPERATOR_SAMPLED",
+            {
+                "parent_id": parent_id,
+                "child_id": child_id,
+                "sigma_snapshot": sigma_snapshot,
+                "sampled_op": sampled_op,
+                "method": method,
+            },
+        )
+
+    def log_sigma_trajectory(
+        self,
+        generation: int,
+        mean_sigma: list[float],
+        population_size: int,
+    ) -> None:
+        self.log(
+            generation,
+            "SIGMA_TRAJECTORY",
+            {
+                "mean_sigma": mean_sigma,
+                "population_size": population_size,
+            },
+        )
+
     def save(self, filepath: str | Path) -> Path:
         path = Path(filepath)
         path.parent.mkdir(parents=True, exist_ok=True)

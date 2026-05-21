@@ -545,12 +545,17 @@ class BaseEALLMMethod:
         category: dict[str, Any],
         parent: str | None = None,
         origin: str = "init",
+        parent_id: str | None = None,
+        sigma: Any = None,
     ) -> Hypothesis:
+        kwargs = {"sigma": sigma} if sigma is not None else {}
         return Hypothesis(
             category_name=str(category.get("name", "unnamed category")),
             description=str(category.get("description", "")),
             parent=parent,
+            parent_id=parent_id,
             origin=origin,
+            **kwargs,
         )
 
     def _log_solved(self) -> None:

@@ -61,6 +61,109 @@ Invalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.
 JSON schema:
 [{{"name": "direction name", "description": "short description", "words": ["word1", "word2", "word3"]}}]"""
 
+S_MUTATION_PROMPT = """Return only JSON, no markdown or explanation.
+The current hypothesis is "{name}".
+Description: {description}
+Results so far in this hypothesis: {words_tried}
+Best word so far: "{best_word}" with rank {best_rank}.
+
+Make a SMALL mutation: produce a child hypothesis that stays in the same
+conceptual neighborhood as "{name}" but narrows or refines it. The new starter
+words should be close semantic neighbors of "{best_word}" - synonyms, common
+descriptors, or words that frequently co-occur with it.
+
+For example, if the parent is "types of plants" and the best word is "shrub",
+a small mutation could be "woody plants" with starters like bush, hedge, thicket.
+
+Suggest one refined hypothesis. Include exactly {n} starter words that have not
+already been tried.
+Every word must be one common lowercase dictionary word.
+Do not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.
+Avoid these words: {all_guesses}
+Avoid these invalid or unrecognized words: {invalid_guesses}
+Do not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.
+JSON schema:
+{{"name": "direction name", "description": "short description", "words": ["word1", "word2", "word3"]}}"""
+
+M_MUTATION_PROMPT = """Return only JSON, no markdown or explanation.
+The current hypothesis is "{name}".
+Description: {description}
+Results so far in this hypothesis: {words_tried}
+Best word so far: "{best_word}" with rank {best_rank}.
+
+Make a MEDIUM mutation: produce a child hypothesis that reinterprets why
+"{best_word}" might have scored well, or shifts to a related sense, lexical
+register, or part of speech. The child should still be semantically anchored
+to "{best_word}" but approach it from a clearly different angle than "{name}".
+
+For example, if the parent is "food" and the best word is "bite", a medium
+mutation could be "animals that bite", "physical sensations from biting", or
+"clinical terms for biting and chewing" - each treats "bite" through a
+different lens.
+
+Suggest one reframed hypothesis. Include exactly {n} starter words that have
+not already been tried.
+Every word must be one common lowercase dictionary word.
+Do not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.
+Avoid these words: {all_guesses}
+Avoid these invalid or unrecognized words: {invalid_guesses}
+Do not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.
+JSON schema:
+{{"name": "direction name", "description": "short description", "words": ["word1", "word2", "word3"]}}"""
+
+ML_MUTATION_PROMPT = """Return only JSON, no markdown or explanation.
+The current hypothesis is "{name}".
+Description: {description}
+Results so far in this hypothesis: {words_tried}
+Best word so far: "{best_word}" with rank {best_rank}.
+
+Make a MEDIUM-LARGE mutation: produce a child hypothesis in an ADJACENT but
+distinct category that could still plausibly contain the hidden target given
+"{best_word}"'s rank. The child must NOT be a sub-category of "{name}" - it
+should sit alongside "{name}" in semantic space, not underneath it.
+
+For example, if the parent is "types of plants" and the best word is "shrub",
+an adjacent category could be "plant descriptors", "botanical terminology",
+"growth habits", or "ecological roles".
+
+Suggest one adjacent hypothesis. Include exactly {n} starter words that have
+not already been tried.
+Every word must be one common lowercase dictionary word.
+Do not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.
+Avoid these words: {all_guesses}
+Avoid these invalid or unrecognized words: {invalid_guesses}
+Do not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.
+JSON schema:
+{{"name": "category name", "description": "short description", "words": ["word1", "word2", "word3"]}}"""
+
+L_MUTATION_PROMPT = """Return only JSON, no markdown or explanation.
+The current hypothesis is "{name}".
+Description: {description}
+Best word so far: "{best_word}" with rank {best_rank}.
+Other active categories already being explored: {active_categories}
+
+Make a LARGE mutation: produce a child hypothesis in a broad, semantically
+substantial new direction that is unlike "{name}" and unlike the other active
+categories above. The goal is to escape the current semantic region and open
+up unexplored territory, while staying plausibly relevant given "{best_word}"'s
+rank - lower ranks mean the target is closer to "{best_word}", so the jump
+must remain in the same broad semantic area even when reframed.
+
+For example, if the parent is "types of plants" and "shrub" ranks 50, a large
+mutation could be "outdoor environments" or "rural landscape features" -
+clearly outside the plant taxonomy but still in a plausible neighborhood for
+a target close to "shrub".
+
+Suggest one new hypothesis. Include exactly {n} starter words that have not
+already been tried.
+Every word must be one common lowercase dictionary word.
+Do not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.
+Avoid these words: {all_guesses}
+Avoid these invalid or unrecognized words: {invalid_guesses}
+Do not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.
+JSON schema:
+{{"name": "direction name", "description": "short description", "words": ["word1", "word2", "word3"]}}"""
+
 CROSSOVER_PROMPT = """Return only JSON, no markdown or explanation.
 Category A is {a_name} with results {a_words}.
 Category B is {b_name} with results {b_words}.
@@ -227,6 +330,33 @@ class LLMClient:
             invalid_guesses=json.dumps(sorted(invalid_guesses or set())),
             n=n,
         )
+        return self._json_request_with_retry(prompt)
+
+    def build_operator_mutation_prompt(
+        self,
+        prompt_template: str,
+        hypothesis: Hypothesis,
+        all_guesses: set[str],
+        invalid_guesses: set[str] | None = None,
+        n: int = 3,
+        active_categories: list[str] | None = None,
+    ) -> str:
+        best_word, best_rank = self._global_best(hypothesis.words_tried)
+        prompt_values = {
+            "name": hypothesis.category_name,
+            "description": hypothesis.description,
+            "words_tried": json.dumps(hypothesis.words_tried, sort_keys=True),
+            "best_word": best_word,
+            "best_rank": best_rank,
+            "all_guesses": json.dumps(sorted(all_guesses)),
+            "invalid_guesses": json.dumps(sorted(invalid_guesses or set())),
+            "n": n,
+        }
+        if "{active_categories}" in prompt_template:
+            prompt_values["active_categories"] = json.dumps(active_categories or [])
+        return prompt_template.format(**prompt_values)
+
+    def complete_json_prompt(self, prompt: str) -> Any:
         return self._json_request_with_retry(prompt)
 
     def crossover(
