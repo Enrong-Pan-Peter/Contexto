@@ -28,7 +28,7 @@ main.py
   -> contexto_solver.main
     -> config
     -> choose game backend: LocalGame or ContextoAPI
-    -> choose method: llm_only, ea_llm, ea_llm_pivot, or embedding
+    -> choose method: llm_only, ea_llm, ea_llm_pivot, ea_llm_self_adaptive, or embedding
     -> Logger records RUN_CONFIG and solver events
     -> method.solve()
     -> trace JSON written to traces/
@@ -107,8 +107,8 @@ Subtleties:
 - `--method` is the method selector. The `solver` metadata field is retained as
   a compatibility family value (`llm` or `embedding`) so existing traces and
   analysis scripts can continue to group runs at a coarse level. In particular,
-  `solver=llm` can now mean `method=llm_only`, `method=ea_llm`, or
-  `method=ea_llm_pivot`.
+  `solver=llm` can now mean `method=llm_only`, `method=ea_llm`,
+  `method=ea_llm_pivot`, or `method=ea_llm_self_adaptive`.
 - `_default(value, default)` preserves explicit `0` CLI values; do not replace
   it with `value or default`.
 
@@ -273,7 +273,8 @@ State model for one LLM search category.
 
 Main function:
 - Stores category name, description, tried words and ranks, activity status,
-  parent, and origin.
+  parent, origin, stable hypothesis ID, canonical parent ID, and self-adaptive
+  sigma.
 - Computes best rank and best word for that category.
 - Serializes itself for traces.
 
@@ -285,8 +286,41 @@ Main interactions:
 
 Subtleties:
 - Empty hypotheses use a large sentinel best rank.
-- `parent` and `origin` are traceability fields; preserve them when adding new
-  hypothesis-generation operations.
+- `parent` and `origin` are compatibility traceability fields; preserve them
+  when adding new hypothesis-generation operations.
+- `parent_id` is the canonical lineage identifier for logging and analysis.
+  When a child is created from a parent hypothesis, `parent_id` should be set to
+  the parent's `hypothesis_id`.
+- `sigma` is serialized for self-adaptive analysis. It must always have four
+  components, sum to one within `1e-6`, and remain above the configured
+  self-adaptive floor for generated adaptive descendants.
+
+### `contexto_solver.operators`
+
+Shared self-adaptive mutation operator definitions.
+
+Main function:
+- Defines exactly four operator IDs: `s_mutation`, `m_mutation`,
+  `ml_mutation`, and `l_mutation`.
+- Provides uniform initial sigma vectors, categorical operator sampling, and
+  Dirichlet perturbation with a configurable floor.
+- Maps operator IDs to prompt constants owned by `contexto_solver.llm_client`.
+- Provides a prompt-leakage assertion used by the self-adaptive method and tests
+  to ensure sigma values are not included in mutation prompts.
+
+Main interactions:
+- Imported by `methods/ea_llm_self_adaptive.py` for mutation sampling.
+- Imports prompt constants from `llm_client`; prompt text is not duplicated in
+  the operator module.
+- Uses `numpy` arrays for sigma vectors.
+
+Subtleties:
+- Sigma vectors must have shape `(4,)`, sum to `1.0` within `1e-6`, and
+  generated adaptive descendants should satisfy `sigma.min() >=
+  SELF_ADAPTIVE_SIGMA_FLOOR`.
+- The LLM receives only the selected operator's formatted prompt. It never sees
+  sigma values, operator probabilities, or the list of alternatives.
+- Operator IDs are trace-facing identifiers through `OPERATOR_SAMPLED` events.
 
 ### `contexto_solver.methods`
 
@@ -308,6 +342,9 @@ Current method modules:
 - `methods/ea_llm.py`: EA+LLM without stall-pivot operators.
 - `methods/ea_llm_pivot.py`: EA+LLM with the stall detector and pivot A/B/C
   operators. Pivot settings are read from `EA_LLM_PIVOT_*` config values.
+- `methods/ea_llm_self_adaptive.py`: EA+LLM variant whose mutation and
+  crossover steps carry per-hypothesis operator probability vectors and emit
+  sigma telemetry.
 - `methods/embedding.py`: embedding nearest-neighbor baseline.
 - `methods/base.py`: shared `Game` and `SolverMethod` protocols.
 
@@ -325,11 +362,19 @@ Subtleties:
 - `ea_llm_pivot` is a subclass of the EA core because pivoting is attached at
   one post-generation hook point but needs access to EA internals such as
   hypotheses, known guesses, and guess/update logging.
+- `ea_llm_self_adaptive` is also built on the EA core but overrides mutation,
+  crossover, local search, and active-population capping. Mutation samples one
+  of the four backend operators from the parent's sigma, crossover perturbs the
+  average of the two parent sigma vectors, and local search is disabled by
+  default through the method config so adaptive runs do not inject uniform-sigma
+  local-search hypotheses. Selection, candidate generation, and deduplication
+  remain on the shared path.
 - `solver=llm` is no longer a unique method. Analysis scripts should inspect
-  `method` when distinguishing `llm_only`, `ea_llm`, and `ea_llm_pivot`.
+  `method` when distinguishing `llm_only`, `ea_llm`, `ea_llm_pivot`, and
+  `ea_llm_self_adaptive`.
 - The `enable_pivot` metadata field remains only as a compatibility field for
-  pivot matrix analysis: `ea_llm` writes `False`, `ea_llm_pivot` writes `True`,
-  and other methods write `None`.
+  pivot matrix analysis: `ea_llm` and `ea_llm_self_adaptive` write `False`,
+  `ea_llm_pivot` writes `True`, and other methods write `None`.
 - All methods must remain backend-agnostic. LLM methods use only rank feedback,
   not local embedding vectors or target internals.
 - The embedding method can know its own solver embedding model, but it should
@@ -344,6 +389,8 @@ Main function:
   details.
 - Writes full traces as indented JSON files.
 - Can print final summary from `SOLVED` or `FAILED` events.
+- Provides convenience methods for self-adaptive `OPERATOR_SAMPLED` and
+  `SIGMA_TRAJECTORY` events.
 
 Main interactions:
 - One `Logger` is created per run by `main` or `experiment`.
@@ -355,6 +402,15 @@ Subtleties:
 - The logger keeps traces in memory until the run ends.
 - The logger does not enforce event schemas; consistency is the responsibility
   of solvers and orchestrators.
+- Self-adaptive traces use `OPERATOR_SAMPLED` for each sampled child mutation
+  and `SIGMA_TRAJECTORY` for generation-level population means.
+  `OPERATOR_SAMPLED.details` includes `parent_id`, `child_id`,
+  `sigma_snapshot`, `child_sigma`, `sampled_op`, and `method`. Self-adaptive
+  `CROSSOVER` details extend the shared child record with `parent_a_sigma`,
+  `parent_b_sigma`, and `child_sigma_pre_perturbation`; the post-perturbation
+  child sigma is serialized in `child.sigma`. When adaptive local search is
+  muted, `LOCAL_SEARCH_DISABLED` may be logged once to make the suppression
+  visible in traces.
 
 ### `contexto_solver.experiment`
 
@@ -423,6 +479,29 @@ Subtleties:
 - Plotting dependencies are intentionally local to the analysis module; solver
   code should not import Matplotlib, UMAP, PaCMAP, or scikit-learn projection
   APIs.
+
+### `scripts/inspect_self_adaptive_trace.py`
+
+Standalone self-adaptive trace inspection script.
+
+Main function:
+- Reads an existing self-adaptive trace JSON file and writes inspection figures
+  next to that trace.
+- Performs five checks: perturbation magnitude, parent-id integrity, mean sigma
+  drift, best-lineage sigma trajectory, and operator usage.
+- Produces `mean_sigma_over_generations.png`,
+  `best_lineage_sigma_trajectory.png`, and `operator_usage_histogram.png` as
+  analysis outputs.
+
+Main interactions:
+- Consumes trace events such as `OPERATOR_SAMPLED`, `SIGMA_TRAJECTORY`,
+  serialized hypothesis records, and self-adaptive `CROSSOVER` child records.
+- Does not participate in solving or modify traces.
+
+Subtleties:
+- Legacy traces that predate full mutation-child records or crossover sigma
+  blending can be partially inspectable but may not support every lineage check.
+- Inspection output is evidence about a specific trace, not a batch-level result.
 
 ### `contexto_solver.play`
 
@@ -555,6 +634,9 @@ Before modifying a component, check these likely dependents:
 - Selection, mutation, local search, or deduplication: update
   `methods/ea_core.py`, verify traces, and consider effects on
   convergence/diversity.
+- Self-adaptive operators or sigma behavior: update `operators.py`,
+  `hypothesis.py`, `methods/ea_llm_self_adaptive.py`, prompt-leakage tests, and
+  trace inspection scripts.
 - Experiment summary fields: update `experiment`, CSV fieldnames, downstream
   docs, and any scripts that read summaries.
 - Trace event names/details: update solvers, `Logger` consumers, documentation,
@@ -569,6 +651,8 @@ Before modifying a component, check these likely dependents:
 - Invalid/unavailable guesses use `-1` at the game interface.
 - Local games should not use API rate limiting.
 - LLM methods should not access local embedding vectors.
+- Self-adaptive sigma must remain backend-only metadata; it should be logged for
+  analysis but never included in LLM prompts.
 - LLM provider choice should not change solver, hypothesis, game, or trace event
   interfaces beyond run-level provider/model metadata.
 - A selected LLM provider should fail clearly on provider-specific errors; do

@@ -3,6 +3,8 @@
 from __future__ import annotations
 
 from enum import Enum
+import json
+import time
 
 import numpy as np
 
@@ -83,15 +85,64 @@ def perturb_sigma(
 def assert_prompt_has_no_sigma_leak(prompt: str, sigma: np.ndarray, operator: Operator) -> None:
     phrase = OPERATOR_DISTINGUISHING_PHRASES[operator]
     if phrase not in prompt:
+        _agent_debug_log(
+            "contexto_solver/operators.py:assert_prompt_has_no_sigma_leak",
+            "missing distinguishing phrase",
+            {"operator": operator.value, "phrase": phrase, "prompt_length": len(prompt)},
+            "H2",
+        )
         raise AssertionError(f"Prompt for {operator.value} is missing distinguishing phrase {phrase!r}.")
 
     lowered = prompt.lower()
     forbidden_substrings = ("sigma", "σ", "probability")
     for substring in forbidden_substrings:
         if substring in lowered:
+            index = lowered.find(substring)
+            _agent_debug_log(
+                "contexto_solver/operators.py:assert_prompt_has_no_sigma_leak",
+                "forbidden substring detected",
+                {
+                    "operator": operator.value,
+                    "substring": substring,
+                    "index": index,
+                    "context": prompt[max(0, index - 120) : index + len(substring) + 120],
+                    "sigma": [float(value) for value in validate_sigma(sigma)],
+                },
+                "H1,H2,H4",
+            )
             raise AssertionError(f"Prompt for {operator.value} leaked forbidden substring {substring!r}.")
 
     for value in validate_sigma(sigma):
         token = f"{value:.2f}"
         if token in prompt:
+            index = prompt.find(token)
+            _agent_debug_log(
+                "contexto_solver/operators.py:assert_prompt_has_no_sigma_leak",
+                "sigma numeric literal detected",
+                {
+                    "operator": operator.value,
+                    "token": token,
+                    "index": index,
+                    "context": prompt[max(0, index - 120) : index + len(token) + 120],
+                    "sigma": [float(item) for item in validate_sigma(sigma)],
+                },
+                "H3,H4",
+            )
             raise AssertionError(f"Prompt for {operator.value} leaked sigma numeric literal {token!r}.")
+
+
+def _agent_debug_log(location: str, message: str, data: dict[str, object], hypothesis_id: str) -> None:
+    try:
+        payload = {
+            "sessionId": "4b7b24",
+            "runId": "pre-fix",
+            "hypothesisId": hypothesis_id,
+            "location": location,
+            "message": message,
+            "data": data,
+            "timestamp": int(time.time() * 1000),
+        }
+        with open("debug-4b7b24.log", "a", encoding="utf-8") as log_file:
+            log_file.write(json.dumps(payload, separators=(",", ":")) + "\n")
+    except Exception:
+        pass

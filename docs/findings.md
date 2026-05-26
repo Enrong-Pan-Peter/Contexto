@@ -8,6 +8,85 @@ belongs in `docs/design_decisions.md`.
 Entries are in reverse chronological order. Claims are phrased according to the
 current evidence level; unresolved or incomplete results are marked explicitly.
 
+## 2026-05-26 — Self-Adaptive Sigma Telemetry Shows Trace-Level Adaptation Signals
+
+Finding: sigma drifts away from uniform during self-adaptive runs.
+
+Status: Repeated-run evidence — observed across available self-adaptive traces
+for `notorious` and `superficial`, but not yet a batch-level comparison.
+
+Evidence:
+- Notorious trace:
+  [`ea_llm_self_adaptive_local_notorious_20260522_035806.json`](../traces/ea_llm_self_adaptive_local_notorious_20260522_035806.json).
+- Superficial pre-crossover-blending trace:
+  [`ea_llm_self_adaptive_local_superficial_20260525_194148.json`](../traces/ea_llm_self_adaptive_local_superficial_20260525_194148.json).
+- Superficial post-crossover-blending trace:
+  [`ea_llm_self_adaptive_local_superficial_20260526_082930.json`](../traces/ea_llm_self_adaptive_local_superficial_20260526_082930.json).
+- Inspection figures:
+  [`notorious mean sigma`](../traces/ea_llm_self_adaptive_local_notorious_20260522_035806_inspection/mean_sigma_over_generations.png),
+  [`superficial 20260525 mean sigma`](../traces/ea_llm_self_adaptive_local_superficial_20260525_194148_inspection/mean_sigma_over_generations.png),
+  and [`superficial 20260526 mean sigma`](../traces/ea_llm_self_adaptive_local_superficial_20260526_082930_inspection/mean_sigma_over_generations.png).
+- Inspection script:
+  [`scripts/inspect_self_adaptive_trace.py`](../scripts/inspect_self_adaptive_trace.py).
+
+Finding: sigma adapts differently for different targets. The notorious run ended
+with elevated `l_mutation` mass, while the inspected superficial runs ended with
+different mixes, including elevated `s_mutation` and/or `l_mutation`.
+
+Status: Uncertain / needs more data — n=2 target families in the current
+self-adaptive evidence set, with only one main run per target family. Needs
+batch comparison across 5-8 targets and multiple seeds before this can support
+an XAI claim.
+
+Finding: winning or near-winning lineages can carry sigma profiles that differ
+from the population mean. In the post-crossover-blending superficial trace, the
+best trace-level result reached `thin` rank 5 while the final population mean was
+`[0.2821, 0.2204, 0.2196, 0.2779]`; lineage-level interpretation still needs
+more systematic inspection.
+
+Status: Single-run observation — needs more lineage analyses to know whether
+this is a pattern.
+
+Evidence:
+- Trace:
+  [`ea_llm_self_adaptive_local_superficial_20260526_082930.json`](../traces/ea_llm_self_adaptive_local_superficial_20260526_082930.json).
+- Best-lineage inspection figure:
+  [`best_lineage_sigma_trajectory.png`](../traces/ea_llm_self_adaptive_local_superficial_20260526_082930_inspection/best_lineage_sigma_trajectory.png).
+
+Finding: crossover sigma continuity is implemented and visible in traces after
+Fix 5. The pre-fix superficial run ended at rank 42 and had 50/50 uniform
+crossover child sigmas; the post-fix full superficial trace ended at rank 5 and
+had 50/50 crossover events with blended sigma metadata and no exactly uniform
+crossover child sigma.
+
+Status: Single-run observation — n=1 per condition, same seed. Suggestive only;
+needs seed replication before claiming an outcome improvement.
+
+Evidence:
+- Pre-fix trace:
+  [`ea_llm_self_adaptive_local_superficial_20260525_194148.json`](../traces/ea_llm_self_adaptive_local_superficial_20260525_194148.json).
+- Post-fix trace:
+  [`ea_llm_self_adaptive_local_superficial_20260526_082930.json`](../traces/ea_llm_self_adaptive_local_superficial_20260526_082930.json).
+- Code:
+  [`contexto_solver/methods/ea_llm_self_adaptive.py`](../contexto_solver/methods/ea_llm_self_adaptive.py).
+
+Finding: local search creates a uniform-sigma injection mechanism that can
+compete with sigma-adapted lineages. The mechanism is confirmed in code because
+base `_local_search()` creates a fresh `Hypothesis` without passing sigma; the
+adaptive method now disables this path by default.
+
+Status: Uncertain / needs more data — the mechanism is confirmed in code, but
+the empirical effect is a single-run observation from pre-Fix-6 traces and needs
+post-Fix-6 comparison.
+
+Evidence:
+- Code:
+  [`contexto_solver/methods/ea_core.py`](../contexto_solver/methods/ea_core.py)
+  and
+  [`contexto_solver/methods/ea_llm_self_adaptive.py`](../contexto_solver/methods/ea_llm_self_adaptive.py).
+- Trace with local-search parent-id artifacts:
+  [`ea_llm_self_adaptive_local_superficial_20260525_194148.json`](../traces/ea_llm_self_adaptive_local_superficial_20260525_194148.json).
+
 ## 2026-05-21 — Trajectory Visualizations Clarify Two `superficial` Runs, But Remain Qualitative
 
 The new trajectory plots provide a clearer qualitative view of two local GloVe

@@ -229,6 +229,79 @@ Research value: these plots improve qualitative trace diagnosis and help compare
 individual trajectories, but they are not a substitute for repeated-run or
 batch-level evidence.
 
+### 2026-05-22 — Self-Adaptive Mutation Method
+
+Evidence:
+- [`contexto_solver/operators.py`](../contexto_solver/operators.py)
+- [`contexto_solver/methods/ea_llm_self_adaptive.py`](../contexto_solver/methods/ea_llm_self_adaptive.py)
+- [`tests/test_self_adaptive_operators.py`](../tests/test_self_adaptive_operators.py)
+- [`scripts/inspect_self_adaptive_trace.py`](../scripts/inspect_self_adaptive_trace.py)
+- [`traces/ea_llm_self_adaptive_local_notorious_20260522_035806.json`](../traces/ea_llm_self_adaptive_local_notorious_20260522_035806.json)
+- [`docs/design_decisions.md`](design_decisions.md#self-adaptive-mutation-operators)
+
+Milestones:
+- Supervisor design discussion selected four mutation operators and `mu=5`;
+  the initial log-normal self-adaptation framing was replaced by Dirichlet
+  perturbation because sigma is a probability vector on the four-simplex.
+- Added `ea_llm_self_adaptive` as a separate EA+LLM method.
+- Added `operators.py` with four operator IDs, prompt mapping, operator
+  sampling, sigma perturbation, and uniform initial sigma.
+- Added four operator prompts in `llm_client.py`.
+- Single-run observation: completed the first available end-to-end
+  self-adaptive trace:
+  [`ea_llm_self_adaptive_local_herbaceous_20260521_214416.json`](../traces/ea_llm_self_adaptive_local_herbaceous_20260521_214416.json).
+- Added prompt-leakage checks to preserve the invariant that sigma remains
+  backend-only metadata.
+- Added a standalone self-adaptive trace inspection script for sigma drift,
+  parent lineage, operator usage, and best-lineage analysis.
+- Single-run observation: ran the `notorious` self-adaptive trace to rank 4
+  (`gangster`); the lineage inspection exposed a crossover uniform-sigma reset
+  and opaque adaptive lineage.
+- Added Fix 1 (`child_sigma` in `OPERATOR_SAMPLED`) and Fix 2 (full mutation
+  child records in `MUTATE.children`) to make mutation lineage inspectable.
+
+Research value: this adds an adaptive exploration-scale mechanism for future
+experiments. The current evidence is implementation and smoke-run validation,
+not a repeated-run performance result.
+
+### 2026-05-25 — Self-Adaptive Trace Diagnosis on `superficial`
+
+Evidence:
+- [`traces/ea_llm_self_adaptive_local_superficial_20260525_194148.json`](../traces/ea_llm_self_adaptive_local_superficial_20260525_194148.json)
+- [`docs/experiment_log.md`](experiment_log.md#self-adaptive-runs)
+- [`docs/findings.md`](findings.md#2026-05-26--self-adaptive-sigma-telemetry-shows-trace-level-adaptation-signals)
+
+Milestones:
+- Single-run observation: the `superficial` run stayed at `sharpness` rank 98
+  for 27 generations and later reached `medium` rank 42 through local search.
+- Uncertain / needs more data: trace inspection identified local-search
+  uniform-sigma injection as a mechanism that can enter the adaptive population;
+  the mechanism is confirmed in code, but the empirical effect needs
+  post-Fix-6 comparison.
+
+Research value: this separated implementation telemetry from an algorithmic
+confound that needed a method-local mitigation.
+
+### 2026-05-26 — Self-Adaptive Crossover and Local-Search Fixes
+
+Evidence:
+- [`contexto_solver/methods/ea_llm_self_adaptive.py`](../contexto_solver/methods/ea_llm_self_adaptive.py)
+- [`traces/ea_llm_self_adaptive_local_superficial_20260526_011632.json`](../traces/ea_llm_self_adaptive_local_superficial_20260526_011632.json)
+- [`traces/ea_llm_self_adaptive_local_superficial_20260526_082930.json`](../traces/ea_llm_self_adaptive_local_superficial_20260526_082930.json)
+
+Milestones:
+- Fix 5: implemented self-adaptive crossover sigma blending; the five-generation
+  smoke trace verified blended crossover metadata and non-uniform crossover
+  child sigma.
+- Single-run observation: the full post-Fix-5 `superficial` run reached `thin`
+  rank 5 and verified that crossover blending fired on every crossover event.
+- Fix 6: disabled local search by default in adaptive mode and added one-shot
+  `LOCAL_SEARCH_DISABLED` trace logging.
+
+Research value: this made self-adaptive lineage telemetry more continuous and
+removed the default uniform-sigma local-search injection path. No post-Fix-6
+full verification trace is present yet.
+
 ## Current Open Questions
 
 - Should work continue directly on pivot direction selection, given the completed
@@ -242,3 +315,5 @@ batch-level evidence.
   present; no explicit MAP-Elites plan or implementation exists in the repo.
 - How do LLM-guided search, aligned embedding search, and non-aligned embedding
   search compare under repeated local benchmarks?
+- Does self-adaptive operator selection improve solve rate, generation count, or
+  failed-run stability compared with fixed mutation and pivot-only methods?
