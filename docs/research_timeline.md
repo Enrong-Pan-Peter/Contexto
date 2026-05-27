@@ -288,6 +288,7 @@ Evidence:
 - [`contexto_solver/methods/ea_llm_self_adaptive.py`](../contexto_solver/methods/ea_llm_self_adaptive.py)
 - [`traces/ea_llm_self_adaptive_local_superficial_20260526_011632.json`](../traces/ea_llm_self_adaptive_local_superficial_20260526_011632.json)
 - [`traces/ea_llm_self_adaptive_local_superficial_20260526_082930.json`](../traces/ea_llm_self_adaptive_local_superficial_20260526_082930.json)
+- [`traces/ea_llm_self_adaptive_local_superficial_20260526_135302.json`](../traces/ea_llm_self_adaptive_local_superficial_20260526_135302.json)
 
 Milestones:
 - Fix 5: implemented self-adaptive crossover sigma blending; the five-generation
@@ -297,10 +298,15 @@ Milestones:
   rank 5 and verified that crossover blending fired on every crossover event.
 - Fix 6: disabled local search by default in adaptive mode and added one-shot
   `LOCAL_SEARCH_DISABLED` trace logging.
+- Single-run observation: the 15-generation post-Fix-6 verification run on
+  `superficial` verified 0 `LOCAL_SEARCH` events, 1 `LOCAL_SEARCH_DISABLED`
+  event, and non-uniform crossover child sigma for all 15 crossover events; it
+  also identified population diversity collapse as a new open issue.
 
 Research value: this made self-adaptive lineage telemetry more continuous and
-removed the default uniform-sigma local-search injection path. No post-Fix-6
-full verification trace is present yet.
+removed the default uniform-sigma local-search injection path. The post-Fix-6
+verification trace adds a new open question about diversity maintenance under
+fully adaptive selection.
 
 ## Current Open Questions
 

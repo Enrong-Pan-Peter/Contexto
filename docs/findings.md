@@ -38,6 +38,28 @@ self-adaptive evidence set, with only one main run per target family. Needs
 batch comparison across 5-8 targets and multiple seeds before this can support
 an XAI claim.
 
+Finding: within-target sigma variance is high across the currently inspected
+`superficial` runs. The pre-Fix-5 run ended at `[0.3242, 0.2467, 0.2262,
+0.2029]` (s-dominant), the post-Fix-5/pre-Fix-6 run ended at `[0.2821, 0.2204,
+0.2196, 0.2779]` (s and l elevated), and the post-Fix-5+6 verification run
+ended at `[0.3232, 0.3106, 0.1708, 0.1955]` (s and m elevated, ml and l
+depressed).
+
+Status: Uncertain / needs more data — these are single-seed runs under different
+code states, so they are not a controlled within-target comparison. The variance
+suggests sigma may be adapting to whichever semantic basin the population finds
+early, not solely to the target. This downgrades confidence in per-puzzle
+adaptation until a multi-seed batch on the same target and fixed code state is
+run.
+
+Evidence:
+- Pre-Fix-5 trace:
+  [`ea_llm_self_adaptive_local_superficial_20260525_194148.json`](../traces/ea_llm_self_adaptive_local_superficial_20260525_194148.json).
+- Post-Fix-5/pre-Fix-6 trace:
+  [`ea_llm_self_adaptive_local_superficial_20260526_082930.json`](../traces/ea_llm_self_adaptive_local_superficial_20260526_082930.json).
+- Post-Fix-5+6 verification trace:
+  [`ea_llm_self_adaptive_local_superficial_20260526_135302.json`](../traces/ea_llm_self_adaptive_local_superficial_20260526_135302.json).
+
 Finding: winning or near-winning lineages can carry sigma profiles that differ
 from the population mean. In the post-crossover-blending superficial trace, the
 best trace-level result reached `thin` rank 5 while the final population mean was
@@ -86,6 +108,31 @@ Evidence:
   [`contexto_solver/methods/ea_llm_self_adaptive.py`](../contexto_solver/methods/ea_llm_self_adaptive.py).
 - Trace with local-search parent-id artifacts:
   [`ea_llm_self_adaptive_local_superficial_20260525_194148.json`](../traces/ea_llm_self_adaptive_local_superficial_20260525_194148.json).
+- See also the population-diversity-collapse finding below: local search was
+  also serving as an unintended diversity-injection mechanism, and disabling it
+  exposed repeated crossover from the same parent pair in
+  [`ea_llm_self_adaptive_local_superficial_20260526_135302.json`](../traces/ea_llm_self_adaptive_local_superficial_20260526_135302.json).
+
+Finding: population diversity collapsed in the post-Fix-6 fully adaptive
+verification run. From generations 4-15, all 12 crossover events used the same
+two parents, identifiable by parent sigma values `[0.2340, 0.3191, 0.2606,
+0.1863]` and `[0.3604, 0.2763, 0.1740, 0.1892]`. By generation 2 the best rank
+was `medium`/42 in an artistic/sensory/medium semantic basin, and the trace did
+not record exploration of alternative senses such as shallow, skin-deep,
+trivial, or exterior after that point.
+
+Status: Single-run observation — this is one 15-generation verification run.
+Mechanism: self-adaptive `_crossover()` selects the top two active hypotheses by
+best rank; stable elite ranks meant the same hypotheses kept being selected.
+Sigma adaptation continued at the operator level, but all operators operated on
+parent material from the same neighborhood. Whether randomized parent selection,
+tournament selection, or another diversity mechanism would help is an open
+question pending supervisor discussion.
+
+Evidence:
+- Trace:
+  [`ea_llm_self_adaptive_local_superficial_20260526_135302.json`](../traces/ea_llm_self_adaptive_local_superficial_20260526_135302.json).
+- Relevant trace region: `CROSSOVER` events for generations 4-15.
 
 ## 2026-05-21 — Trajectory Visualizations Clarify Two `superficial` Runs, But Remain Qualitative
 

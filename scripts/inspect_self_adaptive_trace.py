@@ -31,6 +31,23 @@ class HypothesisRecord:
     order: int
 
 
+@dataclass
+class CrossoverRecord:
+    child_id: str
+    generation: int | None
+    order: int
+    parent_names: tuple[str | None, str | None]
+    parent_sigmas: tuple[np.ndarray | None, np.ndarray | None]
+
+
+@dataclass
+class LineageNode:
+    record: HypothesisRecord
+    crossover: CrossoverRecord | None
+    branches: list["LineageNode"]
+    termination: str | None = None
+
+
 def main() -> int:
     args = _parse_args()
     trace_path = Path(args.trace_path)
@@ -63,7 +80,7 @@ def main() -> int:
     sigma_ok = _check_population_mean_sigma(trace, out_dir)
     if sigma_ok is False:
         failures.append("population mean sigma")
-    if not _check_best_lineage(index, out_dir):
+    if not _check_best_lineage(trace, index, out_dir):
         failures.append("best lineage")
     if not _check_operator_usage(operator_events, trace, out_dir):
         failures.append("operator usage")
@@ -103,6 +120,60 @@ def _build_hypothesis_index(trace: list[dict[str, Any]]) -> dict[str, Hypothesis
         if operator_record is not None and operator_record.hypothesis_id not in index:
             index[operator_record.hypothesis_id] = operator_record
     return index
+
+
+def _build_crossover_index(trace: list[dict[str, Any]]) -> dict[str, CrossoverRecord]:
+    index: dict[str, CrossoverRecord] = {}
+    for order, event in enumerate(trace):
+        if event.get("event") != "CROSSOVER":
+            continue
+        details = _details(event)
+        child = details.get("child")
+        if not isinstance(child, dict):
+            continue
+        child_id = child.get("hypothesis_id")
+        if not isinstance(child_id, str):
+            continue
+
+        parent_names = _crossover_parent_names(details.get("parents"))
+        parent_sigmas = (
+            _coerce_sigma(details.get("parent_a_sigma")),
+            _coerce_sigma(details.get("parent_b_sigma")),
+        )
+        generation = event.get("generation")
+        index[child_id] = CrossoverRecord(
+            child_id=child_id,
+            generation=generation if isinstance(generation, int) else None,
+            order=order,
+            parent_names=parent_names,
+            parent_sigmas=parent_sigmas,
+        )
+    return index
+
+
+def _crossover_parent_names(value: Any) -> tuple[str | None, str | None]:
+    if not isinstance(value, list):
+        return (None, None)
+    names = [item if isinstance(item, str) else None for item in value[:2]]
+    while len(names) < 2:
+        names.append(None)
+    return (names[0], names[1])
+
+
+def _coerce_sigma(value: Any) -> np.ndarray | None:
+    if not isinstance(value, list):
+        return None
+    sigma = np.asarray(value, dtype=float)
+    return sigma if sigma.shape == (4,) else None
+
+
+def _records_by_name(index: dict[str, HypothesisRecord]) -> dict[str, list[HypothesisRecord]]:
+    records: dict[str, list[HypothesisRecord]] = {}
+    for record in index.values():
+        records.setdefault(record.name, []).append(record)
+    for records_for_name in records.values():
+        records_for_name.sort(key=lambda record: record.order)
+    return records
 
 
 def _iter_hypothesis_records(value: Any):
@@ -318,52 +389,192 @@ def _check_population_mean_sigma(trace: list[dict[str, Any]], out_dir: Path) -> 
     return not chaotic
 
 
-def _check_best_lineage(index: dict[str, HypothesisRecord], out_dir: Path) -> bool:
+def _check_best_lineage(
+    trace: list[dict[str, Any]],
+    index: dict[str, HypothesisRecord],
+    out_dir: Path,
+) -> bool:
     print("\n=== Check 4: Best-lineage sigma trajectory ===")
     ranked = [record for record in index.values() if record.best_rank is not None]
     if not ranked:
         print("No indexed hypothesis has best_rank; cannot compute best lineage.")
         return False
     best = min(ranked, key=lambda record: (record.best_rank, record.order))
-    lineage = []
-    seen: set[str] = set()
-    current: HypothesisRecord | None = best
-    terminated_at_crossover = False
-    while current is not None:
-        if current.hypothesis_id in seen:
-            raise RuntimeError(f"Cycle detected while walking parent_id at {current.hypothesis_id}.")
-        seen.add(current.hypothesis_id)
-        lineage.append(current)
-        if current.origin == "crossover":
-            terminated_at_crossover = True
-            break
-        if current.parent_id is None:
-            break
-        current = index.get(current.parent_id)
-
-    lineage = list(reversed(lineage))
-    sigma_matrix = np.vstack([record.sigma for record in lineage])
+    crossover_index = _build_crossover_index(trace)
+    name_index = _records_by_name(index)
+    ambiguity_notes: list[str] = []
+    lineage_tree = _walk_lineage_tree(
+        best,
+        index=index,
+        crossover_index=crossover_index,
+        name_index=name_index,
+        seen=set(),
+        ambiguity_notes=ambiguity_notes,
+    )
+    longest_branch = _longest_branch(lineage_tree)
+    plot_branch = list(reversed(longest_branch))
+    sigma_matrix = np.vstack([node.record.sigma for node in plot_branch])
+    crossover_depths = [index for index, node in enumerate(plot_branch) if node.crossover is not None]
     _plot_sigma_lines(
-        list(range(len(lineage))),
+        list(range(len(plot_branch))),
         sigma_matrix,
         "Best-lineage sigma trajectory",
         out_dir / "best_lineage_sigma_trajectory.png",
         x_label="Depth from root",
+        vertical_markers=crossover_depths,
     )
 
     print(f"Best hypothesis: {best.name}")
     print(f"Best word/rank: {best.best_word} / {best.best_rank:g}")
     print(f"Generation reached: {best.generation}")
-    print(f"Lineage length: {len(lineage)}")
-    if terminated_at_crossover:
-        print("Lineage walk terminated at a crossover ancestor.")
-    print("Lineage:")
-    for record in lineage:
+    print(f"Longest branch length: {len(longest_branch)}")
+    print("Plotted longest branch, root to best:")
+    for node in plot_branch:
+        record = node.record
+        marker = " [crossover]" if node.crossover is not None else ""
         print(
-            f"  ({record.hypothesis_id[:8]}, {record.name}, {record.best_word}, "
-            f"{record.best_rank}, {_fmt_array(record.sigma)})"
+            f"  ({record.hypothesis_id[:8]}, {record.name}, {record.origin}, "
+            f"{record.best_word}, {record.best_rank}, {_fmt_array(record.sigma)}){marker}"
         )
+    if ambiguity_notes:
+        print("Parent resolution notes:")
+        for note in ambiguity_notes:
+            print(f"  {note}")
+    print("Full lineage tree, best to roots:")
+    _print_lineage_tree(lineage_tree)
     return True
+
+
+def _walk_lineage_tree(
+    record: HypothesisRecord,
+    index: dict[str, HypothesisRecord],
+    crossover_index: dict[str, CrossoverRecord],
+    name_index: dict[str, list[HypothesisRecord]],
+    seen: set[str],
+    ambiguity_notes: list[str],
+) -> LineageNode:
+    if record.hypothesis_id in seen:
+        return LineageNode(record=record, crossover=None, branches=[], termination="cycle detected")
+    seen = set(seen)
+    seen.add(record.hypothesis_id)
+
+    if record.origin == "crossover":
+        crossover = crossover_index.get(record.hypothesis_id)
+        node = LineageNode(record=record, crossover=crossover, branches=[])
+        if crossover is None:
+            node.termination = "missing CROSSOVER event"
+            return node
+
+        missing: list[str] = []
+        for branch_index, label in enumerate(("parent_a", "parent_b")):
+            parent = _resolve_crossover_parent(crossover, branch_index, name_index, ambiguity_notes)
+            if parent is None:
+                missing.append(label)
+                continue
+            node.branches.append(
+                _walk_lineage_tree(
+                    parent,
+                    index=index,
+                    crossover_index=crossover_index,
+                    name_index=name_index,
+                    seen=seen,
+                    ambiguity_notes=ambiguity_notes,
+                )
+            )
+        if missing:
+            node.termination = "missing " + ", ".join(missing)
+        return node
+
+    if record.parent_id is None:
+        return LineageNode(record=record, crossover=None, branches=[], termination="parent_id null")
+
+    parent = index.get(record.parent_id)
+    node = LineageNode(record=record, crossover=None, branches=[])
+    if parent is None:
+        node.termination = f"missing parent_id {record.parent_id[:8]}"
+        return node
+    node.branches.append(
+        _walk_lineage_tree(
+            parent,
+            index=index,
+            crossover_index=crossover_index,
+            name_index=name_index,
+            seen=seen,
+            ambiguity_notes=ambiguity_notes,
+        )
+    )
+    return node
+
+
+def _resolve_crossover_parent(
+    crossover: CrossoverRecord,
+    parent_index: int,
+    name_index: dict[str, list[HypothesisRecord]],
+    ambiguity_notes: list[str],
+) -> HypothesisRecord | None:
+    name = crossover.parent_names[parent_index]
+    sigma = crossover.parent_sigmas[parent_index]
+    candidates: list[HypothesisRecord] = []
+    if name is not None:
+        candidates = [record for record in name_index.get(name, []) if record.order < crossover.order]
+
+    if sigma is not None:
+        sigma_matches = [record for record in candidates if np.allclose(record.sigma, sigma, atol=1e-6)]
+        if not candidates:
+            sigma_matches = [
+                record
+                for records in name_index.values()
+                for record in records
+                if record.order < crossover.order and np.allclose(record.sigma, sigma, atol=1e-6)
+            ]
+        if sigma_matches:
+            if len(sigma_matches) > 1:
+                ambiguity_notes.append(
+                    f"crossover child={crossover.child_id[:8]} parent={name or parent_index} "
+                    f"matched {len(sigma_matches)} records by sigma; chose latest before crossover"
+                )
+            return max(sigma_matches, key=lambda record: record.order)
+
+    if candidates:
+        if len(candidates) > 1:
+            ambiguity_notes.append(
+                f"crossover child={crossover.child_id[:8]} parent={name} "
+                f"matched {len(candidates)} records by name; chose latest before crossover"
+            )
+        return max(candidates, key=lambda record: record.order)
+
+    ambiguity_notes.append(
+        f"crossover child={crossover.child_id[:8]} parent={name or parent_index} could not be resolved"
+    )
+    return None
+
+
+def _longest_branch(node: LineageNode) -> list[LineageNode]:
+    if not node.branches:
+        return [node]
+    child_branch = max((_longest_branch(branch) for branch in node.branches), key=len)
+    return [node] + child_branch
+
+
+def _print_lineage_tree(node: LineageNode, indent: int = 0) -> None:
+    prefix = "  " * indent
+    record = node.record
+    print(
+        f"{prefix}- ({record.hypothesis_id[:8]}, {record.name}, {record.origin}, "
+        f"{record.best_word}, {record.best_rank}, {_fmt_array(record.sigma)})"
+    )
+    if node.crossover is not None:
+        parent_a, parent_b = node.crossover.parent_names
+        sigma_a, sigma_b = node.crossover.parent_sigmas
+        print(
+            f"{prefix}  crossover generation={node.crossover.generation} "
+            f"parent_a={parent_a} sigma={_fmt_optional_array(sigma_a)} "
+            f"parent_b={parent_b} sigma={_fmt_optional_array(sigma_b)}"
+        )
+    if node.termination is not None:
+        print(f"{prefix}  termination: {node.termination}")
+    for branch in node.branches:
+        _print_lineage_tree(branch, indent + 1)
 
 
 def _check_operator_usage(operator_events: list[dict[str, Any]], trace: list[dict[str, Any]], out_dir: Path) -> bool:
@@ -407,10 +618,19 @@ def _plot_sigma_lines(
     title: str,
     output_path: Path,
     x_label: str = "Generation",
+    vertical_markers: list[int] | None = None,
 ) -> None:
     fig, ax = plt.subplots(figsize=(9, 5))
     for index, operator in enumerate(OPERATORS):
         ax.plot(x_values, sigma_matrix[:, index], marker="o", label=operator)
+    for marker_index, marker in enumerate(vertical_markers or []):
+        ax.axvline(
+            marker,
+            linestyle=":",
+            linewidth=1.2,
+            color="0.35",
+            label="crossover" if marker_index == 0 else None,
+        )
     ax.axhline(0.25, color="0.4", linestyle="--", linewidth=1.2, label="uniform baseline")
     ax.set_ylim(0, 1)
     ax.set_xlabel(x_label)
@@ -439,6 +659,10 @@ def _details(event: dict[str, Any]) -> dict[str, Any]:
 
 def _fmt_array(values: np.ndarray) -> str:
     return "[" + ", ".join(f"{float(value):.4f}" for value in values) + "]"
+
+
+def _fmt_optional_array(values: np.ndarray | None) -> str:
+    return "NA" if values is None else _fmt_array(values)
 
 
 def _fmt_float(value: float | np.floating) -> str:
