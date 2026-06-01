@@ -1,0 +1,493 @@
+====================================================================================================
+RUN_ID: ea_llm_self_adaptive_local_superficial_20260526_222735
+TRACE_PATH: traces/ea_llm_self_adaptive_local_superficial_20260526_222735.json
+====================================================================================================
+Trace: C:\Users\Peter\Desktop\Github\Contexto\traces\ea_llm_self_adaptive_local_superficial_20260526_222735.json
+Output directory: C:\Users\Peter\Desktop\Github\Contexto\temporary_docs\inspection_artifacts\ea_llm_self_adaptive_local_superficial_20260526_222735
+Hypothesis records indexed: 304
+
+=== Check 1: Perturbation magnitude ===
+Total mutations checked: 248
+Unresolved child records: 0
+L2 mean: 0.112806
+L2 std: 0.051714
+Too small (<0.04): 16
+  child_id=1bcd68fcef494cf0bdc1de474fc3b01e sampled_op=l_mutation sigma_snapshot=[0.2500, 0.2500, 0.2500, 0.2500] child_sigma=[0.2692, 0.2232, 0.2612, 0.2464] L2=0.035012
+  child_id=de2e67ccc55549a5a509982b237deee9 sampled_op=l_mutation sigma_snapshot=[0.2804, 0.2243, 0.2510, 0.2442] child_sigma=[0.2839, 0.2265, 0.2536, 0.2361] L2=0.009491
+  child_id=50355c492b294692ac331ed6f27c65bb sampled_op=s_mutation sigma_snapshot=[0.2520, 0.3025, 0.2618, 0.1837] child_sigma=[0.2466, 0.3321, 0.2486, 0.1727] L2=0.034672
+  child_id=bb8ea843ddc04c3d9a255e5e12b2fcb6 sampled_op=l_mutation sigma_snapshot=[0.2168, 0.2349, 0.2232, 0.3251] child_sigma=[0.2145, 0.2316, 0.2284, 0.3256] L2=0.006588
+  child_id=68db977f839b44aba9885dfe573bbd52 sampled_op=m_mutation sigma_snapshot=[0.2520, 0.3025, 0.2618, 0.1837] child_sigma=[0.2742, 0.2887, 0.2698, 0.1673] L2=0.031864
+  child_id=2d8f8f7e3482410bbf983756353714e4 sampled_op=m_mutation sigma_snapshot=[0.2015, 0.2259, 0.3100, 0.2627] child_sigma=[0.1948, 0.2200, 0.2996, 0.2857] L2=0.026784
+  child_id=0c516fffd06e4067951c66135c73ce1b sampled_op=l_mutation sigma_snapshot=[0.1158, 0.2706, 0.3341, 0.2795] child_sigma=[0.1049, 0.2669, 0.3611, 0.2672] L2=0.031844
+  child_id=4d55ac8525ee45eb9757b704da3c8376 sampled_op=l_mutation sigma_snapshot=[0.2520, 0.3025, 0.2618, 0.1837] child_sigma=[0.2591, 0.2771, 0.2800, 0.1838] L2=0.031978
+  child_id=197f7c8af4564ef796bca1f3313eded0 sampled_op=l_mutation sigma_snapshot=[0.2216, 0.2927, 0.1674, 0.3183] child_sigma=[0.2225, 0.2807, 0.1983, 0.2985] L2=0.038610
+  child_id=8b44a96b705947c4b04de99c82cf5215 sampled_op=s_mutation sigma_snapshot=[0.3048, 0.3640, 0.1509, 0.1803] child_sigma=[0.3100, 0.3747, 0.1369, 0.1784] L2=0.018442
+  child_id=8cb726becdbf47658a0a026a9e56d317 sampled_op=m_mutation sigma_snapshot=[0.3161, 0.2916, 0.1185, 0.2737] child_sigma=[0.3105, 0.2920, 0.1249, 0.2726] L2=0.008566
+  child_id=521728a11641487bb414566822775bc8 sampled_op=ml_mutation sigma_snapshot=[0.2324, 0.3473, 0.2865, 0.1337] child_sigma=[0.2491, 0.3342, 0.2687, 0.1480] L2=0.031130
+  child_id=633d7da834ff4c3298a9b59ff715ab67 sampled_op=m_mutation sigma_snapshot=[0.2285, 0.2940, 0.2867, 0.1907] child_sigma=[0.2339, 0.3149, 0.2578, 0.1934] L2=0.036171
+  child_id=ee8dd3e12ede46c29b7461a6a1244e72 sampled_op=m_mutation sigma_snapshot=[0.2248, 0.2113, 0.3184, 0.2455] child_sigma=[0.2493, 0.2098, 0.3201, 0.2208] L2=0.034903
+  child_id=e968b38db9ff4aca8132af0cb544665e sampled_op=l_mutation sigma_snapshot=[0.1385, 0.2487, 0.3183, 0.2945] child_sigma=[0.1401, 0.2518, 0.3039, 0.3042] L2=0.017813
+  child_id=0fb05ea6390548c69465293e1ac574d6 sampled_op=l_mutation sigma_snapshot=[0.0881, 0.2331, 0.3424, 0.3364] child_sigma=[0.1077, 0.2296, 0.3544, 0.3084] L2=0.036385
+Too large (>0.25): 0
+
+=== Check 2: Parent_id lineage integrity ===
+Unresolved child records: 0
+Missing parent_id: 0
+Orphan parent_id: 0
+
+=== Check 3: Population mean sigma over generations ===
+Initial mean_sigma: [0.2500, 0.2500, 0.2500, 0.2500]
+Final mean_sigma: [0.1055, 0.2001, 0.3730, 0.3214]
+Delta: [-0.1445, -0.0499, 0.1230, 0.0714]
+Chaotic jumps: 0
+
+=== Check 4: Best-lineage sigma trajectory ===
+Best hypothesis: Physical Form Attributes
+Best word/rank: plump / 18
+Generation reached: 44
+Longest branch length: 5
+Plotted longest branch, root to best:
+  (da59b878, colors, init, green, 49571.0, [0.2500, 0.2500, 0.2500, 0.2500])
+  (bec727bc, Concepts of Purity and Peace, mutation, None, None, [0.2015, 0.2259, 0.3100, 0.2627])
+  (1cc8ff5b, Concepts of Moral Virtue, mutation, None, None, [0.2168, 0.2349, 0.2232, 0.3251])
+  (39cddc8e, Perceptual Qualities of Form, mutation, None, None, [0.1414, 0.2138, 0.2675, 0.3772])
+  (51251681, Physical Form Attributes, crossover, plump, 18.0, [0.2060, 0.1946, 0.2814, 0.3181]) [crossover]
+Full lineage tree, best to roots:
+- (51251681, Physical Form Attributes, crossover, plump, 18.0, [0.2060, 0.1946, 0.2814, 0.3181])
+  crossover generation=44 parent_a=Perceptual Qualities of Form sigma=[0.1414, 0.2138, 0.2675, 0.3772] parent_b=Visual Characteristics of Body Shape sigma=[0.2248, 0.2113, 0.3184, 0.2455]
+  - (39cddc8e, Perceptual Qualities of Form, mutation, None, None, [0.1414, 0.2138, 0.2675, 0.3772])
+    - (1cc8ff5b, Concepts of Moral Virtue, mutation, None, None, [0.2168, 0.2349, 0.2232, 0.3251])
+      - (bec727bc, Concepts of Purity and Peace, mutation, None, None, [0.2015, 0.2259, 0.3100, 0.2627])
+        - (da59b878, colors, init, green, 49571.0, [0.2500, 0.2500, 0.2500, 0.2500])
+          termination: parent_id null
+  - (8107d5ce, Visual Characteristics of Body Shape, mutation, None, None, [0.2248, 0.2113, 0.3184, 0.2455])
+    - (092ba5a7, Physical States of Fullness, mutation, None, None, [0.2285, 0.2940, 0.2867, 0.1907])
+      - (bdabf54e, nutritional needs, mutation, None, None, [0.2627, 0.3030, 0.2398, 0.1945])
+        - (d39e6e55, dailyactivities, init, eat, 823.0, [0.2500, 0.2500, 0.2500, 0.2500])
+          termination: parent_id null
+
+=== Check 5: Operator usage histogram ===
+Raw counts: {'s_mutation': 49, 'm_mutation': 69, 'ml_mutation': 56, 'l_mutation': 74}
+Empirical frequencies: {'s_mutation': 0.197581, 'm_mutation': 0.278226, 'ml_mutation': 0.225806, 'l_mutation': 0.298387}
+Final-generation mean_sigma: [0.1055, 0.2001, 0.3730, 0.3214]
+|empirical_freq - final_mean_sigma|: {'s_mutation': 0.092088, 'm_mutation': 0.078152, 'ml_mutation': 0.147179, 'l_mutation': 0.023061}
+Sampling mismatches (>0.10): 1
+  operator=ml_mutation delta=0.147179
+FAIL: perturbation magnitude, operator usage
+
+====================================================================================================
+RUN_ID: ea_llm_self_adaptive_local_superficial_20260527_005559
+TRACE_PATH: traces/ea_llm_self_adaptive_local_superficial_20260527_005559.json
+====================================================================================================
+Trace: C:\Users\Peter\Desktop\Github\Contexto\traces\ea_llm_self_adaptive_local_superficial_20260527_005559.json
+Output directory: C:\Users\Peter\Desktop\Github\Contexto\temporary_docs\inspection_artifacts\ea_llm_self_adaptive_local_superficial_20260527_005559
+Hypothesis records indexed: 304
+
+=== Check 1: Perturbation magnitude ===
+Total mutations checked: 248
+Unresolved child records: 0
+L2 mean: 0.094690
+L2 std: 0.045421
+Too small (<0.04): 23
+  child_id=253c6ca091e04f2180af63d2173a8649 sampled_op=s_mutation sigma_snapshot=[0.4502, 0.1129, 0.4168, 0.0200] child_sigma=[0.4308, 0.1176, 0.4317, 0.0200] L2=0.024918
+  child_id=9f83774d94134b6cb5f5a6738282c8d2 sampled_op=s_mutation sigma_snapshot=[0.3470, 0.3062, 0.2807, 0.0660] child_sigma=[0.3652, 0.2966, 0.2617, 0.0765] L2=0.029966
+  child_id=e5625430b2e34743bdb1d448e16eeff5 sampled_op=ml_mutation sigma_snapshot=[0.3242, 0.1429, 0.2256, 0.3073] child_sigma=[0.3343, 0.1564, 0.2283, 0.2811] L2=0.031267
+  child_id=2b1cfa8257e44a5a811ec4b0dfe7c491 sampled_op=l_mutation sigma_snapshot=[0.3364, 0.2960, 0.1556, 0.2120] child_sigma=[0.3521, 0.2953, 0.1638, 0.1887] L2=0.029282
+  child_id=dd192c9c903a444f94047aa6ad2a809b sampled_op=ml_mutation sigma_snapshot=[0.3242, 0.1429, 0.2256, 0.3073] child_sigma=[0.3174, 0.1600, 0.2012, 0.3214] L2=0.033654
+  child_id=5a8b22a65e0c4d9aaaa7560467dd79ee sampled_op=m_mutation sigma_snapshot=[0.4034, 0.1566, 0.4200, 0.0200] child_sigma=[0.4222, 0.1421, 0.4138, 0.0218] L2=0.024586
+  child_id=091c71595cd94b75a7ecb944d2fd9c54 sampled_op=l_mutation sigma_snapshot=[0.3712, 0.1845, 0.1935, 0.2508] child_sigma=[0.3630, 0.1784, 0.1904, 0.2682] L2=0.020410
+  child_id=ae9b6daf6a044587a2e4ab48dfd6167b sampled_op=s_mutation sigma_snapshot=[0.4502, 0.1129, 0.4168, 0.0200] child_sigma=[0.4664, 0.1276, 0.3860, 0.0200] L2=0.037778
+  child_id=6ee52a5bc7354901ab4ab230c22c1893 sampled_op=l_mutation sigma_snapshot=[0.3500, 0.2429, 0.2442, 0.1629] child_sigma=[0.3457, 0.2648, 0.2544, 0.1351] L2=0.037048
+  child_id=2ee8e68813e24772ad1c5b60082e6d63 sampled_op=s_mutation sigma_snapshot=[0.4502, 0.1129, 0.4168, 0.0200] child_sigma=[0.4277, 0.1060, 0.4266, 0.0398] L2=0.032287
+  child_id=866554eeac484a7f8b4f30f37a08d091 sampled_op=s_mutation sigma_snapshot=[0.5115, 0.0693, 0.3992, 0.0200] child_sigma=[0.5175, 0.0485, 0.4140, 0.0200] L2=0.026224
+  child_id=68c6477bb1d24923b2a8411c6a347119 sampled_op=s_mutation sigma_snapshot=[0.4528, 0.2221, 0.1821, 0.1430] child_sigma=[0.4658, 0.2202, 0.1630, 0.1510] L2=0.024470
+  child_id=d9eda5b219a64718999cc9515e8451bb sampled_op=ml_mutation sigma_snapshot=[0.4782, 0.0762, 0.4255, 0.0200] child_sigma=[0.4844, 0.0636, 0.4274, 0.0246] L2=0.014859
+  child_id=1a061c885fa94887bc80d12cbad52393 sampled_op=s_mutation sigma_snapshot=[0.4528, 0.2221, 0.1821, 0.1430] child_sigma=[0.4533, 0.2420, 0.1654, 0.1393] L2=0.026226
+  child_id=d8ae841d31944f1e9d721031bf4c7270 sampled_op=s_mutation sigma_snapshot=[0.4502, 0.1129, 0.4168, 0.0200] child_sigma=[0.4550, 0.0953, 0.4279, 0.0218] L2=0.021406
+  child_id=59683c4403904345aa0a10af03ca4638 sampled_op=ml_mutation sigma_snapshot=[0.4502, 0.1129, 0.4168, 0.0200] child_sigma=[0.4272, 0.1418, 0.4110, 0.0200] L2=0.037348
+  child_id=10799c403a2248cf95eff36cb22ad7a2 sampled_op=ml_mutation sigma_snapshot=[0.3958, 0.0419, 0.2973, 0.2650] child_sigma=[0.4112, 0.0475, 0.2715, 0.2698] L2=0.030906
+  child_id=4dacbf0a0c0c43428b9b9247c0037427 sampled_op=l_mutation sigma_snapshot=[0.3958, 0.0419, 0.2973, 0.2650] child_sigma=[0.4195, 0.0442, 0.2790, 0.2573] L2=0.031083
+  child_id=0d8e6cc0a7364a9c9ab7f56933e0731f sampled_op=s_mutation sigma_snapshot=[0.4542, 0.1115, 0.3869, 0.0474] child_sigma=[0.4485, 0.0844, 0.4000, 0.0671] L2=0.036408
+  child_id=0ab4aaf149834d098e7d88d76d71148e sampled_op=s_mutation sigma_snapshot=[0.4502, 0.1129, 0.4168, 0.0200] child_sigma=[0.4487, 0.0971, 0.4342, 0.0200] L2=0.023575
+  child_id=1651bce9504b4cadb7d02a9258640bc5 sampled_op=ml_mutation sigma_snapshot=[0.4502, 0.1129, 0.4168, 0.0200] child_sigma=[0.4171, 0.1252, 0.4332, 0.0246] L2=0.039162
+  child_id=78e071d2f86e462e99a81cb5244c8037 sampled_op=s_mutation sigma_snapshot=[0.3751, 0.0247, 0.2884, 0.3118] child_sigma=[0.3775, 0.0276, 0.2692, 0.3257] L2=0.024076
+  child_id=9131de3c43234792b20797762c2734d9 sampled_op=ml_mutation sigma_snapshot=[0.3470, 0.3062, 0.2807, 0.0660] child_sigma=[0.3613, 0.3197, 0.2551, 0.0640] L2=0.032328
+Too large (>0.25): 1
+  child_id=815a8a2ac8b44c75a4894625b84902f6 sampled_op=m_mutation sigma_snapshot=[0.4502, 0.1129, 0.4168, 0.0200] child_sigma=[0.2421, 0.2309, 0.5070, 0.0200] L2=0.255652
+
+=== Check 2: Parent_id lineage integrity ===
+Unresolved child records: 0
+Missing parent_id: 0
+Orphan parent_id: 0
+
+=== Check 3: Population mean sigma over generations ===
+Initial mean_sigma: [0.2500, 0.2500, 0.2500, 0.2500]
+Final mean_sigma: [0.3567, 0.1970, 0.3075, 0.1388]
+Delta: [0.1067, -0.0530, 0.0575, -0.1112]
+Chaotic jumps: 1
+  generation=46 abs_delta=[0.0382, 0.1719, 0.0343, 0.0993]
+
+=== Check 4: Best-lineage sigma trajectory ===
+Best hypothesis: Refined Thinness
+Best word/rank: thin / 5
+Generation reached: 20
+Longest branch length: 7
+Plotted longest branch, root to best:
+  (deeff1a0, objects, init, book, 33315.0, [0.2500, 0.2500, 0.2500, 0.2500])
+  (71991095, technical footwear components, mutation, None, None, [0.3756, 0.1656, 0.2964, 0.1624])
+  (2c0dd466, footwear descriptors, mutation, None, None, [0.3470, 0.3062, 0.2807, 0.0660])
+  (5b8dfe4f, lightness descriptors, mutation, None, None, [0.4660, 0.2279, 0.2711, 0.0350])
+  (daa3acfe, refined lightness descriptors, mutation, None, None, [0.4502, 0.1129, 0.4168, 0.0200])
+  (3e51f327, thinness descriptors, mutation, None, None, [0.4097, 0.1748, 0.3955, 0.0200])
+  (25c2f1c8, Refined Thinness, crossover, thin, 5.0, [0.3897, 0.1796, 0.4107, 0.0200]) [crossover]
+Full lineage tree, best to roots:
+- (25c2f1c8, Refined Thinness, crossover, thin, 5.0, [0.3897, 0.1796, 0.4107, 0.0200])
+  crossover generation=20 parent_a=refined lightness descriptors sigma=[0.4502, 0.1129, 0.4168, 0.0200] parent_b=thinness descriptors sigma=[0.4097, 0.1748, 0.3955, 0.0200]
+  - (daa3acfe, refined lightness descriptors, mutation, None, None, [0.4502, 0.1129, 0.4168, 0.0200])
+    - (5b8dfe4f, lightness descriptors, mutation, None, None, [0.4660, 0.2279, 0.2711, 0.0350])
+      - (2c0dd466, footwear descriptors, mutation, None, None, [0.3470, 0.3062, 0.2807, 0.0660])
+        - (71991095, technical footwear components, mutation, None, None, [0.3756, 0.1656, 0.2964, 0.1624])
+          - (deeff1a0, objects, init, book, 33315.0, [0.2500, 0.2500, 0.2500, 0.2500])
+            termination: parent_id null
+  - (3e51f327, thinness descriptors, mutation, None, None, [0.4097, 0.1748, 0.3955, 0.0200])
+    - (daa3acfe, refined lightness descriptors, mutation, None, None, [0.4502, 0.1129, 0.4168, 0.0200])
+      - (5b8dfe4f, lightness descriptors, mutation, None, None, [0.4660, 0.2279, 0.2711, 0.0350])
+        - (2c0dd466, footwear descriptors, mutation, None, None, [0.3470, 0.3062, 0.2807, 0.0660])
+          - (71991095, technical footwear components, mutation, None, None, [0.3756, 0.1656, 0.2964, 0.1624])
+            - (deeff1a0, objects, init, book, 33315.0, [0.2500, 0.2500, 0.2500, 0.2500])
+              termination: parent_id null
+
+=== Check 5: Operator usage histogram ===
+Raw counts: {'s_mutation': 103, 'm_mutation': 45, 'ml_mutation': 76, 'l_mutation': 24}
+Empirical frequencies: {'s_mutation': 0.415323, 'm_mutation': 0.181452, 'ml_mutation': 0.306452, 'l_mutation': 0.096774}
+Final-generation mean_sigma: [0.3567, 0.1970, 0.3075, 0.1388]
+|empirical_freq - final_mean_sigma|: {'s_mutation': 0.058607, 'm_mutation': 0.015527, 'ml_mutation': 0.001057, 'l_mutation': 0.042023}
+Sampling mismatches (>0.10): 0
+FAIL: perturbation magnitude, population mean sigma
+
+====================================================================================================
+RUN_ID: ea_llm_self_adaptive_local_superficial_20260527_044742
+TRACE_PATH: traces/ea_llm_self_adaptive_local_superficial_20260527_044742.json
+====================================================================================================
+Trace: C:\Users\Peter\Desktop\Github\Contexto\traces\ea_llm_self_adaptive_local_superficial_20260527_044742.json
+Output directory: C:\Users\Peter\Desktop\Github\Contexto\temporary_docs\inspection_artifacts\ea_llm_self_adaptive_local_superficial_20260527_044742
+Hypothesis records indexed: 303
+
+=== Check 1: Perturbation magnitude ===
+Total mutations checked: 247
+Unresolved child records: 0
+L2 mean: 0.108333
+L2 std: 0.051540
+Too small (<0.04): 17
+  child_id=ae3f989e6fe64e3892ecb487a272788e sampled_op=l_mutation sigma_snapshot=[0.2500, 0.2500, 0.2500, 0.2500] child_sigma=[0.2692, 0.2232, 0.2612, 0.2464] L2=0.035012
+  child_id=d2d6b48e63d548779471c4a2bd4cd613 sampled_op=l_mutation sigma_snapshot=[0.2500, 0.2500, 0.2500, 0.2500] child_sigma=[0.2533, 0.2523, 0.2527, 0.2418] L2=0.009543
+  child_id=10a3f0f7a45d456597287694fde1f409 sampled_op=s_mutation sigma_snapshot=[0.2162, 0.1695, 0.3521, 0.2622] child_sigma=[0.2131, 0.1921, 0.3416, 0.2531] L2=0.026695
+  child_id=e15be5706f414ea89e7515e3dd041e88 sampled_op=s_mutation sigma_snapshot=[0.4634, 0.0821, 0.3358, 0.1187] child_sigma=[0.4463, 0.0669, 0.3501, 0.1366] L2=0.032348
+  child_id=9c5efd6ddb18443e827edc312f951b97 sampled_op=l_mutation sigma_snapshot=[0.2162, 0.1695, 0.3521, 0.2622] child_sigma=[0.2217, 0.1601, 0.3334, 0.2848] L2=0.031226
+  child_id=66e1d406d26c43ba9ca55c0936ede1ac sampled_op=ml_mutation sigma_snapshot=[0.2647, 0.1515, 0.2943, 0.2896] child_sigma=[0.2597, 0.1571, 0.2754, 0.3078] L2=0.027263
+  child_id=03dc1a18d4fa44d8b5f0dca5bec94413 sampled_op=s_mutation sigma_snapshot=[0.2162, 0.1695, 0.3521, 0.2622] child_sigma=[0.1990, 0.1539, 0.3592, 0.2880] L2=0.035440
+  child_id=37f59a4fcaa945058ae298634e95580e sampled_op=ml_mutation sigma_snapshot=[0.2162, 0.1695, 0.3521, 0.2622] child_sigma=[0.1937, 0.1659, 0.3722, 0.2681] L2=0.030991
+  child_id=98338397b2d84be1a44dc257182c51f6 sampled_op=s_mutation sigma_snapshot=[0.1582, 0.1324, 0.3107, 0.3987] child_sigma=[0.1324, 0.1510, 0.3297, 0.3869] L2=0.038917
+  child_id=bb9847e70b2344239e91722899bd7f06 sampled_op=l_mutation sigma_snapshot=[0.1190, 0.2934, 0.2712, 0.3163] child_sigma=[0.1157, 0.3209, 0.2723, 0.2911] L2=0.037410
+  child_id=73755f79b70b46bdb44a4a79e6bc0d31 sampled_op=ml_mutation sigma_snapshot=[0.1383, 0.1518, 0.3219, 0.3880] child_sigma=[0.1237, 0.1557, 0.3454, 0.3752] L2=0.030610
+  child_id=44cc634f53234653973aba2d46d6c05f sampled_op=s_mutation sigma_snapshot=[0.1190, 0.2934, 0.2712, 0.3163] child_sigma=[0.1266, 0.2925, 0.2601, 0.3208] L2=0.014202
+  child_id=67eb4098b32d476da4666afddae4d714 sampled_op=m_mutation sigma_snapshot=[0.1915, 0.1359, 0.2784, 0.3942] child_sigma=[0.1802, 0.1586, 0.2685, 0.3927] L2=0.027232
+  child_id=f190dd4c4f194359af1d13ea10970bac sampled_op=ml_mutation sigma_snapshot=[0.2084, 0.1106, 0.3408, 0.3402] child_sigma=[0.1997, 0.1147, 0.3524, 0.3333] L2=0.016553
+  child_id=659faf32fdbb4f24ae37d67c6f6ef28f sampled_op=s_mutation sigma_snapshot=[0.2084, 0.1106, 0.3408, 0.3402] child_sigma=[0.1938, 0.1135, 0.3691, 0.3235] L2=0.036112
+  child_id=48d1f8e8bca04cf5ba799371f2219d13 sampled_op=m_mutation sigma_snapshot=[0.1190, 0.2934, 0.2712, 0.3163] child_sigma=[0.0885, 0.3116, 0.2810, 0.3188] L2=0.036936
+  child_id=9e2b2c7234da492f8eed78fdfb7d4e21 sampled_op=m_mutation sigma_snapshot=[0.1190, 0.2934, 0.2712, 0.3163] child_sigma=[0.1246, 0.3093, 0.2545, 0.3117] L2=0.024175
+Too large (>0.25): 2
+  child_id=5df52ada35c445478419143175183c3a sampled_op=s_mutation sigma_snapshot=[0.0725, 0.2147, 0.2950, 0.4177] child_sigma=[0.0221, 0.4069, 0.3122, 0.2588] L2=0.254945
+  child_id=55b3d008eca643f696beff05d26efb2d sampled_op=s_mutation sigma_snapshot=[0.2647, 0.1515, 0.2943, 0.2896] child_sigma=[0.1375, 0.3763, 0.1874, 0.2987] L2=0.279652
+
+=== Check 2: Parent_id lineage integrity ===
+Unresolved child records: 0
+Missing parent_id: 0
+Orphan parent_id: 0
+
+=== Check 3: Population mean sigma over generations ===
+Initial mean_sigma: [0.2500, 0.2500, 0.2500, 0.2500]
+Final mean_sigma: [0.1984, 0.1702, 0.2996, 0.3318]
+Delta: [-0.0516, -0.0798, 0.0496, 0.0818]
+Chaotic jumps: 0
+
+=== Check 4: Best-lineage sigma trajectory ===
+Best hypothesis: textural_fullness_and_sensory_softness
+Best word/rank: plump / 18
+Generation reached: 30
+Longest branch length: 6
+Plotted longest branch, root to best:
+  (82628198, objects, init, pen, 7251.0, [0.2500, 0.2500, 0.2500, 0.2500])
+  (47a4e368, reflective surfaces, mutation, None, None, [0.2631, 0.2125, 0.3340, 0.1904])
+  (e34c312f, material_nutrients, crossover, substance, 1475.0, [0.2162, 0.1695, 0.3521, 0.2622]) [crossover]
+  (f7a2140a, sensory_attributes_of_fat, mutation, None, None, [0.1915, 0.1359, 0.2784, 0.3942])
+  (2540bdfd, textural_fullness, mutation, None, None, [0.2647, 0.0679, 0.3495, 0.3180])
+  (dc8ac5c7, textural_fullness_and_sensory_softness, crossover, plump, 18.0, [0.3193, 0.0696, 0.3132, 0.2980]) [crossover]
+Full lineage tree, best to roots:
+- (dc8ac5c7, textural_fullness_and_sensory_softness, crossover, plump, 18.0, [0.3193, 0.0696, 0.3132, 0.2980])
+  crossover generation=30 parent_a=sensory_attributes_of_fat sigma=[0.1915, 0.1359, 0.2784, 0.3942] parent_b=textural_fullness sigma=[0.2647, 0.0679, 0.3495, 0.3180]
+  - (f7a2140a, sensory_attributes_of_fat, mutation, None, None, [0.1915, 0.1359, 0.2784, 0.3942])
+    - (e34c312f, material_nutrients, crossover, substance, 1475.0, [0.2162, 0.1695, 0.3521, 0.2622])
+      crossover generation=2 parent_a=reflective surfaces sigma=[0.2631, 0.2125, 0.3340, 0.1904] parent_b=nutrients sigma=[0.1991, 0.2719, 0.2882, 0.2409]
+      - (47a4e368, reflective surfaces, mutation, None, None, [0.2631, 0.2125, 0.3340, 0.1904])
+        - (82628198, objects, init, pen, 7251.0, [0.2500, 0.2500, 0.2500, 0.2500])
+          termination: parent_id null
+      - (db9768a1, nutrients, mutation, None, None, [0.1991, 0.2719, 0.2882, 0.2409])
+        - (596b6a3a, foods, init, bread, 27966.0, [0.2500, 0.2500, 0.2500, 0.2500])
+          termination: parent_id null
+  - (2540bdfd, textural_fullness, mutation, None, None, [0.2647, 0.0679, 0.3495, 0.3180])
+    - (f7a2140a, sensory_attributes_of_fat, mutation, None, None, [0.1915, 0.1359, 0.2784, 0.3942])
+      - (e34c312f, material_nutrients, crossover, substance, 1475.0, [0.2162, 0.1695, 0.3521, 0.2622])
+        crossover generation=2 parent_a=reflective surfaces sigma=[0.2631, 0.2125, 0.3340, 0.1904] parent_b=nutrients sigma=[0.1991, 0.2719, 0.2882, 0.2409]
+        - (47a4e368, reflective surfaces, mutation, None, None, [0.2631, 0.2125, 0.3340, 0.1904])
+          - (82628198, objects, init, pen, 7251.0, [0.2500, 0.2500, 0.2500, 0.2500])
+            termination: parent_id null
+        - (db9768a1, nutrients, mutation, None, None, [0.1991, 0.2719, 0.2882, 0.2409])
+          - (596b6a3a, foods, init, bread, 27966.0, [0.2500, 0.2500, 0.2500, 0.2500])
+            termination: parent_id null
+
+=== Check 5: Operator usage histogram ===
+Raw counts: {'s_mutation': 60, 'm_mutation': 39, 'ml_mutation': 67, 'l_mutation': 81}
+Empirical frequencies: {'s_mutation': 0.242915, 'm_mutation': 0.157895, 'ml_mutation': 0.271255, 'l_mutation': 0.327935}
+Final-generation mean_sigma: [0.1984, 0.1702, 0.2996, 0.3318]
+|empirical_freq - final_mean_sigma|: {'s_mutation': 0.044517, 'm_mutation': 0.01228, 'ml_mutation': 0.028325, 'l_mutation': 0.003912}
+Sampling mismatches (>0.10): 0
+FAIL: perturbation magnitude
+
+====================================================================================================
+RUN_ID: ea_llm_self_adaptive_local_superficial_20260527_052708
+TRACE_PATH: traces/ea_llm_self_adaptive_local_superficial_20260527_052708.json
+====================================================================================================
+Trace: C:\Users\Peter\Desktop\Github\Contexto\traces\ea_llm_self_adaptive_local_superficial_20260527_052708.json
+Output directory: C:\Users\Peter\Desktop\Github\Contexto\temporary_docs\inspection_artifacts\ea_llm_self_adaptive_local_superficial_20260527_052708
+Hypothesis records indexed: 304
+
+=== Check 1: Perturbation magnitude ===
+Total mutations checked: 248
+Unresolved child records: 0
+L2 mean: 0.095244
+L2 std: 0.048410
+Too small (<0.04): 31
+  child_id=e3232a64795d47fdb500329d8cf151cc sampled_op=s_mutation sigma_snapshot=[0.2500, 0.2500, 0.2500, 0.2500] child_sigma=[0.2736, 0.2286, 0.2529, 0.2449] L2=0.032409
+  child_id=7a1bcec956b544c886744992aa5fb19e sampled_op=m_mutation sigma_snapshot=[0.3942, 0.3133, 0.1666, 0.1258] child_sigma=[0.3985, 0.2993, 0.1592, 0.1430] L2=0.023743
+  child_id=7d569c0e5b9b4f4d96f014d9b963e31e sampled_op=s_mutation sigma_snapshot=[0.4337, 0.3464, 0.1417, 0.0782] child_sigma=[0.4437, 0.3643, 0.1293, 0.0627] L2=0.028559
+  child_id=b36188f641804d3692e1bf76eaecce03 sampled_op=s_mutation sigma_snapshot=[0.5556, 0.2703, 0.1148, 0.0594] child_sigma=[0.5780, 0.2600, 0.1086, 0.0534] L2=0.026100
+  child_id=3e3eb2c774b34ba0804c1a588bdb3f92 sampled_op=m_mutation sigma_snapshot=[0.4337, 0.3464, 0.1417, 0.0782] child_sigma=[0.4386, 0.3225, 0.1644, 0.0746] L2=0.033538
+  child_id=0a6b0ed333b94c2b9721f0ea4653501e sampled_op=m_mutation sigma_snapshot=[0.4390, 0.2525, 0.1465, 0.1620] child_sigma=[0.4610, 0.2614, 0.1445, 0.1331] L2=0.037490
+  child_id=f029007284944a088b87dd19ddca7d58 sampled_op=m_mutation sigma_snapshot=[0.4361, 0.5084, 0.0355, 0.0200] child_sigma=[0.4253, 0.5244, 0.0303, 0.0200] L2=0.020027
+  child_id=c916d12bb8f240cca9814298e1a93ac2 sampled_op=s_mutation sigma_snapshot=[0.4390, 0.2525, 0.1465, 0.1620] child_sigma=[0.4169, 0.2694, 0.1615, 0.1522] L2=0.033017
+  child_id=fb1f6e1ebe9f47b49284e0a6091f36d0 sampled_op=s_mutation sigma_snapshot=[0.4361, 0.5084, 0.0355, 0.0200] child_sigma=[0.4475, 0.4908, 0.0417, 0.0200] L2=0.021853
+  child_id=e0030dfd44334b51a20439d4351124fa sampled_op=s_mutation sigma_snapshot=[0.3943, 0.4054, 0.1561, 0.0442] child_sigma=[0.3918, 0.4271, 0.1267, 0.0544] L2=0.037970
+  child_id=87fce69f10c344dd91fec99705937c89 sampled_op=m_mutation sigma_snapshot=[0.4619, 0.3228, 0.1661, 0.0492] child_sigma=[0.4474, 0.3454, 0.1575, 0.0496] L2=0.028267
+  child_id=48c6764ab9414c4ebcdd3644c8664699 sampled_op=s_mutation sigma_snapshot=[0.5087, 0.4485, 0.0228, 0.0200] child_sigma=[0.4969, 0.4631, 0.0200, 0.0200] L2=0.018879
+  child_id=7808443e949f491d9737fc299b06834c sampled_op=s_mutation sigma_snapshot=[0.4856, 0.4499, 0.0445, 0.0200] child_sigma=[0.5020, 0.4416, 0.0363, 0.0200] L2=0.020072
+  child_id=9b33b63121db493cbf0dcff2f5af65f6 sampled_op=m_mutation sigma_snapshot=[0.5087, 0.4485, 0.0228, 0.0200] child_sigma=[0.5350, 0.4250, 0.0200, 0.0200] L2=0.035467
+  child_id=0f61323fee044779b699291c61571955 sampled_op=m_mutation sigma_snapshot=[0.4361, 0.5084, 0.0355, 0.0200] child_sigma=[0.4332, 0.5268, 0.0200, 0.0200] L2=0.024249
+  child_id=76dea778cfcc4519b0a4a3af82b9bbd2 sampled_op=m_mutation sigma_snapshot=[0.5556, 0.2703, 0.1148, 0.0594] child_sigma=[0.5704, 0.2665, 0.1139, 0.0492] L2=0.018394
+  child_id=2016e94160eb4142bda9e23d15d7fa05 sampled_op=s_mutation sigma_snapshot=[0.4361, 0.5084, 0.0355, 0.0200] child_sigma=[0.4409, 0.4908, 0.0342, 0.0341] L2=0.023083
+  child_id=8331b55bdfa840d7af76d14e399051f8 sampled_op=s_mutation sigma_snapshot=[0.5350, 0.4250, 0.0200, 0.0200] child_sigma=[0.5125, 0.4469, 0.0206, 0.0200] L2=0.031505
+  child_id=6e5758e27cea4d8991e7e04b2f27a5f5 sampled_op=s_mutation sigma_snapshot=[0.5350, 0.4250, 0.0200, 0.0200] child_sigma=[0.5554, 0.4046, 0.0200, 0.0200] L2=0.028751
+  child_id=e7302aae2699437592a4318e91bcd734 sampled_op=ml_mutation sigma_snapshot=[0.4361, 0.5084, 0.0355, 0.0200] child_sigma=[0.4137, 0.5227, 0.0233, 0.0404] L2=0.035672
+  child_id=e431e165e69e49699d70265941c4f839 sampled_op=m_mutation sigma_snapshot=[0.4928, 0.4054, 0.0818, 0.0200] child_sigma=[0.5080, 0.4096, 0.0552, 0.0272] L2=0.031694
+  child_id=de41119d58e44c0f937ec8a7038c43d2 sampled_op=s_mutation sigma_snapshot=[0.4437, 0.3643, 0.1293, 0.0627] child_sigma=[0.4628, 0.3367, 0.1402, 0.0602] L2=0.035446
+  child_id=c92eb59f2ffe4b73b0e6819fb779272c sampled_op=m_mutation sigma_snapshot=[0.4628, 0.3367, 0.1402, 0.0602] child_sigma=[0.4447, 0.3602, 0.1343, 0.0608] L2=0.030282
+  child_id=4137e817d49945309afcdbc0b155cc0c sampled_op=s_mutation sigma_snapshot=[0.4928, 0.4054, 0.0818, 0.0200] child_sigma=[0.5075, 0.3868, 0.0656, 0.0401] L2=0.034994
+  child_id=dd3496a81416473b91e8a4b3e5bf5b11 sampled_op=m_mutation sigma_snapshot=[0.4361, 0.5084, 0.0355, 0.0200] child_sigma=[0.4462, 0.4920, 0.0417, 0.0200] L2=0.020223
+  child_id=a5ca25900e6640eda576d6fef3e1bdc5 sampled_op=s_mutation sigma_snapshot=[0.4635, 0.4047, 0.0624, 0.0694] child_sigma=[0.4737, 0.3959, 0.0869, 0.0435] L2=0.038093
+  child_id=fba9980b4cc943f1a5ecd23e2f31d506 sampled_op=s_mutation sigma_snapshot=[0.4462, 0.4920, 0.0417, 0.0200] child_sigma=[0.4189, 0.5122, 0.0489, 0.0200] L2=0.034747
+  child_id=4d8b39c564b34ca4b0dc5647f7e1dc6c sampled_op=s_mutation sigma_snapshot=[0.4737, 0.3959, 0.0869, 0.0435] child_sigma=[0.4689, 0.3820, 0.0780, 0.0711] L2=0.032537
+  child_id=2205952cb72e4baa9db9cd276fb0d149 sampled_op=m_mutation sigma_snapshot=[0.4361, 0.5084, 0.0355, 0.0200] child_sigma=[0.4403, 0.5081, 0.0239, 0.0277] L2=0.014517
+  child_id=eaee8e16973a44eda24406abb51b5dbf sampled_op=ml_mutation sigma_snapshot=[0.4462, 0.4920, 0.0417, 0.0200] child_sigma=[0.4497, 0.5088, 0.0200, 0.0215] L2=0.027705
+  child_id=0db81fa202c9483f928a0b3dd779c653 sampled_op=s_mutation sigma_snapshot=[0.4827, 0.4773, 0.0200, 0.0200] child_sigma=[0.4840, 0.4760, 0.0200, 0.0200] L2=0.001860
+Too large (>0.25): 2
+  child_id=cd889aa8fb7442949251e4371ead2ed4 sampled_op=m_mutation sigma_snapshot=[0.4487, 0.3457, 0.1263, 0.0792] child_sigma=[0.4199, 0.1982, 0.3314, 0.0505] L2=0.255871
+  child_id=1d6ca9767f2e4122a65c848f0def8558 sampled_op=ml_mutation sigma_snapshot=[0.3942, 0.3133, 0.1666, 0.1258] child_sigma=[0.6153, 0.1665, 0.1090, 0.1092] L2=0.272020
+
+=== Check 2: Parent_id lineage integrity ===
+Unresolved child records: 0
+Missing parent_id: 0
+Orphan parent_id: 0
+
+=== Check 3: Population mean sigma over generations ===
+Initial mean_sigma: [0.2500, 0.2500, 0.2500, 0.2500]
+Final mean_sigma: [0.4290, 0.4807, 0.0655, 0.0248]
+Delta: [0.1790, 0.2307, -0.1845, -0.2252]
+Chaotic jumps: 0
+
+=== Check 4: Best-lineage sigma trajectory ===
+Best hypothesis: Robust Structural Expansion
+Best word/rank: plump / 18
+Generation reached: 30
+Longest branch length: 11
+Plotted longest branch, root to best:
+  (ca8fffec, daily_activities, init, rest, 49460.0, [0.2500, 0.2500, 0.2500, 0.2500])
+  (f9d1be78, food_activities, crossover, eat, 823.0, [0.2339, 0.2597, 0.2865, 0.2199]) [crossover]
+  (d2b73387, eating_actions, mutation, None, None, [0.3078, 0.2988, 0.2573, 0.1362])
+  (df923f7b, textural_qualities_of_food, mutation, None, None, [0.4337, 0.3464, 0.1417, 0.0782])
+  (379153a7, Material-Textural Properties, crossover, dense, 162.0, [0.3942, 0.3133, 0.1666, 0.1258]) [crossover]
+  (21b17534, Information Density Features, mutation, None, None, [0.5556, 0.2703, 0.1148, 0.0594])
+  (c690d4f0, Material-Density Properties, crossover, thick, 66.0, [0.3878, 0.4172, 0.1244, 0.0706]) [crossover]
+  (dfb5848c, Material-Thickness Properties, mutation, None, None, [0.4515, 0.4053, 0.1017, 0.0415])
+  (637b7470, Physical Impediments from Bulkiness, mutation, None, None, [0.4928, 0.4054, 0.0818, 0.0200])
+  (c5e6af05, Structural Discomfort from Enlargement, mutation, None, None, [0.4361, 0.5084, 0.0355, 0.0200])
+  (abb874b9, Robust Structural Expansion, crossover, plump, 18.0, [0.5173, 0.3572, 0.0576, 0.0679]) [crossover]
+Full lineage tree, best to roots:
+- (abb874b9, Robust Structural Expansion, crossover, plump, 18.0, [0.5173, 0.3572, 0.0576, 0.0679])
+  crossover generation=30 parent_a=Structural Discomfort from Enlargement sigma=[0.4361, 0.5084, 0.0355, 0.0200] parent_b=Robust Density Features sigma=[0.4686, 0.4161, 0.0881, 0.0271]
+  - (c5e6af05, Structural Discomfort from Enlargement, mutation, None, None, [0.4361, 0.5084, 0.0355, 0.0200])
+    - (637b7470, Physical Impediments from Bulkiness, mutation, None, None, [0.4928, 0.4054, 0.0818, 0.0200])
+      - (dfb5848c, Material-Thickness Properties, mutation, None, None, [0.4515, 0.4053, 0.1017, 0.0415])
+        - (c690d4f0, Material-Density Properties, crossover, thick, 66.0, [0.3878, 0.4172, 0.1244, 0.0706])
+          crossover generation=11 parent_a=Information Density Features sigma=[0.5556, 0.2703, 0.1148, 0.0594] parent_b=Material-Textural Properties sigma=[0.3942, 0.3133, 0.1666, 0.1258]
+          - (21b17534, Information Density Features, mutation, None, None, [0.5556, 0.2703, 0.1148, 0.0594])
+            - (379153a7, Material-Textural Properties, crossover, dense, 162.0, [0.3942, 0.3133, 0.1666, 0.1258])
+              crossover generation=8 parent_a=textural_qualities_of_food sigma=[0.4337, 0.3464, 0.1417, 0.0782] parent_b=structural properties of materials sigma=[0.2764, 0.2837, 0.2706, 0.1693]
+              - (df923f7b, textural_qualities_of_food, mutation, None, None, [0.4337, 0.3464, 0.1417, 0.0782])
+                - (d2b73387, eating_actions, mutation, None, None, [0.3078, 0.2988, 0.2573, 0.1362])
+                  - (f9d1be78, food_activities, crossover, eat, 823.0, [0.2339, 0.2597, 0.2865, 0.2199])
+                    crossover generation=1 parent_a=daily_activities sigma=[0.2500, 0.2500, 0.2500, 0.2500] parent_b=food_items sigma=[0.2500, 0.2500, 0.2500, 0.2500]
+                    - (ca8fffec, daily_activities, init, rest, 49460.0, [0.2500, 0.2500, 0.2500, 0.2500])
+                      termination: parent_id null
+                    - (f6b1ed93, food_items, init, bread, 27966.0, [0.2500, 0.2500, 0.2500, 0.2500])
+                      termination: parent_id null
+              - (ab521a8a, structural properties of materials, mutation, None, None, [0.2764, 0.2837, 0.2706, 0.1693])
+                - (f6b1ed93, food_items, init, bread, 27966.0, [0.2500, 0.2500, 0.2500, 0.2500])
+                  termination: parent_id null
+          - (379153a7, Material-Textural Properties, crossover, dense, 162.0, [0.3942, 0.3133, 0.1666, 0.1258])
+            crossover generation=8 parent_a=textural_qualities_of_food sigma=[0.4337, 0.3464, 0.1417, 0.0782] parent_b=structural properties of materials sigma=[0.2764, 0.2837, 0.2706, 0.1693]
+            - (df923f7b, textural_qualities_of_food, mutation, None, None, [0.4337, 0.3464, 0.1417, 0.0782])
+              - (d2b73387, eating_actions, mutation, None, None, [0.3078, 0.2988, 0.2573, 0.1362])
+                - (f9d1be78, food_activities, crossover, eat, 823.0, [0.2339, 0.2597, 0.2865, 0.2199])
+                  crossover generation=1 parent_a=daily_activities sigma=[0.2500, 0.2500, 0.2500, 0.2500] parent_b=food_items sigma=[0.2500, 0.2500, 0.2500, 0.2500]
+                  - (ca8fffec, daily_activities, init, rest, 49460.0, [0.2500, 0.2500, 0.2500, 0.2500])
+                    termination: parent_id null
+                  - (f6b1ed93, food_items, init, bread, 27966.0, [0.2500, 0.2500, 0.2500, 0.2500])
+                    termination: parent_id null
+            - (ab521a8a, structural properties of materials, mutation, None, None, [0.2764, 0.2837, 0.2706, 0.1693])
+              - (f6b1ed93, food_items, init, bread, 27966.0, [0.2500, 0.2500, 0.2500, 0.2500])
+                termination: parent_id null
+  - (751e1dcb, Robust Density Features, mutation, None, None, [0.4686, 0.4161, 0.0881, 0.0271])
+    - (21b17534, Information Density Features, mutation, None, None, [0.5556, 0.2703, 0.1148, 0.0594])
+      - (379153a7, Material-Textural Properties, crossover, dense, 162.0, [0.3942, 0.3133, 0.1666, 0.1258])
+        crossover generation=8 parent_a=textural_qualities_of_food sigma=[0.4337, 0.3464, 0.1417, 0.0782] parent_b=structural properties of materials sigma=[0.2764, 0.2837, 0.2706, 0.1693]
+        - (df923f7b, textural_qualities_of_food, mutation, None, None, [0.4337, 0.3464, 0.1417, 0.0782])
+          - (d2b73387, eating_actions, mutation, None, None, [0.3078, 0.2988, 0.2573, 0.1362])
+            - (f9d1be78, food_activities, crossover, eat, 823.0, [0.2339, 0.2597, 0.2865, 0.2199])
+              crossover generation=1 parent_a=daily_activities sigma=[0.2500, 0.2500, 0.2500, 0.2500] parent_b=food_items sigma=[0.2500, 0.2500, 0.2500, 0.2500]
+              - (ca8fffec, daily_activities, init, rest, 49460.0, [0.2500, 0.2500, 0.2500, 0.2500])
+                termination: parent_id null
+              - (f6b1ed93, food_items, init, bread, 27966.0, [0.2500, 0.2500, 0.2500, 0.2500])
+                termination: parent_id null
+        - (ab521a8a, structural properties of materials, mutation, None, None, [0.2764, 0.2837, 0.2706, 0.1693])
+          - (f6b1ed93, food_items, init, bread, 27966.0, [0.2500, 0.2500, 0.2500, 0.2500])
+            termination: parent_id null
+
+=== Check 5: Operator usage histogram ===
+Raw counts: {'s_mutation': 93, 'm_mutation': 104, 'ml_mutation': 31, 'l_mutation': 20}
+Empirical frequencies: {'s_mutation': 0.375, 'm_mutation': 0.419355, 'ml_mutation': 0.125, 'l_mutation': 0.080645}
+Final-generation mean_sigma: [0.4290, 0.4807, 0.0655, 0.0248]
+|empirical_freq - final_mean_sigma|: {'s_mutation': 0.053976, 'm_mutation': 0.061336, 'ml_mutation': 0.059501, 'l_mutation': 0.055811}
+Sampling mismatches (>0.10): 0
+FAIL: perturbation magnitude
+
+====================================================================================================
+RUN_ID: ea_llm_self_adaptive_local_superficial_20260527_060746
+TRACE_PATH: traces/ea_llm_self_adaptive_local_superficial_20260527_060746.json
+====================================================================================================
+Trace: C:\Users\Peter\Desktop\Github\Contexto\traces\ea_llm_self_adaptive_local_superficial_20260527_060746.json
+Output directory: C:\Users\Peter\Desktop\Github\Contexto\temporary_docs\inspection_artifacts\ea_llm_self_adaptive_local_superficial_20260527_060746
+Hypothesis records indexed: 303
+
+=== Check 1: Perturbation magnitude ===
+Total mutations checked: 247
+Unresolved child records: 0
+L2 mean: 0.102718
+L2 std: 0.049086
+Too small (<0.04): 19
+  child_id=970b1729779e4e539718bdf7288785a8 sampled_op=s_mutation sigma_snapshot=[0.2500, 0.2500, 0.2500, 0.2500] child_sigma=[0.2642, 0.2606, 0.2383, 0.2370] L2=0.024917
+  child_id=37e33e46fa584bb0b297b22d28af6a81 sampled_op=m_mutation sigma_snapshot=[0.1477, 0.2643, 0.2588, 0.3292] child_sigma=[0.1312, 0.2623, 0.2778, 0.3287] L2=0.025265
+  child_id=da342f69260a4561947f495f87fa7a5d sampled_op=s_mutation sigma_snapshot=[0.2188, 0.1989, 0.1930, 0.3893] child_sigma=[0.2329, 0.1707, 0.1943, 0.4021] L2=0.034048
+  child_id=4f1d7d1dac2f4389848015695fc08265 sampled_op=ml_mutation sigma_snapshot=[0.2188, 0.1989, 0.1930, 0.3893] child_sigma=[0.2402, 0.1761, 0.1768, 0.4068] L2=0.039392
+  child_id=4c29c95541b94a249ba3d146d8669590 sampled_op=s_mutation sigma_snapshot=[0.2713, 0.0639, 0.3980, 0.2668] child_sigma=[0.2988, 0.0423, 0.4035, 0.2554] L2=0.037153
+  child_id=bb4df780662c4807819d70f733aad0d2 sampled_op=m_mutation sigma_snapshot=[0.1477, 0.2643, 0.2588, 0.3292] child_sigma=[0.1237, 0.2657, 0.2616, 0.3490] L2=0.031268
+  child_id=23f1dfd8a8eb4548bb80db52a14ca7cb sampled_op=l_mutation sigma_snapshot=[0.0892, 0.1464, 0.4663, 0.2982] child_sigma=[0.0765, 0.1431, 0.4617, 0.3188] L2=0.024843
+  child_id=56c91280bcdb49b58c6b4c19c92fa3a1 sampled_op=ml_mutation sigma_snapshot=[0.2988, 0.0423, 0.4035, 0.2554] child_sigma=[0.2991, 0.0293, 0.3967, 0.2749] L2=0.024353
+  child_id=c2af8aae3be34b1f91dd961d3f063d84 sampled_op=l_mutation sigma_snapshot=[0.1477, 0.2643, 0.2588, 0.3292] child_sigma=[0.1307, 0.2689, 0.2755, 0.3249] L2=0.024582
+  child_id=3c8a0f75647a40059f35f375de54cdb5 sampled_op=ml_mutation sigma_snapshot=[0.2248, 0.2349, 0.2124, 0.3280] child_sigma=[0.1994, 0.2491, 0.2143, 0.3372] L2=0.030528
+  child_id=c9221a233ad74bda84933165073fc1ee sampled_op=l_mutation sigma_snapshot=[0.1477, 0.2643, 0.2588, 0.3292] child_sigma=[0.1557, 0.2611, 0.2300, 0.3531] L2=0.038452
+  child_id=be3c15caca3e4512ab0e5d89e717bf23 sampled_op=ml_mutation sigma_snapshot=[0.3524, 0.0200, 0.4239, 0.2038] child_sigma=[0.3321, 0.0297, 0.4205, 0.2177] L2=0.026660
+  child_id=dace2055406441cbb920c83e9fdde972 sampled_op=s_mutation sigma_snapshot=[0.3524, 0.0200, 0.4239, 0.2038] child_sigma=[0.3282, 0.0484, 0.4309, 0.1925] L2=0.039586
+  child_id=19a23d5bcd79491a84a9e1b9692c8093 sampled_op=l_mutation sigma_snapshot=[0.2991, 0.0293, 0.3967, 0.2749] child_sigma=[0.3027, 0.0210, 0.3731, 0.3032] L2=0.038009
+  child_id=18247320fbec46b69354bdd7c6fece8d sampled_op=ml_mutation sigma_snapshot=[0.3272, 0.0200, 0.5041, 0.1487] child_sigma=[0.3424, 0.0247, 0.4793, 0.1536] L2=0.029904
+  child_id=e63f50df464946b2923194df3435f3b9 sampled_op=ml_mutation sigma_snapshot=[0.2204, 0.0200, 0.5212, 0.2384] child_sigma=[0.2162, 0.0200, 0.5278, 0.2361] L2=0.008207
+  child_id=d906d8cd74254c4889b4d271170395a6 sampled_op=l_mutation sigma_snapshot=[0.2204, 0.0200, 0.5212, 0.2384] child_sigma=[0.2339, 0.0200, 0.5195, 0.2267] L2=0.017908
+  child_id=2be4a2a084714787880225afc5fdf359 sampled_op=m_mutation sigma_snapshot=[0.3349, 0.0478, 0.4036, 0.2137] child_sigma=[0.3126, 0.0312, 0.4200, 0.2361] L2=0.039238
+  child_id=2f6a16bdea5542488cd746bff8c2936c sampled_op=l_mutation sigma_snapshot=[0.3349, 0.0478, 0.4036, 0.2137] child_sigma=[0.3223, 0.0358, 0.4144, 0.2274] L2=0.024580
+Too large (>0.25): 2
+  child_id=ec7c93e3d2fc485c840e7b18bbb58632 sampled_op=l_mutation sigma_snapshot=[0.2283, 0.2087, 0.2231, 0.3399] child_sigma=[0.1465, 0.1117, 0.1852, 0.5567] L2=0.254019
+  child_id=3a060cc996554c72bfd0192051e7157a sampled_op=s_mutation sigma_snapshot=[0.2036, 0.2232, 0.4077, 0.1655] child_sigma=[0.1644, 0.2038, 0.2589, 0.3729] L2=0.258981
+
+=== Check 2: Parent_id lineage integrity ===
+Unresolved child records: 0
+Missing parent_id: 0
+Orphan parent_id: 0
+
+=== Check 3: Population mean sigma over generations ===
+Initial mean_sigma: [0.2500, 0.2500, 0.2500, 0.2500]
+Final mean_sigma: [0.2602, 0.1203, 0.3468, 0.2726]
+Delta: [0.0102, -0.1297, 0.0968, 0.0226]
+Chaotic jumps: 0
+
+=== Check 4: Best-lineage sigma trajectory ===
+Best hypothesis: Structural Thickness and Bulk Properties
+Best word/rank: plump / 18
+Generation reached: 31
+Longest branch length: 12
+Plotted longest branch, root to best:
+  (803bf14c, objects, init, book, 33315.0, [0.2500, 0.2500, 0.2500, 0.2500])
+  (c9453dc8, surface qualities, mutation, None, None, [0.2036, 0.2232, 0.4077, 0.1655])
+  (4d4fd5d7, tactile properties, mutation, None, None, [0.1585, 0.1484, 0.4503, 0.2428])
+  (60f4e51e, visual luster, mutation, None, None, [0.1546, 0.1721, 0.4827, 0.1906])
+  (aec2a368, surface preparation, mutation, None, None, [0.1816, 0.1126, 0.4800, 0.2258])
+  (b00bafd9, Material Durability Traits, mutation, None, None, [0.1084, 0.1554, 0.4212, 0.3150])
+  (d434ebcf, Biological Adaptation Traits, mutation, None, None, [0.0892, 0.1464, 0.4663, 0.2982])
+  (ad04c0f0, Material Properties of Biological Structures, mutation, None, None, [0.2713, 0.0639, 0.3980, 0.2668])
+  (4c29c955, Material Properties of Biological Structures: Density-Related Characteristics, mutation, None, None, [0.2988, 0.0423, 0.4035, 0.2554])
+  (90e17fb8, Material Properties of Biological Structures: Compactness and Mechanical Resilience, mutation, None, None, [0.3524, 0.0200, 0.4239, 0.2038])
+  (dace2055, Material Properties of Biological Structures: Thickness and Structural Metrics, mutation, None, None, [0.3282, 0.0484, 0.4309, 0.1925])
+  (a317397a, Structural Thickness and Bulk Properties, crossover, plump, 18.0, [0.3263, 0.0200, 0.3929, 0.2608]) [crossover]
+Full lineage tree, best to roots:
+- (a317397a, Structural Thickness and Bulk Properties, crossover, plump, 18.0, [0.3263, 0.0200, 0.3929, 0.2608])
+  crossover generation=31 parent_a=Material Properties of Biological Structures: Substantiality and Thickness sigma=[0.3349, 0.0478, 0.4036, 0.2137] parent_b=Material Properties of Biological Structures: Thickness and Structural Metrics sigma=[0.3282, 0.0484, 0.4309, 0.1925]
+  - (ecaa415f, Material Properties of Biological Structures: Substantiality and Thickness, mutation, None, None, [0.3349, 0.0478, 0.4036, 0.2137])
+    - (4c29c955, Material Properties of Biological Structures: Density-Related Characteristics, mutation, None, None, [0.2988, 0.0423, 0.4035, 0.2554])
+      - (ad04c0f0, Material Properties of Biological Structures, mutation, None, None, [0.2713, 0.0639, 0.3980, 0.2668])
+        - (d434ebcf, Biological Adaptation Traits, mutation, None, None, [0.0892, 0.1464, 0.4663, 0.2982])
+          - (b00bafd9, Material Durability Traits, mutation, None, None, [0.1084, 0.1554, 0.4212, 0.3150])
+            - (aec2a368, surface preparation, mutation, None, None, [0.1816, 0.1126, 0.4800, 0.2258])
+              - (60f4e51e, visual luster, mutation, None, None, [0.1546, 0.1721, 0.4827, 0.1906])
+                - (4d4fd5d7, tactile properties, mutation, None, None, [0.1585, 0.1484, 0.4503, 0.2428])
+                  - (c9453dc8, surface qualities, mutation, None, None, [0.2036, 0.2232, 0.4077, 0.1655])
+                    - (803bf14c, objects, init, book, 33315.0, [0.2500, 0.2500, 0.2500, 0.2500])
+                      termination: parent_id null
+  - (dace2055, Material Properties of Biological Structures: Thickness and Structural Metrics, mutation, None, None, [0.3282, 0.0484, 0.4309, 0.1925])
+    - (90e17fb8, Material Properties of Biological Structures: Compactness and Mechanical Resilience, mutation, None, None, [0.3524, 0.0200, 0.4239, 0.2038])
+      - (4c29c955, Material Properties of Biological Structures: Density-Related Characteristics, mutation, None, None, [0.2988, 0.0423, 0.4035, 0.2554])
+        - (ad04c0f0, Material Properties of Biological Structures, mutation, None, None, [0.2713, 0.0639, 0.3980, 0.2668])
+          - (d434ebcf, Biological Adaptation Traits, mutation, None, None, [0.0892, 0.1464, 0.4663, 0.2982])
+            - (b00bafd9, Material Durability Traits, mutation, None, None, [0.1084, 0.1554, 0.4212, 0.3150])
+              - (aec2a368, surface preparation, mutation, None, None, [0.1816, 0.1126, 0.4800, 0.2258])
+                - (60f4e51e, visual luster, mutation, None, None, [0.1546, 0.1721, 0.4827, 0.1906])
+                  - (4d4fd5d7, tactile properties, mutation, None, None, [0.1585, 0.1484, 0.4503, 0.2428])
+                    - (c9453dc8, surface qualities, mutation, None, None, [0.2036, 0.2232, 0.4077, 0.1655])
+                      - (803bf14c, objects, init, book, 33315.0, [0.2500, 0.2500, 0.2500, 0.2500])
+                        termination: parent_id null
+
+=== Check 5: Operator usage histogram ===
+Raw counts: {'s_mutation': 66, 'm_mutation': 33, 'ml_mutation': 81, 'l_mutation': 67}
+Empirical frequencies: {'s_mutation': 0.267206, 'm_mutation': 0.133603, 'ml_mutation': 0.327935, 'l_mutation': 0.271255}
+Final-generation mean_sigma: [0.2602, 0.1203, 0.3468, 0.2726]
+|empirical_freq - final_mean_sigma|: {'s_mutation': 0.006995, 'm_mutation': 0.013274, 'ml_mutation': 0.018887, 'l_mutation': 0.001382}
+Sampling mismatches (>0.10): 0
+FAIL: perturbation magnitude
+

@@ -8,6 +8,163 @@ belongs in `docs/design_decisions.md`.
 Entries are in reverse chronological order. Claims are phrased according to the
 current evidence level; unresolved or incomplete results are marked explicitly.
 
+## 2026-05-26 — Self-Adaptive Sigma Telemetry Shows Trace-Level Adaptation Signals
+
+Finding: sigma drifts away from uniform during self-adaptive runs.
+
+Status: Repeated-run evidence — observed across available self-adaptive traces
+for `notorious` and `superficial`, but not yet a batch-level comparison.
+
+Evidence:
+- Notorious trace:
+  [`ea_llm_self_adaptive_local_notorious_20260522_035806.json`](../traces/ea_llm_self_adaptive_local_notorious_20260522_035806.json).
+- Superficial pre-crossover-blending trace:
+  [`ea_llm_self_adaptive_local_superficial_20260525_194148.json`](../traces/ea_llm_self_adaptive_local_superficial_20260525_194148.json).
+- Superficial post-crossover-blending trace:
+  [`ea_llm_self_adaptive_local_superficial_20260526_082930.json`](../traces/ea_llm_self_adaptive_local_superficial_20260526_082930.json).
+- Inspection figures:
+  [`notorious mean sigma`](../traces/ea_llm_self_adaptive_local_notorious_20260522_035806_inspection/mean_sigma_over_generations.png),
+  [`superficial 20260525 mean sigma`](../traces/ea_llm_self_adaptive_local_superficial_20260525_194148_inspection/mean_sigma_over_generations.png),
+  and [`superficial 20260526 mean sigma`](../traces/ea_llm_self_adaptive_local_superficial_20260526_082930_inspection/mean_sigma_over_generations.png).
+- Inspection script:
+  [`scripts/inspect_self_adaptive_trace.py`](../scripts/inspect_self_adaptive_trace.py).
+
+Finding: sigma adapts differently for different targets. The notorious run ended
+with elevated `l_mutation` mass, while the inspected superficial runs ended with
+different mixes, including elevated `s_mutation` and/or `l_mutation`.
+
+Status: Uncertain / needs more data — n=2 target families in the current
+self-adaptive evidence set, with only one main run per target family. Needs
+batch comparison across 5-8 targets and multiple seeds before this can support
+an XAI claim.
+
+Finding: within-target sigma variance is high across the currently inspected
+`superficial` runs. The pre-Fix-5 run ended at `[0.3242, 0.2467, 0.2262,
+0.2029]` (s-dominant), the post-Fix-5/pre-Fix-6 run ended at `[0.2821, 0.2204,
+0.2196, 0.2779]` (s and l elevated), and the post-Fix-5+6 verification run
+ended at `[0.3232, 0.3106, 0.1708, 0.1955]` (s and m elevated, ml and l
+depressed).
+
+Status: Uncertain / needs more data — these are single-seed runs under different
+code states, so they are not a controlled within-target comparison. The variance
+suggests sigma may be adapting to whichever semantic basin the population finds
+early, not solely to the target. This downgrades confidence in per-puzzle
+adaptation until a multi-seed batch on the same target and fixed code state is
+run.
+
+Evidence:
+- Pre-Fix-5 trace:
+  [`ea_llm_self_adaptive_local_superficial_20260525_194148.json`](../traces/ea_llm_self_adaptive_local_superficial_20260525_194148.json).
+- Post-Fix-5/pre-Fix-6 trace:
+  [`ea_llm_self_adaptive_local_superficial_20260526_082930.json`](../traces/ea_llm_self_adaptive_local_superficial_20260526_082930.json).
+- Post-Fix-5+6 verification trace:
+  [`ea_llm_self_adaptive_local_superficial_20260526_135302.json`](../traces/ea_llm_self_adaptive_local_superficial_20260526_135302.json).
+
+Finding: winning or near-winning lineages can carry sigma profiles that differ
+from the population mean. In the post-crossover-blending superficial trace, the
+best trace-level result reached `thin` rank 5 while the final population mean was
+`[0.2821, 0.2204, 0.2196, 0.2779]`; lineage-level interpretation still needs
+more systematic inspection.
+
+Status: Single-run observation — needs more lineage analyses to know whether
+this is a pattern.
+
+Evidence:
+- Trace:
+  [`ea_llm_self_adaptive_local_superficial_20260526_082930.json`](../traces/ea_llm_self_adaptive_local_superficial_20260526_082930.json).
+- Best-lineage inspection figure:
+  [`best_lineage_sigma_trajectory.png`](../traces/ea_llm_self_adaptive_local_superficial_20260526_082930_inspection/best_lineage_sigma_trajectory.png).
+
+Finding: crossover sigma continuity is implemented and visible in traces after
+Fix 5. The pre-fix superficial run ended at rank 42 and had 50/50 uniform
+crossover child sigmas; the post-fix full superficial trace ended at rank 5 and
+had 50/50 crossover events with blended sigma metadata and no exactly uniform
+crossover child sigma.
+
+Status: Single-run observation — n=1 per condition, same seed. Suggestive only;
+needs seed replication before claiming an outcome improvement.
+
+Evidence:
+- Pre-fix trace:
+  [`ea_llm_self_adaptive_local_superficial_20260525_194148.json`](../traces/ea_llm_self_adaptive_local_superficial_20260525_194148.json).
+- Post-fix trace:
+  [`ea_llm_self_adaptive_local_superficial_20260526_082930.json`](../traces/ea_llm_self_adaptive_local_superficial_20260526_082930.json).
+- Code:
+  [`contexto_solver/methods/ea_llm_self_adaptive.py`](../contexto_solver/methods/ea_llm_self_adaptive.py).
+
+Finding: local search creates a uniform-sigma injection mechanism that can
+compete with sigma-adapted lineages. The mechanism is confirmed in code because
+base `_local_search()` creates a fresh `Hypothesis` without passing sigma; the
+adaptive method now disables this path by default.
+
+Status: Uncertain / needs more data — the mechanism is confirmed in code, but
+the empirical effect is a single-run observation from pre-Fix-6 traces and needs
+post-Fix-6 comparison.
+
+Evidence:
+- Code:
+  [`contexto_solver/methods/ea_core.py`](../contexto_solver/methods/ea_core.py)
+  and
+  [`contexto_solver/methods/ea_llm_self_adaptive.py`](../contexto_solver/methods/ea_llm_self_adaptive.py).
+- Trace with local-search parent-id artifacts:
+  [`ea_llm_self_adaptive_local_superficial_20260525_194148.json`](../traces/ea_llm_self_adaptive_local_superficial_20260525_194148.json).
+- See also the population-diversity-collapse finding below: local search was
+  also serving as an unintended diversity-injection mechanism, and disabling it
+  exposed repeated crossover from the same parent pair in
+  [`ea_llm_self_adaptive_local_superficial_20260526_135302.json`](../traces/ea_llm_self_adaptive_local_superficial_20260526_135302.json).
+
+Finding: population diversity collapsed in the post-Fix-6 fully adaptive
+verification run. From generations 4-15, all 12 crossover events used the same
+two parents, identifiable by parent sigma values `[0.2340, 0.3191, 0.2606,
+0.1863]` and `[0.3604, 0.2763, 0.1740, 0.1892]`. By generation 2 the best rank
+was `medium`/42 in an artistic/sensory/medium semantic basin, and the trace did
+not record exploration of alternative senses such as shallow, skin-deep,
+trivial, or exterior after that point.
+
+Status: Single-run observation — this is one 15-generation verification run.
+Mechanism: self-adaptive `_crossover()` selects the top two active hypotheses by
+best rank; stable elite ranks meant the same hypotheses kept being selected.
+Sigma adaptation continued at the operator level, but all operators operated on
+parent material from the same neighborhood. Whether randomized parent selection,
+tournament selection, or another diversity mechanism would help is an open
+question pending supervisor discussion.
+
+Evidence:
+- Trace:
+  [`ea_llm_self_adaptive_local_superficial_20260526_135302.json`](../traces/ea_llm_self_adaptive_local_superficial_20260526_135302.json).
+- Relevant trace region: `CROSSOVER` events for generations 4-15.
+
+## 2026-05-21 — Trajectory Visualizations Clarify Two `superficial` Runs, But Remain Qualitative
+
+The new trajectory plots provide a clearer qualitative view of two local GloVe
+`superficial` runs: one solved Ollama run and one earlier unsolved LLM run. The
+rank and distance plots confirm the expected endpoint behavior for these traces:
+the solved run reaches rank 1 and cosine distance 0, while the unsolved run
+plateaus above the target. The projection plots are useful for inspection, but
+they should not be treated as quantitative evidence by themselves.
+
+Evidence:
+- Analysis log entry:
+  [`2026-05-21 trajectory visualizations`](experiment_log.md#2026-05-21--trajectory-visualizations-for-superficial-traces).
+- Code:
+  [`contexto_solver/plot_trajectory.py`](../contexto_solver/plot_trajectory.py).
+- Solved trace:
+  [`llm_local_superficial_20260507_133325.json`](../traces/llm_local_superficial_20260507_133325.json).
+- Unsolved trace:
+  [`llm_local_superficial_20260506_151008.json`](../traces/llm_local_superficial_20260506_151008.json).
+- Generated figures:
+  [`solved rank`](../figures/llm_local_superficial_20260507_133325_rank.png),
+  [`solved distance`](../figures/llm_local_superficial_20260507_133325_distance.png),
+  [`solved PaCMAP`](../figures/llm_local_superficial_20260507_133325_pacmap.png),
+  [`unsolved rank`](../figures/llm_local_superficial_20260506_151008_rank.png),
+  [`unsolved distance`](../figures/llm_local_superficial_20260506_151008_distance.png),
+  and [`unsolved PaCMAP`](../figures/llm_local_superficial_20260506_151008_pacmap.png).
+
+Interpretation: these plots support trace-level diagnosis of how a run moves
+through rank space and embedding space. They do not add a batch-level result.
+Any claim that projection geometry explains success or failure remains uncertain
+until repeated traces are compared systematically.
+
 ## 2026-05-19 — HPC Pivot Replication Strengthens Aggregate Speed Claim But Weakens Per-Target Certainty
 
 The cloud-compute replication of the pivot matrix supports the same aggregate

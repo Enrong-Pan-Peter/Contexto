@@ -39,6 +39,50 @@ belong in `docs/findings.md`; algorithmic rationale belongs in
 | 2026-05-06 15:15 | local GloVe | LLM | `superficial` | not solved | 348 | 20 | `subtle` / 13 | `traces/llm_local_superficial_20260506_151506.json` |
 | 2026-05-07 13:33 | local GloVe | Ollama `qwen3:14b` | `superficial` | solved | 388 | 15 | `superficial` / 1 | `traces/llm_local_superficial_20260507_133325.json` |
 
+## Self-Adaptive Runs
+
+Columns: target, date, method, max_generations, seed, llm_model, best_rank,
+generation_reached, total_guesses, notes, trace_path.
+
+| Target | Date | Method | Max generations | Seed | LLM model | Best rank | Generation reached | Total guesses | Notes | Trace path |
+|---|---|---|---:|---:|---|---:|---:|---:|---|---|
+| `herbaceous` | 2026-05-21 | `ea_llm_self_adaptive` | 50 | 42 | `qwen3:14b` | 1 | 9 | 284 | Single-run observation. First available end-to-end self-adaptive trace in the repo; solved with `herbaceous`. Pre-crossover-blending and pre-local-search-disable. | [`traces/ea_llm_self_adaptive_local_herbaceous_20260521_214416.json`](../traces/ea_llm_self_adaptive_local_herbaceous_20260521_214416.json) |
+| `notorious` | 2026-05-22 | `ea_llm_self_adaptive` | 50 | 42 | `qwen3:14b` | 4 | 50 | 921 | Single-run observation. Reached `gangster` rank 4; inspection showed the best lineage terminating at a crossover child with uniform sigma before crossover blending was added. | [`traces/ea_llm_self_adaptive_local_notorious_20260522_035806.json`](../traces/ea_llm_self_adaptive_local_notorious_20260522_035806.json) |
+| `superficial` | 2026-05-25 | `ea_llm_self_adaptive` | 50 | 42 | `qwen3:14b` | 42 | 50 | 827 | Single-run observation. Post mutation-child trace fixes, pre-crossover-blending and pre-local-search-disable. Best rank stayed at `sharpness`/98 from generations 7-33 and later reached `medium`/42 via local search. | [`traces/ea_llm_self_adaptive_local_superficial_20260525_194148.json`](../traces/ea_llm_self_adaptive_local_superficial_20260525_194148.json) |
+| `superficial` | 2026-05-26 | `ea_llm_self_adaptive` | 5 | 42 | `qwen3:14b` | 18 | 5 | 175 | Single-run smoke observation. Post-crossover-blending verification trace; all 5 crossover events included `child_sigma_pre_perturbation` and no crossover child had exactly uniform sigma. | [`traces/ea_llm_self_adaptive_local_superficial_20260526_011632.json`](../traces/ea_llm_self_adaptive_local_superficial_20260526_011632.json) |
+| `superficial` | 2026-05-26 | `ea_llm_self_adaptive` | 50 | 42 | `qwen3:14b` | 5 | 50 | 761 | Single-run observation. Post-crossover-blending, pre-local-search-disable. Reached `thin` rank 5; all 50 crossover events included blended sigma metadata and no crossover child had exactly uniform sigma. | [`traces/ea_llm_self_adaptive_local_superficial_20260526_082930.json`](../traces/ea_llm_self_adaptive_local_superficial_20260526_082930.json) |
+| `superficial` | 2026-05-26 | `ea_llm_self_adaptive` | 15 | 42 | `qwen3:14b` | 42 | 15 | 387 | Single-run smoke observation. Post-Fix 5 + Fix 6 verification: 0 `LOCAL_SEARCH` events, 1 `LOCAL_SEARCH_DISABLED`, and all 15 crossover children had non-uniform sigma. Best rank `medium`/42 reached at generation 2, with no improvement for 13 generations; the same two parents appeared in every crossover from generation 4 onward. | [`traces/ea_llm_self_adaptive_local_superficial_20260526_135302.json`](../traces/ea_llm_self_adaptive_local_superficial_20260526_135302.json) |
+
+## Analysis Artifacts
+
+### 2026-05-21 — Trajectory Visualizations for `superficial` Traces
+
+- Evidence level: qualitative single-run visualization, not a repeated-run or
+  batch-level performance result.
+- Code: [`contexto_solver/plot_trajectory.py`](../contexto_solver/plot_trajectory.py).
+- Compared traces:
+  [`llm_local_superficial_20260507_133325.json`](../traces/llm_local_superficial_20260507_133325.json)
+  solved with Ollama `qwen3:14b`, and
+  [`llm_local_superficial_20260506_151008.json`](../traces/llm_local_superficial_20260506_151008.json)
+  failed with best word `visceral`, rank 41.
+- Generated rank plots:
+  [`llm_local_superficial_20260507_133325_rank.png`](../figures/llm_local_superficial_20260507_133325_rank.png)
+  and
+  [`llm_local_superficial_20260506_151008_rank.png`](../figures/llm_local_superficial_20260506_151008_rank.png).
+- Generated distance plots using `data/glove.6B.300d.txt`:
+  [`llm_local_superficial_20260507_133325_distance.png`](../figures/llm_local_superficial_20260507_133325_distance.png)
+  and
+  [`llm_local_superficial_20260506_151008_distance.png`](../figures/llm_local_superficial_20260506_151008_distance.png).
+- Generated PaCMAP trajectory plots using `data/glove.6B.300d.txt`:
+  [`llm_local_superficial_20260507_133325_pacmap.png`](../figures/llm_local_superficial_20260507_133325_pacmap.png)
+  and
+  [`llm_local_superficial_20260506_151008_pacmap.png`](../figures/llm_local_superficial_20260506_151008_pacmap.png).
+- Visual checks: the solved rank plot reaches rank 1, the solved distance plot
+  reaches cosine distance 0, and the solved PaCMAP run reported a target/guess
+  coordinate delta of 0 for `superficial`. These are consistency checks for the
+  visualization pipeline and the two selected traces, not general claims about
+  solver performance.
+
 ## Batch Experiments
 
 ### 2026-05-19 — HPC Pivot Evaluation Matrix, Qwen3 14B

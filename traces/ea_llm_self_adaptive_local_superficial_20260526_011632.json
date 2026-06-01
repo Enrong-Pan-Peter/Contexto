@@ -1,0 +1,4668 @@
+[
+  {
+    "generation": -1,
+    "event": "RUN_CONFIG",
+    "timestamp": "2026-05-26T00:41:41",
+    "details": {
+      "game": "local",
+      "solver": "llm",
+      "method": "ea_llm_self_adaptive",
+      "target": "superficial",
+      "game_number": null,
+      "game_embedding_path": "data/embeddings/all-MiniLM-L6-v2.npz",
+      "solver_embedding_path": null,
+      "alignment": "not_applicable",
+      "max_generations": 5,
+      "llm_provider": "ollama",
+      "llm_model": "qwen3:14b",
+      "llm_workers": 1,
+      "local_search_rank_threshold": 100,
+      "self_adaptive_mu": 5,
+      "self_adaptive_concentration": 50.0,
+      "self_adaptive_sigma_floor": 0.02,
+      "enable_pivot": false,
+      "ea_llm_pivot_stall_no_improvement_generations": null,
+      "ea_llm_pivot_stall_close_rank_threshold": null,
+      "ea_llm_pivot_stall_close_generations_limit": null,
+      "ea_llm_pivot_max_attempts_per_run": null,
+      "ea_llm_pivot_candidate_words_per_operator": null,
+      "ea_llm_pivot_resolution_window": null,
+      "seed_count": null,
+      "active_count": null,
+      "neighbors_per_word": null,
+      "random_seed": 42
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:41:59",
+    "details": {
+      "word": "tree",
+      "rank": 263011,
+      "hypothesis": "natureelements",
+      "best_word": "tree",
+      "best_rank": 263011,
+      "total_guesses": 1
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:41:59",
+    "details": {
+      "word": "river",
+      "rank": 263584,
+      "hypothesis": "natureelements",
+      "best_word": "tree",
+      "best_rank": 263011,
+      "total_guesses": 2
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:41:59",
+    "details": {
+      "word": "mountain",
+      "rank": 178312,
+      "hypothesis": "natureelements",
+      "best_word": "mountain",
+      "best_rank": 178312,
+      "total_guesses": 3
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:41:59",
+    "details": {
+      "word": "happy",
+      "rank": 79574,
+      "hypothesis": "emotions",
+      "best_word": "happy",
+      "best_rank": 79574,
+      "total_guesses": 4
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:41:59",
+    "details": {
+      "word": "sad",
+      "rank": 152764,
+      "hypothesis": "emotions",
+      "best_word": "happy",
+      "best_rank": 79574,
+      "total_guesses": 5
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:41:59",
+    "details": {
+      "word": "angry",
+      "rank": 66781,
+      "hypothesis": "emotions",
+      "best_word": "angry",
+      "best_rank": 66781,
+      "total_guesses": 6
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:41:59",
+    "details": {
+      "word": "eat",
+      "rank": 823,
+      "hypothesis": "dailyactivities",
+      "best_word": "eat",
+      "best_rank": 823,
+      "total_guesses": 7
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:41:59",
+    "details": {
+      "word": "sleep",
+      "rank": 44212,
+      "hypothesis": "dailyactivities",
+      "best_word": "eat",
+      "best_rank": 823,
+      "total_guesses": 8
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:41:59",
+    "details": {
+      "word": "work",
+      "rank": 56292,
+      "hypothesis": "dailyactivities",
+      "best_word": "eat",
+      "best_rank": 823,
+      "total_guesses": 9
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:41:59",
+    "details": {
+      "word": "hand",
+      "rank": 39231,
+      "hypothesis": "bodyparts",
+      "best_word": "eat",
+      "best_rank": 823,
+      "total_guesses": 10
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:41:59",
+    "details": {
+      "word": "foot",
+      "rank": 48332,
+      "hypothesis": "bodyparts",
+      "best_word": "eat",
+      "best_rank": 823,
+      "total_guesses": 11
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:41:59",
+    "details": {
+      "word": "eye",
+      "rank": 2117,
+      "hypothesis": "bodyparts",
+      "best_word": "eat",
+      "best_rank": 823,
+      "total_guesses": 12
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:41:59",
+    "details": {
+      "word": "book",
+      "rank": 33315,
+      "hypothesis": "commonobjects",
+      "best_word": "eat",
+      "best_rank": 823,
+      "total_guesses": 13
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:41:59",
+    "details": {
+      "word": "chair",
+      "rank": 127042,
+      "hypothesis": "commonobjects",
+      "best_word": "eat",
+      "best_rank": 823,
+      "total_guesses": 14
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:41:59",
+    "details": {
+      "word": "table",
+      "rank": 190579,
+      "hypothesis": "commonobjects",
+      "best_word": "eat",
+      "best_rank": 823,
+      "total_guesses": 15
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:41:59",
+    "details": {
+      "word": "red",
+      "rank": 179717,
+      "hypothesis": "colors",
+      "best_word": "eat",
+      "best_rank": 823,
+      "total_guesses": 16
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:41:59",
+    "details": {
+      "word": "blue",
+      "rank": 68640,
+      "hypothesis": "colors",
+      "best_word": "eat",
+      "best_rank": 823,
+      "total_guesses": 17
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:41:59",
+    "details": {
+      "word": "green",
+      "rank": 49571,
+      "hypothesis": "colors",
+      "best_word": "eat",
+      "best_rank": 823,
+      "total_guesses": 18
+    }
+  },
+  {
+    "generation": 0,
+    "event": "INIT",
+    "timestamp": "2026-05-26T00:41:59",
+    "details": {
+      "hypotheses": [
+        {
+          "hypothesis_id": "429b288ab1e64187ba6bff3e44d89b86",
+          "category_name": "natureelements",
+          "description": "natural phenomena and features",
+          "words_tried": {
+            "mountain": 178312,
+            "tree": 263011,
+            "river": 263584
+          },
+          "best_word": "mountain",
+          "best_rank": 178312,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "5cd87a48afa4417b98d2c086329893a2",
+          "category_name": "emotions",
+          "description": "basic human feelings",
+          "words_tried": {
+            "angry": 66781,
+            "happy": 79574,
+            "sad": 152764
+          },
+          "best_word": "angry",
+          "best_rank": 66781,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "032866439f5e4417965408ed7c087a63",
+          "category_name": "dailyactivities",
+          "description": "common daily actions",
+          "words_tried": {
+            "eat": 823,
+            "sleep": 44212,
+            "work": 56292
+          },
+          "best_word": "eat",
+          "best_rank": 823,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "f369bd28ef8746a0ae658eb4607e349a",
+          "category_name": "bodyparts",
+          "description": "human body components",
+          "words_tried": {
+            "eye": 2117,
+            "hand": 39231,
+            "foot": 48332
+          },
+          "best_word": "eye",
+          "best_rank": 2117,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "d9b875cd47a54886a0a84d9612430179",
+          "category_name": "commonobjects",
+          "description": "everyday items",
+          "words_tried": {
+            "book": 33315,
+            "chair": 127042,
+            "table": 190579
+          },
+          "best_word": "book",
+          "best_rank": 33315,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "16ba5da8d48d4a28ad66ab686cb88a99",
+          "category_name": "colors",
+          "description": "basic color names",
+          "words_tried": {
+            "green": 49571,
+            "blue": 68640,
+            "red": 179717
+          },
+          "best_word": "green",
+          "best_rank": 49571,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        }
+      ],
+      "best_word": "eat",
+      "best_rank": 823,
+      "total_guesses": 18
+    }
+  },
+  {
+    "generation": 0,
+    "event": "SIGMA_TRAJECTORY",
+    "timestamp": "2026-05-26T00:41:59",
+    "details": {
+      "mean_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "population_size": 6
+    }
+  },
+  {
+    "generation": 1,
+    "event": "CANDIDATES",
+    "timestamp": "2026-05-26T00:43:32",
+    "details": {
+      "count": 15,
+      "candidates": [
+        {
+          "hypothesis": "emotions",
+          "word": "fear"
+        },
+        {
+          "hypothesis": "emotions",
+          "word": "love"
+        },
+        {
+          "hypothesis": "emotions",
+          "word": "hope"
+        },
+        {
+          "hypothesis": "dailyactivities",
+          "word": "brush"
+        },
+        {
+          "hypothesis": "dailyactivities",
+          "word": "drink"
+        },
+        {
+          "hypothesis": "dailyactivities",
+          "word": "walk"
+        },
+        {
+          "hypothesis": "bodyparts",
+          "word": "head"
+        },
+        {
+          "hypothesis": "bodyparts",
+          "word": "mouth"
+        },
+        {
+          "hypothesis": "bodyparts",
+          "word": "nose"
+        },
+        {
+          "hypothesis": "commonobjects",
+          "word": "lamp"
+        },
+        {
+          "hypothesis": "commonobjects",
+          "word": "cup"
+        },
+        {
+          "hypothesis": "commonobjects",
+          "word": "door"
+        },
+        {
+          "hypothesis": "colors",
+          "word": "yellow"
+        },
+        {
+          "hypothesis": "colors",
+          "word": "orange"
+        },
+        {
+          "hypothesis": "colors",
+          "word": "purple"
+        }
+      ]
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:43:32",
+    "details": {
+      "word": "fear",
+      "rank": 75523,
+      "hypothesis": "emotions",
+      "best_word": "eat",
+      "best_rank": 823,
+      "total_guesses": 19
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:43:32",
+    "details": {
+      "word": "love",
+      "rank": 31520,
+      "hypothesis": "emotions",
+      "best_word": "eat",
+      "best_rank": 823,
+      "total_guesses": 20
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:43:32",
+    "details": {
+      "word": "hope",
+      "rank": 250718,
+      "hypothesis": "emotions",
+      "best_word": "eat",
+      "best_rank": 823,
+      "total_guesses": 21
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:43:32",
+    "details": {
+      "word": "brush",
+      "rank": 46893,
+      "hypothesis": "dailyactivities",
+      "best_word": "eat",
+      "best_rank": 823,
+      "total_guesses": 22
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:43:32",
+    "details": {
+      "word": "drink",
+      "rank": 63530,
+      "hypothesis": "dailyactivities",
+      "best_word": "eat",
+      "best_rank": 823,
+      "total_guesses": 23
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:43:32",
+    "details": {
+      "word": "walk",
+      "rank": 228727,
+      "hypothesis": "dailyactivities",
+      "best_word": "eat",
+      "best_rank": 823,
+      "total_guesses": 24
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:43:32",
+    "details": {
+      "word": "head",
+      "rank": 91828,
+      "hypothesis": "bodyparts",
+      "best_word": "eat",
+      "best_rank": 823,
+      "total_guesses": 25
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:43:32",
+    "details": {
+      "word": "mouth",
+      "rank": 16030,
+      "hypothesis": "bodyparts",
+      "best_word": "eat",
+      "best_rank": 823,
+      "total_guesses": 26
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:43:32",
+    "details": {
+      "word": "nose",
+      "rank": 3922,
+      "hypothesis": "bodyparts",
+      "best_word": "eat",
+      "best_rank": 823,
+      "total_guesses": 27
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:43:32",
+    "details": {
+      "word": "lamp",
+      "rank": 52882,
+      "hypothesis": "commonobjects",
+      "best_word": "eat",
+      "best_rank": 823,
+      "total_guesses": 28
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:43:32",
+    "details": {
+      "word": "cup",
+      "rank": 105926,
+      "hypothesis": "commonobjects",
+      "best_word": "eat",
+      "best_rank": 823,
+      "total_guesses": 29
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:43:32",
+    "details": {
+      "word": "door",
+      "rank": 122992,
+      "hypothesis": "commonobjects",
+      "best_word": "eat",
+      "best_rank": 823,
+      "total_guesses": 30
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:43:32",
+    "details": {
+      "word": "yellow",
+      "rank": 33125,
+      "hypothesis": "colors",
+      "best_word": "eat",
+      "best_rank": 823,
+      "total_guesses": 31
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:43:32",
+    "details": {
+      "word": "orange",
+      "rank": 29264,
+      "hypothesis": "colors",
+      "best_word": "eat",
+      "best_rank": 823,
+      "total_guesses": 32
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:43:32",
+    "details": {
+      "word": "purple",
+      "rank": 129926,
+      "hypothesis": "colors",
+      "best_word": "eat",
+      "best_rank": 823,
+      "total_guesses": 33
+    }
+  },
+  {
+    "generation": 1,
+    "event": "SELECT",
+    "timestamp": "2026-05-26T00:43:32",
+    "details": {
+      "kept": [
+        "dailyactivities",
+        "bodyparts",
+        "colors"
+      ],
+      "discarded": [
+        "emotions",
+        "commonobjects",
+        "natureelements"
+      ],
+      "elite": "dailyactivities",
+      "max_active_hypotheses": 5,
+      "best_word": "eat",
+      "best_rank": 823,
+      "total_guesses": 33
+    }
+  },
+  {
+    "generation": 1,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-05-26T00:44:15",
+    "details": {
+      "parent_id": "032866439f5e4417965408ed7c087a63",
+      "child_id": "642accd735394268a7518d2067d13c91",
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.20244513124178523,
+        0.35878150930703145,
+        0.1860139570032389,
+        0.25275940244794465
+      ],
+      "child_hypothesis_name": "nutritionalaspects",
+      "sampled_op": "l_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:44:15",
+    "details": {
+      "word": "nutrient",
+      "rank": 24741,
+      "hypothesis": "nutritionalaspects",
+      "best_word": "eat",
+      "best_rank": 823,
+      "total_guesses": 34
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:44:15",
+    "details": {
+      "word": "mineral",
+      "rank": 3005,
+      "hypothesis": "nutritionalaspects",
+      "best_word": "eat",
+      "best_rank": 823,
+      "total_guesses": 35
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:44:15",
+    "details": {
+      "word": "vitamin",
+      "rank": 9600,
+      "hypothesis": "nutritionalaspects",
+      "best_word": "eat",
+      "best_rank": 823,
+      "total_guesses": 36
+    }
+  },
+  {
+    "generation": 1,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-05-26T00:44:38",
+    "details": {
+      "parent_id": "f369bd28ef8746a0ae658eb4607e349a",
+      "child_id": "3f514fdf44064c52bbe0981f94c7be64",
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.2804369624528541,
+        0.22433480188821942,
+        0.250984620501685,
+        0.2442436151572416
+      ],
+      "child_hypothesis_name": "visual perception terms",
+      "sampled_op": "m_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:44:38",
+    "details": {
+      "word": "gaze",
+      "rank": 3900,
+      "hypothesis": "visual perception terms",
+      "best_word": "eat",
+      "best_rank": 823,
+      "total_guesses": 37
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:44:38",
+    "details": {
+      "word": "sight",
+      "rank": 20329,
+      "hypothesis": "visual perception terms",
+      "best_word": "eat",
+      "best_rank": 823,
+      "total_guesses": 38
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:44:38",
+    "details": {
+      "word": "look",
+      "rank": 1999,
+      "hypothesis": "visual perception terms",
+      "best_word": "eat",
+      "best_rank": 823,
+      "total_guesses": 39
+    }
+  },
+  {
+    "generation": 1,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-05-26T00:44:52",
+    "details": {
+      "parent_id": "16ba5da8d48d4a28ad66ab686cb88a99",
+      "child_id": "2bdf3855d510435bba3fff274c58f069",
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.2692053914917368,
+        0.2231768387835997,
+        0.26117471689143756,
+        0.24644305283322587
+      ],
+      "child_hypothesis_name": "time of day",
+      "sampled_op": "l_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:44:52",
+    "details": {
+      "word": "dawn",
+      "rank": 37828,
+      "hypothesis": "time of day",
+      "best_word": "eat",
+      "best_rank": 823,
+      "total_guesses": 40
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:44:52",
+    "details": {
+      "word": "dusk",
+      "rank": 42229,
+      "hypothesis": "time of day",
+      "best_word": "eat",
+      "best_rank": 823,
+      "total_guesses": 41
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:44:52",
+    "details": {
+      "word": "midday",
+      "rank": 86396,
+      "hypothesis": "time of day",
+      "best_word": "eat",
+      "best_rank": 823,
+      "total_guesses": 42
+    }
+  },
+  {
+    "generation": 1,
+    "event": "MUTATE",
+    "timestamp": "2026-05-26T00:44:52",
+    "details": {
+      "method": "self_adaptive",
+      "children": [
+        {
+          "hypothesis_id": "642accd735394268a7518d2067d13c91",
+          "category_name": "nutritionalaspects",
+          "description": "essential food components",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "dailyactivities",
+          "parent_id": "032866439f5e4417965408ed7c087a63",
+          "origin": "self_adaptive_l_mutation",
+          "sigma": [
+            0.20244513124178523,
+            0.35878150930703145,
+            0.1860139570032389,
+            0.25275940244794465
+          ]
+        },
+        {
+          "hypothesis_id": "3f514fdf44064c52bbe0981f94c7be64",
+          "category_name": "visual perception terms",
+          "description": "terms related to the sense of sight",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "bodyparts",
+          "parent_id": "f369bd28ef8746a0ae658eb4607e349a",
+          "origin": "self_adaptive_m_mutation",
+          "sigma": [
+            0.2804369624528541,
+            0.22433480188821942,
+            0.250984620501685,
+            0.2442436151572416
+          ]
+        },
+        {
+          "hypothesis_id": "2bdf3855d510435bba3fff274c58f069",
+          "category_name": "time of day",
+          "description": "phases of the daily cycle",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "colors",
+          "parent_id": "16ba5da8d48d4a28ad66ab686cb88a99",
+          "origin": "self_adaptive_l_mutation",
+          "sigma": [
+            0.2692053914917368,
+            0.2231768387835997,
+            0.26117471689143756,
+            0.24644305283322587
+          ]
+        }
+      ],
+      "best_word": "eat",
+      "best_rank": 823,
+      "total_guesses": 42
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:45:10",
+    "details": {
+      "word": "look",
+      "rank": 1999,
+      "hypothesis": "visual daily activities",
+      "best_word": "eat",
+      "best_rank": 823,
+      "total_guesses": 42
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:45:10",
+    "details": {
+      "word": "watch",
+      "rank": 104628,
+      "hypothesis": "visual daily activities",
+      "best_word": "eat",
+      "best_rank": 823,
+      "total_guesses": 43
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:45:10",
+    "details": {
+      "word": "see",
+      "rank": 48120,
+      "hypothesis": "visual daily activities",
+      "best_word": "eat",
+      "best_rank": 823,
+      "total_guesses": 44
+    }
+  },
+  {
+    "generation": 1,
+    "event": "CROSSOVER",
+    "timestamp": "2026-05-26T00:45:10",
+    "details": {
+      "parents": [
+        "dailyactivities",
+        "visual perception terms"
+      ],
+      "parent_a_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "parent_b_sigma": [
+        0.2804369624528541,
+        0.22433480188821942,
+        0.250984620501685,
+        0.2442436151572416
+      ],
+      "child_sigma_pre_perturbation": [
+        0.26521848122642705,
+        0.2371674009441097,
+        0.2504923102508425,
+        0.2471218075786208
+      ],
+      "child": {
+        "hypothesis_id": "31528b3fb29f4c4da1cf7bb1c9186be3",
+        "category_name": "visual daily activities",
+        "description": "daily actions involving visual perception",
+        "words_tried": {
+          "look": 1999,
+          "see": 48120,
+          "watch": 104628
+        },
+        "best_word": "look",
+        "best_rank": 1999,
+        "status": "active",
+        "parent": "dailyactivities+visual perception terms",
+        "parent_id": null,
+        "origin": "crossover",
+        "sigma": [
+          0.3002666601073369,
+          0.27428471861514847,
+          0.2275469381404505,
+          0.19790168313706427
+        ]
+      },
+      "best_word": "eat",
+      "best_rank": 823,
+      "total_guesses": 44
+    }
+  },
+  {
+    "generation": 1,
+    "event": "SIGMA_TRAJECTORY",
+    "timestamp": "2026-05-26T00:45:10",
+    "details": {
+      "mean_sigma": [
+        0.25662975076039524,
+        0.2714802059620799,
+        0.23290910312907487,
+        0.2389809401484501
+      ],
+      "population_size": 5
+    }
+  },
+  {
+    "generation": 2,
+    "event": "CANDIDATES",
+    "timestamp": "2026-05-26T00:46:57",
+    "details": {
+      "count": 14,
+      "candidates": [
+        {
+          "hypothesis": "dailyactivities",
+          "word": "rest"
+        },
+        {
+          "hypothesis": "dailyactivities",
+          "word": "read"
+        },
+        {
+          "hypothesis": "dailyactivities",
+          "word": "cook"
+        },
+        {
+          "hypothesis": "visual perception terms",
+          "word": "vision"
+        },
+        {
+          "hypothesis": "visual perception terms",
+          "word": "view"
+        },
+        {
+          "hypothesis": "visual perception terms",
+          "word": "notice"
+        },
+        {
+          "hypothesis": "visual daily activities",
+          "word": "scan"
+        },
+        {
+          "hypothesis": "visual daily activities",
+          "word": "survey"
+        },
+        {
+          "hypothesis": "bodyparts",
+          "word": "arm"
+        },
+        {
+          "hypothesis": "bodyparts",
+          "word": "leg"
+        },
+        {
+          "hypothesis": "bodyparts",
+          "word": "neck"
+        },
+        {
+          "hypothesis": "nutritionalaspects",
+          "word": "fiber"
+        },
+        {
+          "hypothesis": "nutritionalaspects",
+          "word": "protein"
+        },
+        {
+          "hypothesis": "nutritionalaspects",
+          "word": "lipid"
+        }
+      ]
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:46:57",
+    "details": {
+      "word": "rest",
+      "rank": 49460,
+      "hypothesis": "dailyactivities",
+      "best_word": "eat",
+      "best_rank": 823,
+      "total_guesses": 45
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:46:57",
+    "details": {
+      "word": "read",
+      "rank": 23390,
+      "hypothesis": "dailyactivities",
+      "best_word": "eat",
+      "best_rank": 823,
+      "total_guesses": 46
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:46:57",
+    "details": {
+      "word": "cook",
+      "rank": 35874,
+      "hypothesis": "dailyactivities",
+      "best_word": "eat",
+      "best_rank": 823,
+      "total_guesses": 47
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:46:57",
+    "details": {
+      "word": "vision",
+      "rank": 14726,
+      "hypothesis": "visual perception terms",
+      "best_word": "eat",
+      "best_rank": 823,
+      "total_guesses": 48
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:46:57",
+    "details": {
+      "word": "view",
+      "rank": 115756,
+      "hypothesis": "visual perception terms",
+      "best_word": "eat",
+      "best_rank": 823,
+      "total_guesses": 49
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:46:57",
+    "details": {
+      "word": "notice",
+      "rank": 83144,
+      "hypothesis": "visual perception terms",
+      "best_word": "eat",
+      "best_rank": 823,
+      "total_guesses": 50
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:46:57",
+    "details": {
+      "word": "scan",
+      "rank": 149737,
+      "hypothesis": "visual daily activities",
+      "best_word": "eat",
+      "best_rank": 823,
+      "total_guesses": 51
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:46:57",
+    "details": {
+      "word": "survey",
+      "rank": 15023,
+      "hypothesis": "visual daily activities",
+      "best_word": "eat",
+      "best_rank": 823,
+      "total_guesses": 52
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:46:57",
+    "details": {
+      "word": "arm",
+      "rank": 23849,
+      "hypothesis": "bodyparts",
+      "best_word": "eat",
+      "best_rank": 823,
+      "total_guesses": 53
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:46:57",
+    "details": {
+      "word": "leg",
+      "rank": 11510,
+      "hypothesis": "bodyparts",
+      "best_word": "eat",
+      "best_rank": 823,
+      "total_guesses": 54
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:46:57",
+    "details": {
+      "word": "neck",
+      "rank": 10906,
+      "hypothesis": "bodyparts",
+      "best_word": "eat",
+      "best_rank": 823,
+      "total_guesses": 55
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:46:57",
+    "details": {
+      "word": "fiber",
+      "rank": 50619,
+      "hypothesis": "nutritionalaspects",
+      "best_word": "eat",
+      "best_rank": 823,
+      "total_guesses": 56
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:46:57",
+    "details": {
+      "word": "protein",
+      "rank": 88885,
+      "hypothesis": "nutritionalaspects",
+      "best_word": "eat",
+      "best_rank": 823,
+      "total_guesses": 57
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:46:57",
+    "details": {
+      "word": "lipid",
+      "rank": 820,
+      "hypothesis": "nutritionalaspects",
+      "best_word": "lipid",
+      "best_rank": 820,
+      "total_guesses": 58
+    }
+  },
+  {
+    "generation": 2,
+    "event": "SELECT",
+    "timestamp": "2026-05-26T00:46:57",
+    "details": {
+      "kept": [
+        "nutritionalaspects",
+        "dailyactivities",
+        "visual perception terms",
+        "visual daily activities",
+        "bodyparts"
+      ],
+      "discarded": [
+        "colors",
+        "emotions",
+        "commonobjects",
+        "time of day",
+        "natureelements"
+      ],
+      "elite": "nutritionalaspects",
+      "max_active_hypotheses": 5,
+      "best_word": "lipid",
+      "best_rank": 820,
+      "total_guesses": 58
+    }
+  },
+  {
+    "generation": 2,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-05-26T00:47:17",
+    "details": {
+      "parent_id": "642accd735394268a7518d2067d13c91",
+      "child_id": "d25e128ed77b44dfaf60c01fe2297ea5",
+      "sigma_snapshot": [
+        0.20244513124178523,
+        0.35878150930703145,
+        0.1860139570032389,
+        0.25275940244794465
+      ],
+      "child_sigma": [
+        0.21533455168290283,
+        0.32785863902741136,
+        0.2597302694757714,
+        0.19707653981391443
+      ],
+      "child_hypothesis_name": "lipidtypes",
+      "sampled_op": "s_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:47:17",
+    "details": {
+      "word": "fat",
+      "rank": 39,
+      "hypothesis": "lipidtypes",
+      "best_word": "fat",
+      "best_rank": 39,
+      "total_guesses": 59
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:47:17",
+    "details": {
+      "word": "oil",
+      "rank": 22678,
+      "hypothesis": "lipidtypes",
+      "best_word": "fat",
+      "best_rank": 39,
+      "total_guesses": 60
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:47:17",
+    "details": {
+      "word": "ester",
+      "rank": 69807,
+      "hypothesis": "lipidtypes",
+      "best_word": "fat",
+      "best_rank": 39,
+      "total_guesses": 61
+    }
+  },
+  {
+    "generation": 2,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-05-26T00:48:13",
+    "details": {
+      "parent_id": "032866439f5e4417965408ed7c087a63",
+      "child_id": "8e971668076248c2a9e8e08d355a01f4",
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.2532689398658229,
+        0.25231312348166834,
+        0.2526609660026481,
+        0.24175697064986074
+      ],
+      "child_hypothesis_name": "socialinteractions",
+      "sampled_op": "l_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:48:13",
+    "details": {
+      "word": "share",
+      "rank": 167647,
+      "hypothesis": "socialinteractions",
+      "best_word": "fat",
+      "best_rank": 39,
+      "total_guesses": 62
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:48:13",
+    "details": {
+      "word": "gather",
+      "rank": 107417,
+      "hypothesis": "socialinteractions",
+      "best_word": "fat",
+      "best_rank": 39,
+      "total_guesses": 63
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:48:13",
+    "details": {
+      "word": "celebrate",
+      "rank": 278913,
+      "hypothesis": "socialinteractions",
+      "best_word": "fat",
+      "best_rank": 39,
+      "total_guesses": 64
+    }
+  },
+  {
+    "generation": 2,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-05-26T00:48:28",
+    "details": {
+      "parent_id": "3f514fdf44064c52bbe0981f94c7be64",
+      "child_id": "963e1745a18c41da8995b749dfc10fc9",
+      "sigma_snapshot": [
+        0.2804369624528541,
+        0.22433480188821942,
+        0.250984620501685,
+        0.2442436151572416
+      ],
+      "child_sigma": [
+        0.23132039209411195,
+        0.24240688133111035,
+        0.2907382490033294,
+        0.2355344775714482
+      ],
+      "child_hypothesis_name": "visual attention behaviors",
+      "sampled_op": "ml_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:48:28",
+    "details": {
+      "word": "stare",
+      "rank": 1308,
+      "hypothesis": "visual attention behaviors",
+      "best_word": "fat",
+      "best_rank": 39,
+      "total_guesses": 65
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:48:28",
+    "details": {
+      "word": "glance",
+      "rank": 229,
+      "hypothesis": "visual attention behaviors",
+      "best_word": "fat",
+      "best_rank": 39,
+      "total_guesses": 66
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:48:28",
+    "details": {
+      "word": "peer",
+      "rank": 5281,
+      "hypothesis": "visual attention behaviors",
+      "best_word": "fat",
+      "best_rank": 39,
+      "total_guesses": 67
+    }
+  },
+  {
+    "generation": 2,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-05-26T00:48:51",
+    "details": {
+      "parent_id": "31528b3fb29f4c4da1cf7bb1c9186be3",
+      "child_id": "ac618342d0534b47b58e5794f7515194",
+      "sigma_snapshot": [
+        0.3002666601073369,
+        0.27428471861514847,
+        0.2275469381404505,
+        0.19790168313706427
+      ],
+      "child_sigma": [
+        0.2625155517561947,
+        0.30566195643094834,
+        0.27154258846561763,
+        0.1602799033472394
+      ],
+      "child_hypothesis_name": "intentional observation",
+      "sampled_op": "m_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:48:51",
+    "details": {
+      "word": "check",
+      "rank": 85988,
+      "hypothesis": "intentional observation",
+      "best_word": "fat",
+      "best_rank": 39,
+      "total_guesses": 68
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:48:51",
+    "details": {
+      "word": "glimpse",
+      "rank": 111670,
+      "hypothesis": "intentional observation",
+      "best_word": "fat",
+      "best_rank": 39,
+      "total_guesses": 69
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:48:51",
+    "details": {
+      "word": "peek",
+      "rank": 21039,
+      "hypothesis": "intentional observation",
+      "best_word": "fat",
+      "best_rank": 39,
+      "total_guesses": 70
+    }
+  },
+  {
+    "generation": 2,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-05-26T00:49:17",
+    "details": {
+      "parent_id": "f369bd28ef8746a0ae658eb4607e349a",
+      "child_id": "23a3916e837147caafffe2b3ca2199dc",
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.20151589953751883,
+        0.22587426329711813,
+        0.30995938011517626,
+        0.26265045705018686
+      ],
+      "child_hypothesis_name": "visual perception terms",
+      "sampled_op": "m_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:49:17",
+    "details": {
+      "word": "perception",
+      "rank": 18643,
+      "hypothesis": "visual perception terms",
+      "best_word": "fat",
+      "best_rank": 39,
+      "total_guesses": 71
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:49:17",
+    "details": {
+      "word": "spectrum",
+      "rank": 163635,
+      "hypothesis": "visual perception terms",
+      "best_word": "fat",
+      "best_rank": 39,
+      "total_guesses": 72
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:49:17",
+    "details": {
+      "word": "optics",
+      "rank": 6941,
+      "hypothesis": "visual perception terms",
+      "best_word": "fat",
+      "best_rank": 39,
+      "total_guesses": 73
+    }
+  },
+  {
+    "generation": 2,
+    "event": "MUTATE",
+    "timestamp": "2026-05-26T00:49:17",
+    "details": {
+      "method": "self_adaptive",
+      "children": [
+        {
+          "hypothesis_id": "d25e128ed77b44dfaf60c01fe2297ea5",
+          "category_name": "lipidtypes",
+          "description": "types of lipids",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "nutritionalaspects",
+          "parent_id": "642accd735394268a7518d2067d13c91",
+          "origin": "self_adaptive_s_mutation",
+          "sigma": [
+            0.21533455168290283,
+            0.32785863902741136,
+            0.2597302694757714,
+            0.19707653981391443
+          ]
+        },
+        {
+          "hypothesis_id": "8e971668076248c2a9e8e08d355a01f4",
+          "category_name": "socialinteractions",
+          "description": "group activities involving food sharing",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "dailyactivities",
+          "parent_id": "032866439f5e4417965408ed7c087a63",
+          "origin": "self_adaptive_l_mutation",
+          "sigma": [
+            0.2532689398658229,
+            0.25231312348166834,
+            0.2526609660026481,
+            0.24175697064986074
+          ]
+        },
+        {
+          "hypothesis_id": "963e1745a18c41da8995b749dfc10fc9",
+          "category_name": "visual attention behaviors",
+          "description": "actions involving focused or directed sight",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "visual perception terms",
+          "parent_id": "3f514fdf44064c52bbe0981f94c7be64",
+          "origin": "self_adaptive_ml_mutation",
+          "sigma": [
+            0.23132039209411195,
+            0.24240688133111035,
+            0.2907382490033294,
+            0.2355344775714482
+          ]
+        },
+        {
+          "hypothesis_id": "ac618342d0534b47b58e5794f7515194",
+          "category_name": "intentional observation",
+          "description": "purposeful acts of directing attention",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "visual daily activities",
+          "parent_id": "31528b3fb29f4c4da1cf7bb1c9186be3",
+          "origin": "self_adaptive_m_mutation",
+          "sigma": [
+            0.2625155517561947,
+            0.30566195643094834,
+            0.27154258846561763,
+            0.1602799033472394
+          ]
+        },
+        {
+          "hypothesis_id": "23a3916e837147caafffe2b3ca2199dc",
+          "category_name": "visual perception terms",
+          "description": "terms related to the function and study of vision beyond the physical organ",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "bodyparts",
+          "parent_id": "f369bd28ef8746a0ae658eb4607e349a",
+          "origin": "self_adaptive_m_mutation",
+          "sigma": [
+            0.20151589953751883,
+            0.22587426329711813,
+            0.30995938011517626,
+            0.26265045705018686
+          ]
+        }
+      ],
+      "best_word": "fat",
+      "best_rank": 39,
+      "total_guesses": 73
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:49:41",
+    "details": {
+      "word": "gaze",
+      "rank": 3900,
+      "hypothesis": "lipid attention",
+      "best_word": "fat",
+      "best_rank": 39,
+      "total_guesses": 73
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:49:41",
+    "details": {
+      "word": "scan",
+      "rank": 149737,
+      "hypothesis": "lipid attention",
+      "best_word": "fat",
+      "best_rank": 39,
+      "total_guesses": 73
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:49:41",
+    "details": {
+      "word": "peer",
+      "rank": 5281,
+      "hypothesis": "lipid attention",
+      "best_word": "fat",
+      "best_rank": 39,
+      "total_guesses": 73
+    }
+  },
+  {
+    "generation": 2,
+    "event": "CROSSOVER",
+    "timestamp": "2026-05-26T00:49:41",
+    "details": {
+      "parents": [
+        "lipidtypes",
+        "visual attention behaviors"
+      ],
+      "parent_a_sigma": [
+        0.21533455168290283,
+        0.32785863902741136,
+        0.2597302694757714,
+        0.19707653981391443
+      ],
+      "parent_b_sigma": [
+        0.23132039209411195,
+        0.24240688133111035,
+        0.2907382490033294,
+        0.2355344775714482
+      ],
+      "child_sigma_pre_perturbation": [
+        0.22332747188850738,
+        0.28513276017926087,
+        0.27523425923955036,
+        0.2163055086926813
+      ],
+      "child": {
+        "hypothesis_id": "fcc1fbc0a25c411e8567cb68f87bb790",
+        "category_name": "lipid attention",
+        "description": "interaction between lipid types and visual focus",
+        "words_tried": {
+          "gaze": 3900,
+          "peer": 5281,
+          "scan": 149737
+        },
+        "best_word": "gaze",
+        "best_rank": 3900,
+        "status": "active",
+        "parent": "lipidtypes+visual attention behaviors",
+        "parent_id": null,
+        "origin": "crossover",
+        "sigma": [
+          0.2717432034790613,
+          0.32750752098942587,
+          0.25330342867614175,
+          0.1474458468553712
+        ]
+      },
+      "best_word": "fat",
+      "best_rank": 39,
+      "total_guesses": 73
+    }
+  },
+  {
+    "generation": 2,
+    "event": "DEDUPLICATE",
+    "timestamp": "2026-05-26T00:49:41",
+    "details": {
+      "merged": [
+        {
+          "survivor": "visual perception terms",
+          "discarded": "visual perception terms",
+          "survivor_best_rank": 1999,
+          "discarded_best_rank": 6941
+        }
+      ],
+      "remaining_hypotheses": 15,
+      "active_hypotheses": 5,
+      "best_word": "fat",
+      "best_rank": 39,
+      "total_guesses": 73
+    }
+  },
+  {
+    "generation": 2,
+    "event": "SIGMA_TRAJECTORY",
+    "timestamp": "2026-05-26T00:49:41",
+    "details": {
+      "mean_sigma": [
+        0.2359074074943308,
+        0.28067636631075454,
+        0.24749341919680493,
+        0.23592280699810977
+      ],
+      "population_size": 5
+    }
+  },
+  {
+    "generation": 3,
+    "event": "CANDIDATES",
+    "timestamp": "2026-05-26T00:51:28",
+    "details": {
+      "count": 14,
+      "candidates": [
+        {
+          "hypothesis": "lipidtypes",
+          "word": "steroid"
+        },
+        {
+          "hypothesis": "lipidtypes",
+          "word": "wax"
+        },
+        {
+          "hypothesis": "lipidtypes",
+          "word": "cholesterol"
+        },
+        {
+          "hypothesis": "visual attention behaviors",
+          "word": "focus"
+        },
+        {
+          "hypothesis": "visual attention behaviors",
+          "word": "track"
+        },
+        {
+          "hypothesis": "visual attention behaviors",
+          "word": "observe"
+        },
+        {
+          "hypothesis": "nutritionalaspects",
+          "word": "carbohydrate"
+        },
+        {
+          "hypothesis": "nutritionalaspects",
+          "word": "sugar"
+        },
+        {
+          "hypothesis": "nutritionalaspects",
+          "word": "enzyme"
+        },
+        {
+          "hypothesis": "dailyactivities",
+          "word": "breathe"
+        },
+        {
+          "hypothesis": "dailyactivities",
+          "word": "move"
+        },
+        {
+          "hypothesis": "dailyactivities",
+          "word": "talk"
+        },
+        {
+          "hypothesis": "visual perception terms",
+          "word": "image"
+        },
+        {
+          "hypothesis": "visual perception terms",
+          "word": "perceive"
+        }
+      ]
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:51:28",
+    "details": {
+      "word": "steroid",
+      "rank": 1252,
+      "hypothesis": "lipidtypes",
+      "best_word": "fat",
+      "best_rank": 39,
+      "total_guesses": 74
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:51:28",
+    "details": {
+      "word": "wax",
+      "rank": 2862,
+      "hypothesis": "lipidtypes",
+      "best_word": "fat",
+      "best_rank": 39,
+      "total_guesses": 75
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:51:28",
+    "details": {
+      "word": "cholesterol",
+      "rank": 10257,
+      "hypothesis": "lipidtypes",
+      "best_word": "fat",
+      "best_rank": 39,
+      "total_guesses": 76
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:51:28",
+    "details": {
+      "word": "focus",
+      "rank": 4453,
+      "hypothesis": "visual attention behaviors",
+      "best_word": "fat",
+      "best_rank": 39,
+      "total_guesses": 77
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:51:28",
+    "details": {
+      "word": "track",
+      "rank": 273350,
+      "hypothesis": "visual attention behaviors",
+      "best_word": "fat",
+      "best_rank": 39,
+      "total_guesses": 78
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:51:28",
+    "details": {
+      "word": "observe",
+      "rank": 130258,
+      "hypothesis": "visual attention behaviors",
+      "best_word": "fat",
+      "best_rank": 39,
+      "total_guesses": 79
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:51:28",
+    "details": {
+      "word": "carbohydrate",
+      "rank": 105307,
+      "hypothesis": "nutritionalaspects",
+      "best_word": "fat",
+      "best_rank": 39,
+      "total_guesses": 80
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:51:28",
+    "details": {
+      "word": "sugar",
+      "rank": 14120,
+      "hypothesis": "nutritionalaspects",
+      "best_word": "fat",
+      "best_rank": 39,
+      "total_guesses": 81
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:51:28",
+    "details": {
+      "word": "enzyme",
+      "rank": 291522,
+      "hypothesis": "nutritionalaspects",
+      "best_word": "fat",
+      "best_rank": 39,
+      "total_guesses": 82
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:51:28",
+    "details": {
+      "word": "breathe",
+      "rank": 56653,
+      "hypothesis": "dailyactivities",
+      "best_word": "fat",
+      "best_rank": 39,
+      "total_guesses": 83
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:51:28",
+    "details": {
+      "word": "move",
+      "rank": 215996,
+      "hypothesis": "dailyactivities",
+      "best_word": "fat",
+      "best_rank": 39,
+      "total_guesses": 84
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:51:28",
+    "details": {
+      "word": "talk",
+      "rank": 15164,
+      "hypothesis": "dailyactivities",
+      "best_word": "fat",
+      "best_rank": 39,
+      "total_guesses": 85
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:51:28",
+    "details": {
+      "word": "image",
+      "rank": 5258,
+      "hypothesis": "visual perception terms",
+      "best_word": "fat",
+      "best_rank": 39,
+      "total_guesses": 86
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:51:28",
+    "details": {
+      "word": "perceive",
+      "rank": 37999,
+      "hypothesis": "visual perception terms",
+      "best_word": "fat",
+      "best_rank": 39,
+      "total_guesses": 87
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:51:50",
+    "details": {
+      "word": "saturated",
+      "rank": 461,
+      "hypothesis": "local search around fat",
+      "best_word": "fat",
+      "best_rank": 39,
+      "total_guesses": 88
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:51:50",
+    "details": {
+      "word": "excess",
+      "rank": 566,
+      "hypothesis": "local search around fat",
+      "best_word": "fat",
+      "best_rank": 39,
+      "total_guesses": 89
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:51:50",
+    "details": {
+      "word": "weight",
+      "rank": 654,
+      "hypothesis": "local search around fat",
+      "best_word": "fat",
+      "best_rank": 39,
+      "total_guesses": 90
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:51:50",
+    "details": {
+      "word": "rich",
+      "rank": 1344,
+      "hypothesis": "local search around fat",
+      "best_word": "fat",
+      "best_rank": 39,
+      "total_guesses": 91
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:51:50",
+    "details": {
+      "word": "dense",
+      "rank": 162,
+      "hypothesis": "local search around fat",
+      "best_word": "fat",
+      "best_rank": 39,
+      "total_guesses": 92
+    }
+  },
+  {
+    "generation": 3,
+    "event": "LOCAL_SEARCH",
+    "timestamp": "2026-05-26T00:51:50",
+    "details": {
+      "center_word": "fat",
+      "center_rank": 39,
+      "guesses": [
+        {
+          "word": "saturated",
+          "rank": 461
+        },
+        {
+          "word": "excess",
+          "rank": 566
+        },
+        {
+          "word": "weight",
+          "rank": 654
+        },
+        {
+          "word": "rich",
+          "rank": 1344
+        },
+        {
+          "word": "dense",
+          "rank": 162
+        }
+      ],
+      "attempts": [
+        [
+          "saturated",
+          "excess",
+          "weight",
+          "rich",
+          "dense"
+        ]
+      ],
+      "best_word": "fat",
+      "best_rank": 39,
+      "total_guesses": 92
+    }
+  },
+  {
+    "generation": 3,
+    "event": "SELECT",
+    "timestamp": "2026-05-26T00:51:50",
+    "details": {
+      "kept": [
+        "lipidtypes",
+        "local search around fat",
+        "visual attention behaviors",
+        "nutritionalaspects",
+        "dailyactivities"
+      ],
+      "discarded": [
+        "visual perception terms",
+        "visual daily activities",
+        "bodyparts",
+        "lipid attention",
+        "intentional observation",
+        "colors",
+        "emotions",
+        "commonobjects",
+        "time of day",
+        "socialinteractions",
+        "natureelements"
+      ],
+      "elite": "lipidtypes",
+      "max_active_hypotheses": 5,
+      "best_word": "fat",
+      "best_rank": 39,
+      "total_guesses": 92
+    }
+  },
+  {
+    "generation": 3,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-05-26T00:51:58",
+    "details": {
+      "parent_id": "d25e128ed77b44dfaf60c01fe2297ea5",
+      "child_id": "46516d9a22c04d2a883b59567cada490",
+      "sigma_snapshot": [
+        0.21533455168290283,
+        0.32785863902741136,
+        0.2597302694757714,
+        0.19707653981391443
+      ],
+      "child_sigma": [
+        0.20958988580101293,
+        0.3585213602158043,
+        0.24625528339095148,
+        0.18563347059223137
+      ],
+      "child_hypothesis_name": "fat_derivatives",
+      "sampled_op": "s_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:51:58",
+    "details": {
+      "word": "grease",
+      "rank": 6688,
+      "hypothesis": "fat_derivatives",
+      "best_word": "fat",
+      "best_rank": 39,
+      "total_guesses": 93
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:51:58",
+    "details": {
+      "word": "lard",
+      "rank": 64118,
+      "hypothesis": "fat_derivatives",
+      "best_word": "fat",
+      "best_rank": 39,
+      "total_guesses": 94
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:51:58",
+    "details": {
+      "word": "tallow",
+      "rank": 79914,
+      "hypothesis": "fat_derivatives",
+      "best_word": "fat",
+      "best_rank": 39,
+      "total_guesses": 95
+    }
+  },
+  {
+    "generation": 3,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-05-26T00:52:20",
+    "details": {
+      "parent_id": "8659c1c47700422bbbed4f38aedefa07",
+      "child_id": "084f5a0d425d487db93a009ffbfa6dc5",
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.18610054227697528,
+        0.31236388291495026,
+        0.2499519853257802,
+        0.2515835894822942
+      ],
+      "child_hypothesis_name": "thick compact fat",
+      "sampled_op": "s_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:52:20",
+    "details": {
+      "word": "thick",
+      "rank": 66,
+      "hypothesis": "thick compact fat",
+      "best_word": "fat",
+      "best_rank": 39,
+      "total_guesses": 96
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:52:20",
+    "details": {
+      "word": "compact",
+      "rank": 123029,
+      "hypothesis": "thick compact fat",
+      "best_word": "fat",
+      "best_rank": 39,
+      "total_guesses": 97
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:52:20",
+    "details": {
+      "word": "heavy",
+      "rank": 610,
+      "hypothesis": "thick compact fat",
+      "best_word": "fat",
+      "best_rank": 39,
+      "total_guesses": 98
+    }
+  },
+  {
+    "generation": 3,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-05-26T00:52:39",
+    "details": {
+      "parent_id": "963e1745a18c41da8995b749dfc10fc9",
+      "child_id": "c4dab191bebf487b8fc0e683aaee0641",
+      "sigma_snapshot": [
+        0.23132039209411195,
+        0.24240688133111035,
+        0.2907382490033294,
+        0.2355344775714482
+      ],
+      "child_sigma": [
+        0.2506484351896706,
+        0.2530888573960744,
+        0.2050556785381168,
+        0.2912070288761383
+      ],
+      "child_hypothesis_name": "Sudden and Brief Movements",
+      "sampled_op": "m_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:52:39",
+    "details": {
+      "word": "dart",
+      "rank": 98921,
+      "hypothesis": "Sudden and Brief Movements",
+      "best_word": "fat",
+      "best_rank": 39,
+      "total_guesses": 99
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:52:39",
+    "details": {
+      "word": "flick",
+      "rank": 134841,
+      "hypothesis": "Sudden and Brief Movements",
+      "best_word": "fat",
+      "best_rank": 39,
+      "total_guesses": 100
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:52:39",
+    "details": {
+      "word": "snap",
+      "rank": 146886,
+      "hypothesis": "Sudden and Brief Movements",
+      "best_word": "fat",
+      "best_rank": 39,
+      "total_guesses": 101
+    }
+  },
+  {
+    "generation": 3,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-05-26T00:53:07",
+    "details": {
+      "parent_id": "642accd735394268a7518d2067d13c91",
+      "child_id": "0c98f3b07bcb4b64a34e29dd4ffe4c60",
+      "sigma_snapshot": [
+        0.20244513124178523,
+        0.35878150930703145,
+        0.1860139570032389,
+        0.25275940244794465
+      ],
+      "child_sigma": [
+        0.19137478773803462,
+        0.3553802180541234,
+        0.280289748795159,
+        0.17295524541268303
+      ],
+      "child_hypothesis_name": "cellularprocesses",
+      "sampled_op": "l_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:53:07",
+    "details": {
+      "word": "cell",
+      "rank": 49458,
+      "hypothesis": "cellularprocesses",
+      "best_word": "fat",
+      "best_rank": 39,
+      "total_guesses": 102
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:53:07",
+    "details": {
+      "word": "transport",
+      "rank": 235684,
+      "hypothesis": "cellularprocesses",
+      "best_word": "fat",
+      "best_rank": 39,
+      "total_guesses": 103
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:53:07",
+    "details": {
+      "word": "synthesis",
+      "rank": 132107,
+      "hypothesis": "cellularprocesses",
+      "best_word": "fat",
+      "best_rank": 39,
+      "total_guesses": 104
+    }
+  },
+  {
+    "generation": 3,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-05-26T00:53:25",
+    "details": {
+      "parent_id": "032866439f5e4417965408ed7c087a63",
+      "child_id": "c9da713d1a564e05b0974db3d07ecc21",
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.3604429881241057,
+        0.2763260332062427,
+        0.1740262191734541,
+        0.1892047594961975
+      ],
+      "child_hypothesis_name": "consumption",
+      "sampled_op": "s_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:53:25",
+    "details": {
+      "word": "consume",
+      "rank": 30242,
+      "hypothesis": "consumption",
+      "best_word": "fat",
+      "best_rank": 39,
+      "total_guesses": 105
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:53:25",
+    "details": {
+      "word": "nourish",
+      "rank": 44658,
+      "hypothesis": "consumption",
+      "best_word": "fat",
+      "best_rank": 39,
+      "total_guesses": 106
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:53:25",
+    "details": {
+      "word": "feed",
+      "rank": 38367,
+      "hypothesis": "consumption",
+      "best_word": "fat",
+      "best_rank": 39,
+      "total_guesses": 107
+    }
+  },
+  {
+    "generation": 3,
+    "event": "MUTATE",
+    "timestamp": "2026-05-26T00:53:25",
+    "details": {
+      "method": "self_adaptive",
+      "children": [
+        {
+          "hypothesis_id": "46516d9a22c04d2a883b59567cada490",
+          "category_name": "fat_derivatives",
+          "description": "types of fats",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "lipidtypes",
+          "parent_id": "d25e128ed77b44dfaf60c01fe2297ea5",
+          "origin": "self_adaptive_s_mutation",
+          "sigma": [
+            0.20958988580101293,
+            0.3585213602158043,
+            0.24625528339095148,
+            0.18563347059223137
+          ]
+        },
+        {
+          "hypothesis_id": "084f5a0d425d487db93a009ffbfa6dc5",
+          "category_name": "thick compact fat",
+          "description": "refined focus on dense fat properties",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "local search around fat",
+          "parent_id": "8659c1c47700422bbbed4f38aedefa07",
+          "origin": "self_adaptive_s_mutation",
+          "sigma": [
+            0.18610054227697528,
+            0.31236388291495026,
+            0.2499519853257802,
+            0.2515835894822942
+          ]
+        },
+        {
+          "hypothesis_id": "c4dab191bebf487b8fc0e683aaee0641",
+          "category_name": "Sudden and Brief Movements",
+          "description": "actions characterized by quick, fleeting motion",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "visual attention behaviors",
+          "parent_id": "963e1745a18c41da8995b749dfc10fc9",
+          "origin": "self_adaptive_m_mutation",
+          "sigma": [
+            0.2506484351896706,
+            0.2530888573960744,
+            0.2050556785381168,
+            0.2912070288761383
+          ]
+        },
+        {
+          "hypothesis_id": "0c98f3b07bcb4b64a34e29dd4ffe4c60",
+          "category_name": "cellularprocesses",
+          "description": "molecular functions within cells",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "nutritionalaspects",
+          "parent_id": "642accd735394268a7518d2067d13c91",
+          "origin": "self_adaptive_l_mutation",
+          "sigma": [
+            0.19137478773803462,
+            0.3553802180541234,
+            0.280289748795159,
+            0.17295524541268303
+          ]
+        },
+        {
+          "hypothesis_id": "c9da713d1a564e05b0974db3d07ecc21",
+          "category_name": "consumption",
+          "description": "actions related to consuming food",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "dailyactivities",
+          "parent_id": "032866439f5e4417965408ed7c087a63",
+          "origin": "self_adaptive_s_mutation",
+          "sigma": [
+            0.3604429881241057,
+            0.2763260332062427,
+            0.1740262191734541,
+            0.1892047594961975
+          ]
+        }
+      ],
+      "best_word": "fat",
+      "best_rank": 39,
+      "total_guesses": 107
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:53:54",
+    "details": {
+      "word": "dense",
+      "rank": 162,
+      "hypothesis": "dense_compact_lipids",
+      "best_word": "fat",
+      "best_rank": 39,
+      "total_guesses": 107
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:53:54",
+    "details": {
+      "word": "solid",
+      "rank": 1121,
+      "hypothesis": "dense_compact_lipids",
+      "best_word": "fat",
+      "best_rank": 39,
+      "total_guesses": 108
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:53:54",
+    "details": {
+      "word": "compact",
+      "rank": 123029,
+      "hypothesis": "dense_compact_lipids",
+      "best_word": "fat",
+      "best_rank": 39,
+      "total_guesses": 108
+    }
+  },
+  {
+    "generation": 3,
+    "event": "CROSSOVER",
+    "timestamp": "2026-05-26T00:53:54",
+    "details": {
+      "parents": [
+        "lipidtypes",
+        "thick compact fat"
+      ],
+      "parent_a_sigma": [
+        0.21533455168290283,
+        0.32785863902741136,
+        0.2597302694757714,
+        0.19707653981391443
+      ],
+      "parent_b_sigma": [
+        0.18610054227697528,
+        0.31236388291495026,
+        0.2499519853257802,
+        0.2515835894822942
+      ],
+      "child_sigma_pre_perturbation": [
+        0.20071754697993904,
+        0.3201112609711808,
+        0.2548411274007758,
+        0.22433006464810432
+      ],
+      "child": {
+        "hypothesis_id": "c4d4d241456b43ca83415b32349b0b9e",
+        "category_name": "dense_compact_lipids",
+        "description": "describing thick or compact lipid structures",
+        "words_tried": {
+          "dense": 162,
+          "solid": 1121,
+          "compact": 123029
+        },
+        "best_word": "dense",
+        "best_rank": 162,
+        "status": "active",
+        "parent": "lipidtypes+thick compact fat",
+        "parent_id": null,
+        "origin": "crossover",
+        "sigma": [
+          0.13708946104864816,
+          0.3375097139730693,
+          0.20885815952551198,
+          0.3165426654527706
+        ]
+      },
+      "best_word": "fat",
+      "best_rank": 39,
+      "total_guesses": 108
+    }
+  },
+  {
+    "generation": 3,
+    "event": "SIGMA_TRAJECTORY",
+    "timestamp": "2026-05-26T00:53:54",
+    "details": {
+      "mean_sigma": [
+        0.20396898942052766,
+        0.2940278234493082,
+        0.2518557326660786,
+        0.2501474544640855
+      ],
+      "population_size": 5
+    }
+  },
+  {
+    "generation": 4,
+    "event": "CANDIDATES",
+    "timestamp": "2026-05-26T00:57:21",
+    "details": {
+      "count": 14,
+      "candidates": [
+        {
+          "hypothesis": "lipidtypes",
+          "word": "phospholipid"
+        },
+        {
+          "hypothesis": "lipidtypes",
+          "word": "triglyceride"
+        },
+        {
+          "hypothesis": "lipidtypes",
+          "word": "sphingolipid"
+        },
+        {
+          "hypothesis": "thick compact fat",
+          "word": "oily"
+        },
+        {
+          "hypothesis": "thick compact fat",
+          "word": "greasy"
+        },
+        {
+          "hypothesis": "thick compact fat",
+          "word": "firm"
+        },
+        {
+          "hypothesis": "local search around fat",
+          "word": "portly"
+        },
+        {
+          "hypothesis": "local search around fat",
+          "word": "obese"
+        },
+        {
+          "hypothesis": "local search around fat",
+          "word": "flabby"
+        },
+        {
+          "hypothesis": "dense_compact_lipids",
+          "word": "cohesive"
+        },
+        {
+          "hypothesis": "dense_compact_lipids",
+          "word": "packed"
+        },
+        {
+          "hypothesis": "visual attention behaviors",
+          "word": "study"
+        },
+        {
+          "hypothesis": "visual attention behaviors",
+          "word": "inspect"
+        },
+        {
+          "hypothesis": "visual attention behaviors",
+          "word": "spot"
+        }
+      ]
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:57:21",
+    "details": {
+      "word": "phospholipid",
+      "rank": 72869,
+      "hypothesis": "lipidtypes",
+      "best_word": "fat",
+      "best_rank": 39,
+      "total_guesses": 109
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:57:21",
+    "details": {
+      "word": "triglyceride",
+      "rank": 24058,
+      "hypothesis": "lipidtypes",
+      "best_word": "fat",
+      "best_rank": 39,
+      "total_guesses": 110
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:57:21",
+    "details": {
+      "word": "sphingolipid",
+      "rank": 7929,
+      "hypothesis": "lipidtypes",
+      "best_word": "fat",
+      "best_rank": 39,
+      "total_guesses": 111
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:57:21",
+    "details": {
+      "word": "oily",
+      "rank": 3024,
+      "hypothesis": "thick compact fat",
+      "best_word": "fat",
+      "best_rank": 39,
+      "total_guesses": 112
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:57:21",
+    "details": {
+      "word": "greasy",
+      "rank": 1407,
+      "hypothesis": "thick compact fat",
+      "best_word": "fat",
+      "best_rank": 39,
+      "total_guesses": 113
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:57:21",
+    "details": {
+      "word": "firm",
+      "rank": 7988,
+      "hypothesis": "thick compact fat",
+      "best_word": "fat",
+      "best_rank": 39,
+      "total_guesses": 114
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:57:21",
+    "details": {
+      "word": "portly",
+      "rank": 34731,
+      "hypothesis": "local search around fat",
+      "best_word": "fat",
+      "best_rank": 39,
+      "total_guesses": 115
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:57:21",
+    "details": {
+      "word": "obese",
+      "rank": 329,
+      "hypothesis": "local search around fat",
+      "best_word": "fat",
+      "best_rank": 39,
+      "total_guesses": 116
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:57:21",
+    "details": {
+      "word": "flabby",
+      "rank": 368,
+      "hypothesis": "local search around fat",
+      "best_word": "fat",
+      "best_rank": 39,
+      "total_guesses": 117
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:57:21",
+    "details": {
+      "word": "cohesive",
+      "rank": 72000,
+      "hypothesis": "dense_compact_lipids",
+      "best_word": "fat",
+      "best_rank": 39,
+      "total_guesses": 118
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:57:21",
+    "details": {
+      "word": "packed",
+      "rank": 177285,
+      "hypothesis": "dense_compact_lipids",
+      "best_word": "fat",
+      "best_rank": 39,
+      "total_guesses": 119
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:57:21",
+    "details": {
+      "word": "study",
+      "rank": 5710,
+      "hypothesis": "visual attention behaviors",
+      "best_word": "fat",
+      "best_rank": 39,
+      "total_guesses": 120
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:57:21",
+    "details": {
+      "word": "inspect",
+      "rank": 137174,
+      "hypothesis": "visual attention behaviors",
+      "best_word": "fat",
+      "best_rank": 39,
+      "total_guesses": 121
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:57:21",
+    "details": {
+      "word": "spot",
+      "rank": 41688,
+      "hypothesis": "visual attention behaviors",
+      "best_word": "fat",
+      "best_rank": 39,
+      "total_guesses": 122
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:58:00",
+    "details": {
+      "word": "calorie",
+      "rank": 196015,
+      "hypothesis": "local search around fat",
+      "best_word": "fat",
+      "best_rank": 39,
+      "total_guesses": 123
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:58:00",
+    "details": {
+      "word": "content",
+      "rank": 27126,
+      "hypothesis": "local search around fat",
+      "best_word": "fat",
+      "best_rank": 39,
+      "total_guesses": 124
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:58:00",
+    "details": {
+      "word": "diet",
+      "rank": 1006,
+      "hypothesis": "local search around fat",
+      "best_word": "fat",
+      "best_rank": 39,
+      "total_guesses": 125
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:58:00",
+    "details": {
+      "word": "health",
+      "rank": 5516,
+      "hypothesis": "local search around fat",
+      "best_word": "fat",
+      "best_rank": 39,
+      "total_guesses": 126
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:58:00",
+    "details": {
+      "word": "metabolism",
+      "rank": 36159,
+      "hypothesis": "local search around fat",
+      "best_word": "fat",
+      "best_rank": 39,
+      "total_guesses": 127
+    }
+  },
+  {
+    "generation": 4,
+    "event": "LOCAL_SEARCH",
+    "timestamp": "2026-05-26T00:58:00",
+    "details": {
+      "center_word": "fat",
+      "center_rank": 39,
+      "guesses": [
+        {
+          "word": "calorie",
+          "rank": 196015
+        },
+        {
+          "word": "content",
+          "rank": 27126
+        },
+        {
+          "word": "diet",
+          "rank": 1006
+        },
+        {
+          "word": "health",
+          "rank": 5516
+        },
+        {
+          "word": "metabolism",
+          "rank": 36159
+        }
+      ],
+      "attempts": [
+        [
+          "calorie",
+          "content",
+          "diet",
+          "health",
+          "metabolism"
+        ]
+      ],
+      "best_word": "fat",
+      "best_rank": 39,
+      "total_guesses": 127
+    }
+  },
+  {
+    "generation": 4,
+    "event": "SELECT",
+    "timestamp": "2026-05-26T00:58:00",
+    "details": {
+      "kept": [
+        "lipidtypes",
+        "thick compact fat",
+        "local search around fat",
+        "dense_compact_lipids",
+        "visual attention behaviors"
+      ],
+      "discarded": [
+        "nutritionalaspects",
+        "dailyactivities",
+        "local search around fat",
+        "visual perception terms",
+        "visual daily activities",
+        "bodyparts",
+        "lipid attention",
+        "fat_derivatives",
+        "intentional observation",
+        "colors",
+        "consumption",
+        "emotions",
+        "commonobjects",
+        "time of day",
+        "cellularprocesses",
+        "Sudden and Brief Movements",
+        "socialinteractions",
+        "natureelements"
+      ],
+      "elite": "lipidtypes",
+      "max_active_hypotheses": 5,
+      "best_word": "fat",
+      "best_rank": 39,
+      "total_guesses": 127
+    }
+  },
+  {
+    "generation": 4,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-05-26T00:59:54",
+    "details": {
+      "parent_id": "d25e128ed77b44dfaf60c01fe2297ea5",
+      "child_id": "ad6a31f03e0d465ebff5a73ad8445ec4",
+      "sigma_snapshot": [
+        0.21533455168290283,
+        0.32785863902741136,
+        0.2597302694757714,
+        0.19707653981391443
+      ],
+      "child_sigma": [
+        0.3072628214494198,
+        0.2322304472477437,
+        0.25911150497556346,
+        0.2013952263272731
+      ],
+      "child_hypothesis_name": "bodycomposition",
+      "sampled_op": "m_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:59:54",
+    "details": {
+      "word": "fleshy",
+      "rank": 931,
+      "hypothesis": "bodycomposition",
+      "best_word": "fat",
+      "best_rank": 39,
+      "total_guesses": 128
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:59:54",
+    "details": {
+      "word": "plump",
+      "rank": 18,
+      "hypothesis": "bodycomposition",
+      "best_word": "plump",
+      "best_rank": 18,
+      "total_guesses": 129
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T00:59:54",
+    "details": {
+      "word": "bulky",
+      "rank": 81,
+      "hypothesis": "bodycomposition",
+      "best_word": "plump",
+      "best_rank": 18,
+      "total_guesses": 130
+    }
+  },
+  {
+    "generation": 4,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-05-26T01:04:58",
+    "details": {
+      "parent_id": "084f5a0d425d487db93a009ffbfa6dc5",
+      "child_id": "f3ac9c4dbba24ce886c53403c7af2e78",
+      "sigma_snapshot": [
+        0.18610054227697528,
+        0.31236388291495026,
+        0.2499519853257802,
+        0.2515835894822942
+      ],
+      "child_sigma": [
+        0.2107876160928715,
+        0.2583528221604174,
+        0.23522014195941632,
+        0.2956394197872948
+      ],
+      "child_hypothesis_name": "Material Mechanical Properties",
+      "sampled_op": "l_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T01:04:58",
+    "details": {
+      "word": "elasticity",
+      "rank": 19737,
+      "hypothesis": "Material Mechanical Properties",
+      "best_word": "plump",
+      "best_rank": 18,
+      "total_guesses": 131
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T01:04:58",
+    "details": {
+      "word": "resilience",
+      "rank": 185803,
+      "hypothesis": "Material Mechanical Properties",
+      "best_word": "plump",
+      "best_rank": 18,
+      "total_guesses": 132
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T01:04:58",
+    "details": {
+      "word": "stiffness",
+      "rank": 28595,
+      "hypothesis": "Material Mechanical Properties",
+      "best_word": "plump",
+      "best_rank": 18,
+      "total_guesses": 133
+    }
+  },
+  {
+    "generation": 4,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-05-26T01:05:43",
+    "details": {
+      "parent_id": "8659c1c47700422bbbed4f38aedefa07",
+      "child_id": "3897da8f6b7d40ec9d5f9079d0c87cca",
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.364124193813882,
+        0.193964179192537,
+        0.22424433343799272,
+        0.21766729355558834
+      ],
+      "child_hypothesis_name": "natural terrain features",
+      "sampled_op": "l_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T01:05:43",
+    "details": {
+      "word": "sand",
+      "rank": 16642,
+      "hypothesis": "natural terrain features",
+      "best_word": "plump",
+      "best_rank": 18,
+      "total_guesses": 134
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T01:05:43",
+    "details": {
+      "word": "clay",
+      "rank": 13061,
+      "hypothesis": "natural terrain features",
+      "best_word": "plump",
+      "best_rank": 18,
+      "total_guesses": 135
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T01:05:43",
+    "details": {
+      "word": "soil",
+      "rank": 192645,
+      "hypothesis": "natural terrain features",
+      "best_word": "plump",
+      "best_rank": 18,
+      "total_guesses": 136
+    }
+  },
+  {
+    "generation": 4,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-05-26T01:06:17",
+    "details": {
+      "parent_id": "c4d4d241456b43ca83415b32349b0b9e",
+      "child_id": "4ffbf0134d7c478db0e07d8569f47e11",
+      "sigma_snapshot": [
+        0.13708946104864816,
+        0.3375097139730693,
+        0.20885815952551198,
+        0.3165426654527706
+      ],
+      "child_sigma": [
+        0.195548431084567,
+        0.33820087280727185,
+        0.17357792684596446,
+        0.29267276926219676
+      ],
+      "child_hypothesis_name": "concentrated-intense-full",
+      "sampled_op": "m_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T01:06:17",
+    "details": {
+      "word": "concentrated",
+      "rank": 1547,
+      "hypothesis": "concentrated-intense-full",
+      "best_word": "plump",
+      "best_rank": 18,
+      "total_guesses": 137
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T01:06:17",
+    "details": {
+      "word": "intense",
+      "rank": 42512,
+      "hypothesis": "concentrated-intense-full",
+      "best_word": "plump",
+      "best_rank": 18,
+      "total_guesses": 138
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T01:06:17",
+    "details": {
+      "word": "full",
+      "rank": 29769,
+      "hypothesis": "concentrated-intense-full",
+      "best_word": "plump",
+      "best_rank": 18,
+      "total_guesses": 139
+    }
+  },
+  {
+    "generation": 4,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-05-26T01:07:04",
+    "details": {
+      "parent_id": "963e1745a18c41da8995b749dfc10fc9",
+      "child_id": "b7b814f407a147e4a0ba7525f881a0a0",
+      "sigma_snapshot": [
+        0.23132039209411195,
+        0.24240688133111035,
+        0.2907382490033294,
+        0.2355344775714482
+      ],
+      "child_sigma": [
+        0.2287546426703231,
+        0.238890317909265,
+        0.29623576290276266,
+        0.23611927651764936
+      ],
+      "child_hypothesis_name": "spatial configuration analysis",
+      "sampled_op": "l_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T01:07:04",
+    "details": {
+      "word": "layout",
+      "rank": 81385,
+      "hypothesis": "spatial configuration analysis",
+      "best_word": "plump",
+      "best_rank": 18,
+      "total_guesses": 140
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T01:07:04",
+    "details": {
+      "word": "arrangement",
+      "rank": 282550,
+      "hypothesis": "spatial configuration analysis",
+      "best_word": "plump",
+      "best_rank": 18,
+      "total_guesses": 141
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T01:07:04",
+    "details": {
+      "word": "configuration",
+      "rank": 298424,
+      "hypothesis": "spatial configuration analysis",
+      "best_word": "plump",
+      "best_rank": 18,
+      "total_guesses": 142
+    }
+  },
+  {
+    "generation": 4,
+    "event": "MUTATE",
+    "timestamp": "2026-05-26T01:07:04",
+    "details": {
+      "method": "self_adaptive",
+      "children": [
+        {
+          "hypothesis_id": "ad6a31f03e0d465ebff5a73ad8445ec4",
+          "category_name": "bodycomposition",
+          "description": "descriptors of physical fullness or abundance",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "lipidtypes",
+          "parent_id": "d25e128ed77b44dfaf60c01fe2297ea5",
+          "origin": "self_adaptive_m_mutation",
+          "sigma": [
+            0.3072628214494198,
+            0.2322304472477437,
+            0.25911150497556346,
+            0.2013952263272731
+          ]
+        },
+        {
+          "hypothesis_id": "f3ac9c4dbba24ce886c53403c7af2e78",
+          "category_name": "Material Mechanical Properties",
+          "description": "exploring mechanical properties of materials",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "thick compact fat",
+          "parent_id": "084f5a0d425d487db93a009ffbfa6dc5",
+          "origin": "self_adaptive_l_mutation",
+          "sigma": [
+            0.2107876160928715,
+            0.2583528221604174,
+            0.23522014195941632,
+            0.2956394197872948
+          ]
+        },
+        {
+          "hypothesis_id": "3897da8f6b7d40ec9d5f9079d0c87cca",
+          "category_name": "natural terrain features",
+          "description": "Exploring soil and sedimentary materials",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "local search around fat",
+          "parent_id": "8659c1c47700422bbbed4f38aedefa07",
+          "origin": "self_adaptive_l_mutation",
+          "sigma": [
+            0.364124193813882,
+            0.193964179192537,
+            0.22424433343799272,
+            0.21766729355558834
+          ]
+        },
+        {
+          "hypothesis_id": "4ffbf0134d7c478db0e07d8569f47e11",
+          "category_name": "concentrated-intense-full",
+          "description": "describing high concentration or intensity of lipid structures",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "dense_compact_lipids",
+          "parent_id": "c4d4d241456b43ca83415b32349b0b9e",
+          "origin": "self_adaptive_m_mutation",
+          "sigma": [
+            0.195548431084567,
+            0.33820087280727185,
+            0.17357792684596446,
+            0.29267276926219676
+          ]
+        },
+        {
+          "hypothesis_id": "b7b814f407a147e4a0ba7525f881a0a0",
+          "category_name": "spatial configuration analysis",
+          "description": "how spatial arrangements influence interaction",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "visual attention behaviors",
+          "parent_id": "963e1745a18c41da8995b749dfc10fc9",
+          "origin": "self_adaptive_l_mutation",
+          "sigma": [
+            0.2287546426703231,
+            0.238890317909265,
+            0.29623576290276266,
+            0.23611927651764936
+          ]
+        }
+      ],
+      "best_word": "plump",
+      "best_rank": 18,
+      "total_guesses": 142
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T01:07:51",
+    "details": {
+      "word": "fat",
+      "rank": 39,
+      "hypothesis": "bodylipids",
+      "best_word": "plump",
+      "best_rank": 18,
+      "total_guesses": 142
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T01:07:51",
+    "details": {
+      "word": "fatty",
+      "rank": 45,
+      "hypothesis": "bodylipids",
+      "best_word": "plump",
+      "best_rank": 18,
+      "total_guesses": 143
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T01:07:51",
+    "details": {
+      "word": "oily",
+      "rank": 3024,
+      "hypothesis": "bodylipids",
+      "best_word": "plump",
+      "best_rank": 18,
+      "total_guesses": 143
+    }
+  },
+  {
+    "generation": 4,
+    "event": "CROSSOVER",
+    "timestamp": "2026-05-26T01:07:51",
+    "details": {
+      "parents": [
+        "bodycomposition",
+        "lipidtypes"
+      ],
+      "parent_a_sigma": [
+        0.3072628214494198,
+        0.2322304472477437,
+        0.25911150497556346,
+        0.2013952263272731
+      ],
+      "parent_b_sigma": [
+        0.21533455168290283,
+        0.32785863902741136,
+        0.2597302694757714,
+        0.19707653981391443
+      ],
+      "child_sigma_pre_perturbation": [
+        0.2612986865661613,
+        0.28004454313757754,
+        0.2594208872256674,
+        0.19923588307059376
+      ],
+      "child": {
+        "hypothesis_id": "424931ea981c450484ad781351b75585",
+        "category_name": "bodylipids",
+        "description": "terms relating to lipids in body composition",
+        "words_tried": {
+          "fat": 39,
+          "fatty": 45,
+          "oily": 3024
+        },
+        "best_word": "fat",
+        "best_rank": 39,
+        "status": "active",
+        "parent": "bodycomposition+lipidtypes",
+        "parent_id": null,
+        "origin": "crossover",
+        "sigma": [
+          0.27694296977291916,
+          0.32663227523302374,
+          0.1419520838261353,
+          0.2544726711679219
+        ]
+      },
+      "best_word": "plump",
+      "best_rank": 18,
+      "total_guesses": 143
+    }
+  },
+  {
+    "generation": 4,
+    "event": "DEDUPLICATE",
+    "timestamp": "2026-05-26T01:07:51",
+    "details": {
+      "merged": [
+        {
+          "survivor": "local search around fat",
+          "discarded": "local search around fat",
+          "survivor_best_rank": 162,
+          "discarded_best_rank": 1006
+        }
+      ],
+      "remaining_hypotheses": 28,
+      "active_hypotheses": 5,
+      "best_word": "plump",
+      "best_rank": 18,
+      "total_guesses": 143
+    }
+  },
+  {
+    "generation": 4,
+    "event": "SIGMA_TRAJECTORY",
+    "timestamp": "2026-05-26T01:07:51",
+    "details": {
+      "mean_sigma": [
+        0.24712817703644338,
+        0.2898170488846258,
+        0.23214916872065006,
+        0.2309056053582807
+      ],
+      "population_size": 5
+    }
+  },
+  {
+    "generation": 5,
+    "event": "CANDIDATES",
+    "timestamp": "2026-05-26T01:10:59",
+    "details": {
+      "count": 12,
+      "candidates": [
+        {
+          "hypothesis": "bodycomposition",
+          "word": "rotund"
+        },
+        {
+          "hypothesis": "bodycomposition",
+          "word": "stout"
+        },
+        {
+          "hypothesis": "bodycomposition",
+          "word": "swollen"
+        },
+        {
+          "hypothesis": "lipidtypes",
+          "word": "glycolipid"
+        },
+        {
+          "hypothesis": "lipidtypes",
+          "word": "lecithin"
+        },
+        {
+          "hypothesis": "lipidtypes",
+          "word": "carotenoid"
+        },
+        {
+          "hypothesis": "bodylipids",
+          "word": "chubby"
+        },
+        {
+          "hypothesis": "bodylipids",
+          "word": "rounded"
+        },
+        {
+          "hypothesis": "thick compact fat",
+          "word": "bulging"
+        },
+        {
+          "hypothesis": "thick compact fat",
+          "word": "taut"
+        },
+        {
+          "hypothesis": "local search around fat",
+          "word": "chunky"
+        },
+        {
+          "hypothesis": "local search around fat",
+          "word": "hefty"
+        }
+      ]
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T01:10:59",
+    "details": {
+      "word": "rotund",
+      "rank": 139750,
+      "hypothesis": "bodycomposition",
+      "best_word": "plump",
+      "best_rank": 18,
+      "total_guesses": 144
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T01:10:59",
+    "details": {
+      "word": "stout",
+      "rank": 35734,
+      "hypothesis": "bodycomposition",
+      "best_word": "plump",
+      "best_rank": 18,
+      "total_guesses": 145
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T01:10:59",
+    "details": {
+      "word": "swollen",
+      "rank": 1687,
+      "hypothesis": "bodycomposition",
+      "best_word": "plump",
+      "best_rank": 18,
+      "total_guesses": 146
+    }
+  },
+  {
+    "generation": 5,
+    "event": "SKIP_INVALID_GUESS",
+    "timestamp": "2026-05-26T01:10:59",
+    "details": {
+      "word": "glycolipid",
+      "hypothesis": "lipidtypes"
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T01:10:59",
+    "details": {
+      "word": "lecithin",
+      "rank": 177866,
+      "hypothesis": "lipidtypes",
+      "best_word": "plump",
+      "best_rank": 18,
+      "total_guesses": 148
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T01:10:59",
+    "details": {
+      "word": "carotenoid",
+      "rank": 237576,
+      "hypothesis": "lipidtypes",
+      "best_word": "plump",
+      "best_rank": 18,
+      "total_guesses": 149
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T01:10:59",
+    "details": {
+      "word": "chubby",
+      "rank": 411,
+      "hypothesis": "bodylipids",
+      "best_word": "plump",
+      "best_rank": 18,
+      "total_guesses": 150
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T01:10:59",
+    "details": {
+      "word": "rounded",
+      "rank": 119,
+      "hypothesis": "bodylipids",
+      "best_word": "plump",
+      "best_rank": 18,
+      "total_guesses": 151
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T01:10:59",
+    "details": {
+      "word": "bulging",
+      "rank": 1582,
+      "hypothesis": "thick compact fat",
+      "best_word": "plump",
+      "best_rank": 18,
+      "total_guesses": 152
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T01:10:59",
+    "details": {
+      "word": "taut",
+      "rank": 75163,
+      "hypothesis": "thick compact fat",
+      "best_word": "plump",
+      "best_rank": 18,
+      "total_guesses": 153
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T01:10:59",
+    "details": {
+      "word": "chunky",
+      "rank": 1955,
+      "hypothesis": "local search around fat",
+      "best_word": "plump",
+      "best_rank": 18,
+      "total_guesses": 154
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T01:10:59",
+    "details": {
+      "word": "hefty",
+      "rank": 195357,
+      "hypothesis": "local search around fat",
+      "best_word": "plump",
+      "best_rank": 18,
+      "total_guesses": 155
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T01:12:04",
+    "details": {
+      "word": "soft",
+      "rank": 297,
+      "hypothesis": "local search around plump",
+      "best_word": "plump",
+      "best_rank": 18,
+      "total_guesses": 156
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T01:12:04",
+    "details": {
+      "word": "plush",
+      "rank": 31362,
+      "hypothesis": "local search around plump",
+      "best_word": "plump",
+      "best_rank": 18,
+      "total_guesses": 157
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T01:12:04",
+    "details": {
+      "word": "lush",
+      "rank": 1923,
+      "hypothesis": "local search around plump",
+      "best_word": "plump",
+      "best_rank": 18,
+      "total_guesses": 158
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T01:12:04",
+    "details": {
+      "word": "curved",
+      "rank": 1147,
+      "hypothesis": "local search around plump",
+      "best_word": "plump",
+      "best_rank": 18,
+      "total_guesses": 159
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T01:12:04",
+    "details": {
+      "word": "round",
+      "rank": 620,
+      "hypothesis": "local search around plump",
+      "best_word": "plump",
+      "best_rank": 18,
+      "total_guesses": 160
+    }
+  },
+  {
+    "generation": 5,
+    "event": "LOCAL_SEARCH",
+    "timestamp": "2026-05-26T01:12:04",
+    "details": {
+      "center_word": "plump",
+      "center_rank": 18,
+      "guesses": [
+        {
+          "word": "soft",
+          "rank": 297
+        },
+        {
+          "word": "plush",
+          "rank": 31362
+        },
+        {
+          "word": "lush",
+          "rank": 1923
+        },
+        {
+          "word": "curved",
+          "rank": 1147
+        },
+        {
+          "word": "round",
+          "rank": 620
+        }
+      ],
+      "attempts": [
+        [
+          "soft",
+          "plush",
+          "lush",
+          "curved",
+          "round"
+        ]
+      ],
+      "best_word": "plump",
+      "best_rank": 18,
+      "total_guesses": 160
+    }
+  },
+  {
+    "generation": 5,
+    "event": "SELECT",
+    "timestamp": "2026-05-26T01:12:04",
+    "details": {
+      "kept": [
+        "bodycomposition",
+        "lipidtypes",
+        "bodylipids",
+        "thick compact fat",
+        "local search around fat"
+      ],
+      "discarded": [
+        "dense_compact_lipids",
+        "visual attention behaviors",
+        "local search around plump",
+        "nutritionalaspects",
+        "dailyactivities",
+        "concentrated-intense-full",
+        "visual perception terms",
+        "visual daily activities",
+        "bodyparts",
+        "lipid attention",
+        "fat_derivatives",
+        "natural terrain features",
+        "Material Mechanical Properties",
+        "intentional observation",
+        "colors",
+        "consumption",
+        "emotions",
+        "commonobjects",
+        "time of day",
+        "cellularprocesses",
+        "spatial configuration analysis",
+        "Sudden and Brief Movements",
+        "socialinteractions",
+        "natureelements"
+      ],
+      "elite": "bodycomposition",
+      "max_active_hypotheses": 5,
+      "best_word": "plump",
+      "best_rank": 18,
+      "total_guesses": 160
+    }
+  },
+  {
+    "generation": 5,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-05-26T01:12:53",
+    "details": {
+      "parent_id": "ad6a31f03e0d465ebff5a73ad8445ec4",
+      "child_id": "22e057e60adc45d2864fe497f24157f9",
+      "sigma_snapshot": [
+        0.3072628214494198,
+        0.2322304472477437,
+        0.25911150497556346,
+        0.2013952263272731
+      ],
+      "child_sigma": [
+        0.29347889099225155,
+        0.17173356286519809,
+        0.3249134087773505,
+        0.20987413736519986
+      ],
+      "child_hypothesis_name": "softness and roundness",
+      "sampled_op": "s_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T01:12:53",
+    "details": {
+      "word": "puffy",
+      "rank": 3903,
+      "hypothesis": "softness and roundness",
+      "best_word": "plump",
+      "best_rank": 18,
+      "total_guesses": 161
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T01:12:53",
+    "details": {
+      "word": "curvaceous",
+      "rank": 3587,
+      "hypothesis": "softness and roundness",
+      "best_word": "plump",
+      "best_rank": 18,
+      "total_guesses": 162
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T01:12:53",
+    "details": {
+      "word": "robust",
+      "rank": 185185,
+      "hypothesis": "softness and roundness",
+      "best_word": "plump",
+      "best_rank": 18,
+      "total_guesses": 163
+    }
+  },
+  {
+    "generation": 5,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-05-26T01:13:40",
+    "details": {
+      "parent_id": "d25e128ed77b44dfaf60c01fe2297ea5",
+      "child_id": "32bea521119c471884cbd61d67918093",
+      "sigma_snapshot": [
+        0.21533455168290283,
+        0.32785863902741136,
+        0.2597302694757714,
+        0.19707653981391443
+      ],
+      "child_sigma": [
+        0.294770348604574,
+        0.35324412682264855,
+        0.23474593073721034,
+        0.11723959383556713
+      ],
+      "child_hypothesis_name": "fat categories",
+      "sampled_op": "s_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T01:13:40",
+    "details": {
+      "word": "adipose",
+      "rank": 600,
+      "hypothesis": "fat categories",
+      "best_word": "plump",
+      "best_rank": 18,
+      "total_guesses": 164
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T01:13:40",
+    "details": {
+      "word": "suet",
+      "rank": 39110,
+      "hypothesis": "fat categories",
+      "best_word": "plump",
+      "best_rank": 18,
+      "total_guesses": 165
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T01:13:40",
+    "details": {
+      "word": "unsaturated",
+      "rank": 3173,
+      "hypothesis": "fat categories",
+      "best_word": "plump",
+      "best_rank": 18,
+      "total_guesses": 166
+    }
+  },
+  {
+    "generation": 5,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-05-26T01:14:08",
+    "details": {
+      "parent_id": "424931ea981c450484ad781351b75585",
+      "child_id": "f7db94d6ee164adbb93192ece8ccf968",
+      "sigma_snapshot": [
+        0.27694296977291916,
+        0.32663227523302374,
+        0.1419520838261353,
+        0.2544726711679219
+      ],
+      "child_sigma": [
+        0.32590982575869953,
+        0.30603360552379905,
+        0.15406964853408983,
+        0.21398692018341162
+      ],
+      "child_hypothesis_name": "material characteristics",
+      "sampled_op": "l_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T01:14:08",
+    "details": {
+      "word": "texture",
+      "rank": 3547,
+      "hypothesis": "material characteristics",
+      "best_word": "plump",
+      "best_rank": 18,
+      "total_guesses": 167
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T01:14:08",
+    "details": {
+      "word": "consistency",
+      "rank": 88289,
+      "hypothesis": "material characteristics",
+      "best_word": "plump",
+      "best_rank": 18,
+      "total_guesses": 168
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T01:14:08",
+    "details": {
+      "word": "density",
+      "rank": 2666,
+      "hypothesis": "material characteristics",
+      "best_word": "plump",
+      "best_rank": 18,
+      "total_guesses": 169
+    }
+  },
+  {
+    "generation": 5,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-05-26T01:14:37",
+    "details": {
+      "parent_id": "084f5a0d425d487db93a009ffbfa6dc5",
+      "child_id": "4d9d99890f474472a180874b462e3766",
+      "sigma_snapshot": [
+        0.18610054227697528,
+        0.31236388291495026,
+        0.2499519853257802,
+        0.2515835894822942
+      ],
+      "child_sigma": [
+        0.2823152427702197,
+        0.2640295138170367,
+        0.2704115144168293,
+        0.1832437289959142
+      ],
+      "child_hypothesis_name": "material consistency",
+      "sampled_op": "ml_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T01:14:37",
+    "details": {
+      "word": "hard",
+      "rank": 20640,
+      "hypothesis": "material consistency",
+      "best_word": "plump",
+      "best_rank": 18,
+      "total_guesses": 170
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T01:14:37",
+    "details": {
+      "word": "stiff",
+      "rank": 7657,
+      "hypothesis": "material consistency",
+      "best_word": "plump",
+      "best_rank": 18,
+      "total_guesses": 171
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T01:14:37",
+    "details": {
+      "word": "rigid",
+      "rank": 49195,
+      "hypothesis": "material consistency",
+      "best_word": "plump",
+      "best_rank": 18,
+      "total_guesses": 172
+    }
+  },
+  {
+    "generation": 5,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-05-26T01:15:35",
+    "details": {
+      "parent_id": "8659c1c47700422bbbed4f38aedefa07",
+      "child_id": "8287cbeb39d14fd583647b4ceffe2a5b",
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.43258363023688884,
+        0.17554105642395051,
+        0.14418375621399276,
+        0.24769155712516785
+      ],
+      "child_hypothesis_name": "compression and accumulation",
+      "sampled_op": "m_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T01:15:35",
+    "details": {
+      "word": "tight",
+      "rank": 5782,
+      "hypothesis": "compression and accumulation",
+      "best_word": "plump",
+      "best_rank": 18,
+      "total_guesses": 173
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T01:15:35",
+    "details": {
+      "word": "crowded",
+      "rank": 68536,
+      "hypothesis": "compression and accumulation",
+      "best_word": "plump",
+      "best_rank": 18,
+      "total_guesses": 174
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T01:15:35",
+    "details": {
+      "word": "piled",
+      "rank": 103031,
+      "hypothesis": "compression and accumulation",
+      "best_word": "plump",
+      "best_rank": 18,
+      "total_guesses": 175
+    }
+  },
+  {
+    "generation": 5,
+    "event": "MUTATE",
+    "timestamp": "2026-05-26T01:15:35",
+    "details": {
+      "method": "self_adaptive",
+      "children": [
+        {
+          "hypothesis_id": "22e057e60adc45d2864fe497f24157f9",
+          "category_name": "softness and roundness",
+          "description": "descriptors of softness and roundness in body shape",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "bodycomposition",
+          "parent_id": "ad6a31f03e0d465ebff5a73ad8445ec4",
+          "origin": "self_adaptive_s_mutation",
+          "sigma": [
+            0.29347889099225155,
+            0.17173356286519809,
+            0.3249134087773505,
+            0.20987413736519986
+          ]
+        },
+        {
+          "hypothesis_id": "32bea521119c471884cbd61d67918093",
+          "category_name": "fat categories",
+          "description": "specific fat types",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "lipidtypes",
+          "parent_id": "d25e128ed77b44dfaf60c01fe2297ea5",
+          "origin": "self_adaptive_s_mutation",
+          "sigma": [
+            0.294770348604574,
+            0.35324412682264855,
+            0.23474593073721034,
+            0.11723959383556713
+          ]
+        },
+        {
+          "hypothesis_id": "f7db94d6ee164adbb93192ece8ccf968",
+          "category_name": "material characteristics",
+          "description": "terms related to physical properties of substances",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "bodylipids",
+          "parent_id": "424931ea981c450484ad781351b75585",
+          "origin": "self_adaptive_l_mutation",
+          "sigma": [
+            0.32590982575869953,
+            0.30603360552379905,
+            0.15406964853408983,
+            0.21398692018341162
+          ]
+        },
+        {
+          "hypothesis_id": "4d9d99890f474472a180874b462e3766",
+          "category_name": "material consistency",
+          "description": "descriptors of material firmness and density",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "thick compact fat",
+          "parent_id": "084f5a0d425d487db93a009ffbfa6dc5",
+          "origin": "self_adaptive_ml_mutation",
+          "sigma": [
+            0.2823152427702197,
+            0.2640295138170367,
+            0.2704115144168293,
+            0.1832437289959142
+          ]
+        },
+        {
+          "hypothesis_id": "8287cbeb39d14fd583647b4ceffe2a5b",
+          "category_name": "compression and accumulation",
+          "description": "Reinterpreting density through physical packing and crowding",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "local search around fat",
+          "parent_id": "8659c1c47700422bbbed4f38aedefa07",
+          "origin": "self_adaptive_m_mutation",
+          "sigma": [
+            0.43258363023688884,
+            0.17554105642395051,
+            0.14418375621399276,
+            0.24769155712516785
+          ]
+        }
+      ],
+      "best_word": "plump",
+      "best_rank": 18,
+      "total_guesses": 175
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T01:16:32",
+    "details": {
+      "word": "fat",
+      "rank": 39,
+      "hypothesis": "body_lipids",
+      "best_word": "plump",
+      "best_rank": 18,
+      "total_guesses": 175
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T01:16:32",
+    "details": {
+      "word": "fatty",
+      "rank": 45,
+      "hypothesis": "body_lipids",
+      "best_word": "plump",
+      "best_rank": 18,
+      "total_guesses": 175
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-05-26T01:16:32",
+    "details": {
+      "word": "obese",
+      "rank": 329,
+      "hypothesis": "body_lipids",
+      "best_word": "plump",
+      "best_rank": 18,
+      "total_guesses": 175
+    }
+  },
+  {
+    "generation": 5,
+    "event": "CROSSOVER",
+    "timestamp": "2026-05-26T01:16:32",
+    "details": {
+      "parents": [
+        "bodycomposition",
+        "lipidtypes"
+      ],
+      "parent_a_sigma": [
+        0.3072628214494198,
+        0.2322304472477437,
+        0.25911150497556346,
+        0.2013952263272731
+      ],
+      "parent_b_sigma": [
+        0.21533455168290283,
+        0.32785863902741136,
+        0.2597302694757714,
+        0.19707653981391443
+      ],
+      "child_sigma_pre_perturbation": [
+        0.2612986865661613,
+        0.28004454313757754,
+        0.2594208872256674,
+        0.19923588307059376
+      ],
+      "child": {
+        "hypothesis_id": "4594d9cb235f4ec1bb7fe92638acc792",
+        "category_name": "body_lipids",
+        "description": "terms describing body fat and lipid types",
+        "words_tried": {
+          "fat": 39,
+          "fatty": 45,
+          "obese": 329
+        },
+        "best_word": "fat",
+        "best_rank": 39,
+        "status": "active",
+        "parent": "bodycomposition+lipidtypes",
+        "parent_id": null,
+        "origin": "crossover",
+        "sigma": [
+          0.22924947423841693,
+          0.15948474506014254,
+          0.2052488934807462,
+          0.4060168872206944
+        ]
+      },
+      "best_word": "plump",
+      "best_rank": 18,
+      "total_guesses": 175
+    }
+  },
+  {
+    "generation": 5,
+    "event": "DEDUPLICATE",
+    "timestamp": "2026-05-26T01:16:32",
+    "details": {
+      "merged": [
+        {
+          "survivor": "bodylipids",
+          "discarded": "body_lipids",
+          "survivor_best_rank": 39,
+          "discarded_best_rank": 39
+        }
+      ],
+      "remaining_hypotheses": 34,
+      "active_hypotheses": 5,
+      "best_word": "plump",
+      "best_rank": 18,
+      "total_guesses": 175
+    }
+  },
+  {
+    "generation": 5,
+    "event": "SIGMA_TRAJECTORY",
+    "timestamp": "2026-05-26T01:16:32",
+    "details": {
+      "mean_sigma": [
+        0.24712817703644338,
+        0.2898170488846258,
+        0.23214916872065006,
+        0.2309056053582807
+      ],
+      "population_size": 5
+    }
+  },
+  {
+    "generation": 5,
+    "event": "FAILED",
+    "timestamp": "2026-05-26T01:16:32",
+    "details": {
+      "best_word": "plump",
+      "best_rank": 18,
+      "total_guesses": 175
+    }
+  }
+]

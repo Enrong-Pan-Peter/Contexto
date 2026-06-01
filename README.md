@@ -135,7 +135,7 @@ LLM_PROVIDER=openai
 LLM_MODEL=gpt-5.4-mini
 OLLAMA_BASE_URL=http://localhost:11434/v1
 OLLAMA_MODEL=qwen3:14b
-OLLAMA_REQUEST_TIMEOUT_SECONDS=120
+OLLAMA_REQUEST_TIMEOUT_SECONDS=900
 LLM_API_KEY=
 OPENAI_API_KEY=
 ANTHROPIC_API_KEY=
@@ -148,8 +148,11 @@ MPNET_EMBEDDING_PATH=data/embeddings/all-mpnet-base-v2.npz
 # SOLVER_EMBEDDING_PATH=data/embeddings/all-MiniLM-L6-v2.npz
 TRACE_DIR=traces
 MAX_GENERATIONS=50
+INITIAL_CATEGORIES=6
 MAX_ACTIVE_HYPOTHESES=5
 LOCAL_SEARCH_RANK_THRESHOLD=100
+SELF_ADAPTIVE_MU=15
+SELF_ADAPTIVE_INITIAL_CATEGORIES=15
 EA_LLM_PIVOT_STALL_NO_IMPROVEMENT_GENERATIONS=3
 EA_LLM_PIVOT_STALL_CLOSE_RANK_THRESHOLD=30
 EA_LLM_PIVOT_STALL_CLOSE_GENERATIONS_LIMIT=5
@@ -190,11 +193,15 @@ Useful commands while playing:
   crossover, deduplication, and LLM local search. No stall-pivot operators.
 - `ea_llm_pivot`: `ea_llm` plus stall detection and pivot operators for
   morphology, register shifts, and adjacent-category jumps.
+- `ea_llm_self_adaptive`: EA+LLM method whose hypotheses carry mutation
+  operator probabilities. It uses `SELF_ADAPTIVE_MU` and
+  `SELF_ADAPTIVE_INITIAL_CATEGORIES` instead of the regular EA population
+  defaults.
 - `embedding`: embedding nearest-neighbor baseline.
 
 The `solver` field in traces remains a broad compatibility label (`llm` or
-`embedding`). Use the `method` field to distinguish `llm_only`, `ea_llm`, and
-`ea_llm_pivot`.
+`embedding`). Use the `method` field to distinguish `llm_only`, `ea_llm`,
+`ea_llm_pivot`, and `ea_llm_self_adaptive`.
 
 ### EA+LLM Against Local Game
 

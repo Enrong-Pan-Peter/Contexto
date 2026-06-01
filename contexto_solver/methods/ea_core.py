@@ -172,6 +172,26 @@ class BaseEALLMMethod:
         planned_word_families = _word_families(planned_words)
         active_hypotheses = self._active_hypotheses()
         max_workers = min(max(1, self.config.llm_workers), max(1, len(active_hypotheses)))
+        #region agent log
+        _agent_debug_log(
+            "contexto_solver/methods/ea_core.py:_generate_candidates",
+            "candidate generation fanout",
+            {
+                "generation": self.generation,
+                "activeCount": len(active_hypotheses),
+                "maxWorkers": max_workers,
+                "configuredWorkers": self.config.llm_workers,
+                "candidatesPerHypothesis": self.config.candidates_per_hypothesis,
+                "knownWords": len(planned_words),
+                "totalGuesses": self.game.total_guesses(),
+                "activeTopRanks": [
+                    {"name": hypothesis.category_name, "bestRank": hypothesis.best_rank}
+                    for hypothesis in sorted(active_hypotheses, key=lambda item: item.best_rank)[:5]
+                ],
+            },
+            "H1,H2",
+        )
+        #endregion
 
         with ThreadPoolExecutor(max_workers=max_workers) as executor:
             futures = [
@@ -188,7 +208,29 @@ class BaseEALLMMethod:
                 )
                 for hypothesis in active_hypotheses
             ]
-            proposed_words = [(hypothesis, future.result()) for hypothesis, future in futures]
+            proposed_words = []
+            for hypothesis, future in futures:
+                try:
+                    proposed_words.append((hypothesis, future.result()))
+                except Exception as exc:
+                    #region agent log
+                    _agent_debug_log(
+                        "contexto_solver/methods/ea_core.py:_generate_candidates",
+                        "candidate future failed",
+                        {
+                            "generation": self.generation,
+                            "hypothesis": hypothesis.category_name,
+                            "bestRank": hypothesis.best_rank,
+                            "exceptionType": type(exc).__name__,
+                            "exception": str(exc)[:240],
+                            "activeCount": len(active_hypotheses),
+                            "maxWorkers": max_workers,
+                            "knownWords": len(planned_words),
+                        },
+                        "H1,H2,H3",
+                    )
+                    #endregion
+                    raise
 
         raw_count = 0
         rejected_invalid = 0
@@ -545,12 +587,17 @@ class BaseEALLMMethod:
         category: dict[str, Any],
         parent: str | None = None,
         origin: str = "init",
+        parent_id: str | None = None,
+        sigma: Any = None,
     ) -> Hypothesis:
+        kwargs = {"sigma": sigma} if sigma is not None else {}
         return Hypothesis(
             category_name=str(category.get("name", "unnamed category")),
             description=str(category.get("description", "")),
             parent=parent,
+            parent_id=parent_id,
             origin=origin,
+            **kwargs,
         )
 
     def _log_solved(self) -> None:
@@ -656,7 +703,7 @@ def _hypothesis_summary(hypotheses: list[Hypothesis]) -> list[dict[str, Any]]:
 def _agent_debug_log(location: str, message: str, data: dict[str, object], hypothesis_id: str) -> None:
     try:
         payload = {
-            "sessionId": "0eedb7",
+            "sessionId": "f5f8f7",
             "runId": "pre-fix",
             "hypothesisId": hypothesis_id,
             "location": location,
@@ -664,7 +711,7 @@ def _agent_debug_log(location: str, message: str, data: dict[str, object], hypot
             "data": data,
             "timestamp": int(time.time() * 1000),
         }
-        with open("debug-0eedb7.log", "a", encoding="utf-8") as log_file:
+        with open("debug-f5f8f7.log", "a", encoding="utf-8") as log_file:
             log_file.write(json.dumps(payload, separators=(",", ":")) + "\n")
     except Exception:
         pass

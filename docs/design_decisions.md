@@ -168,6 +168,79 @@ they do not reliably solve `notorious`; target-level claims remain limited by
 n=5 per target. See `docs/findings.md` and `docs/experiment_log.md` for evidence
 and interpretation.
 
+## Self-Adaptive Mutation Operators
+
+Decision: `ea_llm_self_adaptive` gives each hypothesis a four-component sigma
+vector over mutation operators: `s_mutation`, `m_mutation`, `ml_mutation`, and
+`l_mutation`.
+
+Rationale: the four operators are categorical semantic moves rather than a
+single continuous step size. `s_mutation` refines the current neighborhood,
+`m_mutation` reframes a clue, `ml_mutation` moves to an adjacent category, and
+`l_mutation` opens a broader fresh direction. These operator semantics are
+implemented in the four prompt constants in
+[`contexto_solver/llm_client.py`](../contexto_solver/llm_client.py) and mapped
+to operator IDs in
+[`contexto_solver/operators.py`](../contexto_solver/operators.py).
+
+Perturbation rule: children inherit a Dirichlet-perturbed copy of the parent's
+sigma, with a floor to keep every operator available. The original supervisor
+discussion framed the adaptation idea in relation to log-normal self-adaptive
+evolution strategies, but the implemented sigma is a probability vector on the
+four-simplex. A multiplicative log-normal rule would require additional
+renormalization to return to the simplex; `Dirichlet(alpha * parent_sigma)`
+keeps the draw on the simplex directly, with `alpha` controlling drift
+magnitude. The implemented rule is in
+[`contexto_solver/operators.py`](../contexto_solver/operators.py).
+
+Prompting constraint: sigma is backend metadata only. The LLM sees the selected
+operator's prompt, but never sees sigma values, probabilities, or the list of
+operator alternatives. This keeps stochasticity in the backend sampler rather
+than asking the LLM to comply with hidden probabilities. Prompt-leakage checks
+guard this contract in
+[`contexto_solver/operators.py`](../contexto_solver/operators.py) and are
+exercised by
+[`tests/test_self_adaptive_operators.py`](../tests/test_self_adaptive_operators.py).
+
+Crossover decision: in the self-adaptive method, crossover sigma is now a
+Dirichlet-perturbed average of the two parent sigmas rather than a uniform reset.
+This was motivated by **Single-run observation** from
+[`ea_llm_self_adaptive_local_notorious_20260522_035806.json`](../traces/ea_llm_self_adaptive_local_notorious_20260522_035806.json):
+the best hypothesis reached `gangster` rank 4, but the inspection lineage
+terminated at a crossover child with uniform sigma, making the adaptive lineage
+opaque. The method-local fix is implemented in
+[`contexto_solver/methods/ea_llm_self_adaptive.py`](../contexto_solver/methods/ea_llm_self_adaptive.py).
+
+Local-search decision: local search is disabled by default in adaptive mode.
+The mechanism is code-confirmed in
+[`contexto_solver/methods/ea_core.py`](../contexto_solver/methods/ea_core.py):
+base `_local_search()` constructs a fresh `Hypothesis` without passing sigma, so
+it receives the default uniform sigma and can later compete as a mutation
+parent. **Single-run observation** from
+[`ea_llm_self_adaptive_local_superficial_20260525_194148.json`](../traces/ea_llm_self_adaptive_local_superficial_20260525_194148.json)
+showed local-search hypotheses entering adaptive selection and producing orphan
+parent IDs in the inspection script because local-search hypothesis records were
+not serialized. The adaptive override and `LOCAL_SEARCH_DISABLED` trace event
+are implemented in
+[`contexto_solver/methods/ea_llm_self_adaptive.py`](../contexto_solver/methods/ea_llm_self_adaptive.py).
+
+Population decision: self-adaptive runs now default to `mu=15` and 15 initial
+categories, while the `mu=5` baseline remains reachable with
+`SELF_ADAPTIVE_MU=5` and `SELF_ADAPTIVE_INITIAL_CATEGORIES=6` or another
+explicit comparison setting. This follows Ting's recommendation to give the
+adaptive mechanism a larger population and matches the sigma-SA-ES intuition
+that selection needs enough competing lineages to discriminate productive sigma
+profiles. It is also motivated by the observed high between-seed sigma variance
+at `mu=5`, where a small active set can over-amplify early stochastic lineage
+differences.
+
+Research relevance: this creates an evolutionary mechanism for adapting the
+exploration scale without adding another LLM-visible decision process. Current
+evidence is trace-level and small-sample; any performance claim requires
+repeated runs or batch analysis. See
+[`docs/experiment_log.md`](experiment_log.md) for run evidence and
+[`docs/findings.md`](findings.md) for evidence-quality labels.
+
 ## Ollama Local LLM Backend
 
 Decision: `LLMClient` supports Ollama through its OpenAI-compatible local
@@ -192,6 +265,34 @@ Research relevance: the current evaluation workflow supports repeated target
 runs, provider/model metadata, per-target breakdowns, solved-only guess
 statistics, unsolved best-rank summaries, Wilcoxon signed-rank tests, and
 Cliff's delta.
+
+## Trace Visualization as Post-Hoc Analysis
+
+Decision: trajectory plots live in `contexto_solver.plot_trajectory` as a
+standalone analysis script, separate from solvers, methods, game backends, and
+the trace schema.
+
+Rationale: visualizations are useful for diagnosing search behavior, but they
+should not affect solver decisions or require new fields in existing traces.
+The plotting module therefore reconstructs best-so-far, active-hypothesis, and
+population-level trajectories from already-recorded events.
+
+Projection rationale: PCA is deterministic and reports explained variance, but
+single-run checks on `superficial` showed low two-component variance in the
+target neighborhood. UMAP and PaCMAP were added as qualitative projection
+options for inspection, with fixed `random_state=42` and a fit-then-transform
+workflow. The plotting code projects each unique word once and reuses that
+coordinate so repeated words land at the same position.
+
+Rank and distance rationale: rank trajectories preserve the game-facing signal
+without requiring embeddings. Cosine-distance trajectories use the embedding
+model that produced the local trace to show whether rank improvements correspond
+to movement toward the target in that model's geometry.
+
+Research relevance: these plots are diagnostic evidence for individual runs and
+small comparisons, not performance estimates by themselves. Claims based on
+figures should cite the underlying traces and distinguish qualitative single-run
+inspection from repeated-run or batch-level summaries.
 
 ## Future Diversity Direction
 

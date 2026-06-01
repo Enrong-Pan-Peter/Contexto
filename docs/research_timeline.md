@@ -206,6 +206,129 @@ Research value: this replication makes the aggregate pivot-speed claim more
 defensible while clarifying that per-target effects at n=5 should remain
 illustrative rather than definitive.
 
+### 2026-05-21 — Trace Trajectory Visualization Tools
+
+Evidence:
+- [`contexto_solver/plot_trajectory.py`](../contexto_solver/plot_trajectory.py)
+- [`figures/llm_local_superficial_20260507_133325_rank.png`](../figures/llm_local_superficial_20260507_133325_rank.png)
+- [`figures/llm_local_superficial_20260507_133325_distance.png`](../figures/llm_local_superficial_20260507_133325_distance.png)
+- [`figures/llm_local_superficial_20260507_133325_pacmap.png`](../figures/llm_local_superficial_20260507_133325_pacmap.png)
+- [`figures/llm_local_superficial_20260506_151008_rank.png`](../figures/llm_local_superficial_20260506_151008_rank.png)
+- [`figures/llm_local_superficial_20260506_151008_distance.png`](../figures/llm_local_superficial_20260506_151008_distance.png)
+- [`figures/llm_local_superficial_20260506_151008_pacmap.png`](../figures/llm_local_superficial_20260506_151008_pacmap.png)
+
+Milestones:
+- Added a standalone trajectory plotting module for existing trace JSON files.
+- Added target-neighborhood variance checks, single-run 2D projections, rank
+  trajectories, cosine-distance trajectories, and PCA/UMAP/PaCMAP projection
+  options.
+- Verified the visualization pipeline on one solved and one unsolved
+  `superficial` trace generated with the local GloVe game.
+
+Research value: these plots improve qualitative trace diagnosis and help compare
+individual trajectories, but they are not a substitute for repeated-run or
+batch-level evidence.
+
+### 2026-05-22 — Self-Adaptive Mutation Method
+
+Evidence:
+- [`contexto_solver/operators.py`](../contexto_solver/operators.py)
+- [`contexto_solver/methods/ea_llm_self_adaptive.py`](../contexto_solver/methods/ea_llm_self_adaptive.py)
+- [`tests/test_self_adaptive_operators.py`](../tests/test_self_adaptive_operators.py)
+- [`scripts/inspect_self_adaptive_trace.py`](../scripts/inspect_self_adaptive_trace.py)
+- [`traces/ea_llm_self_adaptive_local_notorious_20260522_035806.json`](../traces/ea_llm_self_adaptive_local_notorious_20260522_035806.json)
+- [`docs/design_decisions.md`](design_decisions.md#self-adaptive-mutation-operators)
+
+Milestones:
+- Supervisor design discussion selected four mutation operators and `mu=5`;
+  the initial log-normal self-adaptation framing was replaced by Dirichlet
+  perturbation because sigma is a probability vector on the four-simplex.
+- Added `ea_llm_self_adaptive` as a separate EA+LLM method.
+- Added `operators.py` with four operator IDs, prompt mapping, operator
+  sampling, sigma perturbation, and uniform initial sigma.
+- Added four operator prompts in `llm_client.py`.
+- Single-run observation: completed the first available end-to-end
+  self-adaptive trace:
+  [`ea_llm_self_adaptive_local_herbaceous_20260521_214416.json`](../traces/ea_llm_self_adaptive_local_herbaceous_20260521_214416.json).
+- Added prompt-leakage checks to preserve the invariant that sigma remains
+  backend-only metadata.
+- Added a standalone self-adaptive trace inspection script for sigma drift,
+  parent lineage, operator usage, and best-lineage analysis.
+- Single-run observation: ran the `notorious` self-adaptive trace to rank 4
+  (`gangster`); the lineage inspection exposed a crossover uniform-sigma reset
+  and opaque adaptive lineage.
+- Added Fix 1 (`child_sigma` in `OPERATOR_SAMPLED`) and Fix 2 (full mutation
+  child records in `MUTATE.children`) to make mutation lineage inspectable.
+
+Research value: this adds an adaptive exploration-scale mechanism for future
+experiments. The current evidence is implementation and smoke-run validation,
+not a repeated-run performance result.
+
+### 2026-05-25 — Self-Adaptive Trace Diagnosis on `superficial`
+
+Evidence:
+- [`traces/ea_llm_self_adaptive_local_superficial_20260525_194148.json`](../traces/ea_llm_self_adaptive_local_superficial_20260525_194148.json)
+- [`docs/experiment_log.md`](experiment_log.md#self-adaptive-runs)
+- [`docs/findings.md`](findings.md#2026-05-26--self-adaptive-sigma-telemetry-shows-trace-level-adaptation-signals)
+
+Milestones:
+- Single-run observation: the `superficial` run stayed at `sharpness` rank 98
+  for 27 generations and later reached `medium` rank 42 through local search.
+- Uncertain / needs more data: trace inspection identified local-search
+  uniform-sigma injection as a mechanism that can enter the adaptive population;
+  the mechanism is confirmed in code, but the empirical effect needs
+  post-Fix-6 comparison.
+
+Research value: this separated implementation telemetry from an algorithmic
+confound that needed a method-local mitigation.
+
+### 2026-05-26 — Self-Adaptive Crossover and Local-Search Fixes
+
+Evidence:
+- [`contexto_solver/methods/ea_llm_self_adaptive.py`](../contexto_solver/methods/ea_llm_self_adaptive.py)
+- [`traces/ea_llm_self_adaptive_local_superficial_20260526_011632.json`](../traces/ea_llm_self_adaptive_local_superficial_20260526_011632.json)
+- [`traces/ea_llm_self_adaptive_local_superficial_20260526_082930.json`](../traces/ea_llm_self_adaptive_local_superficial_20260526_082930.json)
+- [`traces/ea_llm_self_adaptive_local_superficial_20260526_135302.json`](../traces/ea_llm_self_adaptive_local_superficial_20260526_135302.json)
+
+Milestones:
+- Fix 5: implemented self-adaptive crossover sigma blending; the five-generation
+  smoke trace verified blended crossover metadata and non-uniform crossover
+  child sigma.
+- Single-run observation: the full post-Fix-5 `superficial` run reached `thin`
+  rank 5 and verified that crossover blending fired on every crossover event.
+- Fix 6: disabled local search by default in adaptive mode and added one-shot
+  `LOCAL_SEARCH_DISABLED` trace logging.
+- Single-run observation: the 15-generation post-Fix-6 verification run on
+  `superficial` verified 0 `LOCAL_SEARCH` events, 1 `LOCAL_SEARCH_DISABLED`
+  event, and non-uniform crossover child sigma for all 15 crossover events; it
+  also identified population diversity collapse as a new open issue.
+
+Research value: this made self-adaptive lineage telemetry more continuous and
+removed the default uniform-sigma local-search injection path. The post-Fix-6
+verification trace adds a new open question about diversity maintenance under
+fully adaptive selection.
+
+### 2026-05-29 — Self-Adaptive Population Increase
+
+Evidence:
+- [`contexto_solver/config.py`](../contexto_solver/config.py)
+- [`contexto_solver/main.py`](../contexto_solver/main.py)
+- [`contexto_solver/experiment.py`](../contexto_solver/experiment.py)
+- [`docs/design_decisions.md`](design_decisions.md#self-adaptive-mutation-operators)
+
+Milestones:
+- Raised the default self-adaptive population from `mu=5` to `mu=15`.
+- Added `SELF_ADAPTIVE_INITIAL_CATEGORIES=15` so
+  `ea_llm_self_adaptive` starts from 15 initial hypotheses without changing
+  `ea_llm` or `ea_llm_pivot`, which continue to use `INITIAL_CATEGORIES=6` and
+  `MAX_ACTIVE_HYPOTHESES=5`.
+- Kept the `mu=5` baseline reproducible through environment overrides for
+  comparison runs.
+
+Research value: this follows Ting's recommendation and gives sigma adaptation
+more selection pressure across competing lineages. It remains a design change
+pending repeated-run evidence, not a performance result.
+
 ## Current Open Questions
 
 - Should work continue directly on pivot direction selection, given the completed
@@ -219,3 +342,5 @@ illustrative rather than definitive.
   present; no explicit MAP-Elites plan or implementation exists in the repo.
 - How do LLM-guided search, aligned embedding search, and non-aligned embedding
   search compare under repeated local benchmarks?
+- Does self-adaptive operator selection improve solve rate, generation count, or
+  failed-run stability compared with fixed mutation and pivot-only methods?
