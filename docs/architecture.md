@@ -135,6 +135,12 @@ Subtleties:
   local Ollama.
 - The default generation budget is `MAX_GENERATIONS=50`; CLI flags can still
   lower it to `0` for smoke tests or raise/lower it per run.
+- Self-adaptive settings are namespaced with `SELF_ADAPTIVE_*`.
+  `SELF_ADAPTIVE_INITIAL_CATEGORIES` controls only the number of initial
+  categories requested by `method=ea_llm_self_adaptive`, and
+  `SELF_ADAPTIVE_MU` controls only that method's active population cap and
+  mutation-parent count. Regular `ea_llm` and `ea_llm_pivot` continue to use
+  `INITIAL_CATEGORIES` and `MAX_ACTIVE_HYPOTHESES`.
 - Named embedding paths include legacy GloVe plus transformer caches for
   MiniLM and MPNet. MiniLM becomes the default local embedding backend once its
   cache exists; otherwise the default falls back to GloVe so a fresh checkout
@@ -418,7 +424,8 @@ Batch local experiment runner.
 
 Main function:
 - Runs repeated local experiments over targets from CLI or target file.
-- Supports `llm_only`, `ea_llm`, `ea_llm_pivot`, and `embedding` methods.
+- Supports `llm_only`, `ea_llm`, `ea_llm_pivot`,
+  `ea_llm_self_adaptive`, and `embedding` methods.
 - Supports `aligned` and `non_aligned` embedding modes.
 - Writes per-run traces plus aggregate JSON and CSV summaries.
 - Can resume an existing summary with `--resume`, skipping target/run pairs

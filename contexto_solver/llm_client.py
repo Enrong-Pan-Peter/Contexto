@@ -453,10 +453,40 @@ class LLMClient:
         last_error: Exception | None = None
         max_attempts = 5
         for attempt in range(max_attempts):
+            #region agent log
+            _agent_debug_log(
+                "contexto_solver/llm_client.py:_json_request_with_retry",
+                "llm json attempt start",
+                {
+                    "provider": self.provider,
+                    "model": self.model,
+                    "attempt": attempt + 1,
+                    "maxAttempts": max_attempts,
+                    "promptChars": len(prompt),
+                    "promptPrefix": prompt[:80],
+                },
+                "H2,H3,H4",
+            )
+            #endregion
             try:
                 text = self._complete(prompt)
             except requests.RequestException as exc:
                 last_error = exc
+                #region agent log
+                _agent_debug_log(
+                    "contexto_solver/llm_client.py:_json_request_with_retry",
+                    "llm json attempt request exception",
+                    {
+                        "provider": self.provider,
+                        "model": self.model,
+                        "attempt": attempt + 1,
+                        "exceptionType": type(exc).__name__,
+                        "exception": str(exc)[:240],
+                        "retryable": _is_retryable_provider_error(exc),
+                    },
+                    "H3,H4",
+                )
+                #endregion
                 if not _is_retryable_provider_error(exc) or attempt == max_attempts - 1:
                     raise
                 time.sleep(_retry_delay_seconds(exc, attempt))
@@ -534,6 +564,20 @@ class LLMClient:
 
     def _complete_ollama(self, prompt: str) -> str:
         url = f"{self.ollama_base_url.rstrip('/')}/chat/completions"
+        started_at = time.perf_counter()
+        #region agent log
+        _agent_debug_log(
+            "contexto_solver/llm_client.py:_complete_ollama",
+            "ollama request start",
+            {
+                "model": self.model,
+                "timeoutSeconds": self.ollama_timeout_seconds,
+                "promptChars": len(prompt),
+                "baseUrl": self.ollama_base_url,
+            },
+            "H1,H2,H4",
+        )
+        #endregion
         try:
             response = requests.post(
                 url,
@@ -550,12 +594,43 @@ class LLMClient:
                 f"Ollama server not reachable at {self.ollama_base_url}. "
                 "Is ollama running? Try ollama list to confirm models are pulled."
             ) from exc
+        except requests.RequestException as exc:
+            #region agent log
+            _agent_debug_log(
+                "contexto_solver/llm_client.py:_complete_ollama",
+                "ollama request exception",
+                {
+                    "model": self.model,
+                    "timeoutSeconds": self.ollama_timeout_seconds,
+                    "elapsedSeconds": round(time.perf_counter() - started_at, 3),
+                    "promptChars": len(prompt),
+                    "exceptionType": type(exc).__name__,
+                    "exception": str(exc)[:240],
+                },
+                "H1,H2,H4",
+            )
+            #endregion
+            raise
 
         if response.status_code >= 400:
             response_text = response.text
             if _is_ollama_model_not_found(response.status_code, response_text, self.model):
                 raise ValueError(f"Model {self.model} not found. Run ollama pull {self.model}.")
         response.raise_for_status()
+        #region agent log
+        _agent_debug_log(
+            "contexto_solver/llm_client.py:_complete_ollama",
+            "ollama request success",
+            {
+                "model": self.model,
+                "statusCode": response.status_code,
+                "elapsedSeconds": round(time.perf_counter() - started_at, 3),
+                "promptChars": len(prompt),
+                "responseChars": len(response.text),
+            },
+            "H1,H2,H4",
+        )
+        #endregion
         data = response.json()
         return data["choices"][0]["message"]["content"]
 
@@ -602,7 +677,7 @@ def _is_ollama_model_not_found(status_code: int, response_text: str, model: str)
 def _agent_debug_log(location: str, message: str, data: dict[str, object], hypothesis_id: str) -> None:
     try:
         payload = {
-            "sessionId": "0eedb7",
+            "sessionId": "f5f8f7",
             "runId": "pre-fix",
             "hypothesisId": hypothesis_id,
             "location": location,
@@ -610,7 +685,7 @@ def _agent_debug_log(location: str, message: str, data: dict[str, object], hypot
             "data": data,
             "timestamp": int(time.time() * 1000),
         }
-        with open("debug-0eedb7.log", "a", encoding="utf-8") as log_file:
+        with open("debug-f5f8f7.log", "a", encoding="utf-8") as log_file:
             log_file.write(json.dumps(payload, separators=(",", ":")) + "\n")
     except Exception:
         pass

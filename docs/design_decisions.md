@@ -224,6 +224,16 @@ not serialized. The adaptive override and `LOCAL_SEARCH_DISABLED` trace event
 are implemented in
 [`contexto_solver/methods/ea_llm_self_adaptive.py`](../contexto_solver/methods/ea_llm_self_adaptive.py).
 
+Population decision: self-adaptive runs now default to `mu=15` and 15 initial
+categories, while the `mu=5` baseline remains reachable with
+`SELF_ADAPTIVE_MU=5` and `SELF_ADAPTIVE_INITIAL_CATEGORIES=6` or another
+explicit comparison setting. This follows Ting's recommendation to give the
+adaptive mechanism a larger population and matches the sigma-SA-ES intuition
+that selection needs enough competing lineages to discriminate productive sigma
+profiles. It is also motivated by the observed high between-seed sigma variance
+at `mu=5`, where a small active set can over-amplify early stochastic lineage
+differences.
+
 Research relevance: this creates an evolutionary mechanism for adapting the
 exploration scale without adding another LLM-visible decision process. Current
 evidence is trace-level and small-sample; any performance claim requires

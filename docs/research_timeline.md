@@ -308,6 +308,27 @@ removed the default uniform-sigma local-search injection path. The post-Fix-6
 verification trace adds a new open question about diversity maintenance under
 fully adaptive selection.
 
+### 2026-05-29 — Self-Adaptive Population Increase
+
+Evidence:
+- [`contexto_solver/config.py`](../contexto_solver/config.py)
+- [`contexto_solver/main.py`](../contexto_solver/main.py)
+- [`contexto_solver/experiment.py`](../contexto_solver/experiment.py)
+- [`docs/design_decisions.md`](design_decisions.md#self-adaptive-mutation-operators)
+
+Milestones:
+- Raised the default self-adaptive population from `mu=5` to `mu=15`.
+- Added `SELF_ADAPTIVE_INITIAL_CATEGORIES=15` so
+  `ea_llm_self_adaptive` starts from 15 initial hypotheses without changing
+  `ea_llm` or `ea_llm_pivot`, which continue to use `INITIAL_CATEGORIES=6` and
+  `MAX_ACTIVE_HYPOTHESES=5`.
+- Kept the `mu=5` baseline reproducible through environment overrides for
+  comparison runs.
+
+Research value: this follows Ting's recommendation and gives sigma adaptation
+more selection pressure across competing lineages. It remains a design change
+pending repeated-run evidence, not a performance result.
+
 ## Current Open Questions
 
 - Should work continue directly on pivot direction selection, given the completed

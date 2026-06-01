@@ -71,7 +71,14 @@ def main() -> None:
             "llm_provider": llm_provider if method_family == "llm" else None,
             "llm_model": llm_model if method_family == "llm" else None,
             "llm_workers": _default(args.llm_workers, config.LLM_WORKERS) if args.method in _EA_METHODS else None,
+            "initial_categories": _ea_initial_categories(args.method) if args.method in _EA_METHODS else None,
+            "max_active_hypotheses": (
+                config.MAX_ACTIVE_HYPOTHESES if args.method in {"ea_llm", "ea_llm_pivot"} else None
+            ),
             "local_search_rank_threshold": config.LOCAL_SEARCH_RANK_THRESHOLD if args.method in _EA_METHODS else None,
+            "self_adaptive_initial_categories": (
+                config.SELF_ADAPTIVE_INITIAL_CATEGORIES if args.method == "ea_llm_self_adaptive" else None
+            ),
             "self_adaptive_mu": config.SELF_ADAPTIVE_MU if args.method == "ea_llm_self_adaptive" else None,
             "self_adaptive_concentration": (
                 config.SELF_ADAPTIVE_CONCENTRATION if args.method == "ea_llm_self_adaptive" else None
@@ -150,7 +157,13 @@ def _parse_args() -> argparse.Namespace:
     parser.add_argument("--max-generations", type=int, help="Maximum generations to run.")
     parser.add_argument("--provider", choices=["openai", "anthropic", "ollama"], help="LLM provider.")
     parser.add_argument("--model", help="LLM model name.")
-    parser.add_argument("--ollama-model", help="Ollama model name. Defaults to OLLAMA_MODEL when --provider=ollama.")
+    parser.add_argument(
+        "--ollama-model",
+        help=(
+            "Ollama model name. Defaults to OLLAMA_MODEL when --provider=ollama. "
+            f"Supported local models: {', '.join(config.SUPPORTED_OLLAMA_MODELS)}."
+        ),
+    )
     parser.add_argument("--api-key", help="LLM API key. Prefer using .env for local runs.")
     parser.add_argument("--glove-path", help="Path to a GloVe text embedding file.")
     parser.add_argument("--game-embedding-path", help="Embedding file used by the local game.")
@@ -210,7 +223,7 @@ def _build_llm_method(method: str, game, llm_client: LLMClient, logger: Logger, 
             llm_client,
             logger,
             EALLMSelfAdaptiveConfig(
-                **ea_kwargs,
+                **{**ea_kwargs, "initial_categories": config.SELF_ADAPTIVE_INITIAL_CATEGORIES},
                 mu=config.SELF_ADAPTIVE_MU,
                 concentration=config.SELF_ADAPTIVE_CONCENTRATION,
                 sigma_floor=config.SELF_ADAPTIVE_SIGMA_FLOOR,
@@ -253,6 +266,12 @@ def _enable_pivot_metadata(method: str) -> bool | None:
     if method in {"ea_llm", "ea_llm_self_adaptive"}:
         return False
     return None
+
+
+def _ea_initial_categories(method: str) -> int:
+    if method == "ea_llm_self_adaptive":
+        return config.SELF_ADAPTIVE_INITIAL_CATEGORIES
+    return config.INITIAL_CATEGORIES
 
 
 def _random_seed(cli_seed: int | None) -> int | None:

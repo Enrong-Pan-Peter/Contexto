@@ -14,7 +14,7 @@ from .ea_core import BaseEALLMMethod, EALLMConfig, _words_from_category
 
 @dataclass
 class EALLMSelfAdaptiveConfig(EALLMConfig):
-    mu: int = 5
+    mu: int = 15
     concentration: float = 50.0
     sigma_floor: float = 0.02
     random_seed: int | None = None
