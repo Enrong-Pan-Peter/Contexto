@@ -92,6 +92,29 @@ EMBEDDING_ACTIVE_COUNT = int(os.getenv("EMBEDDING_ACTIVE_COUNT", "5"))
 EMBEDDING_NEIGHBORS_PER_WORD = int(os.getenv("EMBEDDING_NEIGHBORS_PER_WORD", "10"))
 RANDOM_SEED = os.getenv("RANDOM_SEED")
 
+# MAP-Elites
+MAPELITES_GRID_RESOLUTION = int(os.getenv("MAPELITES_GRID_RESOLUTION", "5"))
+MAPELITES_MUTATIONS_PER_GEN = int(os.getenv("MAPELITES_MUTATIONS_PER_GEN", "15"))
+MAPELITES_CROSSOVERS_PER_GEN = int(os.getenv("MAPELITES_CROSSOVERS_PER_GEN", "5"))
+MAPELITES_INITIAL_CATEGORIES = int(os.getenv("MAPELITES_INITIAL_CATEGORIES", "15"))
+MAPELITES_PLACEMENT_CACHE_DIR = _env_value("MAPELITES_PLACEMENT_CACHE_DIR", "data/placement_cache")
+# Anchored placement scales. Concreteness: 0 = most concrete/physical, 1 = most
+# abstract/conceptual. Specificity: 0 = most general, 1 = most specific.
+MAPELITES_ANCHORS_CONCRETENESS = {
+    0.0: "rock",
+    0.25: "green",
+    0.5: "hardness",
+    0.75: "feeling",
+    1.0: "beautiful",
+}
+MAPELITES_ANCHORS_SPECIFICITY = {
+    0.0: "thing",
+    0.25: "animal",
+    0.5: "bird",
+    0.75: "songbird",
+    1.0: "northern cardinal",
+}
+
 # Local game
 DEFAULT_TARGET = os.getenv("DEFAULT_TARGET", "ivory")
 

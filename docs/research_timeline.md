@@ -329,6 +329,56 @@ Research value: this follows Ting's recommendation and gives sigma adaptation
 more selection pressure across competing lineages. It remains a design change
 pending repeated-run evidence, not a performance result.
 
+### 2026-06-01 — MAP-Elites Archive Method
+
+Evidence:
+- [`contexto_solver/methods/ea_llm_map_elites.py`](../contexto_solver/methods/ea_llm_map_elites.py)
+- [`contexto_solver/llm_client.py`](../contexto_solver/llm_client.py)
+- [`contexto_solver/config.py`](../contexto_solver/config.py)
+- [`docs/design_decisions.md`](design_decisions.md#map-elites-archive-selection-ea_llm_map_elites)
+
+Milestones:
+- Added `ea_llm_map_elites`, inheriting from `ea_llm_self_adaptive` and
+  replacing top-mu selection with a `5x5` behavior archive over two LLM-placed
+  axes: concreteness and specificity.
+- Placement is a single anchored-scale LLM call (`LLMClient.place_word`), cached
+  to disk keyed by `(model, anchors_hash, word)` so anchor changes invalidate
+  stale entries; no embedding centroid math, so the method works against the
+  real Contexto API.
+- Inherited the sigma self-adaptation unchanged; each hypothesis is created with
+  exactly one immutable `best_word` and placed by per-cell competition.
+- Added trace events `AXIS_DEFINITION`, `PLACEMENT`, and `ARCHIVE_*` to make
+  placements re-derivable and support later quality-diversity analysis.
+- Left all existing methods (`ea_llm`, `ea_llm_pivot`, `ea_llm_self_adaptive`,
+  `llm_only`, `embedding`) behaviorally unchanged.
+
+Research value: this targets the selection-layer diversity problem identified in
+earlier batches. It is a design change pending repeated-run evidence, not yet a
+performance result. Post-analysis visualization (sigma heatmaps, archive scatter
+plots) is deferred as follow-up tooling.
+
+### 2026-06-02 — MAP-Elites Visualization
+
+Evidence:
+- [`contexto_solver/plot_map_elites.py`](../contexto_solver/plot_map_elites.py)
+- [`docs/architecture.md`](architecture.md#contexto_solverplot_map_elites)
+
+Milestones:
+- Added `contexto_solver.plot_map_elites`, a standalone analysis script that
+  renders seven static figures from a MAP-Elites trace: cell-occupancy and
+  hit-count heatmaps, archive growth, continuous placement scatter, per-component
+  sigma heatmaps (final and over-time snapshots), and the winning-lineage sigma
+  trajectory, plus an optional combined summary.
+- All figures are reconstructed from existing trace events (`AXIS_DEFINITION`,
+  `PLACEMENT`, `ARCHIVE_*`); no new events or solver changes were needed.
+- Output is grouped per run under `figures/<run_label>/`; non-MAP-Elites traces
+  exit cleanly. `plot_trajectory.py` and `inspect_self_adaptive_trace.py` are
+  unchanged.
+
+Research value: makes the quality-diversity behavior of the archive legible
+(spatial sigma structure, occupancy growth, empty-vs-contested cells) for
+diagnosing runs. Diagnostic tooling, not a performance result.
+
 ## Current Open Questions
 
 - Should work continue directly on pivot direction selection, given the completed
@@ -338,8 +388,10 @@ pending repeated-run evidence, not a performance result.
 - Are misleading neighborhoods caused mainly by GloVe geometry, LLM proposal
   bias, or the evolutionary selection loop?
 - Would an archive or MAP-Elites-inspired diversity mechanism improve over the
-  current active-set plus reactive-pivot design? This is only a future idea at
-  present; no explicit MAP-Elites plan or implementation exists in the repo.
+  current active-set plus reactive-pivot design? An initial implementation now
+  exists (`ea_llm_map_elites`); whether it improves solve rate, generation
+  count, or diversity over the current design remains open pending repeated-run
+  evidence.
 - How do LLM-guided search, aligned embedding search, and non-aligned embedding
   search compare under repeated local benchmarks?
 - Does self-adaptive operator selection improve solve rate, generation count, or

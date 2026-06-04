@@ -299,6 +299,51 @@ inspection from repeated-run or batch-level summaries.
 Observation: the project has discussed exploration/exploitation balance and
 diversity maintenance, and the solver contains a fresh-diversity pivot path.
 
-Status: there is no explicit MAP-Elites/archive design or implementation yet.
-Any MAP-Elites-inspired archive should be treated as future work pending the
-pivot-matrix results.
+Status: an explicit archive-based method now exists (`ea_llm_map_elites`, see
+below). The original "future work" note is kept here for history; the MAP-Elites
+selection layer is no longer purely speculative.
+
+## MAP-Elites Archive Selection (`ea_llm_map_elites`)
+
+Decision: add `ea_llm_map_elites`, a MAP-Elites variant of
+`ea_llm_self_adaptive` that replaces top-mu selection with an archive over a
+`5x5` grid of behavior cells. Two behavior axes are used: concreteness
+(concrete/physical to abstract/conceptual) and specificity (general to
+specific). Each cell holds at most one elite; per-cell competition keeps the
+better-ranked hypothesis. The sigma self-adaptation mechanism is inherited
+unchanged from the parent method.
+
+Rationale (selection-layer diversity fix): earlier batches indicated the
+diversity problem is at the selection layer, where top-mu/half selection
+collapses lineages onto the current best region. An archive enforces structural
+diversity: a fresh-jump child with a mediocre global rank still survives if it
+lands in an empty cell or beats that cell's incumbent. This decouples "is this
+the global best" from "is this the best example of this kind of hypothesis."
+
+LLM-driven placement over embedding centroids: placement uses a single LLM call
+with anchored scales rather than embedding-centroid math. This keeps the method
+backend-agnostic and compatible with the real Contexto API, where solver-side
+embeddings of the target neighborhood are not available. Anchored scales (for
+example `0.00: rock ... 1.00: beautiful` for concreteness) give the LLM a stable
+frame of reference and make placements reproducible; anchors live in
+`MAPELITES_ANCHORS_*` config and are hashed into the placement cache key so any
+anchor change invalidates stale cache entries.
+
+First axis pair choice: concreteness and specificity were chosen as the first
+behavior descriptors because they are largely orthogonal, intuitive for an LLM
+to rate on a `0-1` scale, and span the kinds of semantic moves the operators
+already make (narrowing/refining vs. reframing/abstracting).
+
+Override strategy: the method overrides `initialize()` and `run_generation()`
+whole-cloth instead of hooking individual base steps. Because the base EA loop
+is bypassed, per-hypothesis multi-candidate generation, top-mu/half selection,
+the post-generation hook, and deduplication are all inactive without separate
+overrides, matching canonical MAP-Elites where placement and fitness are
+immutable post-creation. Each hypothesis is created with exactly one
+`best_word`.
+
+Research relevance: this is a structural diversity mechanism that is comparable
+across local and real-API games. Any performance claim requires repeated runs;
+the new trace events (`AXIS_DEFINITION`, `PLACEMENT`, `ARCHIVE_*`) are designed
+to support later quality-diversity analysis (sigma heatmaps, archive scatter
+plots), which is out of scope for the initial implementation.

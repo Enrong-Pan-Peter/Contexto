@@ -28,7 +28,7 @@ main.py
   -> contexto_solver.main
     -> config
     -> choose game backend: LocalGame or ContextoAPI
-    -> choose method: llm_only, ea_llm, ea_llm_pivot, ea_llm_self_adaptive, or embedding
+    -> choose method: llm_only, ea_llm, ea_llm_pivot, ea_llm_self_adaptive, ea_llm_map_elites, or embedding
     -> Logger records RUN_CONFIG and solver events
     -> method.solve()
     -> trace JSON written to traces/
@@ -141,6 +141,12 @@ Subtleties:
   `SELF_ADAPTIVE_MU` controls only that method's active population cap and
   mutation-parent count. Regular `ea_llm` and `ea_llm_pivot` continue to use
   `INITIAL_CATEGORIES` and `MAX_ACTIVE_HYPOTHESES`.
+- MAP-Elites settings are namespaced with `MAPELITES_*` and read only by
+  `method=ea_llm_map_elites`. It uses `MAPELITES_INITIAL_CATEGORIES`,
+  `MAPELITES_GRID_RESOLUTION`, `MAPELITES_MUTATIONS_PER_GEN`,
+  `MAPELITES_CROSSOVERS_PER_GEN`, `MAPELITES_PLACEMENT_CACHE_DIR`, and the
+  `MAPELITES_ANCHORS_*` scales, while reusing the `SELF_ADAPTIVE_*`
+  concentration and sigma-floor values for the inherited operator adaptation.
 - Named embedding paths include legacy GloVe plus transformer caches for
   MiniLM and MPNet. MiniLM becomes the default local embedding backend once its
   cache exists; otherwise the default falls back to GloVe so a fresh checkout
@@ -351,6 +357,9 @@ Current method modules:
 - `methods/ea_llm_self_adaptive.py`: EA+LLM variant whose mutation and
   crossover steps carry per-hypothesis operator probability vectors and emit
   sigma telemetry.
+- `methods/ea_llm_map_elites.py`: MAP-Elites variant of the self-adaptive
+  method. Replaces top-mu selection with a behavior archive (see the dedicated
+  subsection below).
 - `methods/embedding.py`: embedding nearest-neighbor baseline.
 - `methods/base.py`: shared `Game` and `SolverMethod` protocols.
 
@@ -375,16 +384,89 @@ Subtleties:
   default through the method config so adaptive runs do not inject uniform-sigma
   local-search hypotheses. Selection, candidate generation, and deduplication
   remain on the shared path.
+- `ea_llm_map_elites` subclasses `ea_llm_self_adaptive` and overrides
+  `initialize()` and `run_generation()` whole-cloth. Because the base EA loop is
+  not invoked, per-hypothesis multi-candidate generation, top-mu/half selection,
+  the post-generation hook, and deduplication are all inactive in this method.
+  It inherits the sigma machinery unchanged (`_mutate`/`_crossover` math reused
+  via per-child helpers) and keeps the four-operator sigma vectors. See the
+  dedicated subsection below.
 - `solver=llm` is no longer a unique method. Analysis scripts should inspect
-  `method` when distinguishing `llm_only`, `ea_llm`, `ea_llm_pivot`, and
-  `ea_llm_self_adaptive`.
+  `method` when distinguishing `llm_only`, `ea_llm`, `ea_llm_pivot`,
+  `ea_llm_self_adaptive`, and `ea_llm_map_elites`.
 - The `enable_pivot` metadata field remains only as a compatibility field for
-  pivot matrix analysis: `ea_llm` and `ea_llm_self_adaptive` write `False`,
-  `ea_llm_pivot` writes `True`, and other methods write `None`.
+  pivot matrix analysis: `ea_llm`, `ea_llm_self_adaptive`, and
+  `ea_llm_map_elites` write `False`, `ea_llm_pivot` writes `True`, and other
+  methods write `None`.
 - All methods must remain backend-agnostic. LLM methods use only rank feedback,
   not local embedding vectors or target internals.
 - The embedding method can know its own solver embedding model, but it should
   not assume the game backend uses the same model unless explicitly configured.
+
+### `methods/ea_llm_map_elites.py`
+
+`ea_llm_map_elites` is a MAP-Elites quality-diversity layer on top of the
+self-adaptive operators. It keeps the inherited sigma self-adaptation but
+replaces selection with a behavior archive.
+
+Archive:
+- A `grid_resolution x grid_resolution` grid (default `5x5 = 25` cells), stored
+  as `self.archive: dict[(i, j), Hypothesis]` holding only occupied cells. Each
+  cell holds zero or one elite. The "population" is the number of occupied cells
+  (0 to 25).
+- A hypothesis's behavior coordinate is the coordinate of its single
+  `best_word`, fixed at creation. Hypotheses carry optional
+  `coordinates: (float, float)` and `cell: (int, int)` fields (default `None`,
+  so other methods are unaffected) that are serialized in the trace.
+
+Behavior axes (anchored, LLM-placed):
+- Concreteness: `0` = most concrete/physical, `1` = most abstract/conceptual.
+- Specificity: `0` = most general, `1` = most specific.
+- Anchor words and scale positions come from `MAPELITES_ANCHORS_CONCRETENESS`
+  and `MAPELITES_ANCHORS_SPECIFICITY`, so anchors are tunable without code
+  changes. Placement is a single LLM call (`LLMClient.place_word`) returning
+  `{concreteness, specificity}` in `[0, 1]`. The cell is
+  `clip(floor(coord * resolution), 0, resolution - 1)` per axis. No embedding
+  centroid math is used, so the method works against the real Contexto API.
+
+Placement cache:
+- Results are cached to `MAPELITES_PLACEMENT_CACHE_DIR/{model}_{anchors_hash}.json`
+  with schema `{word: [concreteness, specificity]}`. `anchors_hash` is a stable
+  hash over the sorted `(axis, position, word)` anchor triples, so any anchor
+  change automatically invalidates stale entries. The cache loads on init and
+  persists on each new placement (durability over speed). `cache_hit` is logged
+  on every `PLACEMENT` event.
+
+Per-generation loop (`run_generation`):
+- Sample `MAPELITES_MUTATIONS_PER_GEN` mutation parents uniformly with
+  replacement over occupied cells; each yields one sigma-driven mutation child
+  with exactly one `best_word` (operator prompt requested with `n=1`).
+- Sample `MAPELITES_CROSSOVERS_PER_GEN` crossover pairs (two parents each, with
+  replacement); each yields one blended-sigma crossover child with one
+  `best_word`.
+- For each child: guess its candidate word (becomes `best_word`), LLM-place it,
+  compute its cell, then apply per-cell competition: empty cell -> place;
+  otherwise the better-ranked hypothesis stays. A fresh-jump child survives if
+  its cell is empty or its incumbent is worse, which is the selection-layer fix
+  for the diversity problem.
+- `_active_hypotheses()` is overridden to return the current archive incumbents
+  so the inherited sigma-trajectory logging reflects the archive.
+
+Trace events emitted by this method (in addition to inherited ones):
+- `AXIS_DEFINITION` (once at run start): anchors, scale positions, grid
+  resolution, so placements are re-derivable from the trace.
+- `PLACEMENT` (per placement): `word`, `coordinates`, `cell`, `cache_hit`.
+- `ARCHIVE_PLACE`: new hypothesis into an empty cell.
+- `ARCHIVE_REPLACE`: incumbent replaced by a better child.
+- `ARCHIVE_REJECT`: child loses to incumbent.
+- `ARCHIVE_SNAPSHOT` (end of generation): occupied cells with incumbents'
+  `best_word`, rank, coordinates, and sigma vectors.
+
+Config (namespaced `MAPELITES_*`): `MAPELITES_GRID_RESOLUTION`,
+`MAPELITES_MUTATIONS_PER_GEN`, `MAPELITES_CROSSOVERS_PER_GEN`,
+`MAPELITES_INITIAL_CATEGORIES`, `MAPELITES_PLACEMENT_CACHE_DIR`,
+`MAPELITES_ANCHORS_CONCRETENESS`, `MAPELITES_ANCHORS_SPECIFICITY`. Sigma
+behavior reuses the `SELF_ADAPTIVE_*` concentration and floor values.
 
 ### `contexto_solver.logger.Logger`
 
@@ -425,7 +507,7 @@ Batch local experiment runner.
 Main function:
 - Runs repeated local experiments over targets from CLI or target file.
 - Supports `llm_only`, `ea_llm`, `ea_llm_pivot`,
-  `ea_llm_self_adaptive`, and `embedding` methods.
+  `ea_llm_self_adaptive`, `ea_llm_map_elites`, and `embedding` methods.
 - Supports `aligned` and `non_aligned` embedding modes.
 - Writes per-run traces plus aggregate JSON and CSV summaries.
 - Can resume an existing summary with `--resume`, skipping target/run pairs
@@ -486,6 +568,50 @@ Subtleties:
 - Plotting dependencies are intentionally local to the analysis module; solver
   code should not import Matplotlib, UMAP, PaCMAP, or scikit-learn projection
   APIs.
+
+### `contexto_solver.plot_map_elites`
+
+Standalone visualization script for MAP-Elites (`method=ea_llm_map_elites`)
+archive traces.
+
+Main function:
+- Reads an existing MAP-Elites trace JSON and renders seven static PNG figures:
+  cell-occupancy heatmap, archive growth, cell hit-count heatmap, continuous
+  placement scatter, per-component sigma heatmap (final), per-component sigma
+  snapshots over time, and the winning-lineage sigma trajectory.
+- Optional `--combined` writes an additional `map_elites_summary.png` montage of
+  the generated figures.
+- `--plots` selects a subset; `--snapshot-gens` controls the sigma snapshot
+  timepoints (final is always appended).
+
+Main interactions:
+- Consumes generated traces only; it does not participate in solving or batch
+  execution and needs no embedding model (MAP-Elites coordinates are already in
+  the trace).
+- Reads `AXIS_DEFINITION` for anchor scales and grid resolution, `PLACEMENT`
+  for continuous coordinates, `ARCHIVE_PLACE/REPLACE/REJECT` for occupancy and
+  hit counts, `ARCHIVE_SNAPSHOT` for archive state at a generation, and
+  `INIT`/`OPERATOR_SAMPLED`/`CROSSOVER` for the lineage walk.
+
+Subtleties:
+- State-at-time plots read `ARCHIVE_SNAPSHOT` events directly (snapshots carry
+  complete per-cell incumbent records), so reconstruction is a lookup, not an
+  event replay. A PLACE/REPLACE replay is used only as a fallback before the
+  first snapshot.
+- Plot 4 recovers each placement's rank by pairing a `PLACEMENT` event with the
+  immediately following `ARCHIVE_*` event, relying on the back-to-back emission
+  order in the solver's `_place_and_compete`.
+- The lineage walk is re-implemented here (not imported from the self-adaptive
+  inspection script) so that script stays unmodified; it mirrors the same
+  crossover parent resolution by category name and sigma.
+- Output goes to a per-run subdirectory `figures/<run_label>/` (derived from the
+  trace filename), which diverges from `plot_trajectory`'s flat `figures/`
+  layout because a single MAP-Elites run produces seven-plus PNGs that benefit
+  from grouping.
+- On a non-MAP-Elites trace (no `AXIS_DEFINITION`), the script prints a clear
+  message and exits without error rather than crashing.
+- Plotting dependencies stay local to the module (Matplotlib is imported
+  lazily); solver code never imports it.
 
 ### `scripts/inspect_self_adaptive_trace.py`
 
@@ -649,8 +775,11 @@ Before modifying a component, check these likely dependents:
 - Trace event names/details: update solvers, `Logger` consumers, documentation,
   and any manual analysis assumptions.
 - Analysis visualizations: update `contexto_solver.plot_trajectory`,
-  `requirements.txt`, and docs when trace interpretation, projection methods, or
-  generated figure conventions change.
+  `contexto_solver.plot_map_elites`, `requirements.txt`, and docs when trace
+  interpretation, projection methods, or generated figure conventions change.
+- MAP-Elites trace events (`AXIS_DEFINITION`, `PLACEMENT`, `ARCHIVE_*`): update
+  `methods/ea_llm_map_elites.py`, `Logger`, and `contexto_solver.plot_map_elites`
+  together, since the visualizer reconstructs archive state from those events.
 
 ## Preserved Invariants
 

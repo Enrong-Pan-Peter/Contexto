@@ -16,6 +16,7 @@ from .local_game import LocalGame
 from .logger import Logger
 from .methods.ea_core import EALLMConfig
 from .methods.ea_llm import EALLMMethod
+from .methods.ea_llm_map_elites import EALLMMapElitesConfig, EALLMMapElitesMethod
 from .methods.ea_llm_pivot import EALLMPivotConfig, EALLMPivotMethod
 from .methods.ea_llm_self_adaptive import EALLMSelfAdaptiveConfig, EALLMSelfAdaptiveMethod
 from .methods.embedding import EmbeddingConfig, EmbeddingMethod
@@ -133,6 +134,12 @@ def _write_outputs(
                 config.SELF_ADAPTIVE_CONCENTRATION if args.method == "ea_llm_self_adaptive" else None
             ),
             "self_adaptive_sigma_floor": config.SELF_ADAPTIVE_SIGMA_FLOOR if args.method == "ea_llm_self_adaptive" else None,
+            "mapelites_grid_resolution": config.MAPELITES_GRID_RESOLUTION if args.method == "ea_llm_map_elites" else None,
+            "mapelites_mutations_per_gen": config.MAPELITES_MUTATIONS_PER_GEN if args.method == "ea_llm_map_elites" else None,
+            "mapelites_crossovers_per_gen": config.MAPELITES_CROSSOVERS_PER_GEN if args.method == "ea_llm_map_elites" else None,
+            "mapelites_initial_categories": config.MAPELITES_INITIAL_CATEGORIES if args.method == "ea_llm_map_elites" else None,
+            "mapelites_concentration": config.SELF_ADAPTIVE_CONCENTRATION if args.method == "ea_llm_map_elites" else None,
+            "mapelites_sigma_floor": config.SELF_ADAPTIVE_SIGMA_FLOOR if args.method == "ea_llm_map_elites" else None,
             "ea_llm_pivot_stall_no_improvement_generations": (
                 config.EA_LLM_PIVOT_STALL_NO_IMPROVEMENT_GENERATIONS if args.method == "ea_llm_pivot" else None
             ),
@@ -203,6 +210,12 @@ def _run_local_target(
                 config.SELF_ADAPTIVE_CONCENTRATION if args.method == "ea_llm_self_adaptive" else None
             ),
             "self_adaptive_sigma_floor": config.SELF_ADAPTIVE_SIGMA_FLOOR if args.method == "ea_llm_self_adaptive" else None,
+            "mapelites_grid_resolution": config.MAPELITES_GRID_RESOLUTION if args.method == "ea_llm_map_elites" else None,
+            "mapelites_mutations_per_gen": config.MAPELITES_MUTATIONS_PER_GEN if args.method == "ea_llm_map_elites" else None,
+            "mapelites_crossovers_per_gen": config.MAPELITES_CROSSOVERS_PER_GEN if args.method == "ea_llm_map_elites" else None,
+            "mapelites_initial_categories": config.MAPELITES_INITIAL_CATEGORIES if args.method == "ea_llm_map_elites" else None,
+            "mapelites_concentration": config.SELF_ADAPTIVE_CONCENTRATION if args.method == "ea_llm_map_elites" else None,
+            "mapelites_sigma_floor": config.SELF_ADAPTIVE_SIGMA_FLOOR if args.method == "ea_llm_map_elites" else None,
             "ea_llm_pivot_stall_no_improvement_generations": (
                 config.EA_LLM_PIVOT_STALL_NO_IMPROVEMENT_GENERATIONS if args.method == "ea_llm_pivot" else None
             ),
@@ -248,6 +261,7 @@ def _run_local_target(
         solver = _build_llm_method(args.method, game, llm_client, logger, run_label, args)
 
     result = solver.solve()
+    archive = getattr(solver, "archive", None)
     return {
         "solver": method_family,
         "method": args.method,
@@ -261,6 +275,8 @@ def _run_local_target(
         "total_guesses": result["total_guesses"],
         "generations": result["generations"],
         "trace_path": result["trace_path"],
+        "archive_occupancy": len(archive) if archive is not None else None,
+        "placement_cache_hit_rate": getattr(solver, "placement_cache_hit_rate", None),
         "error": None,
         "llm_provider": llm_provider if method_family == "llm" else None,
         "llm_model": llm_model if method_family == "llm" else None,
@@ -294,6 +310,8 @@ def _failed_run_row(
         "total_guesses": None,
         "generations": None,
         "trace_path": None,
+        "archive_occupancy": None,
+        "placement_cache_hit_rate": None,
         "error": error,
         "llm_provider": llm_provider if _method_family(args.method) == "llm" else None,
         "llm_model": llm_model if _method_family(args.method) == "llm" else None,
@@ -365,6 +383,8 @@ def _write_csv(path: Path, rows: list[dict[str, Any]]) -> None:
         "total_guesses",
         "generations",
         "trace_path",
+        "archive_occupancy",
+        "placement_cache_hit_rate",
         "error",
         "llm_provider",
         "llm_model",
@@ -438,6 +458,25 @@ def _build_llm_method(method: str, game, llm_client: LLMClient, logger: Logger, 
                 random_seed=args.random_seed,
             ),
         )
+    if method == "ea_llm_map_elites":
+        return EALLMMapElitesMethod(
+            game,
+            llm_client,
+            logger,
+            EALLMMapElitesConfig(
+                **{**ea_kwargs, "initial_categories": config.MAPELITES_INITIAL_CATEGORIES},
+                mu=config.SELF_ADAPTIVE_MU,
+                concentration=config.SELF_ADAPTIVE_CONCENTRATION,
+                sigma_floor=config.SELF_ADAPTIVE_SIGMA_FLOOR,
+                random_seed=args.random_seed,
+                grid_resolution=config.MAPELITES_GRID_RESOLUTION,
+                mutations_per_gen=config.MAPELITES_MUTATIONS_PER_GEN,
+                crossovers_per_gen=config.MAPELITES_CROSSOVERS_PER_GEN,
+                placement_cache_dir=config.MAPELITES_PLACEMENT_CACHE_DIR,
+                anchors_concreteness=config.MAPELITES_ANCHORS_CONCRETENESS,
+                anchors_specificity=config.MAPELITES_ANCHORS_SPECIFICITY,
+            ),
+        )
     if method == "ea_llm_pivot":
         return EALLMPivotMethod(
             game,
@@ -463,7 +502,7 @@ def _method_family(method: str) -> str:
 def _enable_pivot_metadata(method: str) -> bool | None:
     if method == "ea_llm_pivot":
         return True
-    if method in {"ea_llm", "ea_llm_self_adaptive"}:
+    if method in {"ea_llm", "ea_llm_self_adaptive", "ea_llm_map_elites"}:
         return False
     return None
 
@@ -471,6 +510,8 @@ def _enable_pivot_metadata(method: str) -> bool | None:
 def _ea_initial_categories(method: str) -> int:
     if method == "ea_llm_self_adaptive":
         return config.SELF_ADAPTIVE_INITIAL_CATEGORIES
+    if method == "ea_llm_map_elites":
+        return config.MAPELITES_INITIAL_CATEGORIES
     return config.INITIAL_CATEGORIES
 
 
@@ -481,7 +522,7 @@ def _parse_args() -> argparse.Namespace:
     parser.add_argument("--mode", choices=["aligned", "non_aligned"], default="aligned")
     parser.add_argument(
         "--method",
-        choices=["llm_only", "ea_llm", "ea_llm_pivot", "ea_llm_self_adaptive", "embedding"],
+        choices=["llm_only", "ea_llm", "ea_llm_pivot", "ea_llm_self_adaptive", "ea_llm_map_elites", "embedding"],
         default="embedding",
     )
     parser.add_argument("--glove-path", help="Shortcut path used for both game and solver embeddings.")
@@ -509,7 +550,7 @@ def _parse_args() -> argparse.Namespace:
     return parser.parse_args()
 
 
-_EA_METHODS = {"ea_llm", "ea_llm_pivot", "ea_llm_self_adaptive"}
+_EA_METHODS = {"ea_llm", "ea_llm_pivot", "ea_llm_self_adaptive", "ea_llm_map_elites"}
 
 
 if __name__ == "__main__":

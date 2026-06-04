@@ -1,0 +1,4940 @@
+[
+  {
+    "generation": -1,
+    "event": "RUN_CONFIG",
+    "timestamp": "2026-06-02T12:38:53",
+    "details": {
+      "game": "local",
+      "solver": "llm",
+      "method": "ea_llm_map_elites",
+      "target": "superficial",
+      "game_number": null,
+      "game_embedding_path": "data/embeddings/all-MiniLM-L6-v2.npz",
+      "solver_embedding_path": null,
+      "alignment": "not_applicable",
+      "max_generations": 2,
+      "llm_provider": "ollama",
+      "llm_model": "qwen3:14b",
+      "llm_workers": 4,
+      "initial_categories": 15,
+      "max_active_hypotheses": null,
+      "local_search_rank_threshold": 100,
+      "self_adaptive_initial_categories": null,
+      "self_adaptive_mu": null,
+      "self_adaptive_concentration": null,
+      "self_adaptive_sigma_floor": null,
+      "mapelites_grid_resolution": 5,
+      "mapelites_mutations_per_gen": 15,
+      "mapelites_crossovers_per_gen": 5,
+      "mapelites_initial_categories": 15,
+      "mapelites_concentration": 50.0,
+      "mapelites_sigma_floor": 0.02,
+      "enable_pivot": false,
+      "ea_llm_pivot_stall_no_improvement_generations": null,
+      "ea_llm_pivot_stall_close_rank_threshold": null,
+      "ea_llm_pivot_stall_close_generations_limit": null,
+      "ea_llm_pivot_max_attempts_per_run": null,
+      "ea_llm_pivot_candidate_words_per_operator": null,
+      "ea_llm_pivot_resolution_window": null,
+      "seed_count": null,
+      "active_count": null,
+      "neighbors_per_word": null,
+      "random_seed": null
+    }
+  },
+  {
+    "generation": 0,
+    "event": "AXIS_DEFINITION",
+    "timestamp": "2026-06-02T12:38:53",
+    "details": {
+      "grid_resolution": 5,
+      "concreteness": {
+        "label": "0 = most concrete/physical, 1 = most abstract/conceptual",
+        "anchors": {
+          "0.00": "rock",
+          "0.25": "green",
+          "0.50": "hardness",
+          "0.75": "feeling",
+          "1.00": "beautiful"
+        }
+      },
+      "specificity": {
+        "label": "0 = most general, 1 = most specific",
+        "anchors": {
+          "0.00": "thing",
+          "0.25": "animal",
+          "0.50": "bird",
+          "0.75": "songbird",
+          "1.00": "northern cardinal"
+        }
+      }
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-06-02T12:40:40",
+    "details": {
+      "word": "apple",
+      "rank": 37754,
+      "hypothesis": "food",
+      "best_word": "apple",
+      "best_rank": 37754,
+      "total_guesses": 1
+    }
+  },
+  {
+    "generation": 0,
+    "event": "PLACEMENT",
+    "timestamp": "2026-06-02T12:40:40",
+    "details": {
+      "word": "apple",
+      "coordinates": [
+        0.25,
+        0.5
+      ],
+      "cell": [
+        1,
+        2
+      ],
+      "cache_hit": true
+    }
+  },
+  {
+    "generation": 0,
+    "event": "ARCHIVE_PLACE",
+    "timestamp": "2026-06-02T12:40:40",
+    "details": {
+      "cell": [
+        1,
+        2
+      ],
+      "hypothesis_id": "1bae2f00ab714c7fa72f9e0e03b27070",
+      "best_word": "apple",
+      "rank": 37754,
+      "sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ]
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-06-02T12:40:40",
+    "details": {
+      "word": "happy",
+      "rank": 79574,
+      "hypothesis": "emotion",
+      "best_word": "apple",
+      "best_rank": 37754,
+      "total_guesses": 2
+    }
+  },
+  {
+    "generation": 0,
+    "event": "PLACEMENT",
+    "timestamp": "2026-06-02T12:40:40",
+    "details": {
+      "word": "happy",
+      "coordinates": [
+        0.75,
+        0.25
+      ],
+      "cell": [
+        3,
+        1
+      ],
+      "cache_hit": true
+    }
+  },
+  {
+    "generation": 0,
+    "event": "ARCHIVE_PLACE",
+    "timestamp": "2026-06-02T12:40:40",
+    "details": {
+      "cell": [
+        3,
+        1
+      ],
+      "hypothesis_id": "ab1f86b96d7f4a0bb5050688381fe668",
+      "best_word": "happy",
+      "rank": 79574,
+      "sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ]
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-06-02T12:40:40",
+    "details": {
+      "word": "car",
+      "rank": 77046,
+      "hypothesis": "transport",
+      "best_word": "apple",
+      "best_rank": 37754,
+      "total_guesses": 3
+    }
+  },
+  {
+    "generation": 0,
+    "event": "PLACEMENT",
+    "timestamp": "2026-06-02T12:40:40",
+    "details": {
+      "word": "car",
+      "coordinates": [
+        0.25,
+        0.4
+      ],
+      "cell": [
+        1,
+        2
+      ],
+      "cache_hit": true
+    }
+  },
+  {
+    "generation": 0,
+    "event": "ARCHIVE_REJECT",
+    "timestamp": "2026-06-02T12:40:40",
+    "details": {
+      "cell": [
+        1,
+        2
+      ],
+      "child_hypothesis_id": "362add077487415fadcc4be67bce3775",
+      "incumbent_hypothesis_id": "1bae2f00ab714c7fa72f9e0e03b27070",
+      "child_rank": 77046,
+      "incumbent_rank": 37754
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-06-02T12:40:40",
+    "details": {
+      "word": "red",
+      "rank": 179717,
+      "hypothesis": "color",
+      "best_word": "apple",
+      "best_rank": 37754,
+      "total_guesses": 4
+    }
+  },
+  {
+    "generation": 0,
+    "event": "PLACEMENT",
+    "timestamp": "2026-06-02T12:40:40",
+    "details": {
+      "word": "red",
+      "coordinates": [
+        0.25,
+        0.25
+      ],
+      "cell": [
+        1,
+        1
+      ],
+      "cache_hit": true
+    }
+  },
+  {
+    "generation": 0,
+    "event": "ARCHIVE_PLACE",
+    "timestamp": "2026-06-02T12:40:40",
+    "details": {
+      "cell": [
+        1,
+        1
+      ],
+      "hypothesis_id": "9683c0db403e46b2a988d0e8c101cb9d",
+      "best_word": "red",
+      "rank": 179717,
+      "sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ]
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-06-02T12:40:40",
+    "details": {
+      "word": "hand",
+      "rank": 39231,
+      "hypothesis": "bodypart",
+      "best_word": "apple",
+      "best_rank": 37754,
+      "total_guesses": 5
+    }
+  },
+  {
+    "generation": 0,
+    "event": "PLACEMENT",
+    "timestamp": "2026-06-02T12:41:12",
+    "details": {
+      "word": "hand",
+      "coordinates": [
+        0.1,
+        0.3
+      ],
+      "cell": [
+        0,
+        1
+      ],
+      "cache_hit": false
+    }
+  },
+  {
+    "generation": 0,
+    "event": "ARCHIVE_PLACE",
+    "timestamp": "2026-06-02T12:41:12",
+    "details": {
+      "cell": [
+        0,
+        1
+      ],
+      "hypothesis_id": "e5d3fd7e4e7d4d30ba6f37b3cbcab70a",
+      "best_word": "hand",
+      "rank": 39231,
+      "sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ]
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-06-02T12:41:12",
+    "details": {
+      "word": "rain",
+      "rank": 158196,
+      "hypothesis": "weather",
+      "best_word": "apple",
+      "best_rank": 37754,
+      "total_guesses": 6
+    }
+  },
+  {
+    "generation": 0,
+    "event": "PLACEMENT",
+    "timestamp": "2026-06-02T12:41:12",
+    "details": {
+      "word": "rain",
+      "coordinates": [
+        0.25,
+        0.25
+      ],
+      "cell": [
+        1,
+        1
+      ],
+      "cache_hit": true
+    }
+  },
+  {
+    "generation": 0,
+    "event": "ARCHIVE_REPLACE",
+    "timestamp": "2026-06-02T12:41:12",
+    "details": {
+      "cell": [
+        1,
+        1
+      ],
+      "old_hypothesis_id": "9683c0db403e46b2a988d0e8c101cb9d",
+      "new_hypothesis_id": "bdc3a432e680445986c5856e382b5c01",
+      "old_rank": 179717,
+      "new_rank": 158196,
+      "old_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "new_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ]
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-06-02T12:41:12",
+    "details": {
+      "word": "circle",
+      "rank": 46384,
+      "hypothesis": "shape",
+      "best_word": "apple",
+      "best_rank": 37754,
+      "total_guesses": 7
+    }
+  },
+  {
+    "generation": 0,
+    "event": "PLACEMENT",
+    "timestamp": "2026-06-02T12:42:19",
+    "details": {
+      "word": "circle",
+      "coordinates": [
+        0.5,
+        0.25
+      ],
+      "cell": [
+        2,
+        1
+      ],
+      "cache_hit": false
+    }
+  },
+  {
+    "generation": 0,
+    "event": "ARCHIVE_PLACE",
+    "timestamp": "2026-06-02T12:42:19",
+    "details": {
+      "cell": [
+        2,
+        1
+      ],
+      "hypothesis_id": "e60ffeadd2824b4ab7a83a87daf10d63",
+      "best_word": "circle",
+      "rank": 46384,
+      "sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ]
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-06-02T12:42:19",
+    "details": {
+      "word": "one",
+      "rank": 62908,
+      "hypothesis": "number",
+      "best_word": "apple",
+      "best_rank": 37754,
+      "total_guesses": 8
+    }
+  },
+  {
+    "generation": 0,
+    "event": "PLACEMENT",
+    "timestamp": "2026-06-02T12:42:39",
+    "details": {
+      "word": "one",
+      "coordinates": [
+        0.7,
+        0.1
+      ],
+      "cell": [
+        3,
+        0
+      ],
+      "cache_hit": false
+    }
+  },
+  {
+    "generation": 0,
+    "event": "ARCHIVE_PLACE",
+    "timestamp": "2026-06-02T12:42:39",
+    "details": {
+      "cell": [
+        3,
+        0
+      ],
+      "hypothesis_id": "738210c2e8fc4d33b9454de65cc06297",
+      "best_word": "one",
+      "rank": 62908,
+      "sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ]
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-06-02T12:42:39",
+    "details": {
+      "word": "day",
+      "rank": 64012,
+      "hypothesis": "time",
+      "best_word": "apple",
+      "best_rank": 37754,
+      "total_guesses": 9
+    }
+  },
+  {
+    "generation": 0,
+    "event": "PLACEMENT",
+    "timestamp": "2026-06-02T12:43:59",
+    "details": {
+      "word": "day",
+      "coordinates": [
+        0.5,
+        0.25
+      ],
+      "cell": [
+        2,
+        1
+      ],
+      "cache_hit": false
+    }
+  },
+  {
+    "generation": 0,
+    "event": "ARCHIVE_REJECT",
+    "timestamp": "2026-06-02T12:43:59",
+    "details": {
+      "cell": [
+        2,
+        1
+      ],
+      "child_hypothesis_id": "8f6c775dd1e041c58607a00ce9949183",
+      "incumbent_hypothesis_id": "e60ffeadd2824b4ab7a83a87daf10d63",
+      "child_rank": 64012,
+      "incumbent_rank": 46384
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-06-02T12:43:59",
+    "details": {
+      "word": "noise",
+      "rank": 111568,
+      "hypothesis": "sound",
+      "best_word": "apple",
+      "best_rank": 37754,
+      "total_guesses": 10
+    }
+  },
+  {
+    "generation": 0,
+    "event": "PLACEMENT",
+    "timestamp": "2026-06-02T12:44:21",
+    "details": {
+      "word": "noise",
+      "coordinates": [
+        0.6,
+        0.1
+      ],
+      "cell": [
+        3,
+        0
+      ],
+      "cache_hit": false
+    }
+  },
+  {
+    "generation": 0,
+    "event": "ARCHIVE_REJECT",
+    "timestamp": "2026-06-02T12:44:21",
+    "details": {
+      "cell": [
+        3,
+        0
+      ],
+      "child_hypothesis_id": "0c8955a4ef37452cbf1f8f5fad14a72d",
+      "incumbent_hypothesis_id": "738210c2e8fc4d33b9454de65cc06297",
+      "child_rank": 111568,
+      "incumbent_rank": 62908
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-06-02T12:44:21",
+    "details": {
+      "word": "run",
+      "rank": 80819,
+      "hypothesis": "action",
+      "best_word": "apple",
+      "best_rank": 37754,
+      "total_guesses": 11
+    }
+  },
+  {
+    "generation": 0,
+    "event": "PLACEMENT",
+    "timestamp": "2026-06-02T12:45:20",
+    "details": {
+      "word": "run",
+      "coordinates": [
+        0.5,
+        0.25
+      ],
+      "cell": [
+        2,
+        1
+      ],
+      "cache_hit": false
+    }
+  },
+  {
+    "generation": 0,
+    "event": "ARCHIVE_REJECT",
+    "timestamp": "2026-06-02T12:45:20",
+    "details": {
+      "cell": [
+        2,
+        1
+      ],
+      "child_hypothesis_id": "4db4e703c2c44f06962a40abb45d520a",
+      "incumbent_hypothesis_id": "e60ffeadd2824b4ab7a83a87daf10d63",
+      "child_rank": 80819,
+      "incumbent_rank": 46384
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-06-02T12:45:20",
+    "details": {
+      "word": "wood",
+      "rank": 18369,
+      "hypothesis": "material",
+      "best_word": "wood",
+      "best_rank": 18369,
+      "total_guesses": 12
+    }
+  },
+  {
+    "generation": 0,
+    "event": "PLACEMENT",
+    "timestamp": "2026-06-02T12:45:41",
+    "details": {
+      "word": "wood",
+      "coordinates": [
+        0.0,
+        0.25
+      ],
+      "cell": [
+        0,
+        1
+      ],
+      "cache_hit": false
+    }
+  },
+  {
+    "generation": 0,
+    "event": "ARCHIVE_REPLACE",
+    "timestamp": "2026-06-02T12:45:41",
+    "details": {
+      "cell": [
+        0,
+        1
+      ],
+      "old_hypothesis_id": "e5d3fd7e4e7d4d30ba6f37b3cbcab70a",
+      "new_hypothesis_id": "0e197d2442f04b4e8a8378ad025c2274",
+      "old_rank": 39231,
+      "new_rank": 18369,
+      "old_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "new_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ]
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-06-02T12:45:41",
+    "details": {
+      "word": "dog",
+      "rank": 51088,
+      "hypothesis": "animal",
+      "best_word": "wood",
+      "best_rank": 18369,
+      "total_guesses": 13
+    }
+  },
+  {
+    "generation": 0,
+    "event": "PLACEMENT",
+    "timestamp": "2026-06-02T12:46:53",
+    "details": {
+      "word": "dog",
+      "coordinates": [
+        0.0,
+        0.25
+      ],
+      "cell": [
+        0,
+        1
+      ],
+      "cache_hit": false
+    }
+  },
+  {
+    "generation": 0,
+    "event": "ARCHIVE_REJECT",
+    "timestamp": "2026-06-02T12:46:53",
+    "details": {
+      "cell": [
+        0,
+        1
+      ],
+      "child_hypothesis_id": "8c3d26d2b77949d2bf27e1cb52f9e3be",
+      "incumbent_hypothesis_id": "0e197d2442f04b4e8a8378ad025c2274",
+      "child_rank": 51088,
+      "incumbent_rank": 18369
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-06-02T12:46:53",
+    "details": {
+      "word": "home",
+      "rank": 142824,
+      "hypothesis": "place",
+      "best_word": "wood",
+      "best_rank": 18369,
+      "total_guesses": 14
+    }
+  },
+  {
+    "generation": 0,
+    "event": "PLACEMENT",
+    "timestamp": "2026-06-02T12:47:10",
+    "details": {
+      "word": "home",
+      "coordinates": [
+        0.3,
+        0.2
+      ],
+      "cell": [
+        1,
+        1
+      ],
+      "cache_hit": false
+    }
+  },
+  {
+    "generation": 0,
+    "event": "ARCHIVE_REPLACE",
+    "timestamp": "2026-06-02T12:47:10",
+    "details": {
+      "cell": [
+        1,
+        1
+      ],
+      "old_hypothesis_id": "bdc3a432e680445986c5856e382b5c01",
+      "new_hypothesis_id": "94512faf06dc417ba3007c654fca289f",
+      "old_rank": 158196,
+      "new_rank": 142824,
+      "old_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "new_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ]
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-06-02T12:47:10",
+    "details": {
+      "word": "hammer",
+      "rank": 179483,
+      "hypothesis": "tool",
+      "best_word": "wood",
+      "best_rank": 18369,
+      "total_guesses": 15
+    }
+  },
+  {
+    "generation": 0,
+    "event": "PLACEMENT",
+    "timestamp": "2026-06-02T12:47:38",
+    "details": {
+      "word": "hammer",
+      "coordinates": [
+        0.1,
+        0.3
+      ],
+      "cell": [
+        0,
+        1
+      ],
+      "cache_hit": false
+    }
+  },
+  {
+    "generation": 0,
+    "event": "ARCHIVE_REJECT",
+    "timestamp": "2026-06-02T12:47:38",
+    "details": {
+      "cell": [
+        0,
+        1
+      ],
+      "child_hypothesis_id": "14f4c0433d054155b358bd226a814ae0",
+      "incumbent_hypothesis_id": "0e197d2442f04b4e8a8378ad025c2274",
+      "child_rank": 179483,
+      "incumbent_rank": 18369
+    }
+  },
+  {
+    "generation": 0,
+    "event": "INIT",
+    "timestamp": "2026-06-02T12:47:38",
+    "details": {
+      "hypotheses": [
+        {
+          "hypothesis_id": "1bae2f00ab714c7fa72f9e0e03b27070",
+          "category_name": "food",
+          "description": "edible items",
+          "words_tried": {
+            "apple": 37754
+          },
+          "best_word": "apple",
+          "best_rank": 37754,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "coordinates": [
+            0.25,
+            0.5
+          ],
+          "cell": [
+            1,
+            2
+          ]
+        },
+        {
+          "hypothesis_id": "ab1f86b96d7f4a0bb5050688381fe668",
+          "category_name": "emotion",
+          "description": "feelings and states of mind",
+          "words_tried": {
+            "happy": 79574
+          },
+          "best_word": "happy",
+          "best_rank": 79574,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "coordinates": [
+            0.75,
+            0.25
+          ],
+          "cell": [
+            3,
+            1
+          ]
+        },
+        {
+          "hypothesis_id": "362add077487415fadcc4be67bce3775",
+          "category_name": "transport",
+          "description": "means of moving from one place to another",
+          "words_tried": {
+            "car": 77046
+          },
+          "best_word": "car",
+          "best_rank": 77046,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "coordinates": [
+            0.25,
+            0.4
+          ],
+          "cell": [
+            1,
+            2
+          ]
+        },
+        {
+          "hypothesis_id": "9683c0db403e46b2a988d0e8c101cb9d",
+          "category_name": "color",
+          "description": "visual perception of light",
+          "words_tried": {
+            "red": 179717
+          },
+          "best_word": "red",
+          "best_rank": 179717,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "coordinates": [
+            0.25,
+            0.25
+          ],
+          "cell": [
+            1,
+            1
+          ]
+        },
+        {
+          "hypothesis_id": "e5d3fd7e4e7d4d30ba6f37b3cbcab70a",
+          "category_name": "bodypart",
+          "description": "anatomical component of a human",
+          "words_tried": {
+            "hand": 39231
+          },
+          "best_word": "hand",
+          "best_rank": 39231,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "coordinates": [
+            0.1,
+            0.3
+          ],
+          "cell": [
+            0,
+            1
+          ]
+        },
+        {
+          "hypothesis_id": "bdc3a432e680445986c5856e382b5c01",
+          "category_name": "weather",
+          "description": "atmospheric conditions",
+          "words_tried": {
+            "rain": 158196
+          },
+          "best_word": "rain",
+          "best_rank": 158196,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "coordinates": [
+            0.25,
+            0.25
+          ],
+          "cell": [
+            1,
+            1
+          ]
+        },
+        {
+          "hypothesis_id": "e60ffeadd2824b4ab7a83a87daf10d63",
+          "category_name": "shape",
+          "description": "geometric form",
+          "words_tried": {
+            "circle": 46384
+          },
+          "best_word": "circle",
+          "best_rank": 46384,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "coordinates": [
+            0.5,
+            0.25
+          ],
+          "cell": [
+            2,
+            1
+          ]
+        },
+        {
+          "hypothesis_id": "738210c2e8fc4d33b9454de65cc06297",
+          "category_name": "number",
+          "description": "mathematical quantity",
+          "words_tried": {
+            "one": 62908
+          },
+          "best_word": "one",
+          "best_rank": 62908,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "coordinates": [
+            0.7,
+            0.1
+          ],
+          "cell": [
+            3,
+            0
+          ]
+        },
+        {
+          "hypothesis_id": "8f6c775dd1e041c58607a00ce9949183",
+          "category_name": "time",
+          "description": "measurement of duration",
+          "words_tried": {
+            "day": 64012
+          },
+          "best_word": "day",
+          "best_rank": 64012,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "coordinates": [
+            0.5,
+            0.25
+          ],
+          "cell": [
+            2,
+            1
+          ]
+        },
+        {
+          "hypothesis_id": "0c8955a4ef37452cbf1f8f5fad14a72d",
+          "category_name": "sound",
+          "description": "auditory perception",
+          "words_tried": {
+            "noise": 111568
+          },
+          "best_word": "noise",
+          "best_rank": 111568,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "coordinates": [
+            0.6,
+            0.1
+          ],
+          "cell": [
+            3,
+            0
+          ]
+        },
+        {
+          "hypothesis_id": "4db4e703c2c44f06962a40abb45d520a",
+          "category_name": "action",
+          "description": "physical movement",
+          "words_tried": {
+            "run": 80819
+          },
+          "best_word": "run",
+          "best_rank": 80819,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "coordinates": [
+            0.5,
+            0.25
+          ],
+          "cell": [
+            2,
+            1
+          ]
+        },
+        {
+          "hypothesis_id": "0e197d2442f04b4e8a8378ad025c2274",
+          "category_name": "material",
+          "description": "substance used in construction",
+          "words_tried": {
+            "wood": 18369
+          },
+          "best_word": "wood",
+          "best_rank": 18369,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "coordinates": [
+            0.0,
+            0.25
+          ],
+          "cell": [
+            0,
+            1
+          ]
+        },
+        {
+          "hypothesis_id": "8c3d26d2b77949d2bf27e1cb52f9e3be",
+          "category_name": "animal",
+          "description": "living creature",
+          "words_tried": {
+            "dog": 51088
+          },
+          "best_word": "dog",
+          "best_rank": 51088,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "coordinates": [
+            0.0,
+            0.25
+          ],
+          "cell": [
+            0,
+            1
+          ]
+        },
+        {
+          "hypothesis_id": "94512faf06dc417ba3007c654fca289f",
+          "category_name": "place",
+          "description": "location or area",
+          "words_tried": {
+            "home": 142824
+          },
+          "best_word": "home",
+          "best_rank": 142824,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "coordinates": [
+            0.3,
+            0.2
+          ],
+          "cell": [
+            1,
+            1
+          ]
+        },
+        {
+          "hypothesis_id": "14f4c0433d054155b358bd226a814ae0",
+          "category_name": "tool",
+          "description": "device used for specific tasks",
+          "words_tried": {
+            "hammer": 179483
+          },
+          "best_word": "hammer",
+          "best_rank": 179483,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "coordinates": [
+            0.1,
+            0.3
+          ],
+          "cell": [
+            0,
+            1
+          ]
+        }
+      ],
+      "occupied_cells": 6,
+      "best_word": "wood",
+      "best_rank": 18369,
+      "total_guesses": 15
+    }
+  },
+  {
+    "generation": 0,
+    "event": "SIGMA_TRAJECTORY",
+    "timestamp": "2026-06-02T12:47:38",
+    "details": {
+      "mean_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "population_size": 6
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-06-02T12:48:16",
+    "details": {
+      "word": "residential",
+      "rank": 83964,
+      "hypothesis": "land use",
+      "best_word": "wood",
+      "best_rank": 18369,
+      "total_guesses": 16
+    }
+  },
+  {
+    "generation": 1,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-06-02T12:48:16",
+    "details": {
+      "parent_id": "94512faf06dc417ba3007c654fca289f",
+      "child_id": "fdbdcd62ad3e47568b4282508e2afdbf",
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.2633356293177609,
+        0.15117934760408122,
+        0.26627603527046484,
+        0.319208987807693
+      ],
+      "child_hypothesis_name": "land use",
+      "sampled_op": "ml_mutation",
+      "method": "map_elites"
+    }
+  },
+  {
+    "generation": 1,
+    "event": "PLACEMENT",
+    "timestamp": "2026-06-02T12:48:51",
+    "details": {
+      "word": "residential",
+      "coordinates": [
+        0.6,
+        0.5
+      ],
+      "cell": [
+        3,
+        2
+      ],
+      "cache_hit": false
+    }
+  },
+  {
+    "generation": 1,
+    "event": "ARCHIVE_PLACE",
+    "timestamp": "2026-06-02T12:48:51",
+    "details": {
+      "cell": [
+        3,
+        2
+      ],
+      "hypothesis_id": "fdbdcd62ad3e47568b4282508e2afdbf",
+      "best_word": "residential",
+      "rank": 83964,
+      "sigma": [
+        0.2633356293177609,
+        0.15117934760408122,
+        0.26627603527046484,
+        0.319208987807693
+      ]
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-06-02T12:49:37",
+    "details": {
+      "word": "vitality",
+      "rank": 3685,
+      "hypothesis": "vitality",
+      "best_word": "vitality",
+      "best_rank": 3685,
+      "total_guesses": 17
+    }
+  },
+  {
+    "generation": 1,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-06-02T12:49:37",
+    "details": {
+      "parent_id": "ab1f86b96d7f4a0bb5050688381fe668",
+      "child_id": "517aba09c7fe4b6e82dbb7763bb26d3f",
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.26247363844983007,
+        0.2716711909980748,
+        0.19739326492258696,
+        0.2684619056295082
+      ],
+      "child_hypothesis_name": "vitality",
+      "sampled_op": "l_mutation",
+      "method": "map_elites"
+    }
+  },
+  {
+    "generation": 1,
+    "event": "PLACEMENT",
+    "timestamp": "2026-06-02T12:50:02",
+    "details": {
+      "word": "vitality",
+      "coordinates": [
+        0.75,
+        0.25
+      ],
+      "cell": [
+        3,
+        1
+      ],
+      "cache_hit": false
+    }
+  },
+  {
+    "generation": 1,
+    "event": "ARCHIVE_REPLACE",
+    "timestamp": "2026-06-02T12:50:02",
+    "details": {
+      "cell": [
+        3,
+        1
+      ],
+      "old_hypothesis_id": "ab1f86b96d7f4a0bb5050688381fe668",
+      "new_hypothesis_id": "517aba09c7fe4b6e82dbb7763bb26d3f",
+      "old_rank": 79574,
+      "new_rank": 3685,
+      "old_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "new_sigma": [
+        0.26247363844983007,
+        0.2716711909980748,
+        0.19739326492258696,
+        0.2684619056295082
+      ]
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-06-02T12:50:44",
+    "details": {
+      "word": "abstract",
+      "rank": 18337,
+      "hypothesis": "abstract concepts",
+      "best_word": "vitality",
+      "best_rank": 3685,
+      "total_guesses": 18
+    }
+  },
+  {
+    "generation": 1,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-06-02T12:50:44",
+    "details": {
+      "parent_id": "738210c2e8fc4d33b9454de65cc06297",
+      "child_id": "eaaa830ed65d473984abf360aad19cd1",
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.2972878632117163,
+        0.16976112216722727,
+        0.23773400588669213,
+        0.2952170087343643
+      ],
+      "child_hypothesis_name": "abstract concepts",
+      "sampled_op": "l_mutation",
+      "method": "map_elites"
+    }
+  },
+  {
+    "generation": 1,
+    "event": "PLACEMENT",
+    "timestamp": "2026-06-02T12:51:30",
+    "details": {
+      "word": "abstract",
+      "coordinates": [
+        0.8,
+        0.25
+      ],
+      "cell": [
+        4,
+        1
+      ],
+      "cache_hit": false
+    }
+  },
+  {
+    "generation": 1,
+    "event": "ARCHIVE_PLACE",
+    "timestamp": "2026-06-02T12:51:30",
+    "details": {
+      "cell": [
+        4,
+        1
+      ],
+      "hypothesis_id": "eaaa830ed65d473984abf360aad19cd1",
+      "best_word": "abstract",
+      "rank": 18337,
+      "sigma": [
+        0.2972878632117163,
+        0.16976112216722727,
+        0.23773400588669213,
+        0.2952170087343643
+      ]
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-06-02T12:51:50",
+    "details": {
+      "word": "masonry",
+      "rank": 45289,
+      "hypothesis": "construction techniques",
+      "best_word": "vitality",
+      "best_rank": 3685,
+      "total_guesses": 19
+    }
+  },
+  {
+    "generation": 1,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-06-02T12:51:50",
+    "details": {
+      "parent_id": "0e197d2442f04b4e8a8378ad025c2274",
+      "child_id": "0b87989ba8504c79868530c50fe10b2e",
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.20313609736220772,
+        0.2856705317447907,
+        0.1882013626588934,
+        0.3229920082341083
+      ],
+      "child_hypothesis_name": "construction techniques",
+      "sampled_op": "ml_mutation",
+      "method": "map_elites"
+    }
+  },
+  {
+    "generation": 1,
+    "event": "PLACEMENT",
+    "timestamp": "2026-06-02T12:52:51",
+    "details": {
+      "word": "masonry",
+      "coordinates": [
+        0.3,
+        0.7
+      ],
+      "cell": [
+        1,
+        3
+      ],
+      "cache_hit": false
+    }
+  },
+  {
+    "generation": 1,
+    "event": "ARCHIVE_PLACE",
+    "timestamp": "2026-06-02T12:52:51",
+    "details": {
+      "cell": [
+        1,
+        3
+      ],
+      "hypothesis_id": "0b87989ba8504c79868530c50fe10b2e",
+      "best_word": "masonry",
+      "rank": 45289,
+      "sigma": [
+        0.20313609736220772,
+        0.2856705317447907,
+        0.1882013626588934,
+        0.3229920082341083
+      ]
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-06-02T12:53:25",
+    "details": {
+      "word": "season",
+      "rank": 57504,
+      "hypothesis": "seasonal cycles",
+      "best_word": "vitality",
+      "best_rank": 3685,
+      "total_guesses": 20
+    }
+  },
+  {
+    "generation": 1,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-06-02T12:53:25",
+    "details": {
+      "parent_id": "1bae2f00ab714c7fa72f9e0e03b27070",
+      "child_id": "ef333221572c4d95a95da4c80c1c3479",
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.32457322294157853,
+        0.2167148915360706,
+        0.2253063442424442,
+        0.2334055412799067
+      ],
+      "child_hypothesis_name": "seasonal cycles",
+      "sampled_op": "l_mutation",
+      "method": "map_elites"
+    }
+  },
+  {
+    "generation": 1,
+    "event": "PLACEMENT",
+    "timestamp": "2026-06-02T12:53:44",
+    "details": {
+      "word": "season",
+      "coordinates": [
+        0.5,
+        0.4
+      ],
+      "cell": [
+        2,
+        2
+      ],
+      "cache_hit": false
+    }
+  },
+  {
+    "generation": 1,
+    "event": "ARCHIVE_PLACE",
+    "timestamp": "2026-06-02T12:53:44",
+    "details": {
+      "cell": [
+        2,
+        2
+      ],
+      "hypothesis_id": "ef333221572c4d95a95da4c80c1c3479",
+      "best_word": "season",
+      "rank": 57504,
+      "sigma": [
+        0.32457322294157853,
+        0.2167148915360706,
+        0.2253063442424442,
+        0.2334055412799067
+      ]
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-06-02T12:54:17",
+    "details": {
+      "word": "habitat",
+      "rank": 234971,
+      "hypothesis": "habitats",
+      "best_word": "vitality",
+      "best_rank": 3685,
+      "total_guesses": 21
+    }
+  },
+  {
+    "generation": 1,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-06-02T12:54:17",
+    "details": {
+      "parent_id": "1bae2f00ab714c7fa72f9e0e03b27070",
+      "child_id": "6c15daa9520b4ffb92aeaf729f5f9ca1",
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.33024684809216454,
+        0.26979442056803465,
+        0.18320750309942685,
+        0.21675122824037396
+      ],
+      "child_hypothesis_name": "habitats",
+      "sampled_op": "l_mutation",
+      "method": "map_elites"
+    }
+  },
+  {
+    "generation": 1,
+    "event": "PLACEMENT",
+    "timestamp": "2026-06-02T12:55:08",
+    "details": {
+      "word": "habitat",
+      "coordinates": [
+        0.4,
+        0.3
+      ],
+      "cell": [
+        2,
+        1
+      ],
+      "cache_hit": false
+    }
+  },
+  {
+    "generation": 1,
+    "event": "ARCHIVE_REJECT",
+    "timestamp": "2026-06-02T12:55:08",
+    "details": {
+      "cell": [
+        2,
+        1
+      ],
+      "child_hypothesis_id": "6c15daa9520b4ffb92aeaf729f5f9ca1",
+      "incumbent_hypothesis_id": "e60ffeadd2824b4ab7a83a87daf10d63",
+      "child_rank": 234971,
+      "incumbent_rank": 46384
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-06-02T12:55:47",
+    "details": {
+      "word": "dozen",
+      "rank": 81089,
+      "hypothesis": "measurement units",
+      "best_word": "vitality",
+      "best_rank": 3685,
+      "total_guesses": 22
+    }
+  },
+  {
+    "generation": 1,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-06-02T12:55:47",
+    "details": {
+      "parent_id": "738210c2e8fc4d33b9454de65cc06297",
+      "child_id": "65499a0ae91a4fbb95d81cc3892b095b",
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.19696827441083797,
+        0.3227536582696943,
+        0.19989610592693743,
+        0.2803819613925304
+      ],
+      "child_hypothesis_name": "measurement units",
+      "sampled_op": "ml_mutation",
+      "method": "map_elites"
+    }
+  },
+  {
+    "generation": 1,
+    "event": "PLACEMENT",
+    "timestamp": "2026-06-02T12:56:27",
+    "details": {
+      "word": "dozen",
+      "coordinates": [
+        0.5,
+        0.25
+      ],
+      "cell": [
+        2,
+        1
+      ],
+      "cache_hit": false
+    }
+  },
+  {
+    "generation": 1,
+    "event": "ARCHIVE_REJECT",
+    "timestamp": "2026-06-02T12:56:27",
+    "details": {
+      "cell": [
+        2,
+        1
+      ],
+      "child_hypothesis_id": "65499a0ae91a4fbb95d81cc3892b095b",
+      "incumbent_hypothesis_id": "e60ffeadd2824b4ab7a83a87daf10d63",
+      "child_rank": 81089,
+      "incumbent_rank": 46384
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-06-02T12:57:19",
+    "details": {
+      "word": "descriptor",
+      "rank": 78710,
+      "hypothesis": "descriptors",
+      "best_word": "vitality",
+      "best_rank": 3685,
+      "total_guesses": 23
+    }
+  },
+  {
+    "generation": 1,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-06-02T12:57:19",
+    "details": {
+      "parent_id": "eaaa830ed65d473984abf360aad19cd1",
+      "child_id": "0ef4fb964b264061ad71abcd9f8eacbf",
+      "sigma_snapshot": [
+        0.2972878632117163,
+        0.16976112216722727,
+        0.23773400588669213,
+        0.2952170087343643
+      ],
+      "child_sigma": [
+        0.42971723053159744,
+        0.11487022070455537,
+        0.23248903501475196,
+        0.2229235137490953
+      ],
+      "child_hypothesis_name": "descriptors",
+      "sampled_op": "ml_mutation",
+      "method": "map_elites"
+    }
+  },
+  {
+    "generation": 1,
+    "event": "PLACEMENT",
+    "timestamp": "2026-06-02T12:57:19",
+    "details": {
+      "word": "descriptor",
+      "coordinates": [
+        0.85,
+        0.25
+      ],
+      "cell": [
+        4,
+        1
+      ],
+      "cache_hit": true
+    }
+  },
+  {
+    "generation": 1,
+    "event": "ARCHIVE_REJECT",
+    "timestamp": "2026-06-02T12:57:19",
+    "details": {
+      "cell": [
+        4,
+        1
+      ],
+      "child_hypothesis_id": "0ef4fb964b264061ad71abcd9f8eacbf",
+      "incumbent_hypothesis_id": "eaaa830ed65d473984abf360aad19cd1",
+      "child_rank": 78710,
+      "incumbent_rank": 18337
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-06-02T12:58:02",
+    "details": {
+      "word": "singular",
+      "rank": 14574,
+      "hypothesis": "singularity",
+      "best_word": "vitality",
+      "best_rank": 3685,
+      "total_guesses": 24
+    }
+  },
+  {
+    "generation": 1,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-06-02T12:58:02",
+    "details": {
+      "parent_id": "738210c2e8fc4d33b9454de65cc06297",
+      "child_id": "2c42800902574efd92f98c6b64eed9d7",
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.27825730800429255,
+        0.2587662546736998,
+        0.2859845964152518,
+        0.1769918409067559
+      ],
+      "child_hypothesis_name": "singularity",
+      "sampled_op": "m_mutation",
+      "method": "map_elites"
+    }
+  },
+  {
+    "generation": 1,
+    "event": "PLACEMENT",
+    "timestamp": "2026-06-02T12:58:23",
+    "details": {
+      "word": "singular",
+      "coordinates": [
+        0.75,
+        0.25
+      ],
+      "cell": [
+        3,
+        1
+      ],
+      "cache_hit": false
+    }
+  },
+  {
+    "generation": 1,
+    "event": "ARCHIVE_REJECT",
+    "timestamp": "2026-06-02T12:58:23",
+    "details": {
+      "cell": [
+        3,
+        1
+      ],
+      "child_hypothesis_id": "2c42800902574efd92f98c6b64eed9d7",
+      "incumbent_hypothesis_id": "517aba09c7fe4b6e82dbb7763bb26d3f",
+      "child_rank": 14574,
+      "incumbent_rank": 3685
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-06-02T12:59:09",
+    "details": {
+      "word": "orb",
+      "rank": 174369,
+      "hypothesis": "circular forms",
+      "best_word": "vitality",
+      "best_rank": 3685,
+      "total_guesses": 25
+    }
+  },
+  {
+    "generation": 1,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-06-02T12:59:09",
+    "details": {
+      "parent_id": "e60ffeadd2824b4ab7a83a87daf10d63",
+      "child_id": "f38d5c448b3c409aad59671d845d1ea0",
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.22643863097819653,
+        0.2750045762140422,
+        0.21924171727913008,
+        0.2793150755286313
+      ],
+      "child_hypothesis_name": "circular forms",
+      "sampled_op": "s_mutation",
+      "method": "map_elites"
+    }
+  },
+  {
+    "generation": 1,
+    "event": "PLACEMENT",
+    "timestamp": "2026-06-02T12:59:37",
+    "details": {
+      "word": "orb",
+      "coordinates": [
+        0.4,
+        0.4
+      ],
+      "cell": [
+        2,
+        2
+      ],
+      "cache_hit": false
+    }
+  },
+  {
+    "generation": 1,
+    "event": "ARCHIVE_REJECT",
+    "timestamp": "2026-06-02T12:59:37",
+    "details": {
+      "cell": [
+        2,
+        2
+      ],
+      "child_hypothesis_id": "f38d5c448b3c409aad59671d845d1ea0",
+      "incumbent_hypothesis_id": "ef333221572c4d95a95da4c80c1c3479",
+      "child_rank": 174369,
+      "incumbent_rank": 57504
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-06-02T12:59:59",
+    "details": {
+      "word": "bricklaying",
+      "rank": 8011,
+      "hypothesis": "bricklaying",
+      "best_word": "vitality",
+      "best_rank": 3685,
+      "total_guesses": 26
+    }
+  },
+  {
+    "generation": 1,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-06-02T12:59:59",
+    "details": {
+      "parent_id": "0b87989ba8504c79868530c50fe10b2e",
+      "child_id": "58d4f4cac0d0440f92d69e8c4f0173e3",
+      "sigma_snapshot": [
+        0.20313609736220772,
+        0.2856705317447907,
+        0.1882013626588934,
+        0.3229920082341083
+      ],
+      "child_sigma": [
+        0.20891333314317867,
+        0.3120925275376079,
+        0.10671773742859157,
+        0.37227640189062194
+      ],
+      "child_hypothesis_name": "bricklaying",
+      "sampled_op": "s_mutation",
+      "method": "map_elites"
+    }
+  },
+  {
+    "generation": 1,
+    "event": "PLACEMENT",
+    "timestamp": "2026-06-02T13:00:19",
+    "details": {
+      "word": "bricklaying",
+      "coordinates": [
+        0.3,
+        0.7
+      ],
+      "cell": [
+        1,
+        3
+      ],
+      "cache_hit": false
+    }
+  },
+  {
+    "generation": 1,
+    "event": "ARCHIVE_REPLACE",
+    "timestamp": "2026-06-02T13:00:19",
+    "details": {
+      "cell": [
+        1,
+        3
+      ],
+      "old_hypothesis_id": "0b87989ba8504c79868530c50fe10b2e",
+      "new_hypothesis_id": "58d4f4cac0d0440f92d69e8c4f0173e3",
+      "old_rank": 45289,
+      "new_rank": 8011,
+      "old_sigma": [
+        0.20313609736220772,
+        0.2856705317447907,
+        0.1882013626588934,
+        0.3229920082341083
+      ],
+      "new_sigma": [
+        0.20891333314317867,
+        0.3120925275376079,
+        0.10671773742859157,
+        0.37227640189062194
+      ]
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-06-02T13:00:32",
+    "details": {
+      "word": "housing",
+      "rank": 115158,
+      "hypothesis": "housing",
+      "best_word": "vitality",
+      "best_rank": 3685,
+      "total_guesses": 27
+    }
+  },
+  {
+    "generation": 1,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-06-02T13:00:32",
+    "details": {
+      "parent_id": "fdbdcd62ad3e47568b4282508e2afdbf",
+      "child_id": "43f6058af52d4b7db51cb5e064b153cf",
+      "sigma_snapshot": [
+        0.2633356293177609,
+        0.15117934760408122,
+        0.26627603527046484,
+        0.319208987807693
+      ],
+      "child_sigma": [
+        0.32760926486241615,
+        0.08834264917119826,
+        0.1591431976489688,
+        0.4249048883174168
+      ],
+      "child_hypothesis_name": "housing",
+      "sampled_op": "s_mutation",
+      "method": "map_elites"
+    }
+  },
+  {
+    "generation": 1,
+    "event": "PLACEMENT",
+    "timestamp": "2026-06-02T13:00:49",
+    "details": {
+      "word": "housing",
+      "coordinates": [
+        0.3,
+        0.1
+      ],
+      "cell": [
+        1,
+        0
+      ],
+      "cache_hit": false
+    }
+  },
+  {
+    "generation": 1,
+    "event": "ARCHIVE_PLACE",
+    "timestamp": "2026-06-02T13:00:49",
+    "details": {
+      "cell": [
+        1,
+        0
+      ],
+      "hypothesis_id": "43f6058af52d4b7db51cb5e064b153cf",
+      "best_word": "housing",
+      "rank": 115158,
+      "sigma": [
+        0.32760926486241615,
+        0.08834264917119826,
+        0.1591431976489688,
+        0.4249048883174168
+      ]
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-06-02T13:01:16",
+    "details": {
+      "word": "computer",
+      "rank": 146767,
+      "hypothesis": "technology brands",
+      "best_word": "vitality",
+      "best_rank": 3685,
+      "total_guesses": 28
+    }
+  },
+  {
+    "generation": 1,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-06-02T13:01:16",
+    "details": {
+      "parent_id": "1bae2f00ab714c7fa72f9e0e03b27070",
+      "child_id": "add50adeb1f54222acb9e91de811c35a",
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.27970065426941465,
+        0.2925115035881534,
+        0.257355726787868,
+        0.1704321153545639
+      ],
+      "child_hypothesis_name": "technology brands",
+      "sampled_op": "m_mutation",
+      "method": "map_elites"
+    }
+  },
+  {
+    "generation": 1,
+    "event": "PLACEMENT",
+    "timestamp": "2026-06-02T13:01:16",
+    "details": {
+      "word": "computer",
+      "coordinates": [
+        0.3,
+        0.6
+      ],
+      "cell": [
+        1,
+        3
+      ],
+      "cache_hit": true
+    }
+  },
+  {
+    "generation": 1,
+    "event": "ARCHIVE_REJECT",
+    "timestamp": "2026-06-02T13:01:16",
+    "details": {
+      "cell": [
+        1,
+        3
+      ],
+      "child_hypothesis_id": "add50adeb1f54222acb9e91de811c35a",
+      "incumbent_hypothesis_id": "58d4f4cac0d0440f92d69e8c4f0173e3",
+      "child_rank": 146767,
+      "incumbent_rank": 8011
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-06-02T13:02:09",
+    "details": {
+      "word": "structure",
+      "rank": 92024,
+      "hypothesis": "structural focus",
+      "best_word": "vitality",
+      "best_rank": 3685,
+      "total_guesses": 29
+    }
+  },
+  {
+    "generation": 1,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-06-02T13:02:09",
+    "details": {
+      "parent_id": "58d4f4cac0d0440f92d69e8c4f0173e3",
+      "child_id": "c3e62282498343f78831471ea41859db",
+      "sigma_snapshot": [
+        0.20891333314317867,
+        0.3120925275376079,
+        0.10671773742859157,
+        0.37227640189062194
+      ],
+      "child_sigma": [
+        0.16474524557795667,
+        0.3861847327513657,
+        0.118777330948072,
+        0.3302926907226058
+      ],
+      "child_hypothesis_name": "structural focus",
+      "sampled_op": "m_mutation",
+      "method": "map_elites"
+    }
+  },
+  {
+    "generation": 1,
+    "event": "PLACEMENT",
+    "timestamp": "2026-06-02T13:02:09",
+    "details": {
+      "word": "structure",
+      "coordinates": [
+        0.6,
+        0.25
+      ],
+      "cell": [
+        3,
+        1
+      ],
+      "cache_hit": true
+    }
+  },
+  {
+    "generation": 1,
+    "event": "ARCHIVE_REJECT",
+    "timestamp": "2026-06-02T13:02:09",
+    "details": {
+      "cell": [
+        3,
+        1
+      ],
+      "child_hypothesis_id": "c3e62282498343f78831471ea41859db",
+      "incumbent_hypothesis_id": "517aba09c7fe4b6e82dbb7763bb26d3f",
+      "child_rank": 92024,
+      "incumbent_rank": 3685
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-06-02T13:02:51",
+    "details": {
+      "word": "concreting",
+      "rank": 164216,
+      "hypothesis": "construction terminology",
+      "best_word": "vitality",
+      "best_rank": 3685,
+      "total_guesses": 30
+    }
+  },
+  {
+    "generation": 1,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-06-02T13:02:51",
+    "details": {
+      "parent_id": "58d4f4cac0d0440f92d69e8c4f0173e3",
+      "child_id": "9ce183c0f07e49de939bc9367b972eef",
+      "sigma_snapshot": [
+        0.20891333314317867,
+        0.3120925275376079,
+        0.10671773742859157,
+        0.37227640189062194
+      ],
+      "child_sigma": [
+        0.19899779353057095,
+        0.3412919107431699,
+        0.07952870208596245,
+        0.3801815936402967
+      ],
+      "child_hypothesis_name": "construction terminology",
+      "sampled_op": "ml_mutation",
+      "method": "map_elites"
+    }
+  },
+  {
+    "generation": 1,
+    "event": "PLACEMENT",
+    "timestamp": "2026-06-02T13:03:36",
+    "details": {
+      "word": "concreting",
+      "coordinates": [
+        0.3,
+        0.4
+      ],
+      "cell": [
+        1,
+        2
+      ],
+      "cache_hit": false
+    }
+  },
+  {
+    "generation": 1,
+    "event": "ARCHIVE_REJECT",
+    "timestamp": "2026-06-02T13:03:36",
+    "details": {
+      "cell": [
+        1,
+        2
+      ],
+      "child_hypothesis_id": "9ce183c0f07e49de939bc9367b972eef",
+      "incumbent_hypothesis_id": "1bae2f00ab714c7fa72f9e0e03b27070",
+      "child_rank": 164216,
+      "incumbent_rank": 37754
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-06-02T13:03:45",
+    "details": {
+      "word": "square",
+      "rank": 32831,
+      "hypothesis": "location_number",
+      "best_word": "vitality",
+      "best_rank": 3685,
+      "total_guesses": 31
+    }
+  },
+  {
+    "generation": 1,
+    "event": "CROSSOVER",
+    "timestamp": "2026-06-02T13:03:45",
+    "details": {
+      "parents": [
+        "place",
+        "number"
+      ],
+      "parent_a_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "parent_b_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma_pre_perturbation": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child": {
+        "hypothesis_id": "01a2847df2ca4544932d2bace381609f",
+        "category_name": "location_number",
+        "description": "places associated with numerical designations",
+        "words_tried": {
+          "square": 32831
+        },
+        "best_word": "square",
+        "best_rank": 32831,
+        "status": "active",
+        "parent": "place+number",
+        "parent_id": null,
+        "origin": "crossover",
+        "sigma": [
+          0.1464919112592875,
+          0.3256196936048118,
+          0.22538842788807745,
+          0.30249996724782313
+        ]
+      },
+      "best_word": "vitality",
+      "best_rank": 3685,
+      "total_guesses": 31
+    }
+  },
+  {
+    "generation": 1,
+    "event": "PLACEMENT",
+    "timestamp": "2026-06-02T13:04:10",
+    "details": {
+      "word": "square",
+      "coordinates": [
+        0.2,
+        0.2
+      ],
+      "cell": [
+        1,
+        1
+      ],
+      "cache_hit": false
+    }
+  },
+  {
+    "generation": 1,
+    "event": "ARCHIVE_REPLACE",
+    "timestamp": "2026-06-02T13:04:10",
+    "details": {
+      "cell": [
+        1,
+        1
+      ],
+      "old_hypothesis_id": "94512faf06dc417ba3007c654fca289f",
+      "new_hypothesis_id": "01a2847df2ca4544932d2bace381609f",
+      "old_rank": 142824,
+      "new_rank": 32831,
+      "old_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "new_sigma": [
+        0.1464919112592875,
+        0.3256196936048118,
+        0.22538842788807745,
+        0.30249996724782313
+      ]
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-06-02T13:04:22",
+    "details": {
+      "word": "energy",
+      "rank": 114229,
+      "hypothesis": "Vital Material",
+      "best_word": "vitality",
+      "best_rank": 3685,
+      "total_guesses": 32
+    }
+  },
+  {
+    "generation": 1,
+    "event": "CROSSOVER",
+    "timestamp": "2026-06-02T13:04:22",
+    "details": {
+      "parents": [
+        "material",
+        "vitality"
+      ],
+      "parent_a_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "parent_b_sigma": [
+        0.26247363844983007,
+        0.2716711909980748,
+        0.19739326492258696,
+        0.2684619056295082
+      ],
+      "child_sigma_pre_perturbation": [
+        0.25623681922491504,
+        0.2608355954990374,
+        0.22369663246129348,
+        0.2592309528147541
+      ],
+      "child": {
+        "hypothesis_id": "0b340868cf5e4b40822c8611ac9fbd72",
+        "category_name": "Vital Material",
+        "description": "Materials essential for sustaining life and energy",
+        "words_tried": {
+          "energy": 114229
+        },
+        "best_word": "energy",
+        "best_rank": 114229,
+        "status": "active",
+        "parent": "material+vitality",
+        "parent_id": null,
+        "origin": "crossover",
+        "sigma": [
+          0.23092711464648252,
+          0.1968741542221015,
+          0.36208149976371307,
+          0.21011723136770288
+        ]
+      },
+      "best_word": "vitality",
+      "best_rank": 3685,
+      "total_guesses": 32
+    }
+  },
+  {
+    "generation": 1,
+    "event": "PLACEMENT",
+    "timestamp": "2026-06-02T13:05:01",
+    "details": {
+      "word": "energy",
+      "coordinates": [
+        0.6,
+        0.1
+      ],
+      "cell": [
+        3,
+        0
+      ],
+      "cache_hit": false
+    }
+  },
+  {
+    "generation": 1,
+    "event": "ARCHIVE_REJECT",
+    "timestamp": "2026-06-02T13:05:01",
+    "details": {
+      "cell": [
+        3,
+        0
+      ],
+      "child_hypothesis_id": "0b340868cf5e4b40822c8611ac9fbd72",
+      "incumbent_hypothesis_id": "738210c2e8fc4d33b9454de65cc06297",
+      "child_rank": 114229,
+      "incumbent_rank": 62908
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-06-02T13:05:25",
+    "details": {
+      "word": "climate",
+      "rank": 90964,
+      "hypothesis": "Climatic Cycles",
+      "best_word": "vitality",
+      "best_rank": 3685,
+      "total_guesses": 33
+    }
+  },
+  {
+    "generation": 1,
+    "event": "CROSSOVER",
+    "timestamp": "2026-06-02T13:05:25",
+    "details": {
+      "parents": [
+        "location_number",
+        "seasonal cycles"
+      ],
+      "parent_a_sigma": [
+        0.1464919112592875,
+        0.3256196936048118,
+        0.22538842788807745,
+        0.30249996724782313
+      ],
+      "parent_b_sigma": [
+        0.32457322294157853,
+        0.2167148915360706,
+        0.2253063442424442,
+        0.2334055412799067
+      ],
+      "child_sigma_pre_perturbation": [
+        0.23553256710043302,
+        0.2711672925704412,
+        0.22534738606526084,
+        0.2679527542638649
+      ],
+      "child": {
+        "hypothesis_id": "fcb31c08e0214ff68c3a5c45491da617",
+        "category_name": "Climatic Cycles",
+        "description": "Intersection of location-specific seasonal patterns",
+        "words_tried": {
+          "climate": 90964
+        },
+        "best_word": "climate",
+        "best_rank": 90964,
+        "status": "active",
+        "parent": "location_number+seasonal cycles",
+        "parent_id": null,
+        "origin": "crossover",
+        "sigma": [
+          0.1788611294052885,
+          0.22939949913740781,
+          0.28197953774082024,
+          0.3097598337164836
+        ]
+      },
+      "best_word": "vitality",
+      "best_rank": 3685,
+      "total_guesses": 33
+    }
+  },
+  {
+    "generation": 1,
+    "event": "PLACEMENT",
+    "timestamp": "2026-06-02T13:06:11",
+    "details": {
+      "word": "climate",
+      "coordinates": [
+        0.6,
+        0.3
+      ],
+      "cell": [
+        3,
+        1
+      ],
+      "cache_hit": false
+    }
+  },
+  {
+    "generation": 1,
+    "event": "ARCHIVE_REJECT",
+    "timestamp": "2026-06-02T13:06:11",
+    "details": {
+      "cell": [
+        3,
+        1
+      ],
+      "child_hypothesis_id": "fcb31c08e0214ff68c3a5c45491da617",
+      "incumbent_hypothesis_id": "517aba09c7fe4b6e82dbb7763bb26d3f",
+      "child_rank": 90964,
+      "incumbent_rank": 3685
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-06-02T13:06:29",
+    "details": {
+      "word": "overlap",
+      "rank": 191456,
+      "hypothesis": "Seasonal Overlap",
+      "best_word": "vitality",
+      "best_rank": 3685,
+      "total_guesses": 34
+    }
+  },
+  {
+    "generation": 1,
+    "event": "CROSSOVER",
+    "timestamp": "2026-06-02T13:06:29",
+    "details": {
+      "parents": [
+        "seasonal cycles",
+        "seasonal cycles"
+      ],
+      "parent_a_sigma": [
+        0.32457322294157853,
+        0.2167148915360706,
+        0.2253063442424442,
+        0.2334055412799067
+      ],
+      "parent_b_sigma": [
+        0.32457322294157853,
+        0.2167148915360706,
+        0.2253063442424442,
+        0.2334055412799067
+      ],
+      "child_sigma_pre_perturbation": [
+        0.32457322294157853,
+        0.2167148915360706,
+        0.2253063442424442,
+        0.2334055412799067
+      ],
+      "child": {
+        "hypothesis_id": "0d90c656af054f21b1d5acbb7d0fd389",
+        "category_name": "Seasonal Overlap",
+        "description": "Shared seasonal patterns and recurring events",
+        "words_tried": {
+          "overlap": 191456
+        },
+        "best_word": "overlap",
+        "best_rank": 191456,
+        "status": "active",
+        "parent": "seasonal cycles+seasonal cycles",
+        "parent_id": null,
+        "origin": "crossover",
+        "sigma": [
+          0.30565104921085495,
+          0.3021340125028779,
+          0.19284804004462083,
+          0.19936689824164625
+        ]
+      },
+      "best_word": "vitality",
+      "best_rank": 3685,
+      "total_guesses": 34
+    }
+  },
+  {
+    "generation": 1,
+    "event": "PLACEMENT",
+    "timestamp": "2026-06-02T13:07:15",
+    "details": {
+      "word": "overlap",
+      "coordinates": [
+        0.6,
+        0.2
+      ],
+      "cell": [
+        3,
+        1
+      ],
+      "cache_hit": false
+    }
+  },
+  {
+    "generation": 1,
+    "event": "ARCHIVE_REJECT",
+    "timestamp": "2026-06-02T13:07:15",
+    "details": {
+      "cell": [
+        3,
+        1
+      ],
+      "child_hypothesis_id": "0d90c656af054f21b1d5acbb7d0fd389",
+      "incumbent_hypothesis_id": "517aba09c7fe4b6e82dbb7763bb26d3f",
+      "child_rank": 191456,
+      "incumbent_rank": 3685
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-06-02T13:07:26",
+    "details": {
+      "word": "common",
+      "rank": 35639,
+      "hypothesis": "intersection",
+      "best_word": "vitality",
+      "best_rank": 3685,
+      "total_guesses": 35
+    }
+  },
+  {
+    "generation": 1,
+    "event": "CROSSOVER",
+    "timestamp": "2026-06-02T13:07:26",
+    "details": {
+      "parents": [
+        "number",
+        "number"
+      ],
+      "parent_a_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "parent_b_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma_pre_perturbation": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child": {
+        "hypothesis_id": "1635b578b7254f6694dfea8b8cd3f7f5",
+        "category_name": "intersection",
+        "description": "shared elements between A and B",
+        "words_tried": {
+          "common": 35639
+        },
+        "best_word": "common",
+        "best_rank": 35639,
+        "status": "active",
+        "parent": "number+number",
+        "parent_id": null,
+        "origin": "crossover",
+        "sigma": [
+          0.1561901916123199,
+          0.314883256916391,
+          0.31104276793154045,
+          0.21788378353974874
+        ]
+      },
+      "best_word": "vitality",
+      "best_rank": 3685,
+      "total_guesses": 35
+    }
+  },
+  {
+    "generation": 1,
+    "event": "PLACEMENT",
+    "timestamp": "2026-06-02T13:08:28",
+    "details": {
+      "word": "common",
+      "coordinates": [
+        0.75,
+        0.25
+      ],
+      "cell": [
+        3,
+        1
+      ],
+      "cache_hit": false
+    }
+  },
+  {
+    "generation": 1,
+    "event": "ARCHIVE_REJECT",
+    "timestamp": "2026-06-02T13:08:28",
+    "details": {
+      "cell": [
+        3,
+        1
+      ],
+      "child_hypothesis_id": "1635b578b7254f6694dfea8b8cd3f7f5",
+      "incumbent_hypothesis_id": "517aba09c7fe4b6e82dbb7763bb26d3f",
+      "child_rank": 35639,
+      "incumbent_rank": 3685
+    }
+  },
+  {
+    "generation": 1,
+    "event": "ARCHIVE_SNAPSHOT",
+    "timestamp": "2026-06-02T13:08:28",
+    "details": {
+      "occupied_cells": 11,
+      "cells": [
+        {
+          "cell": [
+            0,
+            1
+          ],
+          "hypothesis_id": "0e197d2442f04b4e8a8378ad025c2274",
+          "best_word": "wood",
+          "best_rank": 18369,
+          "coordinates": [
+            0.0,
+            0.25
+          ],
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "cell": [
+            1,
+            0
+          ],
+          "hypothesis_id": "43f6058af52d4b7db51cb5e064b153cf",
+          "best_word": "housing",
+          "best_rank": 115158,
+          "coordinates": [
+            0.3,
+            0.1
+          ],
+          "sigma": [
+            0.32760926486241615,
+            0.08834264917119826,
+            0.1591431976489688,
+            0.4249048883174168
+          ]
+        },
+        {
+          "cell": [
+            1,
+            1
+          ],
+          "hypothesis_id": "01a2847df2ca4544932d2bace381609f",
+          "best_word": "square",
+          "best_rank": 32831,
+          "coordinates": [
+            0.2,
+            0.2
+          ],
+          "sigma": [
+            0.1464919112592875,
+            0.3256196936048118,
+            0.22538842788807745,
+            0.30249996724782313
+          ]
+        },
+        {
+          "cell": [
+            1,
+            2
+          ],
+          "hypothesis_id": "1bae2f00ab714c7fa72f9e0e03b27070",
+          "best_word": "apple",
+          "best_rank": 37754,
+          "coordinates": [
+            0.25,
+            0.5
+          ],
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "cell": [
+            1,
+            3
+          ],
+          "hypothesis_id": "58d4f4cac0d0440f92d69e8c4f0173e3",
+          "best_word": "bricklaying",
+          "best_rank": 8011,
+          "coordinates": [
+            0.3,
+            0.7
+          ],
+          "sigma": [
+            0.20891333314317867,
+            0.3120925275376079,
+            0.10671773742859157,
+            0.37227640189062194
+          ]
+        },
+        {
+          "cell": [
+            2,
+            1
+          ],
+          "hypothesis_id": "e60ffeadd2824b4ab7a83a87daf10d63",
+          "best_word": "circle",
+          "best_rank": 46384,
+          "coordinates": [
+            0.5,
+            0.25
+          ],
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "cell": [
+            2,
+            2
+          ],
+          "hypothesis_id": "ef333221572c4d95a95da4c80c1c3479",
+          "best_word": "season",
+          "best_rank": 57504,
+          "coordinates": [
+            0.5,
+            0.4
+          ],
+          "sigma": [
+            0.32457322294157853,
+            0.2167148915360706,
+            0.2253063442424442,
+            0.2334055412799067
+          ]
+        },
+        {
+          "cell": [
+            3,
+            0
+          ],
+          "hypothesis_id": "738210c2e8fc4d33b9454de65cc06297",
+          "best_word": "one",
+          "best_rank": 62908,
+          "coordinates": [
+            0.7,
+            0.1
+          ],
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "cell": [
+            3,
+            1
+          ],
+          "hypothesis_id": "517aba09c7fe4b6e82dbb7763bb26d3f",
+          "best_word": "vitality",
+          "best_rank": 3685,
+          "coordinates": [
+            0.75,
+            0.25
+          ],
+          "sigma": [
+            0.26247363844983007,
+            0.2716711909980748,
+            0.19739326492258696,
+            0.2684619056295082
+          ]
+        },
+        {
+          "cell": [
+            3,
+            2
+          ],
+          "hypothesis_id": "fdbdcd62ad3e47568b4282508e2afdbf",
+          "best_word": "residential",
+          "best_rank": 83964,
+          "coordinates": [
+            0.6,
+            0.5
+          ],
+          "sigma": [
+            0.2633356293177609,
+            0.15117934760408122,
+            0.26627603527046484,
+            0.319208987807693
+          ]
+        },
+        {
+          "cell": [
+            4,
+            1
+          ],
+          "hypothesis_id": "eaaa830ed65d473984abf360aad19cd1",
+          "best_word": "abstract",
+          "best_rank": 18337,
+          "coordinates": [
+            0.8,
+            0.25
+          ],
+          "sigma": [
+            0.2972878632117163,
+            0.16976112216722727,
+            0.23773400588669213,
+            0.2952170087343643
+          ]
+        }
+      ],
+      "best_word": "vitality",
+      "best_rank": 3685,
+      "total_guesses": 35
+    }
+  },
+  {
+    "generation": 1,
+    "event": "SIGMA_TRAJECTORY",
+    "timestamp": "2026-06-02T13:08:28",
+    "details": {
+      "mean_sigma": [
+        0.2573349875623426,
+        0.23048922023809745,
+        0.21981445575343875,
+        0.2923613364461213
+      ],
+      "population_size": 11
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-06-02T13:09:02",
+    "details": {
+      "word": "lumber",
+      "rank": 127638,
+      "hypothesis": "lumber materials",
+      "best_word": "vitality",
+      "best_rank": 3685,
+      "total_guesses": 36
+    }
+  },
+  {
+    "generation": 2,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-06-02T13:09:02",
+    "details": {
+      "parent_id": "0e197d2442f04b4e8a8378ad025c2274",
+      "child_id": "dfe31af5f46342d391b5e9547175f8a6",
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.26481957895834435,
+        0.253147666307806,
+        0.19357982354287845,
+        0.28845293119097126
+      ],
+      "child_hypothesis_name": "lumber materials",
+      "sampled_op": "s_mutation",
+      "method": "map_elites"
+    }
+  },
+  {
+    "generation": 2,
+    "event": "PLACEMENT",
+    "timestamp": "2026-06-02T13:09:41",
+    "details": {
+      "word": "lumber",
+      "coordinates": [
+        0.3,
+        0.35
+      ],
+      "cell": [
+        1,
+        1
+      ],
+      "cache_hit": false
+    }
+  },
+  {
+    "generation": 2,
+    "event": "ARCHIVE_REJECT",
+    "timestamp": "2026-06-02T13:09:41",
+    "details": {
+      "cell": [
+        1,
+        1
+      ],
+      "child_hypothesis_id": "dfe31af5f46342d391b5e9547175f8a6",
+      "incumbent_hypothesis_id": "01a2847df2ca4544932d2bace381609f",
+      "child_rank": 127638,
+      "incumbent_rank": 32831
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-06-02T13:10:22",
+    "details": {
+      "word": "resource",
+      "rank": 180168,
+      "hypothesis": "natural_resources",
+      "best_word": "vitality",
+      "best_rank": 3685,
+      "total_guesses": 37
+    }
+  },
+  {
+    "generation": 2,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-06-02T13:10:22",
+    "details": {
+      "parent_id": "0e197d2442f04b4e8a8378ad025c2274",
+      "child_id": "0734fa35a8bd455296f7044375af53c1",
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.3735553929400539,
+        0.160619587032853,
+        0.17792669417821036,
+        0.28789832584888275
+      ],
+      "child_hypothesis_name": "natural_resources",
+      "sampled_op": "l_mutation",
+      "method": "map_elites"
+    }
+  },
+  {
+    "generation": 2,
+    "event": "PLACEMENT",
+    "timestamp": "2026-06-02T13:10:22",
+    "details": {
+      "word": "resource",
+      "coordinates": [
+        0.6,
+        0.2
+      ],
+      "cell": [
+        3,
+        1
+      ],
+      "cache_hit": true
+    }
+  },
+  {
+    "generation": 2,
+    "event": "ARCHIVE_REJECT",
+    "timestamp": "2026-06-02T13:10:22",
+    "details": {
+      "cell": [
+        3,
+        1
+      ],
+      "child_hypothesis_id": "0734fa35a8bd455296f7044375af53c1",
+      "incumbent_hypothesis_id": "517aba09c7fe4b6e82dbb7763bb26d3f",
+      "child_rank": 180168,
+      "incumbent_rank": 3685
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-06-02T13:11:50",
+    "details": {
+      "word": "urban",
+      "rank": 6616,
+      "hypothesis": "urban land use",
+      "best_word": "vitality",
+      "best_rank": 3685,
+      "total_guesses": 38
+    }
+  },
+  {
+    "generation": 2,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-06-02T13:11:50",
+    "details": {
+      "parent_id": "fdbdcd62ad3e47568b4282508e2afdbf",
+      "child_id": "9f8ed7f42f354b879e3c346e70caeaa3",
+      "sigma_snapshot": [
+        0.2633356293177609,
+        0.15117934760408122,
+        0.26627603527046484,
+        0.319208987807693
+      ],
+      "child_sigma": [
+        0.3634428158448399,
+        0.1443055323657002,
+        0.27413726996729737,
+        0.21811438182216256
+      ],
+      "child_hypothesis_name": "urban land use",
+      "sampled_op": "s_mutation",
+      "method": "map_elites"
+    }
+  },
+  {
+    "generation": 2,
+    "event": "PLACEMENT",
+    "timestamp": "2026-06-02T13:12:04",
+    "details": {
+      "word": "urban",
+      "coordinates": [
+        0.6,
+        0.4
+      ],
+      "cell": [
+        3,
+        2
+      ],
+      "cache_hit": false
+    }
+  },
+  {
+    "generation": 2,
+    "event": "ARCHIVE_REPLACE",
+    "timestamp": "2026-06-02T13:12:04",
+    "details": {
+      "cell": [
+        3,
+        2
+      ],
+      "old_hypothesis_id": "fdbdcd62ad3e47568b4282508e2afdbf",
+      "new_hypothesis_id": "9f8ed7f42f354b879e3c346e70caeaa3",
+      "old_rank": 83964,
+      "new_rank": 6616,
+      "old_sigma": [
+        0.2633356293177609,
+        0.15117934760408122,
+        0.26627603527046484,
+        0.319208987807693
+      ],
+      "new_sigma": [
+        0.3634428158448399,
+        0.1443055323657002,
+        0.27413726996729737,
+        0.21811438182216256
+      ]
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-06-02T13:13:17",
+    "details": {
+      "word": "stretcher",
+      "rank": 2759,
+      "hypothesis": "bricklaying technique",
+      "best_word": "stretcher",
+      "best_rank": 2759,
+      "total_guesses": 39
+    }
+  },
+  {
+    "generation": 2,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-06-02T13:13:17",
+    "details": {
+      "parent_id": "58d4f4cac0d0440f92d69e8c4f0173e3",
+      "child_id": "d1bf692dcc7f46d1b93da16dacf7db06",
+      "sigma_snapshot": [
+        0.20891333314317867,
+        0.3120925275376079,
+        0.10671773742859157,
+        0.37227640189062194
+      ],
+      "child_sigma": [
+        0.17592469077631318,
+        0.24419381335699616,
+        0.08933268194053116,
+        0.4905488139261595
+      ],
+      "child_hypothesis_name": "bricklaying technique",
+      "sampled_op": "s_mutation",
+      "method": "map_elites"
+    }
+  },
+  {
+    "generation": 2,
+    "event": "PLACEMENT",
+    "timestamp": "2026-06-02T13:13:51",
+    "details": {
+      "word": "stretcher",
+      "coordinates": [
+        0.15,
+        0.65
+      ],
+      "cell": [
+        0,
+        3
+      ],
+      "cache_hit": false
+    }
+  },
+  {
+    "generation": 2,
+    "event": "ARCHIVE_PLACE",
+    "timestamp": "2026-06-02T13:13:51",
+    "details": {
+      "cell": [
+        0,
+        3
+      ],
+      "hypothesis_id": "d1bf692dcc7f46d1b93da16dacf7db06",
+      "best_word": "stretcher",
+      "rank": 2759,
+      "sigma": [
+        0.17592469077631318,
+        0.24419381335699616,
+        0.08933268194053116,
+        0.4905488139261595
+      ]
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-06-02T13:15:23",
+    "details": {
+      "word": "rhythm",
+      "rank": 290598,
+      "hypothesis": "natural rhythms",
+      "best_word": "stretcher",
+      "best_rank": 2759,
+      "total_guesses": 40
+    }
+  },
+  {
+    "generation": 2,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-06-02T13:15:23",
+    "details": {
+      "parent_id": "ef333221572c4d95a95da4c80c1c3479",
+      "child_id": "182ee4fc81e848148d245bbd9bd12de0",
+      "sigma_snapshot": [
+        0.32457322294157853,
+        0.2167148915360706,
+        0.2253063442424442,
+        0.2334055412799067
+      ],
+      "child_sigma": [
+        0.3127624907032436,
+        0.14773766087877638,
+        0.23496825537629726,
+        0.30453159304168276
+      ],
+      "child_hypothesis_name": "natural rhythms",
+      "sampled_op": "ml_mutation",
+      "method": "map_elites"
+    }
+  },
+  {
+    "generation": 2,
+    "event": "PLACEMENT",
+    "timestamp": "2026-06-02T13:15:23",
+    "details": {
+      "word": "rhythm",
+      "coordinates": [
+        0.6,
+        0.4
+      ],
+      "cell": [
+        3,
+        2
+      ],
+      "cache_hit": true
+    }
+  },
+  {
+    "generation": 2,
+    "event": "ARCHIVE_REJECT",
+    "timestamp": "2026-06-02T13:15:23",
+    "details": {
+      "cell": [
+        3,
+        2
+      ],
+      "child_hypothesis_id": "182ee4fc81e848148d245bbd9bd12de0",
+      "incumbent_hypothesis_id": "9f8ed7f42f354b879e3c346e70caeaa3",
+      "child_rank": 290598,
+      "incumbent_rank": 6616
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-06-02T13:16:07",
+    "details": {
+      "word": "annual",
+      "rank": 289702,
+      "hypothesis": "annual cycles",
+      "best_word": "stretcher",
+      "best_rank": 2759,
+      "total_guesses": 41
+    }
+  },
+  {
+    "generation": 2,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-06-02T13:16:07",
+    "details": {
+      "parent_id": "ef333221572c4d95a95da4c80c1c3479",
+      "child_id": "3bc3a7e6e3b344cda56f53fecc410799",
+      "sigma_snapshot": [
+        0.32457322294157853,
+        0.2167148915360706,
+        0.2253063442424442,
+        0.2334055412799067
+      ],
+      "child_sigma": [
+        0.4251161217628773,
+        0.20384114284344332,
+        0.1521845963973984,
+        0.21885813899628104
+      ],
+      "child_hypothesis_name": "annual cycles",
+      "sampled_op": "s_mutation",
+      "method": "map_elites"
+    }
+  },
+  {
+    "generation": 2,
+    "event": "PLACEMENT",
+    "timestamp": "2026-06-02T13:17:10",
+    "details": {
+      "word": "annual",
+      "coordinates": [
+        0.7,
+        0.5
+      ],
+      "cell": [
+        3,
+        2
+      ],
+      "cache_hit": false
+    }
+  },
+  {
+    "generation": 2,
+    "event": "ARCHIVE_REJECT",
+    "timestamp": "2026-06-02T13:17:10",
+    "details": {
+      "cell": [
+        3,
+        2
+      ],
+      "child_hypothesis_id": "3bc3a7e6e3b344cda56f53fecc410799",
+      "incumbent_hypothesis_id": "9f8ed7f42f354b879e3c346e70caeaa3",
+      "child_rank": 289702,
+      "incumbent_rank": 6616
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-06-02T13:17:41",
+    "details": {
+      "word": "ambulance",
+      "rank": 291069,
+      "hypothesis": "emergency medical transport tools",
+      "best_word": "stretcher",
+      "best_rank": 2759,
+      "total_guesses": 42
+    }
+  },
+  {
+    "generation": 2,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-06-02T13:17:41",
+    "details": {
+      "parent_id": "d1bf692dcc7f46d1b93da16dacf7db06",
+      "child_id": "2a50931e3d0e40fd8292fb583381aea1",
+      "sigma_snapshot": [
+        0.17592469077631318,
+        0.24419381335699616,
+        0.08933268194053116,
+        0.4905488139261595
+      ],
+      "child_sigma": [
+        0.19381943261259044,
+        0.13774171934387905,
+        0.20101612454004172,
+        0.46742272350348885
+      ],
+      "child_hypothesis_name": "emergency medical transport tools",
+      "sampled_op": "m_mutation",
+      "method": "map_elites"
+    }
+  },
+  {
+    "generation": 2,
+    "event": "PLACEMENT",
+    "timestamp": "2026-06-02T13:18:35",
+    "details": {
+      "word": "ambulance",
+      "coordinates": [
+        0.1,
+        0.5
+      ],
+      "cell": [
+        0,
+        2
+      ],
+      "cache_hit": false
+    }
+  },
+  {
+    "generation": 2,
+    "event": "ARCHIVE_PLACE",
+    "timestamp": "2026-06-02T13:18:35",
+    "details": {
+      "cell": [
+        0,
+        2
+      ],
+      "hypothesis_id": "2a50931e3d0e40fd8292fb583381aea1",
+      "best_word": "ambulance",
+      "rank": 291069,
+      "sigma": [
+        0.19381943261259044,
+        0.13774171934387905,
+        0.20101612454004172,
+        0.46742272350348885
+      ]
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-06-02T13:19:09",
+    "details": {
+      "word": "cycle",
+      "rank": 277550,
+      "hypothesis": "repetitive process",
+      "best_word": "stretcher",
+      "best_rank": 2759,
+      "total_guesses": 43
+    }
+  },
+  {
+    "generation": 2,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-06-02T13:19:09",
+    "details": {
+      "parent_id": "e60ffeadd2824b4ab7a83a87daf10d63",
+      "child_id": "20cbd48453a347c7b70422ef5aadf873",
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.23560836792212766,
+        0.3981431176771168,
+        0.18296342708994193,
+        0.18328508731081355
+      ],
+      "child_hypothesis_name": "repetitive process",
+      "sampled_op": "m_mutation",
+      "method": "map_elites"
+    }
+  },
+  {
+    "generation": 2,
+    "event": "PLACEMENT",
+    "timestamp": "2026-06-02T13:19:09",
+    "details": {
+      "word": "cycle",
+      "coordinates": [
+        0.5,
+        0.25
+      ],
+      "cell": [
+        2,
+        1
+      ],
+      "cache_hit": true
+    }
+  },
+  {
+    "generation": 2,
+    "event": "ARCHIVE_REJECT",
+    "timestamp": "2026-06-02T13:19:09",
+    "details": {
+      "cell": [
+        2,
+        1
+      ],
+      "child_hypothesis_id": "20cbd48453a347c7b70422ef5aadf873",
+      "incumbent_hypothesis_id": "e60ffeadd2824b4ab7a83a87daf10d63",
+      "child_rank": 277550,
+      "incumbent_rank": 46384
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-06-02T13:19:43",
+    "details": {
+      "word": "orbit",
+      "rank": 272318,
+      "hypothesis": "celestial motion",
+      "best_word": "stretcher",
+      "best_rank": 2759,
+      "total_guesses": 44
+    }
+  },
+  {
+    "generation": 2,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-06-02T13:19:43",
+    "details": {
+      "parent_id": "e60ffeadd2824b4ab7a83a87daf10d63",
+      "child_id": "fea3f2453851422ab84793d7dbaf4e0f",
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.27456936146379174,
+        0.2722849807027332,
+        0.27114186115499933,
+        0.18200379667847566
+      ],
+      "child_hypothesis_name": "celestial motion",
+      "sampled_op": "l_mutation",
+      "method": "map_elites"
+    }
+  },
+  {
+    "generation": 2,
+    "event": "PLACEMENT",
+    "timestamp": "2026-06-02T13:20:04",
+    "details": {
+      "word": "orbit",
+      "coordinates": [
+        0.3,
+        0.25
+      ],
+      "cell": [
+        1,
+        1
+      ],
+      "cache_hit": false
+    }
+  },
+  {
+    "generation": 2,
+    "event": "ARCHIVE_REJECT",
+    "timestamp": "2026-06-02T13:20:04",
+    "details": {
+      "cell": [
+        1,
+        1
+      ],
+      "child_hypothesis_id": "fea3f2453851422ab84793d7dbaf4e0f",
+      "incumbent_hypothesis_id": "01a2847df2ca4544932d2bace381609f",
+      "child_rank": 272318,
+      "incumbent_rank": 32831
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-06-02T13:20:55",
+    "details": {
+      "word": "zone",
+      "rank": 111229,
+      "hypothesis": "area_types",
+      "best_word": "stretcher",
+      "best_rank": 2759,
+      "total_guesses": 45
+    }
+  },
+  {
+    "generation": 2,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-06-02T13:20:55",
+    "details": {
+      "parent_id": "01a2847df2ca4544932d2bace381609f",
+      "child_id": "33a1869f3f2e4560a58924e51d80f0a8",
+      "sigma_snapshot": [
+        0.1464919112592875,
+        0.3256196936048118,
+        0.22538842788807745,
+        0.30249996724782313
+      ],
+      "child_sigma": [
+        0.11198845900675787,
+        0.3639234858266573,
+        0.17533783180460866,
+        0.34875022336197625
+      ],
+      "child_hypothesis_name": "area_types",
+      "sampled_op": "ml_mutation",
+      "method": "map_elites"
+    }
+  },
+  {
+    "generation": 2,
+    "event": "PLACEMENT",
+    "timestamp": "2026-06-02T13:21:14",
+    "details": {
+      "word": "zone",
+      "coordinates": [
+        0.5,
+        0.25
+      ],
+      "cell": [
+        2,
+        1
+      ],
+      "cache_hit": false
+    }
+  },
+  {
+    "generation": 2,
+    "event": "ARCHIVE_REJECT",
+    "timestamp": "2026-06-02T13:21:14",
+    "details": {
+      "cell": [
+        2,
+        1
+      ],
+      "child_hypothesis_id": "33a1869f3f2e4560a58924e51d80f0a8",
+      "incumbent_hypothesis_id": "e60ffeadd2824b4ab7a83a87daf10d63",
+      "child_rank": 111229,
+      "incumbent_rank": 46384
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-06-02T13:22:23",
+    "details": {
+      "word": "theoretical",
+      "rank": 14672,
+      "hypothesis": "theoretical constructs",
+      "best_word": "stretcher",
+      "best_rank": 2759,
+      "total_guesses": 46
+    }
+  },
+  {
+    "generation": 2,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-06-02T13:22:23",
+    "details": {
+      "parent_id": "eaaa830ed65d473984abf360aad19cd1",
+      "child_id": "add3b83e6da74a01ab478703d80303db",
+      "sigma_snapshot": [
+        0.2972878632117163,
+        0.16976112216722727,
+        0.23773400588669213,
+        0.2952170087343643
+      ],
+      "child_sigma": [
+        0.21911130979171314,
+        0.25639303811311376,
+        0.19296393483191207,
+        0.33153171726326114
+      ],
+      "child_hypothesis_name": "theoretical constructs",
+      "sampled_op": "m_mutation",
+      "method": "map_elites"
+    }
+  },
+  {
+    "generation": 2,
+    "event": "PLACEMENT",
+    "timestamp": "2026-06-02T13:22:45",
+    "details": {
+      "word": "theoretical",
+      "coordinates": [
+        0.85,
+        0.2
+      ],
+      "cell": [
+        4,
+        1
+      ],
+      "cache_hit": false
+    }
+  },
+  {
+    "generation": 2,
+    "event": "ARCHIVE_REPLACE",
+    "timestamp": "2026-06-02T13:22:45",
+    "details": {
+      "cell": [
+        4,
+        1
+      ],
+      "old_hypothesis_id": "eaaa830ed65d473984abf360aad19cd1",
+      "new_hypothesis_id": "add3b83e6da74a01ab478703d80303db",
+      "old_rank": 18337,
+      "new_rank": 14672,
+      "old_sigma": [
+        0.2972878632117163,
+        0.16976112216722727,
+        0.23773400588669213,
+        0.2952170087343643
+      ],
+      "new_sigma": [
+        0.21911130979171314,
+        0.25639303811311376,
+        0.19296393483191207,
+        0.33153171726326114
+      ]
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-06-02T13:23:02",
+    "details": {
+      "word": "grid",
+      "rank": 223179,
+      "hypothesis": "spatial_arrangements",
+      "best_word": "stretcher",
+      "best_rank": 2759,
+      "total_guesses": 47
+    }
+  },
+  {
+    "generation": 2,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-06-02T13:23:02",
+    "details": {
+      "parent_id": "01a2847df2ca4544932d2bace381609f",
+      "child_id": "f854b0b07a624bad9997d1575ab572b0",
+      "sigma_snapshot": [
+        0.1464919112592875,
+        0.3256196936048118,
+        0.22538842788807745,
+        0.30249996724782313
+      ],
+      "child_sigma": [
+        0.12419982285674312,
+        0.3476211977012778,
+        0.29476692897748236,
+        0.23341205046449673
+      ],
+      "child_hypothesis_name": "spatial_arrangements",
+      "sampled_op": "l_mutation",
+      "method": "map_elites"
+    }
+  },
+  {
+    "generation": 2,
+    "event": "PLACEMENT",
+    "timestamp": "2026-06-02T13:23:23",
+    "details": {
+      "word": "grid",
+      "coordinates": [
+        0.4,
+        0.3
+      ],
+      "cell": [
+        2,
+        1
+      ],
+      "cache_hit": false
+    }
+  },
+  {
+    "generation": 2,
+    "event": "ARCHIVE_REJECT",
+    "timestamp": "2026-06-02T13:23:23",
+    "details": {
+      "cell": [
+        2,
+        1
+      ],
+      "child_hypothesis_id": "f854b0b07a624bad9997d1575ab572b0",
+      "incumbent_hypothesis_id": "e60ffeadd2824b4ab7a83a87daf10d63",
+      "child_rank": 223179,
+      "incumbent_rank": 46384
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-06-02T13:24:05",
+    "details": {
+      "word": "geology",
+      "rank": 109726,
+      "hypothesis": "geological patterns",
+      "best_word": "stretcher",
+      "best_rank": 2759,
+      "total_guesses": 48
+    }
+  },
+  {
+    "generation": 2,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-06-02T13:24:05",
+    "details": {
+      "parent_id": "ef333221572c4d95a95da4c80c1c3479",
+      "child_id": "7848e2c79b7a4c5db879c7d5fd3d69f4",
+      "sigma_snapshot": [
+        0.32457322294157853,
+        0.2167148915360706,
+        0.2253063442424442,
+        0.2334055412799067
+      ],
+      "child_sigma": [
+        0.1977731513577652,
+        0.19643394793299282,
+        0.2915790721828156,
+        0.3142138285264265
+      ],
+      "child_hypothesis_name": "geological patterns",
+      "sampled_op": "l_mutation",
+      "method": "map_elites"
+    }
+  },
+  {
+    "generation": 2,
+    "event": "PLACEMENT",
+    "timestamp": "2026-06-02T13:24:20",
+    "details": {
+      "word": "geology",
+      "coordinates": [
+        0.7,
+        0.75
+      ],
+      "cell": [
+        3,
+        3
+      ],
+      "cache_hit": false
+    }
+  },
+  {
+    "generation": 2,
+    "event": "ARCHIVE_PLACE",
+    "timestamp": "2026-06-02T13:24:20",
+    "details": {
+      "cell": [
+        3,
+        3
+      ],
+      "hypothesis_id": "7848e2c79b7a4c5db879c7d5fd3d69f4",
+      "best_word": "geology",
+      "rank": 109726,
+      "sigma": [
+        0.1977731513577652,
+        0.19643394793299282,
+        0.2915790721828156,
+        0.3142138285264265
+      ]
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-06-02T13:24:52",
+    "details": {
+      "word": "framework",
+      "rank": 193884,
+      "hypothesis": "alternative frameworks",
+      "best_word": "stretcher",
+      "best_rank": 2759,
+      "total_guesses": 49
+    }
+  },
+  {
+    "generation": 2,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-06-02T13:24:52",
+    "details": {
+      "parent_id": "add3b83e6da74a01ab478703d80303db",
+      "child_id": "dc545f4bed89462aa0029448f26b76d1",
+      "sigma_snapshot": [
+        0.21911130979171314,
+        0.25639303811311376,
+        0.19296393483191207,
+        0.33153171726326114
+      ],
+      "child_sigma": [
+        0.21948081447929277,
+        0.2644882290948946,
+        0.2019903590026091,
+        0.3140405974232036
+      ],
+      "child_hypothesis_name": "alternative frameworks",
+      "sampled_op": "m_mutation",
+      "method": "map_elites"
+    }
+  },
+  {
+    "generation": 2,
+    "event": "PLACEMENT",
+    "timestamp": "2026-06-02T13:25:11",
+    "details": {
+      "word": "framework",
+      "coordinates": [
+        0.75,
+        0.25
+      ],
+      "cell": [
+        3,
+        1
+      ],
+      "cache_hit": false
+    }
+  },
+  {
+    "generation": 2,
+    "event": "ARCHIVE_REJECT",
+    "timestamp": "2026-06-02T13:25:11",
+    "details": {
+      "cell": [
+        3,
+        1
+      ],
+      "child_hypothesis_id": "dc545f4bed89462aa0029448f26b76d1",
+      "incumbent_hypothesis_id": "517aba09c7fe4b6e82dbb7763bb26d3f",
+      "child_rank": 193884,
+      "incumbent_rank": 3685
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-06-02T13:25:45",
+    "details": {
+      "word": "trowel",
+      "rank": 219346,
+      "hypothesis": "tools used in bricklaying",
+      "best_word": "stretcher",
+      "best_rank": 2759,
+      "total_guesses": 50
+    }
+  },
+  {
+    "generation": 2,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-06-02T13:25:45",
+    "details": {
+      "parent_id": "58d4f4cac0d0440f92d69e8c4f0173e3",
+      "child_id": "7f63b4c5a79147a3ae589a8caa35c547",
+      "sigma_snapshot": [
+        0.20891333314317867,
+        0.3120925275376079,
+        0.10671773742859157,
+        0.37227640189062194
+      ],
+      "child_sigma": [
+        0.286028726257393,
+        0.31730828394073984,
+        0.13324630846137894,
+        0.26341668134048823
+      ],
+      "child_hypothesis_name": "tools used in bricklaying",
+      "sampled_op": "m_mutation",
+      "method": "map_elites"
+    }
+  },
+  {
+    "generation": 2,
+    "event": "PLACEMENT",
+    "timestamp": "2026-06-02T13:26:25",
+    "details": {
+      "word": "trowel",
+      "coordinates": [
+        0.2,
+        0.75
+      ],
+      "cell": [
+        1,
+        3
+      ],
+      "cache_hit": false
+    }
+  },
+  {
+    "generation": 2,
+    "event": "ARCHIVE_REJECT",
+    "timestamp": "2026-06-02T13:26:25",
+    "details": {
+      "cell": [
+        1,
+        3
+      ],
+      "child_hypothesis_id": "7f63b4c5a79147a3ae589a8caa35c547",
+      "incumbent_hypothesis_id": "58d4f4cac0d0440f92d69e8c4f0173e3",
+      "child_rank": 219346,
+      "incumbent_rank": 8011
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-06-02T13:26:44",
+    "details": {
+      "word": "trolley",
+      "rank": 287989,
+      "hypothesis": "construction_medical_tools",
+      "best_word": "stretcher",
+      "best_rank": 2759,
+      "total_guesses": 51
+    }
+  },
+  {
+    "generation": 2,
+    "event": "CROSSOVER",
+    "timestamp": "2026-06-02T13:26:44",
+    "details": {
+      "parents": [
+        "bricklaying technique",
+        "emergency medical transport tools"
+      ],
+      "parent_a_sigma": [
+        0.17592469077631318,
+        0.24419381335699616,
+        0.08933268194053116,
+        0.4905488139261595
+      ],
+      "parent_b_sigma": [
+        0.19381943261259044,
+        0.13774171934387905,
+        0.20101612454004172,
+        0.46742272350348885
+      ],
+      "child_sigma_pre_perturbation": [
+        0.1848720616944518,
+        0.1909677663504376,
+        0.14517440324028644,
+        0.4789857687148242
+      ],
+      "child": {
+        "hypothesis_id": "8f143a0b49224f5ba841fb463845a6b3",
+        "category_name": "construction_medical_tools",
+        "description": "tools used in both bricklaying and emergency transport",
+        "words_tried": {
+          "trolley": 287989
+        },
+        "best_word": "trolley",
+        "best_rank": 287989,
+        "status": "active",
+        "parent": "bricklaying technique+emergency medical transport tools",
+        "parent_id": null,
+        "origin": "crossover",
+        "sigma": [
+          0.09438516122712894,
+          0.23799451611388772,
+          0.30405381393704983,
+          0.36356650872193363
+        ]
+      },
+      "best_word": "stretcher",
+      "best_rank": 2759,
+      "total_guesses": 51
+    }
+  },
+  {
+    "generation": 2,
+    "event": "PLACEMENT",
+    "timestamp": "2026-06-02T13:27:32",
+    "details": {
+      "word": "trolley",
+      "coordinates": [
+        0.2,
+        0.6
+      ],
+      "cell": [
+        1,
+        3
+      ],
+      "cache_hit": false
+    }
+  },
+  {
+    "generation": 2,
+    "event": "ARCHIVE_REJECT",
+    "timestamp": "2026-06-02T13:27:32",
+    "details": {
+      "cell": [
+        1,
+        3
+      ],
+      "child_hypothesis_id": "8f143a0b49224f5ba841fb463845a6b3",
+      "incumbent_hypothesis_id": "58d4f4cac0d0440f92d69e8c4f0173e3",
+      "child_rank": 287989,
+      "incumbent_rank": 8011
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-06-02T13:27:43",
+    "details": {
+      "word": "quantitative",
+      "rank": 4875,
+      "hypothesis": "Quantitative Theories",
+      "best_word": "stretcher",
+      "best_rank": 2759,
+      "total_guesses": 52
+    }
+  },
+  {
+    "generation": 2,
+    "event": "CROSSOVER",
+    "timestamp": "2026-06-02T13:27:43",
+    "details": {
+      "parents": [
+        "number",
+        "theoretical constructs"
+      ],
+      "parent_a_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "parent_b_sigma": [
+        0.21911130979171314,
+        0.25639303811311376,
+        0.19296393483191207,
+        0.33153171726326114
+      ],
+      "child_sigma_pre_perturbation": [
+        0.23455565489585656,
+        0.2531965190565569,
+        0.22148196741595605,
+        0.29076585863163057
+      ],
+      "child": {
+        "hypothesis_id": "0d15a4b9293e4a5f82eed4f1bc254417",
+        "category_name": "Quantitative Theories",
+        "description": "Concepts combining numerical data and theoretical frameworks",
+        "words_tried": {
+          "quantitative": 4875
+        },
+        "best_word": "quantitative",
+        "best_rank": 4875,
+        "status": "active",
+        "parent": "number+theoretical constructs",
+        "parent_id": null,
+        "origin": "crossover",
+        "sigma": [
+          0.30954316535223325,
+          0.2242916161484809,
+          0.16513326336929973,
+          0.30103195512998626
+        ]
+      },
+      "best_word": "stretcher",
+      "best_rank": 2759,
+      "total_guesses": 52
+    }
+  },
+  {
+    "generation": 2,
+    "event": "PLACEMENT",
+    "timestamp": "2026-06-02T13:28:17",
+    "details": {
+      "word": "quantitative",
+      "coordinates": [
+        0.6,
+        0.3
+      ],
+      "cell": [
+        3,
+        1
+      ],
+      "cache_hit": false
+    }
+  },
+  {
+    "generation": 2,
+    "event": "ARCHIVE_REJECT",
+    "timestamp": "2026-06-02T13:28:17",
+    "details": {
+      "cell": [
+        3,
+        1
+      ],
+      "child_hypothesis_id": "0d15a4b9293e4a5f82eed4f1bc254417",
+      "incumbent_hypothesis_id": "517aba09c7fe4b6e82dbb7763bb26d3f",
+      "child_rank": 4875,
+      "incumbent_rank": 3685
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-06-02T13:28:40",
+    "details": {
+      "word": "shared",
+      "rank": 286155,
+      "hypothesis": "Convergent Urban Zones",
+      "best_word": "stretcher",
+      "best_rank": 2759,
+      "total_guesses": 53
+    }
+  },
+  {
+    "generation": 2,
+    "event": "CROSSOVER",
+    "timestamp": "2026-06-02T13:28:40",
+    "details": {
+      "parents": [
+        "urban land use",
+        "urban land use"
+      ],
+      "parent_a_sigma": [
+        0.3634428158448399,
+        0.1443055323657002,
+        0.27413726996729737,
+        0.21811438182216256
+      ],
+      "parent_b_sigma": [
+        0.3634428158448399,
+        0.1443055323657002,
+        0.27413726996729737,
+        0.21811438182216256
+      ],
+      "child_sigma_pre_perturbation": [
+        0.3634428158448399,
+        0.1443055323657002,
+        0.27413726996729737,
+        0.21811438182216256
+      ],
+      "child": {
+        "hypothesis_id": "7413e964775647cd9ac3d0402a22b3e1",
+        "category_name": "Convergent Urban Zones",
+        "description": "Areas where urban land uses overlap and intersect",
+        "words_tried": {
+          "shared": 286155
+        },
+        "best_word": "shared",
+        "best_rank": 286155,
+        "status": "active",
+        "parent": "urban land use+urban land use",
+        "parent_id": null,
+        "origin": "crossover",
+        "sigma": [
+          0.4028945716539565,
+          0.15899335238899773,
+          0.23866020286680661,
+          0.19945187309023932
+        ]
+      },
+      "best_word": "stretcher",
+      "best_rank": 2759,
+      "total_guesses": 53
+    }
+  },
+  {
+    "generation": 2,
+    "event": "PLACEMENT",
+    "timestamp": "2026-06-02T13:29:26",
+    "details": {
+      "word": "shared",
+      "coordinates": [
+        0.8,
+        0.2
+      ],
+      "cell": [
+        4,
+        1
+      ],
+      "cache_hit": false
+    }
+  },
+  {
+    "generation": 2,
+    "event": "ARCHIVE_REJECT",
+    "timestamp": "2026-06-02T13:29:26",
+    "details": {
+      "cell": [
+        4,
+        1
+      ],
+      "child_hypothesis_id": "7413e964775647cd9ac3d0402a22b3e1",
+      "incumbent_hypothesis_id": "add3b83e6da74a01ab478703d80303db",
+      "child_rank": 286155,
+      "incumbent_rank": 14672
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-06-02T13:30:27",
+    "details": {
+      "word": "row",
+      "rank": 238671,
+      "hypothesis": "seasonal construction patterns",
+      "best_word": "stretcher",
+      "best_rank": 2759,
+      "total_guesses": 54
+    }
+  },
+  {
+    "generation": 2,
+    "event": "CROSSOVER",
+    "timestamp": "2026-06-02T13:30:27",
+    "details": {
+      "parents": [
+        "seasonal cycles",
+        "bricklaying technique"
+      ],
+      "parent_a_sigma": [
+        0.32457322294157853,
+        0.2167148915360706,
+        0.2253063442424442,
+        0.2334055412799067
+      ],
+      "parent_b_sigma": [
+        0.17592469077631318,
+        0.24419381335699616,
+        0.08933268194053116,
+        0.4905488139261595
+      ],
+      "child_sigma_pre_perturbation": [
+        0.2502489568589459,
+        0.2304543524465334,
+        0.15731951309148767,
+        0.3619771776030331
+      ],
+      "child": {
+        "hypothesis_id": "67efcd02ed274ba4b5d95baeb8ef72cf",
+        "category_name": "seasonal construction patterns",
+        "description": "combines seasonal cycles with bricklaying methods",
+        "words_tried": {
+          "row": 238671
+        },
+        "best_word": "row",
+        "best_rank": 238671,
+        "status": "active",
+        "parent": "seasonal cycles+bricklaying technique",
+        "parent_id": null,
+        "origin": "crossover",
+        "sigma": [
+          0.18709155689558962,
+          0.35582011901386595,
+          0.14126659775395362,
+          0.31582172633659095
+        ]
+      },
+      "best_word": "stretcher",
+      "best_rank": 2759,
+      "total_guesses": 54
+    }
+  },
+  {
+    "generation": 2,
+    "event": "PLACEMENT",
+    "timestamp": "2026-06-02T13:30:51",
+    "details": {
+      "word": "row",
+      "coordinates": [
+        0.3,
+        0.25
+      ],
+      "cell": [
+        1,
+        1
+      ],
+      "cache_hit": false
+    }
+  },
+  {
+    "generation": 2,
+    "event": "ARCHIVE_REJECT",
+    "timestamp": "2026-06-02T13:30:51",
+    "details": {
+      "cell": [
+        1,
+        1
+      ],
+      "child_hypothesis_id": "67efcd02ed274ba4b5d95baeb8ef72cf",
+      "incumbent_hypothesis_id": "01a2847df2ca4544932d2bace381609f",
+      "child_rank": 238671,
+      "incumbent_rank": 32831
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-06-02T13:31:13",
+    "details": {
+      "word": "principles",
+      "rank": 22453,
+      "hypothesis": "Dynamic Concepts",
+      "best_word": "stretcher",
+      "best_rank": 2759,
+      "total_guesses": 55
+    }
+  },
+  {
+    "generation": 2,
+    "event": "CROSSOVER",
+    "timestamp": "2026-06-02T13:31:13",
+    "details": {
+      "parents": [
+        "vitality",
+        "theoretical constructs"
+      ],
+      "parent_a_sigma": [
+        0.26247363844983007,
+        0.2716711909980748,
+        0.19739326492258696,
+        0.2684619056295082
+      ],
+      "parent_b_sigma": [
+        0.21911130979171314,
+        0.25639303811311376,
+        0.19296393483191207,
+        0.33153171726326114
+      ],
+      "child_sigma_pre_perturbation": [
+        0.2407924741207716,
+        0.2640321145555943,
+        0.1951785998772495,
+        0.2999968114463847
+      ],
+      "child": {
+        "hypothesis_id": "a04e3b008a364921b18b792452315572",
+        "category_name": "Dynamic Concepts",
+        "description": "Concepts that bridge theoretical ideas and active principles",
+        "words_tried": {
+          "principles": 22453
+        },
+        "best_word": "principles",
+        "best_rank": 22453,
+        "status": "active",
+        "parent": "vitality+theoretical constructs",
+        "parent_id": null,
+        "origin": "crossover",
+        "sigma": [
+          0.25144093540265683,
+          0.24638742757774632,
+          0.14284136973828476,
+          0.3593302672813121
+        ]
+      },
+      "best_word": "stretcher",
+      "best_rank": 2759,
+      "total_guesses": 55
+    }
+  },
+  {
+    "generation": 2,
+    "event": "PLACEMENT",
+    "timestamp": "2026-06-02T13:31:59",
+    "details": {
+      "word": "principles",
+      "coordinates": [
+        0.85,
+        0.2
+      ],
+      "cell": [
+        4,
+        1
+      ],
+      "cache_hit": false
+    }
+  },
+  {
+    "generation": 2,
+    "event": "ARCHIVE_REJECT",
+    "timestamp": "2026-06-02T13:31:59",
+    "details": {
+      "cell": [
+        4,
+        1
+      ],
+      "child_hypothesis_id": "a04e3b008a364921b18b792452315572",
+      "incumbent_hypothesis_id": "add3b83e6da74a01ab478703d80303db",
+      "child_rank": 22453,
+      "incumbent_rank": 14672
+    }
+  },
+  {
+    "generation": 2,
+    "event": "ARCHIVE_SNAPSHOT",
+    "timestamp": "2026-06-02T13:31:59",
+    "details": {
+      "occupied_cells": 14,
+      "cells": [
+        {
+          "cell": [
+            0,
+            1
+          ],
+          "hypothesis_id": "0e197d2442f04b4e8a8378ad025c2274",
+          "best_word": "wood",
+          "best_rank": 18369,
+          "coordinates": [
+            0.0,
+            0.25
+          ],
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "cell": [
+            0,
+            2
+          ],
+          "hypothesis_id": "2a50931e3d0e40fd8292fb583381aea1",
+          "best_word": "ambulance",
+          "best_rank": 291069,
+          "coordinates": [
+            0.1,
+            0.5
+          ],
+          "sigma": [
+            0.19381943261259044,
+            0.13774171934387905,
+            0.20101612454004172,
+            0.46742272350348885
+          ]
+        },
+        {
+          "cell": [
+            0,
+            3
+          ],
+          "hypothesis_id": "d1bf692dcc7f46d1b93da16dacf7db06",
+          "best_word": "stretcher",
+          "best_rank": 2759,
+          "coordinates": [
+            0.15,
+            0.65
+          ],
+          "sigma": [
+            0.17592469077631318,
+            0.24419381335699616,
+            0.08933268194053116,
+            0.4905488139261595
+          ]
+        },
+        {
+          "cell": [
+            1,
+            0
+          ],
+          "hypothesis_id": "43f6058af52d4b7db51cb5e064b153cf",
+          "best_word": "housing",
+          "best_rank": 115158,
+          "coordinates": [
+            0.3,
+            0.1
+          ],
+          "sigma": [
+            0.32760926486241615,
+            0.08834264917119826,
+            0.1591431976489688,
+            0.4249048883174168
+          ]
+        },
+        {
+          "cell": [
+            1,
+            1
+          ],
+          "hypothesis_id": "01a2847df2ca4544932d2bace381609f",
+          "best_word": "square",
+          "best_rank": 32831,
+          "coordinates": [
+            0.2,
+            0.2
+          ],
+          "sigma": [
+            0.1464919112592875,
+            0.3256196936048118,
+            0.22538842788807745,
+            0.30249996724782313
+          ]
+        },
+        {
+          "cell": [
+            1,
+            2
+          ],
+          "hypothesis_id": "1bae2f00ab714c7fa72f9e0e03b27070",
+          "best_word": "apple",
+          "best_rank": 37754,
+          "coordinates": [
+            0.25,
+            0.5
+          ],
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "cell": [
+            1,
+            3
+          ],
+          "hypothesis_id": "58d4f4cac0d0440f92d69e8c4f0173e3",
+          "best_word": "bricklaying",
+          "best_rank": 8011,
+          "coordinates": [
+            0.3,
+            0.7
+          ],
+          "sigma": [
+            0.20891333314317867,
+            0.3120925275376079,
+            0.10671773742859157,
+            0.37227640189062194
+          ]
+        },
+        {
+          "cell": [
+            2,
+            1
+          ],
+          "hypothesis_id": "e60ffeadd2824b4ab7a83a87daf10d63",
+          "best_word": "circle",
+          "best_rank": 46384,
+          "coordinates": [
+            0.5,
+            0.25
+          ],
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "cell": [
+            2,
+            2
+          ],
+          "hypothesis_id": "ef333221572c4d95a95da4c80c1c3479",
+          "best_word": "season",
+          "best_rank": 57504,
+          "coordinates": [
+            0.5,
+            0.4
+          ],
+          "sigma": [
+            0.32457322294157853,
+            0.2167148915360706,
+            0.2253063442424442,
+            0.2334055412799067
+          ]
+        },
+        {
+          "cell": [
+            3,
+            0
+          ],
+          "hypothesis_id": "738210c2e8fc4d33b9454de65cc06297",
+          "best_word": "one",
+          "best_rank": 62908,
+          "coordinates": [
+            0.7,
+            0.1
+          ],
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "cell": [
+            3,
+            1
+          ],
+          "hypothesis_id": "517aba09c7fe4b6e82dbb7763bb26d3f",
+          "best_word": "vitality",
+          "best_rank": 3685,
+          "coordinates": [
+            0.75,
+            0.25
+          ],
+          "sigma": [
+            0.26247363844983007,
+            0.2716711909980748,
+            0.19739326492258696,
+            0.2684619056295082
+          ]
+        },
+        {
+          "cell": [
+            3,
+            2
+          ],
+          "hypothesis_id": "9f8ed7f42f354b879e3c346e70caeaa3",
+          "best_word": "urban",
+          "best_rank": 6616,
+          "coordinates": [
+            0.6,
+            0.4
+          ],
+          "sigma": [
+            0.3634428158448399,
+            0.1443055323657002,
+            0.27413726996729737,
+            0.21811438182216256
+          ]
+        },
+        {
+          "cell": [
+            3,
+            3
+          ],
+          "hypothesis_id": "7848e2c79b7a4c5db879c7d5fd3d69f4",
+          "best_word": "geology",
+          "best_rank": 109726,
+          "coordinates": [
+            0.7,
+            0.75
+          ],
+          "sigma": [
+            0.1977731513577652,
+            0.19643394793299282,
+            0.2915790721828156,
+            0.3142138285264265
+          ]
+        },
+        {
+          "cell": [
+            4,
+            1
+          ],
+          "hypothesis_id": "add3b83e6da74a01ab478703d80303db",
+          "best_word": "theoretical",
+          "best_rank": 14672,
+          "coordinates": [
+            0.85,
+            0.2
+          ],
+          "sigma": [
+            0.21911130979171314,
+            0.25639303811311376,
+            0.19296393483191207,
+            0.33153171726326114
+          ]
+        }
+      ],
+      "best_word": "stretcher",
+      "best_rank": 2759,
+      "total_guesses": 55
+    }
+  },
+  {
+    "generation": 2,
+    "event": "SIGMA_TRAJECTORY",
+    "timestamp": "2026-06-02T13:31:59",
+    "details": {
+      "mean_sigma": [
+        0.24429519793139381,
+        0.22810778599717468,
+        0.2116412896852334,
+        0.3159557263861982
+      ],
+      "population_size": 14
+    }
+  },
+  {
+    "generation": 2,
+    "event": "FAILED",
+    "timestamp": "2026-06-02T13:31:59",
+    "details": {
+      "best_word": "stretcher",
+      "best_rank": 2759,
+      "total_guesses": 55
+    }
+  }
+]

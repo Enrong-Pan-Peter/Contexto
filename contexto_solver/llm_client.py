@@ -244,6 +244,17 @@ Do not suggest singular or plural forms of already tried words; Contexto treats 
 JSON schema:
 {{"name": "category name", "description": "short description", "words": ["word1", "word2", "word3"]}}"""
 
+PLACE_WORD_PROMPT = """Return only JSON, no markdown or explanation.
+Rate the word "{word}" on two scales.
+
+Concreteness (0 = most concrete/physical, 1 = most abstract/conceptual):
+{concreteness_anchors}
+
+Specificity (0 = most general, 1 = most specific):
+{specificity_anchors}
+
+Return JSON only: {{"concreteness": <number 0-1>, "specificity": <number 0-1>}}"""
+
 NEXT_GUESS_PROMPT = """Return only JSON, no markdown or explanation.
 You are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.
 Guess history with ranks: {history}
@@ -358,6 +369,28 @@ class LLMClient:
 
     def complete_json_prompt(self, prompt: str) -> Any:
         return self._json_request_with_retry(prompt)
+
+    def place_word(
+        self,
+        word: str,
+        anchors_concreteness: dict[float, str] | None = None,
+        anchors_specificity: dict[float, str] | None = None,
+    ) -> dict[str, float]:
+        """Return MAP-Elites behavior coordinates {"concreteness", "specificity"} in [0, 1]."""
+        concreteness_anchors = anchors_concreteness or config.MAPELITES_ANCHORS_CONCRETENESS
+        specificity_anchors = anchors_specificity or config.MAPELITES_ANCHORS_SPECIFICITY
+        prompt = PLACE_WORD_PROMPT.format(
+            word=word,
+            concreteness_anchors=_format_anchor_scale(concreteness_anchors),
+            specificity_anchors=_format_anchor_scale(specificity_anchors),
+        )
+        response = self._json_request_with_retry(prompt)
+        if not isinstance(response, dict):
+            raise ValueError(f"place_word expected a JSON object, got {type(response).__name__}")
+        return {
+            "concreteness": _clamp_unit(response.get("concreteness")),
+            "specificity": _clamp_unit(response.get("specificity")),
+        }
 
     def crossover(
         self,
@@ -640,6 +673,20 @@ class LLMClient:
             return None, None
         best_word = min(all_guesses, key=all_guesses.get)
         return best_word, all_guesses[best_word]
+
+
+def _format_anchor_scale(anchors: dict[float, str]) -> str:
+    return " | ".join(f"{position:.2f}: {word}" for position, word in sorted(anchors.items()))
+
+
+def _clamp_unit(value: Any) -> float:
+    try:
+        number = float(value)
+    except (TypeError, ValueError) as exc:
+        raise ValueError(f"place_word returned a non-numeric coordinate: {value!r}") from exc
+    if number != number:  # NaN guard
+        raise ValueError("place_word returned NaN coordinate")
+    return max(0.0, min(1.0, number))
 
 
 def _strip_code_fences(text: str) -> str:

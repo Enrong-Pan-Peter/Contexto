@@ -197,11 +197,15 @@ Useful commands while playing:
   operator probabilities. It uses `SELF_ADAPTIVE_MU` and
   `SELF_ADAPTIVE_INITIAL_CATEGORIES` instead of the regular EA population
   defaults.
+- `ea_llm_map_elites`: MAP-Elites variant of `ea_llm_self_adaptive`. It replaces
+  top-mu selection with a `5x5` behavior archive over two LLM-placed axes
+  (concreteness and specificity), keeping the inherited self-adaptive sigma
+  machinery. Tuned with `MAPELITES_*` config values.
 - `embedding`: embedding nearest-neighbor baseline.
 
 The `solver` field in traces remains a broad compatibility label (`llm` or
 `embedding`). Use the `method` field to distinguish `llm_only`, `ea_llm`,
-`ea_llm_pivot`, and `ea_llm_self_adaptive`.
+`ea_llm_pivot`, `ea_llm_self_adaptive`, and `ea_llm_map_elites`.
 
 ### EA+LLM Against Local Game
 
@@ -284,7 +288,7 @@ game likely uses a different embedding model.
 
 ```text
 --game {local,api}              Game backend
---method {llm_only,ea_llm,ea_llm_pivot,embedding}
+--method {llm_only,ea_llm,ea_llm_pivot,ea_llm_self_adaptive,ea_llm_map_elites,embedding}
                                   Solver method
 --target TARGET                 Target word for local game
 --game-number GAME_NUMBER       Real Contexto game number
@@ -363,6 +367,8 @@ Trace events include:
 - `LOCAL_SEARCH`: focused guesses near a strong word.
 - `PIVOT_TRIGGERED`: pivot operator results for `ea_llm_pivot`.
 - `PIVOT_RESOLUTION`: whether a pivot was followed by rank improvement.
+- `AXIS_DEFINITION`, `PLACEMENT`, `ARCHIVE_PLACE`/`ARCHIVE_REPLACE`/`ARCHIVE_REJECT`,
+  `ARCHIVE_SNAPSHOT`: MAP-Elites archive events for `ea_llm_map_elites`.
 - `SOLVED`: answer found.
 - `FAILED`: generation budget exhausted.
 
@@ -371,6 +377,25 @@ Example trace path:
 ```text
 traces/llm_local_cat_20260504_121840.json
 ```
+
+## Visualization And Inspection
+
+Trajectory plots (rank, distance, 2D projection) from any trace:
+
+```powershell
+python -m contexto_solver.plot_trajectory --plot-type rank --trace traces/<run_label>.json
+```
+
+MAP-Elites archive visualizations (seven PNGs written to `figures/<run_label>/`):
+
+```powershell
+python -m contexto_solver.plot_map_elites --trace traces/<map_elites_run>.json --combined
+```
+
+Use `--plots occupancy,scatter` to render a subset and `--snapshot-gens 10,20,30,40`
+to choose the sigma snapshot timepoints. Running it on a non-MAP-Elites trace
+exits cleanly with a message. Self-adaptive sigma/operator inspection lives in
+`scripts/inspect_self_adaptive_trace.py`.
 
 ## Validation Performed
 

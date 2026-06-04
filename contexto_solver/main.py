@@ -12,6 +12,7 @@ from .llm_client import LLMClient
 from .logger import Logger
 from .methods.ea_core import EALLMConfig
 from .methods.ea_llm import EALLMMethod
+from .methods.ea_llm_map_elites import EALLMMapElitesConfig, EALLMMapElitesMethod
 from .methods.ea_llm_pivot import EALLMPivotConfig, EALLMPivotMethod
 from .methods.ea_llm_self_adaptive import EALLMSelfAdaptiveConfig, EALLMSelfAdaptiveMethod
 from .methods.embedding import EmbeddingConfig, EmbeddingMethod
@@ -84,6 +85,12 @@ def main() -> None:
                 config.SELF_ADAPTIVE_CONCENTRATION if args.method == "ea_llm_self_adaptive" else None
             ),
             "self_adaptive_sigma_floor": config.SELF_ADAPTIVE_SIGMA_FLOOR if args.method == "ea_llm_self_adaptive" else None,
+            "mapelites_grid_resolution": config.MAPELITES_GRID_RESOLUTION if args.method == "ea_llm_map_elites" else None,
+            "mapelites_mutations_per_gen": config.MAPELITES_MUTATIONS_PER_GEN if args.method == "ea_llm_map_elites" else None,
+            "mapelites_crossovers_per_gen": config.MAPELITES_CROSSOVERS_PER_GEN if args.method == "ea_llm_map_elites" else None,
+            "mapelites_initial_categories": config.MAPELITES_INITIAL_CATEGORIES if args.method == "ea_llm_map_elites" else None,
+            "mapelites_concentration": config.SELF_ADAPTIVE_CONCENTRATION if args.method == "ea_llm_map_elites" else None,
+            "mapelites_sigma_floor": config.SELF_ADAPTIVE_SIGMA_FLOOR if args.method == "ea_llm_map_elites" else None,
             "enable_pivot": _enable_pivot_metadata(args.method),
             "ea_llm_pivot_stall_no_improvement_generations": (
                 config.EA_LLM_PIVOT_STALL_NO_IMPROVEMENT_GENERATIONS if args.method == "ea_llm_pivot" else None
@@ -148,7 +155,7 @@ def _parse_args() -> argparse.Namespace:
     parser.add_argument("--game", choices=["local", "api"], default="api", help="Game backend.")
     parser.add_argument(
         "--method",
-        choices=["llm_only", "ea_llm", "ea_llm_pivot", "ea_llm_self_adaptive", "embedding"],
+        choices=["llm_only", "ea_llm", "ea_llm_pivot", "ea_llm_self_adaptive", "ea_llm_map_elites", "embedding"],
         default="ea_llm_pivot",
         help="Solver method.",
     )
@@ -230,6 +237,25 @@ def _build_llm_method(method: str, game, llm_client: LLMClient, logger: Logger, 
                 random_seed=_random_seed(args.random_seed),
             ),
         )
+    if method == "ea_llm_map_elites":
+        return EALLMMapElitesMethod(
+            game,
+            llm_client,
+            logger,
+            EALLMMapElitesConfig(
+                **{**ea_kwargs, "initial_categories": config.MAPELITES_INITIAL_CATEGORIES},
+                mu=config.SELF_ADAPTIVE_MU,
+                concentration=config.SELF_ADAPTIVE_CONCENTRATION,
+                sigma_floor=config.SELF_ADAPTIVE_SIGMA_FLOOR,
+                random_seed=_random_seed(args.random_seed),
+                grid_resolution=config.MAPELITES_GRID_RESOLUTION,
+                mutations_per_gen=config.MAPELITES_MUTATIONS_PER_GEN,
+                crossovers_per_gen=config.MAPELITES_CROSSOVERS_PER_GEN,
+                placement_cache_dir=config.MAPELITES_PLACEMENT_CACHE_DIR,
+                anchors_concreteness=config.MAPELITES_ANCHORS_CONCRETENESS,
+                anchors_specificity=config.MAPELITES_ANCHORS_SPECIFICITY,
+            ),
+        )
     if method == "ea_llm_pivot":
         return EALLMPivotMethod(
             game,
@@ -263,7 +289,7 @@ def _method_family(method: str) -> str:
 def _enable_pivot_metadata(method: str) -> bool | None:
     if method == "ea_llm_pivot":
         return True
-    if method in {"ea_llm", "ea_llm_self_adaptive"}:
+    if method in {"ea_llm", "ea_llm_self_adaptive", "ea_llm_map_elites"}:
         return False
     return None
 
@@ -271,6 +297,8 @@ def _enable_pivot_metadata(method: str) -> bool | None:
 def _ea_initial_categories(method: str) -> int:
     if method == "ea_llm_self_adaptive":
         return config.SELF_ADAPTIVE_INITIAL_CATEGORIES
+    if method == "ea_llm_map_elites":
+        return config.MAPELITES_INITIAL_CATEGORIES
     return config.INITIAL_CATEGORIES
 
 
@@ -286,7 +314,7 @@ def _default(value, default):
     return default if value is None else value
 
 
-_EA_METHODS = {"ea_llm", "ea_llm_pivot", "ea_llm_self_adaptive"}
+_EA_METHODS = {"ea_llm", "ea_llm_pivot", "ea_llm_self_adaptive", "ea_llm_map_elites"}
 
 
 if __name__ == "__main__":
