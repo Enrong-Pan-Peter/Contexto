@@ -379,6 +379,62 @@ Research value: makes the quality-diversity behavior of the archive legible
 (spatial sigma structure, occupancy growth, empty-vs-contested cells) for
 diagnosing runs. Diagnostic tooling, not a performance result.
 
+### 2026-06-06 — First MAP-Elites `superficial` Test Run Analysis
+
+Evidence:
+- [`traces/ea_llm_map_elites_local_superficial_20260606_015531.json`](../traces/ea_llm_map_elites_local_superficial_20260606_015531.json)
+- [`docs/experiment_log.md`](experiment_log.md#2026-06-06--superficial-seed-4-qwen3-14b)
+- [`docs/findings.md`](findings.md#2026-06-06--first-map-elites-superficial-run-suggests-generation-layer-exhaustion)
+
+Milestones:
+- Recorded the first analyzed MAP-Elites `superficial` run as single-run
+  evidence only: seed 4, Ollama `qwen3:14b`, 70-generation cap, MiniLM local-game
+  backend, LLM-driven placement.
+- Observed generation-layer exhaustion: successful children/gen fell from 18.15
+  in generations 1-20 to 7.20 in generations 41-70, while the inferred
+  duplicate-proposal/drop rate reached 68.33% in generations 50-70.
+- Recorded archive saturation: 19/25 final cells occupied, no placements ever
+  landed in the six empty cells, occupancy last increased at generation 45, and
+  best rank last improved at generation 37 (`thin`/5).
+- Recorded sigma diagnostics as suggestive but confounded: final incumbents had
+  elevated `sigma_l` mean (0.447 vs 0.25 uniform), and the winning lineage also
+  drifted toward large mutation, but controls are needed before interpreting
+  this as selection-layer validation.
+
+Research value: surfaces a new hypothesis that MAP-Elites solved the
+selection-layer diversity problem but exposed a generation-layer exhaustion and
+endgame-focus problem. This is diagnostic single-run evidence, not a performance
+claim.
+
+### 2026-06-08 — Pooled MAP-Elites Sigma-Fitness Coupling Analysis
+
+Evidence:
+- [`scripts/measure_sigma_fitness_coupling.py`](../scripts/measure_sigma_fitness_coupling.py)
+- [`traces/`](../traces/) filtered to MAP-Elites traces with `AXIS_DEFINITION`
+- [`docs/experiment_log.md`](experiment_log.md#2026-06-08--pooled-sigma-fitness-coupling-for-map-elites)
+- [`docs/findings.md`](findings.md#2026-06-08--pooled-map-elites-sigma-fitness-coupling-favors-small-mutation)
+
+Milestones:
+- Pooled 21 MAP-Elites traces and 10,581 linked mutation children, excluding
+  crossover because it has no single sampled operator.
+- Found a clean operator-fitness gradient favoring small mutation:
+  `REPLACE` rate fell from `s_mutation` 14.1% to `l_mutation` 4.8%, and median
+  log-rank delta fell from `s=-1.34` to `l=-2.69`.
+- Confirmed the gradient survived early/late phase splitting and parent-rank
+  tercile control.
+- Step-0 sigma confirmation showed that the earlier `sigma_l ~= 0.45` archive
+  elevation was not pooled: final archive sigma averaged across runs was
+  `[s=0.271, m=0.234, ml=0.232, l=0.263]`.
+- Identified inheritance decoupling as the mechanism: child sigma depends on
+  parent sigma, not on which operator produced the child word.
+
+Research value: turns the sigma question from a single-run artifact into a
+pooled operator-fitness diagnostic. It motivates testing reward-windowed
+adaptive operator selection and upgrades the frozen-sigma / random-sigma control
+to a causal test of whether sigma adaptation misallocates effort. The origin of
+the single-run `sigma_l` elevation remains explicitly uncertain pending those
+controls.
+
 ## Current Open Questions
 
 - Should work continue directly on pivot direction selection, given the completed

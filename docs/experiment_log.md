@@ -53,7 +53,89 @@ generation_reached, total_guesses, notes, trace_path.
 | `superficial` | 2026-05-26 | `ea_llm_self_adaptive` | 50 | 42 | `qwen3:14b` | 5 | 50 | 761 | Single-run observation. Post-crossover-blending, pre-local-search-disable. Reached `thin` rank 5; all 50 crossover events included blended sigma metadata and no crossover child had exactly uniform sigma. | [`traces/ea_llm_self_adaptive_local_superficial_20260526_082930.json`](../traces/ea_llm_self_adaptive_local_superficial_20260526_082930.json) |
 | `superficial` | 2026-05-26 | `ea_llm_self_adaptive` | 15 | 42 | `qwen3:14b` | 42 | 15 | 387 | Single-run smoke observation. Post-Fix 5 + Fix 6 verification: 0 `LOCAL_SEARCH` events, 1 `LOCAL_SEARCH_DISABLED`, and all 15 crossover children had non-uniform sigma. Best rank `medium`/42 reached at generation 2, with no improvement for 13 generations; the same two parents appeared in every crossover from generation 4 onward. | [`traces/ea_llm_self_adaptive_local_superficial_20260526_135302.json`](../traces/ea_llm_self_adaptive_local_superficial_20260526_135302.json) |
 
+## MAP-Elites Runs
+
+### 2026-06-06 — `superficial`, Seed 4, Qwen3 14B
+
+- Evidence level: single-run observation only. Source trace:
+  [`traces/ea_llm_map_elites_local_superficial_20260606_015531.json`](../traces/ea_llm_map_elites_local_superficial_20260606_015531.json).
+- Configuration verified from `RUN_CONFIG`: `method=ea_llm_map_elites`,
+  local game, target `superficial`, seed `4`, `max_generations=70`,
+  Ollama `qwen3:14b`, game backend embeddings
+  `data/embeddings/all-MiniLM-L6-v2.npz`. Placement was LLM-driven from
+  `AXIS_DEFINITION`/`PLACEMENT` events, not embedding-driven.
+- Outcome: NOT SOLVED (`FAILED`). Final `best_word=thin`, `best_rank=5`,
+  `total_guesses=845` from the final event. The valid `GUESS` count is `841`;
+  the remaining four attempts are `SKIP_INVALID_GUESS` events.
+- Best-rank trajectory from `GUESS` events:
+  `teacher`/22153 -> `shirt`/10667 -> `crisp`/216 -> `sharp`/170 ->
+  `plump`/18 -> `appearance`/14 -> `thin`/5. `thin` first reached rank 5 at
+  generation 37.
+- Archive state: final `ARCHIVE_SNAPSHOT` at generation 70 has 19/25 cells
+  occupied. Empty cells were `(0,4)`, `(1,4)`, `(2,0)`, `(2,4)`, `(3,4)`,
+  `(4,4)`; four of the six empty cells are in the top specificity row.
+- Saturation: archive occupancy last increased at generation 45 (last
+  `ARCHIVE_PLACE`). Best rank last improved at generation 37. Generations
+  46-70 were nearly pure churn: 166 `ARCHIVE_REJECT` events and one
+  `ARCHIVE_REPLACE`, with no new occupied cells and no best-rank improvement.
+- Pipeline counts: successful children are 616 mutation children
+  (`OPERATOR_SAMPLED`) + 210 crossover children (`CROSSOVER`) + 15 initial
+  children = 841. These match exactly the 841 valid `GUESS` events, 841
+  `PLACEMENT` events, and 841 archive outcomes. Archive outcome split:
+  19 `ARCHIVE_PLACE`, 48 `ARCHIVE_REPLACE`, and 774 `ARCHIVE_REJECT`. All 841
+  valid guessed words are distinct.
+- Budget collapse: against a 20-child/generation mutation+crossover budget,
+  observed children averaged 18.15/gen in generations 1-20, 12.35/gen in
+  generations 21-40, and 7.20/gen in generations 41-70.
+- Duplicate-proposal rate is inferred from the budget gap because already-seen
+  proposals are skipped before logging. Generations 1-20 created 363/400
+  possible children, so 37 attempts (9.25%) produced no child. Generations
+  50-70 created 133/420 possible children, so 287 attempts (68.33%) produced no
+  child.
+
 ## Analysis Artifacts
+
+### 2026-06-08 — Pooled Sigma-Fitness Coupling for MAP-Elites
+
+- Evidence level: pooled / batch-level trace analysis. Reproducer:
+  [`scripts/measure_sigma_fitness_coupling.py`](../scripts/measure_sigma_fitness_coupling.py)
+  over all MAP-Elites traces in [`traces/`](../traces/) filtered by
+  `AXIS_DEFINITION`; fresh command:
+  `python scripts/measure_sigma_fitness_coupling.py --report-json _sigma_fitness_coupling_report.json`.
+- Scope: 21 MAP-Elites traces, 10,581 linked mutation children. Crossover
+  children were excluded because they do not sample a single operator. Phases
+  were split per run at the occupancy-freeze generation, defined as the final
+  `ARCHIVE_PLACE` generation.
+- Linkage method: `OPERATOR_SAMPLED.details.sampled_op` -> child archive
+  outcome by child hypothesis ID (`ARCHIVE_PLACE.hypothesis_id`,
+  `ARCHIVE_REPLACE.new_hypothesis_id`, or
+  `ARCHIVE_REJECT.child_hypothesis_id`) -> child rank from the archive outcome
+  -> parent rank via `parent_id`.
+- Measurement A, outcome counts and rates:
+  `s_mutation` N=2274, PLACE 60 (2.6%), REPLACE 321 (14.1%), REJECT 1893
+  (83.2%); `m_mutation` N=2574, PLACE 53 (2.1%), REPLACE 236 (9.2%), REJECT
+  2285 (88.8%); `ml_mutation` N=2388, PLACE 48 (2.0%), REPLACE 221 (9.3%),
+  REJECT 2119 (88.7%); `l_mutation` N=3345, PLACE 32 (1.0%), REPLACE 160
+  (4.8%), REJECT 3153 (94.3%).
+- Measurement B, pooled `delta = log(parent_rank) - log(child_rank)`:
+  median delta `s=-1.34`, `m=-2.07`, `ml=-1.70`, `l=-2.69`; improvement rates
+  `s=23%`, `m=19%`, `ml=20%`, `l=13%`; jackpot rates (`delta >= ln(10)`)
+  `s=4%`, `m=3%`, `ml=3%`, `l=2%`; at-least-10x-worse rates
+  `s=35%`, `m=47%`, `ml=41%`, `l=56%`.
+- Phase split: in early/growth, median delta was `s=-1.30`, `m=-1.85`,
+  `ml=-1.46`, `l=-2.35`; in late/post-freeze, median delta was `s=-1.67`,
+  `m=-2.87`, `ml=-2.57`, `l=-3.58`.
+- Parent-rank confound: `l_mutation` drew from better-ranked parents on average
+  (median parent rank 4,332) than `s_mutation` (median parent rank 8,846), but
+  the operator ordering survived parent-rank tercile control. Low parent-rank
+  tercile median delta: `s=-3.90`, `m=-4.92`, `ml=-4.62`, `l=-5.38`; high
+  tercile median delta: `s=-0.28`, `m=-0.37`, `ml=-0.35`, `l=-0.61`.
+- Step-0 sigma confirmation: final archive-incumbent sigma averaged per run over
+  the same 21 traces was `[s=0.271, m=0.234, ml=0.232, l=0.263]`, so the earlier
+  `sigma_l ~= 0.45` elevation is not a pooled final-archive pattern; it remains
+  a single-run observation from the `superficial` seed-4 run.
+- Finding link:
+  [`docs/findings.md`](findings.md#2026-06-08--pooled-map-elites-sigma-fitness-coupling-favors-small-mutation).
 
 ### 2026-05-21 — Trajectory Visualizations for `superficial` Traces
 

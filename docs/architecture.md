@@ -330,6 +330,10 @@ Subtleties:
 - Sigma vectors must have shape `(4,)`, sum to `1.0` within `1e-6`, and
   generated adaptive descendants should satisfy `sigma.min() >=
   SELF_ADAPTIVE_SIGMA_FLOOR`.
+- Child sigma is drawn from `Dirichlet(alpha * parent_sigma)` plus floor
+  renormalization. It depends only on the parent's sigma, not on which operator
+  was sampled; the sampled operator determines the child's word-generation
+  prompt, not the inherited sigma vector.
 - The LLM receives only the selected operator's formatted prompt. It never sees
   sigma values, operator probabilities, or the list of alternatives.
 - Operator IDs are trace-facing identifiers through `OPERATOR_SAMPLED` events.
@@ -449,6 +453,13 @@ Per-generation loop (`run_generation`):
   otherwise the better-ranked hypothesis stays. A fresh-jump child survives if
   its cell is empty or its incumbent is worse, which is the selection-layer fix
   for the diversity problem.
+- Pipeline invariant: MAP-Elites uses exactly one proposed word per child. If
+  that word is already known, `_guess_first_valid()` drops the child before any
+  archive logic and no `GUESS`, `PLACEMENT`, archive event, `OPERATOR_SAMPLED`,
+  or `CROSSOVER` record is emitted for that attempt. If the word is invalid, it
+  may emit `SKIP_INVALID_GUESS`, but it still produces no archive competition.
+  Therefore successful children correspond one-to-one with valid `GUESS`
+  events, `PLACEMENT` events, and archive outcomes.
 - `_active_hypotheses()` is overridden to return the current archive incumbents
   so the inherited sigma-trajectory logging reflects the archive.
 

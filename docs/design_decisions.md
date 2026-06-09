@@ -241,6 +241,25 @@ repeated runs or batch analysis. See
 [`docs/experiment_log.md`](experiment_log.md) for run evidence and
 [`docs/findings.md`](findings.md) for evidence-quality labels.
 
+Open design direction after pooled MAP-Elites coupling analysis: adaptive
+operator selection (AOS) should be evaluated as an alternative credit-assignment
+mechanism. In the current self-adaptive machinery, a child inherits
+`Dirichlet(alpha * parent_sigma)` regardless of which operator produced the
+child's word. A win from `s_mutation` therefore carries the parent's sigma into
+the archive rather than crediting `s_mutation` itself. The 2026-06-08 pooled
+MAP-Elites analysis found a clean per-operator fitness gradient favoring
+`s_mutation` over `l_mutation`, while the inherited sigma mechanism cannot
+directly assign reward to the fired operator. A reward-windowed AOS variant would
+credit the operator that fired by its observed reward, so it can capture "small
+mutation wins" directly. This is an open direction, not a committed design
+change.
+
+Control priority: the frozen-sigma / random-sigma comparison is now more than a
+neutral sanity check. It should test whether sigma adaptation causally
+misallocates effort relative to the observed operator-fitness gradient. The
+informed comparison profile is a static or AOS policy that gives more sampling
+mass to small mutation, while still retaining some larger jumps for exploration.
+
 ## Ollama Local LLM Backend
 
 Decision: `LLMClient` supports Ollama through its OpenAI-compatible local
@@ -347,3 +366,39 @@ across local and real-API games. Any performance claim requires repeated runs;
 the new trace events (`AXIS_DEFINITION`, `PLACEMENT`, `ARCHIVE_*`) are designed
 to support later quality-diversity analysis (sigma heatmaps, archive scatter
 plots), which is out of scope for the initial implementation.
+
+## MAP-Elites Open Design Considerations After First Test Run
+
+Evidence source:
+[`traces/ea_llm_map_elites_local_superficial_20260606_015531.json`](../traces/ea_llm_map_elites_local_superficial_20260606_015531.json).
+Evidence quality: single-run diagnostic observation only (`superficial`, seed 4,
+Ollama `qwen3:14b`). These are open design considerations, not settled design
+decisions.
+
+Archive sampling tension: the first MAP-Elites test run surfaced a
+coverage-versus-exploitation trade-off. Uniform archive sampling bought coverage
+(19/25 occupied cells) but did not concentrate enough effort on the best cell to
+convert `thin` rank 5 to rank 1 after generation 37. Two possible design forks
+are now explicit but undecided: (a) quality-biased archive sampling, or (b)
+stagnation-gated focused refinement on the best cell, reintroducing a
+pivot-style local search only after best-rank stalling. Both require more runs
+before changing the method.
+
+One-word child pipeline: dropping multi-candidate generation and requesting one
+word per child creates a clean one-to-one pipeline for successful children:
+child -> valid `GUESS` -> `PLACEMENT` -> one archive outcome. In the first test
+trace this produced 841 successful children, 841 valid guesses, 841 placements,
+and 841 archive events. The same design makes generative exhaustion visible as a
+collapse in children/gen: already-seen proposals are dropped in `_guess_first_valid`
+before archive competition, so they reduce realized children rather than adding
+duplicate archive contests.
+
+Anchor recalibration: the specificity axis appears miscalibrated for the first
+observed run. Six cells were empty and four of those were in the top specificity
+row; no placement ever landed in any of the empty cells. Keep two explanations
+separate: some sub-grid coverage may be structural for one target because useful
+words occupy a limited behavioral region, while the top specificity row may also
+be tunably too extreme because `northern cardinal` was not reached by
+solver-generated words. A future recalibration should use the empirical
+distribution of solver-generated words without assuming that all empty cells are
+failures.

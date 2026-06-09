@@ -8,6 +8,173 @@ belongs in `docs/design_decisions.md`.
 Entries are in reverse chronological order. Claims are phrased according to the
 current evidence level; unresolved or incomplete results are marked explicitly.
 
+## 2026-06-08 — Pooled MAP-Elites Sigma-Fitness Coupling Favors Small Mutation
+
+Evidence source:
+[`scripts/measure_sigma_fitness_coupling.py`](../scripts/measure_sigma_fitness_coupling.py)
+over all MAP-Elites traces in [`traces/`](../traces/) (filtered by
+`AXIS_DEFINITION`). Fresh verification on 2026-06-08 pooled 21 runs and 10,581
+linked mutation children; crossover children were excluded because they do not
+sample a single operator. Reproducer:
+`python scripts/measure_sigma_fitness_coupling.py --report-json _sigma_fitness_coupling_report.json`.
+
+Finding A: a clean operator-to-fitness gradient exists and favors small
+mutation. `REPLACE` rate, the genuine per-cell fitness win, falls from
+`s_mutation` to `l_mutation`: `s=321/2274 (14.1%)`,
+`m=236/2574 (9.2%)`, `ml=221/2388 (9.3%)`, and
+`l=160/3345 (4.8%)`. `PLACE` rates also fall rather than favoring large
+mutation: `s=60/2274 (2.6%)`, `m=53/2574 (2.1%)`,
+`ml=48/2388 (2.0%)`, and `l=32/3345 (1.0%)`. The
+fitness-change statistic `delta = log(parent_rank) - log(child_rank)` shows the
+same ordering: median delta was `s=-1.34`, `m=-2.07`, `ml=-1.70`, and
+`l=-2.69`; `s_mutation` was least harmful (23% improved, 4% jackpots at
+`delta >= ln(10)`), while `l_mutation` was worst (13% improved, 56% at least
+10x worse than the parent). The ordering appears in both early/growth and late
+phases, and survives parent-rank tercile control: in the low parent-rank tercile
+median delta was `s=-3.90` versus `l=-5.38`; in the high tercile it was
+`s=-0.28` versus `l=-0.61`.
+
+Status: Pooled batch-level evidence. The comparison is reasonably powered for a
+trace-level diagnostic (160-321 `REPLACE` events per operator), and it survives
+phase and parent-rank stratification. It is not yet a causal intervention.
+
+Finding B: the single-run `sigma_l ~= 0.45` archive elevation does not replicate
+as a pooled final-archive elevation. Across the same 21 MAP-Elites traces, mean
+final archive-incumbent sigma averaged per run was
+`[s=0.271, m=0.234, ml=0.232, l=0.263]` (389 final incumbents weighted directly:
+`[s=0.271, m=0.230, ml=0.237, l=0.263]`). Thus the earlier
+`superficial` seed-4 final archive mean
+`[s=0.213, m=0.157, ml=0.182, l=0.447]` remains a single-run elevation, not a
+pooled MAP-Elites pattern. However, the pooled trace still sampled
+`l_mutation` most often (3,345 linked mutation children) despite `l_mutation`
+having the lowest `PLACE` and `REPLACE` rates and the worst median delta. This
+shows pooled effort allocation did not track the per-attempt fitness signal, but
+the stronger claim that final archive sigma is broadly over-weighting
+`l_mutation` is not supported by the current pooled final snapshots.
+
+Status: Mixed evidence. The operator-fitness gradient and operator usage are
+pooled; the large `sigma_l` archive elevation is single-run only. Any causal
+claim that self-adaptation misallocates effort requires a frozen-sigma or
+random-sigma control.
+
+Finding C: the self-adaptive inheritance rule structurally decouples operator
+credit from the operator that fired. A mutation child samples an operator from
+the parent's sigma, but the child's sigma is drawn from
+`Dirichlet(alpha * parent_sigma)` with the configured floor; it depends on the
+parent's sigma and not on whether `s_mutation`, `m_mutation`, `ml_mutation`, or
+`l_mutation` produced the word. Therefore a win produced by `s_mutation` still
+carries the parent's sigma into the archive. Selection credits ancestry, not the
+operator responsible for the observed improvement. This explains why a clean
+operator-fitness gradient cannot directly push sigma toward `sigma_s`.
+
+Status: Structural/mechanistic code fact, corroborated by the pooled gradient
+but not itself a performance claim. It motivates testing adaptive operator
+selection (AOS), where rewards are assigned to the operator that fired.
+
+Open question: the origin of the single-run `sigma_l` elevation is unresolved.
+Finding C explains why an existing sigma bias may not be corrected by selection,
+but not what raised `sigma_l` from the uniform baseline in that run. Candidate
+origins include founder/reachability effects during archive growth,
+floor-renormalization from `SIGMA_FLOOR=0.02` breaking drift symmetry, or
+transient early selection. The pooled `PLACE` counts complicate a simple
+"large jumps colonize distant cells" explanation because small mutations placed
+more empty cells (`s=60`) than large mutations (`l=32`). Resolving this needs
+frozen-sigma and random-sigma controls plus sigma-over-generation traces: if
+random sigma also drifts toward `sigma_l`, floor or sampling asymmetry is
+implicated; if it stays uniform, selection or founder effects are more likely.
+
+## 2026-06-06 — First MAP-Elites `superficial` Run Suggests Generation-Layer Exhaustion
+
+Evidence source for all observations in this section:
+[`traces/ea_llm_map_elites_local_superficial_20260606_015531.json`](../traces/ea_llm_map_elites_local_superficial_20260606_015531.json).
+Experiment-log context:
+[`2026-06-06 MAP-Elites run`](experiment_log.md#2026-06-06--superficial-seed-4-qwen3-14b).
+
+Evidence quality: single-run observation (`superficial`, seed 4, Ollama
+`qwen3:14b`, MiniLM local-game backend). Treat every item below as trace-level
+diagnosis, not a general performance claim.
+
+Finding 1: generation-layer diversity, not selection-layer diversity, appears
+to be the binding constraint in this run. MAP-Elites preserved archive diversity
+to 19/25 occupied cells, but successful child creation collapsed from 18.15
+children/gen in generations 1-20 to 7.20 children/gen in generations 41-70
+against a 20-child/generation budget. In generations 50-70, 287/420 attempted
+mutation+crossover children (68.33%) produced no child. Because skipped
+already-seen proposals are not logged, this duplicate-proposal rate is inferred
+from the budget gap rather than directly observed. The exclusion list kept all
+841 valid `GUESS` words distinct; the generator increasingly proposed words that
+were already seen and were dropped before archive competition.
+
+Status: Single-run observation. Upgrade path: replicate across multiple seeds
+and multiple targets to test whether late duplicate-proposal collapse is general
+or target/run specific.
+
+Finding 2: diversity preservation did not translate into solving in this run,
+and uniform archive sampling may dilute endgame refinement. The run reached rank
+5 (`thin`) at generation 37 and then failed to convert rank 5 to rank 1 by the
+70-generation cap, leaving 33 generations without a best-rank improvement.
+Interpretation: although `s_mutation` can perform local refinement, uniform
+parent sampling over 19 occupied cells gives the best cell only about 1/19 of
+mutation attention, so the method does not concentrate search pressure on the
+near-solved cell.
+
+Status: Mechanistic interpretation from a single run. The dilution mechanism is
+not directly measured by the trace; it should be treated as an explanatory
+hypothesis pending parent-sampling and focused-refinement comparisons.
+
+Finding 3: the behavior space was only partly covered, and the empty cells
+reflect both possible structural and tunable causes. Final occupancy was 19/25;
+empty cells were `(0,4)`, `(1,4)`, `(2,0)`, `(2,4)`, `(3,4)`, `(4,4)`. None of
+those six cells received a `PLACEMENT` event. Four are in the top specificity
+row, suggesting the current specificity scale is difficult for solver-generated
+words to reach. Two causes should be kept distinct: (a) structurally, useful
+words for one target may occupy only a sub-region of the behavior space; (b)
+tunably, the specificity axis may be miscalibrated because the extreme anchor
+`northern cardinal` was effectively unreachable in this run.
+
+Status: Single-run observation. Upgrade path: compare cell coverage across
+targets and recalibrated specificity anchors.
+
+Finding 4: final archive incumbents over-represented the large-mutation
+operator. Mean final incumbent sigma across 19 occupied cells was
+`[s=0.213, m=0.157, ml=0.182, l=0.447]`, compared with a uniform baseline of
+0.25 per component. Later pooled analysis did not reproduce this as a broad
+final-archive pattern (21-run mean `[s=0.271, m=0.234, ml=0.232, l=0.263]`), so
+this should be treated as a single-run sigma anomaly rather than validation of a
+selection-layer hypothesis.
+
+Status: Single-run, suggestive, and confounded. Important confound: cells far
+from a lineage's origin are partly reachable by construction through larger
+jumps, so high-`sigma_l` incumbents may be an artifact of how cells get filled,
+not proof that archive selection adaptively favors useful large jumps. Upgrade
+path: frozen-sigma or random-sigma controls, plus multiple seeds, to separate
+selection effects from archive-geometry artifacts. Do not treat this run as
+validation of the selection-layer hypothesis.
+
+Finding 5: the winning lineage's sigma drifted toward large mutation and away
+from medium mutation, mirroring the archive mean. The lineage from the root to
+the best hypothesis (`thin`, rank 5) had depth 7. Root sigma was uniform
+`[0.25, 0.25, 0.25, 0.25]`; the best hypothesis sigma was
+`[s=0.245, m=0.104, ml=0.266, l=0.385]`.
+
+Status: Single-run, post-hoc, uncertain. The magnitude is within the expected
+per-generation drift band for the current concentration setting (`alpha=50`),
+so it cannot be separated from drift without a control. This should be read as
+supporting context for Finding 4, not an independent validation.
+
+Finding 6: LLM placement was anchor-biased but still substantially continuous,
+with a heavy pile-up at low specificity. Of 841 placements, 406 (48.3%) had
+concreteness exactly on an anchor value and 452 (53.7%) had specificity exactly
+on an anchor value. Both coordinates were anchor-valued for 311 placements
+(37.0%); at least one coordinate was anchor-valued for 547 placements (65.0%),
+leaving 294 placements (35.0%) strictly between anchors on both axes.
+Specificity value 0.25 absorbed 357/841 placements (42.4%), while concreteness
+peaked at non-anchor value 0.6 with 172 placements.
+
+Status: Single-run observation. This may be more likely to generalize as a
+property of the LLM placement prompt than the solver outcome itself, but it
+still needs cross-run and cross-target checks before being stated broadly.
+
 ## 2026-05-26 — Self-Adaptive Sigma Telemetry Shows Trace-Level Adaptation Signals
 
 Finding: sigma drifts away from uniform during self-adaptive runs.
