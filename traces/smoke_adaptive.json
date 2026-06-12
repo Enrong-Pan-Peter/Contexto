@@ -1,0 +1,83 @@
+{
+  "metadata": {
+    "created_at": "2026-06-09T23:58:48",
+    "solver": "llm",
+    "method": "ea_llm_map_elites",
+    "mode": "aligned",
+    "targets": [
+      "superficial"
+    ],
+    "runs_per_target": 1,
+    "game_embedding_path": "data/embeddings/all-MiniLM-L6-v2.npz",
+    "solver_embedding_path": "data/embeddings/all-MiniLM-L6-v2.npz",
+    "max_generations": 10,
+    "llm_provider": "ollama",
+    "llm_model": "qwen3:14b",
+    "random_seed": 1,
+    "enable_pivot": false,
+    "initial_categories": 15,
+    "max_active_hypotheses": null,
+    "self_adaptive_initial_categories": null,
+    "self_adaptive_mu": null,
+    "self_adaptive_concentration": null,
+    "self_adaptive_sigma_floor": null,
+    "mapelites_grid_resolution": 5,
+    "mapelites_mutations_per_gen": 15,
+    "mapelites_crossovers_per_gen": 5,
+    "mapelites_initial_categories": 15,
+    "mapelites_concentration": 50.0,
+    "mapelites_sigma_floor": 0.02,
+    "mapelites_sigma_mode": "adaptive",
+    "mapelites_frozen_sigma": [
+      0.4,
+      0.3,
+      0.2,
+      0.1
+    ],
+    "mapelites_ranked_context_k": 20,
+    "ea_llm_pivot_stall_no_improvement_generations": null,
+    "ea_llm_pivot_stall_close_rank_threshold": null,
+    "ea_llm_pivot_stall_close_generations_limit": null,
+    "ea_llm_pivot_max_attempts_per_run": null,
+    "ea_llm_pivot_candidate_words_per_operator": null,
+    "ea_llm_pivot_resolution_window": null
+  },
+  "aggregate": {
+    "total_runs": 1,
+    "solved_runs": 0,
+    "solve_rate": 0.0,
+    "average_guesses_solved": null,
+    "average_best_rank": 201.0,
+    "average_generations": 10.0
+  },
+  "runs": [
+    {
+      "solver": "llm",
+      "method": "ea_llm_map_elites",
+      "mode": "aligned",
+      "target": "superficial",
+      "run_index": 0,
+      "solved": false,
+      "answer": null,
+      "best_word": "sleek",
+      "best_rank": 201,
+      "total_guesses": 194,
+      "generations": 10,
+      "trace_path": "traces\\ea_llm_map_elites_aligned_superficial_run1_20260609_235848.json",
+      "archive_occupancy": 15,
+      "placement_cache_hit_rate": 0.0,
+      "mapelites_sigma_mode": "adaptive",
+      "mapelites_ranked_context_k": 20,
+      "final_archive_sigma_s": 0.24831455166832542,
+      "final_archive_sigma_m": 0.24773683717792136,
+      "final_archive_sigma_ml": 0.16886217777014983,
+      "final_archive_sigma_l": 0.3350864333836034,
+      "error": null,
+      "llm_provider": "ollama",
+      "llm_model": "qwen3:14b",
+      "game_embedding_path": "data/embeddings/all-MiniLM-L6-v2.npz",
+      "solver_embedding_path": "data/embeddings/all-MiniLM-L6-v2.npz",
+      "alignment": "aligned"
+    }
+  ]
+}

@@ -18,7 +18,15 @@ from pathlib import Path
 from typing import Any
 
 from ..hypothesis import Hypothesis
-from ..operators import OPERATOR_PROMPTS, assert_prompt_has_no_sigma_leak, perturb_sigma, sample_operator
+from ..operators import (
+    N_OPERATORS,
+    OPERATOR_PROMPTS,
+    assert_prompt_has_no_sigma_leak,
+    initial_sigma,
+    perturb_sigma,
+    sample_operator,
+    validate_sigma,
+)
 from .ea_core import _clean_word, _words_from_category
 from .ea_llm_self_adaptive import EALLMSelfAdaptiveConfig, EALLMSelfAdaptiveMethod
 
@@ -31,6 +39,9 @@ class EALLMMapElitesConfig(EALLMSelfAdaptiveConfig):
     placement_cache_dir: str = "data/placement_cache"
     anchors_concreteness: dict[float, str] = field(default_factory=dict)
     anchors_specificity: dict[float, str] = field(default_factory=dict)
+    sigma_mode: str = "adaptive"
+    frozen_sigma: tuple[float, ...] = (0.4, 0.3, 0.2, 0.1)
+    ranked_context_k: int = 0
 
 
 class EALLMMapElitesMethod(EALLMSelfAdaptiveMethod):
@@ -44,6 +55,7 @@ class EALLMMapElitesMethod(EALLMSelfAdaptiveMethod):
         self._placement_cache: dict[str, list[float]] = {}
         self._placement_lookups = 0
         self._placement_hits = 0
+        self._word_ranks: dict[str, int] = {}
         self._anchors_hash = self._compute_anchors_hash()
         self._cache_path = self._placement_cache_path()
         self._load_placement_cache()
@@ -72,7 +84,9 @@ class EALLMMapElitesMethod(EALLMSelfAdaptiveMethod):
         for category in categories:
             if not isinstance(category, dict):
                 continue
-            child = self._hypothesis_from_category(category, origin="init")
+            child = self._hypothesis_from_category(
+                category, origin="init", sigma=self._mode_sigma(None)
+            )
             word = self._guess_first_valid(_words_from_category(category), child)
             if word is None:
                 continue
@@ -134,6 +148,32 @@ class EALLMMapElitesMethod(EALLMSelfAdaptiveMethod):
 
     # --- child production --------------------------------------------------------
 
+    def _mode_sigma(self, base_sigma: Any | None):
+        """Return a child sigma per the configured sigma mode.
+
+        ``base_sigma`` is the parent sigma (mutation) or the blended parent sigma
+        (crossover), or ``None`` for initial hypotheses. Only ``adaptive`` uses it;
+        the frozen and random modes ignore it so the operator-firing distribution
+        is held fixed or randomized. Applied at every creation site (init included)
+        so frozen/random arms do not start generation 0 from a uniform parent.
+        """
+        mode = self.config.sigma_mode
+        if mode == "frozen_uniform":
+            return initial_sigma()
+        if mode == "frozen_fixed":
+            return validate_sigma(self.config.frozen_sigma)
+        if mode == "random":
+            return self.rng.dirichlet([1.0] * N_OPERATORS)
+        # adaptive (default, current behavior)
+        if base_sigma is None:
+            return initial_sigma()
+        return perturb_sigma(
+            base_sigma,
+            concentration=self.config.concentration,
+            sigma_floor=self.config.sigma_floor,
+            rng=self.rng,
+        )
+
     def _mutation_child(self, parent: Hypothesis) -> Hypothesis | None:
         operator = sample_operator(parent.sigma, self.rng)
         prompt_template = OPERATOR_PROMPTS[operator]
@@ -145,18 +185,14 @@ class EALLMMapElitesMethod(EALLMSelfAdaptiveMethod):
             self.invalid_guesses,
             n=1,
             active_categories=[hypothesis.category_name for hypothesis in self.archive.values()],
+            ranked_context=self._render_ranked_context(),
         )
         assert_prompt_has_no_sigma_leak(prompt, parent_sigma, operator)
         category = self.llm_client.complete_json_prompt(prompt)
         if not isinstance(category, dict):
             return None
 
-        child_sigma = perturb_sigma(
-            parent_sigma,
-            concentration=self.config.concentration,
-            sigma_floor=self.config.sigma_floor,
-            rng=self.rng,
-        )
+        child_sigma = self._mode_sigma(parent_sigma)
         child = self._hypothesis_from_category(
             category,
             parent=parent.category_name,
@@ -193,12 +229,7 @@ class EALLMMapElitesMethod(EALLMSelfAdaptiveMethod):
         if not isinstance(category, dict):
             return None
         blended_sigma = 0.5 * (parent_a.sigma + parent_b.sigma)
-        child_sigma = perturb_sigma(
-            blended_sigma,
-            concentration=self.config.concentration,
-            sigma_floor=self.config.sigma_floor,
-            rng=self.rng,
-        )
+        child_sigma = self._mode_sigma(blended_sigma)
         child = self._hypothesis_from_category(
             category,
             parent=f"{parent_a.category_name}+{parent_b.category_name}",
@@ -233,10 +264,27 @@ class EALLMMapElitesMethod(EALLMSelfAdaptiveMethod):
                 continue
             rank = self._guess_and_update(cleaned_word, hypothesis)
             if self.game.is_solved():
+                self._word_ranks[cleaned_word] = rank
                 return cleaned_word
             if rank != -1:
+                self._word_ranks[cleaned_word] = rank
                 return cleaned_word
         return None
+
+    def _render_ranked_context(self) -> str:
+        """Render the global top-K best-ranked guesses for mutation prompts.
+
+        These are game ranks (feedback), not sigma, so the leakage invariant still
+        holds. Mirrors the ``{all_guesses}`` slot: the guessed vocabulary is
+        injected without reserved-substring filtering. Returns an empty string
+        (byte-identical prompt) when the feature is off.
+        """
+        k = self.config.ranked_context_k
+        if k <= 0 or not self._word_ranks:
+            return ""
+        best = sorted(self._word_ranks.items(), key=lambda item: item[1])[:k]
+        rendered = ", ".join(f"{word} ({rank})" for word, rank in best)
+        return f"\nClosest words found so far: {rendered}"
 
     # --- placement and competition ----------------------------------------------
 

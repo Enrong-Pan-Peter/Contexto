@@ -102,18 +102,47 @@ MAPELITES_PLACEMENT_CACHE_DIR = _env_value("MAPELITES_PLACEMENT_CACHE_DIR", "dat
 # abstract/conceptual. Specificity: 0 = most general, 1 = most specific.
 MAPELITES_ANCHORS_CONCRETENESS = {
     0.0: "rock",
-    0.25: "green",
-    0.5: "hardness",
-    0.75: "feeling",
-    1.0: "beautiful",
+    0.25: "rain",
+    0.5: "music",
+    0.75: "fear",
+    1.0: "freedom",
 }
 MAPELITES_ANCHORS_SPECIFICITY = {
     0.0: "thing",
     0.25: "animal",
     0.5: "bird",
     0.75: "songbird",
-    1.0: "northern cardinal",
+    1.0: "sparrow",
 }
+
+# Sigma-mode control for the MAP-Elites operator probabilities. ``adaptive`` is
+# the current behavior (Dirichlet perturbation of the parent sigma). The frozen
+# and random modes ignore the parent sigma so the operator-firing distribution is
+# held fixed or randomized, used by the sigma-control experiment.
+MAPELITES_SIGMA_MODE = _env_value("MAPELITES_SIGMA_MODE", "adaptive")
+
+
+def _parse_sigma_vector(name: str, default: tuple[float, float, float, float]) -> tuple[float, ...]:
+    raw = os.getenv(name)
+    if raw is None or raw.strip() == "":
+        return default
+    parts = [piece for piece in raw.replace(",", " ").split() if piece]
+    try:
+        values = tuple(float(piece) for piece in parts)
+    except ValueError:
+        return default
+    if len(values) != 4:
+        return default
+    return values
+
+
+# Fixed operator profile used only when MAPELITES_SIGMA_MODE == "frozen_fixed".
+# Order is [s, m, ml, l]; default favors small mutation.
+MAPELITES_FROZEN_SIGMA = _parse_sigma_vector("MAPELITES_FROZEN_SIGMA", (0.4, 0.3, 0.2, 0.1))
+
+# Number of best-ranked guessed words injected into mutation prompts as context.
+# 0 disables the feature (current behavior); 20 enables it.
+MAPELITES_RANKED_CONTEXT_K = int(os.getenv("MAPELITES_RANKED_CONTEXT_K", "0"))
 
 # Local game
 DEFAULT_TARGET = os.getenv("DEFAULT_TARGET", "ivory")

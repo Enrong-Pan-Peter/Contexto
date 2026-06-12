@@ -65,7 +65,7 @@ S_MUTATION_PROMPT = """Return only JSON, no markdown or explanation.
 The current hypothesis is "{name}".
 Description: {description}
 Results so far in this hypothesis: {words_tried}
-Best word so far: "{best_word}" with rank {best_rank}.
+Best word so far: "{best_word}" with rank {best_rank}.{ranked_context}
 
 Make a SMALL mutation: produce a child hypothesis that stays in the same
 conceptual neighborhood as "{name}" but narrows or refines it. The new starter
@@ -89,7 +89,7 @@ M_MUTATION_PROMPT = """Return only JSON, no markdown or explanation.
 The current hypothesis is "{name}".
 Description: {description}
 Results so far in this hypothesis: {words_tried}
-Best word so far: "{best_word}" with rank {best_rank}.
+Best word so far: "{best_word}" with rank {best_rank}.{ranked_context}
 
 Make a MEDIUM mutation: produce a child hypothesis that reinterprets why
 "{best_word}" might have scored well, or shifts to a related sense, lexical
@@ -115,7 +115,7 @@ ML_MUTATION_PROMPT = """Return only JSON, no markdown or explanation.
 The current hypothesis is "{name}".
 Description: {description}
 Results so far in this hypothesis: {words_tried}
-Best word so far: "{best_word}" with rank {best_rank}.
+Best word so far: "{best_word}" with rank {best_rank}.{ranked_context}
 
 Make a MEDIUM-LARGE mutation: produce a child hypothesis in an ADJACENT but
 distinct category that could still plausibly contain the hidden target given
@@ -139,7 +139,7 @@ JSON schema:
 L_MUTATION_PROMPT = """Return only JSON, no markdown or explanation.
 The current hypothesis is "{name}".
 Description: {description}
-Best word so far: "{best_word}" with rank {best_rank}.
+Best word so far: "{best_word}" with rank {best_rank}.{ranked_context}
 Other active categories already being explored: {active_categories}
 
 Make a LARGE mutation: produce a child hypothesis in a broad, semantically
@@ -351,6 +351,7 @@ class LLMClient:
         invalid_guesses: set[str] | None = None,
         n: int = 3,
         active_categories: list[str] | None = None,
+        ranked_context: str = "",
     ) -> str:
         best_word, best_rank = self._global_best(hypothesis.words_tried)
         prompt_values = {
@@ -365,6 +366,8 @@ class LLMClient:
         }
         if "{active_categories}" in prompt_template:
             prompt_values["active_categories"] = json.dumps(active_categories or [])
+        if "{ranked_context}" in prompt_template:
+            prompt_values["ranked_context"] = ranked_context
         return prompt_template.format(**prompt_values)
 
     def complete_json_prompt(self, prompt: str) -> Any:

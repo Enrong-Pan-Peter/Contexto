@@ -278,6 +278,14 @@ Subtleties:
   falling back to a cloud provider.
 - Provider errors are raised by `requests` after response status checks unless
   they are converted into clearer local Ollama errors first.
+- The four operator mutation templates carry a shared `{ranked_context}` slot
+  (right after the best-word/rank line). `build_operator_mutation_prompt` only
+  fills it when the template contains the slot, defaulting to the empty string,
+  so self-adaptive prompts stay byte-identical. Only MAP-Elites passes a
+  non-empty `ranked_context` (top-K best-ranked guessed words). Like the
+  `{all_guesses}` slot, the injected vocabulary is not reserved-substring
+  filtered; the values are game ranks, never sigma, so the leakage invariant
+  asserted by `assert_prompt_has_no_sigma_leak` holds.
 
 ### `contexto_solver.hypothesis.Hypothesis`
 
@@ -476,8 +484,31 @@ Trace events emitted by this method (in addition to inherited ones):
 Config (namespaced `MAPELITES_*`): `MAPELITES_GRID_RESOLUTION`,
 `MAPELITES_MUTATIONS_PER_GEN`, `MAPELITES_CROSSOVERS_PER_GEN`,
 `MAPELITES_INITIAL_CATEGORIES`, `MAPELITES_PLACEMENT_CACHE_DIR`,
-`MAPELITES_ANCHORS_CONCRETENESS`, `MAPELITES_ANCHORS_SPECIFICITY`. Sigma
-behavior reuses the `SELF_ADAPTIVE_*` concentration and floor values.
+`MAPELITES_ANCHORS_CONCRETENESS`, `MAPELITES_ANCHORS_SPECIFICITY`,
+`MAPELITES_SIGMA_MODE`, `MAPELITES_FROZEN_SIGMA`, `MAPELITES_RANKED_CONTEXT_K`.
+Sigma behavior reuses the `SELF_ADAPTIVE_*` concentration and floor values.
+
+Sigma-mode control (`MAPELITES_SIGMA_MODE`, env-overridable): selects how each
+child's operator-probability vector (sigma) is assigned. Applied at every
+creation site (`initialize()`, `_mutation_child`, `_crossover_child`) via the
+`_mode_sigma` helper, so frozen/random arms never start generation 0 from an
+adaptive parent. `sample_operator(parent.sigma, rng)` is unchanged, so the
+operator that actually fires for a child still follows that child's parent
+sigma; the mode only controls what sigma children inherit.
+- `adaptive` (default, current behavior): Dirichlet perturbation of the parent
+  (or blended) sigma using the `SELF_ADAPTIVE_*` concentration and floor.
+- `frozen_uniform`: every child sigma is the uniform prior (`initial_sigma()`).
+- `frozen_fixed`: every child sigma is `MAPELITES_FROZEN_SIGMA` (order
+  `[s, m, ml, l]`, default `[0.4, 0.3, 0.2, 0.1]`, validated to a simplex).
+- `random`: every child sigma is a fresh `Dirichlet(1)` draw.
+
+Ranked context (`MAPELITES_RANKED_CONTEXT_K`, default `0` = off): when `> 0`,
+mutation prompts gain a line listing the global top-K best-ranked guessed words
+(`Closest words found so far: word (rank), ...`). This is a shared
+`{ranked_context}` prompt slot (see `LLMClient`); only MAP-Elites populates it,
+via `_render_ranked_context()` over a `_word_ranks` tracker maintained in
+`_guess_first_valid`. These are game ranks (feedback), not sigma, so the
+sigma-leakage invariant is preserved.
 
 ### `contexto_solver.logger.Logger`
 
@@ -530,6 +561,12 @@ Main interactions:
 - Constructs the selected method similarly to `main`.
 - Records LLM provider/model in experiment metadata, per-run rows, CSV output,
   and each run's `RUN_CONFIG` trace event for LLM experiments.
+- For `ea_llm_map_elites`, experiment metadata and `RUN_CONFIG` also record
+  `mapelites_sigma_mode`, `mapelites_frozen_sigma`, and
+  `mapelites_ranked_context_k`. Per-run rows and the CSV add
+  `mapelites_sigma_mode`, `mapelites_ranked_context_k`, and
+  `final_archive_sigma_{s,m,ml,l}` (mean per-operator sigma over the final
+  archive incumbents, or `None` for non-MAP-Elites or failed runs).
 
 Subtleties:
 - Real API batch experiments are intentionally not handled here.
@@ -537,6 +574,30 @@ Subtleties:
 - `random_seed` is offset by run index for repeated embedding experiments.
 - Summary files are rewritten after each completed run so interrupted batches
   can be resumed without losing completed results.
+
+### `scripts/run_sigma_control.py`
+
+Batch orchestrator for the MAP-Elites sigma-mode control.
+
+Main function:
+- For each selected sigma mode (arm), launches one
+  `python -m contexto_solver.experiment --method ea_llm_map_elites` subprocess
+  with `MAPELITES_SIGMA_MODE` (and a constant `MAPELITES_RANKED_CONTEXT_K`) set
+  in the child environment, writing `traces/sigma_control_<mode>.json`.
+- After each arm succeeds, runs `python -m contexto_solver.plot_map_elites
+  --trace ...` for every trace listed in that arm's summary.
+
+Main interactions:
+- Reuses the existing `experiment` and `plot_map_elites` entrypoints rather than
+  reimplementing solving or plotting; it only sets per-arm environment overrides.
+- Holds anchors, ranked-context K, targets, seeds, and generations constant
+  across arms so the only varying factor is the sigma mode.
+
+Subtleties:
+- `--dry-run` prints the per-arm environment overrides and commands without
+  executing, for inspection on an HPC node before committing compute.
+- A failed experiment or plot for one arm/trace is reported and skipped; it does
+  not abort the remaining arms.
 
 ### `contexto_solver.plot_trajectory`
 

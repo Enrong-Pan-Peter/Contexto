@@ -343,7 +343,7 @@ LLM-driven placement over embedding centroids: placement uses a single LLM call
 with anchored scales rather than embedding-centroid math. This keeps the method
 backend-agnostic and compatible with the real Contexto API, where solver-side
 embeddings of the target neighborhood are not available. Anchored scales (for
-example `0.00: rock ... 1.00: beautiful` for concreteness) give the LLM a stable
+example `0.00: rock ... 1.00: freedom` for concreteness) give the LLM a stable
 frame of reference and make placements reproducible; anchors live in
 `MAPELITES_ANCHORS_*` config and are hashed into the placement cache key so any
 anchor change invalidates stale cache entries.
@@ -402,3 +402,47 @@ be tunably too extreme because `northern cardinal` was not reached by
 solver-generated words. A future recalibration should use the empirical
 distribution of solver-generated words without assuming that all empty cells are
 failures.
+
+## MAP-Elites Sigma-Mode Control, Ranked Context, and Anchor Update
+
+Anchor update: the default `MAPELITES_ANCHORS_CONCRETENESS` scale moved to
+`rock, rain, music, fear, freedom` and `MAPELITES_ANCHORS_SPECIFICITY` to
+`thing, animal, bird, songbird, sparrow`. The concreteness poles now use words
+that read more cleanly as "physical object" through "pure abstraction", and the
+specificity ceiling dropped from `northern cardinal` (a two-word proper-ish name
+never reached by solver-generated words in the first run) to `sparrow`, a single
+common word. Because anchors are hashed into the placement cache key, this change
+automatically invalidates stale cache entries rather than mixing scales.
+
+Sigma-mode flag rationale: the first runs could not separate "self-adaptive sigma
+helps" from "the EA structure helps", because operator probabilities always
+adapted. `MAPELITES_SIGMA_MODE` makes the sigma mechanism a controllable factor
+without forking the method. The flag is read from config/env so a batch can sweep
+arms by setting one environment variable per subprocess, leaving the rest of the
+configuration identical.
+
+Control design (four arms): `adaptive` is the current behavior; `frozen_uniform`
+pins every child to the uniform operator prior; `frozen_fixed` pins every child
+to a fixed non-uniform profile; `random` redraws operator probabilities from
+`Dirichlet(1)` for every child. Together they bracket the adaptive mechanism
+between "no adaptation, uniform", "no adaptation, deliberately skewed", and
+"maximally noisy", so a difference in outcomes is attributable to how sigma is
+assigned rather than to any other change. The mode is applied at all three
+hypothesis-creation sites so an arm is internally consistent from generation 0;
+`sample_operator(parent.sigma)` is intentionally left untouched, so the operator
+that fires still follows the child's inherited sigma under every mode.
+
+`frozen_fixed` profile choice: the default `MAPELITES_FROZEN_SIGMA` is
+`[0.4, 0.3, 0.2, 0.1]` over `[s, m, ml, l]`, a monotone preference for smaller
+mutations. This is a deliberate, easily-described skew (favor local refinement,
+still allow occasional large jumps) that contrasts cleanly with the uniform arm,
+not a tuned optimum. It is validated to a simplex on use, so a malformed override
+fails fast rather than silently renormalizing.
+
+Ranked-context design: `MAPELITES_RANKED_CONTEXT_K` (default `0`, off) optionally
+injects the global top-K best-ranked guessed words into mutation prompts as a
+shared `{ranked_context}` slot. It is shared so self-adaptive prompts remain
+byte-identical (empty default), and populated only by MAP-Elites. The injected
+content is game-rank feedback, not sigma, so it does not weaken the sigma-leakage
+invariant; consistent with the existing `{all_guesses}` slot, the words are not
+reserved-substring filtered.

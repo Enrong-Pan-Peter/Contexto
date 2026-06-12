@@ -91,6 +91,9 @@ def main() -> None:
             "mapelites_initial_categories": config.MAPELITES_INITIAL_CATEGORIES if args.method == "ea_llm_map_elites" else None,
             "mapelites_concentration": config.SELF_ADAPTIVE_CONCENTRATION if args.method == "ea_llm_map_elites" else None,
             "mapelites_sigma_floor": config.SELF_ADAPTIVE_SIGMA_FLOOR if args.method == "ea_llm_map_elites" else None,
+            "mapelites_sigma_mode": config.MAPELITES_SIGMA_MODE if args.method == "ea_llm_map_elites" else None,
+            "mapelites_frozen_sigma": list(config.MAPELITES_FROZEN_SIGMA) if args.method == "ea_llm_map_elites" else None,
+            "mapelites_ranked_context_k": config.MAPELITES_RANKED_CONTEXT_K if args.method == "ea_llm_map_elites" else None,
             "enable_pivot": _enable_pivot_metadata(args.method),
             "ea_llm_pivot_stall_no_improvement_generations": (
                 config.EA_LLM_PIVOT_STALL_NO_IMPROVEMENT_GENERATIONS if args.method == "ea_llm_pivot" else None
@@ -254,6 +257,9 @@ def _build_llm_method(method: str, game, llm_client: LLMClient, logger: Logger, 
                 placement_cache_dir=config.MAPELITES_PLACEMENT_CACHE_DIR,
                 anchors_concreteness=config.MAPELITES_ANCHORS_CONCRETENESS,
                 anchors_specificity=config.MAPELITES_ANCHORS_SPECIFICITY,
+                sigma_mode=config.MAPELITES_SIGMA_MODE,
+                frozen_sigma=config.MAPELITES_FROZEN_SIGMA,
+                ranked_context_k=config.MAPELITES_RANKED_CONTEXT_K,
             ),
         )
     if method == "ea_llm_pivot":

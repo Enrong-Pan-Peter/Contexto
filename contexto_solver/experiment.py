@@ -140,6 +140,9 @@ def _write_outputs(
             "mapelites_initial_categories": config.MAPELITES_INITIAL_CATEGORIES if args.method == "ea_llm_map_elites" else None,
             "mapelites_concentration": config.SELF_ADAPTIVE_CONCENTRATION if args.method == "ea_llm_map_elites" else None,
             "mapelites_sigma_floor": config.SELF_ADAPTIVE_SIGMA_FLOOR if args.method == "ea_llm_map_elites" else None,
+            "mapelites_sigma_mode": config.MAPELITES_SIGMA_MODE if args.method == "ea_llm_map_elites" else None,
+            "mapelites_frozen_sigma": list(config.MAPELITES_FROZEN_SIGMA) if args.method == "ea_llm_map_elites" else None,
+            "mapelites_ranked_context_k": config.MAPELITES_RANKED_CONTEXT_K if args.method == "ea_llm_map_elites" else None,
             "ea_llm_pivot_stall_no_improvement_generations": (
                 config.EA_LLM_PIVOT_STALL_NO_IMPROVEMENT_GENERATIONS if args.method == "ea_llm_pivot" else None
             ),
@@ -216,6 +219,9 @@ def _run_local_target(
             "mapelites_initial_categories": config.MAPELITES_INITIAL_CATEGORIES if args.method == "ea_llm_map_elites" else None,
             "mapelites_concentration": config.SELF_ADAPTIVE_CONCENTRATION if args.method == "ea_llm_map_elites" else None,
             "mapelites_sigma_floor": config.SELF_ADAPTIVE_SIGMA_FLOOR if args.method == "ea_llm_map_elites" else None,
+            "mapelites_sigma_mode": config.MAPELITES_SIGMA_MODE if args.method == "ea_llm_map_elites" else None,
+            "mapelites_frozen_sigma": list(config.MAPELITES_FROZEN_SIGMA) if args.method == "ea_llm_map_elites" else None,
+            "mapelites_ranked_context_k": config.MAPELITES_RANKED_CONTEXT_K if args.method == "ea_llm_map_elites" else None,
             "ea_llm_pivot_stall_no_improvement_generations": (
                 config.EA_LLM_PIVOT_STALL_NO_IMPROVEMENT_GENERATIONS if args.method == "ea_llm_pivot" else None
             ),
@@ -262,6 +268,8 @@ def _run_local_target(
 
     result = solver.solve()
     archive = getattr(solver, "archive", None)
+    final_sigma = _archive_sigma_means(archive)
+    is_mapelites = args.method == "ea_llm_map_elites"
     return {
         "solver": method_family,
         "method": args.method,
@@ -277,6 +285,12 @@ def _run_local_target(
         "trace_path": result["trace_path"],
         "archive_occupancy": len(archive) if archive is not None else None,
         "placement_cache_hit_rate": getattr(solver, "placement_cache_hit_rate", None),
+        "mapelites_sigma_mode": config.MAPELITES_SIGMA_MODE if is_mapelites else None,
+        "mapelites_ranked_context_k": config.MAPELITES_RANKED_CONTEXT_K if is_mapelites else None,
+        "final_archive_sigma_s": final_sigma[0],
+        "final_archive_sigma_m": final_sigma[1],
+        "final_archive_sigma_ml": final_sigma[2],
+        "final_archive_sigma_l": final_sigma[3],
         "error": None,
         "llm_provider": llm_provider if method_family == "llm" else None,
         "llm_model": llm_model if method_family == "llm" else None,
@@ -312,6 +326,12 @@ def _failed_run_row(
         "trace_path": None,
         "archive_occupancy": None,
         "placement_cache_hit_rate": None,
+        "mapelites_sigma_mode": config.MAPELITES_SIGMA_MODE if args.method == "ea_llm_map_elites" else None,
+        "mapelites_ranked_context_k": config.MAPELITES_RANKED_CONTEXT_K if args.method == "ea_llm_map_elites" else None,
+        "final_archive_sigma_s": None,
+        "final_archive_sigma_m": None,
+        "final_archive_sigma_ml": None,
+        "final_archive_sigma_l": None,
         "error": error,
         "llm_provider": llm_provider if _method_family(args.method) == "llm" else None,
         "llm_model": llm_model if _method_family(args.method) == "llm" else None,
@@ -319,6 +339,20 @@ def _failed_run_row(
         "solver_embedding_path": solver_embedding_path,
         "alignment": alignment,
     }
+
+
+def _archive_sigma_means(archive: Any) -> list[float | None]:
+    """Mean per-operator sigma over the final archive incumbents (or Nones)."""
+    if not archive:
+        return [None, None, None, None]
+    incumbents = list(archive.values())
+    sums = [0.0, 0.0, 0.0, 0.0]
+    for hypothesis in incumbents:
+        sigma = list(hypothesis.sigma)
+        for index in range(4):
+            sums[index] += float(sigma[index])
+    count = len(incumbents)
+    return [total / count for total in sums]
 
 
 def _load_targets(args: argparse.Namespace) -> list[str]:
@@ -385,6 +419,12 @@ def _write_csv(path: Path, rows: list[dict[str, Any]]) -> None:
         "trace_path",
         "archive_occupancy",
         "placement_cache_hit_rate",
+        "mapelites_sigma_mode",
+        "mapelites_ranked_context_k",
+        "final_archive_sigma_s",
+        "final_archive_sigma_m",
+        "final_archive_sigma_ml",
+        "final_archive_sigma_l",
         "error",
         "llm_provider",
         "llm_model",
@@ -475,6 +515,9 @@ def _build_llm_method(method: str, game, llm_client: LLMClient, logger: Logger, 
                 placement_cache_dir=config.MAPELITES_PLACEMENT_CACHE_DIR,
                 anchors_concreteness=config.MAPELITES_ANCHORS_CONCRETENESS,
                 anchors_specificity=config.MAPELITES_ANCHORS_SPECIFICITY,
+                sigma_mode=config.MAPELITES_SIGMA_MODE,
+                frozen_sigma=config.MAPELITES_FROZEN_SIGMA,
+                ranked_context_k=config.MAPELITES_RANKED_CONTEXT_K,
             ),
         )
     if method == "ea_llm_pivot":
