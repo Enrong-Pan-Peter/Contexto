@@ -8,6 +8,55 @@ belongs in `docs/design_decisions.md`.
 Entries are in reverse chronological order. Claims are phrased according to the
 current evidence level; unresolved or incomplete results are marked explicitly.
 
+## 2026-06-15 — Self-Adaptive Operator-Fitness Gradient Favors Small Mutation (Partial)
+
+Evidence source:
+[`scripts/measure_self_adaptive_selection_coupling.py`](../scripts/measure_self_adaptive_selection_coupling.py)
+run over existing self-adaptive traces with output
+[`selcoupling.json`](../selcoupling.json). Experiment-log context:
+[`2026-06-15 self-adaptive coupling`](experiment_log.md#2026-06-15--self-adaptive-operator---selectionfitness-coupling).
+
+Evidence quality: batch-level pooled observational trace analysis
+(correlational). The run pooled 30 self-adaptive traces
+(`herbaceous=6`, `notorious=11`, `superficial=13`) and 6,186 mutation children.
+Validity was checked against raw traces: the sanity gate passed, per-operator
+sentinel fractions were small minorities (`s=0.0904899135446686`,
+`m=0.08718980549966465`, `ml=0.06960716747070986`,
+`l=0.09874088800530152`), sampled child ranks came from real `GUESS` events, and
+survival bookkeeping was nonzero and balanced.
+
+Finding: the productive-operator gradient favoring small mutation replicates in
+plain self-adaptive under the logged top-`max_active`+elite selection step. Pooled
+survival rate fell from `s_mutation` to `l_mutation`:
+`s=0.11235955056179775`, `m=0.09930715935334873`,
+`ml=0.09418282548476455`, `l=0.039301310043668124`, so `s/l ~= 2.86x`. The
+delta-fitness signal points the same way: median
+`delta = log(parent_rank) - log(child_rank)` was least negative for small
+mutation and monotonic toward large mutation,
+`s=-2.475052004290017`, `ml=-3.0013452094179742`,
+`m=-3.4997536852024735`, `l=-4.7326426852862`. Improvement rate was also
+monotonic: `s=0.14351005484460694`, `ml=0.11422845691382766`,
+`m=0.08801341156747695`, `l=0.03165584415584415`.
+
+Conclusion: the operator -> fitness gradient is general across both the
+MAP-Elites coupling result and plain self-adaptive traces; it is not
+MAP-Elites-specific. This output contains no sigma, so it does not establish any
+general claim about sigma behavior.
+
+Caveat: the survival-linkage bias diagnostic is not flat. Pooled unresolvable
+rates were `s=0.2818443804034582`, `ml=0.253618194348725`,
+`m=0.12877263581488935`, and `l=0.08946322067594434`, so survival is
+corroborating rather than the primary signal. The primary signal is
+delta-fitness, which is computed by ID/time-bounded rank linkage, has roughly
+1,000-1,200 children per operator (`s=1094`, `m=1193`, `ml=998`, `l=1232`), and
+shows a small-vs-large gap far larger than the missingness could create.
+
+Open items: first, the sigma-drift half is still open: whether sigma in these
+same self-adaptive runs drifts toward large mutation despite the gradient
+favoring small requires analyzing the sigma trajectory, not this script. Second,
+causality remains open: the frozen/random-sigma control batch is still required
+before claiming that adaptation causes misallocation.
+
 ## 2026-06-08 — Pooled MAP-Elites Sigma-Fitness Coupling Favors Small Mutation
 
 Evidence source:

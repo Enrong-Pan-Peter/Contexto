@@ -435,6 +435,75 @@ to a causal test of whether sigma adaptation misallocates effort. The origin of
 the single-run `sigma_l` elevation remains explicitly uncertain pending those
 controls.
 
+### 2026-06-15 — Sigma-Control Arm-Comparison Tooling (no batch results yet)
+
+Evidence:
+- [`scripts/compare_sigma_control_arms.py`](../scripts/compare_sigma_control_arms.py)
+- [`scripts/run_sigma_control.py`](../scripts/run_sigma_control.py) (produces the batch this consumes)
+- [`docs/architecture.md`](architecture.md#scriptscompare_sigma_control_armspy)
+- [`docs/design_decisions.md`](design_decisions.md) (arm-comparison analysis design)
+
+Milestones:
+- Added the arm-comparison analysis script ahead of the sigma-control batch
+  finishing, so the read-out is ready when results land. It groups runs by
+  `MAPELITES_SIGMA_MODE`, pairs by `(target, seed)`, and reports per-arm
+  `best_rank`, solve rate, archive occupancy, and the per-operator archive sigma
+  from the last `ARCHIVE_SNAPSHOT`, with the three highlighted contrasts
+  (`adaptive` vs `frozen_uniform`, `adaptive` vs `frozen_fixed`, `random` vs
+  `adaptive`).
+- Distinguished it from `measure_sigma_fitness_coupling.py`, which pools runs for
+  an operator-fitness gradient and does not separate the arms.
+- Verified the parser/table on existing MAP-Elites traces only (trace mode);
+  those traces predate `MAPELITES_SIGMA_MODE`, so they group as a single
+  `unknown` arm and the three contrasts correctly report their arms as absent.
+
+Research value: tooling readiness, not a result. No sigma-control batch has been
+run, so there is no arm-level evidence yet; whether the arms separate on
+`best_rank`, solve rate, or archive sigma remains open pending the batch.
+
+### 2026-06-15 — Embedding-vs-LLM Closeness Diagnostic
+
+Evidence:
+- [`scripts/compare_embedding_llm_closeness.py`](../scripts/compare_embedding_llm_closeness.py)
+- [`docs/experiment_log.md`](experiment_log.md#2026-06-15--embedding-vs-llm-closeness-diagnostic-tool--single-run-illustration)
+- [`docs/design_decisions.md`](design_decisions.md) (closeness diagnostic rationale)
+
+Milestones:
+- Added a per-target diagnostic that lists the top-N closest words by the local
+  game's embedding (`nearest_neighbors`) next to the LLM's ordered list (via the
+  public `complete_json_prompt()` path), and reports overlap, exact-position
+  matches, Spearman, embedding blind spots, and LLM-only-far words.
+- Verified it on real embeddings and the live `qwen3:14b` path; a single
+  illustrative run on `chicken` (top-8) showed 1/8 overlap and concrete blind
+  spots (see experiment log).
+
+Research value: gives a measurable lens on why LLM guesses may miss
+embedding-close words (the solver's blind spots), motivating an embedding/LLM
+closeness sweep over hard targets. This is a single-run illustration plus tooling,
+not a batch result; the blind-spot-causes-stalls explanation is an untested
+hypothesis and reflects MiniLM geometry, not real Contexto.
+
+### 2026-06-15 — Self-Adaptive Operator -> Selection/Fitness Coupling Run
+
+Evidence:
+- [`scripts/measure_self_adaptive_selection_coupling.py`](../scripts/measure_self_adaptive_selection_coupling.py)
+- [`selcoupling.json`](../selcoupling.json)
+- [`docs/experiment_log.md`](experiment_log.md#2026-06-15--self-adaptive-operator---selectionfitness-coupling)
+- [`docs/findings.md`](findings.md#2026-06-15--self-adaptive-operator-fitness-gradient-favors-small-mutation-partial)
+
+Milestones:
+- Ran the self-adaptive coupling analysis over 30 existing traces and 6,186
+  mutation children; gradient generality was confirmed as a partial result:
+  small mutation had the strongest operator -> fitness signal under the logged
+  top-`max_active`+elite selection step, while sigma-drift and any causal claim
+  remain pending.
+
+Research value: upgrades the operator-fitness gradient from MAP-Elites-specific
+evidence to a batch-level pooled observational pattern also visible in plain
+self-adaptive traces. It does not show whether sigma drifts toward large in these
+runs, and it does not replace the frozen/random-sigma control batch needed for a
+causal claim.
+
 ## Current Open Questions
 
 - Should work continue directly on pivot direction selection, given the completed

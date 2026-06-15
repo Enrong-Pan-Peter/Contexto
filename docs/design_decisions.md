@@ -446,3 +446,41 @@ byte-identical (empty default), and populated only by MAP-Elites. The injected
 content is game-rank feedback, not sigma, so it does not weaken the sigma-leakage
 invariant; consistent with the existing `{all_guesses}` slot, the words are not
 reserved-substring filtered.
+
+Arm-comparison analysis design (`scripts/compare_sigma_control_arms.py`): the
+control batch is only interpretable if the arms are contrasted on identical
+problems, so the comparison is paired by `(target, seed)` rather than aggregated
+arm-wide. Holding `(target, seed)` fixed removes target difficulty and seed luck
+as confounds, which matters because solve rate over a handful of local targets is
+otherwise dominated by which words were drawn. The script reports `best_rank`,
+solve rate, and archive occupancy per arm, plus the per-operator archive sigma.
+The sigma figure is read from the *last* `ARCHIVE_SNAPSHOT` (mean over occupied
+cells) rather than recomputed, so the analysis depends only on logged archive
+state and stays a lookup, mirroring how `plot_map_elites` reconstructs archive
+state. The three contrasts are chosen to bracket the adaptive mechanism the same
+way the arms do: `adaptive` vs `frozen_uniform` and `adaptive` vs `frozen_fixed`
+test whether adaptation beats a pinned prior, while `random` vs `adaptive` is
+framed around the per-operator sigma because random redraws `Dirichlet(1)` per
+child and should leave a flat archive sigma, whereas adaptation should leave
+operator structure if selection shapes sigma. Whether these contrasts actually
+separate the arms is an open empirical question until the batch runs; the script
+only defines how the evidence will be read.
+
+Embedding-vs-LLM closeness diagnostic (`scripts/compare_embedding_llm_closeness.py`):
+the local game scores guesses by embedding rank, but the LLM proposes guesses by
+its own notion of meaning-closeness, so a guess can only help if those two
+notions agree near the target. This diagnostic makes that agreement measurable
+per target. Two design choices matter. First, the embedding "ground truth" is the
+game's own `nearest_neighbors` ranking rather than a separate metric, so the
+comparison is against exactly what the game rewards. Second, the LLM list comes
+through the same public `complete_json_prompt()` path the solver-adjacent tooling
+already uses, and the returned words are normalized to the game's guess
+constraints (single lowercase dictionary words), so the LLM column reflects words
+the solver could actually play. The headline output is the blind-spot set:
+embedding-close words the LLM never proposes. The working hypothesis is that
+these blind spots explain stalls (e.g. a guess stuck at rank 5 whose closer
+neighbors are morphological variants or near-synonyms the LLM does not generate),
+but that is a hypothesis the diagnostic surfaces, not an established cause; it
+also reflects MiniLM geometry specifically, not real Contexto. The
+`LLM-only-far` list is the complementary waste case: words the LLM ranks close
+that the embedding ranks far, i.e. likely wasted guesses.

@@ -95,6 +95,63 @@ generation_reached, total_guesses, notes, trace_path.
 
 ## Analysis Artifacts
 
+### 2026-06-15 — Self-Adaptive Operator -> Selection/Fitness Coupling
+
+- Evidence level: batch-level pooled observational trace analysis. Reproducer:
+  [`scripts/measure_self_adaptive_selection_coupling.py`](../scripts/measure_self_adaptive_selection_coupling.py)
+  with command:
+  `python scripts/measure_self_adaptive_selection_coupling.py --max-generations 50 --by-word --report-json selcoupling.json`.
+- Scope: 30 self-adaptive traces, split as `herbaceous=6`, `notorious=11`,
+  `superficial=13`, with 6,186 mutation children. Crossover children were
+  excluded because they do not sample a single mutation operator. Output:
+  [`selcoupling.json`](../selcoupling.json).
+- Validity checks: the sanity gate passed. Per-operator sentinel fractions were
+  `s=0.0904899135446686`, `m=0.08718980549966465`,
+  `ml=0.06960716747070986`, and `l=0.09874088800530152`; spot checks against raw
+  traces confirmed real `GUESS`-based child ranks, real delta samples, nonzero
+  survival, and balanced bookkeeping.
+- Pooled logged top-`max_active`+elite survival rates:
+  `s=0.11235955056179775`, `m=0.09930715935334873`,
+  `ml=0.09418282548476455`, `l=0.039301310043668124` (`s/l ~= 2.86x`).
+- Pooled `delta = log(parent_rank) - log(child_rank)` median:
+  `s=-2.475052004290017`, `ml=-3.0013452094179742`,
+  `m=-3.4997536852024735`, `l=-4.7326426852862`; improvement rates:
+  `s=0.14351005484460694`, `ml=0.11422845691382766`,
+  `m=0.08801341156747695`, `l=0.03165584415584415`.
+- Caveat: the survival-linkage bias diagnostic is not flat. Pooled unresolvable
+  rates were `s=0.2818443804034582`, `ml=0.253618194348725`,
+  `m=0.12877263581488935`, and `l=0.08946322067594434`. Survival is therefore
+  corroborating, while delta-fitness is the primary signal: delta is computed by
+  ID/time-bounded rank linkage, has roughly 1,000-1,200 children per operator
+  (`s=1094`, `m=1193`, `ml=998`, `l=1232`), and the small-vs-large gap is much
+  larger than the missingness could create.
+- Finding link:
+  [`docs/findings.md`](findings.md#2026-06-15--self-adaptive-operator-fitness-gradient-favors-small-mutation-partial).
+
+### 2026-06-15 — Embedding-vs-LLM Closeness Diagnostic (tool + single-run illustration)
+
+- Evidence level: tooling plus a single-target, single-model illustration. NOT a
+  finding and NOT repeated-run evidence; the intended hard-target comparison
+  (e.g. `superficial`, `notorious`) with real LLM lists has not been run as a
+  deliberate batch.
+- Code: [`scripts/compare_embedding_llm_closeness.py`](../scripts/compare_embedding_llm_closeness.py).
+  Reproducer:
+  `python scripts/compare_embedding_llm_closeness.py chicken --top-n 8 --provider ollama --ollama-model qwen3:14b`.
+- Embedding: local game `data/embeddings/all-MiniLM-L6-v2.npz` (MiniLM, 300k
+  vocab), via `EmbeddingModel.nearest_neighbors`; LLM: Ollama `qwen3:14b` via the
+  public `complete_json_prompt()` path, list cached at
+  `data/placement_cache/closeness_qwen3-14b.json`.
+- Single-run observation (`chicken`, top-8): overlap 1/8 (only `poultry` shared),
+  0 exact-position matches. Embedding blind spots the LLM never proposed included
+  morphological variants (`chickens`, `chickening`, `chickened`, `chickenfoot`,
+  `chickenpox`) plus `meat` and `rooster`. LLM-only-far words (LLM-close but
+  embedding-far): `fowl` (rank 249), `cluck` (rank 41290), `scratch` (rank
+  23584), `feather` (rank 110).
+- Caveat: MiniLM is the local game's embedding, not real Contexto, so this
+  illustrates local-game geometry only; the morphological-variant blind spots are
+  partly a MiniLM subword artifact. Whether blind spots cause solver stalls is a
+  hypothesis to test, not a result here.
+
 ### 2026-06-08 — Pooled Sigma-Fitness Coupling for MAP-Elites
 
 - Evidence level: pooled / batch-level trace analysis. Reproducer:
