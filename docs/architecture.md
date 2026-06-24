@@ -644,26 +644,37 @@ Subtleties:
 
 ### `scripts/compare_embedding_llm_closeness.py`
 
-Per-target diagnostic that contrasts the local game's notion of "close" (the
-embedding) with the LLM's, to expose solver blind spots.
+Per-target diagnostic that contrasts up to three notions of "close" - real
+Contexto (ground truth, when available), the local-game embedding, and the LLM -
+to expose solver blind spots.
 
 Main function:
-- For each target word it lists the top-N closest words two ways and prints them
-  side by side: the embedding's nearest neighbors and the LLM's ordered list.
-- Reports, per target: set overlap and overlap rate, exact-position matches and
-  rate, Spearman rank correlation over shared words, the embedding-side BLIND
-  SPOTS (embedding-close words the LLM never proposed), and an optional
-  LLM-only-far list (LLM words the embedding ranks beyond `--far-rank` or places
-  out of vocabulary). A batch over multiple targets prints a per-target summary
-  row plus mean overlap / match rates; `--report-json` dumps the full report.
+- For each target word it lists the top-N closest words up to three ways and
+  prints them side by side: real Contexto neighbors, the embedding's nearest
+  neighbors, and the LLM's ordered list.
+- Reports, per target: pairwise set overlap / overlap rate, exact-position
+  matches, and Spearman over shared words for the three pairs (Contexto-vs-embedding,
+  Contexto-vs-LLM, embedding-vs-LLM). When Contexto data is present it is the
+  ground-truth anchor and the BLIND SPOTS are Contexto-anchored: Contexto-close
+  words the LLM never proposed, and Contexto-close words the embedding ranks
+  beyond `--far-rank` or places out of vocabulary. When no Contexto file exists
+  the report falls back to the embedding-anchored blind spots / LLM-only-far list.
+  A batch over multiple targets prints a per-target summary row (per-pair overlap
+  rates plus Contexto-anchored blind-spot counts) plus mean overlap rates;
+  `--report-json` dumps the full report.
 
 Main interactions:
+- Real Contexto side: `load_contexto_words(target, contexto_dir)` reads the
+  manually collected `data/<target>.txt` rank file (alternating word/rank lines,
+  target at rank 1), excludes the target, dedups, and caps at `CONTEXTO_MAX_RANK`
+  (300; positions beyond what the file provides are `n/a`). `--contexto-dir`
+  overrides the directory (default `data`).
 - Embedding side: `EmbeddingModel.nearest_neighbors(target, n)` for the top-N
   neighbors (cosine, target excluded) - the same ranking `LocalGame` derives, so
   embedding-rank `r` is the r-th closest word the local game would rank.
-- Actual embedding rank of an arbitrary LLM word: `LocalGame(model, target).rankings`
-  (target = rank 1; missing words are out-of-vocab `n/a`), used only for the
-  LLM-only-far check.
+- Actual embedding rank of an arbitrary word: `LocalGame(model, target).rankings`
+  (target = rank 1; missing words are out-of-vocab `n/a`), used for the
+  Contexto-close-but-embedding-far and LLM-only-far checks.
 - LLM side: a task-specific ordered-list JSON prompt submitted through the public
   `LLMClient.complete_json_prompt()` (the same path `scripts/calibrate_anchors.py`
   uses, not `place_word`). Provider/model resolve from `config` with CLI overrides.
@@ -675,10 +686,58 @@ Subtleties:
 - LLM lists are cached per `(model, target, N)` (model in the cache filename,
   `target::nN` as the key) under `MAPELITES_PLACEMENT_CACHE_DIR`, so re-runs are
   free; `--no-llm` uses the cache only.
+- A target must be in the embedding vocabulary for its row to appear (the
+  embedding side anchors the table); targets missing from the embedding are
+  skipped even if a Contexto file exists.
 - The embedding is the LOCAL game's (MiniLM by default), not the real Contexto
-  embedding, so its findings explain local-game behavior only.
-- Analysis only: it reads `EmbeddingModel`, `LocalGame`, and `LLMClient` and
-  modifies no solver, game, or config code.
+  embedding; embedding-only findings explain local-game behavior. Real Contexto
+  ranks are only as good as the manually collected `data/<target>.txt` files.
+- Analysis only: it reads `EmbeddingModel`, `LocalGame`, `LLMClient`, and the
+  `data/<target>.txt` Contexto files, and modifies no solver, game, or config code.
+
+### `scripts/analyze_closeness.py`
+
+Second-stage, fully offline analysis of a closeness-comparison JSON produced by
+`scripts/compare_embedding_llm_closeness.py`. It is the read-only consumer of that
+script's `--report-json` output and the producer of paste-ready report artifacts.
+
+Main function:
+- Takes one required positional arg (the comparison JSON) and an optional
+  `--out-dir` (default top-level `closeness_reports/`). Writes two files named
+  after the input stem: `<stem>_summary.txt` (plain-text, one compact block per
+  target plus an aggregate) and `<stem>_metrics.json` (a nested dict keyed by
+  target plus an `"aggregate"` key, mirroring every numeric metric). Prints both
+  output paths.
+- Treats `contexto_words` as ground truth and reports, per target and as an
+  aggregate over usable targets: [A] data health (with `LLM_FAILED` /
+  `DEGENERATE_EMBEDDING` flags), [B] embedding-vs-real transferability
+  (recall@{10,25,50}, intersection Spearman vs the file's stored value, median
+  embedding rank of real's top-15/50, OOV count), [C] LLM-vs-real blind spots
+  (recall, absent words, LLM over-reach), [D] embedding-vs-LLM overlap, [E] a
+  morphology / surface-form control (raw vs stemmed overlap), and [F] a
+  real-neighbor decomposition (MORPH / SYNONYM / DISTRIBUTIONAL / OTHER).
+
+Main interactions:
+- Pure stdlib; no numpy/scipy dependency (Spearman is implemented locally). It
+  imports nothing from `contexto_solver` and reads only the one JSON passed in.
+- Defensive schema detection handles both the newer Contexto-anchored format
+  (`contexto_words`, `pair_contexto_*`, `contexto_blind_*`) and the older
+  embedding-vs-LLM-only format (flat `overlap`/`spearman`/`blind_spots`); when
+  `contexto_*` fields are absent it runs the embedding-vs-LLM half only and labels
+  real-dependent metrics "absent (no contexto column)".
+- Global embedding rank for an arbitrary word is recovered by one helper: index
+  in `embedding_words`, else the `embedding_rank` stored in `contexto_blind_embedding`
+  / `llm_only_far`, else counted as unresolved (never coerced); a word is OOV iff
+  it appears in `contexto_blind_embedding` with `in_vocab == false`.
+
+Subtleties:
+- LLM-family aggregates ([C], [D], and the SYNONYM bucket of [F]) are averaged
+  only over non-`LLM_FAILED` targets; embedding aggregates ([B]) only over
+  non-`DEGENERATE_EMBEDDING` targets. Excluded targets and reasons are printed,
+  never silently averaged.
+- Strictly analysis only: it READS one JSON and WRITES into `--out-dir`; it never
+  runs the solver, calls an LLM, touches the network, or modifies any existing
+  repo file, consistent with the analysis-script invariant.
 
 ### `contexto_solver.plot_trajectory`
 
@@ -875,6 +934,9 @@ Current assumption:
   backend after cache generation.
 - `data/embeddings/all-mpnet-base-v2.npz` is the heavier quality-oriented
   solver/backend option after cache generation.
+- `data/<target>.txt` files are manually collected real-Contexto rank lists
+  (alternating word/rank lines, target at rank 1, up to 300 ranks) consumed by
+  `scripts/compare_embedding_llm_closeness.py` as the ground-truth closeness side.
 
 ### `traces/`
 
@@ -904,6 +966,19 @@ Subtleties:
 - Figures are analysis artifacts, not runtime inputs.
 - They should be cited as evidence for qualitative inspection only unless tied
   to repeated-run summaries or batch-level statistics.
+
+### `closeness_reports/`
+
+Default output directory for `scripts/analyze_closeness.py`.
+
+Current outputs:
+- `<stem>_summary.txt`: paste-ready plain-text closeness analysis report.
+- `<stem>_metrics.json`: machine-readable mirror of every numeric metric, keyed
+  by target plus an `"aggregate"` key.
+
+Subtleties:
+- These are generated analysis artifacts derived from an existing comparison
+  JSON, not runtime inputs; `scripts/` itself stays Python-only.
 
 ### `docs/`
 
@@ -956,6 +1031,10 @@ Before modifying a component, check these likely dependents:
   `EmbeddingModel`, `LocalGame`, `methods/embedding.py`, README, and docs. The
   `EmbeddingModel.nearest_neighbors` / `LocalGame.rankings` contract is also
   relied on by `scripts/compare_embedding_llm_closeness.py`.
+- Real-Contexto rank file format (`data/<target>.txt`, alternating word/rank
+  lines capped at 300): update `load_contexto_words` in
+  `scripts/compare_embedding_llm_closeness.py`, which treats it as the
+  ground-truth closeness anchor.
 - LLM prompts or JSON schemas: update `LLMClient`, LLM methods'
   parsing/cleaning, trace expectations, and experiment notes. Scripts that own a
   prompt submitted through the public `complete_json_prompt()` path

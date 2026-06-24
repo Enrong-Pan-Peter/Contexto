@@ -95,6 +95,59 @@ generation_reached, total_guesses, notes, trace_path.
 
 ## Analysis Artifacts
 
+### 2026-06-24 — Corrected Sigma-Control Arm Comparison
+
+- Evidence level: batch-level causal-control comparison on the MiniLM local game,
+  with 59 completed runs from 60 planned. Raw traces:
+  [`traces/sigma_arms_batch/`](../traces/sigma_arms_batch/). Corrected report:
+  [`sigma_control_report_corrected.json`](../sigma_control_report_corrected.json).
+  Original uncorrected report retained for audit:
+  [`sigma_control_report.json`](../sigma_control_report.json).
+- Reproducer:
+  `python scripts/compare_sigma_control_arms.py --traces "traces/sigma_arms_batch/*.json" --report-json sigma_control_report_corrected.json`.
+- Scope: four sigma modes for `ea_llm_map_elites`: `adaptive`,
+  `frozen_fixed`, `frozen_uniform`, and `random`; targets `superficial`,
+  `herbaceous`, and `notorious`; seeds 42-46; Ollama `qwen3:14b`; ranked context
+  `K=20` held constant across arms.
+- Completion: `adaptive=15`, `frozen_fixed=15`, `frozen_uniform=14`,
+  `random=15`; one planned `frozen_uniform` run did not finish.
+- Corrected per-arm results: `frozen_fixed` solved 7/15 with median best rank 2;
+  `frozen_uniform` solved 5/14 with median best rank 4; `random` solved 4/15
+  with median best rank 6; `adaptive` solved 2/15 with median best rank 14.
+- Metric correction: solved runs' `best_rank` is set to 1 because `SOLVED` can
+  occur after the last `ARCHIVE_SNAPSHOT`. This affects rank summaries and paired
+  rank comparisons; solve rate was already clean.
+- Finding link:
+  [`docs/findings.md`](findings.md#2026-06-24--sigma-control-batch-inherited-sigma-does-not-beat-controls).
+
+### 2026-06-24 — Contexto-Anchored Top-300 Closeness Comparison
+
+- Evidence level: descriptive batch diagnostic over seven targets with manually
+  collected real Contexto rank files. Comparison JSON:
+  [`closeness_contexto_300_3.json`](../closeness_contexto_300_3.json). Summary:
+  [`closeness_contexto_300_3_summary.txt`](../closeness_reports/closeness_contexto_300_3_summary.txt).
+  Metrics:
+  [`closeness_contexto_300_3_metrics.json`](../closeness_reports/closeness_contexto_300_3_metrics.json).
+- Reproducer for the comparison:
+  `python scripts/compare_embedding_llm_closeness.py --targets blade,loyalty,otter,blackboard,arrow,rhythm,safe --top-n 300 --provider ollama --ollama-model qwen3:14b --contexto-dir data --cache data/placement_cache/closeness_qwen3-14b_300_3.json --report-json closeness_contexto_300_3.json`.
+- Reproducer for the offline analysis:
+  `python scripts/analyze_closeness.py closeness_contexto_300_3.json`.
+- Scope: `top_n=300`, MiniLM local-game embedding
+  `data/embeddings/all-MiniLM-L6-v2.npz`, qwen3:14b LLM list, and real Contexto
+  files under [`data/`](../data/). Targets in file: `blade`, `loyalty`, `otter`,
+  `blackboard`, `arrow`, `rhythm`, and `safe`.
+- Health notes: seven targets have real Contexto data. `loyalty` failed the LLM
+  branch with a JSON parse error, so LLM aggregates use six targets. `otter` is
+  marked as degenerate for embedding aggregates, so embedding means also use six
+  targets.
+- Aggregate output from the metrics file: embedding-vs-real recall means
+  @10=0.567, @25=0.500, @50=0.383, with intersection Spearman about 0.067.
+  LLM-vs-real recall means @10=0.383, @25=0.327, @50=0.259. Real-top50
+  decomposition means were `MORPH=0.71`, `SYNONYM=12.67`,
+  `DISTRIBUTIONAL=11.29`, and `OTHER=27.14`.
+- Finding link:
+  [`docs/findings.md`](findings.md#2026-06-24--contexto-anchored-closeness-real-neighbors-are-mostly-associative).
+
 ### 2026-06-15 — Self-Adaptive Operator -> Selection/Fitness Coupling
 
 - Evidence level: batch-level pooled observational trace analysis. Reproducer:

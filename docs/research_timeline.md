@@ -457,9 +457,9 @@ Milestones:
   those traces predate `MAPELITES_SIGMA_MODE`, so they group as a single
   `unknown` arm and the three contrasts correctly report their arms as absent.
 
-Research value: tooling readiness, not a result. No sigma-control batch has been
-run, so there is no arm-level evidence yet; whether the arms separate on
-`best_rank`, solve rate, or archive sigma remains open pending the batch.
+Research value at the time: tooling readiness, not a result. This entry records
+the pre-batch state; the completed corrected batch is recorded in the 2026-06-24
+milestone below.
 
 ### 2026-06-15 — Embedding-vs-LLM Closeness Diagnostic
 
@@ -500,9 +500,66 @@ Milestones:
 
 Research value: upgrades the operator-fitness gradient from MAP-Elites-specific
 evidence to a batch-level pooled observational pattern also visible in plain
-self-adaptive traces. It does not show whether sigma drifts toward large in these
-runs, and it does not replace the frozen/random-sigma control batch needed for a
-causal claim.
+self-adaptive traces. It does not measure sigma trajectories in those
+self-adaptive runs. At the time, it motivated a frozen/random-sigma control; the
+completed MAP-Elites control batch is recorded in the next milestone.
+
+### 2026-06-24 — Sigma-Control Batch Corrected and Interpreted
+
+Evidence:
+- [`traces/sigma_arms_batch/`](../traces/sigma_arms_batch/)
+- [`sigma_control_report_corrected.json`](../sigma_control_report_corrected.json)
+- [`scripts/compare_sigma_control_arms.py`](../scripts/compare_sigma_control_arms.py)
+- [`docs/experiment_log.md`](experiment_log.md#2026-06-24--corrected-sigma-control-arm-comparison)
+- [`docs/findings.md`](findings.md#2026-06-24--sigma-control-batch-inherited-sigma-does-not-beat-controls)
+
+Milestones:
+- Completed and analyzed the four-arm MAP-Elites sigma-control batch on the
+  MiniLM local game: `adaptive`, `frozen_fixed`, `frozen_uniform`, and `random`.
+- Recovered 59 completed runs from 60 planned, with one missing
+  `frozen_uniform` run.
+- Corrected `best_rank` accounting so solved runs count as rank 1 even when the
+  `SOLVED` event occurs after the final `ARCHIVE_SNAPSHOT`.
+- Found that inherited sigma self-adaptation did not beat the controls in this
+  batch: `adaptive` had the lowest solve rate and worst corrected median
+  `best_rank`; `frozen_fixed` performed best on both metrics.
+- Retired the broad "sigma drifts toward large" framing. The large-sigma signal
+  remains a single-run observation from the older K-off `superficial` trace, not
+  a batch-level pattern.
+
+Research value: this converts the sigma question from an observational
+operator-fitness gradient into a direct causal-control result on the MiniLM
+proxy. The result argues against the current inheritance-based credit assignment
+and motivates static informed sigma or adaptive operator selection. Individual
+arm comparisons remain underpowered and non-significant at the current n.
+
+### 2026-06-24 — Real-Contexto Top-300 Closeness Diagnostic
+
+Evidence:
+- [`closeness_contexto_300_3.json`](../closeness_contexto_300_3.json)
+- [`closeness_reports/closeness_contexto_300_3_summary.txt`](../closeness_reports/closeness_contexto_300_3_summary.txt)
+- [`closeness_reports/closeness_contexto_300_3_metrics.json`](../closeness_reports/closeness_contexto_300_3_metrics.json)
+- [`scripts/compare_embedding_llm_closeness.py`](../scripts/compare_embedding_llm_closeness.py)
+- [`scripts/analyze_closeness.py`](../scripts/analyze_closeness.py)
+- [`docs/experiment_log.md`](experiment_log.md#2026-06-24--contexto-anchored-top-300-closeness-comparison)
+- [`docs/findings.md`](findings.md#2026-06-24--contexto-anchored-closeness-real-neighbors-are-mostly-associative)
+
+Milestones:
+- Extended the closeness diagnostic from MiniLM-vs-LLM to a three-way comparison:
+  MiniLM local-game neighbors, qwen3:14b LLM neighbors, and manually collected
+  real Contexto top-300 ranks.
+- Added and ran the offline analyzer over seven targets:
+  `blade`, `loyalty`, `otter`, `blackboard`, `arrow`, `rhythm`, and `safe`.
+- Recorded denominator-aware aggregate health: `loyalty` failed the LLM branch;
+  `otter` is excluded from embedding means as degenerate.
+- Found that real Contexto top-50 neighborhoods in this diagnostic set are mostly
+  associative words not captured by either proxy, while MiniLM and qwen3 fail in
+  different ways.
+
+Research value: this downgrades broad claims that the MiniLM local game is a
+strong proxy for real Contexto. Solver results on the local game remain valid as
+MiniLM-proxy results, but claims about real Contexto behavior now need direct
+real-rank evidence or an explicit uncertainty label.
 
 ## Current Open Questions
 
@@ -519,5 +576,9 @@ causal claim.
   evidence.
 - How do LLM-guided search, aligned embedding search, and non-aligned embedding
   search compare under repeated local benchmarks?
-- Does self-adaptive operator selection improve solve rate, generation count, or
-  failed-run stability compared with fixed mutation and pivot-only methods?
+- Would adaptive operator selection, which credits the operator that actually
+  fired, outperform the inherited sigma mechanism or the informed fixed profile?
+- Does the sigma-control result replicate with ranked context off, with more
+  targets, or against the real Contexto API rather than the MiniLM proxy?
+- How large and diverse must the real-Contexto closeness target set be before the
+  associative-neighborhood decomposition supports a general claim?

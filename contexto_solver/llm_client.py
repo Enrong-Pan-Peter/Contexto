@@ -622,6 +622,7 @@ class LLMClient:
                     "model": self.model,
                     "messages": [{"role": "user", "content": prompt}],
                     "temperature": 0.8,
+                    "response_format": {"type": "json_object"},
                 },
                 timeout=self.ollama_timeout_seconds,
             )
@@ -692,11 +693,47 @@ def _clamp_unit(value: Any) -> float:
     return max(0.0, min(1.0, number))
 
 
+def _first_json_object(text: str) -> str | None:
+    start = text.find("{")
+    if start == -1:
+        return None
+    depth = 0
+    in_string = False
+    escaped = False
+    for index in range(start, len(text)):
+        char = text[index]
+        if in_string:
+            if escaped:
+                escaped = False
+            elif char == "\\":
+                escaped = True
+            elif char == '"':
+                in_string = False
+            continue
+        if char == '"':
+            in_string = True
+        elif char == "{":
+            depth += 1
+        elif char == "}":
+            depth -= 1
+            if depth == 0:
+                return text[start:index + 1]
+    return None
+
+
 def _strip_code_fences(text: str) -> str:
     cleaned = text.strip()
+    # qwen3 reasoning preamble: drop a leading <think>...</think> block if present.
+    think_match = re.match(r"^<think>.*?</think>\s*", cleaned, flags=re.DOTALL)
+    if think_match:
+        cleaned = cleaned[think_match.end():].strip()
     fence_match = re.fullmatch(r"```(?:json)?\s*(.*?)\s*```", cleaned, flags=re.DOTALL)
     if fence_match:
-        return fence_match.group(1).strip()
+        cleaned = fence_match.group(1).strip()
+    if not cleaned.startswith("{"):
+        extracted = _first_json_object(cleaned)
+        if extracted is not None:
+            return extracted
     return cleaned
 
 
@@ -739,4 +776,11 @@ def _agent_debug_log(location: str, message: str, data: dict[str, object], hypot
             log_file.write(json.dumps(payload, separators=(",", ":")) + "\n")
     except Exception:
         pass
+
+
+if __name__ == "__main__":
+    assert json.loads(_strip_code_fences('<think>reasoning</think>{"words":["a"]}')) == {"words": ["a"]}
+    assert json.loads(_strip_code_fences('```json\n{"words":["a"]}\n```')) == {"words": ["a"]}
+    assert json.loads(_strip_code_fences('{"words":["a"]}')) == {"words": ["a"]}
+    print("ok")
 

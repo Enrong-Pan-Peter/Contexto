@@ -1,0 +1,104 @@
+======================================================================
+CLOSENESS ANALYSIS: closeness.json
+======================================================================
+top_n=15 far_rank=100 llm_model=qwen3:14b embedding_path=data\embeddings\all-MiniLM-L6-v2.npz
+targets in file: 9
+
+##### superficial
+[A] health: status='llm' llm_N=12 emb_N=15 ctx_N=None contexto_available=False  [DEGENERATE_EMBEDDING]
+    emb top5: superficiality, superficially, superficialities, thin, thinness (top15 resolving into real/llm: 1)
+[B] transferability: absent (no contexto column)
+[C] blind spots: absent (no contexto column)
+[D] emb-vs-llm overlap@12: 1/12 -> shallow
+[E] morph in top15: emb=3 (superficiality, superficially, superficialities); llm=0 ((none))
+    overlap raw->stemmed: absent (no contexto column)
+[F] real-top50 decomposition: absent (no contexto column)
+
+##### notorious
+[A] health: status='llm' llm_N=15 emb_N=15 ctx_N=None contexto_available=False  [DEGENERATE_EMBEDDING]
+    emb top5: infamous, notoriously, gangster, rapper, renowned (top15 resolving into real/llm: 1)
+[B] transferability: absent (no contexto column)
+[C] blind spots: absent (no contexto column)
+[D] emb-vs-llm overlap@15: 1/15 -> infamous
+[E] morph in top15: emb=1 (notoriously); llm=0 ((none))
+    overlap raw->stemmed: absent (no contexto column)
+[F] real-top50 decomposition: absent (no contexto column)
+
+##### herbaceous
+[A] health: status='llm' llm_N=15 emb_N=15 ctx_N=None contexto_available=False  [DEGENERATE_EMBEDDING]
+    emb top5: herbage, herbicidal, herb, herbes, herbits (top15 resolving into real/llm: 0)
+[B] transferability: absent (no contexto column)
+[C] blind spots: absent (no contexto column)
+[D] emb-vs-llm overlap@15: 0/15 -> (none)
+[E] morph in top15: emb=2 (herb, herba); llm=0 ((none))
+    overlap raw->stemmed: absent (no contexto column)
+[F] real-top50 decomposition: absent (no contexto column)
+
+##### ivory
+[A] health: status='llm' llm_N=15 emb_N=15 ctx_N=None contexto_available=False  [DEGENERATE_EMBEDDING]
+    emb top5: ivoryton, ivorian, ivo, ivories, ivone (top15 resolving into real/llm: 0)
+[B] transferability: absent (no contexto column)
+[C] blind spots: absent (no contexto column)
+[D] emb-vs-llm overlap@15: 0/15 -> (none)
+[E] morph in top15: emb=3 (ivoryton, ivories, ivor); llm=0 ((none))
+    overlap raw->stemmed: absent (no contexto column)
+[F] real-top50 decomposition: absent (no contexto column)
+
+##### house
+[A] health: status='llm' llm_N=15 emb_N=15 ctx_N=None contexto_available=False  [DEGENERATE_EMBEDDING]
+    emb top5: houses, homes, home, houseful, housework (top15 resolving into real/llm: 2)
+[B] transferability: absent (no contexto column)
+[C] blind spots: absent (no contexto column)
+[D] emb-vs-llm overlap@15: 2/15 -> home, mansion
+[E] morph in top15: emb=8 (houses, houseful, housework, housebreaking, housebuilding, household, housecat, housemother); llm=0 ((none))
+    overlap raw->stemmed: absent (no contexto column)
+[F] real-top50 decomposition: absent (no contexto column)
+
+##### chicken
+[A] health: status='llm' llm_N=15 emb_N=15 ctx_N=None contexto_available=False
+[B] transferability: absent (no contexto column)
+[C] blind spots: absent (no contexto column)
+[D] emb-vs-llm overlap@15: 6/15 -> bird, chick, hen, meat, poultry, rooster
+[E] morph in top15: emb=6 (chickens, chickening, chickened, chickenfoot, chickenpox, chick); llm=1 (chick)
+    overlap raw->stemmed: absent (no contexto column)
+[F] real-top50 decomposition: absent (no contexto column)
+
+##### cat
+[A] health: status='llm' llm_N=15 emb_N=15 ctx_N=None contexto_available=False  [DEGENERATE_EMBEDDING]
+    emb top5: cats, kitty, kitten, catdog, cates (top15 resolving into real/llm: 2)
+[B] transferability: absent (no contexto column)
+[C] blind spots: absent (no contexto column)
+[D] emb-vs-llm overlap@15: 2/15 -> feline, kitten
+[E] morph in top15: emb=2 (cats, cates); llm=0 ((none))
+    overlap raw->stemmed: absent (no contexto column)
+[F] real-top50 decomposition: absent (no contexto column)
+
+##### dog
+[A] health: status='llm' llm_N=14 emb_N=15 ctx_N=None contexto_available=False
+[B] transferability: absent (no contexto column)
+[C] blind spots: absent (no contexto column)
+[D] emb-vs-llm overlap@14: 4/14 -> canine, pet, pup, puppy
+[E] morph in top15: emb=1 (dogs); llm=0 ((none))
+    overlap raw->stemmed: absent (no contexto column)
+[F] real-top50 decomposition: absent (no contexto column)
+
+##### computer
+[A] health: status='llm' llm_N=15 emb_N=15 ctx_N=None contexto_available=False  [DEGENERATE_EMBEDDING]
+    emb top5: computers, pc, laptop, desktop, windows (top15 resolving into real/llm: 1)
+[B] transferability: absent (no contexto column)
+[C] blind spots: absent (no contexto column)
+[D] emb-vs-llm overlap@15: 1/15 -> hardware
+[E] morph in top15: emb=4 (computers, computerware, computerologist, computerised); llm=0 ((none))
+    overlap raw->stemmed: absent (no contexto column)
+[F] real-top50 decomposition: absent (no contexto column)
+
+======================================================================
+AGGREGATE (means across usable targets)
+======================================================================
+targets=9 usable_embedding=0 usable_llm=9
+  excluded from [B] embedding means: superficial (degenerate_embedding), notorious (degenerate_embedding), herbaceous (degenerate_embedding), ivory (degenerate_embedding), house (degenerate_embedding), chicken (no contexto column), cat (degenerate_embedding), dog (no contexto column), computer (degenerate_embedding)
+[B] emb-vs-real recall means: @10=n/a @25=n/a @50=n/a
+    spearman=n/a median-emb-rank real-top15=n/a real-top50=n/a
+[C] llm-vs-real recall means: @10=n/a @25=n/a @50=n/a
+[D] emb-vs-llm overlap mean: 1.89
+[F] real-top50 decomp means: MORPH=n/a SYNONYM=n/a DISTRIBUTIONAL=n/a OTHER=n/a

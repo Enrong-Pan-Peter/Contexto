@@ -462,25 +462,42 @@ way the arms do: `adaptive` vs `frozen_uniform` and `adaptive` vs `frozen_fixed`
 test whether adaptation beats a pinned prior, while `random` vs `adaptive` is
 framed around the per-operator sigma because random redraws `Dirichlet(1)` per
 child and should leave a flat archive sigma, whereas adaptation should leave
-operator structure if selection shapes sigma. Whether these contrasts actually
-separate the arms is an open empirical question until the batch runs; the script
-only defines how the evidence will be read.
+operator structure if selection shapes sigma. The script defines how the
+evidence is read; the current batch-level result is summarized below rather than
+treated as a design invariant.
+
+Post-batch design implication: the corrected 59-run sigma-control batch did not
+show inherited sigma beating the controls; `adaptive` had the lowest solve rate
+and worst corrected median `best_rank`, while archive sigma stayed near uniform.
+That is evidence against the current inheritance-based credit assignment, not
+against operator control in general. The design direction remains either a simple
+informed static profile such as `[0.4, 0.3, 0.2, 0.1]` or an adaptive operator
+selection policy that credits the operator that actually fired. Evidence and
+caveats are recorded in
+[`docs/findings.md`](findings.md#2026-06-24--sigma-control-batch-inherited-sigma-does-not-beat-controls)
+and
+[`docs/experiment_log.md`](experiment_log.md#2026-06-24--corrected-sigma-control-arm-comparison).
 
 Embedding-vs-LLM closeness diagnostic (`scripts/compare_embedding_llm_closeness.py`):
 the local game scores guesses by embedding rank, but the LLM proposes guesses by
-its own notion of meaning-closeness, so a guess can only help if those two
-notions agree near the target. This diagnostic makes that agreement measurable
-per target. Two design choices matter. First, the embedding "ground truth" is the
-game's own `nearest_neighbors` ranking rather than a separate metric, so the
-comparison is against exactly what the game rewards. Second, the LLM list comes
-through the same public `complete_json_prompt()` path the solver-adjacent tooling
-already uses, and the returned words are normalized to the game's guess
-constraints (single lowercase dictionary words), so the LLM column reflects words
-the solver could actually play. The headline output is the blind-spot set:
-embedding-close words the LLM never proposes. The working hypothesis is that
-these blind spots explain stalls (e.g. a guess stuck at rank 5 whose closer
-neighbors are morphological variants or near-synonyms the LLM does not generate),
-but that is a hypothesis the diagnostic surfaces, not an established cause; it
-also reflects MiniLM geometry specifically, not real Contexto. The
-`LLM-only-far` list is the complementary waste case: words the LLM ranks close
-that the embedding ranks far, i.e. likely wasted guesses.
+its own notion of meaning-closeness, and real Contexto may reward a third
+geometry. This diagnostic makes the agreement measurable per target. Three
+design choices matter. First, the embedding side is the local game's own
+`nearest_neighbors` ranking rather than a separate metric, so the comparison is
+against exactly what the local game rewards. Second, when `--contexto-dir` is
+available, manually collected `data/<target>.txt` real-Contexto ranks become the
+ground-truth anchor for transferability and blind-spot analysis. Third, the LLM
+list comes through the same public `complete_json_prompt()` path the
+solver-adjacent tooling already uses, and returned words are normalized to the
+game's guess constraints (single lowercase dictionary words), so the LLM column
+reflects words the solver could actually play.
+
+The design purpose has shifted from only "embedding-close words the LLM never
+proposes" to a three-way diagnostic: MiniLM local-game closeness, LLM definitional
+closeness, and real Contexto closeness. The top-300 Contexto-anchored run shows
+these notions can diverge sharply, so local MiniLM results should be described as
+MiniLM-proxied Contexto unless real-Contexto evidence is cited. Evidence and
+caveats are recorded in
+[`docs/findings.md`](findings.md#2026-06-24--contexto-anchored-closeness-real-neighbors-are-mostly-associative)
+and
+[`docs/experiment_log.md`](experiment_log.md#2026-06-24--contexto-anchored-top-300-closeness-comparison).

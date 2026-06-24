@@ -1,7 +1,10 @@
-"""Compare the embedding's notion of "close" with the LLM's, per target word.
+"""Compare three notions of "close" per target word: real Contexto, embedding, LLM.
 
-For each target this lists the top-N closest words two ways and shows them side
-by side:
+For each target this lists the top-N closest words up to three ways and shows
+them side by side:
+  * Real Contexto side (ground truth, when available): the manually collected
+    Contexto backend ranks in ``data/<target>.txt`` (see ``load_contexto_words``).
+    This is the anchor: blind spots are defined relative to it.
   * Embedding side: the local game's own ranking. ``EmbeddingModel.nearest_neighbors``
     returns the top-N vocabulary words by cosine similarity to the target,
     excluding the target itself, so embedding-rank ``r`` is "the r-th closest word
@@ -11,28 +14,33 @@ by side:
     (``LLMClient.complete_json_prompt``, the same entrypoint
     ``scripts/calibrate_anchors.py`` uses; not ``place_word``).
 
-It then reports, per target, concise overlap statistics and, most importantly,
-the embedding-side BLIND SPOTS: words the game considers close that the LLM never
-proposes. Those are the solver's likely stall points (e.g. a rank-5 plateau the
-LLM cannot break because it never guesses the close word).
+It then reports, per target, pairwise overlap statistics for the three pairs
+(Contexto-vs-embedding, Contexto-vs-LLM, embedding-vs-LLM) and, most importantly,
+the Contexto-anchored BLIND SPOTS when Contexto data is present: real-Contexto-close
+words the LLM never proposes, and real-Contexto-close words the embedding ranks
+far. Those are the solver's likely stall points. When no Contexto file exists for
+a target, the embedding-vs-LLM comparison runs as usual and the Contexto column is
+shown as n/a.
 
 Caveats (verify before citing):
+  * Real Contexto data comes from ``data/<target>.txt`` and is capped at the top
+    ``CONTEXTO_MAX_RANK`` ranks; positions beyond what the file provides are n/a.
   * The embedding here is the LOCAL game's embedding (MiniLM by default), NOT the
-    real Contexto embedding. Findings explain local-game behavior only.
+    real Contexto embedding. Embedding-only findings explain local-game behavior.
   * LLM words absent from the embedding vocabulary are marked ``n/a`` (the local
     game would reject them); they cannot get an embedding rank.
-  * The target is always excluded from its own neighbor list.
+  * The target is always excluded from its own neighbor list on every side.
 
-This is analysis only: it reads ``EmbeddingModel`` and ``LLMClient`` and changes
-no solver, game, or config code, consistent with the analysis-script invariant in
-docs/architecture.md.
+This is analysis only: it reads ``EmbeddingModel``, ``LocalGame``, ``LLMClient``,
+and the ``data/<target>.txt`` Contexto files, and changes no solver, game, or
+config code, consistent with the analysis-script invariant in docs/architecture.md.
 
 Usage:
     python scripts/compare_embedding_llm_closeness.py superficial notorious chicken
     python scripts/compare_embedding_llm_closeness.py --targets superficial,notorious
         [--top-n 15] [--provider ollama] [--ollama-model qwen3:14b]
         [--embedding-path data/embeddings/all-MiniLM-L6-v2.npz]
-        [--far-rank 100] [--cache PATH] [--report-json PATH]
+        [--contexto-dir data] [--far-rank 100] [--cache PATH] [--report-json PATH]
 """
 
 from __future__ import annotations
@@ -54,6 +62,12 @@ from contexto_solver.local_game import LocalGame  # noqa: E402
 
 DEFAULT_TARGETS = ("superficial", "notorious", "chicken")
 
+# Real Contexto data files live in this directory as ``<target>.txt`` and are
+# capped at this many ranks (the backend only exposes the closest 300 words;
+# positions beyond this are reported as n/a).
+DEFAULT_CONTEXTO_DIR = "data"
+CONTEXTO_MAX_RANK = 300
+
 # Ordered-list prompt sent through the public complete_json_prompt() path. Mirrors
 # calibrate_anchors.py's approach: a task-specific JSON prompt, reusing the shared
 # bounded JSON-retry path, with no edits to llm_client.py.
@@ -67,6 +81,44 @@ Rules:
 - Do not include the word "{word}" itself.
 - Give exactly {n} distinct words if you can.
 Return JSON only: {{"words": ["word1", "word2", ...]}}"""
+
+
+# --------------------------------------------------------------------------- #
+# Real Contexto side (ground truth, from data/<target>.txt)
+# --------------------------------------------------------------------------- #
+def load_contexto_words(target: str, contexto_dir: str) -> list[str] | None:
+    """Ordered closest-first Contexto neighbor words from ``data/<target>.txt``.
+
+    The file has alternating lines: a word then its integer rank, with the target
+    itself at rank 1. Returns the closest non-target words in rank order (target
+    excluded for parity with the embedding/LLM sides), deduplicated and capped at
+    ``CONTEXTO_MAX_RANK``. Returns None when no file exists for the target, so the
+    Contexto column/stats fall back to n/a.
+    """
+    path = Path(contexto_dir) / f"{target}.txt"
+    if not path.exists():
+        return None
+    lines = [line.strip() for line in path.read_text(encoding="utf-8").splitlines()
+             if line.strip()]
+    target_clean = target.lower().strip()
+    ranked: list[tuple[int, str]] = []
+    for index in range(0, len(lines) - 1, 2):
+        word = lines[index].lower().strip()
+        try:
+            rank = int(lines[index + 1])
+        except ValueError:
+            continue
+        if rank > CONTEXTO_MAX_RANK or word == target_clean:
+            continue
+        ranked.append((rank, word))
+    ranked.sort(key=lambda item: item[0])
+    words: list[str] = []
+    seen: set[str] = set()
+    for _, word in ranked:
+        if word and word not in seen:
+            seen.add(word)
+            words.append(word)
+    return words
 
 
 # --------------------------------------------------------------------------- #
@@ -175,6 +227,39 @@ def _spearman(common: list[str], emb_pos: dict[str, int], llm_pos: dict[str, int
     return cov / ((var_x ** 0.5) * (var_y ** 0.5))
 
 
+def pairwise_stats(
+    words_a: list[str] | None,
+    words_b: list[str] | None,
+    top_n: int,
+) -> dict[str, Any] | None:
+    """Overlap, exact-position matches, and Spearman between two ordered lists.
+
+    Returns None when either side is unavailable (e.g. no Contexto file), so the
+    caller renders the pair as n/a. Rates divide by ``top_n``; positions present
+    in only one list simply do not overlap or align.
+    """
+    if words_a is None or words_b is None:
+        return None
+    pos_a = {word: index + 1 for index, word in enumerate(words_a)}
+    pos_b = {word: index + 1 for index, word in enumerate(words_b)}
+    set_a, set_b = set(words_a), set(words_b)
+    common = [word for word in words_a if word in set_b]
+    overlap = len(set_a & set_b)
+    exact = sum(
+        1 for index in range(top_n)
+        if index < len(words_a) and index < len(words_b)
+        and words_a[index] == words_b[index]
+    )
+    return {
+        "overlap": overlap,
+        "overlap_rate": overlap / top_n if top_n else None,
+        "exact_position_matches": exact,
+        "exact_match_rate": exact / top_n if top_n else None,
+        "spearman": _spearman(common, pos_a, pos_b),
+        "n_common": len(common),
+    }
+
+
 def analyze_target(
     target: str,
     top_n: int,
@@ -183,6 +268,7 @@ def analyze_target(
     cache: dict[str, list[str]],
     cache_path: Path,
     far_rank: int,
+    contexto_dir: str,
 ) -> dict[str, Any] | None:
     target_clean = target.lower().strip()
     if not model.has_word(target_clean):
@@ -197,21 +283,46 @@ def analyze_target(
     raw, status = llm_raw_words(target_clean, top_n, client, cache, cache_path)
     llm_words = normalize_llm_words(raw, target_clean, top_n)
 
-    emb_pos = {word: index + 1 for index, word in enumerate(emb_words)}
-    llm_pos = {word: index + 1 for index, word in enumerate(llm_words)}
+    contexto_all = load_contexto_words(target_clean, contexto_dir)
+    contexto_words = contexto_all[:top_n] if contexto_all is not None else None
+
     emb_set, llm_set = set(emb_words), set(llm_words)
-    common = [word for word in emb_words if word in llm_set]
+    emb_pos = {word: index + 1 for index, word in enumerate(emb_words)}
 
-    overlap = len(emb_set & llm_set)
-    exact_matches = sum(
-        1 for index in range(top_n)
-        if index < len(emb_words) and index < len(llm_words)
-        and emb_words[index] == llm_words[index]
-    )
-    spearman = _spearman(common, emb_pos, llm_pos)
+    # Pairwise comparisons across the three notions of "close".
+    pair_contexto_embedding = pairwise_stats(contexto_words, emb_words, top_n)
+    pair_contexto_llm = pairwise_stats(contexto_words, llm_words, top_n)
+    pair_embedding_llm = pairwise_stats(emb_words, llm_words, top_n)
 
-    # Embedding's full-vocab ranking (target = rank 1) for the LLM-far check.
+    # Embedding's full-vocab ranking (target = rank 1), reused for far checks.
     game = LocalGame(model, target_clean)
+
+    # Contexto-anchored blind spots (only when Contexto ground truth is present):
+    # ground-truth-close words the LLM never proposes, and ground-truth-close
+    # words the embedding ranks far or places out of vocabulary.
+    contexto_blind_llm: list[dict[str, Any]] | None = None
+    contexto_blind_embedding: list[dict[str, Any]] | None = None
+    if contexto_words is not None:
+        contexto_pos = {word: index + 1 for index, word in enumerate(contexto_words)}
+        contexto_blind_llm = [
+            {"word": word, "contexto_rank": contexto_pos[word]}
+            for word in contexto_words if word not in llm_set
+        ]
+        contexto_blind_embedding = []
+        for word in contexto_words:
+            rank = game.rankings.get(word, -1)
+            in_vocab = rank > 0
+            if not in_vocab or rank > far_rank:
+                contexto_blind_embedding.append({
+                    "word": word,
+                    "contexto_rank": contexto_pos[word],
+                    "embedding_rank": rank if in_vocab else None,
+                    "in_vocab": in_vocab,
+                })
+
+    # Secondary embedding-anchored diagnostics (retained so targets without a
+    # Contexto file still print meaningful blind spots, as before).
+    llm_pos = {word: index + 1 for index, word in enumerate(llm_words)}
     blind_spots = [
         {"word": word, "embedding_rank": emb_pos[word], "cosine": emb_cos[word]}
         for word in emb_words if word not in llm_set
@@ -236,14 +347,16 @@ def analyze_target(
         "llm_status": status,
         "llm_word_count": len(llm_words),
         "embedding_word_count": len(emb_words),
+        "contexto_word_count": len(contexto_words) if contexto_words is not None else None,
+        "contexto_available": contexto_words is not None,
+        "contexto_words": contexto_words,
         "embedding_words": emb_words,
         "llm_words": llm_words,
-        "overlap": overlap,
-        "overlap_rate": overlap / top_n if top_n else None,
-        "exact_position_matches": exact_matches,
-        "exact_match_rate": exact_matches / top_n if top_n else None,
-        "spearman": spearman,
-        "n_common": len(common),
+        "pair_contexto_embedding": pair_contexto_embedding,
+        "pair_contexto_llm": pair_contexto_llm,
+        "pair_embedding_llm": pair_embedding_llm,
+        "contexto_blind_llm": contexto_blind_llm,
+        "contexto_blind_embedding": contexto_blind_embedding,
         "blind_spots": blind_spots,
         "llm_only_far": llm_only_far,
     }
@@ -261,79 +374,126 @@ def _fmt_spearman(value: float | None) -> str:
     return " n/a " if value is None else f"{value:+.2f}"
 
 
+def _pair_line(label: str, pair: dict[str, Any] | None, top_n: int) -> str:
+    if pair is None:
+        return f"  {label:<22} n/a (Contexto data unavailable)"
+    return (f"  {label:<22} overlap {pair['overlap']:>3}/{top_n} "
+            f"({_fmt_opt_rate(pair['overlap_rate'])}), "
+            f"exact {pair['exact_position_matches']:>3} "
+            f"({_fmt_opt_rate(pair['exact_match_rate'])}), "
+            f"Spearman {_fmt_spearman(pair['spearman'])} "
+            f"(n={pair['n_common']})")
+
+
 def print_target_report(result: dict[str, Any]) -> None:
     target = result["target"]
     top_n = result["top_n"]
     emb_words = result["embedding_words"]
     llm_words = result["llm_words"]
+    contexto_words = result["contexto_words"]
+    contexto_available = result["contexto_available"]
 
-    print("\n" + "=" * 64)
+    print("\n" + "=" * 78)
     print(f"TARGET: {target}   (top-{top_n})   LLM list source: {result['llm_status']}")
-    print("=" * 64)
+    print("=" * 78)
+    if not contexto_available:
+        print("[note] no Contexto file (data/<target>.txt); Contexto column is n/a.")
+    elif result["contexto_word_count"] < top_n:
+        print(f"[note] Contexto provides only {result['contexto_word_count']} word(s) "
+              f"(cap {CONTEXTO_MAX_RANK}); remaining positions are n/a.")
     if result["llm_word_count"] < top_n:
         print(f"[note] only {result['llm_word_count']} usable LLM word(s) survived "
               f"normalization (wanted {top_n}).")
 
-    print(f"\n{'rank':>4} | {'embedding word':<18} | {'LLM word':<18}")
-    print(f"{'-' * 4}-+-{'-' * 18}-+-{'-' * 18}")
+    contexto_list = contexto_words if contexto_words is not None else []
+    print(f"\n{'rank':>4} | {'contexto word':<18} | {'embedding word':<18} | {'LLM word':<18}")
+    print(f"{'-' * 4}-+-{'-' * 18}-+-{'-' * 18}-+-{'-' * 18}")
     for index in range(top_n):
+        ctx = contexto_list[index] if index < len(contexto_list) else ("n/a" if contexto_available else "--")
         emb = emb_words[index] if index < len(emb_words) else "--"
         llm = llm_words[index] if index < len(llm_words) else "--"
-        marker = "  <= match" if emb == llm and emb != "--" else ""
-        print(f"{index + 1:>4} | {emb:<18} | {llm:<18}{marker}")
+        print(f"{index + 1:>4} | {ctx:<18} | {emb:<18} | {llm:<18}")
 
-    print(f"\nOverlap:          {result['overlap']}/{top_n} words "
-          f"({_fmt_opt_rate(result['overlap_rate'])})")
-    print(f"Exact position:   {result['exact_position_matches']}/{top_n} "
-          f"({_fmt_opt_rate(result['exact_match_rate'])})")
-    print(f"Order agreement:  Spearman {_fmt_spearman(result['spearman'])} "
-          f"(over {result['n_common']} shared word(s))")
+    print("\nPairwise agreement:")
+    print(_pair_line("contexto vs embedding", result["pair_contexto_embedding"], top_n))
+    print(_pair_line("contexto vs LLM", result["pair_contexto_llm"], top_n))
+    print(_pair_line("embedding vs LLM", result["pair_embedding_llm"], top_n))
 
-    blind = result["blind_spots"]
-    print(f"\nBLIND SPOTS - embedding-close words the LLM never proposed "
-          f"({len(blind)}/{top_n}):")
-    if blind:
-        for item in blind:
-            print(f"  emb#{item['embedding_rank']:<2} {item['word']:<18} "
-                  f"(cosine {item['cosine']:.3f})")
+    if contexto_available:
+        blind_llm = result["contexto_blind_llm"]
+        print(f"\nBLIND SPOTS - Contexto-close words the LLM never proposed "
+              f"({len(blind_llm)}/{top_n}):")
+        if blind_llm:
+            for item in blind_llm:
+                print(f"  ctx#{item['contexto_rank']:<3} {item['word']:<18}")
+        else:
+            print("  (none — LLM covered the entire Contexto top-N)")
+
+        blind_emb = result["contexto_blind_embedding"]
+        print(f"\nBLIND SPOTS - Contexto-close words the embedding ranks far / out of vocab "
+              f"({len(blind_emb)}/{top_n}):")
+        if blind_emb:
+            for item in blind_emb:
+                rank = "n/a (not in vocab)" if not item["in_vocab"] else f"rank {item['embedding_rank']}"
+                print(f"  ctx#{item['contexto_rank']:<3} {item['word']:<18} ({rank})")
+        else:
+            print("  (none — embedding ranks every Contexto top-N word within far-rank)")
     else:
-        print("  (none — LLM covered the entire embedding top-N)")
+        blind = result["blind_spots"]
+        print(f"\nBLIND SPOTS - embedding-close words the LLM never proposed "
+              f"({len(blind)}/{top_n}):")
+        if blind:
+            for item in blind:
+                print(f"  emb#{item['embedding_rank']:<2} {item['word']:<18} "
+                      f"(cosine {item['cosine']:.3f})")
+        else:
+            print("  (none — LLM covered the entire embedding top-N)")
 
-    far = result["llm_only_far"]
-    if far:
-        print(f"\nLLM-only-far - LLM words the embedding ranks far / out of vocab "
-              f"({len(far)}):")
-        for item in far:
-            rank = "n/a (not in vocab)" if not item["in_vocab"] else f"rank {item['embedding_rank']}"
-            print(f"  llm#{item['llm_rank']:<2} {item['word']:<18} ({rank})")
+        far = result["llm_only_far"]
+        if far:
+            print(f"\nLLM-only-far - LLM words the embedding ranks far / out of vocab "
+                  f"({len(far)}):")
+            for item in far:
+                rank = "n/a (not in vocab)" if not item["in_vocab"] else f"rank {item['embedding_rank']}"
+                print(f"  llm#{item['llm_rank']:<2} {item['word']:<18} ({rank})")
+
+
+def _pair_overlap_rate(result: dict[str, Any], pair_key: str) -> float | None:
+    pair = result.get(pair_key)
+    return pair["overlap_rate"] if pair is not None else None
+
+
+def _mean(values: list[float]) -> float | None:
+    return sum(values) / len(values) if values else None
 
 
 def print_aggregate(results: list[dict[str, Any]]) -> None:
-    print("\n" + "=" * 64)
-    print("SUMMARY (one row per target)")
-    print("=" * 64)
-    print(f"{'target':<16} {'overlap':>9} {'pos-match':>10} {'spearman':>9} {'blind':>6} {'llm-far':>8}")
-    print("-" * 64)
+    print("\n" + "=" * 78)
+    print("SUMMARY (one row per target; overlap rate per pair)")
+    print("=" * 78)
+    print(f"{'target':<16} {'ctx-emb':>9} {'ctx-llm':>9} {'emb-llm':>9} "
+          f"{'blind-llm':>10} {'blind-emb':>10}")
+    print("-" * 78)
     for result in results:
+        ctx_blind_llm = result["contexto_blind_llm"]
+        ctx_blind_emb = result["contexto_blind_embedding"]
         print(f"{result['target']:<16} "
-              f"{_fmt_opt_rate(result['overlap_rate']):>9} "
-              f"{_fmt_opt_rate(result['exact_match_rate']):>10} "
-              f"{_fmt_spearman(result['spearman']):>9} "
-              f"{len(result['blind_spots']):>6} "
-              f"{len(result['llm_only_far']):>8}")
+              f"{_fmt_opt_rate(_pair_overlap_rate(result, 'pair_contexto_embedding')):>9} "
+              f"{_fmt_opt_rate(_pair_overlap_rate(result, 'pair_contexto_llm')):>9} "
+              f"{_fmt_opt_rate(_pair_overlap_rate(result, 'pair_embedding_llm')):>9} "
+              f"{(len(ctx_blind_llm) if ctx_blind_llm is not None else 'n/a'):>10} "
+              f"{(len(ctx_blind_emb) if ctx_blind_emb is not None else 'n/a'):>10}")
 
-    overlap_rates = [r["overlap_rate"] for r in results if r["overlap_rate"] is not None]
-    match_rates = [r["exact_match_rate"] for r in results if r["exact_match_rate"] is not None]
-    spearmans = [r["spearman"] for r in results if r["spearman"] is not None]
-    print("-" * 64)
-    mean_overlap = sum(overlap_rates) / len(overlap_rates) if overlap_rates else None
-    mean_match = sum(match_rates) / len(match_rates) if match_rates else None
-    mean_spearman = sum(spearmans) / len(spearmans) if spearmans else None
-    print(f"{'MEAN':<16} {_fmt_opt_rate(mean_overlap):>9} "
-          f"{_fmt_opt_rate(mean_match):>10} {_fmt_spearman(mean_spearman):>9}")
-    print("\nLower overlap / Spearman on a target means the LLM's notion of close")
-    print("diverges from the game's there; the blind-spot words are the concrete")
-    print("close words the solver is unlikely to ever guess on that target.")
+    print("-" * 78)
+    mean_ce = _mean([r for r in (_pair_overlap_rate(x, "pair_contexto_embedding") for x in results) if r is not None])
+    mean_cl = _mean([r for r in (_pair_overlap_rate(x, "pair_contexto_llm") for x in results) if r is not None])
+    mean_el = _mean([r for r in (_pair_overlap_rate(x, "pair_embedding_llm") for x in results) if r is not None])
+    print(f"{'MEAN':<16} {_fmt_opt_rate(mean_ce):>9} {_fmt_opt_rate(mean_cl):>9} "
+          f"{_fmt_opt_rate(mean_el):>9}")
+    print("\nctx-emb / ctx-llm / emb-llm are top-N set overlap rates between pairs.")
+    print("When Contexto data is present it is the ground-truth anchor: blind-llm")
+    print("counts Contexto-close words the LLM never proposes, blind-emb counts")
+    print("Contexto-close words the embedding ranks far - both are solver stall risks.")
 
 
 # --------------------------------------------------------------------------- #
@@ -341,12 +501,15 @@ def print_aggregate(results: list[dict[str, Any]]) -> None:
 # --------------------------------------------------------------------------- #
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Compare embedding vs LLM closeness per target (analysis only; "
-                    "changes no solver code).")
+        description="Compare real Contexto vs embedding vs LLM closeness per target "
+                    "(analysis only; changes no solver code).")
     parser.add_argument("targets", nargs="*", help="Target words (positional).")
     parser.add_argument("--targets", dest="targets_csv",
                         help="Comma-separated target words (merged with positional).")
     parser.add_argument("--top-n", type=int, default=15, help="Words per side (default 15).")
+    parser.add_argument("--contexto-dir", default=DEFAULT_CONTEXTO_DIR,
+                        help="Directory of real Contexto rank files <target>.txt "
+                             f"(default: {DEFAULT_CONTEXTO_DIR}).")
     parser.add_argument("--embedding-path", default=config.GAME_EMBEDDING_PATH,
                         help="Local game embedding file (default: config.GAME_EMBEDDING_PATH).")
     parser.add_argument("--provider", help="LLM provider (default: config.LLM_PROVIDER).")
@@ -414,7 +577,8 @@ def main() -> int:
 
     results: list[dict[str, Any]] = []
     for target in targets:
-        result = analyze_target(target, args.top_n, model, client, cache, cache_path, args.far_rank)
+        result = analyze_target(target, args.top_n, model, client, cache, cache_path,
+                                args.far_rank, args.contexto_dir)
         if result is not None:
             results.append(result)
             print_target_report(result)
@@ -427,9 +591,9 @@ def main() -> int:
     if len(results) > 1:
         print_aggregate(results)
 
-    print("\nCaveat: this is the LOCAL game's embedding "
-          f"({model.path}), not the real Contexto embedding; it explains local-game "
-          "behavior only.")
+    print("\nCaveat: the embedding side is the LOCAL game's embedding "
+          f"({model.path}), not the real Contexto embedding. Real Contexto ranks, "
+          "when present, come from the manually collected data/<target>.txt files.")
 
     if args.report_json:
         report = {
@@ -438,6 +602,8 @@ def main() -> int:
             "llm_model": resolved_model,
             "top_n": args.top_n,
             "far_rank": args.far_rank,
+            "contexto_dir": args.contexto_dir,
+            "contexto_max_rank": CONTEXTO_MAX_RANK,
             "targets": results,
         }
         Path(args.report_json).write_text(json.dumps(report, indent=2, sort_keys=True), encoding="utf-8")

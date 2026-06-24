@@ -1,0 +1,961 @@
+{
+  "aggregate": {
+    "blind_spot_means": {
+      "recall@10": 0.15000000000000002,
+      "recall@25": 0.2,
+      "recall@50": 0.16
+    },
+    "decomposition_means": {
+      "DISTRIBUTIONAL": 16.0,
+      "MORPH": 0.7142857142857143,
+      "OTHER": 31.0,
+      "SYNONYM": 8.0
+    },
+    "embedding_vs_llm_overlap_mean": 0.5,
+    "excluded_from_embedding_means": [
+      [
+        "otter",
+        "degenerate_embedding"
+      ]
+    ],
+    "excluded_from_llm_means": [
+      [
+        "blade",
+        "LLM_FAILED"
+      ],
+      [
+        "loyalty",
+        "LLM_FAILED"
+      ],
+      [
+        "blackboard",
+        "LLM_FAILED"
+      ],
+      [
+        "rhythm",
+        "LLM_FAILED"
+      ],
+      [
+        "safe",
+        "LLM_FAILED"
+      ]
+    ],
+    "n_targets": 7,
+    "transferability_means": {
+      "median_emb_rank_real_top15": 2189.8333333333335,
+      "median_emb_rank_real_top50": 2096.75,
+      "recall@10": 0.5666666666666667,
+      "recall@25": 0.5,
+      "recall@50": 0.3833333333333333,
+      "spearman_intersection": 0.06659933179792508
+    },
+    "usable_embedding_count": 6,
+    "usable_llm_count": 2
+  },
+  "input": "closeness_contexto_300_2.json",
+  "meta": {
+    "contexto_max_rank": 300,
+    "embedding_path": "data\\embeddings\\all-MiniLM-L6-v2.npz",
+    "far_rank": 100,
+    "llm_model": "qwen3:14b",
+    "top_n": 300
+  },
+  "targets": {
+    "arrow": {
+      "blind_spots": {
+        "llm_overreach": [
+          {
+            "real_rank": 104,
+            "word": "shaft"
+          },
+          {
+            "real_rank": 3,
+            "word": "point"
+          },
+          {
+            "real_rank": 78,
+            "word": "tip"
+          },
+          {
+            "real_rank": 130,
+            "word": "head"
+          },
+          {
+            "real_rank": 191,
+            "word": "nock"
+          },
+          {
+            "real_rank": null,
+            "word": "fletching"
+          },
+          {
+            "real_rank": null,
+            "word": "feathers"
+          },
+          {
+            "real_rank": 43,
+            "word": "quiver"
+          },
+          {
+            "real_rank": 2,
+            "word": "bow"
+          },
+          {
+            "real_rank": 67,
+            "word": "target"
+          },
+          {
+            "real_rank": 24,
+            "word": "aim"
+          },
+          {
+            "real_rank": 22,
+            "word": "shoot"
+          },
+          {
+            "real_rank": 60,
+            "word": "launch"
+          },
+          {
+            "real_rank": null,
+            "word": "direct"
+          },
+          {
+            "real_rank": 159,
+            "word": "trajectory"
+          }
+        ],
+        "real_top50_absent_from_llm": [
+          "cursor",
+          "bullet",
+          "button",
+          "scroll",
+          "sword",
+          "red",
+          "circle",
+          "crossbow",
+          "mouse",
+          "spacebar",
+          "right",
+          "icon",
+          "click",
+          "archer",
+          "move",
+          "axis",
+          "vertical",
+          "finger",
+          "directional",
+          "tail",
+          "turn",
+          "fire",
+          "horizontal",
+          "fly",
+          "drag"
+        ],
+        "real_top50_absent_from_llm_count": 37,
+        "real_top50_absent_total": 37,
+        "recall": {
+          "10": {
+            "capped": false,
+            "hits": 2,
+            "k": 10,
+            "rate": 0.2,
+            "requested_k": 10
+          },
+          "25": {
+            "capped": false,
+            "hits": 8,
+            "k": 25,
+            "rate": 0.32,
+            "requested_k": 25
+          },
+          "50": {
+            "capped": false,
+            "hits": 13,
+            "k": 50,
+            "rate": 0.26,
+            "requested_k": 50
+          }
+        }
+      },
+      "decomposition": {
+        "counts": {
+          "DISTRIBUTIONAL": 9,
+          "MORPH": 0,
+          "OTHER": 28,
+          "SYNONYM": 13
+        },
+        "synonym_folded_into_other": false,
+        "window": 50
+      },
+      "embedding_vs_llm": {
+        "cut": 15,
+        "overlap": 1,
+        "shared_words": [
+          "bow"
+        ]
+      },
+      "health": {
+        "contexto_available": true,
+        "contexto_word_count": 299,
+        "degenerate_embedding": false,
+        "embedding_top15_resolved_into_real_or_llm": 5,
+        "embedding_top5": [
+          "arrows",
+          "arrowed",
+          "arrowpoint",
+          "arrowheads",
+          "arrowroot"
+        ],
+        "embedding_word_count": 300,
+        "has_contexto": true,
+        "llm_failed": false,
+        "llm_status": "llm",
+        "llm_word_count": 82
+      },
+      "morphology": {
+        "emb_vs_real_overlap_raw": 40,
+        "emb_vs_real_overlap_stemmed": 39,
+        "embedding_top15_morph_count": 9,
+        "embedding_top15_morph_words": [
+          "arrows",
+          "arrowed",
+          "arrowpoint",
+          "arrowheads",
+          "arrowroot",
+          "arrowhead",
+          "arroway",
+          "arrowood",
+          "arrowsmith"
+        ],
+        "llm_top15_morph_count": 0,
+        "llm_top15_morph_words": [],
+        "llm_vs_real_overlap_raw": 36,
+        "llm_vs_real_overlap_stemmed": 35
+      },
+      "target": "arrow",
+      "transferability": {
+        "median_emb_rank_real_top15": 353.5,
+        "median_emb_rank_real_top15_n_resolved": 14,
+        "median_emb_rank_real_top15_n_unresolved": 1,
+        "median_emb_rank_real_top50": 690.0,
+        "median_emb_rank_real_top50_n_resolved": 49,
+        "median_emb_rank_real_top50_n_unresolved": 1,
+        "oov_count_real_top50": 1,
+        "oov_words": [
+          "spacebar"
+        ],
+        "recall": {
+          "10": {
+            "capped": false,
+            "hits": 3,
+            "k": 10,
+            "rate": 0.3,
+            "requested_k": 10
+          },
+          "25": {
+            "capped": false,
+            "hits": 10,
+            "k": 25,
+            "rate": 0.4,
+            "requested_k": 25
+          },
+          "50": {
+            "capped": false,
+            "hits": 16,
+            "k": 50,
+            "rate": 0.32,
+            "requested_k": 50
+          }
+        },
+        "spearman_differs": false,
+        "spearman_intersection": 0.1614506092025122,
+        "spearman_n_shared": 40,
+        "spearman_stored": 0.1614506092025122,
+        "spearman_underpowered": false
+      }
+    },
+    "blackboard": {
+      "blind_spots": {
+        "reason": "LLM_FAILED (empty llm_words; status='error: LLM did not return valid JSON after retry: Expecting value: line 1 column 1 (char 0)')"
+      },
+      "decomposition": {
+        "counts": {
+          "DISTRIBUTIONAL": 10,
+          "MORPH": 0,
+          "OTHER": 40,
+          "SYNONYM": 0
+        },
+        "synonym_folded_into_other": true,
+        "synonym_reason": "LLM_FAILED (empty llm_words; status='error: LLM did not return valid JSON after retry: Expecting value: line 1 column 1 (char 0)')",
+        "window": 50
+      },
+      "embedding_vs_llm": {
+        "reason": "LLM_FAILED (empty llm_words; status='error: LLM did not return valid JSON after retry: Expecting value: line 1 column 1 (char 0)')"
+      },
+      "health": {
+        "contexto_available": true,
+        "contexto_word_count": 299,
+        "degenerate_embedding": false,
+        "embedding_top15_resolved_into_real_or_llm": 3,
+        "embedding_top5": [
+          "blackboards",
+          "whiteboard",
+          "board",
+          "whiteboards",
+          "wallboard"
+        ],
+        "embedding_word_count": 300,
+        "has_contexto": true,
+        "llm_failed": true,
+        "llm_status": "error: LLM did not return valid JSON after retry: Expecting value: line 1 column 1 (char 0)",
+        "llm_word_count": 0
+      },
+      "morphology": {
+        "emb_vs_real_overlap_raw": 19,
+        "emb_vs_real_overlap_stemmed": 19,
+        "embedding_top15_morph_count": 1,
+        "embedding_top15_morph_words": [
+          "blackboards"
+        ],
+        "llm_morph_reason": "LLM_FAILED (empty llm_words; status='error: LLM did not return valid JSON after retry: Expecting value: line 1 column 1 (char 0)')",
+        "llm_top15_morph_count": null,
+        "llm_top15_morph_words": [],
+        "llm_vs_real_overlap_raw": null,
+        "llm_vs_real_overlap_stemmed": null,
+        "llm_vs_real_reason": "LLM_FAILED (empty llm_words; status='error: LLM did not return valid JSON after retry: Expecting value: line 1 column 1 (char 0)')"
+      },
+      "target": "blackboard",
+      "transferability": {
+        "median_emb_rank_real_top15": 519.5,
+        "median_emb_rank_real_top15_n_resolved": 14,
+        "median_emb_rank_real_top15_n_unresolved": 1,
+        "median_emb_rank_real_top50": 7143.0,
+        "median_emb_rank_real_top50_n_resolved": 49,
+        "median_emb_rank_real_top50_n_unresolved": 1,
+        "oov_count_real_top50": 1,
+        "oov_words": [
+          "corkboard"
+        ],
+        "recall": {
+          "10": {
+            "capped": false,
+            "hits": 5,
+            "k": 10,
+            "rate": 0.5,
+            "requested_k": 10
+          },
+          "25": {
+            "capped": false,
+            "hits": 9,
+            "k": 25,
+            "rate": 0.36,
+            "requested_k": 25
+          },
+          "50": {
+            "capped": false,
+            "hits": 10,
+            "k": 50,
+            "rate": 0.2,
+            "requested_k": 50
+          }
+        },
+        "spearman_differs": false,
+        "spearman_intersection": -0.1857768508849118,
+        "spearman_n_shared": 19,
+        "spearman_stored": -0.1857768508849118,
+        "spearman_underpowered": false
+      }
+    },
+    "blade": {
+      "blind_spots": {
+        "reason": "LLM_FAILED (status='cache')"
+      },
+      "decomposition": {
+        "counts": {
+          "DISTRIBUTIONAL": 26,
+          "MORPH": 1,
+          "OTHER": 23,
+          "SYNONYM": 0
+        },
+        "synonym_folded_into_other": true,
+        "synonym_reason": "LLM_FAILED (status='cache')",
+        "window": 50
+      },
+      "embedding_vs_llm": {
+        "reason": "LLM_FAILED (status='cache')"
+      },
+      "health": {
+        "contexto_available": true,
+        "contexto_word_count": 299,
+        "degenerate_embedding": false,
+        "embedding_top15_resolved_into_real_or_llm": 4,
+        "embedding_top5": [
+          "blades",
+          "bladed",
+          "blader",
+          "knife",
+          "bladers"
+        ],
+        "embedding_word_count": 300,
+        "has_contexto": true,
+        "llm_failed": true,
+        "llm_status": "cache",
+        "llm_word_count": 134
+      },
+      "morphology": {
+        "emb_vs_real_overlap_raw": 46,
+        "emb_vs_real_overlap_stemmed": 45,
+        "embedding_top15_morph_count": 9,
+        "embedding_top15_morph_words": [
+          "blades",
+          "bladed",
+          "blader",
+          "bladers",
+          "bladen",
+          "bladel",
+          "bladerunner",
+          "bladet",
+          "bladecenter"
+        ],
+        "llm_morph_reason": "LLM_FAILED (status='cache')",
+        "llm_top15_morph_count": null,
+        "llm_top15_morph_words": [],
+        "llm_vs_real_overlap_raw": null,
+        "llm_vs_real_overlap_stemmed": null,
+        "llm_vs_real_reason": "LLM_FAILED (status='cache')"
+      },
+      "target": "blade",
+      "transferability": {
+        "median_emb_rank_real_top15": 127.0,
+        "median_emb_rank_real_top15_n_resolved": 15,
+        "median_emb_rank_real_top15_n_unresolved": 0,
+        "median_emb_rank_real_top50": 210.5,
+        "median_emb_rank_real_top50_n_resolved": 50,
+        "median_emb_rank_real_top50_n_unresolved": 0,
+        "oov_count_real_top50": 0,
+        "oov_words": [],
+        "recall": {
+          "10": {
+            "capped": false,
+            "hits": 9,
+            "k": 10,
+            "rate": 0.9,
+            "requested_k": 10
+          },
+          "25": {
+            "capped": false,
+            "hits": 19,
+            "k": 25,
+            "rate": 0.76,
+            "requested_k": 25
+          },
+          "50": {
+            "capped": false,
+            "hits": 27,
+            "k": 50,
+            "rate": 0.54,
+            "requested_k": 50
+          }
+        },
+        "spearman_differs": false,
+        "spearman_intersection": 0.15213359511941407,
+        "spearman_n_shared": 46,
+        "spearman_stored": 0.15213359511941407,
+        "spearman_underpowered": false
+      }
+    },
+    "loyalty": {
+      "blind_spots": {
+        "reason": "LLM_FAILED (status='cache')"
+      },
+      "decomposition": {
+        "counts": {
+          "DISTRIBUTIONAL": 28,
+          "MORPH": 1,
+          "OTHER": 21,
+          "SYNONYM": 0
+        },
+        "synonym_folded_into_other": true,
+        "synonym_reason": "LLM_FAILED (status='cache')",
+        "window": 50
+      },
+      "embedding_vs_llm": {
+        "reason": "LLM_FAILED (status='cache')"
+      },
+      "health": {
+        "contexto_available": true,
+        "contexto_word_count": 299,
+        "degenerate_embedding": false,
+        "embedding_top15_resolved_into_real_or_llm": 6,
+        "embedding_top5": [
+          "loyalism",
+          "loyal",
+          "loyalties",
+          "loyals",
+          "loyally"
+        ],
+        "embedding_word_count": 300,
+        "has_contexto": true,
+        "llm_failed": true,
+        "llm_status": "cache",
+        "llm_word_count": 118
+      },
+      "morphology": {
+        "emb_vs_real_overlap_raw": 74,
+        "emb_vs_real_overlap_stemmed": 73,
+        "embedding_top15_morph_count": 2,
+        "embedding_top15_morph_words": [
+          "loyal",
+          "loyalties"
+        ],
+        "llm_morph_reason": "LLM_FAILED (status='cache')",
+        "llm_top15_morph_count": null,
+        "llm_top15_morph_words": [],
+        "llm_vs_real_overlap_raw": null,
+        "llm_vs_real_overlap_stemmed": null,
+        "llm_vs_real_reason": "LLM_FAILED (status='cache')"
+      },
+      "target": "loyalty",
+      "transferability": {
+        "median_emb_rank_real_top15": 90.0,
+        "median_emb_rank_real_top15_n_resolved": 15,
+        "median_emb_rank_real_top15_n_unresolved": 0,
+        "median_emb_rank_real_top50": 190.5,
+        "median_emb_rank_real_top50_n_resolved": 50,
+        "median_emb_rank_real_top50_n_unresolved": 0,
+        "oov_count_real_top50": 0,
+        "oov_words": [],
+        "recall": {
+          "10": {
+            "capped": false,
+            "hits": 8,
+            "k": 10,
+            "rate": 0.8,
+            "requested_k": 10
+          },
+          "25": {
+            "capped": false,
+            "hits": 18,
+            "k": 25,
+            "rate": 0.72,
+            "requested_k": 25
+          },
+          "50": {
+            "capped": false,
+            "hits": 29,
+            "k": 50,
+            "rate": 0.58,
+            "requested_k": 50
+          }
+        },
+        "spearman_differs": false,
+        "spearman_intersection": 0.19270983135605443,
+        "spearman_n_shared": 74,
+        "spearman_stored": 0.19270983135605443,
+        "spearman_underpowered": false
+      }
+    },
+    "otter": {
+      "blind_spots": {
+        "llm_overreach": [
+          {
+            "real_rank": 132,
+            "word": "swim"
+          },
+          {
+            "real_rank": null,
+            "word": "paddle"
+          },
+          {
+            "real_rank": null,
+            "word": "glide"
+          },
+          {
+            "real_rank": null,
+            "word": "dive"
+          },
+          {
+            "real_rank": null,
+            "word": "float"
+          },
+          {
+            "real_rank": null,
+            "word": "leap"
+          },
+          {
+            "real_rank": null,
+            "word": "jump"
+          },
+          {
+            "real_rank": null,
+            "word": "play"
+          },
+          {
+            "real_rank": 169,
+            "word": "hunt"
+          },
+          {
+            "real_rank": null,
+            "word": "eat"
+          },
+          {
+            "real_rank": 186,
+            "word": "catch"
+          },
+          {
+            "real_rank": null,
+            "word": "kill"
+          },
+          {
+            "real_rank": 194,
+            "word": "feed"
+          },
+          {
+            "real_rank": 23,
+            "word": "fish"
+          },
+          {
+            "real_rank": 287,
+            "word": "prey"
+          }
+        ],
+        "real_top50_absent_from_llm": [
+          "whale",
+          "beaver",
+          "turtle",
+          "humpback",
+          "moose",
+          "fox",
+          "muskrat",
+          "raccoon",
+          "bear",
+          "muskrats",
+          "porpoise",
+          "manatee",
+          "alligator",
+          "walrus",
+          "squirrel",
+          "wolf",
+          "heron",
+          "dolphin",
+          "caribou",
+          "shark",
+          "seabird",
+          "sturgeon",
+          "orca",
+          "frog",
+          "duck"
+        ],
+        "real_top50_absent_from_llm_count": 47,
+        "real_top50_absent_total": 47,
+        "recall": {
+          "10": {
+            "capped": false,
+            "hits": 1,
+            "k": 10,
+            "rate": 0.1,
+            "requested_k": 10
+          },
+          "25": {
+            "capped": false,
+            "hits": 2,
+            "k": 25,
+            "rate": 0.08,
+            "requested_k": 25
+          },
+          "50": {
+            "capped": false,
+            "hits": 3,
+            "k": 50,
+            "rate": 0.06,
+            "requested_k": 50
+          }
+        }
+      },
+      "decomposition": {
+        "counts": {
+          "DISTRIBUTIONAL": 9,
+          "MORPH": 0,
+          "OTHER": 38,
+          "SYNONYM": 3
+        },
+        "synonym_folded_into_other": false,
+        "window": 50
+      },
+      "embedding_vs_llm": {
+        "cut": 15,
+        "overlap": 0,
+        "shared_words": []
+      },
+      "health": {
+        "contexto_available": true,
+        "contexto_word_count": 299,
+        "degenerate_embedding": true,
+        "embedding_top15_resolved_into_real_or_llm": 1,
+        "embedding_top5": [
+          "ottery",
+          "otterness",
+          "otters",
+          "otterman",
+          "otterbein"
+        ],
+        "embedding_word_count": 300,
+        "has_contexto": true,
+        "llm_failed": false,
+        "llm_status": "llm",
+        "llm_word_count": 214
+      },
+      "morphology": {
+        "emb_vs_real_overlap_raw": 28,
+        "emb_vs_real_overlap_stemmed": 28,
+        "embedding_top15_morph_count": 9,
+        "embedding_top15_morph_words": [
+          "ottery",
+          "otterness",
+          "otters",
+          "otterman",
+          "otterbein",
+          "otterlo",
+          "otterson",
+          "otterloo",
+          "otterburn"
+        ],
+        "llm_top15_morph_count": 0,
+        "llm_top15_morph_words": [],
+        "llm_vs_real_overlap_raw": 32,
+        "llm_vs_real_overlap_stemmed": 32
+      },
+      "target": "otter",
+      "transferability": {
+        "median_emb_rank_real_top15": 20961.0,
+        "median_emb_rank_real_top15_n_resolved": 15,
+        "median_emb_rank_real_top15_n_unresolved": 0,
+        "median_emb_rank_real_top50": 6292.0,
+        "median_emb_rank_real_top50_n_resolved": 50,
+        "median_emb_rank_real_top50_n_unresolved": 0,
+        "oov_count_real_top50": 0,
+        "oov_words": [],
+        "recall": {
+          "10": {
+            "capped": false,
+            "hits": 2,
+            "k": 10,
+            "rate": 0.2,
+            "requested_k": 10
+          },
+          "25": {
+            "capped": false,
+            "hits": 5,
+            "k": 25,
+            "rate": 0.2,
+            "requested_k": 25
+          },
+          "50": {
+            "capped": false,
+            "hits": 9,
+            "k": 50,
+            "rate": 0.18,
+            "requested_k": 50
+          }
+        },
+        "spearman_differs": false,
+        "spearman_intersection": -0.23821561420869278,
+        "spearman_n_shared": 28,
+        "spearman_stored": -0.23821561420869278,
+        "spearman_underpowered": false
+      }
+    },
+    "rhythm": {
+      "blind_spots": {
+        "reason": "LLM_FAILED (status='cache')"
+      },
+      "decomposition": {
+        "counts": {
+          "DISTRIBUTIONAL": 26,
+          "MORPH": 1,
+          "OTHER": 23,
+          "SYNONYM": 0
+        },
+        "synonym_folded_into_other": true,
+        "synonym_reason": "LLM_FAILED (status='cache')",
+        "window": 50
+      },
+      "embedding_vs_llm": {
+        "reason": "LLM_FAILED (status='cache')"
+      },
+      "health": {
+        "contexto_available": true,
+        "contexto_word_count": 299,
+        "degenerate_embedding": false,
+        "embedding_top15_resolved_into_real_or_llm": 8,
+        "embedding_top5": [
+          "rhythms",
+          "rhythmic",
+          "rhythmical",
+          "rhythmicity",
+          "rhythmically"
+        ],
+        "embedding_word_count": 300,
+        "has_contexto": true,
+        "llm_failed": true,
+        "llm_status": "cache",
+        "llm_word_count": 137
+      },
+      "morphology": {
+        "emb_vs_real_overlap_raw": 54,
+        "emb_vs_real_overlap_stemmed": 51,
+        "embedding_top15_morph_count": 5,
+        "embedding_top15_morph_words": [
+          "rhythms",
+          "rhythmic",
+          "rhythmical",
+          "rhythmicity",
+          "rhythmically"
+        ],
+        "llm_morph_reason": "LLM_FAILED (status='cache')",
+        "llm_top15_morph_count": null,
+        "llm_top15_morph_words": [],
+        "llm_vs_real_overlap_raw": null,
+        "llm_vs_real_overlap_stemmed": null,
+        "llm_vs_real_reason": "LLM_FAILED (status='cache')"
+      },
+      "target": "rhythm",
+      "transferability": {
+        "median_emb_rank_real_top15": 156.0,
+        "median_emb_rank_real_top15_n_resolved": 15,
+        "median_emb_rank_real_top15_n_unresolved": 0,
+        "median_emb_rank_real_top50": 259.5,
+        "median_emb_rank_real_top50_n_resolved": 50,
+        "median_emb_rank_real_top50_n_unresolved": 0,
+        "oov_count_real_top50": 0,
+        "oov_words": [],
+        "recall": {
+          "10": {
+            "capped": false,
+            "hits": 8,
+            "k": 10,
+            "rate": 0.8,
+            "requested_k": 10
+          },
+          "25": {
+            "capped": false,
+            "hits": 15,
+            "k": 25,
+            "rate": 0.6,
+            "requested_k": 25
+          },
+          "50": {
+            "capped": false,
+            "hits": 27,
+            "k": 50,
+            "rate": 0.54,
+            "requested_k": 50
+          }
+        },
+        "spearman_differs": false,
+        "spearman_intersection": -0.13250167685157338,
+        "spearman_n_shared": 54,
+        "spearman_stored": -0.13250167685157338,
+        "spearman_underpowered": false
+      }
+    },
+    "safe": {
+      "blind_spots": {
+        "reason": "LLM_FAILED (empty llm_words; status='error: LLM did not return valid JSON after retry: Expecting value: line 1 column 1 (char 0)')"
+      },
+      "decomposition": {
+        "counts": {
+          "DISTRIBUTIONAL": 4,
+          "MORPH": 2,
+          "OTHER": 44,
+          "SYNONYM": 0
+        },
+        "synonym_folded_into_other": true,
+        "synonym_reason": "LLM_FAILED (empty llm_words; status='error: LLM did not return valid JSON after retry: Expecting value: line 1 column 1 (char 0)')",
+        "window": 50
+      },
+      "embedding_vs_llm": {
+        "reason": "LLM_FAILED (empty llm_words; status='error: LLM did not return valid JSON after retry: Expecting value: line 1 column 1 (char 0)')"
+      },
+      "health": {
+        "contexto_available": true,
+        "contexto_word_count": 299,
+        "degenerate_embedding": false,
+        "embedding_top15_resolved_into_real_or_llm": 3,
+        "embedding_top5": [
+          "safely",
+          "safest",
+          "unsafe",
+          "safer",
+          "safes"
+        ],
+        "embedding_word_count": 300,
+        "has_contexto": true,
+        "llm_failed": true,
+        "llm_status": "error: LLM did not return valid JSON after retry: Expecting value: line 1 column 1 (char 0)",
+        "llm_word_count": 0
+      },
+      "morphology": {
+        "emb_vs_real_overlap_raw": 22,
+        "emb_vs_real_overlap_stemmed": 20,
+        "embedding_top15_morph_count": 8,
+        "embedding_top15_morph_words": [
+          "safely",
+          "safest",
+          "safer",
+          "safes",
+          "safed",
+          "safety",
+          "safeties",
+          "safet"
+        ],
+        "llm_morph_reason": "LLM_FAILED (empty llm_words; status='error: LLM did not return valid JSON after retry: Expecting value: line 1 column 1 (char 0)')",
+        "llm_top15_morph_count": null,
+        "llm_top15_morph_words": [],
+        "llm_vs_real_overlap_raw": null,
+        "llm_vs_real_overlap_stemmed": null,
+        "llm_vs_real_reason": "LLM_FAILED (empty llm_words; status='error: LLM did not return valid JSON after retry: Expecting value: line 1 column 1 (char 0)')"
+      },
+      "target": "safe",
+      "transferability": {
+        "median_emb_rank_real_top15": 11893.0,
+        "median_emb_rank_real_top15_n_resolved": 15,
+        "median_emb_rank_real_top15_n_unresolved": 0,
+        "median_emb_rank_real_top50": 4087.0,
+        "median_emb_rank_real_top50_n_resolved": 50,
+        "median_emb_rank_real_top50_n_unresolved": 0,
+        "oov_count_real_top50": 0,
+        "oov_words": [],
+        "recall": {
+          "10": {
+            "capped": false,
+            "hits": 1,
+            "k": 10,
+            "rate": 0.1,
+            "requested_k": 10
+          },
+          "25": {
+            "capped": false,
+            "hits": 4,
+            "k": 25,
+            "rate": 0.16,
+            "requested_k": 25
+          },
+          "50": {
+            "capped": false,
+            "hits": 6,
+            "k": 50,
+            "rate": 0.12,
+            "requested_k": 50
+          }
+        },
+        "spearman_differs": false,
+        "spearman_intersection": 0.211580482846055,
+        "spearman_n_shared": 22,
+        "spearman_stored": 0.211580482846055,
+        "spearman_underpowered": false
+      }
+    }
+  }
+}

@@ -1,0 +1,518 @@
+{
+  "aggregate": {
+    "blind_spot_means": {
+      "recall@10": null,
+      "recall@25": null,
+      "recall@50": null
+    },
+    "decomposition_means": {
+      "DISTRIBUTIONAL": null,
+      "MORPH": null,
+      "OTHER": null,
+      "SYNONYM": null
+    },
+    "embedding_vs_llm_overlap_mean": 1.8888888888888888,
+    "excluded_from_embedding_means": [
+      [
+        "superficial",
+        "degenerate_embedding"
+      ],
+      [
+        "notorious",
+        "degenerate_embedding"
+      ],
+      [
+        "herbaceous",
+        "degenerate_embedding"
+      ],
+      [
+        "ivory",
+        "degenerate_embedding"
+      ],
+      [
+        "house",
+        "degenerate_embedding"
+      ],
+      [
+        "chicken",
+        "no contexto column"
+      ],
+      [
+        "cat",
+        "degenerate_embedding"
+      ],
+      [
+        "dog",
+        "no contexto column"
+      ],
+      [
+        "computer",
+        "degenerate_embedding"
+      ]
+    ],
+    "excluded_from_llm_means": [],
+    "n_targets": 9,
+    "transferability_means": {
+      "median_emb_rank_real_top15": null,
+      "median_emb_rank_real_top50": null,
+      "recall@10": null,
+      "recall@25": null,
+      "recall@50": null,
+      "spearman_intersection": null
+    },
+    "usable_embedding_count": 0,
+    "usable_llm_count": 9
+  },
+  "input": "closeness.json",
+  "meta": {
+    "embedding_path": "data\\embeddings\\all-MiniLM-L6-v2.npz",
+    "far_rank": 100,
+    "llm_model": "qwen3:14b",
+    "top_n": 15
+  },
+  "targets": {
+    "cat": {
+      "blind_spots": {
+        "reason": "absent (no contexto column)"
+      },
+      "decomposition": {
+        "reason": "absent (no contexto column)"
+      },
+      "embedding_vs_llm": {
+        "cut": 15,
+        "overlap": 2,
+        "shared_words": [
+          "feline",
+          "kitten"
+        ]
+      },
+      "health": {
+        "contexto_available": false,
+        "contexto_word_count": null,
+        "degenerate_embedding": true,
+        "embedding_top15_resolved_into_real_or_llm": 2,
+        "embedding_top5": [
+          "cats",
+          "kitty",
+          "kitten",
+          "catdog",
+          "cates"
+        ],
+        "embedding_word_count": 15,
+        "has_contexto": false,
+        "llm_failed": false,
+        "llm_status": "llm",
+        "llm_word_count": 15
+      },
+      "morphology": {
+        "embedding_top15_morph_count": 2,
+        "embedding_top15_morph_words": [
+          "cats",
+          "cates"
+        ],
+        "llm_top15_morph_count": 0,
+        "llm_top15_morph_words": [],
+        "overlap_reason": "absent (no contexto column)"
+      },
+      "target": "cat",
+      "transferability": {
+        "reason": "absent (no contexto column)"
+      }
+    },
+    "chicken": {
+      "blind_spots": {
+        "reason": "absent (no contexto column)"
+      },
+      "decomposition": {
+        "reason": "absent (no contexto column)"
+      },
+      "embedding_vs_llm": {
+        "cut": 15,
+        "overlap": 6,
+        "shared_words": [
+          "bird",
+          "chick",
+          "hen",
+          "meat",
+          "poultry",
+          "rooster"
+        ]
+      },
+      "health": {
+        "contexto_available": false,
+        "contexto_word_count": null,
+        "degenerate_embedding": false,
+        "embedding_top15_resolved_into_real_or_llm": 6,
+        "embedding_top5": [
+          "chickens",
+          "poultry",
+          "chickening",
+          "chickened",
+          "meat"
+        ],
+        "embedding_word_count": 15,
+        "has_contexto": false,
+        "llm_failed": false,
+        "llm_status": "llm",
+        "llm_word_count": 15
+      },
+      "morphology": {
+        "embedding_top15_morph_count": 6,
+        "embedding_top15_morph_words": [
+          "chickens",
+          "chickening",
+          "chickened",
+          "chickenfoot",
+          "chickenpox",
+          "chick"
+        ],
+        "llm_top15_morph_count": 1,
+        "llm_top15_morph_words": [
+          "chick"
+        ],
+        "overlap_reason": "absent (no contexto column)"
+      },
+      "target": "chicken",
+      "transferability": {
+        "reason": "absent (no contexto column)"
+      }
+    },
+    "computer": {
+      "blind_spots": {
+        "reason": "absent (no contexto column)"
+      },
+      "decomposition": {
+        "reason": "absent (no contexto column)"
+      },
+      "embedding_vs_llm": {
+        "cut": 15,
+        "overlap": 1,
+        "shared_words": [
+          "hardware"
+        ]
+      },
+      "health": {
+        "contexto_available": false,
+        "contexto_word_count": null,
+        "degenerate_embedding": true,
+        "embedding_top15_resolved_into_real_or_llm": 1,
+        "embedding_top5": [
+          "computers",
+          "pc",
+          "laptop",
+          "desktop",
+          "windows"
+        ],
+        "embedding_word_count": 15,
+        "has_contexto": false,
+        "llm_failed": false,
+        "llm_status": "llm",
+        "llm_word_count": 15
+      },
+      "morphology": {
+        "embedding_top15_morph_count": 4,
+        "embedding_top15_morph_words": [
+          "computers",
+          "computerware",
+          "computerologist",
+          "computerised"
+        ],
+        "llm_top15_morph_count": 0,
+        "llm_top15_morph_words": [],
+        "overlap_reason": "absent (no contexto column)"
+      },
+      "target": "computer",
+      "transferability": {
+        "reason": "absent (no contexto column)"
+      }
+    },
+    "dog": {
+      "blind_spots": {
+        "reason": "absent (no contexto column)"
+      },
+      "decomposition": {
+        "reason": "absent (no contexto column)"
+      },
+      "embedding_vs_llm": {
+        "cut": 14,
+        "overlap": 4,
+        "shared_words": [
+          "canine",
+          "pet",
+          "pup",
+          "puppy"
+        ]
+      },
+      "health": {
+        "contexto_available": false,
+        "contexto_word_count": null,
+        "degenerate_embedding": false,
+        "embedding_top15_resolved_into_real_or_llm": 4,
+        "embedding_top5": [
+          "canine",
+          "dogs",
+          "animal",
+          "pup",
+          "puppy"
+        ],
+        "embedding_word_count": 15,
+        "has_contexto": false,
+        "llm_failed": false,
+        "llm_status": "llm",
+        "llm_word_count": 14
+      },
+      "morphology": {
+        "embedding_top15_morph_count": 1,
+        "embedding_top15_morph_words": [
+          "dogs"
+        ],
+        "llm_top15_morph_count": 0,
+        "llm_top15_morph_words": [],
+        "overlap_reason": "absent (no contexto column)"
+      },
+      "target": "dog",
+      "transferability": {
+        "reason": "absent (no contexto column)"
+      }
+    },
+    "herbaceous": {
+      "blind_spots": {
+        "reason": "absent (no contexto column)"
+      },
+      "decomposition": {
+        "reason": "absent (no contexto column)"
+      },
+      "embedding_vs_llm": {
+        "cut": 15,
+        "overlap": 0,
+        "shared_words": []
+      },
+      "health": {
+        "contexto_available": false,
+        "contexto_word_count": null,
+        "degenerate_embedding": true,
+        "embedding_top15_resolved_into_real_or_llm": 0,
+        "embedding_top5": [
+          "herbage",
+          "herbicidal",
+          "herb",
+          "herbes",
+          "herbits"
+        ],
+        "embedding_word_count": 15,
+        "has_contexto": false,
+        "llm_failed": false,
+        "llm_status": "llm",
+        "llm_word_count": 15
+      },
+      "morphology": {
+        "embedding_top15_morph_count": 2,
+        "embedding_top15_morph_words": [
+          "herb",
+          "herba"
+        ],
+        "llm_top15_morph_count": 0,
+        "llm_top15_morph_words": [],
+        "overlap_reason": "absent (no contexto column)"
+      },
+      "target": "herbaceous",
+      "transferability": {
+        "reason": "absent (no contexto column)"
+      }
+    },
+    "house": {
+      "blind_spots": {
+        "reason": "absent (no contexto column)"
+      },
+      "decomposition": {
+        "reason": "absent (no contexto column)"
+      },
+      "embedding_vs_llm": {
+        "cut": 15,
+        "overlap": 2,
+        "shared_words": [
+          "home",
+          "mansion"
+        ]
+      },
+      "health": {
+        "contexto_available": false,
+        "contexto_word_count": null,
+        "degenerate_embedding": true,
+        "embedding_top15_resolved_into_real_or_llm": 2,
+        "embedding_top5": [
+          "houses",
+          "homes",
+          "home",
+          "houseful",
+          "housework"
+        ],
+        "embedding_word_count": 15,
+        "has_contexto": false,
+        "llm_failed": false,
+        "llm_status": "llm",
+        "llm_word_count": 15
+      },
+      "morphology": {
+        "embedding_top15_morph_count": 8,
+        "embedding_top15_morph_words": [
+          "houses",
+          "houseful",
+          "housework",
+          "housebreaking",
+          "housebuilding",
+          "household",
+          "housecat",
+          "housemother"
+        ],
+        "llm_top15_morph_count": 0,
+        "llm_top15_morph_words": [],
+        "overlap_reason": "absent (no contexto column)"
+      },
+      "target": "house",
+      "transferability": {
+        "reason": "absent (no contexto column)"
+      }
+    },
+    "ivory": {
+      "blind_spots": {
+        "reason": "absent (no contexto column)"
+      },
+      "decomposition": {
+        "reason": "absent (no contexto column)"
+      },
+      "embedding_vs_llm": {
+        "cut": 15,
+        "overlap": 0,
+        "shared_words": []
+      },
+      "health": {
+        "contexto_available": false,
+        "contexto_word_count": null,
+        "degenerate_embedding": true,
+        "embedding_top15_resolved_into_real_or_llm": 0,
+        "embedding_top5": [
+          "ivoryton",
+          "ivorian",
+          "ivo",
+          "ivories",
+          "ivone"
+        ],
+        "embedding_word_count": 15,
+        "has_contexto": false,
+        "llm_failed": false,
+        "llm_status": "llm",
+        "llm_word_count": 15
+      },
+      "morphology": {
+        "embedding_top15_morph_count": 3,
+        "embedding_top15_morph_words": [
+          "ivoryton",
+          "ivories",
+          "ivor"
+        ],
+        "llm_top15_morph_count": 0,
+        "llm_top15_morph_words": [],
+        "overlap_reason": "absent (no contexto column)"
+      },
+      "target": "ivory",
+      "transferability": {
+        "reason": "absent (no contexto column)"
+      }
+    },
+    "notorious": {
+      "blind_spots": {
+        "reason": "absent (no contexto column)"
+      },
+      "decomposition": {
+        "reason": "absent (no contexto column)"
+      },
+      "embedding_vs_llm": {
+        "cut": 15,
+        "overlap": 1,
+        "shared_words": [
+          "infamous"
+        ]
+      },
+      "health": {
+        "contexto_available": false,
+        "contexto_word_count": null,
+        "degenerate_embedding": true,
+        "embedding_top15_resolved_into_real_or_llm": 1,
+        "embedding_top5": [
+          "infamous",
+          "notoriously",
+          "gangster",
+          "rapper",
+          "renowned"
+        ],
+        "embedding_word_count": 15,
+        "has_contexto": false,
+        "llm_failed": false,
+        "llm_status": "llm",
+        "llm_word_count": 15
+      },
+      "morphology": {
+        "embedding_top15_morph_count": 1,
+        "embedding_top15_morph_words": [
+          "notoriously"
+        ],
+        "llm_top15_morph_count": 0,
+        "llm_top15_morph_words": [],
+        "overlap_reason": "absent (no contexto column)"
+      },
+      "target": "notorious",
+      "transferability": {
+        "reason": "absent (no contexto column)"
+      }
+    },
+    "superficial": {
+      "blind_spots": {
+        "reason": "absent (no contexto column)"
+      },
+      "decomposition": {
+        "reason": "absent (no contexto column)"
+      },
+      "embedding_vs_llm": {
+        "cut": 12,
+        "overlap": 1,
+        "shared_words": [
+          "shallow"
+        ]
+      },
+      "health": {
+        "contexto_available": false,
+        "contexto_word_count": null,
+        "degenerate_embedding": true,
+        "embedding_top15_resolved_into_real_or_llm": 1,
+        "embedding_top5": [
+          "superficiality",
+          "superficially",
+          "superficialities",
+          "thin",
+          "thinness"
+        ],
+        "embedding_word_count": 15,
+        "has_contexto": false,
+        "llm_failed": false,
+        "llm_status": "llm",
+        "llm_word_count": 12
+      },
+      "morphology": {
+        "embedding_top15_morph_count": 3,
+        "embedding_top15_morph_words": [
+          "superficiality",
+          "superficially",
+          "superficialities"
+        ],
+        "llm_top15_morph_count": 0,
+        "llm_top15_morph_words": [],
+        "overlap_reason": "absent (no contexto column)"
+      },
+      "target": "superficial",
+      "transferability": {
+        "reason": "absent (no contexto column)"
+      }
+    }
+  }
+}

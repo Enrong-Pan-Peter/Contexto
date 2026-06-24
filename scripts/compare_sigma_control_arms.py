@@ -204,12 +204,19 @@ def record_from_trace(path: Path, default_mode: str) -> RunRecord | None:
         arm = default_mode
     seed = config.get("random_seed")
     run_index = config.get("run_index")
+
+    solved = _trace_solved(events, best_rank)
+    # SOLVED fires the generation AFTER the final ARCHIVE_SNAPSHOT and no snapshot is
+    # written at/after the solve, so the snapshot records the pre-solve best_rank
+    # (e.g. 4 or 2). A solved run's true best_rank is the rank-1 winning guess.
+    if solved:
+        best_rank = 1
     return RunRecord(
         arm=arm,
         target=config.get("target") if isinstance(config.get("target"), str) else None,
         seed=seed if isinstance(seed, int) else None,
         run_index=run_index if isinstance(run_index, int) else None,
-        solved=_trace_solved(events, best_rank),
+        solved=solved,
         best_rank=best_rank,
         archive_occupancy=occupancy,
         final_archive_sigma=_snapshot_mean_sigma(snapshot),
