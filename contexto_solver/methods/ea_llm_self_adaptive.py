@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import json
 from dataclasses import dataclass
 from typing import Any
 
@@ -9,6 +10,11 @@ import numpy as np
 
 from ..hypothesis import Hypothesis
 from ..operators import OPERATOR_PROMPTS, assert_prompt_has_no_sigma_leak, perturb_sigma, sample_operator
+from ..self_report import (
+    SELF_REPORT_BLOCK,
+    SELF_REPORT_FOLLOWUP_PROMPT,
+    parse_self_report,
+)
 from .ea_core import BaseEALLMMethod, EALLMConfig, _words_from_category
 
 
@@ -32,6 +38,68 @@ class EALLMSelfAdaptiveMethod(BaseEALLMMethod):
     def _after_initialize(self) -> None:
         self._log_sigma_trajectory()
 
+    # --- RQ1 self-report instrumentation (logged-only) --------------------------
+
+    def _self_report_block(self) -> str:
+        """The prompt block requesting self-report fields, or "" when off."""
+        return SELF_REPORT_BLOCK if self.config.self_report else ""
+
+    def _self_report_context(self) -> str:
+        """Words the operator saw (guessed + invalid), for the follow-up prompt.
+
+        These are exactly the words interpolated into the operator prompt's
+        ``all_guesses`` slot, so any ``basis_words`` the model cites from here are
+        present in the stored operator prompt.
+        """
+        return json.dumps(sorted(self._known_words()))
+
+    def _attach_self_report(
+        self,
+        child: Hypothesis,
+        category: Any,
+        raw: str | None,
+        rendered_prompt: str | None,
+        proposed_word: str | None,
+    ) -> None:
+        """Parse and attach the logged-only self-report to a child hypothesis.
+
+        Never raises and never affects word acceptance. On a missing/failed
+        report, issues one targeted follow-up about ``proposed_word``; on repeated
+        failure stores nulls with ``self_report_parse_failed`` set and keeps the
+        raw text for offline re-parsing.
+        """
+        report = parse_self_report(category)
+        final_raw = raw
+        if report["predicted_closeness"] is None and proposed_word:
+            followup_prompt = SELF_REPORT_FOLLOWUP_PROMPT.format(
+                word=proposed_word,
+                context=self._self_report_context(),
+            )
+            try:
+                parsed, followup_raw = self.llm_client.complete_json_prompt_with_raw(followup_prompt)
+            except Exception:
+                parsed, followup_raw = None, None
+            if parsed is not None:
+                followup = parse_self_report(parsed)
+                final_raw = followup_raw if followup_raw is not None else raw
+                if followup["predicted_closeness"] is not None:
+                    report["predicted_closeness"] = followup["predicted_closeness"]
+                    report["predicted_closeness_clamped"] = followup["predicted_closeness_clamped"]
+                if followup["rationale"] and (
+                    report["rationale"] is None or not report["rationale"]["basis_words"]
+                ):
+                    report["rationale"] = followup["rationale"]
+
+        child.self_report_prompt = rendered_prompt
+        child.self_report_raw = final_raw
+        child.predicted_closeness = report["predicted_closeness"]
+        child.predicted_closeness_clamped = report["predicted_closeness_clamped"]
+        child.rationale = report["rationale"]
+        rationale = report["rationale"]
+        child.self_report_parse_failed = report["predicted_closeness"] is None and (
+            rationale is None or (not rationale["basis_words"] and not rationale["reason"])
+        )
+
     def _mutate(self) -> None:
         parents = sorted(self._active_hypotheses(), key=lambda hypothesis: hypothesis.best_rank)[: self.config.mu]
         children: list[dict[str, Any]] = []
@@ -47,9 +115,13 @@ class EALLMSelfAdaptiveMethod(BaseEALLMMethod):
                 self.invalid_guesses,
                 n=self.config.starter_words_per_category,
                 active_categories=[hypothesis.category_name for hypothesis in self._active_hypotheses()],
+                self_report_block=self._self_report_block(),
             )
             assert_prompt_has_no_sigma_leak(prompt, parent_sigma, operator)
-            category = self.llm_client.complete_json_prompt(prompt)
+            if self.config.self_report:
+                category, raw = self.llm_client.complete_json_prompt_with_raw(prompt)
+            else:
+                category, raw = self.llm_client.complete_json_prompt(prompt), None
             if not isinstance(category, dict):
                 continue
 
@@ -67,20 +139,25 @@ class EALLMSelfAdaptiveMethod(BaseEALLMMethod):
                 sigma=child_sigma,
             )
             self.hypotheses.append(child)
+            if self.config.self_report:
+                proposed = _words_from_category(category)
+                self._attach_self_report(
+                    child, category, raw, prompt, proposed[0] if proposed else None
+                )
             children.append(child.to_dict())
-            self.logger.log(
-                self.generation,
-                "OPERATOR_SAMPLED",
-                {
-                    "parent_id": parent.hypothesis_id,
-                    "child_id": child.hypothesis_id,
-                    "sigma_snapshot": [float(value) for value in parent_sigma],
-                    "child_sigma": [float(value) for value in child.sigma],
-                    "child_hypothesis_name": child.category_name,
-                    "sampled_op": operator.value,
-                    "method": "self_adaptive",
-                },
-            )
+            operator_details: dict[str, Any] = {
+                "parent_id": parent.hypothesis_id,
+                "child_id": child.hypothesis_id,
+                "parent_rank": parent.best_rank,
+                "sigma_snapshot": [float(value) for value in parent_sigma],
+                "child_sigma": [float(value) for value in child.sigma],
+                "child_hypothesis_name": child.category_name,
+                "sampled_op": operator.value,
+                "method": "self_adaptive",
+            }
+            if self.config.self_report:
+                operator_details["self_report"] = child.self_report_dict()
+            self.logger.log(self.generation, "OPERATOR_SAMPLED", operator_details)
 
             for word in _words_from_category(category):
                 if word in self.invalid_guesses:
@@ -109,12 +186,31 @@ class EALLMSelfAdaptiveMethod(BaseEALLMMethod):
             return
 
         parent_a, parent_b = active[0], active[1]
-        category = self.llm_client.crossover(
-            parent_a.category_name,
-            parent_b.category_name,
-            parent_a.words_tried,
-            parent_b.words_tried,
-        )
+        block = self._self_report_block()
+        if self.config.self_report:
+            rendered_prompt = self.llm_client.build_crossover_prompt(
+                parent_a.category_name,
+                parent_b.category_name,
+                parent_a.words_tried,
+                parent_b.words_tried,
+                block,
+            )
+            category, raw = self.llm_client.crossover(
+                parent_a.category_name,
+                parent_b.category_name,
+                parent_a.words_tried,
+                parent_b.words_tried,
+                self_report_block=block,
+                return_raw=True,
+            )
+        else:
+            rendered_prompt, raw = None, None
+            category = self.llm_client.crossover(
+                parent_a.category_name,
+                parent_b.category_name,
+                parent_a.words_tried,
+                parent_b.words_tried,
+            )
         blended_sigma = 0.5 * (parent_a.sigma + parent_b.sigma)
         child_sigma = perturb_sigma(
             blended_sigma,
@@ -129,6 +225,11 @@ class EALLMSelfAdaptiveMethod(BaseEALLMMethod):
             sigma=child_sigma,
         )
         self.hypotheses.append(child)
+        if self.config.self_report and isinstance(category, dict):
+            proposed = _words_from_category(category)
+            self._attach_self_report(
+                child, category, raw, rendered_prompt, proposed[0] if proposed else None
+            )
         for word in _words_from_category(category):
             if word in self.invalid_guesses:
                 continue
@@ -141,6 +242,8 @@ class EALLMSelfAdaptiveMethod(BaseEALLMMethod):
             "CROSSOVER",
             {
                 "parents": [parent_a.category_name, parent_b.category_name],
+                "parent_ids": [parent_a.hypothesis_id, parent_b.hypothesis_id],
+                "parent_ranks": [parent_a.best_rank, parent_b.best_rank],
                 "parent_a_sigma": [float(value) for value in parent_a.sigma],
                 "parent_b_sigma": [float(value) for value in parent_b.sigma],
                 "child_sigma_pre_perturbation": [float(value) for value in blended_sigma],

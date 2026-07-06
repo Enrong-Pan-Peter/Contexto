@@ -1,0 +1,104 @@
+======================================================================
+CLOSENESS ANALYSIS: closeness_contexto_300_4.json
+======================================================================
+top_n=300 far_rank=100 llm_model=qwen3:14b contexto_max_rank=300 embedding_path=data\glove.6B.300d.txt
+targets in file: 7
+
+##### blade
+[A] health: status='cache' llm_N=134 emb_N=300 ctx_N=299 contexto_available=True  [LLM_FAILED]
+[B] emb-vs-real recall: @10=9/10 (90.0%) @25=20/25 (80.0%) @50=38/50 (76.0%)
+    spearman(intersection)=0.252 n_shared=105 stored=0.252
+    median emb-rank real-top15=45.0 (res=15, unres=0); real-top50=103.0 (res=50, unres=0)
+    OOV in real-top50: 0 -> (none)
+[C] blind spots: LLM_FAILED (status='cache')
+[D] emb-vs-llm: LLM_FAILED (status='cache')
+[E] morph in top15: emb=2 (blades, bladed); llm=n/a ((none))
+    overlap raw->stemmed: emb-vs-real 105->104; llm-vs-real n/a->n/a
+[F] real-top50 decomp: MORPH=1 SYNONYM=0 DISTRIBUTIONAL=37 OTHER=12 (SYNONYM folded into OTHER: LLM_FAILED)
+
+##### loyalty
+[A] health: status='cache' llm_N=118 emb_N=300 ctx_N=299 contexto_available=True  [LLM_FAILED]
+[B] emb-vs-real recall: @10=9/10 (90.0%) @25=21/25 (84.0%) @50=43/50 (86.0%)
+    spearman(intersection)=0.486 n_shared=158 stored=0.486
+    median emb-rank real-top15=15.0 (res=15, unres=0); real-top50=51.5 (res=50, unres=0)
+    OOV in real-top50: 0 -> (none)
+[C] blind spots: LLM_FAILED (status='cache')
+[D] emb-vs-llm: LLM_FAILED (status='cache')
+[E] morph in top15: emb=2 (loyalties, loyal); llm=n/a ((none))
+    overlap raw->stemmed: emb-vs-real 158->157; llm-vs-real n/a->n/a
+[F] real-top50 decomp: MORPH=1 SYNONYM=0 DISTRIBUTIONAL=42 OTHER=7 (SYNONYM folded into OTHER: LLM_FAILED)
+
+##### otter
+[A] health: status='cache' llm_N=214 emb_N=300 ctx_N=299 contexto_available=True  [LLM_FAILED]
+[B] emb-vs-real recall: @10=9/10 (90.0%) @25=20/25 (80.0%) @50=34/50 (68.0%)
+    spearman(intersection)=0.261 n_shared=96 stored=0.261
+    median emb-rank real-top15=51.0 (res=15, unres=0); real-top50=143.5 (res=50, unres=0)
+    OOV in real-top50: 0 -> (none)
+[C] blind spots: LLM_FAILED (status='cache')
+[D] emb-vs-llm: LLM_FAILED (status='cache')
+[E] morph in top15: emb=1 (otters); llm=n/a ((none))
+    overlap raw->stemmed: emb-vs-real 96->96; llm-vs-real n/a->n/a
+[F] real-top50 decomp: MORPH=0 SYNONYM=0 DISTRIBUTIONAL=34 OTHER=16 (SYNONYM folded into OTHER: LLM_FAILED)
+
+##### blackboard
+[A] health: status='llm' llm_N=219 emb_N=300 ctx_N=299 contexto_available=True
+[B] emb-vs-real recall: @10=7/10 (70.0%) @25=12/25 (48.0%) @50=19/50 (38.0%)
+    spearman(intersection)=0.254 n_shared=40 stored=0.254
+    median emb-rank real-top15=193.0 (res=15, unres=0); real-top50=1056.5 (res=50, unres=0)
+    OOV in real-top50: 0 -> (none)
+[C] llm-vs-real recall: @10=6/10 (60.0%) @25=12/25 (48.0%) @50=16/50 (32.0%)
+    real-top50 absent from llm: 34/50 -> whiteboard, easel, syllabus, corkboard, calendar, lunchroom, cafeteria, clipboard, curriculum, handout, scrawl, scribble, tutor, schoolhouse, schoolroom, rubric, webcasts, signboard, intranet, classmate, courseware, notepad, plaster, powerpoint, school
+    llm-top15 real-rank: board=15, chalkboard=1, slate=9, surface=not-in-real, chalk=3, write=66, draw=not-in-real, erase=17, classroom=4, teacher=31, student=25, lesson=164, study=not-in-real, education=233, learning=49
+[D] emb-vs-llm overlap@15: 2/15 -> chalk, chalkboard
+[E] morph in top15: emb=1 (blackboards); llm=0 ((none))
+    overlap raw->stemmed: emb-vs-real 40->40; llm-vs-real 28->28
+[F] real-top50 decomp: MORPH=0 SYNONYM=16 DISTRIBUTIONAL=12 OTHER=22
+
+##### arrow
+[A] health: status='cache' llm_N=82 emb_N=300 ctx_N=299 contexto_available=True  [LLM_FAILED]
+[B] emb-vs-real recall: @10=7/10 (70.0%) @25=14/25 (56.0%) @50=25/50 (50.0%)
+    spearman(intersection)=0.348 n_shared=80 stored=0.348
+    median emb-rank real-top15=60.0 (res=15, unres=0); real-top50=286.5 (res=50, unres=0)
+    OOV in real-top50: 0 -> (none)
+[C] blind spots: LLM_FAILED (status='cache')
+[D] emb-vs-llm: LLM_FAILED (status='cache')
+[E] morph in top15: emb=1 (arrows); llm=n/a ((none))
+    overlap raw->stemmed: emb-vs-real 80->80; llm-vs-real n/a->n/a
+[F] real-top50 decomp: MORPH=0 SYNONYM=0 DISTRIBUTIONAL=25 OTHER=25 (SYNONYM folded into OTHER: LLM_FAILED)
+
+##### rhythm
+[A] health: status='cache' llm_N=137 emb_N=300 ctx_N=299 contexto_available=True  [LLM_FAILED]
+[B] emb-vs-real recall: @10=9/10 (90.0%) @25=23/25 (92.0%) @50=46/50 (92.0%)
+    spearman(intersection)=0.555 n_shared=154 stored=0.555
+    median emb-rank real-top15=37.0 (res=15, unres=0); real-top50=53.5 (res=50, unres=0)
+    OOV in real-top50: 0 -> (none)
+[C] blind spots: LLM_FAILED (status='cache')
+[D] emb-vs-llm: LLM_FAILED (status='cache')
+[E] morph in top15: emb=2 (rhythms, rhythmic); llm=n/a ((none))
+    overlap raw->stemmed: emb-vs-real 154->152; llm-vs-real n/a->n/a
+[F] real-top50 decomp: MORPH=1 SYNONYM=0 DISTRIBUTIONAL=45 OTHER=4 (SYNONYM folded into OTHER: LLM_FAILED)
+
+##### safe
+[A] health: status='llm' llm_N=120 emb_N=300 ctx_N=299 contexto_available=True
+[B] emb-vs-real recall: @10=4/10 (40.0%) @25=8/25 (32.0%) @50=21/50 (42.0%)
+    spearman(intersection)=0.298 n_shared=87 stored=0.298
+    median emb-rank real-top15=783.0 (res=15, unres=0); real-top50=414.5 (res=50, unres=0)
+    OOV in real-top50: 0 -> (none)
+[C] llm-vs-real recall: @10=3/10 (30.0%) @25=10/25 (40.0%) @50=12/50 (24.0%)
+    real-top50 absent from llm: 38/50 -> lockbox, bank, access, lock, inside, place, open, door, room, store, facility, put, outside, key, cash, provide, shop, available, easy, go, safely, behind, money, opening, need
+    llm-top15 real-rank: secure=5, protected=not-in-real, safeguard=not-in-real, guard=143, shield=not-in-real, defend=not-in-real, preserve=not-in-real, keep=14, hold=35, retain=not-in-real, maintain=195, assure=not-in-real, reliable=154, certain=222, confident=not-in-real
+[D] emb-vs-llm overlap@15: 2/15 -> assure, secure
+[E] morph in top15: emb=4 (safer, safely, safety, safest); llm=1 (safeguard)
+    overlap raw->stemmed: emb-vs-real 87->85; llm-vs-real 20->19
+[F] real-top50 decomp: MORPH=2 SYNONYM=11 DISTRIBUTIONAL=14 OTHER=23
+
+======================================================================
+AGGREGATE (means across usable targets)
+======================================================================
+targets=7 usable_embedding=7 usable_llm=2
+  excluded from [C]/[D]/[F-SYN] llm means: blade (LLM_FAILED), loyalty (LLM_FAILED), otter (LLM_FAILED), arrow (LLM_FAILED), rhythm (LLM_FAILED)
+[B] emb-vs-real recall means: @10=0.771 @25=0.674 @50=0.646
+    spearman=0.350 median-emb-rank real-top15=169.1 real-top50=301.3
+[C] llm-vs-real recall means: @10=0.450 @25=0.440 @50=0.280
+[D] emb-vs-llm overlap mean: 2.00
+[F] real-top50 decomp means: MORPH=0.71 SYNONYM=13.50 DISTRIBUTIONAL=29.86 OTHER=15.57

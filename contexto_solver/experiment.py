@@ -121,6 +121,8 @@ def _write_outputs(
                 else None
             ),
             "random_seed": args.random_seed,
+            "trace_schema_version": config.TRACE_SCHEMA_VERSION,
+            "self_report": config.SELF_REPORT if args.method in _SELF_REPORT_METHODS else None,
             "enable_pivot": _enable_pivot_metadata(args.method),
             "initial_categories": _ea_initial_categories(args.method) if args.method in _EA_METHODS else None,
             "max_active_hypotheses": (
@@ -195,7 +197,11 @@ def _run_local_target(
             "run_index": run_index,
             "game_embedding_path": game_embedding_path,
             "solver_embedding_path": solver_embedding_path,
+            "embedding_backend": Path(game_embedding_path).stem,
+            "vocabulary_size": len(game_embedding_model.words),
             "alignment": alignment,
+            "trace_schema_version": config.TRACE_SCHEMA_VERSION,
+            "self_report": config.SELF_REPORT if args.method in _SELF_REPORT_METHODS else None,
             "max_generations": args.max_generations,
             "llm_provider": llm_provider if method_family == "llm" else None,
             "llm_model": llm_model if method_family == "llm" else None,
@@ -285,6 +291,7 @@ def _run_local_target(
         "trace_path": result["trace_path"],
         "archive_occupancy": len(archive) if archive is not None else None,
         "placement_cache_hit_rate": getattr(solver, "placement_cache_hit_rate", None),
+        "self_report": config.SELF_REPORT if args.method in _SELF_REPORT_METHODS else None,
         "mapelites_sigma_mode": config.MAPELITES_SIGMA_MODE if is_mapelites else None,
         "mapelites_ranked_context_k": config.MAPELITES_RANKED_CONTEXT_K if is_mapelites else None,
         "final_archive_sigma_s": final_sigma[0],
@@ -326,6 +333,7 @@ def _failed_run_row(
         "trace_path": None,
         "archive_occupancy": None,
         "placement_cache_hit_rate": None,
+        "self_report": config.SELF_REPORT if args.method in _SELF_REPORT_METHODS else None,
         "mapelites_sigma_mode": config.MAPELITES_SIGMA_MODE if args.method == "ea_llm_map_elites" else None,
         "mapelites_ranked_context_k": config.MAPELITES_RANKED_CONTEXT_K if args.method == "ea_llm_map_elites" else None,
         "final_archive_sigma_s": None,
@@ -419,6 +427,7 @@ def _write_csv(path: Path, rows: list[dict[str, Any]]) -> None:
         "trace_path",
         "archive_occupancy",
         "placement_cache_hit_rate",
+        "self_report",
         "mapelites_sigma_mode",
         "mapelites_ranked_context_k",
         "final_archive_sigma_s",
@@ -482,6 +491,7 @@ def _build_llm_method(method: str, game, llm_client: LLMClient, logger: Logger, 
         "run_label": run_label,
         "llm_workers": args.llm_workers,
         "local_search_rank_threshold": config.LOCAL_SEARCH_RANK_THRESHOLD,
+        "self_report": config.SELF_REPORT,
     }
     if method == "ea_llm":
         return EALLMMethod(game, llm_client, logger, EALLMConfig(**ea_kwargs))
@@ -594,6 +604,7 @@ def _parse_args() -> argparse.Namespace:
 
 
 _EA_METHODS = {"ea_llm", "ea_llm_pivot", "ea_llm_self_adaptive", "ea_llm_map_elites"}
+_SELF_REPORT_METHODS = {"ea_llm_self_adaptive", "ea_llm_map_elites"}
 
 
 if __name__ == "__main__":

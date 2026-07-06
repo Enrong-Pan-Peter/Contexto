@@ -26,6 +26,15 @@ class Hypothesis:
     sigma: np.ndarray = field(default_factory=lambda: np.full(N_OPERATOR_SIGMA_COMPONENTS, 0.25, dtype=np.float64))
     coordinates: tuple[float, float] | None = None
     cell: tuple[int, int] | None = None
+    # RQ1 operator self-report instrumentation (logged-only; see self_report.py).
+    # All default to None/False so hypotheses in non-instrumented methods and
+    # runs serialize byte-identically to before.
+    predicted_closeness: float | None = None
+    predicted_closeness_clamped: bool = False
+    rationale: dict | None = None
+    self_report_parse_failed: bool = False
+    self_report_raw: str | None = None
+    self_report_prompt: str | None = None
 
     def __post_init__(self) -> None:
         self.sigma = self._validate_sigma(self.sigma)
@@ -68,7 +77,30 @@ class Hypothesis:
             payload["coordinates"] = list(self.coordinates)
         if self.cell is not None:
             payload["cell"] = list(self.cell)
+        # Only emitted when self-report instrumentation attached a record, so
+        # non-instrumented runs' traces stay byte-identical.
+        if self._has_self_report():
+            payload["self_report"] = self.self_report_dict()
         return payload
+
+    def _has_self_report(self) -> bool:
+        return (
+            self.predicted_closeness is not None
+            or self.rationale is not None
+            or self.self_report_raw is not None
+            or self.self_report_prompt is not None
+            or self.self_report_parse_failed
+        )
+
+    def self_report_dict(self) -> dict:
+        return {
+            "predicted_closeness": self.predicted_closeness,
+            "predicted_closeness_clamped": self.predicted_closeness_clamped,
+            "rationale": self.rationale,
+            "self_report_parse_failed": self.self_report_parse_failed,
+            "self_report_raw": self.self_report_raw,
+            "self_report_prompt": self.self_report_prompt,
+        }
 
     @staticmethod
     def _validate_sigma(sigma: np.ndarray) -> np.ndarray:

@@ -29,6 +29,10 @@ class EALLMConfig:
     run_label: str
     llm_workers: int = 4
     local_search_rank_threshold: int = 100
+    # RQ1 operator self-report instrumentation. Only read by the operator-based
+    # methods (ea_llm_self_adaptive, ea_llm_map_elites); logged-only, never used
+    # in selection, fitness, or sigma adaptation.
+    self_report: bool = False
 
 
 class BaseEALLMMethod:
@@ -54,6 +58,13 @@ class BaseEALLMMethod:
                 if self.game.is_solved():
                     self._log_solved()
                     return True
+
+        if not self.game.is_solved() and not self.hypotheses:
+            raise RuntimeError(
+                "EA+LLM initialization produced an empty hypothesis population: "
+                f"none of the {len(categories)} initial categories were usable. "
+                "Refusing to run empty generations."
+            )
 
         self.logger.log(
             self.generation,

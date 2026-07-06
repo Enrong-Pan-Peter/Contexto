@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+from pathlib import Path
 
 from . import config
 from .embeddings import EmbeddingModel
@@ -67,7 +68,11 @@ def main() -> None:
             "game_number": game_number,
             "game_embedding_path": game_embedding_path if args.game == "local" else None,
             "solver_embedding_path": solver_embedding_path if args.method == "embedding" else None,
+            "embedding_backend": Path(game_embedding_path).stem if args.game == "local" else None,
+            "vocabulary_size": (len(game_embedding_model.words) if game_embedding_model is not None else None),
             "alignment": _alignment(args.game, args.method, game_embedding_path, solver_embedding_path),
+            "trace_schema_version": config.TRACE_SCHEMA_VERSION,
+            "self_report": config.SELF_REPORT if args.method in _SELF_REPORT_METHODS else None,
             "max_generations": _default(args.max_generations, config.MAX_GENERATIONS),
             "llm_provider": llm_provider if method_family == "llm" else None,
             "llm_model": llm_model if method_family == "llm" else None,
@@ -224,6 +229,7 @@ def _build_llm_method(method: str, game, llm_client: LLMClient, logger: Logger, 
         "run_label": run_label,
         "llm_workers": _default(args.llm_workers, config.LLM_WORKERS),
         "local_search_rank_threshold": config.LOCAL_SEARCH_RANK_THRESHOLD,
+        "self_report": config.SELF_REPORT,
     }
     if method == "ea_llm":
         return EALLMMethod(game, llm_client, logger, EALLMConfig(**ea_kwargs))
@@ -321,6 +327,7 @@ def _default(value, default):
 
 
 _EA_METHODS = {"ea_llm", "ea_llm_pivot", "ea_llm_self_adaptive", "ea_llm_map_elites"}
+_SELF_REPORT_METHODS = {"ea_llm_self_adaptive", "ea_llm_map_elites"}
 
 
 if __name__ == "__main__":

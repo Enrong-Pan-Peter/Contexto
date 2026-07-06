@@ -13,6 +13,13 @@ def _env_value(name: str, default: str) -> str:
     return value
 
 
+def _env_bool(name: str, default: bool = False) -> bool:
+    value = os.getenv(name)
+    if value is None or value.strip() == "":
+        return default
+    return value.strip().lower() in {"1", "true", "yes", "on"}
+
+
 def load_dotenv(path: str | Path = ".env") -> None:
     """Load simple KEY=VALUE pairs into the process environment if absent."""
     env_path = Path(path)
@@ -144,4 +151,14 @@ MAPELITES_RANKED_CONTEXT_K = int(os.getenv("MAPELITES_RANKED_CONTEXT_K", "0"))
 
 # Local game
 DEFAULT_TARGET = os.getenv("DEFAULT_TARGET", "ivory")
+
+# RQ1 operator self-report instrumentation (logged-only; never feeds selection).
+# When on, the operator/crossover prompts request predicted_closeness + rationale
+# fields and those are parsed and written to the trace. When off, prompts render
+# byte-identical to the pre-instrumentation prompts.
+SELF_REPORT = _env_bool("SELF_REPORT", False)
+
+# Trace schema version so instrumented traces are distinguishable from older ones.
+# Bumped to 2 when the self-report instrumentation and richer run metadata landed.
+TRACE_SCHEMA_VERSION = 2
 

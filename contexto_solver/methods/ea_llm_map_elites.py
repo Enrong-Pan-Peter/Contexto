@@ -107,6 +107,12 @@ class EALLMMapElitesMethod(EALLMSelfAdaptiveMethod):
                 "total_guesses": self.game.total_guesses(),
             },
         )
+        if not self.game.is_solved() and not self.archive:
+            raise RuntimeError(
+                "MAP-Elites initialization produced an empty archive: none of the "
+                f"{len(categories)} initial categories yielded a valid guessed word. "
+                "Refusing to run empty generations."
+            )
         return self.game.is_solved()
 
     def run_generation(self) -> bool:
@@ -186,9 +192,13 @@ class EALLMMapElitesMethod(EALLMSelfAdaptiveMethod):
             n=1,
             active_categories=[hypothesis.category_name for hypothesis in self.archive.values()],
             ranked_context=self._render_ranked_context(),
+            self_report_block=self._self_report_block(),
         )
         assert_prompt_has_no_sigma_leak(prompt, parent_sigma, operator)
-        category = self.llm_client.complete_json_prompt(prompt)
+        if self.config.self_report:
+            category, raw = self.llm_client.complete_json_prompt_with_raw(prompt)
+        else:
+            category, raw = self.llm_client.complete_json_prompt(prompt), None
         if not isinstance(category, dict):
             return None
 
@@ -204,28 +214,49 @@ class EALLMMapElitesMethod(EALLMSelfAdaptiveMethod):
         if word is None:
             return None
         self.hypotheses.append(child)
-        self.logger.log(
-            self.generation,
-            "OPERATOR_SAMPLED",
-            {
-                "parent_id": parent.hypothesis_id,
-                "child_id": child.hypothesis_id,
-                "sigma_snapshot": [float(value) for value in parent_sigma],
-                "child_sigma": [float(value) for value in child.sigma],
-                "child_hypothesis_name": child.category_name,
-                "sampled_op": operator.value,
-                "method": "map_elites",
-            },
-        )
+        if self.config.self_report:
+            self._attach_self_report(child, category, raw, prompt, word)
+        operator_details: dict[str, Any] = {
+            "parent_id": parent.hypothesis_id,
+            "child_id": child.hypothesis_id,
+            "parent_rank": parent.best_rank,
+            "sigma_snapshot": [float(value) for value in parent_sigma],
+            "child_sigma": [float(value) for value in child.sigma],
+            "child_hypothesis_name": child.category_name,
+            "sampled_op": operator.value,
+            "method": "map_elites",
+        }
+        if self.config.self_report:
+            operator_details["self_report"] = child.self_report_dict()
+        self.logger.log(self.generation, "OPERATOR_SAMPLED", operator_details)
         return child
 
     def _crossover_child(self, parent_a: Hypothesis, parent_b: Hypothesis) -> Hypothesis | None:
-        category = self.llm_client.crossover(
-            parent_a.category_name,
-            parent_b.category_name,
-            parent_a.words_tried,
-            parent_b.words_tried,
-        )
+        block = self._self_report_block()
+        if self.config.self_report:
+            rendered_prompt = self.llm_client.build_crossover_prompt(
+                parent_a.category_name,
+                parent_b.category_name,
+                parent_a.words_tried,
+                parent_b.words_tried,
+                block,
+            )
+            category, raw = self.llm_client.crossover(
+                parent_a.category_name,
+                parent_b.category_name,
+                parent_a.words_tried,
+                parent_b.words_tried,
+                self_report_block=block,
+                return_raw=True,
+            )
+        else:
+            rendered_prompt, raw = None, None
+            category = self.llm_client.crossover(
+                parent_a.category_name,
+                parent_b.category_name,
+                parent_a.words_tried,
+                parent_b.words_tried,
+            )
         if not isinstance(category, dict):
             return None
         blended_sigma = 0.5 * (parent_a.sigma + parent_b.sigma)
@@ -240,11 +271,15 @@ class EALLMMapElitesMethod(EALLMSelfAdaptiveMethod):
         if word is None:
             return None
         self.hypotheses.append(child)
+        if self.config.self_report:
+            self._attach_self_report(child, category, raw, rendered_prompt, word)
         self.logger.log(
             self.generation,
             "CROSSOVER",
             {
                 "parents": [parent_a.category_name, parent_b.category_name],
+                "parent_ids": [parent_a.hypothesis_id, parent_b.hypothesis_id],
+                "parent_ranks": [parent_a.best_rank, parent_b.best_rank],
                 "parent_a_sigma": [float(value) for value in parent_a.sigma],
                 "parent_b_sigma": [float(value) for value in parent_b.sigma],
                 "child_sigma_pre_perturbation": [float(value) for value in blended_sigma],
