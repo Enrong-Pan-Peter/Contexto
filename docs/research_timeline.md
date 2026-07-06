@@ -329,6 +329,238 @@ Research value: this follows Ting's recommendation and gives sigma adaptation
 more selection pressure across competing lineages. It remains a design change
 pending repeated-run evidence, not a performance result.
 
+### 2026-06-01 — MAP-Elites Archive Method
+
+Evidence:
+- [`contexto_solver/methods/ea_llm_map_elites.py`](../contexto_solver/methods/ea_llm_map_elites.py)
+- [`contexto_solver/llm_client.py`](../contexto_solver/llm_client.py)
+- [`contexto_solver/config.py`](../contexto_solver/config.py)
+- [`docs/design_decisions.md`](design_decisions.md#map-elites-archive-selection-ea_llm_map_elites)
+
+Milestones:
+- Added `ea_llm_map_elites`, inheriting from `ea_llm_self_adaptive` and
+  replacing top-mu selection with a `5x5` behavior archive over two LLM-placed
+  axes: concreteness and specificity.
+- Placement is a single anchored-scale LLM call (`LLMClient.place_word`), cached
+  to disk keyed by `(model, anchors_hash, word)` so anchor changes invalidate
+  stale entries; no embedding centroid math, so the method works against the
+  real Contexto API.
+- Inherited the sigma self-adaptation unchanged; each hypothesis is created with
+  exactly one immutable `best_word` and placed by per-cell competition.
+- Added trace events `AXIS_DEFINITION`, `PLACEMENT`, and `ARCHIVE_*` to make
+  placements re-derivable and support later quality-diversity analysis.
+- Left all existing methods (`ea_llm`, `ea_llm_pivot`, `ea_llm_self_adaptive`,
+  `llm_only`, `embedding`) behaviorally unchanged.
+
+Research value: this targets the selection-layer diversity problem identified in
+earlier batches. It is a design change pending repeated-run evidence, not yet a
+performance result. Post-analysis visualization (sigma heatmaps, archive scatter
+plots) is deferred as follow-up tooling.
+
+### 2026-06-02 — MAP-Elites Visualization
+
+Evidence:
+- [`contexto_solver/plot_map_elites.py`](../contexto_solver/plot_map_elites.py)
+- [`docs/architecture.md`](architecture.md#contexto_solverplot_map_elites)
+
+Milestones:
+- Added `contexto_solver.plot_map_elites`, a standalone analysis script that
+  renders seven static figures from a MAP-Elites trace: cell-occupancy and
+  hit-count heatmaps, archive growth, continuous placement scatter, per-component
+  sigma heatmaps (final and over-time snapshots), and the winning-lineage sigma
+  trajectory, plus an optional combined summary.
+- All figures are reconstructed from existing trace events (`AXIS_DEFINITION`,
+  `PLACEMENT`, `ARCHIVE_*`); no new events or solver changes were needed.
+- Output is grouped per run under `figures/<run_label>/`; non-MAP-Elites traces
+  exit cleanly. `plot_trajectory.py` and `inspect_self_adaptive_trace.py` are
+  unchanged.
+
+Research value: makes the quality-diversity behavior of the archive legible
+(spatial sigma structure, occupancy growth, empty-vs-contested cells) for
+diagnosing runs. Diagnostic tooling, not a performance result.
+
+### 2026-06-06 — First MAP-Elites `superficial` Test Run Analysis
+
+Evidence:
+- [`traces/ea_llm_map_elites_local_superficial_20260606_015531.json`](../traces/ea_llm_map_elites_local_superficial_20260606_015531.json)
+- [`docs/experiment_log.md`](experiment_log.md#2026-06-06--superficial-seed-4-qwen3-14b)
+- [`docs/findings.md`](findings.md#2026-06-06--first-map-elites-superficial-run-suggests-generation-layer-exhaustion)
+
+Milestones:
+- Recorded the first analyzed MAP-Elites `superficial` run as single-run
+  evidence only: seed 4, Ollama `qwen3:14b`, 70-generation cap, MiniLM local-game
+  backend, LLM-driven placement.
+- Observed generation-layer exhaustion: successful children/gen fell from 18.15
+  in generations 1-20 to 7.20 in generations 41-70, while the inferred
+  duplicate-proposal/drop rate reached 68.33% in generations 50-70.
+- Recorded archive saturation: 19/25 final cells occupied, no placements ever
+  landed in the six empty cells, occupancy last increased at generation 45, and
+  best rank last improved at generation 37 (`thin`/5).
+- Recorded sigma diagnostics as suggestive but confounded: final incumbents had
+  elevated `sigma_l` mean (0.447 vs 0.25 uniform), and the winning lineage also
+  drifted toward large mutation, but controls are needed before interpreting
+  this as selection-layer validation.
+
+Research value: surfaces a new hypothesis that MAP-Elites solved the
+selection-layer diversity problem but exposed a generation-layer exhaustion and
+endgame-focus problem. This is diagnostic single-run evidence, not a performance
+claim.
+
+### 2026-06-08 — Pooled MAP-Elites Sigma-Fitness Coupling Analysis
+
+Evidence:
+- [`scripts/measure_sigma_fitness_coupling.py`](../scripts/measure_sigma_fitness_coupling.py)
+- [`traces/`](../traces/) filtered to MAP-Elites traces with `AXIS_DEFINITION`
+- [`docs/experiment_log.md`](experiment_log.md#2026-06-08--pooled-sigma-fitness-coupling-for-map-elites)
+- [`docs/findings.md`](findings.md#2026-06-08--pooled-map-elites-sigma-fitness-coupling-favors-small-mutation)
+
+Milestones:
+- Pooled 21 MAP-Elites traces and 10,581 linked mutation children, excluding
+  crossover because it has no single sampled operator.
+- Found a clean operator-fitness gradient favoring small mutation:
+  `REPLACE` rate fell from `s_mutation` 14.1% to `l_mutation` 4.8%, and median
+  log-rank delta fell from `s=-1.34` to `l=-2.69`.
+- Confirmed the gradient survived early/late phase splitting and parent-rank
+  tercile control.
+- Step-0 sigma confirmation showed that the earlier `sigma_l ~= 0.45` archive
+  elevation was not pooled: final archive sigma averaged across runs was
+  `[s=0.271, m=0.234, ml=0.232, l=0.263]`.
+- Identified inheritance decoupling as the mechanism: child sigma depends on
+  parent sigma, not on which operator produced the child word.
+
+Research value: turns the sigma question from a single-run artifact into a
+pooled operator-fitness diagnostic. It motivates testing reward-windowed
+adaptive operator selection and upgrades the frozen-sigma / random-sigma control
+to a causal test of whether sigma adaptation misallocates effort. The origin of
+the single-run `sigma_l` elevation remains explicitly uncertain pending those
+controls.
+
+### 2026-06-15 — Sigma-Control Arm-Comparison Tooling (no batch results yet)
+
+Evidence:
+- [`scripts/compare_sigma_control_arms.py`](../scripts/compare_sigma_control_arms.py)
+- [`scripts/run_sigma_control.py`](../scripts/run_sigma_control.py) (produces the batch this consumes)
+- [`docs/architecture.md`](architecture.md#scriptscompare_sigma_control_armspy)
+- [`docs/design_decisions.md`](design_decisions.md) (arm-comparison analysis design)
+
+Milestones:
+- Added the arm-comparison analysis script ahead of the sigma-control batch
+  finishing, so the read-out is ready when results land. It groups runs by
+  `MAPELITES_SIGMA_MODE`, pairs by `(target, seed)`, and reports per-arm
+  `best_rank`, solve rate, archive occupancy, and the per-operator archive sigma
+  from the last `ARCHIVE_SNAPSHOT`, with the three highlighted contrasts
+  (`adaptive` vs `frozen_uniform`, `adaptive` vs `frozen_fixed`, `random` vs
+  `adaptive`).
+- Distinguished it from `measure_sigma_fitness_coupling.py`, which pools runs for
+  an operator-fitness gradient and does not separate the arms.
+- Verified the parser/table on existing MAP-Elites traces only (trace mode);
+  those traces predate `MAPELITES_SIGMA_MODE`, so they group as a single
+  `unknown` arm and the three contrasts correctly report their arms as absent.
+
+Research value at the time: tooling readiness, not a result. This entry records
+the pre-batch state; the completed corrected batch is recorded in the 2026-06-24
+milestone below.
+
+### 2026-06-15 — Embedding-vs-LLM Closeness Diagnostic
+
+Evidence:
+- [`scripts/compare_embedding_llm_closeness.py`](../scripts/compare_embedding_llm_closeness.py)
+- [`docs/experiment_log.md`](experiment_log.md#2026-06-15--embedding-vs-llm-closeness-diagnostic-tool--single-run-illustration)
+- [`docs/design_decisions.md`](design_decisions.md) (closeness diagnostic rationale)
+
+Milestones:
+- Added a per-target diagnostic that lists the top-N closest words by the local
+  game's embedding (`nearest_neighbors`) next to the LLM's ordered list (via the
+  public `complete_json_prompt()` path), and reports overlap, exact-position
+  matches, Spearman, embedding blind spots, and LLM-only-far words.
+- Verified it on real embeddings and the live `qwen3:14b` path; a single
+  illustrative run on `chicken` (top-8) showed 1/8 overlap and concrete blind
+  spots (see experiment log).
+
+Research value: gives a measurable lens on why LLM guesses may miss
+embedding-close words (the solver's blind spots), motivating an embedding/LLM
+closeness sweep over hard targets. This is a single-run illustration plus tooling,
+not a batch result; the blind-spot-causes-stalls explanation is an untested
+hypothesis and reflects MiniLM geometry, not real Contexto.
+
+### 2026-06-15 — Self-Adaptive Operator -> Selection/Fitness Coupling Run
+
+Evidence:
+- [`scripts/measure_self_adaptive_selection_coupling.py`](../scripts/measure_self_adaptive_selection_coupling.py)
+- [`selcoupling.json`](../selcoupling.json)
+- [`docs/experiment_log.md`](experiment_log.md#2026-06-15--self-adaptive-operator---selectionfitness-coupling)
+- [`docs/findings.md`](findings.md#2026-06-15--self-adaptive-operator-fitness-gradient-favors-small-mutation-partial)
+
+Milestones:
+- Ran the self-adaptive coupling analysis over 30 existing traces and 6,186
+  mutation children; gradient generality was confirmed as a partial result:
+  small mutation had the strongest operator -> fitness signal under the logged
+  top-`max_active`+elite selection step, while sigma-drift and any causal claim
+  remain pending.
+
+Research value: upgrades the operator-fitness gradient from MAP-Elites-specific
+evidence to a batch-level pooled observational pattern also visible in plain
+self-adaptive traces. It does not measure sigma trajectories in those
+self-adaptive runs. At the time, it motivated a frozen/random-sigma control; the
+completed MAP-Elites control batch is recorded in the next milestone.
+
+### 2026-06-24 — Sigma-Control Batch Corrected and Interpreted
+
+Evidence:
+- [`traces/sigma_arms_batch/`](../traces/sigma_arms_batch/)
+- [`sigma_control_report_corrected.json`](../sigma_control_report_corrected.json)
+- [`scripts/compare_sigma_control_arms.py`](../scripts/compare_sigma_control_arms.py)
+- [`docs/experiment_log.md`](experiment_log.md#2026-06-24--corrected-sigma-control-arm-comparison)
+- [`docs/findings.md`](findings.md#2026-06-24--sigma-control-batch-inherited-sigma-does-not-beat-controls)
+
+Milestones:
+- Completed and analyzed the four-arm MAP-Elites sigma-control batch on the
+  MiniLM local game: `adaptive`, `frozen_fixed`, `frozen_uniform`, and `random`.
+- Recovered 59 completed runs from 60 planned, with one missing
+  `frozen_uniform` run.
+- Corrected `best_rank` accounting so solved runs count as rank 1 even when the
+  `SOLVED` event occurs after the final `ARCHIVE_SNAPSHOT`.
+- Found that inherited sigma self-adaptation did not beat the controls in this
+  batch: `adaptive` had the lowest solve rate and worst corrected median
+  `best_rank`; `frozen_fixed` performed best on both metrics.
+- Retired the broad "sigma drifts toward large" framing. The large-sigma signal
+  remains a single-run observation from the older K-off `superficial` trace, not
+  a batch-level pattern.
+
+Research value: this converts the sigma question from an observational
+operator-fitness gradient into a direct causal-control result on the MiniLM
+proxy. The result argues against the current inheritance-based credit assignment
+and motivates static informed sigma or adaptive operator selection. Individual
+arm comparisons remain underpowered and non-significant at the current n.
+
+### 2026-06-24 — Real-Contexto Top-300 Closeness Diagnostic
+
+Evidence:
+- [`closeness_contexto_300_3.json`](../closeness_contexto_300_3.json)
+- [`closeness_reports/closeness_contexto_300_3_summary.txt`](../closeness_reports/closeness_contexto_300_3_summary.txt)
+- [`closeness_reports/closeness_contexto_300_3_metrics.json`](../closeness_reports/closeness_contexto_300_3_metrics.json)
+- [`scripts/compare_embedding_llm_closeness.py`](../scripts/compare_embedding_llm_closeness.py)
+- [`scripts/analyze_closeness.py`](../scripts/analyze_closeness.py)
+- [`docs/experiment_log.md`](experiment_log.md#2026-06-24--contexto-anchored-top-300-closeness-comparison)
+- [`docs/findings.md`](findings.md#2026-06-24--contexto-anchored-closeness-real-neighbors-are-mostly-associative)
+
+Milestones:
+- Extended the closeness diagnostic from MiniLM-vs-LLM to a three-way comparison:
+  MiniLM local-game neighbors, qwen3:14b LLM neighbors, and manually collected
+  real Contexto top-300 ranks.
+- Added and ran the offline analyzer over seven targets:
+  `blade`, `loyalty`, `otter`, `blackboard`, `arrow`, `rhythm`, and `safe`.
+- Recorded denominator-aware aggregate health: `loyalty` failed the LLM branch;
+  `otter` is excluded from embedding means as degenerate.
+- Found that real Contexto top-50 neighborhoods in this diagnostic set are mostly
+  associative words not captured by either proxy, while MiniLM and qwen3 fail in
+  different ways.
+
+Research value: this downgrades broad claims that the MiniLM local game is a
+strong proxy for real Contexto. Solver results on the local game remain valid as
+MiniLM-proxy results, but claims about real Contexto behavior now need direct
+real-rank evidence or an explicit uncertainty label.
+
 ## Current Open Questions
 
 - Should work continue directly on pivot direction selection, given the completed
@@ -338,9 +570,15 @@ pending repeated-run evidence, not a performance result.
 - Are misleading neighborhoods caused mainly by GloVe geometry, LLM proposal
   bias, or the evolutionary selection loop?
 - Would an archive or MAP-Elites-inspired diversity mechanism improve over the
-  current active-set plus reactive-pivot design? This is only a future idea at
-  present; no explicit MAP-Elites plan or implementation exists in the repo.
+  current active-set plus reactive-pivot design? An initial implementation now
+  exists (`ea_llm_map_elites`); whether it improves solve rate, generation
+  count, or diversity over the current design remains open pending repeated-run
+  evidence.
 - How do LLM-guided search, aligned embedding search, and non-aligned embedding
   search compare under repeated local benchmarks?
-- Does self-adaptive operator selection improve solve rate, generation count, or
-  failed-run stability compared with fixed mutation and pivot-only methods?
+- Would adaptive operator selection, which credits the operator that actually
+  fired, outperform the inherited sigma mechanism or the informed fixed profile?
+- Does the sigma-control result replicate with ranked context off, with more
+  targets, or against the real Contexto API rather than the MiniLM proxy?
+- How large and diverse must the real-Contexto closeness target set be before the
+  associative-neighborhood decomposition supports a general claim?

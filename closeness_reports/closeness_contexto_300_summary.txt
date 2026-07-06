@@ -1,0 +1,84 @@
+======================================================================
+CLOSENESS ANALYSIS: closeness_contexto_300.json
+======================================================================
+top_n=300 far_rank=100 llm_model=qwen3:14b contexto_max_rank=300 embedding_path=data\embeddings\all-MiniLM-L6-v2.npz
+targets in file: 5
+
+##### blade
+[A] health: status='llm' llm_N=134 emb_N=300 ctx_N=299 contexto_available=True
+[B] emb-vs-real recall: @10=9/10 (90.0%) @25=19/25 (76.0%) @50=27/50 (54.0%)
+    spearman(intersection)=0.152 n_shared=46 stored=0.152
+    median emb-rank real-top15=127.0 (res=15, unres=0); real-top50=210.5 (res=50, unres=0)
+    OOV in real-top50: 0 -> (none)
+[C] llm-vs-real recall: @10=6/10 (60.0%) @25=12/25 (48.0%) @50=20/50 (40.0%)
+    real-top50 absent from llm: 30/50 -> serrate, cutter, bladed, curve, rotor, shaft, stainless, axe, grinder, dagger, wiper, scissors, mower, scraper, katana, roller, spear, hammer, precision, brush, clipper, tail, hacksaw, sharpener, angle
+    llm-top15 real-rank: edge=7, knife=1, sword=4, cut=16, point=279, tip=33, slice=19, sharp=17, hack=not-in-real, chop=62, carve=not-in-real, shear=30, trim=252, snip=not-in-real, slit=not-in-real
+[D] emb-vs-llm overlap@15: 2/15 -> knife, sword
+[E] morph in top15: emb=9 (blades, bladed, blader, bladers, bladen, bladel, bladerunner, bladet, bladecenter); llm=0 ((none))
+    overlap raw->stemmed: emb-vs-real 46->45; llm-vs-real 40->40
+[F] real-top50 decomp: MORPH=1 SYNONYM=20 DISTRIBUTIONAL=12 OTHER=17
+
+##### loyalty
+[A] health: status='llm' llm_N=118 emb_N=300 ctx_N=299 contexto_available=True
+[B] emb-vs-real recall: @10=8/10 (80.0%) @25=18/25 (72.0%) @50=29/50 (58.0%)
+    spearman(intersection)=0.193 n_shared=74 stored=0.193
+    median emb-rank real-top15=90.0 (res=15, unres=0); real-top50=190.5 (res=50, unres=0)
+    OOV in real-top50: 0 -> (none)
+[C] llm-vs-real recall: @10=5/10 (50.0%) @25=11/25 (44.0%) @50=14/50 (28.0%)
+    real-top50 absent from llm: 36/50 -> patriotism, willingness, relationship, unwavering, ethic, motivation, affection, motive, belief, ideal, undying, betrayal, desire, distrust, friendship, reward, identity, betray, unswerving, confidence, courage, interest, customer, animosity, ideology
+    llm-top15 real-rank: faithful=171, loyal=4, devoted=not-in-real, committed=not-in-real, steadfast=81, true=73, fidelity=214, allegiance=1, constancy=not-in-real, devotion=5, dedication=30, trust=24, faith=21, commitment=3, support=not-in-real
+[D] emb-vs-llm overlap@15: 3/15 -> faithful, loyal, trust
+[E] morph in top15: emb=2 (loyal, loyalties); llm=1 (loyal)
+    overlap raw->stemmed: emb-vs-real 74->73; llm-vs-real 36->35
+[F] real-top50 decomp: MORPH=1 SYNONYM=13 DISTRIBUTIONAL=15 OTHER=21
+
+##### lozenge
+[A] health: status='error: LLM did not return valid JSON after retry: Unterminated string starting at: line 1 column 111242 (char 111241)' llm_N=0 emb_N=300 ctx_N=299 contexto_available=True  [LLM_FAILED, DEGENERATE_EMBEDDING]
+    emb top5: lozen, lozengy, lozenges, lojze, lovage (top15 resolving into real/llm: 0)
+[B] emb-vs-real recall: @10=0/10 (0.0%) @25=0/25 (0.0%) @50=0/50 (0.0%)
+    spearman(intersection)=n/a n_shared=0 (underpowered) stored=n/a
+    median emb-rank real-top15=126254.0 (res=15, unres=0); real-top50=150685.0 (res=50, unres=0)
+    OOV in real-top50: 0 -> (none)
+[C] blind spots: LLM_FAILED (empty llm_words; status='error: LLM did not return valid JSON after retry: Unterminated string starting at: line 1 column 111242 (char 111241)')
+[D] emb-vs-llm: LLM_FAILED (empty llm_words; status='error: LLM did not return valid JSON after retry: Unterminated string starting at: line 1 column 111242 (char 111241)')
+[E] morph in top15: emb=2 (lozen, lozenges); llm=n/a ((none))
+    overlap raw->stemmed: emb-vs-real 0->0; llm-vs-real n/a->n/a
+[F] real-top50 decomp: MORPH=0 SYNONYM=0 DISTRIBUTIONAL=0 OTHER=50 (SYNONYM folded into OTHER: LLM_FAILED)
+
+##### rhythm
+[A] health: status='llm' llm_N=137 emb_N=300 ctx_N=299 contexto_available=True
+[B] emb-vs-real recall: @10=8/10 (80.0%) @25=15/25 (60.0%) @50=27/50 (54.0%)
+    spearman(intersection)=-0.133 n_shared=54 stored=-0.133
+    median emb-rank real-top15=156.0 (res=15, unres=0); real-top50=259.5 (res=50, unres=0)
+    OOV in real-top50: 0 -> (none)
+[C] llm-vs-real recall: @10=4/10 (40.0%) @25=4/25 (16.0%) @50=10/50 (20.0%)
+    real-top50 absent from llm: 40/50 -> musicality, rhythmic, melodic, vocal, instrumental, phrase, riff, chord, guitar, piano, song, music, musical, improvisation, jazz, sound, soulful, solo, percussion, groove, percussive, bass, drum, singing, chorus
+    llm-top15 real-rank: beat=37, cadence=45, tempo=2, meter=not-in-real, pulse=230, syncopation=50, flow=131, pattern=184, sequence=not-in-real, time=283, cycle=not-in-real, period=not-in-real, regularity=not-in-real, repetition=129, lilt=68
+[D] emb-vs-llm overlap@15: 1/15 -> tempo
+[E] morph in top15: emb=5 (rhythms, rhythmic, rhythmical, rhythmicity, rhythmically); llm=0 ((none))
+    overlap raw->stemmed: emb-vs-real 54->51; llm-vs-real 34->34
+[F] real-top50 decomp: MORPH=1 SYNONYM=10 DISTRIBUTIONAL=19 OTHER=20
+
+##### safe
+[A] health: status='error: LLM did not return valid JSON after retry: Expecting value: line 1 column 1 (char 0)' llm_N=0 emb_N=300 ctx_N=299 contexto_available=True  [LLM_FAILED]
+[B] emb-vs-real recall: @10=1/10 (10.0%) @25=4/25 (16.0%) @50=6/50 (12.0%)
+    spearman(intersection)=0.212 n_shared=22 stored=0.212
+    median emb-rank real-top15=11893.0 (res=15, unres=0); real-top50=4087.0 (res=50, unres=0)
+    OOV in real-top50: 0 -> (none)
+[C] blind spots: LLM_FAILED (empty llm_words; status='error: LLM did not return valid JSON after retry: Expecting value: line 1 column 1 (char 0)')
+[D] emb-vs-llm: LLM_FAILED (empty llm_words; status='error: LLM did not return valid JSON after retry: Expecting value: line 1 column 1 (char 0)')
+[E] morph in top15: emb=8 (safely, safest, safer, safes, safed, safety, safeties, safet); llm=n/a ((none))
+    overlap raw->stemmed: emb-vs-real 22->20; llm-vs-real n/a->n/a
+[F] real-top50 decomp: MORPH=2 SYNONYM=0 DISTRIBUTIONAL=4 OTHER=44 (SYNONYM folded into OTHER: LLM_FAILED)
+
+======================================================================
+AGGREGATE (means across usable targets)
+======================================================================
+targets=5 usable_embedding=4 usable_llm=3
+  excluded from [B] embedding means: lozenge (degenerate_embedding)
+  excluded from [C]/[D]/[F-SYN] llm means: lozenge (LLM_FAILED), safe (LLM_FAILED)
+[B] emb-vs-real recall means: @10=0.650 @25=0.560 @50=0.445
+    spearman=0.106 median-emb-rank real-top15=3066.5 real-top50=1186.9
+[C] llm-vs-real recall means: @10=0.500 @25=0.360 @50=0.293
+[D] emb-vs-llm overlap mean: 2.00
+[F] real-top50 decomp means: MORPH=1.00 SYNONYM=14.33 DISTRIBUTIONAL=10.00 OTHER=30.40

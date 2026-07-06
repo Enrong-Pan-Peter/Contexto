@@ -28,7 +28,7 @@ main.py
   -> contexto_solver.main
     -> config
     -> choose game backend: LocalGame or ContextoAPI
-    -> choose method: llm_only, ea_llm, ea_llm_pivot, ea_llm_self_adaptive, or embedding
+    -> choose method: llm_only, ea_llm, ea_llm_pivot, ea_llm_self_adaptive, ea_llm_map_elites, or embedding
     -> Logger records RUN_CONFIG and solver events
     -> method.solve()
     -> trace JSON written to traces/
@@ -141,6 +141,12 @@ Subtleties:
   `SELF_ADAPTIVE_MU` controls only that method's active population cap and
   mutation-parent count. Regular `ea_llm` and `ea_llm_pivot` continue to use
   `INITIAL_CATEGORIES` and `MAX_ACTIVE_HYPOTHESES`.
+- MAP-Elites settings are namespaced with `MAPELITES_*` and read only by
+  `method=ea_llm_map_elites`. It uses `MAPELITES_INITIAL_CATEGORIES`,
+  `MAPELITES_GRID_RESOLUTION`, `MAPELITES_MUTATIONS_PER_GEN`,
+  `MAPELITES_CROSSOVERS_PER_GEN`, `MAPELITES_PLACEMENT_CACHE_DIR`, and the
+  `MAPELITES_ANCHORS_*` scales, while reusing the `SELF_ADAPTIVE_*`
+  concentration and sigma-floor values for the inherited operator adaptation.
 - Named embedding paths include legacy GloVe plus transformer caches for
   MiniLM and MPNet. MiniLM becomes the default local embedding backend once its
   cache exists; otherwise the default falls back to GloVe so a fresh checkout
@@ -272,6 +278,14 @@ Subtleties:
   falling back to a cloud provider.
 - Provider errors are raised by `requests` after response status checks unless
   they are converted into clearer local Ollama errors first.
+- The four operator mutation templates carry a shared `{ranked_context}` slot
+  (right after the best-word/rank line). `build_operator_mutation_prompt` only
+  fills it when the template contains the slot, defaulting to the empty string,
+  so self-adaptive prompts stay byte-identical. Only MAP-Elites passes a
+  non-empty `ranked_context` (top-K best-ranked guessed words). Like the
+  `{all_guesses}` slot, the injected vocabulary is not reserved-substring
+  filtered; the values are game ranks, never sigma, so the leakage invariant
+  asserted by `assert_prompt_has_no_sigma_leak` holds.
 
 ### `contexto_solver.hypothesis.Hypothesis`
 
@@ -324,6 +338,10 @@ Subtleties:
 - Sigma vectors must have shape `(4,)`, sum to `1.0` within `1e-6`, and
   generated adaptive descendants should satisfy `sigma.min() >=
   SELF_ADAPTIVE_SIGMA_FLOOR`.
+- Child sigma is drawn from `Dirichlet(alpha * parent_sigma)` plus floor
+  renormalization. It depends only on the parent's sigma, not on which operator
+  was sampled; the sampled operator determines the child's word-generation
+  prompt, not the inherited sigma vector.
 - The LLM receives only the selected operator's formatted prompt. It never sees
   sigma values, operator probabilities, or the list of alternatives.
 - Operator IDs are trace-facing identifiers through `OPERATOR_SAMPLED` events.
@@ -351,6 +369,9 @@ Current method modules:
 - `methods/ea_llm_self_adaptive.py`: EA+LLM variant whose mutation and
   crossover steps carry per-hypothesis operator probability vectors and emit
   sigma telemetry.
+- `methods/ea_llm_map_elites.py`: MAP-Elites variant of the self-adaptive
+  method. Replaces top-mu selection with a behavior archive (see the dedicated
+  subsection below).
 - `methods/embedding.py`: embedding nearest-neighbor baseline.
 - `methods/base.py`: shared `Game` and `SolverMethod` protocols.
 
@@ -375,16 +396,119 @@ Subtleties:
   default through the method config so adaptive runs do not inject uniform-sigma
   local-search hypotheses. Selection, candidate generation, and deduplication
   remain on the shared path.
+- `ea_llm_map_elites` subclasses `ea_llm_self_adaptive` and overrides
+  `initialize()` and `run_generation()` whole-cloth. Because the base EA loop is
+  not invoked, per-hypothesis multi-candidate generation, top-mu/half selection,
+  the post-generation hook, and deduplication are all inactive in this method.
+  It inherits the sigma machinery unchanged (`_mutate`/`_crossover` math reused
+  via per-child helpers) and keeps the four-operator sigma vectors. See the
+  dedicated subsection below.
 - `solver=llm` is no longer a unique method. Analysis scripts should inspect
-  `method` when distinguishing `llm_only`, `ea_llm`, `ea_llm_pivot`, and
-  `ea_llm_self_adaptive`.
+  `method` when distinguishing `llm_only`, `ea_llm`, `ea_llm_pivot`,
+  `ea_llm_self_adaptive`, and `ea_llm_map_elites`.
 - The `enable_pivot` metadata field remains only as a compatibility field for
-  pivot matrix analysis: `ea_llm` and `ea_llm_self_adaptive` write `False`,
-  `ea_llm_pivot` writes `True`, and other methods write `None`.
+  pivot matrix analysis: `ea_llm`, `ea_llm_self_adaptive`, and
+  `ea_llm_map_elites` write `False`, `ea_llm_pivot` writes `True`, and other
+  methods write `None`.
 - All methods must remain backend-agnostic. LLM methods use only rank feedback,
   not local embedding vectors or target internals.
 - The embedding method can know its own solver embedding model, but it should
   not assume the game backend uses the same model unless explicitly configured.
+
+### `methods/ea_llm_map_elites.py`
+
+`ea_llm_map_elites` is a MAP-Elites quality-diversity layer on top of the
+self-adaptive operators. It keeps the inherited sigma self-adaptation but
+replaces selection with a behavior archive.
+
+Archive:
+- A `grid_resolution x grid_resolution` grid (default `5x5 = 25` cells), stored
+  as `self.archive: dict[(i, j), Hypothesis]` holding only occupied cells. Each
+  cell holds zero or one elite. The "population" is the number of occupied cells
+  (0 to 25).
+- A hypothesis's behavior coordinate is the coordinate of its single
+  `best_word`, fixed at creation. Hypotheses carry optional
+  `coordinates: (float, float)` and `cell: (int, int)` fields (default `None`,
+  so other methods are unaffected) that are serialized in the trace.
+
+Behavior axes (anchored, LLM-placed):
+- Concreteness: `0` = most concrete/physical, `1` = most abstract/conceptual.
+- Specificity: `0` = most general, `1` = most specific.
+- Anchor words and scale positions come from `MAPELITES_ANCHORS_CONCRETENESS`
+  and `MAPELITES_ANCHORS_SPECIFICITY`, so anchors are tunable without code
+  changes. Placement is a single LLM call (`LLMClient.place_word`) returning
+  `{concreteness, specificity}` in `[0, 1]`. The cell is
+  `clip(floor(coord * resolution), 0, resolution - 1)` per axis. No embedding
+  centroid math is used, so the method works against the real Contexto API.
+
+Placement cache:
+- Results are cached to `MAPELITES_PLACEMENT_CACHE_DIR/{model}_{anchors_hash}.json`
+  with schema `{word: [concreteness, specificity]}`. `anchors_hash` is a stable
+  hash over the sorted `(axis, position, word)` anchor triples, so any anchor
+  change automatically invalidates stale entries. The cache loads on init and
+  persists on each new placement (durability over speed). `cache_hit` is logged
+  on every `PLACEMENT` event.
+
+Per-generation loop (`run_generation`):
+- Sample `MAPELITES_MUTATIONS_PER_GEN` mutation parents uniformly with
+  replacement over occupied cells; each yields one sigma-driven mutation child
+  with exactly one `best_word` (operator prompt requested with `n=1`).
+- Sample `MAPELITES_CROSSOVERS_PER_GEN` crossover pairs (two parents each, with
+  replacement); each yields one blended-sigma crossover child with one
+  `best_word`.
+- For each child: guess its candidate word (becomes `best_word`), LLM-place it,
+  compute its cell, then apply per-cell competition: empty cell -> place;
+  otherwise the better-ranked hypothesis stays. A fresh-jump child survives if
+  its cell is empty or its incumbent is worse, which is the selection-layer fix
+  for the diversity problem.
+- Pipeline invariant: MAP-Elites uses exactly one proposed word per child. If
+  that word is already known, `_guess_first_valid()` drops the child before any
+  archive logic and no `GUESS`, `PLACEMENT`, archive event, `OPERATOR_SAMPLED`,
+  or `CROSSOVER` record is emitted for that attempt. If the word is invalid, it
+  may emit `SKIP_INVALID_GUESS`, but it still produces no archive competition.
+  Therefore successful children correspond one-to-one with valid `GUESS`
+  events, `PLACEMENT` events, and archive outcomes.
+- `_active_hypotheses()` is overridden to return the current archive incumbents
+  so the inherited sigma-trajectory logging reflects the archive.
+
+Trace events emitted by this method (in addition to inherited ones):
+- `AXIS_DEFINITION` (once at run start): anchors, scale positions, grid
+  resolution, so placements are re-derivable from the trace.
+- `PLACEMENT` (per placement): `word`, `coordinates`, `cell`, `cache_hit`.
+- `ARCHIVE_PLACE`: new hypothesis into an empty cell.
+- `ARCHIVE_REPLACE`: incumbent replaced by a better child.
+- `ARCHIVE_REJECT`: child loses to incumbent.
+- `ARCHIVE_SNAPSHOT` (end of generation): occupied cells with incumbents'
+  `best_word`, rank, coordinates, and sigma vectors.
+
+Config (namespaced `MAPELITES_*`): `MAPELITES_GRID_RESOLUTION`,
+`MAPELITES_MUTATIONS_PER_GEN`, `MAPELITES_CROSSOVERS_PER_GEN`,
+`MAPELITES_INITIAL_CATEGORIES`, `MAPELITES_PLACEMENT_CACHE_DIR`,
+`MAPELITES_ANCHORS_CONCRETENESS`, `MAPELITES_ANCHORS_SPECIFICITY`,
+`MAPELITES_SIGMA_MODE`, `MAPELITES_FROZEN_SIGMA`, `MAPELITES_RANKED_CONTEXT_K`.
+Sigma behavior reuses the `SELF_ADAPTIVE_*` concentration and floor values.
+
+Sigma-mode control (`MAPELITES_SIGMA_MODE`, env-overridable): selects how each
+child's operator-probability vector (sigma) is assigned. Applied at every
+creation site (`initialize()`, `_mutation_child`, `_crossover_child`) via the
+`_mode_sigma` helper, so frozen/random arms never start generation 0 from an
+adaptive parent. `sample_operator(parent.sigma, rng)` is unchanged, so the
+operator that actually fires for a child still follows that child's parent
+sigma; the mode only controls what sigma children inherit.
+- `adaptive` (default, current behavior): Dirichlet perturbation of the parent
+  (or blended) sigma using the `SELF_ADAPTIVE_*` concentration and floor.
+- `frozen_uniform`: every child sigma is the uniform prior (`initial_sigma()`).
+- `frozen_fixed`: every child sigma is `MAPELITES_FROZEN_SIGMA` (order
+  `[s, m, ml, l]`, default `[0.4, 0.3, 0.2, 0.1]`, validated to a simplex).
+- `random`: every child sigma is a fresh `Dirichlet(1)` draw.
+
+Ranked context (`MAPELITES_RANKED_CONTEXT_K`, default `0` = off): when `> 0`,
+mutation prompts gain a line listing the global top-K best-ranked guessed words
+(`Closest words found so far: word (rank), ...`). This is a shared
+`{ranked_context}` prompt slot (see `LLMClient`); only MAP-Elites populates it,
+via `_render_ranked_context()` over a `_word_ranks` tracker maintained in
+`_guess_first_valid`. These are game ranks (feedback), not sigma, so the
+sigma-leakage invariant is preserved.
 
 ### `contexto_solver.logger.Logger`
 
@@ -425,7 +549,7 @@ Batch local experiment runner.
 Main function:
 - Runs repeated local experiments over targets from CLI or target file.
 - Supports `llm_only`, `ea_llm`, `ea_llm_pivot`,
-  `ea_llm_self_adaptive`, and `embedding` methods.
+  `ea_llm_self_adaptive`, `ea_llm_map_elites`, and `embedding` methods.
 - Supports `aligned` and `non_aligned` embedding modes.
 - Writes per-run traces plus aggregate JSON and CSV summaries.
 - Can resume an existing summary with `--resume`, skipping target/run pairs
@@ -437,6 +561,12 @@ Main interactions:
 - Constructs the selected method similarly to `main`.
 - Records LLM provider/model in experiment metadata, per-run rows, CSV output,
   and each run's `RUN_CONFIG` trace event for LLM experiments.
+- For `ea_llm_map_elites`, experiment metadata and `RUN_CONFIG` also record
+  `mapelites_sigma_mode`, `mapelites_frozen_sigma`, and
+  `mapelites_ranked_context_k`. Per-run rows and the CSV add
+  `mapelites_sigma_mode`, `mapelites_ranked_context_k`, and
+  `final_archive_sigma_{s,m,ml,l}` (mean per-operator sigma over the final
+  archive incumbents, or `None` for non-MAP-Elites or failed runs).
 
 Subtleties:
 - Real API batch experiments are intentionally not handled here.
@@ -444,6 +574,170 @@ Subtleties:
 - `random_seed` is offset by run index for repeated embedding experiments.
 - Summary files are rewritten after each completed run so interrupted batches
   can be resumed without losing completed results.
+
+### `scripts/run_sigma_control.py`
+
+Batch orchestrator for the MAP-Elites sigma-mode control.
+
+Main function:
+- For each selected sigma mode (arm), launches one
+  `python -m contexto_solver.experiment --method ea_llm_map_elites` subprocess
+  with `MAPELITES_SIGMA_MODE` (and a constant `MAPELITES_RANKED_CONTEXT_K`) set
+  in the child environment, writing `traces/sigma_control_<mode>.json`.
+- After each arm succeeds, runs `python -m contexto_solver.plot_map_elites
+  --trace ...` for every trace listed in that arm's summary.
+
+Main interactions:
+- Reuses the existing `experiment` and `plot_map_elites` entrypoints rather than
+  reimplementing solving or plotting; it only sets per-arm environment overrides.
+- Holds anchors, ranked-context K, targets, seeds, and generations constant
+  across arms so the only varying factor is the sigma mode.
+
+Subtleties:
+- `--dry-run` prints the per-arm environment overrides and commands without
+  executing, for inspection on an HPC node before committing compute.
+- A failed experiment or plot for one arm/trace is reported and skipped; it does
+  not abort the remaining arms.
+
+### `scripts/compare_sigma_control_arms.py`
+
+Arm-comparison analysis for the MAP-Elites sigma-mode control. It is the
+companion to `scripts/run_sigma_control.py` (which produces the batch) and is
+distinct from `scripts/measure_sigma_fitness_coupling.py` (which *pools* runs to
+estimate an operator-fitness gradient and does not separate the arms).
+
+Main function:
+- Loads sigma-control runs, groups them by `MAPELITES_SIGMA_MODE`, and reports,
+  paired by `(target, seed)`: per-arm `best_rank` distribution, solve rate,
+  archive occupancy, and the final per-operator archive sigma (order
+  `[s, m, ml, l]`) read from the last `ARCHIVE_SNAPSHOT` of each run's trace
+  (mean over occupied cells).
+- Prints three highlighted comparisons: `adaptive` vs `frozen_uniform`,
+  `adaptive` vs `frozen_fixed`, and `random` vs `adaptive` (the last surfacing
+  the per-operator archive sigma side by side, with the sigma difference and a
+  paired `best_rank` head-to-head). A text table is always printed; `--report-json`
+  additionally dumps the full structured report.
+
+Main interactions:
+- Summary mode (default): discovers `traces/sigma_control_*.json` (or files
+  passed via `--summaries`) written by `experiment`/`run_sigma_control.py`, and
+  reads each run row's `mapelites_sigma_mode`, `target`, `run_index`, `solved`,
+  `best_rank`, `archive_occupancy`, and `trace_path`. The seed is reconstructed
+  as `metadata.random_seed + run_index`. The per-operator archive sigma is read
+  from the trace at `trace_path`, falling back to the summary row's
+  `final_archive_sigma_{s,m,ml,l}` columns when that trace is unavailable.
+- Trace mode (`--traces`, used for verification or when only traces exist):
+  builds run records directly from each trace's `RUN_CONFIG`
+  (`mapelites_sigma_mode`, `target`, `random_seed`, `run_index`),
+  `ARCHIVE_SNAPSHOT` (occupancy and per-operator sigma), and `SOLVED`/`FAILED`
+  events.
+
+Subtleties:
+- Pairing requires a `(target, seed)` key in both arms; runs missing either field
+  (older traces that predate `run_index`/`mapelites_sigma_mode` in `RUN_CONFIG`)
+  are reported as unpaired and fall into the `--default-mode` arm label
+  (default `unknown`).
+- A comparison whose arm is absent from the input is reported as missing and
+  skipped rather than fabricated, so the output stays honest on partial batches.
+- This script reads traces and summaries only; consistent with the analysis-script
+  invariant, it modifies no solver behavior, game backends, or trace schemas.
+
+### `scripts/compare_embedding_llm_closeness.py`
+
+Per-target diagnostic that contrasts up to three notions of "close" - real
+Contexto (ground truth, when available), the local-game embedding, and the LLM -
+to expose solver blind spots.
+
+Main function:
+- For each target word it lists the top-N closest words up to three ways and
+  prints them side by side: real Contexto neighbors, the embedding's nearest
+  neighbors, and the LLM's ordered list.
+- Reports, per target: pairwise set overlap / overlap rate, exact-position
+  matches, and Spearman over shared words for the three pairs (Contexto-vs-embedding,
+  Contexto-vs-LLM, embedding-vs-LLM). When Contexto data is present it is the
+  ground-truth anchor and the BLIND SPOTS are Contexto-anchored: Contexto-close
+  words the LLM never proposed, and Contexto-close words the embedding ranks
+  beyond `--far-rank` or places out of vocabulary. When no Contexto file exists
+  the report falls back to the embedding-anchored blind spots / LLM-only-far list.
+  A batch over multiple targets prints a per-target summary row (per-pair overlap
+  rates plus Contexto-anchored blind-spot counts) plus mean overlap rates;
+  `--report-json` dumps the full report.
+
+Main interactions:
+- Real Contexto side: `load_contexto_words(target, contexto_dir)` reads the
+  manually collected `data/<target>.txt` rank file (alternating word/rank lines,
+  target at rank 1), excludes the target, dedups, and caps at `CONTEXTO_MAX_RANK`
+  (300; positions beyond what the file provides are `n/a`). `--contexto-dir`
+  overrides the directory (default `data`).
+- Embedding side: `EmbeddingModel.nearest_neighbors(target, n)` for the top-N
+  neighbors (cosine, target excluded) - the same ranking `LocalGame` derives, so
+  embedding-rank `r` is the r-th closest word the local game would rank.
+- Actual embedding rank of an arbitrary word: `LocalGame(model, target).rankings`
+  (target = rank 1; missing words are out-of-vocab `n/a`), used for the
+  Contexto-close-but-embedding-far and LLM-only-far checks.
+- LLM side: a task-specific ordered-list JSON prompt submitted through the public
+  `LLMClient.complete_json_prompt()` (the same path `scripts/calibrate_anchors.py`
+  uses, not `place_word`). Provider/model resolve from `config` with CLI overrides.
+
+Subtleties:
+- LLM words are normalized to single lowercase alphabetic words to match the
+  game's guess constraints (phrases, hyphens, punctuation, and the target itself
+  are dropped, duplicates removed); the report notes when fewer than N survive.
+- LLM lists are cached per `(model, target, N)` (model in the cache filename,
+  `target::nN` as the key) under `MAPELITES_PLACEMENT_CACHE_DIR`, so re-runs are
+  free; `--no-llm` uses the cache only.
+- A target must be in the embedding vocabulary for its row to appear (the
+  embedding side anchors the table); targets missing from the embedding are
+  skipped even if a Contexto file exists.
+- The embedding is the LOCAL game's (MiniLM by default), not the real Contexto
+  embedding; embedding-only findings explain local-game behavior. Real Contexto
+  ranks are only as good as the manually collected `data/<target>.txt` files.
+- Analysis only: it reads `EmbeddingModel`, `LocalGame`, `LLMClient`, and the
+  `data/<target>.txt` Contexto files, and modifies no solver, game, or config code.
+
+### `scripts/analyze_closeness.py`
+
+Second-stage, fully offline analysis of a closeness-comparison JSON produced by
+`scripts/compare_embedding_llm_closeness.py`. It is the read-only consumer of that
+script's `--report-json` output and the producer of paste-ready report artifacts.
+
+Main function:
+- Takes one required positional arg (the comparison JSON) and an optional
+  `--out-dir` (default top-level `closeness_reports/`). Writes two files named
+  after the input stem: `<stem>_summary.txt` (plain-text, one compact block per
+  target plus an aggregate) and `<stem>_metrics.json` (a nested dict keyed by
+  target plus an `"aggregate"` key, mirroring every numeric metric). Prints both
+  output paths.
+- Treats `contexto_words` as ground truth and reports, per target and as an
+  aggregate over usable targets: [A] data health (with `LLM_FAILED` /
+  `DEGENERATE_EMBEDDING` flags), [B] embedding-vs-real transferability
+  (recall@{10,25,50}, intersection Spearman vs the file's stored value, median
+  embedding rank of real's top-15/50, OOV count), [C] LLM-vs-real blind spots
+  (recall, absent words, LLM over-reach), [D] embedding-vs-LLM overlap, [E] a
+  morphology / surface-form control (raw vs stemmed overlap), and [F] a
+  real-neighbor decomposition (MORPH / SYNONYM / DISTRIBUTIONAL / OTHER).
+
+Main interactions:
+- Pure stdlib; no numpy/scipy dependency (Spearman is implemented locally). It
+  imports nothing from `contexto_solver` and reads only the one JSON passed in.
+- Defensive schema detection handles both the newer Contexto-anchored format
+  (`contexto_words`, `pair_contexto_*`, `contexto_blind_*`) and the older
+  embedding-vs-LLM-only format (flat `overlap`/`spearman`/`blind_spots`); when
+  `contexto_*` fields are absent it runs the embedding-vs-LLM half only and labels
+  real-dependent metrics "absent (no contexto column)".
+- Global embedding rank for an arbitrary word is recovered by one helper: index
+  in `embedding_words`, else the `embedding_rank` stored in `contexto_blind_embedding`
+  / `llm_only_far`, else counted as unresolved (never coerced); a word is OOV iff
+  it appears in `contexto_blind_embedding` with `in_vocab == false`.
+
+Subtleties:
+- LLM-family aggregates ([C], [D], and the SYNONYM bucket of [F]) are averaged
+  only over non-`LLM_FAILED` targets; embedding aggregates ([B]) only over
+  non-`DEGENERATE_EMBEDDING` targets. Excluded targets and reasons are printed,
+  never silently averaged.
+- Strictly analysis only: it READS one JSON and WRITES into `--out-dir`; it never
+  runs the solver, calls an LLM, touches the network, or modifies any existing
+  repo file, consistent with the analysis-script invariant.
 
 ### `contexto_solver.plot_trajectory`
 
@@ -487,6 +781,50 @@ Subtleties:
   code should not import Matplotlib, UMAP, PaCMAP, or scikit-learn projection
   APIs.
 
+### `contexto_solver.plot_map_elites`
+
+Standalone visualization script for MAP-Elites (`method=ea_llm_map_elites`)
+archive traces.
+
+Main function:
+- Reads an existing MAP-Elites trace JSON and renders seven static PNG figures:
+  cell-occupancy heatmap, archive growth, cell hit-count heatmap, continuous
+  placement scatter, per-component sigma heatmap (final), per-component sigma
+  snapshots over time, and the winning-lineage sigma trajectory.
+- Optional `--combined` writes an additional `map_elites_summary.png` montage of
+  the generated figures.
+- `--plots` selects a subset; `--snapshot-gens` controls the sigma snapshot
+  timepoints (final is always appended).
+
+Main interactions:
+- Consumes generated traces only; it does not participate in solving or batch
+  execution and needs no embedding model (MAP-Elites coordinates are already in
+  the trace).
+- Reads `AXIS_DEFINITION` for anchor scales and grid resolution, `PLACEMENT`
+  for continuous coordinates, `ARCHIVE_PLACE/REPLACE/REJECT` for occupancy and
+  hit counts, `ARCHIVE_SNAPSHOT` for archive state at a generation, and
+  `INIT`/`OPERATOR_SAMPLED`/`CROSSOVER` for the lineage walk.
+
+Subtleties:
+- State-at-time plots read `ARCHIVE_SNAPSHOT` events directly (snapshots carry
+  complete per-cell incumbent records), so reconstruction is a lookup, not an
+  event replay. A PLACE/REPLACE replay is used only as a fallback before the
+  first snapshot.
+- Plot 4 recovers each placement's rank by pairing a `PLACEMENT` event with the
+  immediately following `ARCHIVE_*` event, relying on the back-to-back emission
+  order in the solver's `_place_and_compete`.
+- The lineage walk is re-implemented here (not imported from the self-adaptive
+  inspection script) so that script stays unmodified; it mirrors the same
+  crossover parent resolution by category name and sigma.
+- Output goes to a per-run subdirectory `figures/<run_label>/` (derived from the
+  trace filename), which diverges from `plot_trajectory`'s flat `figures/`
+  layout because a single MAP-Elites run produces seven-plus PNGs that benefit
+  from grouping.
+- On a non-MAP-Elites trace (no `AXIS_DEFINITION`), the script prints a clear
+  message and exits without error rather than crashing.
+- Plotting dependencies stay local to the module (Matplotlib is imported
+  lazily); solver code never imports it.
+
 ### `scripts/inspect_self_adaptive_trace.py`
 
 Standalone self-adaptive trace inspection script.
@@ -509,6 +847,48 @@ Subtleties:
 - Legacy traces that predate full mutation-child records or crossover sigma
   blending can be partially inspectable but may not support every lineage check.
 - Inspection output is evidence about a specific trace, not a batch-level result.
+
+### `scripts/measure_self_adaptive_selection_coupling.py`
+
+Operator -> selection-survival and operator -> fitness coupling for plain
+self-adaptive (`method=ea_llm_self_adaptive`) traces. It is the self-adaptive
+counterpart to `scripts/measure_sigma_fitness_coupling.py`: that script links a
+fired operator to a MAP-Elites archive (cell) win, whereas this one links it to
+whether the mutation child survived selection. The fitness (delta) half is
+identical (`delta = log(parent_rank) - log(child_rank)` on the log-rank scale).
+
+Main function:
+- Pools self-adaptive traces for the requested targets (default
+  `herbaceous,notorious,superficial`) and, per fired mutation operator
+  (`OPERATOR_SAMPLED.sampled_op`; crossover excluded), reports a per-operator
+  survival rate and a per-operator delta-fitness distribution. `--by-word` adds
+  a per-target split; `--report-json` dumps the full report.
+
+Main interactions:
+- Reads `OPERATOR_SAMPLED` (operator, `child_id`, `parent_id`,
+  `child_hypothesis_name`), serialized hypothesis records from `INIT`/`MUTATE`/
+  `CROSSOVER` (for `hypothesis_id` -> `best_rank`), and `SELECT`
+  (`kept`/`discarded`/`elite`, by category name). Child rank is read by
+  `child_id` (ID-reliable); parent rank is the parent's latest real rank at or
+  before the child's event order.
+
+Subtleties:
+- "survived" means the child's `child_hypothesis_name` is in the NEXT
+  generation's `SELECT.kept` (or is its `elite`). Within a generation the order
+  is `... SELECT -> OPERATOR_SAMPLED -> MUTATE ...`, so a child is judged by the
+  following generation's `SELECT`. This is the logged top-`max_active_hypotheses`+
+  elite step; the separate `mu` cap (`SELF_ADAPTIVE_MU`) via
+  `_cap_active_hypotheses` is unlogged and is NOT what this measures.
+- Sentinel-rank children (`best_rank` 1e9 / None / <=0, i.e. no valid guess) are
+  excluded from delta and counted as culled.
+- A non-sentinel child is unresolvable only when it is a last-generation child
+  (no next `SELECT`) or its name is reused by another mutation child in the same
+  trace (ambiguous). Unresolvable children are dropped from the survival rate,
+  and the per-operator unresolvable fraction is reported as a bias diagnostic.
+  Absence from the next `SELECT` (removal by deduplication) is counted as culled,
+  since `SELECT.kept`+`discarded` cover all live hypotheses.
+- Analysis only: reads traces, runs no solver/new games, and changes no solver,
+  game, or trace-schema code.
 
 ### `contexto_solver.play`
 
@@ -554,6 +934,9 @@ Current assumption:
   backend after cache generation.
 - `data/embeddings/all-mpnet-base-v2.npz` is the heavier quality-oriented
   solver/backend option after cache generation.
+- `data/<target>.txt` files are manually collected real-Contexto rank lists
+  (alternating word/rank lines, target at rank 1, up to 300 ranks) consumed by
+  `scripts/compare_embedding_llm_closeness.py` as the ground-truth closeness side.
 
 ### `traces/`
 
@@ -583,6 +966,19 @@ Subtleties:
 - Figures are analysis artifacts, not runtime inputs.
 - They should be cited as evidence for qualitative inspection only unless tied
   to repeated-run summaries or batch-level statistics.
+
+### `closeness_reports/`
+
+Default output directory for `scripts/analyze_closeness.py`.
+
+Current outputs:
+- `<stem>_summary.txt`: paste-ready plain-text closeness analysis report.
+- `<stem>_metrics.json`: machine-readable mirror of every numeric metric, keyed
+  by target plus an `"aggregate"` key.
+
+Subtleties:
+- These are generated analysis artifacts derived from an existing comparison
+  JSON, not runtime inputs; `scripts/` itself stays Python-only.
 
 ### `docs/`
 
@@ -632,25 +1028,46 @@ Before modifying a component, check these likely dependents:
 - Game interface shape: update methods, `main`, `experiment`, and `play` if
   needed.
 - Embedding loading or paths: update `config`, `main`, `experiment`,
-  `EmbeddingModel`, `LocalGame`, `methods/embedding.py`, README, and docs.
+  `EmbeddingModel`, `LocalGame`, `methods/embedding.py`, README, and docs. The
+  `EmbeddingModel.nearest_neighbors` / `LocalGame.rankings` contract is also
+  relied on by `scripts/compare_embedding_llm_closeness.py`.
+- Real-Contexto rank file format (`data/<target>.txt`, alternating word/rank
+  lines capped at 300): update `load_contexto_words` in
+  `scripts/compare_embedding_llm_closeness.py`, which treats it as the
+  ground-truth closeness anchor.
 - LLM prompts or JSON schemas: update `LLMClient`, LLM methods'
-  parsing/cleaning, trace expectations, and experiment notes.
+  parsing/cleaning, trace expectations, and experiment notes. Scripts that own a
+  prompt submitted through the public `complete_json_prompt()` path
+  (`scripts/calibrate_anchors.py`, `scripts/compare_embedding_llm_closeness.py`)
+  depend on that path staying stable.
 - LLM provider routing or defaults: update `config`, `main`, `experiment`,
   `LLMClient`, `RUN_CONFIG` metadata, experiment summary fields, and smoke
   tests for both selected provider behavior and provider-specific errors.
 - Selection, mutation, local search, or deduplication: update
   `methods/ea_core.py`, verify traces, and consider effects on
-  convergence/diversity.
+  convergence/diversity. The `SELECT` event shape (`kept`/`discarded`/`elite`
+  by category name) and the within-generation event order are relied on by
+  `scripts/measure_self_adaptive_selection_coupling.py` to recover survival.
 - Self-adaptive operators or sigma behavior: update `operators.py`,
   `hypothesis.py`, `methods/ea_llm_self_adaptive.py`, prompt-leakage tests, and
-  trace inspection scripts.
+  trace inspection/analysis scripts (`scripts/inspect_self_adaptive_trace.py`,
+  `scripts/measure_self_adaptive_selection_coupling.py`).
 - Experiment summary fields: update `experiment`, CSV fieldnames, downstream
-  docs, and any scripts that read summaries.
+  docs, and any scripts that read summaries, including
+  `scripts/compare_sigma_control_arms.py` (which reads `mapelites_sigma_mode`,
+  `target`, `run_index`, `solved`, `best_rank`, `archive_occupancy`,
+  `trace_path`, and the `final_archive_sigma_*` columns).
 - Trace event names/details: update solvers, `Logger` consumers, documentation,
   and any manual analysis assumptions.
 - Analysis visualizations: update `contexto_solver.plot_trajectory`,
-  `requirements.txt`, and docs when trace interpretation, projection methods, or
-  generated figure conventions change.
+  `contexto_solver.plot_map_elites`, `requirements.txt`, and docs when trace
+  interpretation, projection methods, or generated figure conventions change.
+- MAP-Elites trace events (`AXIS_DEFINITION`, `PLACEMENT`, `ARCHIVE_*`): update
+  `methods/ea_llm_map_elites.py`, `Logger`, and `contexto_solver.plot_map_elites`
+  together, since the visualizer reconstructs archive state from those events.
+  `ARCHIVE_SNAPSHOT` is additionally consumed by
+  `scripts/compare_sigma_control_arms.py` (occupancy and per-operator sigma) and
+  `scripts/measure_sigma_fitness_coupling.py`.
 
 ## Preserved Invariants
 

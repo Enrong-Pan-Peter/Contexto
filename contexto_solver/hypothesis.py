@@ -24,6 +24,8 @@ class Hypothesis:
     hypothesis_id: str = field(default_factory=lambda: uuid4().hex)
     parent_id: str | None = None
     sigma: np.ndarray = field(default_factory=lambda: np.full(N_OPERATOR_SIGMA_COMPONENTS, 0.25, dtype=np.float64))
+    coordinates: tuple[float, float] | None = None
+    cell: tuple[int, int] | None = None
 
     def __post_init__(self) -> None:
         self.sigma = self._validate_sigma(self.sigma)
@@ -47,7 +49,7 @@ class Hypothesis:
         self.sigma = self._validate_sigma(sigma)
 
     def to_dict(self) -> dict:
-        return {
+        payload = {
             "hypothesis_id": self.hypothesis_id,
             "category_name": self.category_name,
             "description": self.description,
@@ -60,6 +62,13 @@ class Hypothesis:
             "origin": self.origin,
             "sigma": [float(value) for value in self.sigma],
         }
+        # Only emitted by archive-based methods (e.g. MAP-Elites); omitted
+        # otherwise so existing methods' traces stay byte-identical.
+        if self.coordinates is not None:
+            payload["coordinates"] = list(self.coordinates)
+        if self.cell is not None:
+            payload["cell"] = list(self.cell)
+        return payload
 
     @staticmethod
     def _validate_sigma(sigma: np.ndarray) -> np.ndarray:

@@ -1,0 +1,106 @@
+======================================================================
+CLOSENESS ANALYSIS: closeness_contexto_300_2.json
+======================================================================
+top_n=300 far_rank=100 llm_model=qwen3:14b contexto_max_rank=300 embedding_path=data\embeddings\all-MiniLM-L6-v2.npz
+targets in file: 7
+
+##### blade
+[A] health: status='cache' llm_N=134 emb_N=300 ctx_N=299 contexto_available=True  [LLM_FAILED]
+[B] emb-vs-real recall: @10=9/10 (90.0%) @25=19/25 (76.0%) @50=27/50 (54.0%)
+    spearman(intersection)=0.152 n_shared=46 stored=0.152
+    median emb-rank real-top15=127.0 (res=15, unres=0); real-top50=210.5 (res=50, unres=0)
+    OOV in real-top50: 0 -> (none)
+[C] blind spots: LLM_FAILED (status='cache')
+[D] emb-vs-llm: LLM_FAILED (status='cache')
+[E] morph in top15: emb=9 (blades, bladed, blader, bladers, bladen, bladel, bladerunner, bladet, bladecenter); llm=n/a ((none))
+    overlap raw->stemmed: emb-vs-real 46->45; llm-vs-real n/a->n/a
+[F] real-top50 decomp: MORPH=1 SYNONYM=0 DISTRIBUTIONAL=26 OTHER=23 (SYNONYM folded into OTHER: LLM_FAILED)
+
+##### loyalty
+[A] health: status='cache' llm_N=118 emb_N=300 ctx_N=299 contexto_available=True  [LLM_FAILED]
+[B] emb-vs-real recall: @10=8/10 (80.0%) @25=18/25 (72.0%) @50=29/50 (58.0%)
+    spearman(intersection)=0.193 n_shared=74 stored=0.193
+    median emb-rank real-top15=90.0 (res=15, unres=0); real-top50=190.5 (res=50, unres=0)
+    OOV in real-top50: 0 -> (none)
+[C] blind spots: LLM_FAILED (status='cache')
+[D] emb-vs-llm: LLM_FAILED (status='cache')
+[E] morph in top15: emb=2 (loyal, loyalties); llm=n/a ((none))
+    overlap raw->stemmed: emb-vs-real 74->73; llm-vs-real n/a->n/a
+[F] real-top50 decomp: MORPH=1 SYNONYM=0 DISTRIBUTIONAL=28 OTHER=21 (SYNONYM folded into OTHER: LLM_FAILED)
+
+##### otter
+[A] health: status='llm' llm_N=214 emb_N=300 ctx_N=299 contexto_available=True  [DEGENERATE_EMBEDDING]
+    emb top5: ottery, otterness, otters, otterman, otterbein (top15 resolving into real/llm: 1)
+[B] emb-vs-real recall: @10=2/10 (20.0%) @25=5/25 (20.0%) @50=9/50 (18.0%)
+    spearman(intersection)=-0.238 n_shared=28 stored=-0.238
+    median emb-rank real-top15=20961.0 (res=15, unres=0); real-top50=6292.0 (res=50, unres=0)
+    OOV in real-top50: 0 -> (none)
+[C] llm-vs-real recall: @10=1/10 (10.0%) @25=2/25 (8.0%) @50=3/50 (6.0%)
+    real-top50 absent from llm: 47/50 -> whale, beaver, turtle, humpback, moose, fox, muskrat, raccoon, bear, muskrats, porpoise, manatee, alligator, walrus, squirrel, wolf, heron, dolphin, caribou, shark, seabird, sturgeon, orca, frog, duck
+    llm-top15 real-rank: swim=132, paddle=not-in-real, glide=not-in-real, dive=not-in-real, float=not-in-real, leap=not-in-real, jump=not-in-real, play=not-in-real, hunt=169, eat=not-in-real, catch=186, kill=not-in-real, feed=194, fish=23, prey=287
+[D] emb-vs-llm overlap@15: 0/15 -> (none)
+[E] morph in top15: emb=9 (ottery, otterness, otters, otterman, otterbein, otterlo, otterson, otterloo, otterburn); llm=0 ((none))
+    overlap raw->stemmed: emb-vs-real 28->28; llm-vs-real 32->32
+[F] real-top50 decomp: MORPH=0 SYNONYM=3 DISTRIBUTIONAL=9 OTHER=38
+
+##### blackboard
+[A] health: status='error: LLM did not return valid JSON after retry: Expecting value: line 1 column 1 (char 0)' llm_N=0 emb_N=300 ctx_N=299 contexto_available=True  [LLM_FAILED]
+[B] emb-vs-real recall: @10=5/10 (50.0%) @25=9/25 (36.0%) @50=10/50 (20.0%)
+    spearman(intersection)=-0.186 n_shared=19 stored=-0.186
+    median emb-rank real-top15=519.5 (res=14, unres=1); real-top50=7143.0 (res=49, unres=1)
+    OOV in real-top50: 1 -> corkboard
+[C] blind spots: LLM_FAILED (empty llm_words; status='error: LLM did not return valid JSON after retry: Expecting value: line 1 column 1 (char 0)')
+[D] emb-vs-llm: LLM_FAILED (empty llm_words; status='error: LLM did not return valid JSON after retry: Expecting value: line 1 column 1 (char 0)')
+[E] morph in top15: emb=1 (blackboards); llm=n/a ((none))
+    overlap raw->stemmed: emb-vs-real 19->19; llm-vs-real n/a->n/a
+[F] real-top50 decomp: MORPH=0 SYNONYM=0 DISTRIBUTIONAL=10 OTHER=40 (SYNONYM folded into OTHER: LLM_FAILED)
+
+##### arrow
+[A] health: status='llm' llm_N=82 emb_N=300 ctx_N=299 contexto_available=True
+[B] emb-vs-real recall: @10=3/10 (30.0%) @25=10/25 (40.0%) @50=16/50 (32.0%)
+    spearman(intersection)=0.161 n_shared=40 stored=0.161
+    median emb-rank real-top15=353.5 (res=14, unres=1); real-top50=690.0 (res=49, unres=1)
+    OOV in real-top50: 1 -> spacebar
+[C] llm-vs-real recall: @10=2/10 (20.0%) @25=8/25 (32.0%) @50=13/50 (26.0%)
+    real-top50 absent from llm: 37/50 -> cursor, bullet, button, scroll, sword, red, circle, crossbow, mouse, spacebar, right, icon, click, archer, move, axis, vertical, finger, directional, tail, turn, fire, horizontal, fly, drag
+    llm-top15 real-rank: shaft=104, point=3, tip=78, head=130, nock=191, fletching=not-in-real, feathers=not-in-real, quiver=43, bow=2, target=67, aim=24, shoot=22, launch=60, direct=not-in-real, trajectory=159
+[D] emb-vs-llm overlap@15: 1/15 -> bow
+[E] morph in top15: emb=9 (arrows, arrowed, arrowpoint, arrowheads, arrowroot, arrowhead, arroway, arrowood, arrowsmith); llm=0 ((none))
+    overlap raw->stemmed: emb-vs-real 40->39; llm-vs-real 36->35
+[F] real-top50 decomp: MORPH=0 SYNONYM=13 DISTRIBUTIONAL=9 OTHER=28
+
+##### rhythm
+[A] health: status='cache' llm_N=137 emb_N=300 ctx_N=299 contexto_available=True  [LLM_FAILED]
+[B] emb-vs-real recall: @10=8/10 (80.0%) @25=15/25 (60.0%) @50=27/50 (54.0%)
+    spearman(intersection)=-0.133 n_shared=54 stored=-0.133
+    median emb-rank real-top15=156.0 (res=15, unres=0); real-top50=259.5 (res=50, unres=0)
+    OOV in real-top50: 0 -> (none)
+[C] blind spots: LLM_FAILED (status='cache')
+[D] emb-vs-llm: LLM_FAILED (status='cache')
+[E] morph in top15: emb=5 (rhythms, rhythmic, rhythmical, rhythmicity, rhythmically); llm=n/a ((none))
+    overlap raw->stemmed: emb-vs-real 54->51; llm-vs-real n/a->n/a
+[F] real-top50 decomp: MORPH=1 SYNONYM=0 DISTRIBUTIONAL=26 OTHER=23 (SYNONYM folded into OTHER: LLM_FAILED)
+
+##### safe
+[A] health: status='error: LLM did not return valid JSON after retry: Expecting value: line 1 column 1 (char 0)' llm_N=0 emb_N=300 ctx_N=299 contexto_available=True  [LLM_FAILED]
+[B] emb-vs-real recall: @10=1/10 (10.0%) @25=4/25 (16.0%) @50=6/50 (12.0%)
+    spearman(intersection)=0.212 n_shared=22 stored=0.212
+    median emb-rank real-top15=11893.0 (res=15, unres=0); real-top50=4087.0 (res=50, unres=0)
+    OOV in real-top50: 0 -> (none)
+[C] blind spots: LLM_FAILED (empty llm_words; status='error: LLM did not return valid JSON after retry: Expecting value: line 1 column 1 (char 0)')
+[D] emb-vs-llm: LLM_FAILED (empty llm_words; status='error: LLM did not return valid JSON after retry: Expecting value: line 1 column 1 (char 0)')
+[E] morph in top15: emb=8 (safely, safest, safer, safes, safed, safety, safeties, safet); llm=n/a ((none))
+    overlap raw->stemmed: emb-vs-real 22->20; llm-vs-real n/a->n/a
+[F] real-top50 decomp: MORPH=2 SYNONYM=0 DISTRIBUTIONAL=4 OTHER=44 (SYNONYM folded into OTHER: LLM_FAILED)
+
+======================================================================
+AGGREGATE (means across usable targets)
+======================================================================
+targets=7 usable_embedding=6 usable_llm=2
+  excluded from [B] embedding means: otter (degenerate_embedding)
+  excluded from [C]/[D]/[F-SYN] llm means: blade (LLM_FAILED), loyalty (LLM_FAILED), blackboard (LLM_FAILED), rhythm (LLM_FAILED), safe (LLM_FAILED)
+[B] emb-vs-real recall means: @10=0.567 @25=0.500 @50=0.383
+    spearman=0.067 median-emb-rank real-top15=2189.8 real-top50=2096.8
+[C] llm-vs-real recall means: @10=0.150 @25=0.200 @50=0.160
+[D] emb-vs-llm overlap mean: 0.50
+[F] real-top50 decomp means: MORPH=0.71 SYNONYM=8.00 DISTRIBUTIONAL=16.00 OTHER=31.00

@@ -57,6 +57,48 @@ class Logger:
             },
         )
 
+    def log_axis_definition(
+        self,
+        generation: int,
+        grid_resolution: int,
+        anchors_concreteness: dict[float, str],
+        anchors_specificity: dict[float, str],
+    ) -> None:
+        self.log(
+            generation,
+            "AXIS_DEFINITION",
+            {
+                "grid_resolution": grid_resolution,
+                "concreteness": {
+                    "label": "0 = most concrete/physical, 1 = most abstract/conceptual",
+                    "anchors": {f"{position:.2f}": word for position, word in sorted(anchors_concreteness.items())},
+                },
+                "specificity": {
+                    "label": "0 = most general, 1 = most specific",
+                    "anchors": {f"{position:.2f}": word for position, word in sorted(anchors_specificity.items())},
+                },
+            },
+        )
+
+    def log_placement(
+        self,
+        generation: int,
+        word: str,
+        coordinates: tuple[float, float],
+        cell: tuple[int, int],
+        cache_hit: bool,
+    ) -> None:
+        self.log(
+            generation,
+            "PLACEMENT",
+            {
+                "word": word,
+                "coordinates": [float(coordinates[0]), float(coordinates[1])],
+                "cell": [int(cell[0]), int(cell[1])],
+                "cache_hit": bool(cache_hit),
+            },
+        )
+
     def save(self, filepath: str | Path) -> Path:
         path = Path(filepath)
         path.parent.mkdir(parents=True, exist_ok=True)

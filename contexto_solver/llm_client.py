@@ -65,7 +65,7 @@ S_MUTATION_PROMPT = """Return only JSON, no markdown or explanation.
 The current hypothesis is "{name}".
 Description: {description}
 Results so far in this hypothesis: {words_tried}
-Best word so far: "{best_word}" with rank {best_rank}.
+Best word so far: "{best_word}" with rank {best_rank}.{ranked_context}
 
 Make a SMALL mutation: produce a child hypothesis that stays in the same
 conceptual neighborhood as "{name}" but narrows or refines it. The new starter
@@ -89,7 +89,7 @@ M_MUTATION_PROMPT = """Return only JSON, no markdown or explanation.
 The current hypothesis is "{name}".
 Description: {description}
 Results so far in this hypothesis: {words_tried}
-Best word so far: "{best_word}" with rank {best_rank}.
+Best word so far: "{best_word}" with rank {best_rank}.{ranked_context}
 
 Make a MEDIUM mutation: produce a child hypothesis that reinterprets why
 "{best_word}" might have scored well, or shifts to a related sense, lexical
@@ -115,7 +115,7 @@ ML_MUTATION_PROMPT = """Return only JSON, no markdown or explanation.
 The current hypothesis is "{name}".
 Description: {description}
 Results so far in this hypothesis: {words_tried}
-Best word so far: "{best_word}" with rank {best_rank}.
+Best word so far: "{best_word}" with rank {best_rank}.{ranked_context}
 
 Make a MEDIUM-LARGE mutation: produce a child hypothesis in an ADJACENT but
 distinct category that could still plausibly contain the hidden target given
@@ -139,7 +139,7 @@ JSON schema:
 L_MUTATION_PROMPT = """Return only JSON, no markdown or explanation.
 The current hypothesis is "{name}".
 Description: {description}
-Best word so far: "{best_word}" with rank {best_rank}.
+Best word so far: "{best_word}" with rank {best_rank}.{ranked_context}
 Other active categories already being explored: {active_categories}
 
 Make a LARGE mutation: produce a child hypothesis in a broad, semantically
@@ -244,6 +244,17 @@ Do not suggest singular or plural forms of already tried words; Contexto treats 
 JSON schema:
 {{"name": "category name", "description": "short description", "words": ["word1", "word2", "word3"]}}"""
 
+PLACE_WORD_PROMPT = """Return only JSON, no markdown or explanation.
+Rate the word "{word}" on two scales.
+
+Concreteness (0 = most concrete/physical, 1 = most abstract/conceptual):
+{concreteness_anchors}
+
+Specificity (0 = most general, 1 = most specific):
+{specificity_anchors}
+
+Return JSON only: {{"concreteness": <number 0-1>, "specificity": <number 0-1>}}"""
+
 NEXT_GUESS_PROMPT = """Return only JSON, no markdown or explanation.
 You are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.
 Guess history with ranks: {history}
@@ -340,6 +351,7 @@ class LLMClient:
         invalid_guesses: set[str] | None = None,
         n: int = 3,
         active_categories: list[str] | None = None,
+        ranked_context: str = "",
     ) -> str:
         best_word, best_rank = self._global_best(hypothesis.words_tried)
         prompt_values = {
@@ -354,10 +366,34 @@ class LLMClient:
         }
         if "{active_categories}" in prompt_template:
             prompt_values["active_categories"] = json.dumps(active_categories or [])
+        if "{ranked_context}" in prompt_template:
+            prompt_values["ranked_context"] = ranked_context
         return prompt_template.format(**prompt_values)
 
     def complete_json_prompt(self, prompt: str) -> Any:
         return self._json_request_with_retry(prompt)
+
+    def place_word(
+        self,
+        word: str,
+        anchors_concreteness: dict[float, str] | None = None,
+        anchors_specificity: dict[float, str] | None = None,
+    ) -> dict[str, float]:
+        """Return MAP-Elites behavior coordinates {"concreteness", "specificity"} in [0, 1]."""
+        concreteness_anchors = anchors_concreteness or config.MAPELITES_ANCHORS_CONCRETENESS
+        specificity_anchors = anchors_specificity or config.MAPELITES_ANCHORS_SPECIFICITY
+        prompt = PLACE_WORD_PROMPT.format(
+            word=word,
+            concreteness_anchors=_format_anchor_scale(concreteness_anchors),
+            specificity_anchors=_format_anchor_scale(specificity_anchors),
+        )
+        response = self._json_request_with_retry(prompt)
+        if not isinstance(response, dict):
+            raise ValueError(f"place_word expected a JSON object, got {type(response).__name__}")
+        return {
+            "concreteness": _clamp_unit(response.get("concreteness")),
+            "specificity": _clamp_unit(response.get("specificity")),
+        }
 
     def crossover(
         self,
@@ -586,6 +622,7 @@ class LLMClient:
                     "model": self.model,
                     "messages": [{"role": "user", "content": prompt}],
                     "temperature": 0.8,
+                    "response_format": {"type": "json_object"},
                 },
                 timeout=self.ollama_timeout_seconds,
             )
@@ -642,11 +679,61 @@ class LLMClient:
         return best_word, all_guesses[best_word]
 
 
+def _format_anchor_scale(anchors: dict[float, str]) -> str:
+    return " | ".join(f"{position:.2f}: {word}" for position, word in sorted(anchors.items()))
+
+
+def _clamp_unit(value: Any) -> float:
+    try:
+        number = float(value)
+    except (TypeError, ValueError) as exc:
+        raise ValueError(f"place_word returned a non-numeric coordinate: {value!r}") from exc
+    if number != number:  # NaN guard
+        raise ValueError("place_word returned NaN coordinate")
+    return max(0.0, min(1.0, number))
+
+
+def _first_json_object(text: str) -> str | None:
+    start = text.find("{")
+    if start == -1:
+        return None
+    depth = 0
+    in_string = False
+    escaped = False
+    for index in range(start, len(text)):
+        char = text[index]
+        if in_string:
+            if escaped:
+                escaped = False
+            elif char == "\\":
+                escaped = True
+            elif char == '"':
+                in_string = False
+            continue
+        if char == '"':
+            in_string = True
+        elif char == "{":
+            depth += 1
+        elif char == "}":
+            depth -= 1
+            if depth == 0:
+                return text[start:index + 1]
+    return None
+
+
 def _strip_code_fences(text: str) -> str:
     cleaned = text.strip()
+    # qwen3 reasoning preamble: drop a leading <think>...</think> block if present.
+    think_match = re.match(r"^<think>.*?</think>\s*", cleaned, flags=re.DOTALL)
+    if think_match:
+        cleaned = cleaned[think_match.end():].strip()
     fence_match = re.fullmatch(r"```(?:json)?\s*(.*?)\s*```", cleaned, flags=re.DOTALL)
     if fence_match:
-        return fence_match.group(1).strip()
+        cleaned = fence_match.group(1).strip()
+    if not cleaned.startswith("{"):
+        extracted = _first_json_object(cleaned)
+        if extracted is not None:
+            return extracted
     return cleaned
 
 
@@ -689,4 +776,11 @@ def _agent_debug_log(location: str, message: str, data: dict[str, object], hypot
             log_file.write(json.dumps(payload, separators=(",", ":")) + "\n")
     except Exception:
         pass
+
+
+if __name__ == "__main__":
+    assert json.loads(_strip_code_fences('<think>reasoning</think>{"words":["a"]}')) == {"words": ["a"]}
+    assert json.loads(_strip_code_fences('```json\n{"words":["a"]}\n```')) == {"words": ["a"]}
+    assert json.loads(_strip_code_fences('{"words":["a"]}')) == {"words": ["a"]}
+    print("ok")
 

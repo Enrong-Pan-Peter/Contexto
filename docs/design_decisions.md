@@ -241,6 +241,25 @@ repeated runs or batch analysis. See
 [`docs/experiment_log.md`](experiment_log.md) for run evidence and
 [`docs/findings.md`](findings.md) for evidence-quality labels.
 
+Open design direction after pooled MAP-Elites coupling analysis: adaptive
+operator selection (AOS) should be evaluated as an alternative credit-assignment
+mechanism. In the current self-adaptive machinery, a child inherits
+`Dirichlet(alpha * parent_sigma)` regardless of which operator produced the
+child's word. A win from `s_mutation` therefore carries the parent's sigma into
+the archive rather than crediting `s_mutation` itself. The 2026-06-08 pooled
+MAP-Elites analysis found a clean per-operator fitness gradient favoring
+`s_mutation` over `l_mutation`, while the inherited sigma mechanism cannot
+directly assign reward to the fired operator. A reward-windowed AOS variant would
+credit the operator that fired by its observed reward, so it can capture "small
+mutation wins" directly. This is an open direction, not a committed design
+change.
+
+Control priority: the frozen-sigma / random-sigma comparison is now more than a
+neutral sanity check. It should test whether sigma adaptation causally
+misallocates effort relative to the observed operator-fitness gradient. The
+informed comparison profile is a static or AOS policy that gives more sampling
+mass to small mutation, while still retaining some larger jumps for exploration.
+
 ## Ollama Local LLM Backend
 
 Decision: `LLMClient` supports Ollama through its OpenAI-compatible local
@@ -299,6 +318,186 @@ inspection from repeated-run or batch-level summaries.
 Observation: the project has discussed exploration/exploitation balance and
 diversity maintenance, and the solver contains a fresh-diversity pivot path.
 
-Status: there is no explicit MAP-Elites/archive design or implementation yet.
-Any MAP-Elites-inspired archive should be treated as future work pending the
-pivot-matrix results.
+Status: an explicit archive-based method now exists (`ea_llm_map_elites`, see
+below). The original "future work" note is kept here for history; the MAP-Elites
+selection layer is no longer purely speculative.
+
+## MAP-Elites Archive Selection (`ea_llm_map_elites`)
+
+Decision: add `ea_llm_map_elites`, a MAP-Elites variant of
+`ea_llm_self_adaptive` that replaces top-mu selection with an archive over a
+`5x5` grid of behavior cells. Two behavior axes are used: concreteness
+(concrete/physical to abstract/conceptual) and specificity (general to
+specific). Each cell holds at most one elite; per-cell competition keeps the
+better-ranked hypothesis. The sigma self-adaptation mechanism is inherited
+unchanged from the parent method.
+
+Rationale (selection-layer diversity fix): earlier batches indicated the
+diversity problem is at the selection layer, where top-mu/half selection
+collapses lineages onto the current best region. An archive enforces structural
+diversity: a fresh-jump child with a mediocre global rank still survives if it
+lands in an empty cell or beats that cell's incumbent. This decouples "is this
+the global best" from "is this the best example of this kind of hypothesis."
+
+LLM-driven placement over embedding centroids: placement uses a single LLM call
+with anchored scales rather than embedding-centroid math. This keeps the method
+backend-agnostic and compatible with the real Contexto API, where solver-side
+embeddings of the target neighborhood are not available. Anchored scales (for
+example `0.00: rock ... 1.00: freedom` for concreteness) give the LLM a stable
+frame of reference and make placements reproducible; anchors live in
+`MAPELITES_ANCHORS_*` config and are hashed into the placement cache key so any
+anchor change invalidates stale cache entries.
+
+First axis pair choice: concreteness and specificity were chosen as the first
+behavior descriptors because they are largely orthogonal, intuitive for an LLM
+to rate on a `0-1` scale, and span the kinds of semantic moves the operators
+already make (narrowing/refining vs. reframing/abstracting).
+
+Override strategy: the method overrides `initialize()` and `run_generation()`
+whole-cloth instead of hooking individual base steps. Because the base EA loop
+is bypassed, per-hypothesis multi-candidate generation, top-mu/half selection,
+the post-generation hook, and deduplication are all inactive without separate
+overrides, matching canonical MAP-Elites where placement and fitness are
+immutable post-creation. Each hypothesis is created with exactly one
+`best_word`.
+
+Research relevance: this is a structural diversity mechanism that is comparable
+across local and real-API games. Any performance claim requires repeated runs;
+the new trace events (`AXIS_DEFINITION`, `PLACEMENT`, `ARCHIVE_*`) are designed
+to support later quality-diversity analysis (sigma heatmaps, archive scatter
+plots), which is out of scope for the initial implementation.
+
+## MAP-Elites Open Design Considerations After First Test Run
+
+Evidence source:
+[`traces/ea_llm_map_elites_local_superficial_20260606_015531.json`](../traces/ea_llm_map_elites_local_superficial_20260606_015531.json).
+Evidence quality: single-run diagnostic observation only (`superficial`, seed 4,
+Ollama `qwen3:14b`). These are open design considerations, not settled design
+decisions.
+
+Archive sampling tension: the first MAP-Elites test run surfaced a
+coverage-versus-exploitation trade-off. Uniform archive sampling bought coverage
+(19/25 occupied cells) but did not concentrate enough effort on the best cell to
+convert `thin` rank 5 to rank 1 after generation 37. Two possible design forks
+are now explicit but undecided: (a) quality-biased archive sampling, or (b)
+stagnation-gated focused refinement on the best cell, reintroducing a
+pivot-style local search only after best-rank stalling. Both require more runs
+before changing the method.
+
+One-word child pipeline: dropping multi-candidate generation and requesting one
+word per child creates a clean one-to-one pipeline for successful children:
+child -> valid `GUESS` -> `PLACEMENT` -> one archive outcome. In the first test
+trace this produced 841 successful children, 841 valid guesses, 841 placements,
+and 841 archive events. The same design makes generative exhaustion visible as a
+collapse in children/gen: already-seen proposals are dropped in `_guess_first_valid`
+before archive competition, so they reduce realized children rather than adding
+duplicate archive contests.
+
+Anchor recalibration: the specificity axis appears miscalibrated for the first
+observed run. Six cells were empty and four of those were in the top specificity
+row; no placement ever landed in any of the empty cells. Keep two explanations
+separate: some sub-grid coverage may be structural for one target because useful
+words occupy a limited behavioral region, while the top specificity row may also
+be tunably too extreme because `northern cardinal` was not reached by
+solver-generated words. A future recalibration should use the empirical
+distribution of solver-generated words without assuming that all empty cells are
+failures.
+
+## MAP-Elites Sigma-Mode Control, Ranked Context, and Anchor Update
+
+Anchor update: the default `MAPELITES_ANCHORS_CONCRETENESS` scale moved to
+`rock, rain, music, fear, freedom` and `MAPELITES_ANCHORS_SPECIFICITY` to
+`thing, animal, bird, songbird, sparrow`. The concreteness poles now use words
+that read more cleanly as "physical object" through "pure abstraction", and the
+specificity ceiling dropped from `northern cardinal` (a two-word proper-ish name
+never reached by solver-generated words in the first run) to `sparrow`, a single
+common word. Because anchors are hashed into the placement cache key, this change
+automatically invalidates stale cache entries rather than mixing scales.
+
+Sigma-mode flag rationale: the first runs could not separate "self-adaptive sigma
+helps" from "the EA structure helps", because operator probabilities always
+adapted. `MAPELITES_SIGMA_MODE` makes the sigma mechanism a controllable factor
+without forking the method. The flag is read from config/env so a batch can sweep
+arms by setting one environment variable per subprocess, leaving the rest of the
+configuration identical.
+
+Control design (four arms): `adaptive` is the current behavior; `frozen_uniform`
+pins every child to the uniform operator prior; `frozen_fixed` pins every child
+to a fixed non-uniform profile; `random` redraws operator probabilities from
+`Dirichlet(1)` for every child. Together they bracket the adaptive mechanism
+between "no adaptation, uniform", "no adaptation, deliberately skewed", and
+"maximally noisy", so a difference in outcomes is attributable to how sigma is
+assigned rather than to any other change. The mode is applied at all three
+hypothesis-creation sites so an arm is internally consistent from generation 0;
+`sample_operator(parent.sigma)` is intentionally left untouched, so the operator
+that fires still follows the child's inherited sigma under every mode.
+
+`frozen_fixed` profile choice: the default `MAPELITES_FROZEN_SIGMA` is
+`[0.4, 0.3, 0.2, 0.1]` over `[s, m, ml, l]`, a monotone preference for smaller
+mutations. This is a deliberate, easily-described skew (favor local refinement,
+still allow occasional large jumps) that contrasts cleanly with the uniform arm,
+not a tuned optimum. It is validated to a simplex on use, so a malformed override
+fails fast rather than silently renormalizing.
+
+Ranked-context design: `MAPELITES_RANKED_CONTEXT_K` (default `0`, off) optionally
+injects the global top-K best-ranked guessed words into mutation prompts as a
+shared `{ranked_context}` slot. It is shared so self-adaptive prompts remain
+byte-identical (empty default), and populated only by MAP-Elites. The injected
+content is game-rank feedback, not sigma, so it does not weaken the sigma-leakage
+invariant; consistent with the existing `{all_guesses}` slot, the words are not
+reserved-substring filtered.
+
+Arm-comparison analysis design (`scripts/compare_sigma_control_arms.py`): the
+control batch is only interpretable if the arms are contrasted on identical
+problems, so the comparison is paired by `(target, seed)` rather than aggregated
+arm-wide. Holding `(target, seed)` fixed removes target difficulty and seed luck
+as confounds, which matters because solve rate over a handful of local targets is
+otherwise dominated by which words were drawn. The script reports `best_rank`,
+solve rate, and archive occupancy per arm, plus the per-operator archive sigma.
+The sigma figure is read from the *last* `ARCHIVE_SNAPSHOT` (mean over occupied
+cells) rather than recomputed, so the analysis depends only on logged archive
+state and stays a lookup, mirroring how `plot_map_elites` reconstructs archive
+state. The three contrasts are chosen to bracket the adaptive mechanism the same
+way the arms do: `adaptive` vs `frozen_uniform` and `adaptive` vs `frozen_fixed`
+test whether adaptation beats a pinned prior, while `random` vs `adaptive` is
+framed around the per-operator sigma because random redraws `Dirichlet(1)` per
+child and should leave a flat archive sigma, whereas adaptation should leave
+operator structure if selection shapes sigma. The script defines how the
+evidence is read; the current batch-level result is summarized below rather than
+treated as a design invariant.
+
+Post-batch design implication: the corrected 59-run sigma-control batch did not
+show inherited sigma beating the controls; `adaptive` had the lowest solve rate
+and worst corrected median `best_rank`, while archive sigma stayed near uniform.
+That is evidence against the current inheritance-based credit assignment, not
+against operator control in general. The design direction remains either a simple
+informed static profile such as `[0.4, 0.3, 0.2, 0.1]` or an adaptive operator
+selection policy that credits the operator that actually fired. Evidence and
+caveats are recorded in
+[`docs/findings.md`](findings.md#2026-06-24--sigma-control-batch-inherited-sigma-does-not-beat-controls)
+and
+[`docs/experiment_log.md`](experiment_log.md#2026-06-24--corrected-sigma-control-arm-comparison).
+
+Embedding-vs-LLM closeness diagnostic (`scripts/compare_embedding_llm_closeness.py`):
+the local game scores guesses by embedding rank, but the LLM proposes guesses by
+its own notion of meaning-closeness, and real Contexto may reward a third
+geometry. This diagnostic makes the agreement measurable per target. Three
+design choices matter. First, the embedding side is the local game's own
+`nearest_neighbors` ranking rather than a separate metric, so the comparison is
+against exactly what the local game rewards. Second, when `--contexto-dir` is
+available, manually collected `data/<target>.txt` real-Contexto ranks become the
+ground-truth anchor for transferability and blind-spot analysis. Third, the LLM
+list comes through the same public `complete_json_prompt()` path the
+solver-adjacent tooling already uses, and returned words are normalized to the
+game's guess constraints (single lowercase dictionary words), so the LLM column
+reflects words the solver could actually play.
+
+The design purpose has shifted from only "embedding-close words the LLM never
+proposes" to a three-way diagnostic: MiniLM local-game closeness, LLM definitional
+closeness, and real Contexto closeness. The top-300 Contexto-anchored run shows
+these notions can diverge sharply, so local MiniLM results should be described as
+MiniLM-proxied Contexto unless real-Contexto evidence is cited. Evidence and
+caveats are recorded in
+[`docs/findings.md`](findings.md#2026-06-24--contexto-anchored-closeness-real-neighbors-are-mostly-associative)
+and
+[`docs/experiment_log.md`](experiment_log.md#2026-06-24--contexto-anchored-top-300-closeness-comparison).

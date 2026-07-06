@@ -1,0 +1,515 @@
+{
+  "arms": [
+    "adaptive",
+    "frozen_fixed",
+    "frozen_uniform",
+    "random"
+  ],
+  "comparisons": {
+    "adaptive_vs_frozen_fixed": {
+      "available": true,
+      "left": {
+        "archive_occupancy": {
+          "max": 21,
+          "median": 19,
+          "min": 16,
+          "n": 15,
+          "q1": 18.0,
+          "q3": 20.0
+        },
+        "arm": "adaptive",
+        "best_rank": {
+          "max": 1093,
+          "median": 14,
+          "min": 4,
+          "n": 15,
+          "q1": 5.0,
+          "q3": 16.0
+        },
+        "decided": 15,
+        "mean_archive_sigma": [
+          0.228170253585488,
+          0.2493659917683744,
+          0.27186582625345157,
+          0.2505979283926862
+        ],
+        "n_runs": 15,
+        "solve_rate": 0.13333333333333333,
+        "solved": 2
+      },
+      "n_pairs": 15,
+      "paired_best_rank_outcome": {
+        "comparable_pairs": 15,
+        "left_better": 6,
+        "median_rank_delta_right_minus_left": 0.0,
+        "right_better": 6,
+        "ties": 3
+      },
+      "right": {
+        "archive_occupancy": {
+          "max": 20,
+          "median": 19,
+          "min": 18,
+          "n": 15,
+          "q1": 18.0,
+          "q3": 19.0
+        },
+        "arm": "frozen_fixed",
+        "best_rank": {
+          "max": 1400,
+          "median": 6,
+          "min": 2,
+          "n": 15,
+          "q1": 4.0,
+          "q3": 48.0
+        },
+        "decided": 15,
+        "mean_archive_sigma": [
+          0.40000000000000024,
+          0.2999999999999999,
+          0.20000000000000012,
+          0.10000000000000006
+        ],
+        "n_runs": 15,
+        "solve_rate": 0.4666666666666667,
+        "solved": 7
+      },
+      "shared_keys": [
+        [
+          "herbaceous",
+          42
+        ],
+        [
+          "herbaceous",
+          43
+        ],
+        [
+          "herbaceous",
+          44
+        ],
+        [
+          "herbaceous",
+          45
+        ],
+        [
+          "herbaceous",
+          46
+        ],
+        [
+          "notorious",
+          42
+        ],
+        [
+          "notorious",
+          43
+        ],
+        [
+          "notorious",
+          44
+        ],
+        [
+          "notorious",
+          45
+        ],
+        [
+          "notorious",
+          46
+        ],
+        [
+          "superficial",
+          42
+        ],
+        [
+          "superficial",
+          43
+        ],
+        [
+          "superficial",
+          44
+        ],
+        [
+          "superficial",
+          45
+        ],
+        [
+          "superficial",
+          46
+        ]
+      ]
+    },
+    "adaptive_vs_frozen_uniform": {
+      "available": true,
+      "left": {
+        "archive_occupancy": {
+          "max": 21,
+          "median": 19.0,
+          "min": 16,
+          "n": 14,
+          "q1": 18.0,
+          "q3": 20.0
+        },
+        "arm": "adaptive",
+        "best_rank": {
+          "max": 1093,
+          "median": 14.0,
+          "min": 4,
+          "n": 14,
+          "q1": 4.75,
+          "q3": 16.0
+        },
+        "decided": 14,
+        "mean_archive_sigma": [
+          0.23057108046931046,
+          0.25240785232983914,
+          0.2750362858443063,
+          0.2419847813565442
+        ],
+        "n_runs": 14,
+        "solve_rate": 0.14285714285714285,
+        "solved": 2
+      },
+      "n_pairs": 14,
+      "paired_best_rank_outcome": {
+        "comparable_pairs": 14,
+        "left_better": 4,
+        "median_rank_delta_right_minus_left": 0.0,
+        "right_better": 5,
+        "ties": 5
+      },
+      "right": {
+        "archive_occupancy": {
+          "max": 21,
+          "median": 19.0,
+          "min": 17,
+          "n": 14,
+          "q1": 17.75,
+          "q3": 19.0
+        },
+        "arm": "frozen_uniform",
+        "best_rank": {
+          "max": 51,
+          "median": 6.0,
+          "min": 4,
+          "n": 14,
+          "q1": 4.0,
+          "q3": 14.0
+        },
+        "decided": 14,
+        "mean_archive_sigma": [
+          0.25,
+          0.25,
+          0.25,
+          0.25
+        ],
+        "n_runs": 14,
+        "solve_rate": 0.35714285714285715,
+        "solved": 5
+      },
+      "shared_keys": [
+        [
+          "herbaceous",
+          42
+        ],
+        [
+          "herbaceous",
+          43
+        ],
+        [
+          "herbaceous",
+          44
+        ],
+        [
+          "herbaceous",
+          45
+        ],
+        [
+          "herbaceous",
+          46
+        ],
+        [
+          "notorious",
+          42
+        ],
+        [
+          "notorious",
+          43
+        ],
+        [
+          "notorious",
+          44
+        ],
+        [
+          "notorious",
+          45
+        ],
+        [
+          "notorious",
+          46
+        ],
+        [
+          "superficial",
+          42
+        ],
+        [
+          "superficial",
+          43
+        ],
+        [
+          "superficial",
+          44
+        ],
+        [
+          "superficial",
+          46
+        ]
+      ]
+    },
+    "random_vs_adaptive": {
+      "available": true,
+      "left": {
+        "archive_occupancy": {
+          "max": 19,
+          "median": 18,
+          "min": 17,
+          "n": 15,
+          "q1": 18.0,
+          "q3": 19.0
+        },
+        "arm": "random",
+        "best_rank": {
+          "max": 292,
+          "median": 6,
+          "min": 4,
+          "n": 15,
+          "q1": 4.0,
+          "q3": 14.0
+        },
+        "decided": 15,
+        "mean_archive_sigma": [
+          0.25654664484184475,
+          0.252466829392383,
+          0.23461589175508407,
+          0.25637063401068805
+        ],
+        "n_runs": 15,
+        "solve_rate": 0.26666666666666666,
+        "solved": 4
+      },
+      "n_pairs": 15,
+      "paired_best_rank_outcome": {
+        "comparable_pairs": 15,
+        "left_better": 6,
+        "median_rank_delta_right_minus_left": 0.0,
+        "right_better": 5,
+        "ties": 4
+      },
+      "right": {
+        "archive_occupancy": {
+          "max": 21,
+          "median": 19,
+          "min": 16,
+          "n": 15,
+          "q1": 18.0,
+          "q3": 20.0
+        },
+        "arm": "adaptive",
+        "best_rank": {
+          "max": 1093,
+          "median": 14,
+          "min": 4,
+          "n": 15,
+          "q1": 5.0,
+          "q3": 16.0
+        },
+        "decided": 15,
+        "mean_archive_sigma": [
+          0.228170253585488,
+          0.2493659917683744,
+          0.27186582625345157,
+          0.2505979283926862
+        ],
+        "n_runs": 15,
+        "solve_rate": 0.13333333333333333,
+        "solved": 2
+      },
+      "shared_keys": [
+        [
+          "herbaceous",
+          42
+        ],
+        [
+          "herbaceous",
+          43
+        ],
+        [
+          "herbaceous",
+          44
+        ],
+        [
+          "herbaceous",
+          45
+        ],
+        [
+          "herbaceous",
+          46
+        ],
+        [
+          "notorious",
+          42
+        ],
+        [
+          "notorious",
+          43
+        ],
+        [
+          "notorious",
+          44
+        ],
+        [
+          "notorious",
+          45
+        ],
+        [
+          "notorious",
+          46
+        ],
+        [
+          "superficial",
+          42
+        ],
+        [
+          "superficial",
+          43
+        ],
+        [
+          "superficial",
+          44
+        ],
+        [
+          "superficial",
+          45
+        ],
+        [
+          "superficial",
+          46
+        ]
+      ]
+    }
+  },
+  "n_runs": 59,
+  "overview": {
+    "adaptive": {
+      "archive_occupancy": {
+        "max": 21,
+        "median": 19,
+        "min": 16,
+        "n": 15,
+        "q1": 18.0,
+        "q3": 20.0
+      },
+      "best_rank": {
+        "max": 1093,
+        "median": 14,
+        "min": 4,
+        "n": 15,
+        "q1": 5.0,
+        "q3": 16.0
+      },
+      "decided": 15,
+      "mean_archive_sigma": [
+        0.22817025358548798,
+        0.24936599176837443,
+        0.27186582625345157,
+        0.2505979283926862
+      ],
+      "n_runs": 15,
+      "solve_rate": 0.13333333333333333,
+      "solved": 2
+    },
+    "frozen_fixed": {
+      "archive_occupancy": {
+        "max": 20,
+        "median": 19,
+        "min": 18,
+        "n": 15,
+        "q1": 18.0,
+        "q3": 19.0
+      },
+      "best_rank": {
+        "max": 1400,
+        "median": 6,
+        "min": 2,
+        "n": 15,
+        "q1": 4.0,
+        "q3": 48.0
+      },
+      "decided": 15,
+      "mean_archive_sigma": [
+        0.40000000000000024,
+        0.2999999999999999,
+        0.20000000000000012,
+        0.10000000000000006
+      ],
+      "n_runs": 15,
+      "solve_rate": 0.4666666666666667,
+      "solved": 7
+    },
+    "frozen_uniform": {
+      "archive_occupancy": {
+        "max": 21,
+        "median": 19.0,
+        "min": 17,
+        "n": 14,
+        "q1": 17.75,
+        "q3": 19.0
+      },
+      "best_rank": {
+        "max": 51,
+        "median": 6.0,
+        "min": 4,
+        "n": 14,
+        "q1": 4.0,
+        "q3": 14.0
+      },
+      "decided": 14,
+      "mean_archive_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "n_runs": 14,
+      "solve_rate": 0.35714285714285715,
+      "solved": 5
+    },
+    "random": {
+      "archive_occupancy": {
+        "max": 19,
+        "median": 18,
+        "min": 17,
+        "n": 15,
+        "q1": 18.0,
+        "q3": 19.0
+      },
+      "best_rank": {
+        "max": 292,
+        "median": 6,
+        "min": 4,
+        "n": 15,
+        "q1": 4.0,
+        "q3": 14.0
+      },
+      "decided": 15,
+      "mean_archive_sigma": [
+        0.25654664484184475,
+        0.252466829392383,
+        0.23461589175508407,
+        0.25637063401068805
+      ],
+      "n_runs": 15,
+      "solve_rate": 0.26666666666666666,
+      "solved": 4
+    }
+  },
+  "source": "traces"
+}
