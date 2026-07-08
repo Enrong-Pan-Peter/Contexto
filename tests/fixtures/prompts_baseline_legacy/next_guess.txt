@@ -1,0 +1,12 @@
+Return only JSON, no markdown or explanation.
+You are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.
+Guess history with ranks: {"shrub": 50, "tree": 400}
+Invalid or unavailable guesses to avoid: ["sourcream", "wildanimal"]
+
+Suggest exactly one new single-word guess that could be closer to the hidden target.
+Every guess must be one common lowercase dictionary word.
+Do not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.
+Do not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.
+Invalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.
+JSON schema:
+{"word": "guess"}

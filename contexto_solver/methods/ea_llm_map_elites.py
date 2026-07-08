@@ -195,10 +195,7 @@ class EALLMMapElitesMethod(EALLMSelfAdaptiveMethod):
             self_report_block=self._self_report_block(),
         )
         assert_prompt_has_no_sigma_leak(prompt, parent_sigma, operator)
-        if self.config.self_report:
-            category, raw = self.llm_client.complete_json_prompt_with_raw(prompt)
-        else:
-            category, raw = self.llm_client.complete_json_prompt(prompt), None
+        category, raw = self._complete_proposal(prompt)
         if not isinstance(category, dict):
             return None
 
@@ -232,31 +229,7 @@ class EALLMMapElitesMethod(EALLMSelfAdaptiveMethod):
         return child
 
     def _crossover_child(self, parent_a: Hypothesis, parent_b: Hypothesis) -> Hypothesis | None:
-        block = self._self_report_block()
-        if self.config.self_report:
-            rendered_prompt = self.llm_client.build_crossover_prompt(
-                parent_a.category_name,
-                parent_b.category_name,
-                parent_a.words_tried,
-                parent_b.words_tried,
-                block,
-            )
-            category, raw = self.llm_client.crossover(
-                parent_a.category_name,
-                parent_b.category_name,
-                parent_a.words_tried,
-                parent_b.words_tried,
-                self_report_block=block,
-                return_raw=True,
-            )
-        else:
-            rendered_prompt, raw = None, None
-            category = self.llm_client.crossover(
-                parent_a.category_name,
-                parent_b.category_name,
-                parent_a.words_tried,
-                parent_b.words_tried,
-            )
+        category, raw, rendered_prompt = self._crossover_request(parent_a, parent_b)
         if not isinstance(category, dict):
             return None
         blended_sigma = 0.5 * (parent_a.sigma + parent_b.sigma)

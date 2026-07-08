@@ -215,6 +215,7 @@ def _build_llm_method(method: str, game, llm_client: LLMClient, logger: Logger, 
                 max_generations=_default(args.max_generations, config.MAX_GENERATIONS),
                 trace_dir=config.TRACE_DIR,
                 run_label=run_label,
+                self_report=config.SELF_REPORT,
             ),
         )
 
@@ -327,7 +328,13 @@ def _default(value, default):
 
 
 _EA_METHODS = {"ea_llm", "ea_llm_pivot", "ea_llm_self_adaptive", "ea_llm_map_elites"}
-_SELF_REPORT_METHODS = {"ea_llm_self_adaptive", "ea_llm_map_elites"}
+_SELF_REPORT_METHODS = {
+    "llm_only",
+    "ea_llm",
+    "ea_llm_pivot",
+    "ea_llm_self_adaptive",
+    "ea_llm_map_elites",
+}
 
 
 if __name__ == "__main__":

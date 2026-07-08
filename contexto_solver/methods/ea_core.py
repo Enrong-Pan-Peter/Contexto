@@ -14,6 +14,11 @@ from typing import Any
 from ..hypothesis import Hypothesis
 from ..llm_client import LLMClient
 from ..logger import Logger
+from ..self_report import (
+    apply_self_report_to_hypothesis,
+    resolve_self_report,
+    self_report_block,
+)
 from .base import Game
 
 
@@ -44,6 +49,83 @@ class BaseEALLMMethod:
         self.hypotheses: list[Hypothesis] = []
         self.invalid_guesses: set[str] = set()
         self.generation = 0
+
+    # --- RQ1 self-report instrumentation (logged-only; shared by every EA mode) ---
+
+    def _self_report_block(self) -> str:
+        """The appended self-report request block, or "" when the flag is off."""
+        return self_report_block(self.config.self_report)
+
+    def _self_report_context(self) -> str:
+        """Words the operator saw (guessed + invalid), for the follow-up prompt."""
+        return json.dumps(sorted(self._known_words()))
+
+    def _attach_self_report(
+        self,
+        child: Hypothesis,
+        source: Any,
+        raw: str | None,
+        rendered_prompt: str | None,
+        proposed_word: str | None,
+    ) -> None:
+        """Resolve and attach the logged-only self-report via the shared layer."""
+        record = resolve_self_report(
+            self.llm_client,
+            source=source,
+            raw=raw,
+            context=self._self_report_context(),
+            proposed_word=proposed_word,
+            rendered_prompt=rendered_prompt,
+        )
+        apply_self_report_to_hypothesis(child, record)
+
+    def _complete_proposal(self, prompt: str) -> tuple[Any, str | None]:
+        """Issue an operator/mutation proposal call, capturing raw text only when
+        the self-report flag is on.
+
+        Single routing point for the flag-gated raw capture so every operator
+        path shares identical request behavior. With the flag off this is exactly
+        ``complete_json_prompt`` (no raw), keeping behavior byte-identical.
+        """
+        if self.config.self_report:
+            return self.llm_client.complete_json_prompt_with_raw(prompt)
+        return self.llm_client.complete_json_prompt(prompt), None
+
+    def _crossover_request(
+        self, parent_a: Hypothesis, parent_b: Hypothesis
+    ) -> tuple[Any, str | None, str | None]:
+        """Issue the crossover proposal call, capturing the rendered prompt and raw
+        text only when the self-report flag is on.
+
+        Single routing point shared by every EA mode's crossover. With the flag
+        off this is exactly one ``crossover`` call (no prompt build, no raw),
+        keeping behavior byte-identical.
+        """
+        block = self._self_report_block()
+        if self.config.self_report:
+            rendered_prompt = self.llm_client.build_crossover_prompt(
+                parent_a.category_name,
+                parent_b.category_name,
+                parent_a.words_tried,
+                parent_b.words_tried,
+                block,
+            )
+            category, raw = self.llm_client.crossover(
+                parent_a.category_name,
+                parent_b.category_name,
+                parent_a.words_tried,
+                parent_b.words_tried,
+                self_report_block=block,
+                return_raw=True,
+            )
+            return category, raw, rendered_prompt
+        category = self.llm_client.crossover(
+            parent_a.category_name,
+            parent_b.category_name,
+            parent_a.words_tried,
+            parent_b.words_tried,
+        )
+        return category, None, None
 
     def initialize(self) -> bool:
         categories = self.llm_client.generate_initial_categories(
@@ -352,6 +434,8 @@ class BaseEALLMMethod:
     def _mutate(self) -> None:
         top_hypotheses = sorted(self._active_hypotheses(), key=lambda hypothesis: hypothesis.best_rank)[:2]
         max_workers = min(max(1, self.config.llm_workers), max(1, len(top_hypotheses)))
+        block = self._self_report_block()
+        want_raw = self.config.self_report
 
         with ThreadPoolExecutor(max_workers=max_workers) as executor:
             futures = [
@@ -363,18 +447,25 @@ class BaseEALLMMethod:
                         parent.words_tried,
                         self.invalid_guesses,
                         self.config.mutations_per_generation,
+                        self_report_block=block,
+                        return_raw=want_raw,
                     ),
                 )
                 for parent in top_hypotheses
             ]
             specialization_results = [(parent, future.result()) for parent, future in futures]
 
-        for parent, subcategories in specialization_results:
+        for parent, result in specialization_results:
+            subcategories, raw = result if want_raw else (result, None)
             children = []
+            first_child: Hypothesis | None = None
+            first_category: dict[str, Any] | None = None
             for category in subcategories:
                 child = self._hypothesis_from_category(category, parent=parent.category_name, origin="mutation")
                 self.hypotheses.append(child)
                 children.append(child.category_name)
+                if first_child is None:
+                    first_child, first_category = child, category
                 for word in _words_from_category(category):
                     if word in self.invalid_guesses:
                         continue
@@ -382,17 +473,22 @@ class BaseEALLMMethod:
                     if self.game.is_solved():
                         break
 
-            self.logger.log(
-                self.generation,
-                "MUTATE",
-                {
-                    "parent": parent.category_name,
-                    "children": children,
-                    "best_word": self.best_word,
-                    "best_rank": self.best_rank,
-                    "total_guesses": self.game.total_guesses(),
-                },
-            )
+            mutate_details: dict[str, Any] = {
+                "parent": parent.category_name,
+                "children": children,
+                "best_word": self.best_word,
+                "best_rank": self.best_rank,
+                "total_guesses": self.game.total_guesses(),
+            }
+            if want_raw and first_child is not None:
+                proposed = _words_from_category(first_category or {})
+                # The self-report fields ride in the same top-level object as the
+                # "specializations" list, so parse from the raw response.
+                self._attach_self_report(
+                    first_child, raw, raw, None, proposed[0] if proposed else None
+                )
+                mutate_details["self_report"] = first_child.self_report_dict()
+            self.logger.log(self.generation, "MUTATE", mutate_details)
             if self.game.is_solved():
                 return
 
@@ -455,18 +551,18 @@ class BaseEALLMMethod:
             return
 
         parent_a, parent_b = active[0], active[1]
-        category = self.llm_client.crossover(
-            parent_a.category_name,
-            parent_b.category_name,
-            parent_a.words_tried,
-            parent_b.words_tried,
-        )
+        category, raw, rendered_prompt = self._crossover_request(parent_a, parent_b)
         child = self._hypothesis_from_category(
             category,
             parent=f"{parent_a.category_name}+{parent_b.category_name}",
             origin="crossover",
         )
         self.hypotheses.append(child)
+        if self.config.self_report and isinstance(category, dict):
+            proposed = _words_from_category(category)
+            self._attach_self_report(
+                child, category, raw, rendered_prompt, proposed[0] if proposed else None
+            )
         for word in _words_from_category(category):
             if word in self.invalid_guesses:
                 continue

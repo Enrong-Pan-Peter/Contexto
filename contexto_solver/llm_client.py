@@ -46,7 +46,7 @@ Do not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign w
 Do not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.
 Invalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.
 JSON schema:
-["word1", "word2", "word3"]"""
+{{"words": ["word1", "word2", "word3"]}}"""
 
 SPECIALIZE_PROMPT = """Return only JSON, no markdown or explanation.
 The category "{name}" had these results: {words_tried}.
@@ -68,7 +68,7 @@ Avoid these invalid or unrecognized words: {invalid_guesses}
 Do not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.
 Invalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.
 JSON schema:
-[{{"name": "direction name", "description": "short description", "words": ["word1", "word2", "word3"]}}]"""
+{{"specializations": [{{"name": "direction name", "description": "short description", "words": ["word1", "word2", "word3"]}}]}}"""
 
 S_MUTATION_PROMPT = """Return only JSON, no markdown or explanation.
 The current hypothesis is "{name}".
@@ -193,7 +193,7 @@ Every word must be one common lowercase dictionary word.
 Avoid these already tried words: {all_guesses}
 Do not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.
 JSON schema:
-["word1", "word2", "word3"]"""
+{{"words": ["word1", "word2", "word3"]}}"""
 
 PIVOT_MORPHOLOGY_PROMPT = """Return only JSON, no markdown or explanation.
 The word {word} has rank {rank}, so it is very close to the hidden target.
@@ -206,7 +206,7 @@ Do not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign w
 Avoid these already tried words: {all_guesses}
 Do not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.
 JSON schema:
-["word1", "word2", "word3"]"""
+{{"words": ["word1", "word2", "word3"]}}"""
 
 PIVOT_REGISTER_SHIFT_PROMPT = """Return only JSON, no markdown or explanation.
 The hidden target is semantically close to {word}, which has rank {rank}, but it may be
@@ -218,7 +218,7 @@ Do not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign w
 Avoid these already tried words: {all_guesses}
 Do not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.
 JSON schema:
-["word1", "word2", "word3"]"""
+{{"words": ["word1", "word2", "word3"]}}"""
 
 PIVOT_ADJACENT_CATEGORY_PROMPT = """Return only JSON, no markdown or explanation.
 The current best word is {word} with rank {rank}.
@@ -327,6 +327,37 @@ class LLMClient:
             )
         return categories
 
+    def _request_json_list(
+        self,
+        prompt: str,
+        expected_key: str,
+        element_type: type,
+        what: str,
+        return_raw: bool = False,
+    ) -> Any:
+        """Request a JSON list, tolerating json_object's object-only responses.
+
+        Normalizes ``{expected_key: [...]}``, bare arrays, and single-key
+        wrappers into a list of ``element_type``. Validates minimally (non-empty);
+        on an empty result retries the LLM call once (a full extra round-trip,
+        distinct from the JSON-validity retries in ``_json_request_with_retry``)
+        before raising a clear error. With ``return_raw`` also returns the raw
+        response text of the parsed call (for self-report re-parsing).
+        """
+        parsed, raw = self._json_request_with_retry_and_raw(prompt)
+        items = _normalize_json_list(parsed, expected_key, element_type)
+        if not items:
+            parsed, raw = self._json_request_with_retry_and_raw(prompt)
+            items = _normalize_json_list(parsed, expected_key, element_type)
+        if not items:
+            raise ValueError(
+                f"{what} returned no usable {expected_key} after one retry. This "
+                "usually means the provider forced a single top-level JSON object "
+                "(e.g. Ollama json_object mode) that did not match the requested "
+                f'{{"{expected_key}": [...]}} shape.'
+            )
+        return (items, raw) if return_raw else items
+
     def propose_words(
         self,
         hypothesis: Hypothesis,
@@ -347,7 +378,7 @@ class LLMClient:
             invalid_guesses=json.dumps(sorted(invalid_guesses or set())),
             n=n,
         )
-        return self._json_request_with_retry(prompt)
+        return self._request_json_list(prompt, "words", str, "propose_words")
 
     def specialize(
         self,
@@ -355,7 +386,9 @@ class LLMClient:
         all_guesses: dict[str, int],
         invalid_guesses: set[str] | None = None,
         n: int = 2,
-    ) -> list[dict[str, Any]]:
+        self_report_block: str = "",
+        return_raw: bool = False,
+    ) -> Any:
         best_word, best_rank = self._global_best(hypothesis.words_tried)
         prompt = SPECIALIZE_PROMPT.format(
             name=hypothesis.category_name,
@@ -366,8 +399,10 @@ class LLMClient:
             all_guesses=json.dumps(sorted(all_guesses)),
             invalid_guesses=json.dumps(sorted(invalid_guesses or set())),
             n=n,
+        ) + self_report_block
+        return self._request_json_list(
+            prompt, "specializations", dict, "specialize", return_raw=return_raw
         )
-        return self._json_request_with_retry(prompt)
 
     def build_operator_mutation_prompt(
         self,
@@ -481,25 +516,45 @@ class LLMClient:
             n=n,
             all_guesses=json.dumps(sorted(all_guesses or set())),
         )
-        return self._json_request_with_retry(prompt)
+        return self._request_json_list(prompt, "words", str, "local_search")
 
-    def pivot_morphology(self, word: str, rank: int, all_guesses: set[str], n: int = 10) -> list[str]:
+    def pivot_morphology(
+        self,
+        word: str,
+        rank: int,
+        all_guesses: set[str],
+        n: int = 10,
+        self_report_block: str = "",
+        return_raw: bool = False,
+    ) -> Any:
         prompt = PIVOT_MORPHOLOGY_PROMPT.format(
             word=word,
             rank=rank,
             n=n,
             all_guesses=json.dumps(sorted(all_guesses)),
+        ) + self_report_block
+        return self._request_json_list(
+            prompt, "words", str, "pivot_morphology", return_raw=return_raw
         )
-        return self._json_request_with_retry(prompt)
 
-    def pivot_register_shift(self, word: str, rank: int, all_guesses: set[str], n: int = 10) -> list[str]:
+    def pivot_register_shift(
+        self,
+        word: str,
+        rank: int,
+        all_guesses: set[str],
+        n: int = 10,
+        self_report_block: str = "",
+        return_raw: bool = False,
+    ) -> Any:
         prompt = PIVOT_REGISTER_SHIFT_PROMPT.format(
             word=word,
             rank=rank,
             n=n,
             all_guesses=json.dumps(sorted(all_guesses)),
+        ) + self_report_block
+        return self._request_json_list(
+            prompt, "words", str, "pivot_register_shift", return_raw=return_raw
         )
-        return self._json_request_with_retry(prompt)
 
     def pivot_adjacent_category(
         self,
@@ -510,7 +565,9 @@ class LLMClient:
         words_tried: dict[str, int],
         all_guesses: set[str],
         n: int = 10,
-    ) -> dict[str, Any]:
+        self_report_block: str = "",
+        return_raw: bool = False,
+    ) -> Any:
         prompt = PIVOT_ADJACENT_CATEGORY_PROMPT.format(
             word=word,
             rank=rank,
@@ -519,7 +576,9 @@ class LLMClient:
             words_tried=json.dumps(words_tried, sort_keys=True),
             all_guesses=json.dumps(sorted(all_guesses)),
             n=n,
-        )
+        ) + self_report_block
+        if return_raw:
+            return self._json_request_with_retry_and_raw(prompt)
         return self._json_request_with_retry(prompt)
 
     def pivot_fresh_adjacent_category(
@@ -529,21 +588,35 @@ class LLMClient:
         active_categories: list[str],
         all_guesses: set[str],
         n: int = 10,
-    ) -> dict[str, Any]:
+        self_report_block: str = "",
+        return_raw: bool = False,
+    ) -> Any:
         prompt = PIVOT_FRESH_ADJACENT_CATEGORY_PROMPT.format(
             word=word,
             rank=rank,
             active_categories=json.dumps(active_categories),
             all_guesses=json.dumps(sorted(all_guesses)),
             n=n,
-        )
+        ) + self_report_block
+        if return_raw:
+            return self._json_request_with_retry_and_raw(prompt)
         return self._json_request_with_retry(prompt)
 
-    def next_guess(self, history: dict[str, int], invalid_guesses: set[str] | None = None) -> str:
+    def next_guess(
+        self,
+        history: dict[str, int],
+        invalid_guesses: set[str] | None = None,
+        self_report_block: str = "",
+        return_raw: bool = False,
+    ) -> Any:
         prompt = NEXT_GUESS_PROMPT.format(
             history=json.dumps(history, sort_keys=True),
             invalid_guesses=json.dumps(sorted(invalid_guesses or set())),
-        )
+        ) + self_report_block
+        if return_raw:
+            response, raw = self._json_request_with_retry_and_raw(prompt)
+            word = str(response.get("word", "")) if isinstance(response, dict) else str(response)
+            return word, response, raw
         response = self._json_request_with_retry(prompt)
         if isinstance(response, dict):
             return str(response.get("word", ""))
@@ -765,28 +838,35 @@ def _looks_like_category(value: Any) -> bool:
     return isinstance(value, dict) and ("words" in value or "name" in value)
 
 
-def _normalize_initial_categories(parsed: Any) -> list[dict[str, Any]]:
-    """Coerce the initial-categories response into a list of category dicts.
+def _normalize_json_list(parsed: Any, expected_key: str, element_type: type) -> list:
+    """Coerce a model response into a list of ``element_type`` items.
 
-    Tolerates every shape observed across providers:
-    - ``{"categories": [ {...}, ... ]}`` (the shape the prompt now requests),
-    - a bare single-category dict (what Ollama's json_object mode collapses to),
-    - any other single-key wrapper whose sole list value holds the categories,
-    - a bare top-level array (providers that do not force a JSON object).
-    Non-dict entries are dropped.
+    Ollama's ``response_format=json_object`` forces a single top-level object, so
+    prompts now request ``{expected_key: [...]}``. This tolerates every shape seen
+    across providers:
+    - ``{expected_key: [ ... ]}`` (the requested shape),
+    - a bare top-level array (providers that do not force an object),
+    - any other single-key wrapper whose sole list value holds the items,
+    - for dict elements only, a bare single element object (json_object collapse).
+    Entries not matching ``element_type`` are dropped.
     """
     if isinstance(parsed, list):
-        return [item for item in parsed if isinstance(item, dict)]
+        return [item for item in parsed if isinstance(item, element_type)]
     if isinstance(parsed, dict):
-        wrapped = parsed.get("categories")
+        wrapped = parsed.get(expected_key)
         if isinstance(wrapped, list):
-            return [item for item in wrapped if isinstance(item, dict)]
-        if _looks_like_category(parsed):
+            return [item for item in wrapped if isinstance(item, element_type)]
+        if element_type is dict and _looks_like_category(parsed):
             return [parsed]
         for value in parsed.values():
-            if isinstance(value, list) and any(isinstance(item, dict) for item in value):
-                return [item for item in value if isinstance(item, dict)]
+            if isinstance(value, list) and any(isinstance(item, element_type) for item in value):
+                return [item for item in value if isinstance(item, element_type)]
     return []
+
+
+def _normalize_initial_categories(parsed: Any) -> list[dict[str, Any]]:
+    """Coerce the initial-categories response into a list of category dicts."""
+    return _normalize_json_list(parsed, "categories", dict)
 
 
 def _count_seed_words(categories: list[dict[str, Any]]) -> int:

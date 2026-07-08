@@ -103,6 +103,8 @@ def _ollama_available() -> bool:
 @unittest.skipUnless(_ollama_available(), "Set RUN_OLLAMA_SMOKE=1 with a reachable Ollama server to run live smoke")
 class LiveSmokeTests(unittest.TestCase):
     def test_each_operator_returns_parseable_self_report(self) -> None:
+        """Covers the operator family shared by ea_llm_self_adaptive and
+        ea_llm_map_elites (s/m/ml/l mutations + crossover)."""
         client = LLMClient(provider="ollama", api_key="ollama", model=config.OLLAMA_MODEL)
         prompts = build_prompts(client, self_report_block=SELF_REPORT_BLOCK)
         for name in OPERATOR_NAMES:
@@ -113,6 +115,50 @@ class LiveSmokeTests(unittest.TestCase):
                 self.assertIsInstance(parsed, dict)
                 # A real response should carry a usable closeness or at least parse.
                 self.assertFalse(report["self_report_parse_failed"])
+
+    def test_remaining_modes_return_parseable_self_report(self) -> None:
+        """Phase 3: one live proposal call per remaining live mode's distinct
+        instrumented call type, confirming the shared layer's block + parse path
+        yields usable self-report fields.
+
+        - llm_only        -> next_guess
+        - ea_llm          -> specialize
+        - ea_llm_pivot    -> pivot_morphology
+        """
+        from contexto_solver.hypothesis import Hypothesis
+        from contexto_solver.self_report import parse_self_report as _parse
+
+        client = LLMClient(provider="ollama", api_key="ollama", model=config.OLLAMA_MODEL)
+        history = {"shrub": 50, "tree": 400}
+        hypothesis = Hypothesis(
+            category_name="types of plants",
+            description="plant taxonomy and related greenery",
+            words_tried=dict(history),
+        )
+
+        # llm_only: next_guess carries the self-report in the same object.
+        word, response, raw = client.next_guess(
+            history, {"sourcream"}, self_report_block=SELF_REPORT_BLOCK, return_raw=True
+        )
+        print(f"\n=== llm_only next_guess raw response ===\n{raw}\n")
+        self.assertTrue(word)
+        self.assertIsInstance(_parse(response), dict)
+
+        # ea_llm: specialize returns (items, raw) with the self-report at top level.
+        _items, raw = client.specialize(
+            hypothesis, dict(history), invalid_guesses={"sourcream"}, n=3,
+            self_report_block=SELF_REPORT_BLOCK, return_raw=True,
+        )
+        print(f"\n=== ea_llm specialize raw response ===\n{raw}\n")
+        self.assertFalse(_parse(raw)["self_report_parse_failed"])
+
+        # ea_llm_pivot: pivot_morphology carries self-report alongside "words".
+        _words, raw = client.pivot_morphology(
+            "shrub", 50, {"shrub", "tree"}, n=10,
+            self_report_block=SELF_REPORT_BLOCK, return_raw=True,
+        )
+        print(f"\n=== ea_llm_pivot pivot_morphology raw response ===\n{raw}\n")
+        self.assertFalse(_parse(raw)["self_report_parse_failed"])
 
 
 if __name__ == "__main__":

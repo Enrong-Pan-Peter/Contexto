@@ -8,11 +8,26 @@ import unittest
 from pathlib import Path
 
 from scripts.verify_self_report_pilot import (
+    CANONICAL_SELF_REPORT_KEYS,
     compute_metrics,
     evaluate_thresholds,
     extract_records,
     load_trace,
+    schema_audit,
 )
+
+
+def _canonical_report(**overrides):
+    record = {
+        "predicted_closeness": 0.6,
+        "predicted_closeness_clamped": False,
+        "rationale": {"basis_words": ["shrub"], "reason": "x"},
+        "self_report_parse_failed": False,
+        "self_report_raw": "{}",
+        "self_report_prompt": "has shrub",
+    }
+    record.update(overrides)
+    return record
 
 
 def _op_event(generation, op, name, self_report):
@@ -157,6 +172,70 @@ class VerifyPilotTests(unittest.TestCase):
         checks = evaluate_thresholds(compute_metrics(extract_records(clean)))
         self.assertTrue(checks["all_pass"])
         self.assertFalse(checks["parse_failure_needs_discussion"])
+
+
+class LlmOnlyExtractionTests(unittest.TestCase):
+    """llm_only writes self_report under GUESS events (non-Hypothesis helper)."""
+
+    def _llm_only_trace(self):
+        return [
+            {"generation": -1, "event": "RUN_CONFIG", "details": {"self_report": True, "trace_schema_version": 2}},
+            {"generation": 1, "event": "GUESS", "details": {"word": "bush", "rank": 40, "self_report": _canonical_report()}},
+            {"generation": 2, "event": "GUESS", "details": {"word": "hedge", "rank": 30, "self_report": _canonical_report(predicted_closeness=0.5)}},
+            # a guess without self_report (e.g. flag-off style) must be ignored
+            {"generation": 3, "event": "GUESS", "details": {"word": "fern", "rank": 90}},
+        ]
+
+    def test_guess_records_are_extracted(self) -> None:
+        records = extract_records(self._llm_only_trace())
+        self.assertEqual(len(records), 2)
+        self.assertTrue(all(r["source_event"] == "GUESS" for r in records))
+        self.assertEqual(sorted(r["guess_word"] for r in records), ["bush", "hedge"])
+        self.assertTrue(all(r["hypothesis_name"] is None for r in records))
+        self.assertTrue(all(r["operator"] == "next_guess" for r in records))
+
+    def test_llm_only_metrics_and_thresholds(self) -> None:
+        checks = evaluate_thresholds(compute_metrics(extract_records(self._llm_only_trace())))
+        self.assertTrue(checks["all_pass"])
+
+
+class SchemaAuditTests(unittest.TestCase):
+    def test_canonical_keys_and_consistent_version_pass(self) -> None:
+        ea = [
+            {"generation": -1, "event": "RUN_CONFIG", "details": {"trace_schema_version": 2}},
+            _op_event(1, "s_mutation", "a", _canonical_report()),
+        ]
+        llm_only = [
+            {"generation": -1, "event": "RUN_CONFIG", "details": {"trace_schema_version": 2}},
+            {"generation": 1, "event": "GUESS", "details": {"word": "bush", "self_report": _canonical_report()}},
+        ]
+        audit = schema_audit([("ea.json", ea), ("llm_only.json", llm_only)])
+        self.assertTrue(audit["all_key_sets_canonical"])
+        self.assertTrue(audit["schema_version_consistent"])
+        self.assertEqual(audit["schema_versions_seen"], ["2"])
+        self.assertEqual(audit["distinct_key_sets"], [sorted(CANONICAL_SELF_REPORT_KEYS)])
+
+    def test_divergent_field_names_flagged(self) -> None:
+        bad = [
+            {"generation": -1, "event": "RUN_CONFIG", "details": {"trace_schema_version": 2}},
+            # llm_only serializing a stray/renamed key would surface here
+            {"generation": 1, "event": "GUESS", "details": {"word": "bush", "self_report": _canonical_report(closeness=0.6)}},
+        ]
+        audit = schema_audit([("bad.json", bad)])
+        self.assertFalse(audit["all_key_sets_canonical"])
+
+    def test_schema_version_mismatch_flagged(self) -> None:
+        v2 = [
+            {"generation": -1, "event": "RUN_CONFIG", "details": {"trace_schema_version": 2}},
+            _op_event(1, "s_mutation", "a", _canonical_report()),
+        ]
+        v1 = [
+            {"generation": -1, "event": "RUN_CONFIG", "details": {"trace_schema_version": 1}},
+            {"generation": 1, "event": "GUESS", "details": {"word": "bush", "self_report": _canonical_report()}},
+        ]
+        audit = schema_audit([("v2.json", v2), ("v1.json", v1)])
+        self.assertFalse(audit["schema_version_consistent"])
+        self.assertEqual(audit["schema_versions_seen"], ["1", "2"])
 
 
 if __name__ == "__main__":

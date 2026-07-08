@@ -165,6 +165,7 @@ EMBEDDING_SEED_COUNT=12
 EMBEDDING_ACTIVE_COUNT=5
 EMBEDDING_NEIGHBORS_PER_WORD=10
 RANDOM_SEED=
+SELF_REPORT=0
 ```
 
 For OpenAI, set either `LLM_API_KEY` or `OPENAI_API_KEY`. Ollama runs use the
@@ -208,6 +209,23 @@ Useful commands while playing:
 The `solver` field in traces remains a broad compatibility label (`llm` or
 `embedding`). Use the `method` field to distinguish `llm_only`, `ea_llm`,
 `ea_llm_pivot`, `ea_llm_self_adaptive`, and `ea_llm_map_elites`.
+
+### Operator self-report instrumentation (RQ1)
+
+Set `SELF_REPORT=1` (env var, default off) to log `predicted_closeness` and
+`rationale` on instrumented LLM proposal calls. These fields are logged-only and
+never affect search decisions. See [`docs/architecture.md`](docs/architecture.md)
+for code structure and invariants, and [`docs/design_decisions.md`](docs/design_decisions.md)
+for rationale and scope.
+
+```powershell
+$env:SELF_REPORT="1"; python main.py --game local --target cat --method ea_llm_map_elites
+```
+
+Per-mode usage is the same command with a different `--method` value
+(`llm_only`, `ea_llm`, `ea_llm_pivot`, `ea_llm_self_adaptive`,
+`ea_llm_map_elites`). The `embedding` method has no LLM calls and ignores this
+flag.
 
 ### EA+LLM Against Local Game
 

@@ -1,0 +1,12 @@
+Return only JSON, no markdown or explanation.
+The word shrub has rank 50, so it is very close to the hidden target.
+Suggest 10 candidate words that pivot across morphology, word forms, parts of speech,
+botanical/scientific terms, descriptors, hypernyms, and hyponyms.
+For example, from shrub, useful candidates could include shrubby, shrubland,
+herbaceous, woody, perennial, bush, foliage.
+Every word must be one common lowercase dictionary word.
+Do not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.
+Avoid these already tried words: ["bush", "fern", "hedge", "shrub", "tree"]
+Do not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.
+JSON schema:
+{"words": ["word1", "word2", "word3"]}

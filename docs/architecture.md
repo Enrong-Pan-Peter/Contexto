@@ -154,6 +154,14 @@ Subtleties:
 - Pivot-only settings are namespaced with `EA_LLM_PIVOT_*` and only apply to
   `method=ea_llm_pivot`. There is no global `ENABLE_PIVOT` flag; pivot behavior
   is selected by method.
+- `SELF_REPORT` (default off) is a global env flag read by all LLM-family
+  methods via their config dataclasses. When on, instrumented proposal prompts
+  request logged-only self-report fields; see `contexto_solver.self_report` and
+  the dedicated subsection below.
+- `TRACE_SCHEMA_VERSION` (currently `2`) is written to every run's
+  `RUN_CONFIG` regardless of whether self-report is enabled. It marks the trace
+  format era (richer run metadata and optional hypothesis `self_report` blocks),
+  not per-run instrumentation status.
 
 ### `contexto_solver.embeddings.EmbeddingModel`
 
@@ -254,6 +262,13 @@ Main function:
   proposals, mutation, crossover, local search, and pivot operators.
 - Requests JSON-only responses and parses JSON. JSON parse failures retry the
   generation request; retryable provider failures use bounded backoff.
+- List-returning prompts (`propose_words`, `specialize`, `local_search`, pivot
+  word lists, and `generate_initial_categories`) route through
+  `_normalize_json_list()` and `_request_json_list()` so Ollama's forced
+  top-level JSON object (`response_format: {"type": "json_object"}`) can be
+  normalized from `{expected_key: [...]}`, a bare array (cloud providers), or
+  alternate single-key wrappers. Below-minimum results retry once, then raise.
+  See [`docs/design_decisions.md`](design_decisions.md#ollama-json_object-response-shape-normalization).
 
 Main interactions:
 - Used only by LLM-family methods.
@@ -287,6 +302,52 @@ Subtleties:
   filtered; the values are game ranks, never sigma, so the leakage invariant
   asserted by `assert_prompt_has_no_sigma_leak` holds.
 
+### `contexto_solver.self_report`
+
+RQ1 operator self-report instrumentation (logged-only measurement layer).
+
+Main function:
+- Owns the self-report request block appended to instrumented prompts when
+  `SELF_REPORT=1` (`SELF_REPORT_BLOCK`, exposed via `self_report_block()`).
+- Parses `predicted_closeness`, `basis_words`, and `reason` from proposal
+  responses (`parse_self_report()`), with clamping to `[0, 1]`.
+- Resolves a complete record with one targeted follow-up when closeness is
+  missing (`resolve_self_report()` + `SELF_REPORT_FOLLOWUP_PROMPT`), then null
+  fields and `self_report_parse_failed=true` on repeated failure. Never raises
+  and never affects word acceptance.
+- Applies resolved records to hypotheses (`apply_self_report_to_hypothesis()`)
+  or returns a trace dict for modes without hypotheses (`llm_only`).
+- Tolerantly reads old traces (`read_self_report()`).
+
+Main interactions:
+- `LLMClient` appends `self_report_block` to instrumented prompt builders
+  (`specialize`, operator templates via `build_operator_mutation_prompt`,
+  `crossover`, pivot operators, `next_guess`). Block text and parsing logic live
+  only in this module.
+- `BaseEALLMMethod._self_report_block()`, `_attach_self_report()`,
+  `_complete_proposal()`, and `_crossover_request()` route EA-family instrumented
+  calls through the shared layer.
+- `llm_only` calls `resolve_self_report()` directly and writes
+  `details["self_report"]` on `GUESS` events.
+
+Instrumented proposal calls (when flag on):
+- `llm_only`: `next_guess`
+- `ea_llm`: `specialize`, `crossover`
+- `ea_llm_pivot`: above plus the four pivot operators
+- `ea_llm_self_adaptive`, `ea_llm_map_elites`: s/m/ml/l operator mutations and
+  `crossover`
+
+Not instrumented (by design): `propose_words`, `local_search`,
+`generate_initial_categories`, `place_word`. `embedding` has no LLM calls.
+
+Invariants:
+- With `SELF_REPORT` off, appended block is empty and prompts are byte-identical
+  to pre-instrumentation baselines (enforced by snapshot tests under
+  `tests/fixtures/prompts_baseline*`).
+- Self-report fields are never read for selection, fitness, operator choice,
+  sigma handling, pivoting, or local search.
+- Parse failures must not abort a run.
+
 ### `contexto_solver.hypothesis.Hypothesis`
 
 State model for one LLM search category.
@@ -314,6 +375,10 @@ Subtleties:
 - `sigma` is serialized for self-adaptive analysis. It must always have four
   components, sum to one within `1e-6`, and remain above the configured
   self-adaptive floor for generated adaptive descendants.
+- Optional RQ1 self-report fields (`predicted_closeness`, `rationale`,
+  `self_report_parse_failed`, `self_report_raw`, `self_report_prompt`) are
+  emitted in `to_dict()` only when `_has_self_report()` is true, so
+  non-instrumented runs stay byte-identical at the hypothesis level.
 
 ### `contexto_solver.operators`
 
@@ -362,7 +427,11 @@ Current method modules:
   crossover, or local search.
 - `methods/ea_core.py`: shared EA+LLM core for hypothesis initialization,
   candidate generation, local search, selection, mutation, crossover,
-  deduplication, trace saving, and the post-generation hook contract.
+  deduplication, trace saving, and the post-generation hook contract. Also hosts
+  the shared self-report routing helpers `_self_report_block()`,
+  `_attach_self_report()`, `_complete_proposal()`, and `_crossover_request()`.
+  After initialization, raises `RuntimeError` if the hypothesis population is
+  empty (fail-fast guard against degenerate LLM seed sets).
 - `methods/ea_llm.py`: EA+LLM without stall-pivot operators.
 - `methods/ea_llm_pivot.py`: EA+LLM with the stall detector and pivot A/B/C
   operators. Pivot settings are read from `EA_LLM_PIVOT_*` config values.
@@ -401,8 +470,9 @@ Subtleties:
   not invoked, per-hypothesis multi-candidate generation, top-mu/half selection,
   the post-generation hook, and deduplication are all inactive in this method.
   It inherits the sigma machinery unchanged (`_mutate`/`_crossover` math reused
-  via per-child helpers) and keeps the four-operator sigma vectors. See the
-  dedicated subsection below.
+  via per-child helpers) and keeps the four-operator sigma vectors. Its
+  `initialize()` raises `RuntimeError` if the archive is empty after seeding.
+  See the dedicated subsection below.
 - `solver=llm` is no longer a unique method. Analysis scripts should inspect
   `method` when distinguishing `llm_only`, `ea_llm`, `ea_llm_pivot`,
   `ea_llm_self_adaptive`, and `ea_llm_map_elites`.
@@ -541,6 +611,11 @@ Subtleties:
   child sigma is serialized in `child.sigma`. When adaptive local search is
   muted, `LOCAL_SEARCH_DISABLED` may be logged once to make the suppression
   visible in traces.
+- When `SELF_REPORT=1`, instrumented events may include a nested `self_report`
+  object on hypotheses (`OPERATOR_SAMPLED`, `CROSSOVER`, `MUTATE`,
+  `PIVOT_TRIGGERED`) or on `GUESS` details (`llm_only`). `RUN_CONFIG` records
+  `self_report: true|false` for LLM methods and `self_report: null` for
+  `embedding`, plus `trace_schema_version`.
 
 ### `contexto_solver.experiment`
 

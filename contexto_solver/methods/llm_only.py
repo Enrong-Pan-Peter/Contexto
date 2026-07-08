@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import json
 import re
 from dataclasses import dataclass
 from datetime import datetime
@@ -10,6 +11,7 @@ from typing import Any
 
 from ..llm_client import LLMClient
 from ..logger import Logger
+from ..self_report import resolve_self_report, self_report_block
 from .base import Game
 from .ea_core import _word_family, _word_families
 
@@ -19,6 +21,8 @@ class LLMOnlyConfig:
     max_generations: int
     trace_dir: str
     run_label: str
+    # RQ1 operator self-report instrumentation (logged-only; see self_report.py).
+    self_report: bool = False
 
 
 class LLMOnlyMethod:
@@ -46,7 +50,7 @@ class LLMOnlyMethod:
         solved = self.game.is_solved()
         while not solved and self.generation < generation_limit:
             self.generation += 1
-            word = self._next_clean_guess()
+            word, self_report_record = self._next_clean_guess()
             if not word:
                 self.logger.log(
                     self.generation,
@@ -60,17 +64,16 @@ class LLMOnlyMethod:
                 self.logger.log(self.generation, "SKIP_INVALID_GUESS", {"word": word})
                 continue
 
-            self.logger.log(
-                self.generation,
-                "GUESS",
-                {
-                    "word": word,
-                    "rank": rank,
-                    "best_word": self.best_word,
-                    "best_rank": self.best_rank,
-                    "total_guesses": self.game.total_guesses(),
-                },
-            )
+            guess_details: dict[str, Any] = {
+                "word": word,
+                "rank": rank,
+                "best_word": self.best_word,
+                "best_rank": self.best_rank,
+                "total_guesses": self.game.total_guesses(),
+            }
+            if self_report_record is not None:
+                guess_details["self_report"] = self_report_record
+            self.logger.log(self.generation, "GUESS", guess_details)
             solved = self.game.is_solved()
             if solved:
                 self._log_solved()
@@ -98,18 +101,46 @@ class LLMOnlyMethod:
             "trace_path": str(trace_path),
         }
 
-    def _next_clean_guess(self) -> str:
+    def _next_clean_guess(self) -> tuple[str, dict[str, Any] | None]:
         known_words = set(self.invalid_guesses)
         known_words.update(self._valid_history())
         known_word_families = _word_families(known_words)
+        block = self_report_block(self.config.self_report)
         for _ in range(3):
-            word = _clean_word(self.llm_client.next_guess(self._valid_history(), self.invalid_guesses))
+            if self.config.self_report:
+                raw_word, response, raw = self.llm_client.next_guess(
+                    self._valid_history(),
+                    self.invalid_guesses,
+                    self_report_block=block,
+                    return_raw=True,
+                )
+            else:
+                raw_word, response, raw = (
+                    self.llm_client.next_guess(self._valid_history(), self.invalid_guesses),
+                    None,
+                    None,
+                )
+            word = _clean_word(raw_word)
             if not word:
                 continue
             if word in known_words or _word_family(word) in known_word_families:
                 continue
-            return word
-        return ""
+            record = None
+            if self.config.self_report:
+                record = resolve_self_report(
+                    self.llm_client,
+                    source=response,
+                    raw=raw,
+                    context=self._self_report_context(),
+                    proposed_word=word,
+                    rendered_prompt=None,
+                )
+            return word, record
+        return "", None
+
+    def _self_report_context(self) -> str:
+        known = set(self.invalid_guesses) | set(self._valid_history())
+        return json.dumps(sorted(known))
 
     def _valid_history(self) -> dict[str, int]:
         guesses = getattr(self.game, "guesses", {})

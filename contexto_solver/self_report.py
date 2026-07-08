@@ -138,6 +138,78 @@ def parse_self_report(source: Any) -> dict[str, Any]:
     }
 
 
+def self_report_block(enabled: bool) -> str:
+    """The self-report request block to append to a base prompt, or ``""``.
+
+    Single source of the appended request text: modes pass the result into their
+    prompt construction so a flag-off prompt renders byte-identically.
+    """
+    return SELF_REPORT_BLOCK if enabled else ""
+
+
+def resolve_self_report(
+    llm_client: Any,
+    *,
+    source: Any,
+    raw: str | None,
+    context: str,
+    proposed_word: str | None,
+    rendered_prompt: str | None,
+) -> dict[str, Any]:
+    """Parse a proposal's self-report, with one targeted follow-up on failure.
+
+    ``source`` is the parsed proposal object (or raw text) that may carry the
+    self-report fields; ``raw`` is stored for offline re-parsing. When closeness
+    is missing, issues exactly one follow-up asking only about ``proposed_word``
+    so the accepted proposal is never affected. Returns a record dict shaped like
+    ``Hypothesis.self_report_dict()``. Never raises.
+    """
+    report = parse_self_report(source)
+    final_raw = raw
+    if report["predicted_closeness"] is None and proposed_word:
+        followup_prompt = SELF_REPORT_FOLLOWUP_PROMPT.format(
+            word=proposed_word,
+            context=context,
+        )
+        try:
+            parsed, followup_raw = llm_client.complete_json_prompt_with_raw(followup_prompt)
+        except Exception:
+            parsed, followup_raw = None, None
+        if parsed is not None:
+            followup = parse_self_report(parsed)
+            final_raw = followup_raw if followup_raw is not None else raw
+            if followup["predicted_closeness"] is not None:
+                report["predicted_closeness"] = followup["predicted_closeness"]
+                report["predicted_closeness_clamped"] = followup["predicted_closeness_clamped"]
+            if followup["rationale"] and (
+                report["rationale"] is None or not report["rationale"]["basis_words"]
+            ):
+                report["rationale"] = followup["rationale"]
+
+    rationale = report["rationale"]
+    parse_failed = report["predicted_closeness"] is None and (
+        rationale is None or (not rationale["basis_words"] and not rationale["reason"])
+    )
+    return {
+        "predicted_closeness": report["predicted_closeness"],
+        "predicted_closeness_clamped": report["predicted_closeness_clamped"],
+        "rationale": rationale,
+        "self_report_parse_failed": parse_failed,
+        "self_report_raw": final_raw,
+        "self_report_prompt": rendered_prompt,
+    }
+
+
+def apply_self_report_to_hypothesis(child: Any, record: dict[str, Any]) -> None:
+    """Copy a resolved self-report record onto a hypothesis (logged-only)."""
+    child.predicted_closeness = record["predicted_closeness"]
+    child.predicted_closeness_clamped = record["predicted_closeness_clamped"]
+    child.rationale = record["rationale"]
+    child.self_report_parse_failed = record["self_report_parse_failed"]
+    child.self_report_raw = record["self_report_raw"]
+    child.self_report_prompt = record["self_report_prompt"]
+
+
 def read_self_report(child_dict: dict[str, Any]) -> dict[str, Any]:
     """Tolerantly read a serialized child's self-report (for old traces).
 

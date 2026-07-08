@@ -561,6 +561,47 @@ strong proxy for real Contexto. Solver results on the local game remain valid as
 MiniLM-proxy results, but claims about real Contexto behavior now need direct
 real-rank evidence or an explicit uncertainty label.
 
+### 2026-07-06 — Ollama JSON-Shape Fixes and RQ1 Self-Report Shared Layer
+
+Evidence:
+- [`contexto_solver/llm_client.py`](../contexto_solver/llm_client.py)
+  (`_normalize_json_list`, `_request_json_list`, object-wrapped prompt schemas)
+- [`contexto_solver/self_report.py`](../contexto_solver/self_report.py)
+- [`contexto_solver/methods/ea_core.py`](../contexto_solver/methods/ea_core.py)
+  (`_complete_proposal`, `_crossover_request`, init fail-fast)
+- [`tests/test_initial_categories_parsing.py`](../tests/test_initial_categories_parsing.py),
+  [`tests/test_list_prompts_parsing.py`](../tests/test_list_prompts_parsing.py),
+  [`tests/test_legacy_prompt_snapshots.py`](../tests/test_legacy_prompt_snapshots.py),
+  [`tests/test_self_report_prompt.py`](../tests/test_self_report_prompt.py),
+  [`tests/test_prompt_isolation.py`](../tests/test_prompt_isolation.py)
+- [`scripts/verify_self_report_pilot.py`](../scripts/verify_self_report_pilot.py)
+- Single-run pilot (bug exposure, not calibration):
+  [`traces/ea_llm_map_elites_aligned_ivory_run1_20260706_151900.json`](../traces/ea_llm_map_elites_aligned_ivory_run1_20260706_151900.json)
+- Design notes:
+  [`docs/design_decisions.md`](design_decisions.md#ollama-json_object-response-shape-normalization),
+  [`docs/design_decisions.md`](design_decisions.md#rq1-operator-self-report-instrumentation-logged-only)
+
+Milestones:
+- Fixed Ollama `json_object` mismatches for initial categories and five
+  array-shaped list prompts (`propose_words`, `specialize`, `local_search`,
+  pivot word lists) via object wrappers plus shared normalization with
+  retry-once-then-raise validation.
+- Added fail-fast guards so empty initialization no longer runs silent empty
+  generations.
+- Consolidated RQ1 self-report request/parse routing across all five live LLM
+  modes through `contexto_solver/self_report.py` and shared EA helpers; locked
+  flag-off prompt bytes with snapshot fixtures for operator and legacy proposal
+  paths.
+- Extended information-isolation audits to legacy non-operator prompts; no target,
+  unguessed-rank, or sigma leaks found in the audited fixture population.
+- Documented `SELF_REPORT` usage in `README.md`; detailed structure in
+  `docs/architecture.md`.
+
+Research value: unblocks Ollama-backed solver runs that previously could start
+with empty archives, and prepares RQ1 calibration data collection. The empty
+`ivory` pilot confirms the pre-fix failure mode but does not yet provide
+multi-generation self-report calibration evidence. Batch audit runs remain open.
+
 ## Current Open Questions
 
 - Should work continue directly on pivot direction selection, given the completed
@@ -582,3 +623,8 @@ real-rank evidence or an explicit uncertainty label.
   targets, or against the real Contexto API rather than the MiniLM proxy?
 - How large and diverse must the real-Contexto closeness target set be before the
   associative-neighborhood decomposition supports a general claim?
+- After the Ollama JSON-shape fixes, do previously observed empty-archive MAP-Elites
+  traces disappear under repeated local pilots, and do instrumented audit runs
+  yield analyzable `self_report` fields across generations?
+- Does operator `predicted_closeness` correlate with realized game rank once
+  dedicated `SELF_REPORT=1` solver traces exist, or is that still untested?

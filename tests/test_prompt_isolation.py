@@ -126,6 +126,28 @@ class PromptIsolationTests(unittest.TestCase):
                 )
                 assert_prompt_has_no_sigma_leak(prompt, parent.sigma, operator)
 
+    def test_legacy_mode_prompts_are_isolated(self) -> None:
+        """Phase 3: extend the isolation audit to every live mode's non-operator
+        proposal prompts (llm_only next_guess, ea_llm propose_words/specialize/
+        local_search, ea_llm_pivot pivots), flag off and on.
+
+        These prompts predate the operator-era isolation discipline; this is the
+        first audit that they never carry the hidden target, an unguessed word's
+        rank, or strategy parameters. All values they interpolate come from
+        guessed words (history / words_tried / best_word+best_rank) or fixed
+        instruction text, so a leak would surface as a literal substring.
+        """
+        from tests.legacy_prompt_fixture_inputs import build_legacy_prompts, make_client
+
+        for block in ("", SELF_REPORT_BLOCK):
+            prompts = build_legacy_prompts(make_client(), self_report_block=block)
+            for name, prompt in prompts.items():
+                with self.subTest(prompt=name, flag_on=bool(block)):
+                    self.assertNotIn(TARGET_WORD, prompt, f"{name} leaked the target word")
+                    self.assertNotIn(TARGET_RANK_TOKEN, prompt, f"{name} leaked an unguessed rank")
+                    # No strategy parameters (sigma vector / adaptation knobs).
+                    self.assertNotIn("sigma", prompt.lower(), f"{name} leaked a strategy parameter")
+
     def test_ranked_context_only_contains_guessed_words(self) -> None:
         """MAP-Elites ranked context injects only guessed words with their ranks.
 

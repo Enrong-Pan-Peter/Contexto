@@ -337,6 +337,43 @@ generation_reached, total_guesses, notes, trace_path.
   effect estimate, but only six paired solved-run comparisons were available.
 - Finding link: [`docs/findings.md`](findings.md#2026-05-13--pivot-matrix-shows-faster-stall-recovery-but-not-a-complete-unblock).
 
+## 2026-07-06 — RQ1 Self-Report Pilot (Empty Archive; Bug Exposure)
+
+- Evidence level: single-run observation; not a calibration result.
+- Command pattern (PowerShell):
+  `$env:SELF_REPORT="1"; python -m contexto_solver.experiment --method ea_llm_map_elites --provider ollama --targets ivory --runs-per-target 1 --max-generations 10 --random-seed 0 --output traces/pilot_self_report.json`
+- Trace:
+  [`traces/ea_llm_map_elites_aligned_ivory_run1_20260706_151900.json`](../traces/ea_llm_map_elites_aligned_ivory_run1_20260706_151900.json)
+- Summary artifact:
+  [`traces/pilot_self_report.json`](../traces/pilot_self_report.json) (if present
+  from the same session).
+- Result: not solved; `best_word=null`, `best_rank=null`, zero guesses across 10
+  generations; `RUN_CONFIG.self_report=true`, `trace_schema_version=2`; `INIT`
+  logged `hypotheses: []` and `occupied_cells: 0`. No `OPERATOR_SAMPLED` or
+  `CROSSOVER` events because initialization produced no archive incumbents.
+- Interpretation: exposed the Ollama `json_object` / array-schema mismatch at
+  init time rather than validating operator self-report calibration. See
+  [`docs/findings.md`](findings.md#2026-07-06--ollama-json_object-empty-init-bug-confirmed-and-fixed).
+
+## 2026-07-06 — Self-Report Instrumentation Test Evidence (Not Solver Runs)
+
+- Evidence level: automated tests and env-gated live single-call smokes; not
+  batch solver experiments.
+- Offline suite: 63 tests (`tests/test_self_report_schema.py`,
+  `tests/test_self_report_prompt.py`, `tests/test_legacy_prompt_snapshots.py`,
+  `tests/test_prompt_isolation.py`, `tests/test_initial_categories_parsing.py`,
+  `tests/test_list_prompts_parsing.py`, `tests/test_verify_self_report_pilot.py`).
+- Live smokes (`RUN_OLLAMA_SMOKE=1`, Ollama `qwen3:14b`): operator/crossover
+  prompts plus one call each for `next_guess`, `specialize`, and
+  `pivot_morphology`; all returned JSON objects parseable by
+  `parse_self_report()`. Raw responses are printed by the test run, not stored
+  as trace artifacts.
+- Verification tooling ready:
+  [`scripts/verify_self_report_pilot.py`](../scripts/verify_self_report_pilot.py)
+  (for future instrumented solver traces).
+- Finding link:
+  [`docs/findings.md`](findings.md#2026-07-06--rq1-self-report-layer-ready-for-audit-runs-not-yet-batch-validated).
+
 ## Finding Links
 
 - Near-target stagnation and misleading neighborhoods: `docs/findings.md`.
