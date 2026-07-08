@@ -108,15 +108,16 @@ class LLMOnlyMethod:
         block = self_report_block(self.config.self_report)
         for _ in range(3):
             if self.config.self_report:
-                raw_word, response, raw = self.llm_client.next_guess(
+                raw_word, response, raw, rendered_prompt = self.llm_client.next_guess(
                     self._valid_history(),
                     self.invalid_guesses,
                     self_report_block=block,
                     return_raw=True,
                 )
             else:
-                raw_word, response, raw = (
+                raw_word, response, raw, rendered_prompt = (
                     self.llm_client.next_guess(self._valid_history(), self.invalid_guesses),
+                    None,
                     None,
                     None,
                 )
@@ -133,7 +134,7 @@ class LLMOnlyMethod:
                     raw=raw,
                     context=self._self_report_context(),
                     proposed_word=word,
-                    rendered_prompt=None,
+                    rendered_prompt=rendered_prompt,
                 )
             return word, record
         return "", None

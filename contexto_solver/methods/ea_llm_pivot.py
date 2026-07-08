@@ -289,12 +289,19 @@ class EALLMPivotMethod(BaseEALLMMethod):
         }
 
     def _maybe_attach_pivot_self_report(
-        self, hypothesis: Hypothesis, source: Any, raw: str | None, words: list[str]
+        self,
+        hypothesis: Hypothesis,
+        source: Any,
+        raw: str | None,
+        rendered_prompt: str | None,
+        words: list[str],
     ) -> None:
         """Attach the logged-only self-report to a pivot hypothesis (flag-gated)."""
         if not self.config.self_report:
             return
-        self._attach_self_report(hypothesis, source, raw, None, words[0] if words else None)
+        self._attach_self_report(
+            hypothesis, source, raw, rendered_prompt, words[0] if words else None
+        )
 
     def _build_pivot_hypothesis(self, operator: dict[str, str], best_word: str, best_rank: int) -> tuple[Hypothesis, list[str]]:
         all_guesses = self._known_words()
@@ -304,11 +311,15 @@ class EALLMPivotMethod(BaseEALLMMethod):
 
         if operator["name"] == "morphology":
             if want_raw:
-                words, raw = self.llm_client.pivot_morphology(
+                words, raw, rendered_prompt = self.llm_client.pivot_morphology(
                     best_word, best_rank, all_guesses, n=n, self_report_block=block, return_raw=True
                 )
             else:
-                words, raw = self.llm_client.pivot_morphology(best_word, best_rank, all_guesses, n=n), None
+                words, raw, rendered_prompt = (
+                    self.llm_client.pivot_morphology(best_word, best_rank, all_guesses, n=n),
+                    None,
+                    None,
+                )
             hypothesis = Hypothesis(
                 category_name=f"pivot morphology around {best_word}",
                 description=f"Lexical and morphological variants near {best_word}",
@@ -318,15 +329,19 @@ class EALLMPivotMethod(BaseEALLMMethod):
             pivot_words = _coerce_word_list(words)
             # Word-list pivots carry the self-report alongside "words" at the top
             # level, so parse from the raw response.
-            self._maybe_attach_pivot_self_report(hypothesis, raw, raw, pivot_words)
+            self._maybe_attach_pivot_self_report(hypothesis, raw, raw, rendered_prompt, pivot_words)
             return hypothesis, pivot_words
         if operator["name"] == "register_shift":
             if want_raw:
-                words, raw = self.llm_client.pivot_register_shift(
+                words, raw, rendered_prompt = self.llm_client.pivot_register_shift(
                     best_word, best_rank, all_guesses, n=n, self_report_block=block, return_raw=True
                 )
             else:
-                words, raw = self.llm_client.pivot_register_shift(best_word, best_rank, all_guesses, n=n), None
+                words, raw, rendered_prompt = (
+                    self.llm_client.pivot_register_shift(best_word, best_rank, all_guesses, n=n),
+                    None,
+                    None,
+                )
             hypothesis = Hypothesis(
                 category_name=f"pivot register shift around {best_word}",
                 description=f"Different lexical registers near {best_word}",
@@ -334,13 +349,13 @@ class EALLMPivotMethod(BaseEALLMMethod):
                 origin=operator["origin"],
             )
             pivot_words = _coerce_word_list(words)
-            self._maybe_attach_pivot_self_report(hypothesis, raw, raw, pivot_words)
+            self._maybe_attach_pivot_self_report(hypothesis, raw, raw, rendered_prompt, pivot_words)
             return hypothesis, pivot_words
 
         best_hypothesis = self._best_hypothesis()
         if operator.get("fresh") == "true":
             if want_raw:
-                category, raw = self.llm_client.pivot_fresh_adjacent_category(
+                category, raw, rendered_prompt = self.llm_client.pivot_fresh_adjacent_category(
                     best_word,
                     best_rank,
                     [hypothesis.category_name for hypothesis in self._active_hypotheses()],
@@ -350,16 +365,16 @@ class EALLMPivotMethod(BaseEALLMMethod):
                     return_raw=True,
                 )
             else:
-                category, raw = self.llm_client.pivot_fresh_adjacent_category(
+                category, raw, rendered_prompt = self.llm_client.pivot_fresh_adjacent_category(
                     best_word,
                     best_rank,
                     [hypothesis.category_name for hypothesis in self._active_hypotheses()],
                     all_guesses,
                     n=n,
-                ), None
+                ), None, None
         else:
             if want_raw:
-                category, raw = self.llm_client.pivot_adjacent_category(
+                category, raw, rendered_prompt = self.llm_client.pivot_adjacent_category(
                     best_word,
                     best_rank,
                     best_hypothesis.category_name if best_hypothesis else "unknown category",
@@ -371,7 +386,7 @@ class EALLMPivotMethod(BaseEALLMMethod):
                     return_raw=True,
                 )
             else:
-                category, raw = self.llm_client.pivot_adjacent_category(
+                category, raw, rendered_prompt = self.llm_client.pivot_adjacent_category(
                     best_word,
                     best_rank,
                     best_hypothesis.category_name if best_hypothesis else "unknown category",
@@ -379,14 +394,14 @@ class EALLMPivotMethod(BaseEALLMMethod):
                     best_hypothesis.words_tried if best_hypothesis else {},
                     all_guesses,
                     n=n,
-                ), None
+                ), None, None
         hypothesis = self._hypothesis_from_category(
             category,
             parent=best_word,
             origin=operator["origin"],
         )
         pivot_words = _words_from_category(category)
-        self._maybe_attach_pivot_self_report(hypothesis, category, raw, pivot_words)
+        self._maybe_attach_pivot_self_report(hypothesis, category, raw, rendered_prompt, pivot_words)
         return hypothesis, pivot_words
 
     def _log_pivot_resolution(self, resolution: dict[str, Any]) -> None:

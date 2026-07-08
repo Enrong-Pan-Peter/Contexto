@@ -159,6 +159,8 @@ DEFAULT_TARGET = os.getenv("DEFAULT_TARGET", "ivory")
 SELF_REPORT = _env_bool("SELF_REPORT", False)
 
 # Trace schema version so instrumented traces are distinguishable from older ones.
-# Bumped to 2 when the self-report instrumentation and richer run metadata landed.
-TRACE_SCHEMA_VERSION = 2
+# 2: self-report instrumentation + richer run metadata landed.
+# 3: added predicted_bucket and pinned predicted_closeness semantics (top-100
+#    chance); self_report records now carry a predicted_bucket field.
+TRACE_SCHEMA_VERSION = 3
 

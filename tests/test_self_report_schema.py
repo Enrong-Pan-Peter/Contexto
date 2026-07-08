@@ -25,6 +25,7 @@ class SelfReportSchemaTests(unittest.TestCase):
         hypothesis.update("shrub", 42)
         hypothesis.predicted_closeness = 0.7
         hypothesis.predicted_closeness_clamped = False
+        hypothesis.predicted_bucket = "top100"
         hypothesis.rationale = {"basis_words": ["shrub", "bush"], "reason": "close neighbor."}
         hypothesis.self_report_parse_failed = False
         hypothesis.self_report_raw = '{"predicted_closeness": 0.7}'
@@ -38,6 +39,7 @@ class SelfReportSchemaTests(unittest.TestCase):
         report = restored["self_report"]
         self.assertEqual(report["predicted_closeness"], 0.7)
         self.assertFalse(report["predicted_closeness_clamped"])
+        self.assertEqual(report["predicted_bucket"], "top100")
         self.assertEqual(report["rationale"], {"basis_words": ["shrub", "bush"], "reason": "close neighbor."})
         self.assertFalse(report["self_report_parse_failed"])
         self.assertEqual(report["self_report_raw"], '{"predicted_closeness": 0.7}')
@@ -69,6 +71,7 @@ class SelfReportSchemaTests(unittest.TestCase):
         report = read_self_report(old_child)
         self.assertIsNone(report["predicted_closeness"])
         self.assertFalse(report["predicted_closeness_clamped"])
+        self.assertIsNone(report["predicted_bucket"])
         self.assertIsNone(report["rationale"])
         self.assertFalse(report["self_report_parse_failed"])
         self.assertIsNone(report["self_report_raw"])

@@ -11,7 +11,9 @@ import requests
 from contexto_solver import config
 from contexto_solver.llm_client import LLMClient
 from contexto_solver.self_report import (
+    PREDICTED_BUCKETS,
     SELF_REPORT_BLOCK,
+    parse_predicted_bucket,
     parse_self_report,
 )
 
@@ -89,6 +91,46 @@ class ParserTests(unittest.TestCase):
         self.assertEqual(report["predicted_closeness"], 0.5)
 
 
+class PredictedBucketTests(unittest.TestCase):
+    def test_valid_buckets_pass_through(self) -> None:
+        for bucket in PREDICTED_BUCKETS:
+            self.assertEqual(parse_predicted_bucket(bucket), bucket)
+
+    def test_normalization_of_spacing_and_case(self) -> None:
+        self.assertEqual(parse_predicted_bucket("Top 100"), "top100")
+        self.assertEqual(parse_predicted_bucket("top_500"), "top500")
+        self.assertEqual(parse_predicted_bucket("TOP-10"), "top10")
+        self.assertEqual(parse_predicted_bucket(" beyond "), "beyond")
+
+    def test_unknown_or_non_string_is_none(self) -> None:
+        for value in ("top1000", "closest", "", None, 5, ["top10"], {}):
+            self.assertIsNone(parse_predicted_bucket(value), msg=repr(value))
+
+    def test_parse_self_report_extracts_bucket(self) -> None:
+        report = parse_self_report(
+            {"predicted_closeness": 0.6, "predicted_bucket": "top10", "basis_words": ["x"], "reason": "y"}
+        )
+        self.assertEqual(report["predicted_bucket"], "top10")
+        self.assertFalse(report["self_report_parse_failed"])
+
+    def test_missing_bucket_is_none_without_failing(self) -> None:
+        report = parse_self_report({"predicted_closeness": 0.6, "basis_words": ["x"], "reason": "y"})
+        self.assertIsNone(report["predicted_bucket"])
+        self.assertFalse(report["self_report_parse_failed"])
+
+    def test_unknown_bucket_is_none_without_failing(self) -> None:
+        report = parse_self_report(
+            {"predicted_closeness": 0.6, "predicted_bucket": "very close", "basis_words": ["x"], "reason": "y"}
+        )
+        self.assertIsNone(report["predicted_bucket"])
+        self.assertFalse(report["self_report_parse_failed"])
+
+    def test_bucket_from_prose_embedded_json(self) -> None:
+        raw = 'ok {"predicted_closeness": 0.4, "predicted_bucket": "top500", "basis_words": ["b"], "reason": "r"} end'
+        report = parse_self_report(raw)
+        self.assertEqual(report["predicted_bucket"], "top500")
+
+
 def _ollama_available() -> bool:
     if os.getenv("RUN_OLLAMA_SMOKE", "").strip().lower() not in {"1", "true", "yes", "on"}:
         return False
@@ -137,15 +179,15 @@ class LiveSmokeTests(unittest.TestCase):
         )
 
         # llm_only: next_guess carries the self-report in the same object.
-        word, response, raw = client.next_guess(
+        word, response, raw, _prompt = client.next_guess(
             history, {"sourcream"}, self_report_block=SELF_REPORT_BLOCK, return_raw=True
         )
         print(f"\n=== llm_only next_guess raw response ===\n{raw}\n")
         self.assertTrue(word)
         self.assertIsInstance(_parse(response), dict)
 
-        # ea_llm: specialize returns (items, raw) with the self-report at top level.
-        _items, raw = client.specialize(
+        # ea_llm: specialize returns (items, raw, prompt) with the self-report at top level.
+        _items, raw, _prompt = client.specialize(
             hypothesis, dict(history), invalid_guesses={"sourcream"}, n=3,
             self_report_block=SELF_REPORT_BLOCK, return_raw=True,
         )
@@ -153,7 +195,7 @@ class LiveSmokeTests(unittest.TestCase):
         self.assertFalse(_parse(raw)["self_report_parse_failed"])
 
         # ea_llm_pivot: pivot_morphology carries self-report alongside "words".
-        _words, raw = client.pivot_morphology(
+        _words, raw, _prompt = client.pivot_morphology(
             "shrub", 50, {"shrub", "tree"}, n=10,
             self_report_block=SELF_REPORT_BLOCK, return_raw=True,
         )

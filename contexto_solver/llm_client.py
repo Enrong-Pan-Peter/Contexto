@@ -342,7 +342,8 @@ class LLMClient:
         on an empty result retries the LLM call once (a full extra round-trip,
         distinct from the JSON-validity retries in ``_json_request_with_retry``)
         before raising a clear error. With ``return_raw`` also returns the raw
-        response text of the parsed call (for self-report re-parsing).
+        response text of the parsed call and the rendered ``prompt`` (both for
+        self-report re-parsing and trace provenance).
         """
         parsed, raw = self._json_request_with_retry_and_raw(prompt)
         items = _normalize_json_list(parsed, expected_key, element_type)
@@ -356,7 +357,7 @@ class LLMClient:
                 "(e.g. Ollama json_object mode) that did not match the requested "
                 f'{{"{expected_key}": [...]}} shape.'
             )
-        return (items, raw) if return_raw else items
+        return (items, raw, prompt) if return_raw else items
 
     def propose_words(
         self,
@@ -578,7 +579,8 @@ class LLMClient:
             n=n,
         ) + self_report_block
         if return_raw:
-            return self._json_request_with_retry_and_raw(prompt)
+            parsed, raw = self._json_request_with_retry_and_raw(prompt)
+            return parsed, raw, prompt
         return self._json_request_with_retry(prompt)
 
     def pivot_fresh_adjacent_category(
@@ -599,7 +601,8 @@ class LLMClient:
             n=n,
         ) + self_report_block
         if return_raw:
-            return self._json_request_with_retry_and_raw(prompt)
+            parsed, raw = self._json_request_with_retry_and_raw(prompt)
+            return parsed, raw, prompt
         return self._json_request_with_retry(prompt)
 
     def next_guess(
@@ -616,7 +619,7 @@ class LLMClient:
         if return_raw:
             response, raw = self._json_request_with_retry_and_raw(prompt)
             word = str(response.get("word", "")) if isinstance(response, dict) else str(response)
-            return word, response, raw
+            return word, response, raw, prompt
         response = self._json_request_with_retry(prompt)
         if isinstance(response, dict):
             return str(response.get("word", ""))
