@@ -158,6 +158,11 @@ DEFAULT_TARGET = os.getenv("DEFAULT_TARGET", "ivory")
 # byte-identical to the pre-instrumentation prompts.
 SELF_REPORT = _env_bool("SELF_REPORT", False)
 
+# RQ1 parent-rationale inheritance (logged-only; default off). When on, s/m/ml/l
+# operator mutations and ea_llm specialize append the parent's prior rationale
+# to the prompt. Crossover and pivot operators are excluded.
+RATIONALE_INHERITANCE = _env_bool("RATIONALE_INHERITANCE", False)
+
 # Trace schema version so instrumented traces are distinguishable from older ones.
 # 2: self-report instrumentation + richer run metadata landed.
 # 3: added predicted_bucket and pinned predicted_closeness semantics (top-100

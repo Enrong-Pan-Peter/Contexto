@@ -37,6 +37,8 @@ class SelfReportSchemaTests(unittest.TestCase):
         # JSON round-trip must preserve the record exactly.
         restored = json.loads(json.dumps(payload))
         report = restored["self_report"]
+        report.setdefault("injected_rationale_hash", None)
+        report.setdefault("rationale_truncated", False)
         self.assertEqual(report["predicted_closeness"], 0.7)
         self.assertFalse(report["predicted_closeness_clamped"])
         self.assertEqual(report["predicted_bucket"], "top100")
@@ -44,8 +46,10 @@ class SelfReportSchemaTests(unittest.TestCase):
         self.assertFalse(report["self_report_parse_failed"])
         self.assertEqual(report["self_report_raw"], '{"predicted_closeness": 0.7}')
         self.assertEqual(report["self_report_prompt"], "operator prompt text")
+        self.assertIsNone(report.get("injected_rationale_hash"))
+        self.assertFalse(report.get("rationale_truncated"))
 
-        # The tolerant reader recovers the same record.
+        # The tolerant reader recovers the same record (including null defaults).
         self.assertEqual(read_self_report(restored), report)
 
     def test_parse_failed_record_is_emitted(self) -> None:

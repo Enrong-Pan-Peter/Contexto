@@ -31,10 +31,13 @@ class Hypothesis:
     # runs serialize byte-identically to before.
     predicted_closeness: float | None = None
     predicted_closeness_clamped: bool = False
+    predicted_bucket: str | None = None
     rationale: dict | None = None
     self_report_parse_failed: bool = False
     self_report_raw: str | None = None
     self_report_prompt: str | None = None
+    injected_rationale_hash: str | None = None
+    rationale_truncated: bool = False
 
     def __post_init__(self) -> None:
         self.sigma = self._validate_sigma(self.sigma)
@@ -86,21 +89,30 @@ class Hypothesis:
     def _has_self_report(self) -> bool:
         return (
             self.predicted_closeness is not None
+            or self.predicted_bucket is not None
             or self.rationale is not None
             or self.self_report_raw is not None
             or self.self_report_prompt is not None
+            or self.injected_rationale_hash is not None
+            or self.rationale_truncated
             or self.self_report_parse_failed
         )
 
     def self_report_dict(self) -> dict:
-        return {
+        payload = {
             "predicted_closeness": self.predicted_closeness,
             "predicted_closeness_clamped": self.predicted_closeness_clamped,
+            "predicted_bucket": self.predicted_bucket,
             "rationale": self.rationale,
             "self_report_parse_failed": self.self_report_parse_failed,
             "self_report_raw": self.self_report_raw,
             "self_report_prompt": self.self_report_prompt,
         }
+        if self.injected_rationale_hash is not None:
+            payload["injected_rationale_hash"] = self.injected_rationale_hash
+        if self.rationale_truncated:
+            payload["rationale_truncated"] = self.rationale_truncated
+        return payload
 
     @staticmethod
     def _validate_sigma(sigma: np.ndarray) -> np.ndarray:

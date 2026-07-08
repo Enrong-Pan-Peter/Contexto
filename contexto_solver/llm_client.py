@@ -387,6 +387,7 @@ class LLMClient:
         all_guesses: dict[str, int],
         invalid_guesses: set[str] | None = None,
         n: int = 2,
+        rationale_inheritance_block: str = "",
         self_report_block: str = "",
         return_raw: bool = False,
     ) -> Any:
@@ -400,7 +401,7 @@ class LLMClient:
             all_guesses=json.dumps(sorted(all_guesses)),
             invalid_guesses=json.dumps(sorted(invalid_guesses or set())),
             n=n,
-        ) + self_report_block
+        ) + rationale_inheritance_block + self_report_block
         return self._request_json_list(
             prompt, "specializations", dict, "specialize", return_raw=return_raw
         )
@@ -414,6 +415,7 @@ class LLMClient:
         n: int = 3,
         active_categories: list[str] | None = None,
         ranked_context: str = "",
+        rationale_inheritance_block: str = "",
         self_report_block: str = "",
     ) -> str:
         best_word, best_rank = self._global_best(hypothesis.words_tried)
@@ -436,7 +438,7 @@ class LLMClient:
         # (self_report_block == ""). Appending, rather than adding a template
         # slot, avoids touching the shared JSON-schema tail used by the
         # out-of-scope pivot prompts.
-        return prompt_template.format(**prompt_values) + self_report_block
+        return prompt_template.format(**prompt_values) + rationale_inheritance_block + self_report_block
 
     def complete_json_prompt(self, prompt: str) -> Any:
         return self._json_request_with_retry(prompt)

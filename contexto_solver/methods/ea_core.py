@@ -16,6 +16,7 @@ from ..llm_client import LLMClient
 from ..logger import Logger
 from ..self_report import (
     apply_self_report_to_hypothesis,
+    rationale_inheritance_block,
     resolve_self_report,
     self_report_block,
 )
@@ -38,6 +39,9 @@ class EALLMConfig:
     # methods (ea_llm_self_adaptive, ea_llm_map_elites); logged-only, never used
     # in selection, fitness, or sigma adaptation.
     self_report: bool = False
+    # RQ1 parent-rationale inheritance (logged-only). When on, s/m/ml/l mutations
+    # and ea_llm specialize append the parent's prior rationale to the prompt.
+    rationale_inheritance: bool = False
 
 
 class BaseEALLMMethod:
@@ -56,6 +60,12 @@ class BaseEALLMMethod:
         """The appended self-report request block, or "" when the flag is off."""
         return self_report_block(self.config.self_report)
 
+    def _rationale_inheritance_for_parent(self, parent: Hypothesis) -> tuple[str, dict[str, Any]]:
+        """Parent-rationale suffix for eligible operators, or ("", {})."""
+        if not self.config.rationale_inheritance:
+            return "", {}
+        return rationale_inheritance_block(parent.rationale)
+
     def _self_report_context(self) -> str:
         """Words the operator saw (guessed + invalid), for the follow-up prompt."""
         return json.dumps(sorted(self._known_words()))
@@ -67,6 +77,7 @@ class BaseEALLMMethod:
         raw: str | None,
         rendered_prompt: str | None,
         proposed_word: str | None,
+        inheritance_meta: dict[str, Any] | None = None,
     ) -> None:
         """Resolve and attach the logged-only self-report via the shared layer."""
         record = resolve_self_report(
@@ -77,6 +88,10 @@ class BaseEALLMMethod:
             proposed_word=proposed_word,
             rendered_prompt=rendered_prompt,
         )
+        if inheritance_meta:
+            if inheritance_meta.get("hash"):
+                record["injected_rationale_hash"] = inheritance_meta["hash"]
+            record["rationale_truncated"] = bool(inheritance_meta.get("truncated"))
         apply_self_report_to_hypothesis(child, record)
 
     def _complete_proposal(self, prompt: str) -> tuple[Any, str | None]:
@@ -447,6 +462,7 @@ class BaseEALLMMethod:
                         parent.words_tried,
                         self.invalid_guesses,
                         self.config.mutations_per_generation,
+                        rationale_inheritance_block=self._rationale_inheritance_for_parent(parent)[0],
                         self_report_block=block,
                         return_raw=want_raw,
                     ),
@@ -456,7 +472,10 @@ class BaseEALLMMethod:
             specialization_results = [(parent, future.result()) for parent, future in futures]
 
         for parent, result in specialization_results:
-            subcategories, raw = result if want_raw else (result, None)
+            if want_raw:
+                subcategories, raw, rendered_prompt = result
+            else:
+                subcategories, raw, rendered_prompt = result, None, None
             children = []
             first_child: Hypothesis | None = None
             first_category: dict[str, Any] | None = None
@@ -482,10 +501,16 @@ class BaseEALLMMethod:
             }
             if want_raw and first_child is not None:
                 proposed = _words_from_category(first_category or {})
+                inheritance_block, inheritance_meta = self._rationale_inheritance_for_parent(parent)
                 # The self-report fields ride in the same top-level object as the
                 # "specializations" list, so parse from the raw response.
                 self._attach_self_report(
-                    first_child, raw, raw, None, proposed[0] if proposed else None
+                    first_child,
+                    raw,
+                    raw,
+                    rendered_prompt,
+                    proposed[0] if proposed else None,
+                    inheritance_meta=inheritance_meta if inheritance_block else None,
                 )
                 mutate_details["self_report"] = first_child.self_report_dict()
             self.logger.log(self.generation, "MUTATE", mutate_details)

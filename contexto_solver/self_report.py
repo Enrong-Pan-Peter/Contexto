@@ -28,6 +28,7 @@ documented limitation, not a causal claim that the rationale preceded the choice
 
 from __future__ import annotations
 
+import hashlib
 import json
 import math
 from typing import Any
@@ -74,6 +75,9 @@ Context you had available: {context}
 Estimate how close "{word}" is to the hidden target and explain briefly.
 Return JSON only with exactly these keys:
 {{"basis_words": ["word", "word"], "reason": "one or two sentences", "predicted_bucket": "top10|top100|top500|beyond", "predicted_closeness": <number 0-1>}}"""
+
+RATIONALE_INHERITANCE_MAX_REASON_CHARS = 400
+RATIONALE_INHERITANCE_MAX_BASIS_WORDS = 8
 
 
 def clamp_predicted_closeness(value: Any) -> tuple[float | None, bool]:
@@ -195,6 +199,48 @@ def self_report_block(enabled: bool) -> str:
     return SELF_REPORT_BLOCK if enabled else ""
 
 
+def hash_injection_text(text: str) -> str:
+    """Stable short hash for an injected prompt suffix (inheritance provenance)."""
+    return hashlib.sha256(text.encode("utf-8")).hexdigest()[:16]
+
+
+def rationale_inheritance_block(
+    parent_rationale: dict[str, Any] | None,
+    *,
+    replacement: str | None = None,
+) -> tuple[str, dict[str, Any]]:
+    """Build the parent-rationale injection suffix and provenance metadata.
+
+    Returns ``(block_text, meta)`` where ``meta`` may include ``hash`` and
+    ``truncated``. When ``replacement`` is set (tests only), that string is
+    returned verbatim. Never raises.
+    """
+    if replacement is not None:
+        return replacement, {"hash": hash_injection_text(replacement), "truncated": False}
+
+    if not isinstance(parent_rationale, dict):
+        return "", {}
+
+    reason = _sanitize_reason(parent_rationale.get("reason"))
+    basis_words = _sanitize_basis_words(parent_rationale.get("basis_words"))
+    if not reason and not basis_words:
+        return "", {}
+
+    truncated = False
+    if len(reason) > RATIONALE_INHERITANCE_MAX_REASON_CHARS:
+        reason = reason[: RATIONALE_INHERITANCE_MAX_REASON_CHARS].rstrip() + "..."
+        truncated = True
+    if len(basis_words) > RATIONALE_INHERITANCE_MAX_BASIS_WORDS:
+        basis_words = basis_words[: RATIONALE_INHERITANCE_MAX_BASIS_WORDS]
+        truncated = True
+
+    block = (
+        "\nThe parent hypothesis's prior rationale (for context only; do not copy "
+        f"blindly): basis_words={json.dumps(basis_words)}, reason={json.dumps(reason)}."
+    )
+    return block, {"hash": hash_injection_text(block), "truncated": truncated}
+
+
 def resolve_self_report(
     llm_client: Any,
     *,
@@ -248,6 +294,8 @@ def resolve_self_report(
         "self_report_parse_failed": parse_failed,
         "self_report_raw": final_raw,
         "self_report_prompt": rendered_prompt,
+        "injected_rationale_hash": None,
+        "rationale_truncated": False,
     }
 
 
@@ -260,6 +308,8 @@ def apply_self_report_to_hypothesis(child: Any, record: dict[str, Any]) -> None:
     child.self_report_parse_failed = record["self_report_parse_failed"]
     child.self_report_raw = record["self_report_raw"]
     child.self_report_prompt = record["self_report_prompt"]
+    child.injected_rationale_hash = record.get("injected_rationale_hash")
+    child.rationale_truncated = bool(record.get("rationale_truncated"))
 
 
 def read_self_report(child_dict: dict[str, Any]) -> dict[str, Any]:
@@ -276,6 +326,8 @@ def read_self_report(child_dict: dict[str, Any]) -> dict[str, Any]:
         "self_report_parse_failed": False,
         "self_report_raw": None,
         "self_report_prompt": None,
+        "injected_rationale_hash": None,
+        "rationale_truncated": False,
     }
     if not isinstance(child_dict, dict):
         return defaults

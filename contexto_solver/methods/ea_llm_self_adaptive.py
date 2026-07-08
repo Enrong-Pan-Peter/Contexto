@@ -41,6 +41,7 @@ class EALLMSelfAdaptiveMethod(BaseEALLMMethod):
             operator = sample_operator(parent.sigma, self.rng)
             prompt_template = OPERATOR_PROMPTS[operator]
             parent_sigma = parent.sigma.copy()
+            inheritance_block, inheritance_meta = self._rationale_inheritance_for_parent(parent)
             prompt = self.llm_client.build_operator_mutation_prompt(
                 prompt_template,
                 parent,
@@ -48,6 +49,7 @@ class EALLMSelfAdaptiveMethod(BaseEALLMMethod):
                 self.invalid_guesses,
                 n=self.config.starter_words_per_category,
                 active_categories=[hypothesis.category_name for hypothesis in self._active_hypotheses()],
+                rationale_inheritance_block=inheritance_block,
                 self_report_block=self._self_report_block(),
             )
             assert_prompt_has_no_sigma_leak(prompt, parent_sigma, operator)
@@ -72,7 +74,12 @@ class EALLMSelfAdaptiveMethod(BaseEALLMMethod):
             if self.config.self_report:
                 proposed = _words_from_category(category)
                 self._attach_self_report(
-                    child, category, raw, prompt, proposed[0] if proposed else None
+                    child,
+                    category,
+                    raw,
+                    prompt,
+                    proposed[0] if proposed else None,
+                    inheritance_meta=inheritance_meta if inheritance_block else None,
                 )
             children.append(child.to_dict())
             operator_details: dict[str, Any] = {
