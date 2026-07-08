@@ -28,6 +28,7 @@ import argparse
 import glob
 import json
 import random
+import statistics
 from pathlib import Path
 from typing import Any
 
@@ -35,6 +36,11 @@ from typing import Any
 PARSE_FAILURE_HARD_MAX = 0.10
 PARSE_FAILURE_DISCUSS_MAX = 0.02
 BASIS_WORDS_NONEMPTY_MIN = 0.90
+# Degenerate-clustering flag: a self-report signal is unusable for calibration if
+# a single closeness value covers more than half the parsed reports, or the
+# spread is effectively zero (the model always emits the same number).
+CLUSTER_DOMINANT_VALUE_FRACTION = 0.50
+CLUSTER_NEAR_ZERO_STD = 0.01
 
 # The canonical self-report record shape, defined by Hypothesis.self_report_dict()
 # and resolve_self_report(). Every mode -- including the non-Hypothesis llm_only
@@ -43,6 +49,7 @@ CANONICAL_SELF_REPORT_KEYS = frozenset(
     {
         "predicted_closeness",
         "predicted_closeness_clamped",
+        "predicted_bucket",
         "rationale",
         "self_report_parse_failed",
         "self_report_raw",
@@ -77,10 +84,13 @@ def _record_from_self_report(
         "parents": context.get("parents"),
         "predicted_closeness": self_report.get("predicted_closeness"),
         "predicted_closeness_clamped": bool(self_report.get("predicted_closeness_clamped")),
+        "predicted_bucket": self_report.get("predicted_bucket"),
         "rationale": self_report.get("rationale"),
         "self_report_parse_failed": bool(self_report.get("self_report_parse_failed")),
         "self_report_raw": self_report.get("self_report_raw"),
         "self_report_prompt": self_report.get("self_report_prompt"),
+        "injected_rationale_hash": self_report.get("injected_rationale_hash"),
+        "rationale_truncated": bool(self_report.get("rationale_truncated")),
     }
 
 
@@ -222,8 +232,12 @@ def compute_metrics(records: list[dict[str, Any]]) -> dict[str, Any]:
     parse_failed = [r for r in records if r["self_report_parse_failed"]]
     parsed = [r for r in records if not r["self_report_parse_failed"]]
     closeness_values = [r["predicted_closeness"] for r in records if r["predicted_closeness"] is not None]
+    bucket_values = [r["predicted_bucket"] for r in records if r["predicted_bucket"] is not None]
     clamped = [r for r in records if r["predicted_closeness_clamped"]]
     empty_basis = [r for r in records if not _basis_words(r)]
+    inheritance_injected = [r for r in records if r.get("injected_rationale_hash")]
+    inheritance_truncated = [r for r in inheritance_injected if r.get("rationale_truncated")]
+    missing_prompt = [r for r in records if not r.get("self_report_prompt")]
 
     parsed_with_basis = sum(1 for r in parsed if _basis_words(r))
     basis_membership_violations = []
@@ -240,22 +254,69 @@ def compute_metrics(records: list[dict[str, Any]]) -> dict[str, Any]:
             )
 
     in_range = all(0.0 <= value <= 1.0 for value in closeness_values)
+    closeness_missing = total - len(closeness_values)
+    bucket_missing = total - len(bucket_values)
+
+    # Degenerate-clustering detection over parsed closeness values.
+    dominant_value: float | None = None
+    dominant_fraction: float | None = None
+    closeness_std: float | None = None
+    if closeness_values:
+        value_counts: dict[float, int] = {}
+        for value in closeness_values:
+            value_counts[value] = value_counts.get(value, 0) + 1
+        dominant_value, dominant_count = max(value_counts.items(), key=lambda item: item[1])
+        dominant_fraction = dominant_count / len(closeness_values)
+        closeness_std = statistics.pstdev(closeness_values) if len(closeness_values) > 1 else 0.0
+    closeness_clustered = bool(
+        closeness_values
+        and (
+            (dominant_fraction is not None and dominant_fraction > CLUSTER_DOMINANT_VALUE_FRACTION)
+            or (closeness_std is not None and closeness_std < CLUSTER_NEAR_ZERO_STD)
+        )
+    )
+    bucket_counts: dict[str, int] = {}
+    for bucket in bucket_values:
+        bucket_counts[bucket] = bucket_counts.get(bucket, 0) + 1
+
+    histogram_bins = [0.0, 0.2, 0.4, 0.6, 0.8, 1.01]
+    histogram_labels = ["[0.0,0.2)", "[0.2,0.4)", "[0.4,0.6)", "[0.6,0.8)", "[0.8,1.0]"]
+    histogram = {label: 0 for label in histogram_labels}
+    for value in closeness_values:
+        for index in range(len(histogram_labels)):
+            if histogram_bins[index] <= value < histogram_bins[index + 1]:
+                histogram[histogram_labels[index]] += 1
+                break
 
     return {
         "total_proposals": total,
         "parse_failure_count": len(parse_failed),
         "parse_failure_rate": (len(parse_failed) / total) if total else None,
         "predicted_closeness_present": len(closeness_values),
+        "predicted_closeness_missing": closeness_missing,
+        "predicted_closeness_parse_rate": (len(closeness_values) / total) if total else None,
+        "predicted_bucket_present": len(bucket_values),
+        "predicted_bucket_missing": bucket_missing,
+        "predicted_bucket_parse_rate": (len(bucket_values) / total) if total else None,
+        "predicted_bucket_counts": bucket_counts,
         "predicted_closeness_min": min(closeness_values) if closeness_values else None,
         "predicted_closeness_max": max(closeness_values) if closeness_values else None,
         "predicted_closeness_mean": (sum(closeness_values) / len(closeness_values)) if closeness_values else None,
+        "predicted_closeness_histogram": histogram,
         "predicted_closeness_all_in_range": in_range,
+        "predicted_closeness_std": closeness_std,
+        "predicted_closeness_dominant_value": dominant_value,
+        "predicted_closeness_dominant_fraction": dominant_fraction,
+        "predicted_closeness_clustered": closeness_clustered,
         "clamped_count": len(clamped),
         "empty_basis_words_count": len(empty_basis),
         "parsed_count": len(parsed),
         "parsed_with_nonempty_basis": parsed_with_basis,
         "parsed_basis_nonempty_rate": (parsed_with_basis / len(parsed)) if parsed else None,
         "basis_membership_violations": basis_membership_violations,
+        "inheritance_injected_count": len(inheritance_injected),
+        "inheritance_truncated_count": len(inheritance_truncated),
+        "self_report_prompt_missing_count": len(missing_prompt),
     }
 
 
@@ -268,6 +329,9 @@ def evaluate_thresholds(metrics: dict[str, Any]) -> dict[str, Any]:
         "predicted_closeness_all_in_range": metrics["predicted_closeness_all_in_range"],
         "basis_words_nonempty_ok": (basis_rate is not None and basis_rate >= BASIS_WORDS_NONEMPTY_MIN),
         "basis_membership_clean": not metrics["basis_membership_violations"],
+        # Flag (not a hard gate): degenerate closeness clustering makes the signal
+        # unusable for calibration even when every other check passes.
+        "closeness_degenerate_cluster": bool(metrics["predicted_closeness_clustered"]),
     }
     checks["all_pass"] = (
         checks["parse_failure_within_hard_max"]
@@ -283,15 +347,27 @@ def _format_metrics(metrics: dict[str, Any]) -> str:
         f"total proposals:            {metrics['total_proposals']}",
         f"parse failures:             {metrics['parse_failure_count']} "
         f"(rate={_fmt(metrics['parse_failure_rate'])})",
-        f"predicted_closeness present:{metrics['predicted_closeness_present']}",
+        f"predicted_closeness present:{metrics['predicted_closeness_present']} "
+        f"(parse rate={_fmt(metrics['predicted_closeness_parse_rate'])})",
+        f"predicted_bucket present:   {metrics['predicted_bucket_present']} "
+        f"(parse rate={_fmt(metrics['predicted_bucket_parse_rate'])})",
+        f"  bucket counts:            {metrics['predicted_bucket_counts']}",
         f"  min/mean/max:             {_fmt(metrics['predicted_closeness_min'])} / "
         f"{_fmt(metrics['predicted_closeness_mean'])} / {_fmt(metrics['predicted_closeness_max'])}",
+        f"  histogram [0-1]:          {metrics['predicted_closeness_histogram']}",
+        f"  std / dominant value:     {_fmt(metrics['predicted_closeness_std'])} / "
+        f"{_fmt(metrics['predicted_closeness_dominant_value'])} "
+        f"(fraction={_fmt(metrics['predicted_closeness_dominant_fraction'])})",
+        f"  degenerate clustering:    {metrics['predicted_closeness_clustered']}",
         f"  all in [0,1]:             {metrics['predicted_closeness_all_in_range']}",
         f"clamped values:             {metrics['clamped_count']}",
         f"empty basis_words:          {metrics['empty_basis_words_count']}",
         f"parsed w/ nonempty basis:   {metrics['parsed_with_nonempty_basis']}/{metrics['parsed_count']} "
         f"(rate={_fmt(metrics['parsed_basis_nonempty_rate'])})",
         f"basis-in-prompt violations: {len(metrics['basis_membership_violations'])}",
+        f"inheritance injected:       {metrics['inheritance_injected_count']} "
+        f"(truncated={metrics['inheritance_truncated_count']})",
+        f"missing self_report_prompt: {metrics['self_report_prompt_missing_count']}",
     ]
     return "\n".join(lines)
 
@@ -369,6 +445,12 @@ def main() -> None:
     print(f"  schema_version_consistent: {schema['schema_version_consistent']}")
     if checks["parse_failure_needs_discussion"] and checks["parse_failure_within_hard_max"]:
         print("  NOTE: parse-failure rate exceeds 2% (within the 10% hard limit); flag for discussion.")
+    if checks["closeness_degenerate_cluster"]:
+        print(
+            "  NOTE: predicted_closeness is degenerately clustered (a single value "
+            ">50% of parsed reports, or near-zero std); the signal may be unusable "
+            "for calibration."
+        )
 
     rng = random.Random(args.seed)
     sample = rng.sample(records, min(args.sample, len(records))) if records else []

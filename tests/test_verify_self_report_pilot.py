@@ -21,6 +21,7 @@ def _canonical_report(**overrides):
     record = {
         "predicted_closeness": 0.6,
         "predicted_closeness_clamped": False,
+        "predicted_bucket": "top100",
         "rationale": {"basis_words": ["shrub"], "reason": "x"},
         "self_report_parse_failed": False,
         "self_report_raw": "{}",
@@ -156,6 +157,44 @@ class VerifyPilotTests(unittest.TestCase):
             path.write_text(json.dumps(SYNTHETIC_EVENTS), encoding="utf-8")
             events = load_trace(path)
             self.assertEqual(len(extract_records(events)), 5)
+
+    def test_degenerate_clustering_flag_on_single_value(self) -> None:
+        # 20 parsed reports all with the same closeness -> dominant fraction 1.0
+        # and zero std, so the clustering flag fires while other checks pass.
+        clustered = [
+            _op_event(1, "s_mutation", "a", {
+                "predicted_closeness": 0.6,
+                "predicted_closeness_clamped": False,
+                "rationale": {"basis_words": ["shrub"], "reason": "x"},
+                "self_report_parse_failed": False,
+                "self_report_raw": "{}",
+                "self_report_prompt": "has shrub",
+            })
+            for _ in range(20)
+        ]
+        metrics = compute_metrics(extract_records(clustered))
+        self.assertTrue(metrics["predicted_closeness_clustered"])
+        self.assertEqual(metrics["predicted_closeness_dominant_value"], 0.6)
+        self.assertAlmostEqual(metrics["predicted_closeness_dominant_fraction"], 1.0)
+        self.assertEqual(metrics["predicted_closeness_std"], 0.0)
+        checks = evaluate_thresholds(metrics)
+        self.assertTrue(checks["closeness_degenerate_cluster"])
+
+    def test_varied_closeness_does_not_trigger_clustering(self) -> None:
+        varied = [
+            _op_event(1, "s_mutation", f"h{i}", {
+                "predicted_closeness": value,
+                "predicted_closeness_clamped": False,
+                "rationale": {"basis_words": ["shrub"], "reason": "x"},
+                "self_report_parse_failed": False,
+                "self_report_raw": "{}",
+                "self_report_prompt": "has shrub",
+            })
+            for i, value in enumerate([0.1, 0.3, 0.5, 0.7, 0.9, 0.2, 0.4, 0.6, 0.8, 0.35])
+        ]
+        metrics = compute_metrics(extract_records(varied))
+        self.assertFalse(metrics["predicted_closeness_clustered"])
+        self.assertFalse(evaluate_thresholds(metrics)["closeness_degenerate_cluster"])
 
     def test_clean_pilot_passes_thresholds(self) -> None:
         clean = [

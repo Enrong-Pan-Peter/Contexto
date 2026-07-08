@@ -158,10 +158,11 @@ Subtleties:
   methods via their config dataclasses. When on, instrumented proposal prompts
   request logged-only self-report fields; see `contexto_solver.self_report` and
   the dedicated subsection below.
-- `TRACE_SCHEMA_VERSION` (currently `2`) is written to every run's
+- `TRACE_SCHEMA_VERSION` (currently `3`) is written to every run's
   `RUN_CONFIG` regardless of whether self-report is enabled. It marks the trace
-  format era (richer run metadata and optional hypothesis `self_report` blocks),
-  not per-run instrumentation status.
+  format era (richer run metadata and optional hypothesis `self_report` blocks;
+  v3 adds `predicted_bucket` and pins `predicted_closeness` to the top-100
+  chance), not per-run instrumentation status.
 
 ### `contexto_solver.embeddings.EmbeddingModel`
 
@@ -346,6 +347,24 @@ Invariants:
   `tests/fixtures/prompts_baseline*`).
 - Self-report fields are never read for selection, fitness, operator choice,
   sigma handling, pivoting, or local search.
+
+**RQ1 instrumentation coverage (pilot disclosure):**
+
+| Mode / operator | Self-report (`SELF_REPORT=1`) | Rationale inheritance (`RATIONALE_INHERITANCE=1`) |
+|---|---|---|
+| `llm_only` `next_guess` | yes | no (no parent hypothesis) |
+| `ea_llm` `specialize` | yes | yes |
+| `ea_llm` `crossover` | yes | no (two parents; excluded by design) |
+| `ea_llm_pivot` (all four pivot operators) | yes | no (no parent rationale block) |
+| `ea_llm_self_adaptive` / `ea_llm_map_elites` s/m/ml/l mutations | yes | yes |
+| `ea_llm_self_adaptive` / `ea_llm_map_elites` crossover | yes | no |
+| `propose_words`, `local_search`, init categories, `place_word` | no | no |
+
+`RUN_CONFIG` logs `instrumentation_provenance_hash` (hash of prompt templates +
+instrumentation blocks), `rationale_inheritance`, and (for self-adaptive)
+`self_adaptive_sigma_mode`. Real API runs may enable the read-through rank cache
+at `ContextoAPI.guess` (`RANK_CACHE_ENABLED`, default on; files under
+`data/rank_cache/`).
 - Parse failures must not abort a run.
 
 ### `contexto_solver.hypothesis.Hypothesis`

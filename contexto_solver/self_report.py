@@ -241,6 +241,54 @@ def rationale_inheritance_block(
     return block, {"hash": hash_injection_text(block), "truncated": truncated}
 
 
+def instrumentation_provenance_hash() -> str:
+    """Hash prompt templates and instrumentation blocks for ``RUN_CONFIG`` provenance."""
+    from . import config as app_config
+    from .llm_client import (
+        CROSSOVER_PROMPT,
+        INITIAL_CATEGORIES_PROMPT,
+        L_MUTATION_PROMPT,
+        LOCAL_SEARCH_PROMPT,
+        M_MUTATION_PROMPT,
+        ML_MUTATION_PROMPT,
+        NEXT_GUESS_PROMPT,
+        PIVOT_ADJACENT_CATEGORY_PROMPT,
+        PIVOT_FRESH_ADJACENT_CATEGORY_PROMPT,
+        PIVOT_MORPHOLOGY_PROMPT,
+        PIVOT_REGISTER_SHIFT_PROMPT,
+        PLACE_WORD_PROMPT,
+        PROPOSE_WORDS_PROMPT,
+        S_MUTATION_PROMPT,
+        SPECIALIZE_PROMPT,
+    )
+
+    parts = [
+        INITIAL_CATEGORIES_PROMPT,
+        PROPOSE_WORDS_PROMPT,
+        SPECIALIZE_PROMPT,
+        S_MUTATION_PROMPT,
+        M_MUTATION_PROMPT,
+        ML_MUTATION_PROMPT,
+        L_MUTATION_PROMPT,
+        CROSSOVER_PROMPT,
+        LOCAL_SEARCH_PROMPT,
+        PIVOT_MORPHOLOGY_PROMPT,
+        PIVOT_REGISTER_SHIFT_PROMPT,
+        PIVOT_ADJACENT_CATEGORY_PROMPT,
+        PIVOT_FRESH_ADJACENT_CATEGORY_PROMPT,
+        PLACE_WORD_PROMPT,
+        NEXT_GUESS_PROMPT,
+        SELF_REPORT_BLOCK,
+        SELF_REPORT_FOLLOWUP_PROMPT,
+        f"RATIONALE_INHERITANCE_MAX_REASON={RATIONALE_INHERITANCE_MAX_REASON_CHARS}",
+        f"RATIONALE_INHERITANCE_MAX_BASIS={RATIONALE_INHERITANCE_MAX_BASIS_WORDS}",
+        f"TRACE_SCHEMA_VERSION={app_config.TRACE_SCHEMA_VERSION}",
+        f"PREDICTED_BUCKETS={','.join(PREDICTED_BUCKETS)}",
+    ]
+    digest = hashlib.sha256("\n---\n".join(parts).encode("utf-8")).hexdigest()
+    return digest[:16]
+
+
 def resolve_self_report(
     llm_client: Any,
     *,
