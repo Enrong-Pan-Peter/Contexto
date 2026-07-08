@@ -9,7 +9,7 @@ from typing import Any
 import numpy as np
 
 from ..hypothesis import Hypothesis
-from ..operators import OPERATOR_PROMPTS, assert_prompt_has_no_sigma_leak, perturb_sigma, sample_operator
+from ..operators import OPERATOR_PROMPTS, assert_prompt_has_no_sigma_leak, initial_sigma, perturb_sigma, sample_operator
 from .ea_core import BaseEALLMMethod, EALLMConfig, _words_from_category
 
 
@@ -20,6 +20,7 @@ class EALLMSelfAdaptiveConfig(EALLMConfig):
     sigma_floor: float = 0.02
     random_seed: int | None = None
     disable_local_search: bool = True
+    sigma_mode: str = "adaptive"
 
 
 class EALLMSelfAdaptiveMethod(BaseEALLMMethod):
@@ -32,6 +33,16 @@ class EALLMSelfAdaptiveMethod(BaseEALLMMethod):
 
     def _after_initialize(self) -> None:
         self._log_sigma_trajectory()
+
+    def _mode_sigma(self, base_sigma: np.ndarray) -> np.ndarray:
+        if self.config.sigma_mode == "frozen_uniform":
+            return initial_sigma()
+        return perturb_sigma(
+            base_sigma,
+            concentration=self.config.concentration,
+            sigma_floor=self.config.sigma_floor,
+            rng=self.rng,
+        )
 
     def _mutate(self) -> None:
         parents = sorted(self._active_hypotheses(), key=lambda hypothesis: hypothesis.best_rank)[: self.config.mu]
@@ -57,12 +68,7 @@ class EALLMSelfAdaptiveMethod(BaseEALLMMethod):
             if not isinstance(category, dict):
                 continue
 
-            child_sigma = perturb_sigma(
-                parent_sigma,
-                concentration=self.config.concentration,
-                sigma_floor=self.config.sigma_floor,
-                rng=self.rng,
-            )
+            child_sigma = self._mode_sigma(parent_sigma)
             child = self._hypothesis_from_category(
                 category,
                 parent=parent.category_name,
@@ -125,12 +131,7 @@ class EALLMSelfAdaptiveMethod(BaseEALLMMethod):
         parent_a, parent_b = active[0], active[1]
         category, raw, rendered_prompt = self._crossover_request(parent_a, parent_b)
         blended_sigma = 0.5 * (parent_a.sigma + parent_b.sigma)
-        child_sigma = perturb_sigma(
-            blended_sigma,
-            concentration=self.config.concentration,
-            sigma_floor=self.config.sigma_floor,
-            rng=self.rng,
-        )
+        child_sigma = self._mode_sigma(blended_sigma)
         child = self._hypothesis_from_category(
             category,
             parent=f"{parent_a.category_name}+{parent_b.category_name}",

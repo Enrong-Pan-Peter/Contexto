@@ -163,6 +163,11 @@ SELF_REPORT = _env_bool("SELF_REPORT", False)
 # to the prompt. Crossover and pivot operators are excluded.
 RATIONALE_INHERITANCE = _env_bool("RATIONALE_INHERITANCE", False)
 
+# Sigma-mode control for ea_llm_self_adaptive operator probabilities.
+# ``adaptive`` is the current behavior (Dirichlet perturbation of parent sigma).
+# ``frozen_uniform`` resets child sigma to ``initial_sigma()`` each proposal.
+SELF_ADAPTIVE_SIGMA_MODE = _env_value("SELF_ADAPTIVE_SIGMA_MODE", "adaptive")
+
 # Trace schema version so instrumented traces are distinguishable from older ones.
 # 2: self-report instrumentation + richer run metadata landed.
 # 3: added predicted_bucket and pinned predicted_closeness semantics (top-100
