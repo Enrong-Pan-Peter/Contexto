@@ -168,6 +168,10 @@ RATIONALE_INHERITANCE = _env_bool("RATIONALE_INHERITANCE", False)
 # ``frozen_uniform`` resets child sigma to ``initial_sigma()`` each proposal.
 SELF_ADAPTIVE_SIGMA_MODE = _env_value("SELF_ADAPTIVE_SIGMA_MODE", "adaptive")
 
+# Persistent read-through cache for real-game rank lookups (``ContextoAPI.guess``).
+RANK_CACHE_DIR = _env_value("RANK_CACHE_DIR", "data/rank_cache")
+RANK_CACHE_ENABLED = _env_bool("RANK_CACHE_ENABLED", True)
+
 # Trace schema version so instrumented traces are distinguishable from older ones.
 # 2: self-report instrumentation + richer run metadata landed.
 # 3: added predicted_bucket and pinned predicted_closeness semantics (top-100
