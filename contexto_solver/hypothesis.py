@@ -99,7 +99,11 @@ class Hypothesis:
         )
 
     def self_report_dict(self) -> dict:
-        payload = {
+        # Every self-report record carries a uniform key set across all modes:
+        # injected_rationale_hash (null when no inheritance injection) and
+        # rationale_truncated are always emitted, matching the llm_only writer
+        # (resolve_self_report) so schema identity holds without a version bump.
+        return {
             "predicted_closeness": self.predicted_closeness,
             "predicted_closeness_clamped": self.predicted_closeness_clamped,
             "predicted_bucket": self.predicted_bucket,
@@ -107,12 +111,9 @@ class Hypothesis:
             "self_report_parse_failed": self.self_report_parse_failed,
             "self_report_raw": self.self_report_raw,
             "self_report_prompt": self.self_report_prompt,
+            "injected_rationale_hash": self.injected_rationale_hash,
+            "rationale_truncated": self.rationale_truncated,
         }
-        if self.injected_rationale_hash is not None:
-            payload["injected_rationale_hash"] = self.injected_rationale_hash
-        if self.rationale_truncated:
-            payload["rationale_truncated"] = self.rationale_truncated
-        return payload
 
     @staticmethod
     def _validate_sigma(sigma: np.ndarray) -> np.ndarray:

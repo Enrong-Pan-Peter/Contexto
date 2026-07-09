@@ -249,16 +249,21 @@ class SchemaAuditTests(unittest.TestCase):
             {"generation": 1, "event": "GUESS", "details": {"word": "bush", "self_report": _canonical_report()}},
         ]
         audit = schema_audit([("ea.json", ea), ("llm_only.json", llm_only)])
+        # Pre-fix traces (missing the optional injected_rationale_hash /
+        # rationale_truncated keys) pass because the check runs after a
+        # normalized read that fills defaults.
         self.assertTrue(audit["all_key_sets_canonical"])
         self.assertTrue(audit["schema_version_consistent"])
         self.assertEqual(audit["schema_versions_seen"], ["2"])
-        self.assertEqual(audit["distinct_key_sets"], [sorted(CANONICAL_SELF_REPORT_KEYS)])
+        # Raw variants remain informational (7 legacy keys); normalized is canonical.
+        self.assertEqual(audit["distinct_key_sets_normalized"], [sorted(CANONICAL_SELF_REPORT_KEYS)])
 
     def test_divergent_field_names_flagged(self) -> None:
         bad = [
             {"generation": -1, "event": "RUN_CONFIG", "details": {"trace_schema_version": 2}},
-            # llm_only serializing a stray/renamed key would surface here
-            {"generation": 1, "event": "GUESS", "details": {"word": "bush", "self_report": _canonical_report(closeness=0.6)}},
+            # llm_only serializing a stray/renamed key surfaces after normalization
+            # because unknown keys are preserved (not silently dropped).
+            {"generation": 1, "event": "GUESS", "details": {"word": "bush", "self_report": _canonical_report(stray_key=0.6)}},
         ]
         audit = schema_audit([("bad.json", bad)])
         self.assertFalse(audit["all_key_sets_canonical"])

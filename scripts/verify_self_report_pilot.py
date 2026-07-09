@@ -29,8 +29,12 @@ import glob
 import json
 import random
 import statistics
+import sys
 from pathlib import Path
 from typing import Any
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+from contexto_solver.self_report import read_self_report
 
 # Acceptance thresholds (Phase 4).
 PARSE_FAILURE_HARD_MAX = 0.10
@@ -54,6 +58,8 @@ CANONICAL_SELF_REPORT_KEYS = frozenset(
         "self_report_parse_failed",
         "self_report_raw",
         "self_report_prompt",
+        "injected_rationale_hash",
+        "rationale_truncated",
     }
 )
 
@@ -61,7 +67,23 @@ CANONICAL_SELF_REPORT_KEYS = frozenset(
 def load_trace(path: str | Path) -> list[dict[str, Any]]:
     data = json.loads(Path(path).read_text(encoding="utf-8"))
     if not isinstance(data, list):
-        raise ValueError(f"{path} is not a solver trace (expected a list of events).")
+        hint = ""
+        if isinstance(data, dict) and isinstance(data.get("runs"), list) and data["runs"]:
+            first = data["runs"][0] if isinstance(data["runs"][0], dict) else {}
+            trace_path = first.get("trace_path") if isinstance(first, dict) else None
+            if trace_path:
+                hint = (
+                    f" This looks like an experiment summary (--output), not a solver "
+                    f"trace. Pass the per-run file instead, e.g. {trace_path}"
+                )
+            else:
+                hint = (
+                    " This looks like an experiment summary (--output), not a solver "
+                    "trace. Pass the per-run traces listed under runs[].trace_path."
+                )
+        raise ValueError(
+            f"{path} is not a solver trace (expected a list of events).{hint}"
+        )
     return data
 
 
@@ -169,7 +191,8 @@ def schema_audit(paths_and_events: list[tuple[str, list[dict[str, Any]]]]) -> di
     ``RUN_CONFIG.trace_schema_version`` agrees.
     """
     per_file: list[dict[str, Any]] = []
-    key_variants: set[frozenset[str]] = set()
+    raw_key_variants: set[frozenset[str]] = set()
+    normalized_key_variants: set[frozenset[str]] = set()
     schema_versions: set[Any] = set()
     for path, events in paths_and_events:
         version: Any = None
@@ -186,9 +209,18 @@ def schema_audit(paths_and_events: list[tuple[str, list[dict[str, Any]]]]) -> di
             if isinstance(child, dict) and isinstance(child.get("self_report"), dict):
                 found.append((name, child["self_report"]))
             for source, report in found:
-                keys = frozenset(report.keys())
-                source_keys.setdefault(source, set()).add(keys)
-                key_variants.add(keys)
+                raw_keys = frozenset(report.keys())
+                source_keys.setdefault(source, set()).add(raw_keys)
+                raw_key_variants.add(raw_keys)
+                # Canonical identity is judged after a normalized read so pre-fix
+                # traces (whose optional keys were absent) still pass; the raw
+                # variants above are retained purely as an informational line.
+                # read_self_report fills defaults for absent canonical keys and
+                # drops unknowns, so we re-union any stray/renamed raw keys to keep
+                # genuine schema divergence detectable.
+                normalized = set(read_self_report({"self_report": report}).keys())
+                stray = raw_keys - normalized
+                normalized_key_variants.add(frozenset(normalized | stray))
         if version is not None:
             schema_versions.add(version)
         per_file.append(
@@ -201,10 +233,11 @@ def schema_audit(paths_and_events: list[tuple[str, list[dict[str, Any]]]]) -> di
             }
         )
     canonical = set(CANONICAL_SELF_REPORT_KEYS)
-    keys_all_canonical = all(set(k) == canonical for k in key_variants)
+    keys_all_canonical = all(set(k) == canonical for k in normalized_key_variants)
     return {
         "per_file": per_file,
-        "distinct_key_sets": [sorted(k) for k in key_variants],
+        "distinct_key_sets_raw": [sorted(k) for k in raw_key_variants],
+        "distinct_key_sets_normalized": [sorted(k) for k in normalized_key_variants],
         "all_key_sets_canonical": keys_all_canonical,
         "schema_versions_seen": sorted(str(v) for v in schema_versions),
         "schema_version_consistent": len(schema_versions) <= 1,
@@ -433,8 +466,9 @@ def main() -> None:
         print(f"    trace_schema_version: {entry['trace_schema_version']}")
         for source, keysets in entry["self_report_key_sets"].items():
             print(f"    {source} self_report keys: {keysets}")
-    print(f"  distinct self_report key sets across files: {schema['distinct_key_sets']}")
-    print(f"  all key sets canonical: {schema['all_key_sets_canonical']}")
+    print(f"  distinct raw self_report key sets across files (informational): {schema['distinct_key_sets_raw']}")
+    print(f"  distinct normalized self_report key sets across files: {schema['distinct_key_sets_normalized']}")
+    print(f"  all normalized key sets canonical: {schema['all_key_sets_canonical']}")
     print(f"  schema versions seen: {schema['schema_versions_seen']}")
     print(f"  schema version consistent across files: {schema['schema_version_consistent']}")
     print()
