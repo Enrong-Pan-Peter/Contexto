@@ -8,7 +8,9 @@ import unittest
 from pathlib import Path
 from unittest import mock
 
+from contexto_solver import config
 from contexto_solver.game_api import ContextoAPI
+from contexto_solver.logger import Logger
 from contexto_solver.rank_cache import INVALID_MARKER, RankCache
 
 
@@ -137,6 +139,81 @@ class ContextoAPICallLoggingTests(unittest.TestCase):
         self.assertEqual(metrics["status_counts"], {"200": 2})
         self.assertEqual(metrics["outcome_counts"], {"ok": 2})
         self.assertIsNotNone(metrics["network_wall_clock_seconds"])
+
+    def test_call_metrics_reports_latency_percentiles(self) -> None:
+        api = self._api()
+        # Inject a deterministic call log so latency stats are exact.
+        api.call_log = [
+            {"word": "a", "status": 200, "outcome": "ok", "latency_s": 0.10, "retries": 0},
+            {"word": "b", "status": 200, "outcome": "ok", "latency_s": 0.20, "retries": 0},
+            {"word": "c", "status": 500, "outcome": "http_error", "latency_s": 0.30, "retries": 0},
+            {"word": "d", "status": None, "outcome": "exception", "latency_s": 0.40, "retries": 0},
+        ]
+
+        metrics = api.call_metrics()
+
+        self.assertEqual(metrics["network_calls"], 4)
+        self.assertEqual(metrics["median_latency_seconds"], 0.25)
+        self.assertEqual(metrics["p95_latency_seconds"], 0.40)
+        self.assertEqual(metrics["max_latency_seconds"], 0.40)
+        self.assertEqual(metrics["status_counts"], {"200": 2, "500": 1, "None": 1})
+        self.assertEqual(metrics["outcome_counts"], {"ok": 2, "http_error": 1, "exception": 1})
+
+
+class NetworkMetricsTraceTests(unittest.TestCase):
+    """End-of-run persistence of ContextoAPI telemetry into the trace."""
+
+    def _api_with_calls(self) -> ContextoAPI:
+        api = ContextoAPI(
+            game_number=1314,
+            base_url="https://api.contexto.me/machado/en/game",
+            rate_limit=0.0,
+            rank_cache_enabled=False,
+        )
+        response = mock.Mock(status_code=200)
+        response.json.return_value = {"distance": 4}
+        with mock.patch("contexto_solver.game_api.requests.get", return_value=response):
+            api.guess("alpha")
+            api.guess("beta")
+        return api
+
+    def test_metrics_event_appended_without_call_log_by_default(self) -> None:
+        logger = Logger()
+        api = self._api_with_calls()
+
+        with mock.patch.object(config, "PERSIST_CALL_LOG", False):
+            logger.log_network_metrics(7, api)
+
+        events = [entry for entry in logger.trace if entry["event"] == "NETWORK_METRICS"]
+        self.assertEqual(len(events), 1)
+        details = events[0]["details"]
+        self.assertEqual(events[0]["generation"], 7)
+        self.assertEqual(details["network_calls"], 2)
+        self.assertIn("median_latency_seconds", details)
+        self.assertIn("p95_latency_seconds", details)
+        self.assertIn("network_wall_clock_seconds", details)
+        self.assertNotIn("call_log", details)
+
+    def test_full_call_log_persisted_behind_env_flag(self) -> None:
+        logger = Logger()
+        api = self._api_with_calls()
+
+        with mock.patch.object(config, "PERSIST_CALL_LOG", True):
+            logger.log_network_metrics(3, api)
+
+        details = next(e["details"] for e in logger.trace if e["event"] == "NETWORK_METRICS")
+        self.assertIn("call_log", details)
+        self.assertEqual([record["word"] for record in details["call_log"]], ["alpha", "beta"])
+
+    def test_local_game_without_telemetry_is_noop(self) -> None:
+        logger = Logger()
+
+        class _LocalStub:
+            """A game backend with no network telemetry (mirrors LocalGame)."""
+
+        logger.log_network_metrics(0, _LocalStub())
+
+        self.assertEqual(logger.trace, [])
 
 
 if __name__ == "__main__":

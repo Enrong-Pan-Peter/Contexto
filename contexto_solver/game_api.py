@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+import math
+import statistics
 import time
 from typing import Any
 from urllib.parse import quote
@@ -76,6 +78,8 @@ class ContextoAPI:
             "network_wall_clock_seconds": self.network_wall_clock_seconds,
             "total_latency_seconds": round(sum(latencies), 4) if latencies else 0.0,
             "mean_latency_seconds": round(sum(latencies) / len(latencies), 4) if latencies else None,
+            "median_latency_seconds": round(statistics.median(latencies), 4) if latencies else None,
+            "p95_latency_seconds": _percentile(latencies, 95),
             "max_latency_seconds": max(latencies) if latencies else None,
             "status_counts": status_counts,
             "outcome_counts": outcome_counts,
@@ -155,3 +159,13 @@ class ContextoAPI:
 
     def is_solved(self) -> bool:
         return any(rank == 1 for rank in self.guesses.values())
+
+
+def _percentile(values: list[float], pct: float) -> float | None:
+    """Nearest-rank percentile of ``values`` in seconds, or ``None`` when empty."""
+    if not values:
+        return None
+    ordered = sorted(values)
+    rank = math.ceil(pct / 100 * len(ordered))
+    index = min(max(rank - 1, 0), len(ordered) - 1)
+    return round(ordered[index], 4)

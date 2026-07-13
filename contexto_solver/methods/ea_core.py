@@ -744,6 +744,7 @@ class BaseEALLMMethod:
         )
 
     def _save_trace(self) -> Path:
+        self.logger.log_network_metrics(self.generation, self.game)
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         return self.logger.save(Path(self.config.trace_dir) / f"{self.config.run_label}_{timestamp}.json")
 

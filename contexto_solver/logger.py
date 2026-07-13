@@ -7,6 +7,8 @@ from datetime import datetime
 from pathlib import Path
 from typing import Any
 
+from . import config
+
 
 class Logger:
     def __init__(self) -> None:
@@ -98,6 +100,21 @@ class Logger:
                 "cache_hit": bool(cache_hit),
             },
         )
+
+    def log_network_metrics(self, generation: int, game: Any) -> None:
+        """Persist real-API network telemetry as a ``NETWORK_METRICS`` event.
+
+        No-op for games without call telemetry (e.g. the local game), so it is
+        safe to call unconditionally at end of run. When ``PERSIST_CALL_LOG`` is
+        set, the full per-call log is embedded alongside the aggregate metrics.
+        """
+        metrics_fn = getattr(game, "call_metrics", None)
+        if not callable(metrics_fn):
+            return
+        details: dict[str, Any] = dict(metrics_fn())
+        if config.PERSIST_CALL_LOG:
+            details["call_log"] = [dict(record) for record in getattr(game, "call_log", [])]
+        self.log(generation, "NETWORK_METRICS", details)
 
     def save(self, filepath: str | Path) -> Path:
         path = Path(filepath)
