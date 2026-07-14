@@ -11,6 +11,7 @@ from typing import Any
 
 from . import config
 from .embeddings import EmbeddingModel
+from .game_api import ContextoAPI
 from .llm_client import LLMClient
 from .local_game import LocalGame
 from .logger import Logger
@@ -26,6 +27,13 @@ from .self_report import instrumentation_provenance_hash
 
 def main() -> None:
     args = _parse_args()
+    if args.game == "api":
+        _run_api_batch(args)
+        return
+    _run_local_batch(args)
+
+
+def _run_local_batch(args: argparse.Namespace) -> None:
     targets = _load_targets(args)
     if not targets:
         raise ValueError("Provide at least one target with --targets or --target-file.")
@@ -34,7 +42,6 @@ def main() -> None:
     solver_embedding_path = args.solver_embedding_path or args.glove_path or config.SOLVER_EMBEDDING_PATH
     llm_provider = args.provider or config.LLM_PROVIDER
     llm_model = _model_for_provider(llm_provider, args.model, args.ollama_model)
-    method_family = _method_family(args.method)
     if args.mode == "aligned" and args.method == "embedding" and game_embedding_path != solver_embedding_path:
         raise ValueError("aligned embedding experiments require the same game and solver embedding path.")
     if args.mode == "non_aligned" and args.method == "embedding" and game_embedding_path == solver_embedding_path:
@@ -53,10 +60,10 @@ def main() -> None:
     output_path.parent.mkdir(parents=True, exist_ok=True)
 
     rows: list[dict[str, Any]] = _load_existing_rows(output_path) if args.resume else []
-    completed = {(row["target"], row["run_index"]) for row in rows}
+    completed = {_completed_key(row) for row in rows}
     for run_index in range(args.runs_per_target):
         for target in targets:
-            if (target, run_index) in completed:
+            if (target, None, run_index) in completed:
                 continue
             try:
                 rows.append(
@@ -90,6 +97,65 @@ def main() -> None:
             _write_outputs(output_path, args, targets, game_embedding_path, solver_embedding_path, rows)
 
     _write_outputs(output_path, args, targets, game_embedding_path, solver_embedding_path, rows)
+
+    print(f"Wrote JSON summary: {output_path}")
+    print(f"Wrote CSV summary: {output_path.with_suffix('.csv')}")
+    print(json.dumps(_aggregate(rows), indent=2))
+
+
+def _run_api_batch(args: argparse.Namespace) -> None:
+    """Batch runner for real-game (API) runs.
+
+    Strictly sequential across game numbers AND runs: the public Contexto API is
+    rate-limited and every game shares one persistent rank cache, so overlapping
+    runs would race the cache and the rate limiter. Each run logs a RUN_CONFIG
+    with api fields matching ``contexto_solver.main`` and persists NETWORK_METRICS
+    at end of run (via the solver's ``_save_trace`` -> ``log_network_metrics``).
+    """
+    game_numbers = _load_game_numbers(args)
+    if not game_numbers:
+        raise ValueError("Provide at least one game number with --game-numbers for --game api.")
+    if args.method == "embedding":
+        raise ValueError("--game api supports the LLM methods only (not the embedding solver).")
+
+    llm_provider = args.provider or config.LLM_PROVIDER
+    llm_model = _model_for_provider(llm_provider, args.model, args.ollama_model)
+
+    output_path = Path(args.output or _default_output_path(args.method, "api"))
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+
+    rows: list[dict[str, Any]] = _load_existing_rows(output_path) if args.resume else []
+    completed = {_completed_key(row) for row in rows}
+    for run_index in range(args.runs_per_target):
+        for game_number in game_numbers:
+            if (None, game_number, run_index) in completed:
+                continue
+            try:
+                rows.append(
+                    _run_api_game(
+                        game_number=game_number,
+                        run_index=run_index,
+                        args=args,
+                        llm_provider=llm_provider,
+                        llm_model=llm_model,
+                    )
+                )
+            except Exception as exc:
+                error_message = f"{type(exc).__name__}: {exc}"
+                print(f"Run failed for game_number={game_number} run_index={run_index}: {error_message}")
+                rows.append(
+                    _failed_api_row(
+                        game_number=game_number,
+                        run_index=run_index,
+                        args=args,
+                        llm_provider=llm_provider,
+                        llm_model=llm_model,
+                        error=error_message,
+                    )
+                )
+            _write_api_outputs(output_path, args, game_numbers, rows)
+
+    _write_api_outputs(output_path, args, game_numbers, rows)
 
     print(f"Wrote JSON summary: {output_path}")
     print(f"Wrote CSV summary: {output_path.with_suffix('.csv')}")
@@ -169,6 +235,47 @@ def _write_outputs(
                 config.EA_LLM_PIVOT_CANDIDATE_WORDS_PER_OPERATOR if args.method == "ea_llm_pivot" else None
             ),
             "ea_llm_pivot_resolution_window": config.EA_LLM_PIVOT_RESOLUTION_WINDOW if args.method == "ea_llm_pivot" else None,
+        },
+        "aggregate": _aggregate(rows),
+        "runs": rows,
+    }
+    output_path.write_text(json.dumps(summary, indent=2), encoding="utf-8")
+    _write_csv(output_path.with_suffix(".csv"), rows)
+
+
+def _write_api_outputs(
+    output_path: Path,
+    args: argparse.Namespace,
+    game_numbers: list[int],
+    rows: list[dict[str, Any]],
+) -> None:
+    summary = {
+        "metadata": {
+            "created_at": datetime.now().isoformat(timespec="seconds"),
+            "solver": _method_family(args.method),
+            "method": args.method,
+            "game": "api",
+            "mode": "api",
+            "game_numbers": game_numbers,
+            "runs_per_target": args.runs_per_target,
+            "api_base_url": config.API_BASE_URL,
+            "api_rate_limit": config.API_RATE_LIMIT,
+            "rank_cache_enabled": config.RANK_CACHE_ENABLED,
+            "max_generations": args.max_generations,
+            "llm_provider": args.provider or config.LLM_PROVIDER,
+            "llm_model": _model_for_provider(args.provider or config.LLM_PROVIDER, args.model, args.ollama_model),
+            "random_seed": args.random_seed,
+            "trace_schema_version": config.TRACE_SCHEMA_VERSION,
+            "instrumentation_provenance_hash": instrumentation_provenance_hash(),
+            "self_report": config.SELF_REPORT if args.method in _SELF_REPORT_METHODS else None,
+            "rationale_inheritance": (
+                config.RATIONALE_INHERITANCE if args.method in _SELF_REPORT_METHODS else None
+            ),
+            "enable_pivot": _enable_pivot_metadata(args.method),
+            "self_adaptive_sigma_mode": (
+                config.SELF_ADAPTIVE_SIGMA_MODE if args.method == "ea_llm_self_adaptive" else None
+            ),
+            "mapelites_sigma_mode": config.MAPELITES_SIGMA_MODE if args.method == "ea_llm_map_elites" else None,
         },
         "aggregate": _aggregate(rows),
         "runs": rows,
@@ -295,6 +402,8 @@ def _run_local_target(
         "solver": method_family,
         "method": args.method,
         "mode": args.mode,
+        "game": "local",
+        "game_number": None,
         "target": target,
         "run_index": run_index,
         "solved": result["solved"],
@@ -337,6 +446,8 @@ def _failed_run_row(
         "solver": _method_family(args.method),
         "method": args.method,
         "mode": args.mode,
+        "game": "local",
+        "game_number": None,
         "target": target,
         "run_index": run_index,
         "solved": False,
@@ -362,6 +473,192 @@ def _failed_run_row(
         "solver_embedding_path": solver_embedding_path,
         "alignment": alignment,
     }
+
+
+def _run_api_game(
+    game_number: int,
+    run_index: int,
+    args: argparse.Namespace,
+    llm_provider: str,
+    llm_model: str,
+) -> dict[str, Any]:
+    game = ContextoAPI(
+        game_number=game_number,
+        base_url=config.API_BASE_URL,
+        rate_limit=config.API_RATE_LIMIT,
+    )
+    logger = Logger()
+    run_label = f"{args.method}_api_{game_number}_run{run_index + 1}"
+    logger.log(-1, "RUN_CONFIG", _api_run_config(args, game_number, run_index, llm_provider, llm_model))
+
+    llm_client = LLMClient(
+        provider=llm_provider,
+        api_key=args.api_key or _api_key_for_provider(llm_provider),
+        model=llm_model,
+    )
+    solver = _build_llm_method(args.method, game, llm_client, logger, run_label, args)
+    result = solver.solve()
+    return {
+        "solver": _method_family(args.method),
+        "method": args.method,
+        "mode": "api",
+        "game": "api",
+        "game_number": game_number,
+        "target": None,
+        "run_index": run_index,
+        "solved": result["solved"],
+        "answer": result["answer"],
+        "best_word": result["best_word"],
+        "best_rank": result["best_rank"],
+        "total_guesses": result["total_guesses"],
+        "generations": result["generations"],
+        "trace_path": result["trace_path"],
+        "archive_occupancy": None,
+        "placement_cache_hit_rate": getattr(solver, "placement_cache_hit_rate", None),
+        "self_report": config.SELF_REPORT if args.method in _SELF_REPORT_METHODS else None,
+        "mapelites_sigma_mode": config.MAPELITES_SIGMA_MODE if args.method == "ea_llm_map_elites" else None,
+        "mapelites_ranked_context_k": config.MAPELITES_RANKED_CONTEXT_K if args.method == "ea_llm_map_elites" else None,
+        "final_archive_sigma_s": None,
+        "final_archive_sigma_m": None,
+        "final_archive_sigma_ml": None,
+        "final_archive_sigma_l": None,
+        "error": None,
+        "llm_provider": llm_provider,
+        "llm_model": llm_model,
+        "game_embedding_path": None,
+        "solver_embedding_path": None,
+        "alignment": "api_unknown",
+    }
+
+
+def _failed_api_row(
+    game_number: int,
+    run_index: int,
+    args: argparse.Namespace,
+    llm_provider: str,
+    llm_model: str,
+    error: str,
+) -> dict[str, Any]:
+    return {
+        "solver": _method_family(args.method),
+        "method": args.method,
+        "mode": "api",
+        "game": "api",
+        "game_number": game_number,
+        "target": None,
+        "run_index": run_index,
+        "solved": False,
+        "answer": None,
+        "best_word": None,
+        "best_rank": None,
+        "total_guesses": None,
+        "generations": None,
+        "trace_path": None,
+        "archive_occupancy": None,
+        "placement_cache_hit_rate": None,
+        "self_report": config.SELF_REPORT if args.method in _SELF_REPORT_METHODS else None,
+        "mapelites_sigma_mode": config.MAPELITES_SIGMA_MODE if args.method == "ea_llm_map_elites" else None,
+        "mapelites_ranked_context_k": config.MAPELITES_RANKED_CONTEXT_K if args.method == "ea_llm_map_elites" else None,
+        "final_archive_sigma_s": None,
+        "final_archive_sigma_m": None,
+        "final_archive_sigma_ml": None,
+        "final_archive_sigma_l": None,
+        "error": error,
+        "llm_provider": llm_provider,
+        "llm_model": llm_model,
+        "game_embedding_path": None,
+        "solver_embedding_path": None,
+        "alignment": "api_unknown",
+    }
+
+
+def _api_run_config(
+    args: argparse.Namespace,
+    game_number: int,
+    run_index: int,
+    llm_provider: str,
+    llm_model: str,
+) -> dict[str, Any]:
+    """RUN_CONFIG details for an api run, matching ``contexto_solver.main``.
+
+    Field set mirrors main.py's api RUN_CONFIG (target None, game_number set,
+    alignment api_unknown, rank_cache_enabled populated) plus the experiment-only
+    ``mode``/``run_index`` markers, so api traces from the batch runner and the
+    single-run entry point are schema-compatible for the RQ1 readers.
+    """
+    return {
+        "game": "api",
+        "solver": _method_family(args.method),
+        "method": args.method,
+        "mode": "api",
+        "target": None,
+        "game_number": game_number,
+        "run_index": run_index,
+        "game_embedding_path": None,
+        "solver_embedding_path": None,
+        "embedding_backend": None,
+        "vocabulary_size": None,
+        "alignment": "api_unknown",
+        "trace_schema_version": config.TRACE_SCHEMA_VERSION,
+        "instrumentation_provenance_hash": instrumentation_provenance_hash(),
+        "self_report": config.SELF_REPORT if args.method in _SELF_REPORT_METHODS else None,
+        "rationale_inheritance": (
+            config.RATIONALE_INHERITANCE if args.method in _SELF_REPORT_METHODS else None
+        ),
+        "max_generations": args.max_generations,
+        "llm_provider": llm_provider,
+        "llm_model": llm_model,
+        "llm_workers": args.llm_workers if args.method in _EA_METHODS else None,
+        "initial_categories": _ea_initial_categories(args.method) if args.method in _EA_METHODS else None,
+        "max_active_hypotheses": (
+            config.MAX_ACTIVE_HYPOTHESES if args.method in {"ea_llm", "ea_llm_pivot"} else None
+        ),
+        "local_search_rank_threshold": config.LOCAL_SEARCH_RANK_THRESHOLD if args.method in _EA_METHODS else None,
+        "self_adaptive_initial_categories": (
+            config.SELF_ADAPTIVE_INITIAL_CATEGORIES if args.method == "ea_llm_self_adaptive" else None
+        ),
+        "self_adaptive_mu": config.SELF_ADAPTIVE_MU if args.method == "ea_llm_self_adaptive" else None,
+        "self_adaptive_concentration": (
+            config.SELF_ADAPTIVE_CONCENTRATION if args.method == "ea_llm_self_adaptive" else None
+        ),
+        "self_adaptive_sigma_floor": config.SELF_ADAPTIVE_SIGMA_FLOOR if args.method == "ea_llm_self_adaptive" else None,
+        "self_adaptive_sigma_mode": (
+            config.SELF_ADAPTIVE_SIGMA_MODE if args.method == "ea_llm_self_adaptive" else None
+        ),
+        "mapelites_grid_resolution": config.MAPELITES_GRID_RESOLUTION if args.method == "ea_llm_map_elites" else None,
+        "mapelites_mutations_per_gen": config.MAPELITES_MUTATIONS_PER_GEN if args.method == "ea_llm_map_elites" else None,
+        "mapelites_crossovers_per_gen": config.MAPELITES_CROSSOVERS_PER_GEN if args.method == "ea_llm_map_elites" else None,
+        "mapelites_initial_categories": config.MAPELITES_INITIAL_CATEGORIES if args.method == "ea_llm_map_elites" else None,
+        "mapelites_concentration": config.SELF_ADAPTIVE_CONCENTRATION if args.method == "ea_llm_map_elites" else None,
+        "mapelites_sigma_floor": config.SELF_ADAPTIVE_SIGMA_FLOOR if args.method == "ea_llm_map_elites" else None,
+        "mapelites_sigma_mode": config.MAPELITES_SIGMA_MODE if args.method == "ea_llm_map_elites" else None,
+        "mapelites_frozen_sigma": list(config.MAPELITES_FROZEN_SIGMA) if args.method == "ea_llm_map_elites" else None,
+        "mapelites_ranked_context_k": config.MAPELITES_RANKED_CONTEXT_K if args.method == "ea_llm_map_elites" else None,
+        "rank_cache_enabled": config.RANK_CACHE_ENABLED,
+        "enable_pivot": _enable_pivot_metadata(args.method),
+        "ea_llm_pivot_stall_no_improvement_generations": (
+            config.EA_LLM_PIVOT_STALL_NO_IMPROVEMENT_GENERATIONS if args.method == "ea_llm_pivot" else None
+        ),
+        "ea_llm_pivot_stall_close_rank_threshold": (
+            config.EA_LLM_PIVOT_STALL_CLOSE_RANK_THRESHOLD if args.method == "ea_llm_pivot" else None
+        ),
+        "ea_llm_pivot_stall_close_generations_limit": (
+            config.EA_LLM_PIVOT_STALL_CLOSE_GENERATIONS_LIMIT if args.method == "ea_llm_pivot" else None
+        ),
+        "ea_llm_pivot_max_attempts_per_run": (
+            config.EA_LLM_PIVOT_MAX_ATTEMPTS_PER_RUN if args.method == "ea_llm_pivot" else None
+        ),
+        "ea_llm_pivot_candidate_words_per_operator": (
+            config.EA_LLM_PIVOT_CANDIDATE_WORDS_PER_OPERATOR if args.method == "ea_llm_pivot" else None
+        ),
+        "ea_llm_pivot_resolution_window": config.EA_LLM_PIVOT_RESOLUTION_WINDOW if args.method == "ea_llm_pivot" else None,
+        "random_seed": _run_seed(args.random_seed, run_index),
+    }
+
+
+def _completed_key(row: dict[str, Any]) -> tuple[Any, Any, Any]:
+    """Resume key spanning local (target) and api (game_number) runs."""
+    return (row.get("target"), row.get("game_number"), row.get("run_index"))
 
 
 def _archive_sigma_means(archive: Any) -> list[float | None]:
@@ -390,6 +687,17 @@ def _load_targets(args: argparse.Namespace) -> list[str]:
             if line.strip() and not line.startswith("#")
         )
     return list(dict.fromkeys(targets))
+
+
+def _load_game_numbers(args: argparse.Namespace) -> list[int]:
+    if not args.game_numbers:
+        return []
+    numbers: list[int] = []
+    for piece in args.game_numbers.replace(",", " ").split():
+        piece = piece.strip()
+        if piece:
+            numbers.append(int(piece))
+    return list(dict.fromkeys(numbers))
 
 
 def _load_existing_rows(output_path: Path) -> list[dict[str, Any]]:
@@ -431,6 +739,8 @@ def _write_csv(path: Path, rows: list[dict[str, Any]]) -> None:
         "solver",
         "method",
         "mode",
+        "game",
+        "game_number",
         "target",
         "run_index",
         "solved",
@@ -591,9 +901,14 @@ def _ea_initial_categories(method: str) -> int:
 
 
 def _parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Run local Contexto solver experiments.")
-    parser.add_argument("--targets", help="Comma-separated local target words.")
-    parser.add_argument("--target-file", help="File containing one target word per line.")
+    parser = argparse.ArgumentParser(description="Run batch Contexto solver experiments (local or API).")
+    parser.add_argument("--game", choices=["local", "api"], default="local", help="Game backend for the batch.")
+    parser.add_argument("--targets", help="Comma-separated local target words (--game local).")
+    parser.add_argument("--target-file", help="File containing one target word per line (--game local).")
+    parser.add_argument(
+        "--game-numbers",
+        help="Comma/space-separated Contexto game numbers to solve (--game api).",
+    )
     parser.add_argument("--mode", choices=["aligned", "non_aligned"], default="aligned")
     parser.add_argument(
         "--method",
