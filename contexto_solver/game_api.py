@@ -60,13 +60,31 @@ class ContextoAPI:
 
     @property
     def network_wall_clock_seconds(self) -> float | None:
-        """Elapsed wall-clock across all HTTP calls, or ``None`` if none were made."""
+        """Wall-clock SPAN from the first HTTP call's start to the last call's end.
+
+        This is a span, NOT a sum of latencies: it includes everything that
+        happens between calls -- LLM generation, solver bookkeeping, and the
+        ``rate_limit`` sleep before each request. It therefore vastly exceeds the
+        summed round-trip time and MUST NOT be read as network cost. For the
+        actual network cost use ``total_latency_seconds`` from ``call_metrics``.
+        Returns ``None`` if no HTTP calls were made.
+        """
         if self._run_start_monotonic is None or self._run_end_monotonic is None:
             return None
         return round(self._run_end_monotonic - self._run_start_monotonic, 4)
 
     def call_metrics(self) -> dict[str, Any]:
-        """Aggregate per-call telemetry (logging-only; safe to call anytime)."""
+        """Aggregate per-call telemetry (logging-only; safe to call anytime).
+
+        Two latency figures are reported and must not be conflated:
+
+        - ``total_latency_seconds``: the SUM of per-call HTTP round-trip
+          latencies. This is the true network cost of the run.
+        - ``network_wall_clock_seconds``: the wall-clock SPAN from the first
+          call's start to the last call's end. It includes LLM generation and
+          per-call rate-limit sleeps between requests, so it is far larger than
+          ``total_latency_seconds`` and is NOT a measure of network cost.
+        """
         latencies = [c["latency_s"] for c in self.call_log]
         status_counts: dict[str, int] = {}
         outcome_counts: dict[str, int] = {}

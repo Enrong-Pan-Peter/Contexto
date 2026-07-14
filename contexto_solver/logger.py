@@ -107,6 +107,11 @@ class Logger:
         No-op for games without call telemetry (e.g. the local game), so it is
         safe to call unconditionally at end of run. When ``PERSIST_CALL_LOG`` is
         set, the full per-call log is embedded alongside the aggregate metrics.
+
+        Latency fields carry two distinct meanings (see ``ContextoAPI.call_metrics``):
+        ``total_latency_seconds`` is the summed HTTP round-trip time (network
+        cost), while ``network_wall_clock_seconds`` is the first-to-last call
+        span that includes LLM time and rate-limit sleeps and is not network cost.
         """
         metrics_fn = getattr(game, "call_metrics", None)
         if not callable(metrics_fn):
