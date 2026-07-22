@@ -68,5 +68,21 @@ class CompletedKeyTests(unittest.TestCase):
         self.assertNotEqual(local, api)
 
 
+class SeedAssignmentTests(unittest.TestCase):
+    """Solver config.random_seed must match RUN_CONFIG.random_seed = base + run_index."""
+
+    def test_run_seed_offsets(self):
+        self.assertEqual(ex._run_seed(0, 0), 0)
+        self.assertEqual(ex._run_seed(0, 1), 1)
+        self.assertEqual(ex._run_seed(10, 2), 12)
+        self.assertIsNone(ex._run_seed(None, 1))
+
+    def test_run_config_matches_solver_seed(self):
+        args = _args(random_seed=0, game_numbers="1387")
+        for run_index in (0, 1):
+            logged = ex._api_run_config(args, 1387, run_index, "ollama", "qwen3:14b")["random_seed"]
+            self.assertEqual(logged, ex._run_seed(args.random_seed, run_index))
+
+
 if __name__ == "__main__":
     unittest.main()

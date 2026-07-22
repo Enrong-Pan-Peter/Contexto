@@ -392,7 +392,7 @@ def _run_local_target(
             api_key=args.api_key or _api_key_for_provider(llm_provider),
             model=llm_model,
         )
-        solver = _build_llm_method(args.method, game, llm_client, logger, run_label, args)
+        solver = _build_llm_method(args.method, game, llm_client, logger, run_label, args, run_index)
 
     result = solver.solve()
     archive = getattr(solver, "archive", None)
@@ -496,7 +496,7 @@ def _run_api_game(
         api_key=args.api_key or _api_key_for_provider(llm_provider),
         model=llm_model,
     )
-    solver = _build_llm_method(args.method, game, llm_client, logger, run_label, args)
+    solver = _build_llm_method(args.method, game, llm_client, logger, run_label, args, run_index)
     result = solver.solve()
     return {
         "solver": _method_family(args.method),
@@ -796,7 +796,17 @@ def _model_for_provider(provider: str, cli_model: str | None, cli_ollama_model: 
     return cli_model or config.LLM_MODEL
 
 
-def _build_llm_method(method: str, game, llm_client: LLMClient, logger: Logger, run_label: str, args: argparse.Namespace):
+def _build_llm_method(
+    method: str,
+    game,
+    llm_client: LLMClient,
+    logger: Logger,
+    run_label: str,
+    args: argparse.Namespace,
+    run_index: int = 0,
+):
+    # Must match RUN_CONFIG.random_seed: base CLI seed + run_index.
+    run_seed = _run_seed(args.random_seed, run_index)
     if method == "llm_only":
         return LLMOnlyMethod(
             game,
@@ -837,7 +847,7 @@ def _build_llm_method(method: str, game, llm_client: LLMClient, logger: Logger, 
                 concentration=config.SELF_ADAPTIVE_CONCENTRATION,
                 sigma_floor=config.SELF_ADAPTIVE_SIGMA_FLOOR,
                 sigma_mode=config.SELF_ADAPTIVE_SIGMA_MODE,
-                random_seed=args.random_seed,
+                random_seed=run_seed,
             ),
         )
     if method == "ea_llm_map_elites":
@@ -850,7 +860,7 @@ def _build_llm_method(method: str, game, llm_client: LLMClient, logger: Logger, 
                 mu=config.SELF_ADAPTIVE_MU,
                 concentration=config.SELF_ADAPTIVE_CONCENTRATION,
                 sigma_floor=config.SELF_ADAPTIVE_SIGMA_FLOOR,
-                random_seed=args.random_seed,
+                random_seed=run_seed,
                 grid_resolution=config.MAPELITES_GRID_RESOLUTION,
                 mutations_per_gen=config.MAPELITES_MUTATIONS_PER_GEN,
                 crossovers_per_gen=config.MAPELITES_CROSSOVERS_PER_GEN,
