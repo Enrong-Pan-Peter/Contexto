@@ -103,12 +103,15 @@ class ContextoAPICallLoggingTests(unittest.TestCase):
         with mock.patch(
             "contexto_solver.game_api.requests.get", side_effect=__import__("requests").RequestException()
         ):
-            self.assertEqual(api.guess("boom"), -1)
+            # A persistent transport failure is retried once, then raised.
+            with self.assertRaises(RuntimeError):
+                api.guess("boom")
 
         outcomes = [c["outcome"] for c in api.call_log]
-        self.assertEqual(outcomes, ["http_error", "exception"])
+        self.assertEqual(outcomes, ["http_error", "exception", "exception"])
         self.assertEqual(api.call_log[0]["status"], 404)
         self.assertIsNone(api.call_log[1]["status"])
+        self.assertIsNone(api.call_log[2]["status"])
 
     def test_cache_hit_records_no_network_call(self) -> None:
         with tempfile.TemporaryDirectory() as cache_dir:
@@ -158,6 +161,81 @@ class ContextoAPICallLoggingTests(unittest.TestCase):
         self.assertEqual(metrics["max_latency_seconds"], 0.40)
         self.assertEqual(metrics["status_counts"], {"200": 2, "500": 1, "None": 1})
         self.assertEqual(metrics["outcome_counts"], {"ok": 2, "http_error": 1, "exception": 1})
+
+
+class TransientErrorPolicyTests(unittest.TestCase):
+    """Only definitive 404s are cached as invalid; transients retry once then raise."""
+
+    def _api(self, cache_dir: str) -> ContextoAPI:
+        return ContextoAPI(
+            game_number=1314,
+            base_url="https://api.contexto.me/machado/en/game",
+            rate_limit=0.0,
+            rank_cache_enabled=True,
+            rank_cache_dir=cache_dir,
+        )
+
+    @staticmethod
+    def _response(status_code: int, distance: int | None = None) -> mock.Mock:
+        response = mock.Mock(status_code=status_code)
+        response.json.return_value = {"distance": distance} if distance is not None else {}
+        return response
+
+    def test_404_is_cached_invalid(self) -> None:
+        with tempfile.TemporaryDirectory() as cache_dir:
+            api = self._api(cache_dir)
+            with mock.patch("contexto_solver.game_api.requests.get", return_value=self._response(404)):
+                self.assertEqual(api.guess("nonword"), -1)
+            self.assertEqual(api._rank_cache.lookup("nonword"), INVALID_MARKER)
+            self.assertIn("nonword", api.invalid_guesses)
+
+    def test_transient_500_then_ok_is_retried_and_graded(self) -> None:
+        with tempfile.TemporaryDirectory() as cache_dir:
+            api = self._api(cache_dir)
+            with mock.patch(
+                "contexto_solver.game_api.requests.get",
+                side_effect=[self._response(500), self._response(200, distance=41)],
+            ):
+                self.assertEqual(api.guess("pearl"), 42)
+            self.assertEqual(api._rank_cache.lookup("pearl"), 42)
+            self.assertEqual([c["outcome"] for c in api.call_log], ["http_error", "ok"])
+
+    def test_persistent_500_raises_without_cache_write(self) -> None:
+        with tempfile.TemporaryDirectory() as cache_dir:
+            api = self._api(cache_dir)
+            with mock.patch(
+                "contexto_solver.game_api.requests.get",
+                side_effect=[self._response(500), self._response(503)],
+            ):
+                with self.assertRaises(RuntimeError):
+                    api.guess("pearl")
+            self.assertIsNone(api._rank_cache.lookup("pearl"))
+            self.assertNotIn("pearl", api.invalid_guesses)
+            self.assertNotIn("pearl", api.guesses)
+
+    def test_persistent_exception_raises_without_cache_write(self) -> None:
+        with tempfile.TemporaryDirectory() as cache_dir:
+            api = self._api(cache_dir)
+            requests_module = __import__("requests")
+            with mock.patch(
+                "contexto_solver.game_api.requests.get",
+                side_effect=[requests_module.ConnectionError(), requests_module.Timeout()],
+            ):
+                with self.assertRaises(RuntimeError):
+                    api.guess("pearl")
+            self.assertIsNone(api._rank_cache.lookup("pearl"))
+            self.assertEqual([c["outcome"] for c in api.call_log], ["exception", "exception"])
+
+    def test_bad_payload_then_ok_is_retried(self) -> None:
+        with tempfile.TemporaryDirectory() as cache_dir:
+            api = self._api(cache_dir)
+            with mock.patch(
+                "contexto_solver.game_api.requests.get",
+                side_effect=[self._response(200), self._response(200, distance=4)],
+            ):
+                self.assertEqual(api.guess("pearl"), 5)
+            self.assertEqual([c["outcome"] for c in api.call_log], ["bad_payload", "ok"])
+            self.assertEqual(api._rank_cache.lookup("pearl"), 5)
 
 
 class NetworkMetricsTraceTests(unittest.TestCase):
