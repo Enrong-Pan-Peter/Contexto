@@ -168,6 +168,12 @@ RATIONALE_INHERITANCE = _env_bool("RATIONALE_INHERITANCE", False)
 # ``frozen_uniform`` resets child sigma to ``initial_sigma()`` each proposal.
 SELF_ADAPTIVE_SIGMA_MODE = _env_value("SELF_ADAPTIVE_SIGMA_MODE", "adaptive")
 
+# Survivor-selection control for ea_llm_self_adaptive (RQ3 control arm).
+# ``tophalf`` is the existing behavior: keep the top half by best rank (capped
+# at max_active_hypotheses) plus the elite. ``random`` keeps the same number of
+# survivors but picks them uniformly at random with the run's RNG.
+SELF_ADAPTIVE_SELECTION_MODE = _env_value("SELF_ADAPTIVE_SELECTION_MODE", "tophalf")
+
 # Persistent read-through cache for real-game rank lookups (``ContextoAPI.guess``).
 RANK_CACHE_DIR = _env_value("RANK_CACHE_DIR", "data/rank_cache")
 RANK_CACHE_ENABLED = _env_bool("RANK_CACHE_ENABLED", True)

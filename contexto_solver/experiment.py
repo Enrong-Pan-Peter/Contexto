@@ -210,6 +210,9 @@ def _write_outputs(
             "self_adaptive_sigma_mode": (
                 config.SELF_ADAPTIVE_SIGMA_MODE if args.method == "ea_llm_self_adaptive" else None
             ),
+            "self_adaptive_selection_mode": (
+                config.SELF_ADAPTIVE_SELECTION_MODE if args.method == "ea_llm_self_adaptive" else None
+            ),
             "mapelites_grid_resolution": config.MAPELITES_GRID_RESOLUTION if args.method == "ea_llm_map_elites" else None,
             "mapelites_mutations_per_gen": config.MAPELITES_MUTATIONS_PER_GEN if args.method == "ea_llm_map_elites" else None,
             "mapelites_crossovers_per_gen": config.MAPELITES_CROSSOVERS_PER_GEN if args.method == "ea_llm_map_elites" else None,
@@ -274,6 +277,9 @@ def _write_api_outputs(
             "enable_pivot": _enable_pivot_metadata(args.method),
             "self_adaptive_sigma_mode": (
                 config.SELF_ADAPTIVE_SIGMA_MODE if args.method == "ea_llm_self_adaptive" else None
+            ),
+            "self_adaptive_selection_mode": (
+                config.SELF_ADAPTIVE_SELECTION_MODE if args.method == "ea_llm_self_adaptive" else None
             ),
             "mapelites_sigma_mode": config.MAPELITES_SIGMA_MODE if args.method == "ea_llm_map_elites" else None,
         },
@@ -340,6 +346,9 @@ def _run_local_target(
             "self_adaptive_sigma_floor": config.SELF_ADAPTIVE_SIGMA_FLOOR if args.method == "ea_llm_self_adaptive" else None,
             "self_adaptive_sigma_mode": (
                 config.SELF_ADAPTIVE_SIGMA_MODE if args.method == "ea_llm_self_adaptive" else None
+            ),
+            "self_adaptive_selection_mode": (
+                config.SELF_ADAPTIVE_SELECTION_MODE if args.method == "ea_llm_self_adaptive" else None
             ),
             "mapelites_grid_resolution": config.MAPELITES_GRID_RESOLUTION if args.method == "ea_llm_map_elites" else None,
             "mapelites_mutations_per_gen": config.MAPELITES_MUTATIONS_PER_GEN if args.method == "ea_llm_map_elites" else None,
@@ -625,6 +634,9 @@ def _api_run_config(
         "self_adaptive_sigma_mode": (
             config.SELF_ADAPTIVE_SIGMA_MODE if args.method == "ea_llm_self_adaptive" else None
         ),
+        "self_adaptive_selection_mode": (
+            config.SELF_ADAPTIVE_SELECTION_MODE if args.method == "ea_llm_self_adaptive" else None
+        ),
         "mapelites_grid_resolution": config.MAPELITES_GRID_RESOLUTION if args.method == "ea_llm_map_elites" else None,
         "mapelites_mutations_per_gen": config.MAPELITES_MUTATIONS_PER_GEN if args.method == "ea_llm_map_elites" else None,
         "mapelites_crossovers_per_gen": config.MAPELITES_CROSSOVERS_PER_GEN if args.method == "ea_llm_map_elites" else None,
@@ -847,6 +859,7 @@ def _build_llm_method(
                 concentration=config.SELF_ADAPTIVE_CONCENTRATION,
                 sigma_floor=config.SELF_ADAPTIVE_SIGMA_FLOOR,
                 sigma_mode=config.SELF_ADAPTIVE_SIGMA_MODE,
+                selection_mode=config.SELF_ADAPTIVE_SELECTION_MODE,
                 random_seed=run_seed,
             ),
         )

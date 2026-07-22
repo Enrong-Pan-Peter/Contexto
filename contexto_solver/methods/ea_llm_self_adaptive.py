@@ -21,6 +21,7 @@ class EALLMSelfAdaptiveConfig(EALLMConfig):
     random_seed: int | None = None
     disable_local_search: bool = True
     sigma_mode: str = "adaptive"
+    selection_mode: str = "tophalf"
 
 
 class EALLMSelfAdaptiveMethod(BaseEALLMMethod):
@@ -42,6 +43,43 @@ class EALLMSelfAdaptiveMethod(BaseEALLMMethod):
             concentration=self.config.concentration,
             sigma_floor=self.config.sigma_floor,
             rng=self.rng,
+        )
+
+    def _select(self) -> None:
+        """Survivor selection; ``selection_mode == "random"`` is the RQ3 control.
+
+        The default (``tophalf``) defers to the base top-half rank cull and is
+        byte-identical to prior behavior. ``random`` keeps the same survivor
+        count but draws survivors uniformly at random with the run's RNG; no
+        elite guarantee (that would reintroduce selection on fitness).
+        """
+        if self.config.selection_mode != "random":
+            super()._select()
+            return
+
+        ranked = sorted(self.hypotheses, key=lambda hypothesis: hypothesis.best_rank)
+        keep_count = min(max(1, len(ranked) // 2), self.config.max_active_hypotheses)
+        chosen = sorted(self.rng.choice(len(ranked), size=keep_count, replace=False).tolist())
+        kept_list = [ranked[index] for index in chosen]
+        kept_ids = set(id(hypothesis) for hypothesis in kept_list)
+        for hypothesis in self.hypotheses:
+            hypothesis.status = "active" if id(hypothesis) in kept_ids else "dormant"
+
+        self.logger.log(
+            self.generation,
+            "SELECT",
+            {
+                "kept": [hypothesis.category_name for hypothesis in kept_list],
+                "discarded": [
+                    hypothesis.category_name for hypothesis in ranked if id(hypothesis) not in kept_ids
+                ],
+                "elite": kept_list[0].category_name if kept_list else None,
+                "max_active_hypotheses": self.config.max_active_hypotheses,
+                "selection_mode": "random",
+                "best_word": self.best_word,
+                "best_rank": self.best_rank,
+                "total_guesses": self.game.total_guesses(),
+            },
         )
 
     def _mutate(self) -> None:
