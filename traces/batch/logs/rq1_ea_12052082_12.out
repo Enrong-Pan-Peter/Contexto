@@ -1,0 +1,117 @@
+===== JOB INFORMATION =====
+Date: Wed Jul 22 22:10:57 EDT 2026
+Host: frnt190.frontenac.local
+Job ID: 12052388
+Array task: 12
+Arm: A3
+Game: 1335
+Python: /global/home/hpc6237/venvs/contexto/bin/python
+OLLAMA_HOST: 127.0.0.1:32388
+OLLAMA_BASE_URL: http://127.0.0.1:32388/v1
+RANK_CACHE_DIR: data/rank_cache_A3
+Command: python -m contexto_solver.experiment --game api --method ea_llm_self_adaptive --provider ollama --ollama-model qwen3:14b --game-numbers 1335 --runs-per-target 5 --random-seed 0 --max-generations 50 --output traces/rq1_A3/A3_ea_llm_self_adaptive_game1335.json
+Python 3.11.5
+Wed Jul 22 22:10:57 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 580.167.08             Driver Version: 580.167.08     CUDA Version: 13.0     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100-SXM4-40GB          On  |   00000000:07:00.0 Off |                    0 |
+| N/A   51C    P0            322W /  400W |   16053MiB /  40960MiB |     97%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   1  NVIDIA A100-SXM4-40GB          On  |   00000000:0F:00.0 Off |                    0 |
+| N/A   56C    P0            377W /  400W |   15691MiB /  40960MiB |    100%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   2  NVIDIA A100-SXM4-40GB          On  |   00000000:47:00.0 Off |                    0 |
+| N/A   58C    P0            328W /  400W |   15691MiB /  40960MiB |    100%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   3  NVIDIA A100-SXM4-40GB          On  |   00000000:4E:00.0 Off |                    0 |
+| N/A   56C    P0            345W /  400W |    2343MiB /  40960MiB |     98%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   4  NVIDIA A100-SXM4-40GB          On  |   00000000:87:00.0 Off |                    0 |
+| N/A   46C    P0             58W /  400W |       0MiB /  40960MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   5  NVIDIA A100-SXM4-40GB          On  |   00000000:90:00.0 Off |                    0 |
+| N/A   69C    P0            367W /  400W |   16055MiB /  40960MiB |     97%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   6  NVIDIA A100-SXM4-40GB          On  |   00000000:B7:00.0 Off |                    0 |
+| N/A   67C    P0            340W /  400W |   16053MiB /  40960MiB |     97%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   7  NVIDIA A100-SXM4-40GB          On  |   00000000:BD:00.0 Off |                    0 |
+| N/A   42C    P0             79W /  400W |   38917MiB /  40960MiB |     50%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|    0   N/A  N/A          222807      C   ...local/lib/ollama/llama-server      16044MiB |
+|    1   N/A  N/A          111239      C   python                                15682MiB |
+|    2   N/A  N/A          158153      C   python                                15682MiB |
+|    3   N/A  N/A          644852      C   python                                 2334MiB |
+|    5   N/A  N/A          196867      C   ...local/lib/ollama/llama-server      16046MiB |
+|    6   N/A  N/A          169237      C   ...local/lib/ollama/llama-server      16044MiB |
+|    7   N/A  N/A         3657173      C   ...MelaniePINN_NS/env/bin/python      38908MiB |
++-----------------------------------------------------------------------------------------+
+===== START OLLAMA =====
+===== RUN EXPERIMENT =====
+Generation 0: best word=knife, best rank=109
+Generation 1: best word=sound, best rank=99
+Generation 2: best word=instrument, best rank=56
+Generation 3: best word=instrument, best rank=56
+Generation 4: best word=instrument, best rank=56
+Generation 5: best word=gauge, best rank=13
+Generation 6: best word=sensor, best rank=12
+Generation 7: best word=compass, best rank=1
+Generation 0: best word=knife, best rank=109
+Generation 1: best word=mirror, best rank=39
+Generation 2: best word=clock, best rank=17
+Generation 3: best word=clock, best rank=17
+Generation 4: best word=clock, best rank=17
+Generation 5: best word=clock, best rank=17
+Generation 6: best word=clock, best rank=17
+Generation 7: best word=compass, best rank=1
+Generation 0: best word=knife, best rank=109
+Generation 1: best word=knife, best rank=109
+Generation 2: best word=point, best rank=73
+Generation 3: best word=point, best rank=73
+Generation 4: best word=direction, best rank=65
+Generation 5: best word=axis, best rank=28
+Generation 6: best word=axis, best rank=28
+Generation 7: best word=compass, best rank=1
+Generation 0: best word=hand, best rank=157
+Generation 1: best word=guide, best rank=53
+Generation 2: best word=compass, best rank=1
+Generation 0: best word=knife, best rank=109
+Generation 1: best word=angle, best rank=102
+Generation 2: best word=position, best rank=23
+Generation 3: best word=gauge, best rank=13
+Generation 4: best word=compass, best rank=1
+Wrote JSON summary: traces/rq1_A3/A3_ea_llm_self_adaptive_game1335.json
+Wrote CSV summary: traces/rq1_A3/A3_ea_llm_self_adaptive_game1335.csv
+{
+  "total_runs": 5,
+  "solved_runs": 5,
+  "solve_rate": 1.0,
+  "average_guesses_solved": 252.8,
+  "average_best_rank": 1.0,
+  "average_generations": 5.4
+}
+===== FINISHED =====
+Arm: A3
+Game: 1335
+Exit status: 0
+Date: Thu Jul 23 01:45:57 EDT 2026
+Metadata: traces/rq1_A3/A3_game1335_ollama_metadata_job12052388.txt

@@ -1,0 +1,6742 @@
+[
+  {
+    "generation": -1,
+    "event": "RUN_CONFIG",
+    "timestamp": "2026-07-22T18:43:27",
+    "details": {
+      "game": "api",
+      "solver": "llm",
+      "method": "ea_llm_self_adaptive",
+      "mode": "api",
+      "target": null,
+      "game_number": 1303,
+      "run_index": 0,
+      "game_embedding_path": null,
+      "solver_embedding_path": null,
+      "embedding_backend": null,
+      "vocabulary_size": null,
+      "alignment": "api_unknown",
+      "trace_schema_version": 3,
+      "instrumentation_provenance_hash": "bd9f2858283673a2",
+      "self_report": false,
+      "rationale_inheritance": false,
+      "max_generations": 50,
+      "llm_provider": "ollama",
+      "llm_model": "qwen3:14b",
+      "llm_workers": 4,
+      "initial_categories": 15,
+      "max_active_hypotheses": null,
+      "local_search_rank_threshold": 100,
+      "self_adaptive_initial_categories": 15,
+      "self_adaptive_mu": 15,
+      "self_adaptive_concentration": 50.0,
+      "self_adaptive_sigma_floor": 0.02,
+      "self_adaptive_sigma_mode": "frozen_uniform",
+      "mapelites_grid_resolution": null,
+      "mapelites_mutations_per_gen": null,
+      "mapelites_crossovers_per_gen": null,
+      "mapelites_initial_categories": null,
+      "mapelites_concentration": null,
+      "mapelites_sigma_floor": null,
+      "mapelites_sigma_mode": null,
+      "mapelites_frozen_sigma": null,
+      "mapelites_ranked_context_k": null,
+      "rank_cache_enabled": true,
+      "enable_pivot": false,
+      "ea_llm_pivot_stall_no_improvement_generations": null,
+      "ea_llm_pivot_stall_close_rank_threshold": null,
+      "ea_llm_pivot_stall_close_generations_limit": null,
+      "ea_llm_pivot_max_attempts_per_run": null,
+      "ea_llm_pivot_candidate_words_per_operator": null,
+      "ea_llm_pivot_resolution_window": null,
+      "random_seed": 0
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:44:03",
+    "details": {
+      "word": "happy",
+      "rank": 3118,
+      "hypothesis": "emotions",
+      "best_word": "happy",
+      "best_rank": 3118,
+      "total_guesses": 1
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:44:04",
+    "details": {
+      "word": "sad",
+      "rank": 3673,
+      "hypothesis": "emotions",
+      "best_word": "happy",
+      "best_rank": 3118,
+      "total_guesses": 2
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:44:05",
+    "details": {
+      "word": "angry",
+      "rank": 5204,
+      "hypothesis": "emotions",
+      "best_word": "happy",
+      "best_rank": 3118,
+      "total_guesses": 3
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:44:05",
+    "details": {
+      "word": "teacher",
+      "rank": 4847,
+      "hypothesis": "professions",
+      "best_word": "happy",
+      "best_rank": 3118,
+      "total_guesses": 4
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:44:06",
+    "details": {
+      "word": "doctor",
+      "rank": 410,
+      "hypothesis": "professions",
+      "best_word": "doctor",
+      "best_rank": 410,
+      "total_guesses": 5
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:44:07",
+    "details": {
+      "word": "engineer",
+      "rank": 7287,
+      "hypothesis": "professions",
+      "best_word": "doctor",
+      "best_rank": 410,
+      "total_guesses": 6
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:44:07",
+    "details": {
+      "word": "water",
+      "rank": 178,
+      "hypothesis": "natural_elements",
+      "best_word": "water",
+      "best_rank": 178,
+      "total_guesses": 7
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:44:08",
+    "details": {
+      "word": "fire",
+      "rank": 947,
+      "hypothesis": "natural_elements",
+      "best_word": "water",
+      "best_rank": 178,
+      "total_guesses": 8
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:44:09",
+    "details": {
+      "word": "earth",
+      "rank": 2145,
+      "hypothesis": "natural_elements",
+      "best_word": "water",
+      "best_rank": 178,
+      "total_guesses": 9
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:44:10",
+    "details": {
+      "word": "hand",
+      "rank": 841,
+      "hypothesis": "body_parts",
+      "best_word": "water",
+      "best_rank": 178,
+      "total_guesses": 10
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:44:10",
+    "details": {
+      "word": "foot",
+      "rank": 586,
+      "hypothesis": "body_parts",
+      "best_word": "water",
+      "best_rank": 178,
+      "total_guesses": 11
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:44:11",
+    "details": {
+      "word": "head",
+      "rank": 587,
+      "hypothesis": "body_parts",
+      "best_word": "water",
+      "best_rank": 178,
+      "total_guesses": 12
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:44:12",
+    "details": {
+      "word": "run",
+      "rank": 1011,
+      "hypothesis": "actions",
+      "best_word": "water",
+      "best_rank": 178,
+      "total_guesses": 13
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:44:13",
+    "details": {
+      "word": "jump",
+      "rank": 3138,
+      "hypothesis": "actions",
+      "best_word": "water",
+      "best_rank": 178,
+      "total_guesses": 14
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:44:13",
+    "details": {
+      "word": "walk",
+      "rank": 2221,
+      "hypothesis": "actions",
+      "best_word": "water",
+      "best_rank": 178,
+      "total_guesses": 15
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:44:14",
+    "details": {
+      "word": "book",
+      "rank": 2512,
+      "hypothesis": "objects",
+      "best_word": "water",
+      "best_rank": 178,
+      "total_guesses": 16
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:44:15",
+    "details": {
+      "word": "chair",
+      "rank": 6099,
+      "hypothesis": "objects",
+      "best_word": "water",
+      "best_rank": 178,
+      "total_guesses": 17
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:44:16",
+    "details": {
+      "word": "table",
+      "rank": 1407,
+      "hypothesis": "objects",
+      "best_word": "water",
+      "best_rank": 178,
+      "total_guesses": 18
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:44:16",
+    "details": {
+      "word": "door",
+      "rank": 2533,
+      "hypothesis": "house_parts",
+      "best_word": "water",
+      "best_rank": 178,
+      "total_guesses": 19
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:44:17",
+    "details": {
+      "word": "window",
+      "rank": 2336,
+      "hypothesis": "house_parts",
+      "best_word": "water",
+      "best_rank": 178,
+      "total_guesses": 20
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:44:18",
+    "details": {
+      "word": "wall",
+      "rank": 1813,
+      "hypothesis": "house_parts",
+      "best_word": "water",
+      "best_rank": 178,
+      "total_guesses": 21
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:44:18",
+    "details": {
+      "word": "apple",
+      "rank": 5069,
+      "hypothesis": "food",
+      "best_word": "water",
+      "best_rank": 178,
+      "total_guesses": 22
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:44:19",
+    "details": {
+      "word": "bread",
+      "rank": 4263,
+      "hypothesis": "food",
+      "best_word": "water",
+      "best_rank": 178,
+      "total_guesses": 23
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:44:20",
+    "details": {
+      "word": "cheese",
+      "rank": 3410,
+      "hypothesis": "food",
+      "best_word": "water",
+      "best_rank": 178,
+      "total_guesses": 24
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:44:21",
+    "details": {
+      "word": "wheel",
+      "rank": 2523,
+      "hypothesis": "car_parts",
+      "best_word": "water",
+      "best_rank": 178,
+      "total_guesses": 25
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:44:21",
+    "details": {
+      "word": "door",
+      "rank": 2533,
+      "hypothesis": "car_parts",
+      "best_word": "water",
+      "best_rank": 178,
+      "total_guesses": 25
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:44:21",
+    "details": {
+      "word": "engine",
+      "rank": 2354,
+      "hypothesis": "car_parts",
+      "best_word": "water",
+      "best_rank": 178,
+      "total_guesses": 26
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:44:22",
+    "details": {
+      "word": "day",
+      "rank": 274,
+      "hypothesis": "time_units",
+      "best_word": "water",
+      "best_rank": 178,
+      "total_guesses": 27
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:44:23",
+    "details": {
+      "word": "week",
+      "rank": 166,
+      "hypothesis": "time_units",
+      "best_word": "week",
+      "best_rank": 166,
+      "total_guesses": 28
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:44:24",
+    "details": {
+      "word": "year",
+      "rank": 832,
+      "hypothesis": "time_units",
+      "best_word": "week",
+      "best_rank": 166,
+      "total_guesses": 29
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:44:24",
+    "details": {
+      "word": "red",
+      "rank": 436,
+      "hypothesis": "colors",
+      "best_word": "week",
+      "best_rank": 166,
+      "total_guesses": 30
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:44:25",
+    "details": {
+      "word": "blue",
+      "rank": 1337,
+      "hypothesis": "colors",
+      "best_word": "week",
+      "best_rank": 166,
+      "total_guesses": 31
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:44:26",
+    "details": {
+      "word": "green",
+      "rank": 2671,
+      "hypothesis": "colors",
+      "best_word": "week",
+      "best_rank": 166,
+      "total_guesses": 32
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:44:27",
+    "details": {
+      "word": "move",
+      "rank": 1509,
+      "hypothesis": "verbs_movement",
+      "best_word": "week",
+      "best_rank": 166,
+      "total_guesses": 33
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:44:27",
+    "details": {
+      "word": "run",
+      "rank": 1011,
+      "hypothesis": "verbs_movement",
+      "best_word": "week",
+      "best_rank": 166,
+      "total_guesses": 33
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:44:27",
+    "details": {
+      "word": "walk",
+      "rank": 2221,
+      "hypothesis": "verbs_movement",
+      "best_word": "week",
+      "best_rank": 166,
+      "total_guesses": 33
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:44:27",
+    "details": {
+      "word": "rock",
+      "rank": 2272,
+      "hypothesis": "music_genres",
+      "best_word": "week",
+      "best_rank": 166,
+      "total_guesses": 34
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:44:28",
+    "details": {
+      "word": "pop",
+      "rank": 1715,
+      "hypothesis": "music_genres",
+      "best_word": "week",
+      "best_rank": 166,
+      "total_guesses": 35
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:44:29",
+    "details": {
+      "word": "jazz",
+      "rank": 4421,
+      "hypothesis": "music_genres",
+      "best_word": "week",
+      "best_rank": 166,
+      "total_guesses": 36
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:44:29",
+    "details": {
+      "word": "soccer",
+      "rank": 4164,
+      "hypothesis": "sports",
+      "best_word": "week",
+      "best_rank": 166,
+      "total_guesses": 37
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:44:30",
+    "details": {
+      "word": "basketball",
+      "rank": 6190,
+      "hypothesis": "sports",
+      "best_word": "week",
+      "best_rank": 166,
+      "total_guesses": 38
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:44:31",
+    "details": {
+      "word": "tennis",
+      "rank": 7491,
+      "hypothesis": "sports",
+      "best_word": "week",
+      "best_rank": 166,
+      "total_guesses": 39
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:44:32",
+    "details": {
+      "word": "oak",
+      "rank": 3849,
+      "hypothesis": "trees",
+      "best_word": "week",
+      "best_rank": 166,
+      "total_guesses": 40
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:44:32",
+    "details": {
+      "word": "pine",
+      "rank": 3634,
+      "hypothesis": "trees",
+      "best_word": "week",
+      "best_rank": 166,
+      "total_guesses": 41
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:44:36",
+    "details": {
+      "word": "maple",
+      "rank": 5015,
+      "hypothesis": "trees",
+      "best_word": "week",
+      "best_rank": 166,
+      "total_guesses": 42
+    }
+  },
+  {
+    "generation": 0,
+    "event": "INIT",
+    "timestamp": "2026-07-22T18:44:36",
+    "details": {
+      "hypotheses": [
+        {
+          "hypothesis_id": "d3d80b77275d43c789c27fb6caa8ee9e",
+          "category_name": "emotions",
+          "description": "common emotions",
+          "words_tried": {
+            "happy": 3118,
+            "sad": 3673,
+            "angry": 5204
+          },
+          "best_word": "happy",
+          "best_rank": 3118,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "ecfdad63fe494336b283c286f44316ed",
+          "category_name": "professions",
+          "description": "occupational roles",
+          "words_tried": {
+            "doctor": 410,
+            "teacher": 4847,
+            "engineer": 7287
+          },
+          "best_word": "doctor",
+          "best_rank": 410,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "4f2702be72614e6a9c560a4fdcf2749c",
+          "category_name": "natural_elements",
+          "description": "elements in nature",
+          "words_tried": {
+            "water": 178,
+            "fire": 947,
+            "earth": 2145
+          },
+          "best_word": "water",
+          "best_rank": 178,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "345b90d6a567477e840b08dd46d388ca",
+          "category_name": "body_parts",
+          "description": "human anatomy",
+          "words_tried": {
+            "foot": 586,
+            "head": 587,
+            "hand": 841
+          },
+          "best_word": "foot",
+          "best_rank": 586,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "3356c8553ee74eeaa9ffff352d00aa72",
+          "category_name": "actions",
+          "description": "physical activities",
+          "words_tried": {
+            "run": 1011,
+            "walk": 2221,
+            "jump": 3138
+          },
+          "best_word": "run",
+          "best_rank": 1011,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "626801f6bf194c5aa946605808359113",
+          "category_name": "objects",
+          "description": "common items",
+          "words_tried": {
+            "table": 1407,
+            "book": 2512,
+            "chair": 6099
+          },
+          "best_word": "table",
+          "best_rank": 1407,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "975fc988b9244633b5caa575abc67845",
+          "category_name": "house_parts",
+          "description": "building components",
+          "words_tried": {
+            "wall": 1813,
+            "window": 2336,
+            "door": 2533
+          },
+          "best_word": "wall",
+          "best_rank": 1813,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "efddd7a11583423286a33ed1b55e9f90",
+          "category_name": "food",
+          "description": "edible items",
+          "words_tried": {
+            "cheese": 3410,
+            "bread": 4263,
+            "apple": 5069
+          },
+          "best_word": "cheese",
+          "best_rank": 3410,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "aa5c852c8978463489501ea7221901ef",
+          "category_name": "car_parts",
+          "description": "vehicle components",
+          "words_tried": {
+            "engine": 2354,
+            "wheel": 2523,
+            "door": 2533
+          },
+          "best_word": "engine",
+          "best_rank": 2354,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "9f2daaa89e1e4a00a549cb5f1b316c65",
+          "category_name": "time_units",
+          "description": "time measurements",
+          "words_tried": {
+            "week": 166,
+            "day": 274,
+            "year": 832
+          },
+          "best_word": "week",
+          "best_rank": 166,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "fd22343a6fdd42f785078010a50bbebd",
+          "category_name": "colors",
+          "description": "visual hues",
+          "words_tried": {
+            "red": 436,
+            "blue": 1337,
+            "green": 2671
+          },
+          "best_word": "red",
+          "best_rank": 436,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "9f0b5ea42efc4acb84111c30a84fde6a",
+          "category_name": "verbs_movement",
+          "description": "motion verbs",
+          "words_tried": {
+            "run": 1011,
+            "move": 1509,
+            "walk": 2221
+          },
+          "best_word": "run",
+          "best_rank": 1011,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "e0173c61fad24cbfbc0e4073483602dc",
+          "category_name": "music_genres",
+          "description": "types of music",
+          "words_tried": {
+            "pop": 1715,
+            "rock": 2272,
+            "jazz": 4421
+          },
+          "best_word": "pop",
+          "best_rank": 1715,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "e29ea5e337654dd5bf89fab0b24c5d7d",
+          "category_name": "sports",
+          "description": "physical games",
+          "words_tried": {
+            "soccer": 4164,
+            "basketball": 6190,
+            "tennis": 7491
+          },
+          "best_word": "soccer",
+          "best_rank": 4164,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "818239e480f34beb8824e14b1aef0122",
+          "category_name": "trees",
+          "description": "plant species",
+          "words_tried": {
+            "pine": 3634,
+            "oak": 3849,
+            "maple": 5015
+          },
+          "best_word": "pine",
+          "best_rank": 3634,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        }
+      ],
+      "best_word": "week",
+      "best_rank": 166,
+      "total_guesses": 42
+    }
+  },
+  {
+    "generation": 0,
+    "event": "SIGMA_TRAJECTORY",
+    "timestamp": "2026-07-22T18:44:36",
+    "details": {
+      "mean_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "population_size": 15
+    }
+  },
+  {
+    "generation": 1,
+    "event": "CANDIDATES",
+    "timestamp": "2026-07-22T18:46:55",
+    "details": {
+      "count": 44,
+      "candidates": [
+        {
+          "hypothesis": "emotions",
+          "word": "fear"
+        },
+        {
+          "hypothesis": "emotions",
+          "word": "love"
+        },
+        {
+          "hypothesis": "emotions",
+          "word": "joy"
+        },
+        {
+          "hypothesis": "professions",
+          "word": "lawyer"
+        },
+        {
+          "hypothesis": "professions",
+          "word": "nurse"
+        },
+        {
+          "hypothesis": "professions",
+          "word": "artist"
+        },
+        {
+          "hypothesis": "natural_elements",
+          "word": "air"
+        },
+        {
+          "hypothesis": "natural_elements",
+          "word": "soil"
+        },
+        {
+          "hypothesis": "natural_elements",
+          "word": "stone"
+        },
+        {
+          "hypothesis": "body_parts",
+          "word": "arm"
+        },
+        {
+          "hypothesis": "body_parts",
+          "word": "leg"
+        },
+        {
+          "hypothesis": "body_parts",
+          "word": "eye"
+        },
+        {
+          "hypothesis": "actions",
+          "word": "climb"
+        },
+        {
+          "hypothesis": "actions",
+          "word": "swim"
+        },
+        {
+          "hypothesis": "actions",
+          "word": "dance"
+        },
+        {
+          "hypothesis": "objects",
+          "word": "lamp"
+        },
+        {
+          "hypothesis": "objects",
+          "word": "cup"
+        },
+        {
+          "hypothesis": "objects",
+          "word": "shoe"
+        },
+        {
+          "hypothesis": "house_parts",
+          "word": "roof"
+        },
+        {
+          "hypothesis": "house_parts",
+          "word": "floor"
+        },
+        {
+          "hypothesis": "house_parts",
+          "word": "beam"
+        },
+        {
+          "hypothesis": "food",
+          "word": "meat"
+        },
+        {
+          "hypothesis": "food",
+          "word": "rice"
+        },
+        {
+          "hypothesis": "food",
+          "word": "pasta"
+        },
+        {
+          "hypothesis": "car_parts",
+          "word": "brake"
+        },
+        {
+          "hypothesis": "car_parts",
+          "word": "gear"
+        },
+        {
+          "hypothesis": "car_parts",
+          "word": "mirror"
+        },
+        {
+          "hypothesis": "time_units",
+          "word": "month"
+        },
+        {
+          "hypothesis": "time_units",
+          "word": "hour"
+        },
+        {
+          "hypothesis": "time_units",
+          "word": "minute"
+        },
+        {
+          "hypothesis": "colors",
+          "word": "yellow"
+        },
+        {
+          "hypothesis": "colors",
+          "word": "orange"
+        },
+        {
+          "hypothesis": "colors",
+          "word": "purple"
+        },
+        {
+          "hypothesis": "verbs_movement",
+          "word": "drive"
+        },
+        {
+          "hypothesis": "verbs_movement",
+          "word": "glide"
+        },
+        {
+          "hypothesis": "music_genres",
+          "word": "classical"
+        },
+        {
+          "hypothesis": "music_genres",
+          "word": "country"
+        },
+        {
+          "hypothesis": "music_genres",
+          "word": "electronic"
+        },
+        {
+          "hypothesis": "sports",
+          "word": "golf"
+        },
+        {
+          "hypothesis": "sports",
+          "word": "baseball"
+        },
+        {
+          "hypothesis": "sports",
+          "word": "hockey"
+        },
+        {
+          "hypothesis": "trees",
+          "word": "birch"
+        },
+        {
+          "hypothesis": "trees",
+          "word": "elm"
+        },
+        {
+          "hypothesis": "trees",
+          "word": "cedar"
+        }
+      ]
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:46:58",
+    "details": {
+      "word": "fear",
+      "rank": 819,
+      "hypothesis": "emotions",
+      "best_word": "week",
+      "best_rank": 166,
+      "total_guesses": 43
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:46:59",
+    "details": {
+      "word": "love",
+      "rank": 2772,
+      "hypothesis": "emotions",
+      "best_word": "week",
+      "best_rank": 166,
+      "total_guesses": 44
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:47:00",
+    "details": {
+      "word": "joy",
+      "rank": 3609,
+      "hypothesis": "emotions",
+      "best_word": "week",
+      "best_rank": 166,
+      "total_guesses": 45
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:47:01",
+    "details": {
+      "word": "lawyer",
+      "rank": 11645,
+      "hypothesis": "professions",
+      "best_word": "week",
+      "best_rank": 166,
+      "total_guesses": 46
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:47:01",
+    "details": {
+      "word": "nurse",
+      "rank": 1917,
+      "hypothesis": "professions",
+      "best_word": "week",
+      "best_rank": 166,
+      "total_guesses": 47
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:47:02",
+    "details": {
+      "word": "artist",
+      "rank": 7983,
+      "hypothesis": "professions",
+      "best_word": "week",
+      "best_rank": 166,
+      "total_guesses": 48
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:47:03",
+    "details": {
+      "word": "air",
+      "rank": 756,
+      "hypothesis": "natural_elements",
+      "best_word": "week",
+      "best_rank": 166,
+      "total_guesses": 49
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:47:04",
+    "details": {
+      "word": "soil",
+      "rank": 1439,
+      "hypothesis": "natural_elements",
+      "best_word": "week",
+      "best_rank": 166,
+      "total_guesses": 50
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:47:04",
+    "details": {
+      "word": "stone",
+      "rank": 3215,
+      "hypothesis": "natural_elements",
+      "best_word": "week",
+      "best_rank": 166,
+      "total_guesses": 51
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:47:05",
+    "details": {
+      "word": "arm",
+      "rank": 1860,
+      "hypothesis": "body_parts",
+      "best_word": "week",
+      "best_rank": 166,
+      "total_guesses": 52
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:47:06",
+    "details": {
+      "word": "leg",
+      "rank": 255,
+      "hypothesis": "body_parts",
+      "best_word": "week",
+      "best_rank": 166,
+      "total_guesses": 53
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:47:07",
+    "details": {
+      "word": "eye",
+      "rank": 349,
+      "hypothesis": "body_parts",
+      "best_word": "week",
+      "best_rank": 166,
+      "total_guesses": 54
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:47:07",
+    "details": {
+      "word": "climb",
+      "rank": 2822,
+      "hypothesis": "actions",
+      "best_word": "week",
+      "best_rank": 166,
+      "total_guesses": 55
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:47:08",
+    "details": {
+      "word": "swim",
+      "rank": 3034,
+      "hypothesis": "actions",
+      "best_word": "week",
+      "best_rank": 166,
+      "total_guesses": 56
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:47:09",
+    "details": {
+      "word": "dance",
+      "rank": 4134,
+      "hypothesis": "actions",
+      "best_word": "week",
+      "best_rank": 166,
+      "total_guesses": 57
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:47:09",
+    "details": {
+      "word": "lamp",
+      "rank": 3607,
+      "hypothesis": "objects",
+      "best_word": "week",
+      "best_rank": 166,
+      "total_guesses": 58
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:47:10",
+    "details": {
+      "word": "cup",
+      "rank": 2583,
+      "hypothesis": "objects",
+      "best_word": "week",
+      "best_rank": 166,
+      "total_guesses": 59
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:47:11",
+    "details": {
+      "word": "shoe",
+      "rank": 4098,
+      "hypothesis": "objects",
+      "best_word": "week",
+      "best_rank": 166,
+      "total_guesses": 60
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:47:12",
+    "details": {
+      "word": "roof",
+      "rank": 1621,
+      "hypothesis": "house_parts",
+      "best_word": "week",
+      "best_rank": 166,
+      "total_guesses": 61
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:47:12",
+    "details": {
+      "word": "floor",
+      "rank": 1491,
+      "hypothesis": "house_parts",
+      "best_word": "week",
+      "best_rank": 166,
+      "total_guesses": 62
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:47:13",
+    "details": {
+      "word": "beam",
+      "rank": 2714,
+      "hypothesis": "house_parts",
+      "best_word": "week",
+      "best_rank": 166,
+      "total_guesses": 63
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:47:14",
+    "details": {
+      "word": "meat",
+      "rank": 1092,
+      "hypothesis": "food",
+      "best_word": "week",
+      "best_rank": 166,
+      "total_guesses": 64
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:47:15",
+    "details": {
+      "word": "rice",
+      "rank": 3683,
+      "hypothesis": "food",
+      "best_word": "week",
+      "best_rank": 166,
+      "total_guesses": 65
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:47:15",
+    "details": {
+      "word": "pasta",
+      "rank": 8125,
+      "hypothesis": "food",
+      "best_word": "week",
+      "best_rank": 166,
+      "total_guesses": 66
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:47:16",
+    "details": {
+      "word": "brake",
+      "rank": 3552,
+      "hypothesis": "car_parts",
+      "best_word": "week",
+      "best_rank": 166,
+      "total_guesses": 67
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:47:17",
+    "details": {
+      "word": "gear",
+      "rank": 2904,
+      "hypothesis": "car_parts",
+      "best_word": "week",
+      "best_rank": 166,
+      "total_guesses": 68
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:47:18",
+    "details": {
+      "word": "mirror",
+      "rank": 3657,
+      "hypothesis": "car_parts",
+      "best_word": "week",
+      "best_rank": 166,
+      "total_guesses": 69
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:47:18",
+    "details": {
+      "word": "month",
+      "rank": 688,
+      "hypothesis": "time_units",
+      "best_word": "week",
+      "best_rank": 166,
+      "total_guesses": 70
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:47:19",
+    "details": {
+      "word": "hour",
+      "rank": 448,
+      "hypothesis": "time_units",
+      "best_word": "week",
+      "best_rank": 166,
+      "total_guesses": 71
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:47:20",
+    "details": {
+      "word": "minute",
+      "rank": 676,
+      "hypothesis": "time_units",
+      "best_word": "week",
+      "best_rank": 166,
+      "total_guesses": 72
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:47:20",
+    "details": {
+      "word": "yellow",
+      "rank": 951,
+      "hypothesis": "colors",
+      "best_word": "week",
+      "best_rank": 166,
+      "total_guesses": 73
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:47:21",
+    "details": {
+      "word": "orange",
+      "rank": 2673,
+      "hypothesis": "colors",
+      "best_word": "week",
+      "best_rank": 166,
+      "total_guesses": 74
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:47:22",
+    "details": {
+      "word": "purple",
+      "rank": 2368,
+      "hypothesis": "colors",
+      "best_word": "week",
+      "best_rank": 166,
+      "total_guesses": 75
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:47:23",
+    "details": {
+      "word": "drive",
+      "rank": 2304,
+      "hypothesis": "verbs_movement",
+      "best_word": "week",
+      "best_rank": 166,
+      "total_guesses": 76
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:47:23",
+    "details": {
+      "word": "glide",
+      "rank": 10173,
+      "hypothesis": "verbs_movement",
+      "best_word": "week",
+      "best_rank": 166,
+      "total_guesses": 77
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:47:24",
+    "details": {
+      "word": "classical",
+      "rank": 4005,
+      "hypothesis": "music_genres",
+      "best_word": "week",
+      "best_rank": 166,
+      "total_guesses": 78
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:47:25",
+    "details": {
+      "word": "country",
+      "rank": 1636,
+      "hypothesis": "music_genres",
+      "best_word": "week",
+      "best_rank": 166,
+      "total_guesses": 79
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:47:26",
+    "details": {
+      "word": "electronic",
+      "rank": 2612,
+      "hypothesis": "music_genres",
+      "best_word": "week",
+      "best_rank": 166,
+      "total_guesses": 80
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:47:26",
+    "details": {
+      "word": "golf",
+      "rank": 5721,
+      "hypothesis": "sports",
+      "best_word": "week",
+      "best_rank": 166,
+      "total_guesses": 81
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:47:27",
+    "details": {
+      "word": "baseball",
+      "rank": 4891,
+      "hypothesis": "sports",
+      "best_word": "week",
+      "best_rank": 166,
+      "total_guesses": 82
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:47:28",
+    "details": {
+      "word": "hockey",
+      "rank": 5640,
+      "hypothesis": "sports",
+      "best_word": "week",
+      "best_rank": 166,
+      "total_guesses": 83
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:47:28",
+    "details": {
+      "word": "birch",
+      "rank": 10261,
+      "hypothesis": "trees",
+      "best_word": "week",
+      "best_rank": 166,
+      "total_guesses": 84
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:47:29",
+    "details": {
+      "word": "elm",
+      "rank": 9330,
+      "hypothesis": "trees",
+      "best_word": "week",
+      "best_rank": 166,
+      "total_guesses": 85
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:47:30",
+    "details": {
+      "word": "cedar",
+      "rank": 5152,
+      "hypothesis": "trees",
+      "best_word": "week",
+      "best_rank": 166,
+      "total_guesses": 86
+    }
+  },
+  {
+    "generation": 1,
+    "event": "SELECT",
+    "timestamp": "2026-07-22T18:47:30",
+    "details": {
+      "kept": [
+        "time_units",
+        "natural_elements",
+        "body_parts",
+        "professions",
+        "colors"
+      ],
+      "discarded": [
+        "emotions",
+        "actions",
+        "verbs_movement",
+        "food",
+        "objects",
+        "house_parts",
+        "music_genres",
+        "car_parts",
+        "trees",
+        "sports"
+      ],
+      "elite": "time_units",
+      "max_active_hypotheses": 5,
+      "best_word": "week",
+      "best_rank": 166,
+      "total_guesses": 86
+    }
+  },
+  {
+    "generation": 1,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-22T18:47:54",
+    "details": {
+      "parent_id": "9f2daaa89e1e4a00a549cb5f1b316c65",
+      "child_id": "b6d16885c8e546a6821f76772cf1b6b3",
+      "parent_rank": 166,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "natural cycles",
+      "sampled_op": "ml_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:47:58",
+    "details": {
+      "word": "cycle",
+      "rank": 341,
+      "hypothesis": "natural cycles",
+      "best_word": "week",
+      "best_rank": 166,
+      "total_guesses": 87
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:47:59",
+    "details": {
+      "word": "rotation",
+      "rank": 1933,
+      "hypothesis": "natural cycles",
+      "best_word": "week",
+      "best_rank": 166,
+      "total_guesses": 88
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:47:59",
+    "details": {
+      "word": "season",
+      "rank": 1065,
+      "hypothesis": "natural cycles",
+      "best_word": "week",
+      "best_rank": 166,
+      "total_guesses": 89
+    }
+  },
+  {
+    "generation": 1,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-22T18:48:24",
+    "details": {
+      "parent_id": "4f2702be72614e6a9c560a4fdcf2749c",
+      "child_id": "c8b82592260e42ccbc40c8c0b5d6950e",
+      "parent_rank": 178,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "fluid motion",
+      "sampled_op": "m_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:48:25",
+    "details": {
+      "word": "flow",
+      "rank": 217,
+      "hypothesis": "fluid motion",
+      "best_word": "week",
+      "best_rank": 166,
+      "total_guesses": 90
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:48:26",
+    "details": {
+      "word": "river",
+      "rank": 2976,
+      "hypothesis": "fluid motion",
+      "best_word": "week",
+      "best_rank": 166,
+      "total_guesses": 91
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:48:27",
+    "details": {
+      "word": "stream",
+      "rank": 1587,
+      "hypothesis": "fluid motion",
+      "best_word": "week",
+      "best_rank": 166,
+      "total_guesses": 92
+    }
+  },
+  {
+    "generation": 1,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-22T18:48:32",
+    "details": {
+      "parent_id": "345b90d6a567477e840b08dd46d388ca",
+      "child_id": "a98e8afa2b8643068a90ff1b45bffbca",
+      "parent_rank": 255,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "lower_body_parts",
+      "sampled_op": "s_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:48:36",
+    "details": {
+      "word": "thigh",
+      "rank": 1957,
+      "hypothesis": "lower_body_parts",
+      "best_word": "week",
+      "best_rank": 166,
+      "total_guesses": 93
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:48:37",
+    "details": {
+      "word": "knee",
+      "rank": 1170,
+      "hypothesis": "lower_body_parts",
+      "best_word": "week",
+      "best_rank": 166,
+      "total_guesses": 94
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:48:37",
+    "details": {
+      "word": "calf",
+      "rank": 2703,
+      "hypothesis": "lower_body_parts",
+      "best_word": "week",
+      "best_rank": 166,
+      "total_guesses": 95
+    }
+  },
+  {
+    "generation": 1,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-22T18:48:43",
+    "details": {
+      "parent_id": "ecfdad63fe494336b283c286f44316ed",
+      "child_id": "209ab06b543f45d5a9478340766b6615",
+      "parent_rank": 410,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "medical professionals",
+      "sampled_op": "s_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:48:47",
+    "details": {
+      "word": "physician",
+      "rank": 1489,
+      "hypothesis": "medical professionals",
+      "best_word": "week",
+      "best_rank": 166,
+      "total_guesses": 96
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:48:47",
+    "details": {
+      "word": "surgeon",
+      "rank": 7110,
+      "hypothesis": "medical professionals",
+      "best_word": "week",
+      "best_rank": 166,
+      "total_guesses": 97
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:48:48",
+    "details": {
+      "word": "specialist",
+      "rank": 2786,
+      "hypothesis": "medical professionals",
+      "best_word": "week",
+      "best_rank": 166,
+      "total_guesses": 98
+    }
+  },
+  {
+    "generation": 1,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-22T18:49:07",
+    "details": {
+      "parent_id": "fd22343a6fdd42f785078010a50bbebd",
+      "child_id": "3d11b723b62d41169aea20cae060b0e7",
+      "parent_rank": 436,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "communication signals",
+      "sampled_op": "l_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:49:11",
+    "details": {
+      "word": "signal",
+      "rank": 776,
+      "hypothesis": "communication signals",
+      "best_word": "week",
+      "best_rank": 166,
+      "total_guesses": 99
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:49:12",
+    "details": {
+      "word": "symbol",
+      "rank": 3732,
+      "hypothesis": "communication signals",
+      "best_word": "week",
+      "best_rank": 166,
+      "total_guesses": 100
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:49:12",
+    "details": {
+      "word": "indicator",
+      "rank": 356,
+      "hypothesis": "communication signals",
+      "best_word": "week",
+      "best_rank": 166,
+      "total_guesses": 101
+    }
+  },
+  {
+    "generation": 1,
+    "event": "MUTATE",
+    "timestamp": "2026-07-22T18:49:12",
+    "details": {
+      "method": "self_adaptive",
+      "children": [
+        {
+          "hypothesis_id": "b6d16885c8e546a6821f76772cf1b6b3",
+          "category_name": "natural cycles",
+          "description": "repeating natural phenomena",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "time_units",
+          "parent_id": "9f2daaa89e1e4a00a549cb5f1b316c65",
+          "origin": "self_adaptive_ml_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "c8b82592260e42ccbc40c8c0b5d6950e",
+          "category_name": "fluid motion",
+          "description": "movement and flow of water",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "natural_elements",
+          "parent_id": "4f2702be72614e6a9c560a4fdcf2749c",
+          "origin": "self_adaptive_m_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "a98e8afa2b8643068a90ff1b45bffbca",
+          "category_name": "lower_body_parts",
+          "description": "anatomy of the lower limbs",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "body_parts",
+          "parent_id": "345b90d6a567477e840b08dd46d388ca",
+          "origin": "self_adaptive_s_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "209ab06b543f45d5a9478340766b6615",
+          "category_name": "medical professionals",
+          "description": "specialized healthcare roles",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "professions",
+          "parent_id": "ecfdad63fe494336b283c286f44316ed",
+          "origin": "self_adaptive_s_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "3d11b723b62d41169aea20cae060b0e7",
+          "category_name": "communication signals",
+          "description": "non-verbal communication cues",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "colors",
+          "parent_id": "fd22343a6fdd42f785078010a50bbebd",
+          "origin": "self_adaptive_l_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        }
+      ],
+      "best_word": "week",
+      "best_rank": 166,
+      "total_guesses": 101
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:49:32",
+    "details": {
+      "word": "cycle",
+      "rank": 341,
+      "hypothesis": "natural_time_cycles",
+      "best_word": "week",
+      "best_rank": 166,
+      "total_guesses": 101
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:49:32",
+    "details": {
+      "word": "season",
+      "rank": 1065,
+      "hypothesis": "natural_time_cycles",
+      "best_word": "week",
+      "best_rank": 166,
+      "total_guesses": 101
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:49:36",
+    "details": {
+      "word": "era",
+      "rank": 3774,
+      "hypothesis": "natural_time_cycles",
+      "best_word": "week",
+      "best_rank": 166,
+      "total_guesses": 102
+    }
+  },
+  {
+    "generation": 1,
+    "event": "CROSSOVER",
+    "timestamp": "2026-07-22T18:49:36",
+    "details": {
+      "parents": [
+        "time_units",
+        "natural_elements"
+      ],
+      "parent_ids": [
+        "9f2daaa89e1e4a00a549cb5f1b316c65",
+        "4f2702be72614e6a9c560a4fdcf2749c"
+      ],
+      "parent_ranks": [
+        166,
+        178
+      ],
+      "parent_a_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "parent_b_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma_pre_perturbation": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child": {
+        "hypothesis_id": "92efc35072c34b50a423143572c1fbe6",
+        "category_name": "natural_time_cycles",
+        "description": "terms related to both time and natural elements",
+        "words_tried": {
+          "cycle": 341,
+          "season": 1065,
+          "era": 3774
+        },
+        "best_word": "cycle",
+        "best_rank": 341,
+        "status": "active",
+        "parent": "time_units+natural_elements",
+        "parent_id": null,
+        "origin": "crossover",
+        "sigma": [
+          0.25,
+          0.25,
+          0.25,
+          0.25
+        ]
+      },
+      "best_word": "week",
+      "best_rank": 166,
+      "total_guesses": 102
+    }
+  },
+  {
+    "generation": 1,
+    "event": "DEDUPLICATE",
+    "timestamp": "2026-07-22T18:49:36",
+    "details": {
+      "merged": [
+        {
+          "survivor": "natural cycles",
+          "discarded": "natural_time_cycles",
+          "survivor_best_rank": 341,
+          "discarded_best_rank": 341
+        },
+        {
+          "survivor": "actions",
+          "discarded": "verbs_movement",
+          "survivor_best_rank": 1011,
+          "discarded_best_rank": 1011
+        },
+        {
+          "survivor": "body_parts",
+          "discarded": "lower_body_parts",
+          "survivor_best_rank": 255,
+          "discarded_best_rank": 1170
+        }
+      ],
+      "remaining_hypotheses": 18,
+      "active_hypotheses": 9,
+      "best_word": "week",
+      "best_rank": 166,
+      "total_guesses": 102
+    }
+  },
+  {
+    "generation": 1,
+    "event": "SIGMA_TRAJECTORY",
+    "timestamp": "2026-07-22T18:49:36",
+    "details": {
+      "mean_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "population_size": 9
+    }
+  },
+  {
+    "generation": 2,
+    "event": "CANDIDATES",
+    "timestamp": "2026-07-22T18:51:25",
+    "details": {
+      "count": 27,
+      "candidates": [
+        {
+          "hypothesis": "time_units",
+          "word": "decade"
+        },
+        {
+          "hypothesis": "time_units",
+          "word": "century"
+        },
+        {
+          "hypothesis": "time_units",
+          "word": "millennium"
+        },
+        {
+          "hypothesis": "natural_elements",
+          "word": "wind"
+        },
+        {
+          "hypothesis": "natural_elements",
+          "word": "rain"
+        },
+        {
+          "hypothesis": "natural_elements",
+          "word": "cloud"
+        },
+        {
+          "hypothesis": "fluid motion",
+          "word": "current"
+        },
+        {
+          "hypothesis": "fluid motion",
+          "word": "drift"
+        },
+        {
+          "hypothesis": "fluid motion",
+          "word": "surge"
+        },
+        {
+          "hypothesis": "body_parts",
+          "word": "back"
+        },
+        {
+          "hypothesis": "body_parts",
+          "word": "neck"
+        },
+        {
+          "hypothesis": "body_parts",
+          "word": "stomach"
+        },
+        {
+          "hypothesis": "natural cycles",
+          "word": "orbit"
+        },
+        {
+          "hypothesis": "natural cycles",
+          "word": "tide"
+        },
+        {
+          "hypothesis": "natural cycles",
+          "word": "phase"
+        },
+        {
+          "hypothesis": "communication signals",
+          "word": "gesture"
+        },
+        {
+          "hypothesis": "communication signals",
+          "word": "expression"
+        },
+        {
+          "hypothesis": "communication signals",
+          "word": "posture"
+        },
+        {
+          "hypothesis": "professions",
+          "word": "chef"
+        },
+        {
+          "hypothesis": "professions",
+          "word": "sailor"
+        },
+        {
+          "hypothesis": "professions",
+          "word": "farmer"
+        },
+        {
+          "hypothesis": "colors",
+          "word": "hue"
+        },
+        {
+          "hypothesis": "colors",
+          "word": "shade"
+        },
+        {
+          "hypothesis": "colors",
+          "word": "palette"
+        },
+        {
+          "hypothesis": "medical professionals",
+          "word": "dentist"
+        },
+        {
+          "hypothesis": "medical professionals",
+          "word": "pharmacist"
+        },
+        {
+          "hypothesis": "medical professionals",
+          "word": "therapist"
+        }
+      ]
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:51:26",
+    "details": {
+      "word": "decade",
+      "rank": 1651,
+      "hypothesis": "time_units",
+      "best_word": "week",
+      "best_rank": 166,
+      "total_guesses": 103
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:51:27",
+    "details": {
+      "word": "century",
+      "rank": 2402,
+      "hypothesis": "time_units",
+      "best_word": "week",
+      "best_rank": 166,
+      "total_guesses": 104
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:51:28",
+    "details": {
+      "word": "millennium",
+      "rank": 6554,
+      "hypothesis": "time_units",
+      "best_word": "week",
+      "best_rank": 166,
+      "total_guesses": 105
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:51:28",
+    "details": {
+      "word": "wind",
+      "rank": 592,
+      "hypothesis": "natural_elements",
+      "best_word": "week",
+      "best_rank": 166,
+      "total_guesses": 106
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:51:29",
+    "details": {
+      "word": "rain",
+      "rank": 443,
+      "hypothesis": "natural_elements",
+      "best_word": "week",
+      "best_rank": 166,
+      "total_guesses": 107
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:51:30",
+    "details": {
+      "word": "cloud",
+      "rank": 2244,
+      "hypothesis": "natural_elements",
+      "best_word": "week",
+      "best_rank": 166,
+      "total_guesses": 108
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:51:31",
+    "details": {
+      "word": "current",
+      "rank": 393,
+      "hypothesis": "fluid motion",
+      "best_word": "week",
+      "best_rank": 166,
+      "total_guesses": 109
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:51:31",
+    "details": {
+      "word": "drift",
+      "rank": 2997,
+      "hypothesis": "fluid motion",
+      "best_word": "week",
+      "best_rank": 166,
+      "total_guesses": 110
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:51:32",
+    "details": {
+      "word": "surge",
+      "rank": 1880,
+      "hypothesis": "fluid motion",
+      "best_word": "week",
+      "best_rank": 166,
+      "total_guesses": 111
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:51:33",
+    "details": {
+      "word": "back",
+      "rank": 303,
+      "hypothesis": "body_parts",
+      "best_word": "week",
+      "best_rank": 166,
+      "total_guesses": 112
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:51:33",
+    "details": {
+      "word": "neck",
+      "rank": 304,
+      "hypothesis": "body_parts",
+      "best_word": "week",
+      "best_rank": 166,
+      "total_guesses": 113
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:51:34",
+    "details": {
+      "word": "stomach",
+      "rank": 51,
+      "hypothesis": "body_parts",
+      "best_word": "stomach",
+      "best_rank": 51,
+      "total_guesses": 114
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:51:35",
+    "details": {
+      "word": "orbit",
+      "rank": 7203,
+      "hypothesis": "natural cycles",
+      "best_word": "stomach",
+      "best_rank": 51,
+      "total_guesses": 115
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:51:36",
+    "details": {
+      "word": "tide",
+      "rank": 2558,
+      "hypothesis": "natural cycles",
+      "best_word": "stomach",
+      "best_rank": 51,
+      "total_guesses": 116
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:51:36",
+    "details": {
+      "word": "phase",
+      "rank": 483,
+      "hypothesis": "natural cycles",
+      "best_word": "stomach",
+      "best_rank": 51,
+      "total_guesses": 117
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:51:37",
+    "details": {
+      "word": "gesture",
+      "rank": 13667,
+      "hypothesis": "communication signals",
+      "best_word": "stomach",
+      "best_rank": 51,
+      "total_guesses": 118
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:51:38",
+    "details": {
+      "word": "expression",
+      "rank": 2916,
+      "hypothesis": "communication signals",
+      "best_word": "stomach",
+      "best_rank": 51,
+      "total_guesses": 119
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:51:39",
+    "details": {
+      "word": "posture",
+      "rank": 4509,
+      "hypothesis": "communication signals",
+      "best_word": "stomach",
+      "best_rank": 51,
+      "total_guesses": 120
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:51:39",
+    "details": {
+      "word": "chef",
+      "rank": 13653,
+      "hypothesis": "professions",
+      "best_word": "stomach",
+      "best_rank": 51,
+      "total_guesses": 121
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:51:40",
+    "details": {
+      "word": "sailor",
+      "rank": 11795,
+      "hypothesis": "professions",
+      "best_word": "stomach",
+      "best_rank": 51,
+      "total_guesses": 122
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:51:41",
+    "details": {
+      "word": "farmer",
+      "rank": 6958,
+      "hypothesis": "professions",
+      "best_word": "stomach",
+      "best_rank": 51,
+      "total_guesses": 123
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:51:42",
+    "details": {
+      "word": "hue",
+      "rank": 6813,
+      "hypothesis": "colors",
+      "best_word": "stomach",
+      "best_rank": 51,
+      "total_guesses": 124
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:51:42",
+    "details": {
+      "word": "shade",
+      "rank": 4348,
+      "hypothesis": "colors",
+      "best_word": "stomach",
+      "best_rank": 51,
+      "total_guesses": 125
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:51:43",
+    "details": {
+      "word": "palette",
+      "rank": 11450,
+      "hypothesis": "colors",
+      "best_word": "stomach",
+      "best_rank": 51,
+      "total_guesses": 126
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:51:44",
+    "details": {
+      "word": "dentist",
+      "rank": 7191,
+      "hypothesis": "medical professionals",
+      "best_word": "stomach",
+      "best_rank": 51,
+      "total_guesses": 127
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:51:44",
+    "details": {
+      "word": "pharmacist",
+      "rank": 4499,
+      "hypothesis": "medical professionals",
+      "best_word": "stomach",
+      "best_rank": 51,
+      "total_guesses": 128
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:51:45",
+    "details": {
+      "word": "therapist",
+      "rank": 5390,
+      "hypothesis": "medical professionals",
+      "best_word": "stomach",
+      "best_rank": 51,
+      "total_guesses": 129
+    }
+  },
+  {
+    "generation": 2,
+    "event": "LOCAL_SEARCH_DISABLED",
+    "timestamp": "2026-07-22T18:51:45",
+    "details": {
+      "center_word": "stomach",
+      "center_rank": 51,
+      "threshold": 100,
+      "reason": "self_adaptive_disable_local_search"
+    }
+  },
+  {
+    "generation": 2,
+    "event": "SELECT",
+    "timestamp": "2026-07-22T18:51:45",
+    "details": {
+      "kept": [
+        "body_parts",
+        "time_units",
+        "natural_elements",
+        "fluid motion",
+        "natural cycles"
+      ],
+      "discarded": [
+        "communication signals",
+        "professions",
+        "colors",
+        "emotions",
+        "actions",
+        "food",
+        "objects",
+        "medical professionals",
+        "house_parts",
+        "music_genres",
+        "car_parts",
+        "trees",
+        "sports"
+      ],
+      "elite": "body_parts",
+      "max_active_hypotheses": 5,
+      "best_word": "stomach",
+      "best_rank": 51,
+      "total_guesses": 129
+    }
+  },
+  {
+    "generation": 2,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-22T18:51:58",
+    "details": {
+      "parent_id": "345b90d6a567477e840b08dd46d388ca",
+      "child_id": "038016d79d584e668a988205f1778bdd",
+      "parent_rank": 51,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "digestive processes",
+      "sampled_op": "l_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:51:59",
+    "details": {
+      "word": "digestion",
+      "rank": 812,
+      "hypothesis": "digestive processes",
+      "best_word": "stomach",
+      "best_rank": 51,
+      "total_guesses": 130
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:51:59",
+    "details": {
+      "word": "nutrients",
+      "rank": 1277,
+      "hypothesis": "digestive processes",
+      "best_word": "stomach",
+      "best_rank": 51,
+      "total_guesses": 131
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:52:00",
+    "details": {
+      "word": "hunger",
+      "rank": 560,
+      "hypothesis": "digestive processes",
+      "best_word": "stomach",
+      "best_rank": 51,
+      "total_guesses": 132
+    }
+  },
+  {
+    "generation": 2,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-22T18:52:07",
+    "details": {
+      "parent_id": "9f2daaa89e1e4a00a549cb5f1b316c65",
+      "child_id": "b160a5bcb96048acb3666ab07cbd251e",
+      "parent_rank": 166,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "cycles",
+      "sampled_op": "ml_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:52:08",
+    "details": {
+      "word": "rhythm",
+      "rank": 1189,
+      "hypothesis": "cycles",
+      "best_word": "stomach",
+      "best_rank": 51,
+      "total_guesses": 133
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:52:08",
+    "details": {
+      "word": "pulse",
+      "rank": 315,
+      "hypothesis": "cycles",
+      "best_word": "stomach",
+      "best_rank": 51,
+      "total_guesses": 134
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:52:09",
+    "details": {
+      "word": "wave",
+      "rank": 997,
+      "hypothesis": "cycles",
+      "best_word": "stomach",
+      "best_rank": 51,
+      "total_guesses": 135
+    }
+  },
+  {
+    "generation": 2,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-22T18:52:45",
+    "details": {
+      "parent_id": "4f2702be72614e6a9c560a4fdcf2749c",
+      "child_id": "02f661f58c0a469ab53d7506e48c9b1a",
+      "parent_rank": 178,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "elemental characteristics",
+      "sampled_op": "ml_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:52:49",
+    "details": {
+      "word": "fluid",
+      "rank": 384,
+      "hypothesis": "elemental characteristics",
+      "best_word": "stomach",
+      "best_rank": 51,
+      "total_guesses": 136
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:52:50",
+    "details": {
+      "word": "solid",
+      "rank": 1653,
+      "hypothesis": "elemental characteristics",
+      "best_word": "stomach",
+      "best_rank": 51,
+      "total_guesses": 137
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:52:50",
+    "details": {
+      "word": "vapor",
+      "rank": 1714,
+      "hypothesis": "elemental characteristics",
+      "best_word": "stomach",
+      "best_rank": 51,
+      "total_guesses": 138
+    }
+  },
+  {
+    "generation": 2,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-22T18:53:05",
+    "details": {
+      "parent_id": "c8b82592260e42ccbc40c8c0b5d6950e",
+      "child_id": "ddb57323c1fc47179ed364d4b46e184b",
+      "parent_rank": 217,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "movement descriptors",
+      "sampled_op": "ml_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:53:08",
+    "details": {
+      "word": "sway",
+      "rank": 8521,
+      "hypothesis": "movement descriptors",
+      "best_word": "stomach",
+      "best_rank": 51,
+      "total_guesses": 139
+    }
+  },
+  {
+    "generation": 2,
+    "event": "SKIP_INVALID_GUESS",
+    "timestamp": "2026-07-22T18:53:09",
+    "details": {
+      "word": "slope",
+      "hypothesis": "movement descriptors"
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:53:10",
+    "details": {
+      "word": "ripple",
+      "rank": 5852,
+      "hypothesis": "movement descriptors",
+      "best_word": "stomach",
+      "best_rank": 51,
+      "total_guesses": 140
+    }
+  },
+  {
+    "generation": 2,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-22T18:53:37",
+    "details": {
+      "parent_id": "b6d16885c8e546a6821f76772cf1b6b3",
+      "child_id": "47ffbf3200344781ac960404c9904e45",
+      "parent_rank": 341,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "natural patterns",
+      "sampled_op": "l_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:53:41",
+    "details": {
+      "word": "pattern",
+      "rank": 625,
+      "hypothesis": "natural patterns",
+      "best_word": "stomach",
+      "best_rank": 51,
+      "total_guesses": 141
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:53:41",
+    "details": {
+      "word": "repetition",
+      "rank": 5459,
+      "hypothesis": "natural patterns",
+      "best_word": "stomach",
+      "best_rank": 51,
+      "total_guesses": 142
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:53:42",
+    "details": {
+      "word": "sequence",
+      "rank": 2284,
+      "hypothesis": "natural patterns",
+      "best_word": "stomach",
+      "best_rank": 51,
+      "total_guesses": 143
+    }
+  },
+  {
+    "generation": 2,
+    "event": "MUTATE",
+    "timestamp": "2026-07-22T18:53:42",
+    "details": {
+      "method": "self_adaptive",
+      "children": [
+        {
+          "hypothesis_id": "038016d79d584e668a988205f1778bdd",
+          "category_name": "digestive processes",
+          "description": "functions related to digestion and nutrient absorption",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "body_parts",
+          "parent_id": "345b90d6a567477e840b08dd46d388ca",
+          "origin": "self_adaptive_l_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "b160a5bcb96048acb3666ab07cbd251e",
+          "category_name": "cycles",
+          "description": "recurring patterns or sequences",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "time_units",
+          "parent_id": "9f2daaa89e1e4a00a549cb5f1b316c65",
+          "origin": "self_adaptive_ml_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "02f661f58c0a469ab53d7506e48c9b1a",
+          "category_name": "elemental characteristics",
+          "description": "attributes of natural elements",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "natural_elements",
+          "parent_id": "4f2702be72614e6a9c560a4fdcf2749c",
+          "origin": "self_adaptive_ml_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "ddb57323c1fc47179ed364d4b46e184b",
+          "category_name": "movement descriptors",
+          "description": "terms describing the way things move",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "fluid motion",
+          "parent_id": "c8b82592260e42ccbc40c8c0b5d6950e",
+          "origin": "self_adaptive_ml_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "47ffbf3200344781ac960404c9904e45",
+          "category_name": "natural patterns",
+          "description": "recurring non-cyclical natural forms",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "natural cycles",
+          "parent_id": "b6d16885c8e546a6821f76772cf1b6b3",
+          "origin": "self_adaptive_l_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        }
+      ],
+      "best_word": "stomach",
+      "best_rank": 51,
+      "total_guesses": 143
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:53:58",
+    "details": {
+      "word": "cycle",
+      "rank": 341,
+      "hypothesis": "biological_rhythms",
+      "best_word": "stomach",
+      "best_rank": 51,
+      "total_guesses": 143
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:53:58",
+    "details": {
+      "word": "rhythm",
+      "rank": 1189,
+      "hypothesis": "biological_rhythms",
+      "best_word": "stomach",
+      "best_rank": 51,
+      "total_guesses": 143
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T18:53:58",
+    "details": {
+      "word": "pulse",
+      "rank": 315,
+      "hypothesis": "biological_rhythms",
+      "best_word": "stomach",
+      "best_rank": 51,
+      "total_guesses": 143
+    }
+  },
+  {
+    "generation": 2,
+    "event": "CROSSOVER",
+    "timestamp": "2026-07-22T18:53:58",
+    "details": {
+      "parents": [
+        "body_parts",
+        "time_units"
+      ],
+      "parent_ids": [
+        "345b90d6a567477e840b08dd46d388ca",
+        "9f2daaa89e1e4a00a549cb5f1b316c65"
+      ],
+      "parent_ranks": [
+        51,
+        166
+      ],
+      "parent_a_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "parent_b_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma_pre_perturbation": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child": {
+        "hypothesis_id": "c842756ff76442398947c2587b1c809c",
+        "category_name": "biological_rhythms",
+        "description": "terms related to both body parts and time units",
+        "words_tried": {
+          "pulse": 315,
+          "cycle": 341,
+          "rhythm": 1189
+        },
+        "best_word": "pulse",
+        "best_rank": 315,
+        "status": "active",
+        "parent": "body_parts+time_units",
+        "parent_id": null,
+        "origin": "crossover",
+        "sigma": [
+          0.25,
+          0.25,
+          0.25,
+          0.25
+        ]
+      },
+      "best_word": "stomach",
+      "best_rank": 51,
+      "total_guesses": 143
+    }
+  },
+  {
+    "generation": 2,
+    "event": "DEDUPLICATE",
+    "timestamp": "2026-07-22T18:53:58",
+    "details": {
+      "merged": [
+        {
+          "survivor": "cycles",
+          "discarded": "biological_rhythms",
+          "survivor_best_rank": 315,
+          "discarded_best_rank": 315
+        },
+        {
+          "survivor": "cycles",
+          "discarded": "natural cycles",
+          "survivor_best_rank": 315,
+          "discarded_best_rank": 341
+        }
+      ],
+      "remaining_hypotheses": 22,
+      "active_hypotheses": 9,
+      "best_word": "stomach",
+      "best_rank": 51,
+      "total_guesses": 143
+    }
+  },
+  {
+    "generation": 2,
+    "event": "SIGMA_TRAJECTORY",
+    "timestamp": "2026-07-22T18:53:58",
+    "details": {
+      "mean_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "population_size": 9
+    }
+  },
+  {
+    "generation": 3,
+    "event": "CANDIDATES",
+    "timestamp": "2026-07-22T19:14:23",
+    "details": {
+      "count": 24,
+      "candidates": [
+        {
+          "hypothesis": "body_parts",
+          "word": "shoulder"
+        },
+        {
+          "hypothesis": "body_parts",
+          "word": "wrist"
+        },
+        {
+          "hypothesis": "body_parts",
+          "word": "elbow"
+        },
+        {
+          "hypothesis": "time_units",
+          "word": "age"
+        },
+        {
+          "hypothesis": "time_units",
+          "word": "epoch"
+        },
+        {
+          "hypothesis": "time_units",
+          "word": "span"
+        },
+        {
+          "hypothesis": "natural_elements",
+          "word": "sand"
+        },
+        {
+          "hypothesis": "natural_elements",
+          "word": "mineral"
+        },
+        {
+          "hypothesis": "natural_elements",
+          "word": "oxygen"
+        },
+        {
+          "hypothesis": "fluid motion",
+          "word": "swell"
+        },
+        {
+          "hypothesis": "cycles",
+          "word": "loop"
+        },
+        {
+          "hypothesis": "cycles",
+          "word": "oscillation"
+        },
+        {
+          "hypothesis": "cycles",
+          "word": "cadence"
+        },
+        {
+          "hypothesis": "elemental characteristics",
+          "word": "mass"
+        },
+        {
+          "hypothesis": "elemental characteristics",
+          "word": "density"
+        },
+        {
+          "hypothesis": "elemental characteristics",
+          "word": "texture"
+        },
+        {
+          "hypothesis": "digestive processes",
+          "word": "enzyme"
+        },
+        {
+          "hypothesis": "digestive processes",
+          "word": "liver"
+        },
+        {
+          "hypothesis": "digestive processes",
+          "word": "intestine"
+        },
+        {
+          "hypothesis": "natural patterns",
+          "word": "form"
+        },
+        {
+          "hypothesis": "natural patterns",
+          "word": "structure"
+        },
+        {
+          "hypothesis": "movement descriptors",
+          "word": "vibrate"
+        },
+        {
+          "hypothesis": "movement descriptors",
+          "word": "swing"
+        },
+        {
+          "hypothesis": "movement descriptors",
+          "word": "roll"
+        }
+      ]
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:14:27",
+    "details": {
+      "word": "shoulder",
+      "rank": 1314,
+      "hypothesis": "body_parts",
+      "best_word": "stomach",
+      "best_rank": 51,
+      "total_guesses": 144
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:14:27",
+    "details": {
+      "word": "wrist",
+      "rank": 1429,
+      "hypothesis": "body_parts",
+      "best_word": "stomach",
+      "best_rank": 51,
+      "total_guesses": 145
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:14:28",
+    "details": {
+      "word": "elbow",
+      "rank": 1675,
+      "hypothesis": "body_parts",
+      "best_word": "stomach",
+      "best_rank": 51,
+      "total_guesses": 146
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:14:29",
+    "details": {
+      "word": "age",
+      "rank": 446,
+      "hypothesis": "time_units",
+      "best_word": "stomach",
+      "best_rank": 51,
+      "total_guesses": 147
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:14:30",
+    "details": {
+      "word": "epoch",
+      "rank": 10278,
+      "hypothesis": "time_units",
+      "best_word": "stomach",
+      "best_rank": 51,
+      "total_guesses": 148
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:14:30",
+    "details": {
+      "word": "span",
+      "rank": 1647,
+      "hypothesis": "time_units",
+      "best_word": "stomach",
+      "best_rank": 51,
+      "total_guesses": 149
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:14:31",
+    "details": {
+      "word": "sand",
+      "rank": 3970,
+      "hypothesis": "natural_elements",
+      "best_word": "stomach",
+      "best_rank": 51,
+      "total_guesses": 150
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:14:32",
+    "details": {
+      "word": "mineral",
+      "rank": 2937,
+      "hypothesis": "natural_elements",
+      "best_word": "stomach",
+      "best_rank": 51,
+      "total_guesses": 151
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:14:33",
+    "details": {
+      "word": "oxygen",
+      "rank": 376,
+      "hypothesis": "natural_elements",
+      "best_word": "stomach",
+      "best_rank": 51,
+      "total_guesses": 152
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:14:33",
+    "details": {
+      "word": "swell",
+      "rank": 108,
+      "hypothesis": "fluid motion",
+      "best_word": "stomach",
+      "best_rank": 51,
+      "total_guesses": 153
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:14:34",
+    "details": {
+      "word": "loop",
+      "rank": 3638,
+      "hypothesis": "cycles",
+      "best_word": "stomach",
+      "best_rank": 51,
+      "total_guesses": 154
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:14:35",
+    "details": {
+      "word": "oscillation",
+      "rank": 1752,
+      "hypothesis": "cycles",
+      "best_word": "stomach",
+      "best_rank": 51,
+      "total_guesses": 155
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:14:36",
+    "details": {
+      "word": "cadence",
+      "rank": 7494,
+      "hypothesis": "cycles",
+      "best_word": "stomach",
+      "best_rank": 51,
+      "total_guesses": 156
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:14:36",
+    "details": {
+      "word": "mass",
+      "rank": 1255,
+      "hypothesis": "elemental characteristics",
+      "best_word": "stomach",
+      "best_rank": 51,
+      "total_guesses": 157
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:14:37",
+    "details": {
+      "word": "density",
+      "rank": 944,
+      "hypothesis": "elemental characteristics",
+      "best_word": "stomach",
+      "best_rank": 51,
+      "total_guesses": 158
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:14:38",
+    "details": {
+      "word": "texture",
+      "rank": 3091,
+      "hypothesis": "elemental characteristics",
+      "best_word": "stomach",
+      "best_rank": 51,
+      "total_guesses": 159
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:14:38",
+    "details": {
+      "word": "enzyme",
+      "rank": 2179,
+      "hypothesis": "digestive processes",
+      "best_word": "stomach",
+      "best_rank": 51,
+      "total_guesses": 160
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:14:39",
+    "details": {
+      "word": "liver",
+      "rank": 143,
+      "hypothesis": "digestive processes",
+      "best_word": "stomach",
+      "best_rank": 51,
+      "total_guesses": 161
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:14:40",
+    "details": {
+      "word": "intestine",
+      "rank": 3048,
+      "hypothesis": "digestive processes",
+      "best_word": "stomach",
+      "best_rank": 51,
+      "total_guesses": 162
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:14:41",
+    "details": {
+      "word": "form",
+      "rank": 677,
+      "hypothesis": "natural patterns",
+      "best_word": "stomach",
+      "best_rank": 51,
+      "total_guesses": 163
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:14:41",
+    "details": {
+      "word": "structure",
+      "rank": 1202,
+      "hypothesis": "natural patterns",
+      "best_word": "stomach",
+      "best_rank": 51,
+      "total_guesses": 164
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:14:42",
+    "details": {
+      "word": "vibrate",
+      "rank": 6523,
+      "hypothesis": "movement descriptors",
+      "best_word": "stomach",
+      "best_rank": 51,
+      "total_guesses": 165
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:14:43",
+    "details": {
+      "word": "swing",
+      "rank": 826,
+      "hypothesis": "movement descriptors",
+      "best_word": "stomach",
+      "best_rank": 51,
+      "total_guesses": 166
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:14:44",
+    "details": {
+      "word": "roll",
+      "rank": 1508,
+      "hypothesis": "movement descriptors",
+      "best_word": "stomach",
+      "best_rank": 51,
+      "total_guesses": 167
+    }
+  },
+  {
+    "generation": 3,
+    "event": "SELECT",
+    "timestamp": "2026-07-22T19:14:44",
+    "details": {
+      "kept": [
+        "body_parts",
+        "fluid motion",
+        "digestive processes",
+        "time_units",
+        "natural_elements"
+      ],
+      "discarded": [
+        "cycles",
+        "communication signals",
+        "elemental characteristics",
+        "professions",
+        "colors",
+        "natural patterns",
+        "emotions",
+        "movement descriptors",
+        "actions",
+        "food",
+        "objects",
+        "medical professionals",
+        "house_parts",
+        "music_genres",
+        "car_parts",
+        "trees",
+        "sports"
+      ],
+      "elite": "body_parts",
+      "max_active_hypotheses": 5,
+      "best_word": "stomach",
+      "best_rank": 51,
+      "total_guesses": 167
+    }
+  },
+  {
+    "generation": 3,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-22T19:15:06",
+    "details": {
+      "parent_id": "345b90d6a567477e840b08dd46d388ca",
+      "child_id": "f7f688c7988b4205954b44a5f876eb89",
+      "parent_rank": 51,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "sensations",
+      "sampled_op": "l_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:15:10",
+    "details": {
+      "word": "pain",
+      "rank": 5,
+      "hypothesis": "sensations",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 168
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:15:10",
+    "details": {
+      "word": "fullness",
+      "rank": 4028,
+      "hypothesis": "sensations",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 169
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:15:11",
+    "details": {
+      "word": "pleasure",
+      "rank": 1505,
+      "hypothesis": "sensations",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 170
+    }
+  },
+  {
+    "generation": 3,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-22T19:15:27",
+    "details": {
+      "parent_id": "c8b82592260e42ccbc40c8c0b5d6950e",
+      "child_id": "ae7b77cf4cbb4e5e854c81481fa248ba",
+      "parent_rank": 108,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "water bulges",
+      "sampled_op": "s_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:15:31",
+    "details": {
+      "word": "bulge",
+      "rank": 5391,
+      "hypothesis": "water bulges",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 171
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:15:31",
+    "details": {
+      "word": "heave",
+      "rank": 9395,
+      "hypothesis": "water bulges",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 172
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:15:32",
+    "details": {
+      "word": "billow",
+      "rank": 20509,
+      "hypothesis": "water bulges",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 173
+    }
+  },
+  {
+    "generation": 3,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-22T19:16:11",
+    "details": {
+      "parent_id": "038016d79d584e668a988205f1778bdd",
+      "child_id": "fa3a0f85e1994242879f540c0a4ff801",
+      "parent_rank": 143,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "chemical synthesis",
+      "sampled_op": "l_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:16:15",
+    "details": {
+      "word": "synthesis",
+      "rank": 3125,
+      "hypothesis": "chemical synthesis",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 174
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:16:15",
+    "details": {
+      "word": "chemical",
+      "rank": 783,
+      "hypothesis": "chemical synthesis",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 175
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:16:16",
+    "details": {
+      "word": "reaction",
+      "rank": 62,
+      "hypothesis": "chemical synthesis",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 176
+    }
+  },
+  {
+    "generation": 3,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-22T19:16:31",
+    "details": {
+      "parent_id": "9f2daaa89e1e4a00a549cb5f1b316c65",
+      "child_id": "9410f35511a747a7bc3a228e645d292e",
+      "parent_rank": 166,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "time_intervals",
+      "sampled_op": "s_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:16:34",
+    "details": {
+      "word": "term",
+      "rank": 488,
+      "hypothesis": "time_intervals",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 177
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:16:35",
+    "details": {
+      "word": "duration",
+      "rank": 310,
+      "hypothesis": "time_intervals",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 178
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:16:36",
+    "details": {
+      "word": "interval",
+      "rank": 716,
+      "hypothesis": "time_intervals",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 179
+    }
+  },
+  {
+    "generation": 3,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-22T19:16:56",
+    "details": {
+      "parent_id": "4f2702be72614e6a9c560a4fdcf2749c",
+      "child_id": "d9811fd0f6c048ab9b0e6fe106c36e00",
+      "parent_rank": 178,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "weather phenomena",
+      "sampled_op": "ml_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:17:00",
+    "details": {
+      "word": "storm",
+      "rank": 1252,
+      "hypothesis": "weather phenomena",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 180
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:17:01",
+    "details": {
+      "word": "hail",
+      "rank": 9787,
+      "hypothesis": "weather phenomena",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 181
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:17:02",
+    "details": {
+      "word": "ice",
+      "rank": 1052,
+      "hypothesis": "weather phenomena",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 182
+    }
+  },
+  {
+    "generation": 3,
+    "event": "MUTATE",
+    "timestamp": "2026-07-22T19:17:02",
+    "details": {
+      "method": "self_adaptive",
+      "children": [
+        {
+          "hypothesis_id": "f7f688c7988b4205954b44a5f876eb89",
+          "category_name": "sensations",
+          "description": "human physical experiences",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "body_parts",
+          "parent_id": "345b90d6a567477e840b08dd46d388ca",
+          "origin": "self_adaptive_l_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "ae7b77cf4cbb4e5e854c81481fa248ba",
+          "category_name": "water bulges",
+          "description": "rising and falling of water",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "fluid motion",
+          "parent_id": "c8b82592260e42ccbc40c8c0b5d6950e",
+          "origin": "self_adaptive_s_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "fa3a0f85e1994242879f540c0a4ff801",
+          "category_name": "chemical synthesis",
+          "description": "processes related to chemical reactions and molecular formation",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "digestive processes",
+          "parent_id": "038016d79d584e668a988205f1778bdd",
+          "origin": "self_adaptive_l_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "9410f35511a747a7bc3a228e645d292e",
+          "category_name": "time_intervals",
+          "description": "recurring time periods",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "time_units",
+          "parent_id": "9f2daaa89e1e4a00a549cb5f1b316c65",
+          "origin": "self_adaptive_s_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "d9811fd0f6c048ab9b0e6fe106c36e00",
+          "category_name": "weather phenomena",
+          "description": "weather-related events",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "natural_elements",
+          "parent_id": "4f2702be72614e6a9c560a4fdcf2749c",
+          "origin": "self_adaptive_ml_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        }
+      ],
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 182
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:17:09",
+    "details": {
+      "word": "ache",
+      "rank": 61,
+      "hypothesis": "body_sensations",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 183
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:17:09",
+    "details": {
+      "word": "throb",
+      "rank": 2240,
+      "hypothesis": "body_sensations",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 184
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:17:10",
+    "details": {
+      "word": "tingle",
+      "rank": 233,
+      "hypothesis": "body_sensations",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 185
+    }
+  },
+  {
+    "generation": 3,
+    "event": "CROSSOVER",
+    "timestamp": "2026-07-22T19:17:10",
+    "details": {
+      "parents": [
+        "sensations",
+        "body_parts"
+      ],
+      "parent_ids": [
+        "f7f688c7988b4205954b44a5f876eb89",
+        "345b90d6a567477e840b08dd46d388ca"
+      ],
+      "parent_ranks": [
+        5,
+        51
+      ],
+      "parent_a_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "parent_b_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma_pre_perturbation": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child": {
+        "hypothesis_id": "f47ba73549db40ef9bd136c1d7123a62",
+        "category_name": "body_sensations",
+        "description": "sensations experienced in specific body parts",
+        "words_tried": {
+          "ache": 61,
+          "tingle": 233,
+          "throb": 2240
+        },
+        "best_word": "ache",
+        "best_rank": 61,
+        "status": "active",
+        "parent": "sensations+body_parts",
+        "parent_id": null,
+        "origin": "crossover",
+        "sigma": [
+          0.25,
+          0.25,
+          0.25,
+          0.25
+        ]
+      },
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 185
+    }
+  },
+  {
+    "generation": 3,
+    "event": "DEDUPLICATE",
+    "timestamp": "2026-07-22T19:17:10",
+    "details": {
+      "merged": [
+        {
+          "survivor": "sensations",
+          "discarded": "body_sensations",
+          "survivor_best_rank": 5,
+          "discarded_best_rank": 61
+        }
+      ],
+      "remaining_hypotheses": 27,
+      "active_hypotheses": 10,
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 185
+    }
+  },
+  {
+    "generation": 3,
+    "event": "SIGMA_TRAJECTORY",
+    "timestamp": "2026-07-22T19:17:10",
+    "details": {
+      "mean_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "population_size": 10
+    }
+  },
+  {
+    "generation": 4,
+    "event": "CANDIDATES",
+    "timestamp": "2026-07-22T19:19:27",
+    "details": {
+      "count": 26,
+      "candidates": [
+        {
+          "hypothesis": "sensations",
+          "word": "burn"
+        },
+        {
+          "hypothesis": "sensations",
+          "word": "itch"
+        },
+        {
+          "hypothesis": "sensations",
+          "word": "numb"
+        },
+        {
+          "hypothesis": "body_parts",
+          "word": "hip"
+        },
+        {
+          "hypothesis": "body_parts",
+          "word": "ankle"
+        },
+        {
+          "hypothesis": "body_parts",
+          "word": "spine"
+        },
+        {
+          "hypothesis": "chemical synthesis",
+          "word": "compound"
+        },
+        {
+          "hypothesis": "chemical synthesis",
+          "word": "molecule"
+        },
+        {
+          "hypothesis": "chemical synthesis",
+          "word": "catalyst"
+        },
+        {
+          "hypothesis": "fluid motion",
+          "word": "ebb"
+        },
+        {
+          "hypothesis": "fluid motion",
+          "word": "rush"
+        },
+        {
+          "hypothesis": "fluid motion",
+          "word": "gush"
+        },
+        {
+          "hypothesis": "digestive processes",
+          "word": "absorb"
+        },
+        {
+          "hypothesis": "digestive processes",
+          "word": "bile"
+        },
+        {
+          "hypothesis": "digestive processes",
+          "word": "saliva"
+        },
+        {
+          "hypothesis": "time_units",
+          "word": "moment"
+        },
+        {
+          "hypothesis": "time_units",
+          "word": "instant"
+        },
+        {
+          "hypothesis": "time_units",
+          "word": "period"
+        },
+        {
+          "hypothesis": "natural_elements",
+          "word": "tree"
+        },
+        {
+          "hypothesis": "natural_elements",
+          "word": "grass"
+        },
+        {
+          "hypothesis": "time_intervals",
+          "word": "round"
+        },
+        {
+          "hypothesis": "time_intervals",
+          "word": "beat"
+        },
+        {
+          "hypothesis": "weather phenomena",
+          "word": "fog"
+        },
+        {
+          "hypothesis": "weather phenomena",
+          "word": "thunder"
+        },
+        {
+          "hypothesis": "weather phenomena",
+          "word": "gale"
+        },
+        {
+          "hypothesis": "water bulges",
+          "word": "lap"
+        }
+      ]
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:19:31",
+    "details": {
+      "word": "burn",
+      "rank": 509,
+      "hypothesis": "sensations",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 186
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:19:32",
+    "details": {
+      "word": "itch",
+      "rank": 33,
+      "hypothesis": "sensations",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 187
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:19:32",
+    "details": {
+      "word": "numb",
+      "rank": 2098,
+      "hypothesis": "sensations",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 188
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:19:33",
+    "details": {
+      "word": "hip",
+      "rank": 1302,
+      "hypothesis": "body_parts",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 189
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:19:34",
+    "details": {
+      "word": "ankle",
+      "rank": 1703,
+      "hypothesis": "body_parts",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 190
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:19:35",
+    "details": {
+      "word": "spine",
+      "rank": 2473,
+      "hypothesis": "body_parts",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 191
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:19:35",
+    "details": {
+      "word": "compound",
+      "rank": 2117,
+      "hypothesis": "chemical synthesis",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 192
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:19:36",
+    "details": {
+      "word": "molecule",
+      "rank": 4886,
+      "hypothesis": "chemical synthesis",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 193
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:19:37",
+    "details": {
+      "word": "catalyst",
+      "rank": 5216,
+      "hypothesis": "chemical synthesis",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 194
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:19:38",
+    "details": {
+      "word": "ebb",
+      "rank": 6176,
+      "hypothesis": "fluid motion",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 195
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:19:38",
+    "details": {
+      "word": "rush",
+      "rank": 2740,
+      "hypothesis": "fluid motion",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 196
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:19:39",
+    "details": {
+      "word": "gush",
+      "rank": 14397,
+      "hypothesis": "fluid motion",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 197
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:19:40",
+    "details": {
+      "word": "absorb",
+      "rank": 3506,
+      "hypothesis": "digestive processes",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 198
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:19:41",
+    "details": {
+      "word": "bile",
+      "rank": 4176,
+      "hypothesis": "digestive processes",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 199
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:19:41",
+    "details": {
+      "word": "saliva",
+      "rank": 1026,
+      "hypothesis": "digestive processes",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 200
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:19:42",
+    "details": {
+      "word": "moment",
+      "rank": 521,
+      "hypothesis": "time_units",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 201
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:19:43",
+    "details": {
+      "word": "instant",
+      "rank": 1034,
+      "hypothesis": "time_units",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 202
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:19:43",
+    "details": {
+      "word": "period",
+      "rank": 135,
+      "hypothesis": "time_units",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 203
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:19:44",
+    "details": {
+      "word": "tree",
+      "rank": 2941,
+      "hypothesis": "natural_elements",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 204
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:19:45",
+    "details": {
+      "word": "grass",
+      "rank": 4397,
+      "hypothesis": "natural_elements",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 205
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:19:46",
+    "details": {
+      "word": "round",
+      "rank": 1966,
+      "hypothesis": "time_intervals",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 206
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:19:46",
+    "details": {
+      "word": "beat",
+      "rank": 1582,
+      "hypothesis": "time_intervals",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 207
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:19:47",
+    "details": {
+      "word": "fog",
+      "rank": 815,
+      "hypothesis": "weather phenomena",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 208
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:19:48",
+    "details": {
+      "word": "thunder",
+      "rank": 3862,
+      "hypothesis": "weather phenomena",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 209
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:19:49",
+    "details": {
+      "word": "gale",
+      "rank": 8482,
+      "hypothesis": "weather phenomena",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 210
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:19:49",
+    "details": {
+      "word": "lap",
+      "rank": 3401,
+      "hypothesis": "water bulges",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 211
+    }
+  },
+  {
+    "generation": 4,
+    "event": "SELECT",
+    "timestamp": "2026-07-22T19:19:49",
+    "details": {
+      "kept": [
+        "sensations",
+        "body_parts",
+        "chemical synthesis",
+        "fluid motion",
+        "time_units"
+      ],
+      "discarded": [
+        "digestive processes",
+        "natural_elements",
+        "time_intervals",
+        "cycles",
+        "communication signals",
+        "elemental characteristics",
+        "professions",
+        "colors",
+        "natural patterns",
+        "weather phenomena",
+        "emotions",
+        "movement descriptors",
+        "actions",
+        "food",
+        "objects",
+        "medical professionals",
+        "house_parts",
+        "music_genres",
+        "car_parts",
+        "water bulges",
+        "trees",
+        "sports"
+      ],
+      "elite": "sensations",
+      "max_active_hypotheses": 5,
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 211
+    }
+  },
+  {
+    "generation": 4,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-22T19:19:57",
+    "details": {
+      "parent_id": "f7f688c7988b4205954b44a5f876eb89",
+      "child_id": "8133875a738742669f8cb94d0f09eb07",
+      "parent_rank": 5,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "discomfort",
+      "sampled_op": "s_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:19:59",
+    "details": {
+      "word": "discomfort",
+      "rank": 19,
+      "hypothesis": "discomfort",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 212
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:20:00",
+    "details": {
+      "word": "soreness",
+      "rank": 199,
+      "hypothesis": "discomfort",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 213
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:20:01",
+    "details": {
+      "word": "agony",
+      "rank": 2728,
+      "hypothesis": "discomfort",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 214
+    }
+  },
+  {
+    "generation": 4,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-22T19:20:43",
+    "details": {
+      "parent_id": "345b90d6a567477e840b08dd46d388ca",
+      "child_id": "878360280ad942b38ad5e3b7804729e7",
+      "parent_rank": 51,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "biological interactions",
+      "sampled_op": "l_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:20:46",
+    "details": {
+      "word": "interaction",
+      "rank": 1763,
+      "hypothesis": "biological interactions",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 215
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:20:47",
+    "details": {
+      "word": "process",
+      "rank": 1056,
+      "hypothesis": "biological interactions",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 216
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:20:48",
+    "details": {
+      "word": "function",
+      "rank": 493,
+      "hypothesis": "biological interactions",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 217
+    }
+  },
+  {
+    "generation": 4,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-22T19:21:10",
+    "details": {
+      "parent_id": "fa3a0f85e1994242879f540c0a4ff801",
+      "child_id": "404d9e59db634d44a67d9882fcc7152e",
+      "parent_rank": 62,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "biological processes",
+      "sampled_op": "ml_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:21:11",
+    "details": {
+      "word": "cell",
+      "rank": 976,
+      "hypothesis": "biological processes",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 218
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:21:12",
+    "details": {
+      "word": "organism",
+      "rank": 1997,
+      "hypothesis": "biological processes",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 219
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:21:12",
+    "details": {
+      "word": "protein",
+      "rank": 1806,
+      "hypothesis": "biological processes",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 220
+    }
+  },
+  {
+    "generation": 4,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-22T19:21:36",
+    "details": {
+      "parent_id": "c8b82592260e42ccbc40c8c0b5d6950e",
+      "child_id": "37f6e318483d4df68b6c4994ab1f7b2e",
+      "parent_rank": 108,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "expansion phenomena",
+      "sampled_op": "m_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:21:37",
+    "details": {
+      "word": "growth",
+      "rank": 792,
+      "hypothesis": "expansion phenomena",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 221
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:21:38",
+    "details": {
+      "word": "rise",
+      "rank": 289,
+      "hypothesis": "expansion phenomena",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 222
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:21:39",
+    "details": {
+      "word": "expansion",
+      "rank": 2159,
+      "hypothesis": "expansion phenomena",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 223
+    }
+  },
+  {
+    "generation": 4,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-22T19:22:14",
+    "details": {
+      "parent_id": "9f2daaa89e1e4a00a549cb5f1b316c65",
+      "child_id": "24af2decab684899883514f126536c46",
+      "parent_rank": 135,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "periodic_table_terms",
+      "sampled_op": "m_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:22:15",
+    "details": {
+      "word": "element",
+      "rank": 1244,
+      "hypothesis": "periodic_table_terms",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 224
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:22:16",
+    "details": {
+      "word": "group",
+      "rank": 2392,
+      "hypothesis": "periodic_table_terms",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 225
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:22:17",
+    "details": {
+      "word": "atom",
+      "rank": 10682,
+      "hypothesis": "periodic_table_terms",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 226
+    }
+  },
+  {
+    "generation": 4,
+    "event": "MUTATE",
+    "timestamp": "2026-07-22T19:22:17",
+    "details": {
+      "method": "self_adaptive",
+      "children": [
+        {
+          "hypothesis_id": "8133875a738742669f8cb94d0f09eb07",
+          "category_name": "discomfort",
+          "description": "physical unease or hurt",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "sensations",
+          "parent_id": "f7f688c7988b4205954b44a5f876eb89",
+          "origin": "self_adaptive_s_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "878360280ad942b38ad5e3b7804729e7",
+          "category_name": "biological interactions",
+          "description": "interactions between biological components",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "body_parts",
+          "parent_id": "345b90d6a567477e840b08dd46d388ca",
+          "origin": "self_adaptive_l_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "404d9e59db634d44a67d9882fcc7152e",
+          "category_name": "biological processes",
+          "description": "functions and activities within living organisms",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "chemical synthesis",
+          "parent_id": "fa3a0f85e1994242879f540c0a4ff801",
+          "origin": "self_adaptive_ml_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "37f6e318483d4df68b6c4994ab1f7b2e",
+          "category_name": "expansion phenomena",
+          "description": "growth and increase in size or intensity",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "fluid motion",
+          "parent_id": "c8b82592260e42ccbc40c8c0b5d6950e",
+          "origin": "self_adaptive_m_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "24af2decab684899883514f126536c46",
+          "category_name": "periodic_table_terms",
+          "description": "terms related to the periodic table in chemistry",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "time_units",
+          "parent_id": "9f2daaa89e1e4a00a549cb5f1b316c65",
+          "origin": "self_adaptive_m_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        }
+      ],
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 226
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:22:26",
+    "details": {
+      "word": "ache",
+      "rank": 61,
+      "hypothesis": "uncomfortable_sensations",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 226
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:22:26",
+    "details": {
+      "word": "pain",
+      "rank": 5,
+      "hypothesis": "uncomfortable_sensations",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 226
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:22:26",
+    "details": {
+      "word": "burn",
+      "rank": 509,
+      "hypothesis": "uncomfortable_sensations",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 226
+    }
+  },
+  {
+    "generation": 4,
+    "event": "CROSSOVER",
+    "timestamp": "2026-07-22T19:22:26",
+    "details": {
+      "parents": [
+        "sensations",
+        "discomfort"
+      ],
+      "parent_ids": [
+        "f7f688c7988b4205954b44a5f876eb89",
+        "8133875a738742669f8cb94d0f09eb07"
+      ],
+      "parent_ranks": [
+        5,
+        19
+      ],
+      "parent_a_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "parent_b_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma_pre_perturbation": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child": {
+        "hypothesis_id": "11b5710f2bf54b559e0fd7ec18c535c3",
+        "category_name": "uncomfortable_sensations",
+        "description": "sensations that cause physical discomfort",
+        "words_tried": {
+          "pain": 5,
+          "ache": 61,
+          "burn": 509
+        },
+        "best_word": "pain",
+        "best_rank": 5,
+        "status": "active",
+        "parent": "sensations+discomfort",
+        "parent_id": null,
+        "origin": "crossover",
+        "sigma": [
+          0.25,
+          0.25,
+          0.25,
+          0.25
+        ]
+      },
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 226
+    }
+  },
+  {
+    "generation": 4,
+    "event": "DEDUPLICATE",
+    "timestamp": "2026-07-22T19:22:26",
+    "details": {
+      "merged": [
+        {
+          "survivor": "sensations",
+          "discarded": "uncomfortable_sensations",
+          "survivor_best_rank": 5,
+          "discarded_best_rank": 5
+        },
+        {
+          "survivor": "biological interactions",
+          "discarded": "actions",
+          "survivor_best_rank": 493,
+          "discarded_best_rank": 1011
+        }
+      ],
+      "remaining_hypotheses": 31,
+      "active_hypotheses": 10,
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 226
+    }
+  },
+  {
+    "generation": 4,
+    "event": "SIGMA_TRAJECTORY",
+    "timestamp": "2026-07-22T19:22:26",
+    "details": {
+      "mean_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "population_size": 10
+    }
+  },
+  {
+    "generation": 5,
+    "event": "CANDIDATES",
+    "timestamp": "2026-07-22T19:25:54",
+    "details": {
+      "count": 27,
+      "candidates": [
+        {
+          "hypothesis": "sensations",
+          "word": "smart"
+        },
+        {
+          "hypothesis": "sensations",
+          "word": "prick"
+        },
+        {
+          "hypothesis": "discomfort",
+          "word": "malaise"
+        },
+        {
+          "hypothesis": "discomfort",
+          "word": "irritation"
+        },
+        {
+          "hypothesis": "discomfort",
+          "word": "distress"
+        },
+        {
+          "hypothesis": "body_parts",
+          "word": "chest"
+        },
+        {
+          "hypothesis": "body_parts",
+          "word": "kidney"
+        },
+        {
+          "hypothesis": "body_parts",
+          "word": "heart"
+        },
+        {
+          "hypothesis": "chemical synthesis",
+          "word": "combine"
+        },
+        {
+          "hypothesis": "chemical synthesis",
+          "word": "manufacture"
+        },
+        {
+          "hypothesis": "chemical synthesis",
+          "word": "generate"
+        },
+        {
+          "hypothesis": "fluid motion",
+          "word": "trickle"
+        },
+        {
+          "hypothesis": "time_units",
+          "word": "second"
+        },
+        {
+          "hypothesis": "time_units",
+          "word": "tick"
+        },
+        {
+          "hypothesis": "time_units",
+          "word": "now"
+        },
+        {
+          "hypothesis": "expansion phenomena",
+          "word": "escalate"
+        },
+        {
+          "hypothesis": "expansion phenomena",
+          "word": "intensify"
+        },
+        {
+          "hypothesis": "expansion phenomena",
+          "word": "develop"
+        },
+        {
+          "hypothesis": "biological interactions",
+          "word": "synergy"
+        },
+        {
+          "hypothesis": "biological interactions",
+          "word": "communication"
+        },
+        {
+          "hypothesis": "biological interactions",
+          "word": "network"
+        },
+        {
+          "hypothesis": "biological processes",
+          "word": "metabolism"
+        },
+        {
+          "hypothesis": "biological processes",
+          "word": "respiration"
+        },
+        {
+          "hypothesis": "biological processes",
+          "word": "development"
+        },
+        {
+          "hypothesis": "periodic_table_terms",
+          "word": "metal"
+        },
+        {
+          "hypothesis": "periodic_table_terms",
+          "word": "isotope"
+        },
+        {
+          "hypothesis": "periodic_table_terms",
+          "word": "valence"
+        }
+      ]
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:25:55",
+    "details": {
+      "word": "smart",
+      "rank": 7753,
+      "hypothesis": "sensations",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 227
+    }
+  },
+  {
+    "generation": 5,
+    "event": "SKIP_INVALID_GUESS",
+    "timestamp": "2026-07-22T19:25:56",
+    "details": {
+      "word": "prick",
+      "hypothesis": "sensations"
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:25:57",
+    "details": {
+      "word": "malaise",
+      "rank": 250,
+      "hypothesis": "discomfort",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 228
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:25:57",
+    "details": {
+      "word": "irritation",
+      "rank": 58,
+      "hypothesis": "discomfort",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 229
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:25:58",
+    "details": {
+      "word": "distress",
+      "rank": 737,
+      "hypothesis": "discomfort",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 230
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:25:59",
+    "details": {
+      "word": "chest",
+      "rank": 71,
+      "hypothesis": "body_parts",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 231
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:26:00",
+    "details": {
+      "word": "kidney",
+      "rank": 207,
+      "hypothesis": "body_parts",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 232
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:26:00",
+    "details": {
+      "word": "heart",
+      "rank": 253,
+      "hypothesis": "body_parts",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 233
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:26:01",
+    "details": {
+      "word": "combine",
+      "rank": 468,
+      "hypothesis": "chemical synthesis",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 234
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:26:02",
+    "details": {
+      "word": "manufacture",
+      "rank": 2468,
+      "hypothesis": "chemical synthesis",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 235
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:26:03",
+    "details": {
+      "word": "generate",
+      "rank": 1872,
+      "hypothesis": "chemical synthesis",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 236
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:26:03",
+    "details": {
+      "word": "trickle",
+      "rank": 8752,
+      "hypothesis": "fluid motion",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 237
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:26:04",
+    "details": {
+      "word": "second",
+      "rank": 617,
+      "hypothesis": "time_units",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 238
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:26:05",
+    "details": {
+      "word": "tick",
+      "rank": 616,
+      "hypothesis": "time_units",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 239
+    }
+  },
+  {
+    "generation": 5,
+    "event": "SKIP_INVALID_GUESS",
+    "timestamp": "2026-07-22T19:26:05",
+    "details": {
+      "word": "now",
+      "hypothesis": "time_units"
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:26:06",
+    "details": {
+      "word": "escalate",
+      "rank": 5812,
+      "hypothesis": "expansion phenomena",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 240
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:26:07",
+    "details": {
+      "word": "intensify",
+      "rank": 3195,
+      "hypothesis": "expansion phenomena",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 241
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:26:08",
+    "details": {
+      "word": "develop",
+      "rank": 292,
+      "hypothesis": "expansion phenomena",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 242
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:26:08",
+    "details": {
+      "word": "synergy",
+      "rank": 9892,
+      "hypothesis": "biological interactions",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 243
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:26:09",
+    "details": {
+      "word": "communication",
+      "rank": 2723,
+      "hypothesis": "biological interactions",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 244
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:26:10",
+    "details": {
+      "word": "network",
+      "rank": 2447,
+      "hypothesis": "biological interactions",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 245
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:26:11",
+    "details": {
+      "word": "metabolism",
+      "rank": 749,
+      "hypothesis": "biological processes",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 246
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:26:11",
+    "details": {
+      "word": "respiration",
+      "rank": 849,
+      "hypothesis": "biological processes",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 247
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:26:12",
+    "details": {
+      "word": "development",
+      "rank": 1686,
+      "hypothesis": "biological processes",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 248
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:26:13",
+    "details": {
+      "word": "metal",
+      "rank": 1695,
+      "hypothesis": "periodic_table_terms",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 249
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:26:14",
+    "details": {
+      "word": "isotope",
+      "rank": 13290,
+      "hypothesis": "periodic_table_terms",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 250
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:26:14",
+    "details": {
+      "word": "valence",
+      "rank": 25016,
+      "hypothesis": "periodic_table_terms",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 251
+    }
+  },
+  {
+    "generation": 5,
+    "event": "SELECT",
+    "timestamp": "2026-07-22T19:26:14",
+    "details": {
+      "kept": [
+        "sensations",
+        "discomfort",
+        "body_parts",
+        "chemical synthesis",
+        "fluid motion"
+      ],
+      "discarded": [
+        "time_units",
+        "digestive processes",
+        "natural_elements",
+        "expansion phenomena",
+        "time_intervals",
+        "cycles",
+        "communication signals",
+        "elemental characteristics",
+        "professions",
+        "colors",
+        "biological interactions",
+        "natural patterns",
+        "biological processes",
+        "weather phenomena",
+        "emotions",
+        "movement descriptors",
+        "food",
+        "periodic_table_terms",
+        "objects",
+        "medical professionals",
+        "house_parts",
+        "music_genres",
+        "car_parts",
+        "water bulges",
+        "trees",
+        "sports"
+      ],
+      "elite": "sensations",
+      "max_active_hypotheses": 5,
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 251
+    }
+  },
+  {
+    "generation": 5,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-22T19:26:30",
+    "details": {
+      "parent_id": "f7f688c7988b4205954b44a5f876eb89",
+      "child_id": "84f88853a21343e0ac0e716ed3886a9e",
+      "parent_rank": 5,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "pain descriptors",
+      "sampled_op": "s_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:26:33",
+    "details": {
+      "word": "hurt",
+      "rank": 2010,
+      "hypothesis": "pain descriptors",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 252
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:26:34",
+    "details": {
+      "word": "sore",
+      "rank": 37,
+      "hypothesis": "pain descriptors",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 253
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:26:35",
+    "details": {
+      "word": "sharp",
+      "rank": 1980,
+      "hypothesis": "pain descriptors",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 254
+    }
+  },
+  {
+    "generation": 5,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-22T19:27:26",
+    "details": {
+      "parent_id": "8133875a738742669f8cb94d0f09eb07",
+      "child_id": "9494f6970bd54f0e86c96235a958be78",
+      "parent_rank": 19,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "disquiet",
+      "sampled_op": "s_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:27:27",
+    "details": {
+      "word": "disquiet",
+      "rank": 16503,
+      "hypothesis": "disquiet",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 255
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:27:28",
+    "details": {
+      "word": "unease",
+      "rank": 5848,
+      "hypothesis": "disquiet",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 256
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:27:28",
+    "details": {
+      "word": "smart",
+      "rank": 7753,
+      "hypothesis": "disquiet",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 256
+    }
+  },
+  {
+    "generation": 5,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-22T19:28:00",
+    "details": {
+      "parent_id": "345b90d6a567477e840b08dd46d388ca",
+      "child_id": "1d5faaf92f9b409fa6d1decb777220f0",
+      "parent_rank": 51,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "symptoms",
+      "sampled_op": "ml_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:28:04",
+    "details": {
+      "word": "nausea",
+      "rank": 12,
+      "hypothesis": "symptoms",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 257
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:28:05",
+    "details": {
+      "word": "dizziness",
+      "rank": 47,
+      "hypothesis": "symptoms",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 258
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:28:05",
+    "details": {
+      "word": "fatigue",
+      "rank": 6,
+      "hypothesis": "symptoms",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 259
+    }
+  },
+  {
+    "generation": 5,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-22T19:28:15",
+    "details": {
+      "parent_id": "fa3a0f85e1994242879f540c0a4ff801",
+      "child_id": "85757a9782a0457a95bdf6e463629bd3",
+      "parent_rank": 62,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "physical processes",
+      "sampled_op": "ml_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:28:19",
+    "details": {
+      "word": "transform",
+      "rank": 3398,
+      "hypothesis": "physical processes",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 260
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:28:19",
+    "details": {
+      "word": "phase",
+      "rank": 483,
+      "hypothesis": "physical processes",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 260
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:28:20",
+    "details": {
+      "word": "state",
+      "rank": 1345,
+      "hypothesis": "physical processes",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 261
+    }
+  },
+  {
+    "generation": 5,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-22T19:29:00",
+    "details": {
+      "parent_id": "c8b82592260e42ccbc40c8c0b5d6950e",
+      "child_id": "04bbdd8ba6e941d0a25a4577f1e90e7c",
+      "parent_rank": 108,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "Dynamic Processes",
+      "sampled_op": "ml_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:29:00",
+    "details": {
+      "word": "crest",
+      "rank": 7712,
+      "hypothesis": "Dynamic Processes",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 262
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:29:00",
+    "details": {
+      "word": "sway",
+      "rank": 8521,
+      "hypothesis": "Dynamic Processes",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 262
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:29:01",
+    "details": {
+      "word": "rip",
+      "rank": 8541,
+      "hypothesis": "Dynamic Processes",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 263
+    }
+  },
+  {
+    "generation": 5,
+    "event": "MUTATE",
+    "timestamp": "2026-07-22T19:29:01",
+    "details": {
+      "method": "self_adaptive",
+      "children": [
+        {
+          "hypothesis_id": "84f88853a21343e0ac0e716ed3886a9e",
+          "category_name": "pain descriptors",
+          "description": "specific types of physical discomfort",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "sensations",
+          "parent_id": "f7f688c7988b4205954b44a5f876eb89",
+          "origin": "self_adaptive_s_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "9494f6970bd54f0e86c96235a958be78",
+          "category_name": "disquiet",
+          "description": "mild unease or restlessness",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "discomfort",
+          "parent_id": "8133875a738742669f8cb94d0f09eb07",
+          "origin": "self_adaptive_s_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "1d5faaf92f9b409fa6d1decb777220f0",
+          "category_name": "symptoms",
+          "description": "medical symptoms",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "body_parts",
+          "parent_id": "345b90d6a567477e840b08dd46d388ca",
+          "origin": "self_adaptive_ml_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "85757a9782a0457a95bdf6e463629bd3",
+          "category_name": "physical processes",
+          "description": "processes involving changes in physical properties",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "chemical synthesis",
+          "parent_id": "fa3a0f85e1994242879f540c0a4ff801",
+          "origin": "self_adaptive_ml_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "04bbdd8ba6e941d0a25a4577f1e90e7c",
+          "category_name": "Dynamic Processes",
+          "description": "ongoing changes and movements in nature",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "fluid motion",
+          "parent_id": "c8b82592260e42ccbc40c8c0b5d6950e",
+          "origin": "self_adaptive_ml_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        }
+      ],
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 263
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:29:19",
+    "details": {
+      "word": "ache",
+      "rank": 61,
+      "hypothesis": "sensory_symptoms",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 263
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:29:19",
+    "details": {
+      "word": "burn",
+      "rank": 509,
+      "hypothesis": "sensory_symptoms",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 263
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:29:19",
+    "details": {
+      "word": "dizziness",
+      "rank": 47,
+      "hypothesis": "sensory_symptoms",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 263
+    }
+  },
+  {
+    "generation": 5,
+    "event": "CROSSOVER",
+    "timestamp": "2026-07-22T19:29:19",
+    "details": {
+      "parents": [
+        "sensations",
+        "symptoms"
+      ],
+      "parent_ids": [
+        "f7f688c7988b4205954b44a5f876eb89",
+        "1d5faaf92f9b409fa6d1decb777220f0"
+      ],
+      "parent_ranks": [
+        5,
+        6
+      ],
+      "parent_a_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "parent_b_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma_pre_perturbation": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child": {
+        "hypothesis_id": "6ad201164d194c0aa2a96787715bf1fb",
+        "category_name": "sensory_symptoms",
+        "description": "sensations that also manifest as symptoms",
+        "words_tried": {
+          "dizziness": 47,
+          "ache": 61,
+          "burn": 509
+        },
+        "best_word": "dizziness",
+        "best_rank": 47,
+        "status": "active",
+        "parent": "sensations+symptoms",
+        "parent_id": null,
+        "origin": "crossover",
+        "sigma": [
+          0.25,
+          0.25,
+          0.25,
+          0.25
+        ]
+      },
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 263
+    }
+  },
+  {
+    "generation": 5,
+    "event": "DEDUPLICATE",
+    "timestamp": "2026-07-22T19:29:19",
+    "details": {
+      "merged": [
+        {
+          "survivor": "sensations",
+          "discarded": "sensory_symptoms",
+          "survivor_best_rank": 5,
+          "discarded_best_rank": 47
+        }
+      ],
+      "remaining_hypotheses": 36,
+      "active_hypotheses": 10,
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 263
+    }
+  },
+  {
+    "generation": 5,
+    "event": "SIGMA_TRAJECTORY",
+    "timestamp": "2026-07-22T19:29:19",
+    "details": {
+      "mean_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "population_size": 10
+    }
+  },
+  {
+    "generation": 6,
+    "event": "CANDIDATES",
+    "timestamp": "2026-07-22T19:32:36",
+    "details": {
+      "count": 20,
+      "candidates": [
+        {
+          "hypothesis": "sensations",
+          "word": "warm"
+        },
+        {
+          "hypothesis": "sensations",
+          "word": "pressure"
+        },
+        {
+          "hypothesis": "sensations",
+          "word": "tense"
+        },
+        {
+          "hypothesis": "symptoms",
+          "word": "fever"
+        },
+        {
+          "hypothesis": "symptoms",
+          "word": "cough"
+        },
+        {
+          "hypothesis": "symptoms",
+          "word": "chill"
+        },
+        {
+          "hypothesis": "discomfort",
+          "word": "smarting"
+        },
+        {
+          "hypothesis": "pain descriptors",
+          "word": "twinge"
+        },
+        {
+          "hypothesis": "pain descriptors",
+          "word": "sting"
+        },
+        {
+          "hypothesis": "body_parts",
+          "word": "brain"
+        },
+        {
+          "hypothesis": "body_parts",
+          "word": "ear"
+        },
+        {
+          "hypothesis": "body_parts",
+          "word": "lung"
+        },
+        {
+          "hypothesis": "chemical synthesis",
+          "word": "create"
+        },
+        {
+          "hypothesis": "chemical synthesis",
+          "word": "produce"
+        },
+        {
+          "hypothesis": "physical processes",
+          "word": "alter"
+        },
+        {
+          "hypothesis": "physical processes",
+          "word": "change"
+        },
+        {
+          "hypothesis": "physical processes",
+          "word": "shift"
+        },
+        {
+          "hypothesis": "disquiet",
+          "word": "apprehension"
+        },
+        {
+          "hypothesis": "disquiet",
+          "word": "anxiety"
+        },
+        {
+          "hypothesis": "disquiet",
+          "word": "restlessness"
+        }
+      ]
+    }
+  },
+  {
+    "generation": 6,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:32:40",
+    "details": {
+      "word": "warm",
+      "rank": 245,
+      "hypothesis": "sensations",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 264
+    }
+  },
+  {
+    "generation": 6,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:32:41",
+    "details": {
+      "word": "pressure",
+      "rank": 20,
+      "hypothesis": "sensations",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 265
+    }
+  },
+  {
+    "generation": 6,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:32:42",
+    "details": {
+      "word": "tense",
+      "rank": 3755,
+      "hypothesis": "sensations",
+      "best_word": "pain",
+      "best_rank": 5,
+      "total_guesses": 266
+    }
+  },
+  {
+    "generation": 6,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:32:42",
+    "details": {
+      "word": "fever",
+      "rank": 1,
+      "hypothesis": "symptoms",
+      "best_word": "fever",
+      "best_rank": 1,
+      "total_guesses": 267
+    }
+  },
+  {
+    "generation": 6,
+    "event": "SOLVED",
+    "timestamp": "2026-07-22T19:32:42",
+    "details": {
+      "answer": "fever",
+      "rank": 1,
+      "total_guesses": 267
+    }
+  },
+  {
+    "generation": 6,
+    "event": "NETWORK_METRICS",
+    "timestamp": "2026-07-22T19:32:42",
+    "details": {
+      "network_calls": 270,
+      "network_wall_clock_seconds": 2922.395,
+      "total_latency_seconds": 134.8071,
+      "mean_latency_seconds": 0.4993,
+      "median_latency_seconds": 0.2266,
+      "p95_latency_seconds": 3.2256,
+      "max_latency_seconds": 3.2346,
+      "status_counts": {
+        "200": 267,
+        "404": 3
+      },
+      "outcome_counts": {
+        "ok": 267,
+        "http_error": 3
+      }
+    }
+  }
+]

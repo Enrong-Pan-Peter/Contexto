@@ -1,0 +1,1518 @@
+[
+  {
+    "generation": -1,
+    "event": "RUN_CONFIG",
+    "timestamp": "2026-07-22T21:53:49",
+    "details": {
+      "game": "api",
+      "solver": "llm",
+      "method": "llm_only",
+      "mode": "api",
+      "target": null,
+      "game_number": 1307,
+      "run_index": 1,
+      "game_embedding_path": null,
+      "solver_embedding_path": null,
+      "embedding_backend": null,
+      "vocabulary_size": null,
+      "alignment": "api_unknown",
+      "trace_schema_version": 3,
+      "instrumentation_provenance_hash": "bd9f2858283673a2",
+      "self_report": true,
+      "rationale_inheritance": false,
+      "max_generations": 350,
+      "llm_provider": "ollama",
+      "llm_model": "qwen3:14b",
+      "llm_workers": null,
+      "initial_categories": null,
+      "max_active_hypotheses": null,
+      "local_search_rank_threshold": null,
+      "self_adaptive_initial_categories": null,
+      "self_adaptive_mu": null,
+      "self_adaptive_concentration": null,
+      "self_adaptive_sigma_floor": null,
+      "self_adaptive_sigma_mode": null,
+      "mapelites_grid_resolution": null,
+      "mapelites_mutations_per_gen": null,
+      "mapelites_crossovers_per_gen": null,
+      "mapelites_initial_categories": null,
+      "mapelites_concentration": null,
+      "mapelites_sigma_floor": null,
+      "mapelites_sigma_mode": null,
+      "mapelites_frozen_sigma": null,
+      "mapelites_ranked_context_k": null,
+      "rank_cache_enabled": true,
+      "enable_pivot": null,
+      "ea_llm_pivot_stall_no_improvement_generations": null,
+      "ea_llm_pivot_stall_close_rank_threshold": null,
+      "ea_llm_pivot_stall_close_generations_limit": null,
+      "ea_llm_pivot_max_attempts_per_run": null,
+      "ea_llm_pivot_candidate_words_per_operator": null,
+      "ea_llm_pivot_resolution_window": null,
+      "random_seed": 1
+    }
+  },
+  {
+    "generation": 0,
+    "event": "INIT",
+    "timestamp": "2026-07-22T21:53:49",
+    "details": {
+      "history": {},
+      "best_word": null,
+      "best_rank": null,
+      "total_guesses": 0
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:54:14",
+    "details": {
+      "word": "work",
+      "rank": 745,
+      "best_word": "work",
+      "best_rank": 745,
+      "total_guesses": 1,
+      "self_report": {
+        "predicted_closeness": 0.75,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [],
+          "reason": "Selected a common, versatile noun that is likely to be relevant in many contexts, making it a strong candidate for proximity to the hidden target."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"work\", \"basis_words\": [], \"reason\": \"Selected a common, versatile noun that is likely to be relevant in many contexts, making it a strong candidate for proximity to the hidden target.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.75}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:54:25",
+    "details": {
+      "word": "job",
+      "rank": 2435,
+      "best_word": "work",
+      "best_rank": 745,
+      "total_guesses": 2,
+      "self_report": {
+        "predicted_closeness": 0.6,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "work"
+          ],
+          "reason": "Job is a direct synonym of work and likely a more specific term closer to the hidden target."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"job\", \"basis_words\": [\"work\"], \"reason\": \"Job is a direct synonym of work and likely a more specific term closer to the hidden target.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.6}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"work\": 745}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:54:37",
+    "details": {
+      "word": "task",
+      "rank": 2953,
+      "best_word": "work",
+      "best_rank": 745,
+      "total_guesses": 3,
+      "self_report": {
+        "predicted_closeness": 0.6,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "job",
+            "work"
+          ],
+          "reason": "Task is a close synonym to both job and work, likely to be closer to the hidden target."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"task\", \"basis_words\": [\"job\", \"work\"], \"reason\": \"Task is a close synonym to both job and work, likely to be closer to the hidden target.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.6}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"job\": 2435, \"work\": 745}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:54:50",
+    "details": {
+      "word": "assignment",
+      "rank": 6336,
+      "best_word": "work",
+      "best_rank": 745,
+      "total_guesses": 4,
+      "self_report": {
+        "predicted_closeness": 0.6,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "job",
+            "task",
+            "work"
+          ],
+          "reason": "Synonyms for 'job' and 'task' that are more specific and may align closer to the target."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"assignment\", \"basis_words\": [\"job\", \"task\", \"work\"], \"reason\": \"Synonyms for 'job' and 'task' that are more specific and may align closer to the target.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.6}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"job\": 2435, \"task\": 2953, \"work\": 745}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:55:01",
+    "details": {
+      "word": "duty",
+      "rank": 1947,
+      "best_word": "work",
+      "best_rank": 745,
+      "total_guesses": 5,
+      "self_report": {
+        "predicted_closeness": 0.7,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "assignment",
+            "job",
+            "task",
+            "work"
+          ],
+          "reason": "Duty is a synonym of job, task, and work, and may be closer to the hidden target based on the existing context."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"duty\", \"basis_words\": [\"assignment\", \"job\", \"task\", \"work\"], \"reason\": \"Duty is a synonym of job, task, and work, and may be closer to the hidden target based on the existing context.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.7}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"assignment\": 6336, \"job\": 2435, \"task\": 2953, \"work\": 745}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 6,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:55:22",
+    "details": {
+      "word": "role",
+      "rank": 1793,
+      "best_word": "work",
+      "best_rank": 745,
+      "total_guesses": 6,
+      "self_report": {
+        "predicted_closeness": 0.3,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "assignment",
+            "duty",
+            "job",
+            "task",
+            "work"
+          ],
+          "reason": "The word 'role' is a synonym for job, duty, and task, and has not been previously guessed, making it a logical next step in narrowing down the target."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"role\", \"basis_words\": [\"assignment\", \"duty\", \"job\", \"task\", \"work\"], \"reason\": \"The word 'role' is a synonym for job, duty, and task, and has not been previously guessed, making it a logical next step in narrowing down the target.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"assignment\": 6336, \"duty\": 1947, \"job\": 2435, \"task\": 2953, \"work\": 745}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 7,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:55:33",
+    "details": {
+      "word": "function",
+      "rank": 3561,
+      "best_word": "work",
+      "best_rank": 745,
+      "total_guesses": 7,
+      "self_report": {
+        "predicted_closeness": 0.5,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "assignment",
+            "duty",
+            "job",
+            "role",
+            "task",
+            "work"
+          ],
+          "reason": "Function is a synonym for role or job, aligning with the context of responsibilities and occupations, and has not been previously guessed."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"function\", \"basis_words\": [\"assignment\", \"duty\", \"job\", \"role\", \"task\", \"work\"], \"reason\": \"Function is a synonym for role or job, aligning with the context of responsibilities and occupations, and has not been previously guessed.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.5}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"assignment\": 6336, \"duty\": 1947, \"job\": 2435, \"role\": 1793, \"task\": 2953, \"work\": 745}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 8,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:55:45",
+    "details": {
+      "word": "occupation",
+      "rank": 11029,
+      "best_word": "work",
+      "best_rank": 745,
+      "total_guesses": 8,
+      "self_report": {
+        "predicted_closeness": 0.7,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "assignment",
+            "duty",
+            "function",
+            "job",
+            "role",
+            "task",
+            "work"
+          ],
+          "reason": "Occupation is a synonym of job, role, and duty, and is a common term that may be closer to the target than the current guesses."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"occupation\", \"basis_words\": [\"assignment\", \"duty\", \"function\", \"job\", \"role\", \"task\", \"work\"], \"reason\": \"Occupation is a synonym of job, role, and duty, and is a common term that may be closer to the target than the current guesses.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.7}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"assignment\": 6336, \"duty\": 1947, \"function\": 3561, \"job\": 2435, \"role\": 1793, \"task\": 2953, \"work\": 745}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 9,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:56:00",
+    "details": {
+      "word": "position",
+      "rank": 3435,
+      "best_word": "work",
+      "best_rank": 745,
+      "total_guesses": 9,
+      "self_report": {
+        "predicted_closeness": 0.7,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "job",
+            "occupation",
+            "role",
+            "function",
+            "assignment"
+          ],
+          "reason": "The hidden target likely relates to roles or responsibilities, and 'position' is a common synonym for job/role that hasn't been tried yet."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"position\", \"basis_words\": [\"job\", \"occupation\", \"role\", \"function\", \"assignment\"], \"reason\": \"The hidden target likely relates to roles or responsibilities, and 'position' is a common synonym for job/role that hasn't been tried yet.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.7}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"assignment\": 6336, \"duty\": 1947, \"function\": 3561, \"job\": 2435, \"occupation\": 11029, \"role\": 1793, \"task\": 2953, \"work\": 745}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 10,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:56:10",
+    "details": {
+      "word": "post",
+      "rank": 2641,
+      "best_word": "work",
+      "best_rank": 745,
+      "total_guesses": 10,
+      "self_report": {
+        "predicted_closeness": 0.8,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "assignment",
+            "duty",
+            "function",
+            "job",
+            "occupation",
+            "position",
+            "role",
+            "task",
+            "work"
+          ],
+          "reason": "The word 'post' is a synonym for job, position, and role, which are all closely related to the existing guesses and likely share similar contextual proximity to the hidden target."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"post\", \"basis_words\": [\"assignment\", \"duty\", \"function\", \"job\", \"occupation\", \"position\", \"role\", \"task\", \"work\"], \"reason\": \"The word 'post' is a synonym for job, position, and role, which are all closely related to the existing guesses and likely share similar contextual proximity to the hidden target.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.8}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"assignment\": 6336, \"duty\": 1947, \"function\": 3561, \"job\": 2435, \"occupation\": 11029, \"position\": 3435, \"role\": 1793, \"task\": 2953, \"work\": 745}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 11,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:56:20",
+    "details": {
+      "word": "responsibility",
+      "rank": 77,
+      "best_word": "responsibility",
+      "best_rank": 77,
+      "total_guesses": 11,
+      "self_report": {
+        "predicted_closeness": 0.6,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "duty",
+            "role",
+            "task"
+          ],
+          "reason": "Responsibility is a close synonym to existing guesses like duty, role, and task, and hasn't been tried yet, making it a logical next step."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"responsibility\", \"basis_words\": [\"duty\", \"role\", \"task\"], \"reason\": \"Responsibility is a close synonym to existing guesses like duty, role, and task, and hasn't been tried yet, making it a logical next step.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.6}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"assignment\": 6336, \"duty\": 1947, \"function\": 3561, \"job\": 2435, \"occupation\": 11029, \"position\": 3435, \"post\": 2641, \"role\": 1793, \"task\": 2953, \"work\": 745}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 12,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:56:30",
+    "details": {
+      "word": "calling",
+      "rank": 2557,
+      "best_word": "responsibility",
+      "best_rank": 77,
+      "total_guesses": 12,
+      "self_report": {
+        "predicted_closeness": 0.7,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "job",
+            "occupation",
+            "role",
+            "responsibility"
+          ],
+          "reason": "Calling is a synonym for job or vocation, closely related to the existing guesses but not yet tried."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"calling\", \"basis_words\": [\"job\", \"occupation\", \"role\", \"responsibility\"], \"reason\": \"Calling is a synonym for job or vocation, closely related to the existing guesses but not yet tried.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.7}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"assignment\": 6336, \"duty\": 1947, \"function\": 3561, \"job\": 2435, \"occupation\": 11029, \"position\": 3435, \"post\": 2641, \"responsibility\": 77, \"role\": 1793, \"task\": 2953, \"work\": 745}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 13,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:56:41",
+    "details": {
+      "word": "vocation",
+      "rank": 2561,
+      "best_word": "responsibility",
+      "best_rank": 77,
+      "total_guesses": 13,
+      "self_report": {
+        "predicted_closeness": 0.7,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "calling",
+            "occupation",
+            "job",
+            "duty"
+          ],
+          "reason": "Vocation is a synonym for calling or occupation, which are already in the guess history, suggesting it may be a closer synonym to the hidden target."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"vocation\", \"basis_words\": [\"calling\", \"occupation\", \"job\", \"duty\"], \"reason\": \"Vocation is a synonym for calling or occupation, which are already in the guess history, suggesting it may be a closer synonym to the hidden target.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.7}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"assignment\": 6336, \"calling\": 2557, \"duty\": 1947, \"function\": 3561, \"job\": 2435, \"occupation\": 11029, \"position\": 3435, \"post\": 2641, \"responsibility\": 77, \"role\": 1793, \"task\": 2953, \"work\": 745}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 14,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:57:00",
+    "details": {
+      "word": "charge",
+      "rank": 3962,
+      "best_word": "responsibility",
+      "best_rank": 77,
+      "total_guesses": 14,
+      "self_report": {
+        "predicted_closeness": 0.3,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "duty",
+            "responsibility"
+          ],
+          "reason": "Charge is a synonym for duty or responsibility, which are already close to the hidden target."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"charge\", \"basis_words\": [\"duty\", \"responsibility\"], \"reason\": \"Charge is a synonym for duty or responsibility, which are already close to the hidden target.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"assignment\": 6336, \"calling\": 2557, \"duty\": 1947, \"function\": 3561, \"job\": 2435, \"occupation\": 11029, \"position\": 3435, \"post\": 2641, \"responsibility\": 77, \"role\": 1793, \"task\": 2953, \"vocation\": 2561, \"work\": 745}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 15,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:57:11",
+    "details": {
+      "word": "mandate",
+      "rank": 3498,
+      "best_word": "responsibility",
+      "best_rank": 77,
+      "total_guesses": 15,
+      "self_report": {
+        "predicted_closeness": 0.6,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "duty",
+            "responsibility",
+            "charge",
+            "assignment"
+          ],
+          "reason": "Mandate is a synonym for duty or responsibility, which are already close to the target, suggesting it could be a more precise fit."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"mandate\", \"basis_words\": [\"duty\", \"responsibility\", \"charge\", \"assignment\"], \"reason\": \"Mandate is a synonym for duty or responsibility, which are already close to the target, suggesting it could be a more precise fit.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.6}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"assignment\": 6336, \"calling\": 2557, \"charge\": 3962, \"duty\": 1947, \"function\": 3561, \"job\": 2435, \"occupation\": 11029, \"position\": 3435, \"post\": 2641, \"responsibility\": 77, \"role\": 1793, \"task\": 2953, \"vocation\": 2561, \"work\": 745}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 16,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:57:28",
+    "details": {
+      "word": "obligation",
+      "rank": 854,
+      "best_word": "responsibility",
+      "best_rank": 77,
+      "total_guesses": 16,
+      "self_report": {
+        "predicted_closeness": 0.7,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "responsibility"
+          ],
+          "reason": "Obligation is a synonym of responsibility and not yet guessed, likely closer to the hidden target."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"obligation\", \"basis_words\": [\"responsibility\"], \"reason\": \"Obligation is a synonym of responsibility and not yet guessed, likely closer to the hidden target.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.7}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"assignment\": 6336, \"calling\": 2557, \"charge\": 3962, \"duty\": 1947, \"function\": 3561, \"job\": 2435, \"mandate\": 3498, \"occupation\": 11029, \"position\": 3435, \"post\": 2641, \"responsibility\": 77, \"role\": 1793, \"task\": 2953, \"vocation\": 2561, \"work\": 745}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 17,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:57:40",
+    "details": {
+      "word": "commitment",
+      "rank": 27,
+      "best_word": "commitment",
+      "best_rank": 27,
+      "total_guesses": 17,
+      "self_report": {
+        "predicted_closeness": 0.8,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "responsibility",
+            "obligation",
+            "duty"
+          ],
+          "reason": "Commitment is a close synonym to responsibility, obligation, and duty, which are already in the guess history with relatively low ranks, suggesting the hidden target may be a similar term."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"commitment\", \"basis_words\": [\"responsibility\", \"obligation\", \"duty\"], \"reason\": \"Commitment is a close synonym to responsibility, obligation, and duty, which are already in the guess history with relatively low ranks, suggesting the hidden target may be a similar term.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.8}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"assignment\": 6336, \"calling\": 2557, \"charge\": 3962, \"duty\": 1947, \"function\": 3561, \"job\": 2435, \"mandate\": 3498, \"obligation\": 854, \"occupation\": 11029, \"position\": 3435, \"post\": 2641, \"responsibility\": 77, \"role\": 1793, \"task\": 2953, \"vocation\": 2561, \"work\": 745}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 18,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:58:04",
+    "details": {
+      "word": "service",
+      "rank": 1170,
+      "best_word": "commitment",
+      "best_rank": 27,
+      "total_guesses": 18,
+      "self_report": {
+        "predicted_closeness": 0.6,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "duty",
+            "responsibility",
+            "task",
+            "commitment"
+          ],
+          "reason": "Synonym for duty, responsibility, and task, which are high-ranked guesses, indicating proximity to the target."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"service\", \"basis_words\": [\"duty\", \"responsibility\", \"task\", \"commitment\"], \"reason\": \"Synonym for duty, responsibility, and task, which are high-ranked guesses, indicating proximity to the target.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.6}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"assignment\": 6336, \"calling\": 2557, \"charge\": 3962, \"commitment\": 27, \"duty\": 1947, \"function\": 3561, \"job\": 2435, \"mandate\": 3498, \"obligation\": 854, \"occupation\": 11029, \"position\": 3435, \"post\": 2641, \"responsibility\": 77, \"role\": 1793, \"task\": 2953, \"vocation\": 2561, \"work\": 745}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 19,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:58:25",
+    "details": {
+      "word": "mission",
+      "rank": 2306,
+      "best_word": "commitment",
+      "best_rank": 27,
+      "total_guesses": 19,
+      "self_report": {
+        "predicted_closeness": 0.7,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "commitment",
+            "responsibility",
+            "duty",
+            "obligation"
+          ],
+          "reason": "Synonyms for 'mission' overlap with the semantic field of existing low-ranked guesses like 'commitment' and 'responsibility', suggesting it may be closer to the target."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"mission\", \"basis_words\": [\"commitment\", \"responsibility\", \"duty\", \"obligation\"], \"reason\": \"Synonyms for 'mission' overlap with the semantic field of existing low-ranked guesses like 'commitment' and 'responsibility', suggesting it may be closer to the target.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.7}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"assignment\": 6336, \"calling\": 2557, \"charge\": 3962, \"commitment\": 27, \"duty\": 1947, \"function\": 3561, \"job\": 2435, \"mandate\": 3498, \"obligation\": 854, \"occupation\": 11029, \"position\": 3435, \"post\": 2641, \"responsibility\": 77, \"role\": 1793, \"service\": 1170, \"task\": 2953, \"vocation\": 2561, \"work\": 745}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 20,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:58:37",
+    "details": {
+      "word": "stewardship",
+      "rank": 1265,
+      "best_word": "commitment",
+      "best_rank": 27,
+      "total_guesses": 20,
+      "self_report": {
+        "predicted_closeness": 0.6,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "responsibility",
+            "commitment",
+            "mission",
+            "duty",
+            "obligation"
+          ],
+          "reason": "The word 'stewardship' is closely related to responsibility, duty, and mission, which have low ranks, suggesting it may be a synonym in the same semantic field."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"stewardship\", \"basis_words\": [\"responsibility\", \"commitment\", \"mission\", \"duty\", \"obligation\"], \"reason\": \"The word 'stewardship' is closely related to responsibility, duty, and mission, which have low ranks, suggesting it may be a synonym in the same semantic field.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.6}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"assignment\": 6336, \"calling\": 2557, \"charge\": 3962, \"commitment\": 27, \"duty\": 1947, \"function\": 3561, \"job\": 2435, \"mandate\": 3498, \"mission\": 2306, \"obligation\": 854, \"occupation\": 11029, \"position\": 3435, \"post\": 2641, \"responsibility\": 77, \"role\": 1793, \"service\": 1170, \"task\": 2953, \"vocation\": 2561, \"work\": 745}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 21,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:59:01",
+    "details": {
+      "word": "purpose",
+      "rank": 659,
+      "best_word": "commitment",
+      "best_rank": 27,
+      "total_guesses": 21,
+      "self_report": {
+        "predicted_closeness": 0.8,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "commitment",
+            "responsibility",
+            "mission",
+            "duty"
+          ],
+          "reason": "Purpose is a close synonym to existing high-ranking words like commitment and responsibility, which are central to the context."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"purpose\", \"basis_words\": [\"commitment\", \"responsibility\", \"mission\", \"duty\"], \"reason\": \"Purpose is a close synonym to existing high-ranking words like commitment and responsibility, which are central to the context.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.8}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"assignment\": 6336, \"calling\": 2557, \"charge\": 3962, \"commitment\": 27, \"duty\": 1947, \"function\": 3561, \"job\": 2435, \"mandate\": 3498, \"mission\": 2306, \"obligation\": 854, \"occupation\": 11029, \"position\": 3435, \"post\": 2641, \"responsibility\": 77, \"role\": 1793, \"service\": 1170, \"stewardship\": 1265, \"task\": 2953, \"vocation\": 2561, \"work\": 745}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 22,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:59:20",
+    "details": {
+      "word": "endeavor",
+      "rank": 1100,
+      "best_word": "commitment",
+      "best_rank": 27,
+      "total_guesses": 22,
+      "self_report": {
+        "predicted_closeness": 0.7,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "mission",
+            "purpose",
+            "task",
+            "calling"
+          ],
+          "reason": "Endeavor is a synonym for mission, purpose, and task, which are all close to the target word."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"endeavor\", \"basis_words\": [\"mission\", \"purpose\", \"task\", \"calling\"], \"reason\": \"Endeavor is a synonym for mission, purpose, and task, which are all close to the target word.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.7}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"assignment\": 6336, \"calling\": 2557, \"charge\": 3962, \"commitment\": 27, \"duty\": 1947, \"function\": 3561, \"job\": 2435, \"mandate\": 3498, \"mission\": 2306, \"obligation\": 854, \"occupation\": 11029, \"position\": 3435, \"post\": 2641, \"purpose\": 659, \"responsibility\": 77, \"role\": 1793, \"service\": 1170, \"stewardship\": 1265, \"task\": 2953, \"vocation\": 2561, \"work\": 745}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 23,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:59:58",
+    "details": {
+      "word": "accountability",
+      "rank": 37,
+      "best_word": "commitment",
+      "best_rank": 27,
+      "total_guesses": 23,
+      "self_report": {
+        "predicted_closeness": 0.6,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "responsibility",
+            "obligation",
+            "commitment",
+            "duty"
+          ],
+          "reason": "Accountability is a direct synonym for responsibility and related terms, which have shown low ranks in the guess history, indicating proximity to the hidden target."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"accountability\", \"basis_words\": [\"responsibility\", \"obligation\", \"commitment\", \"duty\"], \"reason\": \"Accountability is a direct synonym for responsibility and related terms, which have shown low ranks in the guess history, indicating proximity to the hidden target.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.6}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"assignment\": 6336, \"calling\": 2557, \"charge\": 3962, \"commitment\": 27, \"duty\": 1947, \"endeavor\": 1100, \"function\": 3561, \"job\": 2435, \"mandate\": 3498, \"mission\": 2306, \"obligation\": 854, \"occupation\": 11029, \"position\": 3435, \"post\": 2641, \"purpose\": 659, \"responsibility\": 77, \"role\": 1793, \"service\": 1170, \"stewardship\": 1265, \"task\": 2953, \"vocation\": 2561, \"work\": 745}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 24,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:00:41",
+    "details": {
+      "word": "goal",
+      "rank": 2261,
+      "best_word": "commitment",
+      "best_rank": 27,
+      "total_guesses": 24,
+      "self_report": {
+        "predicted_closeness": 0.6,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "purpose",
+            "mission",
+            "commitment",
+            "responsibility"
+          ],
+          "reason": "Goal is a synonym related to purpose and mission, which are among the lower-ranked guesses, suggesting it may be closer to the hidden target."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"goal\", \"basis_words\": [\"purpose\", \"mission\", \"commitment\", \"responsibility\"], \"reason\": \"Goal is a synonym related to purpose and mission, which are among the lower-ranked guesses, suggesting it may be closer to the hidden target.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.6}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"accountability\": 37, \"assignment\": 6336, \"calling\": 2557, \"charge\": 3962, \"commitment\": 27, \"duty\": 1947, \"endeavor\": 1100, \"function\": 3561, \"job\": 2435, \"mandate\": 3498, \"mission\": 2306, \"obligation\": 854, \"occupation\": 11029, \"position\": 3435, \"post\": 2641, \"purpose\": 659, \"responsibility\": 77, \"role\": 1793, \"service\": 1170, \"stewardship\": 1265, \"task\": 2953, \"vocation\": 2561, \"work\": 745}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 25,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:01:21",
+    "details": {
+      "word": "objective",
+      "rank": 649,
+      "best_word": "commitment",
+      "best_rank": 27,
+      "total_guesses": 25,
+      "self_report": {
+        "predicted_closeness": 0.6,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "purpose",
+            "goal",
+            "mission",
+            "commitment",
+            "responsibility"
+          ],
+          "reason": "Objective is a synonym for purpose and goal, which are in the guess history with mid-to-low ranks, suggesting it could be a closer synonym to the hidden target."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"objective\", \"basis_words\": [\"purpose\", \"goal\", \"mission\", \"commitment\", \"responsibility\"], \"reason\": \"Objective is a synonym for purpose and goal, which are in the guess history with mid-to-low ranks, suggesting it could be a closer synonym to the hidden target.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.6}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"accountability\": 37, \"assignment\": 6336, \"calling\": 2557, \"charge\": 3962, \"commitment\": 27, \"duty\": 1947, \"endeavor\": 1100, \"function\": 3561, \"goal\": 2261, \"job\": 2435, \"mandate\": 3498, \"mission\": 2306, \"obligation\": 854, \"occupation\": 11029, \"position\": 3435, \"post\": 2641, \"purpose\": 659, \"responsibility\": 77, \"role\": 1793, \"service\": 1170, \"stewardship\": 1265, \"task\": 2953, \"vocation\": 2561, \"work\": 745}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 26,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:01:39",
+    "details": {
+      "word": "aim",
+      "rank": 862,
+      "best_word": "commitment",
+      "best_rank": 27,
+      "total_guesses": 26,
+      "self_report": {
+        "predicted_closeness": 0.7,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "goal",
+            "objective",
+            "purpose",
+            "mission"
+          ],
+          "reason": "Aim is a synonym for goal, objective, and purpose, which are all closely related to the existing low-ranked guesses, suggesting it could be a strong candidate."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"aim\", \"basis_words\": [\"goal\", \"objective\", \"purpose\", \"mission\"], \"reason\": \"Aim is a synonym for goal, objective, and purpose, which are all closely related to the existing low-ranked guesses, suggesting it could be a strong candidate.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.7}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"accountability\": 37, \"assignment\": 6336, \"calling\": 2557, \"charge\": 3962, \"commitment\": 27, \"duty\": 1947, \"endeavor\": 1100, \"function\": 3561, \"goal\": 2261, \"job\": 2435, \"mandate\": 3498, \"mission\": 2306, \"objective\": 649, \"obligation\": 854, \"occupation\": 11029, \"position\": 3435, \"post\": 2641, \"purpose\": 659, \"responsibility\": 77, \"role\": 1793, \"service\": 1170, \"stewardship\": 1265, \"task\": 2953, \"vocation\": 2561, \"work\": 745}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 27,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:02:15",
+    "details": {
+      "word": "effort",
+      "rank": 407,
+      "best_word": "commitment",
+      "best_rank": 27,
+      "total_guesses": 27,
+      "self_report": {
+        "predicted_closeness": 0.6,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "endeavor",
+            "objective",
+            "purpose",
+            "responsibility"
+          ],
+          "reason": "The word 'effort' is closely related to synonyms like 'endeavor,' 'objective,' and 'purpose,' which have relatively low ranks. It is a common term that could fit as a synonym for duty or commitment, which are also low-ranked words."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"effort\", \"basis_words\": [\"endeavor\", \"objective\", \"purpose\", \"responsibility\"], \"reason\": \"The word 'effort' is closely related to synonyms like 'endeavor,' 'objective,' and 'purpose,' which have relatively low ranks. It is a common term that could fit as a synonym for duty or commitment, which are also low-ranked words.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.6}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"accountability\": 37, \"aim\": 862, \"assignment\": 6336, \"calling\": 2557, \"charge\": 3962, \"commitment\": 27, \"duty\": 1947, \"endeavor\": 1100, \"function\": 3561, \"goal\": 2261, \"job\": 2435, \"mandate\": 3498, \"mission\": 2306, \"objective\": 649, \"obligation\": 854, \"occupation\": 11029, \"position\": 3435, \"post\": 2641, \"purpose\": 659, \"responsibility\": 77, \"role\": 1793, \"service\": 1170, \"stewardship\": 1265, \"task\": 2953, \"vocation\": 2561, \"work\": 745}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 28,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:02:34",
+    "details": {
+      "word": "burden",
+      "rank": 3654,
+      "best_word": "commitment",
+      "best_rank": 27,
+      "total_guesses": 28,
+      "self_report": {
+        "predicted_closeness": 0.2,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "beyond",
+        "rationale": {
+          "basis_words": [
+            "duty",
+            "responsibility",
+            "obligation"
+          ],
+          "reason": "Synonym to duty and responsibility, not previously guessed."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"burden\", \"basis_words\": [\"duty\", \"responsibility\", \"obligation\"], \"reason\": \"Synonym to duty and responsibility, not previously guessed.\", \"predicted_bucket\": \"beyond\", \"predicted_closeness\": 0.2}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"accountability\": 37, \"aim\": 862, \"assignment\": 6336, \"calling\": 2557, \"charge\": 3962, \"commitment\": 27, \"duty\": 1947, \"effort\": 407, \"endeavor\": 1100, \"function\": 3561, \"goal\": 2261, \"job\": 2435, \"mandate\": 3498, \"mission\": 2306, \"objective\": 649, \"obligation\": 854, \"occupation\": 11029, \"position\": 3435, \"post\": 2641, \"purpose\": 659, \"responsibility\": 77, \"role\": 1793, \"service\": 1170, \"stewardship\": 1265, \"task\": 2953, \"vocation\": 2561, \"work\": 745}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 29,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:02:53",
+    "details": {
+      "word": "dedication",
+      "rank": 32,
+      "best_word": "commitment",
+      "best_rank": 27,
+      "total_guesses": 29,
+      "self_report": {
+        "predicted_closeness": 0.3,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "accountability",
+            "commitment",
+            "responsibility"
+          ],
+          "reason": "Dedication is a synonym of existing low-ranked words like 'commitment' and 'responsibility', suggesting it might be closer to the target."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"dedication\", \"basis_words\": [\"accountability\", \"commitment\", \"responsibility\"], \"reason\": \"Dedication is a synonym of existing low-ranked words like 'commitment' and 'responsibility', suggesting it might be closer to the target.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.3}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"accountability\": 37, \"aim\": 862, \"assignment\": 6336, \"burden\": 3654, \"calling\": 2557, \"charge\": 3962, \"commitment\": 27, \"duty\": 1947, \"effort\": 407, \"endeavor\": 1100, \"function\": 3561, \"goal\": 2261, \"job\": 2435, \"mandate\": 3498, \"mission\": 2306, \"objective\": 649, \"obligation\": 854, \"occupation\": 11029, \"position\": 3435, \"post\": 2641, \"purpose\": 659, \"responsibility\": 77, \"role\": 1793, \"service\": 1170, \"stewardship\": 1265, \"task\": 2953, \"vocation\": 2561, \"work\": 745}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 30,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:03:47",
+    "details": {
+      "word": "care",
+      "rank": 101,
+      "best_word": "commitment",
+      "best_rank": 27,
+      "total_guesses": 30,
+      "self_report": {
+        "predicted_closeness": 0.2,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "beyond",
+        "rationale": {
+          "basis_words": [
+            "accountability",
+            "commitment",
+            "dedication",
+            "responsibility"
+          ],
+          "reason": "The word 'care' is a synonym of responsibility and related concepts, and has not been used in previous guesses, making it a plausible candidate closer to the target."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"care\", \"basis_words\": [\"accountability\", \"commitment\", \"dedication\", \"responsibility\"], \"reason\": \"The word 'care' is a synonym of responsibility and related concepts, and has not been used in previous guesses, making it a plausible candidate closer to the target.\", \"predicted_bucket\": \"beyond\", \"predicted_closeness\": 0.2}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"accountability\": 37, \"aim\": 862, \"assignment\": 6336, \"burden\": 3654, \"calling\": 2557, \"charge\": 3962, \"commitment\": 27, \"dedication\": 32, \"duty\": 1947, \"effort\": 407, \"endeavor\": 1100, \"function\": 3561, \"goal\": 2261, \"job\": 2435, \"mandate\": 3498, \"mission\": 2306, \"objective\": 649, \"obligation\": 854, \"occupation\": 11029, \"position\": 3435, \"post\": 2641, \"purpose\": 659, \"responsibility\": 77, \"role\": 1793, \"service\": 1170, \"stewardship\": 1265, \"task\": 2953, \"vocation\": 2561, \"work\": 745}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 31,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:04:13",
+    "details": {
+      "word": "trust",
+      "rank": 96,
+      "best_word": "commitment",
+      "best_rank": 27,
+      "total_guesses": 31,
+      "self_report": {
+        "predicted_closeness": 0.4,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "accountability",
+            "commitment",
+            "responsibility",
+            "dedication",
+            "care",
+            "obligation",
+            "duty"
+          ],
+          "reason": "Trust is a common synonym related to responsibility and duty, themes prevalent in the existing guesses, and may bridge gaps between higher-ranked terms like 'commitment' (27) and 'care' (101)."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"trust\", \"basis_words\": [\"accountability\", \"commitment\", \"responsibility\", \"dedication\", \"care\", \"obligation\", \"duty\"], \"reason\": \"Trust is a common synonym related to responsibility and duty, themes prevalent in the existing guesses, and may bridge gaps between higher-ranked terms like 'commitment' (27) and 'care' (101).\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"accountability\": 37, \"aim\": 862, \"assignment\": 6336, \"burden\": 3654, \"calling\": 2557, \"care\": 101, \"charge\": 3962, \"commitment\": 27, \"dedication\": 32, \"duty\": 1947, \"effort\": 407, \"endeavor\": 1100, \"function\": 3561, \"goal\": 2261, \"job\": 2435, \"mandate\": 3498, \"mission\": 2306, \"objective\": 649, \"obligation\": 854, \"occupation\": 11029, \"position\": 3435, \"post\": 2641, \"purpose\": 659, \"responsibility\": 77, \"role\": 1793, \"service\": 1170, \"stewardship\": 1265, \"task\": 2953, \"vocation\": 2561, \"work\": 745}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 32,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:04:37",
+    "details": {
+      "word": "devotion",
+      "rank": 51,
+      "best_word": "commitment",
+      "best_rank": 27,
+      "total_guesses": 32,
+      "self_report": {
+        "predicted_closeness": 0.7,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "commitment",
+            "dedication",
+            "responsibility"
+          ],
+          "reason": "These words are semantically similar to 'devotion', which hasn't been guessed yet and could be closer to the target."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"devotion\", \"basis_words\": [\"commitment\", \"dedication\", \"responsibility\"], \"reason\": \"These words are semantically similar to 'devotion', which hasn't been guessed yet and could be closer to the target.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.7}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"accountability\": 37, \"aim\": 862, \"assignment\": 6336, \"burden\": 3654, \"calling\": 2557, \"care\": 101, \"charge\": 3962, \"commitment\": 27, \"dedication\": 32, \"duty\": 1947, \"effort\": 407, \"endeavor\": 1100, \"function\": 3561, \"goal\": 2261, \"job\": 2435, \"mandate\": 3498, \"mission\": 2306, \"objective\": 649, \"obligation\": 854, \"occupation\": 11029, \"position\": 3435, \"post\": 2641, \"purpose\": 659, \"responsibility\": 77, \"role\": 1793, \"service\": 1170, \"stewardship\": 1265, \"task\": 2953, \"trust\": 96, \"vocation\": 2561, \"work\": 745}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 33,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:21:06",
+    "details": {
+      "word": "undertaking",
+      "rank": 3098,
+      "best_word": "commitment",
+      "best_rank": 27,
+      "total_guesses": 33,
+      "self_report": {
+        "predicted_closeness": 0.5,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "commitment",
+            "responsibility",
+            "accountability",
+            "dedication",
+            "obligation"
+          ],
+          "reason": "Undertaking is a synonym of commitment and responsibility, which are among the closest guesses, suggesting it may be closer to the hidden target."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"undertaking\", \"basis_words\": [\"commitment\", \"responsibility\", \"accountability\", \"dedication\", \"obligation\"], \"reason\": \"Undertaking is a synonym of commitment and responsibility, which are among the closest guesses, suggesting it may be closer to the hidden target.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.5}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"accountability\": 37, \"aim\": 862, \"assignment\": 6336, \"burden\": 3654, \"calling\": 2557, \"care\": 101, \"charge\": 3962, \"commitment\": 27, \"dedication\": 32, \"devotion\": 51, \"duty\": 1947, \"effort\": 407, \"endeavor\": 1100, \"function\": 3561, \"goal\": 2261, \"job\": 2435, \"mandate\": 3498, \"mission\": 2306, \"objective\": 649, \"obligation\": 854, \"occupation\": 11029, \"position\": 3435, \"post\": 2641, \"purpose\": 659, \"responsibility\": 77, \"role\": 1793, \"service\": 1170, \"stewardship\": 1265, \"task\": 2953, \"trust\": 96, \"vocation\": 2561, \"work\": 745}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 34,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:21:47",
+    "details": {
+      "word": "sacrifice",
+      "rank": 234,
+      "best_word": "commitment",
+      "best_rank": 27,
+      "total_guesses": 34,
+      "self_report": {
+        "predicted_closeness": 0.5,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "commitment",
+            "dedication",
+            "responsibility"
+          ],
+          "reason": "Synonyms of 'commitment' and 'dedication' with lower ranks suggest the target may be a related term not yet guessed."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"sacrifice\", \"basis_words\": [\"commitment\", \"dedication\", \"responsibility\"], \"reason\": \"Synonyms of 'commitment' and 'dedication' with lower ranks suggest the target may be a related term not yet guessed.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.5}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"accountability\": 37, \"aim\": 862, \"assignment\": 6336, \"burden\": 3654, \"calling\": 2557, \"care\": 101, \"charge\": 3962, \"commitment\": 27, \"dedication\": 32, \"devotion\": 51, \"duty\": 1947, \"effort\": 407, \"endeavor\": 1100, \"function\": 3561, \"goal\": 2261, \"job\": 2435, \"mandate\": 3498, \"mission\": 2306, \"objective\": 649, \"obligation\": 854, \"occupation\": 11029, \"position\": 3435, \"post\": 2641, \"purpose\": 659, \"responsibility\": 77, \"role\": 1793, \"service\": 1170, \"stewardship\": 1265, \"task\": 2953, \"trust\": 96, \"undertaking\": 3098, \"vocation\": 2561, \"work\": 745}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 35,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:21:58",
+    "details": {
+      "word": "enterprise",
+      "rank": 3702,
+      "best_word": "commitment",
+      "best_rank": 27,
+      "total_guesses": 35,
+      "self_report": {
+        "predicted_closeness": 0.7,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "commitment",
+            "dedication",
+            "devotion",
+            "sacrifice"
+          ],
+          "reason": "Enterprise is semantically related to commitment, dedication, and purpose, which are among the closest guesses. It is a common word not previously used and fits the thematic context."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"enterprise\", \"basis_words\": [\"commitment\", \"dedication\", \"devotion\", \"sacrifice\"], \"reason\": \"Enterprise is semantically related to commitment, dedication, and purpose, which are among the closest guesses. It is a common word not previously used and fits the thematic context.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.7}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"accountability\": 37, \"aim\": 862, \"assignment\": 6336, \"burden\": 3654, \"calling\": 2557, \"care\": 101, \"charge\": 3962, \"commitment\": 27, \"dedication\": 32, \"devotion\": 51, \"duty\": 1947, \"effort\": 407, \"endeavor\": 1100, \"function\": 3561, \"goal\": 2261, \"job\": 2435, \"mandate\": 3498, \"mission\": 2306, \"objective\": 649, \"obligation\": 854, \"occupation\": 11029, \"position\": 3435, \"post\": 2641, \"purpose\": 659, \"responsibility\": 77, \"role\": 1793, \"sacrifice\": 234, \"service\": 1170, \"stewardship\": 1265, \"task\": 2953, \"trust\": 96, \"undertaking\": 3098, \"vocation\": 2561, \"work\": 745}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 36,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:22:29",
+    "details": {
+      "word": "contribution",
+      "rank": 1249,
+      "best_word": "commitment",
+      "best_rank": 27,
+      "total_guesses": 36,
+      "self_report": {
+        "predicted_closeness": 0.35,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "commitment",
+            "dedication",
+            "responsibility",
+            "care"
+          ],
+          "reason": "Contribution is semantically related to commitment, dedication, and responsibility, which are among the closest guesses with low ranks. It fills a gap in the synonym spectrum of obligation and duty."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"contribution\", \"basis_words\": [\"commitment\", \"dedication\", \"responsibility\", \"care\"], \"reason\": \"Contribution is semantically related to commitment, dedication, and responsibility, which are among the closest guesses with low ranks. It fills a gap in the synonym spectrum of obligation and duty.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.35}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"accountability\": 37, \"aim\": 862, \"assignment\": 6336, \"burden\": 3654, \"calling\": 2557, \"care\": 101, \"charge\": 3962, \"commitment\": 27, \"dedication\": 32, \"devotion\": 51, \"duty\": 1947, \"effort\": 407, \"endeavor\": 1100, \"enterprise\": 3702, \"function\": 3561, \"goal\": 2261, \"job\": 2435, \"mandate\": 3498, \"mission\": 2306, \"objective\": 649, \"obligation\": 854, \"occupation\": 11029, \"position\": 3435, \"post\": 2641, \"purpose\": 659, \"responsibility\": 77, \"role\": 1793, \"sacrifice\": 234, \"service\": 1170, \"stewardship\": 1265, \"task\": 2953, \"trust\": 96, \"undertaking\": 3098, \"vocation\": 2561, \"work\": 745}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 37,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:23:24",
+    "details": {
+      "word": "perseverance",
+      "rank": 40,
+      "best_word": "commitment",
+      "best_rank": 27,
+      "total_guesses": 37,
+      "self_report": {
+        "predicted_closeness": 0.3,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "beyond",
+        "rationale": {
+          "basis_words": [
+            "commitment",
+            "dedication",
+            "sacrifice",
+            "responsibility"
+          ],
+          "reason": "Perseverance is closely related to commitment and dedication, which have low ranks, suggesting it may be a synonym or concept near the hidden target."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"perseverance\", \"basis_words\": [\"commitment\", \"dedication\", \"sacrifice\", \"responsibility\"], \"reason\": \"Perseverance is closely related to commitment and dedication, which have low ranks, suggesting it may be a synonym or concept near the hidden target.\", \"predicted_bucket\": \"beyond\", \"predicted_closeness\": 0.3}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"accountability\": 37, \"aim\": 862, \"assignment\": 6336, \"burden\": 3654, \"calling\": 2557, \"care\": 101, \"charge\": 3962, \"commitment\": 27, \"contribution\": 1249, \"dedication\": 32, \"devotion\": 51, \"duty\": 1947, \"effort\": 407, \"endeavor\": 1100, \"enterprise\": 3702, \"function\": 3561, \"goal\": 2261, \"job\": 2435, \"mandate\": 3498, \"mission\": 2306, \"objective\": 649, \"obligation\": 854, \"occupation\": 11029, \"position\": 3435, \"post\": 2641, \"purpose\": 659, \"responsibility\": 77, \"role\": 1793, \"sacrifice\": 234, \"service\": 1170, \"stewardship\": 1265, \"task\": 2953, \"trust\": 96, \"undertaking\": 3098, \"vocation\": 2561, \"work\": 745}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 38,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:23:50",
+    "details": {
+      "word": "resolve",
+      "rank": 973,
+      "best_word": "commitment",
+      "best_rank": 27,
+      "total_guesses": 38,
+      "self_report": {
+        "predicted_closeness": 0.6,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "commitment",
+            "perseverance",
+            "dedication",
+            "devotion"
+          ],
+          "reason": "Resolve is a synonym for commitment and perseverance, which have low ranks, suggesting it may be closer to the hidden target."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"resolve\", \"basis_words\": [\"commitment\", \"perseverance\", \"dedication\", \"devotion\"], \"reason\": \"Resolve is a synonym for commitment and perseverance, which have low ranks, suggesting it may be closer to the hidden target.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.6}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"accountability\": 37, \"aim\": 862, \"assignment\": 6336, \"burden\": 3654, \"calling\": 2557, \"care\": 101, \"charge\": 3962, \"commitment\": 27, \"contribution\": 1249, \"dedication\": 32, \"devotion\": 51, \"duty\": 1947, \"effort\": 407, \"endeavor\": 1100, \"enterprise\": 3702, \"function\": 3561, \"goal\": 2261, \"job\": 2435, \"mandate\": 3498, \"mission\": 2306, \"objective\": 649, \"obligation\": 854, \"occupation\": 11029, \"perseverance\": 40, \"position\": 3435, \"post\": 2641, \"purpose\": 659, \"responsibility\": 77, \"role\": 1793, \"sacrifice\": 234, \"service\": 1170, \"stewardship\": 1265, \"task\": 2953, \"trust\": 96, \"undertaking\": 3098, \"vocation\": 2561, \"work\": 745}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 39,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:24:17",
+    "details": {
+      "word": "persistence",
+      "rank": 210,
+      "best_word": "commitment",
+      "best_rank": 27,
+      "total_guesses": 39,
+      "self_report": {
+        "predicted_closeness": 0.6,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "commitment",
+            "dedication",
+            "perseverance",
+            "sacrifice"
+          ],
+          "reason": "The word 'persistence' is a close synonym to existing low-ranked guesses like 'perseverance', 'commitment', and 'sacrifice', which are all related to determination and effort, suggesting it may be closer to the hidden target."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"persistence\", \"basis_words\": [\"commitment\", \"dedication\", \"perseverance\", \"sacrifice\"], \"reason\": \"The word 'persistence' is a close synonym to existing low-ranked guesses like 'perseverance', 'commitment', and 'sacrifice', which are all related to determination and effort, suggesting it may be closer to the hidden target.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.6}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"accountability\": 37, \"aim\": 862, \"assignment\": 6336, \"burden\": 3654, \"calling\": 2557, \"care\": 101, \"charge\": 3962, \"commitment\": 27, \"contribution\": 1249, \"dedication\": 32, \"devotion\": 51, \"duty\": 1947, \"effort\": 407, \"endeavor\": 1100, \"enterprise\": 3702, \"function\": 3561, \"goal\": 2261, \"job\": 2435, \"mandate\": 3498, \"mission\": 2306, \"objective\": 649, \"obligation\": 854, \"occupation\": 11029, \"perseverance\": 40, \"position\": 3435, \"post\": 2641, \"purpose\": 659, \"resolve\": 973, \"responsibility\": 77, \"role\": 1793, \"sacrifice\": 234, \"service\": 1170, \"stewardship\": 1265, \"task\": 2953, \"trust\": 96, \"undertaking\": 3098, \"vocation\": 2561, \"work\": 745}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 40,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:24:37",
+    "details": {
+      "word": "diligence",
+      "rank": 114,
+      "best_word": "commitment",
+      "best_rank": 27,
+      "total_guesses": 40,
+      "self_report": {
+        "predicted_closeness": 0.3,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "perseverance",
+            "persistence",
+            "dedication",
+            "effort",
+            "resolve"
+          ],
+          "reason": "Diligence is a close synonym to words like perseverance, persistence, and dedication, which have lower ranks, suggesting it may be closer to the target."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"diligence\", \"basis_words\": [\"perseverance\", \"persistence\", \"dedication\", \"effort\", \"resolve\"], \"reason\": \"Diligence is a close synonym to words like perseverance, persistence, and dedication, which have lower ranks, suggesting it may be closer to the target.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"accountability\": 37, \"aim\": 862, \"assignment\": 6336, \"burden\": 3654, \"calling\": 2557, \"care\": 101, \"charge\": 3962, \"commitment\": 27, \"contribution\": 1249, \"dedication\": 32, \"devotion\": 51, \"duty\": 1947, \"effort\": 407, \"endeavor\": 1100, \"enterprise\": 3702, \"function\": 3561, \"goal\": 2261, \"job\": 2435, \"mandate\": 3498, \"mission\": 2306, \"objective\": 649, \"obligation\": 854, \"occupation\": 11029, \"perseverance\": 40, \"persistence\": 210, \"position\": 3435, \"post\": 2641, \"purpose\": 659, \"resolve\": 973, \"responsibility\": 77, \"role\": 1793, \"sacrifice\": 234, \"service\": 1170, \"stewardship\": 1265, \"task\": 2953, \"trust\": 96, \"undertaking\": 3098, \"vocation\": 2561, \"work\": 745}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 41,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:25:20",
+    "details": {
+      "word": "zeal",
+      "rank": 249,
+      "best_word": "commitment",
+      "best_rank": 27,
+      "total_guesses": 41,
+      "self_report": {
+        "predicted_closeness": 0.3,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "commitment",
+            "dedication",
+            "perseverance",
+            "persistence",
+            "devotion"
+          ],
+          "reason": "Zeal is a synonym for dedication and commitment, which are among the closest guesses, suggesting it may be a close synonym to the target word."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"zeal\", \"basis_words\": [\"commitment\", \"dedication\", \"perseverance\", \"persistence\", \"devotion\"], \"reason\": \"Zeal is a synonym for dedication and commitment, which are among the closest guesses, suggesting it may be a close synonym to the target word.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"accountability\": 37, \"aim\": 862, \"assignment\": 6336, \"burden\": 3654, \"calling\": 2557, \"care\": 101, \"charge\": 3962, \"commitment\": 27, \"contribution\": 1249, \"dedication\": 32, \"devotion\": 51, \"diligence\": 114, \"duty\": 1947, \"effort\": 407, \"endeavor\": 1100, \"enterprise\": 3702, \"function\": 3561, \"goal\": 2261, \"job\": 2435, \"mandate\": 3498, \"mission\": 2306, \"objective\": 649, \"obligation\": 854, \"occupation\": 11029, \"perseverance\": 40, \"persistence\": 210, \"position\": 3435, \"post\": 2641, \"purpose\": 659, \"resolve\": 973, \"responsibility\": 77, \"role\": 1793, \"sacrifice\": 234, \"service\": 1170, \"stewardship\": 1265, \"task\": 2953, \"trust\": 96, \"undertaking\": 3098, \"vocation\": 2561, \"work\": 745}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 42,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:25:33",
+    "details": {
+      "word": "tenacity",
+      "rank": 92,
+      "best_word": "commitment",
+      "best_rank": 27,
+      "total_guesses": 42,
+      "self_report": {
+        "predicted_closeness": 0.7,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "perseverance",
+            "persistence",
+            "resolve"
+          ],
+          "reason": "Tenacity is a synonym for perseverance, persistence, and resolve, which are all close to the target."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"tenacity\", \"basis_words\": [\"perseverance\", \"persistence\", \"resolve\"], \"reason\": \"Tenacity is a synonym for perseverance, persistence, and resolve, which are all close to the target.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.7}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"accountability\": 37, \"aim\": 862, \"assignment\": 6336, \"burden\": 3654, \"calling\": 2557, \"care\": 101, \"charge\": 3962, \"commitment\": 27, \"contribution\": 1249, \"dedication\": 32, \"devotion\": 51, \"diligence\": 114, \"duty\": 1947, \"effort\": 407, \"endeavor\": 1100, \"enterprise\": 3702, \"function\": 3561, \"goal\": 2261, \"job\": 2435, \"mandate\": 3498, \"mission\": 2306, \"objective\": 649, \"obligation\": 854, \"occupation\": 11029, \"perseverance\": 40, \"persistence\": 210, \"position\": 3435, \"post\": 2641, \"purpose\": 659, \"resolve\": 973, \"responsibility\": 77, \"role\": 1793, \"sacrifice\": 234, \"service\": 1170, \"stewardship\": 1265, \"task\": 2953, \"trust\": 96, \"undertaking\": 3098, \"vocation\": 2561, \"work\": 745, \"zeal\": 249}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 43,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:25:52",
+    "details": {
+      "word": "commission",
+      "rank": 4882,
+      "best_word": "commitment",
+      "best_rank": 27,
+      "total_guesses": 43,
+      "self_report": {
+        "predicted_closeness": 0.6,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "assignment",
+            "mission",
+            "responsibility",
+            "task"
+          ],
+          "reason": "Commission is a synonym for task or mission, and shares conceptual overlap with responsibility and duty, which are already low-ranked in the guess history."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"commission\", \"basis_words\": [\"assignment\", \"mission\", \"responsibility\", \"task\"], \"reason\": \"Commission is a synonym for task or mission, and shares conceptual overlap with responsibility and duty, which are already low-ranked in the guess history.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.6}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"accountability\": 37, \"aim\": 862, \"assignment\": 6336, \"burden\": 3654, \"calling\": 2557, \"care\": 101, \"charge\": 3962, \"commitment\": 27, \"contribution\": 1249, \"dedication\": 32, \"devotion\": 51, \"diligence\": 114, \"duty\": 1947, \"effort\": 407, \"endeavor\": 1100, \"enterprise\": 3702, \"function\": 3561, \"goal\": 2261, \"job\": 2435, \"mandate\": 3498, \"mission\": 2306, \"objective\": 649, \"obligation\": 854, \"occupation\": 11029, \"perseverance\": 40, \"persistence\": 210, \"position\": 3435, \"post\": 2641, \"purpose\": 659, \"resolve\": 973, \"responsibility\": 77, \"role\": 1793, \"sacrifice\": 234, \"service\": 1170, \"stewardship\": 1265, \"task\": 2953, \"tenacity\": 92, \"trust\": 96, \"undertaking\": 3098, \"vocation\": 2561, \"work\": 745, \"zeal\": 249}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 44,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:26:37",
+    "details": {
+      "word": "initiative",
+      "rank": 1279,
+      "best_word": "commitment",
+      "best_rank": 27,
+      "total_guesses": 44,
+      "self_report": {
+        "predicted_closeness": 0.4,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "perseverance",
+            "persistence",
+            "diligence",
+            "resolve",
+            "tenacity"
+          ],
+          "reason": "The target appears to be a synonym of words related to effort and determination, such as 'perseverance' (rank 40), 'persistence' (210), and 'diligence' (114). 'Initiative' is a common synonym not yet guessed, potentially closer to the hidden target."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"initiative\", \"basis_words\": [\"perseverance\", \"persistence\", \"diligence\", \"resolve\", \"tenacity\"], \"reason\": \"The target appears to be a synonym of words related to effort and determination, such as 'perseverance' (rank 40), 'persistence' (210), and 'diligence' (114). 'Initiative' is a common synonym not yet guessed, potentially closer to the hidden target.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"accountability\": 37, \"aim\": 862, \"assignment\": 6336, \"burden\": 3654, \"calling\": 2557, \"care\": 101, \"charge\": 3962, \"commission\": 4882, \"commitment\": 27, \"contribution\": 1249, \"dedication\": 32, \"devotion\": 51, \"diligence\": 114, \"duty\": 1947, \"effort\": 407, \"endeavor\": 1100, \"enterprise\": 3702, \"function\": 3561, \"goal\": 2261, \"job\": 2435, \"mandate\": 3498, \"mission\": 2306, \"objective\": 649, \"obligation\": 854, \"occupation\": 11029, \"perseverance\": 40, \"persistence\": 210, \"position\": 3435, \"post\": 2641, \"purpose\": 659, \"resolve\": 973, \"responsibility\": 77, \"role\": 1793, \"sacrifice\": 234, \"service\": 1170, \"stewardship\": 1265, \"task\": 2953, \"tenacity\": 92, \"trust\": 96, \"undertaking\": 3098, \"vocation\": 2561, \"work\": 745, \"zeal\": 249}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 45,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:27:30",
+    "details": {
+      "word": "integrity",
+      "rank": 3,
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 45,
+      "self_report": {
+        "predicted_closeness": 0.1,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "beyond",
+        "rationale": {
+          "basis_words": [
+            "commitment",
+            "dedication",
+            "perseverance",
+            "responsibility"
+          ],
+          "reason": "Integrity is a synonym for commitment and dedication, and may be closer to the target based on the existing guesses with similar ranks."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"integrity\", \"basis_words\": [\"commitment\", \"dedication\", \"perseverance\", \"responsibility\"], \"reason\": \"Integrity is a synonym for commitment and dedication, and may be closer to the target based on the existing guesses with similar ranks.\", \"predicted_bucket\": \"beyond\", \"predicted_closeness\": 0.1}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"accountability\": 37, \"aim\": 862, \"assignment\": 6336, \"burden\": 3654, \"calling\": 2557, \"care\": 101, \"charge\": 3962, \"commission\": 4882, \"commitment\": 27, \"contribution\": 1249, \"dedication\": 32, \"devotion\": 51, \"diligence\": 114, \"duty\": 1947, \"effort\": 407, \"endeavor\": 1100, \"enterprise\": 3702, \"function\": 3561, \"goal\": 2261, \"initiative\": 1279, \"job\": 2435, \"mandate\": 3498, \"mission\": 2306, \"objective\": 649, \"obligation\": 854, \"occupation\": 11029, \"perseverance\": 40, \"persistence\": 210, \"position\": 3435, \"post\": 2641, \"purpose\": 659, \"resolve\": 973, \"responsibility\": 77, \"role\": 1793, \"sacrifice\": 234, \"service\": 1170, \"stewardship\": 1265, \"task\": 2953, \"tenacity\": 92, \"trust\": 96, \"undertaking\": 3098, \"vocation\": 2561, \"work\": 745, \"zeal\": 249}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 46,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:27:40",
+    "details": {
+      "word": "honesty",
+      "rank": 1,
+      "best_word": "honesty",
+      "best_rank": 1,
+      "total_guesses": 46,
+      "self_report": {
+        "predicted_closeness": 0.7,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "integrity",
+            "dedication"
+          ],
+          "reason": "Integrity (rank 3) and dedication (rank 32) suggest the target relates to moral or ethical qualities. 'Honesty' is a close synonym not yet guessed."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"honesty\", \"basis_words\": [\"integrity\", \"dedication\"], \"reason\": \"Integrity (rank 3) and dedication (rank 32) suggest the target relates to moral or ethical qualities. 'Honesty' is a close synonym not yet guessed.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.7}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"accountability\": 37, \"aim\": 862, \"assignment\": 6336, \"burden\": 3654, \"calling\": 2557, \"care\": 101, \"charge\": 3962, \"commission\": 4882, \"commitment\": 27, \"contribution\": 1249, \"dedication\": 32, \"devotion\": 51, \"diligence\": 114, \"duty\": 1947, \"effort\": 407, \"endeavor\": 1100, \"enterprise\": 3702, \"function\": 3561, \"goal\": 2261, \"initiative\": 1279, \"integrity\": 3, \"job\": 2435, \"mandate\": 3498, \"mission\": 2306, \"objective\": 649, \"obligation\": 854, \"occupation\": 11029, \"perseverance\": 40, \"persistence\": 210, \"position\": 3435, \"post\": 2641, \"purpose\": 659, \"resolve\": 973, \"responsibility\": 77, \"role\": 1793, \"sacrifice\": 234, \"service\": 1170, \"stewardship\": 1265, \"task\": 2953, \"tenacity\": 92, \"trust\": 96, \"undertaking\": 3098, \"vocation\": 2561, \"work\": 745, \"zeal\": 249}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 46,
+    "event": "SOLVED",
+    "timestamp": "2026-07-22T22:27:40",
+    "details": {
+      "answer": "honesty",
+      "rank": 1,
+      "total_guesses": 46
+    }
+  },
+  {
+    "generation": 46,
+    "event": "NETWORK_METRICS",
+    "timestamp": "2026-07-22T22:27:40",
+    "details": {
+      "network_calls": 39,
+      "network_wall_clock_seconds": 1901.1376,
+      "total_latency_seconds": 106.4002,
+      "mean_latency_seconds": 2.7282,
+      "median_latency_seconds": 3.2264,
+      "p95_latency_seconds": 3.2321,
+      "max_latency_seconds": 3.244,
+      "status_counts": {
+        "200": 39
+      },
+      "outcome_counts": {
+        "ok": 39
+      }
+    }
+  }
+]

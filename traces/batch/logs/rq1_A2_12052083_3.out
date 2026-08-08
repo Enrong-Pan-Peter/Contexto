@@ -1,0 +1,76 @@
+===== JOB INFORMATION =====
+Date: Thu Jul 23 02:02:21 EDT 2026
+Host: frnt191.frontenac.local
+Job ID: 12052423
+Array task: 3
+Arm: A2
+Game: 1335
+Python: /global/home/hpc6237/venvs/contexto/bin/python
+OLLAMA_HOST: 127.0.0.1:32423
+OLLAMA_BASE_URL: http://127.0.0.1:32423/v1
+RANK_CACHE_DIR: data/rank_cache_A2
+Command: python -m contexto_solver.experiment --game api --method llm_only --provider ollama --ollama-model qwen3:14b --game-numbers 1335 --runs-per-target 5 --random-seed 0 --max-generations 350 --output traces/rq1_A2/A2_llm_only_game1335.json
+Python 3.11.5
+Thu Jul 23 02:02:21 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 580.167.08             Driver Version: 580.167.08     CUDA Version: 13.0     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100-SXM4-40GB          On  |   00000000:07:00.0 Off |                    0 |
+| N/A   27C    P0             53W /  400W |     107MiB /  40960MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   1  NVIDIA A100-SXM4-40GB          On  |   00000000:0F:00.0 Off |                    0 |
+| N/A   49C    P0             86W /  400W |   15719MiB /  40960MiB |     99%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   2  NVIDIA A100-SXM4-40GB          On  |   00000000:47:00.0 Off |                    0 |
+| N/A   55C    P0            305W /  400W |   15790MiB /  40960MiB |     95%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   3  NVIDIA A100-SXM4-40GB          On  |   00000000:4E:00.0 Off |                    0 |
+| N/A   53C    P0            299W /  400W |   15783MiB /  40960MiB |     96%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   4  NVIDIA A100-SXM4-40GB          On  |   00000000:87:00.0 Off |                    0 |
+| N/A   46C    P0            205W /  400W |   14201MiB /  40960MiB |     80%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   5  NVIDIA A100-SXM4-40GB          On  |   00000000:90:00.0 Off |                    0 |
+| N/A   58C    P0            233W /  400W |   14202MiB /  40960MiB |     85%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   6  NVIDIA A100-SXM4-40GB          On  |   00000000:B7:00.0 Off |                    0 |
+| N/A   59C    P0            237W /  400W |   14202MiB /  40960MiB |     81%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   7  NVIDIA A100-SXM4-40GB          On  |   00000000:BD:00.0 Off |                    0 |
+| N/A   61C    P0            237W /  400W |   14205MiB /  40960MiB |     81%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|    0   N/A  N/A         1182569      G   ...local/lib/ollama/llama-server          6MiB |
+|    0   N/A  N/A         1194555      G   ...local/lib/ollama/llama-server          6MiB |
+|    0   N/A  N/A         1701481      G   ...local/lib/ollama/llama-server          6MiB |
+|    0   N/A  N/A         1787545      G   ...local/lib/ollama/llama-server          6MiB |
+|    0   N/A  N/A         2995164      G   ...local/lib/ollama/llama-server          6MiB |
+|    0   N/A  N/A         2995167      G   ...local/lib/ollama/llama-server          6MiB |
+|    0   N/A  N/A         3020772      G   ...local/lib/ollama/llama-server          6MiB |
+|    1   N/A  N/A         3020772    C+G   ...local/lib/ollama/llama-server      15701MiB |
+|    2   N/A  N/A         2995164    C+G   ...local/lib/ollama/llama-server      15765MiB |
+|    3   N/A  N/A         2995167    C+G   ...local/lib/ollama/llama-server      15765MiB |
+|    4   N/A  N/A         1701481    C+G   ...local/lib/ollama/llama-server      14182MiB |
+|    5   N/A  N/A         1194555    C+G   ...local/lib/ollama/llama-server      14182MiB |
+|    6   N/A  N/A         1787545    C+G   ...local/lib/ollama/llama-server      14182MiB |
+|    7   N/A  N/A         1182569    C+G   ...local/lib/ollama/llama-server      14182MiB |
++-----------------------------------------------------------------------------------------+
+===== START OLLAMA =====
+===== RUN EXPERIMENT =====

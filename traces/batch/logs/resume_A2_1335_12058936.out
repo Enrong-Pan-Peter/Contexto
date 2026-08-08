@@ -1,0 +1,496 @@
+Python: /global/home/hpc6237/venvs/contexto/bin/python
+Python 3.11.5
+NumPy: 2.4.2
+Tue Aug  4 12:09:15 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 580.167.08             Driver Version: 580.167.08     CUDA Version: 13.0     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100-SXM4-40GB          On  |   00000000:07:00.0 Off |                    0 |
+| N/A   61C    P0            375W /  400W |   24465MiB /  40960MiB |    100%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   1  NVIDIA A100-SXM4-40GB          On  |   00000000:0F:00.0 Off |                    0 |
+| N/A   23C    P0             53W /  400W |       0MiB /  40960MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   2  NVIDIA A100-SXM4-40GB          On  |   00000000:47:00.0 Off |                    0 |
+| N/A   22C    P0             54W /  400W |       0MiB /  40960MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   3  NVIDIA A100-SXM4-40GB          On  |   00000000:4E:00.0 Off |                    0 |
+| N/A   23C    P0             55W /  400W |       0MiB /  40960MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   4  NVIDIA A100-SXM4-40GB          On  |   00000000:87:00.0 Off |                    0 |
+| N/A   41C    P0             56W /  400W |       0MiB /  40960MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   5  NVIDIA A100-SXM4-40GB          On  |   00000000:90:00.0 Off |                    0 |
+| N/A   25C    P0             59W /  400W |       0MiB /  40960MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   6  NVIDIA A100-SXM4-40GB          On  |   00000000:B7:00.0 Off |                    0 |
+| N/A   25C    P0             54W /  400W |       0MiB /  40960MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   7  NVIDIA A100-SXM4-40GB          On  |   00000000:BD:00.0 Off |                    0 |
+| N/A   26C    P0             53W /  400W |       0MiB /  40960MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|    0   N/A  N/A           82727      C   python                                24034MiB |
++-----------------------------------------------------------------------------------------+
+ollama version is 0.32.1
+NAME          ID              SIZE      MODIFIED     
+gemma4:12b    4eb23ef187e2    7.6 GB    13 days ago     
+qwen3:14b     bdbd181c33f2    9.3 GB    5 weeks ago     
+qwen3:30b     ad815644918f    18 GB     2 months ago    
+Generation 1: best word=time, best rank=1567
+Generation 2: best word=time, best rank=1567
+Generation 3: best word=time, best rank=1567
+Generation 4: best word=time, best rank=1567
+Generation 5: best word=time, best rank=1567
+Generation 6: best word=time, best rank=1567
+Generation 7: best word=time, best rank=1567
+Generation 8: best word=time, best rank=1567
+Generation 9: best word=time, best rank=1567
+Generation 10: best word=time, best rank=1567
+Generation 11: best word=time, best rank=1567
+Generation 12: best word=time, best rank=1567
+Generation 13: best word=time, best rank=1567
+Generation 14: best word=time, best rank=1567
+Generation 15: best word=time, best rank=1567
+Generation 16: best word=time, best rank=1567
+Generation 17: best word=time, best rank=1567
+Generation 18: best word=time, best rank=1567
+Generation 19: best word=time, best rank=1567
+Generation 20: best word=time, best rank=1567
+Generation 21: best word=time, best rank=1567
+Generation 22: best word=time, best rank=1567
+Generation 23: best word=time, best rank=1567
+Generation 24: best word=time, best rank=1567
+Generation 25: best word=time, best rank=1567
+Generation 26: best word=time, best rank=1567
+Generation 27: best word=time, best rank=1567
+Generation 28: best word=time, best rank=1567
+Generation 29: best word=point, best rank=73
+Generation 30: best word=point, best rank=73
+Generation 31: best word=position, best rank=23
+Generation 32: best word=position, best rank=23
+Generation 33: best word=position, best rank=23
+Generation 35: best word=position, best rank=23
+Generation 36: best word=position, best rank=23
+Generation 37: best word=position, best rank=23
+Generation 38: best word=position, best rank=23
+Generation 40: best word=position, best rank=23
+Generation 41: best word=position, best rank=23
+Generation 42: best word=position, best rank=23
+Generation 43: best word=position, best rank=23
+Generation 44: best word=position, best rank=23
+Generation 45: best word=position, best rank=23
+Generation 46: best word=position, best rank=23
+Generation 47: best word=position, best rank=23
+Generation 48: best word=position, best rank=23
+Generation 49: best word=position, best rank=23
+Generation 50: best word=position, best rank=23
+Generation 51: best word=position, best rank=23
+Generation 52: best word=position, best rank=23
+Generation 53: best word=position, best rank=23
+Generation 54: best word=position, best rank=23
+Generation 55: best word=position, best rank=23
+Generation 56: best word=position, best rank=23
+Generation 57: best word=position, best rank=23
+Generation 58: best word=position, best rank=23
+Generation 59: best word=position, best rank=23
+Generation 60: best word=position, best rank=23
+Generation 61: best word=position, best rank=23
+Generation 62: best word=position, best rank=23
+Generation 63: best word=position, best rank=23
+Generation 64: best word=position, best rank=23
+Generation 65: best word=position, best rank=23
+Generation 66: best word=position, best rank=23
+Generation 67: best word=position, best rank=23
+Generation 68: best word=position, best rank=23
+Generation 69: best word=position, best rank=23
+Generation 70: best word=position, best rank=23
+Generation 71: best word=position, best rank=23
+Generation 72: best word=position, best rank=23
+Generation 73: best word=position, best rank=23
+Generation 74: best word=position, best rank=23
+Generation 75: best word=position, best rank=23
+Generation 76: best word=position, best rank=23
+Generation 77: best word=position, best rank=23
+Generation 78: best word=position, best rank=23
+Generation 79: best word=position, best rank=23
+Generation 80: best word=position, best rank=23
+Generation 81: best word=position, best rank=23
+Generation 82: best word=position, best rank=23
+Generation 83: best word=position, best rank=23
+Generation 84: best word=position, best rank=23
+Generation 85: best word=position, best rank=23
+Generation 86: best word=position, best rank=23
+Generation 87: best word=position, best rank=23
+Generation 88: best word=position, best rank=23
+Generation 89: best word=position, best rank=23
+Generation 90: best word=position, best rank=23
+Generation 91: best word=position, best rank=23
+Generation 92: best word=position, best rank=23
+Generation 93: best word=position, best rank=23
+Generation 96: best word=position, best rank=23
+Generation 97: best word=position, best rank=23
+Generation 98: best word=position, best rank=23
+Generation 99: best word=position, best rank=23
+Generation 100: best word=position, best rank=23
+Generation 101: best word=position, best rank=23
+Generation 102: best word=position, best rank=23
+Generation 103: best word=position, best rank=23
+Generation 104: best word=position, best rank=23
+Generation 105: best word=position, best rank=23
+Generation 106: best word=position, best rank=23
+Generation 107: best word=position, best rank=23
+Generation 108: best word=position, best rank=23
+Generation 109: best word=position, best rank=23
+Generation 110: best word=position, best rank=23
+Generation 111: best word=position, best rank=23
+Generation 112: best word=position, best rank=23
+Generation 113: best word=position, best rank=23
+Generation 114: best word=position, best rank=23
+Generation 115: best word=position, best rank=23
+Generation 116: best word=position, best rank=23
+Generation 117: best word=position, best rank=23
+Generation 118: best word=position, best rank=23
+Generation 119: best word=position, best rank=23
+Generation 120: best word=position, best rank=23
+Generation 121: best word=position, best rank=23
+Generation 122: best word=position, best rank=23
+Generation 123: best word=position, best rank=23
+Generation 124: best word=position, best rank=23
+Generation 125: best word=position, best rank=23
+Generation 126: best word=position, best rank=23
+Generation 127: best word=position, best rank=23
+Generation 128: best word=position, best rank=23
+Generation 129: best word=position, best rank=23
+Generation 130: best word=position, best rank=23
+Generation 131: best word=position, best rank=23
+Generation 132: best word=position, best rank=23
+Generation 133: best word=position, best rank=23
+Generation 134: best word=position, best rank=23
+Generation 135: best word=position, best rank=23
+Generation 137: best word=position, best rank=23
+Generation 138: best word=position, best rank=23
+Generation 139: best word=position, best rank=23
+Generation 140: best word=position, best rank=23
+Generation 141: best word=position, best rank=23
+Generation 142: best word=position, best rank=23
+Generation 143: best word=position, best rank=23
+Generation 144: best word=position, best rank=23
+Generation 145: best word=position, best rank=23
+Generation 146: best word=position, best rank=23
+Generation 147: best word=position, best rank=23
+Generation 148: best word=position, best rank=23
+Generation 149: best word=position, best rank=23
+Generation 150: best word=position, best rank=23
+Generation 151: best word=position, best rank=23
+Generation 152: best word=position, best rank=23
+Generation 153: best word=position, best rank=23
+Generation 154: best word=position, best rank=23
+Generation 155: best word=position, best rank=23
+Generation 156: best word=position, best rank=23
+Generation 157: best word=position, best rank=23
+Generation 158: best word=position, best rank=23
+Generation 159: best word=position, best rank=23
+Generation 160: best word=position, best rank=23
+Generation 162: best word=position, best rank=23
+Generation 163: best word=position, best rank=23
+Generation 164: best word=position, best rank=23
+Generation 167: best word=position, best rank=23
+Generation 168: best word=position, best rank=23
+Generation 170: best word=position, best rank=23
+Generation 171: best word=position, best rank=23
+Generation 172: best word=position, best rank=23
+Generation 173: best word=position, best rank=23
+Generation 174: best word=position, best rank=23
+Generation 175: best word=position, best rank=23
+Generation 176: best word=position, best rank=23
+Generation 177: best word=position, best rank=23
+Generation 178: best word=position, best rank=23
+Generation 179: best word=position, best rank=23
+Generation 180: best word=position, best rank=23
+Generation 181: best word=position, best rank=23
+Generation 182: best word=position, best rank=23
+Generation 184: best word=position, best rank=23
+Generation 185: best word=position, best rank=23
+Generation 186: best word=position, best rank=23
+Generation 187: best word=position, best rank=23
+Generation 188: best word=position, best rank=23
+Generation 189: best word=position, best rank=23
+Generation 190: best word=position, best rank=23
+Generation 192: best word=position, best rank=23
+Generation 194: best word=position, best rank=23
+Generation 195: best word=position, best rank=23
+Generation 196: best word=position, best rank=23
+Generation 197: best word=position, best rank=23
+Generation 198: best word=position, best rank=23
+Generation 199: best word=position, best rank=23
+Generation 200: best word=position, best rank=23
+Generation 201: best word=position, best rank=23
+Generation 202: best word=position, best rank=23
+Generation 203: best word=position, best rank=23
+Generation 204: best word=position, best rank=23
+Generation 205: best word=position, best rank=23
+Generation 206: best word=position, best rank=23
+Generation 207: best word=position, best rank=23
+Generation 208: best word=position, best rank=23
+Generation 209: best word=position, best rank=23
+Generation 210: best word=position, best rank=23
+Generation 211: best word=position, best rank=23
+Generation 212: best word=compass, best rank=1
+Generation 1: best word=water, best rank=975
+Generation 2: best word=water, best rank=975
+Generation 3: best word=water, best rank=975
+Generation 4: best word=water, best rank=975
+Generation 5: best word=sea, best rank=725
+Generation 6: best word=sea, best rank=725
+Generation 7: best word=sea, best rank=725
+Generation 8: best word=sea, best rank=725
+Generation 9: best word=sea, best rank=725
+Generation 10: best word=sea, best rank=725
+Generation 11: best word=sea, best rank=725
+Generation 12: best word=sea, best rank=725
+Generation 13: best word=sea, best rank=725
+Generation 14: best word=sea, best rank=725
+Generation 15: best word=sea, best rank=725
+Generation 16: best word=sea, best rank=725
+Generation 17: best word=sea, best rank=725
+Generation 18: best word=sound, best rank=99
+Generation 19: best word=sound, best rank=99
+Generation 20: best word=sound, best rank=99
+Generation 21: best word=sound, best rank=99
+Generation 22: best word=sound, best rank=99
+Generation 23: best word=sound, best rank=99
+Generation 24: best word=sound, best rank=99
+Generation 25: best word=sound, best rank=99
+Generation 26: best word=sound, best rank=99
+Generation 27: best word=sound, best rank=99
+Generation 28: best word=sound, best rank=99
+Generation 29: best word=sound, best rank=99
+Generation 30: best word=sound, best rank=99
+Generation 31: best word=sound, best rank=99
+Generation 32: best word=sound, best rank=99
+Generation 33: best word=sound, best rank=99
+Generation 34: best word=sound, best rank=99
+Generation 35: best word=sound, best rank=99
+Generation 36: best word=sound, best rank=99
+Generation 38: best word=sound, best rank=99
+Generation 39: best word=sound, best rank=99
+Generation 40: best word=sound, best rank=99
+Generation 42: best word=sound, best rank=99
+Generation 43: best word=sound, best rank=99
+Generation 44: best word=sound, best rank=99
+Generation 45: best word=sound, best rank=99
+Generation 46: best word=sound, best rank=99
+Generation 47: best word=sound, best rank=99
+Generation 48: best word=sound, best rank=99
+Generation 49: best word=sound, best rank=99
+Generation 50: best word=sound, best rank=99
+Generation 51: best word=sound, best rank=99
+Generation 52: best word=sound, best rank=99
+Generation 53: best word=sound, best rank=99
+Generation 54: best word=sound, best rank=99
+Generation 55: best word=sound, best rank=99
+Generation 56: best word=sound, best rank=99
+Generation 57: best word=sound, best rank=99
+Generation 58: best word=sound, best rank=99
+Generation 59: best word=sound, best rank=99
+Generation 61: best word=sound, best rank=99
+Generation 62: best word=sound, best rank=99
+Generation 63: best word=sound, best rank=99
+Generation 66: best word=sound, best rank=99
+Generation 68: best word=point, best rank=73
+Generation 69: best word=point, best rank=73
+Generation 70: best word=point, best rank=73
+Generation 71: best word=point, best rank=73
+Generation 72: best word=point, best rank=73
+Generation 73: best word=point, best rank=73
+Generation 74: best word=point, best rank=73
+Generation 75: best word=point, best rank=73
+Generation 77: best word=point, best rank=73
+Generation 78: best word=point, best rank=73
+Generation 79: best word=point, best rank=73
+Generation 80: best word=point, best rank=73
+Generation 81: best word=point, best rank=73
+Generation 83: best word=point, best rank=73
+Generation 84: best word=point, best rank=73
+Generation 85: best word=point, best rank=73
+Generation 87: best word=point, best rank=73
+Generation 88: best word=point, best rank=73
+Generation 89: best word=point, best rank=73
+Generation 90: best word=point, best rank=73
+Generation 91: best word=point, best rank=73
+Generation 92: best word=point, best rank=73
+Generation 94: best word=point, best rank=73
+Generation 95: best word=point, best rank=73
+Generation 97: best word=point, best rank=73
+Generation 98: best word=point, best rank=73
+Generation 99: best word=point, best rank=73
+Generation 100: best word=point, best rank=73
+Generation 101: best word=point, best rank=73
+Generation 102: best word=point, best rank=73
+Generation 103: best word=point, best rank=73
+Generation 105: best word=point, best rank=73
+Generation 106: best word=point, best rank=73
+Generation 110: best word=point, best rank=73
+Generation 111: best word=point, best rank=73
+Generation 112: best word=point, best rank=73
+Generation 113: best word=point, best rank=73
+Generation 114: best word=point, best rank=73
+Generation 115: best word=point, best rank=73
+Generation 116: best word=point, best rank=73
+Generation 117: best word=point, best rank=73
+Generation 118: best word=point, best rank=73
+Generation 120: best word=point, best rank=73
+Generation 121: best word=point, best rank=73
+Generation 122: best word=point, best rank=73
+Generation 123: best word=point, best rank=73
+Generation 124: best word=point, best rank=73
+Generation 125: best word=point, best rank=73
+Generation 126: best word=point, best rank=73
+Generation 127: best word=point, best rank=73
+Generation 128: best word=point, best rank=73
+Generation 130: best word=point, best rank=73
+Generation 131: best word=point, best rank=73
+Generation 132: best word=point, best rank=73
+Generation 133: best word=point, best rank=73
+Generation 135: best word=point, best rank=73
+Generation 136: best word=point, best rank=73
+Generation 137: best word=point, best rank=73
+Generation 139: best word=point, best rank=73
+Generation 140: best word=point, best rank=73
+Generation 141: best word=point, best rank=73
+Generation 142: best word=point, best rank=73
+Generation 143: best word=point, best rank=73
+Generation 144: best word=point, best rank=73
+Generation 149: best word=point, best rank=73
+Generation 150: best word=point, best rank=73
+Generation 151: best word=point, best rank=73
+Generation 152: best word=point, best rank=73
+Generation 154: best word=point, best rank=73
+Generation 155: best word=point, best rank=73
+Generation 156: best word=point, best rank=73
+Generation 157: best word=point, best rank=73
+Generation 158: best word=point, best rank=73
+Generation 159: best word=point, best rank=73
+Generation 161: best word=point, best rank=73
+Generation 164: best word=point, best rank=73
+Generation 165: best word=point, best rank=73
+Generation 166: best word=point, best rank=73
+Generation 167: best word=point, best rank=73
+Generation 168: best word=point, best rank=73
+Generation 169: best word=point, best rank=73
+Generation 172: best word=point, best rank=73
+Generation 173: best word=point, best rank=73
+Generation 174: best word=point, best rank=73
+Generation 177: best word=point, best rank=73
+Generation 180: best word=point, best rank=73
+Generation 182: best word=point, best rank=73
+Generation 183: best word=point, best rank=73
+Generation 185: best word=point, best rank=73
+Generation 186: best word=point, best rank=73
+Generation 188: best word=point, best rank=73
+Generation 189: best word=point, best rank=73
+Generation 190: best word=point, best rank=73
+Generation 192: best word=point, best rank=73
+Generation 193: best word=point, best rank=73
+Generation 196: best word=point, best rank=73
+Generation 198: best word=point, best rank=73
+Generation 199: best word=point, best rank=73
+Generation 206: best word=point, best rank=73
+Generation 207: best word=point, best rank=73
+Generation 208: best word=point, best rank=73
+Generation 210: best word=point, best rank=73
+Generation 211: best word=point, best rank=73
+Generation 217: best word=point, best rank=73
+Generation 218: best word=point, best rank=73
+Generation 220: best word=point, best rank=73
+Generation 222: best word=point, best rank=73
+Generation 223: best word=point, best rank=73
+Generation 227: best word=point, best rank=73
+Generation 231: best word=point, best rank=73
+Generation 232: best word=point, best rank=73
+Generation 233: best word=point, best rank=73
+Generation 236: best word=point, best rank=73
+Generation 238: best word=point, best rank=73
+Generation 242: best word=point, best rank=73
+Generation 243: best word=point, best rank=73
+Generation 245: best word=point, best rank=73
+Generation 247: best word=point, best rank=73
+Generation 250: best word=point, best rank=73
+Generation 252: best word=point, best rank=73
+Generation 254: best word=point, best rank=73
+Generation 255: best word=point, best rank=73
+Generation 256: best word=point, best rank=73
+Generation 258: best word=point, best rank=73
+Generation 260: best word=point, best rank=73
+Generation 265: best word=point, best rank=73
+Generation 267: best word=point, best rank=73
+Generation 268: best word=point, best rank=73
+Generation 270: best word=point, best rank=73
+Generation 273: best word=point, best rank=73
+Generation 274: best word=point, best rank=73
+Generation 276: best word=point, best rank=73
+Generation 277: best word=point, best rank=73
+Generation 280: best word=point, best rank=73
+Generation 282: best word=point, best rank=73
+Generation 283: best word=point, best rank=73
+Generation 285: best word=point, best rank=73
+Generation 286: best word=point, best rank=73
+Generation 290: best word=point, best rank=73
+Generation 291: best word=point, best rank=73
+Generation 292: best word=point, best rank=73
+Generation 293: best word=point, best rank=73
+Generation 294: best word=point, best rank=73
+Generation 295: best word=point, best rank=73
+Generation 296: best word=point, best rank=73
+Generation 297: best word=point, best rank=73
+Generation 299: best word=point, best rank=73
+Generation 301: best word=point, best rank=73
+Generation 302: best word=point, best rank=73
+Generation 304: best word=point, best rank=73
+Generation 305: best word=point, best rank=73
+Generation 307: best word=point, best rank=73
+Generation 308: best word=point, best rank=73
+Generation 311: best word=point, best rank=73
+Generation 314: best word=point, best rank=73
+Generation 322: best word=point, best rank=73
+Generation 325: best word=point, best rank=73
+Generation 327: best word=point, best rank=73
+Generation 329: best word=point, best rank=73
+Generation 331: best word=point, best rank=73
+Generation 335: best word=point, best rank=73
+Generation 343: best word=point, best rank=73
+Generation 345: best word=point, best rank=73
+Generation 347: best word=point, best rank=73
+Generation 348: best word=point, best rank=73
+Wrote JSON summary: traces/rq1_A2/A2_llm_only_game1335.json
+Wrote CSV summary: traces/rq1_A2/A2_llm_only_game1335.csv
+{
+  "total_runs": 5,
+  "solved_runs": 2,
+  "solve_rate": 0.4,
+  "average_guesses_solved": 219.0,
+  "average_best_rank": 22.8,
+  "average_generations": 301.2
+}
+===== FINISHED =====
+Game: 1335
+Exit status: 0
+Date: Thu Aug  6 06:56:22 EDT 2026

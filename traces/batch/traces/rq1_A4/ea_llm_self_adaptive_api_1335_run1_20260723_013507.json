@@ -1,0 +1,3522 @@
+[
+  {
+    "generation": -1,
+    "event": "RUN_CONFIG",
+    "timestamp": "2026-07-23T01:03:00",
+    "details": {
+      "game": "api",
+      "solver": "llm",
+      "method": "ea_llm_self_adaptive",
+      "mode": "api",
+      "target": null,
+      "game_number": 1335,
+      "run_index": 0,
+      "game_embedding_path": null,
+      "solver_embedding_path": null,
+      "embedding_backend": null,
+      "vocabulary_size": null,
+      "alignment": "api_unknown",
+      "trace_schema_version": 3,
+      "instrumentation_provenance_hash": "bd9f2858283673a2",
+      "self_report": true,
+      "rationale_inheritance": true,
+      "max_generations": 50,
+      "llm_provider": "ollama",
+      "llm_model": "gemma4:12b",
+      "llm_workers": 4,
+      "initial_categories": 15,
+      "max_active_hypotheses": null,
+      "local_search_rank_threshold": 100,
+      "self_adaptive_initial_categories": 15,
+      "self_adaptive_mu": 15,
+      "self_adaptive_concentration": 50.0,
+      "self_adaptive_sigma_floor": 0.02,
+      "self_adaptive_sigma_mode": "frozen_uniform",
+      "mapelites_grid_resolution": null,
+      "mapelites_mutations_per_gen": null,
+      "mapelites_crossovers_per_gen": null,
+      "mapelites_initial_categories": null,
+      "mapelites_concentration": null,
+      "mapelites_sigma_floor": null,
+      "mapelites_sigma_mode": null,
+      "mapelites_frozen_sigma": null,
+      "mapelites_ranked_context_k": null,
+      "rank_cache_enabled": true,
+      "enable_pivot": false,
+      "ea_llm_pivot_stall_no_improvement_generations": null,
+      "ea_llm_pivot_stall_close_rank_threshold": null,
+      "ea_llm_pivot_stall_close_generations_limit": null,
+      "ea_llm_pivot_max_attempts_per_run": null,
+      "ea_llm_pivot_candidate_words_per_operator": null,
+      "ea_llm_pivot_resolution_window": null,
+      "random_seed": 0
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:05:19",
+    "details": {
+      "word": "mountain",
+      "rank": 2247,
+      "hypothesis": "nature",
+      "best_word": "mountain",
+      "best_rank": 2247,
+      "total_guesses": 1
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:05:20",
+    "details": {
+      "word": "forest",
+      "rank": 8399,
+      "hypothesis": "nature",
+      "best_word": "mountain",
+      "best_rank": 2247,
+      "total_guesses": 2
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:05:21",
+    "details": {
+      "word": "river",
+      "rank": 2629,
+      "hypothesis": "nature",
+      "best_word": "mountain",
+      "best_rank": 2247,
+      "total_guesses": 3
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:05:21",
+    "details": {
+      "word": "apple",
+      "rank": 11349,
+      "hypothesis": "food",
+      "best_word": "mountain",
+      "best_rank": 2247,
+      "total_guesses": 4
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:05:22",
+    "details": {
+      "word": "bread",
+      "rank": 5837,
+      "hypothesis": "food",
+      "best_word": "mountain",
+      "best_rank": 2247,
+      "total_guesses": 5
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:05:23",
+    "details": {
+      "word": "cheese",
+      "rank": 12611,
+      "hypothesis": "food",
+      "best_word": "mountain",
+      "best_rank": 2247,
+      "total_guesses": 6
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:05:24",
+    "details": {
+      "word": "tiger",
+      "rank": 7508,
+      "hypothesis": "animals",
+      "best_word": "mountain",
+      "best_rank": 2247,
+      "total_guesses": 7
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:05:24",
+    "details": {
+      "word": "eagle",
+      "rank": 354,
+      "hypothesis": "animals",
+      "best_word": "eagle",
+      "best_rank": 354,
+      "total_guesses": 8
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:05:25",
+    "details": {
+      "word": "whale",
+      "rank": 2804,
+      "hypothesis": "animals",
+      "best_word": "eagle",
+      "best_rank": 354,
+      "total_guesses": 9
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:05:26",
+    "details": {
+      "word": "phone",
+      "rank": 951,
+      "hypothesis": "technology",
+      "best_word": "eagle",
+      "best_rank": 354,
+      "total_guesses": 10
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:05:27",
+    "details": {
+      "word": "laptop",
+      "rank": 2401,
+      "hypothesis": "technology",
+      "best_word": "eagle",
+      "best_rank": 354,
+      "total_guesses": 11
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:05:28",
+    "details": {
+      "word": "screen",
+      "rank": 705,
+      "hypothesis": "technology",
+      "best_word": "eagle",
+      "best_rank": 354,
+      "total_guesses": 12
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:05:28",
+    "details": {
+      "word": "chair",
+      "rank": 1919,
+      "hypothesis": "furniture",
+      "best_word": "eagle",
+      "best_rank": 354,
+      "total_guesses": 13
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:05:29",
+    "details": {
+      "word": "table",
+      "rank": 555,
+      "hypothesis": "furniture",
+      "best_word": "eagle",
+      "best_rank": 354,
+      "total_guesses": 14
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:05:30",
+    "details": {
+      "word": "lamp",
+      "rank": 85,
+      "hypothesis": "furniture",
+      "best_word": "lamp",
+      "best_rank": 85,
+      "total_guesses": 15
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:05:31",
+    "details": {
+      "word": "rain",
+      "rank": 2161,
+      "hypothesis": "weather",
+      "best_word": "lamp",
+      "best_rank": 85,
+      "total_guesses": 16
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:05:31",
+    "details": {
+      "word": "snow",
+      "rank": 11539,
+      "hypothesis": "weather",
+      "best_word": "lamp",
+      "best_rank": 85,
+      "total_guesses": 17
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:05:32",
+    "details": {
+      "word": "wind",
+      "rank": 534,
+      "hypothesis": "weather",
+      "best_word": "lamp",
+      "best_rank": 85,
+      "total_guesses": 18
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:05:33",
+    "details": {
+      "word": "book",
+      "rank": 122,
+      "hypothesis": "education",
+      "best_word": "lamp",
+      "best_rank": 85,
+      "total_guesses": 19
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:05:34",
+    "details": {
+      "word": "desk",
+      "rank": 560,
+      "hypothesis": "education",
+      "best_word": "lamp",
+      "best_rank": 85,
+      "total_guesses": 20
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:05:35",
+    "details": {
+      "word": "class",
+      "rank": 2325,
+      "hypothesis": "education",
+      "best_word": "lamp",
+      "best_rank": 85,
+      "total_guesses": 21
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:05:35",
+    "details": {
+      "word": "red",
+      "rank": 1461,
+      "hypothesis": "colors",
+      "best_word": "lamp",
+      "best_rank": 85,
+      "total_guesses": 22
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:05:36",
+    "details": {
+      "word": "blue",
+      "rank": 957,
+      "hypothesis": "colors",
+      "best_word": "lamp",
+      "best_rank": 85,
+      "total_guesses": 23
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:05:37",
+    "details": {
+      "word": "green",
+      "rank": 2895,
+      "hypothesis": "colors",
+      "best_word": "lamp",
+      "best_rank": 85,
+      "total_guesses": 24
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:05:38",
+    "details": {
+      "word": "shirt",
+      "rank": 4407,
+      "hypothesis": "clothing",
+      "best_word": "lamp",
+      "best_rank": 85,
+      "total_guesses": 25
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:05:38",
+    "details": {
+      "word": "dress",
+      "rank": 13411,
+      "hypothesis": "clothing",
+      "best_word": "lamp",
+      "best_rank": 85,
+      "total_guesses": 26
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:05:39",
+    "details": {
+      "word": "skirt",
+      "rank": 10695,
+      "hypothesis": "clothing",
+      "best_word": "lamp",
+      "best_rank": 85,
+      "total_guesses": 27
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:05:40",
+    "details": {
+      "word": "soccer",
+      "rank": 5298,
+      "hypothesis": "sports",
+      "best_word": "lamp",
+      "best_rank": 85,
+      "total_guesses": 28
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:05:41",
+    "details": {
+      "word": "tennis",
+      "rank": 6464,
+      "hypothesis": "sports",
+      "best_word": "lamp",
+      "best_rank": 85,
+      "total_guesses": 29
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:05:41",
+    "details": {
+      "word": "golf",
+      "rank": 893,
+      "hypothesis": "sports",
+      "best_word": "lamp",
+      "best_rank": 85,
+      "total_guesses": 30
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:05:42",
+    "details": {
+      "word": "hand",
+      "rank": 157,
+      "hypothesis": "anatomy",
+      "best_word": "lamp",
+      "best_rank": 85,
+      "total_guesses": 31
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:05:43",
+    "details": {
+      "word": "foot",
+      "rank": 3741,
+      "hypothesis": "anatomy",
+      "best_word": "lamp",
+      "best_rank": 85,
+      "total_guesses": 32
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:05:44",
+    "details": {
+      "word": "head",
+      "rank": 247,
+      "hypothesis": "anatomy",
+      "best_word": "lamp",
+      "best_rank": 85,
+      "total_guesses": 33
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:05:45",
+    "details": {
+      "word": "car",
+      "rank": 1375,
+      "hypothesis": "transport",
+      "best_word": "lamp",
+      "best_rank": 85,
+      "total_guesses": 34
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:05:45",
+    "details": {
+      "word": "train",
+      "rank": 2944,
+      "hypothesis": "transport",
+      "best_word": "lamp",
+      "best_rank": 85,
+      "total_guesses": 35
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:05:46",
+    "details": {
+      "word": "plane",
+      "rank": 270,
+      "hypothesis": "transport",
+      "best_word": "lamp",
+      "best_rank": 85,
+      "total_guesses": 36
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:05:47",
+    "details": {
+      "word": "nurse",
+      "rank": 8510,
+      "hypothesis": "careers",
+      "best_word": "lamp",
+      "best_rank": 85,
+      "total_guesses": 37
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:05:48",
+    "details": {
+      "word": "doctor",
+      "rank": 6554,
+      "hypothesis": "careers",
+      "best_word": "lamp",
+      "best_rank": 85,
+      "total_guesses": 38
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:05:48",
+    "details": {
+      "word": "pilot",
+      "rank": 375,
+      "hypothesis": "careers",
+      "best_word": "lamp",
+      "best_rank": 85,
+      "total_guesses": 39
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:05:49",
+    "details": {
+      "word": "hour",
+      "rank": 2253,
+      "hypothesis": "time",
+      "best_word": "lamp",
+      "best_rank": 85,
+      "total_guesses": 40
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:05:50",
+    "details": {
+      "word": "week",
+      "rank": 7768,
+      "hypothesis": "time",
+      "best_word": "lamp",
+      "best_rank": 85,
+      "total_guesses": 41
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:05:51",
+    "details": {
+      "word": "month",
+      "rank": 14354,
+      "hypothesis": "time",
+      "best_word": "lamp",
+      "best_rank": 85,
+      "total_guesses": 42
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:05:52",
+    "details": {
+      "word": "hammer",
+      "rank": 2753,
+      "hypothesis": "tools",
+      "best_word": "lamp",
+      "best_rank": 85,
+      "total_guesses": 43
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:05:52",
+    "details": {
+      "word": "saw",
+      "rank": 3148,
+      "hypothesis": "tools",
+      "best_word": "lamp",
+      "best_rank": 85,
+      "total_guesses": 44
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:05:53",
+    "details": {
+      "word": "drill",
+      "rank": 2196,
+      "hypothesis": "tools",
+      "best_word": "lamp",
+      "best_rank": 85,
+      "total_guesses": 45
+    }
+  },
+  {
+    "generation": 0,
+    "event": "INIT",
+    "timestamp": "2026-07-23T01:05:53",
+    "details": {
+      "hypotheses": [
+        {
+          "hypothesis_id": "01ca6e81bfbf4e34ad6ec5f6a4317b65",
+          "category_name": "nature",
+          "description": "natural_world",
+          "words_tried": {
+            "mountain": 2247,
+            "river": 2629,
+            "forest": 8399
+          },
+          "best_word": "mountain",
+          "best_rank": 2247,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "cf92b3b4306d4fdb9fa59400887039da",
+          "category_name": "food",
+          "description": "edible_items",
+          "words_tried": {
+            "bread": 5837,
+            "apple": 11349,
+            "cheese": 12611
+          },
+          "best_word": "bread",
+          "best_rank": 5837,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "40d3764ee07a446aa5c6abf992e5f236",
+          "category_name": "animals",
+          "description": "wildlife",
+          "words_tried": {
+            "eagle": 354,
+            "whale": 2804,
+            "tiger": 7508
+          },
+          "best_word": "eagle",
+          "best_rank": 354,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "9e2ccaa46a5a406f95d6d2c46d8ba2fb",
+          "category_name": "technology",
+          "description": "electronics",
+          "words_tried": {
+            "screen": 705,
+            "phone": 951,
+            "laptop": 2401
+          },
+          "best_word": "screen",
+          "best_rank": 705,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "3468bdabfe414b0ca8d5a7ea3a0b8b34",
+          "category_name": "furniture",
+          "description": "household_items",
+          "words_tried": {
+            "lamp": 85,
+            "table": 555,
+            "chair": 1919
+          },
+          "best_word": "lamp",
+          "best_rank": 85,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "753d970f83934d34923ba6ff0c0f9323",
+          "category_name": "weather",
+          "description": "climate",
+          "words_tried": {
+            "wind": 534,
+            "rain": 2161,
+            "snow": 11539
+          },
+          "best_word": "wind",
+          "best_rank": 534,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "1d399486aaf84d4ea8a72113bac7f60b",
+          "category_name": "education",
+          "description": "schooling",
+          "words_tried": {
+            "book": 122,
+            "desk": 560,
+            "class": 2325
+          },
+          "best_word": "book",
+          "best_rank": 122,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "8366b73f8dfa49c18a4e31063ee74956",
+          "category_name": "colors",
+          "description": "hues",
+          "words_tried": {
+            "blue": 957,
+            "red": 1461,
+            "green": 2895
+          },
+          "best_word": "blue",
+          "best_rank": 957,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "ccae59d6e35a463694e3b9f4d8ef0424",
+          "category_name": "clothing",
+          "description": "apparel",
+          "words_tried": {
+            "shirt": 4407,
+            "skirt": 10695,
+            "dress": 13411
+          },
+          "best_word": "shirt",
+          "best_rank": 4407,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "5eb19eb661a244e390907be56b7d4156",
+          "category_name": "sports",
+          "description": "athletics",
+          "words_tried": {
+            "golf": 893,
+            "soccer": 5298,
+            "tennis": 6464
+          },
+          "best_word": "golf",
+          "best_rank": 893,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "999f59425e524902b196d8b1bba09752",
+          "category_name": "anatomy",
+          "description": "body_parts",
+          "words_tried": {
+            "hand": 157,
+            "head": 247,
+            "foot": 3741
+          },
+          "best_word": "hand",
+          "best_rank": 157,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "16ec48669d5f45e5904a31a9020bec39",
+          "category_name": "transport",
+          "description": "travel",
+          "words_tried": {
+            "plane": 270,
+            "car": 1375,
+            "train": 2944
+          },
+          "best_word": "plane",
+          "best_rank": 270,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "c08c0b1f87c845f38c2a168c727212bc",
+          "category_name": "careers",
+          "description": "occupations",
+          "words_tried": {
+            "pilot": 375,
+            "doctor": 6554,
+            "nurse": 8510
+          },
+          "best_word": "pilot",
+          "best_rank": 375,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "ac58cae396424b27a66528ddf041471f",
+          "category_name": "time",
+          "description": "chronology",
+          "words_tried": {
+            "hour": 2253,
+            "week": 7768,
+            "month": 14354
+          },
+          "best_word": "hour",
+          "best_rank": 2253,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "ce9a9593ecc848b2a174c938201e1a6b",
+          "category_name": "tools",
+          "description": "instruments",
+          "words_tried": {
+            "drill": 2196,
+            "hammer": 2753,
+            "saw": 3148
+          },
+          "best_word": "drill",
+          "best_rank": 2196,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        }
+      ],
+      "best_word": "lamp",
+      "best_rank": 85,
+      "total_guesses": 45
+    }
+  },
+  {
+    "generation": 0,
+    "event": "SIGMA_TRAJECTORY",
+    "timestamp": "2026-07-23T01:05:53",
+    "details": {
+      "mean_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "population_size": 15
+    }
+  },
+  {
+    "generation": 1,
+    "event": "CANDIDATES",
+    "timestamp": "2026-07-23T01:14:35",
+    "details": {
+      "count": 44,
+      "candidates": [
+        {
+          "hypothesis": "nature",
+          "word": "tree"
+        },
+        {
+          "hypothesis": "nature",
+          "word": "flower"
+        },
+        {
+          "hypothesis": "nature",
+          "word": "grass"
+        },
+        {
+          "hypothesis": "food",
+          "word": "meat"
+        },
+        {
+          "hypothesis": "food",
+          "word": "fruit"
+        },
+        {
+          "hypothesis": "food",
+          "word": "pasta"
+        },
+        {
+          "hypothesis": "animals",
+          "word": "hawk"
+        },
+        {
+          "hypothesis": "animals",
+          "word": "falcon"
+        },
+        {
+          "hypothesis": "animals",
+          "word": "owl"
+        },
+        {
+          "hypothesis": "technology",
+          "word": "computer"
+        },
+        {
+          "hypothesis": "technology",
+          "word": "device"
+        },
+        {
+          "hypothesis": "technology",
+          "word": "battery"
+        },
+        {
+          "hypothesis": "furniture",
+          "word": "sofa"
+        },
+        {
+          "hypothesis": "furniture",
+          "word": "bed"
+        },
+        {
+          "hypothesis": "furniture",
+          "word": "cabinet"
+        },
+        {
+          "hypothesis": "weather",
+          "word": "storm"
+        },
+        {
+          "hypothesis": "weather",
+          "word": "cloud"
+        },
+        {
+          "hypothesis": "weather",
+          "word": "heat"
+        },
+        {
+          "hypothesis": "education",
+          "word": "school"
+        },
+        {
+          "hypothesis": "education",
+          "word": "student"
+        },
+        {
+          "hypothesis": "education",
+          "word": "teacher"
+        },
+        {
+          "hypothesis": "colors",
+          "word": "yellow"
+        },
+        {
+          "hypothesis": "colors",
+          "word": "white"
+        },
+        {
+          "hypothesis": "colors",
+          "word": "orange"
+        },
+        {
+          "hypothesis": "clothing",
+          "word": "pants"
+        },
+        {
+          "hypothesis": "clothing",
+          "word": "jacket"
+        },
+        {
+          "hypothesis": "clothing",
+          "word": "coat"
+        },
+        {
+          "hypothesis": "sports",
+          "word": "run"
+        },
+        {
+          "hypothesis": "sports",
+          "word": "track"
+        },
+        {
+          "hypothesis": "sports",
+          "word": "race"
+        },
+        {
+          "hypothesis": "anatomy",
+          "word": "arm"
+        },
+        {
+          "hypothesis": "anatomy",
+          "word": "face"
+        },
+        {
+          "hypothesis": "anatomy",
+          "word": "leg"
+        },
+        {
+          "hypothesis": "transport",
+          "word": "bus"
+        },
+        {
+          "hypothesis": "transport",
+          "word": "ship"
+        },
+        {
+          "hypothesis": "transport",
+          "word": "travel"
+        },
+        {
+          "hypothesis": "careers",
+          "word": "job"
+        },
+        {
+          "hypothesis": "careers",
+          "word": "worker"
+        },
+        {
+          "hypothesis": "time",
+          "word": "clock"
+        },
+        {
+          "hypothesis": "time",
+          "word": "minute"
+        },
+        {
+          "hypothesis": "time",
+          "word": "second"
+        },
+        {
+          "hypothesis": "tools",
+          "word": "wrench"
+        },
+        {
+          "hypothesis": "tools",
+          "word": "pliers"
+        },
+        {
+          "hypothesis": "tools",
+          "word": "mallet"
+        }
+      ]
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:14:36",
+    "details": {
+      "word": "tree",
+      "rank": 4020,
+      "hypothesis": "nature",
+      "best_word": "lamp",
+      "best_rank": 85,
+      "total_guesses": 46
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:14:37",
+    "details": {
+      "word": "flower",
+      "rank": 19266,
+      "hypothesis": "nature",
+      "best_word": "lamp",
+      "best_rank": 85,
+      "total_guesses": 47
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:14:37",
+    "details": {
+      "word": "grass",
+      "rank": 18526,
+      "hypothesis": "nature",
+      "best_word": "lamp",
+      "best_rank": 85,
+      "total_guesses": 48
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:14:38",
+    "details": {
+      "word": "meat",
+      "rank": 24559,
+      "hypothesis": "food",
+      "best_word": "lamp",
+      "best_rank": 85,
+      "total_guesses": 49
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:14:39",
+    "details": {
+      "word": "fruit",
+      "rank": 37806,
+      "hypothesis": "food",
+      "best_word": "lamp",
+      "best_rank": 85,
+      "total_guesses": 50
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:14:40",
+    "details": {
+      "word": "pasta",
+      "rank": 14655,
+      "hypothesis": "food",
+      "best_word": "lamp",
+      "best_rank": 85,
+      "total_guesses": 51
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:14:40",
+    "details": {
+      "word": "hawk",
+      "rank": 2529,
+      "hypothesis": "animals",
+      "best_word": "lamp",
+      "best_rank": 85,
+      "total_guesses": 52
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:14:41",
+    "details": {
+      "word": "falcon",
+      "rank": 609,
+      "hypothesis": "animals",
+      "best_word": "lamp",
+      "best_rank": 85,
+      "total_guesses": 53
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:14:42",
+    "details": {
+      "word": "owl",
+      "rank": 1361,
+      "hypothesis": "animals",
+      "best_word": "lamp",
+      "best_rank": 85,
+      "total_guesses": 54
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:14:43",
+    "details": {
+      "word": "computer",
+      "rank": 671,
+      "hypothesis": "technology",
+      "best_word": "lamp",
+      "best_rank": 85,
+      "total_guesses": 55
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:14:44",
+    "details": {
+      "word": "device",
+      "rank": 539,
+      "hypothesis": "technology",
+      "best_word": "lamp",
+      "best_rank": 85,
+      "total_guesses": 56
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:14:44",
+    "details": {
+      "word": "battery",
+      "rank": 390,
+      "hypothesis": "technology",
+      "best_word": "lamp",
+      "best_rank": 85,
+      "total_guesses": 57
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:14:45",
+    "details": {
+      "word": "sofa",
+      "rank": 8492,
+      "hypothesis": "furniture",
+      "best_word": "lamp",
+      "best_rank": 85,
+      "total_guesses": 58
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:14:46",
+    "details": {
+      "word": "bed",
+      "rank": 4709,
+      "hypothesis": "furniture",
+      "best_word": "lamp",
+      "best_rank": 85,
+      "total_guesses": 59
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:14:47",
+    "details": {
+      "word": "cabinet",
+      "rank": 7186,
+      "hypothesis": "furniture",
+      "best_word": "lamp",
+      "best_rank": 85,
+      "total_guesses": 60
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:14:47",
+    "details": {
+      "word": "storm",
+      "rank": 4985,
+      "hypothesis": "weather",
+      "best_word": "lamp",
+      "best_rank": 85,
+      "total_guesses": 61
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:14:48",
+    "details": {
+      "word": "cloud",
+      "rank": 4081,
+      "hypothesis": "weather",
+      "best_word": "lamp",
+      "best_rank": 85,
+      "total_guesses": 62
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:14:49",
+    "details": {
+      "word": "heat",
+      "rank": 2536,
+      "hypothesis": "weather",
+      "best_word": "lamp",
+      "best_rank": 85,
+      "total_guesses": 63
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:14:50",
+    "details": {
+      "word": "school",
+      "rank": 2983,
+      "hypothesis": "education",
+      "best_word": "lamp",
+      "best_rank": 85,
+      "total_guesses": 64
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:14:51",
+    "details": {
+      "word": "student",
+      "rank": 2141,
+      "hypothesis": "education",
+      "best_word": "lamp",
+      "best_rank": 85,
+      "total_guesses": 65
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:14:51",
+    "details": {
+      "word": "teacher",
+      "rank": 2733,
+      "hypothesis": "education",
+      "best_word": "lamp",
+      "best_rank": 85,
+      "total_guesses": 66
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:14:52",
+    "details": {
+      "word": "yellow",
+      "rank": 2835,
+      "hypothesis": "colors",
+      "best_word": "lamp",
+      "best_rank": 85,
+      "total_guesses": 67
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:14:53",
+    "details": {
+      "word": "white",
+      "rank": 3114,
+      "hypothesis": "colors",
+      "best_word": "lamp",
+      "best_rank": 85,
+      "total_guesses": 68
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:14:54",
+    "details": {
+      "word": "orange",
+      "rank": 7319,
+      "hypothesis": "colors",
+      "best_word": "lamp",
+      "best_rank": 85,
+      "total_guesses": 69
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:14:54",
+    "details": {
+      "word": "pants",
+      "rank": 6546,
+      "hypothesis": "clothing",
+      "best_word": "lamp",
+      "best_rank": 85,
+      "total_guesses": 70
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:14:55",
+    "details": {
+      "word": "jacket",
+      "rank": 1715,
+      "hypothesis": "clothing",
+      "best_word": "lamp",
+      "best_rank": 85,
+      "total_guesses": 71
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:14:56",
+    "details": {
+      "word": "coat",
+      "rank": 6136,
+      "hypothesis": "clothing",
+      "best_word": "lamp",
+      "best_rank": 85,
+      "total_guesses": 72
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:14:57",
+    "details": {
+      "word": "run",
+      "rank": 5738,
+      "hypothesis": "sports",
+      "best_word": "lamp",
+      "best_rank": 85,
+      "total_guesses": 73
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:14:57",
+    "details": {
+      "word": "track",
+      "rank": 223,
+      "hypothesis": "sports",
+      "best_word": "lamp",
+      "best_rank": 85,
+      "total_guesses": 74
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:14:58",
+    "details": {
+      "word": "race",
+      "rank": 4570,
+      "hypothesis": "sports",
+      "best_word": "lamp",
+      "best_rank": 85,
+      "total_guesses": 75
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:14:59",
+    "details": {
+      "word": "arm",
+      "rank": 1379,
+      "hypothesis": "anatomy",
+      "best_word": "lamp",
+      "best_rank": 85,
+      "total_guesses": 76
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:15:00",
+    "details": {
+      "word": "face",
+      "rank": 2587,
+      "hypothesis": "anatomy",
+      "best_word": "lamp",
+      "best_rank": 85,
+      "total_guesses": 77
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:15:01",
+    "details": {
+      "word": "leg",
+      "rank": 9102,
+      "hypothesis": "anatomy",
+      "best_word": "lamp",
+      "best_rank": 85,
+      "total_guesses": 78
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:15:01",
+    "details": {
+      "word": "bus",
+      "rank": 6389,
+      "hypothesis": "transport",
+      "best_word": "lamp",
+      "best_rank": 85,
+      "total_guesses": 79
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:15:02",
+    "details": {
+      "word": "ship",
+      "rank": 251,
+      "hypothesis": "transport",
+      "best_word": "lamp",
+      "best_rank": 85,
+      "total_guesses": 80
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:15:03",
+    "details": {
+      "word": "travel",
+      "rank": 112,
+      "hypothesis": "transport",
+      "best_word": "lamp",
+      "best_rank": 85,
+      "total_guesses": 81
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:15:04",
+    "details": {
+      "word": "job",
+      "rank": 4211,
+      "hypothesis": "careers",
+      "best_word": "lamp",
+      "best_rank": 85,
+      "total_guesses": 82
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:15:04",
+    "details": {
+      "word": "worker",
+      "rank": 11341,
+      "hypothesis": "careers",
+      "best_word": "lamp",
+      "best_rank": 85,
+      "total_guesses": 83
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:15:05",
+    "details": {
+      "word": "clock",
+      "rank": 17,
+      "hypothesis": "time",
+      "best_word": "clock",
+      "best_rank": 17,
+      "total_guesses": 84
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:15:06",
+    "details": {
+      "word": "minute",
+      "rank": 6027,
+      "hypothesis": "time",
+      "best_word": "clock",
+      "best_rank": 17,
+      "total_guesses": 85
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:15:07",
+    "details": {
+      "word": "second",
+      "rank": 2182,
+      "hypothesis": "time",
+      "best_word": "clock",
+      "best_rank": 17,
+      "total_guesses": 86
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:15:08",
+    "details": {
+      "word": "wrench",
+      "rank": 863,
+      "hypothesis": "tools",
+      "best_word": "clock",
+      "best_rank": 17,
+      "total_guesses": 87
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:15:08",
+    "details": {
+      "word": "pliers",
+      "rank": 1656,
+      "hypothesis": "tools",
+      "best_word": "clock",
+      "best_rank": 17,
+      "total_guesses": 88
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:15:09",
+    "details": {
+      "word": "mallet",
+      "rank": 2414,
+      "hypothesis": "tools",
+      "best_word": "clock",
+      "best_rank": 17,
+      "total_guesses": 89
+    }
+  },
+  {
+    "generation": 1,
+    "event": "LOCAL_SEARCH_DISABLED",
+    "timestamp": "2026-07-23T01:15:09",
+    "details": {
+      "center_word": "clock",
+      "center_rank": 17,
+      "threshold": 100,
+      "reason": "self_adaptive_disable_local_search"
+    }
+  },
+  {
+    "generation": 1,
+    "event": "SELECT",
+    "timestamp": "2026-07-23T01:15:09",
+    "details": {
+      "kept": [
+        "time",
+        "furniture",
+        "transport",
+        "education",
+        "anatomy"
+      ],
+      "discarded": [
+        "sports",
+        "animals",
+        "careers",
+        "technology",
+        "weather",
+        "tools",
+        "colors",
+        "clothing",
+        "nature",
+        "food"
+      ],
+      "elite": "time",
+      "max_active_hypotheses": 5,
+      "best_word": "clock",
+      "best_rank": 17,
+      "total_guesses": 89
+    }
+  },
+  {
+    "generation": 1,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-23T01:16:00",
+    "details": {
+      "parent_id": "ac58cae396424b27a66528ddf041471f",
+      "child_id": "5545c800fef5426490f9bfd26553c702",
+      "parent_rank": 17,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "measurement systems",
+      "sampled_op": "ml_mutation",
+      "method": "self_adaptive",
+      "self_report": {
+        "predicted_closeness": 0.8,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "clock",
+            "hour",
+            "minute",
+            "second"
+          ],
+          "reason": "Since 'clock' is very close but specific time denominations are far away, the target likely relates to the concept of measurement rather than chronology specifically."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"name\": \"measurement systems\", \"description\": \"quantities, units, and devices used for measuring physical properties like length, weight, or volume\", \"words\": [\"meter\", \"scale\", \"gauge\"], \"basis_words\": [\"clock\", \"hour\", \"minute\", \"second\"], \"reason\": \"Since 'clock' is very close but specific time denominations are far away, the target likely relates to the concept of measurement rather than chronology specifically.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.8}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"time\".\nDescription: chronology\nResults so far in this hypothesis: {\"clock\": 17, \"hour\": 2253, \"minute\": 6027, \"month\": 14354, \"second\": 2182, \"week\": 7768}\nBest word so far: \"clock\" with rank 17.\n\nMake a MEDIUM-LARGE mutation: produce a child hypothesis in an ADJACENT but\ndistinct category that could still plausibly contain the hidden target given\n\"clock\"'s rank. The child must NOT be a sub-category of \"time\" - it\nshould sit alongside \"time\" in semantic space, not underneath it.\n\nFor example, if the parent is \"types of plants\" and the best word is \"shrub\",\nan adjacent category could be \"plant descriptors\", \"botanical terminology\",\n\"growth habits\", or \"ecological roles\".\n\nSuggest one adjacent hypothesis. Include exactly 3 starter words that have\nnot already been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"apple\", \"arm\", \"battery\", \"bed\", \"blue\", \"book\", \"bread\", \"bus\", \"cabinet\", \"car\", \"chair\", \"cheese\", \"class\", \"clock\", \"cloud\", \"coat\", \"computer\", \"desk\", \"device\", \"doctor\", \"dress\", \"drill\", \"eagle\", \"face\", \"falcon\", \"flower\", \"foot\", \"forest\", \"fruit\", \"golf\", \"grass\", \"green\", \"hammer\", \"hand\", \"hawk\", \"head\", \"heat\", \"hour\", \"jacket\", \"job\", \"lamp\", \"laptop\", \"leg\", \"mallet\", \"meat\", \"minute\", \"month\", \"mountain\", \"nurse\", \"orange\", \"owl\", \"pants\", \"pasta\", \"phone\", \"pilot\", \"plane\", \"pliers\", \"race\", \"rain\", \"red\", \"river\", \"run\", \"saw\", \"school\", \"screen\", \"second\", \"ship\", \"shirt\", \"skirt\", \"snow\", \"soccer\", \"sofa\", \"storm\", \"student\", \"table\", \"teacher\", \"tennis\", \"tiger\", \"track\", \"train\", \"travel\", \"tree\", \"week\", \"whale\", \"white\", \"wind\", \"worker\", \"wrench\", \"yellow\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"category name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:16:01",
+    "details": {
+      "word": "meter",
+      "rank": 278,
+      "hypothesis": "measurement systems",
+      "best_word": "clock",
+      "best_rank": 17,
+      "total_guesses": 90
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:16:02",
+    "details": {
+      "word": "scale",
+      "rank": 105,
+      "hypothesis": "measurement systems",
+      "best_word": "clock",
+      "best_rank": 17,
+      "total_guesses": 91
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:16:03",
+    "details": {
+      "word": "gauge",
+      "rank": 13,
+      "hypothesis": "measurement systems",
+      "best_word": "gauge",
+      "best_rank": 13,
+      "total_guesses": 92
+    }
+  },
+  {
+    "generation": 1,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-23T01:16:41",
+    "details": {
+      "parent_id": "3468bdabfe414b0ca8d5a7ea3a0b8b34",
+      "child_id": "f0a8b0bad18640d0a8bee3aea2c30404",
+      "parent_rank": 85,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "lighting fixtures",
+      "sampled_op": "m_mutation",
+      "method": "self_adaptive",
+      "self_report": {
+        "predicted_closeness": 0.8,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "lamp"
+          ],
+          "reason": "Shifts the focus from general furniture to specific household items that serve the function of providing light."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"name\": \"lighting fixtures\", \"description\": \"household objects specifically designed for illumination or light production\", \"words\": [\"bulb\", \"candle\", \"flashlight\"], \"basis_words\": [\"lamp\"], \"reason\": \"Shifts the focus from general furniture to specific household items that serve the function of providing light.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.8}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"furniture\".\nDescription: household_items\nResults so far in this hypothesis: {\"bed\": 4709, \"cabinet\": 7186, \"chair\": 1919, \"lamp\": 85, \"sofa\": 8492, \"table\": 555}\nBest word so far: \"lamp\" with rank 85.\n\nMake a MEDIUM mutation: produce a child hypothesis that reinterprets why\n\"lamp\" might have scored well, or shifts to a related sense, lexical\nregister, or part of speech. The child should still be semantically anchored\nto \"lamp\" but approach it from a clearly different angle than \"furniture\".\n\nFor example, if the parent is \"food\" and the best word is \"bite\", a medium\nmutation could be \"animals that bite\", \"physical sensations from biting\", or\n\"clinical terms for biting and chewing\" - each treats \"bite\" through a\ndifferent lens.\n\nSuggest one reframed hypothesis. Include exactly 3 starter words that have\nnot already been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"apple\", \"arm\", \"battery\", \"bed\", \"blue\", \"book\", \"bread\", \"bus\", \"cabinet\", \"car\", \"chair\", \"cheese\", \"class\", \"clock\", \"cloud\", \"coat\", \"computer\", \"desk\", \"device\", \"doctor\", \"dress\", \"drill\", \"eagle\", \"face\", \"falcon\", \"flower\", \"foot\", \"forest\", \"fruit\", \"gauge\", \"golf\", \"grass\", \"green\", \"hammer\", \"hand\", \"hawk\", \"head\", \"heat\", \"hour\", \"jacket\", \"job\", \"lamp\", \"laptop\", \"leg\", \"mallet\", \"meat\", \"meter\", \"minute\", \"month\", \"mountain\", \"nurse\", \"orange\", \"owl\", \"pants\", \"pasta\", \"phone\", \"pilot\", \"plane\", \"pliers\", \"race\", \"rain\", \"red\", \"river\", \"run\", \"saw\", \"scale\", \"school\", \"screen\", \"second\", \"ship\", \"shirt\", \"skirt\", \"snow\", \"soccer\", \"sofa\", \"storm\", \"student\", \"table\", \"teacher\", \"tennis\", \"tiger\", \"track\", \"train\", \"travel\", \"tree\", \"week\", \"whale\", \"white\", \"wind\", \"worker\", \"wrench\", \"yellow\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"direction name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:16:45",
+    "details": {
+      "word": "bulb",
+      "rank": 4431,
+      "hypothesis": "lighting fixtures",
+      "best_word": "gauge",
+      "best_rank": 13,
+      "total_guesses": 93
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:16:46",
+    "details": {
+      "word": "candle",
+      "rank": 238,
+      "hypothesis": "lighting fixtures",
+      "best_word": "gauge",
+      "best_rank": 13,
+      "total_guesses": 94
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:16:47",
+    "details": {
+      "word": "flashlight",
+      "rank": 15,
+      "hypothesis": "lighting fixtures",
+      "best_word": "gauge",
+      "best_rank": 13,
+      "total_guesses": 95
+    }
+  },
+  {
+    "generation": 1,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-23T01:17:34",
+    "details": {
+      "parent_id": "16ec48669d5f45e5904a31a9020bec39",
+      "child_id": "1fbf486e9126418198b3b64dd11acedb",
+      "parent_rank": 112,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "journey",
+      "sampled_op": "s_mutation",
+      "method": "self_adaptive",
+      "self_report": {
+        "predicted_closeness": 0.8,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "travel"
+          ],
+          "reason": "Moving from general 'transport' to more specific descriptors of the experience of travel, such as trip and voyage."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"name\": \"journey\", \"description\": \"types of trips and voyages\", \"words\": [\"trip\", \"voyage\", \"journey\"], \"basis_words\": [\"travel\"], \"reason\": \"Moving from general 'transport' to more specific descriptors of the experience of travel, such as trip and voyage.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.8}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"transport\".\nDescription: travel\nResults so far in this hypothesis: {\"bus\": 6389, \"car\": 1375, \"plane\": 270, \"ship\": 251, \"train\": 2944, \"travel\": 112}\nBest word so far: \"travel\" with rank 112.\n\nMake a SMALL mutation: produce a child hypothesis that stays in the same\nconceptual neighborhood as \"transport\" but narrows or refines it. The new starter\nwords should be close semantic neighbors of \"travel\" - synonyms, common\ndescriptors, or words that frequently co-occur with it.\n\nFor example, if the parent is \"types of plants\" and the best word is \"shrub\",\na small mutation could be \"woody plants\" with starters like bush, hedge, thicket.\n\nSuggest one refined hypothesis. Include exactly 3 starter words that have not\nalready been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"apple\", \"arm\", \"battery\", \"bed\", \"blue\", \"book\", \"bread\", \"bulb\", \"bus\", \"cabinet\", \"candle\", \"car\", \"chair\", \"cheese\", \"class\", \"clock\", \"cloud\", \"coat\", \"computer\", \"desk\", \"device\", \"doctor\", \"dress\", \"drill\", \"eagle\", \"face\", \"falcon\", \"flashlight\", \"flower\", \"foot\", \"forest\", \"fruit\", \"gauge\", \"golf\", \"grass\", \"green\", \"hammer\", \"hand\", \"hawk\", \"head\", \"heat\", \"hour\", \"jacket\", \"job\", \"lamp\", \"laptop\", \"leg\", \"mallet\", \"meat\", \"meter\", \"minute\", \"month\", \"mountain\", \"nurse\", \"orange\", \"owl\", \"pants\", \"pasta\", \"phone\", \"pilot\", \"plane\", \"pliers\", \"race\", \"rain\", \"red\", \"river\", \"run\", \"saw\", \"scale\", \"school\", \"screen\", \"second\", \"ship\", \"shirt\", \"skirt\", \"snow\", \"soccer\", \"sofa\", \"storm\", \"student\", \"table\", \"teacher\", \"tennis\", \"tiger\", \"track\", \"train\", \"travel\", \"tree\", \"week\", \"whale\", \"white\", \"wind\", \"worker\", \"wrench\", \"yellow\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"direction name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:17:35",
+    "details": {
+      "word": "trip",
+      "rank": 947,
+      "hypothesis": "journey",
+      "best_word": "gauge",
+      "best_rank": 13,
+      "total_guesses": 96
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:17:36",
+    "details": {
+      "word": "voyage",
+      "rank": 1682,
+      "hypothesis": "journey",
+      "best_word": "gauge",
+      "best_rank": 13,
+      "total_guesses": 97
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:17:37",
+    "details": {
+      "word": "journey",
+      "rank": 1422,
+      "hypothesis": "journey",
+      "best_word": "gauge",
+      "best_rank": 13,
+      "total_guesses": 98
+    }
+  },
+  {
+    "generation": 1,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-23T01:18:32",
+    "details": {
+      "parent_id": "1d399486aaf84d4ea8a72113bac7f60b",
+      "child_id": "99a6157c3a6a419fb133b4529f32de13",
+      "parent_rank": 122,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "literary_works",
+      "sampled_op": "s_mutation",
+      "method": "self_adaptive",
+      "self_report": {
+        "predicted_closeness": 0.8,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "book"
+          ],
+          "reason": "The word 'book' is the closest result to the target, suggesting a focus on written material rather than general school activities."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"name\": \"literary_works\", \"description\": \"written content including books and stories\", \"words\": [\"novel\", \"volume\", \"story\"], \"basis_words\": [\"book\"], \"reason\": \"The word 'book' is the closest result to the target, suggesting a focus on written material rather than general school activities.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.8}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"education\".\nDescription: schooling\nResults so far in this hypothesis: {\"book\": 122, \"class\": 2325, \"desk\": 560, \"school\": 2983, \"student\": 2141, \"teacher\": 2733}\nBest word so far: \"book\" with rank 122.\n\nMake a SMALL mutation: produce a child hypothesis that stays in the same\nconceptual neighborhood as \"education\" but narrows or refines it. The new starter\nwords should be close semantic neighbors of \"book\" - synonyms, common\ndescriptors, or words that frequently co-occur with it.\n\nFor example, if the parent is \"types of plants\" and the best word is \"shrub\",\na small mutation could be \"woody plants\" with starters like bush, hedge, thicket.\n\nSuggest one refined hypothesis. Include exactly 3 starter words that have not\nalready been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"apple\", \"arm\", \"battery\", \"bed\", \"blue\", \"book\", \"bread\", \"bulb\", \"bus\", \"cabinet\", \"candle\", \"car\", \"chair\", \"cheese\", \"class\", \"clock\", \"cloud\", \"coat\", \"computer\", \"desk\", \"device\", \"doctor\", \"dress\", \"drill\", \"eagle\", \"face\", \"falcon\", \"flashlight\", \"flower\", \"foot\", \"forest\", \"fruit\", \"gauge\", \"golf\", \"grass\", \"green\", \"hammer\", \"hand\", \"hawk\", \"head\", \"heat\", \"hour\", \"jacket\", \"job\", \"journey\", \"lamp\", \"laptop\", \"leg\", \"mallet\", \"meat\", \"meter\", \"minute\", \"month\", \"mountain\", \"nurse\", \"orange\", \"owl\", \"pants\", \"pasta\", \"phone\", \"pilot\", \"plane\", \"pliers\", \"race\", \"rain\", \"red\", \"river\", \"run\", \"saw\", \"scale\", \"school\", \"screen\", \"second\", \"ship\", \"shirt\", \"skirt\", \"snow\", \"soccer\", \"sofa\", \"storm\", \"student\", \"table\", \"teacher\", \"tennis\", \"tiger\", \"track\", \"train\", \"travel\", \"tree\", \"trip\", \"voyage\", \"week\", \"whale\", \"white\", \"wind\", \"worker\", \"wrench\", \"yellow\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"direction name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:18:36",
+    "details": {
+      "word": "novel",
+      "rank": 6658,
+      "hypothesis": "literary_works",
+      "best_word": "gauge",
+      "best_rank": 13,
+      "total_guesses": 99
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:18:37",
+    "details": {
+      "word": "volume",
+      "rank": 16938,
+      "hypothesis": "literary_works",
+      "best_word": "gauge",
+      "best_rank": 13,
+      "total_guesses": 100
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:18:37",
+    "details": {
+      "word": "story",
+      "rank": 8973,
+      "hypothesis": "literary_works",
+      "best_word": "gauge",
+      "best_rank": 13,
+      "total_guesses": 101
+    }
+  },
+  {
+    "generation": 1,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-23T01:20:10",
+    "details": {
+      "parent_id": "999f59425e524902b196d8b1bba09752",
+      "child_id": "afb25cbefdc54f3aa520a4cdb87ffc54",
+      "parent_rank": 157,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "sports equipment",
+      "sampled_op": "l_mutation",
+      "method": "self_adaptive",
+      "self_report": {
+        "predicted_closeness": 0.7,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "hand"
+          ],
+          "reason": "The word 'hand' (rank 157) is likely near items held or worn during physical activity, such as balls or gloves. Given that specific sports like golf, soccer, and tennis were already explored/excluded, 'sports equipment' represents a distinct but related semantic branch."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"name\": \"sports equipment\", \"description\": \"items used in various sports and athletic activities\", \"words\": [\"ball\", \"glove\", \"bat\"], \"basis_words\": [\"hand\"], \"reason\": \"The word 'hand' (rank 157) is likely near items held or worn during physical activity, such as balls or gloves. Given that specific sports like golf, soccer, and tennis were already explored/excluded, 'sports equipment' represents a distinct but related semantic branch.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.7}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"anatomy\".\nDescription: body_parts\nBest word so far: \"hand\" with rank 157.\nOther active categories already being explored: [\"furniture\", \"education\", \"anatomy\", \"transport\", \"time\", \"measurement systems\", \"lighting fixtures\", \"journey\", \"literary_works\"]\n\nMake a LARGE mutation: produce a child hypothesis in a broad, semantically\nsubstantial new direction that is unlike \"anatomy\" and unlike the other active\ncategories above. The goal is to escape the current semantic region and open\nup unexplored territory, while staying plausibly relevant given \"hand\"'s\nrank - lower ranks mean the target is closer to \"hand\", so the jump\nmust remain in the same broad semantic area even when reframed.\n\nFor example, if the parent is \"types of plants\" and \"shrub\" ranks 50, a large\nmutation could be \"outdoor environments\" or \"rural landscape features\" -\nclearly outside the plant taxonomy but still in a plausible neighborhood for\na target close to \"shrub\".\n\nSuggest one new hypothesis. Include exactly 3 starter words that have not\nalready been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"apple\", \"arm\", \"battery\", \"bed\", \"blue\", \"book\", \"bread\", \"bulb\", \"bus\", \"cabinet\", \"candle\", \"car\", \"chair\", \"cheese\", \"class\", \"clock\", \"cloud\", \"coat\", \"computer\", \"desk\", \"device\", \"doctor\", \"dress\", \"drill\", \"eagle\", \"face\", \"falcon\", \"flashlight\", \"flower\", \"foot\", \"forest\", \"fruit\", \"gauge\", \"golf\", \"grass\", \"green\", \"hammer\", \"hand\", \"hawk\", \"head\", \"heat\", \"hour\", \"jacket\", \"job\", \"journey\", \"lamp\", \"laptop\", \"leg\", \"mallet\", \"meat\", \"meter\", \"minute\", \"month\", \"mountain\", \"novel\", \"nurse\", \"orange\", \"owl\", \"pants\", \"pasta\", \"phone\", \"pilot\", \"plane\", \"pliers\", \"race\", \"rain\", \"red\", \"river\", \"run\", \"saw\", \"scale\", \"school\", \"screen\", \"second\", \"ship\", \"shirt\", \"skirt\", \"snow\", \"soccer\", \"sofa\", \"storm\", \"story\", \"student\", \"table\", \"teacher\", \"tennis\", \"tiger\", \"track\", \"train\", \"travel\", \"tree\", \"trip\", \"volume\", \"voyage\", \"week\", \"whale\", \"white\", \"wind\", \"worker\", \"wrench\", \"yellow\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"direction name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:20:13",
+    "details": {
+      "word": "ball",
+      "rank": 1723,
+      "hypothesis": "sports equipment",
+      "best_word": "gauge",
+      "best_rank": 13,
+      "total_guesses": 102
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:20:14",
+    "details": {
+      "word": "glove",
+      "rank": 2160,
+      "hypothesis": "sports equipment",
+      "best_word": "gauge",
+      "best_rank": 13,
+      "total_guesses": 103
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:20:15",
+    "details": {
+      "word": "bat",
+      "rank": 19177,
+      "hypothesis": "sports equipment",
+      "best_word": "gauge",
+      "best_rank": 13,
+      "total_guesses": 104
+    }
+  },
+  {
+    "generation": 1,
+    "event": "MUTATE",
+    "timestamp": "2026-07-23T01:20:15",
+    "details": {
+      "method": "self_adaptive",
+      "children": [
+        {
+          "hypothesis_id": "5545c800fef5426490f9bfd26553c702",
+          "category_name": "measurement systems",
+          "description": "quantities, units, and devices used for measuring physical properties like length, weight, or volume",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "time",
+          "parent_id": "ac58cae396424b27a66528ddf041471f",
+          "origin": "self_adaptive_ml_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "self_report": {
+            "predicted_closeness": 0.8,
+            "predicted_closeness_clamped": false,
+            "predicted_bucket": "top100",
+            "rationale": {
+              "basis_words": [
+                "clock",
+                "hour",
+                "minute",
+                "second"
+              ],
+              "reason": "Since 'clock' is very close but specific time denominations are far away, the target likely relates to the concept of measurement rather than chronology specifically."
+            },
+            "self_report_parse_failed": false,
+            "self_report_raw": "{\"name\": \"measurement systems\", \"description\": \"quantities, units, and devices used for measuring physical properties like length, weight, or volume\", \"words\": [\"meter\", \"scale\", \"gauge\"], \"basis_words\": [\"clock\", \"hour\", \"minute\", \"second\"], \"reason\": \"Since 'clock' is very close but specific time denominations are far away, the target likely relates to the concept of measurement rather than chronology specifically.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.8}",
+            "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"time\".\nDescription: chronology\nResults so far in this hypothesis: {\"clock\": 17, \"hour\": 2253, \"minute\": 6027, \"month\": 14354, \"second\": 2182, \"week\": 7768}\nBest word so far: \"clock\" with rank 17.\n\nMake a MEDIUM-LARGE mutation: produce a child hypothesis in an ADJACENT but\ndistinct category that could still plausibly contain the hidden target given\n\"clock\"'s rank. The child must NOT be a sub-category of \"time\" - it\nshould sit alongside \"time\" in semantic space, not underneath it.\n\nFor example, if the parent is \"types of plants\" and the best word is \"shrub\",\nan adjacent category could be \"plant descriptors\", \"botanical terminology\",\n\"growth habits\", or \"ecological roles\".\n\nSuggest one adjacent hypothesis. Include exactly 3 starter words that have\nnot already been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"apple\", \"arm\", \"battery\", \"bed\", \"blue\", \"book\", \"bread\", \"bus\", \"cabinet\", \"car\", \"chair\", \"cheese\", \"class\", \"clock\", \"cloud\", \"coat\", \"computer\", \"desk\", \"device\", \"doctor\", \"dress\", \"drill\", \"eagle\", \"face\", \"falcon\", \"flower\", \"foot\", \"forest\", \"fruit\", \"golf\", \"grass\", \"green\", \"hammer\", \"hand\", \"hawk\", \"head\", \"heat\", \"hour\", \"jacket\", \"job\", \"lamp\", \"laptop\", \"leg\", \"mallet\", \"meat\", \"minute\", \"month\", \"mountain\", \"nurse\", \"orange\", \"owl\", \"pants\", \"pasta\", \"phone\", \"pilot\", \"plane\", \"pliers\", \"race\", \"rain\", \"red\", \"river\", \"run\", \"saw\", \"school\", \"screen\", \"second\", \"ship\", \"shirt\", \"skirt\", \"snow\", \"soccer\", \"sofa\", \"storm\", \"student\", \"table\", \"teacher\", \"tennis\", \"tiger\", \"track\", \"train\", \"travel\", \"tree\", \"week\", \"whale\", \"white\", \"wind\", \"worker\", \"wrench\", \"yellow\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"category name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+            "injected_rationale_hash": null,
+            "rationale_truncated": false
+          }
+        },
+        {
+          "hypothesis_id": "f0a8b0bad18640d0a8bee3aea2c30404",
+          "category_name": "lighting fixtures",
+          "description": "household objects specifically designed for illumination or light production",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "furniture",
+          "parent_id": "3468bdabfe414b0ca8d5a7ea3a0b8b34",
+          "origin": "self_adaptive_m_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "self_report": {
+            "predicted_closeness": 0.8,
+            "predicted_closeness_clamped": false,
+            "predicted_bucket": "top100",
+            "rationale": {
+              "basis_words": [
+                "lamp"
+              ],
+              "reason": "Shifts the focus from general furniture to specific household items that serve the function of providing light."
+            },
+            "self_report_parse_failed": false,
+            "self_report_raw": "{\"name\": \"lighting fixtures\", \"description\": \"household objects specifically designed for illumination or light production\", \"words\": [\"bulb\", \"candle\", \"flashlight\"], \"basis_words\": [\"lamp\"], \"reason\": \"Shifts the focus from general furniture to specific household items that serve the function of providing light.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.8}",
+            "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"furniture\".\nDescription: household_items\nResults so far in this hypothesis: {\"bed\": 4709, \"cabinet\": 7186, \"chair\": 1919, \"lamp\": 85, \"sofa\": 8492, \"table\": 555}\nBest word so far: \"lamp\" with rank 85.\n\nMake a MEDIUM mutation: produce a child hypothesis that reinterprets why\n\"lamp\" might have scored well, or shifts to a related sense, lexical\nregister, or part of speech. The child should still be semantically anchored\nto \"lamp\" but approach it from a clearly different angle than \"furniture\".\n\nFor example, if the parent is \"food\" and the best word is \"bite\", a medium\nmutation could be \"animals that bite\", \"physical sensations from biting\", or\n\"clinical terms for biting and chewing\" - each treats \"bite\" through a\ndifferent lens.\n\nSuggest one reframed hypothesis. Include exactly 3 starter words that have\nnot already been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"apple\", \"arm\", \"battery\", \"bed\", \"blue\", \"book\", \"bread\", \"bus\", \"cabinet\", \"car\", \"chair\", \"cheese\", \"class\", \"clock\", \"cloud\", \"coat\", \"computer\", \"desk\", \"device\", \"doctor\", \"dress\", \"drill\", \"eagle\", \"face\", \"falcon\", \"flower\", \"foot\", \"forest\", \"fruit\", \"gauge\", \"golf\", \"grass\", \"green\", \"hammer\", \"hand\", \"hawk\", \"head\", \"heat\", \"hour\", \"jacket\", \"job\", \"lamp\", \"laptop\", \"leg\", \"mallet\", \"meat\", \"meter\", \"minute\", \"month\", \"mountain\", \"nurse\", \"orange\", \"owl\", \"pants\", \"pasta\", \"phone\", \"pilot\", \"plane\", \"pliers\", \"race\", \"rain\", \"red\", \"river\", \"run\", \"saw\", \"scale\", \"school\", \"screen\", \"second\", \"ship\", \"shirt\", \"skirt\", \"snow\", \"soccer\", \"sofa\", \"storm\", \"student\", \"table\", \"teacher\", \"tennis\", \"tiger\", \"track\", \"train\", \"travel\", \"tree\", \"week\", \"whale\", \"white\", \"wind\", \"worker\", \"wrench\", \"yellow\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"direction name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+            "injected_rationale_hash": null,
+            "rationale_truncated": false
+          }
+        },
+        {
+          "hypothesis_id": "1fbf486e9126418198b3b64dd11acedb",
+          "category_name": "journey",
+          "description": "types of trips and voyages",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "transport",
+          "parent_id": "16ec48669d5f45e5904a31a9020bec39",
+          "origin": "self_adaptive_s_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "self_report": {
+            "predicted_closeness": 0.8,
+            "predicted_closeness_clamped": false,
+            "predicted_bucket": "top100",
+            "rationale": {
+              "basis_words": [
+                "travel"
+              ],
+              "reason": "Moving from general 'transport' to more specific descriptors of the experience of travel, such as trip and voyage."
+            },
+            "self_report_parse_failed": false,
+            "self_report_raw": "{\"name\": \"journey\", \"description\": \"types of trips and voyages\", \"words\": [\"trip\", \"voyage\", \"journey\"], \"basis_words\": [\"travel\"], \"reason\": \"Moving from general 'transport' to more specific descriptors of the experience of travel, such as trip and voyage.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.8}",
+            "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"transport\".\nDescription: travel\nResults so far in this hypothesis: {\"bus\": 6389, \"car\": 1375, \"plane\": 270, \"ship\": 251, \"train\": 2944, \"travel\": 112}\nBest word so far: \"travel\" with rank 112.\n\nMake a SMALL mutation: produce a child hypothesis that stays in the same\nconceptual neighborhood as \"transport\" but narrows or refines it. The new starter\nwords should be close semantic neighbors of \"travel\" - synonyms, common\ndescriptors, or words that frequently co-occur with it.\n\nFor example, if the parent is \"types of plants\" and the best word is \"shrub\",\na small mutation could be \"woody plants\" with starters like bush, hedge, thicket.\n\nSuggest one refined hypothesis. Include exactly 3 starter words that have not\nalready been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"apple\", \"arm\", \"battery\", \"bed\", \"blue\", \"book\", \"bread\", \"bulb\", \"bus\", \"cabinet\", \"candle\", \"car\", \"chair\", \"cheese\", \"class\", \"clock\", \"cloud\", \"coat\", \"computer\", \"desk\", \"device\", \"doctor\", \"dress\", \"drill\", \"eagle\", \"face\", \"falcon\", \"flashlight\", \"flower\", \"foot\", \"forest\", \"fruit\", \"gauge\", \"golf\", \"grass\", \"green\", \"hammer\", \"hand\", \"hawk\", \"head\", \"heat\", \"hour\", \"jacket\", \"job\", \"lamp\", \"laptop\", \"leg\", \"mallet\", \"meat\", \"meter\", \"minute\", \"month\", \"mountain\", \"nurse\", \"orange\", \"owl\", \"pants\", \"pasta\", \"phone\", \"pilot\", \"plane\", \"pliers\", \"race\", \"rain\", \"red\", \"river\", \"run\", \"saw\", \"scale\", \"school\", \"screen\", \"second\", \"ship\", \"shirt\", \"skirt\", \"snow\", \"soccer\", \"sofa\", \"storm\", \"student\", \"table\", \"teacher\", \"tennis\", \"tiger\", \"track\", \"train\", \"travel\", \"tree\", \"week\", \"whale\", \"white\", \"wind\", \"worker\", \"wrench\", \"yellow\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"direction name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+            "injected_rationale_hash": null,
+            "rationale_truncated": false
+          }
+        },
+        {
+          "hypothesis_id": "99a6157c3a6a419fb133b4529f32de13",
+          "category_name": "literary_works",
+          "description": "written content including books and stories",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "education",
+          "parent_id": "1d399486aaf84d4ea8a72113bac7f60b",
+          "origin": "self_adaptive_s_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "self_report": {
+            "predicted_closeness": 0.8,
+            "predicted_closeness_clamped": false,
+            "predicted_bucket": "top100",
+            "rationale": {
+              "basis_words": [
+                "book"
+              ],
+              "reason": "The word 'book' is the closest result to the target, suggesting a focus on written material rather than general school activities."
+            },
+            "self_report_parse_failed": false,
+            "self_report_raw": "{\"name\": \"literary_works\", \"description\": \"written content including books and stories\", \"words\": [\"novel\", \"volume\", \"story\"], \"basis_words\": [\"book\"], \"reason\": \"The word 'book' is the closest result to the target, suggesting a focus on written material rather than general school activities.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.8}",
+            "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"education\".\nDescription: schooling\nResults so far in this hypothesis: {\"book\": 122, \"class\": 2325, \"desk\": 560, \"school\": 2983, \"student\": 2141, \"teacher\": 2733}\nBest word so far: \"book\" with rank 122.\n\nMake a SMALL mutation: produce a child hypothesis that stays in the same\nconceptual neighborhood as \"education\" but narrows or refines it. The new starter\nwords should be close semantic neighbors of \"book\" - synonyms, common\ndescriptors, or words that frequently co-occur with it.\n\nFor example, if the parent is \"types of plants\" and the best word is \"shrub\",\na small mutation could be \"woody plants\" with starters like bush, hedge, thicket.\n\nSuggest one refined hypothesis. Include exactly 3 starter words that have not\nalready been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"apple\", \"arm\", \"battery\", \"bed\", \"blue\", \"book\", \"bread\", \"bulb\", \"bus\", \"cabinet\", \"candle\", \"car\", \"chair\", \"cheese\", \"class\", \"clock\", \"cloud\", \"coat\", \"computer\", \"desk\", \"device\", \"doctor\", \"dress\", \"drill\", \"eagle\", \"face\", \"falcon\", \"flashlight\", \"flower\", \"foot\", \"forest\", \"fruit\", \"gauge\", \"golf\", \"grass\", \"green\", \"hammer\", \"hand\", \"hawk\", \"head\", \"heat\", \"hour\", \"jacket\", \"job\", \"journey\", \"lamp\", \"laptop\", \"leg\", \"mallet\", \"meat\", \"meter\", \"minute\", \"month\", \"mountain\", \"nurse\", \"orange\", \"owl\", \"pants\", \"pasta\", \"phone\", \"pilot\", \"plane\", \"pliers\", \"race\", \"rain\", \"red\", \"river\", \"run\", \"saw\", \"scale\", \"school\", \"screen\", \"second\", \"ship\", \"shirt\", \"skirt\", \"snow\", \"soccer\", \"sofa\", \"storm\", \"student\", \"table\", \"teacher\", \"tennis\", \"tiger\", \"track\", \"train\", \"travel\", \"tree\", \"trip\", \"voyage\", \"week\", \"whale\", \"white\", \"wind\", \"worker\", \"wrench\", \"yellow\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"direction name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+            "injected_rationale_hash": null,
+            "rationale_truncated": false
+          }
+        },
+        {
+          "hypothesis_id": "afb25cbefdc54f3aa520a4cdb87ffc54",
+          "category_name": "sports equipment",
+          "description": "items used in various sports and athletic activities",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "anatomy",
+          "parent_id": "999f59425e524902b196d8b1bba09752",
+          "origin": "self_adaptive_l_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "self_report": {
+            "predicted_closeness": 0.7,
+            "predicted_closeness_clamped": false,
+            "predicted_bucket": "top100",
+            "rationale": {
+              "basis_words": [
+                "hand"
+              ],
+              "reason": "The word 'hand' (rank 157) is likely near items held or worn during physical activity, such as balls or gloves. Given that specific sports like golf, soccer, and tennis were already explored/excluded, 'sports equipment' represents a distinct but related semantic branch."
+            },
+            "self_report_parse_failed": false,
+            "self_report_raw": "{\"name\": \"sports equipment\", \"description\": \"items used in various sports and athletic activities\", \"words\": [\"ball\", \"glove\", \"bat\"], \"basis_words\": [\"hand\"], \"reason\": \"The word 'hand' (rank 157) is likely near items held or worn during physical activity, such as balls or gloves. Given that specific sports like golf, soccer, and tennis were already explored/excluded, 'sports equipment' represents a distinct but related semantic branch.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.7}",
+            "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"anatomy\".\nDescription: body_parts\nBest word so far: \"hand\" with rank 157.\nOther active categories already being explored: [\"furniture\", \"education\", \"anatomy\", \"transport\", \"time\", \"measurement systems\", \"lighting fixtures\", \"journey\", \"literary_works\"]\n\nMake a LARGE mutation: produce a child hypothesis in a broad, semantically\nsubstantial new direction that is unlike \"anatomy\" and unlike the other active\ncategories above. The goal is to escape the current semantic region and open\nup unexplored territory, while staying plausibly relevant given \"hand\"'s\nrank - lower ranks mean the target is closer to \"hand\", so the jump\nmust remain in the same broad semantic area even when reframed.\n\nFor example, if the parent is \"types of plants\" and \"shrub\" ranks 50, a large\nmutation could be \"outdoor environments\" or \"rural landscape features\" -\nclearly outside the plant taxonomy but still in a plausible neighborhood for\na target close to \"shrub\".\n\nSuggest one new hypothesis. Include exactly 3 starter words that have not\nalready been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"apple\", \"arm\", \"battery\", \"bed\", \"blue\", \"book\", \"bread\", \"bulb\", \"bus\", \"cabinet\", \"candle\", \"car\", \"chair\", \"cheese\", \"class\", \"clock\", \"cloud\", \"coat\", \"computer\", \"desk\", \"device\", \"doctor\", \"dress\", \"drill\", \"eagle\", \"face\", \"falcon\", \"flashlight\", \"flower\", \"foot\", \"forest\", \"fruit\", \"gauge\", \"golf\", \"grass\", \"green\", \"hammer\", \"hand\", \"hawk\", \"head\", \"heat\", \"hour\", \"jacket\", \"job\", \"journey\", \"lamp\", \"laptop\", \"leg\", \"mallet\", \"meat\", \"meter\", \"minute\", \"month\", \"mountain\", \"novel\", \"nurse\", \"orange\", \"owl\", \"pants\", \"pasta\", \"phone\", \"pilot\", \"plane\", \"pliers\", \"race\", \"rain\", \"red\", \"river\", \"run\", \"saw\", \"scale\", \"school\", \"screen\", \"second\", \"ship\", \"shirt\", \"skirt\", \"snow\", \"soccer\", \"sofa\", \"storm\", \"story\", \"student\", \"table\", \"teacher\", \"tennis\", \"tiger\", \"track\", \"train\", \"travel\", \"tree\", \"trip\", \"volume\", \"voyage\", \"week\", \"whale\", \"white\", \"wind\", \"worker\", \"wrench\", \"yellow\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"direction name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+            "injected_rationale_hash": null,
+            "rationale_truncated": false
+          }
+        }
+      ],
+      "best_word": "gauge",
+      "best_rank": 13,
+      "total_guesses": 104
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:21:58",
+    "details": {
+      "word": "signal",
+      "rank": 444,
+      "hypothesis": "signaling_devices",
+      "best_word": "gauge",
+      "best_rank": 13,
+      "total_guesses": 105
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:21:58",
+    "details": {
+      "word": "indicator",
+      "rank": 22,
+      "hypothesis": "signaling_devices",
+      "best_word": "gauge",
+      "best_rank": 13,
+      "total_guesses": 106
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:21:59",
+    "details": {
+      "word": "beacon",
+      "rank": 58,
+      "hypothesis": "signaling_devices",
+      "best_word": "gauge",
+      "best_rank": 13,
+      "total_guesses": 107
+    }
+  },
+  {
+    "generation": 1,
+    "event": "CROSSOVER",
+    "timestamp": "2026-07-23T01:21:59",
+    "details": {
+      "parents": [
+        "measurement systems",
+        "lighting fixtures"
+      ],
+      "parent_ids": [
+        "5545c800fef5426490f9bfd26553c702",
+        "f0a8b0bad18640d0a8bee3aea2c30404"
+      ],
+      "parent_ranks": [
+        13,
+        15
+      ],
+      "parent_a_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "parent_b_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma_pre_perturbation": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child": {
+        "hypothesis_id": "b59681389112455da6d6398024ac87c6",
+        "category_name": "signaling_devices",
+        "description": "Devices that provide information about a state or quantity through visual or measurable signals.",
+        "words_tried": {
+          "indicator": 22,
+          "beacon": 58,
+          "signal": 444
+        },
+        "best_word": "indicator",
+        "best_rank": 22,
+        "status": "active",
+        "parent": "measurement systems+lighting fixtures",
+        "parent_id": null,
+        "origin": "crossover",
+        "sigma": [
+          0.25,
+          0.25,
+          0.25,
+          0.25
+        ],
+        "self_report": {
+          "predicted_closeness": 0.8,
+          "predicted_closeness_clamped": false,
+          "predicted_bucket": "top100",
+          "rationale": {
+            "basis_words": [
+              "gauge",
+              "meter",
+              "bulb",
+              "candle"
+            ],
+            "reason": "Both categories contain items used to convey information: gauges and meters measure quantities, while bulbs and flashlights provide visual indications of state or presence."
+          },
+          "self_report_parse_failed": false,
+          "self_report_raw": "{\"name\": \"signaling_devices\", \"description\": \"Devices that provide information about a state or quantity through visual or measurable signals.\", \"words\": [\"signal\", \"indicator\", \"beacon\"], \"basis_words\": [\"gauge\", \"meter\", \"bulb\", \"candle\"], \"reason\": \"Both categories contain items used to convey information: gauges and meters measure quantities, while bulbs and flashlights provide visual indications of state or presence.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.8}",
+          "self_report_prompt": "Return only JSON, no markdown or explanation.\nCategory A is measurement systems with results {\"gauge\": 13, \"meter\": 278, \"scale\": 105}.\nCategory B is lighting fixtures with results {\"bulb\": 4431, \"candle\": 238, \"flashlight\": 15}.\nSuggest one new category that captures the intersection or overlap of A and B.\nInclude exactly 3 candidate words.\nEvery word must be one common lowercase dictionary word.\nJSON schema:\n{\"name\": \"category name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+          "injected_rationale_hash": null,
+          "rationale_truncated": false
+        }
+      },
+      "best_word": "gauge",
+      "best_rank": 13,
+      "total_guesses": 107
+    }
+  },
+  {
+    "generation": 1,
+    "event": "DEDUPLICATE",
+    "timestamp": "2026-07-23T01:21:59",
+    "details": {
+      "merged": [
+        {
+          "survivor": "sports",
+          "discarded": "sports equipment",
+          "survivor_best_rank": 223,
+          "discarded_best_rank": 1723
+        }
+      ],
+      "remaining_hypotheses": 20,
+      "active_hypotheses": 11,
+      "best_word": "gauge",
+      "best_rank": 13,
+      "total_guesses": 107
+    }
+  },
+  {
+    "generation": 1,
+    "event": "SIGMA_TRAJECTORY",
+    "timestamp": "2026-07-23T01:21:59",
+    "details": {
+      "mean_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "population_size": 11
+    }
+  },
+  {
+    "generation": 2,
+    "event": "CANDIDATES",
+    "timestamp": "2026-07-23T01:30:01",
+    "details": {
+      "count": 33,
+      "candidates": [
+        {
+          "hypothesis": "measurement systems",
+          "word": "ruler"
+        },
+        {
+          "hypothesis": "measurement systems",
+          "word": "unit"
+        },
+        {
+          "hypothesis": "measurement systems",
+          "word": "metric"
+        },
+        {
+          "hypothesis": "lighting fixtures",
+          "word": "torch"
+        },
+        {
+          "hypothesis": "lighting fixtures",
+          "word": "lantern"
+        },
+        {
+          "hypothesis": "lighting fixtures",
+          "word": "chandelier"
+        },
+        {
+          "hypothesis": "time",
+          "word": "period"
+        },
+        {
+          "hypothesis": "time",
+          "word": "era"
+        },
+        {
+          "hypothesis": "time",
+          "word": "age"
+        },
+        {
+          "hypothesis": "signaling_devices",
+          "word": "alarm"
+        },
+        {
+          "hypothesis": "signaling_devices",
+          "word": "sensor"
+        },
+        {
+          "hypothesis": "signaling_devices",
+          "word": "dial"
+        },
+        {
+          "hypothesis": "furniture",
+          "word": "shelf"
+        },
+        {
+          "hypothesis": "furniture",
+          "word": "stool"
+        },
+        {
+          "hypothesis": "furniture",
+          "word": "bench"
+        },
+        {
+          "hypothesis": "transport",
+          "word": "vehicle"
+        },
+        {
+          "hypothesis": "transport",
+          "word": "transit"
+        },
+        {
+          "hypothesis": "transport",
+          "word": "cargo"
+        },
+        {
+          "hypothesis": "education",
+          "word": "study"
+        },
+        {
+          "hypothesis": "education",
+          "word": "learning"
+        },
+        {
+          "hypothesis": "education",
+          "word": "college"
+        },
+        {
+          "hypothesis": "anatomy",
+          "word": "eye"
+        },
+        {
+          "hypothesis": "anatomy",
+          "word": "finger"
+        },
+        {
+          "hypothesis": "anatomy",
+          "word": "wrist"
+        },
+        {
+          "hypothesis": "sports",
+          "word": "sprint"
+        },
+        {
+          "hypothesis": "sports",
+          "word": "marathon"
+        },
+        {
+          "hypothesis": "sports",
+          "word": "hurdle"
+        },
+        {
+          "hypothesis": "journey",
+          "word": "trek"
+        },
+        {
+          "hypothesis": "journey",
+          "word": "tour"
+        },
+        {
+          "hypothesis": "journey",
+          "word": "expedition"
+        },
+        {
+          "hypothesis": "literary_works",
+          "word": "fiction"
+        },
+        {
+          "hypothesis": "literary_works",
+          "word": "prose"
+        },
+        {
+          "hypothesis": "literary_works",
+          "word": "narrative"
+        }
+      ]
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:30:01",
+    "details": {
+      "word": "ruler",
+      "rank": 35,
+      "hypothesis": "measurement systems",
+      "best_word": "gauge",
+      "best_rank": 13,
+      "total_guesses": 108
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:30:02",
+    "details": {
+      "word": "unit",
+      "rank": 1451,
+      "hypothesis": "measurement systems",
+      "best_word": "gauge",
+      "best_rank": 13,
+      "total_guesses": 109
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:30:03",
+    "details": {
+      "word": "metric",
+      "rank": 1241,
+      "hypothesis": "measurement systems",
+      "best_word": "gauge",
+      "best_rank": 13,
+      "total_guesses": 110
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:30:04",
+    "details": {
+      "word": "torch",
+      "rank": 89,
+      "hypothesis": "lighting fixtures",
+      "best_word": "gauge",
+      "best_rank": 13,
+      "total_guesses": 111
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:30:05",
+    "details": {
+      "word": "lantern",
+      "rank": 61,
+      "hypothesis": "lighting fixtures",
+      "best_word": "gauge",
+      "best_rank": 13,
+      "total_guesses": 112
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:30:05",
+    "details": {
+      "word": "chandelier",
+      "rank": 2678,
+      "hypothesis": "lighting fixtures",
+      "best_word": "gauge",
+      "best_rank": 13,
+      "total_guesses": 113
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:30:06",
+    "details": {
+      "word": "period",
+      "rank": 19795,
+      "hypothesis": "time",
+      "best_word": "gauge",
+      "best_rank": 13,
+      "total_guesses": 114
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:30:07",
+    "details": {
+      "word": "era",
+      "rank": 17623,
+      "hypothesis": "time",
+      "best_word": "gauge",
+      "best_rank": 13,
+      "total_guesses": 115
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:30:08",
+    "details": {
+      "word": "age",
+      "rank": 7067,
+      "hypothesis": "time",
+      "best_word": "gauge",
+      "best_rank": 13,
+      "total_guesses": 116
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:30:09",
+    "details": {
+      "word": "alarm",
+      "rank": 75,
+      "hypothesis": "signaling_devices",
+      "best_word": "gauge",
+      "best_rank": 13,
+      "total_guesses": 117
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:30:09",
+    "details": {
+      "word": "sensor",
+      "rank": 12,
+      "hypothesis": "signaling_devices",
+      "best_word": "sensor",
+      "best_rank": 12,
+      "total_guesses": 118
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:30:10",
+    "details": {
+      "word": "dial",
+      "rank": 117,
+      "hypothesis": "signaling_devices",
+      "best_word": "sensor",
+      "best_rank": 12,
+      "total_guesses": 119
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:30:11",
+    "details": {
+      "word": "shelf",
+      "rank": 2230,
+      "hypothesis": "furniture",
+      "best_word": "sensor",
+      "best_rank": 12,
+      "total_guesses": 120
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:30:12",
+    "details": {
+      "word": "stool",
+      "rank": 6274,
+      "hypothesis": "furniture",
+      "best_word": "sensor",
+      "best_rank": 12,
+      "total_guesses": 121
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:30:12",
+    "details": {
+      "word": "bench",
+      "rank": 1326,
+      "hypothesis": "furniture",
+      "best_word": "sensor",
+      "best_rank": 12,
+      "total_guesses": 122
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:30:13",
+    "details": {
+      "word": "vehicle",
+      "rank": 854,
+      "hypothesis": "transport",
+      "best_word": "sensor",
+      "best_rank": 12,
+      "total_guesses": 123
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:30:14",
+    "details": {
+      "word": "transit",
+      "rank": 1765,
+      "hypothesis": "transport",
+      "best_word": "sensor",
+      "best_rank": 12,
+      "total_guesses": 124
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:30:15",
+    "details": {
+      "word": "cargo",
+      "rank": 1047,
+      "hypothesis": "transport",
+      "best_word": "sensor",
+      "best_rank": 12,
+      "total_guesses": 125
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:30:16",
+    "details": {
+      "word": "study",
+      "rank": 1898,
+      "hypothesis": "education",
+      "best_word": "sensor",
+      "best_rank": 12,
+      "total_guesses": 126
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:30:16",
+    "details": {
+      "word": "learning",
+      "rank": 285,
+      "hypothesis": "education",
+      "best_word": "sensor",
+      "best_rank": 12,
+      "total_guesses": 127
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:30:17",
+    "details": {
+      "word": "college",
+      "rank": 6114,
+      "hypothesis": "education",
+      "best_word": "sensor",
+      "best_rank": 12,
+      "total_guesses": 128
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:30:18",
+    "details": {
+      "word": "eye",
+      "rank": 1010,
+      "hypothesis": "anatomy",
+      "best_word": "sensor",
+      "best_rank": 12,
+      "total_guesses": 129
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:30:19",
+    "details": {
+      "word": "finger",
+      "rank": 2601,
+      "hypothesis": "anatomy",
+      "best_word": "sensor",
+      "best_rank": 12,
+      "total_guesses": 130
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:30:19",
+    "details": {
+      "word": "wrist",
+      "rank": 319,
+      "hypothesis": "anatomy",
+      "best_word": "sensor",
+      "best_rank": 12,
+      "total_guesses": 131
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:30:20",
+    "details": {
+      "word": "sprint",
+      "rank": 12241,
+      "hypothesis": "sports",
+      "best_word": "sensor",
+      "best_rank": 12,
+      "total_guesses": 132
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:30:21",
+    "details": {
+      "word": "marathon",
+      "rank": 16350,
+      "hypothesis": "sports",
+      "best_word": "sensor",
+      "best_rank": 12,
+      "total_guesses": 133
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:30:22",
+    "details": {
+      "word": "hurdle",
+      "rank": 25534,
+      "hypothesis": "sports",
+      "best_word": "sensor",
+      "best_rank": 12,
+      "total_guesses": 134
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:30:23",
+    "details": {
+      "word": "trek",
+      "rank": 1075,
+      "hypothesis": "journey",
+      "best_word": "sensor",
+      "best_rank": 12,
+      "total_guesses": 135
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:30:23",
+    "details": {
+      "word": "tour",
+      "rank": 2103,
+      "hypothesis": "journey",
+      "best_word": "sensor",
+      "best_rank": 12,
+      "total_guesses": 136
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:30:24",
+    "details": {
+      "word": "expedition",
+      "rank": 78,
+      "hypothesis": "journey",
+      "best_word": "sensor",
+      "best_rank": 12,
+      "total_guesses": 137
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:30:25",
+    "details": {
+      "word": "fiction",
+      "rank": 5850,
+      "hypothesis": "literary_works",
+      "best_word": "sensor",
+      "best_rank": 12,
+      "total_guesses": 138
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:30:26",
+    "details": {
+      "word": "prose",
+      "rank": 23640,
+      "hypothesis": "literary_works",
+      "best_word": "sensor",
+      "best_rank": 12,
+      "total_guesses": 139
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:30:26",
+    "details": {
+      "word": "narrative",
+      "rank": 7336,
+      "hypothesis": "literary_works",
+      "best_word": "sensor",
+      "best_rank": 12,
+      "total_guesses": 140
+    }
+  },
+  {
+    "generation": 2,
+    "event": "SELECT",
+    "timestamp": "2026-07-23T01:30:26",
+    "details": {
+      "kept": [
+        "signaling_devices",
+        "measurement systems",
+        "lighting fixtures",
+        "time",
+        "journey"
+      ],
+      "discarded": [
+        "furniture",
+        "transport",
+        "education",
+        "anatomy",
+        "sports",
+        "animals",
+        "careers",
+        "technology",
+        "weather",
+        "tools",
+        "colors",
+        "clothing",
+        "nature",
+        "food",
+        "literary_works"
+      ],
+      "elite": "signaling_devices",
+      "max_active_hypotheses": 5,
+      "best_word": "sensor",
+      "best_rank": 12,
+      "total_guesses": 140
+    }
+  },
+  {
+    "generation": 2,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-23T01:32:29",
+    "details": {
+      "parent_id": "b59681389112455da6d6398024ac87c6",
+      "child_id": "df9ad98874b94fd3bd3f27442e2132f7",
+      "parent_rank": 12,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "remote sensing",
+      "sampled_op": "l_mutation",
+      "method": "self_adaptive",
+      "self_report": {
+        "predicted_closeness": 0.8,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "sensor"
+          ],
+          "reason": "This jumps from the hardware classification of 'signaling_devices' to the specific field of remote observation, which relies on sensors but is distinct in purpose and application."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"name\": \"remote sensing\", \"description\": \"The acquisition of information about objects or areas from a distance using various technologies.\", \"words\": [\"satellite\", \"radar\", \"sonar\"], \"basis_words\": [\"sensor\"], \"reason\": \"This jumps from the hardware classification of 'signaling_devices' to the specific field of remote observation, which relies on sensors but is distinct in purpose and application.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.8}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"signaling_devices\".\nDescription: Devices that provide information about a state or quantity through visual or measurable signals.\nBest word so far: \"sensor\" with rank 12.\nOther active categories already being explored: [\"measurement systems\", \"lighting fixtures\", \"time\", \"signaling_devices\", \"journey\"]\n\nMake a LARGE mutation: produce a child hypothesis in a broad, semantically\nsubstantial new direction that is unlike \"signaling_devices\" and unlike the other active\ncategories above. The goal is to escape the current semantic region and open\nup unexplored territory, while staying plausibly relevant given \"sensor\"'s\nrank - lower ranks mean the target is closer to \"sensor\", so the jump\nmust remain in the same broad semantic area even when reframed.\n\nFor example, if the parent is \"types of plants\" and \"shrub\" ranks 50, a large\nmutation could be \"outdoor environments\" or \"rural landscape features\" -\nclearly outside the plant taxonomy but still in a plausible neighborhood for\na target close to \"shrub\".\n\nSuggest one new hypothesis. Include exactly 3 starter words that have not\nalready been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"age\", \"alarm\", \"apple\", \"arm\", \"ball\", \"bat\", \"battery\", \"beacon\", \"bed\", \"bench\", \"blue\", \"book\", \"bread\", \"bulb\", \"bus\", \"cabinet\", \"candle\", \"car\", \"cargo\", \"chair\", \"chandelier\", \"cheese\", \"class\", \"clock\", \"cloud\", \"coat\", \"college\", \"computer\", \"desk\", \"device\", \"dial\", \"doctor\", \"dress\", \"drill\", \"eagle\", \"era\", \"expedition\", \"eye\", \"face\", \"falcon\", \"fiction\", \"finger\", \"flashlight\", \"flower\", \"foot\", \"forest\", \"fruit\", \"gauge\", \"glove\", \"golf\", \"grass\", \"green\", \"hammer\", \"hand\", \"hawk\", \"head\", \"heat\", \"hour\", \"hurdle\", \"indicator\", \"jacket\", \"job\", \"journey\", \"lamp\", \"lantern\", \"laptop\", \"learning\", \"leg\", \"mallet\", \"marathon\", \"meat\", \"meter\", \"metric\", \"minute\", \"month\", \"mountain\", \"narrative\", \"novel\", \"nurse\", \"orange\", \"owl\", \"pants\", \"pasta\", \"period\", \"phone\", \"pilot\", \"plane\", \"pliers\", \"prose\", \"race\", \"rain\", \"red\", \"river\", \"ruler\", \"run\", \"saw\", \"scale\", \"school\", \"screen\", \"second\", \"sensor\", \"shelf\", \"ship\", \"shirt\", \"signal\", \"skirt\", \"snow\", \"soccer\", \"sofa\", \"sprint\", \"stool\", \"storm\", \"story\", \"student\", \"study\", \"table\", \"teacher\", \"tennis\", \"tiger\", \"torch\", \"tour\", \"track\", \"train\", \"transit\", \"travel\", \"tree\", \"trek\", \"trip\", \"unit\", \"vehicle\", \"volume\", \"voyage\", \"week\", \"whale\", \"white\", \"wind\", \"worker\", \"wrench\", \"wrist\", \"yellow\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"direction name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nThe parent hypothesis's prior rationale (for context only; do not copy blindly): basis_words=[\"gauge\", \"meter\", \"bulb\", \"candle\"], reason=\"Both categories contain items used to convey information: gauges and meters measure quantities, while bulbs and flashlights provide visual indications of state or presence.\".\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": "8397727899bcba78",
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:32:29",
+    "details": {
+      "word": "satellite",
+      "rank": 118,
+      "hypothesis": "remote sensing",
+      "best_word": "sensor",
+      "best_rank": 12,
+      "total_guesses": 141
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:32:30",
+    "details": {
+      "word": "radar",
+      "rank": 44,
+      "hypothesis": "remote sensing",
+      "best_word": "sensor",
+      "best_rank": 12,
+      "total_guesses": 142
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:32:31",
+    "details": {
+      "word": "sonar",
+      "rank": 635,
+      "hypothesis": "remote sensing",
+      "best_word": "sensor",
+      "best_rank": 12,
+      "total_guesses": 143
+    }
+  },
+  {
+    "generation": 2,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-23T01:33:52",
+    "details": {
+      "parent_id": "5545c800fef5426490f9bfd26553c702",
+      "child_id": "7f432bcc807b4e98811cb3fc94fa4d9d",
+      "parent_rank": 13,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "manufacturing and fabrication",
+      "sampled_op": "ml_mutation",
+      "method": "self_adaptive",
+      "self_report": {
+        "predicted_closeness": 0.8,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "gauge",
+            "ruler"
+          ],
+          "reason": "The high ranking of 'gauge' (13) and 'ruler' (35) suggests the target is a specific physical measurement or tool used in fabrication, moving the focus from abstract units to practical industrial dimensions."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"name\": \"manufacturing and fabrication\", \"description\": \"terms related to industrial production, material measurements, and machine specifications\", \"words\": [\"caliber\", \"diameter\", \"thickness\"], \"basis_words\": [\"gauge\", \"ruler\"], \"reason\": \"The high ranking of 'gauge' (13) and 'ruler' (35) suggests the target is a specific physical measurement or tool used in fabrication, moving the focus from abstract units to practical industrial dimensions.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.8}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"measurement systems\".\nDescription: quantities, units, and devices used for measuring physical properties like length, weight, or volume\nResults so far in this hypothesis: {\"gauge\": 13, \"meter\": 278, \"metric\": 1241, \"ruler\": 35, \"scale\": 105, \"unit\": 1451}\nBest word so far: \"gauge\" with rank 13.\n\nMake a MEDIUM-LARGE mutation: produce a child hypothesis in an ADJACENT but\ndistinct category that could still plausibly contain the hidden target given\n\"gauge\"'s rank. The child must NOT be a sub-category of \"measurement systems\" - it\nshould sit alongside \"measurement systems\" in semantic space, not underneath it.\n\nFor example, if the parent is \"types of plants\" and the best word is \"shrub\",\nan adjacent category could be \"plant descriptors\", \"botanical terminology\",\n\"growth habits\", or \"ecological roles\".\n\nSuggest one adjacent hypothesis. Include exactly 3 starter words that have\nnot already been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"age\", \"alarm\", \"apple\", \"arm\", \"ball\", \"bat\", \"battery\", \"beacon\", \"bed\", \"bench\", \"blue\", \"book\", \"bread\", \"bulb\", \"bus\", \"cabinet\", \"candle\", \"car\", \"cargo\", \"chair\", \"chandelier\", \"cheese\", \"class\", \"clock\", \"cloud\", \"coat\", \"college\", \"computer\", \"desk\", \"device\", \"dial\", \"doctor\", \"dress\", \"drill\", \"eagle\", \"era\", \"expedition\", \"eye\", \"face\", \"falcon\", \"fiction\", \"finger\", \"flashlight\", \"flower\", \"foot\", \"forest\", \"fruit\", \"gauge\", \"glove\", \"golf\", \"grass\", \"green\", \"hammer\", \"hand\", \"hawk\", \"head\", \"heat\", \"hour\", \"hurdle\", \"indicator\", \"jacket\", \"job\", \"journey\", \"lamp\", \"lantern\", \"laptop\", \"learning\", \"leg\", \"mallet\", \"marathon\", \"meat\", \"meter\", \"metric\", \"minute\", \"month\", \"mountain\", \"narrative\", \"novel\", \"nurse\", \"orange\", \"owl\", \"pants\", \"pasta\", \"period\", \"phone\", \"pilot\", \"plane\", \"pliers\", \"prose\", \"race\", \"radar\", \"rain\", \"red\", \"river\", \"ruler\", \"run\", \"satellite\", \"saw\", \"scale\", \"school\", \"screen\", \"second\", \"sensor\", \"shelf\", \"ship\", \"shirt\", \"signal\", \"skirt\", \"snow\", \"soccer\", \"sofa\", \"sonar\", \"sprint\", \"stool\", \"storm\", \"story\", \"student\", \"study\", \"table\", \"teacher\", \"tennis\", \"tiger\", \"torch\", \"tour\", \"track\", \"train\", \"transit\", \"travel\", \"tree\", \"trek\", \"trip\", \"unit\", \"vehicle\", \"volume\", \"voyage\", \"week\", \"whale\", \"white\", \"wind\", \"worker\", \"wrench\", \"wrist\", \"yellow\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"category name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nThe parent hypothesis's prior rationale (for context only; do not copy blindly): basis_words=[\"clock\", \"hour\", \"minute\", \"second\"], reason=\"Since 'clock' is very close but specific time denominations are far away, the target likely relates to the concept of measurement rather than chronology specifically.\".\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": "5a84fa7084a6529a",
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:33:53",
+    "details": {
+      "word": "caliber",
+      "rank": 1307,
+      "hypothesis": "manufacturing and fabrication",
+      "best_word": "sensor",
+      "best_rank": 12,
+      "total_guesses": 144
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:33:54",
+    "details": {
+      "word": "diameter",
+      "rank": 921,
+      "hypothesis": "manufacturing and fabrication",
+      "best_word": "sensor",
+      "best_rank": 12,
+      "total_guesses": 145
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:33:55",
+    "details": {
+      "word": "thickness",
+      "rank": 6496,
+      "hypothesis": "manufacturing and fabrication",
+      "best_word": "sensor",
+      "best_rank": 12,
+      "total_guesses": 146
+    }
+  },
+  {
+    "generation": 2,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-23T01:35:05",
+    "details": {
+      "parent_id": "f0a8b0bad18640d0a8bee3aea2c30404",
+      "child_id": "1ac0abad93ac42ca89492f876a08c603",
+      "parent_rank": 15,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "outdoor gear",
+      "sampled_op": "ml_mutation",
+      "method": "self_adaptive",
+      "self_report": {
+        "predicted_closeness": 0.8,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "flashlight",
+            "lantern"
+          ],
+          "reason": "The significant difference in rank between 'flashlight' (15) and 'chandelier' (2678) suggests the target is a practical, portable item rather than a stationary decorative fixture."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"name\": \"outdoor gear\", \"description\": \"equipment and tools designed for outdoor activities such as camping and hiking\", \"words\": [\"backpack\", \"compass\", \"tent\"], \"basis_words\": [\"flashlight\", \"lantern\"], \"reason\": \"The significant difference in rank between 'flashlight' (15) and 'chandelier' (2678) suggests the target is a practical, portable item rather than a stationary decorative fixture.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.8}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"lighting fixtures\".\nDescription: household objects specifically designed for illumination or light production\nResults so far in this hypothesis: {\"bulb\": 4431, \"candle\": 238, \"chandelier\": 2678, \"flashlight\": 15, \"lantern\": 61, \"torch\": 89}\nBest word so far: \"flashlight\" with rank 15.\n\nMake a MEDIUM-LARGE mutation: produce a child hypothesis in an ADJACENT but\ndistinct category that could still plausibly contain the hidden target given\n\"flashlight\"'s rank. The child must NOT be a sub-category of \"lighting fixtures\" - it\nshould sit alongside \"lighting fixtures\" in semantic space, not underneath it.\n\nFor example, if the parent is \"types of plants\" and the best word is \"shrub\",\nan adjacent category could be \"plant descriptors\", \"botanical terminology\",\n\"growth habits\", or \"ecological roles\".\n\nSuggest one adjacent hypothesis. Include exactly 3 starter words that have\nnot already been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"age\", \"alarm\", \"apple\", \"arm\", \"ball\", \"bat\", \"battery\", \"beacon\", \"bed\", \"bench\", \"blue\", \"book\", \"bread\", \"bulb\", \"bus\", \"cabinet\", \"caliber\", \"candle\", \"car\", \"cargo\", \"chair\", \"chandelier\", \"cheese\", \"class\", \"clock\", \"cloud\", \"coat\", \"college\", \"computer\", \"desk\", \"device\", \"dial\", \"diameter\", \"doctor\", \"dress\", \"drill\", \"eagle\", \"era\", \"expedition\", \"eye\", \"face\", \"falcon\", \"fiction\", \"finger\", \"flashlight\", \"flower\", \"foot\", \"forest\", \"fruit\", \"gauge\", \"glove\", \"golf\", \"grass\", \"green\", \"hammer\", \"hand\", \"hawk\", \"head\", \"heat\", \"hour\", \"hurdle\", \"indicator\", \"jacket\", \"job\", \"journey\", \"lamp\", \"lantern\", \"laptop\", \"learning\", \"leg\", \"mallet\", \"marathon\", \"meat\", \"meter\", \"metric\", \"minute\", \"month\", \"mountain\", \"narrative\", \"novel\", \"nurse\", \"orange\", \"owl\", \"pants\", \"pasta\", \"period\", \"phone\", \"pilot\", \"plane\", \"pliers\", \"prose\", \"race\", \"radar\", \"rain\", \"red\", \"river\", \"ruler\", \"run\", \"satellite\", \"saw\", \"scale\", \"school\", \"screen\", \"second\", \"sensor\", \"shelf\", \"ship\", \"shirt\", \"signal\", \"skirt\", \"snow\", \"soccer\", \"sofa\", \"sonar\", \"sprint\", \"stool\", \"storm\", \"story\", \"student\", \"study\", \"table\", \"teacher\", \"tennis\", \"thickness\", \"tiger\", \"torch\", \"tour\", \"track\", \"train\", \"transit\", \"travel\", \"tree\", \"trek\", \"trip\", \"unit\", \"vehicle\", \"volume\", \"voyage\", \"week\", \"whale\", \"white\", \"wind\", \"worker\", \"wrench\", \"wrist\", \"yellow\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"category name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nThe parent hypothesis's prior rationale (for context only; do not copy blindly): basis_words=[\"lamp\"], reason=\"Shifts the focus from general furniture to specific household items that serve the function of providing light.\".\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": "4a63f02e1eabcff6",
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:35:06",
+    "details": {
+      "word": "backpack",
+      "rank": 503,
+      "hypothesis": "outdoor gear",
+      "best_word": "sensor",
+      "best_rank": 12,
+      "total_guesses": 147
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:35:07",
+    "details": {
+      "word": "compass",
+      "rank": 1,
+      "hypothesis": "outdoor gear",
+      "best_word": "compass",
+      "best_rank": 1,
+      "total_guesses": 148
+    }
+  },
+  {
+    "generation": 2,
+    "event": "MUTATE",
+    "timestamp": "2026-07-23T01:35:07",
+    "details": {
+      "method": "self_adaptive",
+      "children": [
+        {
+          "hypothesis_id": "df9ad98874b94fd3bd3f27442e2132f7",
+          "category_name": "remote sensing",
+          "description": "The acquisition of information about objects or areas from a distance using various technologies.",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "signaling_devices",
+          "parent_id": "b59681389112455da6d6398024ac87c6",
+          "origin": "self_adaptive_l_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "self_report": {
+            "predicted_closeness": 0.8,
+            "predicted_closeness_clamped": false,
+            "predicted_bucket": "top100",
+            "rationale": {
+              "basis_words": [
+                "sensor"
+              ],
+              "reason": "This jumps from the hardware classification of 'signaling_devices' to the specific field of remote observation, which relies on sensors but is distinct in purpose and application."
+            },
+            "self_report_parse_failed": false,
+            "self_report_raw": "{\"name\": \"remote sensing\", \"description\": \"The acquisition of information about objects or areas from a distance using various technologies.\", \"words\": [\"satellite\", \"radar\", \"sonar\"], \"basis_words\": [\"sensor\"], \"reason\": \"This jumps from the hardware classification of 'signaling_devices' to the specific field of remote observation, which relies on sensors but is distinct in purpose and application.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.8}",
+            "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"signaling_devices\".\nDescription: Devices that provide information about a state or quantity through visual or measurable signals.\nBest word so far: \"sensor\" with rank 12.\nOther active categories already being explored: [\"measurement systems\", \"lighting fixtures\", \"time\", \"signaling_devices\", \"journey\"]\n\nMake a LARGE mutation: produce a child hypothesis in a broad, semantically\nsubstantial new direction that is unlike \"signaling_devices\" and unlike the other active\ncategories above. The goal is to escape the current semantic region and open\nup unexplored territory, while staying plausibly relevant given \"sensor\"'s\nrank - lower ranks mean the target is closer to \"sensor\", so the jump\nmust remain in the same broad semantic area even when reframed.\n\nFor example, if the parent is \"types of plants\" and \"shrub\" ranks 50, a large\nmutation could be \"outdoor environments\" or \"rural landscape features\" -\nclearly outside the plant taxonomy but still in a plausible neighborhood for\na target close to \"shrub\".\n\nSuggest one new hypothesis. Include exactly 3 starter words that have not\nalready been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"age\", \"alarm\", \"apple\", \"arm\", \"ball\", \"bat\", \"battery\", \"beacon\", \"bed\", \"bench\", \"blue\", \"book\", \"bread\", \"bulb\", \"bus\", \"cabinet\", \"candle\", \"car\", \"cargo\", \"chair\", \"chandelier\", \"cheese\", \"class\", \"clock\", \"cloud\", \"coat\", \"college\", \"computer\", \"desk\", \"device\", \"dial\", \"doctor\", \"dress\", \"drill\", \"eagle\", \"era\", \"expedition\", \"eye\", \"face\", \"falcon\", \"fiction\", \"finger\", \"flashlight\", \"flower\", \"foot\", \"forest\", \"fruit\", \"gauge\", \"glove\", \"golf\", \"grass\", \"green\", \"hammer\", \"hand\", \"hawk\", \"head\", \"heat\", \"hour\", \"hurdle\", \"indicator\", \"jacket\", \"job\", \"journey\", \"lamp\", \"lantern\", \"laptop\", \"learning\", \"leg\", \"mallet\", \"marathon\", \"meat\", \"meter\", \"metric\", \"minute\", \"month\", \"mountain\", \"narrative\", \"novel\", \"nurse\", \"orange\", \"owl\", \"pants\", \"pasta\", \"period\", \"phone\", \"pilot\", \"plane\", \"pliers\", \"prose\", \"race\", \"rain\", \"red\", \"river\", \"ruler\", \"run\", \"saw\", \"scale\", \"school\", \"screen\", \"second\", \"sensor\", \"shelf\", \"ship\", \"shirt\", \"signal\", \"skirt\", \"snow\", \"soccer\", \"sofa\", \"sprint\", \"stool\", \"storm\", \"story\", \"student\", \"study\", \"table\", \"teacher\", \"tennis\", \"tiger\", \"torch\", \"tour\", \"track\", \"train\", \"transit\", \"travel\", \"tree\", \"trek\", \"trip\", \"unit\", \"vehicle\", \"volume\", \"voyage\", \"week\", \"whale\", \"white\", \"wind\", \"worker\", \"wrench\", \"wrist\", \"yellow\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"direction name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nThe parent hypothesis's prior rationale (for context only; do not copy blindly): basis_words=[\"gauge\", \"meter\", \"bulb\", \"candle\"], reason=\"Both categories contain items used to convey information: gauges and meters measure quantities, while bulbs and flashlights provide visual indications of state or presence.\".\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+            "injected_rationale_hash": "8397727899bcba78",
+            "rationale_truncated": false
+          }
+        },
+        {
+          "hypothesis_id": "7f432bcc807b4e98811cb3fc94fa4d9d",
+          "category_name": "manufacturing and fabrication",
+          "description": "terms related to industrial production, material measurements, and machine specifications",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "measurement systems",
+          "parent_id": "5545c800fef5426490f9bfd26553c702",
+          "origin": "self_adaptive_ml_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "self_report": {
+            "predicted_closeness": 0.8,
+            "predicted_closeness_clamped": false,
+            "predicted_bucket": "top100",
+            "rationale": {
+              "basis_words": [
+                "gauge",
+                "ruler"
+              ],
+              "reason": "The high ranking of 'gauge' (13) and 'ruler' (35) suggests the target is a specific physical measurement or tool used in fabrication, moving the focus from abstract units to practical industrial dimensions."
+            },
+            "self_report_parse_failed": false,
+            "self_report_raw": "{\"name\": \"manufacturing and fabrication\", \"description\": \"terms related to industrial production, material measurements, and machine specifications\", \"words\": [\"caliber\", \"diameter\", \"thickness\"], \"basis_words\": [\"gauge\", \"ruler\"], \"reason\": \"The high ranking of 'gauge' (13) and 'ruler' (35) suggests the target is a specific physical measurement or tool used in fabrication, moving the focus from abstract units to practical industrial dimensions.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.8}",
+            "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"measurement systems\".\nDescription: quantities, units, and devices used for measuring physical properties like length, weight, or volume\nResults so far in this hypothesis: {\"gauge\": 13, \"meter\": 278, \"metric\": 1241, \"ruler\": 35, \"scale\": 105, \"unit\": 1451}\nBest word so far: \"gauge\" with rank 13.\n\nMake a MEDIUM-LARGE mutation: produce a child hypothesis in an ADJACENT but\ndistinct category that could still plausibly contain the hidden target given\n\"gauge\"'s rank. The child must NOT be a sub-category of \"measurement systems\" - it\nshould sit alongside \"measurement systems\" in semantic space, not underneath it.\n\nFor example, if the parent is \"types of plants\" and the best word is \"shrub\",\nan adjacent category could be \"plant descriptors\", \"botanical terminology\",\n\"growth habits\", or \"ecological roles\".\n\nSuggest one adjacent hypothesis. Include exactly 3 starter words that have\nnot already been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"age\", \"alarm\", \"apple\", \"arm\", \"ball\", \"bat\", \"battery\", \"beacon\", \"bed\", \"bench\", \"blue\", \"book\", \"bread\", \"bulb\", \"bus\", \"cabinet\", \"candle\", \"car\", \"cargo\", \"chair\", \"chandelier\", \"cheese\", \"class\", \"clock\", \"cloud\", \"coat\", \"college\", \"computer\", \"desk\", \"device\", \"dial\", \"doctor\", \"dress\", \"drill\", \"eagle\", \"era\", \"expedition\", \"eye\", \"face\", \"falcon\", \"fiction\", \"finger\", \"flashlight\", \"flower\", \"foot\", \"forest\", \"fruit\", \"gauge\", \"glove\", \"golf\", \"grass\", \"green\", \"hammer\", \"hand\", \"hawk\", \"head\", \"heat\", \"hour\", \"hurdle\", \"indicator\", \"jacket\", \"job\", \"journey\", \"lamp\", \"lantern\", \"laptop\", \"learning\", \"leg\", \"mallet\", \"marathon\", \"meat\", \"meter\", \"metric\", \"minute\", \"month\", \"mountain\", \"narrative\", \"novel\", \"nurse\", \"orange\", \"owl\", \"pants\", \"pasta\", \"period\", \"phone\", \"pilot\", \"plane\", \"pliers\", \"prose\", \"race\", \"radar\", \"rain\", \"red\", \"river\", \"ruler\", \"run\", \"satellite\", \"saw\", \"scale\", \"school\", \"screen\", \"second\", \"sensor\", \"shelf\", \"ship\", \"shirt\", \"signal\", \"skirt\", \"snow\", \"soccer\", \"sofa\", \"sonar\", \"sprint\", \"stool\", \"storm\", \"story\", \"student\", \"study\", \"table\", \"teacher\", \"tennis\", \"tiger\", \"torch\", \"tour\", \"track\", \"train\", \"transit\", \"travel\", \"tree\", \"trek\", \"trip\", \"unit\", \"vehicle\", \"volume\", \"voyage\", \"week\", \"whale\", \"white\", \"wind\", \"worker\", \"wrench\", \"wrist\", \"yellow\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"category name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nThe parent hypothesis's prior rationale (for context only; do not copy blindly): basis_words=[\"clock\", \"hour\", \"minute\", \"second\"], reason=\"Since 'clock' is very close but specific time denominations are far away, the target likely relates to the concept of measurement rather than chronology specifically.\".\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+            "injected_rationale_hash": "5a84fa7084a6529a",
+            "rationale_truncated": false
+          }
+        },
+        {
+          "hypothesis_id": "1ac0abad93ac42ca89492f876a08c603",
+          "category_name": "outdoor gear",
+          "description": "equipment and tools designed for outdoor activities such as camping and hiking",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "lighting fixtures",
+          "parent_id": "f0a8b0bad18640d0a8bee3aea2c30404",
+          "origin": "self_adaptive_ml_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "self_report": {
+            "predicted_closeness": 0.8,
+            "predicted_closeness_clamped": false,
+            "predicted_bucket": "top100",
+            "rationale": {
+              "basis_words": [
+                "flashlight",
+                "lantern"
+              ],
+              "reason": "The significant difference in rank between 'flashlight' (15) and 'chandelier' (2678) suggests the target is a practical, portable item rather than a stationary decorative fixture."
+            },
+            "self_report_parse_failed": false,
+            "self_report_raw": "{\"name\": \"outdoor gear\", \"description\": \"equipment and tools designed for outdoor activities such as camping and hiking\", \"words\": [\"backpack\", \"compass\", \"tent\"], \"basis_words\": [\"flashlight\", \"lantern\"], \"reason\": \"The significant difference in rank between 'flashlight' (15) and 'chandelier' (2678) suggests the target is a practical, portable item rather than a stationary decorative fixture.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.8}",
+            "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"lighting fixtures\".\nDescription: household objects specifically designed for illumination or light production\nResults so far in this hypothesis: {\"bulb\": 4431, \"candle\": 238, \"chandelier\": 2678, \"flashlight\": 15, \"lantern\": 61, \"torch\": 89}\nBest word so far: \"flashlight\" with rank 15.\n\nMake a MEDIUM-LARGE mutation: produce a child hypothesis in an ADJACENT but\ndistinct category that could still plausibly contain the hidden target given\n\"flashlight\"'s rank. The child must NOT be a sub-category of \"lighting fixtures\" - it\nshould sit alongside \"lighting fixtures\" in semantic space, not underneath it.\n\nFor example, if the parent is \"types of plants\" and the best word is \"shrub\",\nan adjacent category could be \"plant descriptors\", \"botanical terminology\",\n\"growth habits\", or \"ecological roles\".\n\nSuggest one adjacent hypothesis. Include exactly 3 starter words that have\nnot already been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"age\", \"alarm\", \"apple\", \"arm\", \"ball\", \"bat\", \"battery\", \"beacon\", \"bed\", \"bench\", \"blue\", \"book\", \"bread\", \"bulb\", \"bus\", \"cabinet\", \"caliber\", \"candle\", \"car\", \"cargo\", \"chair\", \"chandelier\", \"cheese\", \"class\", \"clock\", \"cloud\", \"coat\", \"college\", \"computer\", \"desk\", \"device\", \"dial\", \"diameter\", \"doctor\", \"dress\", \"drill\", \"eagle\", \"era\", \"expedition\", \"eye\", \"face\", \"falcon\", \"fiction\", \"finger\", \"flashlight\", \"flower\", \"foot\", \"forest\", \"fruit\", \"gauge\", \"glove\", \"golf\", \"grass\", \"green\", \"hammer\", \"hand\", \"hawk\", \"head\", \"heat\", \"hour\", \"hurdle\", \"indicator\", \"jacket\", \"job\", \"journey\", \"lamp\", \"lantern\", \"laptop\", \"learning\", \"leg\", \"mallet\", \"marathon\", \"meat\", \"meter\", \"metric\", \"minute\", \"month\", \"mountain\", \"narrative\", \"novel\", \"nurse\", \"orange\", \"owl\", \"pants\", \"pasta\", \"period\", \"phone\", \"pilot\", \"plane\", \"pliers\", \"prose\", \"race\", \"radar\", \"rain\", \"red\", \"river\", \"ruler\", \"run\", \"satellite\", \"saw\", \"scale\", \"school\", \"screen\", \"second\", \"sensor\", \"shelf\", \"ship\", \"shirt\", \"signal\", \"skirt\", \"snow\", \"soccer\", \"sofa\", \"sonar\", \"sprint\", \"stool\", \"storm\", \"story\", \"student\", \"study\", \"table\", \"teacher\", \"tennis\", \"thickness\", \"tiger\", \"torch\", \"tour\", \"track\", \"train\", \"transit\", \"travel\", \"tree\", \"trek\", \"trip\", \"unit\", \"vehicle\", \"volume\", \"voyage\", \"week\", \"whale\", \"white\", \"wind\", \"worker\", \"wrench\", \"wrist\", \"yellow\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"category name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nThe parent hypothesis's prior rationale (for context only; do not copy blindly): basis_words=[\"lamp\"], reason=\"Shifts the focus from general furniture to specific household items that serve the function of providing light.\".\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+            "injected_rationale_hash": "4a63f02e1eabcff6",
+            "rationale_truncated": false
+          }
+        }
+      ],
+      "best_word": "compass",
+      "best_rank": 1,
+      "total_guesses": 148
+    }
+  },
+  {
+    "generation": 2,
+    "event": "SOLVED",
+    "timestamp": "2026-07-23T01:35:07",
+    "details": {
+      "answer": "compass",
+      "rank": 1,
+      "total_guesses": 148
+    }
+  },
+  {
+    "generation": 2,
+    "event": "NETWORK_METRICS",
+    "timestamp": "2026-07-23T01:35:07",
+    "details": {
+      "network_calls": 148,
+      "network_wall_clock_seconds": 1790.8661,
+      "total_latency_seconds": 52.6413,
+      "mean_latency_seconds": 0.3557,
+      "median_latency_seconds": 0.2707,
+      "p95_latency_seconds": 0.2846,
+      "max_latency_seconds": 3.275,
+      "status_counts": {
+        "200": 148
+      },
+      "outcome_counts": {
+        "ok": 148
+      }
+    }
+  }
+]

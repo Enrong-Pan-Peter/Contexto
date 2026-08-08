@@ -1,0 +1,2637 @@
+[
+  {
+    "generation": -1,
+    "event": "RUN_CONFIG",
+    "timestamp": "2026-07-22T23:38:51",
+    "details": {
+      "game": "api",
+      "solver": "llm",
+      "method": "ea_llm_self_adaptive",
+      "mode": "api",
+      "target": null,
+      "game_number": 1319,
+      "run_index": 0,
+      "game_embedding_path": null,
+      "solver_embedding_path": null,
+      "embedding_backend": null,
+      "vocabulary_size": null,
+      "alignment": "api_unknown",
+      "trace_schema_version": 3,
+      "instrumentation_provenance_hash": "bd9f2858283673a2",
+      "self_report": true,
+      "rationale_inheritance": true,
+      "max_generations": 50,
+      "llm_provider": "ollama",
+      "llm_model": "gemma4:12b",
+      "llm_workers": 4,
+      "initial_categories": 15,
+      "max_active_hypotheses": null,
+      "local_search_rank_threshold": 100,
+      "self_adaptive_initial_categories": 15,
+      "self_adaptive_mu": 15,
+      "self_adaptive_concentration": 50.0,
+      "self_adaptive_sigma_floor": 0.02,
+      "self_adaptive_sigma_mode": "frozen_uniform",
+      "mapelites_grid_resolution": null,
+      "mapelites_mutations_per_gen": null,
+      "mapelites_crossovers_per_gen": null,
+      "mapelites_initial_categories": null,
+      "mapelites_concentration": null,
+      "mapelites_sigma_floor": null,
+      "mapelites_sigma_mode": null,
+      "mapelites_frozen_sigma": null,
+      "mapelites_ranked_context_k": null,
+      "rank_cache_enabled": true,
+      "enable_pivot": false,
+      "ea_llm_pivot_stall_no_improvement_generations": null,
+      "ea_llm_pivot_stall_close_rank_threshold": null,
+      "ea_llm_pivot_stall_close_generations_limit": null,
+      "ea_llm_pivot_max_attempts_per_run": null,
+      "ea_llm_pivot_candidate_words_per_operator": null,
+      "ea_llm_pivot_resolution_window": null,
+      "random_seed": 0
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:40:10",
+    "details": {
+      "word": "forest",
+      "rank": 1679,
+      "hypothesis": "nature",
+      "best_word": "forest",
+      "best_rank": 1679,
+      "total_guesses": 1
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:40:11",
+    "details": {
+      "word": "river",
+      "rank": 2643,
+      "hypothesis": "nature",
+      "best_word": "forest",
+      "best_rank": 1679,
+      "total_guesses": 2
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:40:12",
+    "details": {
+      "word": "mountain",
+      "rank": 6568,
+      "hypothesis": "nature",
+      "best_word": "forest",
+      "best_rank": 1679,
+      "total_guesses": 3
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:40:12",
+    "details": {
+      "word": "bread",
+      "rank": 45913,
+      "hypothesis": "food",
+      "best_word": "forest",
+      "best_rank": 1679,
+      "total_guesses": 4
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:40:13",
+    "details": {
+      "word": "fruit",
+      "rank": 11235,
+      "hypothesis": "food",
+      "best_word": "forest",
+      "best_rank": 1679,
+      "total_guesses": 5
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:40:14",
+    "details": {
+      "word": "cheese",
+      "rank": 12166,
+      "hypothesis": "food",
+      "best_word": "forest",
+      "best_rank": 1679,
+      "total_guesses": 6
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:40:15",
+    "details": {
+      "word": "tiger",
+      "rank": 346,
+      "hypothesis": "animals",
+      "best_word": "tiger",
+      "best_rank": 346,
+      "total_guesses": 7
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:40:15",
+    "details": {
+      "word": "eagle",
+      "rank": 489,
+      "hypothesis": "animals",
+      "best_word": "tiger",
+      "best_rank": 346,
+      "total_guesses": 8
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:40:16",
+    "details": {
+      "word": "whale",
+      "rank": 2,
+      "hypothesis": "animals",
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 9
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:40:17",
+    "details": {
+      "word": "chair",
+      "rank": 29383,
+      "hypothesis": "furniture",
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 10
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:40:17",
+    "details": {
+      "word": "table",
+      "rank": 68417,
+      "hypothesis": "furniture",
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 11
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:40:18",
+    "details": {
+      "word": "lamp",
+      "rank": 50682,
+      "hypothesis": "furniture",
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 12
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:40:19",
+    "details": {
+      "word": "happy",
+      "rank": 9481,
+      "hypothesis": "emotions",
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 13
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:40:20",
+    "details": {
+      "word": "sad",
+      "rank": 2409,
+      "hypothesis": "emotions",
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 14
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:40:20",
+    "details": {
+      "word": "angry",
+      "rank": 5640,
+      "hypothesis": "emotions",
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 15
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:40:21",
+    "details": {
+      "word": "soccer",
+      "rank": 58060,
+      "hypothesis": "sports",
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 16
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:40:22",
+    "details": {
+      "word": "tennis",
+      "rank": 74943,
+      "hypothesis": "sports",
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 17
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:40:23",
+    "details": {
+      "word": "hockey",
+      "rank": 4012,
+      "hypothesis": "sports",
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 18
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:40:23",
+    "details": {
+      "word": "phone",
+      "rank": 51341,
+      "hypothesis": "technology",
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 19
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:40:24",
+    "details": {
+      "word": "laptop",
+      "rank": 69468,
+      "hypothesis": "technology",
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 20
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:40:25",
+    "details": {
+      "word": "camera",
+      "rank": 50174,
+      "hypothesis": "technology",
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 21
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:40:25",
+    "details": {
+      "word": "shirt",
+      "rank": 24223,
+      "hypothesis": "clothing",
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 22
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:40:26",
+    "details": {
+      "word": "pants",
+      "rank": 29436,
+      "hypothesis": "clothing",
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 23
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:40:27",
+    "details": {
+      "word": "dress",
+      "rank": 4587,
+      "hypothesis": "clothing",
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 24
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:40:28",
+    "details": {
+      "word": "rain",
+      "rank": 7514,
+      "hypothesis": "weather",
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 25
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:40:28",
+    "details": {
+      "word": "snow",
+      "rank": 1073,
+      "hypothesis": "weather",
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 26
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:40:29",
+    "details": {
+      "word": "wind",
+      "rank": 12328,
+      "hypothesis": "weather",
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 27
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:40:30",
+    "details": {
+      "word": "heart",
+      "rank": 25339,
+      "hypothesis": "anatomy",
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 28
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:40:31",
+    "details": {
+      "word": "nose",
+      "rank": 367,
+      "hypothesis": "anatomy",
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 29
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:40:31",
+    "details": {
+      "word": "hand",
+      "rank": 26454,
+      "hypothesis": "anatomy",
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 30
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:40:32",
+    "details": {
+      "word": "train",
+      "rank": 12052,
+      "hypothesis": "transport",
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 31
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:40:33",
+    "details": {
+      "word": "plane",
+      "rank": 9862,
+      "hypothesis": "transport",
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 32
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:40:34",
+    "details": {
+      "word": "ship",
+      "rank": 2740,
+      "hypothesis": "transport",
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 33
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:40:34",
+    "details": {
+      "word": "doctor",
+      "rank": 31611,
+      "hypothesis": "careers",
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 34
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:40:35",
+    "details": {
+      "word": "nurse",
+      "rank": 10831,
+      "hypothesis": "careers",
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 35
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:40:36",
+    "details": {
+      "word": "pilot",
+      "rank": 5332,
+      "hypothesis": "careers",
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 36
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:40:36",
+    "details": {
+      "word": "house",
+      "rank": 24860,
+      "hypothesis": "architecture",
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 37
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:40:37",
+    "details": {
+      "word": "bridge",
+      "rank": 21417,
+      "hypothesis": "architecture",
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 38
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:40:38",
+    "details": {
+      "word": "tower",
+      "rank": 14169,
+      "hypothesis": "architecture",
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 39
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:40:39",
+    "details": {
+      "word": "guitar",
+      "rank": 18430,
+      "hypothesis": "music",
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 40
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:40:39",
+    "details": {
+      "word": "piano",
+      "rank": 7848,
+      "hypothesis": "music",
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 41
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:40:40",
+    "details": {
+      "word": "song",
+      "rank": 2304,
+      "hypothesis": "music",
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 42
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:40:41",
+    "details": {
+      "word": "flower",
+      "rank": 51053,
+      "hypothesis": "plants",
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 43
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:40:42",
+    "details": {
+      "word": "grass",
+      "rank": 5069,
+      "hypothesis": "plants",
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 44
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:40:42",
+    "details": {
+      "word": "tree",
+      "rank": 5791,
+      "hypothesis": "plants",
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 45
+    }
+  },
+  {
+    "generation": 0,
+    "event": "INIT",
+    "timestamp": "2026-07-22T23:40:42",
+    "details": {
+      "hypotheses": [
+        {
+          "hypothesis_id": "bfdb6b829e7b4f9cb53e378d8a7558d9",
+          "category_name": "nature",
+          "description": "natural landscapes and features",
+          "words_tried": {
+            "forest": 1679,
+            "river": 2643,
+            "mountain": 6568
+          },
+          "best_word": "forest",
+          "best_rank": 1679,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "8dbeda77920f485d8d7922ec6993b00b",
+          "category_name": "food",
+          "description": "common edible items",
+          "words_tried": {
+            "fruit": 11235,
+            "cheese": 12166,
+            "bread": 45913
+          },
+          "best_word": "fruit",
+          "best_rank": 11235,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "0d86e085c13f46deaa2dda0416c72052",
+          "category_name": "animals",
+          "description": "wildlife and creatures",
+          "words_tried": {
+            "whale": 2,
+            "tiger": 346,
+            "eagle": 489
+          },
+          "best_word": "whale",
+          "best_rank": 2,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "df464d3482084280adf9b5b8950ab826",
+          "category_name": "furniture",
+          "description": "household objects for use",
+          "words_tried": {
+            "chair": 29383,
+            "lamp": 50682,
+            "table": 68417
+          },
+          "best_word": "chair",
+          "best_rank": 29383,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "6181f79057304422becf291c0c315719",
+          "category_name": "emotions",
+          "description": "feelings and moods",
+          "words_tried": {
+            "sad": 2409,
+            "angry": 5640,
+            "happy": 9481
+          },
+          "best_word": "sad",
+          "best_rank": 2409,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "60071d8b432a431b9204a3a2ee43c15d",
+          "category_name": "sports",
+          "description": "physical activities and games",
+          "words_tried": {
+            "hockey": 4012,
+            "soccer": 58060,
+            "tennis": 74943
+          },
+          "best_word": "hockey",
+          "best_rank": 4012,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "1ef8b4df8e4e4cfe8326bea0c60b569e",
+          "category_name": "technology",
+          "description": "electronic devices and tools",
+          "words_tried": {
+            "camera": 50174,
+            "phone": 51341,
+            "laptop": 69468
+          },
+          "best_word": "camera",
+          "best_rank": 50174,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "a15d872041f1447bb1b6fd1cc259324d",
+          "category_name": "clothing",
+          "description": "garments and apparel",
+          "words_tried": {
+            "dress": 4587,
+            "shirt": 24223,
+            "pants": 29436
+          },
+          "best_word": "dress",
+          "best_rank": 4587,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "c72765f4b69743c8a85174eac06404c1",
+          "category_name": "weather",
+          "description": "atmospheric conditions",
+          "words_tried": {
+            "snow": 1073,
+            "rain": 7514,
+            "wind": 12328
+          },
+          "best_word": "snow",
+          "best_rank": 1073,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "d2af9912657d496e86057e3e3a1fdd9d",
+          "category_name": "anatomy",
+          "description": "parts of the human body",
+          "words_tried": {
+            "nose": 367,
+            "heart": 25339,
+            "hand": 26454
+          },
+          "best_word": "nose",
+          "best_rank": 367,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "264ad39561d0498abb139f740740e163",
+          "category_name": "transport",
+          "description": "modes of travel",
+          "words_tried": {
+            "ship": 2740,
+            "plane": 9862,
+            "train": 12052
+          },
+          "best_word": "ship",
+          "best_rank": 2740,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "3dccbfef8d3143b895d346a54ad0699d",
+          "category_name": "careers",
+          "description": "common professions and jobs",
+          "words_tried": {
+            "pilot": 5332,
+            "nurse": 10831,
+            "doctor": 31611
+          },
+          "best_word": "pilot",
+          "best_rank": 5332,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "fc306adf08564c43a137d98bf3168767",
+          "category_name": "architecture",
+          "description": "structures and buildings",
+          "words_tried": {
+            "tower": 14169,
+            "bridge": 21417,
+            "house": 24860
+          },
+          "best_word": "tower",
+          "best_rank": 14169,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "e391fe537fbf4af8a74fe215639d3961",
+          "category_name": "music",
+          "description": "instruments and sounds",
+          "words_tried": {
+            "song": 2304,
+            "piano": 7848,
+            "guitar": 18430
+          },
+          "best_word": "song",
+          "best_rank": 2304,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "6139bb5f0078463d86db757793719280",
+          "category_name": "plants",
+          "description": "flora and vegetation",
+          "words_tried": {
+            "grass": 5069,
+            "tree": 5791,
+            "flower": 51053
+          },
+          "best_word": "grass",
+          "best_rank": 5069,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        }
+      ],
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 45
+    }
+  },
+  {
+    "generation": 0,
+    "event": "SIGMA_TRAJECTORY",
+    "timestamp": "2026-07-22T23:40:42",
+    "details": {
+      "mean_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "population_size": 15
+    }
+  },
+  {
+    "generation": 1,
+    "event": "CANDIDATES",
+    "timestamp": "2026-07-22T23:50:34",
+    "details": {
+      "count": 40,
+      "candidates": [
+        {
+          "hypothesis": "nature",
+          "word": "ocean"
+        },
+        {
+          "hypothesis": "nature",
+          "word": "dolphin"
+        },
+        {
+          "hypothesis": "nature",
+          "word": "shark"
+        },
+        {
+          "hypothesis": "food",
+          "word": "fish"
+        },
+        {
+          "hypothesis": "food",
+          "word": "meat"
+        },
+        {
+          "hypothesis": "food",
+          "word": "snack"
+        },
+        {
+          "hypothesis": "animals",
+          "word": "orca"
+        },
+        {
+          "hypothesis": "furniture",
+          "word": "sofa"
+        },
+        {
+          "hypothesis": "furniture",
+          "word": "couch"
+        },
+        {
+          "hypothesis": "furniture",
+          "word": "bed"
+        },
+        {
+          "hypothesis": "emotions",
+          "word": "fear"
+        },
+        {
+          "hypothesis": "emotions",
+          "word": "joy"
+        },
+        {
+          "hypothesis": "emotions",
+          "word": "calm"
+        },
+        {
+          "hypothesis": "sports",
+          "word": "skating"
+        },
+        {
+          "hypothesis": "sports",
+          "word": "skiing"
+        },
+        {
+          "hypothesis": "sports",
+          "word": "swimming"
+        },
+        {
+          "hypothesis": "technology",
+          "word": "computer"
+        },
+        {
+          "hypothesis": "technology",
+          "word": "internet"
+        },
+        {
+          "hypothesis": "technology",
+          "word": "robot"
+        },
+        {
+          "hypothesis": "weather",
+          "word": "storm"
+        },
+        {
+          "hypothesis": "weather",
+          "word": "cloud"
+        },
+        {
+          "hypothesis": "weather",
+          "word": "climate"
+        },
+        {
+          "hypothesis": "anatomy",
+          "word": "eye"
+        },
+        {
+          "hypothesis": "anatomy",
+          "word": "mouth"
+        },
+        {
+          "hypothesis": "anatomy",
+          "word": "face"
+        },
+        {
+          "hypothesis": "transport",
+          "word": "truck"
+        },
+        {
+          "hypothesis": "transport",
+          "word": "bus"
+        },
+        {
+          "hypothesis": "transport",
+          "word": "submarine"
+        },
+        {
+          "hypothesis": "careers",
+          "word": "teacher"
+        },
+        {
+          "hypothesis": "careers",
+          "word": "soldier"
+        },
+        {
+          "hypothesis": "careers",
+          "word": "driver"
+        },
+        {
+          "hypothesis": "architecture",
+          "word": "castle"
+        },
+        {
+          "hypothesis": "architecture",
+          "word": "mansion"
+        },
+        {
+          "hypothesis": "architecture",
+          "word": "palace"
+        },
+        {
+          "hypothesis": "music",
+          "word": "melody"
+        },
+        {
+          "hypothesis": "music",
+          "word": "rhythm"
+        },
+        {
+          "hypothesis": "music",
+          "word": "harmony"
+        },
+        {
+          "hypothesis": "plants",
+          "word": "leaf"
+        },
+        {
+          "hypothesis": "plants",
+          "word": "bush"
+        },
+        {
+          "hypothesis": "plants",
+          "word": "shrub"
+        }
+      ]
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:50:38",
+    "details": {
+      "word": "ocean",
+      "rank": 275,
+      "hypothesis": "nature",
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 46
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:50:39",
+    "details": {
+      "word": "dolphin",
+      "rank": 27,
+      "hypothesis": "nature",
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 47
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:50:39",
+    "details": {
+      "word": "shark",
+      "rank": 22,
+      "hypothesis": "nature",
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 48
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:50:40",
+    "details": {
+      "word": "fish",
+      "rank": 138,
+      "hypothesis": "food",
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 49
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:50:41",
+    "details": {
+      "word": "meat",
+      "rank": 2309,
+      "hypothesis": "food",
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 50
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:50:42",
+    "details": {
+      "word": "snack",
+      "rank": 8294,
+      "hypothesis": "food",
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 51
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:50:42",
+    "details": {
+      "word": "orca",
+      "rank": 13,
+      "hypothesis": "animals",
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 52
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:50:43",
+    "details": {
+      "word": "sofa",
+      "rank": 13720,
+      "hypothesis": "furniture",
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 53
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:50:44",
+    "details": {
+      "word": "couch",
+      "rank": 7822,
+      "hypothesis": "furniture",
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 54
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:50:45",
+    "details": {
+      "word": "bed",
+      "rank": 31770,
+      "hypothesis": "furniture",
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 55
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:50:45",
+    "details": {
+      "word": "fear",
+      "rank": 23408,
+      "hypothesis": "emotions",
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 56
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:50:46",
+    "details": {
+      "word": "joy",
+      "rank": 29050,
+      "hypothesis": "emotions",
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 57
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:50:47",
+    "details": {
+      "word": "calm",
+      "rank": 13881,
+      "hypothesis": "emotions",
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 58
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:50:47",
+    "details": {
+      "word": "skating",
+      "rank": 8340,
+      "hypothesis": "sports",
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 59
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:50:48",
+    "details": {
+      "word": "skiing",
+      "rank": 12871,
+      "hypothesis": "sports",
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 60
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:50:49",
+    "details": {
+      "word": "swimming",
+      "rank": 374,
+      "hypothesis": "sports",
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 61
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:50:50",
+    "details": {
+      "word": "computer",
+      "rank": 36550,
+      "hypothesis": "technology",
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 62
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:50:50",
+    "details": {
+      "word": "internet",
+      "rank": 33232,
+      "hypothesis": "technology",
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 63
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:50:51",
+    "details": {
+      "word": "robot",
+      "rank": 5842,
+      "hypothesis": "technology",
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 64
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:50:52",
+    "details": {
+      "word": "storm",
+      "rank": 4009,
+      "hypothesis": "weather",
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 65
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:50:53",
+    "details": {
+      "word": "cloud",
+      "rank": 5850,
+      "hypothesis": "weather",
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 66
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:50:53",
+    "details": {
+      "word": "climate",
+      "rank": 15488,
+      "hypothesis": "weather",
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 67
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:50:54",
+    "details": {
+      "word": "eye",
+      "rank": 4637,
+      "hypothesis": "anatomy",
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 68
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:50:55",
+    "details": {
+      "word": "mouth",
+      "rank": 1025,
+      "hypothesis": "anatomy",
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 69
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:50:55",
+    "details": {
+      "word": "face",
+      "rank": 4817,
+      "hypothesis": "anatomy",
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 70
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:50:56",
+    "details": {
+      "word": "truck",
+      "rank": 8662,
+      "hypothesis": "transport",
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 71
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:50:57",
+    "details": {
+      "word": "bus",
+      "rank": 37501,
+      "hypothesis": "transport",
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 72
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:50:58",
+    "details": {
+      "word": "submarine",
+      "rank": 173,
+      "hypothesis": "transport",
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 73
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:50:58",
+    "details": {
+      "word": "teacher",
+      "rank": 57652,
+      "hypothesis": "careers",
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 74
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:50:59",
+    "details": {
+      "word": "soldier",
+      "rank": 9711,
+      "hypothesis": "careers",
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 75
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:51:00",
+    "details": {
+      "word": "driver",
+      "rank": 75758,
+      "hypothesis": "careers",
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 76
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:51:01",
+    "details": {
+      "word": "castle",
+      "rank": 38227,
+      "hypothesis": "architecture",
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 77
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:51:01",
+    "details": {
+      "word": "mansion",
+      "rank": 65603,
+      "hypothesis": "architecture",
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 78
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:51:02",
+    "details": {
+      "word": "palace",
+      "rank": 38825,
+      "hypothesis": "architecture",
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 79
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:51:03",
+    "details": {
+      "word": "melody",
+      "rank": 30040,
+      "hypothesis": "music",
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 80
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:51:04",
+    "details": {
+      "word": "rhythm",
+      "rank": 44942,
+      "hypothesis": "music",
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 81
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:51:04",
+    "details": {
+      "word": "harmony",
+      "rank": 25219,
+      "hypothesis": "music",
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 82
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:51:05",
+    "details": {
+      "word": "leaf",
+      "rank": 3502,
+      "hypothesis": "plants",
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 83
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:51:06",
+    "details": {
+      "word": "bush",
+      "rank": 19151,
+      "hypothesis": "plants",
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 84
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:51:06",
+    "details": {
+      "word": "shrub",
+      "rank": 30398,
+      "hypothesis": "plants",
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 85
+    }
+  },
+  {
+    "generation": 1,
+    "event": "LOCAL_SEARCH_DISABLED",
+    "timestamp": "2026-07-22T23:51:06",
+    "details": {
+      "center_word": "whale",
+      "center_rank": 2,
+      "threshold": 100,
+      "reason": "self_adaptive_disable_local_search"
+    }
+  },
+  {
+    "generation": 1,
+    "event": "SELECT",
+    "timestamp": "2026-07-22T23:51:06",
+    "details": {
+      "kept": [
+        "animals",
+        "nature",
+        "food",
+        "transport",
+        "anatomy"
+      ],
+      "discarded": [
+        "sports",
+        "weather",
+        "music",
+        "emotions",
+        "plants",
+        "clothing",
+        "careers",
+        "technology",
+        "furniture",
+        "architecture"
+      ],
+      "elite": "animals",
+      "max_active_hypotheses": 5,
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 85
+    }
+  },
+  {
+    "generation": 1,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-22T23:52:23",
+    "details": {
+      "parent_id": "0d86e085c13f46deaa2dda0416c72052",
+      "child_id": "1d8d87f23c4443f384053b61286dafc1",
+      "parent_rank": 2,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "marine environments",
+      "sampled_op": "ml_mutation",
+      "method": "self_adaptive",
+      "self_report": {
+        "predicted_closeness": 0.8,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "whale",
+            "orca"
+          ],
+          "reason": "The proximity of 'whale' (2) and 'orca' (13) strongly suggests a marine mammal target. This adjacent category shifts the focus to the maritime environment while remaining in the relevant semantic space."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"name\": \"marine environments\", \"description\": \"habitats and landscapes within sea regions\", \"words\": [\"marine\", \"aquatic\", \"coastal\"], \"basis_words\": [\"whale\", \"orca\"], \"reason\": \"The proximity of 'whale' (2) and 'orca' (13) strongly suggests a marine mammal target. This adjacent category shifts the focus to the maritime environment while remaining in the relevant semantic space.\", \"predicted_bucket\": \"top_100\", \"predicted_closeness\": 0.8}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"animals\".\nDescription: wildlife and creatures\nResults so far in this hypothesis: {\"eagle\": 489, \"orca\": 13, \"tiger\": 346, \"whale\": 2}\nBest word so far: \"whale\" with rank 2.\n\nMake a MEDIUM-LARGE mutation: produce a child hypothesis in an ADJACENT but\ndistinct category that could still plausibly contain the hidden target given\n\"whale\"'s rank. The child must NOT be a sub-category of \"animals\" - it\nshould sit alongside \"animals\" in semantic space, not underneath it.\n\nFor example, if the parent is \"types of plants\" and the best word is \"shrub\",\nan adjacent category could be \"plant descriptors\", \"botanical terminology\",\n\"growth habits\", or \"ecological roles\".\n\nSuggest one adjacent hypothesis. Include exactly 3 starter words that have\nnot already been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"angry\", \"bed\", \"bread\", \"bridge\", \"bus\", \"bush\", \"calm\", \"camera\", \"castle\", \"chair\", \"cheese\", \"climate\", \"cloud\", \"computer\", \"couch\", \"doctor\", \"dolphin\", \"dress\", \"driver\", \"eagle\", \"eye\", \"face\", \"fear\", \"fish\", \"flower\", \"forest\", \"fruit\", \"grass\", \"guitar\", \"hand\", \"happy\", \"harmony\", \"heart\", \"hockey\", \"house\", \"internet\", \"joy\", \"lamp\", \"laptop\", \"leaf\", \"mansion\", \"meat\", \"melody\", \"mountain\", \"mouth\", \"nose\", \"nurse\", \"ocean\", \"orca\", \"palace\", \"pants\", \"phone\", \"piano\", \"pilot\", \"plane\", \"rain\", \"rhythm\", \"river\", \"robot\", \"sad\", \"shark\", \"ship\", \"shirt\", \"shrub\", \"skating\", \"skiing\", \"snack\", \"snow\", \"soccer\", \"sofa\", \"soldier\", \"song\", \"storm\", \"submarine\", \"swimming\", \"table\", \"teacher\", \"tennis\", \"tiger\", \"tower\", \"train\", \"tree\", \"truck\", \"whale\", \"wind\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"category name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:52:24",
+    "details": {
+      "word": "marine",
+      "rank": 602,
+      "hypothesis": "marine environments",
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 86
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:52:25",
+    "details": {
+      "word": "aquatic",
+      "rank": 1159,
+      "hypothesis": "marine environments",
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 87
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:52:25",
+    "details": {
+      "word": "coastal",
+      "rank": 3649,
+      "hypothesis": "marine environments",
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 88
+    }
+  },
+  {
+    "generation": 1,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-22T23:53:52",
+    "details": {
+      "parent_id": "bfdb6b829e7b4f9cb53e378d8a7558d9",
+      "child_id": "2c0d598be7e74c76bf6be2bfde342f3a",
+      "parent_rank": 22,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "predatory sea creatures",
+      "sampled_op": "m_mutation",
+      "method": "self_adaptive",
+      "self_report": {
+        "predicted_closeness": 0.8,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "shark",
+            "dolphin"
+          ],
+          "reason": "Since both shark and dolphin ranked very highly, the target is likely a predator in a marine environment. This hypothesis narrows down the 'nature' category to specifically focus on predatory aquatic animals."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"name\": \"predatory sea creatures\", \"description\": \"aquatic animals that hunt and consume other organisms\", \"words\": [\"mako\", \"tuna\", \"barracuda\"], \"basis_words\": [\"shark\", \"dolphin\"], \"reason\": \"Since both shark and dolphin ranked very highly, the target is likely a predator in a marine environment. This hypothesis narrows down the 'nature' category to specifically focus on predatory aquatic animals.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.8}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"nature\".\nDescription: natural landscapes and features\nResults so far in this hypothesis: {\"dolphin\": 27, \"forest\": 1679, \"mountain\": 6568, \"ocean\": 275, \"river\": 2643, \"shark\": 22}\nBest word so far: \"shark\" with rank 22.\n\nMake a MEDIUM mutation: produce a child hypothesis that reinterprets why\n\"shark\" might have scored well, or shifts to a related sense, lexical\nregister, or part of speech. The child should still be semantically anchored\nto \"shark\" but approach it from a clearly different angle than \"nature\".\n\nFor example, if the parent is \"food\" and the best word is \"bite\", a medium\nmutation could be \"animals that bite\", \"physical sensations from biting\", or\n\"clinical terms for biting and chewing\" - each treats \"bite\" through a\ndifferent lens.\n\nSuggest one reframed hypothesis. Include exactly 3 starter words that have\nnot already been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"angry\", \"aquatic\", \"bed\", \"bread\", \"bridge\", \"bus\", \"bush\", \"calm\", \"camera\", \"castle\", \"chair\", \"cheese\", \"climate\", \"cloud\", \"coastal\", \"computer\", \"couch\", \"doctor\", \"dolphin\", \"dress\", \"driver\", \"eagle\", \"eye\", \"face\", \"fear\", \"fish\", \"flower\", \"forest\", \"fruit\", \"grass\", \"guitar\", \"hand\", \"happy\", \"harmony\", \"heart\", \"hockey\", \"house\", \"internet\", \"joy\", \"lamp\", \"laptop\", \"leaf\", \"mansion\", \"marine\", \"meat\", \"melody\", \"mountain\", \"mouth\", \"nose\", \"nurse\", \"ocean\", \"orca\", \"palace\", \"pants\", \"phone\", \"piano\", \"pilot\", \"plane\", \"rain\", \"rhythm\", \"river\", \"robot\", \"sad\", \"shark\", \"ship\", \"shirt\", \"shrub\", \"skating\", \"skiing\", \"snack\", \"snow\", \"soccer\", \"sofa\", \"soldier\", \"song\", \"storm\", \"submarine\", \"swimming\", \"table\", \"teacher\", \"tennis\", \"tiger\", \"tower\", \"train\", \"tree\", \"truck\", \"whale\", \"wind\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"direction name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:53:56",
+    "details": {
+      "word": "mako",
+      "rank": 324,
+      "hypothesis": "predatory sea creatures",
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 89
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:53:56",
+    "details": {
+      "word": "tuna",
+      "rank": 262,
+      "hypothesis": "predatory sea creatures",
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 90
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:53:57",
+    "details": {
+      "word": "barracuda",
+      "rank": 255,
+      "hypothesis": "predatory sea creatures",
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 91
+    }
+  },
+  {
+    "generation": 1,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-22T23:54:42",
+    "details": {
+      "parent_id": "8dbeda77920f485d8d7922ec6993b00b",
+      "child_id": "d000125c0793463d9b258e01858158a4",
+      "parent_rank": 138,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "seafood",
+      "sampled_op": "s_mutation",
+      "method": "self_adaptive",
+      "self_report": {
+        "predicted_closeness": 0.8,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "fish"
+          ],
+          "reason": "Since 'fish' is a strong lead, narrowing the focus to specific types of seafood will help identify if the target is a specific species or category of aquatic food."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"name\": \"seafood\", \"description\": \"edible items from the sea\", \"words\": [\"salmon\", \"cod\", \"trout\"], \"basis_words\": [\"fish\"], \"reason\": \"Since 'fish' is a strong lead, narrowing the focus to specific types of seafood will help identify if the target is a specific species or category of aquatic food.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.8}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"food\".\nDescription: common edible items\nResults so far in this hypothesis: {\"bread\": 45913, \"cheese\": 12166, \"fish\": 138, \"fruit\": 11235, \"meat\": 2309, \"snack\": 8294}\nBest word so far: \"fish\" with rank 138.\n\nMake a SMALL mutation: produce a child hypothesis that stays in the same\nconceptual neighborhood as \"food\" but narrows or refines it. The new starter\nwords should be close semantic neighbors of \"fish\" - synonyms, common\ndescriptors, or words that frequently co-occur with it.\n\nFor example, if the parent is \"types of plants\" and the best word is \"shrub\",\na small mutation could be \"woody plants\" with starters like bush, hedge, thicket.\n\nSuggest one refined hypothesis. Include exactly 3 starter words that have not\nalready been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"angry\", \"aquatic\", \"barracuda\", \"bed\", \"bread\", \"bridge\", \"bus\", \"bush\", \"calm\", \"camera\", \"castle\", \"chair\", \"cheese\", \"climate\", \"cloud\", \"coastal\", \"computer\", \"couch\", \"doctor\", \"dolphin\", \"dress\", \"driver\", \"eagle\", \"eye\", \"face\", \"fear\", \"fish\", \"flower\", \"forest\", \"fruit\", \"grass\", \"guitar\", \"hand\", \"happy\", \"harmony\", \"heart\", \"hockey\", \"house\", \"internet\", \"joy\", \"lamp\", \"laptop\", \"leaf\", \"mako\", \"mansion\", \"marine\", \"meat\", \"melody\", \"mountain\", \"mouth\", \"nose\", \"nurse\", \"ocean\", \"orca\", \"palace\", \"pants\", \"phone\", \"piano\", \"pilot\", \"plane\", \"rain\", \"rhythm\", \"river\", \"robot\", \"sad\", \"shark\", \"ship\", \"shirt\", \"shrub\", \"skating\", \"skiing\", \"snack\", \"snow\", \"soccer\", \"sofa\", \"soldier\", \"song\", \"storm\", \"submarine\", \"swimming\", \"table\", \"teacher\", \"tennis\", \"tiger\", \"tower\", \"train\", \"tree\", \"truck\", \"tuna\", \"whale\", \"wind\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"direction name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:54:46",
+    "details": {
+      "word": "salmon",
+      "rank": 333,
+      "hypothesis": "seafood",
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 92
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:54:47",
+    "details": {
+      "word": "cod",
+      "rank": 1418,
+      "hypothesis": "seafood",
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 93
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:54:47",
+    "details": {
+      "word": "trout",
+      "rank": 819,
+      "hypothesis": "seafood",
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 94
+    }
+  },
+  {
+    "generation": 1,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-22T23:55:48",
+    "details": {
+      "parent_id": "264ad39561d0498abb139f740740e163",
+      "child_id": "4b71919fe79f4d5bb9cae3431be26464",
+      "parent_rank": 173,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "underwater vessels",
+      "sampled_op": "s_mutation",
+      "method": "self_adaptive",
+      "self_report": {
+        "predicted_closeness": 0.7,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "submarine",
+            "ship"
+          ],
+          "reason": "Because 'submarine' is significantly closer than 'ship', the focus should shift towards specific nautical vessel terminology."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"name\": \"underwater vessels\", \"description\": \"specialized sea craft and underwater vehicles\", \"words\": [\"vessel\", \"submersible\", \"hull\"], \"basis_words\": [\"submarine\", \"ship\"], \"reason\": \"Because 'submarine' is significantly closer than 'ship', the focus should shift towards specific nautical vessel terminology.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.7}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"transport\".\nDescription: modes of travel\nResults so far in this hypothesis: {\"bus\": 37501, \"plane\": 9862, \"ship\": 2740, \"submarine\": 173, \"train\": 12052, \"truck\": 8662}\nBest word so far: \"submarine\" with rank 173.\n\nMake a SMALL mutation: produce a child hypothesis that stays in the same\nconceptual neighborhood as \"transport\" but narrows or refines it. The new starter\nwords should be close semantic neighbors of \"submarine\" - synonyms, common\ndescriptors, or words that frequently co-occur with it.\n\nFor example, if the parent is \"types of plants\" and the best word is \"shrub\",\na small mutation could be \"woody plants\" with starters like bush, hedge, thicket.\n\nSuggest one refined hypothesis. Include exactly 3 starter words that have not\nalready been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"angry\", \"aquatic\", \"barracuda\", \"bed\", \"bread\", \"bridge\", \"bus\", \"bush\", \"calm\", \"camera\", \"castle\", \"chair\", \"cheese\", \"climate\", \"cloud\", \"coastal\", \"cod\", \"computer\", \"couch\", \"doctor\", \"dolphin\", \"dress\", \"driver\", \"eagle\", \"eye\", \"face\", \"fear\", \"fish\", \"flower\", \"forest\", \"fruit\", \"grass\", \"guitar\", \"hand\", \"happy\", \"harmony\", \"heart\", \"hockey\", \"house\", \"internet\", \"joy\", \"lamp\", \"laptop\", \"leaf\", \"mako\", \"mansion\", \"marine\", \"meat\", \"melody\", \"mountain\", \"mouth\", \"nose\", \"nurse\", \"ocean\", \"orca\", \"palace\", \"pants\", \"phone\", \"piano\", \"pilot\", \"plane\", \"rain\", \"rhythm\", \"river\", \"robot\", \"sad\", \"salmon\", \"shark\", \"ship\", \"shirt\", \"shrub\", \"skating\", \"skiing\", \"snack\", \"snow\", \"soccer\", \"sofa\", \"soldier\", \"song\", \"storm\", \"submarine\", \"swimming\", \"table\", \"teacher\", \"tennis\", \"tiger\", \"tower\", \"train\", \"tree\", \"trout\", \"truck\", \"tuna\", \"whale\", \"wind\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"direction name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:55:49",
+    "details": {
+      "word": "vessel",
+      "rank": 6545,
+      "hypothesis": "underwater vessels",
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 95
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:55:50",
+    "details": {
+      "word": "submersible",
+      "rank": 7714,
+      "hypothesis": "underwater vessels",
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 96
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:55:51",
+    "details": {
+      "word": "hull",
+      "rank": 4386,
+      "hypothesis": "underwater vessels",
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 97
+    }
+  },
+  {
+    "generation": 1,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-22T23:56:45",
+    "details": {
+      "parent_id": "d2af9912657d496e86057e3e3a1fdd9d",
+      "child_id": "179fb69e8046470dafcd7aca89cf2df6",
+      "parent_rank": 367,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "sensory experiences",
+      "sampled_op": "l_mutation",
+      "method": "self_adaptive",
+      "self_report": {
+        "predicted_closeness": 0.7,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "nose"
+          ],
+          "reason": "This shifts from physical anatomy to the functional experience of sensory systems, providing a broad but logically linked leap."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"name\": \"sensory experiences\", \"description\": \"experiences and perceptions related to the five senses\", \"words\": [\"scent\", \"smell\", \"taste\"], \"basis_words\": [\"nose\"], \"reason\": \"This shifts from physical anatomy to the functional experience of sensory systems, providing a broad but logically linked leap.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.7}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"anatomy\".\nDescription: parts of the human body\nBest word so far: \"nose\" with rank 367.\nOther active categories already being explored: [\"nature\", \"food\", \"animals\", \"anatomy\", \"transport\", \"marine environments\", \"predatory sea creatures\", \"seafood\", \"underwater vessels\"]\n\nMake a LARGE mutation: produce a child hypothesis in a broad, semantically\nsubstantial new direction that is unlike \"anatomy\" and unlike the other active\ncategories above. The goal is to escape the current semantic region and open\nup unexplored territory, while staying plausibly relevant given \"nose\"'s\nrank - lower ranks mean the target is closer to \"nose\", so the jump\nmust remain in the same broad semantic area even when reframed.\n\nFor example, if the parent is \"types of plants\" and \"shrub\" ranks 50, a large\nmutation could be \"outdoor environments\" or \"rural landscape features\" -\nclearly outside the plant taxonomy but still in a plausible neighborhood for\na target close to \"shrub\".\n\nSuggest one new hypothesis. Include exactly 3 starter words that have not\nalready been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"angry\", \"aquatic\", \"barracuda\", \"bed\", \"bread\", \"bridge\", \"bus\", \"bush\", \"calm\", \"camera\", \"castle\", \"chair\", \"cheese\", \"climate\", \"cloud\", \"coastal\", \"cod\", \"computer\", \"couch\", \"doctor\", \"dolphin\", \"dress\", \"driver\", \"eagle\", \"eye\", \"face\", \"fear\", \"fish\", \"flower\", \"forest\", \"fruit\", \"grass\", \"guitar\", \"hand\", \"happy\", \"harmony\", \"heart\", \"hockey\", \"house\", \"hull\", \"internet\", \"joy\", \"lamp\", \"laptop\", \"leaf\", \"mako\", \"mansion\", \"marine\", \"meat\", \"melody\", \"mountain\", \"mouth\", \"nose\", \"nurse\", \"ocean\", \"orca\", \"palace\", \"pants\", \"phone\", \"piano\", \"pilot\", \"plane\", \"rain\", \"rhythm\", \"river\", \"robot\", \"sad\", \"salmon\", \"shark\", \"ship\", \"shirt\", \"shrub\", \"skating\", \"skiing\", \"snack\", \"snow\", \"soccer\", \"sofa\", \"soldier\", \"song\", \"storm\", \"submarine\", \"submersible\", \"swimming\", \"table\", \"teacher\", \"tennis\", \"tiger\", \"tower\", \"train\", \"tree\", \"trout\", \"truck\", \"tuna\", \"vessel\", \"whale\", \"wind\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"direction name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:56:46",
+    "details": {
+      "word": "scent",
+      "rank": 24051,
+      "hypothesis": "sensory experiences",
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 98
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:56:46",
+    "details": {
+      "word": "smell",
+      "rank": 34503,
+      "hypothesis": "sensory experiences",
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 99
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:56:47",
+    "details": {
+      "word": "taste",
+      "rank": 30777,
+      "hypothesis": "sensory experiences",
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 100
+    }
+  },
+  {
+    "generation": 1,
+    "event": "MUTATE",
+    "timestamp": "2026-07-22T23:56:47",
+    "details": {
+      "method": "self_adaptive",
+      "children": [
+        {
+          "hypothesis_id": "1d8d87f23c4443f384053b61286dafc1",
+          "category_name": "marine environments",
+          "description": "habitats and landscapes within sea regions",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "animals",
+          "parent_id": "0d86e085c13f46deaa2dda0416c72052",
+          "origin": "self_adaptive_ml_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "self_report": {
+            "predicted_closeness": 0.8,
+            "predicted_closeness_clamped": false,
+            "predicted_bucket": "top100",
+            "rationale": {
+              "basis_words": [
+                "whale",
+                "orca"
+              ],
+              "reason": "The proximity of 'whale' (2) and 'orca' (13) strongly suggests a marine mammal target. This adjacent category shifts the focus to the maritime environment while remaining in the relevant semantic space."
+            },
+            "self_report_parse_failed": false,
+            "self_report_raw": "{\"name\": \"marine environments\", \"description\": \"habitats and landscapes within sea regions\", \"words\": [\"marine\", \"aquatic\", \"coastal\"], \"basis_words\": [\"whale\", \"orca\"], \"reason\": \"The proximity of 'whale' (2) and 'orca' (13) strongly suggests a marine mammal target. This adjacent category shifts the focus to the maritime environment while remaining in the relevant semantic space.\", \"predicted_bucket\": \"top_100\", \"predicted_closeness\": 0.8}",
+            "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"animals\".\nDescription: wildlife and creatures\nResults so far in this hypothesis: {\"eagle\": 489, \"orca\": 13, \"tiger\": 346, \"whale\": 2}\nBest word so far: \"whale\" with rank 2.\n\nMake a MEDIUM-LARGE mutation: produce a child hypothesis in an ADJACENT but\ndistinct category that could still plausibly contain the hidden target given\n\"whale\"'s rank. The child must NOT be a sub-category of \"animals\" - it\nshould sit alongside \"animals\" in semantic space, not underneath it.\n\nFor example, if the parent is \"types of plants\" and the best word is \"shrub\",\nan adjacent category could be \"plant descriptors\", \"botanical terminology\",\n\"growth habits\", or \"ecological roles\".\n\nSuggest one adjacent hypothesis. Include exactly 3 starter words that have\nnot already been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"angry\", \"bed\", \"bread\", \"bridge\", \"bus\", \"bush\", \"calm\", \"camera\", \"castle\", \"chair\", \"cheese\", \"climate\", \"cloud\", \"computer\", \"couch\", \"doctor\", \"dolphin\", \"dress\", \"driver\", \"eagle\", \"eye\", \"face\", \"fear\", \"fish\", \"flower\", \"forest\", \"fruit\", \"grass\", \"guitar\", \"hand\", \"happy\", \"harmony\", \"heart\", \"hockey\", \"house\", \"internet\", \"joy\", \"lamp\", \"laptop\", \"leaf\", \"mansion\", \"meat\", \"melody\", \"mountain\", \"mouth\", \"nose\", \"nurse\", \"ocean\", \"orca\", \"palace\", \"pants\", \"phone\", \"piano\", \"pilot\", \"plane\", \"rain\", \"rhythm\", \"river\", \"robot\", \"sad\", \"shark\", \"ship\", \"shirt\", \"shrub\", \"skating\", \"skiing\", \"snack\", \"snow\", \"soccer\", \"sofa\", \"soldier\", \"song\", \"storm\", \"submarine\", \"swimming\", \"table\", \"teacher\", \"tennis\", \"tiger\", \"tower\", \"train\", \"tree\", \"truck\", \"whale\", \"wind\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"category name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+            "injected_rationale_hash": null,
+            "rationale_truncated": false
+          }
+        },
+        {
+          "hypothesis_id": "2c0d598be7e74c76bf6be2bfde342f3a",
+          "category_name": "predatory sea creatures",
+          "description": "aquatic animals that hunt and consume other organisms",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "nature",
+          "parent_id": "bfdb6b829e7b4f9cb53e378d8a7558d9",
+          "origin": "self_adaptive_m_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "self_report": {
+            "predicted_closeness": 0.8,
+            "predicted_closeness_clamped": false,
+            "predicted_bucket": "top100",
+            "rationale": {
+              "basis_words": [
+                "shark",
+                "dolphin"
+              ],
+              "reason": "Since both shark and dolphin ranked very highly, the target is likely a predator in a marine environment. This hypothesis narrows down the 'nature' category to specifically focus on predatory aquatic animals."
+            },
+            "self_report_parse_failed": false,
+            "self_report_raw": "{\"name\": \"predatory sea creatures\", \"description\": \"aquatic animals that hunt and consume other organisms\", \"words\": [\"mako\", \"tuna\", \"barracuda\"], \"basis_words\": [\"shark\", \"dolphin\"], \"reason\": \"Since both shark and dolphin ranked very highly, the target is likely a predator in a marine environment. This hypothesis narrows down the 'nature' category to specifically focus on predatory aquatic animals.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.8}",
+            "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"nature\".\nDescription: natural landscapes and features\nResults so far in this hypothesis: {\"dolphin\": 27, \"forest\": 1679, \"mountain\": 6568, \"ocean\": 275, \"river\": 2643, \"shark\": 22}\nBest word so far: \"shark\" with rank 22.\n\nMake a MEDIUM mutation: produce a child hypothesis that reinterprets why\n\"shark\" might have scored well, or shifts to a related sense, lexical\nregister, or part of speech. The child should still be semantically anchored\nto \"shark\" but approach it from a clearly different angle than \"nature\".\n\nFor example, if the parent is \"food\" and the best word is \"bite\", a medium\nmutation could be \"animals that bite\", \"physical sensations from biting\", or\n\"clinical terms for biting and chewing\" - each treats \"bite\" through a\ndifferent lens.\n\nSuggest one reframed hypothesis. Include exactly 3 starter words that have\nnot already been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"angry\", \"aquatic\", \"bed\", \"bread\", \"bridge\", \"bus\", \"bush\", \"calm\", \"camera\", \"castle\", \"chair\", \"cheese\", \"climate\", \"cloud\", \"coastal\", \"computer\", \"couch\", \"doctor\", \"dolphin\", \"dress\", \"driver\", \"eagle\", \"eye\", \"face\", \"fear\", \"fish\", \"flower\", \"forest\", \"fruit\", \"grass\", \"guitar\", \"hand\", \"happy\", \"harmony\", \"heart\", \"hockey\", \"house\", \"internet\", \"joy\", \"lamp\", \"laptop\", \"leaf\", \"mansion\", \"marine\", \"meat\", \"melody\", \"mountain\", \"mouth\", \"nose\", \"nurse\", \"ocean\", \"orca\", \"palace\", \"pants\", \"phone\", \"piano\", \"pilot\", \"plane\", \"rain\", \"rhythm\", \"river\", \"robot\", \"sad\", \"shark\", \"ship\", \"shirt\", \"shrub\", \"skating\", \"skiing\", \"snack\", \"snow\", \"soccer\", \"sofa\", \"soldier\", \"song\", \"storm\", \"submarine\", \"swimming\", \"table\", \"teacher\", \"tennis\", \"tiger\", \"tower\", \"train\", \"tree\", \"truck\", \"whale\", \"wind\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"direction name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+            "injected_rationale_hash": null,
+            "rationale_truncated": false
+          }
+        },
+        {
+          "hypothesis_id": "d000125c0793463d9b258e01858158a4",
+          "category_name": "seafood",
+          "description": "edible items from the sea",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "food",
+          "parent_id": "8dbeda77920f485d8d7922ec6993b00b",
+          "origin": "self_adaptive_s_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "self_report": {
+            "predicted_closeness": 0.8,
+            "predicted_closeness_clamped": false,
+            "predicted_bucket": "top100",
+            "rationale": {
+              "basis_words": [
+                "fish"
+              ],
+              "reason": "Since 'fish' is a strong lead, narrowing the focus to specific types of seafood will help identify if the target is a specific species or category of aquatic food."
+            },
+            "self_report_parse_failed": false,
+            "self_report_raw": "{\"name\": \"seafood\", \"description\": \"edible items from the sea\", \"words\": [\"salmon\", \"cod\", \"trout\"], \"basis_words\": [\"fish\"], \"reason\": \"Since 'fish' is a strong lead, narrowing the focus to specific types of seafood will help identify if the target is a specific species or category of aquatic food.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.8}",
+            "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"food\".\nDescription: common edible items\nResults so far in this hypothesis: {\"bread\": 45913, \"cheese\": 12166, \"fish\": 138, \"fruit\": 11235, \"meat\": 2309, \"snack\": 8294}\nBest word so far: \"fish\" with rank 138.\n\nMake a SMALL mutation: produce a child hypothesis that stays in the same\nconceptual neighborhood as \"food\" but narrows or refines it. The new starter\nwords should be close semantic neighbors of \"fish\" - synonyms, common\ndescriptors, or words that frequently co-occur with it.\n\nFor example, if the parent is \"types of plants\" and the best word is \"shrub\",\na small mutation could be \"woody plants\" with starters like bush, hedge, thicket.\n\nSuggest one refined hypothesis. Include exactly 3 starter words that have not\nalready been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"angry\", \"aquatic\", \"barracuda\", \"bed\", \"bread\", \"bridge\", \"bus\", \"bush\", \"calm\", \"camera\", \"castle\", \"chair\", \"cheese\", \"climate\", \"cloud\", \"coastal\", \"computer\", \"couch\", \"doctor\", \"dolphin\", \"dress\", \"driver\", \"eagle\", \"eye\", \"face\", \"fear\", \"fish\", \"flower\", \"forest\", \"fruit\", \"grass\", \"guitar\", \"hand\", \"happy\", \"harmony\", \"heart\", \"hockey\", \"house\", \"internet\", \"joy\", \"lamp\", \"laptop\", \"leaf\", \"mako\", \"mansion\", \"marine\", \"meat\", \"melody\", \"mountain\", \"mouth\", \"nose\", \"nurse\", \"ocean\", \"orca\", \"palace\", \"pants\", \"phone\", \"piano\", \"pilot\", \"plane\", \"rain\", \"rhythm\", \"river\", \"robot\", \"sad\", \"shark\", \"ship\", \"shirt\", \"shrub\", \"skating\", \"skiing\", \"snack\", \"snow\", \"soccer\", \"sofa\", \"soldier\", \"song\", \"storm\", \"submarine\", \"swimming\", \"table\", \"teacher\", \"tennis\", \"tiger\", \"tower\", \"train\", \"tree\", \"truck\", \"tuna\", \"whale\", \"wind\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"direction name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+            "injected_rationale_hash": null,
+            "rationale_truncated": false
+          }
+        },
+        {
+          "hypothesis_id": "4b71919fe79f4d5bb9cae3431be26464",
+          "category_name": "underwater vessels",
+          "description": "specialized sea craft and underwater vehicles",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "transport",
+          "parent_id": "264ad39561d0498abb139f740740e163",
+          "origin": "self_adaptive_s_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "self_report": {
+            "predicted_closeness": 0.7,
+            "predicted_closeness_clamped": false,
+            "predicted_bucket": "top100",
+            "rationale": {
+              "basis_words": [
+                "submarine",
+                "ship"
+              ],
+              "reason": "Because 'submarine' is significantly closer than 'ship', the focus should shift towards specific nautical vessel terminology."
+            },
+            "self_report_parse_failed": false,
+            "self_report_raw": "{\"name\": \"underwater vessels\", \"description\": \"specialized sea craft and underwater vehicles\", \"words\": [\"vessel\", \"submersible\", \"hull\"], \"basis_words\": [\"submarine\", \"ship\"], \"reason\": \"Because 'submarine' is significantly closer than 'ship', the focus should shift towards specific nautical vessel terminology.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.7}",
+            "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"transport\".\nDescription: modes of travel\nResults so far in this hypothesis: {\"bus\": 37501, \"plane\": 9862, \"ship\": 2740, \"submarine\": 173, \"train\": 12052, \"truck\": 8662}\nBest word so far: \"submarine\" with rank 173.\n\nMake a SMALL mutation: produce a child hypothesis that stays in the same\nconceptual neighborhood as \"transport\" but narrows or refines it. The new starter\nwords should be close semantic neighbors of \"submarine\" - synonyms, common\ndescriptors, or words that frequently co-occur with it.\n\nFor example, if the parent is \"types of plants\" and the best word is \"shrub\",\na small mutation could be \"woody plants\" with starters like bush, hedge, thicket.\n\nSuggest one refined hypothesis. Include exactly 3 starter words that have not\nalready been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"angry\", \"aquatic\", \"barracuda\", \"bed\", \"bread\", \"bridge\", \"bus\", \"bush\", \"calm\", \"camera\", \"castle\", \"chair\", \"cheese\", \"climate\", \"cloud\", \"coastal\", \"cod\", \"computer\", \"couch\", \"doctor\", \"dolphin\", \"dress\", \"driver\", \"eagle\", \"eye\", \"face\", \"fear\", \"fish\", \"flower\", \"forest\", \"fruit\", \"grass\", \"guitar\", \"hand\", \"happy\", \"harmony\", \"heart\", \"hockey\", \"house\", \"internet\", \"joy\", \"lamp\", \"laptop\", \"leaf\", \"mako\", \"mansion\", \"marine\", \"meat\", \"melody\", \"mountain\", \"mouth\", \"nose\", \"nurse\", \"ocean\", \"orca\", \"palace\", \"pants\", \"phone\", \"piano\", \"pilot\", \"plane\", \"rain\", \"rhythm\", \"river\", \"robot\", \"sad\", \"salmon\", \"shark\", \"ship\", \"shirt\", \"shrub\", \"skating\", \"skiing\", \"snack\", \"snow\", \"soccer\", \"sofa\", \"soldier\", \"song\", \"storm\", \"submarine\", \"swimming\", \"table\", \"teacher\", \"tennis\", \"tiger\", \"tower\", \"train\", \"tree\", \"trout\", \"truck\", \"tuna\", \"whale\", \"wind\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"direction name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+            "injected_rationale_hash": null,
+            "rationale_truncated": false
+          }
+        },
+        {
+          "hypothesis_id": "179fb69e8046470dafcd7aca89cf2df6",
+          "category_name": "sensory experiences",
+          "description": "experiences and perceptions related to the five senses",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "anatomy",
+          "parent_id": "d2af9912657d496e86057e3e3a1fdd9d",
+          "origin": "self_adaptive_l_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "self_report": {
+            "predicted_closeness": 0.7,
+            "predicted_closeness_clamped": false,
+            "predicted_bucket": "top100",
+            "rationale": {
+              "basis_words": [
+                "nose"
+              ],
+              "reason": "This shifts from physical anatomy to the functional experience of sensory systems, providing a broad but logically linked leap."
+            },
+            "self_report_parse_failed": false,
+            "self_report_raw": "{\"name\": \"sensory experiences\", \"description\": \"experiences and perceptions related to the five senses\", \"words\": [\"scent\", \"smell\", \"taste\"], \"basis_words\": [\"nose\"], \"reason\": \"This shifts from physical anatomy to the functional experience of sensory systems, providing a broad but logically linked leap.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.7}",
+            "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"anatomy\".\nDescription: parts of the human body\nBest word so far: \"nose\" with rank 367.\nOther active categories already being explored: [\"nature\", \"food\", \"animals\", \"anatomy\", \"transport\", \"marine environments\", \"predatory sea creatures\", \"seafood\", \"underwater vessels\"]\n\nMake a LARGE mutation: produce a child hypothesis in a broad, semantically\nsubstantial new direction that is unlike \"anatomy\" and unlike the other active\ncategories above. The goal is to escape the current semantic region and open\nup unexplored territory, while staying plausibly relevant given \"nose\"'s\nrank - lower ranks mean the target is closer to \"nose\", so the jump\nmust remain in the same broad semantic area even when reframed.\n\nFor example, if the parent is \"types of plants\" and \"shrub\" ranks 50, a large\nmutation could be \"outdoor environments\" or \"rural landscape features\" -\nclearly outside the plant taxonomy but still in a plausible neighborhood for\na target close to \"shrub\".\n\nSuggest one new hypothesis. Include exactly 3 starter words that have not\nalready been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"angry\", \"aquatic\", \"barracuda\", \"bed\", \"bread\", \"bridge\", \"bus\", \"bush\", \"calm\", \"camera\", \"castle\", \"chair\", \"cheese\", \"climate\", \"cloud\", \"coastal\", \"cod\", \"computer\", \"couch\", \"doctor\", \"dolphin\", \"dress\", \"driver\", \"eagle\", \"eye\", \"face\", \"fear\", \"fish\", \"flower\", \"forest\", \"fruit\", \"grass\", \"guitar\", \"hand\", \"happy\", \"harmony\", \"heart\", \"hockey\", \"house\", \"hull\", \"internet\", \"joy\", \"lamp\", \"laptop\", \"leaf\", \"mako\", \"mansion\", \"marine\", \"meat\", \"melody\", \"mountain\", \"mouth\", \"nose\", \"nurse\", \"ocean\", \"orca\", \"palace\", \"pants\", \"phone\", \"piano\", \"pilot\", \"plane\", \"rain\", \"rhythm\", \"river\", \"robot\", \"sad\", \"salmon\", \"shark\", \"ship\", \"shirt\", \"shrub\", \"skating\", \"skiing\", \"snack\", \"snow\", \"soccer\", \"sofa\", \"soldier\", \"song\", \"storm\", \"submarine\", \"submersible\", \"swimming\", \"table\", \"teacher\", \"tennis\", \"tiger\", \"tower\", \"train\", \"tree\", \"trout\", \"truck\", \"tuna\", \"vessel\", \"whale\", \"wind\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"direction name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+            "injected_rationale_hash": null,
+            "rationale_truncated": false
+          }
+        }
+      ],
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 100
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:57:39",
+    "details": {
+      "word": "marine",
+      "rank": 602,
+      "hypothesis": "marine_life",
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 100
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:57:39",
+    "details": {
+      "word": "aquatic",
+      "rank": 1159,
+      "hypothesis": "marine_life",
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 100
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:57:43",
+    "details": {
+      "word": "oceanic",
+      "rank": 322,
+      "hypothesis": "marine_life",
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 101
+    }
+  },
+  {
+    "generation": 1,
+    "event": "CROSSOVER",
+    "timestamp": "2026-07-22T23:57:43",
+    "details": {
+      "parents": [
+        "animals",
+        "nature"
+      ],
+      "parent_ids": [
+        "0d86e085c13f46deaa2dda0416c72052",
+        "bfdb6b829e7b4f9cb53e378d8a7558d9"
+      ],
+      "parent_ranks": [
+        2,
+        22
+      ],
+      "parent_a_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "parent_b_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma_pre_perturbation": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child": {
+        "hypothesis_id": "d3acb5d7ac784a8388157b563d12a1f4",
+        "category_name": "marine_life",
+        "description": "animals and environments associated with the ocean",
+        "words_tried": {
+          "oceanic": 322,
+          "marine": 602,
+          "aquatic": 1159
+        },
+        "best_word": "oceanic",
+        "best_rank": 322,
+        "status": "active",
+        "parent": "animals+nature",
+        "parent_id": null,
+        "origin": "crossover",
+        "sigma": [
+          0.25,
+          0.25,
+          0.25,
+          0.25
+        ],
+        "self_report": {
+          "predicted_closeness": 0.85,
+          "predicted_closeness_clamped": false,
+          "predicted_bucket": "top100",
+          "rationale": {
+            "basis_words": [
+              "orca",
+              "whale",
+              "dolphin",
+              "shark",
+              "ocean"
+            ],
+            "reason": "The overlap between animals (A) and nature (B) is most strongly represented by sea creatures and marine environments."
+          },
+          "self_report_parse_failed": false,
+          "self_report_raw": "{\"name\": \"marine_life\", \"description\": \"animals and environments associated with the ocean\", \"words\": [\"marine\", \"aquatic\", \"oceanic\"], \"basis_words\": [\"orca\", \"whale\", \"dolphin\", \"shark\", \"ocean\"], \"reason\": \"The overlap between animals (A) and nature (B) is most strongly represented by sea creatures and marine environments.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.85}",
+          "self_report_prompt": "Return only JSON, no markdown or explanation.\nCategory A is animals with results {\"eagle\": 489, \"orca\": 13, \"tiger\": 346, \"whale\": 2}.\nCategory B is nature with results {\"dolphin\": 27, \"forest\": 1679, \"mountain\": 6568, \"ocean\": 275, \"river\": 2643, \"shark\": 22}.\nSuggest one new category that captures the intersection or overlap of A and B.\nInclude exactly 3 candidate words.\nEvery word must be one common lowercase dictionary word.\nJSON schema:\n{\"name\": \"category name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+          "injected_rationale_hash": null,
+          "rationale_truncated": false
+        }
+      },
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 101
+    }
+  },
+  {
+    "generation": 1,
+    "event": "DEDUPLICATE",
+    "timestamp": "2026-07-22T23:57:43",
+    "details": {
+      "merged": [
+        {
+          "survivor": "food",
+          "discarded": "seafood",
+          "survivor_best_rank": 138,
+          "discarded_best_rank": 333
+        },
+        {
+          "survivor": "marine_life",
+          "discarded": "marine environments",
+          "survivor_best_rank": 322,
+          "discarded_best_rank": 602
+        }
+      ],
+      "remaining_hypotheses": 19,
+      "active_hypotheses": 9,
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 101
+    }
+  },
+  {
+    "generation": 1,
+    "event": "SIGMA_TRAJECTORY",
+    "timestamp": "2026-07-22T23:57:43",
+    "details": {
+      "mean_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "population_size": 9
+    }
+  },
+  {
+    "generation": 2,
+    "event": "CANDIDATES",
+    "timestamp": "2026-07-23T00:06:18",
+    "details": {
+      "count": 20,
+      "candidates": [
+        {
+          "hypothesis": "animals",
+          "word": "porpoise"
+        },
+        {
+          "hypothesis": "animals",
+          "word": "seal"
+        },
+        {
+          "hypothesis": "animals",
+          "word": "walrus"
+        },
+        {
+          "hypothesis": "nature",
+          "word": "sea"
+        },
+        {
+          "hypothesis": "nature",
+          "word": "mammal"
+        },
+        {
+          "hypothesis": "nature",
+          "word": "tide"
+        },
+        {
+          "hypothesis": "transport",
+          "word": "boat"
+        },
+        {
+          "hypothesis": "transport",
+          "word": "ferry"
+        },
+        {
+          "hypothesis": "transport",
+          "word": "yacht"
+        },
+        {
+          "hypothesis": "predatory sea creatures",
+          "word": "marlin"
+        },
+        {
+          "hypothesis": "predatory sea creatures",
+          "word": "stingray"
+        },
+        {
+          "hypothesis": "marine_life",
+          "word": "reef"
+        },
+        {
+          "hypothesis": "marine_life",
+          "word": "plankton"
+        },
+        {
+          "hypothesis": "anatomy",
+          "word": "fin"
+        },
+        {
+          "hypothesis": "anatomy",
+          "word": "tail"
+        },
+        {
+          "hypothesis": "anatomy",
+          "word": "fluke"
+        },
+        {
+          "hypothesis": "underwater vessels",
+          "word": "manatee"
+        },
+        {
+          "hypothesis": "sensory experiences",
+          "word": "sight"
+        },
+        {
+          "hypothesis": "sensory experiences",
+          "word": "sound"
+        },
+        {
+          "hypothesis": "sensory experiences",
+          "word": "touch"
+        }
+      ]
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T00:06:22",
+    "details": {
+      "word": "porpoise",
+      "rank": 14,
+      "hypothesis": "animals",
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 102
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T00:06:22",
+    "details": {
+      "word": "seal",
+      "rank": 7,
+      "hypothesis": "animals",
+      "best_word": "whale",
+      "best_rank": 2,
+      "total_guesses": 103
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T00:06:23",
+    "details": {
+      "word": "walrus",
+      "rank": 1,
+      "hypothesis": "animals",
+      "best_word": "walrus",
+      "best_rank": 1,
+      "total_guesses": 104
+    }
+  },
+  {
+    "generation": 2,
+    "event": "SOLVED",
+    "timestamp": "2026-07-23T00:06:23",
+    "details": {
+      "answer": "walrus",
+      "rank": 1,
+      "total_guesses": 104
+    }
+  },
+  {
+    "generation": 2,
+    "event": "NETWORK_METRICS",
+    "timestamp": "2026-07-23T00:06:23",
+    "details": {
+      "network_calls": 104,
+      "network_wall_clock_seconds": 1573.1852,
+      "total_latency_seconds": 39.7861,
+      "mean_latency_seconds": 0.3826,
+      "median_latency_seconds": 0.2267,
+      "p95_latency_seconds": 1.3918,
+      "max_latency_seconds": 3.2289,
+      "status_counts": {
+        "200": 104
+      },
+      "outcome_counts": {
+        "ok": 104
+      }
+    }
+  }
+]

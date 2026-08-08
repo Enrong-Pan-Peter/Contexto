@@ -1,0 +1,1504 @@
+[
+  {
+    "generation": -1,
+    "event": "RUN_CONFIG",
+    "timestamp": "2026-07-31T00:49:39",
+    "details": {
+      "game": "api",
+      "solver": "llm",
+      "method": "llm_only",
+      "mode": "api",
+      "target": null,
+      "game_number": 1372,
+      "run_index": 1,
+      "game_embedding_path": null,
+      "solver_embedding_path": null,
+      "embedding_backend": null,
+      "vocabulary_size": null,
+      "alignment": "api_unknown",
+      "trace_schema_version": 3,
+      "instrumentation_provenance_hash": "bd9f2858283673a2",
+      "self_report": true,
+      "rationale_inheritance": false,
+      "max_generations": 350,
+      "llm_provider": "ollama",
+      "llm_model": "qwen3:14b",
+      "llm_workers": null,
+      "initial_categories": null,
+      "max_active_hypotheses": null,
+      "local_search_rank_threshold": null,
+      "self_adaptive_initial_categories": null,
+      "self_adaptive_mu": null,
+      "self_adaptive_concentration": null,
+      "self_adaptive_sigma_floor": null,
+      "self_adaptive_sigma_mode": null,
+      "mapelites_grid_resolution": null,
+      "mapelites_mutations_per_gen": null,
+      "mapelites_crossovers_per_gen": null,
+      "mapelites_initial_categories": null,
+      "mapelites_concentration": null,
+      "mapelites_sigma_floor": null,
+      "mapelites_sigma_mode": null,
+      "mapelites_frozen_sigma": null,
+      "mapelites_ranked_context_k": null,
+      "rank_cache_enabled": true,
+      "enable_pivot": null,
+      "ea_llm_pivot_stall_no_improvement_generations": null,
+      "ea_llm_pivot_stall_close_rank_threshold": null,
+      "ea_llm_pivot_stall_close_generations_limit": null,
+      "ea_llm_pivot_max_attempts_per_run": null,
+      "ea_llm_pivot_candidate_words_per_operator": null,
+      "ea_llm_pivot_resolution_window": null,
+      "random_seed": 1
+    }
+  },
+  {
+    "generation": 0,
+    "event": "INIT",
+    "timestamp": "2026-07-31T00:49:39",
+    "details": {
+      "history": {},
+      "best_word": null,
+      "best_rank": null,
+      "total_guesses": 0
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T00:49:52",
+    "details": {
+      "word": "time",
+      "rank": 284,
+      "best_word": "time",
+      "best_rank": 284,
+      "total_guesses": 1,
+      "self_report": {
+        "predicted_closeness": 0.8,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [],
+          "reason": "Choosing a common word likely close to the target"
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"time\", \"basis_words\": [], \"reason\": \"Choosing a common word likely close to the target\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.8}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T00:50:07",
+    "details": {
+      "word": "hour",
+      "rank": 1622,
+      "best_word": "time",
+      "best_rank": 284,
+      "total_guesses": 2,
+      "self_report": {
+        "predicted_closeness": 0.6,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "time"
+          ],
+          "reason": "Hour is a common synonym and related concept to 'time', which was previously guessed."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"hour\", \"basis_words\": [\"time\"], \"reason\": \"Hour is a common synonym and related concept to 'time', which was previously guessed.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.6}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"time\": 284}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T00:50:17",
+    "details": {
+      "word": "moment",
+      "rank": 318,
+      "best_word": "time",
+      "best_rank": 284,
+      "total_guesses": 3,
+      "self_report": {
+        "predicted_closeness": 0.8,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "hour",
+            "time"
+          ],
+          "reason": "Moment is a synonym for a short period of time, closely related to both 'hour' and 'time'"
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"moment\", \"basis_words\": [\"hour\", \"time\"], \"reason\": \"Moment is a synonym for a short period of time, closely related to both 'hour' and 'time'\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.8}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"hour\": 1622, \"time\": 284}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T00:50:36",
+    "details": {
+      "word": "instant",
+      "rank": 4677,
+      "best_word": "time",
+      "best_rank": 284,
+      "total_guesses": 4,
+      "self_report": {
+        "predicted_closeness": 0.4,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "hour",
+            "moment",
+            "time"
+          ],
+          "reason": "The previous guesses are all synonyms related to time, and 'instant' is a more specific synonym that could be closer to the target."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"instant\", \"basis_words\": [\"hour\", \"moment\", \"time\"], \"reason\": \"The previous guesses are all synonyms related to time, and 'instant' is a more specific synonym that could be closer to the target.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"hour\": 1622, \"moment\": 318, \"time\": 284}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T00:50:53",
+    "details": {
+      "word": "epoch",
+      "rank": 17332,
+      "best_word": "time",
+      "best_rank": 284,
+      "total_guesses": 5,
+      "self_report": {
+        "predicted_closeness": 0.6,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "hour",
+            "instant",
+            "moment",
+            "time"
+          ],
+          "reason": "Epoch is a synonym for a significant period, closely related to the existing guesses which are all time-related terms. It may be a more specific or precise term than the current closest guess 'time'."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"epoch\", \"basis_words\": [\"hour\", \"instant\", \"moment\", \"time\"], \"reason\": \"Epoch is a synonym for a significant period, closely related to the existing guesses which are all time-related terms. It may be a more specific or precise term than the current closest guess 'time'.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.6}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"hour\": 1622, \"instant\": 4677, \"moment\": 318, \"time\": 284}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 6,
+    "event": "SKIP_INVALID_GUESS",
+    "timestamp": "2026-07-31T00:51:11",
+    "details": {
+      "word": "now"
+    }
+  },
+  {
+    "generation": 7,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T00:51:25",
+    "details": {
+      "word": "minute",
+      "rank": 763,
+      "best_word": "time",
+      "best_rank": 284,
+      "total_guesses": 6,
+      "self_report": {
+        "predicted_closeness": 0.3,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "epoch",
+            "hour",
+            "instant",
+            "moment",
+            "time"
+          ],
+          "reason": "The previous guesses are all time-related terms, and 'minute' is a close synonym that fits the theme and could be a more specific temporal unit."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"minute\", \"basis_words\": [\"epoch\", \"hour\", \"instant\", \"moment\", \"time\"], \"reason\": \"The previous guesses are all time-related terms, and 'minute' is a close synonym that fits the theme and could be a more specific temporal unit.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"epoch\": 17332, \"hour\": 1622, \"instant\": 4677, \"moment\": 318, \"time\": 284}\nInvalid or unavailable guesses to avoid: [\"now\"]\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 8,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T00:51:36",
+    "details": {
+      "word": "period",
+      "rank": 1366,
+      "best_word": "time",
+      "best_rank": 284,
+      "total_guesses": 7,
+      "self_report": {
+        "predicted_closeness": 0.4,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "epoch",
+            "time",
+            "moment"
+          ],
+          "reason": "Period is a general term related to time and could bridge the existing guesses which are all time-related but more specific."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"period\", \"basis_words\": [\"epoch\", \"time\", \"moment\"], \"reason\": \"Period is a general term related to time and could bridge the existing guesses which are all time-related but more specific.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"epoch\": 17332, \"hour\": 1622, \"instant\": 4677, \"minute\": 763, \"moment\": 318, \"time\": 284}\nInvalid or unavailable guesses to avoid: [\"now\"]\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 9,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T00:51:49",
+    "details": {
+      "word": "second",
+      "rank": 649,
+      "best_word": "time",
+      "best_rank": 284,
+      "total_guesses": 8,
+      "self_report": {
+        "predicted_closeness": 0.7,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "epoch",
+            "hour",
+            "instant",
+            "minute",
+            "moment",
+            "period",
+            "time"
+          ],
+          "reason": "The existing guesses are all time-related terms, suggesting the hidden target is another temporal concept. 'Second' is a common, singular time unit not previously guessed."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"second\", \"basis_words\": [\"epoch\", \"hour\", \"instant\", \"minute\", \"moment\", \"period\", \"time\"], \"reason\": \"The existing guesses are all time-related terms, suggesting the hidden target is another temporal concept. 'Second' is a common, singular time unit not previously guessed.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.7}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"epoch\": 17332, \"hour\": 1622, \"instant\": 4677, \"minute\": 763, \"moment\": 318, \"period\": 1366, \"time\": 284}\nInvalid or unavailable guesses to avoid: [\"now\"]\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 10,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T00:52:07",
+    "details": {
+      "word": "clock",
+      "rank": 862,
+      "best_word": "time",
+      "best_rank": 284,
+      "total_guesses": 9,
+      "self_report": {
+        "predicted_closeness": 0.7,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "epoch",
+            "hour",
+            "instant",
+            "minute",
+            "moment",
+            "period",
+            "second",
+            "time"
+          ],
+          "reason": "The guess history contains time-related terms, and 'clock' is a concrete object associated with time, potentially closer to the target than the more abstract terms already used."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"clock\", \"basis_words\": [\"epoch\", \"hour\", \"instant\", \"minute\", \"moment\", \"period\", \"second\", \"time\"], \"reason\": \"The guess history contains time-related terms, and 'clock' is a concrete object associated with time, potentially closer to the target than the more abstract terms already used.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.7}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"epoch\": 17332, \"hour\": 1622, \"instant\": 4677, \"minute\": 763, \"moment\": 318, \"period\": 1366, \"second\": 649, \"time\": 284}\nInvalid or unavailable guesses to avoid: [\"now\"]\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 11,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T00:52:14",
+    "details": {
+      "word": "phase",
+      "rank": 2002,
+      "best_word": "time",
+      "best_rank": 284,
+      "total_guesses": 10,
+      "self_report": {
+        "predicted_closeness": 0.3,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "period",
+            "epoch"
+          ],
+          "reason": "Phase relates to a distinct stage or portion of time, similar to period and epoch, which are already in the guess history. It is a common word not previously used and may bridge the gap to the hidden target."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"phase\", \"basis_words\": [\"period\", \"epoch\"], \"reason\": \"Phase relates to a distinct stage or portion of time, similar to period and epoch, which are already in the guess history. It is a common word not previously used and may bridge the gap to the hidden target.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"clock\": 862, \"epoch\": 17332, \"hour\": 1622, \"instant\": 4677, \"minute\": 763, \"moment\": 318, \"period\": 1366, \"second\": 649, \"time\": 284}\nInvalid or unavailable guesses to avoid: [\"now\"]\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 12,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T00:52:22",
+    "details": {
+      "word": "era",
+      "rank": 1211,
+      "best_word": "time",
+      "best_rank": 284,
+      "total_guesses": 11,
+      "self_report": {
+        "predicted_closeness": 0.8,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "epoch",
+            "period"
+          ],
+          "reason": "Era is a synonym for epoch and period, which are already in the guess history and are related to time, suggesting it may be closer to the target."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"era\", \"basis_words\": [\"epoch\", \"period\"], \"reason\": \"Era is a synonym for epoch and period, which are already in the guess history and are related to time, suggesting it may be closer to the target.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.8}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"clock\": 862, \"epoch\": 17332, \"hour\": 1622, \"instant\": 4677, \"minute\": 763, \"moment\": 318, \"period\": 1366, \"phase\": 2002, \"second\": 649, \"time\": 284}\nInvalid or unavailable guesses to avoid: [\"now\"]\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 13,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T00:52:34",
+    "details": {
+      "word": "span",
+      "rank": 2561,
+      "best_word": "time",
+      "best_rank": 284,
+      "total_guesses": 12,
+      "self_report": {
+        "predicted_closeness": 0.6,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "period",
+            "epoch",
+            "era",
+            "phase",
+            "time"
+          ],
+          "reason": "Span is a synonym for a duration or interval, aligning with time-related terms in the guess history. It's a common word not previously used."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"span\", \"basis_words\": [\"period\", \"epoch\", \"era\", \"phase\", \"time\"], \"reason\": \"Span is a synonym for a duration or interval, aligning with time-related terms in the guess history. It's a common word not previously used.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.6}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"clock\": 862, \"epoch\": 17332, \"era\": 1211, \"hour\": 1622, \"instant\": 4677, \"minute\": 763, \"moment\": 318, \"period\": 1366, \"phase\": 2002, \"second\": 649, \"time\": 284}\nInvalid or unavailable guesses to avoid: [\"now\"]\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 14,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T00:52:46",
+    "details": {
+      "word": "duration",
+      "rank": 901,
+      "best_word": "time",
+      "best_rank": 284,
+      "total_guesses": 13,
+      "self_report": {
+        "predicted_closeness": 0.3,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "epoch",
+            "era",
+            "period",
+            "span"
+          ],
+          "reason": "Duration is a synonym for time span and hasn't been used yet, making it a logical next guess based on existing time-related terms."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"duration\", \"basis_words\": [\"epoch\", \"era\", \"period\", \"span\"], \"reason\": \"Duration is a synonym for time span and hasn't been used yet, making it a logical next guess based on existing time-related terms.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"clock\": 862, \"epoch\": 17332, \"era\": 1211, \"hour\": 1622, \"instant\": 4677, \"minute\": 763, \"moment\": 318, \"period\": 1366, \"phase\": 2002, \"second\": 649, \"span\": 2561, \"time\": 284}\nInvalid or unavailable guesses to avoid: [\"now\"]\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 15,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T00:53:10",
+    "details": {
+      "word": "decade",
+      "rank": 2143,
+      "best_word": "time",
+      "best_rank": 284,
+      "total_guesses": 14,
+      "self_report": {
+        "predicted_closeness": 0.6,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "epoch",
+            "era",
+            "period"
+          ],
+          "reason": "Decade is a time period similar to epoch, era, and period, which are already in the guess history, suggesting a focus on temporal units. It is not yet used and may be closer to the target than broader terms like 'era'."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"decade\", \"basis_words\": [\"epoch\", \"era\", \"period\"], \"reason\": \"Decade is a time period similar to epoch, era, and period, which are already in the guess history, suggesting a focus on temporal units. It is not yet used and may be closer to the target than broader terms like 'era'.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.6}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"clock\": 862, \"duration\": 901, \"epoch\": 17332, \"era\": 1211, \"hour\": 1622, \"instant\": 4677, \"minute\": 763, \"moment\": 318, \"period\": 1366, \"phase\": 2002, \"second\": 649, \"span\": 2561, \"time\": 284}\nInvalid or unavailable guesses to avoid: [\"now\"]\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 16,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T00:53:29",
+    "details": {
+      "word": "spell",
+      "rank": 1339,
+      "best_word": "time",
+      "best_rank": 284,
+      "total_guesses": 15,
+      "self_report": {
+        "predicted_closeness": 0.4,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "moment",
+            "duration",
+            "span",
+            "period"
+          ],
+          "reason": "Spell is a synonym for a short period of time, similar to 'moment' and 'span', which have lower ranks, suggesting it might be closer to the target."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"spell\", \"basis_words\": [\"moment\", \"duration\", \"span\", \"period\"], \"reason\": \"Spell is a synonym for a short period of time, similar to 'moment' and 'span', which have lower ranks, suggesting it might be closer to the target.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"clock\": 862, \"decade\": 2143, \"duration\": 901, \"epoch\": 17332, \"era\": 1211, \"hour\": 1622, \"instant\": 4677, \"minute\": 763, \"moment\": 318, \"period\": 1366, \"phase\": 2002, \"second\": 649, \"span\": 2561, \"time\": 284}\nInvalid or unavailable guesses to avoid: [\"now\"]\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 17,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T00:53:50",
+    "details": {
+      "word": "age",
+      "rank": 1230,
+      "best_word": "time",
+      "best_rank": 284,
+      "total_guesses": 16,
+      "self_report": {
+        "predicted_closeness": 0.6,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "moment",
+            "time"
+          ],
+          "reason": "The target is likely a time-related term; 'age' is a common synonym not previously tried and closer than some existing guesses."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"age\", \"basis_words\": [\"moment\", \"time\"], \"reason\": \"The target is likely a time-related term; 'age' is a common synonym not previously tried and closer than some existing guesses.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.6}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"clock\": 862, \"decade\": 2143, \"duration\": 901, \"epoch\": 17332, \"era\": 1211, \"hour\": 1622, \"instant\": 4677, \"minute\": 763, \"moment\": 318, \"period\": 1366, \"phase\": 2002, \"second\": 649, \"span\": 2561, \"spell\": 1339, \"time\": 284}\nInvalid or unavailable guesses to avoid: [\"now\"]\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 18,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T00:54:25",
+    "details": {
+      "word": "year",
+      "rank": 1952,
+      "best_word": "time",
+      "best_rank": 284,
+      "total_guesses": 17,
+      "self_report": {
+        "predicted_closeness": 0.3,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "time",
+            "duration"
+          ],
+          "reason": "Year is a specific time unit not yet guessed, potentially closer to the target. Related to existing guesses like time and duration."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"year\", \"basis_words\": [\"time\", \"duration\"], \"reason\": \"Year is a specific time unit not yet guessed, potentially closer to the target. Related to existing guesses like time and duration.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"age\": 1230, \"clock\": 862, \"decade\": 2143, \"duration\": 901, \"epoch\": 17332, \"era\": 1211, \"hour\": 1622, \"instant\": 4677, \"minute\": 763, \"moment\": 318, \"period\": 1366, \"phase\": 2002, \"second\": 649, \"span\": 2561, \"spell\": 1339, \"time\": 284}\nInvalid or unavailable guesses to avoid: [\"now\"]\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 19,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T00:54:42",
+    "details": {
+      "word": "interval",
+      "rank": 473,
+      "best_word": "time",
+      "best_rank": 284,
+      "total_guesses": 18,
+      "self_report": {
+        "predicted_closeness": 0.6,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "duration",
+            "period",
+            "span",
+            "moment",
+            "epoch"
+          ],
+          "reason": "Interval is a common synonym for a time period, which may be closer to the hidden target based on existing time-related guesses."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"interval\", \"basis_words\": [\"duration\", \"period\", \"span\", \"moment\", \"epoch\"], \"reason\": \"Interval is a common synonym for a time period, which may be closer to the hidden target based on existing time-related guesses.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.6}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"age\": 1230, \"clock\": 862, \"decade\": 2143, \"duration\": 901, \"epoch\": 17332, \"era\": 1211, \"hour\": 1622, \"instant\": 4677, \"minute\": 763, \"moment\": 318, \"period\": 1366, \"phase\": 2002, \"second\": 649, \"span\": 2561, \"spell\": 1339, \"time\": 284, \"year\": 1952}\nInvalid or unavailable guesses to avoid: [\"now\"]\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 20,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T00:55:06",
+    "details": {
+      "word": "century",
+      "rank": 2360,
+      "best_word": "time",
+      "best_rank": 284,
+      "total_guesses": 19,
+      "self_report": {
+        "predicted_closeness": 0.6,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "age",
+            "decade",
+            "duration",
+            "epoch",
+            "era",
+            "hour",
+            "instant",
+            "interval",
+            "minute",
+            "moment",
+            "period",
+            "phase",
+            "second",
+            "span",
+            "spell",
+            "time",
+            "year"
+          ],
+          "reason": "Century is a time-related term not yet guessed and fits the pattern of previously used time-related words."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"century\", \"basis_words\": [\"age\", \"decade\", \"duration\", \"epoch\", \"era\", \"hour\", \"instant\", \"interval\", \"minute\", \"moment\", \"period\", \"phase\", \"second\", \"span\", \"spell\", \"time\", \"year\"], \"reason\": \"Century is a time-related term not yet guessed and fits the pattern of previously used time-related words.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.6}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"age\": 1230, \"clock\": 862, \"decade\": 2143, \"duration\": 901, \"epoch\": 17332, \"era\": 1211, \"hour\": 1622, \"instant\": 4677, \"interval\": 473, \"minute\": 763, \"moment\": 318, \"period\": 1366, \"phase\": 2002, \"second\": 649, \"span\": 2561, \"spell\": 1339, \"time\": 284, \"year\": 1952}\nInvalid or unavailable guesses to avoid: [\"now\"]\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 21,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T00:55:28",
+    "details": {
+      "word": "cycle",
+      "rank": 769,
+      "best_word": "time",
+      "best_rank": 284,
+      "total_guesses": 20,
+      "self_report": {
+        "predicted_closeness": 0.7,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "epoch",
+            "era",
+            "period",
+            "phase",
+            "duration",
+            "span",
+            "interval",
+            "moment",
+            "time"
+          ],
+          "reason": "The existing guesses are all time-related terms, suggesting the hidden target is another temporal concept. 'Cycle' is a common synonym for recurring time periods and hasn't been tried yet."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"cycle\", \"basis_words\": [\"epoch\", \"era\", \"period\", \"phase\", \"duration\", \"span\", \"interval\", \"moment\", \"time\"], \"reason\": \"The existing guesses are all time-related terms, suggesting the hidden target is another temporal concept. 'Cycle' is a common synonym for recurring time periods and hasn't been tried yet.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.7}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"age\": 1230, \"century\": 2360, \"clock\": 862, \"decade\": 2143, \"duration\": 901, \"epoch\": 17332, \"era\": 1211, \"hour\": 1622, \"instant\": 4677, \"interval\": 473, \"minute\": 763, \"moment\": 318, \"period\": 1366, \"phase\": 2002, \"second\": 649, \"span\": 2561, \"spell\": 1339, \"time\": 284, \"year\": 1952}\nInvalid or unavailable guesses to avoid: [\"now\"]\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 22,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T00:55:42",
+    "details": {
+      "word": "term",
+      "rank": 1460,
+      "best_word": "time",
+      "best_rank": 284,
+      "total_guesses": 21,
+      "self_report": {
+        "predicted_closeness": 0.3,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "duration",
+            "span",
+            "interval",
+            "period"
+          ],
+          "reason": "Term is a common time-related word not previously guessed, and may align with the target's context. It shares conceptual overlap with existing guesses like 'duration' and 'span'."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"term\", \"basis_words\": [\"duration\", \"span\", \"interval\", \"period\"], \"reason\": \"Term is a common time-related word not previously guessed, and may align with the target's context. It shares conceptual overlap with existing guesses like 'duration' and 'span'.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"age\": 1230, \"century\": 2360, \"clock\": 862, \"cycle\": 769, \"decade\": 2143, \"duration\": 901, \"epoch\": 17332, \"era\": 1211, \"hour\": 1622, \"instant\": 4677, \"interval\": 473, \"minute\": 763, \"moment\": 318, \"period\": 1366, \"phase\": 2002, \"second\": 649, \"span\": 2561, \"spell\": 1339, \"time\": 284, \"year\": 1952}\nInvalid or unavailable guesses to avoid: [\"now\"]\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 23,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T00:56:09",
+    "details": {
+      "word": "stage",
+      "rank": 581,
+      "best_word": "time",
+      "best_rank": 284,
+      "total_guesses": 22,
+      "self_report": {
+        "predicted_closeness": 0.4,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "phase",
+            "period",
+            "epoch"
+          ],
+          "reason": "Stage is a synonym for phase or period, which are already in the guess history and share similar contextual relationships to time-based concepts."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"stage\", \"basis_words\": [\"phase\", \"period\", \"epoch\"], \"reason\": \"Stage is a synonym for phase or period, which are already in the guess history and share similar contextual relationships to time-based concepts.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"age\": 1230, \"century\": 2360, \"clock\": 862, \"cycle\": 769, \"decade\": 2143, \"duration\": 901, \"epoch\": 17332, \"era\": 1211, \"hour\": 1622, \"instant\": 4677, \"interval\": 473, \"minute\": 763, \"moment\": 318, \"period\": 1366, \"phase\": 2002, \"second\": 649, \"span\": 2561, \"spell\": 1339, \"term\": 1460, \"time\": 284, \"year\": 1952}\nInvalid or unavailable guesses to avoid: [\"now\"]\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 24,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T00:56:31",
+    "details": {
+      "word": "day",
+      "rank": 1101,
+      "best_word": "time",
+      "best_rank": 284,
+      "total_guesses": 23,
+      "self_report": {
+        "predicted_closeness": 0.6,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "time",
+            "year",
+            "hour",
+            "minute",
+            "second"
+          ],
+          "reason": "The target likely relates to time measurement. 'Day' is a fundamental time unit, similar to existing guesses like 'hour' and 'minute', and may be closer to the target."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"day\", \"basis_words\": [\"time\", \"year\", \"hour\", \"minute\", \"second\"], \"reason\": \"The target likely relates to time measurement. 'Day' is a fundamental time unit, similar to existing guesses like 'hour' and 'minute', and may be closer to the target.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.6}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"age\": 1230, \"century\": 2360, \"clock\": 862, \"cycle\": 769, \"decade\": 2143, \"duration\": 901, \"epoch\": 17332, \"era\": 1211, \"hour\": 1622, \"instant\": 4677, \"interval\": 473, \"minute\": 763, \"moment\": 318, \"period\": 1366, \"phase\": 2002, \"second\": 649, \"span\": 2561, \"spell\": 1339, \"stage\": 581, \"term\": 1460, \"time\": 284, \"year\": 1952}\nInvalid or unavailable guesses to avoid: [\"now\"]\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 25,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T00:57:00",
+    "details": {
+      "word": "juncture",
+      "rank": 11578,
+      "best_word": "time",
+      "best_rank": 284,
+      "total_guesses": 24,
+      "self_report": {
+        "predicted_closeness": 0.5,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "moment",
+            "instant"
+          ],
+          "reason": "Juncture is a synonym for a critical point in time, similar to 'moment' and 'instant,' which are already in the guess history with lower ranks."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"juncture\", \"basis_words\": [\"moment\", \"instant\"], \"reason\": \"Juncture is a synonym for a critical point in time, similar to 'moment' and 'instant,' which are already in the guess history with lower ranks.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.5}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"age\": 1230, \"century\": 2360, \"clock\": 862, \"cycle\": 769, \"day\": 1101, \"decade\": 2143, \"duration\": 901, \"epoch\": 17332, \"era\": 1211, \"hour\": 1622, \"instant\": 4677, \"interval\": 473, \"minute\": 763, \"moment\": 318, \"period\": 1366, \"phase\": 2002, \"second\": 649, \"span\": 2561, \"spell\": 1339, \"stage\": 581, \"term\": 1460, \"time\": 284, \"year\": 1952}\nInvalid or unavailable guesses to avoid: [\"now\"]\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 26,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T00:57:34",
+    "details": {
+      "word": "length",
+      "rank": 1708,
+      "best_word": "time",
+      "best_rank": 284,
+      "total_guesses": 25,
+      "self_report": {
+        "predicted_closeness": 0.4,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "time",
+            "duration",
+            "span"
+          ],
+          "reason": "Length is a synonym for duration and time, which have lower ranks in the history, suggesting it may be a closer synonym to the hidden target."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"length\", \"basis_words\": [\"time\", \"duration\", \"span\"], \"reason\": \"Length is a synonym for duration and time, which have lower ranks in the history, suggesting it may be a closer synonym to the hidden target.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"age\": 1230, \"century\": 2360, \"clock\": 862, \"cycle\": 769, \"day\": 1101, \"decade\": 2143, \"duration\": 901, \"epoch\": 17332, \"era\": 1211, \"hour\": 1622, \"instant\": 4677, \"interval\": 473, \"juncture\": 11578, \"minute\": 763, \"moment\": 318, \"period\": 1366, \"phase\": 2002, \"second\": 649, \"span\": 2561, \"spell\": 1339, \"stage\": 581, \"term\": 1460, \"time\": 284, \"year\": 1952}\nInvalid or unavailable guesses to avoid: [\"now\"]\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 27,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T00:57:56",
+    "details": {
+      "word": "lifetime",
+      "rank": 7403,
+      "best_word": "time",
+      "best_rank": 284,
+      "total_guesses": 26,
+      "self_report": {
+        "predicted_closeness": 0.4,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "age",
+            "century",
+            "duration",
+            "epoch",
+            "era",
+            "year"
+          ],
+          "reason": "The existing guesses are all time-related terms, and 'lifetime' is a common synonym that could be closely related to the hidden target."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"lifetime\", \"basis_words\": [\"age\", \"century\", \"duration\", \"epoch\", \"era\", \"year\"], \"reason\": \"The existing guesses are all time-related terms, and 'lifetime' is a common synonym that could be closely related to the hidden target.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"age\": 1230, \"century\": 2360, \"clock\": 862, \"cycle\": 769, \"day\": 1101, \"decade\": 2143, \"duration\": 901, \"epoch\": 17332, \"era\": 1211, \"hour\": 1622, \"instant\": 4677, \"interval\": 473, \"juncture\": 11578, \"length\": 1708, \"minute\": 763, \"moment\": 318, \"period\": 1366, \"phase\": 2002, \"second\": 649, \"span\": 2561, \"spell\": 1339, \"stage\": 581, \"term\": 1460, \"time\": 284, \"year\": 1952}\nInvalid or unavailable guesses to avoid: [\"now\"]\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 28,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T00:58:27",
+    "details": {
+      "word": "eon",
+      "rank": 14633,
+      "best_word": "time",
+      "best_rank": 284,
+      "total_guesses": 27,
+      "self_report": {
+        "predicted_closeness": 0.4,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "age",
+            "century",
+            "epoch",
+            "era",
+            "year"
+          ],
+          "reason": "The existing guesses are all time-related terms, suggesting the hidden target may be a less common time measurement. 'Eon' is a valid, uncommon time term not yet guessed."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"eon\", \"basis_words\": [\"age\", \"century\", \"epoch\", \"era\", \"year\"], \"reason\": \"The existing guesses are all time-related terms, suggesting the hidden target may be a less common time measurement. 'Eon' is a valid, uncommon time term not yet guessed.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"age\": 1230, \"century\": 2360, \"clock\": 862, \"cycle\": 769, \"day\": 1101, \"decade\": 2143, \"duration\": 901, \"epoch\": 17332, \"era\": 1211, \"hour\": 1622, \"instant\": 4677, \"interval\": 473, \"juncture\": 11578, \"length\": 1708, \"lifetime\": 7403, \"minute\": 763, \"moment\": 318, \"period\": 1366, \"phase\": 2002, \"second\": 649, \"span\": 2561, \"spell\": 1339, \"stage\": 581, \"term\": 1460, \"time\": 284, \"year\": 1952}\nInvalid or unavailable guesses to avoid: [\"now\"]\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 29,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T00:58:53",
+    "details": {
+      "word": "week",
+      "rank": 2326,
+      "best_word": "time",
+      "best_rank": 284,
+      "total_guesses": 28,
+      "self_report": {
+        "predicted_closeness": 0.3,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "day",
+            "year",
+            "hour",
+            "minute",
+            "second"
+          ],
+          "reason": "The existing guesses are all time-related terms, suggesting the hidden target is another unit of time. 'Week' is a common time unit not yet used."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"week\", \"basis_words\": [\"day\", \"year\", \"hour\", \"minute\", \"second\"], \"reason\": \"The existing guesses are all time-related terms, suggesting the hidden target is another unit of time. 'Week' is a common time unit not yet used.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"age\": 1230, \"century\": 2360, \"clock\": 862, \"cycle\": 769, \"day\": 1101, \"decade\": 2143, \"duration\": 901, \"eon\": 14633, \"epoch\": 17332, \"era\": 1211, \"hour\": 1622, \"instant\": 4677, \"interval\": 473, \"juncture\": 11578, \"length\": 1708, \"lifetime\": 7403, \"minute\": 763, \"moment\": 318, \"period\": 1366, \"phase\": 2002, \"second\": 649, \"span\": 2561, \"spell\": 1339, \"stage\": 581, \"term\": 1460, \"time\": 284, \"year\": 1952}\nInvalid or unavailable guesses to avoid: [\"now\"]\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 30,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T00:59:26",
+    "details": {
+      "word": "month",
+      "rank": 3312,
+      "best_word": "time",
+      "best_rank": 284,
+      "total_guesses": 29,
+      "self_report": {
+        "predicted_closeness": 0.4,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "year",
+            "century",
+            "decade",
+            "week"
+          ],
+          "reason": "Month is a common time unit not yet tried, and similar to existing guesses like year and week which have moderate ranks."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"month\", \"basis_words\": [\"year\", \"century\", \"decade\", \"week\"], \"reason\": \"Month is a common time unit not yet tried, and similar to existing guesses like year and week which have moderate ranks.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"age\": 1230, \"century\": 2360, \"clock\": 862, \"cycle\": 769, \"day\": 1101, \"decade\": 2143, \"duration\": 901, \"eon\": 14633, \"epoch\": 17332, \"era\": 1211, \"hour\": 1622, \"instant\": 4677, \"interval\": 473, \"juncture\": 11578, \"length\": 1708, \"lifetime\": 7403, \"minute\": 763, \"moment\": 318, \"period\": 1366, \"phase\": 2002, \"second\": 649, \"span\": 2561, \"spell\": 1339, \"stage\": 581, \"term\": 1460, \"time\": 284, \"week\": 2326, \"year\": 1952}\nInvalid or unavailable guesses to avoid: [\"now\"]\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 31,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T01:00:11",
+    "details": {
+      "word": "point",
+      "rank": 1220,
+      "best_word": "time",
+      "best_rank": 284,
+      "total_guesses": 30,
+      "self_report": {
+        "predicted_closeness": 0.3,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "time",
+            "moment",
+            "interval"
+          ],
+          "reason": "The word 'point' is a common synonym for a specific moment or instance, which aligns with the context of time-related terms already tried, suggesting it might be closer to the hidden target."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"point\", \"basis_words\": [\"time\", \"moment\", \"interval\"], \"reason\": \"The word 'point' is a common synonym for a specific moment or instance, which aligns with the context of time-related terms already tried, suggesting it might be closer to the hidden target.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"age\": 1230, \"century\": 2360, \"clock\": 862, \"cycle\": 769, \"day\": 1101, \"decade\": 2143, \"duration\": 901, \"eon\": 14633, \"epoch\": 17332, \"era\": 1211, \"hour\": 1622, \"instant\": 4677, \"interval\": 473, \"juncture\": 11578, \"length\": 1708, \"lifetime\": 7403, \"minute\": 763, \"moment\": 318, \"month\": 3312, \"period\": 1366, \"phase\": 2002, \"second\": 649, \"span\": 2561, \"spell\": 1339, \"stage\": 581, \"term\": 1460, \"time\": 284, \"week\": 2326, \"year\": 1952}\nInvalid or unavailable guesses to avoid: [\"now\"]\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 32,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T01:15:58",
+    "details": {
+      "word": "event",
+      "rank": 2551,
+      "best_word": "time",
+      "best_rank": 284,
+      "total_guesses": 31,
+      "self_report": {
+        "predicted_closeness": 0.2,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "beyond",
+        "rationale": {
+          "basis_words": [
+            "time",
+            "moment",
+            "instant"
+          ],
+          "reason": "The hidden target is likely a time-related term, and 'event' is a common synonym not yet tried."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"event\", \"basis_words\": [\"time\", \"moment\", \"instant\"], \"reason\": \"The hidden target is likely a time-related term, and 'event' is a common synonym not yet tried.\", \"predicted_bucket\": \"beyond\", \"predicted_closeness\": 0.2}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"age\": 1230, \"century\": 2360, \"clock\": 862, \"cycle\": 769, \"day\": 1101, \"decade\": 2143, \"duration\": 901, \"eon\": 14633, \"epoch\": 17332, \"era\": 1211, \"hour\": 1622, \"instant\": 4677, \"interval\": 473, \"juncture\": 11578, \"length\": 1708, \"lifetime\": 7403, \"minute\": 763, \"moment\": 318, \"month\": 3312, \"period\": 1366, \"phase\": 2002, \"point\": 1220, \"second\": 649, \"span\": 2561, \"spell\": 1339, \"stage\": 581, \"term\": 1460, \"time\": 284, \"week\": 2326, \"year\": 1952}\nInvalid or unavailable guesses to avoid: [\"now\"]\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 33,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T01:16:27",
+    "details": {
+      "word": "turn",
+      "rank": 424,
+      "best_word": "time",
+      "best_rank": 284,
+      "total_guesses": 32,
+      "self_report": {
+        "predicted_closeness": 0.2,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "beyond",
+        "rationale": {
+          "basis_words": [
+            "time",
+            "epoch",
+            "era",
+            "event",
+            "phase",
+            "stage"
+          ],
+          "reason": "The hidden target likely relates to time or temporal concepts, as evidenced by the existing guesses. 'Turn' is a common synonym for a change in time or a period, and is not already in the guess history."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"turn\", \"basis_words\": [\"time\", \"epoch\", \"era\", \"event\", \"phase\", \"stage\"], \"reason\": \"The hidden target likely relates to time or temporal concepts, as evidenced by the existing guesses. 'Turn' is a common synonym for a change in time or a period, and is not already in the guess history.\", \"predicted_bucket\": \"beyond\", \"predicted_closeness\": 0.2}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"age\": 1230, \"century\": 2360, \"clock\": 862, \"cycle\": 769, \"day\": 1101, \"decade\": 2143, \"duration\": 901, \"eon\": 14633, \"epoch\": 17332, \"era\": 1211, \"event\": 2551, \"hour\": 1622, \"instant\": 4677, \"interval\": 473, \"juncture\": 11578, \"length\": 1708, \"lifetime\": 7403, \"minute\": 763, \"moment\": 318, \"month\": 3312, \"period\": 1366, \"phase\": 2002, \"point\": 1220, \"second\": 649, \"span\": 2561, \"spell\": 1339, \"stage\": 581, \"term\": 1460, \"time\": 284, \"week\": 2326, \"year\": 1952}\nInvalid or unavailable guesses to avoid: [\"now\"]\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 34,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T01:18:03",
+    "details": {
+      "word": "beat",
+      "rank": 38,
+      "best_word": "beat",
+      "best_rank": 38,
+      "total_guesses": 33,
+      "self_report": {
+        "predicted_closeness": 0.3,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "moment",
+            "time"
+          ],
+          "reason": "Beat is a synonym for a brief moment or unit of time, potentially closer to the target than existing guesses like 'moment' or 'time'."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"beat\", \"basis_words\": [\"moment\", \"time\"], \"reason\": \"Beat is a synonym for a brief moment or unit of time, potentially closer to the target than existing guesses like 'moment' or 'time'.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"age\": 1230, \"century\": 2360, \"clock\": 862, \"cycle\": 769, \"day\": 1101, \"decade\": 2143, \"duration\": 901, \"eon\": 14633, \"epoch\": 17332, \"era\": 1211, \"event\": 2551, \"hour\": 1622, \"instant\": 4677, \"interval\": 473, \"juncture\": 11578, \"length\": 1708, \"lifetime\": 7403, \"minute\": 763, \"moment\": 318, \"month\": 3312, \"period\": 1366, \"phase\": 2002, \"point\": 1220, \"second\": 649, \"span\": 2561, \"spell\": 1339, \"stage\": 581, \"term\": 1460, \"time\": 284, \"turn\": 424, \"week\": 2326, \"year\": 1952}\nInvalid or unavailable guesses to avoid: [\"now\"]\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 35,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T01:18:51",
+    "details": {
+      "word": "instance",
+      "rank": 3765,
+      "best_word": "beat",
+      "best_rank": 38,
+      "total_guesses": 34,
+      "self_report": {
+        "predicted_closeness": 0.5,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "moment",
+            "event"
+          ],
+          "reason": "Instance is a synonym for moment or event, which are already in the guess history with relatively low ranks, suggesting it may be closer to the target. It's a common word not yet tried."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"instance\", \"basis_words\": [\"moment\", \"event\"], \"reason\": \"Instance is a synonym for moment or event, which are already in the guess history with relatively low ranks, suggesting it may be closer to the target. It's a common word not yet tried.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.5}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"age\": 1230, \"beat\": 38, \"century\": 2360, \"clock\": 862, \"cycle\": 769, \"day\": 1101, \"decade\": 2143, \"duration\": 901, \"eon\": 14633, \"epoch\": 17332, \"era\": 1211, \"event\": 2551, \"hour\": 1622, \"instant\": 4677, \"interval\": 473, \"juncture\": 11578, \"length\": 1708, \"lifetime\": 7403, \"minute\": 763, \"moment\": 318, \"month\": 3312, \"period\": 1366, \"phase\": 2002, \"point\": 1220, \"second\": 649, \"span\": 2561, \"spell\": 1339, \"stage\": 581, \"term\": 1460, \"time\": 284, \"turn\": 424, \"week\": 2326, \"year\": 1952}\nInvalid or unavailable guesses to avoid: [\"now\"]\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 36,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T01:19:24",
+    "details": {
+      "word": "millennium",
+      "rank": 6708,
+      "best_word": "beat",
+      "best_rank": 38,
+      "total_guesses": 35,
+      "self_report": {
+        "predicted_closeness": 0.4,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "century",
+            "epoch",
+            "era",
+            "age",
+            "duration"
+          ],
+          "reason": "The hidden target likely relates to a long time period, and 'millennium' is a synonym not yet guessed, aligning with existing time-related terms like 'century' and 'epoch'."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"millennium\", \"basis_words\": [\"century\", \"epoch\", \"era\", \"age\", \"duration\"], \"reason\": \"The hidden target likely relates to a long time period, and 'millennium' is a synonym not yet guessed, aligning with existing time-related terms like 'century' and 'epoch'.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"age\": 1230, \"beat\": 38, \"century\": 2360, \"clock\": 862, \"cycle\": 769, \"day\": 1101, \"decade\": 2143, \"duration\": 901, \"eon\": 14633, \"epoch\": 17332, \"era\": 1211, \"event\": 2551, \"hour\": 1622, \"instance\": 3765, \"instant\": 4677, \"interval\": 473, \"juncture\": 11578, \"length\": 1708, \"lifetime\": 7403, \"minute\": 763, \"moment\": 318, \"month\": 3312, \"period\": 1366, \"phase\": 2002, \"point\": 1220, \"second\": 649, \"span\": 2561, \"spell\": 1339, \"stage\": 581, \"term\": 1460, \"time\": 284, \"turn\": 424, \"week\": 2326, \"year\": 1952}\nInvalid or unavailable guesses to avoid: [\"now\"]\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 37,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T01:20:45",
+    "details": {
+      "word": "stretch",
+      "rank": 1860,
+      "best_word": "beat",
+      "best_rank": 38,
+      "total_guesses": 36,
+      "self_report": {
+        "predicted_closeness": 0.7,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "duration",
+            "span",
+            "length",
+            "interval",
+            "time"
+          ],
+          "reason": "Stretch is a synonym for time-related terms like duration and span, which are already in the guess history, suggesting it may be closer to the target."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"stretch\", \"basis_words\": [\"duration\", \"span\", \"length\", \"interval\", \"time\"], \"reason\": \"Stretch is a synonym for time-related terms like duration and span, which are already in the guess history, suggesting it may be closer to the target.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.7}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"age\": 1230, \"beat\": 38, \"century\": 2360, \"clock\": 862, \"cycle\": 769, \"day\": 1101, \"decade\": 2143, \"duration\": 901, \"eon\": 14633, \"epoch\": 17332, \"era\": 1211, \"event\": 2551, \"hour\": 1622, \"instance\": 3765, \"instant\": 4677, \"interval\": 473, \"juncture\": 11578, \"length\": 1708, \"lifetime\": 7403, \"millennium\": 6708, \"minute\": 763, \"moment\": 318, \"month\": 3312, \"period\": 1366, \"phase\": 2002, \"point\": 1220, \"second\": 649, \"span\": 2561, \"spell\": 1339, \"stage\": 581, \"term\": 1460, \"time\": 284, \"turn\": 424, \"week\": 2326, \"year\": 1952}\nInvalid or unavailable guesses to avoid: [\"now\"]\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 38,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T01:21:27",
+    "details": {
+      "word": "episode",
+      "rank": 3224,
+      "best_word": "beat",
+      "best_rank": 38,
+      "total_guesses": 37,
+      "self_report": {
+        "predicted_closeness": 0.3,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "event",
+            "period",
+            "spell",
+            "phase"
+          ],
+          "reason": "Episode is a synonym for a short period or sequence of events, which may be closer to the hidden target given the context of time-related terms."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"episode\", \"basis_words\": [\"event\", \"period\", \"spell\", \"phase\"], \"reason\": \"Episode is a synonym for a short period or sequence of events, which may be closer to the hidden target given the context of time-related terms.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"age\": 1230, \"beat\": 38, \"century\": 2360, \"clock\": 862, \"cycle\": 769, \"day\": 1101, \"decade\": 2143, \"duration\": 901, \"eon\": 14633, \"epoch\": 17332, \"era\": 1211, \"event\": 2551, \"hour\": 1622, \"instance\": 3765, \"instant\": 4677, \"interval\": 473, \"juncture\": 11578, \"length\": 1708, \"lifetime\": 7403, \"millennium\": 6708, \"minute\": 763, \"moment\": 318, \"month\": 3312, \"period\": 1366, \"phase\": 2002, \"point\": 1220, \"second\": 649, \"span\": 2561, \"spell\": 1339, \"stage\": 581, \"stretch\": 1860, \"term\": 1460, \"time\": 284, \"turn\": 424, \"week\": 2326, \"year\": 1952}\nInvalid or unavailable guesses to avoid: [\"now\"]\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 39,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T01:22:19",
+    "details": {
+      "word": "occasion",
+      "rank": 2987,
+      "best_word": "beat",
+      "best_rank": 38,
+      "total_guesses": 38,
+      "self_report": {
+        "predicted_closeness": 0.6,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "event",
+            "moment",
+            "time"
+          ],
+          "reason": "Occasion is a synonym related to time and events, not yet guessed, and could be closer to the target."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"occasion\", \"basis_words\": [\"event\", \"moment\", \"time\"], \"reason\": \"Occasion is a synonym related to time and events, not yet guessed, and could be closer to the target.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.6}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"age\": 1230, \"beat\": 38, \"century\": 2360, \"clock\": 862, \"cycle\": 769, \"day\": 1101, \"decade\": 2143, \"duration\": 901, \"eon\": 14633, \"episode\": 3224, \"epoch\": 17332, \"era\": 1211, \"event\": 2551, \"hour\": 1622, \"instance\": 3765, \"instant\": 4677, \"interval\": 473, \"juncture\": 11578, \"length\": 1708, \"lifetime\": 7403, \"millennium\": 6708, \"minute\": 763, \"moment\": 318, \"month\": 3312, \"period\": 1366, \"phase\": 2002, \"point\": 1220, \"second\": 649, \"span\": 2561, \"spell\": 1339, \"stage\": 581, \"stretch\": 1860, \"term\": 1460, \"time\": 284, \"turn\": 424, \"week\": 2326, \"year\": 1952}\nInvalid or unavailable guesses to avoid: [\"now\"]\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 40,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T01:22:48",
+    "details": {
+      "word": "occurrence",
+      "rank": 8036,
+      "best_word": "beat",
+      "best_rank": 38,
+      "total_guesses": 39,
+      "self_report": {
+        "predicted_closeness": 0.4,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "event",
+            "episode",
+            "occasion"
+          ],
+          "reason": "Occurrence is a synonym of event, episode, and occasion, which are all related to time-based occurrences and may be closer to the hidden target."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"occurrence\", \"basis_words\": [\"event\", \"episode\", \"occasion\"], \"reason\": \"Occurrence is a synonym of event, episode, and occasion, which are all related to time-based occurrences and may be closer to the hidden target.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"age\": 1230, \"beat\": 38, \"century\": 2360, \"clock\": 862, \"cycle\": 769, \"day\": 1101, \"decade\": 2143, \"duration\": 901, \"eon\": 14633, \"episode\": 3224, \"epoch\": 17332, \"era\": 1211, \"event\": 2551, \"hour\": 1622, \"instance\": 3765, \"instant\": 4677, \"interval\": 473, \"juncture\": 11578, \"length\": 1708, \"lifetime\": 7403, \"millennium\": 6708, \"minute\": 763, \"moment\": 318, \"month\": 3312, \"occasion\": 2987, \"period\": 1366, \"phase\": 2002, \"point\": 1220, \"second\": 649, \"span\": 2561, \"spell\": 1339, \"stage\": 581, \"stretch\": 1860, \"term\": 1460, \"time\": 284, \"turn\": 424, \"week\": 2326, \"year\": 1952}\nInvalid or unavailable guesses to avoid: [\"now\"]\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 41,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T01:23:14",
+    "details": {
+      "word": "season",
+      "rank": 2289,
+      "best_word": "beat",
+      "best_rank": 38,
+      "total_guesses": 40,
+      "self_report": {
+        "predicted_closeness": 0.3,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "year",
+            "month",
+            "week",
+            "day",
+            "hour",
+            "minute",
+            "second"
+          ],
+          "reason": "Season is a time-related term not yet guessed, aligning with the context of time periods and events in the history."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"season\", \"basis_words\": [\"year\", \"month\", \"week\", \"day\", \"hour\", \"minute\", \"second\"], \"reason\": \"Season is a time-related term not yet guessed, aligning with the context of time periods and events in the history.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"age\": 1230, \"beat\": 38, \"century\": 2360, \"clock\": 862, \"cycle\": 769, \"day\": 1101, \"decade\": 2143, \"duration\": 901, \"eon\": 14633, \"episode\": 3224, \"epoch\": 17332, \"era\": 1211, \"event\": 2551, \"hour\": 1622, \"instance\": 3765, \"instant\": 4677, \"interval\": 473, \"juncture\": 11578, \"length\": 1708, \"lifetime\": 7403, \"millennium\": 6708, \"minute\": 763, \"moment\": 318, \"month\": 3312, \"occasion\": 2987, \"occurrence\": 8036, \"period\": 1366, \"phase\": 2002, \"point\": 1220, \"second\": 649, \"span\": 2561, \"spell\": 1339, \"stage\": 581, \"stretch\": 1860, \"term\": 1460, \"time\": 284, \"turn\": 424, \"week\": 2326, \"year\": 1952}\nInvalid or unavailable guesses to avoid: [\"now\"]\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 42,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T01:24:14",
+    "details": {
+      "word": "timing",
+      "rank": 136,
+      "best_word": "beat",
+      "best_rank": 38,
+      "total_guesses": 41,
+      "self_report": {
+        "predicted_closeness": 0.3,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "time",
+            "moment",
+            "turn"
+          ],
+          "reason": "Timing is closely related to time and events, which are central to the previous guesses, and may be a more specific term than 'time'."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"timing\", \"basis_words\": [\"time\", \"moment\", \"turn\"], \"reason\": \"Timing is closely related to time and events, which are central to the previous guesses, and may be a more specific term than 'time'.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.3}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"age\": 1230, \"beat\": 38, \"century\": 2360, \"clock\": 862, \"cycle\": 769, \"day\": 1101, \"decade\": 2143, \"duration\": 901, \"eon\": 14633, \"episode\": 3224, \"epoch\": 17332, \"era\": 1211, \"event\": 2551, \"hour\": 1622, \"instance\": 3765, \"instant\": 4677, \"interval\": 473, \"juncture\": 11578, \"length\": 1708, \"lifetime\": 7403, \"millennium\": 6708, \"minute\": 763, \"moment\": 318, \"month\": 3312, \"occasion\": 2987, \"occurrence\": 8036, \"period\": 1366, \"phase\": 2002, \"point\": 1220, \"season\": 2289, \"second\": 649, \"span\": 2561, \"spell\": 1339, \"stage\": 581, \"stretch\": 1860, \"term\": 1460, \"time\": 284, \"turn\": 424, \"week\": 2326, \"year\": 1952}\nInvalid or unavailable guesses to avoid: [\"now\"]\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 43,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T01:25:09",
+    "details": {
+      "word": "incident",
+      "rank": 9904,
+      "best_word": "beat",
+      "best_rank": 38,
+      "total_guesses": 42,
+      "self_report": {
+        "predicted_closeness": 0.3,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "event",
+            "occurrence"
+          ],
+          "reason": "incident is a synonym for event and occurrence, which are in the guess history with ranks 2551 and 8036, suggesting it might be a related and potentially closer term."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"incident\", \"basis_words\": [\"event\", \"occurrence\"], \"reason\": \"incident is a synonym for event and occurrence, which are in the guess history with ranks 2551 and 8036, suggesting it might be a related and potentially closer term.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"age\": 1230, \"beat\": 38, \"century\": 2360, \"clock\": 862, \"cycle\": 769, \"day\": 1101, \"decade\": 2143, \"duration\": 901, \"eon\": 14633, \"episode\": 3224, \"epoch\": 17332, \"era\": 1211, \"event\": 2551, \"hour\": 1622, \"instance\": 3765, \"instant\": 4677, \"interval\": 473, \"juncture\": 11578, \"length\": 1708, \"lifetime\": 7403, \"millennium\": 6708, \"minute\": 763, \"moment\": 318, \"month\": 3312, \"occasion\": 2987, \"occurrence\": 8036, \"period\": 1366, \"phase\": 2002, \"point\": 1220, \"season\": 2289, \"second\": 649, \"span\": 2561, \"spell\": 1339, \"stage\": 581, \"stretch\": 1860, \"term\": 1460, \"time\": 284, \"timing\": 136, \"turn\": 424, \"week\": 2326, \"year\": 1952}\nInvalid or unavailable guesses to avoid: [\"now\"]\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 44,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T01:25:55",
+    "details": {
+      "word": "pulse",
+      "rank": 231,
+      "best_word": "beat",
+      "best_rank": 38,
+      "total_guesses": 43,
+      "self_report": {
+        "predicted_closeness": 0.4,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "beat",
+            "interval",
+            "moment",
+            "time"
+          ],
+          "reason": "Pulse is a synonym for a brief rhythmic beat or moment, aligning with the context of time-related terms like 'beat', 'interval', and 'moment' which have lower ranks. It is a common noun not previously guessed."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"pulse\", \"basis_words\": [\"beat\", \"interval\", \"moment\", \"time\"], \"reason\": \"Pulse is a synonym for a brief rhythmic beat or moment, aligning with the context of time-related terms like 'beat', 'interval', and 'moment' which have lower ranks. It is a common noun not previously guessed.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"age\": 1230, \"beat\": 38, \"century\": 2360, \"clock\": 862, \"cycle\": 769, \"day\": 1101, \"decade\": 2143, \"duration\": 901, \"eon\": 14633, \"episode\": 3224, \"epoch\": 17332, \"era\": 1211, \"event\": 2551, \"hour\": 1622, \"incident\": 9904, \"instance\": 3765, \"instant\": 4677, \"interval\": 473, \"juncture\": 11578, \"length\": 1708, \"lifetime\": 7403, \"millennium\": 6708, \"minute\": 763, \"moment\": 318, \"month\": 3312, \"occasion\": 2987, \"occurrence\": 8036, \"period\": 1366, \"phase\": 2002, \"point\": 1220, \"season\": 2289, \"second\": 649, \"span\": 2561, \"spell\": 1339, \"stage\": 581, \"stretch\": 1860, \"term\": 1460, \"time\": 284, \"timing\": 136, \"turn\": 424, \"week\": 2326, \"year\": 1952}\nInvalid or unavailable guesses to avoid: [\"now\"]\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 45,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T01:27:45",
+    "details": {
+      "word": "streak",
+      "rank": 5780,
+      "best_word": "beat",
+      "best_rank": 38,
+      "total_guesses": 44,
+      "self_report": {
+        "predicted_closeness": 0.7,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "spell",
+            "stretch",
+            "moment",
+            "phase"
+          ],
+          "reason": "Streak is a period of continuous activity, similar to existing guesses like 'spell' and 'stretch' which have lower ranks."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"streak\", \"basis_words\": [\"spell\", \"stretch\", \"moment\", \"phase\"], \"reason\": \"Streak is a period of continuous activity, similar to existing guesses like 'spell' and 'stretch' which have lower ranks.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.7}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"age\": 1230, \"beat\": 38, \"century\": 2360, \"clock\": 862, \"cycle\": 769, \"day\": 1101, \"decade\": 2143, \"duration\": 901, \"eon\": 14633, \"episode\": 3224, \"epoch\": 17332, \"era\": 1211, \"event\": 2551, \"hour\": 1622, \"incident\": 9904, \"instance\": 3765, \"instant\": 4677, \"interval\": 473, \"juncture\": 11578, \"length\": 1708, \"lifetime\": 7403, \"millennium\": 6708, \"minute\": 763, \"moment\": 318, \"month\": 3312, \"occasion\": 2987, \"occurrence\": 8036, \"period\": 1366, \"phase\": 2002, \"point\": 1220, \"pulse\": 231, \"season\": 2289, \"second\": 649, \"span\": 2561, \"spell\": 1339, \"stage\": 581, \"stretch\": 1860, \"term\": 1460, \"time\": 284, \"timing\": 136, \"turn\": 424, \"week\": 2326, \"year\": 1952}\nInvalid or unavailable guesses to avoid: [\"now\"]\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 46,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T01:42:32",
+    "details": {
+      "word": "rhythm",
+      "rank": 1,
+      "best_word": "rhythm",
+      "best_rank": 1,
+      "total_guesses": 45,
+      "self_report": {
+        "predicted_closeness": 0.6,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "beat",
+            "pulse",
+            "timing"
+          ],
+          "reason": "Rhythm is closely related to beat and pulse, which have low ranks, suggesting a temporal or cyclical relationship to the hidden target."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"rhythm\", \"basis_words\": [\"beat\", \"pulse\", \"timing\"], \"reason\": \"Rhythm is closely related to beat and pulse, which have low ranks, suggesting a temporal or cyclical relationship to the hidden target.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.6}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"age\": 1230, \"beat\": 38, \"century\": 2360, \"clock\": 862, \"cycle\": 769, \"day\": 1101, \"decade\": 2143, \"duration\": 901, \"eon\": 14633, \"episode\": 3224, \"epoch\": 17332, \"era\": 1211, \"event\": 2551, \"hour\": 1622, \"incident\": 9904, \"instance\": 3765, \"instant\": 4677, \"interval\": 473, \"juncture\": 11578, \"length\": 1708, \"lifetime\": 7403, \"millennium\": 6708, \"minute\": 763, \"moment\": 318, \"month\": 3312, \"occasion\": 2987, \"occurrence\": 8036, \"period\": 1366, \"phase\": 2002, \"point\": 1220, \"pulse\": 231, \"season\": 2289, \"second\": 649, \"span\": 2561, \"spell\": 1339, \"stage\": 581, \"streak\": 5780, \"stretch\": 1860, \"term\": 1460, \"time\": 284, \"timing\": 136, \"turn\": 424, \"week\": 2326, \"year\": 1952}\nInvalid or unavailable guesses to avoid: [\"now\"]\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 46,
+    "event": "SOLVED",
+    "timestamp": "2026-07-31T01:42:32",
+    "details": {
+      "answer": "rhythm",
+      "rank": 1,
+      "total_guesses": 45
+    }
+  },
+  {
+    "generation": 46,
+    "event": "NETWORK_METRICS",
+    "timestamp": "2026-07-31T01:42:32",
+    "details": {
+      "network_calls": 42,
+      "network_wall_clock_seconds": 3163.002,
+      "total_latency_seconds": 134.2787,
+      "mean_latency_seconds": 3.1971,
+      "median_latency_seconds": 3.2294,
+      "p95_latency_seconds": 3.2434,
+      "max_latency_seconds": 3.2536,
+      "status_counts": {
+        "200": 41,
+        "404": 1
+      },
+      "outcome_counts": {
+        "ok": 41,
+        "http_error": 1
+      }
+    }
+  }
+]

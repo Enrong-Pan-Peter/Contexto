@@ -1,0 +1,5826 @@
+[
+  {
+    "generation": -1,
+    "event": "RUN_CONFIG",
+    "timestamp": "2026-07-23T02:51:42",
+    "details": {
+      "game": "api",
+      "solver": "llm",
+      "method": "ea_llm_self_adaptive",
+      "mode": "api",
+      "target": null,
+      "game_number": 1319,
+      "run_index": 4,
+      "game_embedding_path": null,
+      "solver_embedding_path": null,
+      "embedding_backend": null,
+      "vocabulary_size": null,
+      "alignment": "api_unknown",
+      "trace_schema_version": 3,
+      "instrumentation_provenance_hash": "bd9f2858283673a2",
+      "self_report": false,
+      "rationale_inheritance": false,
+      "max_generations": 50,
+      "llm_provider": "ollama",
+      "llm_model": "qwen3:14b",
+      "llm_workers": 4,
+      "initial_categories": 15,
+      "max_active_hypotheses": null,
+      "local_search_rank_threshold": 100,
+      "self_adaptive_initial_categories": 15,
+      "self_adaptive_mu": 15,
+      "self_adaptive_concentration": 50.0,
+      "self_adaptive_sigma_floor": 0.02,
+      "self_adaptive_sigma_mode": "frozen_uniform",
+      "mapelites_grid_resolution": null,
+      "mapelites_mutations_per_gen": null,
+      "mapelites_crossovers_per_gen": null,
+      "mapelites_initial_categories": null,
+      "mapelites_concentration": null,
+      "mapelites_sigma_floor": null,
+      "mapelites_sigma_mode": null,
+      "mapelites_frozen_sigma": null,
+      "mapelites_ranked_context_k": null,
+      "rank_cache_enabled": true,
+      "enable_pivot": false,
+      "ea_llm_pivot_stall_no_improvement_generations": null,
+      "ea_llm_pivot_stall_close_rank_threshold": null,
+      "ea_llm_pivot_stall_close_generations_limit": null,
+      "ea_llm_pivot_max_attempts_per_run": null,
+      "ea_llm_pivot_candidate_words_per_operator": null,
+      "ea_llm_pivot_resolution_window": null,
+      "random_seed": 4
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:52:00",
+    "details": {
+      "word": "happy",
+      "rank": 9481,
+      "hypothesis": "emotions",
+      "best_word": "happy",
+      "best_rank": 9481,
+      "total_guesses": 1
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:52:00",
+    "details": {
+      "word": "sad",
+      "rank": 2409,
+      "hypothesis": "emotions",
+      "best_word": "sad",
+      "best_rank": 2409,
+      "total_guesses": 2
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:52:00",
+    "details": {
+      "word": "angry",
+      "rank": 5640,
+      "hypothesis": "emotions",
+      "best_word": "sad",
+      "best_rank": 2409,
+      "total_guesses": 3
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:52:00",
+    "details": {
+      "word": "tree",
+      "rank": 5791,
+      "hypothesis": "nature",
+      "best_word": "sad",
+      "best_rank": 2409,
+      "total_guesses": 4
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:52:00",
+    "details": {
+      "word": "river",
+      "rank": 2643,
+      "hypothesis": "nature",
+      "best_word": "sad",
+      "best_rank": 2409,
+      "total_guesses": 5
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:52:00",
+    "details": {
+      "word": "mountain",
+      "rank": 6568,
+      "hypothesis": "nature",
+      "best_word": "sad",
+      "best_rank": 2409,
+      "total_guesses": 6
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:52:00",
+    "details": {
+      "word": "computer",
+      "rank": 36550,
+      "hypothesis": "technology",
+      "best_word": "sad",
+      "best_rank": 2409,
+      "total_guesses": 7
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:52:00",
+    "details": {
+      "word": "phone",
+      "rank": 51341,
+      "hypothesis": "technology",
+      "best_word": "sad",
+      "best_rank": 2409,
+      "total_guesses": 8
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:52:00",
+    "details": {
+      "word": "internet",
+      "rank": 33232,
+      "hypothesis": "technology",
+      "best_word": "sad",
+      "best_rank": 2409,
+      "total_guesses": 9
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:52:00",
+    "details": {
+      "word": "dog",
+      "rank": 1067,
+      "hypothesis": "animals",
+      "best_word": "dog",
+      "best_rank": 1067,
+      "total_guesses": 10
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:52:00",
+    "details": {
+      "word": "cat",
+      "rank": 590,
+      "hypothesis": "animals",
+      "best_word": "cat",
+      "best_rank": 590,
+      "total_guesses": 11
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:52:00",
+    "details": {
+      "word": "bird",
+      "rank": 182,
+      "hypothesis": "animals",
+      "best_word": "bird",
+      "best_rank": 182,
+      "total_guesses": 12
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:52:00",
+    "details": {
+      "word": "red",
+      "rank": 16194,
+      "hypothesis": "colors",
+      "best_word": "bird",
+      "best_rank": 182,
+      "total_guesses": 13
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:52:00",
+    "details": {
+      "word": "blue",
+      "rank": 2640,
+      "hypothesis": "colors",
+      "best_word": "bird",
+      "best_rank": 182,
+      "total_guesses": 14
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:52:00",
+    "details": {
+      "word": "green",
+      "rank": 36889,
+      "hypothesis": "colors",
+      "best_word": "bird",
+      "best_rank": 182,
+      "total_guesses": 15
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:52:00",
+    "details": {
+      "word": "apple",
+      "rank": 10789,
+      "hypothesis": "foods",
+      "best_word": "bird",
+      "best_rank": 182,
+      "total_guesses": 16
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:52:00",
+    "details": {
+      "word": "bread",
+      "rank": 45913,
+      "hypothesis": "foods",
+      "best_word": "bird",
+      "best_rank": 182,
+      "total_guesses": 17
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:52:00",
+    "details": {
+      "word": "rice",
+      "rank": 47969,
+      "hypothesis": "foods",
+      "best_word": "bird",
+      "best_rank": 182,
+      "total_guesses": 18
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:52:00",
+    "details": {
+      "word": "doctor",
+      "rank": 31611,
+      "hypothesis": "professions",
+      "best_word": "bird",
+      "best_rank": 182,
+      "total_guesses": 19
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:52:00",
+    "details": {
+      "word": "teacher",
+      "rank": 57652,
+      "hypothesis": "professions",
+      "best_word": "bird",
+      "best_rank": 182,
+      "total_guesses": 20
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:52:00",
+    "details": {
+      "word": "engineer",
+      "rank": 13388,
+      "hypothesis": "professions",
+      "best_word": "bird",
+      "best_rank": 182,
+      "total_guesses": 21
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:52:00",
+    "details": {
+      "word": "soccer",
+      "rank": 58060,
+      "hypothesis": "sports",
+      "best_word": "bird",
+      "best_rank": 182,
+      "total_guesses": 22
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:52:00",
+    "details": {
+      "word": "basketball",
+      "rank": 27856,
+      "hypothesis": "sports",
+      "best_word": "bird",
+      "best_rank": 182,
+      "total_guesses": 23
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:52:00",
+    "details": {
+      "word": "tennis",
+      "rank": 74943,
+      "hypothesis": "sports",
+      "best_word": "bird",
+      "best_rank": 182,
+      "total_guesses": 24
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:52:00",
+    "details": {
+      "word": "rain",
+      "rank": 7514,
+      "hypothesis": "weather",
+      "best_word": "bird",
+      "best_rank": 182,
+      "total_guesses": 25
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:52:00",
+    "details": {
+      "word": "sun",
+      "rank": 893,
+      "hypothesis": "weather",
+      "best_word": "bird",
+      "best_rank": 182,
+      "total_guesses": 26
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:52:00",
+    "details": {
+      "word": "snow",
+      "rank": 1073,
+      "hypothesis": "weather",
+      "best_word": "bird",
+      "best_rank": 182,
+      "total_guesses": 27
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:52:00",
+    "details": {
+      "word": "circle",
+      "rank": 3740,
+      "hypothesis": "shapes",
+      "best_word": "bird",
+      "best_rank": 182,
+      "total_guesses": 28
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:52:00",
+    "details": {
+      "word": "square",
+      "rank": 24444,
+      "hypothesis": "shapes",
+      "best_word": "bird",
+      "best_rank": 182,
+      "total_guesses": 29
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:52:00",
+    "details": {
+      "word": "triangle",
+      "rank": 49078,
+      "hypothesis": "shapes",
+      "best_word": "bird",
+      "best_rank": 182,
+      "total_guesses": 30
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:52:02",
+    "details": {
+      "word": "map",
+      "rank": 62521,
+      "hypothesis": "geography",
+      "best_word": "bird",
+      "best_rank": 182,
+      "total_guesses": 31
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:52:02",
+    "details": {
+      "word": "globe",
+      "rank": 20474,
+      "hypothesis": "geography",
+      "best_word": "bird",
+      "best_rank": 182,
+      "total_guesses": 32
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:52:03",
+    "details": {
+      "word": "continent",
+      "rank": 2447,
+      "hypothesis": "geography",
+      "best_word": "bird",
+      "best_rank": 182,
+      "total_guesses": 33
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:52:03",
+    "details": {
+      "word": "day",
+      "rank": 12858,
+      "hypothesis": "time",
+      "best_word": "bird",
+      "best_rank": 182,
+      "total_guesses": 34
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:52:03",
+    "details": {
+      "word": "night",
+      "rank": 13652,
+      "hypothesis": "time",
+      "best_word": "bird",
+      "best_rank": 182,
+      "total_guesses": 35
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:52:03",
+    "details": {
+      "word": "week",
+      "rank": 34907,
+      "hypothesis": "time",
+      "best_word": "bird",
+      "best_rank": 182,
+      "total_guesses": 36
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:52:03",
+    "details": {
+      "word": "shirt",
+      "rank": 24223,
+      "hypothesis": "clothing",
+      "best_word": "bird",
+      "best_rank": 182,
+      "total_guesses": 37
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:52:03",
+    "details": {
+      "word": "pants",
+      "rank": 29436,
+      "hypothesis": "clothing",
+      "best_word": "bird",
+      "best_rank": 182,
+      "total_guesses": 38
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:52:03",
+    "details": {
+      "word": "shoes",
+      "rank": 14350,
+      "hypothesis": "clothing",
+      "best_word": "bird",
+      "best_rank": 182,
+      "total_guesses": 39
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:52:03",
+    "details": {
+      "word": "car",
+      "rank": 45142,
+      "hypothesis": "transportation",
+      "best_word": "bird",
+      "best_rank": 182,
+      "total_guesses": 40
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:52:03",
+    "details": {
+      "word": "bike",
+      "rank": 42903,
+      "hypothesis": "transportation",
+      "best_word": "bird",
+      "best_rank": 182,
+      "total_guesses": 41
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:52:03",
+    "details": {
+      "word": "train",
+      "rank": 12052,
+      "hypothesis": "transportation",
+      "best_word": "bird",
+      "best_rank": 182,
+      "total_guesses": 42
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:52:03",
+    "details": {
+      "word": "guitar",
+      "rank": 18430,
+      "hypothesis": "instruments",
+      "best_word": "bird",
+      "best_rank": 182,
+      "total_guesses": 43
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:52:04",
+    "details": {
+      "word": "piano",
+      "rank": 7848,
+      "hypothesis": "instruments",
+      "best_word": "bird",
+      "best_rank": 182,
+      "total_guesses": 44
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:52:05",
+    "details": {
+      "word": "drum",
+      "rank": 9692,
+      "hypothesis": "instruments",
+      "best_word": "bird",
+      "best_rank": 182,
+      "total_guesses": 45
+    }
+  },
+  {
+    "generation": 0,
+    "event": "INIT",
+    "timestamp": "2026-07-23T02:52:05",
+    "details": {
+      "hypotheses": [
+        {
+          "hypothesis_id": "8848b204e9dc448d9ae2886f396ff0ad",
+          "category_name": "emotions",
+          "description": "human feelings and moods",
+          "words_tried": {
+            "sad": 2409,
+            "angry": 5640,
+            "happy": 9481
+          },
+          "best_word": "sad",
+          "best_rank": 2409,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "6554dc0625d3450d97fd9a42988e5377",
+          "category_name": "nature",
+          "description": "elements of the natural world",
+          "words_tried": {
+            "river": 2643,
+            "tree": 5791,
+            "mountain": 6568
+          },
+          "best_word": "river",
+          "best_rank": 2643,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "90b8325e22724901bfe3c503f15c617b",
+          "category_name": "technology",
+          "description": "tools and systems of modern life",
+          "words_tried": {
+            "internet": 33232,
+            "computer": 36550,
+            "phone": 51341
+          },
+          "best_word": "internet",
+          "best_rank": 33232,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "ced078c8665643088cf330748e87845f",
+          "category_name": "animals",
+          "description": "living creatures",
+          "words_tried": {
+            "bird": 182,
+            "cat": 590,
+            "dog": 1067
+          },
+          "best_word": "bird",
+          "best_rank": 182,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "9d1d4db69ed94c64b51ca4004102f7e4",
+          "category_name": "colors",
+          "description": "visual hues",
+          "words_tried": {
+            "blue": 2640,
+            "red": 16194,
+            "green": 36889
+          },
+          "best_word": "blue",
+          "best_rank": 2640,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "1e32ffb943a7411ca85d5092aba867eb",
+          "category_name": "foods",
+          "description": "edible items",
+          "words_tried": {
+            "apple": 10789,
+            "bread": 45913,
+            "rice": 47969
+          },
+          "best_word": "apple",
+          "best_rank": 10789,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "7fc9cb76d8444bf5a8fd21084c6f7653",
+          "category_name": "professions",
+          "description": "occupational roles",
+          "words_tried": {
+            "engineer": 13388,
+            "doctor": 31611,
+            "teacher": 57652
+          },
+          "best_word": "engineer",
+          "best_rank": 13388,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "9c9111a0e5b04189b41c4fb3d33b7c8a",
+          "category_name": "sports",
+          "description": "physical games and activities",
+          "words_tried": {
+            "basketball": 27856,
+            "soccer": 58060,
+            "tennis": 74943
+          },
+          "best_word": "basketball",
+          "best_rank": 27856,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "92788dcfb6b2425a938f0496ccc06c48",
+          "category_name": "weather",
+          "description": "atmospheric conditions",
+          "words_tried": {
+            "sun": 893,
+            "snow": 1073,
+            "rain": 7514
+          },
+          "best_word": "sun",
+          "best_rank": 893,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "331d257877cc453eb9a61c90d9fd6e01",
+          "category_name": "shapes",
+          "description": "geometric forms",
+          "words_tried": {
+            "circle": 3740,
+            "square": 24444,
+            "triangle": 49078
+          },
+          "best_word": "circle",
+          "best_rank": 3740,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "27454d7afea14b8f9d9c983e56f54094",
+          "category_name": "geography",
+          "description": "physical features of the earth",
+          "words_tried": {
+            "continent": 2447,
+            "globe": 20474,
+            "map": 62521
+          },
+          "best_word": "continent",
+          "best_rank": 2447,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "f5f1206982f54a55b07a97e8b0c38a4f",
+          "category_name": "time",
+          "description": "measurement of duration",
+          "words_tried": {
+            "day": 12858,
+            "night": 13652,
+            "week": 34907
+          },
+          "best_word": "day",
+          "best_rank": 12858,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "d68828bbabd34f2da5e2818eb29a58a3",
+          "category_name": "clothing",
+          "description": "items worn on the body",
+          "words_tried": {
+            "shoes": 14350,
+            "shirt": 24223,
+            "pants": 29436
+          },
+          "best_word": "shoes",
+          "best_rank": 14350,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "b1baa4cf08e1484f96afa361d79e6bdf",
+          "category_name": "transportation",
+          "description": "methods of moving people or goods",
+          "words_tried": {
+            "train": 12052,
+            "bike": 42903,
+            "car": 45142
+          },
+          "best_word": "train",
+          "best_rank": 12052,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "9bcea824f4ae46d69f3f1bca7022dea3",
+          "category_name": "instruments",
+          "description": "tools for creating music",
+          "words_tried": {
+            "piano": 7848,
+            "drum": 9692,
+            "guitar": 18430
+          },
+          "best_word": "piano",
+          "best_rank": 7848,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        }
+      ],
+      "best_word": "bird",
+      "best_rank": 182,
+      "total_guesses": 45
+    }
+  },
+  {
+    "generation": 0,
+    "event": "SIGMA_TRAJECTORY",
+    "timestamp": "2026-07-23T02:52:05",
+    "details": {
+      "mean_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "population_size": 15
+    }
+  },
+  {
+    "generation": 1,
+    "event": "CANDIDATES",
+    "timestamp": "2026-07-23T02:56:31",
+    "details": {
+      "count": 45,
+      "candidates": [
+        {
+          "hypothesis": "emotions",
+          "word": "fear"
+        },
+        {
+          "hypothesis": "emotions",
+          "word": "joy"
+        },
+        {
+          "hypothesis": "emotions",
+          "word": "grief"
+        },
+        {
+          "hypothesis": "nature",
+          "word": "plant"
+        },
+        {
+          "hypothesis": "nature",
+          "word": "forest"
+        },
+        {
+          "hypothesis": "nature",
+          "word": "ocean"
+        },
+        {
+          "hypothesis": "technology",
+          "word": "system"
+        },
+        {
+          "hypothesis": "technology",
+          "word": "software"
+        },
+        {
+          "hypothesis": "technology",
+          "word": "machine"
+        },
+        {
+          "hypothesis": "animals",
+          "word": "fish"
+        },
+        {
+          "hypothesis": "animals",
+          "word": "reptile"
+        },
+        {
+          "hypothesis": "animals",
+          "word": "insect"
+        },
+        {
+          "hypothesis": "colors",
+          "word": "yellow"
+        },
+        {
+          "hypothesis": "colors",
+          "word": "orange"
+        },
+        {
+          "hypothesis": "colors",
+          "word": "purple"
+        },
+        {
+          "hypothesis": "foods",
+          "word": "banana"
+        },
+        {
+          "hypothesis": "foods",
+          "word": "pasta"
+        },
+        {
+          "hypothesis": "foods",
+          "word": "beef"
+        },
+        {
+          "hypothesis": "professions",
+          "word": "lawyer"
+        },
+        {
+          "hypothesis": "professions",
+          "word": "nurse"
+        },
+        {
+          "hypothesis": "professions",
+          "word": "artist"
+        },
+        {
+          "hypothesis": "sports",
+          "word": "game"
+        },
+        {
+          "hypothesis": "sports",
+          "word": "match"
+        },
+        {
+          "hypothesis": "sports",
+          "word": "race"
+        },
+        {
+          "hypothesis": "weather",
+          "word": "cloud"
+        },
+        {
+          "hypothesis": "weather",
+          "word": "storm"
+        },
+        {
+          "hypothesis": "weather",
+          "word": "wind"
+        },
+        {
+          "hypothesis": "shapes",
+          "word": "polygon"
+        },
+        {
+          "hypothesis": "shapes",
+          "word": "ellipse"
+        },
+        {
+          "hypothesis": "shapes",
+          "word": "hexagon"
+        },
+        {
+          "hypothesis": "geography",
+          "word": "delta"
+        },
+        {
+          "hypothesis": "geography",
+          "word": "island"
+        },
+        {
+          "hypothesis": "geography",
+          "word": "coast"
+        },
+        {
+          "hypothesis": "time",
+          "word": "hour"
+        },
+        {
+          "hypothesis": "time",
+          "word": "year"
+        },
+        {
+          "hypothesis": "time",
+          "word": "minute"
+        },
+        {
+          "hypothesis": "clothing",
+          "word": "jacket"
+        },
+        {
+          "hypothesis": "clothing",
+          "word": "dress"
+        },
+        {
+          "hypothesis": "clothing",
+          "word": "hat"
+        },
+        {
+          "hypothesis": "transportation",
+          "word": "ship"
+        },
+        {
+          "hypothesis": "transportation",
+          "word": "plane"
+        },
+        {
+          "hypothesis": "transportation",
+          "word": "truck"
+        },
+        {
+          "hypothesis": "instruments",
+          "word": "violin"
+        },
+        {
+          "hypothesis": "instruments",
+          "word": "flute"
+        },
+        {
+          "hypothesis": "instruments",
+          "word": "trumpet"
+        }
+      ]
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:56:31",
+    "details": {
+      "word": "fear",
+      "rank": 23408,
+      "hypothesis": "emotions",
+      "best_word": "bird",
+      "best_rank": 182,
+      "total_guesses": 46
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:56:31",
+    "details": {
+      "word": "joy",
+      "rank": 29050,
+      "hypothesis": "emotions",
+      "best_word": "bird",
+      "best_rank": 182,
+      "total_guesses": 47
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:56:31",
+    "details": {
+      "word": "grief",
+      "rank": 14715,
+      "hypothesis": "emotions",
+      "best_word": "bird",
+      "best_rank": 182,
+      "total_guesses": 48
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:56:31",
+    "details": {
+      "word": "plant",
+      "rank": 19568,
+      "hypothesis": "nature",
+      "best_word": "bird",
+      "best_rank": 182,
+      "total_guesses": 49
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:56:31",
+    "details": {
+      "word": "forest",
+      "rank": 1679,
+      "hypothesis": "nature",
+      "best_word": "bird",
+      "best_rank": 182,
+      "total_guesses": 50
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:56:31",
+    "details": {
+      "word": "ocean",
+      "rank": 275,
+      "hypothesis": "nature",
+      "best_word": "bird",
+      "best_rank": 182,
+      "total_guesses": 51
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:56:31",
+    "details": {
+      "word": "system",
+      "rank": 69274,
+      "hypothesis": "technology",
+      "best_word": "bird",
+      "best_rank": 182,
+      "total_guesses": 52
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:56:31",
+    "details": {
+      "word": "software",
+      "rank": 50623,
+      "hypothesis": "technology",
+      "best_word": "bird",
+      "best_rank": 182,
+      "total_guesses": 53
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:56:31",
+    "details": {
+      "word": "machine",
+      "rank": 38487,
+      "hypothesis": "technology",
+      "best_word": "bird",
+      "best_rank": 182,
+      "total_guesses": 54
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:56:31",
+    "details": {
+      "word": "fish",
+      "rank": 138,
+      "hypothesis": "animals",
+      "best_word": "fish",
+      "best_rank": 138,
+      "total_guesses": 55
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:56:31",
+    "details": {
+      "word": "reptile",
+      "rank": 228,
+      "hypothesis": "animals",
+      "best_word": "fish",
+      "best_rank": 138,
+      "total_guesses": 56
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:56:31",
+    "details": {
+      "word": "insect",
+      "rank": 1511,
+      "hypothesis": "animals",
+      "best_word": "fish",
+      "best_rank": 138,
+      "total_guesses": 57
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:56:31",
+    "details": {
+      "word": "yellow",
+      "rank": 11593,
+      "hypothesis": "colors",
+      "best_word": "fish",
+      "best_rank": 138,
+      "total_guesses": 58
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:56:35",
+    "details": {
+      "word": "orange",
+      "rank": 13416,
+      "hypothesis": "colors",
+      "best_word": "fish",
+      "best_rank": 138,
+      "total_guesses": 59
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:56:35",
+    "details": {
+      "word": "purple",
+      "rank": 13003,
+      "hypothesis": "colors",
+      "best_word": "fish",
+      "best_rank": 138,
+      "total_guesses": 60
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:56:35",
+    "details": {
+      "word": "banana",
+      "rank": 772,
+      "hypothesis": "foods",
+      "best_word": "fish",
+      "best_rank": 138,
+      "total_guesses": 61
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:56:36",
+    "details": {
+      "word": "pasta",
+      "rank": 30246,
+      "hypothesis": "foods",
+      "best_word": "fish",
+      "best_rank": 138,
+      "total_guesses": 62
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:56:36",
+    "details": {
+      "word": "beef",
+      "rank": 15808,
+      "hypothesis": "foods",
+      "best_word": "fish",
+      "best_rank": 138,
+      "total_guesses": 63
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:56:36",
+    "details": {
+      "word": "lawyer",
+      "rank": 41448,
+      "hypothesis": "professions",
+      "best_word": "fish",
+      "best_rank": 138,
+      "total_guesses": 64
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:56:36",
+    "details": {
+      "word": "nurse",
+      "rank": 10831,
+      "hypothesis": "professions",
+      "best_word": "fish",
+      "best_rank": 138,
+      "total_guesses": 65
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:56:36",
+    "details": {
+      "word": "artist",
+      "rank": 9322,
+      "hypothesis": "professions",
+      "best_word": "fish",
+      "best_rank": 138,
+      "total_guesses": 66
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:56:36",
+    "details": {
+      "word": "game",
+      "rank": 19132,
+      "hypothesis": "sports",
+      "best_word": "fish",
+      "best_rank": 138,
+      "total_guesses": 67
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:56:36",
+    "details": {
+      "word": "match",
+      "rank": 45786,
+      "hypothesis": "sports",
+      "best_word": "fish",
+      "best_rank": 138,
+      "total_guesses": 68
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:56:36",
+    "details": {
+      "word": "race",
+      "rank": 40378,
+      "hypothesis": "sports",
+      "best_word": "fish",
+      "best_rank": 138,
+      "total_guesses": 69
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:56:36",
+    "details": {
+      "word": "cloud",
+      "rank": 5850,
+      "hypothesis": "weather",
+      "best_word": "fish",
+      "best_rank": 138,
+      "total_guesses": 70
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:56:36",
+    "details": {
+      "word": "storm",
+      "rank": 4009,
+      "hypothesis": "weather",
+      "best_word": "fish",
+      "best_rank": 138,
+      "total_guesses": 71
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:56:36",
+    "details": {
+      "word": "wind",
+      "rank": 12328,
+      "hypothesis": "weather",
+      "best_word": "fish",
+      "best_rank": 138,
+      "total_guesses": 72
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:56:36",
+    "details": {
+      "word": "polygon",
+      "rank": 25798,
+      "hypothesis": "shapes",
+      "best_word": "fish",
+      "best_rank": 138,
+      "total_guesses": 73
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:56:36",
+    "details": {
+      "word": "ellipse",
+      "rank": 24119,
+      "hypothesis": "shapes",
+      "best_word": "fish",
+      "best_rank": 138,
+      "total_guesses": 74
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:56:36",
+    "details": {
+      "word": "hexagon",
+      "rank": 23029,
+      "hypothesis": "shapes",
+      "best_word": "fish",
+      "best_rank": 138,
+      "total_guesses": 75
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:56:36",
+    "details": {
+      "word": "delta",
+      "rank": 563,
+      "hypothesis": "geography",
+      "best_word": "fish",
+      "best_rank": 138,
+      "total_guesses": 76
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:56:36",
+    "details": {
+      "word": "island",
+      "rank": 4150,
+      "hypothesis": "geography",
+      "best_word": "fish",
+      "best_rank": 138,
+      "total_guesses": 77
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:56:36",
+    "details": {
+      "word": "coast",
+      "rank": 488,
+      "hypothesis": "geography",
+      "best_word": "fish",
+      "best_rank": 138,
+      "total_guesses": 78
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:56:36",
+    "details": {
+      "word": "hour",
+      "rank": 43067,
+      "hypothesis": "time",
+      "best_word": "fish",
+      "best_rank": 138,
+      "total_guesses": 79
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:56:36",
+    "details": {
+      "word": "year",
+      "rank": 23391,
+      "hypothesis": "time",
+      "best_word": "fish",
+      "best_rank": 138,
+      "total_guesses": 80
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:56:36",
+    "details": {
+      "word": "minute",
+      "rank": 36313,
+      "hypothesis": "time",
+      "best_word": "fish",
+      "best_rank": 138,
+      "total_guesses": 81
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:56:36",
+    "details": {
+      "word": "jacket",
+      "rank": 3079,
+      "hypothesis": "clothing",
+      "best_word": "fish",
+      "best_rank": 138,
+      "total_guesses": 82
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:56:37",
+    "details": {
+      "word": "dress",
+      "rank": 4587,
+      "hypothesis": "clothing",
+      "best_word": "fish",
+      "best_rank": 138,
+      "total_guesses": 83
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:56:37",
+    "details": {
+      "word": "hat",
+      "rank": 3712,
+      "hypothesis": "clothing",
+      "best_word": "fish",
+      "best_rank": 138,
+      "total_guesses": 84
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:56:37",
+    "details": {
+      "word": "ship",
+      "rank": 2740,
+      "hypothesis": "transportation",
+      "best_word": "fish",
+      "best_rank": 138,
+      "total_guesses": 85
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:56:37",
+    "details": {
+      "word": "plane",
+      "rank": 9862,
+      "hypothesis": "transportation",
+      "best_word": "fish",
+      "best_rank": 138,
+      "total_guesses": 86
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:56:37",
+    "details": {
+      "word": "truck",
+      "rank": 8662,
+      "hypothesis": "transportation",
+      "best_word": "fish",
+      "best_rank": 138,
+      "total_guesses": 87
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:56:38",
+    "details": {
+      "word": "violin",
+      "rank": 37764,
+      "hypothesis": "instruments",
+      "best_word": "fish",
+      "best_rank": 138,
+      "total_guesses": 88
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:56:39",
+    "details": {
+      "word": "flute",
+      "rank": 29307,
+      "hypothesis": "instruments",
+      "best_word": "fish",
+      "best_rank": 138,
+      "total_guesses": 89
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:56:39",
+    "details": {
+      "word": "trumpet",
+      "rank": 1927,
+      "hypothesis": "instruments",
+      "best_word": "fish",
+      "best_rank": 138,
+      "total_guesses": 90
+    }
+  },
+  {
+    "generation": 1,
+    "event": "SELECT",
+    "timestamp": "2026-07-23T02:56:39",
+    "details": {
+      "kept": [
+        "animals",
+        "nature",
+        "geography",
+        "foods",
+        "weather"
+      ],
+      "discarded": [
+        "instruments",
+        "emotions",
+        "colors",
+        "transportation",
+        "clothing",
+        "shapes",
+        "professions",
+        "time",
+        "sports",
+        "technology"
+      ],
+      "elite": "animals",
+      "max_active_hypotheses": 5,
+      "best_word": "fish",
+      "best_rank": 138,
+      "total_guesses": 90
+    }
+  },
+  {
+    "generation": 1,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-23T02:57:02",
+    "details": {
+      "parent_id": "ced078c8665643088cf330748e87845f",
+      "child_id": "189933c5cdcd4cd2abc757d8c0c2b2f3",
+      "parent_rank": 138,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "biological structures",
+      "sampled_op": "l_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:57:06",
+    "details": {
+      "word": "organ",
+      "rank": 23661,
+      "hypothesis": "biological structures",
+      "best_word": "fish",
+      "best_rank": 138,
+      "total_guesses": 91
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:57:06",
+    "details": {
+      "word": "cell",
+      "rank": 70083,
+      "hypothesis": "biological structures",
+      "best_word": "fish",
+      "best_rank": 138,
+      "total_guesses": 92
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:57:07",
+    "details": {
+      "word": "tissue",
+      "rank": 13471,
+      "hypothesis": "biological structures",
+      "best_word": "fish",
+      "best_rank": 138,
+      "total_guesses": 93
+    }
+  },
+  {
+    "generation": 1,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-23T02:57:40",
+    "details": {
+      "parent_id": "6554dc0625d3450d97fd9a42988e5377",
+      "child_id": "f9a17a531111497794bcdb57bb20f5ac",
+      "parent_rank": 275,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "nautical terms",
+      "sampled_op": "ml_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:57:40",
+    "details": {
+      "word": "sail",
+      "rank": 6367,
+      "hypothesis": "nautical terms",
+      "best_word": "fish",
+      "best_rank": 138,
+      "total_guesses": 94
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:57:40",
+    "details": {
+      "word": "anchor",
+      "rank": 4352,
+      "hypothesis": "nautical terms",
+      "best_word": "fish",
+      "best_rank": 138,
+      "total_guesses": 95
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:57:40",
+    "details": {
+      "word": "boat",
+      "rank": 2199,
+      "hypothesis": "nautical terms",
+      "best_word": "fish",
+      "best_rank": 138,
+      "total_guesses": 96
+    }
+  },
+  {
+    "generation": 1,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-23T02:58:29",
+    "details": {
+      "parent_id": "27454d7afea14b8f9d9c983e56f54094",
+      "child_id": "e58563456c914708b620640547e1c3b2",
+      "parent_rank": 488,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "human-modified landscapes",
+      "sampled_op": "l_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:58:33",
+    "details": {
+      "word": "landscape",
+      "rank": 29597,
+      "hypothesis": "human-modified landscapes",
+      "best_word": "fish",
+      "best_rank": 138,
+      "total_guesses": 97
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:58:33",
+    "details": {
+      "word": "modification",
+      "rank": 43822,
+      "hypothesis": "human-modified landscapes",
+      "best_word": "fish",
+      "best_rank": 138,
+      "total_guesses": 98
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:58:33",
+    "details": {
+      "word": "terrain",
+      "rank": 41014,
+      "hypothesis": "human-modified landscapes",
+      "best_word": "fish",
+      "best_rank": 138,
+      "total_guesses": 99
+    }
+  },
+  {
+    "generation": 1,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-23T02:58:49",
+    "details": {
+      "parent_id": "1e32ffb943a7411ca85d5092aba867eb",
+      "child_id": "7cfe5a9120c84a16bd2fef5218b5d581",
+      "parent_rank": 772,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "tropical fruits",
+      "sampled_op": "s_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:58:50",
+    "details": {
+      "word": "plantain",
+      "rank": 12510,
+      "hypothesis": "tropical fruits",
+      "best_word": "fish",
+      "best_rank": 138,
+      "total_guesses": 100
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:58:50",
+    "details": {
+      "word": "mango",
+      "rank": 8477,
+      "hypothesis": "tropical fruits",
+      "best_word": "fish",
+      "best_rank": 138,
+      "total_guesses": 101
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:58:51",
+    "details": {
+      "word": "guava",
+      "rank": 5173,
+      "hypothesis": "tropical fruits",
+      "best_word": "fish",
+      "best_rank": 138,
+      "total_guesses": 102
+    }
+  },
+  {
+    "generation": 1,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-23T02:59:05",
+    "details": {
+      "parent_id": "92788dcfb6b2425a938f0496ccc06c48",
+      "child_id": "bfa6a15140f941899050163cc50d438e",
+      "parent_rank": 893,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "celestial phenomena",
+      "sampled_op": "ml_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:59:05",
+    "details": {
+      "word": "moon",
+      "rank": 2615,
+      "hypothesis": "celestial phenomena",
+      "best_word": "fish",
+      "best_rank": 138,
+      "total_guesses": 103
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:59:05",
+    "details": {
+      "word": "star",
+      "rank": 23431,
+      "hypothesis": "celestial phenomena",
+      "best_word": "fish",
+      "best_rank": 138,
+      "total_guesses": 104
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:59:06",
+    "details": {
+      "word": "heat",
+      "rank": 47348,
+      "hypothesis": "celestial phenomena",
+      "best_word": "fish",
+      "best_rank": 138,
+      "total_guesses": 105
+    }
+  },
+  {
+    "generation": 1,
+    "event": "MUTATE",
+    "timestamp": "2026-07-23T02:59:06",
+    "details": {
+      "method": "self_adaptive",
+      "children": [
+        {
+          "hypothesis_id": "189933c5cdcd4cd2abc757d8c0c2b2f3",
+          "category_name": "biological structures",
+          "description": "components of living organisms",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "animals",
+          "parent_id": "ced078c8665643088cf330748e87845f",
+          "origin": "self_adaptive_l_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "f9a17a531111497794bcdb57bb20f5ac",
+          "category_name": "nautical terms",
+          "description": "terms related to sailing and maritime activities",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "nature",
+          "parent_id": "6554dc0625d3450d97fd9a42988e5377",
+          "origin": "self_adaptive_ml_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "e58563456c914708b620640547e1c3b2",
+          "category_name": "human-modified landscapes",
+          "description": "human alterations to natural environments",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "geography",
+          "parent_id": "27454d7afea14b8f9d9c983e56f54094",
+          "origin": "self_adaptive_l_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "7cfe5a9120c84a16bd2fef5218b5d581",
+          "category_name": "tropical fruits",
+          "description": "edible tropical fruits",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "foods",
+          "parent_id": "1e32ffb943a7411ca85d5092aba867eb",
+          "origin": "self_adaptive_s_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "bfa6a15140f941899050163cc50d438e",
+          "category_name": "celestial phenomena",
+          "description": "celestial events and objects",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "weather",
+          "parent_id": "92788dcfb6b2425a938f0496ccc06c48",
+          "origin": "self_adaptive_ml_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        }
+      ],
+      "best_word": "fish",
+      "best_rank": 138,
+      "total_guesses": 105
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:59:20",
+    "details": {
+      "word": "bird",
+      "rank": 182,
+      "hypothesis": "wildlife",
+      "best_word": "fish",
+      "best_rank": 138,
+      "total_guesses": 105
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:59:20",
+    "details": {
+      "word": "forest",
+      "rank": 1679,
+      "hypothesis": "wildlife",
+      "best_word": "fish",
+      "best_rank": 138,
+      "total_guesses": 105
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:59:20",
+    "details": {
+      "word": "river",
+      "rank": 2643,
+      "hypothesis": "wildlife",
+      "best_word": "fish",
+      "best_rank": 138,
+      "total_guesses": 105
+    }
+  },
+  {
+    "generation": 1,
+    "event": "CROSSOVER",
+    "timestamp": "2026-07-23T02:59:20",
+    "details": {
+      "parents": [
+        "animals",
+        "nature"
+      ],
+      "parent_ids": [
+        "ced078c8665643088cf330748e87845f",
+        "6554dc0625d3450d97fd9a42988e5377"
+      ],
+      "parent_ranks": [
+        138,
+        275
+      ],
+      "parent_a_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "parent_b_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma_pre_perturbation": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child": {
+        "hypothesis_id": "735e30e54ee14029a06a4e2d96250a4b",
+        "category_name": "wildlife",
+        "description": "animals in natural environments",
+        "words_tried": {
+          "bird": 182,
+          "forest": 1679,
+          "river": 2643
+        },
+        "best_word": "bird",
+        "best_rank": 182,
+        "status": "active",
+        "parent": "animals+nature",
+        "parent_id": null,
+        "origin": "crossover",
+        "sigma": [
+          0.25,
+          0.25,
+          0.25,
+          0.25
+        ]
+      },
+      "best_word": "fish",
+      "best_rank": 138,
+      "total_guesses": 105
+    }
+  },
+  {
+    "generation": 1,
+    "event": "DEDUPLICATE",
+    "timestamp": "2026-07-23T02:59:20",
+    "details": {
+      "merged": [
+        {
+          "survivor": "wildlife",
+          "discarded": "nature",
+          "survivor_best_rank": 182,
+          "discarded_best_rank": 275
+        }
+      ],
+      "remaining_hypotheses": 20,
+      "active_hypotheses": 10,
+      "best_word": "fish",
+      "best_rank": 138,
+      "total_guesses": 105
+    }
+  },
+  {
+    "generation": 1,
+    "event": "SIGMA_TRAJECTORY",
+    "timestamp": "2026-07-23T02:59:20",
+    "details": {
+      "mean_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "population_size": 10
+    }
+  },
+  {
+    "generation": 2,
+    "event": "CANDIDATES",
+    "timestamp": "2026-07-23T03:01:42",
+    "details": {
+      "count": 30,
+      "candidates": [
+        {
+          "hypothesis": "animals",
+          "word": "mammal"
+        },
+        {
+          "hypothesis": "animals",
+          "word": "beast"
+        },
+        {
+          "hypothesis": "animals",
+          "word": "creature"
+        },
+        {
+          "hypothesis": "wildlife",
+          "word": "deer"
+        },
+        {
+          "hypothesis": "wildlife",
+          "word": "fox"
+        },
+        {
+          "hypothesis": "wildlife",
+          "word": "wolf"
+        },
+        {
+          "hypothesis": "geography",
+          "word": "plain"
+        },
+        {
+          "hypothesis": "geography",
+          "word": "canyon"
+        },
+        {
+          "hypothesis": "geography",
+          "word": "valley"
+        },
+        {
+          "hypothesis": "foods",
+          "word": "chicken"
+        },
+        {
+          "hypothesis": "foods",
+          "word": "egg"
+        },
+        {
+          "hypothesis": "foods",
+          "word": "lettuce"
+        },
+        {
+          "hypothesis": "weather",
+          "word": "humidity"
+        },
+        {
+          "hypothesis": "weather",
+          "word": "temperature"
+        },
+        {
+          "hypothesis": "weather",
+          "word": "precipitation"
+        },
+        {
+          "hypothesis": "nautical terms",
+          "word": "yacht"
+        },
+        {
+          "hypothesis": "nautical terms",
+          "word": "port"
+        },
+        {
+          "hypothesis": "nautical terms",
+          "word": "starboard"
+        },
+        {
+          "hypothesis": "celestial phenomena",
+          "word": "comet"
+        },
+        {
+          "hypothesis": "celestial phenomena",
+          "word": "asteroid"
+        },
+        {
+          "hypothesis": "celestial phenomena",
+          "word": "galaxy"
+        },
+        {
+          "hypothesis": "tropical fruits",
+          "word": "papaya"
+        },
+        {
+          "hypothesis": "tropical fruits",
+          "word": "pineapple"
+        },
+        {
+          "hypothesis": "tropical fruits",
+          "word": "lychee"
+        },
+        {
+          "hypothesis": "biological structures",
+          "word": "membrane"
+        },
+        {
+          "hypothesis": "biological structures",
+          "word": "nucleus"
+        },
+        {
+          "hypothesis": "biological structures",
+          "word": "vein"
+        },
+        {
+          "hypothesis": "human-modified landscapes",
+          "word": "urban"
+        },
+        {
+          "hypothesis": "human-modified landscapes",
+          "word": "agriculture"
+        },
+        {
+          "hypothesis": "human-modified landscapes",
+          "word": "infrastructure"
+        }
+      ]
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:01:42",
+    "details": {
+      "word": "mammal",
+      "rank": 17,
+      "hypothesis": "animals",
+      "best_word": "mammal",
+      "best_rank": 17,
+      "total_guesses": 106
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:01:42",
+    "details": {
+      "word": "beast",
+      "rank": 191,
+      "hypothesis": "animals",
+      "best_word": "mammal",
+      "best_rank": 17,
+      "total_guesses": 107
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:01:42",
+    "details": {
+      "word": "creature",
+      "rank": 311,
+      "hypothesis": "animals",
+      "best_word": "mammal",
+      "best_rank": 17,
+      "total_guesses": 108
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:01:42",
+    "details": {
+      "word": "deer",
+      "rank": 348,
+      "hypothesis": "wildlife",
+      "best_word": "mammal",
+      "best_rank": 17,
+      "total_guesses": 109
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:01:42",
+    "details": {
+      "word": "fox",
+      "rank": 56,
+      "hypothesis": "wildlife",
+      "best_word": "mammal",
+      "best_rank": 17,
+      "total_guesses": 110
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:01:42",
+    "details": {
+      "word": "wolf",
+      "rank": 52,
+      "hypothesis": "wildlife",
+      "best_word": "mammal",
+      "best_rank": 17,
+      "total_guesses": 111
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:01:42",
+    "details": {
+      "word": "plain",
+      "rank": 7270,
+      "hypothesis": "geography",
+      "best_word": "mammal",
+      "best_rank": 17,
+      "total_guesses": 112
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:01:42",
+    "details": {
+      "word": "canyon",
+      "rank": 22264,
+      "hypothesis": "geography",
+      "best_word": "mammal",
+      "best_rank": 17,
+      "total_guesses": 113
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:01:42",
+    "details": {
+      "word": "valley",
+      "rank": 12708,
+      "hypothesis": "geography",
+      "best_word": "mammal",
+      "best_rank": 17,
+      "total_guesses": 114
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:01:42",
+    "details": {
+      "word": "chicken",
+      "rank": 5204,
+      "hypothesis": "foods",
+      "best_word": "mammal",
+      "best_rank": 17,
+      "total_guesses": 115
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:01:42",
+    "details": {
+      "word": "egg",
+      "rank": 3361,
+      "hypothesis": "foods",
+      "best_word": "mammal",
+      "best_rank": 17,
+      "total_guesses": 116
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:01:42",
+    "details": {
+      "word": "lettuce",
+      "rank": 12553,
+      "hypothesis": "foods",
+      "best_word": "mammal",
+      "best_rank": 17,
+      "total_guesses": 117
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:01:42",
+    "details": {
+      "word": "humidity",
+      "rank": 39240,
+      "hypothesis": "weather",
+      "best_word": "mammal",
+      "best_rank": 17,
+      "total_guesses": 118
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:01:42",
+    "details": {
+      "word": "temperature",
+      "rank": 8935,
+      "hypothesis": "weather",
+      "best_word": "mammal",
+      "best_rank": 17,
+      "total_guesses": 119
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:01:42",
+    "details": {
+      "word": "precipitation",
+      "rank": 48424,
+      "hypothesis": "weather",
+      "best_word": "mammal",
+      "best_rank": 17,
+      "total_guesses": 120
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:01:43",
+    "details": {
+      "word": "yacht",
+      "rank": 10855,
+      "hypothesis": "nautical terms",
+      "best_word": "mammal",
+      "best_rank": 17,
+      "total_guesses": 121
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:01:44",
+    "details": {
+      "word": "port",
+      "rank": 8267,
+      "hypothesis": "nautical terms",
+      "best_word": "mammal",
+      "best_rank": 17,
+      "total_guesses": 122
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:01:45",
+    "details": {
+      "word": "starboard",
+      "rank": 52031,
+      "hypothesis": "nautical terms",
+      "best_word": "mammal",
+      "best_rank": 17,
+      "total_guesses": 123
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:01:45",
+    "details": {
+      "word": "comet",
+      "rank": 5963,
+      "hypothesis": "celestial phenomena",
+      "best_word": "mammal",
+      "best_rank": 17,
+      "total_guesses": 124
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:01:45",
+    "details": {
+      "word": "asteroid",
+      "rank": 3666,
+      "hypothesis": "celestial phenomena",
+      "best_word": "mammal",
+      "best_rank": 17,
+      "total_guesses": 125
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:01:45",
+    "details": {
+      "word": "galaxy",
+      "rank": 10841,
+      "hypothesis": "celestial phenomena",
+      "best_word": "mammal",
+      "best_rank": 17,
+      "total_guesses": 126
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:01:46",
+    "details": {
+      "word": "papaya",
+      "rank": 5702,
+      "hypothesis": "tropical fruits",
+      "best_word": "mammal",
+      "best_rank": 17,
+      "total_guesses": 127
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:01:46",
+    "details": {
+      "word": "pineapple",
+      "rank": 1641,
+      "hypothesis": "tropical fruits",
+      "best_word": "mammal",
+      "best_rank": 17,
+      "total_guesses": 128
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:01:47",
+    "details": {
+      "word": "lychee",
+      "rank": 14447,
+      "hypothesis": "tropical fruits",
+      "best_word": "mammal",
+      "best_rank": 17,
+      "total_guesses": 129
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:01:48",
+    "details": {
+      "word": "membrane",
+      "rank": 46374,
+      "hypothesis": "biological structures",
+      "best_word": "mammal",
+      "best_rank": 17,
+      "total_guesses": 130
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:01:49",
+    "details": {
+      "word": "nucleus",
+      "rank": 20154,
+      "hypothesis": "biological structures",
+      "best_word": "mammal",
+      "best_rank": 17,
+      "total_guesses": 131
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:01:49",
+    "details": {
+      "word": "vein",
+      "rank": 25017,
+      "hypothesis": "biological structures",
+      "best_word": "mammal",
+      "best_rank": 17,
+      "total_guesses": 132
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:01:49",
+    "details": {
+      "word": "urban",
+      "rank": 65738,
+      "hypothesis": "human-modified landscapes",
+      "best_word": "mammal",
+      "best_rank": 17,
+      "total_guesses": 133
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:01:50",
+    "details": {
+      "word": "agriculture",
+      "rank": 63844,
+      "hypothesis": "human-modified landscapes",
+      "best_word": "mammal",
+      "best_rank": 17,
+      "total_guesses": 134
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:01:51",
+    "details": {
+      "word": "infrastructure",
+      "rank": 68081,
+      "hypothesis": "human-modified landscapes",
+      "best_word": "mammal",
+      "best_rank": 17,
+      "total_guesses": 135
+    }
+  },
+  {
+    "generation": 2,
+    "event": "LOCAL_SEARCH_DISABLED",
+    "timestamp": "2026-07-23T03:01:51",
+    "details": {
+      "center_word": "mammal",
+      "center_rank": 17,
+      "threshold": 100,
+      "reason": "self_adaptive_disable_local_search"
+    }
+  },
+  {
+    "generation": 2,
+    "event": "SELECT",
+    "timestamp": "2026-07-23T03:01:51",
+    "details": {
+      "kept": [
+        "animals",
+        "wildlife",
+        "geography",
+        "foods",
+        "weather"
+      ],
+      "discarded": [
+        "tropical fruits",
+        "instruments",
+        "nautical terms",
+        "emotions",
+        "celestial phenomena",
+        "colors",
+        "transportation",
+        "clothing",
+        "shapes",
+        "professions",
+        "time",
+        "biological structures",
+        "sports",
+        "human-modified landscapes",
+        "technology"
+      ],
+      "elite": "animals",
+      "max_active_hypotheses": 5,
+      "best_word": "mammal",
+      "best_rank": 17,
+      "total_guesses": 135
+    }
+  },
+  {
+    "generation": 2,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-23T03:02:07",
+    "details": {
+      "parent_id": "ced078c8665643088cf330748e87845f",
+      "child_id": "7bdfd1d9e1af40e8826ceb408fe3af8d",
+      "parent_rank": 17,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "domestication",
+      "sampled_op": "m_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:02:10",
+    "details": {
+      "word": "domestic",
+      "rank": 6791,
+      "hypothesis": "domestication",
+      "best_word": "mammal",
+      "best_rank": 17,
+      "total_guesses": 136
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:02:11",
+    "details": {
+      "word": "breed",
+      "rank": 2433,
+      "hypothesis": "domestication",
+      "best_word": "mammal",
+      "best_rank": 17,
+      "total_guesses": 137
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:02:12",
+    "details": {
+      "word": "pet",
+      "rank": 1497,
+      "hypothesis": "domestication",
+      "best_word": "mammal",
+      "best_rank": 17,
+      "total_guesses": 138
+    }
+  },
+  {
+    "generation": 2,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-23T03:02:29",
+    "details": {
+      "parent_id": "735e30e54ee14029a06a4e2d96250a4b",
+      "child_id": "389d0ab9da4e4f55bbfaca7c08a92ea4",
+      "parent_rank": 52,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "terrestrial survival",
+      "sampled_op": "l_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:02:29",
+    "details": {
+      "word": "survival",
+      "rank": 14109,
+      "hypothesis": "terrestrial survival",
+      "best_word": "mammal",
+      "best_rank": 17,
+      "total_guesses": 139
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:02:29",
+    "details": {
+      "word": "endurance",
+      "rank": 35279,
+      "hypothesis": "terrestrial survival",
+      "best_word": "mammal",
+      "best_rank": 17,
+      "total_guesses": 140
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:02:29",
+    "details": {
+      "word": "adaptation",
+      "rank": 2575,
+      "hypothesis": "terrestrial survival",
+      "best_word": "mammal",
+      "best_rank": 17,
+      "total_guesses": 141
+    }
+  },
+  {
+    "generation": 2,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-23T03:02:35",
+    "details": {
+      "parent_id": "27454d7afea14b8f9d9c983e56f54094",
+      "child_id": "8d19098e404549d1b01bfbadc179a817",
+      "parent_rank": 488,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "coastal features",
+      "sampled_op": "s_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:02:35",
+    "details": {
+      "word": "shore",
+      "rank": 1297,
+      "hypothesis": "coastal features",
+      "best_word": "mammal",
+      "best_rank": 17,
+      "total_guesses": 142
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:02:35",
+    "details": {
+      "word": "beach",
+      "rank": 16,
+      "hypothesis": "coastal features",
+      "best_word": "beach",
+      "best_rank": 16,
+      "total_guesses": 143
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:02:35",
+    "details": {
+      "word": "estuary",
+      "rank": 723,
+      "hypothesis": "coastal features",
+      "best_word": "beach",
+      "best_rank": 16,
+      "total_guesses": 144
+    }
+  },
+  {
+    "generation": 2,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-23T03:03:05",
+    "details": {
+      "parent_id": "1e32ffb943a7411ca85d5092aba867eb",
+      "child_id": "0e14995c4ee6448f8034624fa05344f8",
+      "parent_rank": 772,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "textile materials",
+      "sampled_op": "l_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:03:05",
+    "details": {
+      "word": "fiber",
+      "rank": 38207,
+      "hypothesis": "textile materials",
+      "best_word": "beach",
+      "best_rank": 16,
+      "total_guesses": 145
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:03:05",
+    "details": {
+      "word": "fabric",
+      "rank": 56753,
+      "hypothesis": "textile materials",
+      "best_word": "beach",
+      "best_rank": 16,
+      "total_guesses": 146
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:03:09",
+    "details": {
+      "word": "weave",
+      "rank": 47469,
+      "hypothesis": "textile materials",
+      "best_word": "beach",
+      "best_rank": 16,
+      "total_guesses": 147
+    }
+  },
+  {
+    "generation": 2,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-23T03:03:25",
+    "details": {
+      "parent_id": "92788dcfb6b2425a938f0496ccc06c48",
+      "child_id": "7c189d545e0243d1ba2790d908d732ea",
+      "parent_rank": 893,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "celestial phenomena",
+      "sampled_op": "ml_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:03:25",
+    "details": {
+      "word": "aurora",
+      "rank": 4351,
+      "hypothesis": "celestial phenomena",
+      "best_word": "beach",
+      "best_rank": 16,
+      "total_guesses": 148
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:03:25",
+    "details": {
+      "word": "eclipse",
+      "rank": 10477,
+      "hypothesis": "celestial phenomena",
+      "best_word": "beach",
+      "best_rank": 16,
+      "total_guesses": 149
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:03:26",
+    "details": {
+      "word": "nova",
+      "rank": 11832,
+      "hypothesis": "celestial phenomena",
+      "best_word": "beach",
+      "best_rank": 16,
+      "total_guesses": 150
+    }
+  },
+  {
+    "generation": 2,
+    "event": "MUTATE",
+    "timestamp": "2026-07-23T03:03:26",
+    "details": {
+      "method": "self_adaptive",
+      "children": [
+        {
+          "hypothesis_id": "7bdfd1d9e1af40e8826ceb408fe3af8d",
+          "category_name": "domestication",
+          "description": "mammals in human care",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "animals",
+          "parent_id": "ced078c8665643088cf330748e87845f",
+          "origin": "self_adaptive_m_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "389d0ab9da4e4f55bbfaca7c08a92ea4",
+          "category_name": "terrestrial survival",
+          "description": "strategies for surviving in land-based ecosystems",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "wildlife",
+          "parent_id": "735e30e54ee14029a06a4e2d96250a4b",
+          "origin": "self_adaptive_l_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "8d19098e404549d1b01bfbadc179a817",
+          "category_name": "coastal features",
+          "description": "features along the edges of landmasses and water bodies",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "geography",
+          "parent_id": "27454d7afea14b8f9d9c983e56f54094",
+          "origin": "self_adaptive_s_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "0e14995c4ee6448f8034624fa05344f8",
+          "category_name": "textile materials",
+          "description": "materials used in fabric production",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "foods",
+          "parent_id": "1e32ffb943a7411ca85d5092aba867eb",
+          "origin": "self_adaptive_l_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "7c189d545e0243d1ba2790d908d732ea",
+          "category_name": "celestial phenomena",
+          "description": "celestial events and objects",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "weather",
+          "parent_id": "92788dcfb6b2425a938f0496ccc06c48",
+          "origin": "self_adaptive_ml_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        }
+      ],
+      "best_word": "beach",
+      "best_rank": 16,
+      "total_guesses": 150
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:03:48",
+    "details": {
+      "word": "shorebird",
+      "rank": 230,
+      "hypothesis": "coastal animals",
+      "best_word": "beach",
+      "best_rank": 16,
+      "total_guesses": 151
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:03:48",
+    "details": {
+      "word": "seabird",
+      "rank": 10,
+      "hypothesis": "coastal animals",
+      "best_word": "seabird",
+      "best_rank": 10,
+      "total_guesses": 152
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:03:48",
+    "details": {
+      "word": "fish",
+      "rank": 138,
+      "hypothesis": "coastal animals",
+      "best_word": "seabird",
+      "best_rank": 10,
+      "total_guesses": 152
+    }
+  },
+  {
+    "generation": 2,
+    "event": "CROSSOVER",
+    "timestamp": "2026-07-23T03:03:48",
+    "details": {
+      "parents": [
+        "coastal features",
+        "animals"
+      ],
+      "parent_ids": [
+        "8d19098e404549d1b01bfbadc179a817",
+        "ced078c8665643088cf330748e87845f"
+      ],
+      "parent_ranks": [
+        16,
+        17
+      ],
+      "parent_a_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "parent_b_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma_pre_perturbation": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child": {
+        "hypothesis_id": "77326017873047c092aeb40f83323322",
+        "category_name": "coastal animals",
+        "description": "animals found in coastal areas",
+        "words_tried": {
+          "seabird": 10,
+          "fish": 138,
+          "shorebird": 230
+        },
+        "best_word": "seabird",
+        "best_rank": 10,
+        "status": "active",
+        "parent": "coastal features+animals",
+        "parent_id": null,
+        "origin": "crossover",
+        "sigma": [
+          0.25,
+          0.25,
+          0.25,
+          0.25
+        ]
+      },
+      "best_word": "seabird",
+      "best_rank": 10,
+      "total_guesses": 152
+    }
+  },
+  {
+    "generation": 2,
+    "event": "DEDUPLICATE",
+    "timestamp": "2026-07-23T03:03:48",
+    "details": {
+      "merged": [
+        {
+          "survivor": "coastal animals",
+          "discarded": "animals",
+          "survivor_best_rank": 10,
+          "discarded_best_rank": 17
+        },
+        {
+          "survivor": "celestial phenomena",
+          "discarded": "celestial phenomena",
+          "survivor_best_rank": 2615,
+          "discarded_best_rank": 4351
+        }
+      ],
+      "remaining_hypotheses": 24,
+      "active_hypotheses": 10,
+      "best_word": "seabird",
+      "best_rank": 10,
+      "total_guesses": 152
+    }
+  },
+  {
+    "generation": 2,
+    "event": "SIGMA_TRAJECTORY",
+    "timestamp": "2026-07-23T03:03:48",
+    "details": {
+      "mean_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "population_size": 10
+    }
+  },
+  {
+    "generation": 3,
+    "event": "CANDIDATES",
+    "timestamp": "2026-07-23T03:06:24",
+    "details": {
+      "count": 28,
+      "candidates": [
+        {
+          "hypothesis": "coastal animals",
+          "word": "crab"
+        },
+        {
+          "hypothesis": "coastal animals",
+          "word": "seal"
+        },
+        {
+          "hypothesis": "coastal animals",
+          "word": "otter"
+        },
+        {
+          "hypothesis": "coastal features",
+          "word": "reef"
+        },
+        {
+          "hypothesis": "coastal features",
+          "word": "lagoon"
+        },
+        {
+          "hypothesis": "coastal features",
+          "word": "mangrove"
+        },
+        {
+          "hypothesis": "wildlife",
+          "word": "lynx"
+        },
+        {
+          "hypothesis": "geography",
+          "word": "desert"
+        },
+        {
+          "hypothesis": "geography",
+          "word": "plateau"
+        },
+        {
+          "hypothesis": "geography",
+          "word": "peninsula"
+        },
+        {
+          "hypothesis": "foods",
+          "word": "mushroom"
+        },
+        {
+          "hypothesis": "foods",
+          "word": "grape"
+        },
+        {
+          "hypothesis": "foods",
+          "word": "corn"
+        },
+        {
+          "hypothesis": "weather",
+          "word": "fog"
+        },
+        {
+          "hypothesis": "weather",
+          "word": "hail"
+        },
+        {
+          "hypothesis": "weather",
+          "word": "blizzard"
+        },
+        {
+          "hypothesis": "domestication",
+          "word": "raise"
+        },
+        {
+          "hypothesis": "domestication",
+          "word": "keep"
+        },
+        {
+          "hypothesis": "domestication",
+          "word": "tend"
+        },
+        {
+          "hypothesis": "terrestrial survival",
+          "word": "resilience"
+        },
+        {
+          "hypothesis": "terrestrial survival",
+          "word": "tenacity"
+        },
+        {
+          "hypothesis": "terrestrial survival",
+          "word": "hardiness"
+        },
+        {
+          "hypothesis": "celestial phenomena",
+          "word": "constellation"
+        },
+        {
+          "hypothesis": "celestial phenomena",
+          "word": "meteor"
+        },
+        {
+          "hypothesis": "celestial phenomena",
+          "word": "nebula"
+        },
+        {
+          "hypothesis": "textile materials",
+          "word": "cloth"
+        },
+        {
+          "hypothesis": "textile materials",
+          "word": "yarn"
+        },
+        {
+          "hypothesis": "textile materials",
+          "word": "thread"
+        }
+      ]
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:06:24",
+    "details": {
+      "word": "crab",
+      "rank": 78,
+      "hypothesis": "coastal animals",
+      "best_word": "seabird",
+      "best_rank": 10,
+      "total_guesses": 153
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:06:24",
+    "details": {
+      "word": "seal",
+      "rank": 7,
+      "hypothesis": "coastal animals",
+      "best_word": "seal",
+      "best_rank": 7,
+      "total_guesses": 154
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:06:24",
+    "details": {
+      "word": "otter",
+      "rank": 3,
+      "hypothesis": "coastal animals",
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 155
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:06:24",
+    "details": {
+      "word": "reef",
+      "rank": 183,
+      "hypothesis": "coastal features",
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 156
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:06:24",
+    "details": {
+      "word": "lagoon",
+      "rank": 792,
+      "hypothesis": "coastal features",
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 157
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:06:24",
+    "details": {
+      "word": "mangrove",
+      "rank": 429,
+      "hypothesis": "coastal features",
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 158
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:06:24",
+    "details": {
+      "word": "lynx",
+      "rank": 404,
+      "hypothesis": "wildlife",
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 159
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:06:24",
+    "details": {
+      "word": "desert",
+      "rank": 10677,
+      "hypothesis": "geography",
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 160
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:06:24",
+    "details": {
+      "word": "plateau",
+      "rank": 11399,
+      "hypothesis": "geography",
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 161
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:06:24",
+    "details": {
+      "word": "peninsula",
+      "rank": 6067,
+      "hypothesis": "geography",
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 162
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:06:28",
+    "details": {
+      "word": "mushroom",
+      "rank": 5663,
+      "hypothesis": "foods",
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 163
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:06:28",
+    "details": {
+      "word": "grape",
+      "rank": 21309,
+      "hypothesis": "foods",
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 164
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:06:28",
+    "details": {
+      "word": "corn",
+      "rank": 5469,
+      "hypothesis": "foods",
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 165
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:06:28",
+    "details": {
+      "word": "fog",
+      "rank": 18119,
+      "hypothesis": "weather",
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 166
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:06:28",
+    "details": {
+      "word": "hail",
+      "rank": 31708,
+      "hypothesis": "weather",
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 167
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:06:28",
+    "details": {
+      "word": "blizzard",
+      "rank": 998,
+      "hypothesis": "weather",
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 168
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:06:28",
+    "details": {
+      "word": "raise",
+      "rank": 21791,
+      "hypothesis": "domestication",
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 169
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:06:29",
+    "details": {
+      "word": "keep",
+      "rank": 20902,
+      "hypothesis": "domestication",
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 170
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:06:29",
+    "details": {
+      "word": "tend",
+      "rank": 26045,
+      "hypothesis": "domestication",
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 171
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:06:29",
+    "details": {
+      "word": "resilience",
+      "rank": 18165,
+      "hypothesis": "terrestrial survival",
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 172
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:06:30",
+    "details": {
+      "word": "tenacity",
+      "rank": 47333,
+      "hypothesis": "terrestrial survival",
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 173
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:06:30",
+    "details": {
+      "word": "hardiness",
+      "rank": 47010,
+      "hypothesis": "terrestrial survival",
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 174
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:06:30",
+    "details": {
+      "word": "constellation",
+      "rank": 4117,
+      "hypothesis": "celestial phenomena",
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 175
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:06:30",
+    "details": {
+      "word": "meteor",
+      "rank": 2124,
+      "hypothesis": "celestial phenomena",
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 176
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:06:30",
+    "details": {
+      "word": "nebula",
+      "rank": 6983,
+      "hypothesis": "celestial phenomena",
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 177
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:06:30",
+    "details": {
+      "word": "cloth",
+      "rank": 35410,
+      "hypothesis": "textile materials",
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 178
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:06:31",
+    "details": {
+      "word": "yarn",
+      "rank": 39844,
+      "hypothesis": "textile materials",
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 179
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:06:32",
+    "details": {
+      "word": "thread",
+      "rank": 15932,
+      "hypothesis": "textile materials",
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 180
+    }
+  },
+  {
+    "generation": 3,
+    "event": "SELECT",
+    "timestamp": "2026-07-23T03:06:32",
+    "details": {
+      "kept": [
+        "coastal animals",
+        "coastal features",
+        "wildlife",
+        "geography",
+        "foods"
+      ],
+      "discarded": [
+        "weather",
+        "domestication",
+        "tropical fruits",
+        "instruments",
+        "celestial phenomena",
+        "nautical terms",
+        "emotions",
+        "terrestrial survival",
+        "colors",
+        "transportation",
+        "clothing",
+        "shapes",
+        "professions",
+        "time",
+        "biological structures",
+        "textile materials",
+        "sports",
+        "human-modified landscapes",
+        "technology"
+      ],
+      "elite": "coastal animals",
+      "max_active_hypotheses": 5,
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 180
+    }
+  },
+  {
+    "generation": 3,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-23T03:07:10",
+    "details": {
+      "parent_id": "77326017873047c092aeb40f83323322",
+      "child_id": "7b9087e023a8479898c62c858b17e7a7",
+      "parent_rank": 3,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "navigation",
+      "sampled_op": "l_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:07:10",
+    "details": {
+      "word": "navigation",
+      "rank": 64150,
+      "hypothesis": "navigation",
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 181
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:07:14",
+    "details": {
+      "word": "lighthouse",
+      "rank": 1713,
+      "hypothesis": "navigation",
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 182
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:07:15",
+    "details": {
+      "word": "sailor",
+      "rank": 1291,
+      "hypothesis": "navigation",
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 183
+    }
+  },
+  {
+    "generation": 3,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-23T03:07:55",
+    "details": {
+      "parent_id": "8d19098e404549d1b01bfbadc179a817",
+      "child_id": "8c51087d315d405eb28f782314a1fb8e",
+      "parent_rank": 16,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "materials on beaches",
+      "sampled_op": "m_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:07:55",
+    "details": {
+      "word": "sand",
+      "rank": 2525,
+      "hypothesis": "materials on beaches",
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 184
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:07:55",
+    "details": {
+      "word": "shell",
+      "rank": 445,
+      "hypothesis": "materials on beaches",
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 185
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:07:58",
+    "details": {
+      "word": "pebble",
+      "rank": 4163,
+      "hypothesis": "materials on beaches",
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 186
+    }
+  },
+  {
+    "generation": 3,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-23T03:08:11",
+    "details": {
+      "parent_id": "735e30e54ee14029a06a4e2d96250a4b",
+      "child_id": "028546b2efd448ac93f4bbecdec56d66",
+      "parent_rank": 52,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "cultural symbols",
+      "sampled_op": "m_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:08:11",
+    "details": {
+      "word": "symbol",
+      "rank": 35503,
+      "hypothesis": "cultural symbols",
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 187
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:08:11",
+    "details": {
+      "word": "myth",
+      "rank": 14567,
+      "hypothesis": "cultural symbols",
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 188
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:08:15",
+    "details": {
+      "word": "fable",
+      "rank": 51440,
+      "hypothesis": "cultural symbols",
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 189
+    }
+  },
+  {
+    "generation": 3,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-23T03:08:25",
+    "details": {
+      "parent_id": "27454d7afea14b8f9d9c983e56f54094",
+      "child_id": "0cda598ba5e94f89b1bd38d1783eece9",
+      "parent_rank": 488,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "cultural connections",
+      "sampled_op": "l_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:08:25",
+    "details": {
+      "word": "trade",
+      "rank": 28256,
+      "hypothesis": "cultural connections",
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 190
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:08:29",
+    "details": {
+      "word": "language",
+      "rank": 20728,
+      "hypothesis": "cultural connections",
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 191
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:08:30",
+    "details": {
+      "word": "story",
+      "rank": 25389,
+      "hypothesis": "cultural connections",
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 192
+    }
+  },
+  {
+    "generation": 3,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-23T03:08:44",
+    "details": {
+      "parent_id": "1e32ffb943a7411ca85d5092aba867eb",
+      "child_id": "afc20bfb862c4d00ad5ebd2d75f6c98e",
+      "parent_rank": 772,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "tools and instruments",
+      "sampled_op": "l_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:08:44",
+    "details": {
+      "word": "tool",
+      "rank": 25832,
+      "hypothesis": "tools and instruments",
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 193
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:08:45",
+    "details": {
+      "word": "invention",
+      "rank": 51840,
+      "hypothesis": "tools and instruments",
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 194
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:08:45",
+    "details": {
+      "word": "device",
+      "rank": 56618,
+      "hypothesis": "tools and instruments",
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 195
+    }
+  },
+  {
+    "generation": 3,
+    "event": "MUTATE",
+    "timestamp": "2026-07-23T03:08:45",
+    "details": {
+      "method": "self_adaptive",
+      "children": [
+        {
+          "hypothesis_id": "7b9087e023a8479898c62c858b17e7a7",
+          "category_name": "navigation",
+          "description": "human activities related to sea travel",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "coastal animals",
+          "parent_id": "77326017873047c092aeb40f83323322",
+          "origin": "self_adaptive_l_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "8c51087d315d405eb28f782314a1fb8e",
+          "category_name": "materials on beaches",
+          "description": "substances and objects commonly found on beach environments",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "coastal features",
+          "parent_id": "8d19098e404549d1b01bfbadc179a817",
+          "origin": "self_adaptive_m_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "028546b2efd448ac93f4bbecdec56d66",
+          "category_name": "cultural symbols",
+          "description": "cultural and symbolic representations",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "wildlife",
+          "parent_id": "735e30e54ee14029a06a4e2d96250a4b",
+          "origin": "self_adaptive_m_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "0cda598ba5e94f89b1bd38d1783eece9",
+          "category_name": "cultural connections",
+          "description": "human interactions and narratives",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "geography",
+          "parent_id": "27454d7afea14b8f9d9c983e56f54094",
+          "origin": "self_adaptive_l_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "afc20bfb862c4d00ad5ebd2d75f6c98e",
+          "category_name": "tools and instruments",
+          "description": "objects used for specific tasks",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "foods",
+          "parent_id": "1e32ffb943a7411ca85d5092aba867eb",
+          "origin": "self_adaptive_l_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        }
+      ],
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 195
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:08:59",
+    "details": {
+      "word": "habitat",
+      "rank": 238,
+      "hypothesis": "coastal habitats",
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 196
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:08:59",
+    "details": {
+      "word": "shore",
+      "rank": 1297,
+      "hypothesis": "coastal habitats",
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 196
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:08:59",
+    "details": {
+      "word": "reef",
+      "rank": 183,
+      "hypothesis": "coastal habitats",
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 196
+    }
+  },
+  {
+    "generation": 3,
+    "event": "CROSSOVER",
+    "timestamp": "2026-07-23T03:08:59",
+    "details": {
+      "parents": [
+        "coastal animals",
+        "coastal features"
+      ],
+      "parent_ids": [
+        "77326017873047c092aeb40f83323322",
+        "8d19098e404549d1b01bfbadc179a817"
+      ],
+      "parent_ranks": [
+        3,
+        16
+      ],
+      "parent_a_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "parent_b_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma_pre_perturbation": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child": {
+        "hypothesis_id": "812cd1affd7443628ee9e232994577ce",
+        "category_name": "coastal habitats",
+        "description": "areas where coastal animals and features intersect",
+        "words_tried": {
+          "reef": 183,
+          "habitat": 238,
+          "shore": 1297
+        },
+        "best_word": "reef",
+        "best_rank": 183,
+        "status": "active",
+        "parent": "coastal animals+coastal features",
+        "parent_id": null,
+        "origin": "crossover",
+        "sigma": [
+          0.25,
+          0.25,
+          0.25,
+          0.25
+        ]
+      },
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 196
+    }
+  },
+  {
+    "generation": 3,
+    "event": "DEDUPLICATE",
+    "timestamp": "2026-07-23T03:08:59",
+    "details": {
+      "merged": [
+        {
+          "survivor": "coastal features",
+          "discarded": "coastal habitats",
+          "survivor_best_rank": 16,
+          "discarded_best_rank": 183
+        },
+        {
+          "survivor": "instruments",
+          "discarded": "tools and instruments",
+          "survivor_best_rank": 1927,
+          "discarded_best_rank": 25832
+        }
+      ],
+      "remaining_hypotheses": 28,
+      "active_hypotheses": 10,
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 196
+    }
+  },
+  {
+    "generation": 3,
+    "event": "SIGMA_TRAJECTORY",
+    "timestamp": "2026-07-23T03:08:59",
+    "details": {
+      "mean_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "population_size": 10
+    }
+  },
+  {
+    "generation": 4,
+    "event": "CANDIDATES",
+    "timestamp": "2026-07-23T03:11:25",
+    "details": {
+      "count": 28,
+      "candidates": [
+        {
+          "hypothesis": "coastal animals",
+          "word": "heron"
+        },
+        {
+          "hypothesis": "coastal animals",
+          "word": "dolphin"
+        },
+        {
+          "hypothesis": "coastal animals",
+          "word": "lobster"
+        },
+        {
+          "hypothesis": "coastal features",
+          "word": "bay"
+        },
+        {
+          "hypothesis": "coastal features",
+          "word": "cliff"
+        },
+        {
+          "hypothesis": "coastal features",
+          "word": "harbor"
+        },
+        {
+          "hypothesis": "wildlife",
+          "word": "badger"
+        },
+        {
+          "hypothesis": "wildlife",
+          "word": "marten"
+        },
+        {
+          "hypothesis": "wildlife",
+          "word": "hare"
+        },
+        {
+          "hypothesis": "materials on beaches",
+          "word": "driftwood"
+        },
+        {
+          "hypothesis": "materials on beaches",
+          "word": "seaweed"
+        },
+        {
+          "hypothesis": "materials on beaches",
+          "word": "coral"
+        },
+        {
+          "hypothesis": "geography",
+          "word": "glacier"
+        },
+        {
+          "hypothesis": "geography",
+          "word": "ridge"
+        },
+        {
+          "hypothesis": "foods",
+          "word": "milk"
+        },
+        {
+          "hypothesis": "foods",
+          "word": "nut"
+        },
+        {
+          "hypothesis": "foods",
+          "word": "olive"
+        },
+        {
+          "hypothesis": "navigation",
+          "word": "voyage"
+        },
+        {
+          "hypothesis": "navigation",
+          "word": "tide"
+        },
+        {
+          "hypothesis": "instruments",
+          "word": "harp"
+        },
+        {
+          "hypothesis": "instruments",
+          "word": "cello"
+        },
+        {
+          "hypothesis": "instruments",
+          "word": "lute"
+        },
+        {
+          "hypothesis": "cultural symbols",
+          "word": "icon"
+        },
+        {
+          "hypothesis": "cultural symbols",
+          "word": "emblem"
+        },
+        {
+          "hypothesis": "cultural symbols",
+          "word": "totem"
+        },
+        {
+          "hypothesis": "cultural connections",
+          "word": "dialogue"
+        },
+        {
+          "hypothesis": "cultural connections",
+          "word": "exchange"
+        },
+        {
+          "hypothesis": "cultural connections",
+          "word": "community"
+        }
+      ]
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:11:26",
+    "details": {
+      "word": "heron",
+      "rank": 125,
+      "hypothesis": "coastal animals",
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 197
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:11:26",
+    "details": {
+      "word": "dolphin",
+      "rank": 27,
+      "hypothesis": "coastal animals",
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 198
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:11:26",
+    "details": {
+      "word": "lobster",
+      "rank": 136,
+      "hypothesis": "coastal animals",
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 199
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:11:26",
+    "details": {
+      "word": "bay",
+      "rank": 1039,
+      "hypothesis": "coastal features",
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 200
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:11:26",
+    "details": {
+      "word": "cliff",
+      "rank": 4137,
+      "hypothesis": "coastal features",
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 201
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:11:26",
+    "details": {
+      "word": "harbor",
+      "rank": 13769,
+      "hypothesis": "coastal features",
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 202
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:11:26",
+    "details": {
+      "word": "badger",
+      "rank": 1121,
+      "hypothesis": "wildlife",
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 203
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:11:27",
+    "details": {
+      "word": "marten",
+      "rank": 2169,
+      "hypothesis": "wildlife",
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 204
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:11:27",
+    "details": {
+      "word": "hare",
+      "rank": 96,
+      "hypothesis": "wildlife",
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 205
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:11:27",
+    "details": {
+      "word": "driftwood",
+      "rank": 7458,
+      "hypothesis": "materials on beaches",
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 206
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:11:27",
+    "details": {
+      "word": "seaweed",
+      "rank": 612,
+      "hypothesis": "materials on beaches",
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 207
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:11:27",
+    "details": {
+      "word": "coral",
+      "rank": 261,
+      "hypothesis": "materials on beaches",
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 208
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:11:27",
+    "details": {
+      "word": "glacier",
+      "rank": 51,
+      "hypothesis": "geography",
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 209
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:11:27",
+    "details": {
+      "word": "ridge",
+      "rank": 1169,
+      "hypothesis": "geography",
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 210
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:11:27",
+    "details": {
+      "word": "milk",
+      "rank": 2187,
+      "hypothesis": "foods",
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 211
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:11:28",
+    "details": {
+      "word": "nut",
+      "rank": 8304,
+      "hypothesis": "foods",
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 212
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:11:29",
+    "details": {
+      "word": "olive",
+      "rank": 21415,
+      "hypothesis": "foods",
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 213
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:11:30",
+    "details": {
+      "word": "voyage",
+      "rank": 2818,
+      "hypothesis": "navigation",
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 214
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:11:30",
+    "details": {
+      "word": "tide",
+      "rank": 2060,
+      "hypothesis": "navigation",
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 215
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:11:31",
+    "details": {
+      "word": "harp",
+      "rank": 6164,
+      "hypothesis": "instruments",
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 216
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:11:31",
+    "details": {
+      "word": "cello",
+      "rank": 19323,
+      "hypothesis": "instruments",
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 217
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:11:32",
+    "details": {
+      "word": "lute",
+      "rank": 6886,
+      "hypothesis": "instruments",
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 218
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:11:32",
+    "details": {
+      "word": "icon",
+      "rank": 23298,
+      "hypothesis": "cultural symbols",
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 219
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:11:32",
+    "details": {
+      "word": "emblem",
+      "rank": 3980,
+      "hypothesis": "cultural symbols",
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 220
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:11:32",
+    "details": {
+      "word": "totem",
+      "rank": 493,
+      "hypothesis": "cultural symbols",
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 221
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:11:33",
+    "details": {
+      "word": "dialogue",
+      "rank": 37188,
+      "hypothesis": "cultural connections",
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 222
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:11:34",
+    "details": {
+      "word": "exchange",
+      "rank": 61434,
+      "hypothesis": "cultural connections",
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 223
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:11:34",
+    "details": {
+      "word": "community",
+      "rank": 52468,
+      "hypothesis": "cultural connections",
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 224
+    }
+  },
+  {
+    "generation": 4,
+    "event": "SELECT",
+    "timestamp": "2026-07-23T03:11:34",
+    "details": {
+      "kept": [
+        "coastal animals",
+        "coastal features",
+        "geography",
+        "wildlife",
+        "materials on beaches"
+      ],
+      "discarded": [
+        "cultural symbols",
+        "foods",
+        "weather",
+        "navigation",
+        "domestication",
+        "tropical fruits",
+        "instruments",
+        "celestial phenomena",
+        "nautical terms",
+        "emotions",
+        "terrestrial survival",
+        "colors",
+        "transportation",
+        "clothing",
+        "shapes",
+        "professions",
+        "time",
+        "biological structures",
+        "textile materials",
+        "sports",
+        "cultural connections",
+        "human-modified landscapes",
+        "technology"
+      ],
+      "elite": "coastal animals",
+      "max_active_hypotheses": 5,
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 224
+    }
+  },
+  {
+    "generation": 4,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-23T03:12:19",
+    "details": {
+      "parent_id": "77326017873047c092aeb40f83323322",
+      "child_id": "a79abf8b81f441eb8e4abd3b52143e96",
+      "parent_rank": 3,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "aquatic swimmers",
+      "sampled_op": "m_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:12:19",
+    "details": {
+      "word": "swim",
+      "rank": 374,
+      "hypothesis": "aquatic swimmers",
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 225
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:12:19",
+    "details": {
+      "word": "aquatic",
+      "rank": 1159,
+      "hypothesis": "aquatic swimmers",
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 226
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:12:19",
+    "details": {
+      "word": "water",
+      "rank": 536,
+      "hypothesis": "aquatic swimmers",
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 227
+    }
+  },
+  {
+    "generation": 4,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-23T03:12:42",
+    "details": {
+      "parent_id": "8d19098e404549d1b01bfbadc179a817",
+      "child_id": "032db4a1b7a84ecb98a921274d9d957a",
+      "parent_rank": 16,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "coastal infrastructure",
+      "sampled_op": "l_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:12:43",
+    "details": {
+      "word": "canal",
+      "rank": 7497,
+      "hypothesis": "coastal infrastructure",
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 228
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:12:43",
+    "details": {
+      "word": "bridge",
+      "rank": 21417,
+      "hypothesis": "coastal infrastructure",
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 229
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:12:43",
+    "details": {
+      "word": "tunnel",
+      "rank": 12031,
+      "hypothesis": "coastal infrastructure",
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 230
+    }
+  },
+  {
+    "generation": 4,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-23T03:12:53",
+    "details": {
+      "parent_id": "27454d7afea14b8f9d9c983e56f54094",
+      "child_id": "bb1b47bc110f41af9a83fe1b7ceccb84",
+      "parent_rank": 51,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "human history",
+      "sampled_op": "l_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:12:53",
+    "details": {
+      "word": "artifact",
+      "rank": 4063,
+      "hypothesis": "human history",
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 231
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:12:54",
+    "details": {
+      "word": "monument",
+      "rank": 41702,
+      "hypothesis": "human history",
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 232
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:12:55",
+    "details": {
+      "word": "record",
+      "rank": 4456,
+      "hypothesis": "human history",
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 233
+    }
+  },
+  {
+    "generation": 4,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-23T03:12:59",
+    "details": {
+      "parent_id": "735e30e54ee14029a06a4e2d96250a4b",
+      "child_id": "568e6e72921e46f1ba2b46f3f95efd6d",
+      "parent_rank": 52,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "predators",
+      "sampled_op": "s_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:13:00",
+    "details": {
+      "word": "canine",
+      "rank": 468,
+      "hypothesis": "predators",
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 234
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:13:00",
+    "details": {
+      "word": "pack",
+      "rank": 20034,
+      "hypothesis": "predators",
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 235
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:13:00",
+    "details": {
+      "word": "hunt",
+      "rank": 197,
+      "hypothesis": "predators",
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 236
+    }
+  },
+  {
+    "generation": 4,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-23T03:13:19",
+    "details": {
+      "parent_id": "8c51087d315d405eb28f782314a1fb8e",
+      "child_id": "269335766a82445491135e9e328a2068",
+      "parent_rank": 261,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "marine organisms",
+      "sampled_op": "ml_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:13:19",
+    "details": {
+      "word": "algae",
+      "rank": 1899,
+      "hypothesis": "marine organisms",
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 237
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:13:23",
+    "details": {
+      "word": "anemone",
+      "rank": 153,
+      "hypothesis": "marine organisms",
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 238
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:13:24",
+    "details": {
+      "word": "jellyfish",
+      "rank": 88,
+      "hypothesis": "marine organisms",
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 239
+    }
+  },
+  {
+    "generation": 4,
+    "event": "MUTATE",
+    "timestamp": "2026-07-23T03:13:24",
+    "details": {
+      "method": "self_adaptive",
+      "children": [
+        {
+          "hypothesis_id": "a79abf8b81f441eb8e4abd3b52143e96",
+          "category_name": "aquatic swimmers",
+          "description": "animals that swim",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "coastal animals",
+          "parent_id": "77326017873047c092aeb40f83323322",
+          "origin": "self_adaptive_m_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "032db4a1b7a84ecb98a921274d9d957a",
+          "category_name": "coastal infrastructure",
+          "description": "structures related to transportation and connectivity along coasts",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "coastal features",
+          "parent_id": "8d19098e404549d1b01bfbadc179a817",
+          "origin": "self_adaptive_l_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "bb1b47bc110f41af9a83fe1b7ceccb84",
+          "category_name": "human history",
+          "description": "cultural and historical artifacts related to human activity",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "geography",
+          "parent_id": "27454d7afea14b8f9d9c983e56f54094",
+          "origin": "self_adaptive_l_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "568e6e72921e46f1ba2b46f3f95efd6d",
+          "category_name": "predators",
+          "description": "animals that hunt other animals",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "wildlife",
+          "parent_id": "735e30e54ee14029a06a4e2d96250a4b",
+          "origin": "self_adaptive_s_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "269335766a82445491135e9e328a2068",
+          "category_name": "marine organisms",
+          "description": "living things found in coastal and oceanic environments",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "materials on beaches",
+          "parent_id": "8c51087d315d405eb28f782314a1fb8e",
+          "origin": "self_adaptive_ml_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        }
+      ],
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 239
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:13:35",
+    "details": {
+      "word": "shore",
+      "rank": 1297,
+      "hypothesis": "coastal habitats",
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 239
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:13:35",
+    "details": {
+      "word": "reef",
+      "rank": 183,
+      "hypothesis": "coastal habitats",
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 239
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:13:35",
+    "details": {
+      "word": "estuary",
+      "rank": 723,
+      "hypothesis": "coastal habitats",
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 239
+    }
+  },
+  {
+    "generation": 4,
+    "event": "CROSSOVER",
+    "timestamp": "2026-07-23T03:13:35",
+    "details": {
+      "parents": [
+        "coastal animals",
+        "coastal features"
+      ],
+      "parent_ids": [
+        "77326017873047c092aeb40f83323322",
+        "8d19098e404549d1b01bfbadc179a817"
+      ],
+      "parent_ranks": [
+        3,
+        16
+      ],
+      "parent_a_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "parent_b_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma_pre_perturbation": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child": {
+        "hypothesis_id": "1dc606eab87f4946accf0464931837ad",
+        "category_name": "coastal habitats",
+        "description": "features supporting coastal wildlife",
+        "words_tried": {
+          "reef": 183,
+          "estuary": 723,
+          "shore": 1297
+        },
+        "best_word": "reef",
+        "best_rank": 183,
+        "status": "active",
+        "parent": "coastal animals+coastal features",
+        "parent_id": null,
+        "origin": "crossover",
+        "sigma": [
+          0.25,
+          0.25,
+          0.25,
+          0.25
+        ]
+      },
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 239
+    }
+  },
+  {
+    "generation": 4,
+    "event": "DEDUPLICATE",
+    "timestamp": "2026-07-23T03:13:35",
+    "details": {
+      "merged": [
+        {
+          "survivor": "coastal features",
+          "discarded": "coastal habitats",
+          "survivor_best_rank": 16,
+          "discarded_best_rank": 183
+        }
+      ],
+      "remaining_hypotheses": 33,
+      "active_hypotheses": 10,
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 239
+    }
+  },
+  {
+    "generation": 4,
+    "event": "SIGMA_TRAJECTORY",
+    "timestamp": "2026-07-23T03:13:35",
+    "details": {
+      "mean_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "population_size": 10
+    }
+  },
+  {
+    "generation": 5,
+    "event": "CANDIDATES",
+    "timestamp": "2026-07-23T03:17:10",
+    "details": {
+      "count": 26,
+      "candidates": [
+        {
+          "hypothesis": "coastal animals",
+          "word": "walrus"
+        },
+        {
+          "hypothesis": "coastal animals",
+          "word": "manatee"
+        },
+        {
+          "hypothesis": "coastal animals",
+          "word": "seagull"
+        },
+        {
+          "hypothesis": "coastal features",
+          "word": "inlet"
+        },
+        {
+          "hypothesis": "coastal features",
+          "word": "cove"
+        },
+        {
+          "hypothesis": "coastal features",
+          "word": "dune"
+        },
+        {
+          "hypothesis": "geography",
+          "word": "basin"
+        },
+        {
+          "hypothesis": "geography",
+          "word": "isthmus"
+        },
+        {
+          "hypothesis": "wildlife",
+          "word": "beaver"
+        },
+        {
+          "hypothesis": "wildlife",
+          "word": "coyote"
+        },
+        {
+          "hypothesis": "wildlife",
+          "word": "mink"
+        },
+        {
+          "hypothesis": "marine organisms",
+          "word": "whale"
+        },
+        {
+          "hypothesis": "marine organisms",
+          "word": "shark"
+        },
+        {
+          "hypothesis": "marine organisms",
+          "word": "mussel"
+        },
+        {
+          "hypothesis": "predators",
+          "word": "lion"
+        },
+        {
+          "hypothesis": "predators",
+          "word": "eagle"
+        },
+        {
+          "hypothesis": "materials on beaches",
+          "word": "grit"
+        },
+        {
+          "hypothesis": "materials on beaches",
+          "word": "silt"
+        },
+        {
+          "hypothesis": "materials on beaches",
+          "word": "glass"
+        },
+        {
+          "hypothesis": "aquatic swimmers",
+          "word": "turtle"
+        },
+        {
+          "hypothesis": "human history",
+          "word": "relic"
+        },
+        {
+          "hypothesis": "human history",
+          "word": "scroll"
+        },
+        {
+          "hypothesis": "human history",
+          "word": "vase"
+        },
+        {
+          "hypothesis": "coastal infrastructure",
+          "word": "quay"
+        },
+        {
+          "hypothesis": "coastal infrastructure",
+          "word": "wharf"
+        },
+        {
+          "hypothesis": "coastal infrastructure",
+          "word": "causeway"
+        }
+      ]
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T03:17:10",
+    "details": {
+      "word": "walrus",
+      "rank": 1,
+      "hypothesis": "coastal animals",
+      "best_word": "walrus",
+      "best_rank": 1,
+      "total_guesses": 240
+    }
+  },
+  {
+    "generation": 5,
+    "event": "SOLVED",
+    "timestamp": "2026-07-23T03:17:10",
+    "details": {
+      "answer": "walrus",
+      "rank": 1,
+      "total_guesses": 240
+    }
+  },
+  {
+    "generation": 5,
+    "event": "NETWORK_METRICS",
+    "timestamp": "2026-07-23T03:17:10",
+    "details": {
+      "network_calls": 71,
+      "network_wall_clock_seconds": 1283.2909,
+      "total_latency_seconds": 56.0998,
+      "mean_latency_seconds": 0.7901,
+      "median_latency_seconds": 0.2726,
+      "p95_latency_seconds": 3.2736,
+      "max_latency_seconds": 3.2756,
+      "status_counts": {
+        "200": 71
+      },
+      "outcome_counts": {
+        "ok": 71
+      }
+    }
+  }
+]

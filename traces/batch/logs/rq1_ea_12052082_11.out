@@ -1,0 +1,134 @@
+===== JOB INFORMATION =====
+Date: Wed Jul 22 20:14:18 EDT 2026
+Host: frnt190.frontenac.local
+Job ID: 12052352
+Array task: 11
+Arm: A3
+Game: 1319
+Python: /global/home/hpc6237/venvs/contexto/bin/python
+OLLAMA_HOST: 127.0.0.1:32352
+OLLAMA_BASE_URL: http://127.0.0.1:32352/v1
+RANK_CACHE_DIR: data/rank_cache_A3
+Command: python -m contexto_solver.experiment --game api --method ea_llm_self_adaptive --provider ollama --ollama-model qwen3:14b --game-numbers 1319 --runs-per-target 5 --random-seed 0 --max-generations 50 --output traces/rq1_A3/A3_ea_llm_self_adaptive_game1319.json
+Python 3.11.5
+Wed Jul 22 20:14:18 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 580.167.08             Driver Version: 580.167.08     CUDA Version: 13.0     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100-SXM4-40GB          On  |   00000000:07:00.0 Off |                    0 |
+| N/A   50C    P0            319W /  400W |   16051MiB /  40960MiB |     97%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   1  NVIDIA A100-SXM4-40GB          On  |   00000000:0F:00.0 Off |                    0 |
+| N/A   53C    P0            300W /  400W |   15691MiB /  40960MiB |    100%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   2  NVIDIA A100-SXM4-40GB          On  |   00000000:47:00.0 Off |                    0 |
+| N/A   58C    P0            318W /  400W |   15691MiB /  40960MiB |    100%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   3  NVIDIA A100-SXM4-40GB          On  |   00000000:4E:00.0 Off |                    0 |
+| N/A   56C    P0            318W /  400W |    2343MiB /  40960MiB |     98%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   4  NVIDIA A100-SXM4-40GB          On  |   00000000:87:00.0 Off |                    0 |
+| N/A   64C    P0            322W /  400W |   16051MiB /  40960MiB |     97%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   5  NVIDIA A100-SXM4-40GB          On  |   00000000:90:00.0 Off |                    0 |
+| N/A   46C    P0             69W /  400W |       0MiB /  40960MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   6  NVIDIA A100-SXM4-40GB          On  |   00000000:B7:00.0 Off |                    0 |
+| N/A   66C    P0            344W /  400W |   16051MiB /  40960MiB |     97%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   7  NVIDIA A100-SXM4-40GB          On  |   00000000:BD:00.0 Off |                    0 |
+| N/A   42C    P0             79W /  400W |   38917MiB /  40960MiB |     48%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|    0   N/A  N/A          222807      C   ...local/lib/ollama/llama-server      16042MiB |
+|    1   N/A  N/A          111239      C   python                                15682MiB |
+|    2   N/A  N/A          158153      C   python                                15682MiB |
+|    3   N/A  N/A          644852      C   python                                 2334MiB |
+|    4   N/A  N/A          537555      C   ...local/lib/ollama/llama-server      16042MiB |
+|    6   N/A  N/A          169237      C   ...local/lib/ollama/llama-server      16042MiB |
+|    7   N/A  N/A         3657173      C   ...MelaniePINN_NS/env/bin/python      38908MiB |
++-----------------------------------------------------------------------------------------+
+===== START OLLAMA =====
+===== RUN EXPERIMENT =====
+Generation 0: best word=swim, best rank=374
+Generation 1: best word=ocean, best rank=275
+Generation 2: best word=beach, best rank=16
+Generation 3: best word=beach, best rank=16
+Generation 4: best word=beach, best rank=16
+Generation 5: best word=beach, best rank=16
+Generation 6: best word=beach, best rank=16
+Generation 7: best word=beach, best rank=16
+Generation 8: best word=beach, best rank=16
+Generation 9: best word=beach, best rank=16
+Generation 10: best word=beach, best rank=16
+Generation 11: best word=beach, best rank=16
+Generation 12: best word=beach, best rank=16
+Generation 13: best word=beach, best rank=16
+Generation 14: best word=beach, best rank=16
+Generation 15: best word=beach, best rank=16
+Generation 16: best word=beach, best rank=16
+Generation 17: best word=beach, best rank=16
+Generation 18: best word=beach, best rank=16
+Generation 19: best word=beach, best rank=16
+Generation 20: best word=beach, best rank=16
+Generation 21: best word=walrus, best rank=1
+Generation 0: best word=bird, best rank=182
+Generation 1: best word=lion, best rank=49
+Generation 2: best word=elephant, best rank=11
+Generation 3: best word=elephant, best rank=11
+Generation 4: best word=elephant, best rank=11
+Generation 5: best word=elephant, best rank=11
+Generation 6: best word=elephant, best rank=11
+Generation 7: best word=whale, best rank=2
+Generation 8: best word=whale, best rank=2
+Generation 9: best word=walrus, best rank=1
+Generation 0: best word=bird, best rank=182
+Generation 1: best word=fish, best rank=138
+Generation 2: best word=whale, best rank=2
+Generation 3: best word=whale, best rank=2
+Generation 4: best word=walrus, best rank=1
+Generation 0: best word=bird, best rank=182
+Generation 1: best word=lion, best rank=49
+Generation 2: best word=elephant, best rank=11
+Generation 3: best word=elephant, best rank=11
+Generation 4: best word=elephant, best rank=11
+Generation 5: best word=walrus, best rank=1
+Generation 0: best word=bird, best rank=182
+Generation 1: best word=fish, best rank=138
+Generation 2: best word=seabird, best rank=10
+Generation 3: best word=otter, best rank=3
+Generation 4: best word=otter, best rank=3
+Generation 5: best word=walrus, best rank=1
+Wrote JSON summary: traces/rq1_A3/A3_ea_llm_self_adaptive_game1319.json
+Wrote CSV summary: traces/rq1_A3/A3_ea_llm_self_adaptive_game1319.csv
+{
+  "total_runs": 5,
+  "solved_runs": 5,
+  "solve_rate": 1.0,
+  "average_guesses_solved": 346.6,
+  "average_best_rank": 1.0,
+  "average_generations": 8.8
+}
+===== FINISHED =====
+Arm: A3
+Game: 1319
+Exit status: 0
+Date: Thu Jul 23 03:17:10 EDT 2026
+Metadata: traces/rq1_A3/A3_game1319_ollama_metadata_job12052352.txt

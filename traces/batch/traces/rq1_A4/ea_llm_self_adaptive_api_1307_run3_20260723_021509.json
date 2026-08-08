@@ -1,0 +1,4085 @@
+[
+  {
+    "generation": -1,
+    "event": "RUN_CONFIG",
+    "timestamp": "2026-07-23T01:35:05",
+    "details": {
+      "game": "api",
+      "solver": "llm",
+      "method": "ea_llm_self_adaptive",
+      "mode": "api",
+      "target": null,
+      "game_number": 1307,
+      "run_index": 2,
+      "game_embedding_path": null,
+      "solver_embedding_path": null,
+      "embedding_backend": null,
+      "vocabulary_size": null,
+      "alignment": "api_unknown",
+      "trace_schema_version": 3,
+      "instrumentation_provenance_hash": "bd9f2858283673a2",
+      "self_report": true,
+      "rationale_inheritance": true,
+      "max_generations": 50,
+      "llm_provider": "ollama",
+      "llm_model": "gemma4:12b",
+      "llm_workers": 4,
+      "initial_categories": 15,
+      "max_active_hypotheses": null,
+      "local_search_rank_threshold": 100,
+      "self_adaptive_initial_categories": 15,
+      "self_adaptive_mu": 15,
+      "self_adaptive_concentration": 50.0,
+      "self_adaptive_sigma_floor": 0.02,
+      "self_adaptive_sigma_mode": "frozen_uniform",
+      "mapelites_grid_resolution": null,
+      "mapelites_mutations_per_gen": null,
+      "mapelites_crossovers_per_gen": null,
+      "mapelites_initial_categories": null,
+      "mapelites_concentration": null,
+      "mapelites_sigma_floor": null,
+      "mapelites_sigma_mode": null,
+      "mapelites_frozen_sigma": null,
+      "mapelites_ranked_context_k": null,
+      "rank_cache_enabled": true,
+      "enable_pivot": false,
+      "ea_llm_pivot_stall_no_improvement_generations": null,
+      "ea_llm_pivot_stall_close_rank_threshold": null,
+      "ea_llm_pivot_stall_close_generations_limit": null,
+      "ea_llm_pivot_max_attempts_per_run": null,
+      "ea_llm_pivot_candidate_words_per_operator": null,
+      "ea_llm_pivot_resolution_window": null,
+      "random_seed": 2
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:37:23",
+    "details": {
+      "word": "forest",
+      "rank": 13009,
+      "hypothesis": "nature",
+      "best_word": "forest",
+      "best_rank": 13009,
+      "total_guesses": 1
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:37:23",
+    "details": {
+      "word": "river",
+      "rank": 13240,
+      "hypothesis": "nature",
+      "best_word": "forest",
+      "best_rank": 13009,
+      "total_guesses": 2
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:37:23",
+    "details": {
+      "word": "mountain",
+      "rank": 11482,
+      "hypothesis": "nature",
+      "best_word": "mountain",
+      "best_rank": 11482,
+      "total_guesses": 3
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:37:24",
+    "details": {
+      "word": "apple",
+      "rank": 8375,
+      "hypothesis": "food",
+      "best_word": "apple",
+      "best_rank": 8375,
+      "total_guesses": 4
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:37:24",
+    "details": {
+      "word": "bread",
+      "rank": 9079,
+      "hypothesis": "food",
+      "best_word": "apple",
+      "best_rank": 8375,
+      "total_guesses": 5
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:37:25",
+    "details": {
+      "word": "coffee",
+      "rank": 5538,
+      "hypothesis": "food",
+      "best_word": "coffee",
+      "best_rank": 5538,
+      "total_guesses": 6
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:37:25",
+    "details": {
+      "word": "chair",
+      "rank": 11466,
+      "hypothesis": "furniture",
+      "best_word": "coffee",
+      "best_rank": 5538,
+      "total_guesses": 7
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:37:25",
+    "details": {
+      "word": "table",
+      "rank": 9498,
+      "hypothesis": "furniture",
+      "best_word": "coffee",
+      "best_rank": 5538,
+      "total_guesses": 8
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:37:25",
+    "details": {
+      "word": "lamp",
+      "rank": 40720,
+      "hypothesis": "furniture",
+      "best_word": "coffee",
+      "best_rank": 5538,
+      "total_guesses": 9
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:37:25",
+    "details": {
+      "word": "shirt",
+      "rank": 6206,
+      "hypothesis": "clothing",
+      "best_word": "coffee",
+      "best_rank": 5538,
+      "total_guesses": 10
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:37:25",
+    "details": {
+      "word": "dress",
+      "rank": 6264,
+      "hypothesis": "clothing",
+      "best_word": "coffee",
+      "best_rank": 5538,
+      "total_guesses": 11
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:37:25",
+    "details": {
+      "word": "coat",
+      "rank": 12136,
+      "hypothesis": "clothing",
+      "best_word": "coffee",
+      "best_rank": 5538,
+      "total_guesses": 12
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:37:25",
+    "details": {
+      "word": "phone",
+      "rank": 7529,
+      "hypothesis": "technology",
+      "best_word": "coffee",
+      "best_rank": 5538,
+      "total_guesses": 13
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:37:25",
+    "details": {
+      "word": "laptop",
+      "rank": 9904,
+      "hypothesis": "technology",
+      "best_word": "coffee",
+      "best_rank": 5538,
+      "total_guesses": 14
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:37:25",
+    "details": {
+      "word": "camera",
+      "rank": 9834,
+      "hypothesis": "technology",
+      "best_word": "coffee",
+      "best_rank": 5538,
+      "total_guesses": 15
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:37:25",
+    "details": {
+      "word": "tiger",
+      "rank": 12561,
+      "hypothesis": "animals",
+      "best_word": "coffee",
+      "best_rank": 5538,
+      "total_guesses": 16
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:37:25",
+    "details": {
+      "word": "eagle",
+      "rank": 12695,
+      "hypothesis": "animals",
+      "best_word": "coffee",
+      "best_rank": 5538,
+      "total_guesses": 17
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:37:25",
+    "details": {
+      "word": "whale",
+      "rank": 28450,
+      "hypothesis": "animals",
+      "best_word": "coffee",
+      "best_rank": 5538,
+      "total_guesses": 18
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:37:25",
+    "details": {
+      "word": "rain",
+      "rank": 8390,
+      "hypothesis": "weather",
+      "best_word": "coffee",
+      "best_rank": 5538,
+      "total_guesses": 19
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:37:25",
+    "details": {
+      "word": "wind",
+      "rank": 7457,
+      "hypothesis": "weather",
+      "best_word": "coffee",
+      "best_rank": 5538,
+      "total_guesses": 20
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:37:25",
+    "details": {
+      "word": "storm",
+      "rank": 13667,
+      "hypothesis": "weather",
+      "best_word": "coffee",
+      "best_rank": 5538,
+      "total_guesses": 21
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:37:26",
+    "details": {
+      "word": "planet",
+      "rank": 9208,
+      "hypothesis": "space",
+      "best_word": "coffee",
+      "best_rank": 5538,
+      "total_guesses": 22
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:37:27",
+    "details": {
+      "word": "star",
+      "rank": 8016,
+      "hypothesis": "space",
+      "best_word": "coffee",
+      "best_rank": 5538,
+      "total_guesses": 23
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:37:28",
+    "details": {
+      "word": "moon",
+      "rank": 11847,
+      "hypothesis": "space",
+      "best_word": "coffee",
+      "best_rank": 5538,
+      "total_guesses": 24
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:37:28",
+    "details": {
+      "word": "heart",
+      "rank": 1255,
+      "hypothesis": "anatomy",
+      "best_word": "heart",
+      "best_rank": 1255,
+      "total_guesses": 25
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:37:28",
+    "details": {
+      "word": "hand",
+      "rank": 1952,
+      "hypothesis": "anatomy",
+      "best_word": "heart",
+      "best_rank": 1255,
+      "total_guesses": 26
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:37:28",
+    "details": {
+      "word": "head",
+      "rank": 6591,
+      "hypothesis": "anatomy",
+      "best_word": "heart",
+      "best_rank": 1255,
+      "total_guesses": 27
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:37:28",
+    "details": {
+      "word": "book",
+      "rank": 1801,
+      "hypothesis": "stationery",
+      "best_word": "heart",
+      "best_rank": 1255,
+      "total_guesses": 28
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:37:28",
+    "details": {
+      "word": "pen",
+      "rank": 7025,
+      "hypothesis": "stationery",
+      "best_word": "heart",
+      "best_rank": 1255,
+      "total_guesses": 29
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:37:28",
+    "details": {
+      "word": "paper",
+      "rank": 5873,
+      "hypothesis": "stationery",
+      "best_word": "heart",
+      "best_rank": 1255,
+      "total_guesses": 30
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:37:28",
+    "details": {
+      "word": "game",
+      "rank": 4504,
+      "hypothesis": "sports",
+      "best_word": "heart",
+      "best_rank": 1255,
+      "total_guesses": 31
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:37:28",
+    "details": {
+      "word": "race",
+      "rank": 10513,
+      "hypothesis": "sports",
+      "best_word": "heart",
+      "best_rank": 1255,
+      "total_guesses": 32
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:37:28",
+    "details": {
+      "word": "ball",
+      "rank": 7476,
+      "hypothesis": "sports",
+      "best_word": "heart",
+      "best_rank": 1255,
+      "total_guesses": 33
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:37:28",
+    "details": {
+      "word": "joy",
+      "rank": 372,
+      "hypothesis": "emotions",
+      "best_word": "joy",
+      "best_rank": 372,
+      "total_guesses": 34
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:37:28",
+    "details": {
+      "word": "fear",
+      "rank": 302,
+      "hypothesis": "emotions",
+      "best_word": "fear",
+      "best_rank": 302,
+      "total_guesses": 35
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:37:28",
+    "details": {
+      "word": "anger",
+      "rank": 672,
+      "hypothesis": "emotions",
+      "best_word": "fear",
+      "best_rank": 302,
+      "total_guesses": 36
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:37:29",
+    "details": {
+      "word": "cook",
+      "rank": 8633,
+      "hypothesis": "careers",
+      "best_word": "fear",
+      "best_rank": 302,
+      "total_guesses": 37
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:37:29",
+    "details": {
+      "word": "pilot",
+      "rank": 9158,
+      "hypothesis": "careers",
+      "best_word": "fear",
+      "best_rank": 302,
+      "total_guesses": 38
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:37:30",
+    "details": {
+      "word": "judge",
+      "rank": 564,
+      "hypothesis": "careers",
+      "best_word": "fear",
+      "best_rank": 302,
+      "total_guesses": 39
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:37:30",
+    "details": {
+      "word": "truck",
+      "rank": 13476,
+      "hypothesis": "transportation",
+      "best_word": "fear",
+      "best_rank": 302,
+      "total_guesses": 40
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:37:30",
+    "details": {
+      "word": "train",
+      "rank": 5687,
+      "hypothesis": "transportation",
+      "best_word": "fear",
+      "best_rank": 302,
+      "total_guesses": 41
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:37:30",
+    "details": {
+      "word": "plane",
+      "rank": 9430,
+      "hypothesis": "transportation",
+      "best_word": "fear",
+      "best_rank": 302,
+      "total_guesses": 42
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:37:30",
+    "details": {
+      "word": "red",
+      "rank": 13398,
+      "hypothesis": "colors",
+      "best_word": "fear",
+      "best_rank": 302,
+      "total_guesses": 43
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:37:30",
+    "details": {
+      "word": "blue",
+      "rank": 7732,
+      "hypothesis": "colors",
+      "best_word": "fear",
+      "best_rank": 302,
+      "total_guesses": 44
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:37:30",
+    "details": {
+      "word": "green",
+      "rank": 8584,
+      "hypothesis": "colors",
+      "best_word": "fear",
+      "best_rank": 302,
+      "total_guesses": 45
+    }
+  },
+  {
+    "generation": 0,
+    "event": "INIT",
+    "timestamp": "2026-07-23T01:37:30",
+    "details": {
+      "hypotheses": [
+        {
+          "hypothesis_id": "b681203f53814ec0ad8f91bcb3993897",
+          "category_name": "nature",
+          "description": "natural environments",
+          "words_tried": {
+            "mountain": 11482,
+            "forest": 13009,
+            "river": 13240
+          },
+          "best_word": "mountain",
+          "best_rank": 11482,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "0fb80d47cef54c74b6fecb8260340bb1",
+          "category_name": "food",
+          "description": "common edible items",
+          "words_tried": {
+            "coffee": 5538,
+            "apple": 8375,
+            "bread": 9079
+          },
+          "best_word": "coffee",
+          "best_rank": 5538,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "20207f973daf45a09a6cdbc5fc0de09e",
+          "category_name": "furniture",
+          "description": "household objects",
+          "words_tried": {
+            "table": 9498,
+            "chair": 11466,
+            "lamp": 40720
+          },
+          "best_word": "table",
+          "best_rank": 9498,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "ccc28720d3024ec4bfee15bf8d4eb6c4",
+          "category_name": "clothing",
+          "description": "items to wear",
+          "words_tried": {
+            "shirt": 6206,
+            "dress": 6264,
+            "coat": 12136
+          },
+          "best_word": "shirt",
+          "best_rank": 6206,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "3c8c89e41dcc47b89a2dbc7e9a925290",
+          "category_name": "technology",
+          "description": "electronic devices",
+          "words_tried": {
+            "phone": 7529,
+            "camera": 9834,
+            "laptop": 9904
+          },
+          "best_word": "phone",
+          "best_rank": 7529,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "a9ecdd76b7a04e6292e2fec7c61cb179",
+          "category_name": "animals",
+          "description": "wildlife creatures",
+          "words_tried": {
+            "tiger": 12561,
+            "eagle": 12695,
+            "whale": 28450
+          },
+          "best_word": "tiger",
+          "best_rank": 12561,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "3240f78e77394572b727a47c8f527af1",
+          "category_name": "weather",
+          "description": "atmospheric conditions",
+          "words_tried": {
+            "wind": 7457,
+            "rain": 8390,
+            "storm": 13667
+          },
+          "best_word": "wind",
+          "best_rank": 7457,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "435b79d0352643ba97b1f0723ff9416a",
+          "category_name": "space",
+          "description": "celestial bodies",
+          "words_tried": {
+            "star": 8016,
+            "planet": 9208,
+            "moon": 11847
+          },
+          "best_word": "star",
+          "best_rank": 8016,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "3e8bec07a7a74216b550cf81ae8ec321",
+          "category_name": "anatomy",
+          "description": "human body parts",
+          "words_tried": {
+            "heart": 1255,
+            "hand": 1952,
+            "head": 6591
+          },
+          "best_word": "heart",
+          "best_rank": 1255,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "4d363c892d21444a9dad3c8da2d18657",
+          "category_name": "stationery",
+          "description": "writing materials",
+          "words_tried": {
+            "book": 1801,
+            "paper": 5873,
+            "pen": 7025
+          },
+          "best_word": "book",
+          "best_rank": 1801,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "b1236bb6d4f447ec9337b2fa4f82a849",
+          "category_name": "sports",
+          "description": "athletic activities",
+          "words_tried": {
+            "game": 4504,
+            "ball": 7476,
+            "race": 10513
+          },
+          "best_word": "game",
+          "best_rank": 4504,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "8f63e38a4564468ba50de47f0581fcb5",
+          "category_name": "emotions",
+          "description": "human feelings",
+          "words_tried": {
+            "fear": 302,
+            "joy": 372,
+            "anger": 672
+          },
+          "best_word": "fear",
+          "best_rank": 302,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "140d35ef39394009b5e04b253dd93346",
+          "category_name": "careers",
+          "description": "professional roles",
+          "words_tried": {
+            "judge": 564,
+            "cook": 8633,
+            "pilot": 9158
+          },
+          "best_word": "judge",
+          "best_rank": 564,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "d0bc46050b394741a0bb22c7333edf02",
+          "category_name": "transportation",
+          "description": "travel vehicles",
+          "words_tried": {
+            "train": 5687,
+            "plane": 9430,
+            "truck": 13476
+          },
+          "best_word": "train",
+          "best_rank": 5687,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "1fe264af045c47bbba9da9f4158a3237",
+          "category_name": "colors",
+          "description": "basic hues",
+          "words_tried": {
+            "blue": 7732,
+            "green": 8584,
+            "red": 13398
+          },
+          "best_word": "blue",
+          "best_rank": 7732,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        }
+      ],
+      "best_word": "fear",
+      "best_rank": 302,
+      "total_guesses": 45
+    }
+  },
+  {
+    "generation": 0,
+    "event": "SIGMA_TRAJECTORY",
+    "timestamp": "2026-07-23T01:37:30",
+    "details": {
+      "mean_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "population_size": 15
+    }
+  },
+  {
+    "generation": 1,
+    "event": "CANDIDATES",
+    "timestamp": "2026-07-23T01:43:32",
+    "details": {
+      "count": 44,
+      "candidates": [
+        {
+          "hypothesis": "nature",
+          "word": "desert"
+        },
+        {
+          "hypothesis": "nature",
+          "word": "jungle"
+        },
+        {
+          "hypothesis": "nature",
+          "word": "valley"
+        },
+        {
+          "hypothesis": "food",
+          "word": "tea"
+        },
+        {
+          "hypothesis": "food",
+          "word": "wine"
+        },
+        {
+          "hypothesis": "food",
+          "word": "juice"
+        },
+        {
+          "hypothesis": "furniture",
+          "word": "sofa"
+        },
+        {
+          "hypothesis": "furniture",
+          "word": "bed"
+        },
+        {
+          "hypothesis": "furniture",
+          "word": "desk"
+        },
+        {
+          "hypothesis": "clothing",
+          "word": "pants"
+        },
+        {
+          "hypothesis": "clothing",
+          "word": "shoes"
+        },
+        {
+          "hypothesis": "clothing",
+          "word": "hat"
+        },
+        {
+          "hypothesis": "technology",
+          "word": "computer"
+        },
+        {
+          "hypothesis": "technology",
+          "word": "internet"
+        },
+        {
+          "hypothesis": "technology",
+          "word": "network"
+        },
+        {
+          "hypothesis": "animals",
+          "word": "lion"
+        },
+        {
+          "hypothesis": "animals",
+          "word": "bear"
+        },
+        {
+          "hypothesis": "animals",
+          "word": "wolf"
+        },
+        {
+          "hypothesis": "weather",
+          "word": "cloud"
+        },
+        {
+          "hypothesis": "weather",
+          "word": "snow"
+        },
+        {
+          "hypothesis": "weather",
+          "word": "sun"
+        },
+        {
+          "hypothesis": "space",
+          "word": "universe"
+        },
+        {
+          "hypothesis": "space",
+          "word": "cosmos"
+        },
+        {
+          "hypothesis": "space",
+          "word": "galaxy"
+        },
+        {
+          "hypothesis": "anatomy",
+          "word": "bone"
+        },
+        {
+          "hypothesis": "anatomy",
+          "word": "lung"
+        },
+        {
+          "hypothesis": "anatomy",
+          "word": "skin"
+        },
+        {
+          "hypothesis": "stationery",
+          "word": "pencil"
+        },
+        {
+          "hypothesis": "stationery",
+          "word": "marker"
+        },
+        {
+          "hypothesis": "stationery",
+          "word": "eraser"
+        },
+        {
+          "hypothesis": "sports",
+          "word": "match"
+        },
+        {
+          "hypothesis": "sports",
+          "word": "team"
+        },
+        {
+          "hypothesis": "sports",
+          "word": "athlete"
+        },
+        {
+          "hypothesis": "emotions",
+          "word": "sadness"
+        },
+        {
+          "hypothesis": "emotions",
+          "word": "happiness"
+        },
+        {
+          "hypothesis": "emotions",
+          "word": "love"
+        },
+        {
+          "hypothesis": "careers",
+          "word": "lawyer"
+        },
+        {
+          "hypothesis": "careers",
+          "word": "doctor"
+        },
+        {
+          "hypothesis": "careers",
+          "word": "teacher"
+        },
+        {
+          "hypothesis": "transportation",
+          "word": "car"
+        },
+        {
+          "hypothesis": "transportation",
+          "word": "bus"
+        },
+        {
+          "hypothesis": "transportation",
+          "word": "boat"
+        },
+        {
+          "hypothesis": "colors",
+          "word": "anxiety"
+        },
+        {
+          "hypothesis": "colors",
+          "word": "panic"
+        }
+      ]
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:43:32",
+    "details": {
+      "word": "desert",
+      "rank": 13372,
+      "hypothesis": "nature",
+      "best_word": "fear",
+      "best_rank": 302,
+      "total_guesses": 46
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:43:36",
+    "details": {
+      "word": "jungle",
+      "rank": 14180,
+      "hypothesis": "nature",
+      "best_word": "fear",
+      "best_rank": 302,
+      "total_guesses": 47
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:43:36",
+    "details": {
+      "word": "valley",
+      "rank": 18420,
+      "hypothesis": "nature",
+      "best_word": "fear",
+      "best_rank": 302,
+      "total_guesses": 48
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:43:37",
+    "details": {
+      "word": "tea",
+      "rank": 5348,
+      "hypothesis": "food",
+      "best_word": "fear",
+      "best_rank": 302,
+      "total_guesses": 49
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:43:38",
+    "details": {
+      "word": "wine",
+      "rank": 5162,
+      "hypothesis": "food",
+      "best_word": "fear",
+      "best_rank": 302,
+      "total_guesses": 50
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:43:38",
+    "details": {
+      "word": "juice",
+      "rank": 5447,
+      "hypothesis": "food",
+      "best_word": "fear",
+      "best_rank": 302,
+      "total_guesses": 51
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:43:38",
+    "details": {
+      "word": "sofa",
+      "rank": 38049,
+      "hypothesis": "furniture",
+      "best_word": "fear",
+      "best_rank": 302,
+      "total_guesses": 52
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:43:38",
+    "details": {
+      "word": "bed",
+      "rank": 12045,
+      "hypothesis": "furniture",
+      "best_word": "fear",
+      "best_rank": 302,
+      "total_guesses": 53
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:43:38",
+    "details": {
+      "word": "desk",
+      "rank": 8505,
+      "hypothesis": "furniture",
+      "best_word": "fear",
+      "best_rank": 302,
+      "total_guesses": 54
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:43:38",
+    "details": {
+      "word": "pants",
+      "rank": 14221,
+      "hypothesis": "clothing",
+      "best_word": "fear",
+      "best_rank": 302,
+      "total_guesses": 55
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:43:39",
+    "details": {
+      "word": "shoes",
+      "rank": 15218,
+      "hypothesis": "clothing",
+      "best_word": "fear",
+      "best_rank": 302,
+      "total_guesses": 56
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:43:40",
+    "details": {
+      "word": "hat",
+      "rank": 7570,
+      "hypothesis": "clothing",
+      "best_word": "fear",
+      "best_rank": 302,
+      "total_guesses": 57
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:43:40",
+    "details": {
+      "word": "computer",
+      "rank": 6375,
+      "hypothesis": "technology",
+      "best_word": "fear",
+      "best_rank": 302,
+      "total_guesses": 58
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:43:41",
+    "details": {
+      "word": "internet",
+      "rank": 2637,
+      "hypothesis": "technology",
+      "best_word": "fear",
+      "best_rank": 302,
+      "total_guesses": 59
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:43:41",
+    "details": {
+      "word": "network",
+      "rank": 3246,
+      "hypothesis": "technology",
+      "best_word": "fear",
+      "best_rank": 302,
+      "total_guesses": 60
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:43:41",
+    "details": {
+      "word": "lion",
+      "rank": 14464,
+      "hypothesis": "animals",
+      "best_word": "fear",
+      "best_rank": 302,
+      "total_guesses": 61
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:43:41",
+    "details": {
+      "word": "bear",
+      "rank": 4595,
+      "hypothesis": "animals",
+      "best_word": "fear",
+      "best_rank": 302,
+      "total_guesses": 62
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:43:41",
+    "details": {
+      "word": "wolf",
+      "rank": 11210,
+      "hypothesis": "animals",
+      "best_word": "fear",
+      "best_rank": 302,
+      "total_guesses": 63
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:43:41",
+    "details": {
+      "word": "cloud",
+      "rank": 7999,
+      "hypothesis": "weather",
+      "best_word": "fear",
+      "best_rank": 302,
+      "total_guesses": 64
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:43:41",
+    "details": {
+      "word": "snow",
+      "rank": 10064,
+      "hypothesis": "weather",
+      "best_word": "fear",
+      "best_rank": 302,
+      "total_guesses": 65
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:43:41",
+    "details": {
+      "word": "sun",
+      "rank": 8443,
+      "hypothesis": "weather",
+      "best_word": "fear",
+      "best_rank": 302,
+      "total_guesses": 66
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:43:42",
+    "details": {
+      "word": "universe",
+      "rank": 4772,
+      "hypothesis": "space",
+      "best_word": "fear",
+      "best_rank": 302,
+      "total_guesses": 67
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:43:43",
+    "details": {
+      "word": "cosmos",
+      "rank": 14554,
+      "hypothesis": "space",
+      "best_word": "fear",
+      "best_rank": 302,
+      "total_guesses": 68
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:43:44",
+    "details": {
+      "word": "galaxy",
+      "rank": 50307,
+      "hypothesis": "space",
+      "best_word": "fear",
+      "best_rank": 302,
+      "total_guesses": 69
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:43:44",
+    "details": {
+      "word": "bone",
+      "rank": 8545,
+      "hypothesis": "anatomy",
+      "best_word": "fear",
+      "best_rank": 302,
+      "total_guesses": 70
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:43:45",
+    "details": {
+      "word": "lung",
+      "rank": 12106,
+      "hypothesis": "anatomy",
+      "best_word": "fear",
+      "best_rank": 302,
+      "total_guesses": 71
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:43:45",
+    "details": {
+      "word": "skin",
+      "rank": 6155,
+      "hypothesis": "anatomy",
+      "best_word": "fear",
+      "best_rank": 302,
+      "total_guesses": 72
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:43:45",
+    "details": {
+      "word": "pencil",
+      "rank": 10602,
+      "hypothesis": "stationery",
+      "best_word": "fear",
+      "best_rank": 302,
+      "total_guesses": 73
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:43:45",
+    "details": {
+      "word": "marker",
+      "rank": 22372,
+      "hypothesis": "stationery",
+      "best_word": "fear",
+      "best_rank": 302,
+      "total_guesses": 74
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:43:45",
+    "details": {
+      "word": "eraser",
+      "rank": 19254,
+      "hypothesis": "stationery",
+      "best_word": "fear",
+      "best_rank": 302,
+      "total_guesses": 75
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:43:45",
+    "details": {
+      "word": "match",
+      "rank": 2379,
+      "hypothesis": "sports",
+      "best_word": "fear",
+      "best_rank": 302,
+      "total_guesses": 76
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:43:45",
+    "details": {
+      "word": "team",
+      "rank": 3061,
+      "hypothesis": "sports",
+      "best_word": "fear",
+      "best_rank": 302,
+      "total_guesses": 77
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:43:46",
+    "details": {
+      "word": "athlete",
+      "rank": 5824,
+      "hypothesis": "sports",
+      "best_word": "fear",
+      "best_rank": 302,
+      "total_guesses": 78
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:43:47",
+    "details": {
+      "word": "sadness",
+      "rank": 475,
+      "hypothesis": "emotions",
+      "best_word": "fear",
+      "best_rank": 302,
+      "total_guesses": 79
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:43:48",
+    "details": {
+      "word": "happiness",
+      "rank": 105,
+      "hypothesis": "emotions",
+      "best_word": "happiness",
+      "best_rank": 105,
+      "total_guesses": 80
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:43:48",
+    "details": {
+      "word": "love",
+      "rank": 148,
+      "hypothesis": "emotions",
+      "best_word": "happiness",
+      "best_rank": 105,
+      "total_guesses": 81
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:43:48",
+    "details": {
+      "word": "lawyer",
+      "rank": 4385,
+      "hypothesis": "careers",
+      "best_word": "happiness",
+      "best_rank": 105,
+      "total_guesses": 82
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:43:48",
+    "details": {
+      "word": "doctor",
+      "rank": 3235,
+      "hypothesis": "careers",
+      "best_word": "happiness",
+      "best_rank": 105,
+      "total_guesses": 83
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:43:48",
+    "details": {
+      "word": "teacher",
+      "rank": 2012,
+      "hypothesis": "careers",
+      "best_word": "happiness",
+      "best_rank": 105,
+      "total_guesses": 84
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:43:48",
+    "details": {
+      "word": "car",
+      "rank": 8718,
+      "hypothesis": "transportation",
+      "best_word": "happiness",
+      "best_rank": 105,
+      "total_guesses": 85
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:43:48",
+    "details": {
+      "word": "bus",
+      "rank": 16383,
+      "hypothesis": "transportation",
+      "best_word": "happiness",
+      "best_rank": 105,
+      "total_guesses": 86
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:43:48",
+    "details": {
+      "word": "boat",
+      "rank": 12148,
+      "hypothesis": "transportation",
+      "best_word": "happiness",
+      "best_rank": 105,
+      "total_guesses": 87
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:43:49",
+    "details": {
+      "word": "anxiety",
+      "rank": 2500,
+      "hypothesis": "colors",
+      "best_word": "happiness",
+      "best_rank": 105,
+      "total_guesses": 88
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:43:50",
+    "details": {
+      "word": "panic",
+      "rank": 5832,
+      "hypothesis": "colors",
+      "best_word": "happiness",
+      "best_rank": 105,
+      "total_guesses": 89
+    }
+  },
+  {
+    "generation": 1,
+    "event": "SELECT",
+    "timestamp": "2026-07-23T01:43:50",
+    "details": {
+      "kept": [
+        "emotions",
+        "careers",
+        "anatomy",
+        "stationery",
+        "sports"
+      ],
+      "discarded": [
+        "colors",
+        "technology",
+        "animals",
+        "space",
+        "food",
+        "transportation",
+        "clothing",
+        "weather",
+        "furniture",
+        "nature"
+      ],
+      "elite": "emotions",
+      "max_active_hypotheses": 5,
+      "best_word": "happiness",
+      "best_rank": 105,
+      "total_guesses": 89
+    }
+  },
+  {
+    "generation": 1,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-23T01:44:28",
+    "details": {
+      "parent_id": "8f63e38a4564468ba50de47f0581fcb5",
+      "child_id": "7312a384085d4dbcaea3c9678b6c6a51",
+      "parent_rank": 105,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "states of contentment",
+      "sampled_op": "m_mutation",
+      "method": "self_adaptive",
+      "self_report": {
+        "predicted_closeness": 0.8,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "happiness",
+            "joy"
+          ],
+          "reason": "Shifts from a broad category of emotions to specific types of positive, stable mental states."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"name\": \"states of contentment\", \"description\": \"positive internal states of fulfillment and well-being\", \"words\": [\"bliss\", \"contentment\", \"pleasure\"], \"basis_words\": [\"happiness\", \"joy\"], \"reason\": \"Shifts from a broad category of emotions to specific types of positive, stable mental states.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.8}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"emotions\".\nDescription: human feelings\nResults so far in this hypothesis: {\"anger\": 672, \"fear\": 302, \"happiness\": 105, \"joy\": 372, \"love\": 148, \"sadness\": 475}\nBest word so far: \"happiness\" with rank 105.\n\nMake a MEDIUM mutation: produce a child hypothesis that reinterprets why\n\"happiness\" might have scored well, or shifts to a related sense, lexical\nregister, or part of speech. The child should still be semantically anchored\nto \"happiness\" but approach it from a clearly different angle than \"emotions\".\n\nFor example, if the parent is \"food\" and the best word is \"bite\", a medium\nmutation could be \"animals that bite\", \"physical sensations from biting\", or\n\"clinical terms for biting and chewing\" - each treats \"bite\" through a\ndifferent lens.\n\nSuggest one reframed hypothesis. Include exactly 3 starter words that have\nnot already been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"anger\", \"anxiety\", \"apple\", \"athlete\", \"ball\", \"bear\", \"bed\", \"blue\", \"boat\", \"bone\", \"book\", \"bread\", \"bus\", \"camera\", \"car\", \"chair\", \"cloud\", \"coat\", \"coffee\", \"computer\", \"cook\", \"cosmos\", \"desert\", \"desk\", \"doctor\", \"dress\", \"eagle\", \"eraser\", \"fear\", \"forest\", \"galaxy\", \"game\", \"green\", \"hand\", \"happiness\", \"hat\", \"head\", \"heart\", \"internet\", \"joy\", \"judge\", \"juice\", \"jungle\", \"lamp\", \"laptop\", \"lawyer\", \"lion\", \"love\", \"lung\", \"marker\", \"match\", \"moon\", \"mountain\", \"network\", \"panic\", \"pants\", \"paper\", \"pen\", \"pencil\", \"phone\", \"pilot\", \"plane\", \"planet\", \"race\", \"rain\", \"red\", \"river\", \"sadness\", \"shirt\", \"shoes\", \"skin\", \"snow\", \"sofa\", \"star\", \"storm\", \"sun\", \"table\", \"tea\", \"teacher\", \"team\", \"tiger\", \"train\", \"truck\", \"universe\", \"valley\", \"whale\", \"wind\", \"wine\", \"wolf\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"direction name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:44:31",
+    "details": {
+      "word": "bliss",
+      "rank": 3846,
+      "hypothesis": "states of contentment",
+      "best_word": "happiness",
+      "best_rank": 105,
+      "total_guesses": 90
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:44:31",
+    "details": {
+      "word": "contentment",
+      "rank": 245,
+      "hypothesis": "states of contentment",
+      "best_word": "happiness",
+      "best_rank": 105,
+      "total_guesses": 91
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:44:32",
+    "details": {
+      "word": "pleasure",
+      "rank": 669,
+      "hypothesis": "states of contentment",
+      "best_word": "happiness",
+      "best_rank": 105,
+      "total_guesses": 92
+    }
+  },
+  {
+    "generation": 1,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-23T01:45:06",
+    "details": {
+      "parent_id": "140d35ef39394009b5e04b253dd93346",
+      "child_id": "6a0e4dc5fdc047f6bd272bba3487b51f",
+      "parent_rank": 564,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "judicial_system",
+      "sampled_op": "m_mutation",
+      "method": "self_adaptive",
+      "self_report": {
+        "predicted_closeness": 0.7,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "judge"
+          ],
+          "reason": "This shifts from general vocational roles to the specific institutional context of law and adjudication."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"name\": \"judicial_system\", \"description\": \"terms related to the court system and legal proceedings\", \"words\": [\"court\", \"trial\", \"justice\"], \"basis_words\": [\"judge\"], \"reason\": \"This shifts from general vocational roles to the specific institutional context of law and adjudication.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.7}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"careers\".\nDescription: professional roles\nResults so far in this hypothesis: {\"cook\": 8633, \"doctor\": 3235, \"judge\": 564, \"lawyer\": 4385, \"pilot\": 9158, \"teacher\": 2012}\nBest word so far: \"judge\" with rank 564.\n\nMake a MEDIUM mutation: produce a child hypothesis that reinterprets why\n\"judge\" might have scored well, or shifts to a related sense, lexical\nregister, or part of speech. The child should still be semantically anchored\nto \"judge\" but approach it from a clearly different angle than \"careers\".\n\nFor example, if the parent is \"food\" and the best word is \"bite\", a medium\nmutation could be \"animals that bite\", \"physical sensations from biting\", or\n\"clinical terms for biting and chewing\" - each treats \"bite\" through a\ndifferent lens.\n\nSuggest one reframed hypothesis. Include exactly 3 starter words that have\nnot already been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"anger\", \"anxiety\", \"apple\", \"athlete\", \"ball\", \"bear\", \"bed\", \"bliss\", \"blue\", \"boat\", \"bone\", \"book\", \"bread\", \"bus\", \"camera\", \"car\", \"chair\", \"cloud\", \"coat\", \"coffee\", \"computer\", \"contentment\", \"cook\", \"cosmos\", \"desert\", \"desk\", \"doctor\", \"dress\", \"eagle\", \"eraser\", \"fear\", \"forest\", \"galaxy\", \"game\", \"green\", \"hand\", \"happiness\", \"hat\", \"head\", \"heart\", \"internet\", \"joy\", \"judge\", \"juice\", \"jungle\", \"lamp\", \"laptop\", \"lawyer\", \"lion\", \"love\", \"lung\", \"marker\", \"match\", \"moon\", \"mountain\", \"network\", \"panic\", \"pants\", \"paper\", \"pen\", \"pencil\", \"phone\", \"pilot\", \"plane\", \"planet\", \"pleasure\", \"race\", \"rain\", \"red\", \"river\", \"sadness\", \"shirt\", \"shoes\", \"skin\", \"snow\", \"sofa\", \"star\", \"storm\", \"sun\", \"table\", \"tea\", \"teacher\", \"team\", \"tiger\", \"train\", \"truck\", \"universe\", \"valley\", \"whale\", \"wind\", \"wine\", \"wolf\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"direction name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:45:10",
+    "details": {
+      "word": "court",
+      "rank": 5126,
+      "hypothesis": "judicial_system",
+      "best_word": "happiness",
+      "best_rank": 105,
+      "total_guesses": 93
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:45:10",
+    "details": {
+      "word": "trial",
+      "rank": 6146,
+      "hypothesis": "judicial_system",
+      "best_word": "happiness",
+      "best_rank": 105,
+      "total_guesses": 94
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:45:11",
+    "details": {
+      "word": "justice",
+      "rank": 388,
+      "hypothesis": "judicial_system",
+      "best_word": "happiness",
+      "best_rank": 105,
+      "total_guesses": 95
+    }
+  },
+  {
+    "generation": 1,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-23T01:46:36",
+    "details": {
+      "parent_id": "3e8bec07a7a74216b550cf81ae8ec321",
+      "child_id": "5d6bf402305a4eed9a8af87596995f9a",
+      "parent_rank": 1255,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "geological features",
+      "sampled_op": "l_mutation",
+      "method": "self_adaptive",
+      "self_report": {
+        "predicted_closeness": 0.4,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "beyond",
+        "rationale": {
+          "basis_words": [
+            "heart"
+          ],
+          "reason": "Moves from specific internal anatomy to broader external natural features, staying within the realm of physical/natural systems while significantly shifting away from human biology."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"name\": \"geological features\", \"description\": \"natural landforms and geological structures\", \"words\": [\"canyon\", \"volcano\", \"cave\"], \"basis_words\": [\"heart\"], \"reason\": \"Moves from specific internal anatomy to broader external natural features, staying within the realm of physical/natural systems while significantly shifting away from human biology.\", \"predicted_bucket\": \"beyond\", \"predicted_closeness\": 0.4}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"anatomy\".\nDescription: human body parts\nBest word so far: \"heart\" with rank 1255.\nOther active categories already being explored: [\"anatomy\", \"stationery\", \"sports\", \"emotions\", \"careers\", \"states of contentment\", \"judicial_system\"]\n\nMake a LARGE mutation: produce a child hypothesis in a broad, semantically\nsubstantial new direction that is unlike \"anatomy\" and unlike the other active\ncategories above. The goal is to escape the current semantic region and open\nup unexplored territory, while staying plausibly relevant given \"heart\"'s\nrank - lower ranks mean the target is closer to \"heart\", so the jump\nmust remain in the same broad semantic area even when reframed.\n\nFor example, if the parent is \"types of plants\" and \"shrub\" ranks 50, a large\nmutation could be \"outdoor environments\" or \"rural landscape features\" -\nclearly outside the plant taxonomy but still in a plausible neighborhood for\na target close to \"shrub\".\n\nSuggest one new hypothesis. Include exactly 3 starter words that have not\nalready been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"anger\", \"anxiety\", \"apple\", \"athlete\", \"ball\", \"bear\", \"bed\", \"bliss\", \"blue\", \"boat\", \"bone\", \"book\", \"bread\", \"bus\", \"camera\", \"car\", \"chair\", \"cloud\", \"coat\", \"coffee\", \"computer\", \"contentment\", \"cook\", \"cosmos\", \"court\", \"desert\", \"desk\", \"doctor\", \"dress\", \"eagle\", \"eraser\", \"fear\", \"forest\", \"galaxy\", \"game\", \"green\", \"hand\", \"happiness\", \"hat\", \"head\", \"heart\", \"internet\", \"joy\", \"judge\", \"juice\", \"jungle\", \"justice\", \"lamp\", \"laptop\", \"lawyer\", \"lion\", \"love\", \"lung\", \"marker\", \"match\", \"moon\", \"mountain\", \"network\", \"panic\", \"pants\", \"paper\", \"pen\", \"pencil\", \"phone\", \"pilot\", \"plane\", \"planet\", \"pleasure\", \"race\", \"rain\", \"red\", \"river\", \"sadness\", \"shirt\", \"shoes\", \"skin\", \"snow\", \"sofa\", \"star\", \"storm\", \"sun\", \"table\", \"tea\", \"teacher\", \"team\", \"tiger\", \"train\", \"trial\", \"truck\", \"universe\", \"valley\", \"whale\", \"wind\", \"wine\", \"wolf\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"direction name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:46:39",
+    "details": {
+      "word": "canyon",
+      "rank": 44781,
+      "hypothesis": "geological features",
+      "best_word": "happiness",
+      "best_rank": 105,
+      "total_guesses": 96
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:46:40",
+    "details": {
+      "word": "volcano",
+      "rank": 36285,
+      "hypothesis": "geological features",
+      "best_word": "happiness",
+      "best_rank": 105,
+      "total_guesses": 97
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:46:41",
+    "details": {
+      "word": "cave",
+      "rank": 15170,
+      "hypothesis": "geological features",
+      "best_word": "happiness",
+      "best_rank": 105,
+      "total_guesses": 98
+    }
+  },
+  {
+    "generation": 1,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-23T01:47:49",
+    "details": {
+      "parent_id": "4d363c892d21444a9dad3c8da2d18657",
+      "child_id": "8da9b966711e41f9babc6940b17c501d",
+      "parent_rank": 1801,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "publications",
+      "sampled_op": "s_mutation",
+      "method": "self_adaptive",
+      "self_report": {
+        "predicted_closeness": 0.4,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "beyond",
+        "rationale": {
+          "basis_words": [
+            "book",
+            "paper"
+          ],
+          "reason": "The word 'book' is much closer to the target than other stationery items like 'pen', 'pencil', or 'paper', suggesting a shift from writing tools toward printed works."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"name\": \"publications\", \"description\": \"printed books and literature\", \"words\": [\"novel\", \"volume\", \"journal\"], \"basis_words\": [\"book\", \"paper\"], \"reason\": \"The word 'book' is much closer to the target than other stationery items like 'pen', 'pencil', or 'paper', suggesting a shift from writing tools toward printed works.\", \"predicted_bucket\": \"beyond\", \"predicted_closeness\": 0.4}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"stationery\".\nDescription: writing materials\nResults so far in this hypothesis: {\"book\": 1801, \"eraser\": 19254, \"marker\": 22372, \"paper\": 5873, \"pen\": 7025, \"pencil\": 10602}\nBest word so far: \"book\" with rank 1801.\n\nMake a SMALL mutation: produce a child hypothesis that stays in the same\nconceptual neighborhood as \"stationery\" but narrows or refines it. The new starter\nwords should be close semantic neighbors of \"book\" - synonyms, common\ndescriptors, or words that frequently co-occur with it.\n\nFor example, if the parent is \"types of plants\" and the best word is \"shrub\",\na small mutation could be \"woody plants\" with starters like bush, hedge, thicket.\n\nSuggest one refined hypothesis. Include exactly 3 starter words that have not\nalready been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"anger\", \"anxiety\", \"apple\", \"athlete\", \"ball\", \"bear\", \"bed\", \"bliss\", \"blue\", \"boat\", \"bone\", \"book\", \"bread\", \"bus\", \"camera\", \"canyon\", \"car\", \"cave\", \"chair\", \"cloud\", \"coat\", \"coffee\", \"computer\", \"contentment\", \"cook\", \"cosmos\", \"court\", \"desert\", \"desk\", \"doctor\", \"dress\", \"eagle\", \"eraser\", \"fear\", \"forest\", \"galaxy\", \"game\", \"green\", \"hand\", \"happiness\", \"hat\", \"head\", \"heart\", \"internet\", \"joy\", \"judge\", \"juice\", \"jungle\", \"justice\", \"lamp\", \"laptop\", \"lawyer\", \"lion\", \"love\", \"lung\", \"marker\", \"match\", \"moon\", \"mountain\", \"network\", \"panic\", \"pants\", \"paper\", \"pen\", \"pencil\", \"phone\", \"pilot\", \"plane\", \"planet\", \"pleasure\", \"race\", \"rain\", \"red\", \"river\", \"sadness\", \"shirt\", \"shoes\", \"skin\", \"snow\", \"sofa\", \"star\", \"storm\", \"sun\", \"table\", \"tea\", \"teacher\", \"team\", \"tiger\", \"train\", \"trial\", \"truck\", \"universe\", \"valley\", \"volcano\", \"whale\", \"wind\", \"wine\", \"wolf\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"direction name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:47:49",
+    "details": {
+      "word": "novel",
+      "rank": 4106,
+      "hypothesis": "publications",
+      "best_word": "happiness",
+      "best_rank": 105,
+      "total_guesses": 99
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:47:49",
+    "details": {
+      "word": "volume",
+      "rank": 7233,
+      "hypothesis": "publications",
+      "best_word": "happiness",
+      "best_rank": 105,
+      "total_guesses": 100
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:47:49",
+    "details": {
+      "word": "journal",
+      "rank": 6813,
+      "hypothesis": "publications",
+      "best_word": "happiness",
+      "best_rank": 105,
+      "total_guesses": 101
+    }
+  },
+  {
+    "generation": 1,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-23T01:48:56",
+    "details": {
+      "parent_id": "b1236bb6d4f447ec9337b2fa4f82a849",
+      "child_id": "a6a658c5c74b4e6ca517a12c333ded9f",
+      "parent_rank": 2379,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "competitive events",
+      "sampled_op": "ml_mutation",
+      "method": "self_adaptive",
+      "self_report": {
+        "predicted_closeness": 0.3,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "match",
+            "game",
+            "race"
+          ],
+          "reason": "The word 'match' indicates a focus on competitive structures. Transitioning to 'competitive events' explores the concept of competition as an organized contest, which is adjacent to but distinct from physical sports."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"name\": \"competitive events\", \"description\": \"organized competitions of skill or speed\", \"words\": [\"contest\", \"tournament\", \"competition\"], \"basis_words\": [\"match\", \"game\", \"race\"], \"reason\": \"The word 'match' indicates a focus on competitive structures. Transitioning to 'competitive events' explores the concept of competition as an organized contest, which is adjacent to but distinct from physical sports.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"sports\".\nDescription: athletic activities\nResults so far in this hypothesis: {\"athlete\": 5824, \"ball\": 7476, \"game\": 4504, \"match\": 2379, \"race\": 10513, \"team\": 3061}\nBest word so far: \"match\" with rank 2379.\n\nMake a MEDIUM-LARGE mutation: produce a child hypothesis in an ADJACENT but\ndistinct category that could still plausibly contain the hidden target given\n\"match\"'s rank. The child must NOT be a sub-category of \"sports\" - it\nshould sit alongside \"sports\" in semantic space, not underneath it.\n\nFor example, if the parent is \"types of plants\" and the best word is \"shrub\",\nan adjacent category could be \"plant descriptors\", \"botanical terminology\",\n\"growth habits\", or \"ecological roles\".\n\nSuggest one adjacent hypothesis. Include exactly 3 starter words that have\nnot already been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"anger\", \"anxiety\", \"apple\", \"athlete\", \"ball\", \"bear\", \"bed\", \"bliss\", \"blue\", \"boat\", \"bone\", \"book\", \"bread\", \"bus\", \"camera\", \"canyon\", \"car\", \"cave\", \"chair\", \"cloud\", \"coat\", \"coffee\", \"computer\", \"contentment\", \"cook\", \"cosmos\", \"court\", \"desert\", \"desk\", \"doctor\", \"dress\", \"eagle\", \"eraser\", \"fear\", \"forest\", \"galaxy\", \"game\", \"green\", \"hand\", \"happiness\", \"hat\", \"head\", \"heart\", \"internet\", \"journal\", \"joy\", \"judge\", \"juice\", \"jungle\", \"justice\", \"lamp\", \"laptop\", \"lawyer\", \"lion\", \"love\", \"lung\", \"marker\", \"match\", \"moon\", \"mountain\", \"network\", \"novel\", \"panic\", \"pants\", \"paper\", \"pen\", \"pencil\", \"phone\", \"pilot\", \"plane\", \"planet\", \"pleasure\", \"race\", \"rain\", \"red\", \"river\", \"sadness\", \"shirt\", \"shoes\", \"skin\", \"snow\", \"sofa\", \"star\", \"storm\", \"sun\", \"table\", \"tea\", \"teacher\", \"team\", \"tiger\", \"train\", \"trial\", \"truck\", \"universe\", \"valley\", \"volcano\", \"volume\", \"whale\", \"wind\", \"wine\", \"wolf\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"category name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:49:00",
+    "details": {
+      "word": "contest",
+      "rank": 4345,
+      "hypothesis": "competitive events",
+      "best_word": "happiness",
+      "best_rank": 105,
+      "total_guesses": 102
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:49:01",
+    "details": {
+      "word": "tournament",
+      "rank": 15510,
+      "hypothesis": "competitive events",
+      "best_word": "happiness",
+      "best_rank": 105,
+      "total_guesses": 103
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:49:02",
+    "details": {
+      "word": "competition",
+      "rank": 3200,
+      "hypothesis": "competitive events",
+      "best_word": "happiness",
+      "best_rank": 105,
+      "total_guesses": 104
+    }
+  },
+  {
+    "generation": 1,
+    "event": "MUTATE",
+    "timestamp": "2026-07-23T01:49:02",
+    "details": {
+      "method": "self_adaptive",
+      "children": [
+        {
+          "hypothesis_id": "7312a384085d4dbcaea3c9678b6c6a51",
+          "category_name": "states of contentment",
+          "description": "positive internal states of fulfillment and well-being",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "emotions",
+          "parent_id": "8f63e38a4564468ba50de47f0581fcb5",
+          "origin": "self_adaptive_m_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "self_report": {
+            "predicted_closeness": 0.8,
+            "predicted_closeness_clamped": false,
+            "predicted_bucket": "top100",
+            "rationale": {
+              "basis_words": [
+                "happiness",
+                "joy"
+              ],
+              "reason": "Shifts from a broad category of emotions to specific types of positive, stable mental states."
+            },
+            "self_report_parse_failed": false,
+            "self_report_raw": "{\"name\": \"states of contentment\", \"description\": \"positive internal states of fulfillment and well-being\", \"words\": [\"bliss\", \"contentment\", \"pleasure\"], \"basis_words\": [\"happiness\", \"joy\"], \"reason\": \"Shifts from a broad category of emotions to specific types of positive, stable mental states.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.8}",
+            "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"emotions\".\nDescription: human feelings\nResults so far in this hypothesis: {\"anger\": 672, \"fear\": 302, \"happiness\": 105, \"joy\": 372, \"love\": 148, \"sadness\": 475}\nBest word so far: \"happiness\" with rank 105.\n\nMake a MEDIUM mutation: produce a child hypothesis that reinterprets why\n\"happiness\" might have scored well, or shifts to a related sense, lexical\nregister, or part of speech. The child should still be semantically anchored\nto \"happiness\" but approach it from a clearly different angle than \"emotions\".\n\nFor example, if the parent is \"food\" and the best word is \"bite\", a medium\nmutation could be \"animals that bite\", \"physical sensations from biting\", or\n\"clinical terms for biting and chewing\" - each treats \"bite\" through a\ndifferent lens.\n\nSuggest one reframed hypothesis. Include exactly 3 starter words that have\nnot already been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"anger\", \"anxiety\", \"apple\", \"athlete\", \"ball\", \"bear\", \"bed\", \"blue\", \"boat\", \"bone\", \"book\", \"bread\", \"bus\", \"camera\", \"car\", \"chair\", \"cloud\", \"coat\", \"coffee\", \"computer\", \"cook\", \"cosmos\", \"desert\", \"desk\", \"doctor\", \"dress\", \"eagle\", \"eraser\", \"fear\", \"forest\", \"galaxy\", \"game\", \"green\", \"hand\", \"happiness\", \"hat\", \"head\", \"heart\", \"internet\", \"joy\", \"judge\", \"juice\", \"jungle\", \"lamp\", \"laptop\", \"lawyer\", \"lion\", \"love\", \"lung\", \"marker\", \"match\", \"moon\", \"mountain\", \"network\", \"panic\", \"pants\", \"paper\", \"pen\", \"pencil\", \"phone\", \"pilot\", \"plane\", \"planet\", \"race\", \"rain\", \"red\", \"river\", \"sadness\", \"shirt\", \"shoes\", \"skin\", \"snow\", \"sofa\", \"star\", \"storm\", \"sun\", \"table\", \"tea\", \"teacher\", \"team\", \"tiger\", \"train\", \"truck\", \"universe\", \"valley\", \"whale\", \"wind\", \"wine\", \"wolf\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"direction name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+            "injected_rationale_hash": null,
+            "rationale_truncated": false
+          }
+        },
+        {
+          "hypothesis_id": "6a0e4dc5fdc047f6bd272bba3487b51f",
+          "category_name": "judicial_system",
+          "description": "terms related to the court system and legal proceedings",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "careers",
+          "parent_id": "140d35ef39394009b5e04b253dd93346",
+          "origin": "self_adaptive_m_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "self_report": {
+            "predicted_closeness": 0.7,
+            "predicted_closeness_clamped": false,
+            "predicted_bucket": "top100",
+            "rationale": {
+              "basis_words": [
+                "judge"
+              ],
+              "reason": "This shifts from general vocational roles to the specific institutional context of law and adjudication."
+            },
+            "self_report_parse_failed": false,
+            "self_report_raw": "{\"name\": \"judicial_system\", \"description\": \"terms related to the court system and legal proceedings\", \"words\": [\"court\", \"trial\", \"justice\"], \"basis_words\": [\"judge\"], \"reason\": \"This shifts from general vocational roles to the specific institutional context of law and adjudication.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.7}",
+            "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"careers\".\nDescription: professional roles\nResults so far in this hypothesis: {\"cook\": 8633, \"doctor\": 3235, \"judge\": 564, \"lawyer\": 4385, \"pilot\": 9158, \"teacher\": 2012}\nBest word so far: \"judge\" with rank 564.\n\nMake a MEDIUM mutation: produce a child hypothesis that reinterprets why\n\"judge\" might have scored well, or shifts to a related sense, lexical\nregister, or part of speech. The child should still be semantically anchored\nto \"judge\" but approach it from a clearly different angle than \"careers\".\n\nFor example, if the parent is \"food\" and the best word is \"bite\", a medium\nmutation could be \"animals that bite\", \"physical sensations from biting\", or\n\"clinical terms for biting and chewing\" - each treats \"bite\" through a\ndifferent lens.\n\nSuggest one reframed hypothesis. Include exactly 3 starter words that have\nnot already been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"anger\", \"anxiety\", \"apple\", \"athlete\", \"ball\", \"bear\", \"bed\", \"bliss\", \"blue\", \"boat\", \"bone\", \"book\", \"bread\", \"bus\", \"camera\", \"car\", \"chair\", \"cloud\", \"coat\", \"coffee\", \"computer\", \"contentment\", \"cook\", \"cosmos\", \"desert\", \"desk\", \"doctor\", \"dress\", \"eagle\", \"eraser\", \"fear\", \"forest\", \"galaxy\", \"game\", \"green\", \"hand\", \"happiness\", \"hat\", \"head\", \"heart\", \"internet\", \"joy\", \"judge\", \"juice\", \"jungle\", \"lamp\", \"laptop\", \"lawyer\", \"lion\", \"love\", \"lung\", \"marker\", \"match\", \"moon\", \"mountain\", \"network\", \"panic\", \"pants\", \"paper\", \"pen\", \"pencil\", \"phone\", \"pilot\", \"plane\", \"planet\", \"pleasure\", \"race\", \"rain\", \"red\", \"river\", \"sadness\", \"shirt\", \"shoes\", \"skin\", \"snow\", \"sofa\", \"star\", \"storm\", \"sun\", \"table\", \"tea\", \"teacher\", \"team\", \"tiger\", \"train\", \"truck\", \"universe\", \"valley\", \"whale\", \"wind\", \"wine\", \"wolf\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"direction name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+            "injected_rationale_hash": null,
+            "rationale_truncated": false
+          }
+        },
+        {
+          "hypothesis_id": "5d6bf402305a4eed9a8af87596995f9a",
+          "category_name": "geological features",
+          "description": "natural landforms and geological structures",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "anatomy",
+          "parent_id": "3e8bec07a7a74216b550cf81ae8ec321",
+          "origin": "self_adaptive_l_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "self_report": {
+            "predicted_closeness": 0.4,
+            "predicted_closeness_clamped": false,
+            "predicted_bucket": "beyond",
+            "rationale": {
+              "basis_words": [
+                "heart"
+              ],
+              "reason": "Moves from specific internal anatomy to broader external natural features, staying within the realm of physical/natural systems while significantly shifting away from human biology."
+            },
+            "self_report_parse_failed": false,
+            "self_report_raw": "{\"name\": \"geological features\", \"description\": \"natural landforms and geological structures\", \"words\": [\"canyon\", \"volcano\", \"cave\"], \"basis_words\": [\"heart\"], \"reason\": \"Moves from specific internal anatomy to broader external natural features, staying within the realm of physical/natural systems while significantly shifting away from human biology.\", \"predicted_bucket\": \"beyond\", \"predicted_closeness\": 0.4}",
+            "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"anatomy\".\nDescription: human body parts\nBest word so far: \"heart\" with rank 1255.\nOther active categories already being explored: [\"anatomy\", \"stationery\", \"sports\", \"emotions\", \"careers\", \"states of contentment\", \"judicial_system\"]\n\nMake a LARGE mutation: produce a child hypothesis in a broad, semantically\nsubstantial new direction that is unlike \"anatomy\" and unlike the other active\ncategories above. The goal is to escape the current semantic region and open\nup unexplored territory, while staying plausibly relevant given \"heart\"'s\nrank - lower ranks mean the target is closer to \"heart\", so the jump\nmust remain in the same broad semantic area even when reframed.\n\nFor example, if the parent is \"types of plants\" and \"shrub\" ranks 50, a large\nmutation could be \"outdoor environments\" or \"rural landscape features\" -\nclearly outside the plant taxonomy but still in a plausible neighborhood for\na target close to \"shrub\".\n\nSuggest one new hypothesis. Include exactly 3 starter words that have not\nalready been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"anger\", \"anxiety\", \"apple\", \"athlete\", \"ball\", \"bear\", \"bed\", \"bliss\", \"blue\", \"boat\", \"bone\", \"book\", \"bread\", \"bus\", \"camera\", \"car\", \"chair\", \"cloud\", \"coat\", \"coffee\", \"computer\", \"contentment\", \"cook\", \"cosmos\", \"court\", \"desert\", \"desk\", \"doctor\", \"dress\", \"eagle\", \"eraser\", \"fear\", \"forest\", \"galaxy\", \"game\", \"green\", \"hand\", \"happiness\", \"hat\", \"head\", \"heart\", \"internet\", \"joy\", \"judge\", \"juice\", \"jungle\", \"justice\", \"lamp\", \"laptop\", \"lawyer\", \"lion\", \"love\", \"lung\", \"marker\", \"match\", \"moon\", \"mountain\", \"network\", \"panic\", \"pants\", \"paper\", \"pen\", \"pencil\", \"phone\", \"pilot\", \"plane\", \"planet\", \"pleasure\", \"race\", \"rain\", \"red\", \"river\", \"sadness\", \"shirt\", \"shoes\", \"skin\", \"snow\", \"sofa\", \"star\", \"storm\", \"sun\", \"table\", \"tea\", \"teacher\", \"team\", \"tiger\", \"train\", \"trial\", \"truck\", \"universe\", \"valley\", \"whale\", \"wind\", \"wine\", \"wolf\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"direction name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+            "injected_rationale_hash": null,
+            "rationale_truncated": false
+          }
+        },
+        {
+          "hypothesis_id": "8da9b966711e41f9babc6940b17c501d",
+          "category_name": "publications",
+          "description": "printed books and literature",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "stationery",
+          "parent_id": "4d363c892d21444a9dad3c8da2d18657",
+          "origin": "self_adaptive_s_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "self_report": {
+            "predicted_closeness": 0.4,
+            "predicted_closeness_clamped": false,
+            "predicted_bucket": "beyond",
+            "rationale": {
+              "basis_words": [
+                "book",
+                "paper"
+              ],
+              "reason": "The word 'book' is much closer to the target than other stationery items like 'pen', 'pencil', or 'paper', suggesting a shift from writing tools toward printed works."
+            },
+            "self_report_parse_failed": false,
+            "self_report_raw": "{\"name\": \"publications\", \"description\": \"printed books and literature\", \"words\": [\"novel\", \"volume\", \"journal\"], \"basis_words\": [\"book\", \"paper\"], \"reason\": \"The word 'book' is much closer to the target than other stationery items like 'pen', 'pencil', or 'paper', suggesting a shift from writing tools toward printed works.\", \"predicted_bucket\": \"beyond\", \"predicted_closeness\": 0.4}",
+            "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"stationery\".\nDescription: writing materials\nResults so far in this hypothesis: {\"book\": 1801, \"eraser\": 19254, \"marker\": 22372, \"paper\": 5873, \"pen\": 7025, \"pencil\": 10602}\nBest word so far: \"book\" with rank 1801.\n\nMake a SMALL mutation: produce a child hypothesis that stays in the same\nconceptual neighborhood as \"stationery\" but narrows or refines it. The new starter\nwords should be close semantic neighbors of \"book\" - synonyms, common\ndescriptors, or words that frequently co-occur with it.\n\nFor example, if the parent is \"types of plants\" and the best word is \"shrub\",\na small mutation could be \"woody plants\" with starters like bush, hedge, thicket.\n\nSuggest one refined hypothesis. Include exactly 3 starter words that have not\nalready been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"anger\", \"anxiety\", \"apple\", \"athlete\", \"ball\", \"bear\", \"bed\", \"bliss\", \"blue\", \"boat\", \"bone\", \"book\", \"bread\", \"bus\", \"camera\", \"canyon\", \"car\", \"cave\", \"chair\", \"cloud\", \"coat\", \"coffee\", \"computer\", \"contentment\", \"cook\", \"cosmos\", \"court\", \"desert\", \"desk\", \"doctor\", \"dress\", \"eagle\", \"eraser\", \"fear\", \"forest\", \"galaxy\", \"game\", \"green\", \"hand\", \"happiness\", \"hat\", \"head\", \"heart\", \"internet\", \"joy\", \"judge\", \"juice\", \"jungle\", \"justice\", \"lamp\", \"laptop\", \"lawyer\", \"lion\", \"love\", \"lung\", \"marker\", \"match\", \"moon\", \"mountain\", \"network\", \"panic\", \"pants\", \"paper\", \"pen\", \"pencil\", \"phone\", \"pilot\", \"plane\", \"planet\", \"pleasure\", \"race\", \"rain\", \"red\", \"river\", \"sadness\", \"shirt\", \"shoes\", \"skin\", \"snow\", \"sofa\", \"star\", \"storm\", \"sun\", \"table\", \"tea\", \"teacher\", \"team\", \"tiger\", \"train\", \"trial\", \"truck\", \"universe\", \"valley\", \"volcano\", \"whale\", \"wind\", \"wine\", \"wolf\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"direction name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+            "injected_rationale_hash": null,
+            "rationale_truncated": false
+          }
+        },
+        {
+          "hypothesis_id": "a6a658c5c74b4e6ca517a12c333ded9f",
+          "category_name": "competitive events",
+          "description": "organized competitions of skill or speed",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "sports",
+          "parent_id": "b1236bb6d4f447ec9337b2fa4f82a849",
+          "origin": "self_adaptive_ml_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "self_report": {
+            "predicted_closeness": 0.3,
+            "predicted_closeness_clamped": false,
+            "predicted_bucket": "top500",
+            "rationale": {
+              "basis_words": [
+                "match",
+                "game",
+                "race"
+              ],
+              "reason": "The word 'match' indicates a focus on competitive structures. Transitioning to 'competitive events' explores the concept of competition as an organized contest, which is adjacent to but distinct from physical sports."
+            },
+            "self_report_parse_failed": false,
+            "self_report_raw": "{\"name\": \"competitive events\", \"description\": \"organized competitions of skill or speed\", \"words\": [\"contest\", \"tournament\", \"competition\"], \"basis_words\": [\"match\", \"game\", \"race\"], \"reason\": \"The word 'match' indicates a focus on competitive structures. Transitioning to 'competitive events' explores the concept of competition as an organized contest, which is adjacent to but distinct from physical sports.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}",
+            "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"sports\".\nDescription: athletic activities\nResults so far in this hypothesis: {\"athlete\": 5824, \"ball\": 7476, \"game\": 4504, \"match\": 2379, \"race\": 10513, \"team\": 3061}\nBest word so far: \"match\" with rank 2379.\n\nMake a MEDIUM-LARGE mutation: produce a child hypothesis in an ADJACENT but\ndistinct category that could still plausibly contain the hidden target given\n\"match\"'s rank. The child must NOT be a sub-category of \"sports\" - it\nshould sit alongside \"sports\" in semantic space, not underneath it.\n\nFor example, if the parent is \"types of plants\" and the best word is \"shrub\",\nan adjacent category could be \"plant descriptors\", \"botanical terminology\",\n\"growth habits\", or \"ecological roles\".\n\nSuggest one adjacent hypothesis. Include exactly 3 starter words that have\nnot already been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"anger\", \"anxiety\", \"apple\", \"athlete\", \"ball\", \"bear\", \"bed\", \"bliss\", \"blue\", \"boat\", \"bone\", \"book\", \"bread\", \"bus\", \"camera\", \"canyon\", \"car\", \"cave\", \"chair\", \"cloud\", \"coat\", \"coffee\", \"computer\", \"contentment\", \"cook\", \"cosmos\", \"court\", \"desert\", \"desk\", \"doctor\", \"dress\", \"eagle\", \"eraser\", \"fear\", \"forest\", \"galaxy\", \"game\", \"green\", \"hand\", \"happiness\", \"hat\", \"head\", \"heart\", \"internet\", \"journal\", \"joy\", \"judge\", \"juice\", \"jungle\", \"justice\", \"lamp\", \"laptop\", \"lawyer\", \"lion\", \"love\", \"lung\", \"marker\", \"match\", \"moon\", \"mountain\", \"network\", \"novel\", \"panic\", \"pants\", \"paper\", \"pen\", \"pencil\", \"phone\", \"pilot\", \"plane\", \"planet\", \"pleasure\", \"race\", \"rain\", \"red\", \"river\", \"sadness\", \"shirt\", \"shoes\", \"skin\", \"snow\", \"sofa\", \"star\", \"storm\", \"sun\", \"table\", \"tea\", \"teacher\", \"team\", \"tiger\", \"train\", \"trial\", \"truck\", \"universe\", \"valley\", \"volcano\", \"volume\", \"whale\", \"wind\", \"wine\", \"wolf\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"category name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+            "injected_rationale_hash": null,
+            "rationale_truncated": false
+          }
+        }
+      ],
+      "best_word": "happiness",
+      "best_rank": 105,
+      "total_guesses": 104
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:50:02",
+    "details": {
+      "word": "delight",
+      "rank": 1817,
+      "hypothesis": "joyful_satisfaction",
+      "best_word": "happiness",
+      "best_rank": 105,
+      "total_guesses": 105
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:50:02",
+    "details": {
+      "word": "serenity",
+      "rank": 1192,
+      "hypothesis": "joyful_satisfaction",
+      "best_word": "happiness",
+      "best_rank": 105,
+      "total_guesses": 106
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:50:03",
+    "details": {
+      "word": "satisfaction",
+      "rank": 230,
+      "hypothesis": "joyful_satisfaction",
+      "best_word": "happiness",
+      "best_rank": 105,
+      "total_guesses": 107
+    }
+  },
+  {
+    "generation": 1,
+    "event": "CROSSOVER",
+    "timestamp": "2026-07-23T01:50:03",
+    "details": {
+      "parents": [
+        "emotions",
+        "states of contentment"
+      ],
+      "parent_ids": [
+        "8f63e38a4564468ba50de47f0581fcb5",
+        "7312a384085d4dbcaea3c9678b6c6a51"
+      ],
+      "parent_ranks": [
+        105,
+        245
+      ],
+      "parent_a_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "parent_b_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma_pre_perturbation": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child": {
+        "hypothesis_id": "8cd685d08e7349c397edd71d36346cea",
+        "category_name": "joyful_satisfaction",
+        "description": "A combination of high-arousal positive emotions and states of peaceful contentment.",
+        "words_tried": {
+          "satisfaction": 230,
+          "serenity": 1192,
+          "delight": 1817
+        },
+        "best_word": "satisfaction",
+        "best_rank": 230,
+        "status": "active",
+        "parent": "emotions+states of contentment",
+        "parent_id": null,
+        "origin": "crossover",
+        "sigma": [
+          0.25,
+          0.25,
+          0.25,
+          0.25
+        ],
+        "self_report": {
+          "predicted_closeness": 0.85,
+          "predicted_closeness_clamped": false,
+          "predicted_bucket": "top100",
+          "rationale": {
+            "basis_words": [
+              "happiness",
+              "joy",
+              "bliss",
+              "contentment",
+              "pleasure"
+            ],
+            "reason": "These words represent the overlap between the emotional intensity of joy/happiness and the stable state of bliss/contentment."
+          },
+          "self_report_parse_failed": false,
+          "self_report_raw": "{\"name\": \"joyful_satisfaction\", \"description\": \"A combination of high-arousal positive emotions and states of peaceful contentment.\", \"words\": [\"delight\", \"serenity\", \"satisfaction\"], \"basis_words\": [\"happiness\", \"joy\", \"bliss\", \"contentment\", \"pleasure\"], \"reason\": \"These words represent the overlap between the emotional intensity of joy/happiness and the stable state of bliss/contentment.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.85}",
+          "self_report_prompt": "Return only JSON, no markdown or explanation.\nCategory A is emotions with results {\"anger\": 672, \"fear\": 302, \"happiness\": 105, \"joy\": 372, \"love\": 148, \"sadness\": 475}.\nCategory B is states of contentment with results {\"bliss\": 3846, \"contentment\": 245, \"pleasure\": 669}.\nSuggest one new category that captures the intersection or overlap of A and B.\nInclude exactly 3 candidate words.\nEvery word must be one common lowercase dictionary word.\nJSON schema:\n{\"name\": \"category name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+          "injected_rationale_hash": null,
+          "rationale_truncated": false
+        }
+      },
+      "best_word": "happiness",
+      "best_rank": 105,
+      "total_guesses": 107
+    }
+  },
+  {
+    "generation": 1,
+    "event": "SIGMA_TRAJECTORY",
+    "timestamp": "2026-07-23T01:50:03",
+    "details": {
+      "mean_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "population_size": 11
+    }
+  },
+  {
+    "generation": 2,
+    "event": "CANDIDATES",
+    "timestamp": "2026-07-23T01:59:34",
+    "details": {
+      "count": 32,
+      "candidates": [
+        {
+          "hypothesis": "emotions",
+          "word": "pride"
+        },
+        {
+          "hypothesis": "emotions",
+          "word": "hope"
+        },
+        {
+          "hypothesis": "emotions",
+          "word": "surprise"
+        },
+        {
+          "hypothesis": "joyful_satisfaction",
+          "word": "elation"
+        },
+        {
+          "hypothesis": "joyful_satisfaction",
+          "word": "gladness"
+        },
+        {
+          "hypothesis": "joyful_satisfaction",
+          "word": "gratification"
+        },
+        {
+          "hypothesis": "states of contentment",
+          "word": "peace"
+        },
+        {
+          "hypothesis": "states of contentment",
+          "word": "comfort"
+        },
+        {
+          "hypothesis": "states of contentment",
+          "word": "calm"
+        },
+        {
+          "hypothesis": "judicial_system",
+          "word": "law"
+        },
+        {
+          "hypothesis": "judicial_system",
+          "word": "jury"
+        },
+        {
+          "hypothesis": "judicial_system",
+          "word": "crime"
+        },
+        {
+          "hypothesis": "careers",
+          "word": "clerk"
+        },
+        {
+          "hypothesis": "careers",
+          "word": "sheriff"
+        },
+        {
+          "hypothesis": "anatomy",
+          "word": "brain"
+        },
+        {
+          "hypothesis": "anatomy",
+          "word": "eye"
+        },
+        {
+          "hypothesis": "anatomy",
+          "word": "liver"
+        },
+        {
+          "hypothesis": "stationery",
+          "word": "envelope"
+        },
+        {
+          "hypothesis": "stationery",
+          "word": "ink"
+        },
+        {
+          "hypothesis": "stationery",
+          "word": "stapler"
+        },
+        {
+          "hypothesis": "sports",
+          "word": "fitness"
+        },
+        {
+          "hypothesis": "sports",
+          "word": "training"
+        },
+        {
+          "hypothesis": "sports",
+          "word": "exercise"
+        },
+        {
+          "hypothesis": "competitive events",
+          "word": "championship"
+        },
+        {
+          "hypothesis": "competitive events",
+          "word": "meet"
+        },
+        {
+          "hypothesis": "competitive events",
+          "word": "sport"
+        },
+        {
+          "hypothesis": "publications",
+          "word": "magazine"
+        },
+        {
+          "hypothesis": "publications",
+          "word": "manuscript"
+        },
+        {
+          "hypothesis": "publications",
+          "word": "publication"
+        },
+        {
+          "hypothesis": "geological features",
+          "word": "cliff"
+        },
+        {
+          "hypothesis": "geological features",
+          "word": "ridge"
+        },
+        {
+          "hypothesis": "geological features",
+          "word": "gorge"
+        }
+      ]
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:59:35",
+    "details": {
+      "word": "pride",
+      "rank": 146,
+      "hypothesis": "emotions",
+      "best_word": "happiness",
+      "best_rank": 105,
+      "total_guesses": 108
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:59:36",
+    "details": {
+      "word": "hope",
+      "rank": 256,
+      "hypothesis": "emotions",
+      "best_word": "happiness",
+      "best_rank": 105,
+      "total_guesses": 109
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:59:37",
+    "details": {
+      "word": "surprise",
+      "rank": 312,
+      "hypothesis": "emotions",
+      "best_word": "happiness",
+      "best_rank": 105,
+      "total_guesses": 110
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:59:37",
+    "details": {
+      "word": "elation",
+      "rank": 8756,
+      "hypothesis": "joyful_satisfaction",
+      "best_word": "happiness",
+      "best_rank": 105,
+      "total_guesses": 111
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:59:38",
+    "details": {
+      "word": "gladness",
+      "rank": 5400,
+      "hypothesis": "joyful_satisfaction",
+      "best_word": "happiness",
+      "best_rank": 105,
+      "total_guesses": 112
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:59:39",
+    "details": {
+      "word": "gratification",
+      "rank": 1157,
+      "hypothesis": "joyful_satisfaction",
+      "best_word": "happiness",
+      "best_rank": 105,
+      "total_guesses": 113
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:59:39",
+    "details": {
+      "word": "peace",
+      "rank": 613,
+      "hypothesis": "states of contentment",
+      "best_word": "happiness",
+      "best_rank": 105,
+      "total_guesses": 114
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:59:40",
+    "details": {
+      "word": "comfort",
+      "rank": 1557,
+      "hypothesis": "states of contentment",
+      "best_word": "happiness",
+      "best_rank": 105,
+      "total_guesses": 115
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:59:40",
+    "details": {
+      "word": "calm",
+      "rank": 836,
+      "hypothesis": "states of contentment",
+      "best_word": "happiness",
+      "best_rank": 105,
+      "total_guesses": 116
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:59:41",
+    "details": {
+      "word": "law",
+      "rank": 1921,
+      "hypothesis": "judicial_system",
+      "best_word": "happiness",
+      "best_rank": 105,
+      "total_guesses": 117
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:59:41",
+    "details": {
+      "word": "jury",
+      "rank": 4142,
+      "hypothesis": "judicial_system",
+      "best_word": "happiness",
+      "best_rank": 105,
+      "total_guesses": 118
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:59:42",
+    "details": {
+      "word": "crime",
+      "rank": 2975,
+      "hypothesis": "judicial_system",
+      "best_word": "happiness",
+      "best_rank": 105,
+      "total_guesses": 119
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:59:43",
+    "details": {
+      "word": "clerk",
+      "rank": 9754,
+      "hypothesis": "careers",
+      "best_word": "happiness",
+      "best_rank": 105,
+      "total_guesses": 120
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:59:44",
+    "details": {
+      "word": "sheriff",
+      "rank": 8273,
+      "hypothesis": "careers",
+      "best_word": "happiness",
+      "best_rank": 105,
+      "total_guesses": 121
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:59:44",
+    "details": {
+      "word": "brain",
+      "rank": 2527,
+      "hypothesis": "anatomy",
+      "best_word": "happiness",
+      "best_rank": 105,
+      "total_guesses": 122
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:59:44",
+    "details": {
+      "word": "eye",
+      "rank": 2189,
+      "hypothesis": "anatomy",
+      "best_word": "happiness",
+      "best_rank": 105,
+      "total_guesses": 123
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:59:45",
+    "details": {
+      "word": "liver",
+      "rank": 14187,
+      "hypothesis": "anatomy",
+      "best_word": "happiness",
+      "best_rank": 105,
+      "total_guesses": 124
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:59:46",
+    "details": {
+      "word": "envelope",
+      "rank": 9280,
+      "hypothesis": "stationery",
+      "best_word": "happiness",
+      "best_rank": 105,
+      "total_guesses": 125
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:59:47",
+    "details": {
+      "word": "ink",
+      "rank": 12728,
+      "hypothesis": "stationery",
+      "best_word": "happiness",
+      "best_rank": 105,
+      "total_guesses": 126
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:59:47",
+    "details": {
+      "word": "stapler",
+      "rank": 30597,
+      "hypothesis": "stationery",
+      "best_word": "happiness",
+      "best_rank": 105,
+      "total_guesses": 127
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:59:47",
+    "details": {
+      "word": "fitness",
+      "rank": 4599,
+      "hypothesis": "sports",
+      "best_word": "happiness",
+      "best_rank": 105,
+      "total_guesses": 128
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:59:48",
+    "details": {
+      "word": "training",
+      "rank": 4392,
+      "hypothesis": "sports",
+      "best_word": "happiness",
+      "best_rank": 105,
+      "total_guesses": 129
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:59:49",
+    "details": {
+      "word": "exercise",
+      "rank": 2128,
+      "hypothesis": "sports",
+      "best_word": "happiness",
+      "best_rank": 105,
+      "total_guesses": 130
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:59:50",
+    "details": {
+      "word": "championship",
+      "rank": 22186,
+      "hypothesis": "competitive events",
+      "best_word": "happiness",
+      "best_rank": 105,
+      "total_guesses": 131
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:59:51",
+    "details": {
+      "word": "meet",
+      "rank": 1638,
+      "hypothesis": "competitive events",
+      "best_word": "happiness",
+      "best_rank": 105,
+      "total_guesses": 132
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:59:51",
+    "details": {
+      "word": "sport",
+      "rank": 5285,
+      "hypothesis": "competitive events",
+      "best_word": "happiness",
+      "best_rank": 105,
+      "total_guesses": 133
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:59:51",
+    "details": {
+      "word": "magazine",
+      "rank": 6259,
+      "hypothesis": "publications",
+      "best_word": "happiness",
+      "best_rank": 105,
+      "total_guesses": 134
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:59:52",
+    "details": {
+      "word": "manuscript",
+      "rank": 7902,
+      "hypothesis": "publications",
+      "best_word": "happiness",
+      "best_rank": 105,
+      "total_guesses": 135
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:59:52",
+    "details": {
+      "word": "publication",
+      "rank": 8295,
+      "hypothesis": "publications",
+      "best_word": "happiness",
+      "best_rank": 105,
+      "total_guesses": 136
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:59:53",
+    "details": {
+      "word": "cliff",
+      "rank": 9636,
+      "hypothesis": "geological features",
+      "best_word": "happiness",
+      "best_rank": 105,
+      "total_guesses": 137
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:59:54",
+    "details": {
+      "word": "ridge",
+      "rank": 32088,
+      "hypothesis": "geological features",
+      "best_word": "happiness",
+      "best_rank": 105,
+      "total_guesses": 138
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:59:54",
+    "details": {
+      "word": "gorge",
+      "rank": 28967,
+      "hypothesis": "geological features",
+      "best_word": "happiness",
+      "best_rank": 105,
+      "total_guesses": 139
+    }
+  },
+  {
+    "generation": 2,
+    "event": "SELECT",
+    "timestamp": "2026-07-23T01:59:54",
+    "details": {
+      "kept": [
+        "emotions",
+        "joyful_satisfaction",
+        "states of contentment",
+        "judicial_system",
+        "careers"
+      ],
+      "discarded": [
+        "anatomy",
+        "competitive events",
+        "stationery",
+        "sports",
+        "colors",
+        "technology",
+        "publications",
+        "animals",
+        "space",
+        "food",
+        "transportation",
+        "clothing",
+        "weather",
+        "furniture",
+        "geological features",
+        "nature"
+      ],
+      "elite": "emotions",
+      "max_active_hypotheses": 5,
+      "best_word": "happiness",
+      "best_rank": 105,
+      "total_guesses": 139
+    }
+  },
+  {
+    "generation": 2,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-23T02:00:34",
+    "details": {
+      "parent_id": "8f63e38a4564468ba50de47f0581fcb5",
+      "child_id": "8bd4a1b4801c4fa3b9a056a0e4498453",
+      "parent_rank": 105,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "personality traits",
+      "sampled_op": "ml_mutation",
+      "method": "self_adaptive",
+      "self_report": {
+        "predicted_closeness": 0.8,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "happiness",
+            "pride",
+            "love"
+          ],
+          "reason": "Given the proximity of 'happiness' (105) and 'pride' (146), the target is likely a character trait or internal state; 'personality traits' explores these enduring qualities."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"name\": \"personality traits\", \"description\": \"enduring human characteristics and temperaments\", \"words\": [\"kind\", \"brave\", \"confident\"], \"basis_words\": [\"happiness\", \"pride\", \"love\"], \"reason\": \"Given the proximity of 'happiness' (105) and 'pride' (146), the target is likely a character trait or internal state; 'personality traits' explores these enduring qualities.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.8}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"emotions\".\nDescription: human feelings\nResults so far in this hypothesis: {\"anger\": 672, \"fear\": 302, \"happiness\": 105, \"hope\": 256, \"joy\": 372, \"love\": 148, \"pride\": 146, \"sadness\": 475, \"surprise\": 312}\nBest word so far: \"happiness\" with rank 105.\n\nMake a MEDIUM-LARGE mutation: produce a child hypothesis in an ADJACENT but\ndistinct category that could still plausibly contain the hidden target given\n\"happiness\"'s rank. The child must NOT be a sub-category of \"emotions\" - it\nshould sit alongside \"emotions\" in semantic space, not underneath it.\n\nFor example, if the parent is \"types of plants\" and the best word is \"shrub\",\nan adjacent category could be \"plant descriptors\", \"botanical terminology\",\n\"growth habits\", or \"ecological roles\".\n\nSuggest one adjacent hypothesis. Include exactly 3 starter words that have\nnot already been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"anger\", \"anxiety\", \"apple\", \"athlete\", \"ball\", \"bear\", \"bed\", \"bliss\", \"blue\", \"boat\", \"bone\", \"book\", \"brain\", \"bread\", \"bus\", \"calm\", \"camera\", \"canyon\", \"car\", \"cave\", \"chair\", \"championship\", \"clerk\", \"cliff\", \"cloud\", \"coat\", \"coffee\", \"comfort\", \"competition\", \"computer\", \"contentment\", \"contest\", \"cook\", \"cosmos\", \"court\", \"crime\", \"delight\", \"desert\", \"desk\", \"doctor\", \"dress\", \"eagle\", \"elation\", \"envelope\", \"eraser\", \"exercise\", \"eye\", \"fear\", \"fitness\", \"forest\", \"galaxy\", \"game\", \"gladness\", \"gorge\", \"gratification\", \"green\", \"hand\", \"happiness\", \"hat\", \"head\", \"heart\", \"hope\", \"ink\", \"internet\", \"journal\", \"joy\", \"judge\", \"juice\", \"jungle\", \"jury\", \"justice\", \"lamp\", \"laptop\", \"law\", \"lawyer\", \"lion\", \"liver\", \"love\", \"lung\", \"magazine\", \"manuscript\", \"marker\", \"match\", \"meet\", \"moon\", \"mountain\", \"network\", \"novel\", \"panic\", \"pants\", \"paper\", \"peace\", \"pen\", \"pencil\", \"phone\", \"pilot\", \"plane\", \"planet\", \"pleasure\", \"pride\", \"publication\", \"race\", \"rain\", \"red\", \"ridge\", \"river\", \"sadness\", \"satisfaction\", \"serenity\", \"sheriff\", \"shirt\", \"shoes\", \"skin\", \"snow\", \"sofa\", \"sport\", \"stapler\", \"star\", \"storm\", \"sun\", \"surprise\", \"table\", \"tea\", \"teacher\", \"team\", \"tiger\", \"tournament\", \"train\", \"training\", \"trial\", \"truck\", \"universe\", \"valley\", \"volcano\", \"volume\", \"whale\", \"wind\", \"wine\", \"wolf\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"category name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:00:34",
+    "details": {
+      "word": "kind",
+      "rank": 153,
+      "hypothesis": "personality traits",
+      "best_word": "happiness",
+      "best_rank": 105,
+      "total_guesses": 140
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:00:34",
+    "details": {
+      "word": "brave",
+      "rank": 490,
+      "hypothesis": "personality traits",
+      "best_word": "happiness",
+      "best_rank": 105,
+      "total_guesses": 141
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:00:35",
+    "details": {
+      "word": "confident",
+      "rank": 557,
+      "hypothesis": "personality traits",
+      "best_word": "happiness",
+      "best_rank": 105,
+      "total_guesses": 142
+    }
+  },
+  {
+    "generation": 2,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-23T02:01:58",
+    "details": {
+      "parent_id": "8cd685d08e7349c397edd71d36346cea",
+      "child_id": "d72cbeacb91e4518a52f397e2fd8ef75",
+      "parent_rank": 230,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "attained_fulfillment",
+      "sampled_op": "s_mutation",
+      "method": "self_adaptive",
+      "self_report": {
+        "predicted_closeness": 0.8,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "contentment",
+            "pleasure"
+          ],
+          "reason": "Moving from general satisfaction to a more specific sense of accomplishment and realized goals."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"name\": \"attained_fulfillment\", \"description\": \"Refining satisfaction toward the specific feeling of accomplishment and completed goals.\", \"words\": [\"fulfillment\", \"achievement\", \"success\"], \"basis_words\": [\"contentment\", \"pleasure\"], \"reason\": \"Moving from general satisfaction to a more specific sense of accomplishment and realized goals.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.8}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"joyful_satisfaction\".\nDescription: A combination of high-arousal positive emotions and states of peaceful contentment.\nResults so far in this hypothesis: {\"delight\": 1817, \"elation\": 8756, \"gladness\": 5400, \"gratification\": 1157, \"satisfaction\": 230, \"serenity\": 1192}\nBest word so far: \"satisfaction\" with rank 230.\n\nMake a SMALL mutation: produce a child hypothesis that stays in the same\nconceptual neighborhood as \"joyful_satisfaction\" but narrows or refines it. The new starter\nwords should be close semantic neighbors of \"satisfaction\" - synonyms, common\ndescriptors, or words that frequently co-occur with it.\n\nFor example, if the parent is \"types of plants\" and the best word is \"shrub\",\na small mutation could be \"woody plants\" with starters like bush, hedge, thicket.\n\nSuggest one refined hypothesis. Include exactly 3 starter words that have not\nalready been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"anger\", \"anxiety\", \"apple\", \"athlete\", \"ball\", \"bear\", \"bed\", \"bliss\", \"blue\", \"boat\", \"bone\", \"book\", \"brain\", \"brave\", \"bread\", \"bus\", \"calm\", \"camera\", \"canyon\", \"car\", \"cave\", \"chair\", \"championship\", \"clerk\", \"cliff\", \"cloud\", \"coat\", \"coffee\", \"comfort\", \"competition\", \"computer\", \"confident\", \"contentment\", \"contest\", \"cook\", \"cosmos\", \"court\", \"crime\", \"delight\", \"desert\", \"desk\", \"doctor\", \"dress\", \"eagle\", \"elation\", \"envelope\", \"eraser\", \"exercise\", \"eye\", \"fear\", \"fitness\", \"forest\", \"galaxy\", \"game\", \"gladness\", \"gorge\", \"gratification\", \"green\", \"hand\", \"happiness\", \"hat\", \"head\", \"heart\", \"hope\", \"ink\", \"internet\", \"journal\", \"joy\", \"judge\", \"juice\", \"jungle\", \"jury\", \"justice\", \"kind\", \"lamp\", \"laptop\", \"law\", \"lawyer\", \"lion\", \"liver\", \"love\", \"lung\", \"magazine\", \"manuscript\", \"marker\", \"match\", \"meet\", \"moon\", \"mountain\", \"network\", \"novel\", \"panic\", \"pants\", \"paper\", \"peace\", \"pen\", \"pencil\", \"phone\", \"pilot\", \"plane\", \"planet\", \"pleasure\", \"pride\", \"publication\", \"race\", \"rain\", \"red\", \"ridge\", \"river\", \"sadness\", \"satisfaction\", \"serenity\", \"sheriff\", \"shirt\", \"shoes\", \"skin\", \"snow\", \"sofa\", \"sport\", \"stapler\", \"star\", \"storm\", \"sun\", \"surprise\", \"table\", \"tea\", \"teacher\", \"team\", \"tiger\", \"tournament\", \"train\", \"training\", \"trial\", \"truck\", \"universe\", \"valley\", \"volcano\", \"volume\", \"whale\", \"wind\", \"wine\", \"wolf\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"direction name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nThe parent hypothesis's prior rationale (for context only; do not copy blindly): basis_words=[\"happiness\", \"joy\", \"bliss\", \"contentment\", \"pleasure\"], reason=\"These words represent the overlap between the emotional intensity of joy/happiness and the stable state of bliss/contentment.\".\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": "44cd500f3ca8f6c2",
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:01:59",
+    "details": {
+      "word": "fulfillment",
+      "rank": 1185,
+      "hypothesis": "attained_fulfillment",
+      "best_word": "happiness",
+      "best_rank": 105,
+      "total_guesses": 143
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:02:00",
+    "details": {
+      "word": "achievement",
+      "rank": 995,
+      "hypothesis": "attained_fulfillment",
+      "best_word": "happiness",
+      "best_rank": 105,
+      "total_guesses": 144
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:02:01",
+    "details": {
+      "word": "success",
+      "rank": 226,
+      "hypothesis": "attained_fulfillment",
+      "best_word": "happiness",
+      "best_rank": 105,
+      "total_guesses": 145
+    }
+  },
+  {
+    "generation": 2,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-23T02:03:03",
+    "details": {
+      "parent_id": "7312a384085d4dbcaea3c9678b6c6a51",
+      "child_id": "a8111a1d3f6b4f689cdd48087b689bae",
+      "parent_rank": 245,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "states of inner ease",
+      "sampled_op": "s_mutation",
+      "method": "self_adaptive",
+      "self_report": {
+        "predicted_closeness": 0.8,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "contentment"
+          ],
+          "reason": "Narrowing the focus from general contentment to specific qualities of internal ease and mental stillness."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"name\": \"states of inner ease\", \"description\": \"internal states characterized by harmony, stillness, and lack of stress\", \"words\": [\"ease\", \"stillness\", \"harmony\"], \"basis_words\": [\"contentment\"], \"reason\": \"Narrowing the focus from general contentment to specific qualities of internal ease and mental stillness.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.8}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"states of contentment\".\nDescription: positive internal states of fulfillment and well-being\nResults so far in this hypothesis: {\"bliss\": 3846, \"calm\": 836, \"comfort\": 1557, \"contentment\": 245, \"peace\": 613, \"pleasure\": 669}\nBest word so far: \"contentment\" with rank 245.\n\nMake a SMALL mutation: produce a child hypothesis that stays in the same\nconceptual neighborhood as \"states of contentment\" but narrows or refines it. The new starter\nwords should be close semantic neighbors of \"contentment\" - synonyms, common\ndescriptors, or words that frequently co-occur with it.\n\nFor example, if the parent is \"types of plants\" and the best word is \"shrub\",\na small mutation could be \"woody plants\" with starters like bush, hedge, thicket.\n\nSuggest one refined hypothesis. Include exactly 3 starter words that have not\nalready been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"achievement\", \"anger\", \"anxiety\", \"apple\", \"athlete\", \"ball\", \"bear\", \"bed\", \"bliss\", \"blue\", \"boat\", \"bone\", \"book\", \"brain\", \"brave\", \"bread\", \"bus\", \"calm\", \"camera\", \"canyon\", \"car\", \"cave\", \"chair\", \"championship\", \"clerk\", \"cliff\", \"cloud\", \"coat\", \"coffee\", \"comfort\", \"competition\", \"computer\", \"confident\", \"contentment\", \"contest\", \"cook\", \"cosmos\", \"court\", \"crime\", \"delight\", \"desert\", \"desk\", \"doctor\", \"dress\", \"eagle\", \"elation\", \"envelope\", \"eraser\", \"exercise\", \"eye\", \"fear\", \"fitness\", \"forest\", \"fulfillment\", \"galaxy\", \"game\", \"gladness\", \"gorge\", \"gratification\", \"green\", \"hand\", \"happiness\", \"hat\", \"head\", \"heart\", \"hope\", \"ink\", \"internet\", \"journal\", \"joy\", \"judge\", \"juice\", \"jungle\", \"jury\", \"justice\", \"kind\", \"lamp\", \"laptop\", \"law\", \"lawyer\", \"lion\", \"liver\", \"love\", \"lung\", \"magazine\", \"manuscript\", \"marker\", \"match\", \"meet\", \"moon\", \"mountain\", \"network\", \"novel\", \"panic\", \"pants\", \"paper\", \"peace\", \"pen\", \"pencil\", \"phone\", \"pilot\", \"plane\", \"planet\", \"pleasure\", \"pride\", \"publication\", \"race\", \"rain\", \"red\", \"ridge\", \"river\", \"sadness\", \"satisfaction\", \"serenity\", \"sheriff\", \"shirt\", \"shoes\", \"skin\", \"snow\", \"sofa\", \"sport\", \"stapler\", \"star\", \"storm\", \"success\", \"sun\", \"surprise\", \"table\", \"tea\", \"teacher\", \"team\", \"tiger\", \"tournament\", \"train\", \"training\", \"trial\", \"truck\", \"universe\", \"valley\", \"volcano\", \"volume\", \"whale\", \"wind\", \"wine\", \"wolf\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"direction name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nThe parent hypothesis's prior rationale (for context only; do not copy blindly): basis_words=[\"happiness\", \"joy\"], reason=\"Shifts from a broad category of emotions to specific types of positive, stable mental states.\".\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": "338c5b979201a29f",
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:03:07",
+    "details": {
+      "word": "ease",
+      "rank": 816,
+      "hypothesis": "states of inner ease",
+      "best_word": "happiness",
+      "best_rank": 105,
+      "total_guesses": 146
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:03:07",
+    "details": {
+      "word": "stillness",
+      "rank": 1359,
+      "hypothesis": "states of inner ease",
+      "best_word": "happiness",
+      "best_rank": 105,
+      "total_guesses": 147
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:03:07",
+    "details": {
+      "word": "harmony",
+      "rank": 787,
+      "hypothesis": "states of inner ease",
+      "best_word": "happiness",
+      "best_rank": 105,
+      "total_guesses": 148
+    }
+  },
+  {
+    "generation": 2,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-23T02:04:00",
+    "details": {
+      "parent_id": "6a0e4dc5fdc047f6bd272bba3487b51f",
+      "child_id": "09a9712bb40847eeb6d0d71a06c34b04",
+      "parent_rank": 388,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "moral_ethics",
+      "sampled_op": "m_mutation",
+      "method": "self_adaptive",
+      "self_report": {
+        "predicted_closeness": 0.7,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "justice"
+          ],
+          "reason": "This shifts from the institutional/legal aspects of justice toward its abstract ethical and moral implications."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"name\": \"moral_ethics\", \"description\": \"ethical concepts and principles regarding fairness and moral rightness\", \"words\": [\"fairness\", \"morality\", \"equity\"], \"basis_words\": [\"justice\"], \"reason\": \"This shifts from the institutional/legal aspects of justice toward its abstract ethical and moral implications.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.7}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"judicial_system\".\nDescription: terms related to the court system and legal proceedings\nResults so far in this hypothesis: {\"court\": 5126, \"crime\": 2975, \"jury\": 4142, \"justice\": 388, \"law\": 1921, \"trial\": 6146}\nBest word so far: \"justice\" with rank 388.\n\nMake a MEDIUM mutation: produce a child hypothesis that reinterprets why\n\"justice\" might have scored well, or shifts to a related sense, lexical\nregister, or part of speech. The child should still be semantically anchored\nto \"justice\" but approach it from a clearly different angle than \"judicial_system\".\n\nFor example, if the parent is \"food\" and the best word is \"bite\", a medium\nmutation could be \"animals that bite\", \"physical sensations from biting\", or\n\"clinical terms for biting and chewing\" - each treats \"bite\" through a\ndifferent lens.\n\nSuggest one reframed hypothesis. Include exactly 3 starter words that have\nnot already been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"achievement\", \"anger\", \"anxiety\", \"apple\", \"athlete\", \"ball\", \"bear\", \"bed\", \"bliss\", \"blue\", \"boat\", \"bone\", \"book\", \"brain\", \"brave\", \"bread\", \"bus\", \"calm\", \"camera\", \"canyon\", \"car\", \"cave\", \"chair\", \"championship\", \"clerk\", \"cliff\", \"cloud\", \"coat\", \"coffee\", \"comfort\", \"competition\", \"computer\", \"confident\", \"contentment\", \"contest\", \"cook\", \"cosmos\", \"court\", \"crime\", \"delight\", \"desert\", \"desk\", \"doctor\", \"dress\", \"eagle\", \"ease\", \"elation\", \"envelope\", \"eraser\", \"exercise\", \"eye\", \"fear\", \"fitness\", \"forest\", \"fulfillment\", \"galaxy\", \"game\", \"gladness\", \"gorge\", \"gratification\", \"green\", \"hand\", \"happiness\", \"harmony\", \"hat\", \"head\", \"heart\", \"hope\", \"ink\", \"internet\", \"journal\", \"joy\", \"judge\", \"juice\", \"jungle\", \"jury\", \"justice\", \"kind\", \"lamp\", \"laptop\", \"law\", \"lawyer\", \"lion\", \"liver\", \"love\", \"lung\", \"magazine\", \"manuscript\", \"marker\", \"match\", \"meet\", \"moon\", \"mountain\", \"network\", \"novel\", \"panic\", \"pants\", \"paper\", \"peace\", \"pen\", \"pencil\", \"phone\", \"pilot\", \"plane\", \"planet\", \"pleasure\", \"pride\", \"publication\", \"race\", \"rain\", \"red\", \"ridge\", \"river\", \"sadness\", \"satisfaction\", \"serenity\", \"sheriff\", \"shirt\", \"shoes\", \"skin\", \"snow\", \"sofa\", \"sport\", \"stapler\", \"star\", \"stillness\", \"storm\", \"success\", \"sun\", \"surprise\", \"table\", \"tea\", \"teacher\", \"team\", \"tiger\", \"tournament\", \"train\", \"training\", \"trial\", \"truck\", \"universe\", \"valley\", \"volcano\", \"volume\", \"whale\", \"wind\", \"wine\", \"wolf\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"direction name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nThe parent hypothesis's prior rationale (for context only; do not copy blindly): basis_words=[\"judge\"], reason=\"This shifts from general vocational roles to the specific institutional context of law and adjudication.\".\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": "3720e2bfbcff2efa",
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:04:01",
+    "details": {
+      "word": "fairness",
+      "rank": 8,
+      "hypothesis": "moral_ethics",
+      "best_word": "fairness",
+      "best_rank": 8,
+      "total_guesses": 149
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:04:02",
+    "details": {
+      "word": "morality",
+      "rank": 35,
+      "hypothesis": "moral_ethics",
+      "best_word": "fairness",
+      "best_rank": 8,
+      "total_guesses": 150
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:04:02",
+    "details": {
+      "word": "equity",
+      "rank": 3627,
+      "hypothesis": "moral_ethics",
+      "best_word": "fairness",
+      "best_rank": 8,
+      "total_guesses": 151
+    }
+  },
+  {
+    "generation": 2,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-23T02:05:37",
+    "details": {
+      "parent_id": "140d35ef39394009b5e04b253dd93346",
+      "child_id": "30263739bde0415b9d7e089b92693c7f",
+      "parent_rank": 564,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "government systems",
+      "sampled_op": "ml_mutation",
+      "method": "self_adaptive",
+      "self_report": {
+        "predicted_closeness": 0.7,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "judge"
+          ],
+          "reason": "The superior rank of 'judge' over other career titles suggests the target may be related to the structural framework of governance or public administration rather than just general employment."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"name\": \"government systems\", \"description\": \"administrative structures and organizations of public life\", \"words\": [\"council\", \"agency\", \"bureau\"], \"basis_words\": [\"judge\"], \"reason\": \"The superior rank of 'judge' over other career titles suggests the target may be related to the structural framework of governance or public administration rather than just general employment.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.7}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"careers\".\nDescription: professional roles\nResults so far in this hypothesis: {\"clerk\": 9754, \"cook\": 8633, \"doctor\": 3235, \"judge\": 564, \"lawyer\": 4385, \"pilot\": 9158, \"sheriff\": 8273, \"teacher\": 2012}\nBest word so far: \"judge\" with rank 564.\n\nMake a MEDIUM-LARGE mutation: produce a child hypothesis in an ADJACENT but\ndistinct category that could still plausibly contain the hidden target given\n\"judge\"'s rank. The child must NOT be a sub-category of \"careers\" - it\nshould sit alongside \"careers\" in semantic space, not underneath it.\n\nFor example, if the parent is \"types of plants\" and the best word is \"shrub\",\nan adjacent category could be \"plant descriptors\", \"botanical terminology\",\n\"growth habits\", or \"ecological roles\".\n\nSuggest one adjacent hypothesis. Include exactly 3 starter words that have\nnot already been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"achievement\", \"anger\", \"anxiety\", \"apple\", \"athlete\", \"ball\", \"bear\", \"bed\", \"bliss\", \"blue\", \"boat\", \"bone\", \"book\", \"brain\", \"brave\", \"bread\", \"bus\", \"calm\", \"camera\", \"canyon\", \"car\", \"cave\", \"chair\", \"championship\", \"clerk\", \"cliff\", \"cloud\", \"coat\", \"coffee\", \"comfort\", \"competition\", \"computer\", \"confident\", \"contentment\", \"contest\", \"cook\", \"cosmos\", \"court\", \"crime\", \"delight\", \"desert\", \"desk\", \"doctor\", \"dress\", \"eagle\", \"ease\", \"elation\", \"envelope\", \"equity\", \"eraser\", \"exercise\", \"eye\", \"fairness\", \"fear\", \"fitness\", \"forest\", \"fulfillment\", \"galaxy\", \"game\", \"gladness\", \"gorge\", \"gratification\", \"green\", \"hand\", \"happiness\", \"harmony\", \"hat\", \"head\", \"heart\", \"hope\", \"ink\", \"internet\", \"journal\", \"joy\", \"judge\", \"juice\", \"jungle\", \"jury\", \"justice\", \"kind\", \"lamp\", \"laptop\", \"law\", \"lawyer\", \"lion\", \"liver\", \"love\", \"lung\", \"magazine\", \"manuscript\", \"marker\", \"match\", \"meet\", \"moon\", \"morality\", \"mountain\", \"network\", \"novel\", \"panic\", \"pants\", \"paper\", \"peace\", \"pen\", \"pencil\", \"phone\", \"pilot\", \"plane\", \"planet\", \"pleasure\", \"pride\", \"publication\", \"race\", \"rain\", \"red\", \"ridge\", \"river\", \"sadness\", \"satisfaction\", \"serenity\", \"sheriff\", \"shirt\", \"shoes\", \"skin\", \"snow\", \"sofa\", \"sport\", \"stapler\", \"star\", \"stillness\", \"storm\", \"success\", \"sun\", \"surprise\", \"table\", \"tea\", \"teacher\", \"team\", \"tiger\", \"tournament\", \"train\", \"training\", \"trial\", \"truck\", \"universe\", \"valley\", \"volcano\", \"volume\", \"whale\", \"wind\", \"wine\", \"wolf\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"category name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:05:38",
+    "details": {
+      "word": "council",
+      "rank": 6297,
+      "hypothesis": "government systems",
+      "best_word": "fairness",
+      "best_rank": 8,
+      "total_guesses": 152
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:05:39",
+    "details": {
+      "word": "agency",
+      "rank": 4967,
+      "hypothesis": "government systems",
+      "best_word": "fairness",
+      "best_rank": 8,
+      "total_guesses": 153
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:05:39",
+    "details": {
+      "word": "bureau",
+      "rank": 10414,
+      "hypothesis": "government systems",
+      "best_word": "fairness",
+      "best_rank": 8,
+      "total_guesses": 154
+    }
+  },
+  {
+    "generation": 2,
+    "event": "MUTATE",
+    "timestamp": "2026-07-23T02:05:39",
+    "details": {
+      "method": "self_adaptive",
+      "children": [
+        {
+          "hypothesis_id": "8bd4a1b4801c4fa3b9a056a0e4498453",
+          "category_name": "personality traits",
+          "description": "enduring human characteristics and temperaments",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "emotions",
+          "parent_id": "8f63e38a4564468ba50de47f0581fcb5",
+          "origin": "self_adaptive_ml_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "self_report": {
+            "predicted_closeness": 0.8,
+            "predicted_closeness_clamped": false,
+            "predicted_bucket": "top100",
+            "rationale": {
+              "basis_words": [
+                "happiness",
+                "pride",
+                "love"
+              ],
+              "reason": "Given the proximity of 'happiness' (105) and 'pride' (146), the target is likely a character trait or internal state; 'personality traits' explores these enduring qualities."
+            },
+            "self_report_parse_failed": false,
+            "self_report_raw": "{\"name\": \"personality traits\", \"description\": \"enduring human characteristics and temperaments\", \"words\": [\"kind\", \"brave\", \"confident\"], \"basis_words\": [\"happiness\", \"pride\", \"love\"], \"reason\": \"Given the proximity of 'happiness' (105) and 'pride' (146), the target is likely a character trait or internal state; 'personality traits' explores these enduring qualities.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.8}",
+            "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"emotions\".\nDescription: human feelings\nResults so far in this hypothesis: {\"anger\": 672, \"fear\": 302, \"happiness\": 105, \"hope\": 256, \"joy\": 372, \"love\": 148, \"pride\": 146, \"sadness\": 475, \"surprise\": 312}\nBest word so far: \"happiness\" with rank 105.\n\nMake a MEDIUM-LARGE mutation: produce a child hypothesis in an ADJACENT but\ndistinct category that could still plausibly contain the hidden target given\n\"happiness\"'s rank. The child must NOT be a sub-category of \"emotions\" - it\nshould sit alongside \"emotions\" in semantic space, not underneath it.\n\nFor example, if the parent is \"types of plants\" and the best word is \"shrub\",\nan adjacent category could be \"plant descriptors\", \"botanical terminology\",\n\"growth habits\", or \"ecological roles\".\n\nSuggest one adjacent hypothesis. Include exactly 3 starter words that have\nnot already been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"anger\", \"anxiety\", \"apple\", \"athlete\", \"ball\", \"bear\", \"bed\", \"bliss\", \"blue\", \"boat\", \"bone\", \"book\", \"brain\", \"bread\", \"bus\", \"calm\", \"camera\", \"canyon\", \"car\", \"cave\", \"chair\", \"championship\", \"clerk\", \"cliff\", \"cloud\", \"coat\", \"coffee\", \"comfort\", \"competition\", \"computer\", \"contentment\", \"contest\", \"cook\", \"cosmos\", \"court\", \"crime\", \"delight\", \"desert\", \"desk\", \"doctor\", \"dress\", \"eagle\", \"elation\", \"envelope\", \"eraser\", \"exercise\", \"eye\", \"fear\", \"fitness\", \"forest\", \"galaxy\", \"game\", \"gladness\", \"gorge\", \"gratification\", \"green\", \"hand\", \"happiness\", \"hat\", \"head\", \"heart\", \"hope\", \"ink\", \"internet\", \"journal\", \"joy\", \"judge\", \"juice\", \"jungle\", \"jury\", \"justice\", \"lamp\", \"laptop\", \"law\", \"lawyer\", \"lion\", \"liver\", \"love\", \"lung\", \"magazine\", \"manuscript\", \"marker\", \"match\", \"meet\", \"moon\", \"mountain\", \"network\", \"novel\", \"panic\", \"pants\", \"paper\", \"peace\", \"pen\", \"pencil\", \"phone\", \"pilot\", \"plane\", \"planet\", \"pleasure\", \"pride\", \"publication\", \"race\", \"rain\", \"red\", \"ridge\", \"river\", \"sadness\", \"satisfaction\", \"serenity\", \"sheriff\", \"shirt\", \"shoes\", \"skin\", \"snow\", \"sofa\", \"sport\", \"stapler\", \"star\", \"storm\", \"sun\", \"surprise\", \"table\", \"tea\", \"teacher\", \"team\", \"tiger\", \"tournament\", \"train\", \"training\", \"trial\", \"truck\", \"universe\", \"valley\", \"volcano\", \"volume\", \"whale\", \"wind\", \"wine\", \"wolf\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"category name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+            "injected_rationale_hash": null,
+            "rationale_truncated": false
+          }
+        },
+        {
+          "hypothesis_id": "d72cbeacb91e4518a52f397e2fd8ef75",
+          "category_name": "attained_fulfillment",
+          "description": "Refining satisfaction toward the specific feeling of accomplishment and completed goals.",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "joyful_satisfaction",
+          "parent_id": "8cd685d08e7349c397edd71d36346cea",
+          "origin": "self_adaptive_s_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "self_report": {
+            "predicted_closeness": 0.8,
+            "predicted_closeness_clamped": false,
+            "predicted_bucket": "top100",
+            "rationale": {
+              "basis_words": [
+                "contentment",
+                "pleasure"
+              ],
+              "reason": "Moving from general satisfaction to a more specific sense of accomplishment and realized goals."
+            },
+            "self_report_parse_failed": false,
+            "self_report_raw": "{\"name\": \"attained_fulfillment\", \"description\": \"Refining satisfaction toward the specific feeling of accomplishment and completed goals.\", \"words\": [\"fulfillment\", \"achievement\", \"success\"], \"basis_words\": [\"contentment\", \"pleasure\"], \"reason\": \"Moving from general satisfaction to a more specific sense of accomplishment and realized goals.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.8}",
+            "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"joyful_satisfaction\".\nDescription: A combination of high-arousal positive emotions and states of peaceful contentment.\nResults so far in this hypothesis: {\"delight\": 1817, \"elation\": 8756, \"gladness\": 5400, \"gratification\": 1157, \"satisfaction\": 230, \"serenity\": 1192}\nBest word so far: \"satisfaction\" with rank 230.\n\nMake a SMALL mutation: produce a child hypothesis that stays in the same\nconceptual neighborhood as \"joyful_satisfaction\" but narrows or refines it. The new starter\nwords should be close semantic neighbors of \"satisfaction\" - synonyms, common\ndescriptors, or words that frequently co-occur with it.\n\nFor example, if the parent is \"types of plants\" and the best word is \"shrub\",\na small mutation could be \"woody plants\" with starters like bush, hedge, thicket.\n\nSuggest one refined hypothesis. Include exactly 3 starter words that have not\nalready been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"anger\", \"anxiety\", \"apple\", \"athlete\", \"ball\", \"bear\", \"bed\", \"bliss\", \"blue\", \"boat\", \"bone\", \"book\", \"brain\", \"brave\", \"bread\", \"bus\", \"calm\", \"camera\", \"canyon\", \"car\", \"cave\", \"chair\", \"championship\", \"clerk\", \"cliff\", \"cloud\", \"coat\", \"coffee\", \"comfort\", \"competition\", \"computer\", \"confident\", \"contentment\", \"contest\", \"cook\", \"cosmos\", \"court\", \"crime\", \"delight\", \"desert\", \"desk\", \"doctor\", \"dress\", \"eagle\", \"elation\", \"envelope\", \"eraser\", \"exercise\", \"eye\", \"fear\", \"fitness\", \"forest\", \"galaxy\", \"game\", \"gladness\", \"gorge\", \"gratification\", \"green\", \"hand\", \"happiness\", \"hat\", \"head\", \"heart\", \"hope\", \"ink\", \"internet\", \"journal\", \"joy\", \"judge\", \"juice\", \"jungle\", \"jury\", \"justice\", \"kind\", \"lamp\", \"laptop\", \"law\", \"lawyer\", \"lion\", \"liver\", \"love\", \"lung\", \"magazine\", \"manuscript\", \"marker\", \"match\", \"meet\", \"moon\", \"mountain\", \"network\", \"novel\", \"panic\", \"pants\", \"paper\", \"peace\", \"pen\", \"pencil\", \"phone\", \"pilot\", \"plane\", \"planet\", \"pleasure\", \"pride\", \"publication\", \"race\", \"rain\", \"red\", \"ridge\", \"river\", \"sadness\", \"satisfaction\", \"serenity\", \"sheriff\", \"shirt\", \"shoes\", \"skin\", \"snow\", \"sofa\", \"sport\", \"stapler\", \"star\", \"storm\", \"sun\", \"surprise\", \"table\", \"tea\", \"teacher\", \"team\", \"tiger\", \"tournament\", \"train\", \"training\", \"trial\", \"truck\", \"universe\", \"valley\", \"volcano\", \"volume\", \"whale\", \"wind\", \"wine\", \"wolf\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"direction name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nThe parent hypothesis's prior rationale (for context only; do not copy blindly): basis_words=[\"happiness\", \"joy\", \"bliss\", \"contentment\", \"pleasure\"], reason=\"These words represent the overlap between the emotional intensity of joy/happiness and the stable state of bliss/contentment.\".\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+            "injected_rationale_hash": "44cd500f3ca8f6c2",
+            "rationale_truncated": false
+          }
+        },
+        {
+          "hypothesis_id": "a8111a1d3f6b4f689cdd48087b689bae",
+          "category_name": "states of inner ease",
+          "description": "internal states characterized by harmony, stillness, and lack of stress",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "states of contentment",
+          "parent_id": "7312a384085d4dbcaea3c9678b6c6a51",
+          "origin": "self_adaptive_s_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "self_report": {
+            "predicted_closeness": 0.8,
+            "predicted_closeness_clamped": false,
+            "predicted_bucket": "top100",
+            "rationale": {
+              "basis_words": [
+                "contentment"
+              ],
+              "reason": "Narrowing the focus from general contentment to specific qualities of internal ease and mental stillness."
+            },
+            "self_report_parse_failed": false,
+            "self_report_raw": "{\"name\": \"states of inner ease\", \"description\": \"internal states characterized by harmony, stillness, and lack of stress\", \"words\": [\"ease\", \"stillness\", \"harmony\"], \"basis_words\": [\"contentment\"], \"reason\": \"Narrowing the focus from general contentment to specific qualities of internal ease and mental stillness.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.8}",
+            "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"states of contentment\".\nDescription: positive internal states of fulfillment and well-being\nResults so far in this hypothesis: {\"bliss\": 3846, \"calm\": 836, \"comfort\": 1557, \"contentment\": 245, \"peace\": 613, \"pleasure\": 669}\nBest word so far: \"contentment\" with rank 245.\n\nMake a SMALL mutation: produce a child hypothesis that stays in the same\nconceptual neighborhood as \"states of contentment\" but narrows or refines it. The new starter\nwords should be close semantic neighbors of \"contentment\" - synonyms, common\ndescriptors, or words that frequently co-occur with it.\n\nFor example, if the parent is \"types of plants\" and the best word is \"shrub\",\na small mutation could be \"woody plants\" with starters like bush, hedge, thicket.\n\nSuggest one refined hypothesis. Include exactly 3 starter words that have not\nalready been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"achievement\", \"anger\", \"anxiety\", \"apple\", \"athlete\", \"ball\", \"bear\", \"bed\", \"bliss\", \"blue\", \"boat\", \"bone\", \"book\", \"brain\", \"brave\", \"bread\", \"bus\", \"calm\", \"camera\", \"canyon\", \"car\", \"cave\", \"chair\", \"championship\", \"clerk\", \"cliff\", \"cloud\", \"coat\", \"coffee\", \"comfort\", \"competition\", \"computer\", \"confident\", \"contentment\", \"contest\", \"cook\", \"cosmos\", \"court\", \"crime\", \"delight\", \"desert\", \"desk\", \"doctor\", \"dress\", \"eagle\", \"elation\", \"envelope\", \"eraser\", \"exercise\", \"eye\", \"fear\", \"fitness\", \"forest\", \"fulfillment\", \"galaxy\", \"game\", \"gladness\", \"gorge\", \"gratification\", \"green\", \"hand\", \"happiness\", \"hat\", \"head\", \"heart\", \"hope\", \"ink\", \"internet\", \"journal\", \"joy\", \"judge\", \"juice\", \"jungle\", \"jury\", \"justice\", \"kind\", \"lamp\", \"laptop\", \"law\", \"lawyer\", \"lion\", \"liver\", \"love\", \"lung\", \"magazine\", \"manuscript\", \"marker\", \"match\", \"meet\", \"moon\", \"mountain\", \"network\", \"novel\", \"panic\", \"pants\", \"paper\", \"peace\", \"pen\", \"pencil\", \"phone\", \"pilot\", \"plane\", \"planet\", \"pleasure\", \"pride\", \"publication\", \"race\", \"rain\", \"red\", \"ridge\", \"river\", \"sadness\", \"satisfaction\", \"serenity\", \"sheriff\", \"shirt\", \"shoes\", \"skin\", \"snow\", \"sofa\", \"sport\", \"stapler\", \"star\", \"storm\", \"success\", \"sun\", \"surprise\", \"table\", \"tea\", \"teacher\", \"team\", \"tiger\", \"tournament\", \"train\", \"training\", \"trial\", \"truck\", \"universe\", \"valley\", \"volcano\", \"volume\", \"whale\", \"wind\", \"wine\", \"wolf\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"direction name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nThe parent hypothesis's prior rationale (for context only; do not copy blindly): basis_words=[\"happiness\", \"joy\"], reason=\"Shifts from a broad category of emotions to specific types of positive, stable mental states.\".\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+            "injected_rationale_hash": "338c5b979201a29f",
+            "rationale_truncated": false
+          }
+        },
+        {
+          "hypothesis_id": "09a9712bb40847eeb6d0d71a06c34b04",
+          "category_name": "moral_ethics",
+          "description": "ethical concepts and principles regarding fairness and moral rightness",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "judicial_system",
+          "parent_id": "6a0e4dc5fdc047f6bd272bba3487b51f",
+          "origin": "self_adaptive_m_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "self_report": {
+            "predicted_closeness": 0.7,
+            "predicted_closeness_clamped": false,
+            "predicted_bucket": "top500",
+            "rationale": {
+              "basis_words": [
+                "justice"
+              ],
+              "reason": "This shifts from the institutional/legal aspects of justice toward its abstract ethical and moral implications."
+            },
+            "self_report_parse_failed": false,
+            "self_report_raw": "{\"name\": \"moral_ethics\", \"description\": \"ethical concepts and principles regarding fairness and moral rightness\", \"words\": [\"fairness\", \"morality\", \"equity\"], \"basis_words\": [\"justice\"], \"reason\": \"This shifts from the institutional/legal aspects of justice toward its abstract ethical and moral implications.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.7}",
+            "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"judicial_system\".\nDescription: terms related to the court system and legal proceedings\nResults so far in this hypothesis: {\"court\": 5126, \"crime\": 2975, \"jury\": 4142, \"justice\": 388, \"law\": 1921, \"trial\": 6146}\nBest word so far: \"justice\" with rank 388.\n\nMake a MEDIUM mutation: produce a child hypothesis that reinterprets why\n\"justice\" might have scored well, or shifts to a related sense, lexical\nregister, or part of speech. The child should still be semantically anchored\nto \"justice\" but approach it from a clearly different angle than \"judicial_system\".\n\nFor example, if the parent is \"food\" and the best word is \"bite\", a medium\nmutation could be \"animals that bite\", \"physical sensations from biting\", or\n\"clinical terms for biting and chewing\" - each treats \"bite\" through a\ndifferent lens.\n\nSuggest one reframed hypothesis. Include exactly 3 starter words that have\nnot already been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"achievement\", \"anger\", \"anxiety\", \"apple\", \"athlete\", \"ball\", \"bear\", \"bed\", \"bliss\", \"blue\", \"boat\", \"bone\", \"book\", \"brain\", \"brave\", \"bread\", \"bus\", \"calm\", \"camera\", \"canyon\", \"car\", \"cave\", \"chair\", \"championship\", \"clerk\", \"cliff\", \"cloud\", \"coat\", \"coffee\", \"comfort\", \"competition\", \"computer\", \"confident\", \"contentment\", \"contest\", \"cook\", \"cosmos\", \"court\", \"crime\", \"delight\", \"desert\", \"desk\", \"doctor\", \"dress\", \"eagle\", \"ease\", \"elation\", \"envelope\", \"eraser\", \"exercise\", \"eye\", \"fear\", \"fitness\", \"forest\", \"fulfillment\", \"galaxy\", \"game\", \"gladness\", \"gorge\", \"gratification\", \"green\", \"hand\", \"happiness\", \"harmony\", \"hat\", \"head\", \"heart\", \"hope\", \"ink\", \"internet\", \"journal\", \"joy\", \"judge\", \"juice\", \"jungle\", \"jury\", \"justice\", \"kind\", \"lamp\", \"laptop\", \"law\", \"lawyer\", \"lion\", \"liver\", \"love\", \"lung\", \"magazine\", \"manuscript\", \"marker\", \"match\", \"meet\", \"moon\", \"mountain\", \"network\", \"novel\", \"panic\", \"pants\", \"paper\", \"peace\", \"pen\", \"pencil\", \"phone\", \"pilot\", \"plane\", \"planet\", \"pleasure\", \"pride\", \"publication\", \"race\", \"rain\", \"red\", \"ridge\", \"river\", \"sadness\", \"satisfaction\", \"serenity\", \"sheriff\", \"shirt\", \"shoes\", \"skin\", \"snow\", \"sofa\", \"sport\", \"stapler\", \"star\", \"stillness\", \"storm\", \"success\", \"sun\", \"surprise\", \"table\", \"tea\", \"teacher\", \"team\", \"tiger\", \"tournament\", \"train\", \"training\", \"trial\", \"truck\", \"universe\", \"valley\", \"volcano\", \"volume\", \"whale\", \"wind\", \"wine\", \"wolf\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"direction name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nThe parent hypothesis's prior rationale (for context only; do not copy blindly): basis_words=[\"judge\"], reason=\"This shifts from general vocational roles to the specific institutional context of law and adjudication.\".\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+            "injected_rationale_hash": "3720e2bfbcff2efa",
+            "rationale_truncated": false
+          }
+        },
+        {
+          "hypothesis_id": "30263739bde0415b9d7e089b92693c7f",
+          "category_name": "government systems",
+          "description": "administrative structures and organizations of public life",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "careers",
+          "parent_id": "140d35ef39394009b5e04b253dd93346",
+          "origin": "self_adaptive_ml_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "self_report": {
+            "predicted_closeness": 0.7,
+            "predicted_closeness_clamped": false,
+            "predicted_bucket": "top100",
+            "rationale": {
+              "basis_words": [
+                "judge"
+              ],
+              "reason": "The superior rank of 'judge' over other career titles suggests the target may be related to the structural framework of governance or public administration rather than just general employment."
+            },
+            "self_report_parse_failed": false,
+            "self_report_raw": "{\"name\": \"government systems\", \"description\": \"administrative structures and organizations of public life\", \"words\": [\"council\", \"agency\", \"bureau\"], \"basis_words\": [\"judge\"], \"reason\": \"The superior rank of 'judge' over other career titles suggests the target may be related to the structural framework of governance or public administration rather than just general employment.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.7}",
+            "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"careers\".\nDescription: professional roles\nResults so far in this hypothesis: {\"clerk\": 9754, \"cook\": 8633, \"doctor\": 3235, \"judge\": 564, \"lawyer\": 4385, \"pilot\": 9158, \"sheriff\": 8273, \"teacher\": 2012}\nBest word so far: \"judge\" with rank 564.\n\nMake a MEDIUM-LARGE mutation: produce a child hypothesis in an ADJACENT but\ndistinct category that could still plausibly contain the hidden target given\n\"judge\"'s rank. The child must NOT be a sub-category of \"careers\" - it\nshould sit alongside \"careers\" in semantic space, not underneath it.\n\nFor example, if the parent is \"types of plants\" and the best word is \"shrub\",\nan adjacent category could be \"plant descriptors\", \"botanical terminology\",\n\"growth habits\", or \"ecological roles\".\n\nSuggest one adjacent hypothesis. Include exactly 3 starter words that have\nnot already been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"achievement\", \"anger\", \"anxiety\", \"apple\", \"athlete\", \"ball\", \"bear\", \"bed\", \"bliss\", \"blue\", \"boat\", \"bone\", \"book\", \"brain\", \"brave\", \"bread\", \"bus\", \"calm\", \"camera\", \"canyon\", \"car\", \"cave\", \"chair\", \"championship\", \"clerk\", \"cliff\", \"cloud\", \"coat\", \"coffee\", \"comfort\", \"competition\", \"computer\", \"confident\", \"contentment\", \"contest\", \"cook\", \"cosmos\", \"court\", \"crime\", \"delight\", \"desert\", \"desk\", \"doctor\", \"dress\", \"eagle\", \"ease\", \"elation\", \"envelope\", \"equity\", \"eraser\", \"exercise\", \"eye\", \"fairness\", \"fear\", \"fitness\", \"forest\", \"fulfillment\", \"galaxy\", \"game\", \"gladness\", \"gorge\", \"gratification\", \"green\", \"hand\", \"happiness\", \"harmony\", \"hat\", \"head\", \"heart\", \"hope\", \"ink\", \"internet\", \"journal\", \"joy\", \"judge\", \"juice\", \"jungle\", \"jury\", \"justice\", \"kind\", \"lamp\", \"laptop\", \"law\", \"lawyer\", \"lion\", \"liver\", \"love\", \"lung\", \"magazine\", \"manuscript\", \"marker\", \"match\", \"meet\", \"moon\", \"morality\", \"mountain\", \"network\", \"novel\", \"panic\", \"pants\", \"paper\", \"peace\", \"pen\", \"pencil\", \"phone\", \"pilot\", \"plane\", \"planet\", \"pleasure\", \"pride\", \"publication\", \"race\", \"rain\", \"red\", \"ridge\", \"river\", \"sadness\", \"satisfaction\", \"serenity\", \"sheriff\", \"shirt\", \"shoes\", \"skin\", \"snow\", \"sofa\", \"sport\", \"stapler\", \"star\", \"stillness\", \"storm\", \"success\", \"sun\", \"surprise\", \"table\", \"tea\", \"teacher\", \"team\", \"tiger\", \"tournament\", \"train\", \"training\", \"trial\", \"truck\", \"universe\", \"valley\", \"volcano\", \"volume\", \"whale\", \"wind\", \"wine\", \"wolf\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"category name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+            "injected_rationale_hash": null,
+            "rationale_truncated": false
+          }
+        }
+      ],
+      "best_word": "fairness",
+      "best_rank": 8,
+      "total_guesses": 154
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:06:13",
+    "details": {
+      "word": "empathy",
+      "rank": 19,
+      "hypothesis": "moral_sentiment",
+      "best_word": "fairness",
+      "best_rank": 8,
+      "total_guesses": 155
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:06:14",
+    "details": {
+      "word": "compassion",
+      "rank": 13,
+      "hypothesis": "moral_sentiment",
+      "best_word": "fairness",
+      "best_rank": 8,
+      "total_guesses": 156
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:06:15",
+    "details": {
+      "word": "conscience",
+      "rank": 123,
+      "hypothesis": "moral_sentiment",
+      "best_word": "fairness",
+      "best_rank": 8,
+      "total_guesses": 157
+    }
+  },
+  {
+    "generation": 2,
+    "event": "CROSSOVER",
+    "timestamp": "2026-07-23T02:06:15",
+    "details": {
+      "parents": [
+        "moral_ethics",
+        "emotions"
+      ],
+      "parent_ids": [
+        "09a9712bb40847eeb6d0d71a06c34b04",
+        "8f63e38a4564468ba50de47f0581fcb5"
+      ],
+      "parent_ranks": [
+        8,
+        105
+      ],
+      "parent_a_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "parent_b_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma_pre_perturbation": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child": {
+        "hypothesis_id": "5407479199ea4ed4b00f9e53aa8160c6",
+        "category_name": "moral_sentiment",
+        "description": "Feelings and attitudes derived from ethical considerations and justice.",
+        "words_tried": {
+          "compassion": 13,
+          "empathy": 19,
+          "conscience": 123
+        },
+        "best_word": "compassion",
+        "best_rank": 13,
+        "status": "active",
+        "parent": "moral_ethics+emotions",
+        "parent_id": null,
+        "origin": "crossover",
+        "sigma": [
+          0.25,
+          0.25,
+          0.25,
+          0.25
+        ],
+        "self_report": {
+          "predicted_closeness": 0.85,
+          "predicted_closeness_clamped": false,
+          "predicted_bucket": "top100",
+          "rationale": {
+            "basis_words": [
+              "fairness",
+              "morality",
+              "love",
+              "sadness"
+            ],
+            "reason": "These words capture the emotional experience of internalizing moral values and responding to the needs or rights of others."
+          },
+          "self_report_parse_failed": false,
+          "self_report_raw": "{\"name\": \"moral_sentiment\", \"description\": \"Feelings and attitudes derived from ethical considerations and justice.\", \"words\": [\"empathy\", \"compassion\", \"conscience\"], \"basis_words\": [\"fairness\", \"morality\", \"love\", \"sadness\"], \"reason\": \"These words capture the emotional experience of internalizing moral values and responding to the needs or rights of others.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.85}",
+          "self_report_prompt": "Return only JSON, no markdown or explanation.\nCategory A is moral_ethics with results {\"equity\": 3627, \"fairness\": 8, \"morality\": 35}.\nCategory B is emotions with results {\"anger\": 672, \"fear\": 302, \"happiness\": 105, \"hope\": 256, \"joy\": 372, \"love\": 148, \"pride\": 146, \"sadness\": 475, \"surprise\": 312}.\nSuggest one new category that captures the intersection or overlap of A and B.\nInclude exactly 3 candidate words.\nEvery word must be one common lowercase dictionary word.\nJSON schema:\n{\"name\": \"category name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+          "injected_rationale_hash": null,
+          "rationale_truncated": false
+        }
+      },
+      "best_word": "fairness",
+      "best_rank": 8,
+      "total_guesses": 157
+    }
+  },
+  {
+    "generation": 2,
+    "event": "SIGMA_TRAJECTORY",
+    "timestamp": "2026-07-23T02:06:15",
+    "details": {
+      "mean_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "population_size": 11
+    }
+  },
+  {
+    "generation": 3,
+    "event": "CANDIDATES",
+    "timestamp": "2026-07-23T02:15:02",
+    "details": {
+      "count": 29,
+      "candidates": [
+        {
+          "hypothesis": "moral_ethics",
+          "word": "ethics"
+        },
+        {
+          "hypothesis": "moral_ethics",
+          "word": "virtue"
+        },
+        {
+          "hypothesis": "moral_ethics",
+          "word": "integrity"
+        },
+        {
+          "hypothesis": "moral_sentiment",
+          "word": "altruism"
+        },
+        {
+          "hypothesis": "emotions",
+          "word": "trust"
+        },
+        {
+          "hypothesis": "emotions",
+          "word": "envy"
+        },
+        {
+          "hypothesis": "emotions",
+          "word": "pity"
+        },
+        {
+          "hypothesis": "personality traits",
+          "word": "honesty"
+        },
+        {
+          "hypothesis": "personality traits",
+          "word": "loyalty"
+        },
+        {
+          "hypothesis": "personality traits",
+          "word": "patience"
+        },
+        {
+          "hypothesis": "attained_fulfillment",
+          "word": "triumph"
+        },
+        {
+          "hypothesis": "attained_fulfillment",
+          "word": "victory"
+        },
+        {
+          "hypothesis": "attained_fulfillment",
+          "word": "mastery"
+        },
+        {
+          "hypothesis": "joyful_satisfaction",
+          "word": "exultation"
+        },
+        {
+          "hypothesis": "joyful_satisfaction",
+          "word": "glee"
+        },
+        {
+          "hypothesis": "states of contentment",
+          "word": "tranquility"
+        },
+        {
+          "hypothesis": "states of contentment",
+          "word": "solace"
+        },
+        {
+          "hypothesis": "states of contentment",
+          "word": "repose"
+        },
+        {
+          "hypothesis": "judicial_system",
+          "word": "verdict"
+        },
+        {
+          "hypothesis": "judicial_system",
+          "word": "evidence"
+        },
+        {
+          "hypothesis": "judicial_system",
+          "word": "sentence"
+        },
+        {
+          "hypothesis": "careers",
+          "word": "nurse"
+        },
+        {
+          "hypothesis": "careers",
+          "word": "engineer"
+        },
+        {
+          "hypothesis": "careers",
+          "word": "scientist"
+        },
+        {
+          "hypothesis": "states of inner ease",
+          "word": "composure"
+        },
+        {
+          "hypothesis": "states of inner ease",
+          "word": "balance"
+        },
+        {
+          "hypothesis": "government systems",
+          "word": "government"
+        },
+        {
+          "hypothesis": "government systems",
+          "word": "administration"
+        },
+        {
+          "hypothesis": "government systems",
+          "word": "governance"
+        }
+      ]
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:15:06",
+    "details": {
+      "word": "ethics",
+      "rank": 36,
+      "hypothesis": "moral_ethics",
+      "best_word": "fairness",
+      "best_rank": 8,
+      "total_guesses": 158
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:15:07",
+    "details": {
+      "word": "virtue",
+      "rank": 43,
+      "hypothesis": "moral_ethics",
+      "best_word": "fairness",
+      "best_rank": 8,
+      "total_guesses": 159
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:15:07",
+    "details": {
+      "word": "integrity",
+      "rank": 3,
+      "hypothesis": "moral_ethics",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 160
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:15:08",
+    "details": {
+      "word": "altruism",
+      "rank": 213,
+      "hypothesis": "moral_sentiment",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 161
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:15:08",
+    "details": {
+      "word": "trust",
+      "rank": 96,
+      "hypothesis": "emotions",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 162
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:15:08",
+    "details": {
+      "word": "envy",
+      "rank": 1395,
+      "hypothesis": "emotions",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 163
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:15:09",
+    "details": {
+      "word": "pity",
+      "rank": 285,
+      "hypothesis": "emotions",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 164
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:15:09",
+    "details": {
+      "word": "honesty",
+      "rank": 1,
+      "hypothesis": "personality traits",
+      "best_word": "honesty",
+      "best_rank": 1,
+      "total_guesses": 165
+    }
+  },
+  {
+    "generation": 3,
+    "event": "SOLVED",
+    "timestamp": "2026-07-23T02:15:09",
+    "details": {
+      "answer": "honesty",
+      "rank": 1,
+      "total_guesses": 165
+    }
+  },
+  {
+    "generation": 3,
+    "event": "NETWORK_METRICS",
+    "timestamp": "2026-07-23T02:15:09",
+    "details": {
+      "network_calls": 90,
+      "network_wall_clock_seconds": 2265.7393,
+      "total_latency_seconds": 50.3461,
+      "mean_latency_seconds": 0.5594,
+      "median_latency_seconds": 0.2712,
+      "p95_latency_seconds": 3.27,
+      "max_latency_seconds": 3.2831,
+      "status_counts": {
+        "200": 90
+      },
+      "outcome_counts": {
+        "ok": 90
+      }
+    }
+  }
+]

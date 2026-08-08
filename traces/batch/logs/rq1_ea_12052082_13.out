@@ -1,0 +1,108 @@
+===== JOB INFORMATION =====
+Date: Wed Jul 22 22:51:50 EDT 2026
+Host: frnt191.frontenac.local
+Job ID: 12052392
+Array task: 13
+Arm: A3
+Game: 1372
+Python: /global/home/hpc6237/venvs/contexto/bin/python
+OLLAMA_HOST: 127.0.0.1:32392
+OLLAMA_BASE_URL: http://127.0.0.1:32392/v1
+RANK_CACHE_DIR: data/rank_cache_A3
+Command: python -m contexto_solver.experiment --game api --method ea_llm_self_adaptive --provider ollama --ollama-model qwen3:14b --game-numbers 1372 --runs-per-target 5 --random-seed 0 --max-generations 50 --output traces/rq1_A3/A3_ea_llm_self_adaptive_game1372.json
+Python 3.11.5
+Wed Jul 22 22:51:50 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 580.167.08             Driver Version: 580.167.08     CUDA Version: 13.0     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100-SXM4-40GB          On  |   00000000:07:00.0 Off |                    0 |
+| N/A   27C    P0             53W /  400W |      92MiB /  40960MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   1  NVIDIA A100-SXM4-40GB          On  |   00000000:0F:00.0 Off |                    0 |
+| N/A   52C    P0            303W /  400W |   15719MiB /  40960MiB |     97%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   2  NVIDIA A100-SXM4-40GB          On  |   00000000:47:00.0 Off |                    0 |
+| N/A   52C    P0            288W /  400W |   31294MiB /  40960MiB |     99%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   3  NVIDIA A100-SXM4-40GB          On  |   00000000:4E:00.0 Off |                    0 |
+| N/A   51C    P0            295W /  400W |   15783MiB /  40960MiB |     96%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   4  NVIDIA A100-SXM4-40GB          On  |   00000000:87:00.0 Off |                    0 |
+| N/A   52C    P0            309W /  400W |   14103MiB /  40960MiB |     96%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   5  NVIDIA A100-SXM4-40GB          On  |   00000000:90:00.0 Off |                    0 |
+| N/A   37C    P0             55W /  400W |       3MiB /  40960MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   6  NVIDIA A100-SXM4-40GB          On  |   00000000:B7:00.0 Off |                    0 |
+| N/A   68C    P0            346W /  400W |   15611MiB /  40960MiB |     96%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   7  NVIDIA A100-SXM4-40GB          On  |   00000000:BD:00.0 Off |                    0 |
+| N/A   38C    P0             57W /  400W |       1MiB /  40960MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|    0   N/A  N/A         2995164      G   ...local/lib/ollama/llama-server          6MiB |
+|    0   N/A  N/A         2995167      G   ...local/lib/ollama/llama-server          6MiB |
+|    0   N/A  N/A         2995168      G   ...local/lib/ollama/llama-server          6MiB |
+|    0   N/A  N/A         2997933      G   ...local/lib/ollama/llama-server          6MiB |
+|    0   N/A  N/A         3020772      G   ...local/lib/ollama/llama-server          6MiB |
+|    0   N/A  N/A         4067100      G   ...local/lib/ollama/llama-server          6MiB |
+|    1   N/A  N/A         3020772    C+G   ...local/lib/ollama/llama-server      15701MiB |
+|    2   N/A  N/A         2995164    C+G   ...local/lib/ollama/llama-server      15661MiB |
+|    2   N/A  N/A         2995168    C+G   ...local/lib/ollama/llama-server      15593MiB |
+|    3   N/A  N/A         2995167    C+G   ...local/lib/ollama/llama-server      15765MiB |
+|    4   N/A  N/A         2997933    C+G   ...local/lib/ollama/llama-server      14085MiB |
+|    6   N/A  N/A         4067100    C+G   ...local/lib/ollama/llama-server      15593MiB |
++-----------------------------------------------------------------------------------------+
+===== START OLLAMA =====
+===== RUN EXPERIMENT =====
+Generation 0: best word=rhythm, best rank=1
+Generation 0: best word=blue, best rank=36
+Generation 1: best word=blue, best rank=36
+Generation 2: best word=tone, best rank=34
+Generation 3: best word=rhythm, best rank=1
+Generation 0: best word=song, best rank=16
+Generation 1: best word=melody, best rank=2
+Generation 2: best word=rhythm, best rank=1
+Generation 0: best word=guitar, best rank=14
+Generation 1: best word=guitar, best rank=14
+Generation 2: best word=tuned, best rank=9
+Generation 3: best word=rhythmic, best rank=5
+Generation 4: best word=tempo, best rank=3
+Generation 5: best word=rhythm, best rank=1
+Generation 0: best word=keyboard, best rank=120
+Generation 1: best word=song, best rank=16
+Generation 2: best word=tempo, best rank=3
+Generation 3: best word=rhythm, best rank=1
+Wrote JSON summary: traces/rq1_A3/A3_ea_llm_self_adaptive_game1372.json
+Wrote CSV summary: traces/rq1_A3/A3_ea_llm_self_adaptive_game1372.csv
+{
+  "total_runs": 5,
+  "solved_runs": 5,
+  "solve_rate": 1.0,
+  "average_guesses_solved": 144.6,
+  "average_best_rank": 1.0,
+  "average_generations": 2.6
+}
+===== FINISHED =====
+Arm: A3
+Game: 1372
+Exit status: 0
+Date: Thu Jul 23 02:02:17 EDT 2026
+Metadata: traces/rq1_A3/A3_game1372_ollama_metadata_job12052392.txt

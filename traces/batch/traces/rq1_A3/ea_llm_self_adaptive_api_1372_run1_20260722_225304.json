@@ -1,0 +1,684 @@
+[
+  {
+    "generation": -1,
+    "event": "RUN_CONFIG",
+    "timestamp": "2026-07-22T22:52:04",
+    "details": {
+      "game": "api",
+      "solver": "llm",
+      "method": "ea_llm_self_adaptive",
+      "mode": "api",
+      "target": null,
+      "game_number": 1372,
+      "run_index": 0,
+      "game_embedding_path": null,
+      "solver_embedding_path": null,
+      "embedding_backend": null,
+      "vocabulary_size": null,
+      "alignment": "api_unknown",
+      "trace_schema_version": 3,
+      "instrumentation_provenance_hash": "bd9f2858283673a2",
+      "self_report": false,
+      "rationale_inheritance": false,
+      "max_generations": 50,
+      "llm_provider": "ollama",
+      "llm_model": "qwen3:14b",
+      "llm_workers": 4,
+      "initial_categories": 15,
+      "max_active_hypotheses": null,
+      "local_search_rank_threshold": 100,
+      "self_adaptive_initial_categories": 15,
+      "self_adaptive_mu": 15,
+      "self_adaptive_concentration": 50.0,
+      "self_adaptive_sigma_floor": 0.02,
+      "self_adaptive_sigma_mode": "frozen_uniform",
+      "mapelites_grid_resolution": null,
+      "mapelites_mutations_per_gen": null,
+      "mapelites_crossovers_per_gen": null,
+      "mapelites_initial_categories": null,
+      "mapelites_concentration": null,
+      "mapelites_sigma_floor": null,
+      "mapelites_sigma_mode": null,
+      "mapelites_frozen_sigma": null,
+      "mapelites_ranked_context_k": null,
+      "rank_cache_enabled": true,
+      "enable_pivot": false,
+      "ea_llm_pivot_stall_no_improvement_generations": null,
+      "ea_llm_pivot_stall_close_rank_threshold": null,
+      "ea_llm_pivot_stall_close_generations_limit": null,
+      "ea_llm_pivot_max_attempts_per_run": null,
+      "ea_llm_pivot_candidate_words_per_operator": null,
+      "ea_llm_pivot_resolution_window": null,
+      "random_seed": 0
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:52:32",
+    "details": {
+      "word": "earth",
+      "rank": 1972,
+      "hypothesis": "nature",
+      "best_word": "earth",
+      "best_rank": 1972,
+      "total_guesses": 1
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:52:33",
+    "details": {
+      "word": "sky",
+      "rank": 1521,
+      "hypothesis": "nature",
+      "best_word": "sky",
+      "best_rank": 1521,
+      "total_guesses": 2
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:52:33",
+    "details": {
+      "word": "water",
+      "rank": 2354,
+      "hypothesis": "nature",
+      "best_word": "sky",
+      "best_rank": 1521,
+      "total_guesses": 3
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:52:34",
+    "details": {
+      "word": "happy",
+      "rank": 886,
+      "hypothesis": "emotions",
+      "best_word": "happy",
+      "best_rank": 886,
+      "total_guesses": 4
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:52:35",
+    "details": {
+      "word": "sad",
+      "rank": 1462,
+      "hypothesis": "emotions",
+      "best_word": "happy",
+      "best_rank": 886,
+      "total_guesses": 5
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:52:36",
+    "details": {
+      "word": "angry",
+      "rank": 5897,
+      "hypothesis": "emotions",
+      "best_word": "happy",
+      "best_rank": 886,
+      "total_guesses": 6
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:52:36",
+    "details": {
+      "word": "phone",
+      "rank": 5019,
+      "hypothesis": "technology",
+      "best_word": "happy",
+      "best_rank": 886,
+      "total_guesses": 7
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:52:37",
+    "details": {
+      "word": "computer",
+      "rank": 2895,
+      "hypothesis": "technology",
+      "best_word": "happy",
+      "best_rank": 886,
+      "total_guesses": 8
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:52:38",
+    "details": {
+      "word": "internet",
+      "rank": 5583,
+      "hypothesis": "technology",
+      "best_word": "happy",
+      "best_rank": 886,
+      "total_guesses": 9
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:52:39",
+    "details": {
+      "word": "work",
+      "rank": 475,
+      "hypothesis": "dailyactivities",
+      "best_word": "work",
+      "best_rank": 475,
+      "total_guesses": 10
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:52:39",
+    "details": {
+      "word": "eat",
+      "rank": 5367,
+      "hypothesis": "dailyactivities",
+      "best_word": "work",
+      "best_rank": 475,
+      "total_guesses": 11
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:52:40",
+    "details": {
+      "word": "sleep",
+      "rank": 491,
+      "hypothesis": "dailyactivities",
+      "best_word": "work",
+      "best_rank": 475,
+      "total_guesses": 12
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:52:41",
+    "details": {
+      "word": "red",
+      "rank": 2990,
+      "hypothesis": "colors",
+      "best_word": "work",
+      "best_rank": 475,
+      "total_guesses": 13
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:52:41",
+    "details": {
+      "word": "blue",
+      "rank": 36,
+      "hypothesis": "colors",
+      "best_word": "blue",
+      "best_rank": 36,
+      "total_guesses": 14
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:52:42",
+    "details": {
+      "word": "green",
+      "rank": 5168,
+      "hypothesis": "colors",
+      "best_word": "blue",
+      "best_rank": 36,
+      "total_guesses": 15
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:52:43",
+    "details": {
+      "word": "day",
+      "rank": 1101,
+      "hypothesis": "time",
+      "best_word": "blue",
+      "best_rank": 36,
+      "total_guesses": 16
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:52:44",
+    "details": {
+      "word": "night",
+      "rank": 687,
+      "hypothesis": "time",
+      "best_word": "blue",
+      "best_rank": 36,
+      "total_guesses": 17
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:52:44",
+    "details": {
+      "word": "year",
+      "rank": 1952,
+      "hypothesis": "time",
+      "best_word": "blue",
+      "best_rank": 36,
+      "total_guesses": 18
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:52:45",
+    "details": {
+      "word": "apple",
+      "rank": 5381,
+      "hypothesis": "food",
+      "best_word": "blue",
+      "best_rank": 36,
+      "total_guesses": 19
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:52:46",
+    "details": {
+      "word": "bread",
+      "rank": 6305,
+      "hypothesis": "food",
+      "best_word": "blue",
+      "best_rank": 36,
+      "total_guesses": 20
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:52:47",
+    "details": {
+      "word": "rice",
+      "rank": 7114,
+      "hypothesis": "food",
+      "best_word": "blue",
+      "best_rank": 36,
+      "total_guesses": 21
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:52:47",
+    "details": {
+      "word": "circle",
+      "rank": 1256,
+      "hypothesis": "shapes",
+      "best_word": "blue",
+      "best_rank": 36,
+      "total_guesses": 22
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:52:48",
+    "details": {
+      "word": "square",
+      "rank": 4408,
+      "hypothesis": "shapes",
+      "best_word": "blue",
+      "best_rank": 36,
+      "total_guesses": 23
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:52:49",
+    "details": {
+      "word": "triangle",
+      "rank": 3115,
+      "hypothesis": "shapes",
+      "best_word": "blue",
+      "best_rank": 36,
+      "total_guesses": 24
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:52:49",
+    "details": {
+      "word": "car",
+      "rank": 5627,
+      "hypothesis": "transportation",
+      "best_word": "blue",
+      "best_rank": 36,
+      "total_guesses": 25
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:52:50",
+    "details": {
+      "word": "bus",
+      "rank": 7869,
+      "hypothesis": "transportation",
+      "best_word": "blue",
+      "best_rank": 36,
+      "total_guesses": 26
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:52:51",
+    "details": {
+      "word": "bike",
+      "rank": 2803,
+      "hypothesis": "transportation",
+      "best_word": "blue",
+      "best_rank": 36,
+      "total_guesses": 27
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:52:52",
+    "details": {
+      "word": "hand",
+      "rank": 691,
+      "hypothesis": "bodyparts",
+      "best_word": "blue",
+      "best_rank": 36,
+      "total_guesses": 28
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:52:52",
+    "details": {
+      "word": "foot",
+      "rank": 2266,
+      "hypothesis": "bodyparts",
+      "best_word": "blue",
+      "best_rank": 36,
+      "total_guesses": 29
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:52:53",
+    "details": {
+      "word": "head",
+      "rank": 1607,
+      "hypothesis": "bodyparts",
+      "best_word": "blue",
+      "best_rank": 36,
+      "total_guesses": 30
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:52:54",
+    "details": {
+      "word": "rain",
+      "rank": 929,
+      "hypothesis": "weather",
+      "best_word": "blue",
+      "best_rank": 36,
+      "total_guesses": 31
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:52:55",
+    "details": {
+      "word": "snow",
+      "rank": 5062,
+      "hypothesis": "weather",
+      "best_word": "blue",
+      "best_rank": 36,
+      "total_guesses": 32
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:52:55",
+    "details": {
+      "word": "sun",
+      "rank": 4329,
+      "hypothesis": "weather",
+      "best_word": "blue",
+      "best_rank": 36,
+      "total_guesses": 33
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:52:56",
+    "details": {
+      "word": "mother",
+      "rank": 2806,
+      "hypothesis": "family",
+      "best_word": "blue",
+      "best_rank": 36,
+      "total_guesses": 34
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:52:57",
+    "details": {
+      "word": "father",
+      "rank": 2648,
+      "hypothesis": "family",
+      "best_word": "blue",
+      "best_rank": 36,
+      "total_guesses": 35
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:52:58",
+    "details": {
+      "word": "child",
+      "rank": 1845,
+      "hypothesis": "family",
+      "best_word": "blue",
+      "best_rank": 36,
+      "total_guesses": 36
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:52:58",
+    "details": {
+      "word": "dog",
+      "rank": 3968,
+      "hypothesis": "animals",
+      "best_word": "blue",
+      "best_rank": 36,
+      "total_guesses": 37
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:52:59",
+    "details": {
+      "word": "cat",
+      "rank": 3552,
+      "hypothesis": "animals",
+      "best_word": "blue",
+      "best_rank": 36,
+      "total_guesses": 38
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:53:00",
+    "details": {
+      "word": "bird",
+      "rank": 3971,
+      "hypothesis": "animals",
+      "best_word": "blue",
+      "best_rank": 36,
+      "total_guesses": 39
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:53:00",
+    "details": {
+      "word": "hammer",
+      "rank": 2756,
+      "hypothesis": "tools",
+      "best_word": "blue",
+      "best_rank": 36,
+      "total_guesses": 40
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:53:01",
+    "details": {
+      "word": "screwdriver",
+      "rank": 23323,
+      "hypothesis": "tools",
+      "best_word": "blue",
+      "best_rank": 36,
+      "total_guesses": 41
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:53:02",
+    "details": {
+      "word": "knife",
+      "rank": 9955,
+      "hypothesis": "tools",
+      "best_word": "blue",
+      "best_rank": 36,
+      "total_guesses": 42
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:53:03",
+    "details": {
+      "word": "song",
+      "rank": 16,
+      "hypothesis": "music",
+      "best_word": "song",
+      "best_rank": 16,
+      "total_guesses": 43
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:53:03",
+    "details": {
+      "word": "melody",
+      "rank": 2,
+      "hypothesis": "music",
+      "best_word": "melody",
+      "best_rank": 2,
+      "total_guesses": 44
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:53:04",
+    "details": {
+      "word": "rhythm",
+      "rank": 1,
+      "hypothesis": "music",
+      "best_word": "rhythm",
+      "best_rank": 1,
+      "total_guesses": 45
+    }
+  },
+  {
+    "generation": 0,
+    "event": "SOLVED",
+    "timestamp": "2026-07-22T22:53:04",
+    "details": {
+      "answer": "rhythm",
+      "rank": 1,
+      "total_guesses": 45
+    }
+  },
+  {
+    "generation": 0,
+    "event": "SIGMA_TRAJECTORY",
+    "timestamp": "2026-07-22T22:53:04",
+    "details": {
+      "mean_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "population_size": 15
+    }
+  },
+  {
+    "generation": 0,
+    "event": "NETWORK_METRICS",
+    "timestamp": "2026-07-22T22:53:04",
+    "details": {
+      "network_calls": 45,
+      "network_wall_clock_seconds": 35.3642,
+      "total_latency_seconds": 13.2281,
+      "mean_latency_seconds": 0.294,
+      "median_latency_seconds": 0.227,
+      "p95_latency_seconds": 0.2356,
+      "max_latency_seconds": 3.2271,
+      "status_counts": {
+        "200": 45
+      },
+      "outcome_counts": {
+        "ok": 45
+      }
+    }
+  }
+]

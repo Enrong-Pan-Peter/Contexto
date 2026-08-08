@@ -1,0 +1,4805 @@
+[
+  {
+    "generation": -1,
+    "event": "RUN_CONFIG",
+    "timestamp": "2026-07-23T01:29:35",
+    "details": {
+      "game": "api",
+      "solver": "llm",
+      "method": "ea_llm_self_adaptive",
+      "mode": "api",
+      "target": null,
+      "game_number": 1335,
+      "run_index": 4,
+      "game_embedding_path": null,
+      "solver_embedding_path": null,
+      "embedding_backend": null,
+      "vocabulary_size": null,
+      "alignment": "api_unknown",
+      "trace_schema_version": 3,
+      "instrumentation_provenance_hash": "bd9f2858283673a2",
+      "self_report": false,
+      "rationale_inheritance": false,
+      "max_generations": 50,
+      "llm_provider": "ollama",
+      "llm_model": "qwen3:14b",
+      "llm_workers": 4,
+      "initial_categories": 15,
+      "max_active_hypotheses": null,
+      "local_search_rank_threshold": 100,
+      "self_adaptive_initial_categories": 15,
+      "self_adaptive_mu": 15,
+      "self_adaptive_concentration": 50.0,
+      "self_adaptive_sigma_floor": 0.02,
+      "self_adaptive_sigma_mode": "frozen_uniform",
+      "mapelites_grid_resolution": null,
+      "mapelites_mutations_per_gen": null,
+      "mapelites_crossovers_per_gen": null,
+      "mapelites_initial_categories": null,
+      "mapelites_concentration": null,
+      "mapelites_sigma_floor": null,
+      "mapelites_sigma_mode": null,
+      "mapelites_frozen_sigma": null,
+      "mapelites_ranked_context_k": null,
+      "rank_cache_enabled": true,
+      "enable_pivot": false,
+      "ea_llm_pivot_stall_no_improvement_generations": null,
+      "ea_llm_pivot_stall_close_rank_threshold": null,
+      "ea_llm_pivot_stall_close_generations_limit": null,
+      "ea_llm_pivot_max_attempts_per_run": null,
+      "ea_llm_pivot_candidate_words_per_operator": null,
+      "ea_llm_pivot_resolution_window": null,
+      "random_seed": 4
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:29:49",
+    "details": {
+      "word": "apple",
+      "rank": 11349,
+      "hypothesis": "food",
+      "best_word": "apple",
+      "best_rank": 11349,
+      "total_guesses": 1
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:29:49",
+    "details": {
+      "word": "bread",
+      "rank": 5837,
+      "hypothesis": "food",
+      "best_word": "bread",
+      "best_rank": 5837,
+      "total_guesses": 2
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:29:49",
+    "details": {
+      "word": "fruit",
+      "rank": 37806,
+      "hypothesis": "food",
+      "best_word": "bread",
+      "best_rank": 5837,
+      "total_guesses": 3
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:29:49",
+    "details": {
+      "word": "happy",
+      "rank": 10062,
+      "hypothesis": "emotions",
+      "best_word": "bread",
+      "best_rank": 5837,
+      "total_guesses": 4
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:29:49",
+    "details": {
+      "word": "sad",
+      "rank": 27106,
+      "hypothesis": "emotions",
+      "best_word": "bread",
+      "best_rank": 5837,
+      "total_guesses": 5
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:29:49",
+    "details": {
+      "word": "angry",
+      "rank": 29111,
+      "hypothesis": "emotions",
+      "best_word": "bread",
+      "best_rank": 5837,
+      "total_guesses": 6
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:29:49",
+    "details": {
+      "word": "red",
+      "rank": 1461,
+      "hypothesis": "colors",
+      "best_word": "red",
+      "best_rank": 1461,
+      "total_guesses": 7
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:29:49",
+    "details": {
+      "word": "blue",
+      "rank": 957,
+      "hypothesis": "colors",
+      "best_word": "blue",
+      "best_rank": 957,
+      "total_guesses": 8
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:29:49",
+    "details": {
+      "word": "green",
+      "rank": 2895,
+      "hypothesis": "colors",
+      "best_word": "blue",
+      "best_rank": 957,
+      "total_guesses": 9
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:29:49",
+    "details": {
+      "word": "hand",
+      "rank": 157,
+      "hypothesis": "bodyparts",
+      "best_word": "hand",
+      "best_rank": 157,
+      "total_guesses": 10
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:29:49",
+    "details": {
+      "word": "foot",
+      "rank": 3741,
+      "hypothesis": "bodyparts",
+      "best_word": "hand",
+      "best_rank": 157,
+      "total_guesses": 11
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:29:49",
+    "details": {
+      "word": "head",
+      "rank": 247,
+      "hypothesis": "bodyparts",
+      "best_word": "hand",
+      "best_rank": 157,
+      "total_guesses": 12
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:29:49",
+    "details": {
+      "word": "rain",
+      "rank": 2161,
+      "hypothesis": "weather",
+      "best_word": "hand",
+      "best_rank": 157,
+      "total_guesses": 13
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:29:49",
+    "details": {
+      "word": "snow",
+      "rank": 11539,
+      "hypothesis": "weather",
+      "best_word": "hand",
+      "best_rank": 157,
+      "total_guesses": 14
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:29:49",
+    "details": {
+      "word": "sun",
+      "rank": 1749,
+      "hypothesis": "weather",
+      "best_word": "hand",
+      "best_rank": 157,
+      "total_guesses": 15
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:29:49",
+    "details": {
+      "word": "day",
+      "rank": 2692,
+      "hypothesis": "time",
+      "best_word": "hand",
+      "best_rank": 157,
+      "total_guesses": 16
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:29:49",
+    "details": {
+      "word": "night",
+      "rank": 2330,
+      "hypothesis": "time",
+      "best_word": "hand",
+      "best_rank": 157,
+      "total_guesses": 17
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:29:49",
+    "details": {
+      "word": "year",
+      "rank": 4492,
+      "hypothesis": "time",
+      "best_word": "hand",
+      "best_rank": 157,
+      "total_guesses": 18
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:29:49",
+    "details": {
+      "word": "one",
+      "rank": 1378,
+      "hypothesis": "numbers",
+      "best_word": "hand",
+      "best_rank": 157,
+      "total_guesses": 19
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:29:50",
+    "details": {
+      "word": "two",
+      "rank": 670,
+      "hypothesis": "numbers",
+      "best_word": "hand",
+      "best_rank": 157,
+      "total_guesses": 20
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:29:51",
+    "details": {
+      "word": "three",
+      "rank": 563,
+      "hypothesis": "numbers",
+      "best_word": "hand",
+      "best_rank": 157,
+      "total_guesses": 21
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:29:51",
+    "details": {
+      "word": "circle",
+      "rank": 151,
+      "hypothesis": "shapes",
+      "best_word": "circle",
+      "best_rank": 151,
+      "total_guesses": 22
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:29:51",
+    "details": {
+      "word": "square",
+      "rank": 268,
+      "hypothesis": "shapes",
+      "best_word": "circle",
+      "best_rank": 151,
+      "total_guesses": 23
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:29:51",
+    "details": {
+      "word": "triangle",
+      "rank": 184,
+      "hypothesis": "shapes",
+      "best_word": "circle",
+      "best_rank": 151,
+      "total_guesses": 24
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:29:51",
+    "details": {
+      "word": "mother",
+      "rank": 11722,
+      "hypothesis": "family",
+      "best_word": "circle",
+      "best_rank": 151,
+      "total_guesses": 25
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:29:51",
+    "details": {
+      "word": "father",
+      "rank": 1834,
+      "hypothesis": "family",
+      "best_word": "circle",
+      "best_rank": 151,
+      "total_guesses": 26
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:29:51",
+    "details": {
+      "word": "child",
+      "rank": 1521,
+      "hypothesis": "family",
+      "best_word": "circle",
+      "best_rank": 151,
+      "total_guesses": 27
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:29:51",
+    "details": {
+      "word": "shirt",
+      "rank": 4407,
+      "hypothesis": "clothing",
+      "best_word": "circle",
+      "best_rank": 151,
+      "total_guesses": 28
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:29:51",
+    "details": {
+      "word": "pants",
+      "rank": 6546,
+      "hypothesis": "clothing",
+      "best_word": "circle",
+      "best_rank": 151,
+      "total_guesses": 29
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:29:51",
+    "details": {
+      "word": "shoes",
+      "rank": 5963,
+      "hypothesis": "clothing",
+      "best_word": "circle",
+      "best_rank": 151,
+      "total_guesses": 30
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:29:51",
+    "details": {
+      "word": "run",
+      "rank": 5738,
+      "hypothesis": "verbs",
+      "best_word": "circle",
+      "best_rank": 151,
+      "total_guesses": 31
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:29:51",
+    "details": {
+      "word": "jump",
+      "rank": 4500,
+      "hypothesis": "verbs",
+      "best_word": "circle",
+      "best_rank": 151,
+      "total_guesses": 32
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:29:51",
+    "details": {
+      "word": "swim",
+      "rank": 4370,
+      "hypothesis": "verbs",
+      "best_word": "circle",
+      "best_rank": 151,
+      "total_guesses": 33
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:29:51",
+    "details": {
+      "word": "dog",
+      "rank": 6582,
+      "hypothesis": "animals",
+      "best_word": "circle",
+      "best_rank": 151,
+      "total_guesses": 34
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:29:51",
+    "details": {
+      "word": "cat",
+      "rank": 20402,
+      "hypothesis": "animals",
+      "best_word": "circle",
+      "best_rank": 151,
+      "total_guesses": 35
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:29:51",
+    "details": {
+      "word": "bird",
+      "rank": 3528,
+      "hypothesis": "animals",
+      "best_word": "circle",
+      "best_rank": 151,
+      "total_guesses": 36
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:29:51",
+    "details": {
+      "word": "home",
+      "rank": 1235,
+      "hypothesis": "places",
+      "best_word": "circle",
+      "best_rank": 151,
+      "total_guesses": 37
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:29:51",
+    "details": {
+      "word": "park",
+      "rank": 1931,
+      "hypothesis": "places",
+      "best_word": "circle",
+      "best_rank": 151,
+      "total_guesses": 38
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:29:51",
+    "details": {
+      "word": "school",
+      "rank": 2983,
+      "hypothesis": "places",
+      "best_word": "circle",
+      "best_rank": 151,
+      "total_guesses": 39
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:29:51",
+    "details": {
+      "word": "hammer",
+      "rank": 2753,
+      "hypothesis": "tools",
+      "best_word": "circle",
+      "best_rank": 151,
+      "total_guesses": 40
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:29:51",
+    "details": {
+      "word": "knife",
+      "rank": 109,
+      "hypothesis": "tools",
+      "best_word": "knife",
+      "best_rank": 109,
+      "total_guesses": 41
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:29:51",
+    "details": {
+      "word": "screwdriver",
+      "rank": 287,
+      "hypothesis": "tools",
+      "best_word": "knife",
+      "best_rank": 109,
+      "total_guesses": 42
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:29:51",
+    "details": {
+      "word": "tree",
+      "rank": 4020,
+      "hypothesis": "nature",
+      "best_word": "knife",
+      "best_rank": 109,
+      "total_guesses": 43
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:29:51",
+    "details": {
+      "word": "river",
+      "rank": 2629,
+      "hypothesis": "nature",
+      "best_word": "knife",
+      "best_rank": 109,
+      "total_guesses": 44
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:29:51",
+    "details": {
+      "word": "mountain",
+      "rank": 2247,
+      "hypothesis": "nature",
+      "best_word": "knife",
+      "best_rank": 109,
+      "total_guesses": 45
+    }
+  },
+  {
+    "generation": 0,
+    "event": "INIT",
+    "timestamp": "2026-07-23T01:29:51",
+    "details": {
+      "hypotheses": [
+        {
+          "hypothesis_id": "94c409866dce42d89bf411e52ec27c49",
+          "category_name": "food",
+          "description": "edible items",
+          "words_tried": {
+            "bread": 5837,
+            "apple": 11349,
+            "fruit": 37806
+          },
+          "best_word": "bread",
+          "best_rank": 5837,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "52cc66031088490eaf18723918cd470e",
+          "category_name": "emotions",
+          "description": "feelings and moods",
+          "words_tried": {
+            "happy": 10062,
+            "sad": 27106,
+            "angry": 29111
+          },
+          "best_word": "happy",
+          "best_rank": 10062,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "7b847fde8cf240cf81a680a6b6cda4f2",
+          "category_name": "colors",
+          "description": "visual hues",
+          "words_tried": {
+            "blue": 957,
+            "red": 1461,
+            "green": 2895
+          },
+          "best_word": "blue",
+          "best_rank": 957,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "27cbd82672e54dd58c350bdb3ecf890a",
+          "category_name": "bodyparts",
+          "description": "anatomical features",
+          "words_tried": {
+            "hand": 157,
+            "head": 247,
+            "foot": 3741
+          },
+          "best_word": "hand",
+          "best_rank": 157,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "277c708e44d2404298e054278161d616",
+          "category_name": "weather",
+          "description": "atmospheric conditions",
+          "words_tried": {
+            "sun": 1749,
+            "rain": 2161,
+            "snow": 11539
+          },
+          "best_word": "sun",
+          "best_rank": 1749,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "91d44a98b3a34d6c86e144ce8a4d4197",
+          "category_name": "time",
+          "description": "measurements of duration",
+          "words_tried": {
+            "night": 2330,
+            "day": 2692,
+            "year": 4492
+          },
+          "best_word": "night",
+          "best_rank": 2330,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "e782c65c819f4850a2d01cf94dfea5b3",
+          "category_name": "numbers",
+          "description": "quantitative values",
+          "words_tried": {
+            "three": 563,
+            "two": 670,
+            "one": 1378
+          },
+          "best_word": "three",
+          "best_rank": 563,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "d331091e5fd54c22a924ec5313873636",
+          "category_name": "shapes",
+          "description": "geometric forms",
+          "words_tried": {
+            "circle": 151,
+            "triangle": 184,
+            "square": 268
+          },
+          "best_word": "circle",
+          "best_rank": 151,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "d844776533524e50b62cb812fcec7e90",
+          "category_name": "family",
+          "description": "relational groups",
+          "words_tried": {
+            "child": 1521,
+            "father": 1834,
+            "mother": 11722
+          },
+          "best_word": "child",
+          "best_rank": 1521,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "9d2d2454873744aa8d0c8a42fc71cc9e",
+          "category_name": "clothing",
+          "description": "garments worn",
+          "words_tried": {
+            "shirt": 4407,
+            "shoes": 5963,
+            "pants": 6546
+          },
+          "best_word": "shirt",
+          "best_rank": 4407,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "a7c247f37c8d441ab68e4a917f86b1c1",
+          "category_name": "verbs",
+          "description": "actions performed",
+          "words_tried": {
+            "swim": 4370,
+            "jump": 4500,
+            "run": 5738
+          },
+          "best_word": "swim",
+          "best_rank": 4370,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "0210d22c4b0144128d8ad856dc2833f3",
+          "category_name": "animals",
+          "description": "living creatures",
+          "words_tried": {
+            "bird": 3528,
+            "dog": 6582,
+            "cat": 20402
+          },
+          "best_word": "bird",
+          "best_rank": 3528,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "13288e1b472449e59bd619bfcc3f25f0",
+          "category_name": "places",
+          "description": "locations or sites",
+          "words_tried": {
+            "home": 1235,
+            "park": 1931,
+            "school": 2983
+          },
+          "best_word": "home",
+          "best_rank": 1235,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "259e430a8fc547e5b39adb4f0825cc92",
+          "category_name": "tools",
+          "description": "equipment used",
+          "words_tried": {
+            "knife": 109,
+            "screwdriver": 287,
+            "hammer": 2753
+          },
+          "best_word": "knife",
+          "best_rank": 109,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "445fae0f71d44d4faaa372cbbeda7e1e",
+          "category_name": "nature",
+          "description": "elements of the environment",
+          "words_tried": {
+            "mountain": 2247,
+            "river": 2629,
+            "tree": 4020
+          },
+          "best_word": "mountain",
+          "best_rank": 2247,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        }
+      ],
+      "best_word": "knife",
+      "best_rank": 109,
+      "total_guesses": 45
+    }
+  },
+  {
+    "generation": 0,
+    "event": "SIGMA_TRAJECTORY",
+    "timestamp": "2026-07-23T01:29:51",
+    "details": {
+      "mean_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "population_size": 15
+    }
+  },
+  {
+    "generation": 1,
+    "event": "CANDIDATES",
+    "timestamp": "2026-07-23T01:32:28",
+    "details": {
+      "count": 45,
+      "candidates": [
+        {
+          "hypothesis": "food",
+          "word": "rice"
+        },
+        {
+          "hypothesis": "food",
+          "word": "milk"
+        },
+        {
+          "hypothesis": "food",
+          "word": "egg"
+        },
+        {
+          "hypothesis": "emotions",
+          "word": "joy"
+        },
+        {
+          "hypothesis": "emotions",
+          "word": "fear"
+        },
+        {
+          "hypothesis": "emotions",
+          "word": "grief"
+        },
+        {
+          "hypothesis": "colors",
+          "word": "yellow"
+        },
+        {
+          "hypothesis": "colors",
+          "word": "purple"
+        },
+        {
+          "hypothesis": "colors",
+          "word": "orange"
+        },
+        {
+          "hypothesis": "bodyparts",
+          "word": "arm"
+        },
+        {
+          "hypothesis": "bodyparts",
+          "word": "eye"
+        },
+        {
+          "hypothesis": "bodyparts",
+          "word": "stomach"
+        },
+        {
+          "hypothesis": "weather",
+          "word": "cloud"
+        },
+        {
+          "hypothesis": "weather",
+          "word": "wind"
+        },
+        {
+          "hypothesis": "weather",
+          "word": "storm"
+        },
+        {
+          "hypothesis": "time",
+          "word": "hour"
+        },
+        {
+          "hypothesis": "time",
+          "word": "minute"
+        },
+        {
+          "hypothesis": "time",
+          "word": "week"
+        },
+        {
+          "hypothesis": "numbers",
+          "word": "quantity"
+        },
+        {
+          "hypothesis": "numbers",
+          "word": "total"
+        },
+        {
+          "hypothesis": "numbers",
+          "word": "amount"
+        },
+        {
+          "hypothesis": "shapes",
+          "word": "form"
+        },
+        {
+          "hypothesis": "shapes",
+          "word": "figure"
+        },
+        {
+          "hypothesis": "shapes",
+          "word": "polygon"
+        },
+        {
+          "hypothesis": "family",
+          "word": "relative"
+        },
+        {
+          "hypothesis": "family",
+          "word": "kin"
+        },
+        {
+          "hypothesis": "family",
+          "word": "clan"
+        },
+        {
+          "hypothesis": "clothing",
+          "word": "jacket"
+        },
+        {
+          "hypothesis": "clothing",
+          "word": "dress"
+        },
+        {
+          "hypothesis": "clothing",
+          "word": "hat"
+        },
+        {
+          "hypothesis": "verbs",
+          "word": "walk"
+        },
+        {
+          "hypothesis": "verbs",
+          "word": "eat"
+        },
+        {
+          "hypothesis": "verbs",
+          "word": "talk"
+        },
+        {
+          "hypothesis": "animals",
+          "word": "fish"
+        },
+        {
+          "hypothesis": "animals",
+          "word": "insect"
+        },
+        {
+          "hypothesis": "animals",
+          "word": "beast"
+        },
+        {
+          "hypothesis": "places",
+          "word": "building"
+        },
+        {
+          "hypothesis": "places",
+          "word": "venue"
+        },
+        {
+          "hypothesis": "places",
+          "word": "area"
+        },
+        {
+          "hypothesis": "tools",
+          "word": "wrench"
+        },
+        {
+          "hypothesis": "tools",
+          "word": "pliers"
+        },
+        {
+          "hypothesis": "tools",
+          "word": "drill"
+        },
+        {
+          "hypothesis": "nature",
+          "word": "earth"
+        },
+        {
+          "hypothesis": "nature",
+          "word": "ocean"
+        },
+        {
+          "hypothesis": "nature",
+          "word": "forest"
+        }
+      ]
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:32:28",
+    "details": {
+      "word": "rice",
+      "rank": 23057,
+      "hypothesis": "food",
+      "best_word": "knife",
+      "best_rank": 109,
+      "total_guesses": 46
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:32:28",
+    "details": {
+      "word": "milk",
+      "rank": 27791,
+      "hypothesis": "food",
+      "best_word": "knife",
+      "best_rank": 109,
+      "total_guesses": 47
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:32:29",
+    "details": {
+      "word": "egg",
+      "rank": 14052,
+      "hypothesis": "food",
+      "best_word": "knife",
+      "best_rank": 109,
+      "total_guesses": 48
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:32:29",
+    "details": {
+      "word": "joy",
+      "rank": 9366,
+      "hypothesis": "emotions",
+      "best_word": "knife",
+      "best_rank": 109,
+      "total_guesses": 49
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:32:29",
+    "details": {
+      "word": "fear",
+      "rank": 3171,
+      "hypothesis": "emotions",
+      "best_word": "knife",
+      "best_rank": 109,
+      "total_guesses": 50
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:32:29",
+    "details": {
+      "word": "grief",
+      "rank": 28102,
+      "hypothesis": "emotions",
+      "best_word": "knife",
+      "best_rank": 109,
+      "total_guesses": 51
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:32:29",
+    "details": {
+      "word": "yellow",
+      "rank": 2835,
+      "hypothesis": "colors",
+      "best_word": "knife",
+      "best_rank": 109,
+      "total_guesses": 52
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:32:29",
+    "details": {
+      "word": "purple",
+      "rank": 10328,
+      "hypothesis": "colors",
+      "best_word": "knife",
+      "best_rank": 109,
+      "total_guesses": 53
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:32:29",
+    "details": {
+      "word": "orange",
+      "rank": 7319,
+      "hypothesis": "colors",
+      "best_word": "knife",
+      "best_rank": 109,
+      "total_guesses": 54
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:32:29",
+    "details": {
+      "word": "arm",
+      "rank": 1379,
+      "hypothesis": "bodyparts",
+      "best_word": "knife",
+      "best_rank": 109,
+      "total_guesses": 55
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:32:29",
+    "details": {
+      "word": "eye",
+      "rank": 1010,
+      "hypothesis": "bodyparts",
+      "best_word": "knife",
+      "best_rank": 109,
+      "total_guesses": 56
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:32:29",
+    "details": {
+      "word": "stomach",
+      "rank": 20839,
+      "hypothesis": "bodyparts",
+      "best_word": "knife",
+      "best_rank": 109,
+      "total_guesses": 57
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:32:29",
+    "details": {
+      "word": "cloud",
+      "rank": 4081,
+      "hypothesis": "weather",
+      "best_word": "knife",
+      "best_rank": 109,
+      "total_guesses": 58
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:32:29",
+    "details": {
+      "word": "wind",
+      "rank": 534,
+      "hypothesis": "weather",
+      "best_word": "knife",
+      "best_rank": 109,
+      "total_guesses": 59
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:32:29",
+    "details": {
+      "word": "storm",
+      "rank": 4985,
+      "hypothesis": "weather",
+      "best_word": "knife",
+      "best_rank": 109,
+      "total_guesses": 60
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:32:29",
+    "details": {
+      "word": "hour",
+      "rank": 2253,
+      "hypothesis": "time",
+      "best_word": "knife",
+      "best_rank": 109,
+      "total_guesses": 61
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:32:29",
+    "details": {
+      "word": "minute",
+      "rank": 6027,
+      "hypothesis": "time",
+      "best_word": "knife",
+      "best_rank": 109,
+      "total_guesses": 62
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:32:29",
+    "details": {
+      "word": "week",
+      "rank": 7768,
+      "hypothesis": "time",
+      "best_word": "knife",
+      "best_rank": 109,
+      "total_guesses": 63
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:32:30",
+    "details": {
+      "word": "quantity",
+      "rank": 4409,
+      "hypothesis": "numbers",
+      "best_word": "knife",
+      "best_rank": 109,
+      "total_guesses": 64
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:32:30",
+    "details": {
+      "word": "total",
+      "rank": 8356,
+      "hypothesis": "numbers",
+      "best_word": "knife",
+      "best_rank": 109,
+      "total_guesses": 65
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:32:31",
+    "details": {
+      "word": "amount",
+      "rank": 9998,
+      "hypothesis": "numbers",
+      "best_word": "knife",
+      "best_rank": 109,
+      "total_guesses": 66
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:32:31",
+    "details": {
+      "word": "form",
+      "rank": 2174,
+      "hypothesis": "shapes",
+      "best_word": "knife",
+      "best_rank": 109,
+      "total_guesses": 67
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:32:32",
+    "details": {
+      "word": "figure",
+      "rank": 1872,
+      "hypothesis": "shapes",
+      "best_word": "knife",
+      "best_rank": 109,
+      "total_guesses": 68
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:32:32",
+    "details": {
+      "word": "polygon",
+      "rank": 2209,
+      "hypothesis": "shapes",
+      "best_word": "knife",
+      "best_rank": 109,
+      "total_guesses": 69
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:32:32",
+    "details": {
+      "word": "relative",
+      "rank": 1387,
+      "hypothesis": "family",
+      "best_word": "knife",
+      "best_rank": 109,
+      "total_guesses": 70
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:32:33",
+    "details": {
+      "word": "kin",
+      "rank": 28917,
+      "hypothesis": "family",
+      "best_word": "knife",
+      "best_rank": 109,
+      "total_guesses": 71
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:32:34",
+    "details": {
+      "word": "clan",
+      "rank": 15232,
+      "hypothesis": "family",
+      "best_word": "knife",
+      "best_rank": 109,
+      "total_guesses": 72
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:32:34",
+    "details": {
+      "word": "jacket",
+      "rank": 1715,
+      "hypothesis": "clothing",
+      "best_word": "knife",
+      "best_rank": 109,
+      "total_guesses": 73
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:32:34",
+    "details": {
+      "word": "dress",
+      "rank": 13411,
+      "hypothesis": "clothing",
+      "best_word": "knife",
+      "best_rank": 109,
+      "total_guesses": 74
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:32:34",
+    "details": {
+      "word": "hat",
+      "rank": 1714,
+      "hypothesis": "clothing",
+      "best_word": "knife",
+      "best_rank": 109,
+      "total_guesses": 75
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:32:34",
+    "details": {
+      "word": "walk",
+      "rank": 2206,
+      "hypothesis": "verbs",
+      "best_word": "knife",
+      "best_rank": 109,
+      "total_guesses": 76
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:32:34",
+    "details": {
+      "word": "eat",
+      "rank": 15539,
+      "hypothesis": "verbs",
+      "best_word": "knife",
+      "best_rank": 109,
+      "total_guesses": 77
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:32:34",
+    "details": {
+      "word": "talk",
+      "rank": 4288,
+      "hypothesis": "verbs",
+      "best_word": "knife",
+      "best_rank": 109,
+      "total_guesses": 78
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:32:34",
+    "details": {
+      "word": "fish",
+      "rank": 393,
+      "hypothesis": "animals",
+      "best_word": "knife",
+      "best_rank": 109,
+      "total_guesses": 79
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:32:34",
+    "details": {
+      "word": "insect",
+      "rank": 15775,
+      "hypothesis": "animals",
+      "best_word": "knife",
+      "best_rank": 109,
+      "total_guesses": 80
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:32:34",
+    "details": {
+      "word": "beast",
+      "rank": 17233,
+      "hypothesis": "animals",
+      "best_word": "knife",
+      "best_rank": 109,
+      "total_guesses": 81
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:32:35",
+    "details": {
+      "word": "building",
+      "rank": 2599,
+      "hypothesis": "places",
+      "best_word": "knife",
+      "best_rank": 109,
+      "total_guesses": 82
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:32:36",
+    "details": {
+      "word": "venue",
+      "rank": 5195,
+      "hypothesis": "places",
+      "best_word": "knife",
+      "best_rank": 109,
+      "total_guesses": 83
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:32:36",
+    "details": {
+      "word": "area",
+      "rank": 2080,
+      "hypothesis": "places",
+      "best_word": "knife",
+      "best_rank": 109,
+      "total_guesses": 84
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:32:36",
+    "details": {
+      "word": "wrench",
+      "rank": 863,
+      "hypothesis": "tools",
+      "best_word": "knife",
+      "best_rank": 109,
+      "total_guesses": 85
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:32:36",
+    "details": {
+      "word": "pliers",
+      "rank": 1656,
+      "hypothesis": "tools",
+      "best_word": "knife",
+      "best_rank": 109,
+      "total_guesses": 86
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:32:36",
+    "details": {
+      "word": "drill",
+      "rank": 2196,
+      "hypothesis": "tools",
+      "best_word": "knife",
+      "best_rank": 109,
+      "total_guesses": 87
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:32:36",
+    "details": {
+      "word": "earth",
+      "rank": 297,
+      "hypothesis": "nature",
+      "best_word": "knife",
+      "best_rank": 109,
+      "total_guesses": 88
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:32:36",
+    "details": {
+      "word": "ocean",
+      "rank": 1787,
+      "hypothesis": "nature",
+      "best_word": "knife",
+      "best_rank": 109,
+      "total_guesses": 89
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:32:36",
+    "details": {
+      "word": "forest",
+      "rank": 8399,
+      "hypothesis": "nature",
+      "best_word": "knife",
+      "best_rank": 109,
+      "total_guesses": 90
+    }
+  },
+  {
+    "generation": 1,
+    "event": "SELECT",
+    "timestamp": "2026-07-23T01:32:36",
+    "details": {
+      "kept": [
+        "tools",
+        "shapes",
+        "bodyparts",
+        "nature",
+        "animals"
+      ],
+      "discarded": [
+        "weather",
+        "numbers",
+        "colors",
+        "places",
+        "family",
+        "clothing",
+        "verbs",
+        "time",
+        "emotions",
+        "food"
+      ],
+      "elite": "tools",
+      "max_active_hypotheses": 5,
+      "best_word": "knife",
+      "best_rank": 109,
+      "total_guesses": 90
+    }
+  },
+  {
+    "generation": 1,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-23T01:33:12",
+    "details": {
+      "parent_id": "259e430a8fc547e5b39adb4f0825cc92",
+      "child_id": "a4073e19f13749a1bcfa7a2e38a23ff3",
+      "parent_rank": 109,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "actions",
+      "sampled_op": "l_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:33:12",
+    "details": {
+      "word": "cut",
+      "rank": 9206,
+      "hypothesis": "actions",
+      "best_word": "knife",
+      "best_rank": 109,
+      "total_guesses": 91
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:33:15",
+    "details": {
+      "word": "chop",
+      "rank": 20969,
+      "hypothesis": "actions",
+      "best_word": "knife",
+      "best_rank": 109,
+      "total_guesses": 92
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:33:15",
+    "details": {
+      "word": "carve",
+      "rank": 2596,
+      "hypothesis": "actions",
+      "best_word": "knife",
+      "best_rank": 109,
+      "total_guesses": 93
+    }
+  },
+  {
+    "generation": 1,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-23T01:33:25",
+    "details": {
+      "parent_id": "d331091e5fd54c22a924ec5313873636",
+      "child_id": "62c40cd7ef4b42e5a6576058d1d90737",
+      "parent_rank": 151,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "geometric properties",
+      "sampled_op": "ml_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:33:26",
+    "details": {
+      "word": "symmetry",
+      "rank": 672,
+      "hypothesis": "geometric properties",
+      "best_word": "knife",
+      "best_rank": 109,
+      "total_guesses": 94
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:33:26",
+    "details": {
+      "word": "angle",
+      "rank": 102,
+      "hypothesis": "geometric properties",
+      "best_word": "angle",
+      "best_rank": 102,
+      "total_guesses": 95
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:33:26",
+    "details": {
+      "word": "curve",
+      "rank": 790,
+      "hypothesis": "geometric properties",
+      "best_word": "angle",
+      "best_rank": 102,
+      "total_guesses": 96
+    }
+  },
+  {
+    "generation": 1,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-23T01:33:35",
+    "details": {
+      "parent_id": "27cbd82672e54dd58c350bdb3ecf890a",
+      "child_id": "0c0efe8af56e44f0851166dd6ba9f898",
+      "parent_rank": 157,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "creations",
+      "sampled_op": "l_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:33:35",
+    "details": {
+      "word": "artifact",
+      "rank": 5223,
+      "hypothesis": "creations",
+      "best_word": "angle",
+      "best_rank": 102,
+      "total_guesses": 97
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:33:39",
+    "details": {
+      "word": "design",
+      "rank": 594,
+      "hypothesis": "creations",
+      "best_word": "angle",
+      "best_rank": 102,
+      "total_guesses": 98
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:33:39",
+    "details": {
+      "word": "craft",
+      "rank": 260,
+      "hypothesis": "creations",
+      "best_word": "angle",
+      "best_rank": 102,
+      "total_guesses": 99
+    }
+  },
+  {
+    "generation": 1,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-23T01:33:46",
+    "details": {
+      "parent_id": "445fae0f71d44d4faaa372cbbeda7e1e",
+      "child_id": "3d068f476f6049cdb0d97b57e89ae51a",
+      "parent_rank": 297,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "soil and terrain",
+      "sampled_op": "s_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:33:46",
+    "details": {
+      "word": "soil",
+      "rank": 9812,
+      "hypothesis": "soil and terrain",
+      "best_word": "angle",
+      "best_rank": 102,
+      "total_guesses": 100
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:33:46",
+    "details": {
+      "word": "ground",
+      "rank": 1557,
+      "hypothesis": "soil and terrain",
+      "best_word": "angle",
+      "best_rank": 102,
+      "total_guesses": 101
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:33:49",
+    "details": {
+      "word": "land",
+      "rank": 801,
+      "hypothesis": "soil and terrain",
+      "best_word": "angle",
+      "best_rank": 102,
+      "total_guesses": 102
+    }
+  },
+  {
+    "generation": 1,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-23T01:33:59",
+    "details": {
+      "parent_id": "0210d22c4b0144128d8ad856dc2833f3",
+      "child_id": "5986ce732ce3487dbf8bca23b4dd79cf",
+      "parent_rank": 393,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "dietary classifications",
+      "sampled_op": "ml_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:34:00",
+    "details": {
+      "word": "herbivore",
+      "rank": 61633,
+      "hypothesis": "dietary classifications",
+      "best_word": "angle",
+      "best_rank": 102,
+      "total_guesses": 103
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:34:01",
+    "details": {
+      "word": "carnivore",
+      "rank": 33519,
+      "hypothesis": "dietary classifications",
+      "best_word": "angle",
+      "best_rank": 102,
+      "total_guesses": 104
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:34:01",
+    "details": {
+      "word": "omnivore",
+      "rank": 20299,
+      "hypothesis": "dietary classifications",
+      "best_word": "angle",
+      "best_rank": 102,
+      "total_guesses": 105
+    }
+  },
+  {
+    "generation": 1,
+    "event": "MUTATE",
+    "timestamp": "2026-07-23T01:34:01",
+    "details": {
+      "method": "self_adaptive",
+      "children": [
+        {
+          "hypothesis_id": "a4073e19f13749a1bcfa7a2e38a23ff3",
+          "category_name": "actions",
+          "description": "actions performed with tools",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "tools",
+          "parent_id": "259e430a8fc547e5b39adb4f0825cc92",
+          "origin": "self_adaptive_l_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "62c40cd7ef4b42e5a6576058d1d90737",
+          "category_name": "geometric properties",
+          "description": "attributes of shapes",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "shapes",
+          "parent_id": "d331091e5fd54c22a924ec5313873636",
+          "origin": "self_adaptive_ml_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "0c0efe8af56e44f0851166dd6ba9f898",
+          "category_name": "creations",
+          "description": "human-made objects",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "bodyparts",
+          "parent_id": "27cbd82672e54dd58c350bdb3ecf890a",
+          "origin": "self_adaptive_l_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "3d068f476f6049cdb0d97b57e89ae51a",
+          "category_name": "soil and terrain",
+          "description": "elements related to earth's surface",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "nature",
+          "parent_id": "445fae0f71d44d4faaa372cbbeda7e1e",
+          "origin": "self_adaptive_s_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "5986ce732ce3487dbf8bca23b4dd79cf",
+          "category_name": "dietary classifications",
+          "description": "categories based on food sources",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "animals",
+          "parent_id": "0210d22c4b0144128d8ad856dc2833f3",
+          "origin": "self_adaptive_ml_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        }
+      ],
+      "best_word": "angle",
+      "best_rank": 102,
+      "total_guesses": 105
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:34:16",
+    "details": {
+      "word": "edge",
+      "rank": 500,
+      "hypothesis": "tool geometry features",
+      "best_word": "angle",
+      "best_rank": 102,
+      "total_guesses": 106
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:34:16",
+    "details": {
+      "word": "angle",
+      "rank": 102,
+      "hypothesis": "tool geometry features",
+      "best_word": "angle",
+      "best_rank": 102,
+      "total_guesses": 106
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:34:16",
+    "details": {
+      "word": "curve",
+      "rank": 790,
+      "hypothesis": "tool geometry features",
+      "best_word": "angle",
+      "best_rank": 102,
+      "total_guesses": 106
+    }
+  },
+  {
+    "generation": 1,
+    "event": "CROSSOVER",
+    "timestamp": "2026-07-23T01:34:16",
+    "details": {
+      "parents": [
+        "geometric properties",
+        "tools"
+      ],
+      "parent_ids": [
+        "62c40cd7ef4b42e5a6576058d1d90737",
+        "259e430a8fc547e5b39adb4f0825cc92"
+      ],
+      "parent_ranks": [
+        102,
+        109
+      ],
+      "parent_a_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "parent_b_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma_pre_perturbation": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child": {
+        "hypothesis_id": "67de2e36b21142bd9fd02e4773c5bfb7",
+        "category_name": "tool geometry features",
+        "description": "geometric aspects of tools",
+        "words_tried": {
+          "angle": 102,
+          "edge": 500,
+          "curve": 790
+        },
+        "best_word": "angle",
+        "best_rank": 102,
+        "status": "active",
+        "parent": "geometric properties+tools",
+        "parent_id": null,
+        "origin": "crossover",
+        "sigma": [
+          0.25,
+          0.25,
+          0.25,
+          0.25
+        ]
+      },
+      "best_word": "angle",
+      "best_rank": 102,
+      "total_guesses": 106
+    }
+  },
+  {
+    "generation": 1,
+    "event": "DEDUPLICATE",
+    "timestamp": "2026-07-23T01:34:16",
+    "details": {
+      "merged": [
+        {
+          "survivor": "geometric properties",
+          "discarded": "tool geometry features",
+          "survivor_best_rank": 102,
+          "discarded_best_rank": 102
+        }
+      ],
+      "remaining_hypotheses": 20,
+      "active_hypotheses": 10,
+      "best_word": "angle",
+      "best_rank": 102,
+      "total_guesses": 106
+    }
+  },
+  {
+    "generation": 1,
+    "event": "SIGMA_TRAJECTORY",
+    "timestamp": "2026-07-23T01:34:16",
+    "details": {
+      "mean_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "population_size": 10
+    }
+  },
+  {
+    "generation": 2,
+    "event": "CANDIDATES",
+    "timestamp": "2026-07-23T01:36:17",
+    "details": {
+      "count": 29,
+      "candidates": [
+        {
+          "hypothesis": "geometric properties",
+          "word": "vertex"
+        },
+        {
+          "hypothesis": "geometric properties",
+          "word": "dimension"
+        },
+        {
+          "hypothesis": "geometric properties",
+          "word": "plane"
+        },
+        {
+          "hypothesis": "tools",
+          "word": "chisel"
+        },
+        {
+          "hypothesis": "tools",
+          "word": "saw"
+        },
+        {
+          "hypothesis": "tools",
+          "word": "ladder"
+        },
+        {
+          "hypothesis": "shapes",
+          "word": "line"
+        },
+        {
+          "hypothesis": "shapes",
+          "word": "point"
+        },
+        {
+          "hypothesis": "shapes",
+          "word": "arc"
+        },
+        {
+          "hypothesis": "bodyparts",
+          "word": "limb"
+        },
+        {
+          "hypothesis": "bodyparts",
+          "word": "joint"
+        },
+        {
+          "hypothesis": "bodyparts",
+          "word": "organ"
+        },
+        {
+          "hypothesis": "creations",
+          "word": "tool"
+        },
+        {
+          "hypothesis": "creations",
+          "word": "device"
+        },
+        {
+          "hypothesis": "creations",
+          "word": "object"
+        },
+        {
+          "hypothesis": "nature",
+          "word": "sky"
+        },
+        {
+          "hypothesis": "nature",
+          "word": "grass"
+        },
+        {
+          "hypothesis": "nature",
+          "word": "stone"
+        },
+        {
+          "hypothesis": "animals",
+          "word": "creature"
+        },
+        {
+          "hypothesis": "animals",
+          "word": "organism"
+        },
+        {
+          "hypothesis": "animals",
+          "word": "being"
+        },
+        {
+          "hypothesis": "soil and terrain",
+          "word": "surface"
+        },
+        {
+          "hypothesis": "soil and terrain",
+          "word": "mud"
+        },
+        {
+          "hypothesis": "soil and terrain",
+          "word": "rock"
+        },
+        {
+          "hypothesis": "actions",
+          "word": "file"
+        },
+        {
+          "hypothesis": "actions",
+          "word": "peel"
+        },
+        {
+          "hypothesis": "dietary classifications",
+          "word": "vegetarian"
+        },
+        {
+          "hypothesis": "dietary classifications",
+          "word": "vegan"
+        },
+        {
+          "hypothesis": "dietary classifications",
+          "word": "insectivore"
+        }
+      ]
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:36:17",
+    "details": {
+      "word": "vertex",
+      "rank": 1532,
+      "hypothesis": "geometric properties",
+      "best_word": "angle",
+      "best_rank": 102,
+      "total_guesses": 107
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:36:17",
+    "details": {
+      "word": "dimension",
+      "rank": 778,
+      "hypothesis": "geometric properties",
+      "best_word": "angle",
+      "best_rank": 102,
+      "total_guesses": 108
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:36:17",
+    "details": {
+      "word": "plane",
+      "rank": 270,
+      "hypothesis": "geometric properties",
+      "best_word": "angle",
+      "best_rank": 102,
+      "total_guesses": 109
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:36:17",
+    "details": {
+      "word": "chisel",
+      "rank": 1882,
+      "hypothesis": "tools",
+      "best_word": "angle",
+      "best_rank": 102,
+      "total_guesses": 110
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:36:17",
+    "details": {
+      "word": "saw",
+      "rank": 3148,
+      "hypothesis": "tools",
+      "best_word": "angle",
+      "best_rank": 102,
+      "total_guesses": 111
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:36:17",
+    "details": {
+      "word": "ladder",
+      "rank": 458,
+      "hypothesis": "tools",
+      "best_word": "angle",
+      "best_rank": 102,
+      "total_guesses": 112
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:36:17",
+    "details": {
+      "word": "line",
+      "rank": 1612,
+      "hypothesis": "shapes",
+      "best_word": "angle",
+      "best_rank": 102,
+      "total_guesses": 113
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:36:17",
+    "details": {
+      "word": "point",
+      "rank": 73,
+      "hypothesis": "shapes",
+      "best_word": "point",
+      "best_rank": 73,
+      "total_guesses": 114
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:36:17",
+    "details": {
+      "word": "arc",
+      "rank": 652,
+      "hypothesis": "shapes",
+      "best_word": "point",
+      "best_rank": 73,
+      "total_guesses": 115
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:36:21",
+    "details": {
+      "word": "limb",
+      "rank": 4442,
+      "hypothesis": "bodyparts",
+      "best_word": "point",
+      "best_rank": 73,
+      "total_guesses": 116
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:36:21",
+    "details": {
+      "word": "joint",
+      "rank": 7960,
+      "hypothesis": "bodyparts",
+      "best_word": "point",
+      "best_rank": 73,
+      "total_guesses": 117
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:36:22",
+    "details": {
+      "word": "organ",
+      "rank": 21384,
+      "hypothesis": "bodyparts",
+      "best_word": "point",
+      "best_rank": 73,
+      "total_guesses": 118
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:36:22",
+    "details": {
+      "word": "tool",
+      "rank": 124,
+      "hypothesis": "creations",
+      "best_word": "point",
+      "best_rank": 73,
+      "total_guesses": 119
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:36:22",
+    "details": {
+      "word": "device",
+      "rank": 539,
+      "hypothesis": "creations",
+      "best_word": "point",
+      "best_rank": 73,
+      "total_guesses": 120
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:36:22",
+    "details": {
+      "word": "object",
+      "rank": 530,
+      "hypothesis": "creations",
+      "best_word": "point",
+      "best_rank": 73,
+      "total_guesses": 121
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:36:22",
+    "details": {
+      "word": "sky",
+      "rank": 433,
+      "hypothesis": "nature",
+      "best_word": "point",
+      "best_rank": 73,
+      "total_guesses": 122
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:36:22",
+    "details": {
+      "word": "grass",
+      "rank": 18526,
+      "hypothesis": "nature",
+      "best_word": "point",
+      "best_rank": 73,
+      "total_guesses": 123
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:36:22",
+    "details": {
+      "word": "stone",
+      "rank": 3433,
+      "hypothesis": "nature",
+      "best_word": "point",
+      "best_rank": 73,
+      "total_guesses": 124
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:36:22",
+    "details": {
+      "word": "creature",
+      "rank": 7184,
+      "hypothesis": "animals",
+      "best_word": "point",
+      "best_rank": 73,
+      "total_guesses": 125
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:36:22",
+    "details": {
+      "word": "organism",
+      "rank": 41370,
+      "hypothesis": "animals",
+      "best_word": "point",
+      "best_rank": 73,
+      "total_guesses": 126
+    }
+  },
+  {
+    "generation": 2,
+    "event": "SKIP_INVALID_GUESS",
+    "timestamp": "2026-07-23T01:36:23",
+    "details": {
+      "word": "being",
+      "hypothesis": "animals"
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:36:23",
+    "details": {
+      "word": "surface",
+      "rank": 566,
+      "hypothesis": "soil and terrain",
+      "best_word": "point",
+      "best_rank": 73,
+      "total_guesses": 127
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:36:23",
+    "details": {
+      "word": "mud",
+      "rank": 18990,
+      "hypothesis": "soil and terrain",
+      "best_word": "point",
+      "best_rank": 73,
+      "total_guesses": 128
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:36:23",
+    "details": {
+      "word": "rock",
+      "rank": 5290,
+      "hypothesis": "soil and terrain",
+      "best_word": "point",
+      "best_rank": 73,
+      "total_guesses": 129
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:36:24",
+    "details": {
+      "word": "file",
+      "rank": 7663,
+      "hypothesis": "actions",
+      "best_word": "point",
+      "best_rank": 73,
+      "total_guesses": 130
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:36:25",
+    "details": {
+      "word": "peel",
+      "rank": 34121,
+      "hypothesis": "actions",
+      "best_word": "point",
+      "best_rank": 73,
+      "total_guesses": 131
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:36:26",
+    "details": {
+      "word": "vegetarian",
+      "rank": 19702,
+      "hypothesis": "dietary classifications",
+      "best_word": "point",
+      "best_rank": 73,
+      "total_guesses": 132
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:36:26",
+    "details": {
+      "word": "vegan",
+      "rank": 20811,
+      "hypothesis": "dietary classifications",
+      "best_word": "point",
+      "best_rank": 73,
+      "total_guesses": 133
+    }
+  },
+  {
+    "generation": 2,
+    "event": "SKIP_INVALID_GUESS",
+    "timestamp": "2026-07-23T01:36:27",
+    "details": {
+      "word": "insectivore",
+      "hypothesis": "dietary classifications"
+    }
+  },
+  {
+    "generation": 2,
+    "event": "LOCAL_SEARCH_DISABLED",
+    "timestamp": "2026-07-23T01:36:27",
+    "details": {
+      "center_word": "point",
+      "center_rank": 73,
+      "threshold": 100,
+      "reason": "self_adaptive_disable_local_search"
+    }
+  },
+  {
+    "generation": 2,
+    "event": "SELECT",
+    "timestamp": "2026-07-23T01:36:27",
+    "details": {
+      "kept": [
+        "shapes",
+        "geometric properties",
+        "tools",
+        "creations",
+        "bodyparts"
+      ],
+      "discarded": [
+        "nature",
+        "animals",
+        "weather",
+        "numbers",
+        "soil and terrain",
+        "colors",
+        "places",
+        "family",
+        "clothing",
+        "verbs",
+        "time",
+        "actions",
+        "emotions",
+        "food",
+        "dietary classifications"
+      ],
+      "elite": "shapes",
+      "max_active_hypotheses": 5,
+      "best_word": "point",
+      "best_rank": 73,
+      "total_guesses": 133
+    }
+  },
+  {
+    "generation": 2,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-23T01:36:45",
+    "details": {
+      "parent_id": "d331091e5fd54c22a924ec5313873636",
+      "child_id": "fe1eb91178964e4cb18e0630ea18b56c",
+      "parent_rank": 73,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "directional indicators",
+      "sampled_op": "m_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:36:45",
+    "details": {
+      "word": "direction",
+      "rank": 65,
+      "hypothesis": "directional indicators",
+      "best_word": "direction",
+      "best_rank": 65,
+      "total_guesses": 134
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:36:45",
+    "details": {
+      "word": "axis",
+      "rank": 28,
+      "hypothesis": "directional indicators",
+      "best_word": "axis",
+      "best_rank": 28,
+      "total_guesses": 135
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:36:48",
+    "details": {
+      "word": "reference",
+      "rank": 169,
+      "hypothesis": "directional indicators",
+      "best_word": "axis",
+      "best_rank": 28,
+      "total_guesses": 136
+    }
+  },
+  {
+    "generation": 2,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-23T01:37:20",
+    "details": {
+      "parent_id": "62c40cd7ef4b42e5a6576058d1d90737",
+      "child_id": "82a733434ecf4baa99f2b84239e9ab68",
+      "parent_rank": 102,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "spatial contexts",
+      "sampled_op": "l_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:37:24",
+    "details": {
+      "word": "layout",
+      "rank": 2050,
+      "hypothesis": "spatial contexts",
+      "best_word": "axis",
+      "best_rank": 28,
+      "total_guesses": 137
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:37:25",
+    "details": {
+      "word": "position",
+      "rank": 23,
+      "hypothesis": "spatial contexts",
+      "best_word": "position",
+      "best_rank": 23,
+      "total_guesses": 138
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:37:25",
+    "details": {
+      "word": "alignment",
+      "rank": 95,
+      "hypothesis": "spatial contexts",
+      "best_word": "position",
+      "best_rank": 23,
+      "total_guesses": 139
+    }
+  },
+  {
+    "generation": 2,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-23T01:37:35",
+    "details": {
+      "parent_id": "259e430a8fc547e5b39adb4f0825cc92",
+      "child_id": "b552986d346944e0a7b217c4cc62bbbc",
+      "parent_rank": 109,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "blades",
+      "sampled_op": "s_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:37:35",
+    "details": {
+      "word": "blade",
+      "rank": 1316,
+      "hypothesis": "blades",
+      "best_word": "position",
+      "best_rank": 23,
+      "total_guesses": 140
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:37:35",
+    "details": {
+      "word": "razor",
+      "rank": 5158,
+      "hypothesis": "blades",
+      "best_word": "position",
+      "best_rank": 23,
+      "total_guesses": 141
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:37:35",
+    "details": {
+      "word": "dagger",
+      "rank": 745,
+      "hypothesis": "blades",
+      "best_word": "position",
+      "best_rank": 23,
+      "total_guesses": 142
+    }
+  },
+  {
+    "generation": 2,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-23T01:37:44",
+    "details": {
+      "parent_id": "0c0efe8af56e44f0851166dd6ba9f898",
+      "child_id": "f4016920de304acd83a699b7768bc7f9",
+      "parent_rank": 124,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "conceptual constructs",
+      "sampled_op": "l_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:37:48",
+    "details": {
+      "word": "language",
+      "rank": 2762,
+      "hypothesis": "conceptual constructs",
+      "best_word": "position",
+      "best_rank": 23,
+      "total_guesses": 143
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:37:48",
+    "details": {
+      "word": "symbol",
+      "rank": 344,
+      "hypothesis": "conceptual constructs",
+      "best_word": "position",
+      "best_rank": 23,
+      "total_guesses": 144
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:37:48",
+    "details": {
+      "word": "idea",
+      "rank": 2876,
+      "hypothesis": "conceptual constructs",
+      "best_word": "position",
+      "best_rank": 23,
+      "total_guesses": 145
+    }
+  },
+  {
+    "generation": 2,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-23T01:38:22",
+    "details": {
+      "parent_id": "27cbd82672e54dd58c350bdb3ecf890a",
+      "child_id": "4460bbf206fb492bbc09077e4035cf4d",
+      "parent_rank": 157,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "protective coverings",
+      "sampled_op": "ml_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:38:22",
+    "details": {
+      "word": "glove",
+      "rank": 2160,
+      "hypothesis": "protective coverings",
+      "best_word": "position",
+      "best_rank": 23,
+      "total_guesses": 146
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:38:26",
+    "details": {
+      "word": "sheath",
+      "rank": 4271,
+      "hypothesis": "protective coverings",
+      "best_word": "position",
+      "best_rank": 23,
+      "total_guesses": 147
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:38:27",
+    "details": {
+      "word": "mitt",
+      "rank": 12202,
+      "hypothesis": "protective coverings",
+      "best_word": "position",
+      "best_rank": 23,
+      "total_guesses": 148
+    }
+  },
+  {
+    "generation": 2,
+    "event": "MUTATE",
+    "timestamp": "2026-07-23T01:38:27",
+    "details": {
+      "method": "self_adaptive",
+      "children": [
+        {
+          "hypothesis_id": "fe1eb91178964e4cb18e0630ea18b56c",
+          "category_name": "directional indicators",
+          "description": "terms related to orientation and positioning",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "shapes",
+          "parent_id": "d331091e5fd54c22a924ec5313873636",
+          "origin": "self_adaptive_m_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "82a733434ecf4baa99f2b84239e9ab68",
+          "category_name": "spatial contexts",
+          "description": "relationships of objects in space",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "geometric properties",
+          "parent_id": "62c40cd7ef4b42e5a6576058d1d90737",
+          "origin": "self_adaptive_l_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "b552986d346944e0a7b217c4cc62bbbc",
+          "category_name": "blades",
+          "description": "sharp cutting instruments",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "tools",
+          "parent_id": "259e430a8fc547e5b39adb4f0825cc92",
+          "origin": "self_adaptive_s_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "f4016920de304acd83a699b7768bc7f9",
+          "category_name": "conceptual constructs",
+          "description": "human-abstracted ideas and systems",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "creations",
+          "parent_id": "0c0efe8af56e44f0851166dd6ba9f898",
+          "origin": "self_adaptive_l_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "4460bbf206fb492bbc09077e4035cf4d",
+          "category_name": "protective coverings",
+          "description": "items worn to cover body parts",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "bodyparts",
+          "parent_id": "27cbd82672e54dd58c350bdb3ecf890a",
+          "origin": "self_adaptive_ml_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        }
+      ],
+      "best_word": "position",
+      "best_rank": 23,
+      "total_guesses": 148
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:38:32",
+    "details": {
+      "word": "orientation",
+      "rank": 108,
+      "hypothesis": "spatial_directional_relations",
+      "best_word": "position",
+      "best_rank": 23,
+      "total_guesses": 149
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:38:33",
+    "details": {
+      "word": "placement",
+      "rank": 1224,
+      "hypothesis": "spatial_directional_relations",
+      "best_word": "position",
+      "best_rank": 23,
+      "total_guesses": 150
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:38:33",
+    "details": {
+      "word": "angle",
+      "rank": 102,
+      "hypothesis": "spatial_directional_relations",
+      "best_word": "position",
+      "best_rank": 23,
+      "total_guesses": 150
+    }
+  },
+  {
+    "generation": 2,
+    "event": "CROSSOVER",
+    "timestamp": "2026-07-23T01:38:33",
+    "details": {
+      "parents": [
+        "spatial contexts",
+        "directional indicators"
+      ],
+      "parent_ids": [
+        "82a733434ecf4baa99f2b84239e9ab68",
+        "fe1eb91178964e4cb18e0630ea18b56c"
+      ],
+      "parent_ranks": [
+        23,
+        28
+      ],
+      "parent_a_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "parent_b_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma_pre_perturbation": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child": {
+        "hypothesis_id": "c8e40e1ae68643f79dd8bea239bee1e6",
+        "category_name": "spatial_directional_relations",
+        "description": "context involving both spatial positioning and directional references",
+        "words_tried": {
+          "angle": 102,
+          "orientation": 108,
+          "placement": 1224
+        },
+        "best_word": "angle",
+        "best_rank": 102,
+        "status": "active",
+        "parent": "spatial contexts+directional indicators",
+        "parent_id": null,
+        "origin": "crossover",
+        "sigma": [
+          0.25,
+          0.25,
+          0.25,
+          0.25
+        ]
+      },
+      "best_word": "position",
+      "best_rank": 23,
+      "total_guesses": 150
+    }
+  },
+  {
+    "generation": 2,
+    "event": "SIGMA_TRAJECTORY",
+    "timestamp": "2026-07-23T01:38:33",
+    "details": {
+      "mean_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "population_size": 11
+    }
+  },
+  {
+    "generation": 3,
+    "event": "CANDIDATES",
+    "timestamp": "2026-07-23T01:40:50",
+    "details": {
+      "count": 30,
+      "candidates": [
+        {
+          "hypothesis": "spatial contexts",
+          "word": "location"
+        },
+        {
+          "hypothesis": "spatial contexts",
+          "word": "proximity"
+        },
+        {
+          "hypothesis": "spatial contexts",
+          "word": "configuration"
+        },
+        {
+          "hypothesis": "directional indicators",
+          "word": "level"
+        },
+        {
+          "hypothesis": "directional indicators",
+          "word": "place"
+        },
+        {
+          "hypothesis": "shapes",
+          "word": "sphere"
+        },
+        {
+          "hypothesis": "shapes",
+          "word": "cube"
+        },
+        {
+          "hypothesis": "shapes",
+          "word": "cone"
+        },
+        {
+          "hypothesis": "geometric properties",
+          "word": "length"
+        },
+        {
+          "hypothesis": "geometric properties",
+          "word": "slope"
+        },
+        {
+          "hypothesis": "geometric properties",
+          "word": "shape"
+        },
+        {
+          "hypothesis": "spatial_directional_relations",
+          "word": "bearing"
+        },
+        {
+          "hypothesis": "spatial_directional_relations",
+          "word": "vector"
+        },
+        {
+          "hypothesis": "tools",
+          "word": "clamp"
+        },
+        {
+          "hypothesis": "tools",
+          "word": "tongs"
+        },
+        {
+          "hypothesis": "tools",
+          "word": "gauge"
+        },
+        {
+          "hypothesis": "creations",
+          "word": "product"
+        },
+        {
+          "hypothesis": "creations",
+          "word": "item"
+        },
+        {
+          "hypothesis": "creations",
+          "word": "work"
+        },
+        {
+          "hypothesis": "bodyparts",
+          "word": "tongue"
+        },
+        {
+          "hypothesis": "bodyparts",
+          "word": "spine"
+        },
+        {
+          "hypothesis": "bodyparts",
+          "word": "muscle"
+        },
+        {
+          "hypothesis": "conceptual constructs",
+          "word": "construct"
+        },
+        {
+          "hypothesis": "conceptual constructs",
+          "word": "model"
+        },
+        {
+          "hypothesis": "conceptual constructs",
+          "word": "theory"
+        },
+        {
+          "hypothesis": "blades",
+          "word": "scissors"
+        },
+        {
+          "hypothesis": "blades",
+          "word": "cleaver"
+        },
+        {
+          "hypothesis": "protective coverings",
+          "word": "boot"
+        },
+        {
+          "hypothesis": "protective coverings",
+          "word": "vest"
+        },
+        {
+          "hypothesis": "protective coverings",
+          "word": "mask"
+        }
+      ]
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:40:51",
+    "details": {
+      "word": "location",
+      "rank": 940,
+      "hypothesis": "spatial contexts",
+      "best_word": "position",
+      "best_rank": 23,
+      "total_guesses": 151
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:40:52",
+    "details": {
+      "word": "proximity",
+      "rank": 132,
+      "hypothesis": "spatial contexts",
+      "best_word": "position",
+      "best_rank": 23,
+      "total_guesses": 152
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:40:52",
+    "details": {
+      "word": "configuration",
+      "rank": 1297,
+      "hypothesis": "spatial contexts",
+      "best_word": "position",
+      "best_rank": 23,
+      "total_guesses": 153
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:40:53",
+    "details": {
+      "word": "level",
+      "rank": 1339,
+      "hypothesis": "directional indicators",
+      "best_word": "position",
+      "best_rank": 23,
+      "total_guesses": 154
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:40:54",
+    "details": {
+      "word": "place",
+      "rank": 452,
+      "hypothesis": "directional indicators",
+      "best_word": "position",
+      "best_rank": 23,
+      "total_guesses": 155
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:40:54",
+    "details": {
+      "word": "sphere",
+      "rank": 179,
+      "hypothesis": "shapes",
+      "best_word": "position",
+      "best_rank": 23,
+      "total_guesses": 156
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:40:54",
+    "details": {
+      "word": "cube",
+      "rank": 923,
+      "hypothesis": "shapes",
+      "best_word": "position",
+      "best_rank": 23,
+      "total_guesses": 157
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:40:54",
+    "details": {
+      "word": "cone",
+      "rank": 6834,
+      "hypothesis": "shapes",
+      "best_word": "position",
+      "best_rank": 23,
+      "total_guesses": 158
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:40:55",
+    "details": {
+      "word": "length",
+      "rank": 10433,
+      "hypothesis": "geometric properties",
+      "best_word": "position",
+      "best_rank": 23,
+      "total_guesses": 159
+    }
+  },
+  {
+    "generation": 3,
+    "event": "SKIP_INVALID_GUESS",
+    "timestamp": "2026-07-23T01:40:55",
+    "details": {
+      "word": "slope",
+      "hypothesis": "geometric properties"
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:40:55",
+    "details": {
+      "word": "shape",
+      "rank": 227,
+      "hypothesis": "geometric properties",
+      "best_word": "position",
+      "best_rank": 23,
+      "total_guesses": 160
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:40:55",
+    "details": {
+      "word": "bearing",
+      "rank": 277,
+      "hypothesis": "spatial_directional_relations",
+      "best_word": "position",
+      "best_rank": 23,
+      "total_guesses": 161
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:40:55",
+    "details": {
+      "word": "vector",
+      "rank": 2064,
+      "hypothesis": "spatial_directional_relations",
+      "best_word": "position",
+      "best_rank": 23,
+      "total_guesses": 162
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:40:55",
+    "details": {
+      "word": "clamp",
+      "rank": 955,
+      "hypothesis": "tools",
+      "best_word": "position",
+      "best_rank": 23,
+      "total_guesses": 163
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:40:55",
+    "details": {
+      "word": "tongs",
+      "rank": 11280,
+      "hypothesis": "tools",
+      "best_word": "position",
+      "best_rank": 23,
+      "total_guesses": 164
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:40:55",
+    "details": {
+      "word": "gauge",
+      "rank": 13,
+      "hypothesis": "tools",
+      "best_word": "gauge",
+      "best_rank": 13,
+      "total_guesses": 165
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:40:55",
+    "details": {
+      "word": "product",
+      "rank": 1835,
+      "hypothesis": "creations",
+      "best_word": "gauge",
+      "best_rank": 13,
+      "total_guesses": 166
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:40:55",
+    "details": {
+      "word": "item",
+      "rank": 954,
+      "hypothesis": "creations",
+      "best_word": "gauge",
+      "best_rank": 13,
+      "total_guesses": 167
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:40:55",
+    "details": {
+      "word": "work",
+      "rank": 1369,
+      "hypothesis": "creations",
+      "best_word": "gauge",
+      "best_rank": 13,
+      "total_guesses": 168
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:40:56",
+    "details": {
+      "word": "tongue",
+      "rank": 11299,
+      "hypothesis": "bodyparts",
+      "best_word": "gauge",
+      "best_rank": 13,
+      "total_guesses": 169
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:40:56",
+    "details": {
+      "word": "spine",
+      "rank": 3793,
+      "hypothesis": "bodyparts",
+      "best_word": "gauge",
+      "best_rank": 13,
+      "total_guesses": 170
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:40:56",
+    "details": {
+      "word": "muscle",
+      "rank": 16914,
+      "hypothesis": "bodyparts",
+      "best_word": "gauge",
+      "best_rank": 13,
+      "total_guesses": 171
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:40:57",
+    "details": {
+      "word": "construct",
+      "rank": 3089,
+      "hypothesis": "conceptual constructs",
+      "best_word": "gauge",
+      "best_rank": 13,
+      "total_guesses": 172
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:40:57",
+    "details": {
+      "word": "model",
+      "rank": 1012,
+      "hypothesis": "conceptual constructs",
+      "best_word": "gauge",
+      "best_rank": 13,
+      "total_guesses": 173
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:40:57",
+    "details": {
+      "word": "theory",
+      "rank": 2616,
+      "hypothesis": "conceptual constructs",
+      "best_word": "gauge",
+      "best_rank": 13,
+      "total_guesses": 174
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:40:58",
+    "details": {
+      "word": "scissors",
+      "rank": 481,
+      "hypothesis": "blades",
+      "best_word": "gauge",
+      "best_rank": 13,
+      "total_guesses": 175
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:40:59",
+    "details": {
+      "word": "cleaver",
+      "rank": 5865,
+      "hypothesis": "blades",
+      "best_word": "gauge",
+      "best_rank": 13,
+      "total_guesses": 176
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:40:59",
+    "details": {
+      "word": "boot",
+      "rank": 6031,
+      "hypothesis": "protective coverings",
+      "best_word": "gauge",
+      "best_rank": 13,
+      "total_guesses": 177
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:41:00",
+    "details": {
+      "word": "vest",
+      "rank": 2891,
+      "hypothesis": "protective coverings",
+      "best_word": "gauge",
+      "best_rank": 13,
+      "total_guesses": 178
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:41:01",
+    "details": {
+      "word": "mask",
+      "rank": 5314,
+      "hypothesis": "protective coverings",
+      "best_word": "gauge",
+      "best_rank": 13,
+      "total_guesses": 179
+    }
+  },
+  {
+    "generation": 3,
+    "event": "SELECT",
+    "timestamp": "2026-07-23T01:41:01",
+    "details": {
+      "kept": [
+        "tools",
+        "spatial contexts",
+        "directional indicators",
+        "shapes",
+        "geometric properties"
+      ],
+      "discarded": [
+        "spatial_directional_relations",
+        "creations",
+        "bodyparts",
+        "nature",
+        "conceptual constructs",
+        "animals",
+        "blades",
+        "weather",
+        "numbers",
+        "soil and terrain",
+        "colors",
+        "places",
+        "family",
+        "clothing",
+        "protective coverings",
+        "verbs",
+        "time",
+        "actions",
+        "emotions",
+        "food",
+        "dietary classifications"
+      ],
+      "elite": "tools",
+      "max_active_hypotheses": 5,
+      "best_word": "gauge",
+      "best_rank": 13,
+      "total_guesses": 179
+    }
+  },
+  {
+    "generation": 3,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-23T01:41:09",
+    "details": {
+      "parent_id": "259e430a8fc547e5b39adb4f0825cc92",
+      "child_id": "400792fccebf4e38a082c92f21418e8b",
+      "parent_rank": 13,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "states",
+      "sampled_op": "l_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:41:13",
+    "details": {
+      "word": "state",
+      "rank": 3774,
+      "hypothesis": "states",
+      "best_word": "gauge",
+      "best_rank": 13,
+      "total_guesses": 180
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:41:13",
+    "details": {
+      "word": "phase",
+      "rank": 8441,
+      "hypothesis": "states",
+      "best_word": "gauge",
+      "best_rank": 13,
+      "total_guesses": 181
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:41:14",
+    "details": {
+      "word": "condition",
+      "rank": 2451,
+      "hypothesis": "states",
+      "best_word": "gauge",
+      "best_rank": 13,
+      "total_guesses": 182
+    }
+  },
+  {
+    "generation": 3,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-23T01:41:19",
+    "details": {
+      "parent_id": "82a733434ecf4baa99f2b84239e9ab68",
+      "child_id": "7e341cc64f2f4436889a83cd23579e12",
+      "parent_rank": 23,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "social roles",
+      "sampled_op": "m_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:41:19",
+    "details": {
+      "word": "role",
+      "rank": 8920,
+      "hypothesis": "social roles",
+      "best_word": "gauge",
+      "best_rank": 13,
+      "total_guesses": 183
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:41:23",
+    "details": {
+      "word": "rank",
+      "rank": 7899,
+      "hypothesis": "social roles",
+      "best_word": "gauge",
+      "best_rank": 13,
+      "total_guesses": 184
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:41:24",
+    "details": {
+      "word": "status",
+      "rank": 4710,
+      "hypothesis": "social roles",
+      "best_word": "gauge",
+      "best_rank": 13,
+      "total_guesses": 185
+    }
+  },
+  {
+    "generation": 3,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-23T01:41:33",
+    "details": {
+      "parent_id": "fe1eb91178964e4cb18e0630ea18b56c",
+      "child_id": "7169a24ec5754232ae526c6c6929d516",
+      "parent_rank": 28,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "central structural elements",
+      "sampled_op": "m_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:41:33",
+    "details": {
+      "word": "core",
+      "rank": 4309,
+      "hypothesis": "central structural elements",
+      "best_word": "gauge",
+      "best_rank": 13,
+      "total_guesses": 186
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:41:33",
+    "details": {
+      "word": "pivot",
+      "rank": 453,
+      "hypothesis": "central structural elements",
+      "best_word": "gauge",
+      "best_rank": 13,
+      "total_guesses": 187
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:41:33",
+    "details": {
+      "word": "hub",
+      "rank": 1376,
+      "hypothesis": "central structural elements",
+      "best_word": "gauge",
+      "best_rank": 13,
+      "total_guesses": 188
+    }
+  },
+  {
+    "generation": 3,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-23T01:42:06",
+    "details": {
+      "parent_id": "d331091e5fd54c22a924ec5313873636",
+      "child_id": "823cff440bb24a1294aaf9b67edfc085",
+      "parent_rank": 73,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "system components",
+      "sampled_op": "l_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:42:10",
+    "details": {
+      "word": "component",
+      "rank": 309,
+      "hypothesis": "system components",
+      "best_word": "gauge",
+      "best_rank": 13,
+      "total_guesses": 189
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:42:10",
+    "details": {
+      "word": "element",
+      "rank": 851,
+      "hypothesis": "system components",
+      "best_word": "gauge",
+      "best_rank": 13,
+      "total_guesses": 190
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:42:10",
+    "details": {
+      "word": "node",
+      "rank": 7692,
+      "hypothesis": "system components",
+      "best_word": "gauge",
+      "best_rank": 13,
+      "total_guesses": 191
+    }
+  },
+  {
+    "generation": 3,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-23T01:42:46",
+    "details": {
+      "parent_id": "62c40cd7ef4b42e5a6576058d1d90737",
+      "child_id": "a95cbecfd49145829f11e4fed79b938c",
+      "parent_rank": 102,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "biomechanical properties",
+      "sampled_op": "l_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:42:47",
+    "details": {
+      "word": "force",
+      "rank": 3057,
+      "hypothesis": "biomechanical properties",
+      "best_word": "gauge",
+      "best_rank": 13,
+      "total_guesses": 192
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:42:47",
+    "details": {
+      "word": "movement",
+      "rank": 858,
+      "hypothesis": "biomechanical properties",
+      "best_word": "gauge",
+      "best_rank": 13,
+      "total_guesses": 193
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:42:48",
+    "details": {
+      "word": "load",
+      "rank": 2643,
+      "hypothesis": "biomechanical properties",
+      "best_word": "gauge",
+      "best_rank": 13,
+      "total_guesses": 194
+    }
+  },
+  {
+    "generation": 3,
+    "event": "MUTATE",
+    "timestamp": "2026-07-23T01:42:48",
+    "details": {
+      "method": "self_adaptive",
+      "children": [
+        {
+          "hypothesis_id": "400792fccebf4e38a082c92f21418e8b",
+          "category_name": "states",
+          "description": "conditions or phases of existence",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "tools",
+          "parent_id": "259e430a8fc547e5b39adb4f0825cc92",
+          "origin": "self_adaptive_l_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "7e341cc64f2f4436889a83cd23579e12",
+          "category_name": "social roles",
+          "description": "positions within a hierarchy or group",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "spatial contexts",
+          "parent_id": "82a733434ecf4baa99f2b84239e9ab68",
+          "origin": "self_adaptive_m_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "7169a24ec5754232ae526c6c6929d516",
+          "category_name": "central structural elements",
+          "description": "terms related to central elements or pivot points",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "directional indicators",
+          "parent_id": "fe1eb91178964e4cb18e0630ea18b56c",
+          "origin": "self_adaptive_m_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "823cff440bb24a1294aaf9b67edfc085",
+          "category_name": "system components",
+          "description": "parts of systems",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "shapes",
+          "parent_id": "d331091e5fd54c22a924ec5313873636",
+          "origin": "self_adaptive_l_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "a95cbecfd49145829f11e4fed79b938c",
+          "category_name": "biomechanical properties",
+          "description": "aspects of physical movement and force in organisms",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "geometric properties",
+          "parent_id": "62c40cd7ef4b42e5a6576058d1d90737",
+          "origin": "self_adaptive_l_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        }
+      ],
+      "best_word": "gauge",
+      "best_rank": 13,
+      "total_guesses": 194
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:42:57",
+    "details": {
+      "word": "align",
+      "rank": 421,
+      "hypothesis": "tool spatial actions",
+      "best_word": "gauge",
+      "best_rank": 13,
+      "total_guesses": 195
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:42:57",
+    "details": {
+      "word": "adjust",
+      "rank": 262,
+      "hypothesis": "tool spatial actions",
+      "best_word": "gauge",
+      "best_rank": 13,
+      "total_guesses": 196
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:42:57",
+    "details": {
+      "word": "mount",
+      "rank": 145,
+      "hypothesis": "tool spatial actions",
+      "best_word": "gauge",
+      "best_rank": 13,
+      "total_guesses": 197
+    }
+  },
+  {
+    "generation": 3,
+    "event": "CROSSOVER",
+    "timestamp": "2026-07-23T01:42:57",
+    "details": {
+      "parents": [
+        "tools",
+        "spatial contexts"
+      ],
+      "parent_ids": [
+        "259e430a8fc547e5b39adb4f0825cc92",
+        "82a733434ecf4baa99f2b84239e9ab68"
+      ],
+      "parent_ranks": [
+        13,
+        23
+      ],
+      "parent_a_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "parent_b_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma_pre_perturbation": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child": {
+        "hypothesis_id": "85901f3bd82d4148804bf26c5a976c0e",
+        "category_name": "tool spatial actions",
+        "description": "actions involving tools and spatial relationships",
+        "words_tried": {
+          "mount": 145,
+          "adjust": 262,
+          "align": 421
+        },
+        "best_word": "mount",
+        "best_rank": 145,
+        "status": "active",
+        "parent": "tools+spatial contexts",
+        "parent_id": null,
+        "origin": "crossover",
+        "sigma": [
+          0.25,
+          0.25,
+          0.25,
+          0.25
+        ]
+      },
+      "best_word": "gauge",
+      "best_rank": 13,
+      "total_guesses": 197
+    }
+  },
+  {
+    "generation": 3,
+    "event": "DEDUPLICATE",
+    "timestamp": "2026-07-23T01:42:57",
+    "details": {
+      "merged": [
+        {
+          "survivor": "tool spatial actions",
+          "discarded": "actions",
+          "survivor_best_rank": 145,
+          "discarded_best_rank": 2596
+        }
+      ],
+      "remaining_hypotheses": 31,
+      "active_hypotheses": 11,
+      "best_word": "gauge",
+      "best_rank": 13,
+      "total_guesses": 197
+    }
+  },
+  {
+    "generation": 3,
+    "event": "SIGMA_TRAJECTORY",
+    "timestamp": "2026-07-23T01:42:57",
+    "details": {
+      "mean_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "population_size": 11
+    }
+  },
+  {
+    "generation": 4,
+    "event": "CANDIDATES",
+    "timestamp": "2026-07-23T01:45:55",
+    "details": {
+      "count": 29,
+      "candidates": [
+        {
+          "hypothesis": "tools",
+          "word": "lever"
+        },
+        {
+          "hypothesis": "tools",
+          "word": "mallet"
+        },
+        {
+          "hypothesis": "tools",
+          "word": "trowel"
+        },
+        {
+          "hypothesis": "spatial contexts",
+          "word": "distance"
+        },
+        {
+          "hypothesis": "spatial contexts",
+          "word": "arrangement"
+        },
+        {
+          "hypothesis": "spatial contexts",
+          "word": "extent"
+        },
+        {
+          "hypothesis": "directional indicators",
+          "word": "compass"
+        },
+        {
+          "hypothesis": "directional indicators",
+          "word": "orient"
+        },
+        {
+          "hypothesis": "directional indicators",
+          "word": "guide"
+        },
+        {
+          "hypothesis": "shapes",
+          "word": "cylinder"
+        },
+        {
+          "hypothesis": "shapes",
+          "word": "oval"
+        },
+        {
+          "hypothesis": "shapes",
+          "word": "ellipse"
+        },
+        {
+          "hypothesis": "geometric properties",
+          "word": "radius"
+        },
+        {
+          "hypothesis": "geometric properties",
+          "word": "diameter"
+        },
+        {
+          "hypothesis": "geometric properties",
+          "word": "volume"
+        },
+        {
+          "hypothesis": "tool spatial actions",
+          "word": "measure"
+        },
+        {
+          "hypothesis": "tool spatial actions",
+          "word": "trim"
+        },
+        {
+          "hypothesis": "system components",
+          "word": "part"
+        },
+        {
+          "hypothesis": "system components",
+          "word": "unit"
+        },
+        {
+          "hypothesis": "system components",
+          "word": "module"
+        },
+        {
+          "hypothesis": "central structural elements",
+          "word": "keystone"
+        },
+        {
+          "hypothesis": "central structural elements",
+          "word": "fulcrum"
+        },
+        {
+          "hypothesis": "central structural elements",
+          "word": "nexus"
+        },
+        {
+          "hypothesis": "biomechanical properties",
+          "word": "stiffness"
+        },
+        {
+          "hypothesis": "biomechanical properties",
+          "word": "compliance"
+        },
+        {
+          "hypothesis": "biomechanical properties",
+          "word": "viscosity"
+        },
+        {
+          "hypothesis": "social roles",
+          "word": "station"
+        },
+        {
+          "hypothesis": "social roles",
+          "word": "post"
+        },
+        {
+          "hypothesis": "social roles",
+          "word": "tier"
+        }
+      ]
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:45:55",
+    "details": {
+      "word": "lever",
+      "rank": 299,
+      "hypothesis": "tools",
+      "best_word": "gauge",
+      "best_rank": 13,
+      "total_guesses": 198
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:45:55",
+    "details": {
+      "word": "mallet",
+      "rank": 2414,
+      "hypothesis": "tools",
+      "best_word": "gauge",
+      "best_rank": 13,
+      "total_guesses": 199
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:45:55",
+    "details": {
+      "word": "trowel",
+      "rank": 4260,
+      "hypothesis": "tools",
+      "best_word": "gauge",
+      "best_rank": 13,
+      "total_guesses": 200
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:45:56",
+    "details": {
+      "word": "distance",
+      "rank": 166,
+      "hypothesis": "spatial contexts",
+      "best_word": "gauge",
+      "best_rank": 13,
+      "total_guesses": 201
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:45:56",
+    "details": {
+      "word": "arrangement",
+      "rank": 4243,
+      "hypothesis": "spatial contexts",
+      "best_word": "gauge",
+      "best_rank": 13,
+      "total_guesses": 202
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:45:57",
+    "details": {
+      "word": "extent",
+      "rank": 5522,
+      "hypothesis": "spatial contexts",
+      "best_word": "gauge",
+      "best_rank": 13,
+      "total_guesses": 203
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:45:57",
+    "details": {
+      "word": "compass",
+      "rank": 1,
+      "hypothesis": "directional indicators",
+      "best_word": "compass",
+      "best_rank": 1,
+      "total_guesses": 204
+    }
+  },
+  {
+    "generation": 4,
+    "event": "SOLVED",
+    "timestamp": "2026-07-23T01:45:57",
+    "details": {
+      "answer": "compass",
+      "rank": 1,
+      "total_guesses": 204
+    }
+  },
+  {
+    "generation": 4,
+    "event": "NETWORK_METRICS",
+    "timestamp": "2026-07-23T01:45:57",
+    "details": {
+      "network_calls": 61,
+      "network_wall_clock_seconds": 967.8412,
+      "total_latency_seconds": 52.5002,
+      "mean_latency_seconds": 0.8607,
+      "median_latency_seconds": 0.2709,
+      "p95_latency_seconds": 3.2736,
+      "max_latency_seconds": 3.2787,
+      "status_counts": {
+        "200": 59,
+        "404": 2
+      },
+      "outcome_counts": {
+        "ok": 59,
+        "http_error": 2
+      }
+    }
+  }
+]

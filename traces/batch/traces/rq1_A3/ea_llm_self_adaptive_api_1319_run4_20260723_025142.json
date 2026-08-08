@@ -1,0 +1,6215 @@
+[
+  {
+    "generation": -1,
+    "event": "RUN_CONFIG",
+    "timestamp": "2026-07-23T01:55:49",
+    "details": {
+      "game": "api",
+      "solver": "llm",
+      "method": "ea_llm_self_adaptive",
+      "mode": "api",
+      "target": null,
+      "game_number": 1319,
+      "run_index": 3,
+      "game_embedding_path": null,
+      "solver_embedding_path": null,
+      "embedding_backend": null,
+      "vocabulary_size": null,
+      "alignment": "api_unknown",
+      "trace_schema_version": 3,
+      "instrumentation_provenance_hash": "bd9f2858283673a2",
+      "self_report": false,
+      "rationale_inheritance": false,
+      "max_generations": 50,
+      "llm_provider": "ollama",
+      "llm_model": "qwen3:14b",
+      "llm_workers": 4,
+      "initial_categories": 15,
+      "max_active_hypotheses": null,
+      "local_search_rank_threshold": 100,
+      "self_adaptive_initial_categories": 15,
+      "self_adaptive_mu": 15,
+      "self_adaptive_concentration": 50.0,
+      "self_adaptive_sigma_floor": 0.02,
+      "self_adaptive_sigma_mode": "frozen_uniform",
+      "mapelites_grid_resolution": null,
+      "mapelites_mutations_per_gen": null,
+      "mapelites_crossovers_per_gen": null,
+      "mapelites_initial_categories": null,
+      "mapelites_concentration": null,
+      "mapelites_sigma_floor": null,
+      "mapelites_sigma_mode": null,
+      "mapelites_frozen_sigma": null,
+      "mapelites_ranked_context_k": null,
+      "rank_cache_enabled": true,
+      "enable_pivot": false,
+      "ea_llm_pivot_stall_no_improvement_generations": null,
+      "ea_llm_pivot_stall_close_rank_threshold": null,
+      "ea_llm_pivot_stall_close_generations_limit": null,
+      "ea_llm_pivot_max_attempts_per_run": null,
+      "ea_llm_pivot_candidate_words_per_operator": null,
+      "ea_llm_pivot_resolution_window": null,
+      "random_seed": 3
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:56:08",
+    "details": {
+      "word": "tree",
+      "rank": 5791,
+      "hypothesis": "nature",
+      "best_word": "tree",
+      "best_rank": 5791,
+      "total_guesses": 1
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:56:08",
+    "details": {
+      "word": "river",
+      "rank": 2643,
+      "hypothesis": "nature",
+      "best_word": "river",
+      "best_rank": 2643,
+      "total_guesses": 2
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:56:08",
+    "details": {
+      "word": "mountain",
+      "rank": 6568,
+      "hypothesis": "nature",
+      "best_word": "river",
+      "best_rank": 2643,
+      "total_guesses": 3
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:56:08",
+    "details": {
+      "word": "happy",
+      "rank": 9481,
+      "hypothesis": "emotions",
+      "best_word": "river",
+      "best_rank": 2643,
+      "total_guesses": 4
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:56:08",
+    "details": {
+      "word": "sad",
+      "rank": 2409,
+      "hypothesis": "emotions",
+      "best_word": "sad",
+      "best_rank": 2409,
+      "total_guesses": 5
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:56:08",
+    "details": {
+      "word": "angry",
+      "rank": 5640,
+      "hypothesis": "emotions",
+      "best_word": "sad",
+      "best_rank": 2409,
+      "total_guesses": 6
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:56:08",
+    "details": {
+      "word": "eat",
+      "rank": 1108,
+      "hypothesis": "daily_activities",
+      "best_word": "eat",
+      "best_rank": 1108,
+      "total_guesses": 7
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:56:08",
+    "details": {
+      "word": "sleep",
+      "rank": 4336,
+      "hypothesis": "daily_activities",
+      "best_word": "eat",
+      "best_rank": 1108,
+      "total_guesses": 8
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:56:08",
+    "details": {
+      "word": "work",
+      "rank": 16891,
+      "hypothesis": "daily_activities",
+      "best_word": "eat",
+      "best_rank": 1108,
+      "total_guesses": 9
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:56:08",
+    "details": {
+      "word": "red",
+      "rank": 16194,
+      "hypothesis": "colors",
+      "best_word": "eat",
+      "best_rank": 1108,
+      "total_guesses": 10
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:56:08",
+    "details": {
+      "word": "blue",
+      "rank": 2640,
+      "hypothesis": "colors",
+      "best_word": "eat",
+      "best_rank": 1108,
+      "total_guesses": 11
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:56:08",
+    "details": {
+      "word": "green",
+      "rank": 36889,
+      "hypothesis": "colors",
+      "best_word": "eat",
+      "best_rank": 1108,
+      "total_guesses": 12
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:56:08",
+    "details": {
+      "word": "hand",
+      "rank": 26454,
+      "hypothesis": "body_parts",
+      "best_word": "eat",
+      "best_rank": 1108,
+      "total_guesses": 13
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:56:08",
+    "details": {
+      "word": "foot",
+      "rank": 5086,
+      "hypothesis": "body_parts",
+      "best_word": "eat",
+      "best_rank": 1108,
+      "total_guesses": 14
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:56:08",
+    "details": {
+      "word": "eye",
+      "rank": 4637,
+      "hypothesis": "body_parts",
+      "best_word": "eat",
+      "best_rank": 1108,
+      "total_guesses": 15
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:56:08",
+    "details": {
+      "word": "rain",
+      "rank": 7514,
+      "hypothesis": "weather",
+      "best_word": "eat",
+      "best_rank": 1108,
+      "total_guesses": 16
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:56:08",
+    "details": {
+      "word": "snow",
+      "rank": 1073,
+      "hypothesis": "weather",
+      "best_word": "snow",
+      "best_rank": 1073,
+      "total_guesses": 17
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:56:08",
+    "details": {
+      "word": "sun",
+      "rank": 893,
+      "hypothesis": "weather",
+      "best_word": "sun",
+      "best_rank": 893,
+      "total_guesses": 18
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:56:08",
+    "details": {
+      "word": "day",
+      "rank": 12858,
+      "hypothesis": "time",
+      "best_word": "sun",
+      "best_rank": 893,
+      "total_guesses": 19
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:56:10",
+    "details": {
+      "word": "night",
+      "rank": 13652,
+      "hypothesis": "time",
+      "best_word": "sun",
+      "best_rank": 893,
+      "total_guesses": 20
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:56:10",
+    "details": {
+      "word": "year",
+      "rank": 23391,
+      "hypothesis": "time",
+      "best_word": "sun",
+      "best_rank": 893,
+      "total_guesses": 21
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:56:10",
+    "details": {
+      "word": "circle",
+      "rank": 3740,
+      "hypothesis": "shapes",
+      "best_word": "sun",
+      "best_rank": 893,
+      "total_guesses": 22
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:56:10",
+    "details": {
+      "word": "square",
+      "rank": 24444,
+      "hypothesis": "shapes",
+      "best_word": "sun",
+      "best_rank": 893,
+      "total_guesses": 23
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:56:10",
+    "details": {
+      "word": "triangle",
+      "rank": 49078,
+      "hypothesis": "shapes",
+      "best_word": "sun",
+      "best_rank": 893,
+      "total_guesses": 24
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:56:10",
+    "details": {
+      "word": "apple",
+      "rank": 10789,
+      "hypothesis": "foods",
+      "best_word": "sun",
+      "best_rank": 893,
+      "total_guesses": 25
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:56:10",
+    "details": {
+      "word": "bread",
+      "rank": 45913,
+      "hypothesis": "foods",
+      "best_word": "sun",
+      "best_rank": 893,
+      "total_guesses": 26
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:56:10",
+    "details": {
+      "word": "rice",
+      "rank": 47969,
+      "hypothesis": "foods",
+      "best_word": "sun",
+      "best_rank": 893,
+      "total_guesses": 27
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:56:10",
+    "details": {
+      "word": "car",
+      "rank": 45142,
+      "hypothesis": "transportation",
+      "best_word": "sun",
+      "best_rank": 893,
+      "total_guesses": 28
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:56:10",
+    "details": {
+      "word": "bike",
+      "rank": 42903,
+      "hypothesis": "transportation",
+      "best_word": "sun",
+      "best_rank": 893,
+      "total_guesses": 29
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:56:10",
+    "details": {
+      "word": "train",
+      "rank": 12052,
+      "hypothesis": "transportation",
+      "best_word": "sun",
+      "best_rank": 893,
+      "total_guesses": 30
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:56:10",
+    "details": {
+      "word": "shirt",
+      "rank": 24223,
+      "hypothesis": "clothing",
+      "best_word": "sun",
+      "best_rank": 893,
+      "total_guesses": 31
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:56:10",
+    "details": {
+      "word": "pants",
+      "rank": 29436,
+      "hypothesis": "clothing",
+      "best_word": "sun",
+      "best_rank": 893,
+      "total_guesses": 32
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:56:11",
+    "details": {
+      "word": "shoes",
+      "rank": 14350,
+      "hypothesis": "clothing",
+      "best_word": "sun",
+      "best_rank": 893,
+      "total_guesses": 33
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:56:12",
+    "details": {
+      "word": "hammer",
+      "rank": 9185,
+      "hypothesis": "tools",
+      "best_word": "sun",
+      "best_rank": 893,
+      "total_guesses": 34
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:56:12",
+    "details": {
+      "word": "knife",
+      "rank": 8633,
+      "hypothesis": "tools",
+      "best_word": "sun",
+      "best_rank": 893,
+      "total_guesses": 35
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:56:12",
+    "details": {
+      "word": "screwdriver",
+      "rank": 40626,
+      "hypothesis": "tools",
+      "best_word": "sun",
+      "best_rank": 893,
+      "total_guesses": 36
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:56:12",
+    "details": {
+      "word": "dog",
+      "rank": 1067,
+      "hypothesis": "animals",
+      "best_word": "sun",
+      "best_rank": 893,
+      "total_guesses": 37
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:56:12",
+    "details": {
+      "word": "cat",
+      "rank": 590,
+      "hypothesis": "animals",
+      "best_word": "cat",
+      "best_rank": 590,
+      "total_guesses": 38
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:56:12",
+    "details": {
+      "word": "bird",
+      "rank": 182,
+      "hypothesis": "animals",
+      "best_word": "bird",
+      "best_rank": 182,
+      "total_guesses": 39
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:56:12",
+    "details": {
+      "word": "run",
+      "rank": 39873,
+      "hypothesis": "sports",
+      "best_word": "bird",
+      "best_rank": 182,
+      "total_guesses": 40
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:56:12",
+    "details": {
+      "word": "jump",
+      "rank": 15410,
+      "hypothesis": "sports",
+      "best_word": "bird",
+      "best_rank": 182,
+      "total_guesses": 41
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:56:12",
+    "details": {
+      "word": "swim",
+      "rank": 374,
+      "hypothesis": "sports",
+      "best_word": "bird",
+      "best_rank": 182,
+      "total_guesses": 42
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:56:13",
+    "details": {
+      "word": "mom",
+      "rank": 10867,
+      "hypothesis": "family",
+      "best_word": "bird",
+      "best_rank": 182,
+      "total_guesses": 43
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:56:14",
+    "details": {
+      "word": "dad",
+      "rank": 4950,
+      "hypothesis": "family",
+      "best_word": "bird",
+      "best_rank": 182,
+      "total_guesses": 44
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:56:15",
+    "details": {
+      "word": "brother",
+      "rank": 7346,
+      "hypothesis": "family",
+      "best_word": "bird",
+      "best_rank": 182,
+      "total_guesses": 45
+    }
+  },
+  {
+    "generation": 0,
+    "event": "INIT",
+    "timestamp": "2026-07-23T01:56:15",
+    "details": {
+      "hypotheses": [
+        {
+          "hypothesis_id": "85415a3d267047fab6cc9fd5a01f76c1",
+          "category_name": "nature",
+          "description": "elements found in the natural world",
+          "words_tried": {
+            "river": 2643,
+            "tree": 5791,
+            "mountain": 6568
+          },
+          "best_word": "river",
+          "best_rank": 2643,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "022057b5b31f44e38fd11fb4df82e48e",
+          "category_name": "emotions",
+          "description": "human feelings and states of mind",
+          "words_tried": {
+            "sad": 2409,
+            "angry": 5640,
+            "happy": 9481
+          },
+          "best_word": "sad",
+          "best_rank": 2409,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "cec826ff84c946cca8b216dac8eb5011",
+          "category_name": "daily_activities",
+          "description": "routine actions performed regularly",
+          "words_tried": {
+            "eat": 1108,
+            "sleep": 4336,
+            "work": 16891
+          },
+          "best_word": "eat",
+          "best_rank": 1108,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "f60a137503824402bc40b6e0991cd05a",
+          "category_name": "colors",
+          "description": "visual hues and shades",
+          "words_tried": {
+            "blue": 2640,
+            "red": 16194,
+            "green": 36889
+          },
+          "best_word": "blue",
+          "best_rank": 2640,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "30aae35273b0469381fc17b3abcf41d1",
+          "category_name": "body_parts",
+          "description": "physical components of the human body",
+          "words_tried": {
+            "eye": 4637,
+            "foot": 5086,
+            "hand": 26454
+          },
+          "best_word": "eye",
+          "best_rank": 4637,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "a524eb66d30549d0ac937d6b8f0c19c8",
+          "category_name": "weather",
+          "description": "atmospheric conditions",
+          "words_tried": {
+            "sun": 893,
+            "snow": 1073,
+            "rain": 7514
+          },
+          "best_word": "sun",
+          "best_rank": 893,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "d0369f5274444debb049756d382e4b36",
+          "category_name": "time",
+          "description": "measurement of duration",
+          "words_tried": {
+            "day": 12858,
+            "night": 13652,
+            "year": 23391
+          },
+          "best_word": "day",
+          "best_rank": 12858,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "78851d0810114819828091703b725208",
+          "category_name": "shapes",
+          "description": "geometric forms",
+          "words_tried": {
+            "circle": 3740,
+            "square": 24444,
+            "triangle": 49078
+          },
+          "best_word": "circle",
+          "best_rank": 3740,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "795162c7e9c746c9aa32659d9d604f1e",
+          "category_name": "foods",
+          "description": "edible items consumed for nourishment",
+          "words_tried": {
+            "apple": 10789,
+            "bread": 45913,
+            "rice": 47969
+          },
+          "best_word": "apple",
+          "best_rank": 10789,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "bf346432c21444328a97e3be19086932",
+          "category_name": "transportation",
+          "description": "means of moving from one place to another",
+          "words_tried": {
+            "train": 12052,
+            "bike": 42903,
+            "car": 45142
+          },
+          "best_word": "train",
+          "best_rank": 12052,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "afbcef2c3e284c269266d90ff5cc7660",
+          "category_name": "clothing",
+          "description": "items worn on the body",
+          "words_tried": {
+            "shoes": 14350,
+            "shirt": 24223,
+            "pants": 29436
+          },
+          "best_word": "shoes",
+          "best_rank": 14350,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "4277d2ce2d924184be0f75dc3f18af22",
+          "category_name": "tools",
+          "description": "instruments used for specific tasks",
+          "words_tried": {
+            "knife": 8633,
+            "hammer": 9185,
+            "screwdriver": 40626
+          },
+          "best_word": "knife",
+          "best_rank": 8633,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "1b9e5b69d817443a85eb3c9cea39bea6",
+          "category_name": "animals",
+          "description": "living creatures with biological traits",
+          "words_tried": {
+            "bird": 182,
+            "cat": 590,
+            "dog": 1067
+          },
+          "best_word": "bird",
+          "best_rank": 182,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "e9b31dddca164eacb6612a56e8543369",
+          "category_name": "sports",
+          "description": "physical activities with rules",
+          "words_tried": {
+            "swim": 374,
+            "jump": 15410,
+            "run": 39873
+          },
+          "best_word": "swim",
+          "best_rank": 374,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "749228bb396a4f81889ab632582561a9",
+          "category_name": "family",
+          "description": "relational group of people",
+          "words_tried": {
+            "dad": 4950,
+            "brother": 7346,
+            "mom": 10867
+          },
+          "best_word": "dad",
+          "best_rank": 4950,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        }
+      ],
+      "best_word": "bird",
+      "best_rank": 182,
+      "total_guesses": 45
+    }
+  },
+  {
+    "generation": 0,
+    "event": "SIGMA_TRAJECTORY",
+    "timestamp": "2026-07-23T01:56:15",
+    "details": {
+      "mean_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "population_size": 15
+    }
+  },
+  {
+    "generation": 1,
+    "event": "CANDIDATES",
+    "timestamp": "2026-07-23T02:30:01",
+    "details": {
+      "count": 45,
+      "candidates": [
+        {
+          "hypothesis": "nature",
+          "word": "flower"
+        },
+        {
+          "hypothesis": "nature",
+          "word": "grass"
+        },
+        {
+          "hypothesis": "nature",
+          "word": "soil"
+        },
+        {
+          "hypothesis": "emotions",
+          "word": "love"
+        },
+        {
+          "hypothesis": "emotions",
+          "word": "fear"
+        },
+        {
+          "hypothesis": "emotions",
+          "word": "grief"
+        },
+        {
+          "hypothesis": "daily_activities",
+          "word": "brush"
+        },
+        {
+          "hypothesis": "daily_activities",
+          "word": "wash"
+        },
+        {
+          "hypothesis": "daily_activities",
+          "word": "read"
+        },
+        {
+          "hypothesis": "colors",
+          "word": "hue"
+        },
+        {
+          "hypothesis": "colors",
+          "word": "shade"
+        },
+        {
+          "hypothesis": "colors",
+          "word": "tint"
+        },
+        {
+          "hypothesis": "body_parts",
+          "word": "head"
+        },
+        {
+          "hypothesis": "body_parts",
+          "word": "arm"
+        },
+        {
+          "hypothesis": "body_parts",
+          "word": "leg"
+        },
+        {
+          "hypothesis": "weather",
+          "word": "cloud"
+        },
+        {
+          "hypothesis": "weather",
+          "word": "storm"
+        },
+        {
+          "hypothesis": "weather",
+          "word": "humidity"
+        },
+        {
+          "hypothesis": "time",
+          "word": "hour"
+        },
+        {
+          "hypothesis": "time",
+          "word": "minute"
+        },
+        {
+          "hypothesis": "time",
+          "word": "second"
+        },
+        {
+          "hypothesis": "shapes",
+          "word": "cube"
+        },
+        {
+          "hypothesis": "shapes",
+          "word": "ellipse"
+        },
+        {
+          "hypothesis": "shapes",
+          "word": "octagon"
+        },
+        {
+          "hypothesis": "foods",
+          "word": "meat"
+        },
+        {
+          "hypothesis": "foods",
+          "word": "fruit"
+        },
+        {
+          "hypothesis": "foods",
+          "word": "grain"
+        },
+        {
+          "hypothesis": "transportation",
+          "word": "ship"
+        },
+        {
+          "hypothesis": "transportation",
+          "word": "bus"
+        },
+        {
+          "hypothesis": "transportation",
+          "word": "truck"
+        },
+        {
+          "hypothesis": "clothing",
+          "word": "hat"
+        },
+        {
+          "hypothesis": "clothing",
+          "word": "glove"
+        },
+        {
+          "hypothesis": "clothing",
+          "word": "scarf"
+        },
+        {
+          "hypothesis": "tools",
+          "word": "wrench"
+        },
+        {
+          "hypothesis": "tools",
+          "word": "pliers"
+        },
+        {
+          "hypothesis": "tools",
+          "word": "saw"
+        },
+        {
+          "hypothesis": "animals",
+          "word": "fish"
+        },
+        {
+          "hypothesis": "animals",
+          "word": "snake"
+        },
+        {
+          "hypothesis": "animals",
+          "word": "lion"
+        },
+        {
+          "hypothesis": "sports",
+          "word": "game"
+        },
+        {
+          "hypothesis": "sports",
+          "word": "match"
+        },
+        {
+          "hypothesis": "sports",
+          "word": "race"
+        },
+        {
+          "hypothesis": "family",
+          "word": "kin"
+        },
+        {
+          "hypothesis": "family",
+          "word": "relative"
+        },
+        {
+          "hypothesis": "family",
+          "word": "clan"
+        }
+      ]
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:30:01",
+    "details": {
+      "word": "flower",
+      "rank": 51053,
+      "hypothesis": "nature",
+      "best_word": "bird",
+      "best_rank": 182,
+      "total_guesses": 46
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:30:01",
+    "details": {
+      "word": "grass",
+      "rank": 5069,
+      "hypothesis": "nature",
+      "best_word": "bird",
+      "best_rank": 182,
+      "total_guesses": 47
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:30:01",
+    "details": {
+      "word": "soil",
+      "rank": 35015,
+      "hypothesis": "nature",
+      "best_word": "bird",
+      "best_rank": 182,
+      "total_guesses": 48
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:30:01",
+    "details": {
+      "word": "love",
+      "rank": 5234,
+      "hypothesis": "emotions",
+      "best_word": "bird",
+      "best_rank": 182,
+      "total_guesses": 49
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:30:01",
+    "details": {
+      "word": "fear",
+      "rank": 23408,
+      "hypothesis": "emotions",
+      "best_word": "bird",
+      "best_rank": 182,
+      "total_guesses": 50
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:30:01",
+    "details": {
+      "word": "grief",
+      "rank": 14715,
+      "hypothesis": "emotions",
+      "best_word": "bird",
+      "best_rank": 182,
+      "total_guesses": 51
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:30:01",
+    "details": {
+      "word": "brush",
+      "rank": 10312,
+      "hypothesis": "daily_activities",
+      "best_word": "bird",
+      "best_rank": 182,
+      "total_guesses": 52
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:30:01",
+    "details": {
+      "word": "wash",
+      "rank": 8870,
+      "hypothesis": "daily_activities",
+      "best_word": "bird",
+      "best_rank": 182,
+      "total_guesses": 53
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:30:01",
+    "details": {
+      "word": "read",
+      "rank": 28972,
+      "hypothesis": "daily_activities",
+      "best_word": "bird",
+      "best_rank": 182,
+      "total_guesses": 54
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:30:01",
+    "details": {
+      "word": "hue",
+      "rank": 30950,
+      "hypothesis": "colors",
+      "best_word": "bird",
+      "best_rank": 182,
+      "total_guesses": 55
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:30:01",
+    "details": {
+      "word": "shade",
+      "rank": 57917,
+      "hypothesis": "colors",
+      "best_word": "bird",
+      "best_rank": 182,
+      "total_guesses": 56
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:30:02",
+    "details": {
+      "word": "tint",
+      "rank": 24479,
+      "hypothesis": "colors",
+      "best_word": "bird",
+      "best_rank": 182,
+      "total_guesses": 57
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:30:02",
+    "details": {
+      "word": "head",
+      "rank": 2324,
+      "hypothesis": "body_parts",
+      "best_word": "bird",
+      "best_rank": 182,
+      "total_guesses": 58
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:30:02",
+    "details": {
+      "word": "arm",
+      "rank": 10944,
+      "hypothesis": "body_parts",
+      "best_word": "bird",
+      "best_rank": 182,
+      "total_guesses": 59
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:30:02",
+    "details": {
+      "word": "leg",
+      "rank": 8972,
+      "hypothesis": "body_parts",
+      "best_word": "bird",
+      "best_rank": 182,
+      "total_guesses": 60
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:30:02",
+    "details": {
+      "word": "cloud",
+      "rank": 5850,
+      "hypothesis": "weather",
+      "best_word": "bird",
+      "best_rank": 182,
+      "total_guesses": 61
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:30:02",
+    "details": {
+      "word": "storm",
+      "rank": 4009,
+      "hypothesis": "weather",
+      "best_word": "bird",
+      "best_rank": 182,
+      "total_guesses": 62
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:30:02",
+    "details": {
+      "word": "humidity",
+      "rank": 39240,
+      "hypothesis": "weather",
+      "best_word": "bird",
+      "best_rank": 182,
+      "total_guesses": 63
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:30:02",
+    "details": {
+      "word": "hour",
+      "rank": 43067,
+      "hypothesis": "time",
+      "best_word": "bird",
+      "best_rank": 182,
+      "total_guesses": 64
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:30:02",
+    "details": {
+      "word": "minute",
+      "rank": 36313,
+      "hypothesis": "time",
+      "best_word": "bird",
+      "best_rank": 182,
+      "total_guesses": 65
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:30:02",
+    "details": {
+      "word": "second",
+      "rank": 28201,
+      "hypothesis": "time",
+      "best_word": "bird",
+      "best_rank": 182,
+      "total_guesses": 66
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:30:02",
+    "details": {
+      "word": "cube",
+      "rank": 8501,
+      "hypothesis": "shapes",
+      "best_word": "bird",
+      "best_rank": 182,
+      "total_guesses": 67
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:30:02",
+    "details": {
+      "word": "ellipse",
+      "rank": 24119,
+      "hypothesis": "shapes",
+      "best_word": "bird",
+      "best_rank": 182,
+      "total_guesses": 68
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:30:03",
+    "details": {
+      "word": "octagon",
+      "rank": 41054,
+      "hypothesis": "shapes",
+      "best_word": "bird",
+      "best_rank": 182,
+      "total_guesses": 69
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:30:03",
+    "details": {
+      "word": "meat",
+      "rank": 2309,
+      "hypothesis": "foods",
+      "best_word": "bird",
+      "best_rank": 182,
+      "total_guesses": 70
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:30:03",
+    "details": {
+      "word": "fruit",
+      "rank": 11235,
+      "hypothesis": "foods",
+      "best_word": "bird",
+      "best_rank": 182,
+      "total_guesses": 71
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:30:03",
+    "details": {
+      "word": "grain",
+      "rank": 17275,
+      "hypothesis": "foods",
+      "best_word": "bird",
+      "best_rank": 182,
+      "total_guesses": 72
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:30:03",
+    "details": {
+      "word": "ship",
+      "rank": 2740,
+      "hypothesis": "transportation",
+      "best_word": "bird",
+      "best_rank": 182,
+      "total_guesses": 73
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:30:03",
+    "details": {
+      "word": "bus",
+      "rank": 37501,
+      "hypothesis": "transportation",
+      "best_word": "bird",
+      "best_rank": 182,
+      "total_guesses": 74
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:30:03",
+    "details": {
+      "word": "truck",
+      "rank": 8662,
+      "hypothesis": "transportation",
+      "best_word": "bird",
+      "best_rank": 182,
+      "total_guesses": 75
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:30:04",
+    "details": {
+      "word": "hat",
+      "rank": 3712,
+      "hypothesis": "clothing",
+      "best_word": "bird",
+      "best_rank": 182,
+      "total_guesses": 76
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:30:04",
+    "details": {
+      "word": "glove",
+      "rank": 15134,
+      "hypothesis": "clothing",
+      "best_word": "bird",
+      "best_rank": 182,
+      "total_guesses": 77
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:30:05",
+    "details": {
+      "word": "scarf",
+      "rank": 9852,
+      "hypothesis": "clothing",
+      "best_word": "bird",
+      "best_rank": 182,
+      "total_guesses": 78
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:30:06",
+    "details": {
+      "word": "wrench",
+      "rank": 36025,
+      "hypothesis": "tools",
+      "best_word": "bird",
+      "best_rank": 182,
+      "total_guesses": 79
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:30:07",
+    "details": {
+      "word": "pliers",
+      "rank": 25692,
+      "hypothesis": "tools",
+      "best_word": "bird",
+      "best_rank": 182,
+      "total_guesses": 80
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:30:07",
+    "details": {
+      "word": "saw",
+      "rank": 1485,
+      "hypothesis": "tools",
+      "best_word": "bird",
+      "best_rank": 182,
+      "total_guesses": 81
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:30:07",
+    "details": {
+      "word": "fish",
+      "rank": 138,
+      "hypothesis": "animals",
+      "best_word": "fish",
+      "best_rank": 138,
+      "total_guesses": 82
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:30:07",
+    "details": {
+      "word": "snake",
+      "rank": 295,
+      "hypothesis": "animals",
+      "best_word": "fish",
+      "best_rank": 138,
+      "total_guesses": 83
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:30:07",
+    "details": {
+      "word": "lion",
+      "rank": 49,
+      "hypothesis": "animals",
+      "best_word": "lion",
+      "best_rank": 49,
+      "total_guesses": 84
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:30:07",
+    "details": {
+      "word": "game",
+      "rank": 19132,
+      "hypothesis": "sports",
+      "best_word": "lion",
+      "best_rank": 49,
+      "total_guesses": 85
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:30:07",
+    "details": {
+      "word": "match",
+      "rank": 45786,
+      "hypothesis": "sports",
+      "best_word": "lion",
+      "best_rank": 49,
+      "total_guesses": 86
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:30:07",
+    "details": {
+      "word": "race",
+      "rank": 40378,
+      "hypothesis": "sports",
+      "best_word": "lion",
+      "best_rank": 49,
+      "total_guesses": 87
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:30:08",
+    "details": {
+      "word": "kin",
+      "rank": 16560,
+      "hypothesis": "family",
+      "best_word": "lion",
+      "best_rank": 49,
+      "total_guesses": 88
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:30:08",
+    "details": {
+      "word": "relative",
+      "rank": 21228,
+      "hypothesis": "family",
+      "best_word": "lion",
+      "best_rank": 49,
+      "total_guesses": 89
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:30:09",
+    "details": {
+      "word": "clan",
+      "rank": 6083,
+      "hypothesis": "family",
+      "best_word": "lion",
+      "best_rank": 49,
+      "total_guesses": 90
+    }
+  },
+  {
+    "generation": 1,
+    "event": "LOCAL_SEARCH_DISABLED",
+    "timestamp": "2026-07-23T02:30:09",
+    "details": {
+      "center_word": "lion",
+      "center_rank": 49,
+      "threshold": 100,
+      "reason": "self_adaptive_disable_local_search"
+    }
+  },
+  {
+    "generation": 1,
+    "event": "SELECT",
+    "timestamp": "2026-07-23T02:30:09",
+    "details": {
+      "kept": [
+        "animals",
+        "sports",
+        "weather",
+        "daily_activities",
+        "tools"
+      ],
+      "discarded": [
+        "foods",
+        "body_parts",
+        "emotions",
+        "colors",
+        "nature",
+        "transportation",
+        "clothing",
+        "shapes",
+        "family",
+        "time"
+      ],
+      "elite": "animals",
+      "max_active_hypotheses": 5,
+      "best_word": "lion",
+      "best_rank": 49,
+      "total_guesses": 90
+    }
+  },
+  {
+    "generation": 1,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-23T02:30:19",
+    "details": {
+      "parent_id": "1b9e5b69d817443a85eb3c9cea39bea6",
+      "child_id": "64d03ba7f4f14b4c9dce3653ec112fa1",
+      "parent_rank": 49,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "big cats",
+      "sampled_op": "s_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:30:19",
+    "details": {
+      "word": "tiger",
+      "rank": 346,
+      "hypothesis": "big cats",
+      "best_word": "lion",
+      "best_rank": 49,
+      "total_guesses": 91
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:30:20",
+    "details": {
+      "word": "leopard",
+      "rank": 90,
+      "hypothesis": "big cats",
+      "best_word": "lion",
+      "best_rank": 49,
+      "total_guesses": 92
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:30:20",
+    "details": {
+      "word": "cheetah",
+      "rank": 108,
+      "hypothesis": "big cats",
+      "best_word": "lion",
+      "best_rank": 49,
+      "total_guesses": 93
+    }
+  },
+  {
+    "generation": 1,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-23T02:30:29",
+    "details": {
+      "parent_id": "e9b31dddca164eacb6612a56e8543369",
+      "child_id": "0448fd5c04dd455d859c9a61c33ceb8b",
+      "parent_rank": 374,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "aquatic activities",
+      "sampled_op": "s_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:30:29",
+    "details": {
+      "word": "dive",
+      "rank": 3059,
+      "hypothesis": "aquatic activities",
+      "best_word": "lion",
+      "best_rank": 49,
+      "total_guesses": 94
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:30:29",
+    "details": {
+      "word": "float",
+      "rank": 4178,
+      "hypothesis": "aquatic activities",
+      "best_word": "lion",
+      "best_rank": 49,
+      "total_guesses": 95
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:30:29",
+    "details": {
+      "word": "splash",
+      "rank": 801,
+      "hypothesis": "aquatic activities",
+      "best_word": "lion",
+      "best_rank": 49,
+      "total_guesses": 96
+    }
+  },
+  {
+    "generation": 1,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-23T02:30:41",
+    "details": {
+      "parent_id": "a524eb66d30549d0ac937d6b8f0c19c8",
+      "child_id": "5d45ebf848274001bcf5f2c54bc8627d",
+      "parent_rank": 893,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "celestial_phenomena",
+      "sampled_op": "l_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:30:42",
+    "details": {
+      "word": "cosmos",
+      "rank": 23336,
+      "hypothesis": "celestial_phenomena",
+      "best_word": "lion",
+      "best_rank": 49,
+      "total_guesses": 97
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:30:43",
+    "details": {
+      "word": "space",
+      "rank": 10215,
+      "hypothesis": "celestial_phenomena",
+      "best_word": "lion",
+      "best_rank": 49,
+      "total_guesses": 98
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:30:43",
+    "details": {
+      "word": "galaxy",
+      "rank": 10841,
+      "hypothesis": "celestial_phenomena",
+      "best_word": "lion",
+      "best_rank": 49,
+      "total_guesses": 99
+    }
+  },
+  {
+    "generation": 1,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-23T02:30:59",
+    "details": {
+      "parent_id": "cec826ff84c946cca8b216dac8eb5011",
+      "child_id": "1e584f950eb043a6a2c1440d1368d42b",
+      "parent_rank": 1108,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "food_preparation",
+      "sampled_op": "ml_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:30:59",
+    "details": {
+      "word": "cook",
+      "rank": 36580,
+      "hypothesis": "food_preparation",
+      "best_word": "lion",
+      "best_rank": 49,
+      "total_guesses": 100
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:30:59",
+    "details": {
+      "word": "bake",
+      "rank": 18916,
+      "hypothesis": "food_preparation",
+      "best_word": "lion",
+      "best_rank": 49,
+      "total_guesses": 101
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:31:00",
+    "details": {
+      "word": "grill",
+      "rank": 19458,
+      "hypothesis": "food_preparation",
+      "best_word": "lion",
+      "best_rank": 49,
+      "total_guesses": 102
+    }
+  },
+  {
+    "generation": 1,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-23T02:31:07",
+    "details": {
+      "parent_id": "4277d2ce2d924184be0f75dc3f18af22",
+      "child_id": "50c1099ed8734afbab1bc4ff246d18bb",
+      "parent_rank": 1485,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "cutting tools",
+      "sampled_op": "s_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:31:11",
+    "details": {
+      "word": "chisel",
+      "rank": 2118,
+      "hypothesis": "cutting tools",
+      "best_word": "lion",
+      "best_rank": 49,
+      "total_guesses": 103
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:31:12",
+    "details": {
+      "word": "drill",
+      "rank": 6399,
+      "hypothesis": "cutting tools",
+      "best_word": "lion",
+      "best_rank": 49,
+      "total_guesses": 104
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:31:12",
+    "details": {
+      "word": "shears",
+      "rank": 2347,
+      "hypothesis": "cutting tools",
+      "best_word": "lion",
+      "best_rank": 49,
+      "total_guesses": 105
+    }
+  },
+  {
+    "generation": 1,
+    "event": "MUTATE",
+    "timestamp": "2026-07-23T02:31:12",
+    "details": {
+      "method": "self_adaptive",
+      "children": [
+        {
+          "hypothesis_id": "64d03ba7f4f14b4c9dce3653ec112fa1",
+          "category_name": "big cats",
+          "description": "large feline predators",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "animals",
+          "parent_id": "1b9e5b69d817443a85eb3c9cea39bea6",
+          "origin": "self_adaptive_s_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "0448fd5c04dd455d859c9a61c33ceb8b",
+          "category_name": "aquatic activities",
+          "description": "physical activities in water",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "sports",
+          "parent_id": "e9b31dddca164eacb6612a56e8543369",
+          "origin": "self_adaptive_s_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "5d45ebf848274001bcf5f2c54bc8627d",
+          "category_name": "celestial_phenomena",
+          "description": "celestial objects and events",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "weather",
+          "parent_id": "a524eb66d30549d0ac937d6b8f0c19c8",
+          "origin": "self_adaptive_l_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "1e584f950eb043a6a2c1440d1368d42b",
+          "category_name": "food_preparation",
+          "description": "methods of preparing food",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "daily_activities",
+          "parent_id": "cec826ff84c946cca8b216dac8eb5011",
+          "origin": "self_adaptive_ml_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "50c1099ed8734afbab1bc4ff246d18bb",
+          "category_name": "cutting tools",
+          "description": "tools used for cutting materials",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "tools",
+          "parent_id": "4277d2ce2d924184be0f75dc3f18af22",
+          "origin": "self_adaptive_s_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        }
+      ],
+      "best_word": "lion",
+      "best_rank": 49,
+      "total_guesses": 105
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:31:21",
+    "details": {
+      "word": "feline",
+      "rank": 1835,
+      "hypothesis": "big felines",
+      "best_word": "lion",
+      "best_rank": 49,
+      "total_guesses": 106
+    }
+  },
+  {
+    "generation": 1,
+    "event": "CROSSOVER",
+    "timestamp": "2026-07-23T02:31:21",
+    "details": {
+      "parents": [
+        "animals",
+        "big cats"
+      ],
+      "parent_ids": [
+        "1b9e5b69d817443a85eb3c9cea39bea6",
+        "64d03ba7f4f14b4c9dce3653ec112fa1"
+      ],
+      "parent_ranks": [
+        49,
+        90
+      ],
+      "parent_a_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "parent_b_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma_pre_perturbation": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child": {
+        "hypothesis_id": "28eab16cc70548d79d9be847710cb04f",
+        "category_name": "big felines",
+        "description": "animals that are both big cats and common animals",
+        "words_tried": {
+          "feline": 1835
+        },
+        "best_word": "feline",
+        "best_rank": 1835,
+        "status": "active",
+        "parent": "animals+big cats",
+        "parent_id": null,
+        "origin": "crossover",
+        "sigma": [
+          0.25,
+          0.25,
+          0.25,
+          0.25
+        ]
+      },
+      "best_word": "lion",
+      "best_rank": 49,
+      "total_guesses": 106
+    }
+  },
+  {
+    "generation": 1,
+    "event": "DEDUPLICATE",
+    "timestamp": "2026-07-23T02:31:21",
+    "details": {
+      "merged": [
+        {
+          "survivor": "tools",
+          "discarded": "cutting tools",
+          "survivor_best_rank": 1485,
+          "discarded_best_rank": 2118
+        }
+      ],
+      "remaining_hypotheses": 20,
+      "active_hypotheses": 10,
+      "best_word": "lion",
+      "best_rank": 49,
+      "total_guesses": 106
+    }
+  },
+  {
+    "generation": 1,
+    "event": "SIGMA_TRAJECTORY",
+    "timestamp": "2026-07-23T02:31:21",
+    "details": {
+      "mean_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "population_size": 10
+    }
+  },
+  {
+    "generation": 2,
+    "event": "CANDIDATES",
+    "timestamp": "2026-07-23T02:33:07",
+    "details": {
+      "count": 27,
+      "candidates": [
+        {
+          "hypothesis": "animals",
+          "word": "zebra"
+        },
+        {
+          "hypothesis": "animals",
+          "word": "elephant"
+        },
+        {
+          "hypothesis": "animals",
+          "word": "bear"
+        },
+        {
+          "hypothesis": "big cats",
+          "word": "jaguar"
+        },
+        {
+          "hypothesis": "big cats",
+          "word": "panther"
+        },
+        {
+          "hypothesis": "big cats",
+          "word": "cougar"
+        },
+        {
+          "hypothesis": "sports",
+          "word": "play"
+        },
+        {
+          "hypothesis": "sports",
+          "word": "contest"
+        },
+        {
+          "hypothesis": "sports",
+          "word": "athletics"
+        },
+        {
+          "hypothesis": "aquatic activities",
+          "word": "row"
+        },
+        {
+          "hypothesis": "aquatic activities",
+          "word": "sail"
+        },
+        {
+          "hypothesis": "aquatic activities",
+          "word": "surf"
+        },
+        {
+          "hypothesis": "weather",
+          "word": "temperature"
+        },
+        {
+          "hypothesis": "weather",
+          "word": "wind"
+        },
+        {
+          "hypothesis": "weather",
+          "word": "fog"
+        },
+        {
+          "hypothesis": "daily_activities",
+          "word": "exercise"
+        },
+        {
+          "hypothesis": "daily_activities",
+          "word": "walk"
+        },
+        {
+          "hypothesis": "daily_activities",
+          "word": "rest"
+        },
+        {
+          "hypothesis": "tools",
+          "word": "awl"
+        },
+        {
+          "hypothesis": "tools",
+          "word": "file"
+        },
+        {
+          "hypothesis": "tools",
+          "word": "mallet"
+        },
+        {
+          "hypothesis": "celestial_phenomena",
+          "word": "star"
+        },
+        {
+          "hypothesis": "celestial_phenomena",
+          "word": "comet"
+        },
+        {
+          "hypothesis": "celestial_phenomena",
+          "word": "eclipse"
+        },
+        {
+          "hypothesis": "food_preparation",
+          "word": "roast"
+        },
+        {
+          "hypothesis": "food_preparation",
+          "word": "simmer"
+        },
+        {
+          "hypothesis": "food_preparation",
+          "word": "steam"
+        }
+      ]
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:33:07",
+    "details": {
+      "word": "zebra",
+      "rank": 43,
+      "hypothesis": "animals",
+      "best_word": "zebra",
+      "best_rank": 43,
+      "total_guesses": 107
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:33:07",
+    "details": {
+      "word": "elephant",
+      "rank": 11,
+      "hypothesis": "animals",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 108
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:33:07",
+    "details": {
+      "word": "bear",
+      "rank": 21,
+      "hypothesis": "animals",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 109
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:33:08",
+    "details": {
+      "word": "jaguar",
+      "rank": 1343,
+      "hypothesis": "big cats",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 110
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:33:08",
+    "details": {
+      "word": "panther",
+      "rank": 1214,
+      "hypothesis": "big cats",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 111
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:33:09",
+    "details": {
+      "word": "cougar",
+      "rank": 1502,
+      "hypothesis": "big cats",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 112
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:33:09",
+    "details": {
+      "word": "play",
+      "rank": 8480,
+      "hypothesis": "sports",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 113
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:33:10",
+    "details": {
+      "word": "contest",
+      "rank": 16121,
+      "hypothesis": "sports",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 114
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:33:11",
+    "details": {
+      "word": "athletics",
+      "rank": 37253,
+      "hypothesis": "sports",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 115
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:33:11",
+    "details": {
+      "word": "row",
+      "rank": 10083,
+      "hypothesis": "aquatic activities",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 116
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:33:11",
+    "details": {
+      "word": "sail",
+      "rank": 6367,
+      "hypothesis": "aquatic activities",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 117
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:33:11",
+    "details": {
+      "word": "surf",
+      "rank": 2527,
+      "hypothesis": "aquatic activities",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 118
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:33:11",
+    "details": {
+      "word": "temperature",
+      "rank": 8935,
+      "hypothesis": "weather",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 119
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:33:11",
+    "details": {
+      "word": "wind",
+      "rank": 12328,
+      "hypothesis": "weather",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 120
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:33:11",
+    "details": {
+      "word": "fog",
+      "rank": 18119,
+      "hypothesis": "weather",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 121
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:33:11",
+    "details": {
+      "word": "exercise",
+      "rank": 27448,
+      "hypothesis": "daily_activities",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 122
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:33:11",
+    "details": {
+      "word": "walk",
+      "rank": 19071,
+      "hypothesis": "daily_activities",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 123
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:33:11",
+    "details": {
+      "word": "rest",
+      "rank": 2120,
+      "hypothesis": "daily_activities",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 124
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:33:12",
+    "details": {
+      "word": "awl",
+      "rank": 29421,
+      "hypothesis": "tools",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 125
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:33:12",
+    "details": {
+      "word": "file",
+      "rank": 40395,
+      "hypothesis": "tools",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 126
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:33:13",
+    "details": {
+      "word": "mallet",
+      "rank": 8721,
+      "hypothesis": "tools",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 127
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:33:13",
+    "details": {
+      "word": "star",
+      "rank": 23431,
+      "hypothesis": "celestial_phenomena",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 128
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:33:13",
+    "details": {
+      "word": "comet",
+      "rank": 5963,
+      "hypothesis": "celestial_phenomena",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 129
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:33:14",
+    "details": {
+      "word": "eclipse",
+      "rank": 10477,
+      "hypothesis": "celestial_phenomena",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 130
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:33:15",
+    "details": {
+      "word": "roast",
+      "rank": 14590,
+      "hypothesis": "food_preparation",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 131
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:33:16",
+    "details": {
+      "word": "simmer",
+      "rank": 50395,
+      "hypothesis": "food_preparation",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 132
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:33:16",
+    "details": {
+      "word": "steam",
+      "rank": 7191,
+      "hypothesis": "food_preparation",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 133
+    }
+  },
+  {
+    "generation": 2,
+    "event": "SELECT",
+    "timestamp": "2026-07-23T02:33:16",
+    "details": {
+      "kept": [
+        "animals",
+        "big cats",
+        "sports",
+        "aquatic activities",
+        "weather"
+      ],
+      "discarded": [
+        "daily_activities",
+        "tools",
+        "big felines",
+        "foods",
+        "body_parts",
+        "emotions",
+        "colors",
+        "nature",
+        "transportation",
+        "clothing",
+        "shapes",
+        "family",
+        "celestial_phenomena",
+        "food_preparation",
+        "time"
+      ],
+      "elite": "animals",
+      "max_active_hypotheses": 5,
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 133
+    }
+  },
+  {
+    "generation": 2,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-23T02:33:45",
+    "details": {
+      "parent_id": "1b9e5b69d817443a85eb3c9cea39bea6",
+      "child_id": "7aaec0c2acd6487390823c9f25e83a9a",
+      "parent_rank": 11,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "symbolism",
+      "sampled_op": "m_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:33:45",
+    "details": {
+      "word": "symbol",
+      "rank": 35503,
+      "hypothesis": "symbolism",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 134
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:33:49",
+    "details": {
+      "word": "memory",
+      "rank": 39644,
+      "hypothesis": "symbolism",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 135
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:33:49",
+    "details": {
+      "word": "tusk",
+      "rank": 12,
+      "hypothesis": "symbolism",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 136
+    }
+  },
+  {
+    "generation": 2,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-23T02:34:09",
+    "details": {
+      "parent_id": "64d03ba7f4f14b4c9dce3653ec112fa1",
+      "child_id": "0aa97bbd6ff347538388be1611a9ce2c",
+      "parent_rank": 90,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "patterned animals",
+      "sampled_op": "m_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:34:09",
+    "details": {
+      "word": "pattern",
+      "rank": 17817,
+      "hypothesis": "patterned animals",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 137
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:34:09",
+    "details": {
+      "word": "marking",
+      "rank": 8126,
+      "hypothesis": "patterned animals",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 138
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:34:13",
+    "details": {
+      "word": "print",
+      "rank": 8039,
+      "hypothesis": "patterned animals",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 139
+    }
+  },
+  {
+    "generation": 2,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-23T02:34:34",
+    "details": {
+      "parent_id": "e9b31dddca164eacb6612a56e8543369",
+      "child_id": "3dd8232adedf442d93464e422aab9c45",
+      "parent_rank": 374,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "aquatic movement",
+      "sampled_op": "s_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:34:38",
+    "details": {
+      "word": "lap",
+      "rank": 880,
+      "hypothesis": "aquatic movement",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 140
+    }
+  },
+  {
+    "generation": 2,
+    "event": "SKIP_INVALID_GUESS",
+    "timestamp": "2026-07-23T02:34:38",
+    "details": {
+      "word": "stroke",
+      "hypothesis": "aquatic movement"
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:34:39",
+    "details": {
+      "word": "kick",
+      "rank": 14499,
+      "hypothesis": "aquatic movement",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 141
+    }
+  },
+  {
+    "generation": 2,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-23T02:35:09",
+    "details": {
+      "parent_id": "0448fd5c04dd455d859c9a61c33ceb8b",
+      "child_id": "341e3d9fe1ba4506ad8657c8a4af359d",
+      "parent_rank": 801,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "Water Descriptors",
+      "sampled_op": "ml_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:35:13",
+    "details": {
+      "word": "turbid",
+      "rank": 38461,
+      "hypothesis": "Water Descriptors",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 142
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:35:14",
+    "details": {
+      "word": "muddy",
+      "rank": 4331,
+      "hypothesis": "Water Descriptors",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 143
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:35:15",
+    "details": {
+      "word": "viscous",
+      "rank": 4373,
+      "hypothesis": "Water Descriptors",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 144
+    }
+  },
+  {
+    "generation": 2,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-23T02:35:26",
+    "details": {
+      "parent_id": "a524eb66d30549d0ac937d6b8f0c19c8",
+      "child_id": "92222bc83c6d4760b80b7218fb5a7e37",
+      "parent_rank": 893,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "solar",
+      "sampled_op": "s_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:35:27",
+    "details": {
+      "word": "light",
+      "rank": 39003,
+      "hypothesis": "solar",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 145
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:35:27",
+    "details": {
+      "word": "shine",
+      "rank": 33407,
+      "hypothesis": "solar",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 146
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:35:27",
+    "details": {
+      "word": "glow",
+      "rank": 23766,
+      "hypothesis": "solar",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 147
+    }
+  },
+  {
+    "generation": 2,
+    "event": "MUTATE",
+    "timestamp": "2026-07-23T02:35:27",
+    "details": {
+      "method": "self_adaptive",
+      "children": [
+        {
+          "hypothesis_id": "7aaec0c2acd6487390823c9f25e83a9a",
+          "category_name": "symbolism",
+          "description": "cultural and symbolic representations",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "animals",
+          "parent_id": "1b9e5b69d817443a85eb3c9cea39bea6",
+          "origin": "self_adaptive_m_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "0aa97bbd6ff347538388be1611a9ce2c",
+          "category_name": "patterned animals",
+          "description": "animals with distinctive markings",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "big cats",
+          "parent_id": "64d03ba7f4f14b4c9dce3653ec112fa1",
+          "origin": "self_adaptive_m_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "3dd8232adedf442d93464e422aab9c45",
+          "category_name": "aquatic movement",
+          "description": "water-based physical actions",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "sports",
+          "parent_id": "e9b31dddca164eacb6612a56e8543369",
+          "origin": "self_adaptive_s_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "341e3d9fe1ba4506ad8657c8a4af359d",
+          "category_name": "Water Descriptors",
+          "description": "terms describing water's characteristics",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "aquatic activities",
+          "parent_id": "0448fd5c04dd455d859c9a61c33ceb8b",
+          "origin": "self_adaptive_ml_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "92222bc83c6d4760b80b7218fb5a7e37",
+          "category_name": "solar",
+          "description": "sun-related illumination",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "weather",
+          "parent_id": "a524eb66d30549d0ac937d6b8f0c19c8",
+          "origin": "self_adaptive_s_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        }
+      ],
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 147
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:35:42",
+    "details": {
+      "word": "lion",
+      "rank": 49,
+      "hypothesis": "symbolic animals",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 147
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:35:42",
+    "details": {
+      "word": "snake",
+      "rank": 295,
+      "hypothesis": "symbolic animals",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 147
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:35:42",
+    "details": {
+      "word": "elephant",
+      "rank": 11,
+      "hypothesis": "symbolic animals",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 147
+    }
+  },
+  {
+    "generation": 2,
+    "event": "CROSSOVER",
+    "timestamp": "2026-07-23T02:35:42",
+    "details": {
+      "parents": [
+        "animals",
+        "symbolism"
+      ],
+      "parent_ids": [
+        "1b9e5b69d817443a85eb3c9cea39bea6",
+        "7aaec0c2acd6487390823c9f25e83a9a"
+      ],
+      "parent_ranks": [
+        11,
+        12
+      ],
+      "parent_a_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "parent_b_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma_pre_perturbation": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child": {
+        "hypothesis_id": "9c5abcfc38b742d5843b044987713f75",
+        "category_name": "symbolic animals",
+        "description": "animals with symbolic meanings",
+        "words_tried": {
+          "elephant": 11,
+          "lion": 49,
+          "snake": 295
+        },
+        "best_word": "elephant",
+        "best_rank": 11,
+        "status": "active",
+        "parent": "animals+symbolism",
+        "parent_id": null,
+        "origin": "crossover",
+        "sigma": [
+          0.25,
+          0.25,
+          0.25,
+          0.25
+        ]
+      },
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 147
+    }
+  },
+  {
+    "generation": 2,
+    "event": "DEDUPLICATE",
+    "timestamp": "2026-07-23T02:35:42",
+    "details": {
+      "merged": [
+        {
+          "survivor": "animals",
+          "discarded": "symbolic animals",
+          "survivor_best_rank": 11,
+          "discarded_best_rank": 11
+        },
+        {
+          "survivor": "animals",
+          "discarded": "patterned animals",
+          "survivor_best_rank": 11,
+          "discarded_best_rank": 8039
+        }
+      ],
+      "remaining_hypotheses": 24,
+      "active_hypotheses": 9,
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 147
+    }
+  },
+  {
+    "generation": 2,
+    "event": "SIGMA_TRAJECTORY",
+    "timestamp": "2026-07-23T02:35:42",
+    "details": {
+      "mean_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "population_size": 9
+    }
+  },
+  {
+    "generation": 3,
+    "event": "CANDIDATES",
+    "timestamp": "2026-07-23T02:40:43",
+    "details": {
+      "count": 26,
+      "candidates": [
+        {
+          "hypothesis": "animals",
+          "word": "hippo"
+        },
+        {
+          "hypothesis": "animals",
+          "word": "rhino"
+        },
+        {
+          "hypothesis": "animals",
+          "word": "giraffe"
+        },
+        {
+          "hypothesis": "symbolism",
+          "word": "flag"
+        },
+        {
+          "hypothesis": "symbolism",
+          "word": "heart"
+        },
+        {
+          "hypothesis": "symbolism",
+          "word": "moon"
+        },
+        {
+          "hypothesis": "big cats",
+          "word": "lynx"
+        },
+        {
+          "hypothesis": "big cats",
+          "word": "wildcat"
+        },
+        {
+          "hypothesis": "big cats",
+          "word": "puma"
+        },
+        {
+          "hypothesis": "sports",
+          "word": "sport"
+        },
+        {
+          "hypothesis": "sports",
+          "word": "competition"
+        },
+        {
+          "hypothesis": "sports",
+          "word": "tournament"
+        },
+        {
+          "hypothesis": "aquatic activities",
+          "word": "kayak"
+        },
+        {
+          "hypothesis": "aquatic activities",
+          "word": "snorkel"
+        },
+        {
+          "hypothesis": "aquatic movement",
+          "word": "drift"
+        },
+        {
+          "hypothesis": "aquatic movement",
+          "word": "glide"
+        },
+        {
+          "hypothesis": "aquatic movement",
+          "word": "paddle"
+        },
+        {
+          "hypothesis": "weather",
+          "word": "sleet"
+        },
+        {
+          "hypothesis": "weather",
+          "word": "thunder"
+        },
+        {
+          "hypothesis": "weather",
+          "word": "dew"
+        },
+        {
+          "hypothesis": "Water Descriptors",
+          "word": "clear"
+        },
+        {
+          "hypothesis": "Water Descriptors",
+          "word": "still"
+        },
+        {
+          "hypothesis": "Water Descriptors",
+          "word": "fresh"
+        },
+        {
+          "hypothesis": "solar",
+          "word": "radiant"
+        },
+        {
+          "hypothesis": "solar",
+          "word": "bright"
+        },
+        {
+          "hypothesis": "solar",
+          "word": "luminous"
+        }
+      ]
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:40:45",
+    "details": {
+      "word": "hippo",
+      "rank": 36,
+      "hypothesis": "animals",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 148
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:40:45",
+    "details": {
+      "word": "rhino",
+      "rank": 47,
+      "hypothesis": "animals",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 149
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:40:45",
+    "details": {
+      "word": "giraffe",
+      "rank": 30,
+      "hypothesis": "animals",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 150
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:40:45",
+    "details": {
+      "word": "flag",
+      "rank": 25958,
+      "hypothesis": "symbolism",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 151
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:40:45",
+    "details": {
+      "word": "heart",
+      "rank": 25339,
+      "hypothesis": "symbolism",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 152
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:40:45",
+    "details": {
+      "word": "moon",
+      "rank": 2615,
+      "hypothesis": "symbolism",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 153
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:40:46",
+    "details": {
+      "word": "lynx",
+      "rank": 404,
+      "hypothesis": "big cats",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 154
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:40:46",
+    "details": {
+      "word": "wildcat",
+      "rank": 6479,
+      "hypothesis": "big cats",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 155
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:40:47",
+    "details": {
+      "word": "puma",
+      "rank": 1680,
+      "hypothesis": "big cats",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 156
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:40:47",
+    "details": {
+      "word": "sport",
+      "rank": 7740,
+      "hypothesis": "sports",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 157
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:40:47",
+    "details": {
+      "word": "competition",
+      "rank": 30975,
+      "hypothesis": "sports",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 158
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:40:48",
+    "details": {
+      "word": "tournament",
+      "rank": 57511,
+      "hypothesis": "sports",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 159
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:40:48",
+    "details": {
+      "word": "kayak",
+      "rank": 1380,
+      "hypothesis": "aquatic activities",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 160
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:40:48",
+    "details": {
+      "word": "snorkel",
+      "rank": 405,
+      "hypothesis": "aquatic activities",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 161
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:40:48",
+    "details": {
+      "word": "drift",
+      "rank": 1935,
+      "hypothesis": "aquatic movement",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 162
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:40:48",
+    "details": {
+      "word": "glide",
+      "rank": 6378,
+      "hypothesis": "aquatic movement",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 163
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:40:48",
+    "details": {
+      "word": "paddle",
+      "rank": 1942,
+      "hypothesis": "aquatic movement",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 164
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:40:48",
+    "details": {
+      "word": "sleet",
+      "rank": 6017,
+      "hypothesis": "weather",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 165
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:40:48",
+    "details": {
+      "word": "thunder",
+      "rank": 933,
+      "hypothesis": "weather",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 166
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:40:48",
+    "details": {
+      "word": "dew",
+      "rank": 33621,
+      "hypothesis": "weather",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 167
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:40:49",
+    "details": {
+      "word": "clear",
+      "rank": 15344,
+      "hypothesis": "Water Descriptors",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 168
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:40:50",
+    "details": {
+      "word": "still",
+      "rank": 11412,
+      "hypothesis": "Water Descriptors",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 169
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:40:50",
+    "details": {
+      "word": "fresh",
+      "rank": 43366,
+      "hypothesis": "Water Descriptors",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 170
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:40:50",
+    "details": {
+      "word": "radiant",
+      "rank": 59382,
+      "hypothesis": "solar",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 171
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:40:51",
+    "details": {
+      "word": "bright",
+      "rank": 52743,
+      "hypothesis": "solar",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 172
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:40:51",
+    "details": {
+      "word": "luminous",
+      "rank": 29722,
+      "hypothesis": "solar",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 173
+    }
+  },
+  {
+    "generation": 3,
+    "event": "SELECT",
+    "timestamp": "2026-07-23T02:40:51",
+    "details": {
+      "kept": [
+        "animals",
+        "symbolism",
+        "big cats",
+        "sports",
+        "aquatic activities"
+      ],
+      "discarded": [
+        "aquatic movement",
+        "weather",
+        "daily_activities",
+        "tools",
+        "big felines",
+        "foods",
+        "body_parts",
+        "emotions",
+        "colors",
+        "nature",
+        "transportation",
+        "clothing",
+        "shapes",
+        "Water Descriptors",
+        "family",
+        "celestial_phenomena",
+        "food_preparation",
+        "time",
+        "solar"
+      ],
+      "elite": "animals",
+      "max_active_hypotheses": 5,
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 173
+    }
+  },
+  {
+    "generation": 3,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-23T02:41:14",
+    "details": {
+      "parent_id": "1b9e5b69d817443a85eb3c9cea39bea6",
+      "child_id": "8e0fe5c7fb2f4a1d84842acec6f733d8",
+      "parent_rank": 11,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "elephant parts",
+      "sampled_op": "m_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:41:14",
+    "details": {
+      "word": "tusk",
+      "rank": 12,
+      "hypothesis": "elephant parts",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 173
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:41:14",
+    "details": {
+      "word": "trunk",
+      "rank": 3553,
+      "hypothesis": "elephant parts",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 174
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:41:18",
+    "details": {
+      "word": "skin",
+      "rank": 1868,
+      "hypothesis": "elephant parts",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 175
+    }
+  },
+  {
+    "generation": 3,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-23T02:41:31",
+    "details": {
+      "parent_id": "7aaec0c2acd6487390823c9f25e83a9a",
+      "child_id": "7210dc39c302460a831255c9437349c9",
+      "parent_rank": 12,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "animal features",
+      "sampled_op": "ml_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:41:32",
+    "details": {
+      "word": "fang",
+      "rank": 580,
+      "hypothesis": "animal features",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 176
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:41:32",
+    "details": {
+      "word": "claw",
+      "rank": 507,
+      "hypothesis": "animal features",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 177
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:41:33",
+    "details": {
+      "word": "hoof",
+      "rank": 1454,
+      "hypothesis": "animal features",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 178
+    }
+  },
+  {
+    "generation": 3,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-23T02:41:43",
+    "details": {
+      "parent_id": "64d03ba7f4f14b4c9dce3653ec112fa1",
+      "child_id": "fe0421a6e2d14575bde9674ea62c4d7d",
+      "parent_rank": 90,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "camouflage",
+      "sampled_op": "m_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:41:47",
+    "details": {
+      "word": "camouflage",
+      "rank": 1575,
+      "hypothesis": "camouflage",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 179
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:41:47",
+    "details": {
+      "word": "leap",
+      "rank": 5231,
+      "hypothesis": "camouflage",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 180
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:41:47",
+    "details": {
+      "word": "shadow",
+      "rank": 18117,
+      "hypothesis": "camouflage",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 181
+    }
+  },
+  {
+    "generation": 3,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-23T02:42:21",
+    "details": {
+      "parent_id": "e9b31dddca164eacb6612a56e8543369",
+      "child_id": "4f94ce3279ac435098d8b9b8f93ecf0e",
+      "parent_rank": 374,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "movement types",
+      "sampled_op": "ml_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:42:21",
+    "details": {
+      "word": "leap",
+      "rank": 5231,
+      "hypothesis": "movement types",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 181
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:42:24",
+    "details": {
+      "word": "crawl",
+      "rank": 17164,
+      "hypothesis": "movement types",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 182
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:42:24",
+    "details": {
+      "word": "glide",
+      "rank": 6378,
+      "hypothesis": "movement types",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 182
+    }
+  },
+  {
+    "generation": 3,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-23T02:42:47",
+    "details": {
+      "parent_id": "0448fd5c04dd455d859c9a61c33ceb8b",
+      "child_id": "7ba9f32cd094406cb37c94a3500d5d08",
+      "parent_rank": 405,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "water phenomena",
+      "sampled_op": "ml_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:42:47",
+    "details": {
+      "word": "wave",
+      "rank": 1400,
+      "hypothesis": "water phenomena",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 183
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:42:47",
+    "details": {
+      "word": "tide",
+      "rank": 2060,
+      "hypothesis": "water phenomena",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 184
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:42:47",
+    "details": {
+      "word": "current",
+      "rank": 4210,
+      "hypothesis": "water phenomena",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 185
+    }
+  },
+  {
+    "generation": 3,
+    "event": "MUTATE",
+    "timestamp": "2026-07-23T02:42:47",
+    "details": {
+      "method": "self_adaptive",
+      "children": [
+        {
+          "hypothesis_id": "8e0fe5c7fb2f4a1d84842acec6f733d8",
+          "category_name": "elephant parts",
+          "description": "physical characteristics of large mammals",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "animals",
+          "parent_id": "1b9e5b69d817443a85eb3c9cea39bea6",
+          "origin": "self_adaptive_m_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "7210dc39c302460a831255c9437349c9",
+          "category_name": "animal features",
+          "description": "physical traits of animals",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "symbolism",
+          "parent_id": "7aaec0c2acd6487390823c9f25e83a9a",
+          "origin": "self_adaptive_ml_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "fe0421a6e2d14575bde9674ea62c4d7d",
+          "category_name": "camouflage",
+          "description": "techniques for blending into surroundings",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "big cats",
+          "parent_id": "64d03ba7f4f14b4c9dce3653ec112fa1",
+          "origin": "self_adaptive_m_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "4f94ce3279ac435098d8b9b8f93ecf0e",
+          "category_name": "movement types",
+          "description": "different ways of moving the body",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "sports",
+          "parent_id": "e9b31dddca164eacb6612a56e8543369",
+          "origin": "self_adaptive_ml_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "7ba9f32cd094406cb37c94a3500d5d08",
+          "category_name": "water phenomena",
+          "description": "natural occurrences in water",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "aquatic activities",
+          "parent_id": "0448fd5c04dd455d859c9a61c33ceb8b",
+          "origin": "self_adaptive_ml_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        }
+      ],
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 185
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:42:55",
+    "details": {
+      "word": "lion",
+      "rank": 49,
+      "hypothesis": "animal symbolism",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 185
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:42:55",
+    "details": {
+      "word": "bear",
+      "rank": 21,
+      "hypothesis": "animal symbolism",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 185
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:42:55",
+    "details": {
+      "word": "dog",
+      "rank": 1067,
+      "hypothesis": "animal symbolism",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 185
+    }
+  },
+  {
+    "generation": 3,
+    "event": "CROSSOVER",
+    "timestamp": "2026-07-23T02:42:55",
+    "details": {
+      "parents": [
+        "animals",
+        "symbolism"
+      ],
+      "parent_ids": [
+        "1b9e5b69d817443a85eb3c9cea39bea6",
+        "7aaec0c2acd6487390823c9f25e83a9a"
+      ],
+      "parent_ranks": [
+        11,
+        12
+      ],
+      "parent_a_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "parent_b_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma_pre_perturbation": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child": {
+        "hypothesis_id": "dee6aa6ef63242258aa704c381ee998f",
+        "category_name": "animal symbolism",
+        "description": "animals with symbolic meanings",
+        "words_tried": {
+          "bear": 21,
+          "lion": 49,
+          "dog": 1067
+        },
+        "best_word": "bear",
+        "best_rank": 21,
+        "status": "active",
+        "parent": "animals+symbolism",
+        "parent_id": null,
+        "origin": "crossover",
+        "sigma": [
+          0.25,
+          0.25,
+          0.25,
+          0.25
+        ]
+      },
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 185
+    }
+  },
+  {
+    "generation": 3,
+    "event": "DEDUPLICATE",
+    "timestamp": "2026-07-23T02:42:55",
+    "details": {
+      "merged": [
+        {
+          "survivor": "animals",
+          "discarded": "animal symbolism",
+          "survivor_best_rank": 11,
+          "discarded_best_rank": 21
+        }
+      ],
+      "remaining_hypotheses": 29,
+      "active_hypotheses": 10,
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 185
+    }
+  },
+  {
+    "generation": 3,
+    "event": "SIGMA_TRAJECTORY",
+    "timestamp": "2026-07-23T02:42:55",
+    "details": {
+      "mean_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "population_size": 10
+    }
+  },
+  {
+    "generation": 4,
+    "event": "CANDIDATES",
+    "timestamp": "2026-07-23T02:45:13",
+    "details": {
+      "count": 29,
+      "candidates": [
+        {
+          "hypothesis": "animals",
+          "word": "wolf"
+        },
+        {
+          "hypothesis": "animals",
+          "word": "deer"
+        },
+        {
+          "hypothesis": "animals",
+          "word": "rabbit"
+        },
+        {
+          "hypothesis": "symbolism",
+          "word": "icon"
+        },
+        {
+          "hypothesis": "symbolism",
+          "word": "emblem"
+        },
+        {
+          "hypothesis": "symbolism",
+          "word": "legend"
+        },
+        {
+          "hypothesis": "elephant parts",
+          "word": "tail"
+        },
+        {
+          "hypothesis": "elephant parts",
+          "word": "flank"
+        },
+        {
+          "hypothesis": "elephant parts",
+          "word": "teeth"
+        },
+        {
+          "hypothesis": "big cats",
+          "word": "caracal"
+        },
+        {
+          "hypothesis": "big cats",
+          "word": "snowleopard"
+        },
+        {
+          "hypothesis": "big cats",
+          "word": "serval"
+        },
+        {
+          "hypothesis": "sports",
+          "word": "ski"
+        },
+        {
+          "hypothesis": "sports",
+          "word": "golf"
+        },
+        {
+          "hypothesis": "sports",
+          "word": "climb"
+        },
+        {
+          "hypothesis": "aquatic activities",
+          "word": "raft"
+        },
+        {
+          "hypothesis": "aquatic activities",
+          "word": "canoe"
+        },
+        {
+          "hypothesis": "animal features",
+          "word": "fur"
+        },
+        {
+          "hypothesis": "animal features",
+          "word": "scales"
+        },
+        {
+          "hypothesis": "animal features",
+          "word": "mane"
+        },
+        {
+          "hypothesis": "water phenomena",
+          "word": "surge"
+        },
+        {
+          "hypothesis": "water phenomena",
+          "word": "swell"
+        },
+        {
+          "hypothesis": "water phenomena",
+          "word": "ripple"
+        },
+        {
+          "hypothesis": "camouflage",
+          "word": "blend"
+        },
+        {
+          "hypothesis": "camouflage",
+          "word": "conceal"
+        },
+        {
+          "hypothesis": "camouflage",
+          "word": "mimicry"
+        },
+        {
+          "hypothesis": "movement types",
+          "word": "amble"
+        },
+        {
+          "hypothesis": "movement types",
+          "word": "bound"
+        },
+        {
+          "hypothesis": "movement types",
+          "word": "trudge"
+        }
+      ]
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:45:13",
+    "details": {
+      "word": "wolf",
+      "rank": 52,
+      "hypothesis": "animals",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 186
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:45:13",
+    "details": {
+      "word": "deer",
+      "rank": 348,
+      "hypothesis": "animals",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 187
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:45:15",
+    "details": {
+      "word": "rabbit",
+      "rank": 233,
+      "hypothesis": "animals",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 188
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:45:15",
+    "details": {
+      "word": "icon",
+      "rank": 23298,
+      "hypothesis": "symbolism",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 189
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:45:15",
+    "details": {
+      "word": "emblem",
+      "rank": 3980,
+      "hypothesis": "symbolism",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 190
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:45:15",
+    "details": {
+      "word": "legend",
+      "rank": 33792,
+      "hypothesis": "symbolism",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 191
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:45:15",
+    "details": {
+      "word": "tail",
+      "rank": 1569,
+      "hypothesis": "elephant parts",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 192
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:45:16",
+    "details": {
+      "word": "flank",
+      "rank": 8470,
+      "hypothesis": "elephant parts",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 193
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:45:16",
+    "details": {
+      "word": "teeth",
+      "rank": 749,
+      "hypothesis": "elephant parts",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 194
+    }
+  },
+  {
+    "generation": 4,
+    "event": "SKIP_INVALID_GUESS",
+    "timestamp": "2026-07-23T02:45:17",
+    "details": {
+      "word": "caracal",
+      "hypothesis": "big cats"
+    }
+  },
+  {
+    "generation": 4,
+    "event": "SKIP_INVALID_GUESS",
+    "timestamp": "2026-07-23T02:45:18",
+    "details": {
+      "word": "snowleopard",
+      "hypothesis": "big cats"
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:45:19",
+    "details": {
+      "word": "serval",
+      "rank": 14374,
+      "hypothesis": "big cats",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 195
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:45:19",
+    "details": {
+      "word": "ski",
+      "rank": 12871,
+      "hypothesis": "sports",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 196
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:45:19",
+    "details": {
+      "word": "golf",
+      "rank": 14839,
+      "hypothesis": "sports",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 197
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:45:19",
+    "details": {
+      "word": "climb",
+      "rank": 28887,
+      "hypothesis": "sports",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 198
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:45:19",
+    "details": {
+      "word": "raft",
+      "rank": 5174,
+      "hypothesis": "aquatic activities",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 199
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:45:19",
+    "details": {
+      "word": "canoe",
+      "rank": 3586,
+      "hypothesis": "aquatic activities",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 200
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:45:19",
+    "details": {
+      "word": "fur",
+      "rank": 323,
+      "hypothesis": "animal features",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 201
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:45:19",
+    "details": {
+      "word": "scales",
+      "rank": 8555,
+      "hypothesis": "animal features",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 202
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:45:20",
+    "details": {
+      "word": "mane",
+      "rank": 2023,
+      "hypothesis": "animal features",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 203
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:45:20",
+    "details": {
+      "word": "surge",
+      "rank": 11950,
+      "hypothesis": "water phenomena",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 204
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:45:21",
+    "details": {
+      "word": "swell",
+      "rank": 1842,
+      "hypothesis": "water phenomena",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 205
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:45:21",
+    "details": {
+      "word": "ripple",
+      "rank": 3076,
+      "hypothesis": "water phenomena",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 206
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:45:22",
+    "details": {
+      "word": "blend",
+      "rank": 57608,
+      "hypothesis": "camouflage",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 207
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:45:22",
+    "details": {
+      "word": "conceal",
+      "rank": 37520,
+      "hypothesis": "camouflage",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 208
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:45:23",
+    "details": {
+      "word": "mimicry",
+      "rank": 2886,
+      "hypothesis": "camouflage",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 209
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:45:23",
+    "details": {
+      "word": "amble",
+      "rank": 2739,
+      "hypothesis": "movement types",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 210
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:45:24",
+    "details": {
+      "word": "bound",
+      "rank": 10229,
+      "hypothesis": "movement types",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 211
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:45:25",
+    "details": {
+      "word": "trudge",
+      "rank": 11501,
+      "hypothesis": "movement types",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 212
+    }
+  },
+  {
+    "generation": 4,
+    "event": "SELECT",
+    "timestamp": "2026-07-23T02:45:25",
+    "details": {
+      "kept": [
+        "animals",
+        "symbolism",
+        "elephant parts",
+        "big cats",
+        "animal features"
+      ],
+      "discarded": [
+        "sports",
+        "aquatic activities",
+        "aquatic movement",
+        "weather",
+        "daily_activities",
+        "water phenomena",
+        "tools",
+        "camouflage",
+        "big felines",
+        "foods",
+        "body_parts",
+        "emotions",
+        "colors",
+        "nature",
+        "movement types",
+        "transportation",
+        "clothing",
+        "shapes",
+        "Water Descriptors",
+        "family",
+        "celestial_phenomena",
+        "food_preparation",
+        "time",
+        "solar"
+      ],
+      "elite": "animals",
+      "max_active_hypotheses": 5,
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 212
+    }
+  },
+  {
+    "generation": 4,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-23T02:45:33",
+    "details": {
+      "parent_id": "1b9e5b69d817443a85eb3c9cea39bea6",
+      "child_id": "c5d6b72e5b2e4490852ca0caf1148c8f",
+      "parent_rank": 11,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "terrain features",
+      "sampled_op": "l_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 4,
+    "event": "SKIP_INVALID_GUESS",
+    "timestamp": "2026-07-23T02:45:33",
+    "details": {
+      "word": "slope",
+      "hypothesis": "terrain features"
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:45:33",
+    "details": {
+      "word": "ridge",
+      "rank": 1169,
+      "hypothesis": "terrain features",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 213
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:45:33",
+    "details": {
+      "word": "valley",
+      "rank": 12708,
+      "hypothesis": "terrain features",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 214
+    }
+  },
+  {
+    "generation": 4,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-23T02:46:09",
+    "details": {
+      "parent_id": "7aaec0c2acd6487390823c9f25e83a9a",
+      "child_id": "42d7044515384ad2a312cae4f7f504e0",
+      "parent_rank": 12,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "natural physical properties",
+      "sampled_op": "m_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:46:09",
+    "details": {
+      "word": "ivory",
+      "rank": 513,
+      "hypothesis": "natural physical properties",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 215
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:46:10",
+    "details": {
+      "word": "curve",
+      "rank": 20460,
+      "hypothesis": "natural physical properties",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 216
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:46:10",
+    "details": {
+      "word": "weight",
+      "rank": 32228,
+      "hypothesis": "natural physical properties",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 217
+    }
+  },
+  {
+    "generation": 4,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-23T02:46:29",
+    "details": {
+      "parent_id": "8e0fe5c7fb2f4a1d84842acec6f733d8",
+      "child_id": "aa1ef2072f3c416192480baf4e68cd2f",
+      "parent_rank": 12,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "mammal features",
+      "sampled_op": "ml_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:46:32",
+    "details": {
+      "word": "ear",
+      "rank": 559,
+      "hypothesis": "mammal features",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 218
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:46:33",
+    "details": {
+      "word": "muzzle",
+      "rank": 1667,
+      "hypothesis": "mammal features",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 219
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:46:34",
+    "details": {
+      "word": "horn",
+      "rank": 297,
+      "hypothesis": "mammal features",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 220
+    }
+  },
+  {
+    "generation": 4,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-23T02:46:53",
+    "details": {
+      "parent_id": "64d03ba7f4f14b4c9dce3653ec112fa1",
+      "child_id": "21b3e10fdf2f4e1caa679efd535f94c5",
+      "parent_rank": 90,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "animal markings",
+      "sampled_op": "ml_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:46:54",
+    "details": {
+      "word": "spots",
+      "rank": 423,
+      "hypothesis": "animal markings",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 221
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:46:54",
+    "details": {
+      "word": "stripe",
+      "rank": 1997,
+      "hypothesis": "animal markings",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 222
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:46:55",
+    "details": {
+      "word": "patch",
+      "rank": 11489,
+      "hypothesis": "animal markings",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 223
+    }
+  },
+  {
+    "generation": 4,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-23T02:47:01",
+    "details": {
+      "parent_id": "7210dc39c302460a831255c9437349c9",
+      "child_id": "60db16b839b344d4abf02766a7ceedc1",
+      "parent_rank": 323,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "textile materials",
+      "sampled_op": "m_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:47:01",
+    "details": {
+      "word": "texture",
+      "rank": 38129,
+      "hypothesis": "textile materials",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 224
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:47:01",
+    "details": {
+      "word": "material",
+      "rank": 28058,
+      "hypothesis": "textile materials",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 225
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:47:02",
+    "details": {
+      "word": "insulation",
+      "rank": 7431,
+      "hypothesis": "textile materials",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 226
+    }
+  },
+  {
+    "generation": 4,
+    "event": "MUTATE",
+    "timestamp": "2026-07-23T02:47:02",
+    "details": {
+      "method": "self_adaptive",
+      "children": [
+        {
+          "hypothesis_id": "c5d6b72e5b2e4490852ca0caf1148c8f",
+          "category_name": "terrain features",
+          "description": "physical characteristics of landscapes",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "animals",
+          "parent_id": "1b9e5b69d817443a85eb3c9cea39bea6",
+          "origin": "self_adaptive_l_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "42d7044515384ad2a312cae4f7f504e0",
+          "category_name": "natural physical properties",
+          "description": "focus on tangible attributes and materials",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "symbolism",
+          "parent_id": "7aaec0c2acd6487390823c9f25e83a9a",
+          "origin": "self_adaptive_m_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "aa1ef2072f3c416192480baf4e68cd2f",
+          "category_name": "mammal features",
+          "description": "physical traits of large mammals",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "elephant parts",
+          "parent_id": "8e0fe5c7fb2f4a1d84842acec6f733d8",
+          "origin": "self_adaptive_ml_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "21b3e10fdf2f4e1caa679efd535f94c5",
+          "category_name": "animal markings",
+          "description": "distinctive patterns on animals",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "big cats",
+          "parent_id": "64d03ba7f4f14b4c9dce3653ec112fa1",
+          "origin": "self_adaptive_ml_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "60db16b839b344d4abf02766a7ceedc1",
+          "category_name": "textile materials",
+          "description": "tactile properties of natural fabrics",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "animal features",
+          "parent_id": "7210dc39c302460a831255c9437349c9",
+          "origin": "self_adaptive_m_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        }
+      ],
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 226
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:47:21",
+    "details": {
+      "word": "marking",
+      "rank": 8126,
+      "hypothesis": "symbolic traits",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 226
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:47:21",
+    "details": {
+      "word": "pattern",
+      "rank": 17817,
+      "hypothesis": "symbolic traits",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 226
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:47:21",
+    "details": {
+      "word": "print",
+      "rank": 8039,
+      "hypothesis": "symbolic traits",
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 226
+    }
+  },
+  {
+    "generation": 4,
+    "event": "CROSSOVER",
+    "timestamp": "2026-07-23T02:47:21",
+    "details": {
+      "parents": [
+        "animals",
+        "symbolism"
+      ],
+      "parent_ids": [
+        "1b9e5b69d817443a85eb3c9cea39bea6",
+        "7aaec0c2acd6487390823c9f25e83a9a"
+      ],
+      "parent_ranks": [
+        11,
+        12
+      ],
+      "parent_a_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "parent_b_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma_pre_perturbation": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child": {
+        "hypothesis_id": "4a07aae4b9554cc1a1738eb689396d95",
+        "category_name": "symbolic traits",
+        "description": "terms representing both animal features and symbolic meaning",
+        "words_tried": {
+          "print": 8039,
+          "marking": 8126,
+          "pattern": 17817
+        },
+        "best_word": "print",
+        "best_rank": 8039,
+        "status": "active",
+        "parent": "animals+symbolism",
+        "parent_id": null,
+        "origin": "crossover",
+        "sigma": [
+          0.25,
+          0.25,
+          0.25,
+          0.25
+        ]
+      },
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 226
+    }
+  },
+  {
+    "generation": 4,
+    "event": "DEDUPLICATE",
+    "timestamp": "2026-07-23T02:47:21",
+    "details": {
+      "merged": [
+        {
+          "survivor": "animals",
+          "discarded": "symbolic traits",
+          "survivor_best_rank": 11,
+          "discarded_best_rank": 8039
+        }
+      ],
+      "remaining_hypotheses": 34,
+      "active_hypotheses": 10,
+      "best_word": "elephant",
+      "best_rank": 11,
+      "total_guesses": 226
+    }
+  },
+  {
+    "generation": 4,
+    "event": "SIGMA_TRAJECTORY",
+    "timestamp": "2026-07-23T02:47:21",
+    "details": {
+      "mean_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "population_size": 10
+    }
+  },
+  {
+    "generation": 5,
+    "event": "CANDIDATES",
+    "timestamp": "2026-07-23T02:51:07",
+    "details": {
+      "count": 29,
+      "candidates": [
+        {
+          "hypothesis": "animals",
+          "word": "seal"
+        },
+        {
+          "hypothesis": "animals",
+          "word": "moose"
+        },
+        {
+          "hypothesis": "animals",
+          "word": "badger"
+        },
+        {
+          "hypothesis": "symbolism",
+          "word": "totem"
+        },
+        {
+          "hypothesis": "symbolism",
+          "word": "amulet"
+        },
+        {
+          "hypothesis": "symbolism",
+          "word": "idol"
+        },
+        {
+          "hypothesis": "elephant parts",
+          "word": "snout"
+        },
+        {
+          "hypothesis": "elephant parts",
+          "word": "tongue"
+        },
+        {
+          "hypothesis": "elephant parts",
+          "word": "rib"
+        },
+        {
+          "hypothesis": "big cats",
+          "word": "pride"
+        },
+        {
+          "hypothesis": "big cats",
+          "word": "roar"
+        },
+        {
+          "hypothesis": "mammal features",
+          "word": "coat"
+        },
+        {
+          "hypothesis": "mammal features",
+          "word": "hide"
+        },
+        {
+          "hypothesis": "mammal features",
+          "word": "hump"
+        },
+        {
+          "hypothesis": "animal features",
+          "word": "paw"
+        },
+        {
+          "hypothesis": "animal features",
+          "word": "whisker"
+        },
+        {
+          "hypothesis": "animal features",
+          "word": "antler"
+        },
+        {
+          "hypothesis": "animal markings",
+          "word": "rosette"
+        },
+        {
+          "hypothesis": "animal markings",
+          "word": "banding"
+        },
+        {
+          "hypothesis": "animal markings",
+          "word": "splotch"
+        },
+        {
+          "hypothesis": "natural physical properties",
+          "word": "density"
+        },
+        {
+          "hypothesis": "natural physical properties",
+          "word": "hardness"
+        },
+        {
+          "hypothesis": "natural physical properties",
+          "word": "smoothness"
+        },
+        {
+          "hypothesis": "terrain features",
+          "word": "delta"
+        },
+        {
+          "hypothesis": "terrain features",
+          "word": "canyon"
+        },
+        {
+          "hypothesis": "terrain features",
+          "word": "plateau"
+        },
+        {
+          "hypothesis": "textile materials",
+          "word": "soft"
+        },
+        {
+          "hypothesis": "textile materials",
+          "word": "smooth"
+        },
+        {
+          "hypothesis": "textile materials",
+          "word": "flexible"
+        }
+      ]
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:51:07",
+    "details": {
+      "word": "seal",
+      "rank": 7,
+      "hypothesis": "animals",
+      "best_word": "seal",
+      "best_rank": 7,
+      "total_guesses": 227
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:51:10",
+    "details": {
+      "word": "moose",
+      "rank": 33,
+      "hypothesis": "animals",
+      "best_word": "seal",
+      "best_rank": 7,
+      "total_guesses": 228
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:51:11",
+    "details": {
+      "word": "badger",
+      "rank": 1121,
+      "hypothesis": "animals",
+      "best_word": "seal",
+      "best_rank": 7,
+      "total_guesses": 229
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:51:11",
+    "details": {
+      "word": "totem",
+      "rank": 493,
+      "hypothesis": "symbolism",
+      "best_word": "seal",
+      "best_rank": 7,
+      "total_guesses": 230
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:51:11",
+    "details": {
+      "word": "amulet",
+      "rank": 22240,
+      "hypothesis": "symbolism",
+      "best_word": "seal",
+      "best_rank": 7,
+      "total_guesses": 231
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:51:11",
+    "details": {
+      "word": "idol",
+      "rank": 17218,
+      "hypothesis": "symbolism",
+      "best_word": "seal",
+      "best_rank": 7,
+      "total_guesses": 232
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:51:12",
+    "details": {
+      "word": "snout",
+      "rank": 400,
+      "hypothesis": "elephant parts",
+      "best_word": "seal",
+      "best_rank": 7,
+      "total_guesses": 233
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:51:12",
+    "details": {
+      "word": "tongue",
+      "rank": 1231,
+      "hypothesis": "elephant parts",
+      "best_word": "seal",
+      "best_rank": 7,
+      "total_guesses": 234
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:51:13",
+    "details": {
+      "word": "rib",
+      "rank": 11648,
+      "hypothesis": "elephant parts",
+      "best_word": "seal",
+      "best_rank": 7,
+      "total_guesses": 235
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:51:13",
+    "details": {
+      "word": "pride",
+      "rank": 19777,
+      "hypothesis": "big cats",
+      "best_word": "seal",
+      "best_rank": 7,
+      "total_guesses": 236
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:51:13",
+    "details": {
+      "word": "roar",
+      "rank": 738,
+      "hypothesis": "big cats",
+      "best_word": "seal",
+      "best_rank": 7,
+      "total_guesses": 237
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:51:13",
+    "details": {
+      "word": "coat",
+      "rank": 6652,
+      "hypothesis": "mammal features",
+      "best_word": "seal",
+      "best_rank": 7,
+      "total_guesses": 238
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:51:14",
+    "details": {
+      "word": "hide",
+      "rank": 3315,
+      "hypothesis": "mammal features",
+      "best_word": "seal",
+      "best_rank": 7,
+      "total_guesses": 239
+    }
+  },
+  {
+    "generation": 5,
+    "event": "SKIP_INVALID_GUESS",
+    "timestamp": "2026-07-23T02:51:15",
+    "details": {
+      "word": "hump",
+      "hypothesis": "mammal features"
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:51:16",
+    "details": {
+      "word": "paw",
+      "rank": 756,
+      "hypothesis": "animal features",
+      "best_word": "seal",
+      "best_rank": 7,
+      "total_guesses": 240
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:51:17",
+    "details": {
+      "word": "whisker",
+      "rank": 2092,
+      "hypothesis": "animal features",
+      "best_word": "seal",
+      "best_rank": 7,
+      "total_guesses": 241
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:51:17",
+    "details": {
+      "word": "antler",
+      "rank": 235,
+      "hypothesis": "animal features",
+      "best_word": "seal",
+      "best_rank": 7,
+      "total_guesses": 242
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:51:18",
+    "details": {
+      "word": "rosette",
+      "rank": 35419,
+      "hypothesis": "animal markings",
+      "best_word": "seal",
+      "best_rank": 7,
+      "total_guesses": 243
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:51:19",
+    "details": {
+      "word": "banding",
+      "rank": 20661,
+      "hypothesis": "animal markings",
+      "best_word": "seal",
+      "best_rank": 7,
+      "total_guesses": 244
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:51:20",
+    "details": {
+      "word": "splotch",
+      "rank": 11156,
+      "hypothesis": "animal markings",
+      "best_word": "seal",
+      "best_rank": 7,
+      "total_guesses": 245
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:51:20",
+    "details": {
+      "word": "density",
+      "rank": 14309,
+      "hypothesis": "natural physical properties",
+      "best_word": "seal",
+      "best_rank": 7,
+      "total_guesses": 246
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:51:20",
+    "details": {
+      "word": "hardness",
+      "rank": 21297,
+      "hypothesis": "natural physical properties",
+      "best_word": "seal",
+      "best_rank": 7,
+      "total_guesses": 247
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:51:21",
+    "details": {
+      "word": "smoothness",
+      "rank": 16247,
+      "hypothesis": "natural physical properties",
+      "best_word": "seal",
+      "best_rank": 7,
+      "total_guesses": 248
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:51:21",
+    "details": {
+      "word": "delta",
+      "rank": 563,
+      "hypothesis": "terrain features",
+      "best_word": "seal",
+      "best_rank": 7,
+      "total_guesses": 249
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:51:21",
+    "details": {
+      "word": "canyon",
+      "rank": 22264,
+      "hypothesis": "terrain features",
+      "best_word": "seal",
+      "best_rank": 7,
+      "total_guesses": 250
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:51:21",
+    "details": {
+      "word": "plateau",
+      "rank": 11399,
+      "hypothesis": "terrain features",
+      "best_word": "seal",
+      "best_rank": 7,
+      "total_guesses": 251
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:51:22",
+    "details": {
+      "word": "soft",
+      "rank": 11035,
+      "hypothesis": "textile materials",
+      "best_word": "seal",
+      "best_rank": 7,
+      "total_guesses": 252
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:51:23",
+    "details": {
+      "word": "smooth",
+      "rank": 16095,
+      "hypothesis": "textile materials",
+      "best_word": "seal",
+      "best_rank": 7,
+      "total_guesses": 253
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:51:24",
+    "details": {
+      "word": "flexible",
+      "rank": 66877,
+      "hypothesis": "textile materials",
+      "best_word": "seal",
+      "best_rank": 7,
+      "total_guesses": 254
+    }
+  },
+  {
+    "generation": 5,
+    "event": "SELECT",
+    "timestamp": "2026-07-23T02:51:24",
+    "details": {
+      "kept": [
+        "animals",
+        "symbolism",
+        "elephant parts",
+        "big cats",
+        "animal features"
+      ],
+      "discarded": [
+        "mammal features",
+        "sports",
+        "aquatic activities",
+        "animal markings",
+        "natural physical properties",
+        "terrain features",
+        "aquatic movement",
+        "weather",
+        "daily_activities",
+        "water phenomena",
+        "tools",
+        "camouflage",
+        "big felines",
+        "foods",
+        "body_parts",
+        "emotions",
+        "colors",
+        "nature",
+        "movement types",
+        "transportation",
+        "clothing",
+        "shapes",
+        "Water Descriptors",
+        "family",
+        "celestial_phenomena",
+        "food_preparation",
+        "textile materials",
+        "time",
+        "solar"
+      ],
+      "elite": "animals",
+      "max_active_hypotheses": 5,
+      "best_word": "seal",
+      "best_rank": 7,
+      "total_guesses": 254
+    }
+  },
+  {
+    "generation": 5,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-23T02:51:42",
+    "details": {
+      "parent_id": "1b9e5b69d817443a85eb3c9cea39bea6",
+      "child_id": "2fa56f05b20f493e8db123fd42c1ab07",
+      "parent_rank": 7,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "marine mammals",
+      "sampled_op": "s_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:51:42",
+    "details": {
+      "word": "otter",
+      "rank": 3,
+      "hypothesis": "marine mammals",
+      "best_word": "otter",
+      "best_rank": 3,
+      "total_guesses": 255
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T02:51:42",
+    "details": {
+      "word": "walrus",
+      "rank": 1,
+      "hypothesis": "marine mammals",
+      "best_word": "walrus",
+      "best_rank": 1,
+      "total_guesses": 256
+    }
+  },
+  {
+    "generation": 5,
+    "event": "MUTATE",
+    "timestamp": "2026-07-23T02:51:42",
+    "details": {
+      "method": "self_adaptive",
+      "children": [
+        {
+          "hypothesis_id": "2fa56f05b20f493e8db123fd42c1ab07",
+          "category_name": "marine mammals",
+          "description": "aquatic mammals adapted to life in oceans",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "animals",
+          "parent_id": "1b9e5b69d817443a85eb3c9cea39bea6",
+          "origin": "self_adaptive_s_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        }
+      ],
+      "best_word": "walrus",
+      "best_rank": 1,
+      "total_guesses": 256
+    }
+  },
+  {
+    "generation": 5,
+    "event": "SOLVED",
+    "timestamp": "2026-07-23T02:51:42",
+    "details": {
+      "answer": "walrus",
+      "rank": 1,
+      "total_guesses": 256
+    }
+  },
+  {
+    "generation": 5,
+    "event": "NETWORK_METRICS",
+    "timestamp": "2026-07-23T02:51:42",
+    "details": {
+      "network_calls": 102,
+      "network_wall_clock_seconds": 3315.1833,
+      "total_latency_seconds": 61.1341,
+      "mean_latency_seconds": 0.5994,
+      "median_latency_seconds": 0.2716,
+      "p95_latency_seconds": 3.2711,
+      "max_latency_seconds": 3.2857,
+      "status_counts": {
+        "200": 99,
+        "404": 3
+      },
+      "outcome_counts": {
+        "ok": 99,
+        "http_error": 3
+      }
+    }
+  }
+]

@@ -112,9 +112,11 @@ def two_arm_comparison(
     """Compare two arms of runs per metric.
 
     Uses the paired Wilcoxon signed-rank test when ``paired_key`` maps each run to
-    a pairing key (e.g. target/game_number) and both arms cover the same keys;
-    otherwise the independent Mann-Whitney U test. Runs with a ``None`` metric are
-    dropped from that metric's test.
+    a pairing key (unique per run within an arm, e.g. ``(game_number, run_index)``)
+    and both arms cover the same keys; otherwise the independent Mann-Whitney U
+    test. Runs with a ``None`` metric are dropped from that metric's test. A
+    pairing key duplicated within an arm raises ``ValueError`` (see
+    ``_paired_values``).
     """
     runs_a = [run for run, arm in arm_of.items() if arm == arm_a]
     runs_b = [run for run, arm in arm_of.items() if arm == arm_b]
@@ -169,16 +171,31 @@ def _compare_metric(
 def _paired_values(
     a_clean: dict[str, float], b_clean: dict[str, float], paired_key: dict[str, Any]
 ) -> list[tuple[float, float]] | None:
+    """Match arm-A and arm-B run values that share a pairing key.
+
+    Raises ``ValueError`` when a pairing key maps to more than one run within an
+    arm: which A-run pairs with which B-run would then be arbitrary, and the old
+    dict-overwrite behavior silently collapsed the replicates to one. Callers
+    must supply a key that is unique per (arm, run), e.g.
+    ``(game_number, run_index)`` rather than ``game_number`` alone.
+    """
     a_by_key: dict[Any, float] = {}
     b_by_key: dict[Any, float] = {}
-    for run, value in a_clean.items():
-        key = paired_key.get(run)
-        if key is not None:
-            a_by_key[key] = value
-    for run, value in b_clean.items():
-        key = paired_key.get(run)
-        if key is not None:
-            b_by_key[key] = value
+    duplicates: set[Any] = set()
+    for by_key, clean in ((a_by_key, a_clean), (b_by_key, b_clean)):
+        for run, value in clean.items():
+            key = paired_key.get(run)
+            if key is None:
+                continue
+            if key in by_key:
+                duplicates.add(key)
+            by_key[key] = value
+    if duplicates:
+        raise ValueError(
+            "paired_key is not unique within an arm (duplicate keys: "
+            f"{sorted(duplicates, key=str)}); pairing would be ambiguous. "
+            "Use a per-run key such as (game_number, run_index)."
+        )
     shared = sorted(set(a_by_key) & set(b_by_key), key=str)
     if not shared:
         return None

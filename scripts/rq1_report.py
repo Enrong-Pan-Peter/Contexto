@@ -29,10 +29,22 @@ from contexto_solver.rq1 import report as rq1_report
 from contexto_solver.rq1.reader import Individual, extract_individuals, load_trace, run_config
 from contexto_solver.rq1.records import provenance_hashes
 
+def _flag_label(value: Any) -> str | None:
+    """CLI-comparable label for a RUN_CONFIG flag: booleans become "true"/"false"."""
+    if value is None:
+        return None
+    if isinstance(value, bool):
+        return "true" if value else "false"
+    return str(value)
+
+
 _ARM_KEYS = {
     "mode": lambda config: config.method,
     "method": lambda config: config.method,
     "sigma_mode": lambda config: config.sigma_mode,
+    "llm_model": lambda config: config.raw.get("llm_model"),
+    "self_report": lambda config: _flag_label(config.self_report),
+    "rationale_inheritance": lambda config: _flag_label(config.rationale_inheritance),
 }
 
 
@@ -91,7 +103,15 @@ def main() -> None:
         arm_of = {name: arm_fn(config) for name, config in run_config_by_run.items()}
         paired_key = None
         if args.paired:
-            paired_key = {name: config.game_number for name, config in run_config_by_run.items()}
+            # Pair by (game_number, run_index), not game_number alone: with
+            # several replicate runs per game in each arm, a game-only key would
+            # silently collapse each arm to one run per game inside
+            # _paired_values. run_index comes from the batch runner's RUN_CONFIG
+            # (None for single-run main.py traces, which have one run per game).
+            paired_key = {
+                name: (config.game_number, config.raw.get("run_index"))
+                for name, config in run_config_by_run.items()
+            }
         two_arm = rq1_report.two_arm_comparison(
             scalars, arm_of, args.arm_a, args.arm_b, paired_key=paired_key
         )

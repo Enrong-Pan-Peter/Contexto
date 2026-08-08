@@ -1,0 +1,140 @@
+===== JOB INFORMATION =====
+Date: Wed Jul 22 16:43:28 EDT 2026
+Host: frnt191.frontenac.local
+Job ID: 12052204
+Array task: 1
+Arm: A1
+Game: 1319
+Python: /global/home/hpc6237/venvs/contexto/bin/python
+OLLAMA_HOST: 127.0.0.1:32204
+OLLAMA_BASE_URL: http://127.0.0.1:32204/v1
+RANK_CACHE_DIR: data/rank_cache_A1
+Command: python -m contexto_solver.experiment --game api --method ea_llm_self_adaptive --provider ollama --ollama-model qwen3:14b --game-numbers 1319 --runs-per-target 5 --random-seed 0 --max-generations 50 --output traces/rq1_A1/A1_ea_llm_self_adaptive_game1319.json
+Python 3.11.5
+Wed Jul 22 16:43:32 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 580.167.08             Driver Version: 580.167.08     CUDA Version: 13.0     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100-SXM4-40GB          On  |   00000000:07:00.0 Off |                    0 |
+| N/A   32C    P0             54W /  400W |       0MiB /  40960MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   1  NVIDIA A100-SXM4-40GB          On  |   00000000:0F:00.0 Off |                    0 |
+| N/A   29C    P0             54W /  400W |       0MiB /  40960MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   2  NVIDIA A100-SXM4-40GB          On  |   00000000:47:00.0 Off |                    0 |
+| N/A   29C    P0             56W /  400W |       0MiB /  40960MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   3  NVIDIA A100-SXM4-40GB          On  |   00000000:4E:00.0 Off |                    0 |
+| N/A   29C    P0             53W /  400W |       0MiB /  40960MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   4  NVIDIA A100-SXM4-40GB          On  |   00000000:87:00.0 Off |                    0 |
+| N/A   38C    P0             81W /  400W |       0MiB /  40960MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   5  NVIDIA A100-SXM4-40GB          On  |   00000000:90:00.0 Off |                    0 |
+| N/A   33C    P0             74W /  400W |       0MiB /  40960MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   6  NVIDIA A100-SXM4-40GB          On  |   00000000:B7:00.0 Off |                    0 |
+| N/A   35C    P0             84W /  400W |       0MiB /  40960MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   7  NVIDIA A100-SXM4-40GB          On  |   00000000:BD:00.0 Off |                    0 |
+| N/A   33C    P0             76W /  400W |       0MiB /  40960MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+===== START OLLAMA =====
+===== RUN EXPERIMENT =====
+Generation 0: best word=sun, best rank=893
+Generation 1: best word=reef, best rank=183
+Generation 2: best word=beach, best rank=16
+Generation 3: best word=beach, best rank=16
+Generation 4: best word=polar, best rank=8
+Generation 5: best word=polar, best rank=8
+Generation 6: best word=polar, best rank=8
+Generation 7: best word=polar, best rank=8
+Generation 8: best word=polar, best rank=8
+Generation 9: best word=polar, best rank=8
+Generation 10: best word=polar, best rank=8
+Generation 11: best word=polar, best rank=8
+Generation 12: best word=polar, best rank=8
+Generation 13: best word=polar, best rank=8
+Generation 14: best word=polar, best rank=8
+Generation 15: best word=polar, best rank=8
+Generation 16: best word=whale, best rank=2
+Generation 17: best word=whale, best rank=2
+Generation 18: best word=walrus, best rank=1
+Generation 0: best word=sun, best rank=893
+Generation 1: best word=fish, best rank=138
+Generation 2: best word=beach, best rank=16
+Generation 3: best word=whale, best rank=2
+Generation 4: best word=whale, best rank=2
+Generation 5: best word=whale, best rank=2
+Generation 6: best word=whale, best rank=2
+Generation 7: best word=walrus, best rank=1
+Generation 0: best word=snow, best rank=1073
+Generation 1: best word=habitat, best rank=238
+Generation 2: best word=arctic, best rank=34
+Generation 3: best word=polar, best rank=8
+Generation 4: best word=polar, best rank=8
+Generation 5: best word=polar, best rank=8
+Generation 6: best word=polar, best rank=8
+Generation 7: best word=polar, best rank=8
+Generation 8: best word=whale, best rank=2
+Generation 9: best word=whale, best rank=2
+Generation 10: best word=whale, best rank=2
+Generation 11: best word=whale, best rank=2
+Generation 12: best word=walrus, best rank=1
+Generation 0: best word=bird, best rank=182
+Generation 1: best word=beach, best rank=16
+Generation 2: best word=beach, best rank=16
+Generation 3: best word=beach, best rank=16
+Generation 4: best word=beach, best rank=16
+Generation 5: best word=beach, best rank=16
+Generation 6: best word=beach, best rank=16
+Generation 7: best word=beach, best rank=16
+Generation 8: best word=beach, best rank=16
+Generation 9: best word=puffin, best rank=6
+Generation 10: best word=whale, best rank=2
+Generation 11: best word=walrus, best rank=1
+Generation 0: best word=winter, best rank=254
+Generation 1: best word=winter, best rank=254
+Generation 2: best word=fish, best rank=138
+Generation 3: best word=fish, best rank=138
+Generation 4: best word=iceberg, best rank=23
+Generation 5: best word=iceberg, best rank=23
+Generation 6: best word=beach, best rank=16
+Generation 7: best word=whale, best rank=2
+Generation 8: best word=walrus, best rank=1
+Wrote JSON summary: traces/rq1_A1/A1_ea_llm_self_adaptive_game1319.json
+Wrote CSV summary: traces/rq1_A1/A1_ea_llm_self_adaptive_game1319.csv
+{
+  "total_runs": 5,
+  "solved_runs": 5,
+  "solve_rate": 1.0,
+  "average_guesses_solved": 422.8,
+  "average_best_rank": 1.0,
+  "average_generations": 11.2
+}
+===== FINISHED =====
+Arm: A1
+Game: 1319
+Exit status: 0
+Date: Thu Jul 23 02:54:30 EDT 2026
+Metadata: traces/rq1_A1/A1_game1319_ollama_metadata_job12052204.txt

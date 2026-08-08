@@ -1,0 +1,1978 @@
+[
+  {
+    "generation": -1,
+    "event": "RUN_CONFIG",
+    "timestamp": "2026-07-31T17:14:53",
+    "details": {
+      "game": "api",
+      "solver": "llm",
+      "method": "llm_only",
+      "mode": "api",
+      "target": null,
+      "game_number": 1372,
+      "run_index": 3,
+      "game_embedding_path": null,
+      "solver_embedding_path": null,
+      "embedding_backend": null,
+      "vocabulary_size": null,
+      "alignment": "api_unknown",
+      "trace_schema_version": 3,
+      "instrumentation_provenance_hash": "bd9f2858283673a2",
+      "self_report": true,
+      "rationale_inheritance": false,
+      "max_generations": 350,
+      "llm_provider": "ollama",
+      "llm_model": "qwen3:14b",
+      "llm_workers": null,
+      "initial_categories": null,
+      "max_active_hypotheses": null,
+      "local_search_rank_threshold": null,
+      "self_adaptive_initial_categories": null,
+      "self_adaptive_mu": null,
+      "self_adaptive_concentration": null,
+      "self_adaptive_sigma_floor": null,
+      "self_adaptive_sigma_mode": null,
+      "mapelites_grid_resolution": null,
+      "mapelites_mutations_per_gen": null,
+      "mapelites_crossovers_per_gen": null,
+      "mapelites_initial_categories": null,
+      "mapelites_concentration": null,
+      "mapelites_sigma_floor": null,
+      "mapelites_sigma_mode": null,
+      "mapelites_frozen_sigma": null,
+      "mapelites_ranked_context_k": null,
+      "rank_cache_enabled": true,
+      "enable_pivot": null,
+      "ea_llm_pivot_stall_no_improvement_generations": null,
+      "ea_llm_pivot_stall_close_rank_threshold": null,
+      "ea_llm_pivot_stall_close_generations_limit": null,
+      "ea_llm_pivot_max_attempts_per_run": null,
+      "ea_llm_pivot_candidate_words_per_operator": null,
+      "ea_llm_pivot_resolution_window": null,
+      "random_seed": 3
+    }
+  },
+  {
+    "generation": 0,
+    "event": "INIT",
+    "timestamp": "2026-07-31T17:14:53",
+    "details": {
+      "history": {},
+      "best_word": null,
+      "best_rank": null,
+      "total_guesses": 0
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T17:15:07",
+    "details": {
+      "word": "run",
+      "rank": 992,
+      "best_word": "run",
+      "best_rank": 992,
+      "total_guesses": 1,
+      "self_report": {
+        "predicted_closeness": 0.8,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [],
+          "reason": "run is a high-frequency common English word, likely to be close to the hidden target."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"run\", \"basis_words\": [], \"reason\": \"run is a high-frequency common English word, likely to be close to the hidden target.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.8}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T17:15:22",
+    "details": {
+      "word": "walk",
+      "rank": 1043,
+      "best_word": "run",
+      "best_rank": 992,
+      "total_guesses": 2,
+      "self_report": {
+        "predicted_closeness": 0.4,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "run"
+          ],
+          "reason": "Walk is a common synonym of run in the context of movement, making it a logical next guess closer to the target."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"walk\", \"basis_words\": [\"run\"], \"reason\": \"Walk is a common synonym of run in the context of movement, making it a logical next guess closer to the target.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"run\": 992}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T17:15:40",
+    "details": {
+      "word": "move",
+      "rank": 183,
+      "best_word": "move",
+      "best_rank": 183,
+      "total_guesses": 3,
+      "self_report": {
+        "predicted_closeness": 0.5,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "run",
+            "walk"
+          ],
+          "reason": "Move is a general term related to locomotion, potentially closer to the target if it's a broader concept than specific actions like running or walking."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"move\", \"basis_words\": [\"run\", \"walk\"], \"reason\": \"Move is a general term related to locomotion, potentially closer to the target if it's a broader concept than specific actions like running or walking.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.5}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"run\": 992, \"walk\": 1043}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T17:16:18",
+    "details": {
+      "word": "go",
+      "rank": 462,
+      "best_word": "move",
+      "best_rank": 183,
+      "total_guesses": 4,
+      "self_report": {
+        "predicted_closeness": 0.5,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "move",
+            "run",
+            "walk"
+          ],
+          "reason": "The previous guesses are all verbs related to motion, suggesting the hidden target may be a synonym of 'move'. 'Go' is a common synonym and not previously used."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"go\", \"basis_words\": [\"move\", \"run\", \"walk\"], \"reason\": \"The previous guesses are all verbs related to motion, suggesting the hidden target may be a synonym of 'move'. 'Go' is a common synonym and not previously used.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.5}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"move\": 183, \"run\": 992, \"walk\": 1043}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T17:16:35",
+    "details": {
+      "word": "amble",
+      "rank": 19913,
+      "best_word": "move",
+      "best_rank": 183,
+      "total_guesses": 5,
+      "self_report": {
+        "predicted_closeness": 0.3,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "go",
+            "move",
+            "run",
+            "walk"
+          ],
+          "reason": "The target likely relates to movement verbs; 'amble' is a synonym of 'walk' and 'move' but less common, potentially closer to the hidden target."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"amble\", \"basis_words\": [\"go\", \"move\", \"run\", \"walk\"], \"reason\": \"The target likely relates to movement verbs; 'amble' is a synonym of 'walk' and 'move' but less common, potentially closer to the hidden target.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"go\": 462, \"move\": 183, \"run\": 992, \"walk\": 1043}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 6,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T17:16:51",
+    "details": {
+      "word": "stride",
+      "rank": 237,
+      "best_word": "move",
+      "best_rank": 183,
+      "total_guesses": 6,
+      "self_report": {
+        "predicted_closeness": 0.3,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "move",
+            "walk",
+            "run",
+            "amble",
+            "go"
+          ],
+          "reason": "The previous guesses are all verbs related to movement, suggesting the hidden target may be a similar synonym. 'Stride' is a specific type of movement that hasn't been tried yet."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"stride\", \"basis_words\": [\"move\", \"walk\", \"run\", \"amble\", \"go\"], \"reason\": \"The previous guesses are all verbs related to movement, suggesting the hidden target may be a similar synonym. 'Stride' is a specific type of movement that hasn't been tried yet.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"amble\": 19913, \"go\": 462, \"move\": 183, \"run\": 992, \"walk\": 1043}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 7,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T17:17:00",
+    "details": {
+      "word": "march",
+      "rank": 260,
+      "best_word": "move",
+      "best_rank": 183,
+      "total_guesses": 7,
+      "self_report": {
+        "predicted_closeness": 0.7,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "move",
+            "stride",
+            "walk"
+          ],
+          "reason": "March is a synonym of move and walk but may be closer to the target due to its distinct connotation of purposeful movement."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"march\", \"basis_words\": [\"move\", \"stride\", \"walk\"], \"reason\": \"March is a synonym of move and walk but may be closer to the target due to its distinct connotation of purposeful movement.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.7}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"amble\": 19913, \"go\": 462, \"move\": 183, \"run\": 992, \"stride\": 237, \"walk\": 1043}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 8,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T17:17:10",
+    "details": {
+      "word": "stroll",
+      "rank": 4679,
+      "best_word": "move",
+      "best_rank": 183,
+      "total_guesses": 8,
+      "self_report": {
+        "predicted_closeness": 0.6,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "amble",
+            "march",
+            "stride",
+            "walk"
+          ],
+          "reason": "Stroll is a common synonym for walking-related verbs and shares contextual similarity with existing guesses, making it a plausible candidate closer to the target."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"stroll\", \"basis_words\": [\"amble\", \"march\", \"stride\", \"walk\"], \"reason\": \"Stroll is a common synonym for walking-related verbs and shares contextual similarity with existing guesses, making it a plausible candidate closer to the target.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.6}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"amble\": 19913, \"go\": 462, \"march\": 260, \"move\": 183, \"run\": 992, \"stride\": 237, \"walk\": 1043}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 9,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T17:17:23",
+    "details": {
+      "word": "trudge",
+      "rank": 17881,
+      "best_word": "move",
+      "best_rank": 183,
+      "total_guesses": 9,
+      "self_report": {
+        "predicted_closeness": 0.7,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "amble",
+            "march",
+            "move",
+            "stride",
+            "stroll",
+            "walk"
+          ],
+          "reason": "Trudge is a movement-related verb not yet guessed, potentially closer to the target than existing words like 'amble' or 'stroll' which have higher ranks."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"trudge\", \"basis_words\": [\"amble\", \"march\", \"move\", \"stride\", \"stroll\", \"walk\"], \"reason\": \"Trudge is a movement-related verb not yet guessed, potentially closer to the target than existing words like 'amble' or 'stroll' which have higher ranks.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.7}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"amble\": 19913, \"go\": 462, \"march\": 260, \"move\": 183, \"run\": 992, \"stride\": 237, \"stroll\": 4679, \"walk\": 1043}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 10,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T17:17:43",
+    "details": {
+      "word": "saunter",
+      "rank": 15401,
+      "best_word": "move",
+      "best_rank": 183,
+      "total_guesses": 10,
+      "self_report": {
+        "predicted_closeness": 0.3,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "amble",
+            "stroll",
+            "walk"
+          ],
+          "reason": "Saunter is a synonym of walk and stroll, which are related to the existing guesses, suggesting it might be closer to the target."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"saunter\", \"basis_words\": [\"amble\", \"stroll\", \"walk\"], \"reason\": \"Saunter is a synonym of walk and stroll, which are related to the existing guesses, suggesting it might be closer to the target.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"amble\": 19913, \"go\": 462, \"march\": 260, \"move\": 183, \"run\": 992, \"stride\": 237, \"stroll\": 4679, \"trudge\": 17881, \"walk\": 1043}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 11,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T17:17:54",
+    "details": {
+      "word": "pace",
+      "rank": 37,
+      "best_word": "pace",
+      "best_rank": 37,
+      "total_guesses": 11,
+      "self_report": {
+        "predicted_closeness": 0.6,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "amble",
+            "march",
+            "stride",
+            "stroll",
+            "trudge",
+            "walk"
+          ],
+          "reason": "Pace is a common synonym for walking/progress that hasn't been tried yet, and its rank is likely between the higher-ranked 'move' (183) and lower-ranked 'amble' (19913)."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"pace\", \"basis_words\": [\"amble\", \"march\", \"stride\", \"stroll\", \"trudge\", \"walk\"], \"reason\": \"Pace is a common synonym for walking/progress that hasn't been tried yet, and its rank is likely between the higher-ranked 'move' (183) and lower-ranked 'amble' (19913).\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.6}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"amble\": 19913, \"go\": 462, \"march\": 260, \"move\": 183, \"run\": 992, \"saunter\": 15401, \"stride\": 237, \"stroll\": 4679, \"trudge\": 17881, \"walk\": 1043}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 12,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T17:18:14",
+    "details": {
+      "word": "trot",
+      "rank": 1790,
+      "best_word": "pace",
+      "best_rank": 37,
+      "total_guesses": 12,
+      "self_report": {
+        "predicted_closeness": 0.7,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "pace",
+            "stride",
+            "march",
+            "move"
+          ],
+          "reason": "Trot is a synonym for movement similar to pace and stride, which were previously close guesses, and hasn't been tried yet."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"trot\", \"basis_words\": [\"pace\", \"stride\", \"march\", \"move\"], \"reason\": \"Trot is a synonym for movement similar to pace and stride, which were previously close guesses, and hasn't been tried yet.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.7}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"amble\": 19913, \"go\": 462, \"march\": 260, \"move\": 183, \"pace\": 37, \"run\": 992, \"saunter\": 15401, \"stride\": 237, \"stroll\": 4679, \"trudge\": 17881, \"walk\": 1043}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 13,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T17:18:29",
+    "details": {
+      "word": "lope",
+      "rank": 1361,
+      "best_word": "pace",
+      "best_rank": 37,
+      "total_guesses": 13,
+      "self_report": {
+        "predicted_closeness": 0.7,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "pace",
+            "march",
+            "stride"
+          ],
+          "reason": "Lope is a less common synonym for walking/running with a specific gait, fitting the movement theme while not being in the existing guess list."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"lope\", \"basis_words\": [\"pace\", \"march\", \"stride\"], \"reason\": \"Lope is a less common synonym for walking/running with a specific gait, fitting the movement theme while not being in the existing guess list.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.7}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"amble\": 19913, \"go\": 462, \"march\": 260, \"move\": 183, \"pace\": 37, \"run\": 992, \"saunter\": 15401, \"stride\": 237, \"stroll\": 4679, \"trot\": 1790, \"trudge\": 17881, \"walk\": 1043}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 14,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T17:18:57",
+    "details": {
+      "word": "ramble",
+      "rank": 4526,
+      "best_word": "pace",
+      "best_rank": 37,
+      "total_guesses": 14,
+      "self_report": {
+        "predicted_closeness": 0.3,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "amble",
+            "saunter",
+            "stroll"
+          ],
+          "reason": "Ramble is a synonym for leisurely walking, similar to 'stroll' and 'saunter' in the guess history, and has not been tried yet. It may be closer to the target than other untried synonyms."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"ramble\", \"basis_words\": [\"amble\", \"saunter\", \"stroll\"], \"reason\": \"Ramble is a synonym for leisurely walking, similar to 'stroll' and 'saunter' in the guess history, and has not been tried yet. It may be closer to the target than other untried synonyms.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.3}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"amble\": 19913, \"go\": 462, \"lope\": 1361, \"march\": 260, \"move\": 183, \"pace\": 37, \"run\": 992, \"saunter\": 15401, \"stride\": 237, \"stroll\": 4679, \"trot\": 1790, \"trudge\": 17881, \"walk\": 1043}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 15,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T17:19:23",
+    "details": {
+      "word": "tread",
+      "rank": 4138,
+      "best_word": "pace",
+      "best_rank": 37,
+      "total_guesses": 15,
+      "self_report": {
+        "predicted_closeness": 0.5,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "pace",
+            "march"
+          ],
+          "reason": "Tread is a synonym for walking, similar to pace and march, which have lower ranks, indicating it might be closer to the target."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"tread\", \"basis_words\": [\"pace\", \"march\"], \"reason\": \"Tread is a synonym for walking, similar to pace and march, which have lower ranks, indicating it might be closer to the target.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.5}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"amble\": 19913, \"go\": 462, \"lope\": 1361, \"march\": 260, \"move\": 183, \"pace\": 37, \"ramble\": 4526, \"run\": 992, \"saunter\": 15401, \"stride\": 237, \"stroll\": 4679, \"trot\": 1790, \"trudge\": 17881, \"walk\": 1043}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 16,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T17:20:02",
+    "details": {
+      "word": "hike",
+      "rank": 10012,
+      "best_word": "pace",
+      "best_rank": 37,
+      "total_guesses": 16,
+      "self_report": {
+        "predicted_closeness": 0.3,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "march",
+            "walk",
+            "stride",
+            "pace",
+            "move"
+          ],
+          "reason": "Hike is a common synonym of movement verbs like walk and march, and hasn't been tried yet, making it a plausible closer guess."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"hike\", \"basis_words\": [\"march\", \"walk\", \"stride\", \"pace\", \"move\"], \"reason\": \"Hike is a common synonym of movement verbs like walk and march, and hasn't been tried yet, making it a plausible closer guess.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"amble\": 19913, \"go\": 462, \"lope\": 1361, \"march\": 260, \"move\": 183, \"pace\": 37, \"ramble\": 4526, \"run\": 992, \"saunter\": 15401, \"stride\": 237, \"stroll\": 4679, \"tread\": 4138, \"trot\": 1790, \"trudge\": 17881, \"walk\": 1043}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 17,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T17:20:16",
+    "details": {
+      "word": "wander",
+      "rank": 4542,
+      "best_word": "pace",
+      "best_rank": 37,
+      "total_guesses": 17,
+      "self_report": {
+        "predicted_closeness": 0.3,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "amble",
+            "ramble",
+            "stroll"
+          ],
+          "reason": "Wander is a synonym of walking that hasn't been tried yet and may be closer to the target based on similar words in the history."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"wander\", \"basis_words\": [\"amble\", \"ramble\", \"stroll\"], \"reason\": \"Wander is a synonym of walking that hasn't been tried yet and may be closer to the target based on similar words in the history.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"amble\": 19913, \"go\": 462, \"hike\": 10012, \"lope\": 1361, \"march\": 260, \"move\": 183, \"pace\": 37, \"ramble\": 4526, \"run\": 992, \"saunter\": 15401, \"stride\": 237, \"stroll\": 4679, \"tread\": 4138, \"trot\": 1790, \"trudge\": 17881, \"walk\": 1043}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 18,
+    "event": "SKIP_INVALID_GUESS",
+    "timestamp": "2026-07-31T17:20:43",
+    "details": {
+      "word": "tramp"
+    }
+  },
+  {
+    "generation": 19,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T17:21:02",
+    "details": {
+      "word": "gait",
+      "rank": 457,
+      "best_word": "pace",
+      "best_rank": 37,
+      "total_guesses": 18,
+      "self_report": {
+        "predicted_closeness": 0.4,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "lope",
+            "trot",
+            "stride",
+            "pace"
+          ],
+          "reason": "Gait is a synonym related to movement and walking, and may be a more specific term closer to the target than broader synonyms like 'amble' or 'stroll'."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"gait\", \"basis_words\": [\"lope\", \"trot\", \"stride\", \"pace\"], \"reason\": \"Gait is a synonym related to movement and walking, and may be a more specific term closer to the target than broader synonyms like 'amble' or 'stroll'.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"amble\": 19913, \"go\": 462, \"hike\": 10012, \"lope\": 1361, \"march\": 260, \"move\": 183, \"pace\": 37, \"ramble\": 4526, \"run\": 992, \"saunter\": 15401, \"stride\": 237, \"stroll\": 4679, \"tread\": 4138, \"trot\": 1790, \"trudge\": 17881, \"walk\": 1043, \"wander\": 4542}\nInvalid or unavailable guesses to avoid: [\"tramp\"]\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 20,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T17:21:43",
+    "details": {
+      "word": "step",
+      "rank": 814,
+      "best_word": "pace",
+      "best_rank": 37,
+      "total_guesses": 19,
+      "self_report": {
+        "predicted_closeness": 0.3,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "pace",
+            "stride",
+            "march",
+            "gait",
+            "go"
+          ],
+          "reason": "Step is a common synonym of pace and march, which are among the lowest-ranked guesses, suggesting it may be closer to the target."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"step\", \"basis_words\": [\"pace\", \"stride\", \"march\", \"gait\", \"go\"], \"reason\": \"Step is a common synonym of pace and march, which are among the lowest-ranked guesses, suggesting it may be closer to the target.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"amble\": 19913, \"gait\": 457, \"go\": 462, \"hike\": 10012, \"lope\": 1361, \"march\": 260, \"move\": 183, \"pace\": 37, \"ramble\": 4526, \"run\": 992, \"saunter\": 15401, \"stride\": 237, \"stroll\": 4679, \"tread\": 4138, \"trot\": 1790, \"trudge\": 17881, \"walk\": 1043, \"wander\": 4542}\nInvalid or unavailable guesses to avoid: [\"tramp\"]\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 21,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T17:22:04",
+    "details": {
+      "word": "lumber",
+      "rank": 16157,
+      "best_word": "pace",
+      "best_rank": 37,
+      "total_guesses": 20,
+      "self_report": {
+        "predicted_closeness": 0.2,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "beyond",
+        "rationale": {
+          "basis_words": [
+            "trudge",
+            "amble"
+          ],
+          "reason": "Lumber is a synonym for moving with heavy steps, similar to 'trudge' (rank 17881) and 'amble' (rank 19913), suggesting it may fall within a comparable range of closeness."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"lumber\", \"basis_words\": [\"trudge\", \"amble\"], \"reason\": \"Lumber is a synonym for moving with heavy steps, similar to 'trudge' (rank 17881) and 'amble' (rank 19913), suggesting it may fall within a comparable range of closeness.\", \"predicted_bucket\": \"beyond\", \"predicted_closeness\": 0.2}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"amble\": 19913, \"gait\": 457, \"go\": 462, \"hike\": 10012, \"lope\": 1361, \"march\": 260, \"move\": 183, \"pace\": 37, \"ramble\": 4526, \"run\": 992, \"saunter\": 15401, \"step\": 814, \"stride\": 237, \"stroll\": 4679, \"tread\": 4138, \"trot\": 1790, \"trudge\": 17881, \"walk\": 1043, \"wander\": 4542}\nInvalid or unavailable guesses to avoid: [\"tramp\"]\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 22,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T17:22:37",
+    "details": {
+      "word": "drift",
+      "rank": 1818,
+      "best_word": "pace",
+      "best_rank": 37,
+      "total_guesses": 21,
+      "self_report": {
+        "predicted_closeness": 0.3,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "pace",
+            "stride",
+            "march"
+          ],
+          "reason": "Drift is a movement-related verb not in the guess history and shares conceptual proximity with existing low-ranked words like 'pace' and 'march'."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"drift\", \"basis_words\": [\"pace\", \"stride\", \"march\"], \"reason\": \"Drift is a movement-related verb not in the guess history and shares conceptual proximity with existing low-ranked words like 'pace' and 'march'.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"amble\": 19913, \"gait\": 457, \"go\": 462, \"hike\": 10012, \"lope\": 1361, \"lumber\": 16157, \"march\": 260, \"move\": 183, \"pace\": 37, \"ramble\": 4526, \"run\": 992, \"saunter\": 15401, \"step\": 814, \"stride\": 237, \"stroll\": 4679, \"tread\": 4138, \"trot\": 1790, \"trudge\": 17881, \"walk\": 1043, \"wander\": 4542}\nInvalid or unavailable guesses to avoid: [\"tramp\"]\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 23,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T17:23:22",
+    "details": {
+      "word": "gallop",
+      "rank": 1248,
+      "best_word": "pace",
+      "best_rank": 37,
+      "total_guesses": 22,
+      "self_report": {
+        "predicted_closeness": 0.6,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "pace",
+            "march",
+            "stride"
+          ],
+          "reason": "Gallop is a synonym related to movement and gait, similar to existing low-ranked guesses like 'pace' and 'stride', suggesting it may be closer to the hidden target."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"gallop\", \"basis_words\": [\"pace\", \"march\", \"stride\"], \"reason\": \"Gallop is a synonym related to movement and gait, similar to existing low-ranked guesses like 'pace' and 'stride', suggesting it may be closer to the hidden target.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.6}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"amble\": 19913, \"drift\": 1818, \"gait\": 457, \"go\": 462, \"hike\": 10012, \"lope\": 1361, \"lumber\": 16157, \"march\": 260, \"move\": 183, \"pace\": 37, \"ramble\": 4526, \"run\": 992, \"saunter\": 15401, \"step\": 814, \"stride\": 237, \"stroll\": 4679, \"tread\": 4138, \"trot\": 1790, \"trudge\": 17881, \"walk\": 1043, \"wander\": 4542}\nInvalid or unavailable guesses to avoid: [\"tramp\"]\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 24,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T17:24:03",
+    "details": {
+      "word": "dash",
+      "rank": 2435,
+      "best_word": "pace",
+      "best_rank": 37,
+      "total_guesses": 23,
+      "self_report": {
+        "predicted_closeness": 0.3,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "pace",
+            "run",
+            "stride"
+          ],
+          "reason": "Dash is a synonym for quick movement, similar to 'pace' and 'run', which have lower ranks, suggesting it could be closer to the target."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"dash\", \"basis_words\": [\"pace\", \"run\", \"stride\"], \"reason\": \"Dash is a synonym for quick movement, similar to 'pace' and 'run', which have lower ranks, suggesting it could be closer to the target.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"amble\": 19913, \"drift\": 1818, \"gait\": 457, \"gallop\": 1248, \"go\": 462, \"hike\": 10012, \"lope\": 1361, \"lumber\": 16157, \"march\": 260, \"move\": 183, \"pace\": 37, \"ramble\": 4526, \"run\": 992, \"saunter\": 15401, \"step\": 814, \"stride\": 237, \"stroll\": 4679, \"tread\": 4138, \"trot\": 1790, \"trudge\": 17881, \"walk\": 1043, \"wander\": 4542}\nInvalid or unavailable guesses to avoid: [\"tramp\"]\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 25,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T17:24:49",
+    "details": {
+      "word": "sprint",
+      "rank": 3534,
+      "best_word": "pace",
+      "best_rank": 37,
+      "total_guesses": 24,
+      "self_report": {
+        "predicted_closeness": 0.3,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "pace",
+            "run"
+          ],
+          "reason": "Sprint is a synonym of 'run' and 'pace,' both of which are close to the target. It's a common movement-related verb not yet tested."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"sprint\", \"basis_words\": [\"pace\", \"run\"], \"reason\": \"Sprint is a synonym of 'run' and 'pace,' both of which are close to the target. It's a common movement-related verb not yet tested.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"amble\": 19913, \"dash\": 2435, \"drift\": 1818, \"gait\": 457, \"gallop\": 1248, \"go\": 462, \"hike\": 10012, \"lope\": 1361, \"lumber\": 16157, \"march\": 260, \"move\": 183, \"pace\": 37, \"ramble\": 4526, \"run\": 992, \"saunter\": 15401, \"step\": 814, \"stride\": 237, \"stroll\": 4679, \"tread\": 4138, \"trot\": 1790, \"trudge\": 17881, \"walk\": 1043, \"wander\": 4542}\nInvalid or unavailable guesses to avoid: [\"tramp\"]\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 26,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T17:25:22",
+    "details": {
+      "word": "meander",
+      "rank": 1238,
+      "best_word": "pace",
+      "best_rank": 37,
+      "total_guesses": 25,
+      "self_report": {
+        "predicted_closeness": 0.2,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "beyond",
+        "rationale": {
+          "basis_words": [
+            "amble",
+            "drift",
+            "ramble"
+          ],
+          "reason": "Meander shares semantic similarity with 'amble' and 'drift,' which are in the guess history, suggesting it could be closer to the hidden target. It is a common synonym for slow, winding movement."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"meander\", \"basis_words\": [\"amble\", \"drift\", \"ramble\"], \"reason\": \"Meander shares semantic similarity with 'amble' and 'drift,' which are in the guess history, suggesting it could be closer to the hidden target. It is a common synonym for slow, winding movement.\", \"predicted_bucket\": \"beyond\", \"predicted_closeness\": 0.2}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"amble\": 19913, \"dash\": 2435, \"drift\": 1818, \"gait\": 457, \"gallop\": 1248, \"go\": 462, \"hike\": 10012, \"lope\": 1361, \"lumber\": 16157, \"march\": 260, \"move\": 183, \"pace\": 37, \"ramble\": 4526, \"run\": 992, \"saunter\": 15401, \"sprint\": 3534, \"step\": 814, \"stride\": 237, \"stroll\": 4679, \"tread\": 4138, \"trot\": 1790, \"trudge\": 17881, \"walk\": 1043, \"wander\": 4542}\nInvalid or unavailable guesses to avoid: [\"tramp\"]\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 27,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T17:25:40",
+    "details": {
+      "word": "glide",
+      "rank": 1646,
+      "best_word": "pace",
+      "best_rank": 37,
+      "total_guesses": 26,
+      "self_report": {
+        "predicted_closeness": 0.6,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "pace",
+            "march",
+            "stride"
+          ],
+          "reason": "Glide is a smooth, continuous movement similar to 'pace' and 'stride', which have low ranks, suggesting it may be closer to the target."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"glide\", \"basis_words\": [\"pace\", \"march\", \"stride\"], \"reason\": \"Glide is a smooth, continuous movement similar to 'pace' and 'stride', which have low ranks, suggesting it may be closer to the target.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.6}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"amble\": 19913, \"dash\": 2435, \"drift\": 1818, \"gait\": 457, \"gallop\": 1248, \"go\": 462, \"hike\": 10012, \"lope\": 1361, \"lumber\": 16157, \"march\": 260, \"meander\": 1238, \"move\": 183, \"pace\": 37, \"ramble\": 4526, \"run\": 992, \"saunter\": 15401, \"sprint\": 3534, \"step\": 814, \"stride\": 237, \"stroll\": 4679, \"tread\": 4138, \"trot\": 1790, \"trudge\": 17881, \"walk\": 1043, \"wander\": 4542}\nInvalid or unavailable guesses to avoid: [\"tramp\"]\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 28,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T17:26:11",
+    "details": {
+      "word": "lunge",
+      "rank": 8797,
+      "best_word": "pace",
+      "best_rank": 37,
+      "total_guesses": 27,
+      "self_report": {
+        "predicted_closeness": 0.6,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "pace",
+            "march",
+            "stride"
+          ],
+          "reason": "Lunge is a movement verb similar to pace and march, which have low ranks, suggesting it may be closer to the target."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"lunge\", \"basis_words\": [\"pace\", \"march\", \"stride\"], \"reason\": \"Lunge is a movement verb similar to pace and march, which have low ranks, suggesting it may be closer to the target.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.6}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"amble\": 19913, \"dash\": 2435, \"drift\": 1818, \"gait\": 457, \"gallop\": 1248, \"glide\": 1646, \"go\": 462, \"hike\": 10012, \"lope\": 1361, \"lumber\": 16157, \"march\": 260, \"meander\": 1238, \"move\": 183, \"pace\": 37, \"ramble\": 4526, \"run\": 992, \"saunter\": 15401, \"sprint\": 3534, \"step\": 814, \"stride\": 237, \"stroll\": 4679, \"tread\": 4138, \"trot\": 1790, \"trudge\": 17881, \"walk\": 1043, \"wander\": 4542}\nInvalid or unavailable guesses to avoid: [\"tramp\"]\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 29,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T17:26:39",
+    "details": {
+      "word": "proceed",
+      "rank": 8103,
+      "best_word": "pace",
+      "best_rank": 37,
+      "total_guesses": 28,
+      "self_report": {
+        "predicted_closeness": 0.8,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "move",
+            "go"
+          ],
+          "reason": "The word 'proceed' is a common synonym of 'move' and 'go,' which have relatively low ranks (183 and 462), suggesting proximity to the hidden target. It is not in the invalid list or previously guessed words."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"proceed\", \"basis_words\": [\"move\", \"go\"], \"reason\": \"The word 'proceed' is a common synonym of 'move' and 'go,' which have relatively low ranks (183 and 462), suggesting proximity to the hidden target. It is not in the invalid list or previously guessed words.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.8}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"amble\": 19913, \"dash\": 2435, \"drift\": 1818, \"gait\": 457, \"gallop\": 1248, \"glide\": 1646, \"go\": 462, \"hike\": 10012, \"lope\": 1361, \"lumber\": 16157, \"lunge\": 8797, \"march\": 260, \"meander\": 1238, \"move\": 183, \"pace\": 37, \"ramble\": 4526, \"run\": 992, \"saunter\": 15401, \"sprint\": 3534, \"step\": 814, \"stride\": 237, \"stroll\": 4679, \"tread\": 4138, \"trot\": 1790, \"trudge\": 17881, \"walk\": 1043, \"wander\": 4542}\nInvalid or unavailable guesses to avoid: [\"tramp\"]\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 30,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T17:27:20",
+    "details": {
+      "word": "shift",
+      "rank": 428,
+      "best_word": "pace",
+      "best_rank": 37,
+      "total_guesses": 29,
+      "self_report": {
+        "predicted_closeness": 0.4,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "move",
+            "pace"
+          ],
+          "reason": "Shift is a synonym of move (rank 183) and pace (rank 37), suggesting it may be closer to the hidden target. It is a common movement-related verb not yet tried."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"shift\", \"basis_words\": [\"move\", \"pace\"], \"reason\": \"Shift is a synonym of move (rank 183) and pace (rank 37), suggesting it may be closer to the hidden target. It is a common movement-related verb not yet tried.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.4}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"amble\": 19913, \"dash\": 2435, \"drift\": 1818, \"gait\": 457, \"gallop\": 1248, \"glide\": 1646, \"go\": 462, \"hike\": 10012, \"lope\": 1361, \"lumber\": 16157, \"lunge\": 8797, \"march\": 260, \"meander\": 1238, \"move\": 183, \"pace\": 37, \"proceed\": 8103, \"ramble\": 4526, \"run\": 992, \"saunter\": 15401, \"sprint\": 3534, \"step\": 814, \"stride\": 237, \"stroll\": 4679, \"tread\": 4138, \"trot\": 1790, \"trudge\": 17881, \"walk\": 1043, \"wander\": 4542}\nInvalid or unavailable guesses to avoid: [\"tramp\"]\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 31,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T17:27:34",
+    "details": {
+      "word": "canter",
+      "rank": 2856,
+      "best_word": "pace",
+      "best_rank": 37,
+      "total_guesses": 30,
+      "self_report": {
+        "predicted_closeness": 0.3,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "gallop",
+            "lope",
+            "trot"
+          ],
+          "reason": "Canter is a type of gait similar to gallop and trot, which are already close to the target."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"canter\", \"basis_words\": [\"gallop\", \"lope\", \"trot\"], \"reason\": \"Canter is a type of gait similar to gallop and trot, which are already close to the target.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"amble\": 19913, \"dash\": 2435, \"drift\": 1818, \"gait\": 457, \"gallop\": 1248, \"glide\": 1646, \"go\": 462, \"hike\": 10012, \"lope\": 1361, \"lumber\": 16157, \"lunge\": 8797, \"march\": 260, \"meander\": 1238, \"move\": 183, \"pace\": 37, \"proceed\": 8103, \"ramble\": 4526, \"run\": 992, \"saunter\": 15401, \"shift\": 428, \"sprint\": 3534, \"step\": 814, \"stride\": 237, \"stroll\": 4679, \"tread\": 4138, \"trot\": 1790, \"trudge\": 17881, \"walk\": 1043, \"wander\": 4542}\nInvalid or unavailable guesses to avoid: [\"tramp\"]\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 32,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T17:27:51",
+    "details": {
+      "word": "traverse",
+      "rank": 11265,
+      "best_word": "pace",
+      "best_rank": 37,
+      "total_guesses": 31,
+      "self_report": {
+        "predicted_closeness": 0.5,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "pace",
+            "stride",
+            "move",
+            "go"
+          ],
+          "reason": "The word 'traverse' is a synonym for moving or walking, similar to other low-ranked guesses like 'pace', 'stride', and 'move', suggesting it might be closer to the hidden target."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"traverse\", \"basis_words\": [\"pace\", \"stride\", \"move\", \"go\"], \"reason\": \"The word 'traverse' is a synonym for moving or walking, similar to other low-ranked guesses like 'pace', 'stride', and 'move', suggesting it might be closer to the hidden target.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.5}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"amble\": 19913, \"canter\": 2856, \"dash\": 2435, \"drift\": 1818, \"gait\": 457, \"gallop\": 1248, \"glide\": 1646, \"go\": 462, \"hike\": 10012, \"lope\": 1361, \"lumber\": 16157, \"lunge\": 8797, \"march\": 260, \"meander\": 1238, \"move\": 183, \"pace\": 37, \"proceed\": 8103, \"ramble\": 4526, \"run\": 992, \"saunter\": 15401, \"shift\": 428, \"sprint\": 3534, \"step\": 814, \"stride\": 237, \"stroll\": 4679, \"tread\": 4138, \"trot\": 1790, \"trudge\": 17881, \"walk\": 1043, \"wander\": 4542}\nInvalid or unavailable guesses to avoid: [\"tramp\"]\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 33,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T17:28:39",
+    "details": {
+      "word": "roam",
+      "rank": 11406,
+      "best_word": "pace",
+      "best_rank": 37,
+      "total_guesses": 32,
+      "self_report": {
+        "predicted_closeness": 0.3,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "amble",
+            "meander",
+            "saunter",
+            "wander"
+          ],
+          "reason": "The target appears to be a movement-related verb. 'Roam' is a common synonym for slow, aimless movement, similar to 'amble' and 'wander', which are already in the guess history but have higher ranks, suggesting 'roam' could be closer to the hidden target."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"roam\", \"basis_words\": [\"amble\", \"meander\", \"saunter\", \"wander\"], \"reason\": \"The target appears to be a movement-related verb. 'Roam' is a common synonym for slow, aimless movement, similar to 'amble' and 'wander', which are already in the guess history but have higher ranks, suggesting 'roam' could be closer to the hidden target.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"amble\": 19913, \"canter\": 2856, \"dash\": 2435, \"drift\": 1818, \"gait\": 457, \"gallop\": 1248, \"glide\": 1646, \"go\": 462, \"hike\": 10012, \"lope\": 1361, \"lumber\": 16157, \"lunge\": 8797, \"march\": 260, \"meander\": 1238, \"move\": 183, \"pace\": 37, \"proceed\": 8103, \"ramble\": 4526, \"run\": 992, \"saunter\": 15401, \"shift\": 428, \"sprint\": 3534, \"step\": 814, \"stride\": 237, \"stroll\": 4679, \"traverse\": 11265, \"tread\": 4138, \"trot\": 1790, \"trudge\": 17881, \"walk\": 1043, \"wander\": 4542}\nInvalid or unavailable guesses to avoid: [\"tramp\"]\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 34,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T17:29:31",
+    "details": {
+      "word": "hurry",
+      "rank": 5466,
+      "best_word": "pace",
+      "best_rank": 37,
+      "total_guesses": 33,
+      "self_report": {
+        "predicted_closeness": 0.5,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "move",
+            "pace",
+            "stride"
+          ],
+          "reason": "The lowest ranks are associated with movement verbs like 'move', 'pace', and 'stride'; 'hurry' is a common synonym for moving quickly and has not been tried yet."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"hurry\", \"basis_words\": [\"move\", \"pace\", \"stride\"], \"reason\": \"The lowest ranks are associated with movement verbs like 'move', 'pace', and 'stride'; 'hurry' is a common synonym for moving quickly and has not been tried yet.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.5}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"amble\": 19913, \"canter\": 2856, \"dash\": 2435, \"drift\": 1818, \"gait\": 457, \"gallop\": 1248, \"glide\": 1646, \"go\": 462, \"hike\": 10012, \"lope\": 1361, \"lumber\": 16157, \"lunge\": 8797, \"march\": 260, \"meander\": 1238, \"move\": 183, \"pace\": 37, \"proceed\": 8103, \"ramble\": 4526, \"roam\": 11406, \"run\": 992, \"saunter\": 15401, \"shift\": 428, \"sprint\": 3534, \"step\": 814, \"stride\": 237, \"stroll\": 4679, \"traverse\": 11265, \"tread\": 4138, \"trot\": 1790, \"trudge\": 17881, \"walk\": 1043, \"wander\": 4542}\nInvalid or unavailable guesses to avoid: [\"tramp\"]\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 35,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T17:29:57",
+    "details": {
+      "word": "scurry",
+      "rank": 37691,
+      "best_word": "pace",
+      "best_rank": 37,
+      "total_guesses": 34,
+      "self_report": {
+        "predicted_closeness": 0.3,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "dash",
+            "sprint",
+            "hurry",
+            "amble",
+            "trot",
+            "lope",
+            "stride",
+            "pace"
+          ],
+          "reason": "Scurry is a less common synonym for quick, jerky movement, which may align with the target's context closer than existing guesses like 'dash' or 'hurry'."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"scurry\", \"basis_words\": [\"dash\", \"sprint\", \"hurry\", \"amble\", \"trot\", \"lope\", \"stride\", \"pace\"], \"reason\": \"Scurry is a less common synonym for quick, jerky movement, which may align with the target's context closer than existing guesses like 'dash' or 'hurry'.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"amble\": 19913, \"canter\": 2856, \"dash\": 2435, \"drift\": 1818, \"gait\": 457, \"gallop\": 1248, \"glide\": 1646, \"go\": 462, \"hike\": 10012, \"hurry\": 5466, \"lope\": 1361, \"lumber\": 16157, \"lunge\": 8797, \"march\": 260, \"meander\": 1238, \"move\": 183, \"pace\": 37, \"proceed\": 8103, \"ramble\": 4526, \"roam\": 11406, \"run\": 992, \"saunter\": 15401, \"shift\": 428, \"sprint\": 3534, \"step\": 814, \"stride\": 237, \"stroll\": 4679, \"traverse\": 11265, \"tread\": 4138, \"trot\": 1790, \"trudge\": 17881, \"walk\": 1043, \"wander\": 4542}\nInvalid or unavailable guesses to avoid: [\"tramp\"]\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 36,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T17:30:05",
+    "details": {
+      "word": "advance",
+      "rank": 2699,
+      "best_word": "pace",
+      "best_rank": 37,
+      "total_guesses": 35,
+      "self_report": {
+        "predicted_closeness": 0.3,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "move",
+            "pace",
+            "go",
+            "march"
+          ],
+          "reason": "Advance is a synonym for moving forward, aligning with low-ranked words like 'move' (183) and 'march' (260) that imply progression. It's not in the invalid list and hasn't been guessed before."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"advance\", \"basis_words\": [\"move\", \"pace\", \"go\", \"march\"], \"reason\": \"Advance is a synonym for moving forward, aligning with low-ranked words like 'move' (183) and 'march' (260) that imply progression. It's not in the invalid list and hasn't been guessed before.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"amble\": 19913, \"canter\": 2856, \"dash\": 2435, \"drift\": 1818, \"gait\": 457, \"gallop\": 1248, \"glide\": 1646, \"go\": 462, \"hike\": 10012, \"hurry\": 5466, \"lope\": 1361, \"lumber\": 16157, \"lunge\": 8797, \"march\": 260, \"meander\": 1238, \"move\": 183, \"pace\": 37, \"proceed\": 8103, \"ramble\": 4526, \"roam\": 11406, \"run\": 992, \"saunter\": 15401, \"scurry\": 37691, \"shift\": 428, \"sprint\": 3534, \"step\": 814, \"stride\": 237, \"stroll\": 4679, \"traverse\": 11265, \"tread\": 4138, \"trot\": 1790, \"trudge\": 17881, \"walk\": 1043, \"wander\": 4542}\nInvalid or unavailable guesses to avoid: [\"tramp\"]\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 37,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T17:30:28",
+    "details": {
+      "word": "jog",
+      "rank": 1335,
+      "best_word": "pace",
+      "best_rank": 37,
+      "total_guesses": 36,
+      "self_report": {
+        "predicted_closeness": 0.5,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "amble",
+            "drift",
+            "glide",
+            "hike",
+            "lope",
+            "march",
+            "pace",
+            "ramble",
+            "roam",
+            "stride",
+            "stroll",
+            "tread",
+            "trot",
+            "walk",
+            "wander"
+          ],
+          "reason": "Jog is a common movement-related verb not previously guessed, and similar to low-ranked words like 'pace' and 'stride'."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"jog\", \"basis_words\": [\"amble\", \"drift\", \"glide\", \"hike\", \"lope\", \"march\", \"pace\", \"ramble\", \"roam\", \"stride\", \"stroll\", \"tread\", \"trot\", \"walk\", \"wander\"], \"reason\": \"Jog is a common movement-related verb not previously guessed, and similar to low-ranked words like 'pace' and 'stride'.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.5}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"advance\": 2699, \"amble\": 19913, \"canter\": 2856, \"dash\": 2435, \"drift\": 1818, \"gait\": 457, \"gallop\": 1248, \"glide\": 1646, \"go\": 462, \"hike\": 10012, \"hurry\": 5466, \"lope\": 1361, \"lumber\": 16157, \"lunge\": 8797, \"march\": 260, \"meander\": 1238, \"move\": 183, \"pace\": 37, \"proceed\": 8103, \"ramble\": 4526, \"roam\": 11406, \"run\": 992, \"saunter\": 15401, \"scurry\": 37691, \"shift\": 428, \"sprint\": 3534, \"step\": 814, \"stride\": 237, \"stroll\": 4679, \"traverse\": 11265, \"tread\": 4138, \"trot\": 1790, \"trudge\": 17881, \"walk\": 1043, \"wander\": 4542}\nInvalid or unavailable guesses to avoid: [\"tramp\"]\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 38,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T17:31:43",
+    "details": {
+      "word": "bolt",
+      "rank": 7559,
+      "best_word": "pace",
+      "best_rank": 37,
+      "total_guesses": 37,
+      "self_report": {
+        "predicted_closeness": 0.6,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "pace",
+            "move",
+            "march",
+            "step"
+          ],
+          "reason": "The hidden target likely relates to movement verbs with lower ranks; 'bolt' is a common synonym for quick motion not yet tried."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"bolt\", \"basis_words\": [\"pace\", \"move\", \"march\", \"step\"], \"reason\": \"The hidden target likely relates to movement verbs with lower ranks; 'bolt' is a common synonym for quick motion not yet tried.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.6}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"advance\": 2699, \"amble\": 19913, \"canter\": 2856, \"dash\": 2435, \"drift\": 1818, \"gait\": 457, \"gallop\": 1248, \"glide\": 1646, \"go\": 462, \"hike\": 10012, \"hurry\": 5466, \"jog\": 1335, \"lope\": 1361, \"lumber\": 16157, \"lunge\": 8797, \"march\": 260, \"meander\": 1238, \"move\": 183, \"pace\": 37, \"proceed\": 8103, \"ramble\": 4526, \"roam\": 11406, \"run\": 992, \"saunter\": 15401, \"scurry\": 37691, \"shift\": 428, \"sprint\": 3534, \"step\": 814, \"stride\": 237, \"stroll\": 4679, \"traverse\": 11265, \"tread\": 4138, \"trot\": 1790, \"trudge\": 17881, \"walk\": 1043, \"wander\": 4542}\nInvalid or unavailable guesses to avoid: [\"tramp\"]\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 39,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T17:32:04",
+    "details": {
+      "word": "dart",
+      "rank": 9335,
+      "best_word": "pace",
+      "best_rank": 37,
+      "total_guesses": 38,
+      "self_report": {
+        "predicted_closeness": 0.3,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "dash",
+            "bolt",
+            "sprint",
+            "hurry",
+            "go",
+            "move",
+            "pace"
+          ],
+          "reason": "Dart is a synonym for quick movement, aligning with low-ranked words like 'dash' and 'sprint' that suggest rapid motion. It's a common verb not previously used."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"dart\", \"basis_words\": [\"dash\", \"bolt\", \"sprint\", \"hurry\", \"go\", \"move\", \"pace\"], \"reason\": \"Dart is a synonym for quick movement, aligning with low-ranked words like 'dash' and 'sprint' that suggest rapid motion. It's a common verb not previously used.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"advance\": 2699, \"amble\": 19913, \"bolt\": 7559, \"canter\": 2856, \"dash\": 2435, \"drift\": 1818, \"gait\": 457, \"gallop\": 1248, \"glide\": 1646, \"go\": 462, \"hike\": 10012, \"hurry\": 5466, \"jog\": 1335, \"lope\": 1361, \"lumber\": 16157, \"lunge\": 8797, \"march\": 260, \"meander\": 1238, \"move\": 183, \"pace\": 37, \"proceed\": 8103, \"ramble\": 4526, \"roam\": 11406, \"run\": 992, \"saunter\": 15401, \"scurry\": 37691, \"shift\": 428, \"sprint\": 3534, \"step\": 814, \"stride\": 237, \"stroll\": 4679, \"traverse\": 11265, \"tread\": 4138, \"trot\": 1790, \"trudge\": 17881, \"walk\": 1043, \"wander\": 4542}\nInvalid or unavailable guesses to avoid: [\"tramp\"]\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 40,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T17:34:04",
+    "details": {
+      "word": "sashay",
+      "rank": 22051,
+      "best_word": "pace",
+      "best_rank": 37,
+      "total_guesses": 39,
+      "self_report": {
+        "predicted_closeness": 0.6,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "amble",
+            "pace",
+            "stride"
+          ],
+          "reason": "Sashay is a movement-related verb not previously guessed, aligning with the pattern of movement verbs in the history that have lower ranks. It is a distinct but related term to 'amble' and 'stride', which have varying proximity to the target."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"sashay\", \"basis_words\": [\"amble\", \"pace\", \"stride\"], \"reason\": \"Sashay is a movement-related verb not previously guessed, aligning with the pattern of movement verbs in the history that have lower ranks. It is a distinct but related term to 'amble' and 'stride', which have varying proximity to the target.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.6}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"advance\": 2699, \"amble\": 19913, \"bolt\": 7559, \"canter\": 2856, \"dart\": 9335, \"dash\": 2435, \"drift\": 1818, \"gait\": 457, \"gallop\": 1248, \"glide\": 1646, \"go\": 462, \"hike\": 10012, \"hurry\": 5466, \"jog\": 1335, \"lope\": 1361, \"lumber\": 16157, \"lunge\": 8797, \"march\": 260, \"meander\": 1238, \"move\": 183, \"pace\": 37, \"proceed\": 8103, \"ramble\": 4526, \"roam\": 11406, \"run\": 992, \"saunter\": 15401, \"scurry\": 37691, \"shift\": 428, \"sprint\": 3534, \"step\": 814, \"stride\": 237, \"stroll\": 4679, \"traverse\": 11265, \"tread\": 4138, \"trot\": 1790, \"trudge\": 17881, \"walk\": 1043, \"wander\": 4542}\nInvalid or unavailable guesses to avoid: [\"tramp\"]\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 41,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T17:35:32",
+    "details": {
+      "word": "shuffle",
+      "rank": 833,
+      "best_word": "pace",
+      "best_rank": 37,
+      "total_guesses": 40,
+      "self_report": {
+        "predicted_closeness": 0.3,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "pace",
+            "move",
+            "stride",
+            "go",
+            "gait"
+          ],
+          "reason": "The target seems to be a synonym for movement-related verbs with low ranks such as 'pace', 'move', and 'gait'. 'shuffle' is a common movement verb not previously tried."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"shuffle\", \"basis_words\": [\"pace\", \"move\", \"stride\", \"go\", \"gait\"], \"reason\": \"The target seems to be a synonym for movement-related verbs with low ranks such as 'pace', 'move', and 'gait'. 'shuffle' is a common movement verb not previously tried.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"advance\": 2699, \"amble\": 19913, \"bolt\": 7559, \"canter\": 2856, \"dart\": 9335, \"dash\": 2435, \"drift\": 1818, \"gait\": 457, \"gallop\": 1248, \"glide\": 1646, \"go\": 462, \"hike\": 10012, \"hurry\": 5466, \"jog\": 1335, \"lope\": 1361, \"lumber\": 16157, \"lunge\": 8797, \"march\": 260, \"meander\": 1238, \"move\": 183, \"pace\": 37, \"proceed\": 8103, \"ramble\": 4526, \"roam\": 11406, \"run\": 992, \"sashay\": 22051, \"saunter\": 15401, \"scurry\": 37691, \"shift\": 428, \"sprint\": 3534, \"step\": 814, \"stride\": 237, \"stroll\": 4679, \"traverse\": 11265, \"tread\": 4138, \"trot\": 1790, \"trudge\": 17881, \"walk\": 1043, \"wander\": 4542}\nInvalid or unavailable guesses to avoid: [\"tramp\"]\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 42,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T17:36:27",
+    "details": {
+      "word": "hustle",
+      "rank": 639,
+      "best_word": "pace",
+      "best_rank": 37,
+      "total_guesses": 41,
+      "self_report": {
+        "predicted_closeness": 0.4,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "pace",
+            "move",
+            "march",
+            "stride",
+            "step",
+            "go",
+            "shift",
+            "shuffle",
+            "tread",
+            "gait"
+          ],
+          "reason": "The target appears to be a movement-related verb, with low-ranked guesses like 'pace', 'move', and 'march' suggesting synonyms for locomotion. 'Hustle' is a common synonym for quick movement and has not been guessed yet."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"hustle\", \"basis_words\": [\"pace\", \"move\", \"march\", \"stride\", \"step\", \"go\", \"shift\", \"shuffle\", \"tread\", \"gait\"], \"reason\": \"The target appears to be a movement-related verb, with low-ranked guesses like 'pace', 'move', and 'march' suggesting synonyms for locomotion. 'Hustle' is a common synonym for quick movement and has not been guessed yet.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"advance\": 2699, \"amble\": 19913, \"bolt\": 7559, \"canter\": 2856, \"dart\": 9335, \"dash\": 2435, \"drift\": 1818, \"gait\": 457, \"gallop\": 1248, \"glide\": 1646, \"go\": 462, \"hike\": 10012, \"hurry\": 5466, \"jog\": 1335, \"lope\": 1361, \"lumber\": 16157, \"lunge\": 8797, \"march\": 260, \"meander\": 1238, \"move\": 183, \"pace\": 37, \"proceed\": 8103, \"ramble\": 4526, \"roam\": 11406, \"run\": 992, \"sashay\": 22051, \"saunter\": 15401, \"scurry\": 37691, \"shift\": 428, \"shuffle\": 833, \"sprint\": 3534, \"step\": 814, \"stride\": 237, \"stroll\": 4679, \"traverse\": 11265, \"tread\": 4138, \"trot\": 1790, \"trudge\": 17881, \"walk\": 1043, \"wander\": 4542}\nInvalid or unavailable guesses to avoid: [\"tramp\"]\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 43,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T17:38:49",
+    "details": {
+      "word": "travel",
+      "rank": 3421,
+      "best_word": "pace",
+      "best_rank": 37,
+      "total_guesses": 42,
+      "self_report": {
+        "predicted_closeness": 0.4,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "move",
+            "pace",
+            "drift",
+            "stride"
+          ],
+          "reason": "The hidden target appears to be a movement-related verb, as evidenced by low ranks for words like 'move', 'pace', and 'stride'. 'Travel' is a common synonym for movement not yet guessed."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"travel\", \"basis_words\": [\"move\", \"pace\", \"drift\", \"stride\"], \"reason\": \"The hidden target appears to be a movement-related verb, as evidenced by low ranks for words like 'move', 'pace', and 'stride'. 'Travel' is a common synonym for movement not yet guessed.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"advance\": 2699, \"amble\": 19913, \"bolt\": 7559, \"canter\": 2856, \"dart\": 9335, \"dash\": 2435, \"drift\": 1818, \"gait\": 457, \"gallop\": 1248, \"glide\": 1646, \"go\": 462, \"hike\": 10012, \"hurry\": 5466, \"hustle\": 639, \"jog\": 1335, \"lope\": 1361, \"lumber\": 16157, \"lunge\": 8797, \"march\": 260, \"meander\": 1238, \"move\": 183, \"pace\": 37, \"proceed\": 8103, \"ramble\": 4526, \"roam\": 11406, \"run\": 992, \"sashay\": 22051, \"saunter\": 15401, \"scurry\": 37691, \"shift\": 428, \"shuffle\": 833, \"sprint\": 3534, \"step\": 814, \"stride\": 237, \"stroll\": 4679, \"traverse\": 11265, \"tread\": 4138, \"trot\": 1790, \"trudge\": 17881, \"walk\": 1043, \"wander\": 4542}\nInvalid or unavailable guesses to avoid: [\"tramp\"]\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 44,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T17:40:50",
+    "details": {
+      "word": "speed",
+      "rank": 314,
+      "best_word": "pace",
+      "best_rank": 37,
+      "total_guesses": 43,
+      "self_report": {
+        "predicted_closeness": 0.3,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "pace",
+            "move"
+          ],
+          "reason": "Speed is a synonym of 'pace' (rank 37) and 'move' (rank 183), both of which are close to the target. It is a common, single-word verb related to motion."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"speed\", \"basis_words\": [\"pace\", \"move\"], \"reason\": \"Speed is a synonym of 'pace' (rank 37) and 'move' (rank 183), both of which are close to the target. It is a common, single-word verb related to motion.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"advance\": 2699, \"amble\": 19913, \"bolt\": 7559, \"canter\": 2856, \"dart\": 9335, \"dash\": 2435, \"drift\": 1818, \"gait\": 457, \"gallop\": 1248, \"glide\": 1646, \"go\": 462, \"hike\": 10012, \"hurry\": 5466, \"hustle\": 639, \"jog\": 1335, \"lope\": 1361, \"lumber\": 16157, \"lunge\": 8797, \"march\": 260, \"meander\": 1238, \"move\": 183, \"pace\": 37, \"proceed\": 8103, \"ramble\": 4526, \"roam\": 11406, \"run\": 992, \"sashay\": 22051, \"saunter\": 15401, \"scurry\": 37691, \"shift\": 428, \"shuffle\": 833, \"sprint\": 3534, \"step\": 814, \"stride\": 237, \"stroll\": 4679, \"travel\": 3421, \"traverse\": 11265, \"tread\": 4138, \"trot\": 1790, \"trudge\": 17881, \"walk\": 1043, \"wander\": 4542}\nInvalid or unavailable guesses to avoid: [\"tramp\"]\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 45,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T17:41:39",
+    "details": {
+      "word": "motion",
+      "rank": 281,
+      "best_word": "pace",
+      "best_rank": 37,
+      "total_guesses": 44,
+      "self_report": {
+        "predicted_closeness": 0.6,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "pace",
+            "move",
+            "stride",
+            "march"
+          ],
+          "reason": "Motion is a common synonym for movement and not yet tried, aligning with the context of low-ranked movement-related words like 'pace' and 'march'."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"motion\", \"basis_words\": [\"pace\", \"move\", \"stride\", \"march\"], \"reason\": \"Motion is a common synonym for movement and not yet tried, aligning with the context of low-ranked movement-related words like 'pace' and 'march'.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.6}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"advance\": 2699, \"amble\": 19913, \"bolt\": 7559, \"canter\": 2856, \"dart\": 9335, \"dash\": 2435, \"drift\": 1818, \"gait\": 457, \"gallop\": 1248, \"glide\": 1646, \"go\": 462, \"hike\": 10012, \"hurry\": 5466, \"hustle\": 639, \"jog\": 1335, \"lope\": 1361, \"lumber\": 16157, \"lunge\": 8797, \"march\": 260, \"meander\": 1238, \"move\": 183, \"pace\": 37, \"proceed\": 8103, \"ramble\": 4526, \"roam\": 11406, \"run\": 992, \"sashay\": 22051, \"saunter\": 15401, \"scurry\": 37691, \"shift\": 428, \"shuffle\": 833, \"speed\": 314, \"sprint\": 3534, \"step\": 814, \"stride\": 237, \"stroll\": 4679, \"travel\": 3421, \"traverse\": 11265, \"tread\": 4138, \"trot\": 1790, \"trudge\": 17881, \"walk\": 1043, \"wander\": 4542}\nInvalid or unavailable guesses to avoid: [\"tramp\"]\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 46,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T17:42:21",
+    "details": {
+      "word": "mosey",
+      "rank": 34674,
+      "best_word": "pace",
+      "best_rank": 37,
+      "total_guesses": 45,
+      "self_report": {
+        "predicted_closeness": 0.3,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "pace",
+            "move",
+            "stride",
+            "amble"
+          ],
+          "reason": "Mosey is a synonym of movement-related words like 'amble' and 'stroll', which have shown proximity to the target in previous guesses. It is a common word not yet tried in the context."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"mosey\", \"basis_words\": [\"pace\", \"move\", \"stride\", \"amble\"], \"reason\": \"Mosey is a synonym of movement-related words like 'amble' and 'stroll', which have shown proximity to the target in previous guesses. It is a common word not yet tried in the context.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"advance\": 2699, \"amble\": 19913, \"bolt\": 7559, \"canter\": 2856, \"dart\": 9335, \"dash\": 2435, \"drift\": 1818, \"gait\": 457, \"gallop\": 1248, \"glide\": 1646, \"go\": 462, \"hike\": 10012, \"hurry\": 5466, \"hustle\": 639, \"jog\": 1335, \"lope\": 1361, \"lumber\": 16157, \"lunge\": 8797, \"march\": 260, \"meander\": 1238, \"motion\": 281, \"move\": 183, \"pace\": 37, \"proceed\": 8103, \"ramble\": 4526, \"roam\": 11406, \"run\": 992, \"sashay\": 22051, \"saunter\": 15401, \"scurry\": 37691, \"shift\": 428, \"shuffle\": 833, \"speed\": 314, \"sprint\": 3534, \"step\": 814, \"stride\": 237, \"stroll\": 4679, \"travel\": 3421, \"traverse\": 11265, \"tread\": 4138, \"trot\": 1790, \"trudge\": 17881, \"walk\": 1043, \"wander\": 4542}\nInvalid or unavailable guesses to avoid: [\"tramp\"]\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 47,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T17:43:09",
+    "details": {
+      "word": "rush",
+      "rank": 1726,
+      "best_word": "pace",
+      "best_rank": 37,
+      "total_guesses": 46,
+      "self_report": {
+        "predicted_closeness": 0.6,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "hurry",
+            "hustle",
+            "sprint",
+            "dash",
+            "bolt"
+          ],
+          "reason": "Rush is a synonym of hurry and sprint, which are already in the guess history with moderate ranks, suggesting it may be closer to the target. It is a common verb related to quick movement, which aligns with the context."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"rush\", \"basis_words\": [\"hurry\", \"hustle\", \"sprint\", \"dash\", \"bolt\"], \"reason\": \"Rush is a synonym of hurry and sprint, which are already in the guess history with moderate ranks, suggesting it may be closer to the target. It is a common verb related to quick movement, which aligns with the context.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.6}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"advance\": 2699, \"amble\": 19913, \"bolt\": 7559, \"canter\": 2856, \"dart\": 9335, \"dash\": 2435, \"drift\": 1818, \"gait\": 457, \"gallop\": 1248, \"glide\": 1646, \"go\": 462, \"hike\": 10012, \"hurry\": 5466, \"hustle\": 639, \"jog\": 1335, \"lope\": 1361, \"lumber\": 16157, \"lunge\": 8797, \"march\": 260, \"meander\": 1238, \"mosey\": 34674, \"motion\": 281, \"move\": 183, \"pace\": 37, \"proceed\": 8103, \"ramble\": 4526, \"roam\": 11406, \"run\": 992, \"sashay\": 22051, \"saunter\": 15401, \"scurry\": 37691, \"shift\": 428, \"shuffle\": 833, \"speed\": 314, \"sprint\": 3534, \"step\": 814, \"stride\": 237, \"stroll\": 4679, \"travel\": 3421, \"traverse\": 11265, \"tread\": 4138, \"trot\": 1790, \"trudge\": 17881, \"walk\": 1043, \"wander\": 4542}\nInvalid or unavailable guesses to avoid: [\"tramp\"]\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 48,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T17:43:34",
+    "details": {
+      "word": "slide",
+      "rank": 686,
+      "best_word": "pace",
+      "best_rank": 37,
+      "total_guesses": 47,
+      "self_report": {
+        "predicted_closeness": 0.3,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "drift",
+            "glide",
+            "meander",
+            "stroll"
+          ],
+          "reason": "Slide is a synonym for smooth, effortless movement, similar to drift, glide, and meander, which have lower ranks in the guess history."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"slide\", \"basis_words\": [\"drift\", \"glide\", \"meander\", \"stroll\"], \"reason\": \"Slide is a synonym for smooth, effortless movement, similar to drift, glide, and meander, which have lower ranks in the guess history.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"advance\": 2699, \"amble\": 19913, \"bolt\": 7559, \"canter\": 2856, \"dart\": 9335, \"dash\": 2435, \"drift\": 1818, \"gait\": 457, \"gallop\": 1248, \"glide\": 1646, \"go\": 462, \"hike\": 10012, \"hurry\": 5466, \"hustle\": 639, \"jog\": 1335, \"lope\": 1361, \"lumber\": 16157, \"lunge\": 8797, \"march\": 260, \"meander\": 1238, \"mosey\": 34674, \"motion\": 281, \"move\": 183, \"pace\": 37, \"proceed\": 8103, \"ramble\": 4526, \"roam\": 11406, \"run\": 992, \"rush\": 1726, \"sashay\": 22051, \"saunter\": 15401, \"scurry\": 37691, \"shift\": 428, \"shuffle\": 833, \"speed\": 314, \"sprint\": 3534, \"step\": 814, \"stride\": 237, \"stroll\": 4679, \"travel\": 3421, \"traverse\": 11265, \"tread\": 4138, \"trot\": 1790, \"trudge\": 17881, \"walk\": 1043, \"wander\": 4542}\nInvalid or unavailable guesses to avoid: [\"tramp\"]\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 49,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T18:00:23",
+    "details": {
+      "word": "hasten",
+      "rank": 23347,
+      "best_word": "pace",
+      "best_rank": 37,
+      "total_guesses": 48,
+      "self_report": {
+        "predicted_closeness": 0.7,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "pace",
+            "move",
+            "march",
+            "motion",
+            "stride"
+          ],
+          "reason": "The target appears to be a synonym for movement or speed, as evidenced by low ranks for words like 'pace', 'move', and 'stride'. 'Hasten' is a valid synonym not yet guessed and may be closer to the target."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"hasten\", \"basis_words\": [\"pace\", \"move\", \"march\", \"motion\", \"stride\"], \"reason\": \"The target appears to be a synonym for movement or speed, as evidenced by low ranks for words like 'pace', 'move', and 'stride'. 'Hasten' is a valid synonym not yet guessed and may be closer to the target.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.7}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"advance\": 2699, \"amble\": 19913, \"bolt\": 7559, \"canter\": 2856, \"dart\": 9335, \"dash\": 2435, \"drift\": 1818, \"gait\": 457, \"gallop\": 1248, \"glide\": 1646, \"go\": 462, \"hike\": 10012, \"hurry\": 5466, \"hustle\": 639, \"jog\": 1335, \"lope\": 1361, \"lumber\": 16157, \"lunge\": 8797, \"march\": 260, \"meander\": 1238, \"mosey\": 34674, \"motion\": 281, \"move\": 183, \"pace\": 37, \"proceed\": 8103, \"ramble\": 4526, \"roam\": 11406, \"run\": 992, \"rush\": 1726, \"sashay\": 22051, \"saunter\": 15401, \"scurry\": 37691, \"shift\": 428, \"shuffle\": 833, \"slide\": 686, \"speed\": 314, \"sprint\": 3534, \"step\": 814, \"stride\": 237, \"stroll\": 4679, \"travel\": 3421, \"traverse\": 11265, \"tread\": 4138, \"trot\": 1790, \"trudge\": 17881, \"walk\": 1043, \"wander\": 4542}\nInvalid or unavailable guesses to avoid: [\"tramp\"]\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 50,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T18:00:55",
+    "details": {
+      "word": "skip",
+      "rank": 1611,
+      "best_word": "pace",
+      "best_rank": 37,
+      "total_guesses": 49,
+      "self_report": {
+        "predicted_closeness": 0.3,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "amble",
+            "canter",
+            "dash",
+            "lope",
+            "sprint",
+            "stride"
+          ],
+          "reason": "Skip is a movement verb not in the existing guesses, and related to other movement-related words like amble, canter, and stride. It may be closer to the hidden target than many tried words."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"skip\", \"basis_words\": [\"amble\", \"canter\", \"dash\", \"lope\", \"sprint\", \"stride\"], \"reason\": \"Skip is a movement verb not in the existing guesses, and related to other movement-related words like amble, canter, and stride. It may be closer to the hidden target than many tried words.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"advance\": 2699, \"amble\": 19913, \"bolt\": 7559, \"canter\": 2856, \"dart\": 9335, \"dash\": 2435, \"drift\": 1818, \"gait\": 457, \"gallop\": 1248, \"glide\": 1646, \"go\": 462, \"hasten\": 23347, \"hike\": 10012, \"hurry\": 5466, \"hustle\": 639, \"jog\": 1335, \"lope\": 1361, \"lumber\": 16157, \"lunge\": 8797, \"march\": 260, \"meander\": 1238, \"mosey\": 34674, \"motion\": 281, \"move\": 183, \"pace\": 37, \"proceed\": 8103, \"ramble\": 4526, \"roam\": 11406, \"run\": 992, \"rush\": 1726, \"sashay\": 22051, \"saunter\": 15401, \"scurry\": 37691, \"shift\": 428, \"shuffle\": 833, \"slide\": 686, \"speed\": 314, \"sprint\": 3534, \"step\": 814, \"stride\": 237, \"stroll\": 4679, \"travel\": 3421, \"traverse\": 11265, \"tread\": 4138, \"trot\": 1790, \"trudge\": 17881, \"walk\": 1043, \"wander\": 4542}\nInvalid or unavailable guesses to avoid: [\"tramp\"]\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 51,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T18:01:34",
+    "details": {
+      "word": "dawdle",
+      "rank": 18319,
+      "best_word": "pace",
+      "best_rank": 37,
+      "total_guesses": 50,
+      "self_report": {
+        "predicted_closeness": 0.3,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "amble",
+            "saunter",
+            "stroll"
+          ],
+          "reason": "Dawdle is a synonym for slow movement, aligning with other low-ranked words like 'amble' and 'stroll' that imply leisurely motion."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"dawdle\", \"basis_words\": [\"amble\", \"saunter\", \"stroll\"], \"reason\": \"Dawdle is a synonym for slow movement, aligning with other low-ranked words like 'amble' and 'stroll' that imply leisurely motion.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"advance\": 2699, \"amble\": 19913, \"bolt\": 7559, \"canter\": 2856, \"dart\": 9335, \"dash\": 2435, \"drift\": 1818, \"gait\": 457, \"gallop\": 1248, \"glide\": 1646, \"go\": 462, \"hasten\": 23347, \"hike\": 10012, \"hurry\": 5466, \"hustle\": 639, \"jog\": 1335, \"lope\": 1361, \"lumber\": 16157, \"lunge\": 8797, \"march\": 260, \"meander\": 1238, \"mosey\": 34674, \"motion\": 281, \"move\": 183, \"pace\": 37, \"proceed\": 8103, \"ramble\": 4526, \"roam\": 11406, \"run\": 992, \"rush\": 1726, \"sashay\": 22051, \"saunter\": 15401, \"scurry\": 37691, \"shift\": 428, \"shuffle\": 833, \"skip\": 1611, \"slide\": 686, \"speed\": 314, \"sprint\": 3534, \"step\": 814, \"stride\": 237, \"stroll\": 4679, \"travel\": 3421, \"traverse\": 11265, \"tread\": 4138, \"trot\": 1790, \"trudge\": 17881, \"walk\": 1043, \"wander\": 4542}\nInvalid or unavailable guesses to avoid: [\"tramp\"]\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 52,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T18:02:31",
+    "details": {
+      "word": "haste",
+      "rank": 8605,
+      "best_word": "pace",
+      "best_rank": 37,
+      "total_guesses": 51,
+      "self_report": {
+        "predicted_closeness": 0.8,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "pace",
+            "hurry"
+          ],
+          "reason": "Haste is a synonym of pace (rank 37) and hurry (rank 5466), suggesting it may be closer to the target."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"haste\", \"basis_words\": [\"pace\", \"hurry\"], \"reason\": \"Haste is a synonym of pace (rank 37) and hurry (rank 5466), suggesting it may be closer to the target.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.8}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"advance\": 2699, \"amble\": 19913, \"bolt\": 7559, \"canter\": 2856, \"dart\": 9335, \"dash\": 2435, \"dawdle\": 18319, \"drift\": 1818, \"gait\": 457, \"gallop\": 1248, \"glide\": 1646, \"go\": 462, \"hasten\": 23347, \"hike\": 10012, \"hurry\": 5466, \"hustle\": 639, \"jog\": 1335, \"lope\": 1361, \"lumber\": 16157, \"lunge\": 8797, \"march\": 260, \"meander\": 1238, \"mosey\": 34674, \"motion\": 281, \"move\": 183, \"pace\": 37, \"proceed\": 8103, \"ramble\": 4526, \"roam\": 11406, \"run\": 992, \"rush\": 1726, \"sashay\": 22051, \"saunter\": 15401, \"scurry\": 37691, \"shift\": 428, \"shuffle\": 833, \"skip\": 1611, \"slide\": 686, \"speed\": 314, \"sprint\": 3534, \"step\": 814, \"stride\": 237, \"stroll\": 4679, \"travel\": 3421, \"traverse\": 11265, \"tread\": 4138, \"trot\": 1790, \"trudge\": 17881, \"walk\": 1043, \"wander\": 4542}\nInvalid or unavailable guesses to avoid: [\"tramp\"]\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 53,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T18:03:30",
+    "details": {
+      "word": "coast",
+      "rank": 3472,
+      "best_word": "pace",
+      "best_rank": 37,
+      "total_guesses": 52,
+      "self_report": {
+        "predicted_closeness": 0.6,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "drift",
+            "glide",
+            "slide"
+          ],
+          "reason": "Coast is a movement-related verb similar to drift, glide, and slide, which have moderate to low ranks, suggesting it may be closer to the target. It is not in the existing guess list."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"coast\", \"basis_words\": [\"drift\", \"glide\", \"slide\"], \"reason\": \"Coast is a movement-related verb similar to drift, glide, and slide, which have moderate to low ranks, suggesting it may be closer to the target. It is not in the existing guess list.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.6}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"advance\": 2699, \"amble\": 19913, \"bolt\": 7559, \"canter\": 2856, \"dart\": 9335, \"dash\": 2435, \"dawdle\": 18319, \"drift\": 1818, \"gait\": 457, \"gallop\": 1248, \"glide\": 1646, \"go\": 462, \"haste\": 8605, \"hasten\": 23347, \"hike\": 10012, \"hurry\": 5466, \"hustle\": 639, \"jog\": 1335, \"lope\": 1361, \"lumber\": 16157, \"lunge\": 8797, \"march\": 260, \"meander\": 1238, \"mosey\": 34674, \"motion\": 281, \"move\": 183, \"pace\": 37, \"proceed\": 8103, \"ramble\": 4526, \"roam\": 11406, \"run\": 992, \"rush\": 1726, \"sashay\": 22051, \"saunter\": 15401, \"scurry\": 37691, \"shift\": 428, \"shuffle\": 833, \"skip\": 1611, \"slide\": 686, \"speed\": 314, \"sprint\": 3534, \"step\": 814, \"stride\": 237, \"stroll\": 4679, \"travel\": 3421, \"traverse\": 11265, \"tread\": 4138, \"trot\": 1790, \"trudge\": 17881, \"walk\": 1043, \"wander\": 4542}\nInvalid or unavailable guesses to avoid: [\"tramp\"]\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 54,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T18:04:40",
+    "details": {
+      "word": "shuttle",
+      "rank": 14924,
+      "best_word": "pace",
+      "best_rank": 37,
+      "total_guesses": 53,
+      "self_report": {
+        "predicted_closeness": 0.3,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "amble",
+            "drift",
+            "glide",
+            "slide",
+            "shuffle",
+            "stroll",
+            "traverse"
+          ],
+          "reason": "Shuttle is a movement-related term not yet guessed, with similar context to words like 'drift' and 'glide' which have moderate ranks."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"shuttle\", \"basis_words\": [\"amble\", \"drift\", \"glide\", \"slide\", \"shuffle\", \"stroll\", \"traverse\"], \"reason\": \"Shuttle is a movement-related term not yet guessed, with similar context to words like 'drift' and 'glide' which have moderate ranks.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"advance\": 2699, \"amble\": 19913, \"bolt\": 7559, \"canter\": 2856, \"coast\": 3472, \"dart\": 9335, \"dash\": 2435, \"dawdle\": 18319, \"drift\": 1818, \"gait\": 457, \"gallop\": 1248, \"glide\": 1646, \"go\": 462, \"haste\": 8605, \"hasten\": 23347, \"hike\": 10012, \"hurry\": 5466, \"hustle\": 639, \"jog\": 1335, \"lope\": 1361, \"lumber\": 16157, \"lunge\": 8797, \"march\": 260, \"meander\": 1238, \"mosey\": 34674, \"motion\": 281, \"move\": 183, \"pace\": 37, \"proceed\": 8103, \"ramble\": 4526, \"roam\": 11406, \"run\": 992, \"rush\": 1726, \"sashay\": 22051, \"saunter\": 15401, \"scurry\": 37691, \"shift\": 428, \"shuffle\": 833, \"skip\": 1611, \"slide\": 686, \"speed\": 314, \"sprint\": 3534, \"step\": 814, \"stride\": 237, \"stroll\": 4679, \"travel\": 3421, \"traverse\": 11265, \"tread\": 4138, \"trot\": 1790, \"trudge\": 17881, \"walk\": 1043, \"wander\": 4542}\nInvalid or unavailable guesses to avoid: [\"tramp\"]\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 55,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T18:04:56",
+    "details": {
+      "word": "race",
+      "rank": 2675,
+      "best_word": "pace",
+      "best_rank": 37,
+      "total_guesses": 54,
+      "self_report": {
+        "predicted_closeness": 0.7,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "pace",
+            "stride",
+            "move",
+            "motion",
+            "go"
+          ],
+          "reason": "The target appears to be a synonym for purposeful or rapid movement, as indicated by low-ranked words like 'pace' (37) and 'stride' (237). 'Race' fits this context and is not in the guess history."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"race\", \"basis_words\": [\"pace\", \"stride\", \"move\", \"motion\", \"go\"], \"reason\": \"The target appears to be a synonym for purposeful or rapid movement, as indicated by low-ranked words like 'pace' (37) and 'stride' (237). 'Race' fits this context and is not in the guess history.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.7}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"advance\": 2699, \"amble\": 19913, \"bolt\": 7559, \"canter\": 2856, \"coast\": 3472, \"dart\": 9335, \"dash\": 2435, \"dawdle\": 18319, \"drift\": 1818, \"gait\": 457, \"gallop\": 1248, \"glide\": 1646, \"go\": 462, \"haste\": 8605, \"hasten\": 23347, \"hike\": 10012, \"hurry\": 5466, \"hustle\": 639, \"jog\": 1335, \"lope\": 1361, \"lumber\": 16157, \"lunge\": 8797, \"march\": 260, \"meander\": 1238, \"mosey\": 34674, \"motion\": 281, \"move\": 183, \"pace\": 37, \"proceed\": 8103, \"ramble\": 4526, \"roam\": 11406, \"run\": 992, \"rush\": 1726, \"sashay\": 22051, \"saunter\": 15401, \"scurry\": 37691, \"shift\": 428, \"shuffle\": 833, \"shuttle\": 14924, \"skip\": 1611, \"slide\": 686, \"speed\": 314, \"sprint\": 3534, \"step\": 814, \"stride\": 237, \"stroll\": 4679, \"travel\": 3421, \"traverse\": 11265, \"tread\": 4138, \"trot\": 1790, \"trudge\": 17881, \"walk\": 1043, \"wander\": 4542}\nInvalid or unavailable guesses to avoid: [\"tramp\"]\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 56,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T18:05:12",
+    "details": {
+      "word": "drive",
+      "rank": 493,
+      "best_word": "pace",
+      "best_rank": 37,
+      "total_guesses": 55,
+      "self_report": {
+        "predicted_closeness": 0.4,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "pace",
+            "move",
+            "speed",
+            "hurry",
+            "hasten",
+            "advance",
+            "rush"
+          ],
+          "reason": "Drive is a synonym for moving forward with purpose, aligning with low-ranked words like 'pace' and 'hurry' that imply directed motion. It is not in the guess history and could bridge gaps between existing ranks."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"drive\", \"basis_words\": [\"pace\", \"move\", \"speed\", \"hurry\", \"hasten\", \"advance\", \"rush\"], \"reason\": \"Drive is a synonym for moving forward with purpose, aligning with low-ranked words like 'pace' and 'hurry' that imply directed motion. It is not in the guess history and could bridge gaps between existing ranks.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"advance\": 2699, \"amble\": 19913, \"bolt\": 7559, \"canter\": 2856, \"coast\": 3472, \"dart\": 9335, \"dash\": 2435, \"dawdle\": 18319, \"drift\": 1818, \"gait\": 457, \"gallop\": 1248, \"glide\": 1646, \"go\": 462, \"haste\": 8605, \"hasten\": 23347, \"hike\": 10012, \"hurry\": 5466, \"hustle\": 639, \"jog\": 1335, \"lope\": 1361, \"lumber\": 16157, \"lunge\": 8797, \"march\": 260, \"meander\": 1238, \"mosey\": 34674, \"motion\": 281, \"move\": 183, \"pace\": 37, \"proceed\": 8103, \"race\": 2675, \"ramble\": 4526, \"roam\": 11406, \"run\": 992, \"rush\": 1726, \"sashay\": 22051, \"saunter\": 15401, \"scurry\": 37691, \"shift\": 428, \"shuffle\": 833, \"shuttle\": 14924, \"skip\": 1611, \"slide\": 686, \"speed\": 314, \"sprint\": 3534, \"step\": 814, \"stride\": 237, \"stroll\": 4679, \"travel\": 3421, \"traverse\": 11265, \"tread\": 4138, \"trot\": 1790, \"trudge\": 17881, \"walk\": 1043, \"wander\": 4542}\nInvalid or unavailable guesses to avoid: [\"tramp\"]\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 57,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T18:05:34",
+    "details": {
+      "word": "hie",
+      "rank": 43144,
+      "best_word": "pace",
+      "best_rank": 37,
+      "total_guesses": 56,
+      "self_report": {
+        "predicted_closeness": 0.2,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "hurry",
+            "haste",
+            "hasten",
+            "hustle"
+          ],
+          "reason": "Hie is a synonym for hurry and may be closer to the target based on related words with lower ranks."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"hie\", \"basis_words\": [\"hurry\", \"haste\", \"hasten\", \"hustle\"], \"reason\": \"Hie is a synonym for hurry and may be closer to the target based on related words with lower ranks.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.2}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"advance\": 2699, \"amble\": 19913, \"bolt\": 7559, \"canter\": 2856, \"coast\": 3472, \"dart\": 9335, \"dash\": 2435, \"dawdle\": 18319, \"drift\": 1818, \"drive\": 493, \"gait\": 457, \"gallop\": 1248, \"glide\": 1646, \"go\": 462, \"haste\": 8605, \"hasten\": 23347, \"hike\": 10012, \"hurry\": 5466, \"hustle\": 639, \"jog\": 1335, \"lope\": 1361, \"lumber\": 16157, \"lunge\": 8797, \"march\": 260, \"meander\": 1238, \"mosey\": 34674, \"motion\": 281, \"move\": 183, \"pace\": 37, \"proceed\": 8103, \"race\": 2675, \"ramble\": 4526, \"roam\": 11406, \"run\": 992, \"rush\": 1726, \"sashay\": 22051, \"saunter\": 15401, \"scurry\": 37691, \"shift\": 428, \"shuffle\": 833, \"shuttle\": 14924, \"skip\": 1611, \"slide\": 686, \"speed\": 314, \"sprint\": 3534, \"step\": 814, \"stride\": 237, \"stroll\": 4679, \"travel\": 3421, \"traverse\": 11265, \"tread\": 4138, \"trot\": 1790, \"trudge\": 17881, \"walk\": 1043, \"wander\": 4542}\nInvalid or unavailable guesses to avoid: [\"tramp\"]\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 58,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T18:06:42",
+    "details": {
+      "word": "ride",
+      "rank": 709,
+      "best_word": "pace",
+      "best_rank": 37,
+      "total_guesses": 57,
+      "self_report": {
+        "predicted_closeness": 0.4,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "amble",
+            "canter",
+            "dash",
+            "drive",
+            "gallop",
+            "glide",
+            "hurry",
+            "lope",
+            "march",
+            "pace",
+            "sprint",
+            "stride",
+            "trot"
+          ],
+          "reason": "The word 'ride' is a movement-related verb not previously guessed, and shares semantic similarity with close guesses like 'amble', 'canter', and 'gallop', which have lower ranks indicating proximity to the target."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"ride\", \"basis_words\": [\"amble\", \"canter\", \"dash\", \"drive\", \"gallop\", \"glide\", \"hurry\", \"lope\", \"march\", \"pace\", \"sprint\", \"stride\", \"trot\"], \"reason\": \"The word 'ride' is a movement-related verb not previously guessed, and shares semantic similarity with close guesses like 'amble', 'canter', and 'gallop', which have lower ranks indicating proximity to the target.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"advance\": 2699, \"amble\": 19913, \"bolt\": 7559, \"canter\": 2856, \"coast\": 3472, \"dart\": 9335, \"dash\": 2435, \"dawdle\": 18319, \"drift\": 1818, \"drive\": 493, \"gait\": 457, \"gallop\": 1248, \"glide\": 1646, \"go\": 462, \"haste\": 8605, \"hasten\": 23347, \"hie\": 43144, \"hike\": 10012, \"hurry\": 5466, \"hustle\": 639, \"jog\": 1335, \"lope\": 1361, \"lumber\": 16157, \"lunge\": 8797, \"march\": 260, \"meander\": 1238, \"mosey\": 34674, \"motion\": 281, \"move\": 183, \"pace\": 37, \"proceed\": 8103, \"race\": 2675, \"ramble\": 4526, \"roam\": 11406, \"run\": 992, \"rush\": 1726, \"sashay\": 22051, \"saunter\": 15401, \"scurry\": 37691, \"shift\": 428, \"shuffle\": 833, \"shuttle\": 14924, \"skip\": 1611, \"slide\": 686, \"speed\": 314, \"sprint\": 3534, \"step\": 814, \"stride\": 237, \"stroll\": 4679, \"travel\": 3421, \"traverse\": 11265, \"tread\": 4138, \"trot\": 1790, \"trudge\": 17881, \"walk\": 1043, \"wander\": 4542}\nInvalid or unavailable guesses to avoid: [\"tramp\"]\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 59,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T18:23:10",
+    "details": {
+      "word": "crawl",
+      "rank": 6822,
+      "best_word": "pace",
+      "best_rank": 37,
+      "total_guesses": 58,
+      "self_report": {
+        "predicted_closeness": 0.15,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "beyond",
+        "rationale": {
+          "basis_words": [
+            "amble",
+            "dash",
+            "gallop",
+            "hurry",
+            "pace",
+            "sprint"
+          ],
+          "reason": "Crawl is a movement-related verb not yet tried, and shares thematic similarity with existing guesses like 'amble' and 'sprint'. It may be closer to the target due to its unique motion characteristic."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"crawl\", \"basis_words\": [\"amble\", \"dash\", \"gallop\", \"hurry\", \"pace\", \"sprint\"], \"reason\": \"Crawl is a movement-related verb not yet tried, and shares thematic similarity with existing guesses like 'amble' and 'sprint'. It may be closer to the target due to its unique motion characteristic.\", \"predicted_bucket\": \"beyond\", \"predicted_closeness\": 0.15}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"advance\": 2699, \"amble\": 19913, \"bolt\": 7559, \"canter\": 2856, \"coast\": 3472, \"dart\": 9335, \"dash\": 2435, \"dawdle\": 18319, \"drift\": 1818, \"drive\": 493, \"gait\": 457, \"gallop\": 1248, \"glide\": 1646, \"go\": 462, \"haste\": 8605, \"hasten\": 23347, \"hie\": 43144, \"hike\": 10012, \"hurry\": 5466, \"hustle\": 639, \"jog\": 1335, \"lope\": 1361, \"lumber\": 16157, \"lunge\": 8797, \"march\": 260, \"meander\": 1238, \"mosey\": 34674, \"motion\": 281, \"move\": 183, \"pace\": 37, \"proceed\": 8103, \"race\": 2675, \"ramble\": 4526, \"ride\": 709, \"roam\": 11406, \"run\": 992, \"rush\": 1726, \"sashay\": 22051, \"saunter\": 15401, \"scurry\": 37691, \"shift\": 428, \"shuffle\": 833, \"shuttle\": 14924, \"skip\": 1611, \"slide\": 686, \"speed\": 314, \"sprint\": 3534, \"step\": 814, \"stride\": 237, \"stroll\": 4679, \"travel\": 3421, \"traverse\": 11265, \"tread\": 4138, \"trot\": 1790, \"trudge\": 17881, \"walk\": 1043, \"wander\": 4542}\nInvalid or unavailable guesses to avoid: [\"tramp\"]\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 60,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T18:24:32",
+    "details": {
+      "word": "tempo",
+      "rank": 3,
+      "best_word": "tempo",
+      "best_rank": 3,
+      "total_guesses": 59,
+      "self_report": {
+        "predicted_closeness": 0.5,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "pace",
+            "move",
+            "stride"
+          ],
+          "reason": "Tempo is related to speed and movement, similar to words like pace and move, which have low ranks."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"tempo\", \"basis_words\": [\"pace\", \"move\", \"stride\"], \"reason\": \"Tempo is related to speed and movement, similar to words like pace and move, which have low ranks.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.5}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"advance\": 2699, \"amble\": 19913, \"bolt\": 7559, \"canter\": 2856, \"coast\": 3472, \"crawl\": 6822, \"dart\": 9335, \"dash\": 2435, \"dawdle\": 18319, \"drift\": 1818, \"drive\": 493, \"gait\": 457, \"gallop\": 1248, \"glide\": 1646, \"go\": 462, \"haste\": 8605, \"hasten\": 23347, \"hie\": 43144, \"hike\": 10012, \"hurry\": 5466, \"hustle\": 639, \"jog\": 1335, \"lope\": 1361, \"lumber\": 16157, \"lunge\": 8797, \"march\": 260, \"meander\": 1238, \"mosey\": 34674, \"motion\": 281, \"move\": 183, \"pace\": 37, \"proceed\": 8103, \"race\": 2675, \"ramble\": 4526, \"ride\": 709, \"roam\": 11406, \"run\": 992, \"rush\": 1726, \"sashay\": 22051, \"saunter\": 15401, \"scurry\": 37691, \"shift\": 428, \"shuffle\": 833, \"shuttle\": 14924, \"skip\": 1611, \"slide\": 686, \"speed\": 314, \"sprint\": 3534, \"step\": 814, \"stride\": 237, \"stroll\": 4679, \"travel\": 3421, \"traverse\": 11265, \"tread\": 4138, \"trot\": 1790, \"trudge\": 17881, \"walk\": 1043, \"wander\": 4542}\nInvalid or unavailable guesses to avoid: [\"tramp\"]\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 61,
+    "event": "GUESS",
+    "timestamp": "2026-07-31T18:24:58",
+    "details": {
+      "word": "rhythm",
+      "rank": 1,
+      "best_word": "rhythm",
+      "best_rank": 1,
+      "total_guesses": 60,
+      "self_report": {
+        "predicted_closeness": 0.6,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "tempo",
+            "pace",
+            "motion",
+            "gait"
+          ],
+          "reason": "Rhythm is a synonym for tempo and pace, both of which are low-ranked, suggesting it might be closer to the hidden target."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"rhythm\", \"basis_words\": [\"tempo\", \"pace\", \"motion\", \"gait\"], \"reason\": \"Rhythm is a synonym for tempo and pace, both of which are low-ranked, suggesting it might be closer to the hidden target.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.6}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"advance\": 2699, \"amble\": 19913, \"bolt\": 7559, \"canter\": 2856, \"coast\": 3472, \"crawl\": 6822, \"dart\": 9335, \"dash\": 2435, \"dawdle\": 18319, \"drift\": 1818, \"drive\": 493, \"gait\": 457, \"gallop\": 1248, \"glide\": 1646, \"go\": 462, \"haste\": 8605, \"hasten\": 23347, \"hie\": 43144, \"hike\": 10012, \"hurry\": 5466, \"hustle\": 639, \"jog\": 1335, \"lope\": 1361, \"lumber\": 16157, \"lunge\": 8797, \"march\": 260, \"meander\": 1238, \"mosey\": 34674, \"motion\": 281, \"move\": 183, \"pace\": 37, \"proceed\": 8103, \"race\": 2675, \"ramble\": 4526, \"ride\": 709, \"roam\": 11406, \"run\": 992, \"rush\": 1726, \"sashay\": 22051, \"saunter\": 15401, \"scurry\": 37691, \"shift\": 428, \"shuffle\": 833, \"shuttle\": 14924, \"skip\": 1611, \"slide\": 686, \"speed\": 314, \"sprint\": 3534, \"step\": 814, \"stride\": 237, \"stroll\": 4679, \"tempo\": 3, \"travel\": 3421, \"traverse\": 11265, \"tread\": 4138, \"trot\": 1790, \"trudge\": 17881, \"walk\": 1043, \"wander\": 4542}\nInvalid or unavailable guesses to avoid: [\"tramp\"]\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 61,
+    "event": "SOLVED",
+    "timestamp": "2026-07-31T18:24:58",
+    "details": {
+      "answer": "rhythm",
+      "rank": 1,
+      "total_guesses": 60
+    }
+  },
+  {
+    "generation": 61,
+    "event": "NETWORK_METRICS",
+    "timestamp": "2026-07-31T18:24:58",
+    "details": {
+      "network_calls": 48,
+      "network_wall_clock_seconds": 4080.0558,
+      "total_latency_seconds": 149.4602,
+      "mean_latency_seconds": 3.1138,
+      "median_latency_seconds": 3.229,
+      "p95_latency_seconds": 3.2497,
+      "max_latency_seconds": 3.3202,
+      "status_counts": {
+        "200": 47,
+        "404": 1
+      },
+      "outcome_counts": {
+        "ok": 47,
+        "http_error": 1
+      }
+    }
+  }
+]
