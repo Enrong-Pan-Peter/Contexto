@@ -1,0 +1,5102 @@
+[
+  {
+    "generation": -1,
+    "event": "RUN_CONFIG",
+    "timestamp": "2026-07-22T19:31:35",
+    "details": {
+      "game": "api",
+      "solver": "llm",
+      "method": "ea_llm_self_adaptive",
+      "mode": "api",
+      "target": null,
+      "game_number": 1307,
+      "run_index": 0,
+      "game_embedding_path": null,
+      "solver_embedding_path": null,
+      "embedding_backend": null,
+      "vocabulary_size": null,
+      "alignment": "api_unknown",
+      "trace_schema_version": 3,
+      "instrumentation_provenance_hash": "bd9f2858283673a2",
+      "self_report": false,
+      "rationale_inheritance": false,
+      "max_generations": 50,
+      "llm_provider": "ollama",
+      "llm_model": "qwen3:14b",
+      "llm_workers": 4,
+      "initial_categories": 15,
+      "max_active_hypotheses": null,
+      "local_search_rank_threshold": 100,
+      "self_adaptive_initial_categories": 15,
+      "self_adaptive_mu": 15,
+      "self_adaptive_concentration": 50.0,
+      "self_adaptive_sigma_floor": 0.02,
+      "self_adaptive_sigma_mode": "frozen_uniform",
+      "mapelites_grid_resolution": null,
+      "mapelites_mutations_per_gen": null,
+      "mapelites_crossovers_per_gen": null,
+      "mapelites_initial_categories": null,
+      "mapelites_concentration": null,
+      "mapelites_sigma_floor": null,
+      "mapelites_sigma_mode": null,
+      "mapelites_frozen_sigma": null,
+      "mapelites_ranked_context_k": null,
+      "rank_cache_enabled": true,
+      "enable_pivot": false,
+      "ea_llm_pivot_stall_no_improvement_generations": null,
+      "ea_llm_pivot_stall_close_rank_threshold": null,
+      "ea_llm_pivot_stall_close_generations_limit": null,
+      "ea_llm_pivot_max_attempts_per_run": null,
+      "ea_llm_pivot_candidate_words_per_operator": null,
+      "ea_llm_pivot_resolution_window": null,
+      "random_seed": 0
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:32:00",
+    "details": {
+      "word": "happy",
+      "rank": 1884,
+      "hypothesis": "emotions",
+      "best_word": "happy",
+      "best_rank": 1884,
+      "total_guesses": 1
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:32:01",
+    "details": {
+      "word": "sad",
+      "rank": 956,
+      "hypothesis": "emotions",
+      "best_word": "sad",
+      "best_rank": 956,
+      "total_guesses": 2
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:32:02",
+    "details": {
+      "word": "angry",
+      "rank": 3971,
+      "hypothesis": "emotions",
+      "best_word": "sad",
+      "best_rank": 956,
+      "total_guesses": 3
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:32:02",
+    "details": {
+      "word": "tree",
+      "rank": 8123,
+      "hypothesis": "nature",
+      "best_word": "sad",
+      "best_rank": 956,
+      "total_guesses": 4
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:32:03",
+    "details": {
+      "word": "river",
+      "rank": 13240,
+      "hypothesis": "nature",
+      "best_word": "sad",
+      "best_rank": 956,
+      "total_guesses": 5
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:32:04",
+    "details": {
+      "word": "mountain",
+      "rank": 11482,
+      "hypothesis": "nature",
+      "best_word": "sad",
+      "best_rank": 956,
+      "total_guesses": 6
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:32:05",
+    "details": {
+      "word": "computer",
+      "rank": 6375,
+      "hypothesis": "technology",
+      "best_word": "sad",
+      "best_rank": 956,
+      "total_guesses": 7
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:32:05",
+    "details": {
+      "word": "phone",
+      "rank": 7529,
+      "hypothesis": "technology",
+      "best_word": "sad",
+      "best_rank": 956,
+      "total_guesses": 8
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:32:06",
+    "details": {
+      "word": "internet",
+      "rank": 2637,
+      "hypothesis": "technology",
+      "best_word": "sad",
+      "best_rank": 956,
+      "total_guesses": 9
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:32:07",
+    "details": {
+      "word": "apple",
+      "rank": 8375,
+      "hypothesis": "food",
+      "best_word": "sad",
+      "best_rank": 956,
+      "total_guesses": 10
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:32:07",
+    "details": {
+      "word": "bread",
+      "rank": 9079,
+      "hypothesis": "food",
+      "best_word": "sad",
+      "best_rank": 956,
+      "total_guesses": 11
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:32:08",
+    "details": {
+      "word": "pasta",
+      "rank": 25472,
+      "hypothesis": "food",
+      "best_word": "sad",
+      "best_rank": 956,
+      "total_guesses": 12
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:32:09",
+    "details": {
+      "word": "plane",
+      "rank": 9430,
+      "hypothesis": "travel",
+      "best_word": "sad",
+      "best_rank": 956,
+      "total_guesses": 13
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:32:10",
+    "details": {
+      "word": "boat",
+      "rank": 12148,
+      "hypothesis": "travel",
+      "best_word": "sad",
+      "best_rank": 956,
+      "total_guesses": 14
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:32:10",
+    "details": {
+      "word": "train",
+      "rank": 5687,
+      "hypothesis": "travel",
+      "best_word": "sad",
+      "best_rank": 956,
+      "total_guesses": 15
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:32:11",
+    "details": {
+      "word": "book",
+      "rank": 1801,
+      "hypothesis": "education",
+      "best_word": "sad",
+      "best_rank": 956,
+      "total_guesses": 16
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:32:12",
+    "details": {
+      "word": "school",
+      "rank": 4250,
+      "hypothesis": "education",
+      "best_word": "sad",
+      "best_rank": 956,
+      "total_guesses": 17
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:32:13",
+    "details": {
+      "word": "learn",
+      "rank": 444,
+      "hypothesis": "education",
+      "best_word": "learn",
+      "best_rank": 444,
+      "total_guesses": 18
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:32:13",
+    "details": {
+      "word": "sleep",
+      "rank": 4975,
+      "hypothesis": "health",
+      "best_word": "learn",
+      "best_rank": 444,
+      "total_guesses": 19
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:32:14",
+    "details": {
+      "word": "diet",
+      "rank": 4516,
+      "hypothesis": "health",
+      "best_word": "learn",
+      "best_rank": 444,
+      "total_guesses": 20
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:32:15",
+    "details": {
+      "word": "exercise",
+      "rank": 2128,
+      "hypothesis": "health",
+      "best_word": "learn",
+      "best_rank": 444,
+      "total_guesses": 21
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:32:16",
+    "details": {
+      "word": "run",
+      "rank": 4957,
+      "hypothesis": "sports",
+      "best_word": "learn",
+      "best_rank": 444,
+      "total_guesses": 22
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:32:16",
+    "details": {
+      "word": "swim",
+      "rank": 18300,
+      "hypothesis": "sports",
+      "best_word": "learn",
+      "best_rank": 444,
+      "total_guesses": 23
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:32:17",
+    "details": {
+      "word": "jump",
+      "rank": 5517,
+      "hypothesis": "sports",
+      "best_word": "learn",
+      "best_rank": 444,
+      "total_guesses": 24
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:32:18",
+    "details": {
+      "word": "song",
+      "rank": 2028,
+      "hypothesis": "music",
+      "best_word": "learn",
+      "best_rank": 444,
+      "total_guesses": 25
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:32:18",
+    "details": {
+      "word": "play",
+      "rank": 2960,
+      "hypothesis": "music",
+      "best_word": "learn",
+      "best_rank": 444,
+      "total_guesses": 26
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:32:19",
+    "details": {
+      "word": "beat",
+      "rank": 4782,
+      "hypothesis": "music",
+      "best_word": "learn",
+      "best_rank": 444,
+      "total_guesses": 27
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:32:20",
+    "details": {
+      "word": "red",
+      "rank": 13398,
+      "hypothesis": "colors",
+      "best_word": "learn",
+      "best_rank": 444,
+      "total_guesses": 28
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:32:21",
+    "details": {
+      "word": "blue",
+      "rank": 7732,
+      "hypothesis": "colors",
+      "best_word": "learn",
+      "best_rank": 444,
+      "total_guesses": 29
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:32:21",
+    "details": {
+      "word": "green",
+      "rank": 8584,
+      "hypothesis": "colors",
+      "best_word": "learn",
+      "best_rank": 444,
+      "total_guesses": 30
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:32:22",
+    "details": {
+      "word": "day",
+      "rank": 3118,
+      "hypothesis": "time",
+      "best_word": "learn",
+      "best_rank": 444,
+      "total_guesses": 31
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:32:23",
+    "details": {
+      "word": "week",
+      "rank": 3820,
+      "hypothesis": "time",
+      "best_word": "learn",
+      "best_rank": 444,
+      "total_guesses": 32
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:32:24",
+    "details": {
+      "word": "year",
+      "rank": 2671,
+      "hypothesis": "time",
+      "best_word": "learn",
+      "best_rank": 444,
+      "total_guesses": 33
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:32:24",
+    "details": {
+      "word": "rain",
+      "rank": 8390,
+      "hypothesis": "weather",
+      "best_word": "learn",
+      "best_rank": 444,
+      "total_guesses": 34
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:32:25",
+    "details": {
+      "word": "snow",
+      "rank": 10064,
+      "hypothesis": "weather",
+      "best_word": "learn",
+      "best_rank": 444,
+      "total_guesses": 35
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:32:26",
+    "details": {
+      "word": "sun",
+      "rank": 8443,
+      "hypothesis": "weather",
+      "best_word": "learn",
+      "best_rank": 444,
+      "total_guesses": 36
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:32:26",
+    "details": {
+      "word": "dog",
+      "rank": 808,
+      "hypothesis": "animals",
+      "best_word": "learn",
+      "best_rank": 444,
+      "total_guesses": 37
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:32:27",
+    "details": {
+      "word": "cat",
+      "rank": 8280,
+      "hypothesis": "animals",
+      "best_word": "learn",
+      "best_rank": 444,
+      "total_guesses": 38
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:32:28",
+    "details": {
+      "word": "bird",
+      "rank": 15678,
+      "hypothesis": "animals",
+      "best_word": "learn",
+      "best_rank": 444,
+      "total_guesses": 39
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:32:29",
+    "details": {
+      "word": "mom",
+      "rank": 3858,
+      "hypothesis": "family",
+      "best_word": "learn",
+      "best_rank": 444,
+      "total_guesses": 40
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:32:29",
+    "details": {
+      "word": "dad",
+      "rank": 2880,
+      "hypothesis": "family",
+      "best_word": "learn",
+      "best_rank": 444,
+      "total_guesses": 41
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:32:30",
+    "details": {
+      "word": "kid",
+      "rank": 3031,
+      "hypothesis": "family",
+      "best_word": "learn",
+      "best_rank": 444,
+      "total_guesses": 42
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:32:31",
+    "details": {
+      "word": "doctor",
+      "rank": 3235,
+      "hypothesis": "occupations",
+      "best_word": "learn",
+      "best_rank": 444,
+      "total_guesses": 43
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:32:32",
+    "details": {
+      "word": "teacher",
+      "rank": 2012,
+      "hypothesis": "occupations",
+      "best_word": "learn",
+      "best_rank": 444,
+      "total_guesses": 44
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:32:32",
+    "details": {
+      "word": "engineer",
+      "rank": 6890,
+      "hypothesis": "occupations",
+      "best_word": "learn",
+      "best_rank": 444,
+      "total_guesses": 45
+    }
+  },
+  {
+    "generation": 0,
+    "event": "INIT",
+    "timestamp": "2026-07-22T19:32:32",
+    "details": {
+      "hypotheses": [
+        {
+          "hypothesis_id": "d5515c8a78d64a0c9873bcd8e90b55c0",
+          "category_name": "emotions",
+          "description": "feelings experienced by humans",
+          "words_tried": {
+            "sad": 956,
+            "happy": 1884,
+            "angry": 3971
+          },
+          "best_word": "sad",
+          "best_rank": 956,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "404bb1d83b114ea786b331d40258e5c0",
+          "category_name": "nature",
+          "description": "elements of the natural world",
+          "words_tried": {
+            "tree": 8123,
+            "mountain": 11482,
+            "river": 13240
+          },
+          "best_word": "tree",
+          "best_rank": 8123,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "cf294c146e86413eb09d1543264d4514",
+          "category_name": "technology",
+          "description": "tools and systems created by humans",
+          "words_tried": {
+            "internet": 2637,
+            "computer": 6375,
+            "phone": 7529
+          },
+          "best_word": "internet",
+          "best_rank": 2637,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "11cd590a8af84080bbb6eebefbd16a1b",
+          "category_name": "food",
+          "description": "items consumed for nourishment",
+          "words_tried": {
+            "apple": 8375,
+            "bread": 9079,
+            "pasta": 25472
+          },
+          "best_word": "apple",
+          "best_rank": 8375,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "b412225e4d8f454c8e8e77b4b69eebb9",
+          "category_name": "travel",
+          "description": "methods of moving from one place to another",
+          "words_tried": {
+            "train": 5687,
+            "plane": 9430,
+            "boat": 12148
+          },
+          "best_word": "train",
+          "best_rank": 5687,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "e721eb62eb284c84b894e4001778c16d",
+          "category_name": "education",
+          "description": "process of acquiring knowledge",
+          "words_tried": {
+            "learn": 444,
+            "book": 1801,
+            "school": 4250
+          },
+          "best_word": "learn",
+          "best_rank": 444,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "b29ed231e19b4d45bfad130c141a4b5f",
+          "category_name": "health",
+          "description": "state of physical and mental well-being",
+          "words_tried": {
+            "exercise": 2128,
+            "diet": 4516,
+            "sleep": 4975
+          },
+          "best_word": "exercise",
+          "best_rank": 2128,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "0a63c5683c9b4efcbc6a4f9fe9cbcea5",
+          "category_name": "sports",
+          "description": "physical activities with rules",
+          "words_tried": {
+            "run": 4957,
+            "jump": 5517,
+            "swim": 18300
+          },
+          "best_word": "run",
+          "best_rank": 4957,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "f409982c765b415487488e4a83c54f2d",
+          "category_name": "music",
+          "description": "art of organizing sounds",
+          "words_tried": {
+            "song": 2028,
+            "play": 2960,
+            "beat": 4782
+          },
+          "best_word": "song",
+          "best_rank": 2028,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "b6b84414589e4149adaed2aceedc125d",
+          "category_name": "colors",
+          "description": "visual perceptions of light",
+          "words_tried": {
+            "blue": 7732,
+            "green": 8584,
+            "red": 13398
+          },
+          "best_word": "blue",
+          "best_rank": 7732,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "20ac973cbaa5452dabcde9c9d24878af",
+          "category_name": "time",
+          "description": "measurement of duration",
+          "words_tried": {
+            "year": 2671,
+            "day": 3118,
+            "week": 3820
+          },
+          "best_word": "year",
+          "best_rank": 2671,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "b175c23c06d5479eb99838030522dd79",
+          "category_name": "weather",
+          "description": "atmospheric conditions",
+          "words_tried": {
+            "rain": 8390,
+            "sun": 8443,
+            "snow": 10064
+          },
+          "best_word": "rain",
+          "best_rank": 8390,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "b4474a86125c46d299f40698ce1a76d0",
+          "category_name": "animals",
+          "description": "living creatures with backbones",
+          "words_tried": {
+            "dog": 808,
+            "cat": 8280,
+            "bird": 15678
+          },
+          "best_word": "dog",
+          "best_rank": 808,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "40b2cdbf4aea485a88a0dfce012ce84d",
+          "category_name": "family",
+          "description": "relatives in a household",
+          "words_tried": {
+            "dad": 2880,
+            "kid": 3031,
+            "mom": 3858
+          },
+          "best_word": "dad",
+          "best_rank": 2880,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "367d98df1d68468995c9068838d868e4",
+          "category_name": "occupations",
+          "description": "types of work people do",
+          "words_tried": {
+            "teacher": 2012,
+            "doctor": 3235,
+            "engineer": 6890
+          },
+          "best_word": "teacher",
+          "best_rank": 2012,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        }
+      ],
+      "best_word": "learn",
+      "best_rank": 444,
+      "total_guesses": 45
+    }
+  },
+  {
+    "generation": 0,
+    "event": "SIGMA_TRAJECTORY",
+    "timestamp": "2026-07-22T19:32:32",
+    "details": {
+      "mean_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "population_size": 15
+    }
+  },
+  {
+    "generation": 1,
+    "event": "CANDIDATES",
+    "timestamp": "2026-07-22T19:50:46",
+    "details": {
+      "count": 45,
+      "candidates": [
+        {
+          "hypothesis": "emotions",
+          "word": "fear"
+        },
+        {
+          "hypothesis": "emotions",
+          "word": "joy"
+        },
+        {
+          "hypothesis": "emotions",
+          "word": "love"
+        },
+        {
+          "hypothesis": "nature",
+          "word": "forest"
+        },
+        {
+          "hypothesis": "nature",
+          "word": "ocean"
+        },
+        {
+          "hypothesis": "nature",
+          "word": "soil"
+        },
+        {
+          "hypothesis": "technology",
+          "word": "system"
+        },
+        {
+          "hypothesis": "technology",
+          "word": "device"
+        },
+        {
+          "hypothesis": "technology",
+          "word": "software"
+        },
+        {
+          "hypothesis": "food",
+          "word": "meal"
+        },
+        {
+          "hypothesis": "food",
+          "word": "vegetable"
+        },
+        {
+          "hypothesis": "food",
+          "word": "grain"
+        },
+        {
+          "hypothesis": "travel",
+          "word": "car"
+        },
+        {
+          "hypothesis": "travel",
+          "word": "bus"
+        },
+        {
+          "hypothesis": "travel",
+          "word": "subway"
+        },
+        {
+          "hypothesis": "education",
+          "word": "teach"
+        },
+        {
+          "hypothesis": "education",
+          "word": "study"
+        },
+        {
+          "hypothesis": "education",
+          "word": "instruct"
+        },
+        {
+          "hypothesis": "health",
+          "word": "wellness"
+        },
+        {
+          "hypothesis": "health",
+          "word": "fitness"
+        },
+        {
+          "hypothesis": "health",
+          "word": "hygiene"
+        },
+        {
+          "hypothesis": "sports",
+          "word": "game"
+        },
+        {
+          "hypothesis": "sports",
+          "word": "match"
+        },
+        {
+          "hypothesis": "sports",
+          "word": "team"
+        },
+        {
+          "hypothesis": "music",
+          "word": "harmony"
+        },
+        {
+          "hypothesis": "music",
+          "word": "melody"
+        },
+        {
+          "hypothesis": "music",
+          "word": "rhythm"
+        },
+        {
+          "hypothesis": "colors",
+          "word": "yellow"
+        },
+        {
+          "hypothesis": "colors",
+          "word": "purple"
+        },
+        {
+          "hypothesis": "colors",
+          "word": "orange"
+        },
+        {
+          "hypothesis": "time",
+          "word": "hour"
+        },
+        {
+          "hypothesis": "time",
+          "word": "minute"
+        },
+        {
+          "hypothesis": "time",
+          "word": "second"
+        },
+        {
+          "hypothesis": "weather",
+          "word": "cloud"
+        },
+        {
+          "hypothesis": "weather",
+          "word": "storm"
+        },
+        {
+          "hypothesis": "weather",
+          "word": "temperature"
+        },
+        {
+          "hypothesis": "animals",
+          "word": "vertebrate"
+        },
+        {
+          "hypothesis": "animals",
+          "word": "mammal"
+        },
+        {
+          "hypothesis": "animals",
+          "word": "reptile"
+        },
+        {
+          "hypothesis": "family",
+          "word": "relative"
+        },
+        {
+          "hypothesis": "family",
+          "word": "household"
+        },
+        {
+          "hypothesis": "family",
+          "word": "parent"
+        },
+        {
+          "hypothesis": "occupations",
+          "word": "lawyer"
+        },
+        {
+          "hypothesis": "occupations",
+          "word": "nurse"
+        },
+        {
+          "hypothesis": "occupations",
+          "word": "artist"
+        }
+      ]
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:50:47",
+    "details": {
+      "word": "fear",
+      "rank": 302,
+      "hypothesis": "emotions",
+      "best_word": "fear",
+      "best_rank": 302,
+      "total_guesses": 46
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:50:47",
+    "details": {
+      "word": "joy",
+      "rank": 372,
+      "hypothesis": "emotions",
+      "best_word": "fear",
+      "best_rank": 302,
+      "total_guesses": 47
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:50:48",
+    "details": {
+      "word": "love",
+      "rank": 148,
+      "hypothesis": "emotions",
+      "best_word": "love",
+      "best_rank": 148,
+      "total_guesses": 48
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:50:49",
+    "details": {
+      "word": "forest",
+      "rank": 13009,
+      "hypothesis": "nature",
+      "best_word": "love",
+      "best_rank": 148,
+      "total_guesses": 49
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:50:49",
+    "details": {
+      "word": "ocean",
+      "rank": 10798,
+      "hypothesis": "nature",
+      "best_word": "love",
+      "best_rank": 148,
+      "total_guesses": 50
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:50:50",
+    "details": {
+      "word": "soil",
+      "rank": 10089,
+      "hypothesis": "nature",
+      "best_word": "love",
+      "best_rank": 148,
+      "total_guesses": 51
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:50:51",
+    "details": {
+      "word": "system",
+      "rank": 4738,
+      "hypothesis": "technology",
+      "best_word": "love",
+      "best_rank": 148,
+      "total_guesses": 52
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:50:52",
+    "details": {
+      "word": "device",
+      "rank": 15473,
+      "hypothesis": "technology",
+      "best_word": "love",
+      "best_rank": 148,
+      "total_guesses": 53
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:50:52",
+    "details": {
+      "word": "software",
+      "rank": 5784,
+      "hypothesis": "technology",
+      "best_word": "love",
+      "best_rank": 148,
+      "total_guesses": 54
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:50:53",
+    "details": {
+      "word": "meal",
+      "rank": 7002,
+      "hypothesis": "food",
+      "best_word": "love",
+      "best_rank": 148,
+      "total_guesses": 55
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:50:54",
+    "details": {
+      "word": "vegetable",
+      "rank": 10157,
+      "hypothesis": "food",
+      "best_word": "love",
+      "best_rank": 148,
+      "total_guesses": 56
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:50:55",
+    "details": {
+      "word": "grain",
+      "rank": 9441,
+      "hypothesis": "food",
+      "best_word": "love",
+      "best_rank": 148,
+      "total_guesses": 57
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:50:55",
+    "details": {
+      "word": "car",
+      "rank": 8718,
+      "hypothesis": "travel",
+      "best_word": "love",
+      "best_rank": 148,
+      "total_guesses": 58
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:50:56",
+    "details": {
+      "word": "bus",
+      "rank": 16383,
+      "hypothesis": "travel",
+      "best_word": "love",
+      "best_rank": 148,
+      "total_guesses": 59
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:50:57",
+    "details": {
+      "word": "subway",
+      "rank": 31676,
+      "hypothesis": "travel",
+      "best_word": "love",
+      "best_rank": 148,
+      "total_guesses": 60
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:50:58",
+    "details": {
+      "word": "teach",
+      "rank": 1042,
+      "hypothesis": "education",
+      "best_word": "love",
+      "best_rank": 148,
+      "total_guesses": 61
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:50:58",
+    "details": {
+      "word": "study",
+      "rank": 4158,
+      "hypothesis": "education",
+      "best_word": "love",
+      "best_rank": 148,
+      "total_guesses": 62
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:50:59",
+    "details": {
+      "word": "instruct",
+      "rank": 7042,
+      "hypothesis": "education",
+      "best_word": "love",
+      "best_rank": 148,
+      "total_guesses": 63
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:51:00",
+    "details": {
+      "word": "wellness",
+      "rank": 3803,
+      "hypothesis": "health",
+      "best_word": "love",
+      "best_rank": 148,
+      "total_guesses": 64
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:51:01",
+    "details": {
+      "word": "fitness",
+      "rank": 4599,
+      "hypothesis": "health",
+      "best_word": "love",
+      "best_rank": 148,
+      "total_guesses": 65
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:51:01",
+    "details": {
+      "word": "hygiene",
+      "rank": 2699,
+      "hypothesis": "health",
+      "best_word": "love",
+      "best_rank": 148,
+      "total_guesses": 66
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:51:02",
+    "details": {
+      "word": "game",
+      "rank": 4504,
+      "hypothesis": "sports",
+      "best_word": "love",
+      "best_rank": 148,
+      "total_guesses": 67
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:51:03",
+    "details": {
+      "word": "match",
+      "rank": 2379,
+      "hypothesis": "sports",
+      "best_word": "love",
+      "best_rank": 148,
+      "total_guesses": 68
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:51:04",
+    "details": {
+      "word": "team",
+      "rank": 3061,
+      "hypothesis": "sports",
+      "best_word": "love",
+      "best_rank": 148,
+      "total_guesses": 69
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:51:04",
+    "details": {
+      "word": "harmony",
+      "rank": 787,
+      "hypothesis": "music",
+      "best_word": "love",
+      "best_rank": 148,
+      "total_guesses": 70
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:51:05",
+    "details": {
+      "word": "melody",
+      "rank": 3070,
+      "hypothesis": "music",
+      "best_word": "love",
+      "best_rank": 148,
+      "total_guesses": 71
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:51:06",
+    "details": {
+      "word": "rhythm",
+      "rank": 4262,
+      "hypothesis": "music",
+      "best_word": "love",
+      "best_rank": 148,
+      "total_guesses": 72
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:51:06",
+    "details": {
+      "word": "yellow",
+      "rank": 16005,
+      "hypothesis": "colors",
+      "best_word": "love",
+      "best_rank": 148,
+      "total_guesses": 73
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:51:07",
+    "details": {
+      "word": "purple",
+      "rank": 11428,
+      "hypothesis": "colors",
+      "best_word": "love",
+      "best_rank": 148,
+      "total_guesses": 74
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:51:08",
+    "details": {
+      "word": "orange",
+      "rank": 11276,
+      "hypothesis": "colors",
+      "best_word": "love",
+      "best_rank": 148,
+      "total_guesses": 75
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:51:09",
+    "details": {
+      "word": "hour",
+      "rank": 4564,
+      "hypothesis": "time",
+      "best_word": "love",
+      "best_rank": 148,
+      "total_guesses": 76
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:51:09",
+    "details": {
+      "word": "minute",
+      "rank": 8394,
+      "hypothesis": "time",
+      "best_word": "love",
+      "best_rank": 148,
+      "total_guesses": 77
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:51:10",
+    "details": {
+      "word": "second",
+      "rank": 3936,
+      "hypothesis": "time",
+      "best_word": "love",
+      "best_rank": 148,
+      "total_guesses": 78
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:51:11",
+    "details": {
+      "word": "cloud",
+      "rank": 7999,
+      "hypothesis": "weather",
+      "best_word": "love",
+      "best_rank": 148,
+      "total_guesses": 79
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:51:12",
+    "details": {
+      "word": "storm",
+      "rank": 13667,
+      "hypothesis": "weather",
+      "best_word": "love",
+      "best_rank": 148,
+      "total_guesses": 80
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:51:12",
+    "details": {
+      "word": "temperature",
+      "rank": 10958,
+      "hypothesis": "weather",
+      "best_word": "love",
+      "best_rank": 148,
+      "total_guesses": 81
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:51:13",
+    "details": {
+      "word": "vertebrate",
+      "rank": 46358,
+      "hypothesis": "animals",
+      "best_word": "love",
+      "best_rank": 148,
+      "total_guesses": 82
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:51:14",
+    "details": {
+      "word": "mammal",
+      "rank": 47486,
+      "hypothesis": "animals",
+      "best_word": "love",
+      "best_rank": 148,
+      "total_guesses": 83
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:51:15",
+    "details": {
+      "word": "reptile",
+      "rank": 38359,
+      "hypothesis": "animals",
+      "best_word": "love",
+      "best_rank": 148,
+      "total_guesses": 84
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:51:15",
+    "details": {
+      "word": "relative",
+      "rank": 1903,
+      "hypothesis": "family",
+      "best_word": "love",
+      "best_rank": 148,
+      "total_guesses": 85
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:51:16",
+    "details": {
+      "word": "household",
+      "rank": 13032,
+      "hypothesis": "family",
+      "best_word": "love",
+      "best_rank": 148,
+      "total_guesses": 86
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:51:17",
+    "details": {
+      "word": "parent",
+      "rank": 1482,
+      "hypothesis": "family",
+      "best_word": "love",
+      "best_rank": 148,
+      "total_guesses": 87
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:51:17",
+    "details": {
+      "word": "lawyer",
+      "rank": 4385,
+      "hypothesis": "occupations",
+      "best_word": "love",
+      "best_rank": 148,
+      "total_guesses": 88
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:51:18",
+    "details": {
+      "word": "nurse",
+      "rank": 5117,
+      "hypothesis": "occupations",
+      "best_word": "love",
+      "best_rank": 148,
+      "total_guesses": 89
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:51:19",
+    "details": {
+      "word": "artist",
+      "rank": 4316,
+      "hypothesis": "occupations",
+      "best_word": "love",
+      "best_rank": 148,
+      "total_guesses": 90
+    }
+  },
+  {
+    "generation": 1,
+    "event": "SELECT",
+    "timestamp": "2026-07-22T19:51:19",
+    "details": {
+      "kept": [
+        "emotions",
+        "education",
+        "music",
+        "animals",
+        "family"
+      ],
+      "discarded": [
+        "occupations",
+        "health",
+        "sports",
+        "technology",
+        "time",
+        "travel",
+        "food",
+        "colors",
+        "weather",
+        "nature"
+      ],
+      "elite": "emotions",
+      "max_active_hypotheses": 5,
+      "best_word": "love",
+      "best_rank": 148,
+      "total_guesses": 90
+    }
+  },
+  {
+    "generation": 1,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-22T19:51:30",
+    "details": {
+      "parent_id": "d5515c8a78d64a0c9873bcd8e90b55c0",
+      "child_id": "3c08f33adb704d6bb864778902abe4bd",
+      "parent_rank": 148,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "Interpersonal Relationships",
+      "sampled_op": "ml_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:51:30",
+    "details": {
+      "word": "bond",
+      "rank": 4633,
+      "hypothesis": "Interpersonal Relationships",
+      "best_word": "love",
+      "best_rank": 148,
+      "total_guesses": 91
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:51:31",
+    "details": {
+      "word": "trust",
+      "rank": 96,
+      "hypothesis": "Interpersonal Relationships",
+      "best_word": "trust",
+      "best_rank": 96,
+      "total_guesses": 92
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:51:32",
+    "details": {
+      "word": "respect",
+      "rank": 26,
+      "hypothesis": "Interpersonal Relationships",
+      "best_word": "respect",
+      "best_rank": 26,
+      "total_guesses": 93
+    }
+  },
+  {
+    "generation": 1,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-22T19:51:48",
+    "details": {
+      "parent_id": "e721eb62eb284c84b894e4001778c16d",
+      "child_id": "cb8a8e4289554d61b1399f067d39ca4a",
+      "parent_rank": 444,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "psychological factors in learning",
+      "sampled_op": "m_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:51:49",
+    "details": {
+      "word": "curiosity",
+      "rank": 170,
+      "hypothesis": "psychological factors in learning",
+      "best_word": "respect",
+      "best_rank": 26,
+      "total_guesses": 94
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:51:50",
+    "details": {
+      "word": "motivation",
+      "rank": 120,
+      "hypothesis": "psychological factors in learning",
+      "best_word": "respect",
+      "best_rank": 26,
+      "total_guesses": 95
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:51:51",
+    "details": {
+      "word": "engagement",
+      "rank": 1830,
+      "hypothesis": "psychological factors in learning",
+      "best_word": "respect",
+      "best_rank": 26,
+      "total_guesses": 96
+    }
+  },
+  {
+    "generation": 1,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-22T19:51:55",
+    "details": {
+      "parent_id": "f409982c765b415487488e4a83c54f2d",
+      "child_id": "99fd515f454445f9bbdb00d5942929b7",
+      "parent_rank": 787,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "harmonic structures",
+      "sampled_op": "s_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:51:56",
+    "details": {
+      "word": "accord",
+      "rank": 3963,
+      "hypothesis": "harmonic structures",
+      "best_word": "respect",
+      "best_rank": 26,
+      "total_guesses": 97
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:51:57",
+    "details": {
+      "word": "blend",
+      "rank": 4110,
+      "hypothesis": "harmonic structures",
+      "best_word": "respect",
+      "best_rank": 26,
+      "total_guesses": 98
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:51:58",
+    "details": {
+      "word": "resonance",
+      "rank": 12116,
+      "hypothesis": "harmonic structures",
+      "best_word": "respect",
+      "best_rank": 26,
+      "total_guesses": 99
+    }
+  },
+  {
+    "generation": 1,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-22T19:52:16",
+    "details": {
+      "parent_id": "b4474a86125c46d299f40698ce1a76d0",
+      "child_id": "75d9677a28164108a27498c6fe92ea5e",
+      "parent_rank": 808,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "companion animals",
+      "sampled_op": "s_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:52:20",
+    "details": {
+      "word": "canine",
+      "rank": 9257,
+      "hypothesis": "companion animals",
+      "best_word": "respect",
+      "best_rank": 26,
+      "total_guesses": 100
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:52:21",
+    "details": {
+      "word": "pet",
+      "rank": 6839,
+      "hypothesis": "companion animals",
+      "best_word": "respect",
+      "best_rank": 26,
+      "total_guesses": 101
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:52:21",
+    "details": {
+      "word": "companion",
+      "rank": 4525,
+      "hypothesis": "companion animals",
+      "best_word": "respect",
+      "best_rank": 26,
+      "total_guesses": 102
+    }
+  },
+  {
+    "generation": 1,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-22T19:52:30",
+    "details": {
+      "parent_id": "40b2cdbf4aea485a88a0dfce012ce84d",
+      "child_id": "fb5d1f4fd1294cba86d5d5fef2e68a3f",
+      "parent_rank": 1482,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "cultural practices",
+      "sampled_op": "l_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:52:31",
+    "details": {
+      "word": "tradition",
+      "rank": 555,
+      "hypothesis": "cultural practices",
+      "best_word": "respect",
+      "best_rank": 26,
+      "total_guesses": 103
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:52:31",
+    "details": {
+      "word": "ritual",
+      "rank": 4126,
+      "hypothesis": "cultural practices",
+      "best_word": "respect",
+      "best_rank": 26,
+      "total_guesses": 104
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:52:32",
+    "details": {
+      "word": "heritage",
+      "rank": 4246,
+      "hypothesis": "cultural practices",
+      "best_word": "respect",
+      "best_rank": 26,
+      "total_guesses": 105
+    }
+  },
+  {
+    "generation": 1,
+    "event": "MUTATE",
+    "timestamp": "2026-07-22T19:52:32",
+    "details": {
+      "method": "self_adaptive",
+      "children": [
+        {
+          "hypothesis_id": "3c08f33adb704d6bb864778902abe4bd",
+          "category_name": "Interpersonal Relationships",
+          "description": "connections between people",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "emotions",
+          "parent_id": "d5515c8a78d64a0c9873bcd8e90b55c0",
+          "origin": "self_adaptive_ml_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "cb8a8e4289554d61b1399f067d39ca4a",
+          "category_name": "psychological factors in learning",
+          "description": "emotional and mental drivers of learning",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "education",
+          "parent_id": "e721eb62eb284c84b894e4001778c16d",
+          "origin": "self_adaptive_m_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "99fd515f454445f9bbdb00d5942929b7",
+          "category_name": "harmonic structures",
+          "description": "relationships between musical elements",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "music",
+          "parent_id": "f409982c765b415487488e4a83c54f2d",
+          "origin": "self_adaptive_s_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "75d9677a28164108a27498c6fe92ea5e",
+          "category_name": "companion animals",
+          "description": "animals commonly kept as companions",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "animals",
+          "parent_id": "b4474a86125c46d299f40698ce1a76d0",
+          "origin": "self_adaptive_s_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "fb5d1f4fd1294cba86d5d5fef2e68a3f",
+          "category_name": "cultural practices",
+          "description": "traditions and customs passed down through generations",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "family",
+          "parent_id": "40b2cdbf4aea485a88a0dfce012ce84d",
+          "origin": "self_adaptive_l_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        }
+      ],
+      "best_word": "respect",
+      "best_rank": 26,
+      "total_guesses": 105
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:52:43",
+    "details": {
+      "word": "connection",
+      "rank": 1636,
+      "hypothesis": "social learning dynamics",
+      "best_word": "respect",
+      "best_rank": 26,
+      "total_guesses": 106
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:52:44",
+    "details": {
+      "word": "interaction",
+      "rank": 1855,
+      "hypothesis": "social learning dynamics",
+      "best_word": "respect",
+      "best_rank": 26,
+      "total_guesses": 107
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:52:45",
+    "details": {
+      "word": "collaboration",
+      "rank": 1668,
+      "hypothesis": "social learning dynamics",
+      "best_word": "respect",
+      "best_rank": 26,
+      "total_guesses": 108
+    }
+  },
+  {
+    "generation": 1,
+    "event": "CROSSOVER",
+    "timestamp": "2026-07-22T19:52:45",
+    "details": {
+      "parents": [
+        "Interpersonal Relationships",
+        "psychological factors in learning"
+      ],
+      "parent_ids": [
+        "3c08f33adb704d6bb864778902abe4bd",
+        "cb8a8e4289554d61b1399f067d39ca4a"
+      ],
+      "parent_ranks": [
+        26,
+        120
+      ],
+      "parent_a_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "parent_b_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma_pre_perturbation": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child": {
+        "hypothesis_id": "9177257975434d58a0656e2520d8c954",
+        "category_name": "social learning dynamics",
+        "description": "the interplay between social interactions and psychological drivers in learning processes",
+        "words_tried": {
+          "connection": 1636,
+          "collaboration": 1668,
+          "interaction": 1855
+        },
+        "best_word": "connection",
+        "best_rank": 1636,
+        "status": "active",
+        "parent": "Interpersonal Relationships+psychological factors in learning",
+        "parent_id": null,
+        "origin": "crossover",
+        "sigma": [
+          0.25,
+          0.25,
+          0.25,
+          0.25
+        ]
+      },
+      "best_word": "respect",
+      "best_rank": 26,
+      "total_guesses": 108
+    }
+  },
+  {
+    "generation": 1,
+    "event": "DEDUPLICATE",
+    "timestamp": "2026-07-22T19:52:45",
+    "details": {
+      "merged": [
+        {
+          "survivor": "animals",
+          "discarded": "companion animals",
+          "survivor_best_rank": 808,
+          "discarded_best_rank": 4525
+        }
+      ],
+      "remaining_hypotheses": 20,
+      "active_hypotheses": 10,
+      "best_word": "respect",
+      "best_rank": 26,
+      "total_guesses": 108
+    }
+  },
+  {
+    "generation": 1,
+    "event": "SIGMA_TRAJECTORY",
+    "timestamp": "2026-07-22T19:52:45",
+    "details": {
+      "mean_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "population_size": 10
+    }
+  },
+  {
+    "generation": 2,
+    "event": "CANDIDATES",
+    "timestamp": "2026-07-22T19:54:54",
+    "details": {
+      "count": 28,
+      "candidates": [
+        {
+          "hypothesis": "Interpersonal Relationships",
+          "word": "rapport"
+        },
+        {
+          "hypothesis": "Interpersonal Relationships",
+          "word": "empathy"
+        },
+        {
+          "hypothesis": "Interpersonal Relationships",
+          "word": "understanding"
+        },
+        {
+          "hypothesis": "psychological factors in learning",
+          "word": "drive"
+        },
+        {
+          "hypothesis": "psychological factors in learning",
+          "word": "focus"
+        },
+        {
+          "hypothesis": "psychological factors in learning",
+          "word": "interest"
+        },
+        {
+          "hypothesis": "emotions",
+          "word": "grief"
+        },
+        {
+          "hypothesis": "emotions",
+          "word": "pride"
+        },
+        {
+          "hypothesis": "education",
+          "word": "mentor"
+        },
+        {
+          "hypothesis": "education",
+          "word": "guide"
+        },
+        {
+          "hypothesis": "education",
+          "word": "lecture"
+        },
+        {
+          "hypothesis": "cultural practices",
+          "word": "custom"
+        },
+        {
+          "hypothesis": "cultural practices",
+          "word": "ceremony"
+        },
+        {
+          "hypothesis": "cultural practices",
+          "word": "norm"
+        },
+        {
+          "hypothesis": "music",
+          "word": "note"
+        },
+        {
+          "hypothesis": "music",
+          "word": "tune"
+        },
+        {
+          "hypothesis": "music",
+          "word": "chord"
+        },
+        {
+          "hypothesis": "animals",
+          "word": "creature"
+        },
+        {
+          "hypothesis": "animals",
+          "word": "being"
+        },
+        {
+          "hypothesis": "animals",
+          "word": "organism"
+        },
+        {
+          "hypothesis": "family",
+          "word": "clan"
+        },
+        {
+          "hypothesis": "family",
+          "word": "sibling"
+        },
+        {
+          "hypothesis": "family",
+          "word": "kin"
+        },
+        {
+          "hypothesis": "social learning dynamics",
+          "word": "cooperation"
+        },
+        {
+          "hypothesis": "social learning dynamics",
+          "word": "incentive"
+        },
+        {
+          "hypothesis": "social learning dynamics",
+          "word": "community"
+        },
+        {
+          "hypothesis": "harmonic structures",
+          "word": "scale"
+        },
+        {
+          "hypothesis": "harmonic structures",
+          "word": "interval"
+        }
+      ]
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:54:58",
+    "details": {
+      "word": "rapport",
+      "rank": 1968,
+      "hypothesis": "Interpersonal Relationships",
+      "best_word": "respect",
+      "best_rank": 26,
+      "total_guesses": 109
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:54:58",
+    "details": {
+      "word": "empathy",
+      "rank": 19,
+      "hypothesis": "Interpersonal Relationships",
+      "best_word": "empathy",
+      "best_rank": 19,
+      "total_guesses": 110
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:54:59",
+    "details": {
+      "word": "understanding",
+      "rank": 78,
+      "hypothesis": "Interpersonal Relationships",
+      "best_word": "empathy",
+      "best_rank": 19,
+      "total_guesses": 111
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:55:00",
+    "details": {
+      "word": "drive",
+      "rank": 1840,
+      "hypothesis": "psychological factors in learning",
+      "best_word": "empathy",
+      "best_rank": 19,
+      "total_guesses": 112
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:55:01",
+    "details": {
+      "word": "focus",
+      "rank": 668,
+      "hypothesis": "psychological factors in learning",
+      "best_word": "empathy",
+      "best_rank": 19,
+      "total_guesses": 113
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:55:01",
+    "details": {
+      "word": "interest",
+      "rank": 832,
+      "hypothesis": "psychological factors in learning",
+      "best_word": "empathy",
+      "best_rank": 19,
+      "total_guesses": 114
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:55:02",
+    "details": {
+      "word": "grief",
+      "rank": 884,
+      "hypothesis": "emotions",
+      "best_word": "empathy",
+      "best_rank": 19,
+      "total_guesses": 115
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:55:03",
+    "details": {
+      "word": "pride",
+      "rank": 146,
+      "hypothesis": "emotions",
+      "best_word": "empathy",
+      "best_rank": 19,
+      "total_guesses": 116
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:55:04",
+    "details": {
+      "word": "mentor",
+      "rank": 2245,
+      "hypothesis": "education",
+      "best_word": "empathy",
+      "best_rank": 19,
+      "total_guesses": 117
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:55:04",
+    "details": {
+      "word": "guide",
+      "rank": 2222,
+      "hypothesis": "education",
+      "best_word": "empathy",
+      "best_rank": 19,
+      "total_guesses": 118
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:55:05",
+    "details": {
+      "word": "lecture",
+      "rank": 5000,
+      "hypothesis": "education",
+      "best_word": "empathy",
+      "best_rank": 19,
+      "total_guesses": 119
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:55:06",
+    "details": {
+      "word": "custom",
+      "rank": 4979,
+      "hypothesis": "cultural practices",
+      "best_word": "empathy",
+      "best_rank": 19,
+      "total_guesses": 120
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:55:07",
+    "details": {
+      "word": "ceremony",
+      "rank": 7344,
+      "hypothesis": "cultural practices",
+      "best_word": "empathy",
+      "best_rank": 19,
+      "total_guesses": 121
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:55:07",
+    "details": {
+      "word": "norm",
+      "rank": 968,
+      "hypothesis": "cultural practices",
+      "best_word": "empathy",
+      "best_rank": 19,
+      "total_guesses": 122
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:55:08",
+    "details": {
+      "word": "note",
+      "rank": 1076,
+      "hypothesis": "music",
+      "best_word": "empathy",
+      "best_rank": 19,
+      "total_guesses": 123
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:55:09",
+    "details": {
+      "word": "tune",
+      "rank": 3344,
+      "hypothesis": "music",
+      "best_word": "empathy",
+      "best_rank": 19,
+      "total_guesses": 124
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:55:09",
+    "details": {
+      "word": "chord",
+      "rank": 7044,
+      "hypothesis": "music",
+      "best_word": "empathy",
+      "best_rank": 19,
+      "total_guesses": 125
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:55:10",
+    "details": {
+      "word": "creature",
+      "rank": 6330,
+      "hypothesis": "animals",
+      "best_word": "empathy",
+      "best_rank": 19,
+      "total_guesses": 126
+    }
+  },
+  {
+    "generation": 2,
+    "event": "SKIP_INVALID_GUESS",
+    "timestamp": "2026-07-22T19:55:11",
+    "details": {
+      "word": "being",
+      "hypothesis": "animals"
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:55:12",
+    "details": {
+      "word": "organism",
+      "rank": 19366,
+      "hypothesis": "animals",
+      "best_word": "empathy",
+      "best_rank": 19,
+      "total_guesses": 127
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:55:12",
+    "details": {
+      "word": "clan",
+      "rank": 13931,
+      "hypothesis": "family",
+      "best_word": "empathy",
+      "best_rank": 19,
+      "total_guesses": 128
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:55:13",
+    "details": {
+      "word": "sibling",
+      "rank": 5635,
+      "hypothesis": "family",
+      "best_word": "empathy",
+      "best_rank": 19,
+      "total_guesses": 129
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:55:14",
+    "details": {
+      "word": "kin",
+      "rank": 10937,
+      "hypothesis": "family",
+      "best_word": "empathy",
+      "best_rank": 19,
+      "total_guesses": 130
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:55:15",
+    "details": {
+      "word": "cooperation",
+      "rank": 481,
+      "hypothesis": "social learning dynamics",
+      "best_word": "empathy",
+      "best_rank": 19,
+      "total_guesses": 131
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:55:15",
+    "details": {
+      "word": "incentive",
+      "rank": 4513,
+      "hypothesis": "social learning dynamics",
+      "best_word": "empathy",
+      "best_rank": 19,
+      "total_guesses": 132
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:55:16",
+    "details": {
+      "word": "community",
+      "rank": 1975,
+      "hypothesis": "social learning dynamics",
+      "best_word": "empathy",
+      "best_rank": 19,
+      "total_guesses": 133
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:55:17",
+    "details": {
+      "word": "scale",
+      "rank": 4767,
+      "hypothesis": "harmonic structures",
+      "best_word": "empathy",
+      "best_rank": 19,
+      "total_guesses": 134
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:55:18",
+    "details": {
+      "word": "interval",
+      "rank": 8771,
+      "hypothesis": "harmonic structures",
+      "best_word": "empathy",
+      "best_rank": 19,
+      "total_guesses": 135
+    }
+  },
+  {
+    "generation": 2,
+    "event": "LOCAL_SEARCH_DISABLED",
+    "timestamp": "2026-07-22T19:55:18",
+    "details": {
+      "center_word": "empathy",
+      "center_rank": 19,
+      "threshold": 100,
+      "reason": "self_adaptive_disable_local_search"
+    }
+  },
+  {
+    "generation": 2,
+    "event": "SELECT",
+    "timestamp": "2026-07-22T19:55:18",
+    "details": {
+      "kept": [
+        "Interpersonal Relationships",
+        "psychological factors in learning",
+        "emotions",
+        "education",
+        "social learning dynamics"
+      ],
+      "discarded": [
+        "cultural practices",
+        "music",
+        "animals",
+        "family",
+        "occupations",
+        "health",
+        "sports",
+        "technology",
+        "time",
+        "harmonic structures",
+        "travel",
+        "food",
+        "colors",
+        "weather",
+        "nature"
+      ],
+      "elite": "Interpersonal Relationships",
+      "max_active_hypotheses": 5,
+      "best_word": "empathy",
+      "best_rank": 19,
+      "total_guesses": 135
+    }
+  },
+  {
+    "generation": 2,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-22T19:55:44",
+    "details": {
+      "parent_id": "3c08f33adb704d6bb864778902abe4bd",
+      "child_id": "512d7e28db814e68aad9c1dc5a5d5919",
+      "parent_rank": 19,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "Synchrony",
+      "sampled_op": "l_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:55:48",
+    "details": {
+      "word": "synchrony",
+      "rank": 37452,
+      "hypothesis": "Synchrony",
+      "best_word": "empathy",
+      "best_rank": 19,
+      "total_guesses": 136
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:55:49",
+    "details": {
+      "word": "mirror",
+      "rank": 6894,
+      "hypothesis": "Synchrony",
+      "best_word": "empathy",
+      "best_rank": 19,
+      "total_guesses": 137
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:55:50",
+    "details": {
+      "word": "pulse",
+      "rank": 16865,
+      "hypothesis": "Synchrony",
+      "best_word": "empathy",
+      "best_rank": 19,
+      "total_guesses": 138
+    }
+  },
+  {
+    "generation": 2,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-22T19:55:59",
+    "details": {
+      "parent_id": "cb8a8e4289554d61b1399f067d39ca4a",
+      "child_id": "7401e904e0d04f8482cc6859bc36ee2d",
+      "parent_rank": 120,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "behavioral drivers",
+      "sampled_op": "ml_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:56:03",
+    "details": {
+      "word": "action",
+      "rank": 810,
+      "hypothesis": "behavioral drivers",
+      "best_word": "empathy",
+      "best_rank": 19,
+      "total_guesses": 139
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:56:04",
+    "details": {
+      "word": "initiative",
+      "rank": 1279,
+      "hypothesis": "behavioral drivers",
+      "best_word": "empathy",
+      "best_rank": 19,
+      "total_guesses": 140
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:56:04",
+    "details": {
+      "word": "perseverance",
+      "rank": 40,
+      "hypothesis": "behavioral drivers",
+      "best_word": "empathy",
+      "best_rank": 19,
+      "total_guesses": 141
+    }
+  },
+  {
+    "generation": 2,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-22T19:56:13",
+    "details": {
+      "parent_id": "d5515c8a78d64a0c9873bcd8e90b55c0",
+      "child_id": "442ca039e00d4994b28d9b57c42a4235",
+      "parent_rank": 146,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "character traits",
+      "sampled_op": "ml_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:56:17",
+    "details": {
+      "word": "courage",
+      "rank": 10,
+      "hypothesis": "character traits",
+      "best_word": "courage",
+      "best_rank": 10,
+      "total_guesses": 142
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:56:18",
+    "details": {
+      "word": "humility",
+      "rank": 6,
+      "hypothesis": "character traits",
+      "best_word": "humility",
+      "best_rank": 6,
+      "total_guesses": 143
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:56:18",
+    "details": {
+      "word": "determination",
+      "rank": 128,
+      "hypothesis": "character traits",
+      "best_word": "humility",
+      "best_rank": 6,
+      "total_guesses": 144
+    }
+  },
+  {
+    "generation": 2,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-22T19:56:30",
+    "details": {
+      "parent_id": "e721eb62eb284c84b894e4001778c16d",
+      "child_id": "e94bc532420447019cda2c09042b8a41",
+      "parent_rank": 444,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "cognitive processes",
+      "sampled_op": "ml_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:56:34",
+    "details": {
+      "word": "think",
+      "rank": 324,
+      "hypothesis": "cognitive processes",
+      "best_word": "humility",
+      "best_rank": 6,
+      "total_guesses": 145
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:56:35",
+    "details": {
+      "word": "reason",
+      "rank": 267,
+      "hypothesis": "cognitive processes",
+      "best_word": "humility",
+      "best_rank": 6,
+      "total_guesses": 146
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:56:36",
+    "details": {
+      "word": "analyze",
+      "rank": 3890,
+      "hypothesis": "cognitive processes",
+      "best_word": "humility",
+      "best_rank": 6,
+      "total_guesses": 147
+    }
+  },
+  {
+    "generation": 2,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-22T19:56:54",
+    "details": {
+      "parent_id": "9177257975434d58a0656e2520d8c954",
+      "child_id": "7cf3c4e9f6914bbbaae4aead6eae3ec1",
+      "parent_rank": 481,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "Network Dynamics and Balance",
+      "sampled_op": "l_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:56:55",
+    "details": {
+      "word": "network",
+      "rank": 3246,
+      "hypothesis": "Network Dynamics and Balance",
+      "best_word": "humility",
+      "best_rank": 6,
+      "total_guesses": 148
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:56:56",
+    "details": {
+      "word": "balance",
+      "rank": 664,
+      "hypothesis": "Network Dynamics and Balance",
+      "best_word": "humility",
+      "best_rank": 6,
+      "total_guesses": 149
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:56:57",
+    "details": {
+      "word": "pattern",
+      "rank": 8544,
+      "hypothesis": "Network Dynamics and Balance",
+      "best_word": "humility",
+      "best_rank": 6,
+      "total_guesses": 150
+    }
+  },
+  {
+    "generation": 2,
+    "event": "MUTATE",
+    "timestamp": "2026-07-22T19:56:57",
+    "details": {
+      "method": "self_adaptive",
+      "children": [
+        {
+          "hypothesis_id": "512d7e28db814e68aad9c1dc5a5d5919",
+          "category_name": "Synchrony",
+          "description": "coordinated behaviors and rhythms in individuals",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "Interpersonal Relationships",
+          "parent_id": "3c08f33adb704d6bb864778902abe4bd",
+          "origin": "self_adaptive_l_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "7401e904e0d04f8482cc6859bc36ee2d",
+          "category_name": "behavioral drivers",
+          "description": "actions and behaviors influenced by internal or external factors",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "psychological factors in learning",
+          "parent_id": "cb8a8e4289554d61b1399f067d39ca4a",
+          "origin": "self_adaptive_ml_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "442ca039e00d4994b28d9b57c42a4235",
+          "category_name": "character traits",
+          "description": "attributes that define a person's personality",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "emotions",
+          "parent_id": "d5515c8a78d64a0c9873bcd8e90b55c0",
+          "origin": "self_adaptive_ml_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "e94bc532420447019cda2c09042b8a41",
+          "category_name": "cognitive processes",
+          "description": "mental activities involved in understanding",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "education",
+          "parent_id": "e721eb62eb284c84b894e4001778c16d",
+          "origin": "self_adaptive_ml_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "7cf3c4e9f6914bbbaae4aead6eae3ec1",
+          "category_name": "Network Dynamics and Balance",
+          "description": "exploring the structural and functional aspects of interconnected systems in promoting balanced interactions",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "social learning dynamics",
+          "parent_id": "9177257975434d58a0656e2520d8c954",
+          "origin": "self_adaptive_l_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        }
+      ],
+      "best_word": "humility",
+      "best_rank": 6,
+      "total_guesses": 150
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:57:10",
+    "details": {
+      "word": "empathy",
+      "rank": 19,
+      "hypothesis": "interpersonal character",
+      "best_word": "humility",
+      "best_rank": 6,
+      "total_guesses": 150
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:57:10",
+    "details": {
+      "word": "trust",
+      "rank": 96,
+      "hypothesis": "interpersonal character",
+      "best_word": "humility",
+      "best_rank": 6,
+      "total_guesses": 150
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:57:10",
+    "details": {
+      "word": "respect",
+      "rank": 26,
+      "hypothesis": "interpersonal character",
+      "best_word": "humility",
+      "best_rank": 6,
+      "total_guesses": 150
+    }
+  },
+  {
+    "generation": 2,
+    "event": "CROSSOVER",
+    "timestamp": "2026-07-22T19:57:10",
+    "details": {
+      "parents": [
+        "character traits",
+        "Interpersonal Relationships"
+      ],
+      "parent_ids": [
+        "442ca039e00d4994b28d9b57c42a4235",
+        "3c08f33adb704d6bb864778902abe4bd"
+      ],
+      "parent_ranks": [
+        6,
+        19
+      ],
+      "parent_a_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "parent_b_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma_pre_perturbation": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child": {
+        "hypothesis_id": "d45fdeb032dc473d88e268b7daa41b92",
+        "category_name": "interpersonal character",
+        "description": "traits that foster positive relationships",
+        "words_tried": {
+          "empathy": 19,
+          "respect": 26,
+          "trust": 96
+        },
+        "best_word": "empathy",
+        "best_rank": 19,
+        "status": "active",
+        "parent": "character traits+Interpersonal Relationships",
+        "parent_id": null,
+        "origin": "crossover",
+        "sigma": [
+          0.25,
+          0.25,
+          0.25,
+          0.25
+        ]
+      },
+      "best_word": "humility",
+      "best_rank": 6,
+      "total_guesses": 150
+    }
+  },
+  {
+    "generation": 2,
+    "event": "DEDUPLICATE",
+    "timestamp": "2026-07-22T19:57:10",
+    "details": {
+      "merged": [
+        {
+          "survivor": "Interpersonal Relationships",
+          "discarded": "interpersonal character",
+          "survivor_best_rank": 19,
+          "discarded_best_rank": 19
+        }
+      ],
+      "remaining_hypotheses": 25,
+      "active_hypotheses": 10,
+      "best_word": "humility",
+      "best_rank": 6,
+      "total_guesses": 150
+    }
+  },
+  {
+    "generation": 2,
+    "event": "SIGMA_TRAJECTORY",
+    "timestamp": "2026-07-22T19:57:10",
+    "details": {
+      "mean_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "population_size": 10
+    }
+  },
+  {
+    "generation": 3,
+    "event": "CANDIDATES",
+    "timestamp": "2026-07-22T19:59:52",
+    "details": {
+      "count": 24,
+      "candidates": [
+        {
+          "hypothesis": "character traits",
+          "word": "integrity"
+        },
+        {
+          "hypothesis": "character traits",
+          "word": "compassion"
+        },
+        {
+          "hypothesis": "character traits",
+          "word": "resilience"
+        },
+        {
+          "hypothesis": "Interpersonal Relationships",
+          "word": "synergy"
+        },
+        {
+          "hypothesis": "Interpersonal Relationships",
+          "word": "support"
+        },
+        {
+          "hypothesis": "Interpersonal Relationships",
+          "word": "solidarity"
+        },
+        {
+          "hypothesis": "behavioral drivers",
+          "word": "motive"
+        },
+        {
+          "hypothesis": "behavioral drivers",
+          "word": "factor"
+        },
+        {
+          "hypothesis": "behavioral drivers",
+          "word": "influence"
+        },
+        {
+          "hypothesis": "psychological factors in learning",
+          "word": "adaptability"
+        },
+        {
+          "hypothesis": "psychological factors in learning",
+          "word": "persistence"
+        },
+        {
+          "hypothesis": "emotions",
+          "word": "serenity"
+        },
+        {
+          "hypothesis": "emotions",
+          "word": "anxiety"
+        },
+        {
+          "hypothesis": "cognitive processes",
+          "word": "conceive"
+        },
+        {
+          "hypothesis": "cognitive processes",
+          "word": "infer"
+        },
+        {
+          "hypothesis": "cognitive processes",
+          "word": "discern"
+        },
+        {
+          "hypothesis": "education",
+          "word": "educate"
+        },
+        {
+          "hypothesis": "education",
+          "word": "coach"
+        },
+        {
+          "hypothesis": "education",
+          "word": "develop"
+        },
+        {
+          "hypothesis": "social learning dynamics",
+          "word": "insight"
+        },
+        {
+          "hypothesis": "social learning dynamics",
+          "word": "dialogue"
+        },
+        {
+          "hypothesis": "Network Dynamics and Balance",
+          "word": "cohesion"
+        },
+        {
+          "hypothesis": "Synchrony",
+          "word": "alignment"
+        },
+        {
+          "hypothesis": "Synchrony",
+          "word": "unity"
+        }
+      ]
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:59:56",
+    "details": {
+      "word": "integrity",
+      "rank": 3,
+      "hypothesis": "character traits",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 151
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:59:57",
+    "details": {
+      "word": "compassion",
+      "rank": 13,
+      "hypothesis": "character traits",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 152
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:59:57",
+    "details": {
+      "word": "resilience",
+      "rank": 293,
+      "hypothesis": "character traits",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 153
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:59:58",
+    "details": {
+      "word": "synergy",
+      "rank": 5053,
+      "hypothesis": "Interpersonal Relationships",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 154
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T19:59:59",
+    "details": {
+      "word": "support",
+      "rank": 2177,
+      "hypothesis": "Interpersonal Relationships",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 155
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:00:00",
+    "details": {
+      "word": "solidarity",
+      "rank": 772,
+      "hypothesis": "Interpersonal Relationships",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 156
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:00:00",
+    "details": {
+      "word": "motive",
+      "rank": 295,
+      "hypothesis": "behavioral drivers",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 157
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:00:01",
+    "details": {
+      "word": "factor",
+      "rank": 2442,
+      "hypothesis": "behavioral drivers",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 158
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:00:02",
+    "details": {
+      "word": "influence",
+      "rank": 1402,
+      "hypothesis": "behavioral drivers",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 159
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:00:03",
+    "details": {
+      "word": "adaptability",
+      "rank": 491,
+      "hypothesis": "psychological factors in learning",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 160
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:00:04",
+    "details": {
+      "word": "persistence",
+      "rank": 210,
+      "hypothesis": "psychological factors in learning",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 161
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:00:04",
+    "details": {
+      "word": "serenity",
+      "rank": 1192,
+      "hypothesis": "emotions",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 162
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:00:05",
+    "details": {
+      "word": "anxiety",
+      "rank": 2500,
+      "hypothesis": "emotions",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 163
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:00:06",
+    "details": {
+      "word": "conceive",
+      "rank": 8475,
+      "hypothesis": "cognitive processes",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 164
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:00:07",
+    "details": {
+      "word": "infer",
+      "rank": 11045,
+      "hypothesis": "cognitive processes",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 165
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:00:07",
+    "details": {
+      "word": "discern",
+      "rank": 1342,
+      "hypothesis": "cognitive processes",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 166
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:00:08",
+    "details": {
+      "word": "educate",
+      "rank": 1510,
+      "hypothesis": "education",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 167
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:00:09",
+    "details": {
+      "word": "coach",
+      "rank": 2360,
+      "hypothesis": "education",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 168
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:00:10",
+    "details": {
+      "word": "develop",
+      "rank": 1864,
+      "hypothesis": "education",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 169
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:00:10",
+    "details": {
+      "word": "insight",
+      "rank": 135,
+      "hypothesis": "social learning dynamics",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 170
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:00:11",
+    "details": {
+      "word": "dialogue",
+      "rank": 453,
+      "hypothesis": "social learning dynamics",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 171
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:00:12",
+    "details": {
+      "word": "cohesion",
+      "rank": 1976,
+      "hypothesis": "Network Dynamics and Balance",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 172
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:00:13",
+    "details": {
+      "word": "alignment",
+      "rank": 5827,
+      "hypothesis": "Synchrony",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 173
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:00:13",
+    "details": {
+      "word": "unity",
+      "rank": 1023,
+      "hypothesis": "Synchrony",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 174
+    }
+  },
+  {
+    "generation": 3,
+    "event": "SELECT",
+    "timestamp": "2026-07-22T20:00:13",
+    "details": {
+      "kept": [
+        "character traits",
+        "Interpersonal Relationships",
+        "behavioral drivers",
+        "psychological factors in learning",
+        "social learning dynamics"
+      ],
+      "discarded": [
+        "emotions",
+        "cognitive processes",
+        "education",
+        "cultural practices",
+        "Network Dynamics and Balance",
+        "music",
+        "animals",
+        "Synchrony",
+        "family",
+        "occupations",
+        "health",
+        "sports",
+        "technology",
+        "time",
+        "harmonic structures",
+        "travel",
+        "food",
+        "colors",
+        "weather",
+        "nature"
+      ],
+      "elite": "character traits",
+      "max_active_hypotheses": 5,
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 174
+    }
+  },
+  {
+    "generation": 3,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-22T20:00:31",
+    "details": {
+      "parent_id": "442ca039e00d4994b28d9b57c42a4235",
+      "child_id": "028131cf2c10472c904cc7aef90e1466",
+      "parent_rank": 3,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "Structural Foundations",
+      "sampled_op": "l_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:00:35",
+    "details": {
+      "word": "framework",
+      "rank": 4168,
+      "hypothesis": "Structural Foundations",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 175
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:00:36",
+    "details": {
+      "word": "scaffold",
+      "rank": 34736,
+      "hypothesis": "Structural Foundations",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 176
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:00:37",
+    "details": {
+      "word": "grid",
+      "rank": 22224,
+      "hypothesis": "Structural Foundations",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 177
+    }
+  },
+  {
+    "generation": 3,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-22T20:00:50",
+    "details": {
+      "parent_id": "3c08f33adb704d6bb864778902abe4bd",
+      "child_id": "c852b444166b42bbbe38d491a801a9a7",
+      "parent_rank": 19,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "Sympathetic Bonds",
+      "sampled_op": "s_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:00:54",
+    "details": {
+      "word": "sympathy",
+      "rank": 383,
+      "hypothesis": "Sympathetic Bonds",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 178
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:00:54",
+    "details": {
+      "word": "attunement",
+      "rank": 6659,
+      "hypothesis": "Sympathetic Bonds",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 179
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:00:55",
+    "details": {
+      "word": "altruism",
+      "rank": 213,
+      "hypothesis": "Sympathetic Bonds",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 180
+    }
+  },
+  {
+    "generation": 3,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-22T20:01:20",
+    "details": {
+      "parent_id": "7401e904e0d04f8482cc6859bc36ee2d",
+      "child_id": "865356d64c74494a8ebc628e2f4a15aa",
+      "parent_rank": 40,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "Dynamic Cycles",
+      "sampled_op": "l_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:01:21",
+    "details": {
+      "word": "cycle",
+      "rank": 8677,
+      "hypothesis": "Dynamic Cycles",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 181
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:01:22",
+    "details": {
+      "word": "growth",
+      "rank": 3825,
+      "hypothesis": "Dynamic Cycles",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 182
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:01:22",
+    "details": {
+      "word": "process",
+      "rank": 1465,
+      "hypothesis": "Dynamic Cycles",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 183
+    }
+  },
+  {
+    "generation": 3,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-22T20:01:34",
+    "details": {
+      "parent_id": "cb8a8e4289554d61b1399f067d39ca4a",
+      "child_id": "962d28181b5e4f938b7fcc6bdfafb0ed",
+      "parent_rank": 120,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "intrinsic motivators in learning",
+      "sampled_op": "s_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:01:37",
+    "details": {
+      "word": "zeal",
+      "rank": 249,
+      "hypothesis": "intrinsic motivators in learning",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 184
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:01:38",
+    "details": {
+      "word": "aspiration",
+      "rank": 2205,
+      "hypothesis": "intrinsic motivators in learning",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 185
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:01:39",
+    "details": {
+      "word": "desire",
+      "rank": 160,
+      "hypothesis": "intrinsic motivators in learning",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 186
+    }
+  },
+  {
+    "generation": 3,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-22T20:02:03",
+    "details": {
+      "parent_id": "9177257975434d58a0656e2520d8c954",
+      "child_id": "fea0b07c409e42fdad66c3118c0d4468",
+      "parent_rank": 135,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "cognitive processes",
+      "sampled_op": "ml_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:02:07",
+    "details": {
+      "word": "reasoning",
+      "rank": 267,
+      "hypothesis": "cognitive processes",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 187
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:02:08",
+    "details": {
+      "word": "memory",
+      "rank": 3130,
+      "hypothesis": "cognitive processes",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 188
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:02:08",
+    "details": {
+      "word": "thinking",
+      "rank": 324,
+      "hypothesis": "cognitive processes",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 189
+    }
+  },
+  {
+    "generation": 3,
+    "event": "MUTATE",
+    "timestamp": "2026-07-22T20:02:08",
+    "details": {
+      "method": "self_adaptive",
+      "children": [
+        {
+          "hypothesis_id": "028131cf2c10472c904cc7aef90e1466",
+          "category_name": "Structural Foundations",
+          "description": "the underlying structures that support consistent principles",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "character traits",
+          "parent_id": "442ca039e00d4994b28d9b57c42a4235",
+          "origin": "self_adaptive_l_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "c852b444166b42bbbe38d491a801a9a7",
+          "category_name": "Sympathetic Bonds",
+          "description": "emotional resonance and shared feelings in relationships",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "Interpersonal Relationships",
+          "parent_id": "3c08f33adb704d6bb864778902abe4bd",
+          "origin": "self_adaptive_s_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "865356d64c74494a8ebc628e2f4a15aa",
+          "category_name": "Dynamic Cycles",
+          "description": "ongoing patterns and processes that sustain or repeat over time",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "behavioral drivers",
+          "parent_id": "7401e904e0d04f8482cc6859bc36ee2d",
+          "origin": "self_adaptive_l_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "962d28181b5e4f938b7fcc6bdfafb0ed",
+          "category_name": "intrinsic motivators in learning",
+          "description": "internal drivers of learning",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "psychological factors in learning",
+          "parent_id": "cb8a8e4289554d61b1399f067d39ca4a",
+          "origin": "self_adaptive_s_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "fea0b07c409e42fdad66c3118c0d4468",
+          "category_name": "cognitive processes",
+          "description": "the mental mechanisms involved in learning and problem-solving",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "social learning dynamics",
+          "parent_id": "9177257975434d58a0656e2520d8c954",
+          "origin": "self_adaptive_ml_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        }
+      ],
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 189
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:02:29",
+    "details": {
+      "word": "empathy",
+      "rank": 19,
+      "hypothesis": "interpersonal virtues",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 189
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:02:29",
+    "details": {
+      "word": "integrity",
+      "rank": 3,
+      "hypothesis": "interpersonal virtues",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 189
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:02:29",
+    "details": {
+      "word": "trust",
+      "rank": 96,
+      "hypothesis": "interpersonal virtues",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 189
+    }
+  },
+  {
+    "generation": 3,
+    "event": "CROSSOVER",
+    "timestamp": "2026-07-22T20:02:29",
+    "details": {
+      "parents": [
+        "character traits",
+        "Interpersonal Relationships"
+      ],
+      "parent_ids": [
+        "442ca039e00d4994b28d9b57c42a4235",
+        "3c08f33adb704d6bb864778902abe4bd"
+      ],
+      "parent_ranks": [
+        3,
+        19
+      ],
+      "parent_a_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "parent_b_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma_pre_perturbation": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child": {
+        "hypothesis_id": "c54c07f532e44441a70dfb69ba5c4249",
+        "category_name": "interpersonal virtues",
+        "description": "traits fostering positive relationships and personal integrity",
+        "words_tried": {
+          "integrity": 3,
+          "empathy": 19,
+          "trust": 96
+        },
+        "best_word": "integrity",
+        "best_rank": 3,
+        "status": "active",
+        "parent": "character traits+Interpersonal Relationships",
+        "parent_id": null,
+        "origin": "crossover",
+        "sigma": [
+          0.25,
+          0.25,
+          0.25,
+          0.25
+        ]
+      },
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 189
+    }
+  },
+  {
+    "generation": 3,
+    "event": "DEDUPLICATE",
+    "timestamp": "2026-07-22T20:02:29",
+    "details": {
+      "merged": [
+        {
+          "survivor": "interpersonal virtues",
+          "discarded": "Interpersonal Relationships",
+          "survivor_best_rank": 3,
+          "discarded_best_rank": 19
+        },
+        {
+          "survivor": "cognitive processes",
+          "discarded": "cognitive processes",
+          "survivor_best_rank": 267,
+          "discarded_best_rank": 267
+        }
+      ],
+      "remaining_hypotheses": 29,
+      "active_hypotheses": 10,
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 189
+    }
+  },
+  {
+    "generation": 3,
+    "event": "SIGMA_TRAJECTORY",
+    "timestamp": "2026-07-22T20:02:29",
+    "details": {
+      "mean_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "population_size": 10
+    }
+  },
+  {
+    "generation": 4,
+    "event": "CANDIDATES",
+    "timestamp": "2026-07-22T20:04:27",
+    "details": {
+      "count": 28,
+      "candidates": [
+        {
+          "hypothesis": "character traits",
+          "word": "virtue"
+        },
+        {
+          "hypothesis": "character traits",
+          "word": "honor"
+        },
+        {
+          "hypothesis": "character traits",
+          "word": "grace"
+        },
+        {
+          "hypothesis": "interpersonal virtues",
+          "word": "patience"
+        },
+        {
+          "hypothesis": "interpersonal virtues",
+          "word": "generosity"
+        },
+        {
+          "hypothesis": "behavioral drivers",
+          "word": "intent"
+        },
+        {
+          "hypothesis": "behavioral drivers",
+          "word": "impulse"
+        },
+        {
+          "hypothesis": "behavioral drivers",
+          "word": "disposition"
+        },
+        {
+          "hypothesis": "psychological factors in learning",
+          "word": "confidence"
+        },
+        {
+          "hypothesis": "psychological factors in learning",
+          "word": "autonomy"
+        },
+        {
+          "hypothesis": "psychological factors in learning",
+          "word": "mindset"
+        },
+        {
+          "hypothesis": "social learning dynamics",
+          "word": "consensus"
+        },
+        {
+          "hypothesis": "social learning dynamics",
+          "word": "interdependence"
+        },
+        {
+          "hypothesis": "social learning dynamics",
+          "word": "negotiation"
+        },
+        {
+          "hypothesis": "intrinsic motivators in learning",
+          "word": "purpose"
+        },
+        {
+          "hypothesis": "intrinsic motivators in learning",
+          "word": "passion"
+        },
+        {
+          "hypothesis": "Sympathetic Bonds",
+          "word": "kinship"
+        },
+        {
+          "hypothesis": "Sympathetic Bonds",
+          "word": "affinity"
+        },
+        {
+          "hypothesis": "Sympathetic Bonds",
+          "word": "fellowship"
+        },
+        {
+          "hypothesis": "cognitive processes",
+          "word": "perceive"
+        },
+        {
+          "hypothesis": "cognitive processes",
+          "word": "assess"
+        },
+        {
+          "hypothesis": "cognitive processes",
+          "word": "reflect"
+        },
+        {
+          "hypothesis": "Dynamic Cycles",
+          "word": "continuity"
+        },
+        {
+          "hypothesis": "Dynamic Cycles",
+          "word": "rotation"
+        },
+        {
+          "hypothesis": "Dynamic Cycles",
+          "word": "sequence"
+        },
+        {
+          "hypothesis": "Structural Foundations",
+          "word": "base"
+        },
+        {
+          "hypothesis": "Structural Foundations",
+          "word": "core"
+        },
+        {
+          "hypothesis": "Structural Foundations",
+          "word": "pillar"
+        }
+      ]
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:04:28",
+    "details": {
+      "word": "virtue",
+      "rank": 43,
+      "hypothesis": "character traits",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 190
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:04:29",
+    "details": {
+      "word": "honor",
+      "rank": 299,
+      "hypothesis": "character traits",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 191
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:04:29",
+    "details": {
+      "word": "grace",
+      "rank": 445,
+      "hypothesis": "character traits",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 192
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:04:30",
+    "details": {
+      "word": "patience",
+      "rank": 20,
+      "hypothesis": "interpersonal virtues",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 193
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:04:31",
+    "details": {
+      "word": "generosity",
+      "rank": 15,
+      "hypothesis": "interpersonal virtues",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 194
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:04:31",
+    "details": {
+      "word": "intent",
+      "rank": 792,
+      "hypothesis": "behavioral drivers",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 195
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:04:32",
+    "details": {
+      "word": "impulse",
+      "rank": 3586,
+      "hypothesis": "behavioral drivers",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 196
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:04:33",
+    "details": {
+      "word": "disposition",
+      "rank": 2387,
+      "hypothesis": "behavioral drivers",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 197
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:04:34",
+    "details": {
+      "word": "confidence",
+      "rank": 42,
+      "hypothesis": "psychological factors in learning",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 198
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:04:34",
+    "details": {
+      "word": "autonomy",
+      "rank": 532,
+      "hypothesis": "psychological factors in learning",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 199
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:04:35",
+    "details": {
+      "word": "mindset",
+      "rank": 469,
+      "hypothesis": "psychological factors in learning",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 200
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:04:36",
+    "details": {
+      "word": "consensus",
+      "rank": 2138,
+      "hypothesis": "social learning dynamics",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 201
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:04:37",
+    "details": {
+      "word": "interdependence",
+      "rank": 2076,
+      "hypothesis": "social learning dynamics",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 202
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:04:37",
+    "details": {
+      "word": "negotiation",
+      "rank": 955,
+      "hypothesis": "social learning dynamics",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 203
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:04:38",
+    "details": {
+      "word": "purpose",
+      "rank": 659,
+      "hypothesis": "intrinsic motivators in learning",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 204
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:04:39",
+    "details": {
+      "word": "passion",
+      "rank": 45,
+      "hypothesis": "intrinsic motivators in learning",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 205
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:04:39",
+    "details": {
+      "word": "kinship",
+      "rank": 5438,
+      "hypothesis": "Sympathetic Bonds",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 206
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:04:40",
+    "details": {
+      "word": "affinity",
+      "rank": 5743,
+      "hypothesis": "Sympathetic Bonds",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 207
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:04:41",
+    "details": {
+      "word": "fellowship",
+      "rank": 3484,
+      "hypothesis": "Sympathetic Bonds",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 208
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:04:42",
+    "details": {
+      "word": "perceive",
+      "rank": 632,
+      "hypothesis": "cognitive processes",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 209
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:04:42",
+    "details": {
+      "word": "assess",
+      "rank": 2903,
+      "hypothesis": "cognitive processes",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 210
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:04:43",
+    "details": {
+      "word": "reflect",
+      "rank": 364,
+      "hypothesis": "cognitive processes",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 211
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:04:44",
+    "details": {
+      "word": "continuity",
+      "rank": 823,
+      "hypothesis": "Dynamic Cycles",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 212
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:04:45",
+    "details": {
+      "word": "rotation",
+      "rank": 19616,
+      "hypothesis": "Dynamic Cycles",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 213
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:04:45",
+    "details": {
+      "word": "sequence",
+      "rank": 10258,
+      "hypothesis": "Dynamic Cycles",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 214
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:04:46",
+    "details": {
+      "word": "base",
+      "rank": 2065,
+      "hypothesis": "Structural Foundations",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 215
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:04:47",
+    "details": {
+      "word": "core",
+      "rank": 1692,
+      "hypothesis": "Structural Foundations",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 216
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:04:48",
+    "details": {
+      "word": "pillar",
+      "rank": 1923,
+      "hypothesis": "Structural Foundations",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 217
+    }
+  },
+  {
+    "generation": 4,
+    "event": "SELECT",
+    "timestamp": "2026-07-22T20:04:48",
+    "details": {
+      "kept": [
+        "character traits",
+        "interpersonal virtues",
+        "behavioral drivers",
+        "psychological factors in learning",
+        "intrinsic motivators in learning"
+      ],
+      "discarded": [
+        "social learning dynamics",
+        "emotions",
+        "Sympathetic Bonds",
+        "cognitive processes",
+        "education",
+        "cultural practices",
+        "Network Dynamics and Balance",
+        "music",
+        "animals",
+        "Dynamic Cycles",
+        "Synchrony",
+        "family",
+        "Structural Foundations",
+        "occupations",
+        "health",
+        "sports",
+        "technology",
+        "time",
+        "harmonic structures",
+        "travel",
+        "food",
+        "colors",
+        "weather",
+        "nature"
+      ],
+      "elite": "character traits",
+      "max_active_hypotheses": 5,
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 217
+    }
+  },
+  {
+    "generation": 4,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-22T20:05:02",
+    "details": {
+      "parent_id": "442ca039e00d4994b28d9b57c42a4235",
+      "child_id": "9e68cdcfe80c49e983badca496cb7917",
+      "parent_rank": 3,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "ethical principles",
+      "sampled_op": "s_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:05:06",
+    "details": {
+      "word": "honesty",
+      "rank": 1,
+      "hypothesis": "ethical principles",
+      "best_word": "honesty",
+      "best_rank": 1,
+      "total_guesses": 218
+    }
+  },
+  {
+    "generation": 4,
+    "event": "MUTATE",
+    "timestamp": "2026-07-22T20:05:06",
+    "details": {
+      "method": "self_adaptive",
+      "children": [
+        {
+          "hypothesis_id": "9e68cdcfe80c49e983badca496cb7917",
+          "category_name": "ethical principles",
+          "description": "attributes related to moral and ethical behavior",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "character traits",
+          "parent_id": "442ca039e00d4994b28d9b57c42a4235",
+          "origin": "self_adaptive_s_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        }
+      ],
+      "best_word": "honesty",
+      "best_rank": 1,
+      "total_guesses": 218
+    }
+  },
+  {
+    "generation": 4,
+    "event": "SOLVED",
+    "timestamp": "2026-07-22T20:05:06",
+    "details": {
+      "answer": "honesty",
+      "rank": 1,
+      "total_guesses": 218
+    }
+  },
+  {
+    "generation": 4,
+    "event": "NETWORK_METRICS",
+    "timestamp": "2026-07-22T20:05:06",
+    "details": {
+      "network_calls": 219,
+      "network_wall_clock_seconds": 1987.8679,
+      "total_latency_seconds": 88.2957,
+      "mean_latency_seconds": 0.4032,
+      "median_latency_seconds": 0.2265,
+      "p95_latency_seconds": 3.2239,
+      "max_latency_seconds": 3.2301,
+      "status_counts": {
+        "200": 218,
+        "404": 1
+      },
+      "outcome_counts": {
+        "ok": 218,
+        "http_error": 1
+      }
+    }
+  }
+]

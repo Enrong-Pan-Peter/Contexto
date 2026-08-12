@@ -13,6 +13,15 @@ from . import config
 from .hypothesis import Hypothesis
 
 
+# Minimum viable initial seed set. Every configured caller requests at least 6
+# categories (INITIAL_CATEGORIES=6, MAPELITES/SELF_ADAPTIVE_INITIAL_CATEGORIES=15),
+# so these are conservative floors: they only reject the degenerate single-object
+# collapse (1 category) that Ollama's json_object mode produces, without failing a
+# legitimate under-delivering response.
+MIN_INITIAL_CATEGORIES = 2
+MIN_INITIAL_SEED_WORDS = 2
+
+
 INITIAL_CATEGORIES_PROMPT = """Return only JSON, no markdown or explanation.
 Generate {n} broad semantic categories for exploring a Contexto puzzle.
 Each category must include exactly {starter_words} common starter words.
@@ -20,7 +29,7 @@ Every word must be one common lowercase dictionary word.
 Do not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.
 Invalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.
 JSON schema:
-[{{"name": "category name", "description": "short description", "words": ["word1", "word2", "word3"]}}]"""
+{{"categories": [{{"name": "category name", "description": "short description", "words": ["word1", "word2", "word3"]}}]}}"""
 
 PROPOSE_WORDS_PROMPT = """Return only JSON, no markdown or explanation.
 Contexto ranks words by semantic closeness. Rank 1 is correct. Lower is better.
@@ -37,7 +46,7 @@ Do not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign w
 Do not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.
 Invalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.
 JSON schema:
-["word1", "word2", "word3"]"""
+{{"words": ["word1", "word2", "word3"]}}"""
 
 SPECIALIZE_PROMPT = """Return only JSON, no markdown or explanation.
 The category "{name}" had these results: {words_tried}.
@@ -59,7 +68,7 @@ Avoid these invalid or unrecognized words: {invalid_guesses}
 Do not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.
 Invalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.
 JSON schema:
-[{{"name": "direction name", "description": "short description", "words": ["word1", "word2", "word3"]}}]"""
+{{"specializations": [{{"name": "direction name", "description": "short description", "words": ["word1", "word2", "word3"]}}]}}"""
 
 S_MUTATION_PROMPT = """Return only JSON, no markdown or explanation.
 The current hypothesis is "{name}".
@@ -184,7 +193,7 @@ Every word must be one common lowercase dictionary word.
 Avoid these already tried words: {all_guesses}
 Do not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.
 JSON schema:
-["word1", "word2", "word3"]"""
+{{"words": ["word1", "word2", "word3"]}}"""
 
 PIVOT_MORPHOLOGY_PROMPT = """Return only JSON, no markdown or explanation.
 The word {word} has rank {rank}, so it is very close to the hidden target.
@@ -197,7 +206,7 @@ Do not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign w
 Avoid these already tried words: {all_guesses}
 Do not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.
 JSON schema:
-["word1", "word2", "word3"]"""
+{{"words": ["word1", "word2", "word3"]}}"""
 
 PIVOT_REGISTER_SHIFT_PROMPT = """Return only JSON, no markdown or explanation.
 The hidden target is semantically close to {word}, which has rank {rank}, but it may be
@@ -209,7 +218,7 @@ Do not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign w
 Avoid these already tried words: {all_guesses}
 Do not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.
 JSON schema:
-["word1", "word2", "word3"]"""
+{{"words": ["word1", "word2", "word3"]}}"""
 
 PIVOT_ADJACENT_CATEGORY_PROMPT = """Return only JSON, no markdown or explanation.
 The current best word is {word} with rank {rank}.
@@ -299,7 +308,56 @@ class LLMClient:
 
     def generate_initial_categories(self, n: int = 6, starter_words: int = 3) -> list[dict[str, Any]]:
         prompt = INITIAL_CATEGORIES_PROMPT.format(n=n, starter_words=starter_words)
-        return self._json_request_with_retry(prompt)
+        categories = _normalize_initial_categories(self._json_request_with_retry(prompt))
+        if not _initial_categories_sufficient(categories):
+            # Ollama's json_object mode frequently collapses the requested
+            # category list into a single object. Retry the LLM call once (this is
+            # a full extra round-trip, distinct from the JSON-validity retries in
+            # ``_json_request_with_retry``) before giving up.
+            categories = _normalize_initial_categories(self._json_request_with_retry(prompt))
+        if not _initial_categories_sufficient(categories):
+            raise ValueError(
+                "generate_initial_categories produced a degenerate seed set after "
+                f"one retry: {len(categories)} categories / "
+                f"{_count_seed_words(categories)} seed words "
+                f"(need >= {MIN_INITIAL_CATEGORIES} categories and "
+                f">= {MIN_INITIAL_SEED_WORDS} seed words). This usually means the "
+                "provider forced a single top-level JSON object (e.g. Ollama "
+                "json_object mode) and collapsed the category list."
+            )
+        return categories
+
+    def _request_json_list(
+        self,
+        prompt: str,
+        expected_key: str,
+        element_type: type,
+        what: str,
+        return_raw: bool = False,
+    ) -> Any:
+        """Request a JSON list, tolerating json_object's object-only responses.
+
+        Normalizes ``{expected_key: [...]}``, bare arrays, and single-key
+        wrappers into a list of ``element_type``. Validates minimally (non-empty);
+        on an empty result retries the LLM call once (a full extra round-trip,
+        distinct from the JSON-validity retries in ``_json_request_with_retry``)
+        before raising a clear error. With ``return_raw`` also returns the raw
+        response text of the parsed call and the rendered ``prompt`` (both for
+        self-report re-parsing and trace provenance).
+        """
+        parsed, raw = self._json_request_with_retry_and_raw(prompt)
+        items = _normalize_json_list(parsed, expected_key, element_type)
+        if not items:
+            parsed, raw = self._json_request_with_retry_and_raw(prompt)
+            items = _normalize_json_list(parsed, expected_key, element_type)
+        if not items:
+            raise ValueError(
+                f"{what} returned no usable {expected_key} after one retry. This "
+                "usually means the provider forced a single top-level JSON object "
+                "(e.g. Ollama json_object mode) that did not match the requested "
+                f'{{"{expected_key}": [...]}} shape.'
+            )
+        return (items, raw, prompt) if return_raw else items
 
     def propose_words(
         self,
@@ -321,7 +379,7 @@ class LLMClient:
             invalid_guesses=json.dumps(sorted(invalid_guesses or set())),
             n=n,
         )
-        return self._json_request_with_retry(prompt)
+        return self._request_json_list(prompt, "words", str, "propose_words")
 
     def specialize(
         self,
@@ -329,7 +387,10 @@ class LLMClient:
         all_guesses: dict[str, int],
         invalid_guesses: set[str] | None = None,
         n: int = 2,
-    ) -> list[dict[str, Any]]:
+        rationale_inheritance_block: str = "",
+        self_report_block: str = "",
+        return_raw: bool = False,
+    ) -> Any:
         best_word, best_rank = self._global_best(hypothesis.words_tried)
         prompt = SPECIALIZE_PROMPT.format(
             name=hypothesis.category_name,
@@ -340,8 +401,10 @@ class LLMClient:
             all_guesses=json.dumps(sorted(all_guesses)),
             invalid_guesses=json.dumps(sorted(invalid_guesses or set())),
             n=n,
+        ) + rationale_inheritance_block + self_report_block
+        return self._request_json_list(
+            prompt, "specializations", dict, "specialize", return_raw=return_raw
         )
-        return self._json_request_with_retry(prompt)
 
     def build_operator_mutation_prompt(
         self,
@@ -352,6 +415,8 @@ class LLMClient:
         n: int = 3,
         active_categories: list[str] | None = None,
         ranked_context: str = "",
+        rationale_inheritance_block: str = "",
+        self_report_block: str = "",
     ) -> str:
         best_word, best_rank = self._global_best(hypothesis.words_tried)
         prompt_values = {
@@ -368,10 +433,24 @@ class LLMClient:
             prompt_values["active_categories"] = json.dumps(active_categories or [])
         if "{ranked_context}" in prompt_template:
             prompt_values["ranked_context"] = ranked_context
-        return prompt_template.format(**prompt_values)
+        # The self-report request (RQ1) is appended at the very end so it renders
+        # byte-identically to the pre-instrumentation prompt when the flag is off
+        # (self_report_block == ""). Appending, rather than adding a template
+        # slot, avoids touching the shared JSON-schema tail used by the
+        # out-of-scope pivot prompts.
+        return prompt_template.format(**prompt_values) + rationale_inheritance_block + self_report_block
 
     def complete_json_prompt(self, prompt: str) -> Any:
         return self._json_request_with_retry(prompt)
+
+    def complete_json_prompt_with_raw(self, prompt: str) -> tuple[Any, str]:
+        """Return both the parsed JSON and the raw response text.
+
+        Used by the self-report instrumentation so the raw model output can be
+        stored for offline re-parsing. Parsing/retry semantics match
+        ``complete_json_prompt``.
+        """
+        return self._json_request_with_retry_and_raw(prompt)
 
     def place_word(
         self,
@@ -395,19 +474,42 @@ class LLMClient:
             "specificity": _clamp_unit(response.get("specificity")),
         }
 
+    def build_crossover_prompt(
+        self,
+        hypothesis_a_name: str,
+        hypothesis_b_name: str,
+        a_words_with_ranks: dict[str, int],
+        b_words_with_ranks: dict[str, int],
+        self_report_block: str = "",
+    ) -> str:
+        return (
+            CROSSOVER_PROMPT.format(
+                a_name=hypothesis_a_name,
+                b_name=hypothesis_b_name,
+                a_words=json.dumps(a_words_with_ranks, sort_keys=True),
+                b_words=json.dumps(b_words_with_ranks, sort_keys=True),
+            )
+            + self_report_block
+        )
+
     def crossover(
         self,
         hypothesis_a_name: str,
         hypothesis_b_name: str,
         a_words_with_ranks: dict[str, int],
         b_words_with_ranks: dict[str, int],
-    ) -> dict[str, Any]:
-        prompt = CROSSOVER_PROMPT.format(
-            a_name=hypothesis_a_name,
-            b_name=hypothesis_b_name,
-            a_words=json.dumps(a_words_with_ranks, sort_keys=True),
-            b_words=json.dumps(b_words_with_ranks, sort_keys=True),
+        self_report_block: str = "",
+        return_raw: bool = False,
+    ) -> Any:
+        prompt = self.build_crossover_prompt(
+            hypothesis_a_name,
+            hypothesis_b_name,
+            a_words_with_ranks,
+            b_words_with_ranks,
+            self_report_block,
         )
+        if return_raw:
+            return self._json_request_with_retry_and_raw(prompt)
         return self._json_request_with_retry(prompt)
 
     def local_search(self, word: str, rank: int, n: int = 5, all_guesses: set[str] | None = None) -> list[str]:
@@ -417,25 +519,45 @@ class LLMClient:
             n=n,
             all_guesses=json.dumps(sorted(all_guesses or set())),
         )
-        return self._json_request_with_retry(prompt)
+        return self._request_json_list(prompt, "words", str, "local_search")
 
-    def pivot_morphology(self, word: str, rank: int, all_guesses: set[str], n: int = 10) -> list[str]:
+    def pivot_morphology(
+        self,
+        word: str,
+        rank: int,
+        all_guesses: set[str],
+        n: int = 10,
+        self_report_block: str = "",
+        return_raw: bool = False,
+    ) -> Any:
         prompt = PIVOT_MORPHOLOGY_PROMPT.format(
             word=word,
             rank=rank,
             n=n,
             all_guesses=json.dumps(sorted(all_guesses)),
+        ) + self_report_block
+        return self._request_json_list(
+            prompt, "words", str, "pivot_morphology", return_raw=return_raw
         )
-        return self._json_request_with_retry(prompt)
 
-    def pivot_register_shift(self, word: str, rank: int, all_guesses: set[str], n: int = 10) -> list[str]:
+    def pivot_register_shift(
+        self,
+        word: str,
+        rank: int,
+        all_guesses: set[str],
+        n: int = 10,
+        self_report_block: str = "",
+        return_raw: bool = False,
+    ) -> Any:
         prompt = PIVOT_REGISTER_SHIFT_PROMPT.format(
             word=word,
             rank=rank,
             n=n,
             all_guesses=json.dumps(sorted(all_guesses)),
+        ) + self_report_block
+        return self._request_json_list(
+            prompt, "words", str, "pivot_register_shift", return_raw=return_raw
         )
-        return self._json_request_with_retry(prompt)
 
     def pivot_adjacent_category(
         self,
@@ -446,7 +568,9 @@ class LLMClient:
         words_tried: dict[str, int],
         all_guesses: set[str],
         n: int = 10,
-    ) -> dict[str, Any]:
+        self_report_block: str = "",
+        return_raw: bool = False,
+    ) -> Any:
         prompt = PIVOT_ADJACENT_CATEGORY_PROMPT.format(
             word=word,
             rank=rank,
@@ -455,7 +579,10 @@ class LLMClient:
             words_tried=json.dumps(words_tried, sort_keys=True),
             all_guesses=json.dumps(sorted(all_guesses)),
             n=n,
-        )
+        ) + self_report_block
+        if return_raw:
+            parsed, raw = self._json_request_with_retry_and_raw(prompt)
+            return parsed, raw, prompt
         return self._json_request_with_retry(prompt)
 
     def pivot_fresh_adjacent_category(
@@ -465,27 +592,46 @@ class LLMClient:
         active_categories: list[str],
         all_guesses: set[str],
         n: int = 10,
-    ) -> dict[str, Any]:
+        self_report_block: str = "",
+        return_raw: bool = False,
+    ) -> Any:
         prompt = PIVOT_FRESH_ADJACENT_CATEGORY_PROMPT.format(
             word=word,
             rank=rank,
             active_categories=json.dumps(active_categories),
             all_guesses=json.dumps(sorted(all_guesses)),
             n=n,
-        )
+        ) + self_report_block
+        if return_raw:
+            parsed, raw = self._json_request_with_retry_and_raw(prompt)
+            return parsed, raw, prompt
         return self._json_request_with_retry(prompt)
 
-    def next_guess(self, history: dict[str, int], invalid_guesses: set[str] | None = None) -> str:
+    def next_guess(
+        self,
+        history: dict[str, int],
+        invalid_guesses: set[str] | None = None,
+        self_report_block: str = "",
+        return_raw: bool = False,
+    ) -> Any:
         prompt = NEXT_GUESS_PROMPT.format(
             history=json.dumps(history, sort_keys=True),
             invalid_guesses=json.dumps(sorted(invalid_guesses or set())),
-        )
+        ) + self_report_block
+        if return_raw:
+            response, raw = self._json_request_with_retry_and_raw(prompt)
+            word = str(response.get("word", "")) if isinstance(response, dict) else str(response)
+            return word, response, raw, prompt
         response = self._json_request_with_retry(prompt)
         if isinstance(response, dict):
             return str(response.get("word", ""))
         return str(response)
 
     def _json_request_with_retry(self, prompt: str) -> Any:
+        parsed, _raw = self._json_request_with_retry_and_raw(prompt)
+        return parsed
+
+    def _json_request_with_retry_and_raw(self, prompt: str) -> tuple[Any, str]:
         last_error: Exception | None = None
         max_attempts = 5
         for attempt in range(max_attempts):
@@ -528,7 +674,7 @@ class LLMClient:
                 time.sleep(_retry_delay_seconds(exc, attempt))
                 continue
             try:
-                return json.loads(_strip_code_fences(text))
+                return json.loads(_strip_code_fences(text)), text
             except json.JSONDecodeError as exc:
                 last_error = exc
 
@@ -691,6 +837,57 @@ def _clamp_unit(value: Any) -> float:
     if number != number:  # NaN guard
         raise ValueError("place_word returned NaN coordinate")
     return max(0.0, min(1.0, number))
+
+
+def _looks_like_category(value: Any) -> bool:
+    return isinstance(value, dict) and ("words" in value or "name" in value)
+
+
+def _normalize_json_list(parsed: Any, expected_key: str, element_type: type) -> list:
+    """Coerce a model response into a list of ``element_type`` items.
+
+    Ollama's ``response_format=json_object`` forces a single top-level object, so
+    prompts now request ``{expected_key: [...]}``. This tolerates every shape seen
+    across providers:
+    - ``{expected_key: [ ... ]}`` (the requested shape),
+    - a bare top-level array (providers that do not force an object),
+    - any other single-key wrapper whose sole list value holds the items,
+    - for dict elements only, a bare single element object (json_object collapse).
+    Entries not matching ``element_type`` are dropped.
+    """
+    if isinstance(parsed, list):
+        return [item for item in parsed if isinstance(item, element_type)]
+    if isinstance(parsed, dict):
+        wrapped = parsed.get(expected_key)
+        if isinstance(wrapped, list):
+            return [item for item in wrapped if isinstance(item, element_type)]
+        if element_type is dict and _looks_like_category(parsed):
+            return [parsed]
+        for value in parsed.values():
+            if isinstance(value, list) and any(isinstance(item, element_type) for item in value):
+                return [item for item in value if isinstance(item, element_type)]
+    return []
+
+
+def _normalize_initial_categories(parsed: Any) -> list[dict[str, Any]]:
+    """Coerce the initial-categories response into a list of category dicts."""
+    return _normalize_json_list(parsed, "categories", dict)
+
+
+def _count_seed_words(categories: list[dict[str, Any]]) -> int:
+    total = 0
+    for category in categories:
+        words = category.get("words")
+        if isinstance(words, list):
+            total += sum(1 for word in words if isinstance(word, str) and word.strip())
+    return total
+
+
+def _initial_categories_sufficient(categories: list[dict[str, Any]]) -> bool:
+    return (
+        len(categories) >= MIN_INITIAL_CATEGORIES
+        and _count_seed_words(categories) >= MIN_INITIAL_SEED_WORDS
+    )
 
 
 def _first_json_object(text: str) -> str | None:

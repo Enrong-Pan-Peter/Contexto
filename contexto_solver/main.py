@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+from pathlib import Path
 
 from . import config
 from .embeddings import EmbeddingModel
@@ -17,6 +18,7 @@ from .methods.ea_llm_pivot import EALLMPivotConfig, EALLMPivotMethod
 from .methods.ea_llm_self_adaptive import EALLMSelfAdaptiveConfig, EALLMSelfAdaptiveMethod
 from .methods.embedding import EmbeddingConfig, EmbeddingMethod
 from .methods.llm_only import LLMOnlyConfig, LLMOnlyMethod
+from .self_report import instrumentation_provenance_hash
 
 
 def main() -> None:
@@ -67,7 +69,15 @@ def main() -> None:
             "game_number": game_number,
             "game_embedding_path": game_embedding_path if args.game == "local" else None,
             "solver_embedding_path": solver_embedding_path if args.method == "embedding" else None,
+            "embedding_backend": Path(game_embedding_path).stem if args.game == "local" else None,
+            "vocabulary_size": (len(game_embedding_model.words) if game_embedding_model is not None else None),
             "alignment": _alignment(args.game, args.method, game_embedding_path, solver_embedding_path),
+            "trace_schema_version": config.TRACE_SCHEMA_VERSION,
+            "instrumentation_provenance_hash": instrumentation_provenance_hash(),
+            "self_report": config.SELF_REPORT if args.method in _SELF_REPORT_METHODS else None,
+            "rationale_inheritance": (
+                config.RATIONALE_INHERITANCE if args.method in _SELF_REPORT_METHODS else None
+            ),
             "max_generations": _default(args.max_generations, config.MAX_GENERATIONS),
             "llm_provider": llm_provider if method_family == "llm" else None,
             "llm_model": llm_model if method_family == "llm" else None,
@@ -85,6 +95,12 @@ def main() -> None:
                 config.SELF_ADAPTIVE_CONCENTRATION if args.method == "ea_llm_self_adaptive" else None
             ),
             "self_adaptive_sigma_floor": config.SELF_ADAPTIVE_SIGMA_FLOOR if args.method == "ea_llm_self_adaptive" else None,
+            "self_adaptive_sigma_mode": (
+                config.SELF_ADAPTIVE_SIGMA_MODE if args.method == "ea_llm_self_adaptive" else None
+            ),
+            "self_adaptive_selection_mode": (
+                config.SELF_ADAPTIVE_SELECTION_MODE if args.method == "ea_llm_self_adaptive" else None
+            ),
             "mapelites_grid_resolution": config.MAPELITES_GRID_RESOLUTION if args.method == "ea_llm_map_elites" else None,
             "mapelites_mutations_per_gen": config.MAPELITES_MUTATIONS_PER_GEN if args.method == "ea_llm_map_elites" else None,
             "mapelites_crossovers_per_gen": config.MAPELITES_CROSSOVERS_PER_GEN if args.method == "ea_llm_map_elites" else None,
@@ -94,6 +110,7 @@ def main() -> None:
             "mapelites_sigma_mode": config.MAPELITES_SIGMA_MODE if args.method == "ea_llm_map_elites" else None,
             "mapelites_frozen_sigma": list(config.MAPELITES_FROZEN_SIGMA) if args.method == "ea_llm_map_elites" else None,
             "mapelites_ranked_context_k": config.MAPELITES_RANKED_CONTEXT_K if args.method == "ea_llm_map_elites" else None,
+            "rank_cache_enabled": config.RANK_CACHE_ENABLED if args.game == "api" else None,
             "enable_pivot": _enable_pivot_metadata(args.method),
             "ea_llm_pivot_stall_no_improvement_generations": (
                 config.EA_LLM_PIVOT_STALL_NO_IMPROVEMENT_GENERATIONS if args.method == "ea_llm_pivot" else None
@@ -210,6 +227,7 @@ def _build_llm_method(method: str, game, llm_client: LLMClient, logger: Logger, 
                 max_generations=_default(args.max_generations, config.MAX_GENERATIONS),
                 trace_dir=config.TRACE_DIR,
                 run_label=run_label,
+                self_report=config.SELF_REPORT,
             ),
         )
 
@@ -224,6 +242,8 @@ def _build_llm_method(method: str, game, llm_client: LLMClient, logger: Logger, 
         "run_label": run_label,
         "llm_workers": _default(args.llm_workers, config.LLM_WORKERS),
         "local_search_rank_threshold": config.LOCAL_SEARCH_RANK_THRESHOLD,
+        "self_report": config.SELF_REPORT,
+        "rationale_inheritance": config.RATIONALE_INHERITANCE,
     }
     if method == "ea_llm":
         return EALLMMethod(game, llm_client, logger, EALLMConfig(**ea_kwargs))
@@ -237,6 +257,8 @@ def _build_llm_method(method: str, game, llm_client: LLMClient, logger: Logger, 
                 mu=config.SELF_ADAPTIVE_MU,
                 concentration=config.SELF_ADAPTIVE_CONCENTRATION,
                 sigma_floor=config.SELF_ADAPTIVE_SIGMA_FLOOR,
+                sigma_mode=config.SELF_ADAPTIVE_SIGMA_MODE,
+                selection_mode=config.SELF_ADAPTIVE_SELECTION_MODE,
                 random_seed=_random_seed(args.random_seed),
             ),
         )
@@ -321,6 +343,13 @@ def _default(value, default):
 
 
 _EA_METHODS = {"ea_llm", "ea_llm_pivot", "ea_llm_self_adaptive", "ea_llm_map_elites"}
+_SELF_REPORT_METHODS = {
+    "llm_only",
+    "ea_llm",
+    "ea_llm_pivot",
+    "ea_llm_self_adaptive",
+    "ea_llm_map_elites",
+}
 
 
 if __name__ == "__main__":

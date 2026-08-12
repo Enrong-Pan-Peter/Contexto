@@ -1,0 +1,135 @@
+===== JOB INFO =====
+Job ID: 12055220
+Host: frnt144.frontenac.local
+Date: Tue Jul 28 21:55:47 EDT 2026
+Port: 35220
+Tue Jul 28 21:55:47 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 610.43.02              KMD Version: 610.43.02     CUDA UMD Version: 13.3     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A30                     On  |   00000000:21:00.0 Off |                    0 |
+| N/A   45C    P0            133W /  165W |    9857MiB /  24576MiB |    100%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   1  NVIDIA A30                     On  |   00000000:81:00.0 Off |                    0 |
+| N/A   34C    P0             28W /  165W |       0MiB /  24576MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|    0   N/A  N/A         1396452      C   python                                 9848MiB |
++-----------------------------------------------------------------------------------------+
+Generation 0: best word=mom, best rank=450
+Generation 1: best word=talk, best rank=32
+Generation 2: best word=talk, best rank=32
+Generation 3: best word=chat, best rank=28
+Generation 4: best word=gossip, best rank=1
+Generation 0: best word=sad, best rank=518
+Generation 1: best word=love, best rank=164
+Generation 2: best word=chat, best rank=28
+Generation 3: best word=chat, best rank=28
+Generation 4: best word=banter, best rank=25
+Generation 5: best word=gossip, best rank=1
+Generation 0: best word=mother, best rank=450
+Generation 1: best word=love, best rank=164
+Generation 2: best word=love, best rank=164
+Generation 3: best word=love, best rank=164
+Generation 4: best word=love, best rank=164
+Generation 5: best word=love, best rank=164
+Generation 6: best word=love, best rank=164
+Generation 7: best word=love, best rank=164
+Generation 8: best word=love, best rank=164
+Generation 9: best word=link, best rank=109
+Generation 10: best word=medium, best rank=73
+Generation 11: best word=medium, best rank=73
+Generation 12: best word=medium, best rank=73
+Generation 13: best word=medium, best rank=73
+Generation 14: best word=drama, best rank=60
+Generation 15: best word=story, best rank=30
+Generation 16: best word=story, best rank=30
+Generation 17: best word=story, best rank=30
+Generation 18: best word=story, best rank=30
+Generation 19: best word=story, best rank=30
+Generation 20: best word=story, best rank=30
+Generation 21: best word=story, best rank=30
+Generation 22: best word=story, best rank=30
+Generation 23: best word=story, best rank=30
+Generation 24: best word=story, best rank=30
+Generation 25: best word=story, best rank=30
+Generation 26: best word=story, best rank=30
+Generation 27: best word=story, best rank=30
+Generation 28: best word=story, best rank=30
+Generation 29: best word=story, best rank=30
+Generation 30: best word=story, best rank=30
+Generation 31: best word=story, best rank=30
+Generation 32: best word=story, best rank=30
+Generation 33: best word=happening, best rank=9
+Generation 34: best word=happening, best rank=9
+Generation 35: best word=happening, best rank=9
+Generation 36: best word=happening, best rank=9
+Generation 37: best word=happening, best rank=9
+Generation 38: best word=happening, best rank=9
+Generation 39: best word=happening, best rank=9
+Generation 40: best word=happening, best rank=9
+Generation 41: best word=happening, best rank=9
+Generation 42: best word=happening, best rank=9
+Generation 43: best word=happening, best rank=9
+Generation 44: best word=happening, best rank=9
+Generation 45: best word=happening, best rank=9
+Generation 46: best word=happening, best rank=9
+Generation 47: best word=happening, best rank=9
+Generation 48: best word=happening, best rank=9
+Generation 49: best word=happening, best rank=9
+Generation 50: best word=happening, best rank=9
+Generation 0: best word=love, best rank=164
+Generation 1: best word=love, best rank=164
+Generation 2: best word=listen, best rank=154
+Generation 3: best word=listen, best rank=154
+Generation 4: best word=chat, best rank=28
+Generation 5: best word=chat, best rank=28
+Generation 6: best word=chat, best rank=28
+Generation 7: best word=gossip, best rank=1
+Generation 0: best word=hot, best rank=17
+Generation 1: best word=hot, best rank=17
+Generation 2: best word=hot, best rank=17
+Generation 3: best word=hot, best rank=17
+Generation 4: best word=hot, best rank=17
+Generation 5: best word=hot, best rank=17
+Generation 6: best word=hot, best rank=17
+Generation 7: best word=hot, best rank=17
+Generation 8: best word=hot, best rank=17
+Generation 9: best word=hot, best rank=17
+Generation 10: best word=hot, best rank=17
+Generation 11: best word=hot, best rank=17
+Generation 12: best word=hot, best rank=17
+Generation 13: best word=hot, best rank=17
+Generation 14: best word=hot, best rank=17
+Generation 15: best word=hot, best rank=17
+Generation 16: best word=hot, best rank=17
+Generation 17: best word=hot, best rank=17
+Generation 18: best word=hot, best rank=17
+Generation 19: best word=hot, best rank=17
+Generation 20: best word=hot, best rank=17
+Generation 21: best word=gossip, best rank=1
+Wrote JSON summary: traces/rq1_A1/A1_ea_llm_self_adaptive_game1384.json
+Wrote CSV summary: traces/rq1_A1/A1_ea_llm_self_adaptive_game1384.csv
+{
+  "total_runs": 5,
+  "solved_runs": 4,
+  "solve_rate": 0.8,
+  "average_guesses_solved": 375.0,
+  "average_best_rank": 2.6,
+  "average_generations": 17.4
+}
+===== FINISHED =====
+Game: 1384
+Exit status: 0
+Date: Wed Jul 29 17:23:25 EDT 2026

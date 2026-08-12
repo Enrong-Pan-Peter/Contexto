@@ -1,0 +1,1424 @@
+[
+  {
+    "generation": -1,
+    "event": "RUN_CONFIG",
+    "timestamp": "2026-07-07T00:33:48",
+    "details": {
+      "game": "local",
+      "solver": "llm",
+      "method": "llm_only",
+      "target": "ivory",
+      "game_number": null,
+      "game_embedding_path": "data/glove.6B.300d.txt",
+      "solver_embedding_path": null,
+      "embedding_backend": "glove.6B.300d",
+      "vocabulary_size": 400000,
+      "alignment": "not_applicable",
+      "trace_schema_version": 2,
+      "self_report": true,
+      "max_generations": 50,
+      "llm_provider": "ollama",
+      "llm_model": "qwen3:14b",
+      "llm_workers": null,
+      "initial_categories": null,
+      "max_active_hypotheses": null,
+      "local_search_rank_threshold": null,
+      "self_adaptive_initial_categories": null,
+      "self_adaptive_mu": null,
+      "self_adaptive_concentration": null,
+      "self_adaptive_sigma_floor": null,
+      "mapelites_grid_resolution": null,
+      "mapelites_mutations_per_gen": null,
+      "mapelites_crossovers_per_gen": null,
+      "mapelites_initial_categories": null,
+      "mapelites_concentration": null,
+      "mapelites_sigma_floor": null,
+      "mapelites_sigma_mode": null,
+      "mapelites_frozen_sigma": null,
+      "mapelites_ranked_context_k": null,
+      "enable_pivot": null,
+      "ea_llm_pivot_stall_no_improvement_generations": null,
+      "ea_llm_pivot_stall_close_rank_threshold": null,
+      "ea_llm_pivot_stall_close_generations_limit": null,
+      "ea_llm_pivot_max_attempts_per_run": null,
+      "ea_llm_pivot_candidate_words_per_operator": null,
+      "ea_llm_pivot_resolution_window": null,
+      "seed_count": null,
+      "active_count": null,
+      "neighbors_per_word": null,
+      "random_seed": null
+    }
+  },
+  {
+    "generation": 0,
+    "event": "INIT",
+    "timestamp": "2026-07-07T00:33:48",
+    "details": {
+      "history": {},
+      "best_word": null,
+      "best_rank": null,
+      "total_guesses": 0
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-07T00:34:06",
+    "details": {
+      "word": "apple",
+      "rank": 41172,
+      "best_word": "apple",
+      "best_rank": 41172,
+      "total_guesses": 1,
+      "self_report": {
+        "predicted_closeness": 0.5,
+        "predicted_closeness_clamped": false,
+        "rationale": {
+          "basis_words": [],
+          "reason": "No prior guesses or context provided, so selecting a common, neutral word likely to be relevant in many themes."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"apple\", \"predicted_closeness\": 0.5, \"basis_words\": [], \"reason\": \"No prior guesses or context provided, so selecting a common, neutral word likely to be relevant in many themes.\"}",
+        "self_report_prompt": null
+      }
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-07T00:34:26",
+    "details": {
+      "word": "fruit",
+      "rank": 1540,
+      "best_word": "fruit",
+      "best_rank": 1540,
+      "total_guesses": 2,
+      "self_report": {
+        "predicted_closeness": 0.7,
+        "predicted_closeness_clamped": false,
+        "rationale": {
+          "basis_words": [
+            "apple"
+          ],
+          "reason": "The word 'fruit' is a category that includes 'apple,' suggesting it may be closer to the target if the hidden word is a broader category."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"fruit\", \"predicted_closeness\": 0.7, \"basis_words\": [\"apple\"], \"reason\": \"The word 'fruit' is a category that includes 'apple,' suggesting it may be closer to the target if the hidden word is a broader category.\"}",
+        "self_report_prompt": null
+      }
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-07T00:34:44",
+    "details": {
+      "word": "pear",
+      "rank": 3538,
+      "best_word": "fruit",
+      "best_rank": 1540,
+      "total_guesses": 3,
+      "self_report": {
+        "predicted_closeness": 0.7,
+        "predicted_closeness_clamped": false,
+        "rationale": {
+          "basis_words": [
+            "apple",
+            "fruit"
+          ],
+          "reason": "Pear is a specific fruit, narrowing the category from 'fruit' to a more concrete example, which may align better with the target if it's a singular fruit type."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"pear\", \"predicted_closeness\": 0.7, \"basis_words\": [\"apple\", \"fruit\"], \"reason\": \"Pear is a specific fruit, narrowing the category from 'fruit' to a more concrete example, which may align better with the target if it's a singular fruit type.\"}",
+        "self_report_prompt": null
+      }
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-07T00:35:18",
+    "details": {
+      "word": "produce",
+      "rank": 2361,
+      "best_word": "fruit",
+      "best_rank": 1540,
+      "total_guesses": 4,
+      "self_report": {
+        "predicted_closeness": 0.75,
+        "predicted_closeness_clamped": false,
+        "rationale": {
+          "basis_words": [
+            "fruit",
+            "pear"
+          ],
+          "reason": "Produce is a broader category encompassing fruits and vegetables, which may align more closely with the target than the specific fruits already guessed."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"produce\", \"predicted_closeness\": 0.75, \"basis_words\": [\"fruit\", \"pear\"], \"reason\": \"Produce is a broader category encompassing fruits and vegetables, which may align more closely with the target than the specific fruits already guessed.\"}",
+        "self_report_prompt": null
+      }
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-07-07T00:35:53",
+    "details": {
+      "word": "crop",
+      "rank": 1409,
+      "best_word": "crop",
+      "best_rank": 1409,
+      "total_guesses": 5,
+      "self_report": {
+        "predicted_closeness": 0.7,
+        "predicted_closeness_clamped": false,
+        "rationale": {
+          "basis_words": [
+            "fruit",
+            "produce"
+          ],
+          "reason": "Crop is a related agricultural term to 'produce' and 'fruit', suggesting it may be closer to the hidden target."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"crop\", \"predicted_closeness\": 0.7, \"basis_words\": [\"fruit\", \"produce\"], \"reason\": \"Crop is a related agricultural term to 'produce' and 'fruit', suggesting it may be closer to the hidden target.\"}",
+        "self_report_prompt": null
+      }
+    }
+  },
+  {
+    "generation": 6,
+    "event": "GUESS",
+    "timestamp": "2026-07-07T00:36:08",
+    "details": {
+      "word": "grain",
+      "rank": 2856,
+      "best_word": "crop",
+      "best_rank": 1409,
+      "total_guesses": 6,
+      "self_report": {
+        "predicted_closeness": 0.75,
+        "predicted_closeness_clamped": false,
+        "rationale": {
+          "basis_words": [
+            "crop",
+            "produce"
+          ],
+          "reason": "Grain is a specific type of crop and a common agricultural product, aligning with the context of the existing guesses."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"grain\", \"predicted_closeness\": 0.75, \"basis_words\": [\"crop\", \"produce\"], \"reason\": \"Grain is a specific type of crop and a common agricultural product, aligning with the context of the existing guesses.\"}",
+        "self_report_prompt": null
+      }
+    }
+  },
+  {
+    "generation": 7,
+    "event": "GUESS",
+    "timestamp": "2026-07-07T00:36:23",
+    "details": {
+      "word": "plant",
+      "rank": 31165,
+      "best_word": "crop",
+      "best_rank": 1409,
+      "total_guesses": 7,
+      "self_report": {
+        "predicted_closeness": 0.6,
+        "predicted_closeness_clamped": false,
+        "rationale": {
+          "basis_words": [
+            "crop",
+            "grain",
+            "produce",
+            "fruit"
+          ],
+          "reason": "The target may be a general agricultural term related to crops, produce, and grains. 'Plant' is a broad term that encompasses many of these categories and hasn't been guessed yet."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"plant\", \"predicted_closeness\": 0.6, \"basis_words\": [\"crop\", \"grain\", \"produce\", \"fruit\"], \"reason\": \"The target may be a general agricultural term related to crops, produce, and grains. 'Plant' is a broad term that encompasses many of these categories and hasn't been guessed yet.\"}",
+        "self_report_prompt": null
+      }
+    }
+  },
+  {
+    "generation": 8,
+    "event": "GUESS",
+    "timestamp": "2026-07-07T00:36:34",
+    "details": {
+      "word": "corn",
+      "rank": 7769,
+      "best_word": "crop",
+      "best_rank": 1409,
+      "total_guesses": 8,
+      "self_report": {
+        "predicted_closeness": 0.85,
+        "predicted_closeness_clamped": false,
+        "rationale": {
+          "basis_words": [
+            "crop",
+            "grain",
+            "plant"
+          ],
+          "reason": "Corn is a common agricultural product that fits within the categories of crops, grains, and plants, which are all related to the existing guesses."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"corn\", \"predicted_closeness\": 0.85, \"basis_words\": [\"crop\", \"grain\", \"plant\"], \"reason\": \"Corn is a common agricultural product that fits within the categories of crops, grains, and plants, which are all related to the existing guesses.\"}",
+        "self_report_prompt": null
+      }
+    }
+  },
+  {
+    "generation": 9,
+    "event": "GUESS",
+    "timestamp": "2026-07-07T00:36:47",
+    "details": {
+      "word": "wheat",
+      "rank": 8755,
+      "best_word": "crop",
+      "best_rank": 1409,
+      "total_guesses": 9,
+      "self_report": {
+        "predicted_closeness": 0.75,
+        "predicted_closeness_clamped": false,
+        "rationale": {
+          "basis_words": [
+            "grain",
+            "crop",
+            "produce"
+          ],
+          "reason": "Wheat is a common grain-related term not yet guessed, and it aligns with the context of crops and produce, which are closely ranked in the history."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"wheat\", \"predicted_closeness\": 0.75, \"basis_words\": [\"grain\", \"crop\", \"produce\"], \"reason\": \"Wheat is a common grain-related term not yet guessed, and it aligns with the context of crops and produce, which are closely ranked in the history.\"}",
+        "self_report_prompt": null
+      }
+    }
+  },
+  {
+    "generation": 10,
+    "event": "GUESS",
+    "timestamp": "2026-07-07T00:37:01",
+    "details": {
+      "word": "soy",
+      "rank": 13400,
+      "best_word": "crop",
+      "best_rank": 1409,
+      "total_guesses": 10,
+      "self_report": {
+        "predicted_closeness": 0.25,
+        "predicted_closeness_clamped": false,
+        "rationale": {
+          "basis_words": [
+            "crop",
+            "corn",
+            "grain",
+            "wheat",
+            "produce"
+          ],
+          "reason": "The target appears to be an agricultural product or crop, with existing guesses like corn, wheat, and grain suggesting a focus on crops. 'Soy' is a common crop and fits the pattern of the closest guesses."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"soy\", \"predicted_closeness\": 0.25, \"basis_words\": [\"crop\", \"corn\", \"grain\", \"wheat\", \"produce\"], \"reason\": \"The target appears to be an agricultural product or crop, with existing guesses like corn, wheat, and grain suggesting a focus on crops. 'Soy' is a common crop and fits the pattern of the closest guesses.\"}",
+        "self_report_prompt": null
+      }
+    }
+  },
+  {
+    "generation": 11,
+    "event": "GUESS",
+    "timestamp": "2026-07-07T00:37:41",
+    "details": {
+      "word": "vegetable",
+      "rank": 4396,
+      "best_word": "crop",
+      "best_rank": 1409,
+      "total_guesses": 11,
+      "self_report": {
+        "predicted_closeness": 0.3,
+        "predicted_closeness_clamped": false,
+        "rationale": {
+          "basis_words": [
+            "fruit",
+            "produce"
+          ],
+          "reason": "Vegetable is a common agricultural category similar to 'fruit' and 'produce', which are already in the guess history with relatively low ranks, suggesting a focus on food categories."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"vegetable\", \"predicted_closeness\": 0.3, \"basis_words\": [\"fruit\", \"produce\"], \"reason\": \"Vegetable is a common agricultural category similar to 'fruit' and 'produce', which are already in the guess history with relatively low ranks, suggesting a focus on food categories.\"}",
+        "self_report_prompt": null
+      }
+    }
+  },
+  {
+    "generation": 12,
+    "event": "GUESS",
+    "timestamp": "2026-07-07T00:37:54",
+    "details": {
+      "word": "rice",
+      "rank": 4492,
+      "best_word": "crop",
+      "best_rank": 1409,
+      "total_guesses": 12,
+      "self_report": {
+        "predicted_closeness": 0.3,
+        "predicted_closeness_clamped": false,
+        "rationale": {
+          "basis_words": [
+            "grain",
+            "wheat",
+            "corn",
+            "soy"
+          ],
+          "reason": "Rice is a specific grain similar to wheat and corn, which are already close to the target."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"rice\", \"predicted_closeness\": 0.3, \"basis_words\": [\"grain\", \"wheat\", \"corn\", \"soy\"], \"reason\": \"Rice is a specific grain similar to wheat and corn, which are already close to the target.\"}",
+        "self_report_prompt": null
+      }
+    }
+  },
+  {
+    "generation": 13,
+    "event": "GUESS",
+    "timestamp": "2026-07-07T00:38:38",
+    "details": {
+      "word": "barley",
+      "rank": 83951,
+      "best_word": "crop",
+      "best_rank": 1409,
+      "total_guesses": 13,
+      "self_report": {
+        "predicted_closeness": 0.7,
+        "predicted_closeness_clamped": false,
+        "rationale": {
+          "basis_words": [
+            "crop",
+            "grain"
+          ],
+          "reason": "Barley is a specific type of grain and crop, which may be closer to the target than broader terms like 'grain' or 'crop' already tried."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"barley\", \"predicted_closeness\": 0.7, \"basis_words\": [\"crop\", \"grain\"], \"reason\": \"Barley is a specific type of grain and crop, which may be closer to the target than broader terms like 'grain' or 'crop' already tried.\"}",
+        "self_report_prompt": null
+      }
+    }
+  },
+  {
+    "generation": 14,
+    "event": "GUESS",
+    "timestamp": "2026-07-07T00:38:54",
+    "details": {
+      "word": "harvest",
+      "rank": 334,
+      "best_word": "harvest",
+      "best_rank": 334,
+      "total_guesses": 14,
+      "self_report": {
+        "predicted_closeness": 0.85,
+        "predicted_closeness_clamped": false,
+        "rationale": {
+          "basis_words": [
+            "crop",
+            "produce",
+            "grain",
+            "fruit"
+          ],
+          "reason": "Harvest is a common agricultural term closely related to crops, produce, and grains, making it a logical next guess near the target."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"harvest\", \"predicted_closeness\": 0.85, \"basis_words\": [\"crop\", \"produce\", \"grain\", \"fruit\"], \"reason\": \"Harvest is a common agricultural term closely related to crops, produce, and grains, making it a logical next guess near the target.\"}",
+        "self_report_prompt": null
+      }
+    }
+  },
+  {
+    "generation": 15,
+    "event": "GUESS",
+    "timestamp": "2026-07-07T00:39:15",
+    "details": {
+      "word": "bean",
+      "rank": 13498,
+      "best_word": "harvest",
+      "best_rank": 334,
+      "total_guesses": 15,
+      "self_report": {
+        "predicted_closeness": 0.2,
+        "predicted_closeness_clamped": false,
+        "rationale": {
+          "basis_words": [
+            "soy",
+            "grain"
+          ],
+          "reason": "Bean is a common agricultural crop related to soy (rank 13400) and grain (rank 2856), suggesting it may be closer to the target than less related terms."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"bean\", \"predicted_closeness\": 0.2, \"basis_words\": [\"soy\", \"grain\"], \"reason\": \"Bean is a common agricultural crop related to soy (rank 13400) and grain (rank 2856), suggesting it may be closer to the target than less related terms.\"}",
+        "self_report_prompt": null
+      }
+    }
+  },
+  {
+    "generation": 16,
+    "event": "GUESS",
+    "timestamp": "2026-07-07T00:39:53",
+    "details": {
+      "word": "yield",
+      "rank": 4855,
+      "best_word": "harvest",
+      "best_rank": 334,
+      "total_guesses": 16,
+      "self_report": {
+        "predicted_closeness": 0.8,
+        "predicted_closeness_clamped": false,
+        "rationale": {
+          "basis_words": [
+            "harvest",
+            "crop"
+          ],
+          "reason": "Yield is a synonym of harvest and related to crop, making it a logical next guess based on the context of agricultural terms."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"yield\", \"predicted_closeness\": 0.8, \"basis_words\": [\"harvest\", \"crop\"], \"reason\": \"Yield is a synonym of harvest and related to crop, making it a logical next guess based on the context of agricultural terms.\"}",
+        "self_report_prompt": null
+      }
+    }
+  },
+  {
+    "generation": 17,
+    "event": "GUESS",
+    "timestamp": "2026-07-07T00:43:06",
+    "details": {
+      "word": "field",
+      "rank": 136996,
+      "best_word": "harvest",
+      "best_rank": 334,
+      "total_guesses": 17,
+      "self_report": {
+        "predicted_closeness": 0.85,
+        "predicted_closeness_clamped": false,
+        "rationale": {
+          "basis_words": [
+            "harvest",
+            "crop",
+            "grain",
+            "wheat",
+            "corn",
+            "rice",
+            "soy"
+          ],
+          "reason": "The word 'field' is closely related to agricultural production and harvesting, which are central themes in the existing guesses like 'harvest,' 'crop,' and 'grain.' It is a common synonym for areas where crops are grown, making it a logical next guess."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"field\", \"predicted_closeness\": 0.85, \"basis_words\": [\"harvest\", \"crop\", \"grain\", \"wheat\", \"corn\", \"rice\", \"soy\"], \"reason\": \"The word 'field' is closely related to agricultural production and harvesting, which are central themes in the existing guesses like 'harvest,' 'crop,' and 'grain.' It is a common synonym for areas where crops are grown, making it a logical next guess.\"}",
+        "self_report_prompt": null
+      }
+    }
+  },
+  {
+    "generation": 18,
+    "event": "GUESS",
+    "timestamp": "2026-07-07T00:43:44",
+    "details": {
+      "word": "soil",
+      "rank": 22254,
+      "best_word": "harvest",
+      "best_rank": 334,
+      "total_guesses": 18,
+      "self_report": {
+        "predicted_closeness": 0.65,
+        "predicted_closeness_clamped": false,
+        "rationale": {
+          "basis_words": [
+            "field",
+            "harvest",
+            "crop",
+            "plant",
+            "produce"
+          ],
+          "reason": "Soil is a fundamental component of agricultural contexts, closely related to the existing guesses like field, crop, and harvest, which are all tied to farming and plant growth."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"soil\", \"predicted_closeness\": 0.65, \"basis_words\": [\"field\", \"harvest\", \"crop\", \"plant\", \"produce\"], \"reason\": \"Soil is a fundamental component of agricultural contexts, closely related to the existing guesses like field, crop, and harvest, which are all tied to farming and plant growth.\"}",
+        "self_report_prompt": null
+      }
+    }
+  },
+  {
+    "generation": 19,
+    "event": "GUESS",
+    "timestamp": "2026-07-07T00:44:19",
+    "details": {
+      "word": "agriculture",
+      "rank": 34555,
+      "best_word": "harvest",
+      "best_rank": 334,
+      "total_guesses": 19,
+      "self_report": {
+        "predicted_closeness": 0.7,
+        "predicted_closeness_clamped": false,
+        "rationale": {
+          "basis_words": [
+            "harvest",
+            "produce",
+            "crop",
+            "grain",
+            "yield"
+          ],
+          "reason": "Agriculture is a high-level term encompassing the context of previous guesses like harvest, crop, and yield, making it a likely candidate closer to the target than more specific terms."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"agriculture\", \"predicted_closeness\": 0.7, \"basis_words\": [\"harvest\", \"produce\", \"crop\", \"grain\", \"yield\"], \"reason\": \"Agriculture is a high-level term encompassing the context of previous guesses like harvest, crop, and yield, making it a likely candidate closer to the target than more specific terms.\"}",
+        "self_report_prompt": null
+      }
+    }
+  },
+  {
+    "generation": 20,
+    "event": "GUESS",
+    "timestamp": "2026-07-07T00:44:31",
+    "details": {
+      "word": "seed",
+      "rank": 12020,
+      "best_word": "harvest",
+      "best_rank": 334,
+      "total_guesses": 20,
+      "self_report": {
+        "predicted_closeness": 0.2,
+        "predicted_closeness_clamped": false,
+        "rationale": {
+          "basis_words": [
+            "harvest",
+            "crop",
+            "grain",
+            "yield"
+          ],
+          "reason": "Seed is a fundamental agricultural term closely related to harvest, crop, grain, and yield, which are already low-ranked guesses indicating the target may be a core farming concept."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"seed\", \"predicted_closeness\": 0.2, \"basis_words\": [\"harvest\", \"crop\", \"grain\", \"yield\"], \"reason\": \"Seed is a fundamental agricultural term closely related to harvest, crop, grain, and yield, which are already low-ranked guesses indicating the target may be a core farming concept.\"}",
+        "self_report_prompt": null
+      }
+    }
+  },
+  {
+    "generation": 21,
+    "event": "GUESS",
+    "timestamp": "2026-07-07T00:45:01",
+    "details": {
+      "word": "farm",
+      "rank": 7242,
+      "best_word": "harvest",
+      "best_rank": 334,
+      "total_guesses": 21,
+      "self_report": {
+        "predicted_closeness": 0.2,
+        "predicted_closeness_clamped": false,
+        "rationale": {
+          "basis_words": [
+            "harvest",
+            "crop",
+            "grain",
+            "yield",
+            "produce"
+          ],
+          "reason": "The target appears to be related to agriculture and farming, as evidenced by the low ranks of harvest, crop, grain, yield, and produce. 'Farm' is a common, relevant noun not previously guessed and could be a closer synonym or related term."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"farm\", \"predicted_closeness\": 0.2, \"basis_words\": [\"harvest\", \"crop\", \"grain\", \"yield\", \"produce\"], \"reason\": \"The target appears to be related to agriculture and farming, as evidenced by the low ranks of harvest, crop, grain, yield, and produce. 'Farm' is a common, relevant noun not previously guessed and could be a closer synonym or related term.\"}",
+        "self_report_prompt": null
+      }
+    }
+  },
+  {
+    "generation": 22,
+    "event": "GUESS",
+    "timestamp": "2026-07-07T00:45:49",
+    "details": {
+      "word": "cereal",
+      "rank": 27998,
+      "best_word": "harvest",
+      "best_rank": 334,
+      "total_guesses": 22,
+      "self_report": {
+        "predicted_closeness": 0.7,
+        "predicted_closeness_clamped": false,
+        "rationale": {
+          "basis_words": [
+            "grain",
+            "harvest"
+          ],
+          "reason": "Cereal is a synonym for grain and closely related to agricultural terms like harvest, which have low ranks in the history."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"cereal\", \"predicted_closeness\": 0.7, \"basis_words\": [\"grain\", \"harvest\"], \"reason\": \"Cereal is a synonym for grain and closely related to agricultural terms like harvest, which have low ranks in the history.\"}",
+        "self_report_prompt": null
+      }
+    }
+  },
+  {
+    "generation": 23,
+    "event": "GUESS",
+    "timestamp": "2026-07-07T00:46:43",
+    "details": {
+      "word": "reap",
+      "rank": 35526,
+      "best_word": "harvest",
+      "best_rank": 334,
+      "total_guesses": 23,
+      "self_report": {
+        "predicted_closeness": 0.4,
+        "predicted_closeness_clamped": false,
+        "rationale": {
+          "basis_words": [
+            "harvest",
+            "crop"
+          ],
+          "reason": "Reap is a synonym of harvest and related to crop, making it a likely candidate for being closer to the target."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"reap\", \"predicted_closeness\": 0.4, \"basis_words\": [\"harvest\", \"crop\"], \"reason\": \"Reap is a synonym of harvest and related to crop, making it a likely candidate for being closer to the target.\"}",
+        "self_report_prompt": null
+      }
+    }
+  },
+  {
+    "generation": 24,
+    "event": "GUESS",
+    "timestamp": "2026-07-07T00:47:14",
+    "details": {
+      "word": "pea",
+      "rank": 69299,
+      "best_word": "harvest",
+      "best_rank": 334,
+      "total_guesses": 24,
+      "self_report": {
+        "predicted_closeness": 0.3,
+        "predicted_closeness_clamped": false,
+        "rationale": {
+          "basis_words": [
+            "harvest",
+            "crop",
+            "grain",
+            "wheat",
+            "corn",
+            "soy",
+            "rice",
+            "bean"
+          ],
+          "reason": "The target is likely an agricultural term related to crops or harvest. 'Pea' is a common crop not previously guessed and fits the context of the existing words."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"pea\", \"predicted_closeness\": 0.3, \"basis_words\": [\"harvest\", \"crop\", \"grain\", \"wheat\", \"corn\", \"soy\", \"rice\", \"bean\"], \"reason\": \"The target is likely an agricultural term related to crops or harvest. 'Pea' is a common crop not previously guessed and fits the context of the existing words.\"}",
+        "self_report_prompt": null
+      }
+    }
+  },
+  {
+    "generation": 25,
+    "event": "GUESS",
+    "timestamp": "2026-07-07T00:47:41",
+    "details": {
+      "word": "gather",
+      "rank": 4405,
+      "best_word": "harvest",
+      "best_rank": 334,
+      "total_guesses": 25,
+      "self_report": {
+        "predicted_closeness": 0.7,
+        "predicted_closeness_clamped": false,
+        "rationale": {
+          "basis_words": [
+            "harvest",
+            "crop",
+            "produce"
+          ],
+          "reason": "Gather is a synonym of harvest and closely related to crop and produce, making it a logical next guess in the agricultural context."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"gather\", \"predicted_closeness\": 0.7, \"basis_words\": [\"harvest\", \"crop\", \"produce\"], \"reason\": \"Gather is a synonym of harvest and closely related to crop and produce, making it a logical next guess in the agricultural context.\"}",
+        "self_report_prompt": null
+      }
+    }
+  },
+  {
+    "generation": 26,
+    "event": "GUESS",
+    "timestamp": "2026-07-07T00:48:07",
+    "details": {
+      "word": "thresh",
+      "rank": 186461,
+      "best_word": "harvest",
+      "best_rank": 334,
+      "total_guesses": 26,
+      "self_report": {
+        "predicted_closeness": 0.85,
+        "predicted_closeness_clamped": false,
+        "rationale": {
+          "basis_words": [
+            "harvest",
+            "grain",
+            "crop",
+            "reap"
+          ],
+          "reason": "Thresh is a key agricultural process closely related to harvest and grain, which are already among the closest guesses. It is a specific verb not yet tried, increasing likelihood of proximity to the target."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"thresh\", \"predicted_closeness\": 0.85, \"basis_words\": [\"harvest\", \"grain\", \"crop\", \"reap\"], \"reason\": \"Thresh is a key agricultural process closely related to harvest and grain, which are already among the closest guesses. It is a specific verb not yet tried, increasing likelihood of proximity to the target.\"}",
+        "self_report_prompt": null
+      }
+    }
+  },
+  {
+    "generation": 27,
+    "event": "GUESS",
+    "timestamp": "2026-07-07T00:48:39",
+    "details": {
+      "word": "cultivate",
+      "rank": 45043,
+      "best_word": "harvest",
+      "best_rank": 334,
+      "total_guesses": 27,
+      "self_report": {
+        "predicted_closeness": 0.8,
+        "predicted_closeness_clamped": false,
+        "rationale": {
+          "basis_words": [
+            "harvest",
+            "produce",
+            "crop"
+          ],
+          "reason": "Cultivate is closely related to farming and agriculture, aligning with existing guesses like 'harvest' and 'produce' which have low ranks."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"cultivate\", \"predicted_closeness\": 0.8, \"basis_words\": [\"harvest\", \"produce\", \"crop\"], \"reason\": \"Cultivate is closely related to farming and agriculture, aligning with existing guesses like 'harvest' and 'produce' which have low ranks.\"}",
+        "self_report_prompt": null
+      }
+    }
+  },
+  {
+    "generation": 28,
+    "event": "GUESS",
+    "timestamp": "2026-07-07T00:48:54",
+    "details": {
+      "word": "sow",
+      "rank": 3093,
+      "best_word": "harvest",
+      "best_rank": 334,
+      "total_guesses": 28,
+      "self_report": {
+        "predicted_closeness": 0.3,
+        "predicted_closeness_clamped": false,
+        "rationale": {
+          "basis_words": [
+            "plant",
+            "harvest",
+            "reap",
+            "gather"
+          ],
+          "reason": "Sow is a farming-related term not previously guessed, linked to planting seeds, which is a key agricultural activity similar to harvest, reap, and gather."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"sow\", \"predicted_closeness\": 0.3, \"basis_words\": [\"plant\", \"harvest\", \"reap\", \"gather\"], \"reason\": \"Sow is a farming-related term not previously guessed, linked to planting seeds, which is a key agricultural activity similar to harvest, reap, and gather.\"}",
+        "self_report_prompt": null
+      }
+    }
+  },
+  {
+    "generation": 29,
+    "event": "GUESS",
+    "timestamp": "2026-07-07T00:49:52",
+    "details": {
+      "word": "collect",
+      "rank": 3649,
+      "best_word": "harvest",
+      "best_rank": 334,
+      "total_guesses": 29,
+      "self_report": {
+        "predicted_closeness": 0.7,
+        "predicted_closeness_clamped": false,
+        "rationale": {
+          "basis_words": [
+            "gather",
+            "harvest",
+            "reap"
+          ],
+          "reason": "Based on the proximity of words like gather and reap to the target, 'collect' is a plausible synonym that may be closer."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"collect\", \"predicted_closeness\": 0.7, \"basis_words\": [\"gather\", \"harvest\", \"reap\"], \"reason\": \"Based on the proximity of words like gather and reap to the target, 'collect' is a plausible synonym that may be closer.\"}",
+        "self_report_prompt": null
+      }
+    }
+  },
+  {
+    "generation": 30,
+    "event": "GUESS",
+    "timestamp": "2026-07-07T01:05:25",
+    "details": {
+      "word": "grow",
+      "rank": 7800,
+      "best_word": "harvest",
+      "best_rank": 334,
+      "total_guesses": 30,
+      "self_report": {
+        "predicted_closeness": 0.8,
+        "predicted_closeness_clamped": false,
+        "rationale": {
+          "basis_words": [
+            "harvest",
+            "produce",
+            "cultivate",
+            "plant",
+            "sow"
+          ],
+          "reason": "Grow is a common agricultural term closely related to farming, planting, and crop development, which aligns with the existing guesses."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"grow\", \"predicted_closeness\": 0.8, \"basis_words\": [\"harvest\", \"produce\", \"cultivate\", \"plant\", \"sow\"], \"reason\": \"Grow is a common agricultural term closely related to farming, planting, and crop development, which aligns with the existing guesses.\"}",
+        "self_report_prompt": null
+      }
+    }
+  },
+  {
+    "generation": 31,
+    "event": "GUESS",
+    "timestamp": "2026-07-07T01:06:20",
+    "details": {
+      "word": "oat",
+      "rank": 34318,
+      "best_word": "harvest",
+      "best_rank": 334,
+      "total_guesses": 31,
+      "self_report": {
+        "predicted_closeness": 0.4,
+        "predicted_closeness_clamped": false,
+        "rationale": {
+          "basis_words": [
+            "grain",
+            "wheat",
+            "rice",
+            "corn",
+            "barley"
+          ],
+          "reason": "Oat is a common grain related to the existing words like grain, wheat, rice, corn, and barley, suggesting it might be closer to the target."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"oat\", \"predicted_closeness\": 0.4, \"basis_words\": [\"grain\", \"wheat\", \"rice\", \"corn\", \"barley\"], \"reason\": \"Oat is a common grain related to the existing words like grain, wheat, rice, corn, and barley, suggesting it might be closer to the target.\"}",
+        "self_report_prompt": null
+      }
+    }
+  },
+  {
+    "generation": 32,
+    "event": "GUESS",
+    "timestamp": "2026-07-07T01:06:56",
+    "details": {
+      "word": "till",
+      "rank": 52428,
+      "best_word": "harvest",
+      "best_rank": 334,
+      "total_guesses": 32,
+      "self_report": {
+        "predicted_closeness": 0.3,
+        "predicted_closeness_clamped": false,
+        "rationale": {
+          "basis_words": [
+            "harvest",
+            "sow",
+            "crop",
+            "grow"
+          ],
+          "reason": "Till is an agricultural verb related to soil preparation, similar to existing close guesses like 'harvest' and 'sow'. It's not in previous guesses and fits the context of farming activities."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"till\", \"predicted_closeness\": 0.3, \"basis_words\": [\"harvest\", \"sow\", \"crop\", \"grow\"], \"reason\": \"Till is an agricultural verb related to soil preparation, similar to existing close guesses like 'harvest' and 'sow'. It's not in previous guesses and fits the context of farming activities.\"}",
+        "self_report_prompt": null
+      }
+    }
+  },
+  {
+    "generation": 33,
+    "event": "GUESS",
+    "timestamp": "2026-07-07T01:07:55",
+    "details": {
+      "word": "plow",
+      "rank": 171616,
+      "best_word": "harvest",
+      "best_rank": 334,
+      "total_guesses": 33,
+      "self_report": {
+        "predicted_closeness": 0.4,
+        "predicted_closeness_clamped": false,
+        "rationale": {
+          "basis_words": [
+            "till",
+            "sow",
+            "cultivate"
+          ],
+          "reason": "Plow is a farming action term similar to 'till' and 'sow' in the guess history, suggesting it may be closer to the target."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"plow\", \"predicted_closeness\": 0.4, \"basis_words\": [\"till\", \"sow\", \"cultivate\"], \"reason\": \"Plow is a farming action term similar to 'till' and 'sow' in the guess history, suggesting it may be closer to the target.\"}",
+        "self_report_prompt": null
+      }
+    }
+  },
+  {
+    "generation": 34,
+    "event": "GUESS",
+    "timestamp": "2026-07-07T01:08:17",
+    "details": {
+      "word": "pick",
+      "rank": 7360,
+      "best_word": "harvest",
+      "best_rank": 334,
+      "total_guesses": 34,
+      "self_report": {
+        "predicted_closeness": 0.8,
+        "predicted_closeness_clamped": false,
+        "rationale": {
+          "basis_words": [
+            "harvest",
+            "gather",
+            "collect",
+            "reap"
+          ],
+          "reason": "Pick is a common synonym for harvest, particularly in contexts involving fruits, which are related to several low-ranked guesses like 'fruit' and 'crop'."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"pick\", \"predicted_closeness\": 0.8, \"basis_words\": [\"harvest\", \"gather\", \"collect\", \"reap\"], \"reason\": \"Pick is a common synonym for harvest, particularly in contexts involving fruits, which are related to several low-ranked guesses like 'fruit' and 'crop'.\"}",
+        "self_report_prompt": null
+      }
+    }
+  },
+  {
+    "generation": 35,
+    "event": "GUESS",
+    "timestamp": "2026-07-07T01:09:42",
+    "details": {
+      "word": "weed",
+      "rank": 37957,
+      "best_word": "harvest",
+      "best_rank": 334,
+      "total_guesses": 35,
+      "self_report": {
+        "predicted_closeness": 0.2,
+        "predicted_closeness_clamped": false,
+        "rationale": {
+          "basis_words": [
+            "harvest",
+            "sow",
+            "collect",
+            "gather"
+          ],
+          "reason": "Weed is a farming-related verb not yet tried, and semantically related to existing low-ranked guesses like harvest and sow."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"weed\", \"predicted_closeness\": 0.2, \"basis_words\": [\"harvest\", \"sow\", \"collect\", \"gather\"], \"reason\": \"Weed is a farming-related verb not yet tried, and semantically related to existing low-ranked guesses like harvest and sow.\"}",
+        "self_report_prompt": null
+      }
+    }
+  },
+  {
+    "generation": 36,
+    "event": "GUESS",
+    "timestamp": "2026-07-07T01:11:52",
+    "details": {
+      "word": "pluck",
+      "rank": 105884,
+      "best_word": "harvest",
+      "best_rank": 334,
+      "total_guesses": 36,
+      "self_report": {
+        "predicted_closeness": 0.7,
+        "predicted_closeness_clamped": false,
+        "rationale": {
+          "basis_words": [
+            "harvest",
+            "crop",
+            "produce"
+          ],
+          "reason": "Pluck is a synonym for harvest and crop, which are among the closest guesses, suggesting it may be a related term near the target."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"pluck\", \"predicted_closeness\": 0.7, \"basis_words\": [\"harvest\", \"crop\", \"produce\"], \"reason\": \"Pluck is a synonym for harvest and crop, which are among the closest guesses, suggesting it may be a related term near the target.\"}",
+        "self_report_prompt": null
+      }
+    }
+  },
+  {
+    "generation": 37,
+    "event": "GUESS",
+    "timestamp": "2026-07-07T01:12:38",
+    "details": {
+      "word": "glean",
+      "rank": 213657,
+      "best_word": "harvest",
+      "best_rank": 334,
+      "total_guesses": 37,
+      "self_report": {
+        "predicted_closeness": 0.85,
+        "predicted_closeness_clamped": false,
+        "rationale": {
+          "basis_words": [
+            "harvest",
+            "collect",
+            "reap"
+          ],
+          "reason": "Glean is a synonym of harvest and collect, which are already close to the target, suggesting it may be a related term with similar proximity."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"glean\", \"predicted_closeness\": 0.85, \"basis_words\": [\"harvest\", \"collect\", \"reap\"], \"reason\": \"Glean is a synonym of harvest and collect, which are already close to the target, suggesting it may be a related term with similar proximity.\"}",
+        "self_report_prompt": null
+      }
+    }
+  },
+  {
+    "generation": 38,
+    "event": "GUESS",
+    "timestamp": "2026-07-07T01:13:36",
+    "details": {
+      "word": "bale",
+      "rank": 3766,
+      "best_word": "harvest",
+      "best_rank": 334,
+      "total_guesses": 38,
+      "self_report": {
+        "predicted_closeness": 0.3,
+        "predicted_closeness_clamped": false,
+        "rationale": {
+          "basis_words": [
+            "harvest",
+            "crop",
+            "produce",
+            "grain"
+          ],
+          "reason": "Bale is a common agricultural term not yet guessed, possibly related to the target based on proximity to other farming/harvesting-related words."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"bale\", \"predicted_closeness\": 0.3, \"basis_words\": [\"harvest\", \"crop\", \"produce\", \"grain\"], \"reason\": \"Bale is a common agricultural term not yet guessed, possibly related to the target based on proximity to other farming/harvesting-related words.\"}",
+        "self_report_prompt": null
+      }
+    }
+  },
+  {
+    "generation": 39,
+    "event": "GUESS",
+    "timestamp": "2026-07-07T01:14:29",
+    "details": {
+      "word": "fertilize",
+      "rank": 159644,
+      "best_word": "harvest",
+      "best_rank": 334,
+      "total_guesses": 39,
+      "self_report": {
+        "predicted_closeness": 0.35,
+        "predicted_closeness_clamped": false,
+        "rationale": {
+          "basis_words": [
+            "grow",
+            "cultivate",
+            "produce",
+            "sow",
+            "plant",
+            "harvest"
+          ],
+          "reason": "Fertilize is an agricultural process closely related to farming and crop production, which are common themes in the existing guesses."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"fertilize\", \"predicted_closeness\": 0.35, \"basis_words\": [\"grow\", \"cultivate\", \"produce\", \"sow\", \"plant\", \"harvest\"], \"reason\": \"Fertilize is an agricultural process closely related to farming and crop production, which are common themes in the existing guesses.\"}",
+        "self_report_prompt": null
+      }
+    }
+  },
+  {
+    "generation": 40,
+    "event": "GUESS",
+    "timestamp": "2026-07-07T01:14:59",
+    "details": {
+      "word": "mow",
+      "rank": 231980,
+      "best_word": "harvest",
+      "best_rank": 334,
+      "total_guesses": 40,
+      "self_report": {
+        "predicted_closeness": 0.8,
+        "predicted_closeness_clamped": false,
+        "rationale": {
+          "basis_words": [
+            "harvest",
+            "reap"
+          ],
+          "reason": "Mow is a farming-related verb similar to harvest and reap, which are already in the guess history with lower ranks, suggesting a related context."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"mow\", \"predicted_closeness\": 0.8, \"basis_words\": [\"harvest\", \"reap\"], \"reason\": \"Mow is a farming-related verb similar to harvest and reap, which are already in the guess history with lower ranks, suggesting a related context.\"}",
+        "self_report_prompt": null
+      }
+    }
+  },
+  {
+    "generation": 41,
+    "event": "GUESS",
+    "timestamp": "2026-07-07T01:15:44",
+    "details": {
+      "word": "cut",
+      "rank": 1135,
+      "best_word": "harvest",
+      "best_rank": 334,
+      "total_guesses": 41,
+      "self_report": {
+        "predicted_closeness": 0.8,
+        "predicted_closeness_clamped": false,
+        "rationale": {
+          "basis_words": [
+            "harvest",
+            "gather"
+          ],
+          "reason": "Cut is a common synonym of harvest and related to farming activities, making it a plausible next guess based on existing context."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"cut\", \"predicted_closeness\": 0.8, \"basis_words\": [\"harvest\", \"gather\"], \"reason\": \"Cut is a common synonym of harvest and related to farming activities, making it a plausible next guess based on existing context.\"}",
+        "self_report_prompt": null
+      }
+    }
+  },
+  {
+    "generation": 42,
+    "event": "GUESS",
+    "timestamp": "2026-07-07T01:17:31",
+    "details": {
+      "word": "graze",
+      "rank": 116798,
+      "best_word": "harvest",
+      "best_rank": 334,
+      "total_guesses": 42,
+      "self_report": {
+        "predicted_closeness": 0.3,
+        "predicted_closeness_clamped": false,
+        "rationale": {
+          "basis_words": [
+            "harvest",
+            "cut",
+            "reap",
+            "collect",
+            "gather"
+          ],
+          "reason": "Graze is a common agricultural activity related to livestock, which is similar to harvesting and other farming verbs in the guess history."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"graze\", \"predicted_closeness\": 0.3, \"basis_words\": [\"harvest\", \"cut\", \"reap\", \"collect\", \"gather\"], \"reason\": \"Graze is a common agricultural activity related to livestock, which is similar to harvesting and other farming verbs in the guess history.\"}",
+        "self_report_prompt": null
+      }
+    }
+  },
+  {
+    "generation": 43,
+    "event": "GUESS",
+    "timestamp": "2026-07-07T01:18:04",
+    "details": {
+      "word": "prune",
+      "rank": 73205,
+      "best_word": "harvest",
+      "best_rank": 334,
+      "total_guesses": 43,
+      "self_report": {
+        "predicted_closeness": 0.2,
+        "predicted_closeness_clamped": false,
+        "rationale": {
+          "basis_words": [
+            "harvest",
+            "cut",
+            "reap"
+          ],
+          "reason": "Prune is an agricultural verb related to harvesting and maintaining crops, similar to existing close guesses."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"prune\", \"predicted_closeness\": 0.2, \"basis_words\": [\"harvest\", \"cut\", \"reap\"], \"reason\": \"Prune is an agricultural verb related to harvesting and maintaining crops, similar to existing close guesses.\"}",
+        "self_report_prompt": null
+      }
+    }
+  },
+  {
+    "generation": 44,
+    "event": "GUESS",
+    "timestamp": "2026-07-07T01:18:55",
+    "details": {
+      "word": "trim",
+      "rank": 3145,
+      "best_word": "harvest",
+      "best_rank": 334,
+      "total_guesses": 44,
+      "self_report": {
+        "predicted_closeness": 0.3,
+        "predicted_closeness_clamped": false,
+        "rationale": {
+          "basis_words": [
+            "cut",
+            "harvest"
+          ],
+          "reason": "Trim is a farming-related verb similar to cut and harvest, which are already close to the target."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"trim\", \"predicted_closeness\": 0.3, \"basis_words\": [\"cut\", \"harvest\"], \"reason\": \"Trim is a farming-related verb similar to cut and harvest, which are already close to the target.\"}",
+        "self_report_prompt": null
+      }
+    }
+  },
+  {
+    "generation": 45,
+    "event": "GUESS",
+    "timestamp": "2026-07-07T01:20:10",
+    "details": {
+      "word": "dig",
+      "rank": 58989,
+      "best_word": "harvest",
+      "best_rank": 334,
+      "total_guesses": 45,
+      "self_report": {
+        "predicted_closeness": 0.4,
+        "predicted_closeness_clamped": false,
+        "rationale": {
+          "basis_words": [
+            "harvest",
+            "cut",
+            "sow",
+            "plant"
+          ],
+          "reason": "Dig is a farming-related verb not yet tried, similar to existing guesses like harvest, cut, sow, and plant, which are all agricultural actions."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"dig\", \"predicted_closeness\": 0.4, \"basis_words\": [\"harvest\", \"cut\", \"sow\", \"plant\"], \"reason\": \"Dig is a farming-related verb not yet tried, similar to existing guesses like harvest, cut, sow, and plant, which are all agricultural actions.\"}",
+        "self_report_prompt": null
+      }
+    }
+  },
+  {
+    "generation": 46,
+    "event": "GUESS",
+    "timestamp": "2026-07-07T01:22:48",
+    "details": {
+      "word": "tend",
+      "rank": 14170,
+      "best_word": "harvest",
+      "best_rank": 334,
+      "total_guesses": 46,
+      "self_report": {
+        "predicted_closeness": 0.2,
+        "predicted_closeness_clamped": false,
+        "rationale": {
+          "basis_words": [
+            "harvest",
+            "cut",
+            "trim",
+            "grow",
+            "reap"
+          ],
+          "reason": "Based on the closest verbs like 'harvest,' 'cut,' 'trim,' and 'grow,' 'tend' is a related farming verb not yet tried, likely to be closer to the target."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"tend\", \"predicted_closeness\": 0.2, \"basis_words\": [\"harvest\", \"cut\", \"trim\", \"grow\", \"reap\"], \"reason\": \"Based on the closest verbs like 'harvest,' 'cut,' 'trim,' and 'grow,' 'tend' is a related farming verb not yet tried, likely to be closer to the target.\"}",
+        "self_report_prompt": null
+      }
+    }
+  },
+  {
+    "generation": 47,
+    "event": "SKIP_INVALID_GUESS",
+    "timestamp": "2026-07-07T01:28:34",
+    "details": {
+      "word": "",
+      "reason": "llm returned no valid single word"
+    }
+  },
+  {
+    "generation": 48,
+    "event": "GUESS",
+    "timestamp": "2026-07-07T01:29:29",
+    "details": {
+      "word": "sprout",
+      "rank": 76181,
+      "best_word": "harvest",
+      "best_rank": 334,
+      "total_guesses": 47,
+      "self_report": {
+        "predicted_closeness": 0.2,
+        "predicted_closeness_clamped": false,
+        "rationale": {
+          "basis_words": [
+            "grow",
+            "plant",
+            "sow",
+            "cultivate"
+          ],
+          "reason": "Sprout is a verb related to growth and agricultural processes, not yet tried, and shares thematic proximity with existing guesses like 'grow' and 'cultivate'."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"sprout\", \"predicted_closeness\": 0.2, \"basis_words\": [\"grow\", \"plant\", \"sow\", \"cultivate\"], \"reason\": \"Sprout is a verb related to growth and agricultural processes, not yet tried, and shares thematic proximity with existing guesses like 'grow' and 'cultivate'.\"}",
+        "self_report_prompt": null
+      }
+    }
+  },
+  {
+    "generation": 49,
+    "event": "GUESS",
+    "timestamp": "2026-07-07T01:31:31",
+    "details": {
+      "word": "shear",
+      "rank": 201921,
+      "best_word": "harvest",
+      "best_rank": 334,
+      "total_guesses": 48,
+      "self_report": {
+        "predicted_closeness": 0.3,
+        "predicted_closeness_clamped": false,
+        "rationale": {
+          "basis_words": [
+            "cut",
+            "harvest"
+          ],
+          "reason": "Shear is a verb closely related to cutting, which is a key agricultural action, and may be closer to the hidden target than other words tried so far."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"shear\", \"predicted_closeness\": 0.3, \"basis_words\": [\"cut\", \"harvest\"], \"reason\": \"Shear is a verb closely related to cutting, which is a key agricultural action, and may be closer to the hidden target than other words tried so far.\"}",
+        "self_report_prompt": null
+      }
+    }
+  },
+  {
+    "generation": 50,
+    "event": "GUESS",
+    "timestamp": "2026-07-07T01:32:35",
+    "details": {
+      "word": "winnow",
+      "rank": 219452,
+      "best_word": "harvest",
+      "best_rank": 334,
+      "total_guesses": 49,
+      "self_report": {
+        "predicted_closeness": 0.1,
+        "predicted_closeness_clamped": false,
+        "rationale": {
+          "basis_words": [
+            "thresh",
+            "harvest"
+          ],
+          "reason": "Winnow is a farming-related process similar to threshing and harvesting, which are already in the guess history, suggesting it may be a plausible next step."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"winnow\", \"predicted_closeness\": 0.1, \"basis_words\": [\"thresh\", \"harvest\"], \"reason\": \"Winnow is a farming-related process similar to threshing and harvesting, which are already in the guess history, suggesting it may be a plausible next step.\"}",
+        "self_report_prompt": null
+      }
+    }
+  },
+  {
+    "generation": 50,
+    "event": "FAILED",
+    "timestamp": "2026-07-07T01:32:35",
+    "details": {
+      "best_word": "harvest",
+      "best_rank": 334,
+      "total_guesses": 49
+    }
+  }
+]

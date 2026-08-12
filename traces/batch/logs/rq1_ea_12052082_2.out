@@ -1,0 +1,84 @@
+===== JOB INFORMATION =====
+Date: Wed Jul 22 16:43:28 EDT 2026
+Host: frnt191.frontenac.local
+Job ID: 12052205
+Array task: 2
+Arm: A1
+Game: 1327
+Python: /global/home/hpc6237/venvs/contexto/bin/python
+OLLAMA_HOST: 127.0.0.1:32205
+OLLAMA_BASE_URL: http://127.0.0.1:32205/v1
+RANK_CACHE_DIR: data/rank_cache_A1
+Command: python -m contexto_solver.experiment --game api --method ea_llm_self_adaptive --provider ollama --ollama-model qwen3:14b --game-numbers 1327 --runs-per-target 5 --random-seed 0 --max-generations 50 --output traces/rq1_A1/A1_ea_llm_self_adaptive_game1327.json
+Python 3.11.5
+Wed Jul 22 16:43:32 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 580.167.08             Driver Version: 580.167.08     CUDA Version: 13.0     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100-SXM4-40GB          On  |   00000000:07:00.0 Off |                    0 |
+| N/A   32C    P0             54W /  400W |       0MiB /  40960MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   1  NVIDIA A100-SXM4-40GB          On  |   00000000:0F:00.0 Off |                    0 |
+| N/A   29C    P0             54W /  400W |       0MiB /  40960MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   2  NVIDIA A100-SXM4-40GB          On  |   00000000:47:00.0 Off |                    0 |
+| N/A   29C    P0             56W /  400W |       0MiB /  40960MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   3  NVIDIA A100-SXM4-40GB          On  |   00000000:4E:00.0 Off |                    0 |
+| N/A   29C    P0             53W /  400W |       0MiB /  40960MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   4  NVIDIA A100-SXM4-40GB          On  |   00000000:87:00.0 Off |                    0 |
+| N/A   38C    P0             81W /  400W |       0MiB /  40960MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   5  NVIDIA A100-SXM4-40GB          On  |   00000000:90:00.0 Off |                    0 |
+| N/A   33C    P0             74W /  400W |       0MiB /  40960MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   6  NVIDIA A100-SXM4-40GB          On  |   00000000:B7:00.0 Off |                    0 |
+| N/A   35C    P0             84W /  400W |       0MiB /  40960MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   7  NVIDIA A100-SXM4-40GB          On  |   00000000:BD:00.0 Off |                    0 |
+| N/A   33C    P0             76W /  400W |       0MiB /  40960MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+===== START OLLAMA =====
+===== RUN EXPERIMENT =====
+Run failed for game_number=1327 run_index=0: ReadTimeout: HTTPConnectionPool(host='127.0.0.1', port=32205): Read timed out. (read timeout=900)
+Run failed for game_number=1327 run_index=1: ReadTimeout: HTTPConnectionPool(host='127.0.0.1', port=32205): Read timed out. (read timeout=900)
+Run failed for game_number=1327 run_index=2: ReadTimeout: HTTPConnectionPool(host='127.0.0.1', port=32205): Read timed out. (read timeout=900)
+Run failed for game_number=1327 run_index=3: ReadTimeout: HTTPConnectionPool(host='127.0.0.1', port=32205): Read timed out. (read timeout=900)
+Run failed for game_number=1327 run_index=4: ReadTimeout: HTTPConnectionPool(host='127.0.0.1', port=32205): Read timed out. (read timeout=900)
+Wrote JSON summary: traces/rq1_A1/A1_ea_llm_self_adaptive_game1327.json
+Wrote CSV summary: traces/rq1_A1/A1_ea_llm_self_adaptive_game1327.csv
+{
+  "total_runs": 5,
+  "solved_runs": 0,
+  "solve_rate": 0.0,
+  "average_guesses_solved": null,
+  "average_best_rank": null,
+  "average_generations": null
+}
+===== FINISHED =====
+Arm: A1
+Game: 1327
+Exit status: 0
+Date: Wed Jul 22 22:51:47 EDT 2026
+Metadata: traces/rq1_A1/A1_game1327_ollama_metadata_job12052205.txt

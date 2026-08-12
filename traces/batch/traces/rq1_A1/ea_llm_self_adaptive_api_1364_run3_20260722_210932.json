@@ -1,0 +1,4040 @@
+[
+  {
+    "generation": -1,
+    "event": "RUN_CONFIG",
+    "timestamp": "2026-07-22T20:55:31",
+    "details": {
+      "game": "api",
+      "solver": "llm",
+      "method": "ea_llm_self_adaptive",
+      "mode": "api",
+      "target": null,
+      "game_number": 1364,
+      "run_index": 2,
+      "game_embedding_path": null,
+      "solver_embedding_path": null,
+      "embedding_backend": null,
+      "vocabulary_size": null,
+      "alignment": "api_unknown",
+      "trace_schema_version": 3,
+      "instrumentation_provenance_hash": "bd9f2858283673a2",
+      "self_report": true,
+      "rationale_inheritance": true,
+      "max_generations": 50,
+      "llm_provider": "ollama",
+      "llm_model": "qwen3:14b",
+      "llm_workers": 4,
+      "initial_categories": 15,
+      "max_active_hypotheses": null,
+      "local_search_rank_threshold": 100,
+      "self_adaptive_initial_categories": 15,
+      "self_adaptive_mu": 15,
+      "self_adaptive_concentration": 50.0,
+      "self_adaptive_sigma_floor": 0.02,
+      "self_adaptive_sigma_mode": "frozen_uniform",
+      "mapelites_grid_resolution": null,
+      "mapelites_mutations_per_gen": null,
+      "mapelites_crossovers_per_gen": null,
+      "mapelites_initial_categories": null,
+      "mapelites_concentration": null,
+      "mapelites_sigma_floor": null,
+      "mapelites_sigma_mode": null,
+      "mapelites_frozen_sigma": null,
+      "mapelites_ranked_context_k": null,
+      "rank_cache_enabled": true,
+      "enable_pivot": false,
+      "ea_llm_pivot_stall_no_improvement_generations": null,
+      "ea_llm_pivot_stall_close_rank_threshold": null,
+      "ea_llm_pivot_stall_close_generations_limit": null,
+      "ea_llm_pivot_max_attempts_per_run": null,
+      "ea_llm_pivot_candidate_words_per_operator": null,
+      "ea_llm_pivot_resolution_window": null,
+      "random_seed": 2
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:55:51",
+    "details": {
+      "word": "happy",
+      "rank": 4819,
+      "hypothesis": "emotions",
+      "best_word": "happy",
+      "best_rank": 4819,
+      "total_guesses": 1
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:55:51",
+    "details": {
+      "word": "sad",
+      "rank": 5035,
+      "hypothesis": "emotions",
+      "best_word": "happy",
+      "best_rank": 4819,
+      "total_guesses": 2
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:55:51",
+    "details": {
+      "word": "angry",
+      "rank": 10265,
+      "hypothesis": "emotions",
+      "best_word": "happy",
+      "best_rank": 4819,
+      "total_guesses": 3
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:55:51",
+    "details": {
+      "word": "book",
+      "rank": 1251,
+      "hypothesis": "objects",
+      "best_word": "book",
+      "best_rank": 1251,
+      "total_guesses": 4
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:55:54",
+    "details": {
+      "word": "pen",
+      "rank": 6125,
+      "hypothesis": "objects",
+      "best_word": "book",
+      "best_rank": 1251,
+      "total_guesses": 5
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:55:55",
+    "details": {
+      "word": "chair",
+      "rank": 3426,
+      "hypothesis": "objects",
+      "best_word": "book",
+      "best_rank": 1251,
+      "total_guesses": 6
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:55:55",
+    "details": {
+      "word": "tree",
+      "rank": 1261,
+      "hypothesis": "nature",
+      "best_word": "book",
+      "best_rank": 1251,
+      "total_guesses": 7
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:55:55",
+    "details": {
+      "word": "river",
+      "rank": 805,
+      "hypothesis": "nature",
+      "best_word": "river",
+      "best_rank": 805,
+      "total_guesses": 8
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:55:55",
+    "details": {
+      "word": "mountain",
+      "rank": 383,
+      "hypothesis": "nature",
+      "best_word": "mountain",
+      "best_rank": 383,
+      "total_guesses": 9
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:55:55",
+    "details": {
+      "word": "work",
+      "rank": 1595,
+      "hypothesis": "daily activities",
+      "best_word": "mountain",
+      "best_rank": 383,
+      "total_guesses": 10
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:55:55",
+    "details": {
+      "word": "eat",
+      "rank": 2406,
+      "hypothesis": "daily activities",
+      "best_word": "mountain",
+      "best_rank": 383,
+      "total_guesses": 11
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:55:55",
+    "details": {
+      "word": "sleep",
+      "rank": 4446,
+      "hypothesis": "daily activities",
+      "best_word": "mountain",
+      "best_rank": 383,
+      "total_guesses": 12
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:55:55",
+    "details": {
+      "word": "hand",
+      "rank": 2915,
+      "hypothesis": "body parts",
+      "best_word": "mountain",
+      "best_rank": 383,
+      "total_guesses": 13
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:55:55",
+    "details": {
+      "word": "foot",
+      "rank": 3274,
+      "hypothesis": "body parts",
+      "best_word": "mountain",
+      "best_rank": 383,
+      "total_guesses": 14
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:55:55",
+    "details": {
+      "word": "eye",
+      "rank": 3042,
+      "hypothesis": "body parts",
+      "best_word": "mountain",
+      "best_rank": 383,
+      "total_guesses": 15
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:55:55",
+    "details": {
+      "word": "red",
+      "rank": 1121,
+      "hypothesis": "colors",
+      "best_word": "mountain",
+      "best_rank": 383,
+      "total_guesses": 16
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:55:55",
+    "details": {
+      "word": "blue",
+      "rank": 1139,
+      "hypothesis": "colors",
+      "best_word": "mountain",
+      "best_rank": 383,
+      "total_guesses": 17
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:55:55",
+    "details": {
+      "word": "green",
+      "rank": 1656,
+      "hypothesis": "colors",
+      "best_word": "mountain",
+      "best_rank": 383,
+      "total_guesses": 18
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:55:55",
+    "details": {
+      "word": "apple",
+      "rank": 10618,
+      "hypothesis": "foods",
+      "best_word": "mountain",
+      "best_rank": 383,
+      "total_guesses": 19
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:55:55",
+    "details": {
+      "word": "bread",
+      "rank": 5832,
+      "hypothesis": "foods",
+      "best_word": "mountain",
+      "best_rank": 383,
+      "total_guesses": 20
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:55:56",
+    "details": {
+      "word": "cheese",
+      "rank": 3154,
+      "hypothesis": "foods",
+      "best_word": "mountain",
+      "best_rank": 383,
+      "total_guesses": 21
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:55:56",
+    "details": {
+      "word": "day",
+      "rank": 1405,
+      "hypothesis": "time units",
+      "best_word": "mountain",
+      "best_rank": 383,
+      "total_guesses": 22
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:55:56",
+    "details": {
+      "word": "week",
+      "rank": 2745,
+      "hypothesis": "time units",
+      "best_word": "mountain",
+      "best_rank": 383,
+      "total_guesses": 23
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:55:56",
+    "details": {
+      "word": "year",
+      "rank": 1658,
+      "hypothesis": "time units",
+      "best_word": "mountain",
+      "best_rank": 383,
+      "total_guesses": 24
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:55:56",
+    "details": {
+      "word": "rain",
+      "rank": 4337,
+      "hypothesis": "weather",
+      "best_word": "mountain",
+      "best_rank": 383,
+      "total_guesses": 25
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:55:56",
+    "details": {
+      "word": "snow",
+      "rank": 2295,
+      "hypothesis": "weather",
+      "best_word": "mountain",
+      "best_rank": 383,
+      "total_guesses": 26
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:55:56",
+    "details": {
+      "word": "sun",
+      "rank": 1327,
+      "hypothesis": "weather",
+      "best_word": "mountain",
+      "best_rank": 383,
+      "total_guesses": 27
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:55:56",
+    "details": {
+      "word": "car",
+      "rank": 3162,
+      "hypothesis": "transportation",
+      "best_word": "mountain",
+      "best_rank": 383,
+      "total_guesses": 28
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:55:56",
+    "details": {
+      "word": "bike",
+      "rank": 5817,
+      "hypothesis": "transportation",
+      "best_word": "mountain",
+      "best_rank": 383,
+      "total_guesses": 29
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:55:56",
+    "details": {
+      "word": "bus",
+      "rank": 1849,
+      "hypothesis": "transportation",
+      "best_word": "mountain",
+      "best_rank": 383,
+      "total_guesses": 30
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:55:56",
+    "details": {
+      "word": "circle",
+      "rank": 2293,
+      "hypothesis": "shapes",
+      "best_word": "mountain",
+      "best_rank": 383,
+      "total_guesses": 31
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:55:56",
+    "details": {
+      "word": "square",
+      "rank": 271,
+      "hypothesis": "shapes",
+      "best_word": "square",
+      "best_rank": 271,
+      "total_guesses": 32
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:55:56",
+    "details": {
+      "word": "triangle",
+      "rank": 1825,
+      "hypothesis": "shapes",
+      "best_word": "square",
+      "best_rank": 271,
+      "total_guesses": 33
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:55:56",
+    "details": {
+      "word": "dog",
+      "rank": 5595,
+      "hypothesis": "animals",
+      "best_word": "square",
+      "best_rank": 271,
+      "total_guesses": 34
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:55:56",
+    "details": {
+      "word": "cat",
+      "rank": 5696,
+      "hypothesis": "animals",
+      "best_word": "square",
+      "best_rank": 271,
+      "total_guesses": 35
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:55:57",
+    "details": {
+      "word": "bird",
+      "rank": 2431,
+      "hypothesis": "animals",
+      "best_word": "square",
+      "best_rank": 271,
+      "total_guesses": 36
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:55:57",
+    "details": {
+      "word": "shirt",
+      "rank": 13031,
+      "hypothesis": "clothing",
+      "best_word": "square",
+      "best_rank": 271,
+      "total_guesses": 37
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:55:57",
+    "details": {
+      "word": "pants",
+      "rank": 17912,
+      "hypothesis": "clothing",
+      "best_word": "square",
+      "best_rank": 271,
+      "total_guesses": 38
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:55:57",
+    "details": {
+      "word": "shoe",
+      "rank": 5981,
+      "hypothesis": "clothing",
+      "best_word": "square",
+      "best_rank": 271,
+      "total_guesses": 39
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:55:57",
+    "details": {
+      "word": "run",
+      "rank": 2066,
+      "hypothesis": "sports",
+      "best_word": "square",
+      "best_rank": 271,
+      "total_guesses": 40
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:55:57",
+    "details": {
+      "word": "swim",
+      "rank": 1083,
+      "hypothesis": "sports",
+      "best_word": "square",
+      "best_rank": 271,
+      "total_guesses": 41
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:55:57",
+    "details": {
+      "word": "play",
+      "rank": 1209,
+      "hypothesis": "sports",
+      "best_word": "square",
+      "best_rank": 271,
+      "total_guesses": 42
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:55:57",
+    "details": {
+      "word": "wood",
+      "rank": 1286,
+      "hypothesis": "materials",
+      "best_word": "square",
+      "best_rank": 271,
+      "total_guesses": 43
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:55:58",
+    "details": {
+      "word": "metal",
+      "rank": 5337,
+      "hypothesis": "materials",
+      "best_word": "square",
+      "best_rank": 271,
+      "total_guesses": 44
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:55:59",
+    "details": {
+      "word": "cloth",
+      "rank": 5155,
+      "hypothesis": "materials",
+      "best_word": "square",
+      "best_rank": 271,
+      "total_guesses": 45
+    }
+  },
+  {
+    "generation": 0,
+    "event": "INIT",
+    "timestamp": "2026-07-22T20:55:59",
+    "details": {
+      "hypotheses": [
+        {
+          "hypothesis_id": "b7b67fd0688d49959a8388f198267af5",
+          "category_name": "emotions",
+          "description": "feeling states",
+          "words_tried": {
+            "happy": 4819,
+            "sad": 5035,
+            "angry": 10265
+          },
+          "best_word": "happy",
+          "best_rank": 4819,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "8c8ff6a232af4e08a018bbf763f3a019",
+          "category_name": "objects",
+          "description": "physical items",
+          "words_tried": {
+            "book": 1251,
+            "chair": 3426,
+            "pen": 6125
+          },
+          "best_word": "book",
+          "best_rank": 1251,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "aa73598f71a34833a75bb75c29375bf4",
+          "category_name": "nature",
+          "description": "natural elements",
+          "words_tried": {
+            "mountain": 383,
+            "river": 805,
+            "tree": 1261
+          },
+          "best_word": "mountain",
+          "best_rank": 383,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "555f6dac2b12405db8eded82bbf70a9c",
+          "category_name": "daily activities",
+          "description": "routine actions",
+          "words_tried": {
+            "work": 1595,
+            "eat": 2406,
+            "sleep": 4446
+          },
+          "best_word": "work",
+          "best_rank": 1595,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "b2190a63c3c1475685ecbf04fa0489a9",
+          "category_name": "body parts",
+          "description": "anatomical components",
+          "words_tried": {
+            "hand": 2915,
+            "eye": 3042,
+            "foot": 3274
+          },
+          "best_word": "hand",
+          "best_rank": 2915,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "d74fa6a3439543ed98590698c42a0a53",
+          "category_name": "colors",
+          "description": "visual hues",
+          "words_tried": {
+            "red": 1121,
+            "blue": 1139,
+            "green": 1656
+          },
+          "best_word": "red",
+          "best_rank": 1121,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "0917f635161d45c5b3652b54cd5fa8ae",
+          "category_name": "foods",
+          "description": "edible items",
+          "words_tried": {
+            "cheese": 3154,
+            "bread": 5832,
+            "apple": 10618
+          },
+          "best_word": "cheese",
+          "best_rank": 3154,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "161f71c97a8b43bd96de83efff0b11b1",
+          "category_name": "time units",
+          "description": "measures of time",
+          "words_tried": {
+            "day": 1405,
+            "year": 1658,
+            "week": 2745
+          },
+          "best_word": "day",
+          "best_rank": 1405,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "03efb976755e4bea96b76c6bebbcad5f",
+          "category_name": "weather",
+          "description": "atmospheric conditions",
+          "words_tried": {
+            "sun": 1327,
+            "snow": 2295,
+            "rain": 4337
+          },
+          "best_word": "sun",
+          "best_rank": 1327,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "59b94a92ad234ae59d84c4788b891b18",
+          "category_name": "transportation",
+          "description": "modes of movement",
+          "words_tried": {
+            "bus": 1849,
+            "car": 3162,
+            "bike": 5817
+          },
+          "best_word": "bus",
+          "best_rank": 1849,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "e0f400a5910241bc9b4025d15dc6588c",
+          "category_name": "shapes",
+          "description": "geometric forms",
+          "words_tried": {
+            "square": 271,
+            "triangle": 1825,
+            "circle": 2293
+          },
+          "best_word": "square",
+          "best_rank": 271,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "876fc80433734d73a10fbe9b872f25e8",
+          "category_name": "animals",
+          "description": "living creatures",
+          "words_tried": {
+            "bird": 2431,
+            "dog": 5595,
+            "cat": 5696
+          },
+          "best_word": "bird",
+          "best_rank": 2431,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "a7a1e741b0ab4ed390cce4b630bf42a2",
+          "category_name": "clothing",
+          "description": "apparel items",
+          "words_tried": {
+            "shoe": 5981,
+            "shirt": 13031,
+            "pants": 17912
+          },
+          "best_word": "shoe",
+          "best_rank": 5981,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "7f5523dbf6714420beb4a3d0aa52d1fc",
+          "category_name": "sports",
+          "description": "physical games",
+          "words_tried": {
+            "swim": 1083,
+            "play": 1209,
+            "run": 2066
+          },
+          "best_word": "swim",
+          "best_rank": 1083,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "8fc0792ced2948af968c76c49ae49734",
+          "category_name": "materials",
+          "description": "substances used",
+          "words_tried": {
+            "wood": 1286,
+            "cloth": 5155,
+            "metal": 5337
+          },
+          "best_word": "wood",
+          "best_rank": 1286,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        }
+      ],
+      "best_word": "square",
+      "best_rank": 271,
+      "total_guesses": 45
+    }
+  },
+  {
+    "generation": 0,
+    "event": "SIGMA_TRAJECTORY",
+    "timestamp": "2026-07-22T20:55:59",
+    "details": {
+      "mean_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "population_size": 15
+    }
+  },
+  {
+    "generation": 1,
+    "event": "CANDIDATES",
+    "timestamp": "2026-07-22T20:59:41",
+    "details": {
+      "count": 44,
+      "candidates": [
+        {
+          "hypothesis": "emotions",
+          "word": "fear"
+        },
+        {
+          "hypothesis": "emotions",
+          "word": "joy"
+        },
+        {
+          "hypothesis": "emotions",
+          "word": "mood"
+        },
+        {
+          "hypothesis": "objects",
+          "word": "table"
+        },
+        {
+          "hypothesis": "objects",
+          "word": "door"
+        },
+        {
+          "hypothesis": "objects",
+          "word": "lamp"
+        },
+        {
+          "hypothesis": "nature",
+          "word": "forest"
+        },
+        {
+          "hypothesis": "nature",
+          "word": "ocean"
+        },
+        {
+          "hypothesis": "nature",
+          "word": "grass"
+        },
+        {
+          "hypothesis": "daily activities",
+          "word": "wash"
+        },
+        {
+          "hypothesis": "daily activities",
+          "word": "read"
+        },
+        {
+          "hypothesis": "daily activities",
+          "word": "drink"
+        },
+        {
+          "hypothesis": "body parts",
+          "word": "heart"
+        },
+        {
+          "hypothesis": "body parts",
+          "word": "liver"
+        },
+        {
+          "hypothesis": "body parts",
+          "word": "brain"
+        },
+        {
+          "hypothesis": "colors",
+          "word": "yellow"
+        },
+        {
+          "hypothesis": "colors",
+          "word": "orange"
+        },
+        {
+          "hypothesis": "colors",
+          "word": "purple"
+        },
+        {
+          "hypothesis": "foods",
+          "word": "meat"
+        },
+        {
+          "hypothesis": "foods",
+          "word": "milk"
+        },
+        {
+          "hypothesis": "foods",
+          "word": "fish"
+        },
+        {
+          "hypothesis": "time units",
+          "word": "month"
+        },
+        {
+          "hypothesis": "time units",
+          "word": "hour"
+        },
+        {
+          "hypothesis": "time units",
+          "word": "minute"
+        },
+        {
+          "hypothesis": "weather",
+          "word": "cloud"
+        },
+        {
+          "hypothesis": "weather",
+          "word": "storm"
+        },
+        {
+          "hypothesis": "weather",
+          "word": "wind"
+        },
+        {
+          "hypothesis": "transportation",
+          "word": "train"
+        },
+        {
+          "hypothesis": "transportation",
+          "word": "ship"
+        },
+        {
+          "hypothesis": "transportation",
+          "word": "airplane"
+        },
+        {
+          "hypothesis": "shapes",
+          "word": "diamond"
+        },
+        {
+          "hypothesis": "shapes",
+          "word": "hexagon"
+        },
+        {
+          "hypothesis": "shapes",
+          "word": "pentagon"
+        },
+        {
+          "hypothesis": "animals",
+          "word": "beast"
+        },
+        {
+          "hypothesis": "animals",
+          "word": "creature"
+        },
+        {
+          "hypothesis": "animals",
+          "word": "fauna"
+        },
+        {
+          "hypothesis": "clothing",
+          "word": "garment"
+        },
+        {
+          "hypothesis": "clothing",
+          "word": "hat"
+        },
+        {
+          "hypothesis": "clothing",
+          "word": "glove"
+        },
+        {
+          "hypothesis": "sports",
+          "word": "jump"
+        },
+        {
+          "hypothesis": "sports",
+          "word": "race"
+        },
+        {
+          "hypothesis": "materials",
+          "word": "stone"
+        },
+        {
+          "hypothesis": "materials",
+          "word": "glass"
+        },
+        {
+          "hypothesis": "materials",
+          "word": "paper"
+        }
+      ]
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:59:41",
+    "details": {
+      "word": "fear",
+      "rank": 4938,
+      "hypothesis": "emotions",
+      "best_word": "square",
+      "best_rank": 271,
+      "total_guesses": 46
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:59:41",
+    "details": {
+      "word": "joy",
+      "rank": 1912,
+      "hypothesis": "emotions",
+      "best_word": "square",
+      "best_rank": 271,
+      "total_guesses": 47
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:59:42",
+    "details": {
+      "word": "mood",
+      "rank": 7503,
+      "hypothesis": "emotions",
+      "best_word": "square",
+      "best_rank": 271,
+      "total_guesses": 48
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:59:43",
+    "details": {
+      "word": "table",
+      "rank": 3134,
+      "hypothesis": "objects",
+      "best_word": "square",
+      "best_rank": 271,
+      "total_guesses": 49
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:59:44",
+    "details": {
+      "word": "door",
+      "rank": 1168,
+      "hypothesis": "objects",
+      "best_word": "square",
+      "best_rank": 271,
+      "total_guesses": 50
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:59:44",
+    "details": {
+      "word": "lamp",
+      "rank": 4768,
+      "hypothesis": "objects",
+      "best_word": "square",
+      "best_rank": 271,
+      "total_guesses": 51
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:59:44",
+    "details": {
+      "word": "forest",
+      "rank": 985,
+      "hypothesis": "nature",
+      "best_word": "square",
+      "best_rank": 271,
+      "total_guesses": 52
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:59:44",
+    "details": {
+      "word": "ocean",
+      "rank": 1498,
+      "hypothesis": "nature",
+      "best_word": "square",
+      "best_rank": 271,
+      "total_guesses": 53
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:59:44",
+    "details": {
+      "word": "grass",
+      "rank": 4394,
+      "hypothesis": "nature",
+      "best_word": "square",
+      "best_rank": 271,
+      "total_guesses": 54
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:59:44",
+    "details": {
+      "word": "wash",
+      "rank": 8253,
+      "hypothesis": "daily activities",
+      "best_word": "square",
+      "best_rank": 271,
+      "total_guesses": 55
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:59:44",
+    "details": {
+      "word": "read",
+      "rank": 2763,
+      "hypothesis": "daily activities",
+      "best_word": "square",
+      "best_rank": 271,
+      "total_guesses": 56
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:59:44",
+    "details": {
+      "word": "drink",
+      "rank": 2793,
+      "hypothesis": "daily activities",
+      "best_word": "square",
+      "best_rank": 271,
+      "total_guesses": 57
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:59:44",
+    "details": {
+      "word": "heart",
+      "rank": 1312,
+      "hypothesis": "body parts",
+      "best_word": "square",
+      "best_rank": 271,
+      "total_guesses": 58
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:59:45",
+    "details": {
+      "word": "liver",
+      "rank": 35140,
+      "hypothesis": "body parts",
+      "best_word": "square",
+      "best_rank": 271,
+      "total_guesses": 59
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:59:46",
+    "details": {
+      "word": "brain",
+      "rank": 13650,
+      "hypothesis": "body parts",
+      "best_word": "square",
+      "best_rank": 271,
+      "total_guesses": 60
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:59:46",
+    "details": {
+      "word": "yellow",
+      "rank": 3640,
+      "hypothesis": "colors",
+      "best_word": "square",
+      "best_rank": 271,
+      "total_guesses": 61
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:59:46",
+    "details": {
+      "word": "orange",
+      "rank": 2830,
+      "hypothesis": "colors",
+      "best_word": "square",
+      "best_rank": 271,
+      "total_guesses": 62
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:59:46",
+    "details": {
+      "word": "purple",
+      "rank": 2573,
+      "hypothesis": "colors",
+      "best_word": "square",
+      "best_rank": 271,
+      "total_guesses": 63
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:59:46",
+    "details": {
+      "word": "meat",
+      "rank": 8080,
+      "hypothesis": "foods",
+      "best_word": "square",
+      "best_rank": 271,
+      "total_guesses": 64
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:59:46",
+    "details": {
+      "word": "milk",
+      "rank": 5522,
+      "hypothesis": "foods",
+      "best_word": "square",
+      "best_rank": 271,
+      "total_guesses": 65
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:59:46",
+    "details": {
+      "word": "fish",
+      "rank": 5737,
+      "hypothesis": "foods",
+      "best_word": "square",
+      "best_rank": 271,
+      "total_guesses": 66
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:59:46",
+    "details": {
+      "word": "month",
+      "rank": 2721,
+      "hypothesis": "time units",
+      "best_word": "square",
+      "best_rank": 271,
+      "total_guesses": 67
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:59:46",
+    "details": {
+      "word": "hour",
+      "rank": 3367,
+      "hypothesis": "time units",
+      "best_word": "square",
+      "best_rank": 271,
+      "total_guesses": 68
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:59:46",
+    "details": {
+      "word": "minute",
+      "rank": 1792,
+      "hypothesis": "time units",
+      "best_word": "square",
+      "best_rank": 271,
+      "total_guesses": 69
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:59:46",
+    "details": {
+      "word": "cloud",
+      "rank": 2823,
+      "hypothesis": "weather",
+      "best_word": "square",
+      "best_rank": 271,
+      "total_guesses": 70
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:59:46",
+    "details": {
+      "word": "storm",
+      "rank": 1389,
+      "hypothesis": "weather",
+      "best_word": "square",
+      "best_rank": 271,
+      "total_guesses": 71
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:59:46",
+    "details": {
+      "word": "wind",
+      "rank": 3148,
+      "hypothesis": "weather",
+      "best_word": "square",
+      "best_rank": 271,
+      "total_guesses": 72
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:59:46",
+    "details": {
+      "word": "train",
+      "rank": 981,
+      "hypothesis": "transportation",
+      "best_word": "square",
+      "best_rank": 271,
+      "total_guesses": 73
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:59:46",
+    "details": {
+      "word": "ship",
+      "rank": 2925,
+      "hypothesis": "transportation",
+      "best_word": "square",
+      "best_rank": 271,
+      "total_guesses": 74
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:59:47",
+    "details": {
+      "word": "airplane",
+      "rank": 5633,
+      "hypothesis": "transportation",
+      "best_word": "square",
+      "best_rank": 271,
+      "total_guesses": 75
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:59:47",
+    "details": {
+      "word": "diamond",
+      "rank": 1613,
+      "hypothesis": "shapes",
+      "best_word": "square",
+      "best_rank": 271,
+      "total_guesses": 76
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:59:47",
+    "details": {
+      "word": "hexagon",
+      "rank": 15933,
+      "hypothesis": "shapes",
+      "best_word": "square",
+      "best_rank": 271,
+      "total_guesses": 77
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:59:47",
+    "details": {
+      "word": "pentagon",
+      "rank": 4222,
+      "hypothesis": "shapes",
+      "best_word": "square",
+      "best_rank": 271,
+      "total_guesses": 78
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:59:47",
+    "details": {
+      "word": "beast",
+      "rank": 1969,
+      "hypothesis": "animals",
+      "best_word": "square",
+      "best_rank": 271,
+      "total_guesses": 79
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:59:47",
+    "details": {
+      "word": "creature",
+      "rank": 4224,
+      "hypothesis": "animals",
+      "best_word": "square",
+      "best_rank": 271,
+      "total_guesses": 80
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:59:47",
+    "details": {
+      "word": "fauna",
+      "rank": 2902,
+      "hypothesis": "animals",
+      "best_word": "square",
+      "best_rank": 271,
+      "total_guesses": 81
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:59:48",
+    "details": {
+      "word": "garment",
+      "rank": 7240,
+      "hypothesis": "clothing",
+      "best_word": "square",
+      "best_rank": 271,
+      "total_guesses": 82
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:59:48",
+    "details": {
+      "word": "hat",
+      "rank": 5370,
+      "hypothesis": "clothing",
+      "best_word": "square",
+      "best_rank": 271,
+      "total_guesses": 83
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:59:48",
+    "details": {
+      "word": "glove",
+      "rank": 18483,
+      "hypothesis": "clothing",
+      "best_word": "square",
+      "best_rank": 271,
+      "total_guesses": 84
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:59:48",
+    "details": {
+      "word": "jump",
+      "rank": 5448,
+      "hypothesis": "sports",
+      "best_word": "square",
+      "best_rank": 271,
+      "total_guesses": 85
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:59:48",
+    "details": {
+      "word": "race",
+      "rank": 3482,
+      "hypothesis": "sports",
+      "best_word": "square",
+      "best_rank": 271,
+      "total_guesses": 86
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:59:48",
+    "details": {
+      "word": "stone",
+      "rank": 243,
+      "hypothesis": "materials",
+      "best_word": "stone",
+      "best_rank": 243,
+      "total_guesses": 87
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:59:48",
+    "details": {
+      "word": "glass",
+      "rank": 1562,
+      "hypothesis": "materials",
+      "best_word": "stone",
+      "best_rank": 243,
+      "total_guesses": 88
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T20:59:49",
+    "details": {
+      "word": "paper",
+      "rank": 9526,
+      "hypothesis": "materials",
+      "best_word": "stone",
+      "best_rank": 243,
+      "total_guesses": 89
+    }
+  },
+  {
+    "generation": 1,
+    "event": "SELECT",
+    "timestamp": "2026-07-22T20:59:49",
+    "details": {
+      "kept": [
+        "materials",
+        "shapes",
+        "nature",
+        "transportation",
+        "sports"
+      ],
+      "discarded": [
+        "colors",
+        "objects",
+        "body parts",
+        "weather",
+        "time units",
+        "daily activities",
+        "emotions",
+        "animals",
+        "foods",
+        "clothing"
+      ],
+      "elite": "materials",
+      "max_active_hypotheses": 5,
+      "best_word": "stone",
+      "best_rank": 243,
+      "total_guesses": 89
+    }
+  },
+  {
+    "generation": 1,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-22T21:00:20",
+    "details": {
+      "parent_id": "8fc0792ced2948af968c76c49ae49734",
+      "child_id": "9a50fc7380774dafb8c29b83d7d66efe",
+      "parent_rank": 243,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "stone in architecture",
+      "sampled_op": "m_mutation",
+      "method": "self_adaptive",
+      "self_report": {
+        "predicted_closeness": 0.4,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "stone"
+          ],
+          "reason": "shifts focus to stone's role in construction and iconic structures, reinterpreting its relevance beyond material classification"
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"name\": \"stone in architecture\", \"description\": \"structural elements made of or inspired by stone\", \"words\": [\"monument\", \"pillar\", \"arch\"], \"basis_words\": [\"stone\"], \"reason\": \"shifts focus to stone's role in construction and iconic structures, reinterpreting its relevance beyond material classification\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"materials\".\nDescription: substances used\nResults so far in this hypothesis: {\"cloth\": 5155, \"glass\": 1562, \"metal\": 5337, \"paper\": 9526, \"stone\": 243, \"wood\": 1286}\nBest word so far: \"stone\" with rank 243.\n\nMake a MEDIUM mutation: produce a child hypothesis that reinterprets why\n\"stone\" might have scored well, or shifts to a related sense, lexical\nregister, or part of speech. The child should still be semantically anchored\nto \"stone\" but approach it from a clearly different angle than \"materials\".\n\nFor example, if the parent is \"food\" and the best word is \"bite\", a medium\nmutation could be \"animals that bite\", \"physical sensations from biting\", or\n\"clinical terms for biting and chewing\" - each treats \"bite\" through a\ndifferent lens.\n\nSuggest one reframed hypothesis. Include exactly 3 starter words that have\nnot already been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"airplane\", \"angry\", \"apple\", \"beast\", \"bike\", \"bird\", \"blue\", \"book\", \"brain\", \"bread\", \"bus\", \"car\", \"cat\", \"chair\", \"cheese\", \"circle\", \"cloth\", \"cloud\", \"creature\", \"day\", \"diamond\", \"dog\", \"door\", \"drink\", \"eat\", \"eye\", \"fauna\", \"fear\", \"fish\", \"foot\", \"forest\", \"garment\", \"glass\", \"glove\", \"grass\", \"green\", \"hand\", \"happy\", \"hat\", \"heart\", \"hexagon\", \"hour\", \"joy\", \"jump\", \"lamp\", \"liver\", \"meat\", \"metal\", \"milk\", \"minute\", \"month\", \"mood\", \"mountain\", \"ocean\", \"orange\", \"pants\", \"paper\", \"pen\", \"pentagon\", \"play\", \"purple\", \"race\", \"rain\", \"read\", \"red\", \"river\", \"run\", \"sad\", \"ship\", \"shirt\", \"shoe\", \"sleep\", \"snow\", \"square\", \"stone\", \"storm\", \"sun\", \"swim\", \"table\", \"train\", \"tree\", \"triangle\", \"wash\", \"week\", \"wind\", \"wood\", \"work\", \"year\", \"yellow\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"direction name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:00:20",
+    "details": {
+      "word": "monument",
+      "rank": 6,
+      "hypothesis": "stone in architecture",
+      "best_word": "monument",
+      "best_rank": 6,
+      "total_guesses": 90
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:00:20",
+    "details": {
+      "word": "pillar",
+      "rank": 269,
+      "hypothesis": "stone in architecture",
+      "best_word": "monument",
+      "best_rank": 6,
+      "total_guesses": 91
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:00:20",
+    "details": {
+      "word": "arch",
+      "rank": 341,
+      "hypothesis": "stone in architecture",
+      "best_word": "monument",
+      "best_rank": 6,
+      "total_guesses": 92
+    }
+  },
+  {
+    "generation": 1,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-22T21:00:53",
+    "details": {
+      "parent_id": "e0f400a5910241bc9b4025d15dc6588c",
+      "child_id": "524ddc6597954b81a2dc3b891099ba1b",
+      "parent_rank": 271,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "grid systems",
+      "sampled_op": "m_mutation",
+      "method": "self_adaptive",
+      "self_report": {
+        "predicted_closeness": 0.2,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "beyond",
+        "rationale": {
+          "basis_words": [
+            "square"
+          ],
+          "reason": "Reinterpreting 'square' as a component of structured layouts or grids, which could explain its high rank in a different context than geometric shapes."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"name\": \"grid systems\", \"description\": \"structured layouts\", \"words\": [\"matrix\", \"grid\", \"array\"], \"basis_words\": [\"square\"], \"reason\": \"Reinterpreting 'square' as a component of structured layouts or grids, which could explain its high rank in a different context than geometric shapes.\", \"predicted_bucket\": \"beyond\", \"predicted_closeness\": 0.2}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"shapes\".\nDescription: geometric forms\nResults so far in this hypothesis: {\"circle\": 2293, \"diamond\": 1613, \"hexagon\": 15933, \"pentagon\": 4222, \"square\": 271, \"triangle\": 1825}\nBest word so far: \"square\" with rank 271.\n\nMake a MEDIUM mutation: produce a child hypothesis that reinterprets why\n\"square\" might have scored well, or shifts to a related sense, lexical\nregister, or part of speech. The child should still be semantically anchored\nto \"square\" but approach it from a clearly different angle than \"shapes\".\n\nFor example, if the parent is \"food\" and the best word is \"bite\", a medium\nmutation could be \"animals that bite\", \"physical sensations from biting\", or\n\"clinical terms for biting and chewing\" - each treats \"bite\" through a\ndifferent lens.\n\nSuggest one reframed hypothesis. Include exactly 3 starter words that have\nnot already been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"airplane\", \"angry\", \"apple\", \"arch\", \"beast\", \"bike\", \"bird\", \"blue\", \"book\", \"brain\", \"bread\", \"bus\", \"car\", \"cat\", \"chair\", \"cheese\", \"circle\", \"cloth\", \"cloud\", \"creature\", \"day\", \"diamond\", \"dog\", \"door\", \"drink\", \"eat\", \"eye\", \"fauna\", \"fear\", \"fish\", \"foot\", \"forest\", \"garment\", \"glass\", \"glove\", \"grass\", \"green\", \"hand\", \"happy\", \"hat\", \"heart\", \"hexagon\", \"hour\", \"joy\", \"jump\", \"lamp\", \"liver\", \"meat\", \"metal\", \"milk\", \"minute\", \"month\", \"monument\", \"mood\", \"mountain\", \"ocean\", \"orange\", \"pants\", \"paper\", \"pen\", \"pentagon\", \"pillar\", \"play\", \"purple\", \"race\", \"rain\", \"read\", \"red\", \"river\", \"run\", \"sad\", \"ship\", \"shirt\", \"shoe\", \"sleep\", \"snow\", \"square\", \"stone\", \"storm\", \"sun\", \"swim\", \"table\", \"train\", \"tree\", \"triangle\", \"wash\", \"week\", \"wind\", \"wood\", \"work\", \"year\", \"yellow\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"direction name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:00:57",
+    "details": {
+      "word": "matrix",
+      "rank": 16341,
+      "hypothesis": "grid systems",
+      "best_word": "monument",
+      "best_rank": 6,
+      "total_guesses": 93
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:00:57",
+    "details": {
+      "word": "grid",
+      "rank": 8519,
+      "hypothesis": "grid systems",
+      "best_word": "monument",
+      "best_rank": 6,
+      "total_guesses": 94
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:00:58",
+    "details": {
+      "word": "array",
+      "rank": 2778,
+      "hypothesis": "grid systems",
+      "best_word": "monument",
+      "best_rank": 6,
+      "total_guesses": 95
+    }
+  },
+  {
+    "generation": 1,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-22T21:01:51",
+    "details": {
+      "parent_id": "aa73598f71a34833a75bb75c29375bf4",
+      "child_id": "3547a76ca5b44a0b927243a925340707",
+      "parent_rank": 383,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "relief",
+      "sampled_op": "l_mutation",
+      "method": "self_adaptive",
+      "self_report": {
+        "predicted_closeness": 0.5,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "mountain"
+          ],
+          "reason": "Relief refers to the variation in elevation and is a geological term related to terrain, offering a new direction while staying in the same semantic area as mountain."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"name\": \"relief\", \"description\": \"terrain features\", \"words\": [\"contour\", \"elevation\", \"slope\"], \"basis_words\": [\"mountain\"], \"reason\": \"Relief refers to the variation in elevation and is a geological term related to terrain, offering a new direction while staying in the same semantic area as mountain.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.5}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"nature\".\nDescription: natural elements\nBest word so far: \"mountain\" with rank 383.\nOther active categories already being explored: [\"nature\", \"transportation\", \"shapes\", \"sports\", \"materials\", \"stone in architecture\", \"grid systems\"]\n\nMake a LARGE mutation: produce a child hypothesis in a broad, semantically\nsubstantial new direction that is unlike \"nature\" and unlike the other active\ncategories above. The goal is to escape the current semantic region and open\nup unexplored territory, while staying plausibly relevant given \"mountain\"'s\nrank - lower ranks mean the target is closer to \"mountain\", so the jump\nmust remain in the same broad semantic area even when reframed.\n\nFor example, if the parent is \"types of plants\" and \"shrub\" ranks 50, a large\nmutation could be \"outdoor environments\" or \"rural landscape features\" -\nclearly outside the plant taxonomy but still in a plausible neighborhood for\na target close to \"shrub\".\n\nSuggest one new hypothesis. Include exactly 3 starter words that have not\nalready been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"airplane\", \"angry\", \"apple\", \"arch\", \"array\", \"beast\", \"bike\", \"bird\", \"blue\", \"book\", \"brain\", \"bread\", \"bus\", \"car\", \"cat\", \"chair\", \"cheese\", \"circle\", \"cloth\", \"cloud\", \"creature\", \"day\", \"diamond\", \"dog\", \"door\", \"drink\", \"eat\", \"eye\", \"fauna\", \"fear\", \"fish\", \"foot\", \"forest\", \"garment\", \"glass\", \"glove\", \"grass\", \"green\", \"grid\", \"hand\", \"happy\", \"hat\", \"heart\", \"hexagon\", \"hour\", \"joy\", \"jump\", \"lamp\", \"liver\", \"matrix\", \"meat\", \"metal\", \"milk\", \"minute\", \"month\", \"monument\", \"mood\", \"mountain\", \"ocean\", \"orange\", \"pants\", \"paper\", \"pen\", \"pentagon\", \"pillar\", \"play\", \"purple\", \"race\", \"rain\", \"read\", \"red\", \"river\", \"run\", \"sad\", \"ship\", \"shirt\", \"shoe\", \"sleep\", \"snow\", \"square\", \"stone\", \"storm\", \"sun\", \"swim\", \"table\", \"train\", \"tree\", \"triangle\", \"wash\", \"week\", \"wind\", \"wood\", \"work\", \"year\", \"yellow\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"direction name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:01:55",
+    "details": {
+      "word": "contour",
+      "rank": 31144,
+      "hypothesis": "relief",
+      "best_word": "monument",
+      "best_rank": 6,
+      "total_guesses": 96
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:01:56",
+    "details": {
+      "word": "elevation",
+      "rank": 8492,
+      "hypothesis": "relief",
+      "best_word": "monument",
+      "best_rank": 6,
+      "total_guesses": 97
+    }
+  },
+  {
+    "generation": 1,
+    "event": "SKIP_INVALID_GUESS",
+    "timestamp": "2026-07-22T21:01:56",
+    "details": {
+      "word": "slope",
+      "hypothesis": "relief"
+    }
+  },
+  {
+    "generation": 1,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-22T21:02:15",
+    "details": {
+      "parent_id": "59b94a92ad234ae59d84c4788b891b18",
+      "child_id": "e38fa6c3c0ec4879a0918939a0e9ed14",
+      "parent_rank": 981,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "rail systems",
+      "sampled_op": "s_mutation",
+      "method": "self_adaptive",
+      "self_report": {
+        "predicted_closeness": 0.6,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "train"
+          ],
+          "reason": "rail, track, and subway are all closely related to trains and are common terms in the context of transportation."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"name\": \"rail systems\", \"description\": \"types of rail-based movement\", \"words\": [\"rail\", \"track\", \"subway\"], \"basis_words\": [\"train\"], \"reason\": \"rail, track, and subway are all closely related to trains and are common terms in the context of transportation.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.6}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"transportation\".\nDescription: modes of movement\nResults so far in this hypothesis: {\"airplane\": 5633, \"bike\": 5817, \"bus\": 1849, \"car\": 3162, \"ship\": 2925, \"train\": 981}\nBest word so far: \"train\" with rank 981.\n\nMake a SMALL mutation: produce a child hypothesis that stays in the same\nconceptual neighborhood as \"transportation\" but narrows or refines it. The new starter\nwords should be close semantic neighbors of \"train\" - synonyms, common\ndescriptors, or words that frequently co-occur with it.\n\nFor example, if the parent is \"types of plants\" and the best word is \"shrub\",\na small mutation could be \"woody plants\" with starters like bush, hedge, thicket.\n\nSuggest one refined hypothesis. Include exactly 3 starter words that have not\nalready been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"airplane\", \"angry\", \"apple\", \"arch\", \"array\", \"beast\", \"bike\", \"bird\", \"blue\", \"book\", \"brain\", \"bread\", \"bus\", \"car\", \"cat\", \"chair\", \"cheese\", \"circle\", \"cloth\", \"cloud\", \"contour\", \"creature\", \"day\", \"diamond\", \"dog\", \"door\", \"drink\", \"eat\", \"elevation\", \"eye\", \"fauna\", \"fear\", \"fish\", \"foot\", \"forest\", \"garment\", \"glass\", \"glove\", \"grass\", \"green\", \"grid\", \"hand\", \"happy\", \"hat\", \"heart\", \"hexagon\", \"hour\", \"joy\", \"jump\", \"lamp\", \"liver\", \"matrix\", \"meat\", \"metal\", \"milk\", \"minute\", \"month\", \"monument\", \"mood\", \"mountain\", \"ocean\", \"orange\", \"pants\", \"paper\", \"pen\", \"pentagon\", \"pillar\", \"play\", \"purple\", \"race\", \"rain\", \"read\", \"red\", \"river\", \"run\", \"sad\", \"ship\", \"shirt\", \"shoe\", \"sleep\", \"slope\", \"snow\", \"square\", \"stone\", \"storm\", \"sun\", \"swim\", \"table\", \"train\", \"tree\", \"triangle\", \"wash\", \"week\", \"wind\", \"wood\", \"work\", \"year\", \"yellow\"]\nAvoid these invalid or unrecognized words: [\"slope\"]\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"direction name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:02:15",
+    "details": {
+      "word": "rail",
+      "rank": 4971,
+      "hypothesis": "rail systems",
+      "best_word": "monument",
+      "best_rank": 6,
+      "total_guesses": 98
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:02:15",
+    "details": {
+      "word": "track",
+      "rank": 2570,
+      "hypothesis": "rail systems",
+      "best_word": "monument",
+      "best_rank": 6,
+      "total_guesses": 99
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:02:19",
+    "details": {
+      "word": "subway",
+      "rank": 2323,
+      "hypothesis": "rail systems",
+      "best_word": "monument",
+      "best_rank": 6,
+      "total_guesses": 100
+    }
+  },
+  {
+    "generation": 1,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-22T21:02:38",
+    "details": {
+      "parent_id": "7f5523dbf6714420beb4a3d0aa52d1fc",
+      "child_id": "6832c9ba06064559ba0df3de3746d674",
+      "parent_rank": 1083,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "water-related actions",
+      "sampled_op": "ml_mutation",
+      "method": "self_adaptive",
+      "self_report": {
+        "predicted_closeness": 0.3,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "beyond",
+        "rationale": {
+          "basis_words": [
+            "swim"
+          ],
+          "reason": "Swim is a water-based action, so adjacent categories could include other verbs involving water movement that are not strictly sports-related."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"name\": \"water-related actions\", \"description\": \"verbs involving water movement\", \"words\": [\"float\", \"dive\", \"splash\"], \"basis_words\": [\"swim\"], \"reason\": \"Swim is a water-based action, so adjacent categories could include other verbs involving water movement that are not strictly sports-related.\", \"predicted_bucket\": \"beyond\", \"predicted_closeness\": 0.3}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"sports\".\nDescription: physical games\nResults so far in this hypothesis: {\"jump\": 5448, \"play\": 1209, \"race\": 3482, \"run\": 2066, \"swim\": 1083}\nBest word so far: \"swim\" with rank 1083.\n\nMake a MEDIUM-LARGE mutation: produce a child hypothesis in an ADJACENT but\ndistinct category that could still plausibly contain the hidden target given\n\"swim\"'s rank. The child must NOT be a sub-category of \"sports\" - it\nshould sit alongside \"sports\" in semantic space, not underneath it.\n\nFor example, if the parent is \"types of plants\" and the best word is \"shrub\",\nan adjacent category could be \"plant descriptors\", \"botanical terminology\",\n\"growth habits\", or \"ecological roles\".\n\nSuggest one adjacent hypothesis. Include exactly 3 starter words that have\nnot already been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"airplane\", \"angry\", \"apple\", \"arch\", \"array\", \"beast\", \"bike\", \"bird\", \"blue\", \"book\", \"brain\", \"bread\", \"bus\", \"car\", \"cat\", \"chair\", \"cheese\", \"circle\", \"cloth\", \"cloud\", \"contour\", \"creature\", \"day\", \"diamond\", \"dog\", \"door\", \"drink\", \"eat\", \"elevation\", \"eye\", \"fauna\", \"fear\", \"fish\", \"foot\", \"forest\", \"garment\", \"glass\", \"glove\", \"grass\", \"green\", \"grid\", \"hand\", \"happy\", \"hat\", \"heart\", \"hexagon\", \"hour\", \"joy\", \"jump\", \"lamp\", \"liver\", \"matrix\", \"meat\", \"metal\", \"milk\", \"minute\", \"month\", \"monument\", \"mood\", \"mountain\", \"ocean\", \"orange\", \"pants\", \"paper\", \"pen\", \"pentagon\", \"pillar\", \"play\", \"purple\", \"race\", \"rail\", \"rain\", \"read\", \"red\", \"river\", \"run\", \"sad\", \"ship\", \"shirt\", \"shoe\", \"sleep\", \"slope\", \"snow\", \"square\", \"stone\", \"storm\", \"subway\", \"sun\", \"swim\", \"table\", \"track\", \"train\", \"tree\", \"triangle\", \"wash\", \"week\", \"wind\", \"wood\", \"work\", \"year\", \"yellow\"]\nAvoid these invalid or unrecognized words: [\"slope\"]\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"category name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:02:39",
+    "details": {
+      "word": "float",
+      "rank": 2357,
+      "hypothesis": "water-related actions",
+      "best_word": "monument",
+      "best_rank": 6,
+      "total_guesses": 101
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:02:40",
+    "details": {
+      "word": "dive",
+      "rank": 5533,
+      "hypothesis": "water-related actions",
+      "best_word": "monument",
+      "best_rank": 6,
+      "total_guesses": 102
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:02:41",
+    "details": {
+      "word": "splash",
+      "rank": 3152,
+      "hypothesis": "water-related actions",
+      "best_word": "monument",
+      "best_rank": 6,
+      "total_guesses": 103
+    }
+  },
+  {
+    "generation": 1,
+    "event": "MUTATE",
+    "timestamp": "2026-07-22T21:02:41",
+    "details": {
+      "method": "self_adaptive",
+      "children": [
+        {
+          "hypothesis_id": "9a50fc7380774dafb8c29b83d7d66efe",
+          "category_name": "stone in architecture",
+          "description": "structural elements made of or inspired by stone",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "materials",
+          "parent_id": "8fc0792ced2948af968c76c49ae49734",
+          "origin": "self_adaptive_m_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "self_report": {
+            "predicted_closeness": 0.4,
+            "predicted_closeness_clamped": false,
+            "predicted_bucket": "top500",
+            "rationale": {
+              "basis_words": [
+                "stone"
+              ],
+              "reason": "shifts focus to stone's role in construction and iconic structures, reinterpreting its relevance beyond material classification"
+            },
+            "self_report_parse_failed": false,
+            "self_report_raw": "{\"name\": \"stone in architecture\", \"description\": \"structural elements made of or inspired by stone\", \"words\": [\"monument\", \"pillar\", \"arch\"], \"basis_words\": [\"stone\"], \"reason\": \"shifts focus to stone's role in construction and iconic structures, reinterpreting its relevance beyond material classification\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}",
+            "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"materials\".\nDescription: substances used\nResults so far in this hypothesis: {\"cloth\": 5155, \"glass\": 1562, \"metal\": 5337, \"paper\": 9526, \"stone\": 243, \"wood\": 1286}\nBest word so far: \"stone\" with rank 243.\n\nMake a MEDIUM mutation: produce a child hypothesis that reinterprets why\n\"stone\" might have scored well, or shifts to a related sense, lexical\nregister, or part of speech. The child should still be semantically anchored\nto \"stone\" but approach it from a clearly different angle than \"materials\".\n\nFor example, if the parent is \"food\" and the best word is \"bite\", a medium\nmutation could be \"animals that bite\", \"physical sensations from biting\", or\n\"clinical terms for biting and chewing\" - each treats \"bite\" through a\ndifferent lens.\n\nSuggest one reframed hypothesis. Include exactly 3 starter words that have\nnot already been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"airplane\", \"angry\", \"apple\", \"beast\", \"bike\", \"bird\", \"blue\", \"book\", \"brain\", \"bread\", \"bus\", \"car\", \"cat\", \"chair\", \"cheese\", \"circle\", \"cloth\", \"cloud\", \"creature\", \"day\", \"diamond\", \"dog\", \"door\", \"drink\", \"eat\", \"eye\", \"fauna\", \"fear\", \"fish\", \"foot\", \"forest\", \"garment\", \"glass\", \"glove\", \"grass\", \"green\", \"hand\", \"happy\", \"hat\", \"heart\", \"hexagon\", \"hour\", \"joy\", \"jump\", \"lamp\", \"liver\", \"meat\", \"metal\", \"milk\", \"minute\", \"month\", \"mood\", \"mountain\", \"ocean\", \"orange\", \"pants\", \"paper\", \"pen\", \"pentagon\", \"play\", \"purple\", \"race\", \"rain\", \"read\", \"red\", \"river\", \"run\", \"sad\", \"ship\", \"shirt\", \"shoe\", \"sleep\", \"snow\", \"square\", \"stone\", \"storm\", \"sun\", \"swim\", \"table\", \"train\", \"tree\", \"triangle\", \"wash\", \"week\", \"wind\", \"wood\", \"work\", \"year\", \"yellow\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"direction name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+            "injected_rationale_hash": null,
+            "rationale_truncated": false
+          }
+        },
+        {
+          "hypothesis_id": "524ddc6597954b81a2dc3b891099ba1b",
+          "category_name": "grid systems",
+          "description": "structured layouts",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "shapes",
+          "parent_id": "e0f400a5910241bc9b4025d15dc6588c",
+          "origin": "self_adaptive_m_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "self_report": {
+            "predicted_closeness": 0.2,
+            "predicted_closeness_clamped": false,
+            "predicted_bucket": "beyond",
+            "rationale": {
+              "basis_words": [
+                "square"
+              ],
+              "reason": "Reinterpreting 'square' as a component of structured layouts or grids, which could explain its high rank in a different context than geometric shapes."
+            },
+            "self_report_parse_failed": false,
+            "self_report_raw": "{\"name\": \"grid systems\", \"description\": \"structured layouts\", \"words\": [\"matrix\", \"grid\", \"array\"], \"basis_words\": [\"square\"], \"reason\": \"Reinterpreting 'square' as a component of structured layouts or grids, which could explain its high rank in a different context than geometric shapes.\", \"predicted_bucket\": \"beyond\", \"predicted_closeness\": 0.2}",
+            "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"shapes\".\nDescription: geometric forms\nResults so far in this hypothesis: {\"circle\": 2293, \"diamond\": 1613, \"hexagon\": 15933, \"pentagon\": 4222, \"square\": 271, \"triangle\": 1825}\nBest word so far: \"square\" with rank 271.\n\nMake a MEDIUM mutation: produce a child hypothesis that reinterprets why\n\"square\" might have scored well, or shifts to a related sense, lexical\nregister, or part of speech. The child should still be semantically anchored\nto \"square\" but approach it from a clearly different angle than \"shapes\".\n\nFor example, if the parent is \"food\" and the best word is \"bite\", a medium\nmutation could be \"animals that bite\", \"physical sensations from biting\", or\n\"clinical terms for biting and chewing\" - each treats \"bite\" through a\ndifferent lens.\n\nSuggest one reframed hypothesis. Include exactly 3 starter words that have\nnot already been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"airplane\", \"angry\", \"apple\", \"arch\", \"beast\", \"bike\", \"bird\", \"blue\", \"book\", \"brain\", \"bread\", \"bus\", \"car\", \"cat\", \"chair\", \"cheese\", \"circle\", \"cloth\", \"cloud\", \"creature\", \"day\", \"diamond\", \"dog\", \"door\", \"drink\", \"eat\", \"eye\", \"fauna\", \"fear\", \"fish\", \"foot\", \"forest\", \"garment\", \"glass\", \"glove\", \"grass\", \"green\", \"hand\", \"happy\", \"hat\", \"heart\", \"hexagon\", \"hour\", \"joy\", \"jump\", \"lamp\", \"liver\", \"meat\", \"metal\", \"milk\", \"minute\", \"month\", \"monument\", \"mood\", \"mountain\", \"ocean\", \"orange\", \"pants\", \"paper\", \"pen\", \"pentagon\", \"pillar\", \"play\", \"purple\", \"race\", \"rain\", \"read\", \"red\", \"river\", \"run\", \"sad\", \"ship\", \"shirt\", \"shoe\", \"sleep\", \"snow\", \"square\", \"stone\", \"storm\", \"sun\", \"swim\", \"table\", \"train\", \"tree\", \"triangle\", \"wash\", \"week\", \"wind\", \"wood\", \"work\", \"year\", \"yellow\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"direction name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+            "injected_rationale_hash": null,
+            "rationale_truncated": false
+          }
+        },
+        {
+          "hypothesis_id": "3547a76ca5b44a0b927243a925340707",
+          "category_name": "relief",
+          "description": "terrain features",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "nature",
+          "parent_id": "aa73598f71a34833a75bb75c29375bf4",
+          "origin": "self_adaptive_l_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "self_report": {
+            "predicted_closeness": 0.5,
+            "predicted_closeness_clamped": false,
+            "predicted_bucket": "top500",
+            "rationale": {
+              "basis_words": [
+                "mountain"
+              ],
+              "reason": "Relief refers to the variation in elevation and is a geological term related to terrain, offering a new direction while staying in the same semantic area as mountain."
+            },
+            "self_report_parse_failed": false,
+            "self_report_raw": "{\"name\": \"relief\", \"description\": \"terrain features\", \"words\": [\"contour\", \"elevation\", \"slope\"], \"basis_words\": [\"mountain\"], \"reason\": \"Relief refers to the variation in elevation and is a geological term related to terrain, offering a new direction while staying in the same semantic area as mountain.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.5}",
+            "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"nature\".\nDescription: natural elements\nBest word so far: \"mountain\" with rank 383.\nOther active categories already being explored: [\"nature\", \"transportation\", \"shapes\", \"sports\", \"materials\", \"stone in architecture\", \"grid systems\"]\n\nMake a LARGE mutation: produce a child hypothesis in a broad, semantically\nsubstantial new direction that is unlike \"nature\" and unlike the other active\ncategories above. The goal is to escape the current semantic region and open\nup unexplored territory, while staying plausibly relevant given \"mountain\"'s\nrank - lower ranks mean the target is closer to \"mountain\", so the jump\nmust remain in the same broad semantic area even when reframed.\n\nFor example, if the parent is \"types of plants\" and \"shrub\" ranks 50, a large\nmutation could be \"outdoor environments\" or \"rural landscape features\" -\nclearly outside the plant taxonomy but still in a plausible neighborhood for\na target close to \"shrub\".\n\nSuggest one new hypothesis. Include exactly 3 starter words that have not\nalready been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"airplane\", \"angry\", \"apple\", \"arch\", \"array\", \"beast\", \"bike\", \"bird\", \"blue\", \"book\", \"brain\", \"bread\", \"bus\", \"car\", \"cat\", \"chair\", \"cheese\", \"circle\", \"cloth\", \"cloud\", \"creature\", \"day\", \"diamond\", \"dog\", \"door\", \"drink\", \"eat\", \"eye\", \"fauna\", \"fear\", \"fish\", \"foot\", \"forest\", \"garment\", \"glass\", \"glove\", \"grass\", \"green\", \"grid\", \"hand\", \"happy\", \"hat\", \"heart\", \"hexagon\", \"hour\", \"joy\", \"jump\", \"lamp\", \"liver\", \"matrix\", \"meat\", \"metal\", \"milk\", \"minute\", \"month\", \"monument\", \"mood\", \"mountain\", \"ocean\", \"orange\", \"pants\", \"paper\", \"pen\", \"pentagon\", \"pillar\", \"play\", \"purple\", \"race\", \"rain\", \"read\", \"red\", \"river\", \"run\", \"sad\", \"ship\", \"shirt\", \"shoe\", \"sleep\", \"snow\", \"square\", \"stone\", \"storm\", \"sun\", \"swim\", \"table\", \"train\", \"tree\", \"triangle\", \"wash\", \"week\", \"wind\", \"wood\", \"work\", \"year\", \"yellow\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"direction name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+            "injected_rationale_hash": null,
+            "rationale_truncated": false
+          }
+        },
+        {
+          "hypothesis_id": "e38fa6c3c0ec4879a0918939a0e9ed14",
+          "category_name": "rail systems",
+          "description": "types of rail-based movement",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "transportation",
+          "parent_id": "59b94a92ad234ae59d84c4788b891b18",
+          "origin": "self_adaptive_s_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "self_report": {
+            "predicted_closeness": 0.6,
+            "predicted_closeness_clamped": false,
+            "predicted_bucket": "top500",
+            "rationale": {
+              "basis_words": [
+                "train"
+              ],
+              "reason": "rail, track, and subway are all closely related to trains and are common terms in the context of transportation."
+            },
+            "self_report_parse_failed": false,
+            "self_report_raw": "{\"name\": \"rail systems\", \"description\": \"types of rail-based movement\", \"words\": [\"rail\", \"track\", \"subway\"], \"basis_words\": [\"train\"], \"reason\": \"rail, track, and subway are all closely related to trains and are common terms in the context of transportation.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.6}",
+            "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"transportation\".\nDescription: modes of movement\nResults so far in this hypothesis: {\"airplane\": 5633, \"bike\": 5817, \"bus\": 1849, \"car\": 3162, \"ship\": 2925, \"train\": 981}\nBest word so far: \"train\" with rank 981.\n\nMake a SMALL mutation: produce a child hypothesis that stays in the same\nconceptual neighborhood as \"transportation\" but narrows or refines it. The new starter\nwords should be close semantic neighbors of \"train\" - synonyms, common\ndescriptors, or words that frequently co-occur with it.\n\nFor example, if the parent is \"types of plants\" and the best word is \"shrub\",\na small mutation could be \"woody plants\" with starters like bush, hedge, thicket.\n\nSuggest one refined hypothesis. Include exactly 3 starter words that have not\nalready been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"airplane\", \"angry\", \"apple\", \"arch\", \"array\", \"beast\", \"bike\", \"bird\", \"blue\", \"book\", \"brain\", \"bread\", \"bus\", \"car\", \"cat\", \"chair\", \"cheese\", \"circle\", \"cloth\", \"cloud\", \"contour\", \"creature\", \"day\", \"diamond\", \"dog\", \"door\", \"drink\", \"eat\", \"elevation\", \"eye\", \"fauna\", \"fear\", \"fish\", \"foot\", \"forest\", \"garment\", \"glass\", \"glove\", \"grass\", \"green\", \"grid\", \"hand\", \"happy\", \"hat\", \"heart\", \"hexagon\", \"hour\", \"joy\", \"jump\", \"lamp\", \"liver\", \"matrix\", \"meat\", \"metal\", \"milk\", \"minute\", \"month\", \"monument\", \"mood\", \"mountain\", \"ocean\", \"orange\", \"pants\", \"paper\", \"pen\", \"pentagon\", \"pillar\", \"play\", \"purple\", \"race\", \"rain\", \"read\", \"red\", \"river\", \"run\", \"sad\", \"ship\", \"shirt\", \"shoe\", \"sleep\", \"slope\", \"snow\", \"square\", \"stone\", \"storm\", \"sun\", \"swim\", \"table\", \"train\", \"tree\", \"triangle\", \"wash\", \"week\", \"wind\", \"wood\", \"work\", \"year\", \"yellow\"]\nAvoid these invalid or unrecognized words: [\"slope\"]\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"direction name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+            "injected_rationale_hash": null,
+            "rationale_truncated": false
+          }
+        },
+        {
+          "hypothesis_id": "6832c9ba06064559ba0df3de3746d674",
+          "category_name": "water-related actions",
+          "description": "verbs involving water movement",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "sports",
+          "parent_id": "7f5523dbf6714420beb4a3d0aa52d1fc",
+          "origin": "self_adaptive_ml_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "self_report": {
+            "predicted_closeness": 0.3,
+            "predicted_closeness_clamped": false,
+            "predicted_bucket": "beyond",
+            "rationale": {
+              "basis_words": [
+                "swim"
+              ],
+              "reason": "Swim is a water-based action, so adjacent categories could include other verbs involving water movement that are not strictly sports-related."
+            },
+            "self_report_parse_failed": false,
+            "self_report_raw": "{\"name\": \"water-related actions\", \"description\": \"verbs involving water movement\", \"words\": [\"float\", \"dive\", \"splash\"], \"basis_words\": [\"swim\"], \"reason\": \"Swim is a water-based action, so adjacent categories could include other verbs involving water movement that are not strictly sports-related.\", \"predicted_bucket\": \"beyond\", \"predicted_closeness\": 0.3}",
+            "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"sports\".\nDescription: physical games\nResults so far in this hypothesis: {\"jump\": 5448, \"play\": 1209, \"race\": 3482, \"run\": 2066, \"swim\": 1083}\nBest word so far: \"swim\" with rank 1083.\n\nMake a MEDIUM-LARGE mutation: produce a child hypothesis in an ADJACENT but\ndistinct category that could still plausibly contain the hidden target given\n\"swim\"'s rank. The child must NOT be a sub-category of \"sports\" - it\nshould sit alongside \"sports\" in semantic space, not underneath it.\n\nFor example, if the parent is \"types of plants\" and the best word is \"shrub\",\nan adjacent category could be \"plant descriptors\", \"botanical terminology\",\n\"growth habits\", or \"ecological roles\".\n\nSuggest one adjacent hypothesis. Include exactly 3 starter words that have\nnot already been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"airplane\", \"angry\", \"apple\", \"arch\", \"array\", \"beast\", \"bike\", \"bird\", \"blue\", \"book\", \"brain\", \"bread\", \"bus\", \"car\", \"cat\", \"chair\", \"cheese\", \"circle\", \"cloth\", \"cloud\", \"contour\", \"creature\", \"day\", \"diamond\", \"dog\", \"door\", \"drink\", \"eat\", \"elevation\", \"eye\", \"fauna\", \"fear\", \"fish\", \"foot\", \"forest\", \"garment\", \"glass\", \"glove\", \"grass\", \"green\", \"grid\", \"hand\", \"happy\", \"hat\", \"heart\", \"hexagon\", \"hour\", \"joy\", \"jump\", \"lamp\", \"liver\", \"matrix\", \"meat\", \"metal\", \"milk\", \"minute\", \"month\", \"monument\", \"mood\", \"mountain\", \"ocean\", \"orange\", \"pants\", \"paper\", \"pen\", \"pentagon\", \"pillar\", \"play\", \"purple\", \"race\", \"rail\", \"rain\", \"read\", \"red\", \"river\", \"run\", \"sad\", \"ship\", \"shirt\", \"shoe\", \"sleep\", \"slope\", \"snow\", \"square\", \"stone\", \"storm\", \"subway\", \"sun\", \"swim\", \"table\", \"track\", \"train\", \"tree\", \"triangle\", \"wash\", \"week\", \"wind\", \"wood\", \"work\", \"year\", \"yellow\"]\nAvoid these invalid or unrecognized words: [\"slope\"]\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"category name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+            "injected_rationale_hash": null,
+            "rationale_truncated": false
+          }
+        }
+      ],
+      "best_word": "monument",
+      "best_rank": 6,
+      "total_guesses": 103
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:02:52",
+    "details": {
+      "word": "stone",
+      "rank": 243,
+      "hypothesis": "architectural_materials",
+      "best_word": "monument",
+      "best_rank": 6,
+      "total_guesses": 103
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:02:52",
+    "details": {
+      "word": "wood",
+      "rank": 1286,
+      "hypothesis": "architectural_materials",
+      "best_word": "monument",
+      "best_rank": 6,
+      "total_guesses": 103
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:02:52",
+    "details": {
+      "word": "metal",
+      "rank": 5337,
+      "hypothesis": "architectural_materials",
+      "best_word": "monument",
+      "best_rank": 6,
+      "total_guesses": 103
+    }
+  },
+  {
+    "generation": 1,
+    "event": "CROSSOVER",
+    "timestamp": "2026-07-22T21:02:52",
+    "details": {
+      "parents": [
+        "stone in architecture",
+        "materials"
+      ],
+      "parent_ids": [
+        "9a50fc7380774dafb8c29b83d7d66efe",
+        "8fc0792ced2948af968c76c49ae49734"
+      ],
+      "parent_ranks": [
+        6,
+        243
+      ],
+      "parent_a_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "parent_b_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma_pre_perturbation": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child": {
+        "hypothesis_id": "dac9b354bc384b7f8f3498547075996c",
+        "category_name": "architectural_materials",
+        "description": "materials commonly used in architectural structures",
+        "words_tried": {
+          "stone": 243,
+          "wood": 1286,
+          "metal": 5337
+        },
+        "best_word": "stone",
+        "best_rank": 243,
+        "status": "active",
+        "parent": "stone in architecture+materials",
+        "parent_id": null,
+        "origin": "crossover",
+        "sigma": [
+          0.25,
+          0.25,
+          0.25,
+          0.25
+        ],
+        "self_report": {
+          "predicted_closeness": 0.75,
+          "predicted_closeness_clamped": false,
+          "predicted_bucket": "top100",
+          "rationale": {
+            "basis_words": [
+              "stone",
+              "arch",
+              "monument",
+              "pillar",
+              "wood",
+              "metal"
+            ],
+            "reason": "These words represent materials (from B) that are also implicitly related to architectural elements (from A), combining both contexts."
+          },
+          "self_report_parse_failed": false,
+          "self_report_raw": "{\n  \"name\": \"architectural_materials\",\n  \"description\": \"materials commonly used in architectural structures\",\n  \"words\": [\"stone\", \"wood\", \"metal\"],\n  \"basis_words\": [\"stone\", \"arch\", \"monument\", \"pillar\", \"wood\", \"metal\"],\n  \"reason\": \"These words represent materials (from B) that are also implicitly related to architectural elements (from A), combining both contexts.\",\n  \"predicted_bucket\": \"top100\",\n  \"predicted_closeness\": 0.75\n}",
+          "self_report_prompt": "Return only JSON, no markdown or explanation.\nCategory A is stone in architecture with results {\"arch\": 341, \"monument\": 6, \"pillar\": 269}.\nCategory B is materials with results {\"cloth\": 5155, \"glass\": 1562, \"metal\": 5337, \"paper\": 9526, \"stone\": 243, \"wood\": 1286}.\nSuggest one new category that captures the intersection or overlap of A and B.\nInclude exactly 3 candidate words.\nEvery word must be one common lowercase dictionary word.\nJSON schema:\n{\"name\": \"category name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+          "injected_rationale_hash": null,
+          "rationale_truncated": false
+        }
+      },
+      "best_word": "monument",
+      "best_rank": 6,
+      "total_guesses": 103
+    }
+  },
+  {
+    "generation": 1,
+    "event": "DEDUPLICATE",
+    "timestamp": "2026-07-22T21:02:52",
+    "details": {
+      "merged": [
+        {
+          "survivor": "materials",
+          "discarded": "architectural_materials",
+          "survivor_best_rank": 243,
+          "discarded_best_rank": 243
+        }
+      ],
+      "remaining_hypotheses": 20,
+      "active_hypotheses": 10,
+      "best_word": "monument",
+      "best_rank": 6,
+      "total_guesses": 103
+    }
+  },
+  {
+    "generation": 1,
+    "event": "SIGMA_TRAJECTORY",
+    "timestamp": "2026-07-22T21:02:52",
+    "details": {
+      "mean_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "population_size": 10
+    }
+  },
+  {
+    "generation": 2,
+    "event": "CANDIDATES",
+    "timestamp": "2026-07-22T21:05:10",
+    "details": {
+      "count": 29,
+      "candidates": [
+        {
+          "hypothesis": "stone in architecture",
+          "word": "column"
+        },
+        {
+          "hypothesis": "stone in architecture",
+          "word": "foundation"
+        },
+        {
+          "hypothesis": "stone in architecture",
+          "word": "masonry"
+        },
+        {
+          "hypothesis": "materials",
+          "word": "ore"
+        },
+        {
+          "hypothesis": "materials",
+          "word": "fiber"
+        },
+        {
+          "hypothesis": "materials",
+          "word": "plastic"
+        },
+        {
+          "hypothesis": "shapes",
+          "word": "oval"
+        },
+        {
+          "hypothesis": "shapes",
+          "word": "cone"
+        },
+        {
+          "hypothesis": "shapes",
+          "word": "sphere"
+        },
+        {
+          "hypothesis": "nature",
+          "word": "rock"
+        },
+        {
+          "hypothesis": "nature",
+          "word": "soil"
+        },
+        {
+          "hypothesis": "nature",
+          "word": "moss"
+        },
+        {
+          "hypothesis": "transportation",
+          "word": "tram"
+        },
+        {
+          "hypothesis": "transportation",
+          "word": "taxi"
+        },
+        {
+          "hypothesis": "transportation",
+          "word": "canoe"
+        },
+        {
+          "hypothesis": "sports",
+          "word": "game"
+        },
+        {
+          "hypothesis": "sports",
+          "word": "match"
+        },
+        {
+          "hypothesis": "sports",
+          "word": "team"
+        },
+        {
+          "hypothesis": "rail systems",
+          "word": "metro"
+        },
+        {
+          "hypothesis": "rail systems",
+          "word": "underground"
+        },
+        {
+          "hypothesis": "water-related actions",
+          "word": "flow"
+        },
+        {
+          "hypothesis": "water-related actions",
+          "word": "ripple"
+        },
+        {
+          "hypothesis": "water-related actions",
+          "word": "drift"
+        },
+        {
+          "hypothesis": "grid systems",
+          "word": "framework"
+        },
+        {
+          "hypothesis": "grid systems",
+          "word": "schema"
+        },
+        {
+          "hypothesis": "grid systems",
+          "word": "lattice"
+        },
+        {
+          "hypothesis": "relief",
+          "word": "topography"
+        },
+        {
+          "hypothesis": "relief",
+          "word": "landform"
+        },
+        {
+          "hypothesis": "relief",
+          "word": "relief"
+        }
+      ]
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:05:10",
+    "details": {
+      "word": "column",
+      "rank": 993,
+      "hypothesis": "stone in architecture",
+      "best_word": "monument",
+      "best_rank": 6,
+      "total_guesses": 104
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:05:10",
+    "details": {
+      "word": "foundation",
+      "rank": 2466,
+      "hypothesis": "stone in architecture",
+      "best_word": "monument",
+      "best_rank": 6,
+      "total_guesses": 105
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:05:10",
+    "details": {
+      "word": "masonry",
+      "rank": 3840,
+      "hypothesis": "stone in architecture",
+      "best_word": "monument",
+      "best_rank": 6,
+      "total_guesses": 106
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:05:10",
+    "details": {
+      "word": "ore",
+      "rank": 21560,
+      "hypothesis": "materials",
+      "best_word": "monument",
+      "best_rank": 6,
+      "total_guesses": 107
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:05:12",
+    "details": {
+      "word": "fiber",
+      "rank": 13017,
+      "hypothesis": "materials",
+      "best_word": "monument",
+      "best_rank": 6,
+      "total_guesses": 108
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:05:12",
+    "details": {
+      "word": "plastic",
+      "rank": 9461,
+      "hypothesis": "materials",
+      "best_word": "monument",
+      "best_rank": 6,
+      "total_guesses": 109
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:05:12",
+    "details": {
+      "word": "oval",
+      "rank": 8329,
+      "hypothesis": "shapes",
+      "best_word": "monument",
+      "best_rank": 6,
+      "total_guesses": 110
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:05:12",
+    "details": {
+      "word": "cone",
+      "rank": 16685,
+      "hypothesis": "shapes",
+      "best_word": "monument",
+      "best_rank": 6,
+      "total_guesses": 111
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:05:12",
+    "details": {
+      "word": "sphere",
+      "rank": 4037,
+      "hypothesis": "shapes",
+      "best_word": "monument",
+      "best_rank": 6,
+      "total_guesses": 112
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:05:12",
+    "details": {
+      "word": "rock",
+      "rank": 1471,
+      "hypothesis": "nature",
+      "best_word": "monument",
+      "best_rank": 6,
+      "total_guesses": 113
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:05:12",
+    "details": {
+      "word": "soil",
+      "rank": 17517,
+      "hypothesis": "nature",
+      "best_word": "monument",
+      "best_rank": 6,
+      "total_guesses": 114
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:05:12",
+    "details": {
+      "word": "moss",
+      "rank": 8619,
+      "hypothesis": "nature",
+      "best_word": "monument",
+      "best_rank": 6,
+      "total_guesses": 115
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:05:12",
+    "details": {
+      "word": "tram",
+      "rank": 3237,
+      "hypothesis": "transportation",
+      "best_word": "monument",
+      "best_rank": 6,
+      "total_guesses": 116
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:05:13",
+    "details": {
+      "word": "taxi",
+      "rank": 2249,
+      "hypothesis": "transportation",
+      "best_word": "monument",
+      "best_rank": 6,
+      "total_guesses": 117
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:05:14",
+    "details": {
+      "word": "canoe",
+      "rank": 10233,
+      "hypothesis": "transportation",
+      "best_word": "monument",
+      "best_rank": 6,
+      "total_guesses": 118
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:05:14",
+    "details": {
+      "word": "game",
+      "rank": 1304,
+      "hypothesis": "sports",
+      "best_word": "monument",
+      "best_rank": 6,
+      "total_guesses": 119
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:05:14",
+    "details": {
+      "word": "match",
+      "rank": 4605,
+      "hypothesis": "sports",
+      "best_word": "monument",
+      "best_rank": 6,
+      "total_guesses": 120
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:05:15",
+    "details": {
+      "word": "team",
+      "rank": 7197,
+      "hypothesis": "sports",
+      "best_word": "monument",
+      "best_rank": 6,
+      "total_guesses": 121
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:05:15",
+    "details": {
+      "word": "metro",
+      "rank": 3332,
+      "hypothesis": "rail systems",
+      "best_word": "monument",
+      "best_rank": 6,
+      "total_guesses": 122
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:05:15",
+    "details": {
+      "word": "underground",
+      "rank": 757,
+      "hypothesis": "rail systems",
+      "best_word": "monument",
+      "best_rank": 6,
+      "total_guesses": 123
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:05:15",
+    "details": {
+      "word": "flow",
+      "rank": 4547,
+      "hypothesis": "water-related actions",
+      "best_word": "monument",
+      "best_rank": 6,
+      "total_guesses": 124
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:05:16",
+    "details": {
+      "word": "ripple",
+      "rank": 13145,
+      "hypothesis": "water-related actions",
+      "best_word": "monument",
+      "best_rank": 6,
+      "total_guesses": 125
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:05:16",
+    "details": {
+      "word": "drift",
+      "rank": 15287,
+      "hypothesis": "water-related actions",
+      "best_word": "monument",
+      "best_rank": 6,
+      "total_guesses": 126
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:05:17",
+    "details": {
+      "word": "framework",
+      "rank": 19189,
+      "hypothesis": "grid systems",
+      "best_word": "monument",
+      "best_rank": 6,
+      "total_guesses": 127
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:05:18",
+    "details": {
+      "word": "schema",
+      "rank": 39713,
+      "hypothesis": "grid systems",
+      "best_word": "monument",
+      "best_rank": 6,
+      "total_guesses": 128
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:05:18",
+    "details": {
+      "word": "lattice",
+      "rank": 6778,
+      "hypothesis": "grid systems",
+      "best_word": "monument",
+      "best_rank": 6,
+      "total_guesses": 129
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:05:19",
+    "details": {
+      "word": "topography",
+      "rank": 18135,
+      "hypothesis": "relief",
+      "best_word": "monument",
+      "best_rank": 6,
+      "total_guesses": 130
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:05:20",
+    "details": {
+      "word": "landform",
+      "rank": 23624,
+      "hypothesis": "relief",
+      "best_word": "monument",
+      "best_rank": 6,
+      "total_guesses": 131
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:05:20",
+    "details": {
+      "word": "relief",
+      "rank": 2105,
+      "hypothesis": "relief",
+      "best_word": "monument",
+      "best_rank": 6,
+      "total_guesses": 132
+    }
+  },
+  {
+    "generation": 2,
+    "event": "LOCAL_SEARCH_DISABLED",
+    "timestamp": "2026-07-22T21:05:20",
+    "details": {
+      "center_word": "monument",
+      "center_rank": 6,
+      "threshold": 100,
+      "reason": "self_adaptive_disable_local_search"
+    }
+  },
+  {
+    "generation": 2,
+    "event": "SELECT",
+    "timestamp": "2026-07-22T21:05:20",
+    "details": {
+      "kept": [
+        "stone in architecture",
+        "materials",
+        "shapes",
+        "nature",
+        "rail systems"
+      ],
+      "discarded": [
+        "transportation",
+        "sports",
+        "colors",
+        "objects",
+        "body parts",
+        "weather",
+        "time units",
+        "daily activities",
+        "emotions",
+        "animals",
+        "relief",
+        "water-related actions",
+        "grid systems",
+        "foods",
+        "clothing"
+      ],
+      "elite": "stone in architecture",
+      "max_active_hypotheses": 5,
+      "best_word": "monument",
+      "best_rank": 6,
+      "total_guesses": 132
+    }
+  },
+  {
+    "generation": 2,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-22T21:05:42",
+    "details": {
+      "parent_id": "9a50fc7380774dafb8c29b83d7d66efe",
+      "child_id": "f97282a45bbc4084bc384fb7b258a401",
+      "parent_rank": 6,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "cultural symbols",
+      "sampled_op": "ml_mutation",
+      "method": "self_adaptive",
+      "self_report": {
+        "predicted_closeness": 0.3,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "monument"
+          ],
+          "reason": "shifts focus to symbolic and cultural representations that may include monuments but are not limited to architectural materials"
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"name\": \"cultural symbols\", \"description\": \"objects or concepts representing cultural significance\", \"words\": [\"symbol\", \"heritage\", \"landmark\"], \"basis_words\": [\"monument\"], \"reason\": \"shifts focus to symbolic and cultural representations that may include monuments but are not limited to architectural materials\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"stone in architecture\".\nDescription: structural elements made of or inspired by stone\nResults so far in this hypothesis: {\"arch\": 341, \"column\": 993, \"foundation\": 2466, \"masonry\": 3840, \"monument\": 6, \"pillar\": 269}\nBest word so far: \"monument\" with rank 6.\n\nMake a MEDIUM-LARGE mutation: produce a child hypothesis in an ADJACENT but\ndistinct category that could still plausibly contain the hidden target given\n\"monument\"'s rank. The child must NOT be a sub-category of \"stone in architecture\" - it\nshould sit alongside \"stone in architecture\" in semantic space, not underneath it.\n\nFor example, if the parent is \"types of plants\" and the best word is \"shrub\",\nan adjacent category could be \"plant descriptors\", \"botanical terminology\",\n\"growth habits\", or \"ecological roles\".\n\nSuggest one adjacent hypothesis. Include exactly 3 starter words that have\nnot already been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"airplane\", \"angry\", \"apple\", \"arch\", \"array\", \"beast\", \"bike\", \"bird\", \"blue\", \"book\", \"brain\", \"bread\", \"bus\", \"canoe\", \"car\", \"cat\", \"chair\", \"cheese\", \"circle\", \"cloth\", \"cloud\", \"column\", \"cone\", \"contour\", \"creature\", \"day\", \"diamond\", \"dive\", \"dog\", \"door\", \"drift\", \"drink\", \"eat\", \"elevation\", \"eye\", \"fauna\", \"fear\", \"fiber\", \"fish\", \"float\", \"flow\", \"foot\", \"forest\", \"foundation\", \"framework\", \"game\", \"garment\", \"glass\", \"glove\", \"grass\", \"green\", \"grid\", \"hand\", \"happy\", \"hat\", \"heart\", \"hexagon\", \"hour\", \"joy\", \"jump\", \"lamp\", \"landform\", \"lattice\", \"liver\", \"masonry\", \"match\", \"matrix\", \"meat\", \"metal\", \"metro\", \"milk\", \"minute\", \"month\", \"monument\", \"mood\", \"moss\", \"mountain\", \"ocean\", \"orange\", \"ore\", \"oval\", \"pants\", \"paper\", \"pen\", \"pentagon\", \"pillar\", \"plastic\", \"play\", \"purple\", \"race\", \"rail\", \"rain\", \"read\", \"red\", \"relief\", \"ripple\", \"river\", \"rock\", \"run\", \"sad\", \"schema\", \"ship\", \"shirt\", \"shoe\", \"sleep\", \"slope\", \"snow\", \"soil\", \"sphere\", \"splash\", \"square\", \"stone\", \"storm\", \"subway\", \"sun\", \"swim\", \"table\", \"taxi\", \"team\", \"topography\", \"track\", \"train\", \"tram\", \"tree\", \"triangle\", \"underground\", \"wash\", \"week\", \"wind\", \"wood\", \"work\", \"year\", \"yellow\"]\nAvoid these invalid or unrecognized words: [\"slope\"]\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"category name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nThe parent hypothesis's prior rationale (for context only; do not copy blindly): basis_words=[\"stone\"], reason=\"shifts focus to stone's role in construction and iconic structures, reinterpreting its relevance beyond material classification\".\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": "e14fef6710a7fde9",
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:05:42",
+    "details": {
+      "word": "symbol",
+      "rank": 3107,
+      "hypothesis": "cultural symbols",
+      "best_word": "monument",
+      "best_rank": 6,
+      "total_guesses": 133
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:05:42",
+    "details": {
+      "word": "heritage",
+      "rank": 127,
+      "hypothesis": "cultural symbols",
+      "best_word": "monument",
+      "best_rank": 6,
+      "total_guesses": 134
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:05:42",
+    "details": {
+      "word": "landmark",
+      "rank": 50,
+      "hypothesis": "cultural symbols",
+      "best_word": "monument",
+      "best_rank": 6,
+      "total_guesses": 135
+    }
+  },
+  {
+    "generation": 2,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-22T21:06:05",
+    "details": {
+      "parent_id": "8fc0792ced2948af968c76c49ae49734",
+      "child_id": "6ac9edfc13524df39cb993846db85d19",
+      "parent_rank": 243,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "types of stone",
+      "sampled_op": "s_mutation",
+      "method": "self_adaptive",
+      "self_report": {
+        "predicted_closeness": 0.7,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "stone"
+          ],
+          "reason": "These words are closely related to 'stone' and represent specific types or synonyms of stone."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"name\": \"types of stone\", \"description\": \"types of stone\", \"words\": [\"granite\", \"marble\", \"limestone\"], \"basis_words\": [\"stone\"], \"reason\": \"These words are closely related to 'stone' and represent specific types or synonyms of stone.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.7}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"materials\".\nDescription: substances used\nResults so far in this hypothesis: {\"cloth\": 5155, \"fiber\": 13017, \"glass\": 1562, \"metal\": 5337, \"ore\": 21560, \"paper\": 9526, \"plastic\": 9461, \"stone\": 243, \"wood\": 1286}\nBest word so far: \"stone\" with rank 243.\n\nMake a SMALL mutation: produce a child hypothesis that stays in the same\nconceptual neighborhood as \"materials\" but narrows or refines it. The new starter\nwords should be close semantic neighbors of \"stone\" - synonyms, common\ndescriptors, or words that frequently co-occur with it.\n\nFor example, if the parent is \"types of plants\" and the best word is \"shrub\",\na small mutation could be \"woody plants\" with starters like bush, hedge, thicket.\n\nSuggest one refined hypothesis. Include exactly 3 starter words that have not\nalready been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"airplane\", \"angry\", \"apple\", \"arch\", \"array\", \"beast\", \"bike\", \"bird\", \"blue\", \"book\", \"brain\", \"bread\", \"bus\", \"canoe\", \"car\", \"cat\", \"chair\", \"cheese\", \"circle\", \"cloth\", \"cloud\", \"column\", \"cone\", \"contour\", \"creature\", \"day\", \"diamond\", \"dive\", \"dog\", \"door\", \"drift\", \"drink\", \"eat\", \"elevation\", \"eye\", \"fauna\", \"fear\", \"fiber\", \"fish\", \"float\", \"flow\", \"foot\", \"forest\", \"foundation\", \"framework\", \"game\", \"garment\", \"glass\", \"glove\", \"grass\", \"green\", \"grid\", \"hand\", \"happy\", \"hat\", \"heart\", \"heritage\", \"hexagon\", \"hour\", \"joy\", \"jump\", \"lamp\", \"landform\", \"landmark\", \"lattice\", \"liver\", \"masonry\", \"match\", \"matrix\", \"meat\", \"metal\", \"metro\", \"milk\", \"minute\", \"month\", \"monument\", \"mood\", \"moss\", \"mountain\", \"ocean\", \"orange\", \"ore\", \"oval\", \"pants\", \"paper\", \"pen\", \"pentagon\", \"pillar\", \"plastic\", \"play\", \"purple\", \"race\", \"rail\", \"rain\", \"read\", \"red\", \"relief\", \"ripple\", \"river\", \"rock\", \"run\", \"sad\", \"schema\", \"ship\", \"shirt\", \"shoe\", \"sleep\", \"slope\", \"snow\", \"soil\", \"sphere\", \"splash\", \"square\", \"stone\", \"storm\", \"subway\", \"sun\", \"swim\", \"symbol\", \"table\", \"taxi\", \"team\", \"topography\", \"track\", \"train\", \"tram\", \"tree\", \"triangle\", \"underground\", \"wash\", \"week\", \"wind\", \"wood\", \"work\", \"year\", \"yellow\"]\nAvoid these invalid or unrecognized words: [\"slope\"]\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"direction name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:06:05",
+    "details": {
+      "word": "granite",
+      "rank": 1699,
+      "hypothesis": "types of stone",
+      "best_word": "monument",
+      "best_rank": 6,
+      "total_guesses": 136
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:06:05",
+    "details": {
+      "word": "marble",
+      "rank": 149,
+      "hypothesis": "types of stone",
+      "best_word": "monument",
+      "best_rank": 6,
+      "total_guesses": 137
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:06:05",
+    "details": {
+      "word": "limestone",
+      "rank": 1524,
+      "hypothesis": "types of stone",
+      "best_word": "monument",
+      "best_rank": 6,
+      "total_guesses": 138
+    }
+  },
+  {
+    "generation": 2,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-22T21:06:41",
+    "details": {
+      "parent_id": "e0f400a5910241bc9b4025d15dc6588c",
+      "child_id": "53ba33b5b4c043c69d4d554e5d36a354",
+      "parent_rank": 271,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "quadrilaterals",
+      "sampled_op": "s_mutation",
+      "method": "self_adaptive",
+      "self_report": {
+        "predicted_closeness": 0.3,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "square"
+          ],
+          "reason": "Narrowing to four-sided polygons, which are closely related to 'square', using rectangle, rhombus, and trapezoid as semantic neighbors."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"name\": \"quadrilaterals\", \"description\": \"four-sided polygons\", \"words\": [\"rectangle\", \"rhombus\", \"trapezoid\"], \"basis_words\": [\"square\"], \"reason\": \"Narrowing to four-sided polygons, which are closely related to 'square', using rectangle, rhombus, and trapezoid as semantic neighbors.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"shapes\".\nDescription: geometric forms\nResults so far in this hypothesis: {\"circle\": 2293, \"cone\": 16685, \"diamond\": 1613, \"hexagon\": 15933, \"oval\": 8329, \"pentagon\": 4222, \"sphere\": 4037, \"square\": 271, \"triangle\": 1825}\nBest word so far: \"square\" with rank 271.\n\nMake a SMALL mutation: produce a child hypothesis that stays in the same\nconceptual neighborhood as \"shapes\" but narrows or refines it. The new starter\nwords should be close semantic neighbors of \"square\" - synonyms, common\ndescriptors, or words that frequently co-occur with it.\n\nFor example, if the parent is \"types of plants\" and the best word is \"shrub\",\na small mutation could be \"woody plants\" with starters like bush, hedge, thicket.\n\nSuggest one refined hypothesis. Include exactly 3 starter words that have not\nalready been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"airplane\", \"angry\", \"apple\", \"arch\", \"array\", \"beast\", \"bike\", \"bird\", \"blue\", \"book\", \"brain\", \"bread\", \"bus\", \"canoe\", \"car\", \"cat\", \"chair\", \"cheese\", \"circle\", \"cloth\", \"cloud\", \"column\", \"cone\", \"contour\", \"creature\", \"day\", \"diamond\", \"dive\", \"dog\", \"door\", \"drift\", \"drink\", \"eat\", \"elevation\", \"eye\", \"fauna\", \"fear\", \"fiber\", \"fish\", \"float\", \"flow\", \"foot\", \"forest\", \"foundation\", \"framework\", \"game\", \"garment\", \"glass\", \"glove\", \"granite\", \"grass\", \"green\", \"grid\", \"hand\", \"happy\", \"hat\", \"heart\", \"heritage\", \"hexagon\", \"hour\", \"joy\", \"jump\", \"lamp\", \"landform\", \"landmark\", \"lattice\", \"limestone\", \"liver\", \"marble\", \"masonry\", \"match\", \"matrix\", \"meat\", \"metal\", \"metro\", \"milk\", \"minute\", \"month\", \"monument\", \"mood\", \"moss\", \"mountain\", \"ocean\", \"orange\", \"ore\", \"oval\", \"pants\", \"paper\", \"pen\", \"pentagon\", \"pillar\", \"plastic\", \"play\", \"purple\", \"race\", \"rail\", \"rain\", \"read\", \"red\", \"relief\", \"ripple\", \"river\", \"rock\", \"run\", \"sad\", \"schema\", \"ship\", \"shirt\", \"shoe\", \"sleep\", \"slope\", \"snow\", \"soil\", \"sphere\", \"splash\", \"square\", \"stone\", \"storm\", \"subway\", \"sun\", \"swim\", \"symbol\", \"table\", \"taxi\", \"team\", \"topography\", \"track\", \"train\", \"tram\", \"tree\", \"triangle\", \"underground\", \"wash\", \"week\", \"wind\", \"wood\", \"work\", \"year\", \"yellow\"]\nAvoid these invalid or unrecognized words: [\"slope\"]\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"direction name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:06:41",
+    "details": {
+      "word": "rectangle",
+      "rank": 29499,
+      "hypothesis": "quadrilaterals",
+      "best_word": "monument",
+      "best_rank": 6,
+      "total_guesses": 139
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:06:45",
+    "details": {
+      "word": "rhombus",
+      "rank": 16479,
+      "hypothesis": "quadrilaterals",
+      "best_word": "monument",
+      "best_rank": 6,
+      "total_guesses": 140
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:06:46",
+    "details": {
+      "word": "trapezoid",
+      "rank": 25545,
+      "hypothesis": "quadrilaterals",
+      "best_word": "monument",
+      "best_rank": 6,
+      "total_guesses": 141
+    }
+  },
+  {
+    "generation": 2,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-22T21:07:06",
+    "details": {
+      "parent_id": "aa73598f71a34833a75bb75c29375bf4",
+      "child_id": "18d4d2ca1b9a4c6d98fc5c17d5070106",
+      "parent_rank": 383,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "endurance",
+      "sampled_op": "m_mutation",
+      "method": "self_adaptive",
+      "self_report": {
+        "predicted_closeness": 0.4,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "mountain"
+          ],
+          "reason": "Reinterpreting 'mountain' through its symbolic attributes like endurance and stability, shifting focus from natural elements to human-associated qualities."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"name\": \"endurance\", \"description\": \"attributes associated with mountains\", \"words\": [\"endurance\", \"stability\", \"height\"], \"basis_words\": [\"mountain\"], \"reason\": \"Reinterpreting 'mountain' through its symbolic attributes like endurance and stability, shifting focus from natural elements to human-associated qualities.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"nature\".\nDescription: natural elements\nResults so far in this hypothesis: {\"forest\": 985, \"grass\": 4394, \"moss\": 8619, \"mountain\": 383, \"ocean\": 1498, \"river\": 805, \"rock\": 1471, \"soil\": 17517, \"tree\": 1261}\nBest word so far: \"mountain\" with rank 383.\n\nMake a MEDIUM mutation: produce a child hypothesis that reinterprets why\n\"mountain\" might have scored well, or shifts to a related sense, lexical\nregister, or part of speech. The child should still be semantically anchored\nto \"mountain\" but approach it from a clearly different angle than \"nature\".\n\nFor example, if the parent is \"food\" and the best word is \"bite\", a medium\nmutation could be \"animals that bite\", \"physical sensations from biting\", or\n\"clinical terms for biting and chewing\" - each treats \"bite\" through a\ndifferent lens.\n\nSuggest one reframed hypothesis. Include exactly 3 starter words that have\nnot already been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"airplane\", \"angry\", \"apple\", \"arch\", \"array\", \"beast\", \"bike\", \"bird\", \"blue\", \"book\", \"brain\", \"bread\", \"bus\", \"canoe\", \"car\", \"cat\", \"chair\", \"cheese\", \"circle\", \"cloth\", \"cloud\", \"column\", \"cone\", \"contour\", \"creature\", \"day\", \"diamond\", \"dive\", \"dog\", \"door\", \"drift\", \"drink\", \"eat\", \"elevation\", \"eye\", \"fauna\", \"fear\", \"fiber\", \"fish\", \"float\", \"flow\", \"foot\", \"forest\", \"foundation\", \"framework\", \"game\", \"garment\", \"glass\", \"glove\", \"granite\", \"grass\", \"green\", \"grid\", \"hand\", \"happy\", \"hat\", \"heart\", \"heritage\", \"hexagon\", \"hour\", \"joy\", \"jump\", \"lamp\", \"landform\", \"landmark\", \"lattice\", \"limestone\", \"liver\", \"marble\", \"masonry\", \"match\", \"matrix\", \"meat\", \"metal\", \"metro\", \"milk\", \"minute\", \"month\", \"monument\", \"mood\", \"moss\", \"mountain\", \"ocean\", \"orange\", \"ore\", \"oval\", \"pants\", \"paper\", \"pen\", \"pentagon\", \"pillar\", \"plastic\", \"play\", \"purple\", \"race\", \"rail\", \"rain\", \"read\", \"rectangle\", \"red\", \"relief\", \"rhombus\", \"ripple\", \"river\", \"rock\", \"run\", \"sad\", \"schema\", \"ship\", \"shirt\", \"shoe\", \"sleep\", \"slope\", \"snow\", \"soil\", \"sphere\", \"splash\", \"square\", \"stone\", \"storm\", \"subway\", \"sun\", \"swim\", \"symbol\", \"table\", \"taxi\", \"team\", \"topography\", \"track\", \"train\", \"tram\", \"trapezoid\", \"tree\", \"triangle\", \"underground\", \"wash\", \"week\", \"wind\", \"wood\", \"work\", \"year\", \"yellow\"]\nAvoid these invalid or unrecognized words: [\"slope\"]\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"direction name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:07:06",
+    "details": {
+      "word": "endurance",
+      "rank": 16468,
+      "hypothesis": "endurance",
+      "best_word": "monument",
+      "best_rank": 6,
+      "total_guesses": 142
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:07:06",
+    "details": {
+      "word": "stability",
+      "rank": 9968,
+      "hypothesis": "endurance",
+      "best_word": "monument",
+      "best_rank": 6,
+      "total_guesses": 143
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:07:10",
+    "details": {
+      "word": "height",
+      "rank": 2167,
+      "hypothesis": "endurance",
+      "best_word": "monument",
+      "best_rank": 6,
+      "total_guesses": 144
+    }
+  },
+  {
+    "generation": 2,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-22T21:07:27",
+    "details": {
+      "parent_id": "e38fa6c3c0ec4879a0918939a0e9ed14",
+      "child_id": "8a91e73149224955a8f32d68c8a066dd",
+      "parent_rank": 757,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "subterranean spaces",
+      "sampled_op": "ml_mutation",
+      "method": "self_adaptive",
+      "self_report": {
+        "predicted_closeness": 0.6,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "underground"
+          ],
+          "reason": "Subterranean spaces are semantically related to 'underground' but represent a distinct category focusing on physical environments rather than transportation infrastructure."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\n  \"name\": \"subterranean spaces\",\n  \"description\": \"types of underground areas\",\n  \"words\": [\"cave\", \"basement\", \"cellar\"],\n  \"basis_words\": [\"underground\"],\n  \"reason\": \"Subterranean spaces are semantically related to 'underground' but represent a distinct category focusing on physical environments rather than transportation infrastructure.\",\n  \"predicted_bucket\": \"top500\",\n  \"predicted_closeness\": 0.6\n}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"rail systems\".\nDescription: types of rail-based movement\nResults so far in this hypothesis: {\"metro\": 3332, \"rail\": 4971, \"subway\": 2323, \"track\": 2570, \"underground\": 757}\nBest word so far: \"underground\" with rank 757.\n\nMake a MEDIUM-LARGE mutation: produce a child hypothesis in an ADJACENT but\ndistinct category that could still plausibly contain the hidden target given\n\"underground\"'s rank. The child must NOT be a sub-category of \"rail systems\" - it\nshould sit alongside \"rail systems\" in semantic space, not underneath it.\n\nFor example, if the parent is \"types of plants\" and the best word is \"shrub\",\nan adjacent category could be \"plant descriptors\", \"botanical terminology\",\n\"growth habits\", or \"ecological roles\".\n\nSuggest one adjacent hypothesis. Include exactly 3 starter words that have\nnot already been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"airplane\", \"angry\", \"apple\", \"arch\", \"array\", \"beast\", \"bike\", \"bird\", \"blue\", \"book\", \"brain\", \"bread\", \"bus\", \"canoe\", \"car\", \"cat\", \"chair\", \"cheese\", \"circle\", \"cloth\", \"cloud\", \"column\", \"cone\", \"contour\", \"creature\", \"day\", \"diamond\", \"dive\", \"dog\", \"door\", \"drift\", \"drink\", \"eat\", \"elevation\", \"endurance\", \"eye\", \"fauna\", \"fear\", \"fiber\", \"fish\", \"float\", \"flow\", \"foot\", \"forest\", \"foundation\", \"framework\", \"game\", \"garment\", \"glass\", \"glove\", \"granite\", \"grass\", \"green\", \"grid\", \"hand\", \"happy\", \"hat\", \"heart\", \"height\", \"heritage\", \"hexagon\", \"hour\", \"joy\", \"jump\", \"lamp\", \"landform\", \"landmark\", \"lattice\", \"limestone\", \"liver\", \"marble\", \"masonry\", \"match\", \"matrix\", \"meat\", \"metal\", \"metro\", \"milk\", \"minute\", \"month\", \"monument\", \"mood\", \"moss\", \"mountain\", \"ocean\", \"orange\", \"ore\", \"oval\", \"pants\", \"paper\", \"pen\", \"pentagon\", \"pillar\", \"plastic\", \"play\", \"purple\", \"race\", \"rail\", \"rain\", \"read\", \"rectangle\", \"red\", \"relief\", \"rhombus\", \"ripple\", \"river\", \"rock\", \"run\", \"sad\", \"schema\", \"ship\", \"shirt\", \"shoe\", \"sleep\", \"slope\", \"snow\", \"soil\", \"sphere\", \"splash\", \"square\", \"stability\", \"stone\", \"storm\", \"subway\", \"sun\", \"swim\", \"symbol\", \"table\", \"taxi\", \"team\", \"topography\", \"track\", \"train\", \"tram\", \"trapezoid\", \"tree\", \"triangle\", \"underground\", \"wash\", \"week\", \"wind\", \"wood\", \"work\", \"year\", \"yellow\"]\nAvoid these invalid or unrecognized words: [\"slope\"]\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"category name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nThe parent hypothesis's prior rationale (for context only; do not copy blindly): basis_words=[\"train\"], reason=\"rail, track, and subway are all closely related to trains and are common terms in the context of transportation.\".\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": "b581c6c35331ba35",
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:07:28",
+    "details": {
+      "word": "cave",
+      "rank": 123,
+      "hypothesis": "subterranean spaces",
+      "best_word": "monument",
+      "best_rank": 6,
+      "total_guesses": 145
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:07:29",
+    "details": {
+      "word": "basement",
+      "rank": 4355,
+      "hypothesis": "subterranean spaces",
+      "best_word": "monument",
+      "best_rank": 6,
+      "total_guesses": 146
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:07:30",
+    "details": {
+      "word": "cellar",
+      "rank": 2169,
+      "hypothesis": "subterranean spaces",
+      "best_word": "monument",
+      "best_rank": 6,
+      "total_guesses": 147
+    }
+  },
+  {
+    "generation": 2,
+    "event": "MUTATE",
+    "timestamp": "2026-07-22T21:07:30",
+    "details": {
+      "method": "self_adaptive",
+      "children": [
+        {
+          "hypothesis_id": "f97282a45bbc4084bc384fb7b258a401",
+          "category_name": "cultural symbols",
+          "description": "objects or concepts representing cultural significance",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "stone in architecture",
+          "parent_id": "9a50fc7380774dafb8c29b83d7d66efe",
+          "origin": "self_adaptive_ml_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "self_report": {
+            "predicted_closeness": 0.3,
+            "predicted_closeness_clamped": false,
+            "predicted_bucket": "top500",
+            "rationale": {
+              "basis_words": [
+                "monument"
+              ],
+              "reason": "shifts focus to symbolic and cultural representations that may include monuments but are not limited to architectural materials"
+            },
+            "self_report_parse_failed": false,
+            "self_report_raw": "{\"name\": \"cultural symbols\", \"description\": \"objects or concepts representing cultural significance\", \"words\": [\"symbol\", \"heritage\", \"landmark\"], \"basis_words\": [\"monument\"], \"reason\": \"shifts focus to symbolic and cultural representations that may include monuments but are not limited to architectural materials\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}",
+            "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"stone in architecture\".\nDescription: structural elements made of or inspired by stone\nResults so far in this hypothesis: {\"arch\": 341, \"column\": 993, \"foundation\": 2466, \"masonry\": 3840, \"monument\": 6, \"pillar\": 269}\nBest word so far: \"monument\" with rank 6.\n\nMake a MEDIUM-LARGE mutation: produce a child hypothesis in an ADJACENT but\ndistinct category that could still plausibly contain the hidden target given\n\"monument\"'s rank. The child must NOT be a sub-category of \"stone in architecture\" - it\nshould sit alongside \"stone in architecture\" in semantic space, not underneath it.\n\nFor example, if the parent is \"types of plants\" and the best word is \"shrub\",\nan adjacent category could be \"plant descriptors\", \"botanical terminology\",\n\"growth habits\", or \"ecological roles\".\n\nSuggest one adjacent hypothesis. Include exactly 3 starter words that have\nnot already been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"airplane\", \"angry\", \"apple\", \"arch\", \"array\", \"beast\", \"bike\", \"bird\", \"blue\", \"book\", \"brain\", \"bread\", \"bus\", \"canoe\", \"car\", \"cat\", \"chair\", \"cheese\", \"circle\", \"cloth\", \"cloud\", \"column\", \"cone\", \"contour\", \"creature\", \"day\", \"diamond\", \"dive\", \"dog\", \"door\", \"drift\", \"drink\", \"eat\", \"elevation\", \"eye\", \"fauna\", \"fear\", \"fiber\", \"fish\", \"float\", \"flow\", \"foot\", \"forest\", \"foundation\", \"framework\", \"game\", \"garment\", \"glass\", \"glove\", \"grass\", \"green\", \"grid\", \"hand\", \"happy\", \"hat\", \"heart\", \"hexagon\", \"hour\", \"joy\", \"jump\", \"lamp\", \"landform\", \"lattice\", \"liver\", \"masonry\", \"match\", \"matrix\", \"meat\", \"metal\", \"metro\", \"milk\", \"minute\", \"month\", \"monument\", \"mood\", \"moss\", \"mountain\", \"ocean\", \"orange\", \"ore\", \"oval\", \"pants\", \"paper\", \"pen\", \"pentagon\", \"pillar\", \"plastic\", \"play\", \"purple\", \"race\", \"rail\", \"rain\", \"read\", \"red\", \"relief\", \"ripple\", \"river\", \"rock\", \"run\", \"sad\", \"schema\", \"ship\", \"shirt\", \"shoe\", \"sleep\", \"slope\", \"snow\", \"soil\", \"sphere\", \"splash\", \"square\", \"stone\", \"storm\", \"subway\", \"sun\", \"swim\", \"table\", \"taxi\", \"team\", \"topography\", \"track\", \"train\", \"tram\", \"tree\", \"triangle\", \"underground\", \"wash\", \"week\", \"wind\", \"wood\", \"work\", \"year\", \"yellow\"]\nAvoid these invalid or unrecognized words: [\"slope\"]\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"category name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nThe parent hypothesis's prior rationale (for context only; do not copy blindly): basis_words=[\"stone\"], reason=\"shifts focus to stone's role in construction and iconic structures, reinterpreting its relevance beyond material classification\".\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+            "injected_rationale_hash": "e14fef6710a7fde9",
+            "rationale_truncated": false
+          }
+        },
+        {
+          "hypothesis_id": "6ac9edfc13524df39cb993846db85d19",
+          "category_name": "types of stone",
+          "description": "types of stone",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "materials",
+          "parent_id": "8fc0792ced2948af968c76c49ae49734",
+          "origin": "self_adaptive_s_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "self_report": {
+            "predicted_closeness": 0.7,
+            "predicted_closeness_clamped": false,
+            "predicted_bucket": "top500",
+            "rationale": {
+              "basis_words": [
+                "stone"
+              ],
+              "reason": "These words are closely related to 'stone' and represent specific types or synonyms of stone."
+            },
+            "self_report_parse_failed": false,
+            "self_report_raw": "{\"name\": \"types of stone\", \"description\": \"types of stone\", \"words\": [\"granite\", \"marble\", \"limestone\"], \"basis_words\": [\"stone\"], \"reason\": \"These words are closely related to 'stone' and represent specific types or synonyms of stone.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.7}",
+            "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"materials\".\nDescription: substances used\nResults so far in this hypothesis: {\"cloth\": 5155, \"fiber\": 13017, \"glass\": 1562, \"metal\": 5337, \"ore\": 21560, \"paper\": 9526, \"plastic\": 9461, \"stone\": 243, \"wood\": 1286}\nBest word so far: \"stone\" with rank 243.\n\nMake a SMALL mutation: produce a child hypothesis that stays in the same\nconceptual neighborhood as \"materials\" but narrows or refines it. The new starter\nwords should be close semantic neighbors of \"stone\" - synonyms, common\ndescriptors, or words that frequently co-occur with it.\n\nFor example, if the parent is \"types of plants\" and the best word is \"shrub\",\na small mutation could be \"woody plants\" with starters like bush, hedge, thicket.\n\nSuggest one refined hypothesis. Include exactly 3 starter words that have not\nalready been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"airplane\", \"angry\", \"apple\", \"arch\", \"array\", \"beast\", \"bike\", \"bird\", \"blue\", \"book\", \"brain\", \"bread\", \"bus\", \"canoe\", \"car\", \"cat\", \"chair\", \"cheese\", \"circle\", \"cloth\", \"cloud\", \"column\", \"cone\", \"contour\", \"creature\", \"day\", \"diamond\", \"dive\", \"dog\", \"door\", \"drift\", \"drink\", \"eat\", \"elevation\", \"eye\", \"fauna\", \"fear\", \"fiber\", \"fish\", \"float\", \"flow\", \"foot\", \"forest\", \"foundation\", \"framework\", \"game\", \"garment\", \"glass\", \"glove\", \"grass\", \"green\", \"grid\", \"hand\", \"happy\", \"hat\", \"heart\", \"heritage\", \"hexagon\", \"hour\", \"joy\", \"jump\", \"lamp\", \"landform\", \"landmark\", \"lattice\", \"liver\", \"masonry\", \"match\", \"matrix\", \"meat\", \"metal\", \"metro\", \"milk\", \"minute\", \"month\", \"monument\", \"mood\", \"moss\", \"mountain\", \"ocean\", \"orange\", \"ore\", \"oval\", \"pants\", \"paper\", \"pen\", \"pentagon\", \"pillar\", \"plastic\", \"play\", \"purple\", \"race\", \"rail\", \"rain\", \"read\", \"red\", \"relief\", \"ripple\", \"river\", \"rock\", \"run\", \"sad\", \"schema\", \"ship\", \"shirt\", \"shoe\", \"sleep\", \"slope\", \"snow\", \"soil\", \"sphere\", \"splash\", \"square\", \"stone\", \"storm\", \"subway\", \"sun\", \"swim\", \"symbol\", \"table\", \"taxi\", \"team\", \"topography\", \"track\", \"train\", \"tram\", \"tree\", \"triangle\", \"underground\", \"wash\", \"week\", \"wind\", \"wood\", \"work\", \"year\", \"yellow\"]\nAvoid these invalid or unrecognized words: [\"slope\"]\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"direction name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+            "injected_rationale_hash": null,
+            "rationale_truncated": false
+          }
+        },
+        {
+          "hypothesis_id": "53ba33b5b4c043c69d4d554e5d36a354",
+          "category_name": "quadrilaterals",
+          "description": "four-sided polygons",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "shapes",
+          "parent_id": "e0f400a5910241bc9b4025d15dc6588c",
+          "origin": "self_adaptive_s_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "self_report": {
+            "predicted_closeness": 0.3,
+            "predicted_closeness_clamped": false,
+            "predicted_bucket": "top500",
+            "rationale": {
+              "basis_words": [
+                "square"
+              ],
+              "reason": "Narrowing to four-sided polygons, which are closely related to 'square', using rectangle, rhombus, and trapezoid as semantic neighbors."
+            },
+            "self_report_parse_failed": false,
+            "self_report_raw": "{\"name\": \"quadrilaterals\", \"description\": \"four-sided polygons\", \"words\": [\"rectangle\", \"rhombus\", \"trapezoid\"], \"basis_words\": [\"square\"], \"reason\": \"Narrowing to four-sided polygons, which are closely related to 'square', using rectangle, rhombus, and trapezoid as semantic neighbors.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}",
+            "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"shapes\".\nDescription: geometric forms\nResults so far in this hypothesis: {\"circle\": 2293, \"cone\": 16685, \"diamond\": 1613, \"hexagon\": 15933, \"oval\": 8329, \"pentagon\": 4222, \"sphere\": 4037, \"square\": 271, \"triangle\": 1825}\nBest word so far: \"square\" with rank 271.\n\nMake a SMALL mutation: produce a child hypothesis that stays in the same\nconceptual neighborhood as \"shapes\" but narrows or refines it. The new starter\nwords should be close semantic neighbors of \"square\" - synonyms, common\ndescriptors, or words that frequently co-occur with it.\n\nFor example, if the parent is \"types of plants\" and the best word is \"shrub\",\na small mutation could be \"woody plants\" with starters like bush, hedge, thicket.\n\nSuggest one refined hypothesis. Include exactly 3 starter words that have not\nalready been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"airplane\", \"angry\", \"apple\", \"arch\", \"array\", \"beast\", \"bike\", \"bird\", \"blue\", \"book\", \"brain\", \"bread\", \"bus\", \"canoe\", \"car\", \"cat\", \"chair\", \"cheese\", \"circle\", \"cloth\", \"cloud\", \"column\", \"cone\", \"contour\", \"creature\", \"day\", \"diamond\", \"dive\", \"dog\", \"door\", \"drift\", \"drink\", \"eat\", \"elevation\", \"eye\", \"fauna\", \"fear\", \"fiber\", \"fish\", \"float\", \"flow\", \"foot\", \"forest\", \"foundation\", \"framework\", \"game\", \"garment\", \"glass\", \"glove\", \"granite\", \"grass\", \"green\", \"grid\", \"hand\", \"happy\", \"hat\", \"heart\", \"heritage\", \"hexagon\", \"hour\", \"joy\", \"jump\", \"lamp\", \"landform\", \"landmark\", \"lattice\", \"limestone\", \"liver\", \"marble\", \"masonry\", \"match\", \"matrix\", \"meat\", \"metal\", \"metro\", \"milk\", \"minute\", \"month\", \"monument\", \"mood\", \"moss\", \"mountain\", \"ocean\", \"orange\", \"ore\", \"oval\", \"pants\", \"paper\", \"pen\", \"pentagon\", \"pillar\", \"plastic\", \"play\", \"purple\", \"race\", \"rail\", \"rain\", \"read\", \"red\", \"relief\", \"ripple\", \"river\", \"rock\", \"run\", \"sad\", \"schema\", \"ship\", \"shirt\", \"shoe\", \"sleep\", \"slope\", \"snow\", \"soil\", \"sphere\", \"splash\", \"square\", \"stone\", \"storm\", \"subway\", \"sun\", \"swim\", \"symbol\", \"table\", \"taxi\", \"team\", \"topography\", \"track\", \"train\", \"tram\", \"tree\", \"triangle\", \"underground\", \"wash\", \"week\", \"wind\", \"wood\", \"work\", \"year\", \"yellow\"]\nAvoid these invalid or unrecognized words: [\"slope\"]\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"direction name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+            "injected_rationale_hash": null,
+            "rationale_truncated": false
+          }
+        },
+        {
+          "hypothesis_id": "18d4d2ca1b9a4c6d98fc5c17d5070106",
+          "category_name": "endurance",
+          "description": "attributes associated with mountains",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "nature",
+          "parent_id": "aa73598f71a34833a75bb75c29375bf4",
+          "origin": "self_adaptive_m_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "self_report": {
+            "predicted_closeness": 0.4,
+            "predicted_closeness_clamped": false,
+            "predicted_bucket": "top500",
+            "rationale": {
+              "basis_words": [
+                "mountain"
+              ],
+              "reason": "Reinterpreting 'mountain' through its symbolic attributes like endurance and stability, shifting focus from natural elements to human-associated qualities."
+            },
+            "self_report_parse_failed": false,
+            "self_report_raw": "{\"name\": \"endurance\", \"description\": \"attributes associated with mountains\", \"words\": [\"endurance\", \"stability\", \"height\"], \"basis_words\": [\"mountain\"], \"reason\": \"Reinterpreting 'mountain' through its symbolic attributes like endurance and stability, shifting focus from natural elements to human-associated qualities.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}",
+            "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"nature\".\nDescription: natural elements\nResults so far in this hypothesis: {\"forest\": 985, \"grass\": 4394, \"moss\": 8619, \"mountain\": 383, \"ocean\": 1498, \"river\": 805, \"rock\": 1471, \"soil\": 17517, \"tree\": 1261}\nBest word so far: \"mountain\" with rank 383.\n\nMake a MEDIUM mutation: produce a child hypothesis that reinterprets why\n\"mountain\" might have scored well, or shifts to a related sense, lexical\nregister, or part of speech. The child should still be semantically anchored\nto \"mountain\" but approach it from a clearly different angle than \"nature\".\n\nFor example, if the parent is \"food\" and the best word is \"bite\", a medium\nmutation could be \"animals that bite\", \"physical sensations from biting\", or\n\"clinical terms for biting and chewing\" - each treats \"bite\" through a\ndifferent lens.\n\nSuggest one reframed hypothesis. Include exactly 3 starter words that have\nnot already been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"airplane\", \"angry\", \"apple\", \"arch\", \"array\", \"beast\", \"bike\", \"bird\", \"blue\", \"book\", \"brain\", \"bread\", \"bus\", \"canoe\", \"car\", \"cat\", \"chair\", \"cheese\", \"circle\", \"cloth\", \"cloud\", \"column\", \"cone\", \"contour\", \"creature\", \"day\", \"diamond\", \"dive\", \"dog\", \"door\", \"drift\", \"drink\", \"eat\", \"elevation\", \"eye\", \"fauna\", \"fear\", \"fiber\", \"fish\", \"float\", \"flow\", \"foot\", \"forest\", \"foundation\", \"framework\", \"game\", \"garment\", \"glass\", \"glove\", \"granite\", \"grass\", \"green\", \"grid\", \"hand\", \"happy\", \"hat\", \"heart\", \"heritage\", \"hexagon\", \"hour\", \"joy\", \"jump\", \"lamp\", \"landform\", \"landmark\", \"lattice\", \"limestone\", \"liver\", \"marble\", \"masonry\", \"match\", \"matrix\", \"meat\", \"metal\", \"metro\", \"milk\", \"minute\", \"month\", \"monument\", \"mood\", \"moss\", \"mountain\", \"ocean\", \"orange\", \"ore\", \"oval\", \"pants\", \"paper\", \"pen\", \"pentagon\", \"pillar\", \"plastic\", \"play\", \"purple\", \"race\", \"rail\", \"rain\", \"read\", \"rectangle\", \"red\", \"relief\", \"rhombus\", \"ripple\", \"river\", \"rock\", \"run\", \"sad\", \"schema\", \"ship\", \"shirt\", \"shoe\", \"sleep\", \"slope\", \"snow\", \"soil\", \"sphere\", \"splash\", \"square\", \"stone\", \"storm\", \"subway\", \"sun\", \"swim\", \"symbol\", \"table\", \"taxi\", \"team\", \"topography\", \"track\", \"train\", \"tram\", \"trapezoid\", \"tree\", \"triangle\", \"underground\", \"wash\", \"week\", \"wind\", \"wood\", \"work\", \"year\", \"yellow\"]\nAvoid these invalid or unrecognized words: [\"slope\"]\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"direction name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+            "injected_rationale_hash": null,
+            "rationale_truncated": false
+          }
+        },
+        {
+          "hypothesis_id": "8a91e73149224955a8f32d68c8a066dd",
+          "category_name": "subterranean spaces",
+          "description": "types of underground areas",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "rail systems",
+          "parent_id": "e38fa6c3c0ec4879a0918939a0e9ed14",
+          "origin": "self_adaptive_ml_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "self_report": {
+            "predicted_closeness": 0.6,
+            "predicted_closeness_clamped": false,
+            "predicted_bucket": "top500",
+            "rationale": {
+              "basis_words": [
+                "underground"
+              ],
+              "reason": "Subterranean spaces are semantically related to 'underground' but represent a distinct category focusing on physical environments rather than transportation infrastructure."
+            },
+            "self_report_parse_failed": false,
+            "self_report_raw": "{\n  \"name\": \"subterranean spaces\",\n  \"description\": \"types of underground areas\",\n  \"words\": [\"cave\", \"basement\", \"cellar\"],\n  \"basis_words\": [\"underground\"],\n  \"reason\": \"Subterranean spaces are semantically related to 'underground' but represent a distinct category focusing on physical environments rather than transportation infrastructure.\",\n  \"predicted_bucket\": \"top500\",\n  \"predicted_closeness\": 0.6\n}",
+            "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"rail systems\".\nDescription: types of rail-based movement\nResults so far in this hypothesis: {\"metro\": 3332, \"rail\": 4971, \"subway\": 2323, \"track\": 2570, \"underground\": 757}\nBest word so far: \"underground\" with rank 757.\n\nMake a MEDIUM-LARGE mutation: produce a child hypothesis in an ADJACENT but\ndistinct category that could still plausibly contain the hidden target given\n\"underground\"'s rank. The child must NOT be a sub-category of \"rail systems\" - it\nshould sit alongside \"rail systems\" in semantic space, not underneath it.\n\nFor example, if the parent is \"types of plants\" and the best word is \"shrub\",\nan adjacent category could be \"plant descriptors\", \"botanical terminology\",\n\"growth habits\", or \"ecological roles\".\n\nSuggest one adjacent hypothesis. Include exactly 3 starter words that have\nnot already been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"airplane\", \"angry\", \"apple\", \"arch\", \"array\", \"beast\", \"bike\", \"bird\", \"blue\", \"book\", \"brain\", \"bread\", \"bus\", \"canoe\", \"car\", \"cat\", \"chair\", \"cheese\", \"circle\", \"cloth\", \"cloud\", \"column\", \"cone\", \"contour\", \"creature\", \"day\", \"diamond\", \"dive\", \"dog\", \"door\", \"drift\", \"drink\", \"eat\", \"elevation\", \"endurance\", \"eye\", \"fauna\", \"fear\", \"fiber\", \"fish\", \"float\", \"flow\", \"foot\", \"forest\", \"foundation\", \"framework\", \"game\", \"garment\", \"glass\", \"glove\", \"granite\", \"grass\", \"green\", \"grid\", \"hand\", \"happy\", \"hat\", \"heart\", \"height\", \"heritage\", \"hexagon\", \"hour\", \"joy\", \"jump\", \"lamp\", \"landform\", \"landmark\", \"lattice\", \"limestone\", \"liver\", \"marble\", \"masonry\", \"match\", \"matrix\", \"meat\", \"metal\", \"metro\", \"milk\", \"minute\", \"month\", \"monument\", \"mood\", \"moss\", \"mountain\", \"ocean\", \"orange\", \"ore\", \"oval\", \"pants\", \"paper\", \"pen\", \"pentagon\", \"pillar\", \"plastic\", \"play\", \"purple\", \"race\", \"rail\", \"rain\", \"read\", \"rectangle\", \"red\", \"relief\", \"rhombus\", \"ripple\", \"river\", \"rock\", \"run\", \"sad\", \"schema\", \"ship\", \"shirt\", \"shoe\", \"sleep\", \"slope\", \"snow\", \"soil\", \"sphere\", \"splash\", \"square\", \"stability\", \"stone\", \"storm\", \"subway\", \"sun\", \"swim\", \"symbol\", \"table\", \"taxi\", \"team\", \"topography\", \"track\", \"train\", \"tram\", \"trapezoid\", \"tree\", \"triangle\", \"underground\", \"wash\", \"week\", \"wind\", \"wood\", \"work\", \"year\", \"yellow\"]\nAvoid these invalid or unrecognized words: [\"slope\"]\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"category name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nThe parent hypothesis's prior rationale (for context only; do not copy blindly): basis_words=[\"train\"], reason=\"rail, track, and subway are all closely related to trains and are common terms in the context of transportation.\".\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+            "injected_rationale_hash": "b581c6c35331ba35",
+            "rationale_truncated": false
+          }
+        }
+      ],
+      "best_word": "monument",
+      "best_rank": 6,
+      "total_guesses": 147
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:07:44",
+    "details": {
+      "word": "monument",
+      "rank": 6,
+      "hypothesis": "cultural_architectural_symbols",
+      "best_word": "monument",
+      "best_rank": 6,
+      "total_guesses": 147
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:07:44",
+    "details": {
+      "word": "landmark",
+      "rank": 50,
+      "hypothesis": "cultural_architectural_symbols",
+      "best_word": "monument",
+      "best_rank": 6,
+      "total_guesses": 147
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:07:44",
+    "details": {
+      "word": "heritage",
+      "rank": 127,
+      "hypothesis": "cultural_architectural_symbols",
+      "best_word": "monument",
+      "best_rank": 6,
+      "total_guesses": 147
+    }
+  },
+  {
+    "generation": 2,
+    "event": "CROSSOVER",
+    "timestamp": "2026-07-22T21:07:44",
+    "details": {
+      "parents": [
+        "stone in architecture",
+        "cultural symbols"
+      ],
+      "parent_ids": [
+        "9a50fc7380774dafb8c29b83d7d66efe",
+        "f97282a45bbc4084bc384fb7b258a401"
+      ],
+      "parent_ranks": [
+        6,
+        50
+      ],
+      "parent_a_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "parent_b_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma_pre_perturbation": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child": {
+        "hypothesis_id": "f7795deb1b544d32b81945de45098a19",
+        "category_name": "cultural_architectural_symbols",
+        "description": "structures or concepts that are both architectural and cultural symbols",
+        "words_tried": {
+          "monument": 6,
+          "landmark": 50,
+          "heritage": 127
+        },
+        "best_word": "monument",
+        "best_rank": 6,
+        "status": "active",
+        "parent": "stone in architecture+cultural symbols",
+        "parent_id": null,
+        "origin": "crossover",
+        "sigma": [
+          0.25,
+          0.25,
+          0.25,
+          0.25
+        ],
+        "self_report": {
+          "predicted_closeness": 0.2,
+          "predicted_closeness_clamped": false,
+          "predicted_bucket": "beyond",
+          "rationale": {
+            "basis_words": [
+              "monument",
+              "landmark",
+              "heritage"
+            ],
+            "reason": "these terms represent physical structures (monument, landmark) and cultural concepts (heritage) that overlap between architectural elements and symbolic significance"
+          },
+          "self_report_parse_failed": false,
+          "self_report_raw": "{\"name\": \"cultural_architectural_symbols\", \"description\": \"structures or concepts that are both architectural and cultural symbols\", \"words\": [\"monument\", \"landmark\", \"heritage\"], \"basis_words\": [\"monument\", \"landmark\", \"heritage\"], \"reason\": \"these terms represent physical structures (monument, landmark) and cultural concepts (heritage) that overlap between architectural elements and symbolic significance\", \"predicted_bucket\": \"beyond\", \"predicted_closeness\": 0.2}",
+          "self_report_prompt": "Return only JSON, no markdown or explanation.\nCategory A is stone in architecture with results {\"arch\": 341, \"column\": 993, \"foundation\": 2466, \"masonry\": 3840, \"monument\": 6, \"pillar\": 269}.\nCategory B is cultural symbols with results {\"heritage\": 127, \"landmark\": 50, \"symbol\": 3107}.\nSuggest one new category that captures the intersection or overlap of A and B.\nInclude exactly 3 candidate words.\nEvery word must be one common lowercase dictionary word.\nJSON schema:\n{\"name\": \"category name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+          "injected_rationale_hash": null,
+          "rationale_truncated": false
+        }
+      },
+      "best_word": "monument",
+      "best_rank": 6,
+      "total_guesses": 147
+    }
+  },
+  {
+    "generation": 2,
+    "event": "DEDUPLICATE",
+    "timestamp": "2026-07-22T21:07:44",
+    "details": {
+      "merged": [
+        {
+          "survivor": "cultural_architectural_symbols",
+          "discarded": "cultural symbols",
+          "survivor_best_rank": 6,
+          "discarded_best_rank": 50
+        }
+      ],
+      "remaining_hypotheses": 25,
+      "active_hypotheses": 10,
+      "best_word": "monument",
+      "best_rank": 6,
+      "total_guesses": 147
+    }
+  },
+  {
+    "generation": 2,
+    "event": "SIGMA_TRAJECTORY",
+    "timestamp": "2026-07-22T21:07:44",
+    "details": {
+      "mean_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "population_size": 10
+    }
+  },
+  {
+    "generation": 3,
+    "event": "CANDIDATES",
+    "timestamp": "2026-07-22T21:09:32",
+    "details": {
+      "count": 29,
+      "candidates": [
+        {
+          "hypothesis": "stone in architecture",
+          "word": "lintel"
+        },
+        {
+          "hypothesis": "stone in architecture",
+          "word": "vault"
+        },
+        {
+          "hypothesis": "stone in architecture",
+          "word": "buttress"
+        },
+        {
+          "hypothesis": "cultural_architectural_symbols",
+          "word": "icon"
+        },
+        {
+          "hypothesis": "cultural_architectural_symbols",
+          "word": "temple"
+        },
+        {
+          "hypothesis": "cultural_architectural_symbols",
+          "word": "palace"
+        },
+        {
+          "hypothesis": "subterranean spaces",
+          "word": "tunnel"
+        },
+        {
+          "hypothesis": "subterranean spaces",
+          "word": "bunker"
+        },
+        {
+          "hypothesis": "types of stone",
+          "word": "sandstone"
+        },
+        {
+          "hypothesis": "types of stone",
+          "word": "basalt"
+        },
+        {
+          "hypothesis": "types of stone",
+          "word": "quartz"
+        },
+        {
+          "hypothesis": "materials",
+          "word": "clay"
+        },
+        {
+          "hypothesis": "materials",
+          "word": "concrete"
+        },
+        {
+          "hypothesis": "materials",
+          "word": "ceramic"
+        },
+        {
+          "hypothesis": "shapes",
+          "word": "polygon"
+        },
+        {
+          "hypothesis": "shapes",
+          "word": "ellipse"
+        },
+        {
+          "hypothesis": "shapes",
+          "word": "cube"
+        },
+        {
+          "hypothesis": "nature",
+          "word": "lake"
+        },
+        {
+          "hypothesis": "nature",
+          "word": "desert"
+        },
+        {
+          "hypothesis": "nature",
+          "word": "valley"
+        },
+        {
+          "hypothesis": "rail systems",
+          "word": "elevated"
+        },
+        {
+          "hypothesis": "rail systems",
+          "word": "commuter"
+        },
+        {
+          "hypothesis": "rail systems",
+          "word": "network"
+        },
+        {
+          "hypothesis": "endurance",
+          "word": "bedrock"
+        },
+        {
+          "hypothesis": "endurance",
+          "word": "ruggedness"
+        },
+        {
+          "hypothesis": "endurance",
+          "word": "solidity"
+        },
+        {
+          "hypothesis": "quadrilaterals",
+          "word": "parallelogram"
+        },
+        {
+          "hypothesis": "quadrilaterals",
+          "word": "kite"
+        },
+        {
+          "hypothesis": "quadrilaterals",
+          "word": "quadrangle"
+        }
+      ]
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:09:32",
+    "details": {
+      "word": "lintel",
+      "rank": 15632,
+      "hypothesis": "stone in architecture",
+      "best_word": "monument",
+      "best_rank": 6,
+      "total_guesses": 148
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:09:32",
+    "details": {
+      "word": "vault",
+      "rank": 410,
+      "hypothesis": "stone in architecture",
+      "best_word": "monument",
+      "best_rank": 6,
+      "total_guesses": 149
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:09:32",
+    "details": {
+      "word": "buttress",
+      "rank": 7517,
+      "hypothesis": "stone in architecture",
+      "best_word": "monument",
+      "best_rank": 6,
+      "total_guesses": 150
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:09:32",
+    "details": {
+      "word": "icon",
+      "rank": 6620,
+      "hypothesis": "cultural_architectural_symbols",
+      "best_word": "monument",
+      "best_rank": 6,
+      "total_guesses": 151
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:09:32",
+    "details": {
+      "word": "temple",
+      "rank": 7,
+      "hypothesis": "cultural_architectural_symbols",
+      "best_word": "monument",
+      "best_rank": 6,
+      "total_guesses": 152
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:09:32",
+    "details": {
+      "word": "palace",
+      "rank": 1,
+      "hypothesis": "cultural_architectural_symbols",
+      "best_word": "palace",
+      "best_rank": 1,
+      "total_guesses": 153
+    }
+  },
+  {
+    "generation": 3,
+    "event": "SOLVED",
+    "timestamp": "2026-07-22T21:09:32",
+    "details": {
+      "answer": "palace",
+      "rank": 1,
+      "total_guesses": 153
+    }
+  },
+  {
+    "generation": 3,
+    "event": "NETWORK_METRICS",
+    "timestamp": "2026-07-22T21:09:32",
+    "details": {
+      "network_calls": 43,
+      "network_wall_clock_seconds": 698.6541,
+      "total_latency_seconds": 29.1849,
+      "mean_latency_seconds": 0.6787,
+      "median_latency_seconds": 0.2267,
+      "p95_latency_seconds": 3.2278,
+      "max_latency_seconds": 3.2624,
+      "status_counts": {
+        "200": 43
+      },
+      "outcome_counts": {
+        "ok": 43
+      }
+    }
+  }
+]

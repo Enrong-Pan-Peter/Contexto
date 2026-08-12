@@ -1,0 +1,543 @@
+===== JOB INFORMATION =====
+Date: Wed Jul 22 19:49:53 EDT 2026
+Host: frnt190.frontenac.local
+Job ID: 12052340
+Array task: 1
+Arm: A2
+Game: 1307
+Python: /global/home/hpc6237/venvs/contexto/bin/python
+OLLAMA_HOST: 127.0.0.1:32340
+OLLAMA_BASE_URL: http://127.0.0.1:32340/v1
+RANK_CACHE_DIR: data/rank_cache_A2
+Command: python -m contexto_solver.experiment --game api --method llm_only --provider ollama --ollama-model qwen3:14b --game-numbers 1307 --runs-per-target 5 --random-seed 0 --max-generations 350 --output traces/rq1_A2/A2_llm_only_game1307.json
+Python 3.11.5
+Wed Jul 22 19:49:53 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 580.167.08             Driver Version: 580.167.08     CUDA Version: 13.0     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100-SXM4-40GB          On  |   00000000:07:00.0 Off |                    0 |
+| N/A   49C    P0            316W /  400W |   16051MiB /  40960MiB |     97%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   1  NVIDIA A100-SXM4-40GB          On  |   00000000:0F:00.0 Off |                    0 |
+| N/A   54C    P0            352W /  400W |   15691MiB /  40960MiB |    100%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   2  NVIDIA A100-SXM4-40GB          On  |   00000000:47:00.0 Off |                    0 |
+| N/A   57C    P0            346W /  400W |   15691MiB /  40960MiB |     98%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   3  NVIDIA A100-SXM4-40GB          On  |   00000000:4E:00.0 Off |                    0 |
+| N/A   54C    P0            292W /  400W |    2343MiB /  40960MiB |     98%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   4  NVIDIA A100-SXM4-40GB          On  |   00000000:87:00.0 Off |                    0 |
+| N/A   62C    P0            322W /  400W |   16051MiB /  40960MiB |     97%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   5  NVIDIA A100-SXM4-40GB          On  |   00000000:90:00.0 Off |                    0 |
+| N/A   69C    P0            365W /  400W |   16053MiB /  40960MiB |     97%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   6  NVIDIA A100-SXM4-40GB          On  |   00000000:B7:00.0 Off |                    0 |
+| N/A   41C    P0             59W /  400W |       0MiB /  40960MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   7  NVIDIA A100-SXM4-40GB          On  |   00000000:BD:00.0 Off |                    0 |
+| N/A   42C    P0             80W /  400W |   38917MiB /  40960MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|    0   N/A  N/A          222807      C   ...local/lib/ollama/llama-server      16042MiB |
+|    1   N/A  N/A          111239      C   python                                15682MiB |
+|    2   N/A  N/A          158153      C   python                                15682MiB |
+|    3   N/A  N/A          644852      C   python                                 2334MiB |
+|    4   N/A  N/A          537555      C   ...local/lib/ollama/llama-server      16042MiB |
+|    5   N/A  N/A         4034377      C   ...local/lib/ollama/llama-server      16044MiB |
+|    7   N/A  N/A         3657173      C   ...MelaniePINN_NS/env/bin/python      38908MiB |
++-----------------------------------------------------------------------------------------+
+===== START OLLAMA =====
+===== RUN EXPERIMENT =====
+Generation 1: best word=house, best rank=4115
+Generation 2: best word=house, best rank=4115
+Generation 3: best word=house, best rank=4115
+Generation 4: best word=house, best rank=4115
+Generation 5: best word=house, best rank=4115
+Generation 6: best word=house, best rank=4115
+Generation 7: best word=house, best rank=4115
+Generation 8: best word=house, best rank=4115
+Generation 9: best word=house, best rank=4115
+Generation 10: best word=house, best rank=4115
+Generation 11: best word=house, best rank=4115
+Generation 12: best word=house, best rank=4115
+Generation 13: best word=house, best rank=4115
+Generation 14: best word=house, best rank=4115
+Generation 15: best word=house, best rank=4115
+Generation 16: best word=house, best rank=4115
+Generation 17: best word=house, best rank=4115
+Generation 18: best word=house, best rank=4115
+Generation 19: best word=house, best rank=4115
+Generation 20: best word=house, best rank=4115
+Generation 21: best word=house, best rank=4115
+Generation 22: best word=house, best rank=4115
+Generation 23: best word=house, best rank=4115
+Generation 24: best word=house, best rank=4115
+Generation 25: best word=house, best rank=4115
+Generation 26: best word=house, best rank=4115
+Generation 27: best word=house, best rank=4115
+Generation 28: best word=house, best rank=4115
+Generation 29: best word=house, best rank=4115
+Generation 30: best word=house, best rank=4115
+Generation 31: best word=house, best rank=4115
+Generation 32: best word=house, best rank=4115
+Generation 33: best word=house, best rank=4115
+Generation 34: best word=house, best rank=4115
+Generation 35: best word=house, best rank=4115
+Generation 36: best word=house, best rank=4115
+Generation 37: best word=house, best rank=4115
+Generation 38: best word=house, best rank=4115
+Generation 39: best word=house, best rank=4115
+Generation 40: best word=house, best rank=4115
+Generation 41: best word=house, best rank=4115
+Generation 42: best word=house, best rank=4115
+Generation 43: best word=building, best rank=2713
+Generation 44: best word=building, best rank=2713
+Generation 45: best word=building, best rank=2713
+Generation 46: best word=building, best rank=2713
+Generation 47: best word=building, best rank=2713
+Generation 48: best word=building, best rank=2713
+Generation 49: best word=building, best rank=2713
+Generation 50: best word=building, best rank=2713
+Generation 51: best word=building, best rank=2713
+Generation 52: best word=building, best rank=2713
+Generation 53: best word=building, best rank=2713
+Generation 54: best word=building, best rank=2713
+Generation 55: best word=building, best rank=2713
+Generation 56: best word=establishment, best rank=1708
+Generation 57: best word=establishment, best rank=1708
+Generation 58: best word=establishment, best rank=1708
+Generation 59: best word=establishment, best rank=1708
+Generation 60: best word=establishment, best rank=1708
+Generation 61: best word=establishment, best rank=1708
+Generation 62: best word=establishment, best rank=1708
+Generation 63: best word=establishment, best rank=1708
+Generation 64: best word=establishment, best rank=1708
+Generation 65: best word=establishment, best rank=1708
+Generation 66: best word=establishment, best rank=1708
+Generation 67: best word=society, best rank=1685
+Generation 68: best word=society, best rank=1685
+Generation 69: best word=society, best rank=1685
+Generation 70: best word=society, best rank=1685
+Generation 71: best word=society, best rank=1685
+Generation 72: best word=society, best rank=1685
+Generation 73: best word=society, best rank=1685
+Generation 74: best word=society, best rank=1685
+Generation 75: best word=society, best rank=1685
+Generation 76: best word=society, best rank=1685
+Generation 77: best word=society, best rank=1685
+Generation 78: best word=society, best rank=1685
+Generation 79: best word=society, best rank=1685
+Generation 80: best word=society, best rank=1685
+Generation 81: best word=society, best rank=1685
+Generation 82: best word=society, best rank=1685
+Generation 83: best word=society, best rank=1685
+Generation 84: best word=society, best rank=1685
+Generation 85: best word=society, best rank=1685
+Generation 86: best word=society, best rank=1685
+Generation 87: best word=society, best rank=1685
+Generation 88: best word=society, best rank=1685
+Generation 89: best word=society, best rank=1685
+Generation 90: best word=society, best rank=1685
+Generation 91: best word=society, best rank=1685
+Generation 92: best word=society, best rank=1685
+Generation 93: best word=society, best rank=1685
+Generation 94: best word=society, best rank=1685
+Generation 95: best word=business, best rank=1380
+Generation 96: best word=business, best rank=1380
+Generation 97: best word=business, best rank=1380
+Generation 98: best word=business, best rank=1380
+Generation 99: best word=business, best rank=1380
+Generation 100: best word=business, best rank=1380
+Generation 101: best word=trust, best rank=96
+Generation 102: best word=trust, best rank=96
+Generation 103: best word=trust, best rank=96
+Generation 104: best word=trust, best rank=96
+Generation 105: best word=trust, best rank=96
+Generation 106: best word=trust, best rank=96
+Generation 107: best word=trust, best rank=96
+Generation 108: best word=trust, best rank=96
+Generation 109: best word=trust, best rank=96
+Generation 110: best word=trust, best rank=96
+Generation 111: best word=trust, best rank=96
+Generation 112: best word=trust, best rank=96
+Generation 113: best word=trust, best rank=96
+Generation 114: best word=trust, best rank=96
+Generation 115: best word=trust, best rank=96
+Generation 116: best word=trust, best rank=96
+Generation 117: best word=trust, best rank=96
+Generation 118: best word=trust, best rank=96
+Generation 119: best word=trust, best rank=96
+Generation 120: best word=trust, best rank=96
+Generation 121: best word=trust, best rank=96
+Generation 122: best word=trust, best rank=96
+Generation 123: best word=trust, best rank=96
+Generation 124: best word=trust, best rank=96
+Generation 125: best word=trust, best rank=96
+Generation 126: best word=trust, best rank=96
+Generation 127: best word=trust, best rank=96
+Generation 128: best word=trust, best rank=96
+Generation 129: best word=faith, best rank=56
+Generation 130: best word=faith, best rank=56
+Generation 131: best word=confidence, best rank=42
+Generation 132: best word=confidence, best rank=42
+Generation 133: best word=confidence, best rank=42
+Generation 134: best word=confidence, best rank=42
+Generation 135: best word=confidence, best rank=42
+Generation 136: best word=confidence, best rank=42
+Generation 137: best word=confidence, best rank=42
+Generation 138: best word=confidence, best rank=42
+Generation 139: best word=confidence, best rank=42
+Generation 140: best word=confidence, best rank=42
+Generation 141: best word=confidence, best rank=42
+Generation 142: best word=confidence, best rank=42
+Generation 143: best word=confidence, best rank=42
+Generation 144: best word=confidence, best rank=42
+Generation 145: best word=integrity, best rank=3
+Generation 146: best word=honesty, best rank=1
+Generation 1: best word=work, best rank=745
+Generation 2: best word=work, best rank=745
+Generation 3: best word=work, best rank=745
+Generation 4: best word=work, best rank=745
+Generation 5: best word=work, best rank=745
+Generation 6: best word=work, best rank=745
+Generation 7: best word=work, best rank=745
+Generation 8: best word=work, best rank=745
+Generation 9: best word=work, best rank=745
+Generation 10: best word=work, best rank=745
+Generation 11: best word=responsibility, best rank=77
+Generation 12: best word=responsibility, best rank=77
+Generation 13: best word=responsibility, best rank=77
+Generation 14: best word=responsibility, best rank=77
+Generation 15: best word=responsibility, best rank=77
+Generation 16: best word=responsibility, best rank=77
+Generation 17: best word=commitment, best rank=27
+Generation 18: best word=commitment, best rank=27
+Generation 19: best word=commitment, best rank=27
+Generation 20: best word=commitment, best rank=27
+Generation 21: best word=commitment, best rank=27
+Generation 22: best word=commitment, best rank=27
+Generation 23: best word=commitment, best rank=27
+Generation 24: best word=commitment, best rank=27
+Generation 25: best word=commitment, best rank=27
+Generation 26: best word=commitment, best rank=27
+Generation 27: best word=commitment, best rank=27
+Generation 28: best word=commitment, best rank=27
+Generation 29: best word=commitment, best rank=27
+Generation 30: best word=commitment, best rank=27
+Generation 31: best word=commitment, best rank=27
+Generation 32: best word=commitment, best rank=27
+Generation 33: best word=commitment, best rank=27
+Generation 34: best word=commitment, best rank=27
+Generation 35: best word=commitment, best rank=27
+Generation 36: best word=commitment, best rank=27
+Generation 37: best word=commitment, best rank=27
+Generation 38: best word=commitment, best rank=27
+Generation 39: best word=commitment, best rank=27
+Generation 40: best word=commitment, best rank=27
+Generation 41: best word=commitment, best rank=27
+Generation 42: best word=commitment, best rank=27
+Generation 43: best word=commitment, best rank=27
+Generation 44: best word=commitment, best rank=27
+Generation 45: best word=integrity, best rank=3
+Generation 46: best word=honesty, best rank=1
+Generation 1: best word=light, best rank=6191
+Generation 2: best word=light, best rank=6191
+Generation 3: best word=shine, best rank=763
+Generation 4: best word=shine, best rank=763
+Generation 5: best word=shine, best rank=763
+Generation 6: best word=shine, best rank=763
+Generation 7: best word=shine, best rank=763
+Generation 8: best word=shine, best rank=763
+Generation 9: best word=shine, best rank=763
+Generation 10: best word=shine, best rank=763
+Generation 11: best word=shine, best rank=763
+Generation 12: best word=shine, best rank=763
+Generation 13: best word=shine, best rank=763
+Generation 14: best word=shine, best rank=763
+Generation 15: best word=shine, best rank=763
+Generation 17: best word=shine, best rank=763
+Generation 18: best word=shine, best rank=763
+Generation 19: best word=shine, best rank=763
+Generation 20: best word=shine, best rank=763
+Generation 21: best word=shine, best rank=763
+Generation 22: best word=shine, best rank=763
+Generation 24: best word=shine, best rank=763
+Generation 25: best word=shine, best rank=763
+Generation 26: best word=shine, best rank=763
+Generation 27: best word=shine, best rank=763
+Generation 28: best word=shine, best rank=763
+Generation 29: best word=shine, best rank=763
+Generation 30: best word=shine, best rank=763
+Generation 31: best word=shine, best rank=763
+Generation 33: best word=shine, best rank=763
+Generation 34: best word=shine, best rank=763
+Generation 35: best word=shine, best rank=763
+Generation 36: best word=shine, best rank=763
+Generation 37: best word=shine, best rank=763
+Generation 38: best word=shine, best rank=763
+Generation 39: best word=shine, best rank=763
+Generation 40: best word=shine, best rank=763
+Generation 42: best word=shine, best rank=763
+Generation 43: best word=shine, best rank=763
+Generation 45: best word=shine, best rank=763
+Generation 46: best word=shine, best rank=763
+Generation 47: best word=shine, best rank=763
+Generation 49: best word=shine, best rank=763
+Generation 50: best word=shine, best rank=763
+Generation 51: best word=shine, best rank=763
+Generation 52: best word=shine, best rank=763
+Generation 53: best word=shine, best rank=763
+Generation 54: best word=shine, best rank=763
+Generation 56: best word=shine, best rank=763
+Generation 57: best word=shine, best rank=763
+Generation 58: best word=shine, best rank=763
+Generation 59: best word=shine, best rank=763
+Generation 60: best word=shine, best rank=763
+Generation 61: best word=shine, best rank=763
+Generation 62: best word=shine, best rank=763
+Generation 63: best word=brilliance, best rank=320
+Generation 64: best word=brilliance, best rank=320
+Generation 65: best word=brilliance, best rank=320
+Generation 66: best word=brilliance, best rank=320
+Generation 67: best word=brilliance, best rank=320
+Generation 68: best word=brilliance, best rank=320
+Generation 72: best word=brilliance, best rank=320
+Generation 73: best word=brilliance, best rank=320
+Generation 74: best word=brilliance, best rank=320
+Generation 76: best word=brilliance, best rank=320
+Generation 78: best word=brilliance, best rank=320
+Generation 79: best word=brilliance, best rank=320
+Generation 80: best word=brilliance, best rank=320
+Generation 81: best word=brilliance, best rank=320
+Generation 82: best word=brilliance, best rank=320
+Generation 84: best word=brilliance, best rank=320
+Generation 85: best word=brilliance, best rank=320
+Generation 86: best word=brilliance, best rank=320
+Generation 87: best word=brilliance, best rank=320
+Generation 88: best word=brilliance, best rank=320
+Generation 89: best word=brilliance, best rank=320
+Generation 90: best word=brilliance, best rank=320
+Generation 91: best word=brilliance, best rank=320
+Generation 92: best word=brilliance, best rank=320
+Generation 93: best word=brilliance, best rank=320
+Generation 96: best word=brilliance, best rank=320
+Generation 97: best word=brilliance, best rank=320
+Generation 98: best word=brilliance, best rank=320
+Generation 100: best word=brilliance, best rank=320
+Generation 101: best word=brilliance, best rank=320
+Generation 102: best word=brilliance, best rank=320
+Generation 103: best word=clarity, best rank=81
+Generation 104: best word=clarity, best rank=81
+Generation 105: best word=clarity, best rank=81
+Generation 107: best word=clarity, best rank=81
+Generation 108: best word=clarity, best rank=81
+Generation 109: best word=clarity, best rank=81
+Generation 110: best word=clarity, best rank=81
+Generation 112: best word=clarity, best rank=81
+Generation 113: best word=clarity, best rank=81
+Generation 114: best word=clarity, best rank=81
+Generation 115: best word=transparency, best rank=48
+Generation 116: best word=transparency, best rank=48
+Generation 117: best word=transparency, best rank=48
+Generation 118: best word=transparency, best rank=48
+Generation 119: best word=transparency, best rank=48
+Generation 120: best word=transparency, best rank=48
+Generation 121: best word=transparency, best rank=48
+Generation 122: best word=transparency, best rank=48
+Generation 123: best word=transparency, best rank=48
+Generation 124: best word=transparency, best rank=48
+Generation 125: best word=transparency, best rank=48
+Generation 126: best word=transparency, best rank=48
+Generation 127: best word=transparency, best rank=48
+Generation 128: best word=transparency, best rank=48
+Generation 129: best word=transparency, best rank=48
+Generation 130: best word=transparency, best rank=48
+Generation 131: best word=transparency, best rank=48
+Generation 132: best word=transparency, best rank=48
+Generation 133: best word=transparency, best rank=48
+Generation 134: best word=transparency, best rank=48
+Generation 135: best word=transparency, best rank=48
+Generation 138: best word=transparency, best rank=48
+Generation 139: best word=transparency, best rank=48
+Generation 140: best word=transparency, best rank=48
+Generation 141: best word=transparency, best rank=48
+Generation 142: best word=transparency, best rank=48
+Generation 144: best word=transparency, best rank=48
+Generation 145: best word=transparency, best rank=48
+Generation 146: best word=transparency, best rank=48
+Generation 147: best word=transparency, best rank=48
+Generation 148: best word=transparency, best rank=48
+Generation 149: best word=transparency, best rank=48
+Generation 150: best word=transparency, best rank=48
+Generation 151: best word=transparency, best rank=48
+Generation 152: best word=transparency, best rank=48
+Generation 153: best word=transparency, best rank=48
+Generation 154: best word=transparency, best rank=48
+Generation 155: best word=transparency, best rank=48
+Generation 156: best word=transparency, best rank=48
+Generation 157: best word=openness, best rank=12
+Generation 158: best word=openness, best rank=12
+Generation 159: best word=openness, best rank=12
+Generation 160: best word=openness, best rank=12
+Generation 161: best word=openness, best rank=12
+Generation 162: best word=openness, best rank=12
+Generation 163: best word=openness, best rank=12
+Generation 164: best word=openness, best rank=12
+Generation 165: best word=openness, best rank=12
+Generation 166: best word=openness, best rank=12
+Generation 167: best word=openness, best rank=12
+Generation 168: best word=openness, best rank=12
+Generation 169: best word=openness, best rank=12
+Generation 171: best word=openness, best rank=12
+Generation 172: best word=openness, best rank=12
+Generation 173: best word=openness, best rank=12
+Generation 174: best word=openness, best rank=12
+Generation 175: best word=openness, best rank=12
+Generation 177: best word=openness, best rank=12
+Generation 178: best word=openness, best rank=12
+Generation 179: best word=openness, best rank=12
+Generation 180: best word=openness, best rank=12
+Generation 181: best word=openness, best rank=12
+Generation 182: best word=openness, best rank=12
+Generation 183: best word=openness, best rank=12
+Generation 184: best word=openness, best rank=12
+Generation 185: best word=openness, best rank=12
+Generation 186: best word=openness, best rank=12
+Generation 188: best word=openness, best rank=12
+Generation 189: best word=openness, best rank=12
+Generation 190: best word=integrity, best rank=3
+Generation 191: best word=integrity, best rank=3
+Generation 192: best word=honesty, best rank=1
+Generation 1: best word=time, best rank=1652
+Generation 2: best word=life, best rank=421
+Generation 3: best word=life, best rank=421
+Generation 4: best word=love, best rank=148
+Generation 5: best word=love, best rank=148
+Generation 6: best word=love, best rank=148
+Generation 7: best word=love, best rank=148
+Generation 8: best word=love, best rank=148
+Generation 10: best word=love, best rank=148
+Generation 11: best word=love, best rank=148
+Generation 12: best word=love, best rank=148
+Generation 13: best word=truth, best rank=22
+Generation 14: best word=truth, best rank=22
+Generation 15: best word=truth, best rank=22
+Generation 16: best word=truth, best rank=22
+Generation 18: best word=truth, best rank=22
+Generation 19: best word=truth, best rank=22
+Generation 20: best word=truth, best rank=22
+Generation 21: best word=truth, best rank=22
+Generation 22: best word=truth, best rank=22
+Generation 23: best word=truth, best rank=22
+Generation 24: best word=truth, best rank=22
+Generation 25: best word=truth, best rank=22
+Generation 26: best word=truth, best rank=22
+Generation 27: best word=truth, best rank=22
+Generation 28: best word=truth, best rank=22
+Generation 29: best word=truth, best rank=22
+Generation 30: best word=truth, best rank=22
+Generation 31: best word=truth, best rank=22
+Generation 32: best word=truth, best rank=22
+Generation 33: best word=truth, best rank=22
+Generation 34: best word=truth, best rank=22
+Generation 35: best word=truth, best rank=22
+Generation 36: best word=truth, best rank=22
+Generation 37: best word=truth, best rank=22
+Generation 38: best word=truth, best rank=22
+Generation 39: best word=truth, best rank=22
+Generation 40: best word=truth, best rank=22
+Generation 41: best word=truth, best rank=22
+Generation 42: best word=truth, best rank=22
+Generation 43: best word=truth, best rank=22
+Generation 44: best word=integrity, best rank=3
+Generation 45: best word=integrity, best rank=3
+Generation 46: best word=honesty, best rank=1
+Generation 1: best word=water, best rank=7888
+Generation 2: best word=water, best rank=7888
+Generation 3: best word=earth, best rank=5768
+Generation 4: best word=earth, best rank=5768
+Generation 5: best word=nature, best rank=951
+Generation 6: best word=life, best rank=421
+Generation 7: best word=life, best rank=421
+Generation 8: best word=life, best rank=421
+Generation 10: best word=life, best rank=421
+Generation 11: best word=essence, best rank=288
+Generation 12: best word=essence, best rank=288
+Generation 13: best word=spirit, best rank=247
+Generation 14: best word=spirit, best rank=247
+Generation 16: best word=spirit, best rank=247
+Generation 17: best word=spirit, best rank=247
+Generation 18: best word=spirit, best rank=247
+Generation 19: best word=spirit, best rank=247
+Generation 20: best word=spirit, best rank=247
+Generation 21: best word=spirit, best rank=247
+Generation 22: best word=principle, best rank=161
+Generation 23: best word=principle, best rank=161
+Generation 24: best word=principle, best rank=161
+Generation 25: best word=principle, best rank=161
+Generation 26: best word=principle, best rank=161
+Generation 27: best word=principle, best rank=161
+Generation 28: best word=principle, best rank=161
+Generation 29: best word=principle, best rank=161
+Generation 30: best word=truth, best rank=22
+Generation 31: best word=truth, best rank=22
+Generation 32: best word=truth, best rank=22
+Generation 33: best word=truth, best rank=22
+Generation 34: best word=truth, best rank=22
+Generation 35: best word=truth, best rank=22
+Generation 36: best word=truth, best rank=22
+Generation 37: best word=truth, best rank=22
+Generation 38: best word=truth, best rank=22
+Generation 39: best word=truth, best rank=22
+Generation 40: best word=truth, best rank=22
+Generation 41: best word=truth, best rank=22
+Generation 42: best word=truth, best rank=22
+Generation 43: best word=truth, best rank=22
+Generation 44: best word=truth, best rank=22
+Generation 45: best word=truth, best rank=22
+Generation 46: best word=truth, best rank=22
+Generation 47: best word=truth, best rank=22
+Generation 48: best word=truth, best rank=22
+Generation 49: best word=truth, best rank=22
+Generation 50: best word=truth, best rank=22
+Generation 51: best word=truth, best rank=22
+Generation 52: best word=truth, best rank=22
+Generation 53: best word=truth, best rank=22
+Generation 54: best word=integrity, best rank=3
+Generation 55: best word=integrity, best rank=3
+Generation 56: best word=honesty, best rank=1
+Wrote JSON summary: traces/rq1_A2/A2_llm_only_game1307.json
+Wrote CSV summary: traces/rq1_A2/A2_llm_only_game1307.csv
+{
+  "total_runs": 5,
+  "solved_runs": 5,
+  "solve_rate": 1.0,
+  "average_guesses_solved": 91.6,
+  "average_best_rank": 1.0,
+  "average_generations": 97.2
+}
+===== FINISHED =====
+Arm: A2
+Game: 1307
+Exit status: 0
+Date: Thu Jul 23 06:29:34 EDT 2026
+Metadata: traces/rq1_A2/A2_game1307_ollama_metadata_job12052340.txt

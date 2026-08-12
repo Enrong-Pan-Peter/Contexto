@@ -1,0 +1,1457 @@
+{
+  "traces": [
+    "ea_llm_self_adaptive_api_1303_run1_20260721_233700.json",
+    "ea_llm_self_adaptive_api_1303_run2_20260721_235308.json",
+    "ea_llm_self_adaptive_api_1303_run3_20260722_015443.json",
+    "ea_llm_self_adaptive_api_1303_run4_20260722_032823.json",
+    "ea_llm_self_adaptive_api_1303_run5_20260722_034211.json",
+    "ea_llm_self_adaptive_api_1307_run1_20260722_160312.json",
+    "ea_llm_self_adaptive_api_1307_run2_20260722_171316.json",
+    "ea_llm_self_adaptive_api_1307_run3_20260722_181845.json",
+    "ea_llm_self_adaptive_api_1307_run4_20260722_184920.json",
+    "ea_llm_self_adaptive_api_1307_run5_20260722_201412.json",
+    "ea_llm_self_adaptive_api_1319_run1_20260722_201805.json",
+    "ea_llm_self_adaptive_api_1319_run2_20260722_211439.json",
+    "ea_llm_self_adaptive_api_1319_run3_20260722_231154.json",
+    "ea_llm_self_adaptive_api_1319_run4_20260723_015115.json",
+    "ea_llm_self_adaptive_api_1319_run5_20260723_025430.json",
+    "ea_llm_self_adaptive_api_1327_run1_20260803_160743.json",
+    "ea_llm_self_adaptive_api_1327_run2_20260803_170815.json",
+    "ea_llm_self_adaptive_api_1327_run3_20260803_173302.json",
+    "ea_llm_self_adaptive_api_1327_run4_20260803_173929.json",
+    "ea_llm_self_adaptive_api_1327_run5_20260803_181102.json",
+    "ea_llm_self_adaptive_api_1335_run1_20260803_153531.json",
+    "ea_llm_self_adaptive_api_1335_run2_20260803_175422.json",
+    "ea_llm_self_adaptive_api_1335_run3_20260803_185819.json",
+    "ea_llm_self_adaptive_api_1335_run4_20260803_191631.json",
+    "ea_llm_self_adaptive_api_1335_run5_20260803_192702.json",
+    "ea_llm_self_adaptive_api_1352_run1_20260722_182747.json",
+    "ea_llm_self_adaptive_api_1352_run2_20260722_195659.json",
+    "ea_llm_self_adaptive_api_1352_run3_20260722_204210.json",
+    "ea_llm_self_adaptive_api_1352_run4_20260722_224638.json",
+    "ea_llm_self_adaptive_api_1352_run5_20260723_010249.json",
+    "ea_llm_self_adaptive_api_1364_run1_20260722_184759.json",
+    "ea_llm_self_adaptive_api_1364_run2_20260722_205531.json",
+    "ea_llm_self_adaptive_api_1364_run3_20260722_210932.json",
+    "ea_llm_self_adaptive_api_1364_run4_20260722_215044.json",
+    "ea_llm_self_adaptive_api_1364_run5_20260722_232301.json",
+    "ea_llm_self_adaptive_api_1365_run1_20260724_172056.json",
+    "ea_llm_self_adaptive_api_1365_run2_20260803_180723.json",
+    "ea_llm_self_adaptive_api_1365_run3_20260724_194909.json",
+    "ea_llm_self_adaptive_api_1365_run4_20260725_005857.json",
+    "ea_llm_self_adaptive_api_1365_run5_20260725_024035.json",
+    "ea_llm_self_adaptive_api_1372_run1_20260722_173926.json",
+    "ea_llm_self_adaptive_api_1372_run2_20260722_181616.json",
+    "ea_llm_self_adaptive_api_1372_run3_20260722_184837.json",
+    "ea_llm_self_adaptive_api_1372_run4_20260722_191242.json",
+    "ea_llm_self_adaptive_api_1372_run5_20260722_193120.json",
+    "ea_llm_self_adaptive_api_1384_run1_20260728_223943.json",
+    "ea_llm_self_adaptive_api_1384_run2_20260728_235849.json",
+    "ea_llm_self_adaptive_api_1384_run3_20260729_114104.json",
+    "ea_llm_self_adaptive_api_1384_run4_20260729_125300.json",
+    "ea_llm_self_adaptive_api_1384_run5_20260729_172325.json"
+  ],
+  "which_realized": "first_proposed",
+  "glove_path": "data/glove.6B.300d.txt",
+  "runs_scored": 49,
+  "runs_skipped": [
+    {
+      "trace": "ea_llm_self_adaptive_api_1384_run3_20260729_114104.json",
+      "reason": "unrecoverable_target"
+    }
+  ],
+  "per_run": {
+    "ea_llm_self_adaptive_api_1303_run1_20260721_233700.json": {
+      "method": "ea_llm_self_adaptive",
+      "game_number": 1303,
+      "target": "fever",
+      "target_source": "solved",
+      "provenance_hash": "bd9f2858283673a2",
+      "metrics": {
+        "which_realized": "first_proposed",
+        "words_total": 24,
+        "words_in_glove_vocab": 24,
+        "glove_vocab_coverage": 1.0,
+        "glove_vs_real": {
+          "rho": 0.6205395996518712,
+          "pvalue": 0.0012153119991100462,
+          "n": 24
+        },
+        "closeness_vs_real": {
+          "rho": 0.024635302608366577,
+          "pvalue": 0.9090300806086978,
+          "n": 24
+        },
+        "closeness_vs_glove": {
+          "rho": 0.09764538124770751,
+          "pvalue": 0.6498912006267638,
+          "n": 24
+        }
+      }
+    },
+    "ea_llm_self_adaptive_api_1303_run2_20260721_235308.json": {
+      "method": "ea_llm_self_adaptive",
+      "game_number": 1303,
+      "target": "fever",
+      "target_source": "solved",
+      "provenance_hash": "bd9f2858283673a2",
+      "metrics": {
+        "which_realized": "first_proposed",
+        "words_total": 7,
+        "words_in_glove_vocab": 7,
+        "glove_vocab_coverage": 1.0,
+        "glove_vs_real": {
+          "rho": 0.7500000000000002,
+          "pvalue": 0.05218140045705778,
+          "n": 7
+        },
+        "closeness_vs_real": {
+          "rho": 0.6943650748294137,
+          "pvalue": 0.0834412188556833,
+          "n": 7
+        },
+        "closeness_vs_glove": {
+          "rho": 0.46291004988627577,
+          "pvalue": 0.29555864473452853,
+          "n": 7
+        }
+      }
+    },
+    "ea_llm_self_adaptive_api_1303_run3_20260722_015443.json": {
+      "method": "ea_llm_self_adaptive",
+      "game_number": 1303,
+      "target": "fever",
+      "target_source": "solved",
+      "provenance_hash": "bd9f2858283673a2",
+      "metrics": {
+        "which_realized": "first_proposed",
+        "words_total": 42,
+        "words_in_glove_vocab": 42,
+        "glove_vocab_coverage": 1.0,
+        "glove_vs_real": {
+          "rho": 0.6561284046692608,
+          "pvalue": 2.389089968961066e-06,
+          "n": 42
+        },
+        "closeness_vs_real": {
+          "rho": -0.18376525261209972,
+          "pvalue": 0.24404024338911795,
+          "n": 42
+        },
+        "closeness_vs_glove": {
+          "rho": -0.2172990578332858,
+          "pvalue": 0.16686681559528255,
+          "n": 42
+        }
+      }
+    },
+    "ea_llm_self_adaptive_api_1303_run4_20260722_032823.json": {
+      "method": "ea_llm_self_adaptive",
+      "game_number": 1303,
+      "target": "fever",
+      "target_source": "solved",
+      "provenance_hash": "bd9f2858283673a2",
+      "metrics": {
+        "which_realized": "first_proposed",
+        "words_total": 36,
+        "words_in_glove_vocab": 36,
+        "glove_vocab_coverage": 1.0,
+        "glove_vs_real": {
+          "rho": 0.7882534775888719,
+          "pvalue": 1.1466556176018598e-08,
+          "n": 36
+        },
+        "closeness_vs_real": {
+          "rho": -0.35251905719502863,
+          "pvalue": 0.034971200886281674,
+          "n": 36
+        },
+        "closeness_vs_glove": {
+          "rho": -0.36188660549473045,
+          "pvalue": 0.030098057074718833,
+          "n": 36
+        }
+      }
+    },
+    "ea_llm_self_adaptive_api_1303_run5_20260722_034211.json": {
+      "method": "ea_llm_self_adaptive",
+      "game_number": 1303,
+      "target": "fever",
+      "target_source": "solved",
+      "provenance_hash": "bd9f2858283673a2",
+      "metrics": {
+        "which_realized": "first_proposed",
+        "words_total": 6,
+        "words_in_glove_vocab": 6,
+        "glove_vocab_coverage": 1.0,
+        "glove_vs_real": {
+          "rho": 0.8285714285714287,
+          "pvalue": 0.04156268221574335,
+          "n": 6
+        },
+        "closeness_vs_real": {
+          "rho": 0.0,
+          "pvalue": 1.0,
+          "n": 6
+        },
+        "closeness_vs_glove": {
+          "rho": 0.35856858280031817,
+          "pvalue": 0.4851979632652574,
+          "n": 6
+        }
+      }
+    },
+    "ea_llm_self_adaptive_api_1307_run1_20260722_160312.json": {
+      "method": "ea_llm_self_adaptive",
+      "game_number": 1307,
+      "target": "honesty",
+      "target_source": "solved",
+      "provenance_hash": "bd9f2858283673a2",
+      "metrics": {
+        "which_realized": "first_proposed",
+        "words_total": 28,
+        "words_in_glove_vocab": 28,
+        "glove_vocab_coverage": 1.0,
+        "glove_vs_real": {
+          "rho": 0.8664111689022722,
+          "pvalue": 2.54474218912015e-09,
+          "n": 28
+        },
+        "closeness_vs_real": {
+          "rho": -0.07380589116980579,
+          "pvalue": 0.7089638425506763,
+          "n": 28
+        },
+        "closeness_vs_glove": {
+          "rho": 0.023011722722144766,
+          "pvalue": 0.9074701802270134,
+          "n": 28
+        }
+      }
+    },
+    "ea_llm_self_adaptive_api_1307_run2_20260722_171316.json": {
+      "method": "ea_llm_self_adaptive",
+      "game_number": 1307,
+      "target": "honesty",
+      "target_source": "solved",
+      "provenance_hash": "bd9f2858283673a2",
+      "metrics": {
+        "which_realized": "first_proposed",
+        "words_total": 37,
+        "words_in_glove_vocab": 37,
+        "glove_vocab_coverage": 1.0,
+        "glove_vs_real": {
+          "rho": 0.8473026908716362,
+          "pvalue": 7.188288364409176e-11,
+          "n": 36
+        },
+        "closeness_vs_real": {
+          "rho": -0.4481300072954906,
+          "pvalue": 0.00612684397354724,
+          "n": 36
+        },
+        "closeness_vs_glove": {
+          "rho": -0.48056337623173523,
+          "pvalue": 0.0026081956001121286,
+          "n": 37
+        }
+      }
+    },
+    "ea_llm_self_adaptive_api_1307_run3_20260722_181845.json": {
+      "method": "ea_llm_self_adaptive",
+      "game_number": 1307,
+      "target": "honesty",
+      "target_source": "solved",
+      "provenance_hash": "bd9f2858283673a2",
+      "metrics": {
+        "which_realized": "first_proposed",
+        "words_total": 56,
+        "words_in_glove_vocab": 56,
+        "glove_vocab_coverage": 1.0,
+        "glove_vs_real": {
+          "rho": 0.838432674267571,
+          "pvalue": 1.3811534320886711e-15,
+          "n": 55
+        },
+        "closeness_vs_real": {
+          "rho": -0.1652357706589966,
+          "pvalue": 0.227978447101093,
+          "n": 55
+        },
+        "closeness_vs_glove": {
+          "rho": -0.11511660097054158,
+          "pvalue": 0.39820134545301045,
+          "n": 56
+        }
+      }
+    },
+    "ea_llm_self_adaptive_api_1307_run4_20260722_184920.json": {
+      "method": "ea_llm_self_adaptive",
+      "game_number": 1307,
+      "target": "honesty",
+      "target_source": "solved",
+      "provenance_hash": "bd9f2858283673a2",
+      "metrics": {
+        "which_realized": "first_proposed",
+        "words_total": 24,
+        "words_in_glove_vocab": 24,
+        "glove_vocab_coverage": 1.0,
+        "glove_vs_real": {
+          "rho": 0.7930434782608695,
+          "pvalue": 3.8065593552896333e-06,
+          "n": 24
+        },
+        "closeness_vs_real": {
+          "rho": -0.11100414306076861,
+          "pvalue": 0.6055910136874911,
+          "n": 24
+        },
+        "closeness_vs_glove": {
+          "rho": -0.21974289544682762,
+          "pvalue": 0.30219997283822114,
+          "n": 24
+        }
+      }
+    },
+    "ea_llm_self_adaptive_api_1307_run5_20260722_201412.json": {
+      "method": "ea_llm_self_adaptive",
+      "game_number": 1307,
+      "target": "honesty",
+      "target_source": "solved",
+      "provenance_hash": "bd9f2858283673a2",
+      "metrics": {
+        "which_realized": "first_proposed",
+        "words_total": 24,
+        "words_in_glove_vocab": 24,
+        "glove_vocab_coverage": 1.0,
+        "glove_vs_real": {
+          "rho": 0.7912135711178773,
+          "pvalue": 4.1552038881086686e-06,
+          "n": 24
+        },
+        "closeness_vs_real": {
+          "rho": -0.4119045975097523,
+          "pvalue": 0.04550194326471845,
+          "n": 24
+        },
+        "closeness_vs_glove": {
+          "rho": -0.4646498416835459,
+          "pvalue": 0.022161510847163505,
+          "n": 24
+        }
+      }
+    },
+    "ea_llm_self_adaptive_api_1319_run1_20260722_201805.json": {
+      "method": "ea_llm_self_adaptive",
+      "game_number": 1319,
+      "target": "walrus",
+      "target_source": "solved",
+      "provenance_hash": "bd9f2858283673a2",
+      "metrics": {
+        "which_realized": "first_proposed",
+        "words_total": 104,
+        "words_in_glove_vocab": 104,
+        "glove_vocab_coverage": 1.0,
+        "glove_vs_real": {
+          "rho": 0.6681644524913073,
+          "pvalue": 1.2543189269338156e-14,
+          "n": 103
+        },
+        "closeness_vs_real": {
+          "rho": -0.39605006946945237,
+          "pvalue": 3.456924273766714e-05,
+          "n": 103
+        },
+        "closeness_vs_glove": {
+          "rho": -0.32780492243013726,
+          "pvalue": 0.0006814572126767936,
+          "n": 104
+        }
+      }
+    },
+    "ea_llm_self_adaptive_api_1319_run2_20260722_211439.json": {
+      "method": "ea_llm_self_adaptive",
+      "game_number": 1319,
+      "target": "walrus",
+      "target_source": "solved",
+      "provenance_hash": "bd9f2858283673a2",
+      "metrics": {
+        "which_realized": "first_proposed",
+        "words_total": 38,
+        "words_in_glove_vocab": 38,
+        "glove_vocab_coverage": 1.0,
+        "glove_vs_real": {
+          "rho": 0.7766586380556165,
+          "pvalue": 9.945492603847075e-09,
+          "n": 38
+        },
+        "closeness_vs_real": {
+          "rho": -0.2492288296236621,
+          "pvalue": 0.131310794219439,
+          "n": 38
+        },
+        "closeness_vs_glove": {
+          "rho": -0.22573549397216527,
+          "pvalue": 0.17297475801303688,
+          "n": 38
+        }
+      }
+    },
+    "ea_llm_self_adaptive_api_1319_run3_20260722_231154.json": {
+      "method": "ea_llm_self_adaptive",
+      "game_number": 1319,
+      "target": "walrus",
+      "target_source": "solved",
+      "provenance_hash": "bd9f2858283673a2",
+      "metrics": {
+        "which_realized": "first_proposed",
+        "words_total": 66,
+        "words_in_glove_vocab": 66,
+        "glove_vocab_coverage": 1.0,
+        "glove_vs_real": {
+          "rho": 0.6749644975357114,
+          "pvalue": 5.132061784415111e-10,
+          "n": 66
+        },
+        "closeness_vs_real": {
+          "rho": -0.3171914083719156,
+          "pvalue": 0.009458424800854787,
+          "n": 66
+        },
+        "closeness_vs_glove": {
+          "rho": -0.37793379621061074,
+          "pvalue": 0.0017564075456479493,
+          "n": 66
+        }
+      }
+    },
+    "ea_llm_self_adaptive_api_1319_run4_20260723_015115.json": {
+      "method": "ea_llm_self_adaptive",
+      "game_number": 1319,
+      "target": "walrus",
+      "target_source": "solved",
+      "provenance_hash": "bd9f2858283673a2",
+      "metrics": {
+        "which_realized": "first_proposed",
+        "words_total": 60,
+        "words_in_glove_vocab": 60,
+        "glove_vocab_coverage": 1.0,
+        "glove_vs_real": {
+          "rho": 0.579608627974205,
+          "pvalue": 1.2184216782978436e-06,
+          "n": 60
+        },
+        "closeness_vs_real": {
+          "rho": -0.3285138712859882,
+          "pvalue": 0.010386657889303654,
+          "n": 60
+        },
+        "closeness_vs_glove": {
+          "rho": -0.040616312364027476,
+          "pvalue": 0.7579898210906397,
+          "n": 60
+        }
+      }
+    },
+    "ea_llm_self_adaptive_api_1319_run5_20260723_025430.json": {
+      "method": "ea_llm_self_adaptive",
+      "game_number": 1319,
+      "target": "walrus",
+      "target_source": "solved",
+      "provenance_hash": "bd9f2858283673a2",
+      "metrics": {
+        "which_realized": "first_proposed",
+        "words_total": 42,
+        "words_in_glove_vocab": 42,
+        "glove_vocab_coverage": 1.0,
+        "glove_vs_real": {
+          "rho": 0.7174582590371211,
+          "pvalue": 8.96394506018282e-08,
+          "n": 42
+        },
+        "closeness_vs_real": {
+          "rho": -0.19276975028221316,
+          "pvalue": 0.22129188514724896,
+          "n": 42
+        },
+        "closeness_vs_glove": {
+          "rho": -0.21533996261122965,
+          "pvalue": 0.17081921767649916,
+          "n": 42
+        }
+      }
+    },
+    "ea_llm_self_adaptive_api_1327_run1_20260803_160743.json": {
+      "method": "ea_llm_self_adaptive",
+      "game_number": 1327,
+      "target": "era",
+      "target_source": "solved",
+      "provenance_hash": "bd9f2858283673a2",
+      "metrics": {
+        "which_realized": "first_proposed",
+        "words_total": 1,
+        "words_in_glove_vocab": 1,
+        "glove_vocab_coverage": 1.0,
+        "glove_vs_real": {
+          "rho": null,
+          "pvalue": null,
+          "n": 1
+        },
+        "closeness_vs_real": {
+          "rho": null,
+          "pvalue": null,
+          "n": 1
+        },
+        "closeness_vs_glove": {
+          "rho": null,
+          "pvalue": null,
+          "n": 1
+        }
+      }
+    },
+    "ea_llm_self_adaptive_api_1327_run2_20260803_170815.json": {
+      "method": "ea_llm_self_adaptive",
+      "game_number": 1327,
+      "target": "era",
+      "target_source": "solved",
+      "provenance_hash": "bd9f2858283673a2",
+      "metrics": {
+        "which_realized": "first_proposed",
+        "words_total": 7,
+        "words_in_glove_vocab": 7,
+        "glove_vocab_coverage": 1.0,
+        "glove_vs_real": {
+          "rho": 0.9642857142857145,
+          "pvalue": 0.00045414916919416935,
+          "n": 7
+        },
+        "closeness_vs_real": {
+          "rho": -0.37435244296357284,
+          "pvalue": 0.4080580175675025,
+          "n": 7
+        },
+        "closeness_vs_glove": {
+          "rho": -0.19702760155977517,
+          "pvalue": 0.6719698959610128,
+          "n": 7
+        }
+      }
+    },
+    "ea_llm_self_adaptive_api_1327_run3_20260803_173302.json": {
+      "method": "ea_llm_self_adaptive",
+      "game_number": 1327,
+      "target": "era",
+      "target_source": "solved",
+      "provenance_hash": "bd9f2858283673a2",
+      "metrics": {
+        "which_realized": "first_proposed",
+        "words_total": 12,
+        "words_in_glove_vocab": 12,
+        "glove_vocab_coverage": 1.0,
+        "glove_vs_real": {
+          "rho": 0.8531468531468532,
+          "pvalue": 0.0004181179404149967,
+          "n": 12
+        },
+        "closeness_vs_real": {
+          "rho": -0.46695570991455365,
+          "pvalue": 0.1258991495523923,
+          "n": 12
+        },
+        "closeness_vs_glove": {
+          "rho": -0.38793243592901383,
+          "pvalue": 0.2127431453592819,
+          "n": 12
+        }
+      }
+    },
+    "ea_llm_self_adaptive_api_1327_run4_20260803_173929.json": {
+      "method": "ea_llm_self_adaptive",
+      "game_number": 1327,
+      "target": "era",
+      "target_source": "solved",
+      "provenance_hash": "bd9f2858283673a2",
+      "metrics": {
+        "which_realized": "first_proposed",
+        "words_total": 1,
+        "words_in_glove_vocab": 1,
+        "glove_vocab_coverage": 1.0,
+        "glove_vs_real": {
+          "rho": null,
+          "pvalue": null,
+          "n": 1
+        },
+        "closeness_vs_real": {
+          "rho": null,
+          "pvalue": null,
+          "n": 1
+        },
+        "closeness_vs_glove": {
+          "rho": null,
+          "pvalue": null,
+          "n": 1
+        }
+      }
+    },
+    "ea_llm_self_adaptive_api_1327_run5_20260803_181102.json": {
+      "method": "ea_llm_self_adaptive",
+      "game_number": 1327,
+      "target": "era",
+      "target_source": "solved",
+      "provenance_hash": "bd9f2858283673a2",
+      "metrics": {
+        "which_realized": "first_proposed",
+        "words_total": 6,
+        "words_in_glove_vocab": 6,
+        "glove_vocab_coverage": 1.0,
+        "glove_vs_real": {
+          "rho": 0.15789473684210528,
+          "pvalue": 0.7998006663544925,
+          "n": 5
+        },
+        "closeness_vs_real": {
+          "rho": -0.26315789473684215,
+          "pvalue": 0.6688454650582101,
+          "n": 5
+        },
+        "closeness_vs_glove": {
+          "rho": 0.6120084698771954,
+          "pvalue": 0.19660251776258997,
+          "n": 6
+        }
+      }
+    },
+    "ea_llm_self_adaptive_api_1335_run1_20260803_153531.json": {
+      "method": "ea_llm_self_adaptive",
+      "game_number": 1335,
+      "target": "compass",
+      "target_source": "solved",
+      "provenance_hash": "bd9f2858283673a2",
+      "metrics": {
+        "which_realized": "first_proposed",
+        "words_total": 9,
+        "words_in_glove_vocab": 9,
+        "glove_vocab_coverage": 1.0,
+        "glove_vs_real": {
+          "rho": 0.39999999999999997,
+          "pvalue": 0.286105101908313,
+          "n": 9
+        },
+        "closeness_vs_real": {
+          "rho": 0.01756820922315766,
+          "pvalue": 0.9642195419405483,
+          "n": 9
+        },
+        "closeness_vs_glove": {
+          "rho": 0.2283867199010496,
+          "pvalue": 0.5544863979802297,
+          "n": 9
+        }
+      }
+    },
+    "ea_llm_self_adaptive_api_1335_run2_20260803_175422.json": {
+      "method": "ea_llm_self_adaptive",
+      "game_number": 1335,
+      "target": "compass",
+      "target_source": "solved",
+      "provenance_hash": "bd9f2858283673a2",
+      "metrics": {
+        "which_realized": "first_proposed",
+        "words_total": 30,
+        "words_in_glove_vocab": 30,
+        "glove_vocab_coverage": 1.0,
+        "glove_vs_real": {
+          "rho": 0.796662958843159,
+          "pvalue": 1.3892570347034722e-07,
+          "n": 30
+        },
+        "closeness_vs_real": {
+          "rho": -0.23044159580351423,
+          "pvalue": 0.22053021863109568,
+          "n": 30
+        },
+        "closeness_vs_glove": {
+          "rho": -0.3214543876814678,
+          "pvalue": 0.08324225712174241,
+          "n": 30
+        }
+      }
+    },
+    "ea_llm_self_adaptive_api_1335_run3_20260803_185819.json": {
+      "method": "ea_llm_self_adaptive",
+      "game_number": 1335,
+      "target": "compass",
+      "target_source": "solved",
+      "provenance_hash": "bd9f2858283673a2",
+      "metrics": {
+        "which_realized": "first_proposed",
+        "words_total": 24,
+        "words_in_glove_vocab": 24,
+        "glove_vocab_coverage": 1.0,
+        "glove_vs_real": {
+          "rho": 0.6876903001304915,
+          "pvalue": 0.00020449942677392297,
+          "n": 24
+        },
+        "closeness_vs_real": {
+          "rho": 0.0979740720612701,
+          "pvalue": 0.6487864668932819,
+          "n": 24
+        },
+        "closeness_vs_glove": {
+          "rho": -0.05407806748878418,
+          "pvalue": 0.8018389302147009,
+          "n": 24
+        }
+      }
+    },
+    "ea_llm_self_adaptive_api_1335_run4_20260803_191631.json": {
+      "method": "ea_llm_self_adaptive",
+      "game_number": 1335,
+      "target": "compass",
+      "target_source": "solved",
+      "provenance_hash": "bd9f2858283673a2",
+      "metrics": {
+        "which_realized": "first_proposed",
+        "words_total": 6,
+        "words_in_glove_vocab": 6,
+        "glove_vocab_coverage": 1.0,
+        "glove_vs_real": {
+          "rho": 0.8857142857142858,
+          "pvalue": 0.01884548104956266,
+          "n": 6
+        },
+        "closeness_vs_real": {
+          "rho": -0.5246313898711126,
+          "pvalue": 0.28525218741845076,
+          "n": 6
+        },
+        "closeness_vs_glove": {
+          "rho": -0.401188709901439,
+          "pvalue": 0.4305030741827669,
+          "n": 6
+        }
+      }
+    },
+    "ea_llm_self_adaptive_api_1335_run5_20260803_192702.json": {
+      "method": "ea_llm_self_adaptive",
+      "game_number": 1335,
+      "target": "compass",
+      "target_source": "solved",
+      "provenance_hash": "bd9f2858283673a2",
+      "metrics": {
+        "which_realized": "first_proposed",
+        "words_total": 6,
+        "words_in_glove_vocab": 6,
+        "glove_vocab_coverage": 1.0,
+        "glove_vs_real": {
+          "rho": 0.8857142857142858,
+          "pvalue": 0.01884548104956266,
+          "n": 6
+        },
+        "closeness_vs_real": {
+          "rho": 0.14712247158412492,
+          "pvalue": 0.7809085271647663,
+          "n": 6
+        },
+        "closeness_vs_glove": {
+          "rho": 0.3825184261187248,
+          "pvalue": 0.4542074751137156,
+          "n": 6
+        }
+      }
+    },
+    "ea_llm_self_adaptive_api_1352_run1_20260722_182747.json": {
+      "method": "ea_llm_self_adaptive",
+      "game_number": 1352,
+      "target": "amethyst",
+      "target_source": "solved",
+      "provenance_hash": "bd9f2858283673a2",
+      "metrics": {
+        "which_realized": "first_proposed",
+        "words_total": 42,
+        "words_in_glove_vocab": 42,
+        "glove_vocab_coverage": 1.0,
+        "glove_vs_real": {
+          "rho": 0.6720700275571405,
+          "pvalue": 1.0957298537635152e-06,
+          "n": 42
+        },
+        "closeness_vs_real": {
+          "rho": -0.3298370125868444,
+          "pvalue": 0.032910181202818814,
+          "n": 42
+        },
+        "closeness_vs_glove": {
+          "rho": -0.2580126524429805,
+          "pvalue": 0.09900087192545447,
+          "n": 42
+        }
+      }
+    },
+    "ea_llm_self_adaptive_api_1352_run2_20260722_195659.json": {
+      "method": "ea_llm_self_adaptive",
+      "game_number": 1352,
+      "target": "amethyst",
+      "target_source": "solved",
+      "provenance_hash": "bd9f2858283673a2",
+      "metrics": {
+        "which_realized": "first_proposed",
+        "words_total": 36,
+        "words_in_glove_vocab": 36,
+        "glove_vocab_coverage": 1.0,
+        "glove_vs_real": {
+          "rho": 0.5509460406447091,
+          "pvalue": 0.0006039986890650528,
+          "n": 35
+        },
+        "closeness_vs_real": {
+          "rho": -0.14752371473394787,
+          "pvalue": 0.39771618987800444,
+          "n": 35
+        },
+        "closeness_vs_glove": {
+          "rho": -0.23336157422590614,
+          "pvalue": 0.17076386340109048,
+          "n": 36
+        }
+      }
+    },
+    "ea_llm_self_adaptive_api_1352_run3_20260722_204210.json": {
+      "method": "ea_llm_self_adaptive",
+      "game_number": 1352,
+      "target": "amethyst",
+      "target_source": "solved",
+      "provenance_hash": "bd9f2858283673a2",
+      "metrics": {
+        "which_realized": "first_proposed",
+        "words_total": 12,
+        "words_in_glove_vocab": 12,
+        "glove_vocab_coverage": 1.0,
+        "glove_vs_real": {
+          "rho": 0.8671328671328673,
+          "pvalue": 0.000259811849861481,
+          "n": 12
+        },
+        "closeness_vs_real": {
+          "rho": -0.5196978058325044,
+          "pvalue": 0.08331153599646472,
+          "n": 12
+        },
+        "closeness_vs_glove": {
+          "rho": -0.3477677046548338,
+          "pvalue": 0.267997091415669,
+          "n": 12
+        }
+      }
+    },
+    "ea_llm_self_adaptive_api_1352_run4_20260722_224638.json": {
+      "method": "ea_llm_self_adaptive",
+      "game_number": 1352,
+      "target": "amethyst",
+      "target_source": "solved",
+      "provenance_hash": "bd9f2858283673a2",
+      "metrics": {
+        "which_realized": "first_proposed",
+        "words_total": 24,
+        "words_in_glove_vocab": 24,
+        "glove_vocab_coverage": 1.0,
+        "glove_vs_real": {
+          "rho": 0.6962576153176676,
+          "pvalue": 0.0001575462299852757,
+          "n": 24
+        },
+        "closeness_vs_real": {
+          "rho": -0.3535630496837351,
+          "pvalue": 0.09009863751411941,
+          "n": 24
+        },
+        "closeness_vs_glove": {
+          "rho": -0.6177932410461253,
+          "pvalue": 0.0012960889623093452,
+          "n": 24
+        }
+      }
+    },
+    "ea_llm_self_adaptive_api_1352_run5_20260723_010249.json": {
+      "method": "ea_llm_self_adaptive",
+      "game_number": 1352,
+      "target": "amethyst",
+      "target_source": "solved",
+      "provenance_hash": "bd9f2858283673a2",
+      "metrics": {
+        "which_realized": "first_proposed",
+        "words_total": 54,
+        "words_in_glove_vocab": 54,
+        "glove_vocab_coverage": 1.0,
+        "glove_vs_real": {
+          "rho": 0.6837450442207991,
+          "pvalue": 1.208855558124091e-08,
+          "n": 54
+        },
+        "closeness_vs_real": {
+          "rho": -0.24738850891157957,
+          "pvalue": 0.07130380734090043,
+          "n": 54
+        },
+        "closeness_vs_glove": {
+          "rho": -0.19396041354822496,
+          "pvalue": 0.15991789491520708,
+          "n": 54
+        }
+      }
+    },
+    "ea_llm_self_adaptive_api_1364_run1_20260722_184759.json": {
+      "method": "ea_llm_self_adaptive",
+      "game_number": 1364,
+      "target": "palace",
+      "target_source": "solved",
+      "provenance_hash": "bd9f2858283673a2",
+      "metrics": {
+        "which_realized": "first_proposed",
+        "words_total": 49,
+        "words_in_glove_vocab": 49,
+        "glove_vocab_coverage": 1.0,
+        "glove_vs_real": {
+          "rho": 0.866550236285186,
+          "pvalue": 8.655546655943086e-16,
+          "n": 49
+        },
+        "closeness_vs_real": {
+          "rho": -0.4273015745486476,
+          "pvalue": 0.002197109722445239,
+          "n": 49
+        },
+        "closeness_vs_glove": {
+          "rho": -0.45576044533151544,
+          "pvalue": 0.0009987835067033278,
+          "n": 49
+        }
+      }
+    },
+    "ea_llm_self_adaptive_api_1364_run2_20260722_205531.json": {
+      "method": "ea_llm_self_adaptive",
+      "game_number": 1364,
+      "target": "palace",
+      "target_source": "solved",
+      "provenance_hash": "bd9f2858283673a2",
+      "metrics": {
+        "which_realized": "first_proposed",
+        "words_total": 66,
+        "words_in_glove_vocab": 66,
+        "glove_vocab_coverage": 1.0,
+        "glove_vs_real": {
+          "rho": 0.8389113029663234,
+          "pvalue": 1.4545764478500985e-18,
+          "n": 66
+        },
+        "closeness_vs_real": {
+          "rho": -0.16639173942141125,
+          "pvalue": 0.18178646511962107,
+          "n": 66
+        },
+        "closeness_vs_glove": {
+          "rho": -0.24898512347927604,
+          "pvalue": 0.04380139651080565,
+          "n": 66
+        }
+      }
+    },
+    "ea_llm_self_adaptive_api_1364_run3_20260722_210932.json": {
+      "method": "ea_llm_self_adaptive",
+      "game_number": 1364,
+      "target": "palace",
+      "target_source": "solved",
+      "provenance_hash": "bd9f2858283673a2",
+      "metrics": {
+        "which_realized": "first_proposed",
+        "words_total": 12,
+        "words_in_glove_vocab": 12,
+        "glove_vocab_coverage": 1.0,
+        "glove_vs_real": {
+          "rho": 0.9719298245614036,
+          "pvalue": 1.3093296947121136e-07,
+          "n": 12
+        },
+        "closeness_vs_real": {
+          "rho": -0.12057419897449534,
+          "pvalue": 0.7089514763462859,
+          "n": 12
+        },
+        "closeness_vs_glove": {
+          "rho": -0.08865749924595247,
+          "pvalue": 0.7840898969295425,
+          "n": 12
+        }
+      }
+    },
+    "ea_llm_self_adaptive_api_1364_run4_20260722_215044.json": {
+      "method": "ea_llm_self_adaptive",
+      "game_number": 1364,
+      "target": "palace",
+      "target_source": "solved",
+      "provenance_hash": "bd9f2858283673a2",
+      "metrics": {
+        "which_realized": "first_proposed",
+        "words_total": 25,
+        "words_in_glove_vocab": 25,
+        "glove_vocab_coverage": 1.0,
+        "glove_vs_real": {
+          "rho": 0.5927636643571979,
+          "pvalue": 0.0017930040861531811,
+          "n": 25
+        },
+        "closeness_vs_real": {
+          "rho": -0.24917280353879787,
+          "pvalue": 0.22969715919472158,
+          "n": 25
+        },
+        "closeness_vs_glove": {
+          "rho": -0.13053798147175874,
+          "pvalue": 0.5339780251777597,
+          "n": 25
+        }
+      }
+    },
+    "ea_llm_self_adaptive_api_1364_run5_20260722_232301.json": {
+      "method": "ea_llm_self_adaptive",
+      "game_number": 1364,
+      "target": "palace",
+      "target_source": "solved",
+      "provenance_hash": "bd9f2858283673a2",
+      "metrics": {
+        "which_realized": "first_proposed",
+        "words_total": 54,
+        "words_in_glove_vocab": 54,
+        "glove_vocab_coverage": 1.0,
+        "glove_vs_real": {
+          "rho": 0.7751745716793224,
+          "pvalue": 5.963583944142975e-12,
+          "n": 54
+        },
+        "closeness_vs_real": {
+          "rho": -0.28211226830598823,
+          "pvalue": 0.03875566952327293,
+          "n": 54
+        },
+        "closeness_vs_glove": {
+          "rho": -0.195523354271477,
+          "pvalue": 0.15651358996625103,
+          "n": 54
+        }
+      }
+    },
+    "ea_llm_self_adaptive_api_1365_run1_20260724_172056.json": {
+      "method": "ea_llm_self_adaptive",
+      "game_number": 1365,
+      "target": "turnip",
+      "target_source": "solved",
+      "provenance_hash": "bd9f2858283673a2",
+      "metrics": {
+        "which_realized": "first_proposed",
+        "words_total": 134,
+        "words_in_glove_vocab": 134,
+        "glove_vocab_coverage": 1.0,
+        "glove_vs_real": {
+          "rho": 0.6776913632923814,
+          "pvalue": 4.500592854250111e-19,
+          "n": 132
+        },
+        "closeness_vs_real": {
+          "rho": -0.220887927582825,
+          "pvalue": 0.0109217930638218,
+          "n": 132
+        },
+        "closeness_vs_glove": {
+          "rho": -0.04860819427399321,
+          "pvalue": 0.5770227370782159,
+          "n": 134
+        }
+      }
+    },
+    "ea_llm_self_adaptive_api_1365_run2_20260803_180723.json": {
+      "method": "ea_llm_self_adaptive",
+      "game_number": 1365,
+      "target": "turnip",
+      "target_source": "solved",
+      "provenance_hash": "bd9f2858283673a2",
+      "metrics": {
+        "which_realized": "first_proposed",
+        "words_total": 72,
+        "words_in_glove_vocab": 72,
+        "glove_vocab_coverage": 1.0,
+        "glove_vs_real": {
+          "rho": 0.5665347872237769,
+          "pvalue": 2.1328240285955105e-07,
+          "n": 72
+        },
+        "closeness_vs_real": {
+          "rho": -0.4036772895719138,
+          "pvalue": 0.0004376568874597144,
+          "n": 72
+        },
+        "closeness_vs_glove": {
+          "rho": -0.19041009401430373,
+          "pvalue": 0.10913316008125759,
+          "n": 72
+        }
+      }
+    },
+    "ea_llm_self_adaptive_api_1365_run3_20260724_194909.json": {
+      "method": "ea_llm_self_adaptive",
+      "game_number": 1365,
+      "target": "turnip",
+      "target_source": "solved",
+      "provenance_hash": "bd9f2858283673a2",
+      "metrics": {
+        "which_realized": "first_proposed",
+        "words_total": 54,
+        "words_in_glove_vocab": 54,
+        "glove_vocab_coverage": 1.0,
+        "glove_vs_real": {
+          "rho": 0.8442350966856097,
+          "pvalue": 1.0656997187604335e-15,
+          "n": 54
+        },
+        "closeness_vs_real": {
+          "rho": -0.3733462288647495,
+          "pvalue": 0.0054250318400020855,
+          "n": 54
+        },
+        "closeness_vs_glove": {
+          "rho": -0.47004415288185486,
+          "pvalue": 0.00033547227142346434,
+          "n": 54
+        }
+      }
+    },
+    "ea_llm_self_adaptive_api_1365_run4_20260725_005857.json": {
+      "method": "ea_llm_self_adaptive",
+      "game_number": 1365,
+      "target": "turnip",
+      "target_source": "solved",
+      "provenance_hash": "bd9f2858283673a2",
+      "metrics": {
+        "which_realized": "first_proposed",
+        "words_total": 138,
+        "words_in_glove_vocab": 137,
+        "glove_vocab_coverage": 0.9927536231884058,
+        "glove_vs_real": {
+          "rho": 0.6450506773928893,
+          "pvalue": 2.3375884786542743e-17,
+          "n": 136
+        },
+        "closeness_vs_real": {
+          "rho": -0.3853388020646658,
+          "pvalue": 3.6130067571476944e-06,
+          "n": 136
+        },
+        "closeness_vs_glove": {
+          "rho": -0.1801634403580545,
+          "pvalue": 0.03514290957832232,
+          "n": 137
+        }
+      }
+    },
+    "ea_llm_self_adaptive_api_1365_run5_20260725_024035.json": {
+      "method": "ea_llm_self_adaptive",
+      "game_number": 1365,
+      "target": "turnip",
+      "target_source": "solved",
+      "provenance_hash": "bd9f2858283673a2",
+      "metrics": {
+        "which_realized": "first_proposed",
+        "words_total": 55,
+        "words_in_glove_vocab": 55,
+        "glove_vocab_coverage": 1.0,
+        "glove_vs_real": {
+          "rho": 0.7817183388628303,
+          "pvalue": 3.0205265778928916e-12,
+          "n": 54
+        },
+        "closeness_vs_real": {
+          "rho": -0.048048531148494895,
+          "pvalue": 0.7300787388457668,
+          "n": 54
+        },
+        "closeness_vs_glove": {
+          "rho": -0.1714870230766365,
+          "pvalue": 0.21061785875578146,
+          "n": 55
+        }
+      }
+    },
+    "ea_llm_self_adaptive_api_1372_run1_20260722_173926.json": {
+      "method": "ea_llm_self_adaptive",
+      "game_number": 1372,
+      "target": "rhythm",
+      "target_source": "solved",
+      "provenance_hash": "bd9f2858283673a2",
+      "metrics": {
+        "which_realized": "first_proposed",
+        "words_total": 24,
+        "words_in_glove_vocab": 24,
+        "glove_vocab_coverage": 1.0,
+        "glove_vs_real": {
+          "rho": 0.7615317667536988,
+          "pvalue": 1.5428794145483584e-05,
+          "n": 24
+        },
+        "closeness_vs_real": {
+          "rho": 0.299649175070362,
+          "pvalue": 0.1548690952891408,
+          "n": 24
+        },
+        "closeness_vs_glove": {
+          "rho": 0.329411169885477,
+          "pvalue": 0.11598107950921811,
+          "n": 24
+        }
+      }
+    },
+    "ea_llm_self_adaptive_api_1372_run2_20260722_181616.json": {
+      "method": "ea_llm_self_adaptive",
+      "game_number": 1372,
+      "target": "rhythm",
+      "target_source": "solved",
+      "provenance_hash": "bd9f2858283673a2",
+      "metrics": {
+        "which_realized": "first_proposed",
+        "words_total": 19,
+        "words_in_glove_vocab": 19,
+        "glove_vocab_coverage": 1.0,
+        "glove_vs_real": {
+          "rho": 0.6797520661157025,
+          "pvalue": 0.0019130994891999255,
+          "n": 18
+        },
+        "closeness_vs_real": {
+          "rho": -0.7277500276862551,
+          "pvalue": 0.0006183601344051933,
+          "n": 18
+        },
+        "closeness_vs_glove": {
+          "rho": -0.42825729465932466,
+          "pvalue": 0.06735534582119565,
+          "n": 19
+        }
+      }
+    },
+    "ea_llm_self_adaptive_api_1372_run3_20260722_184837.json": {
+      "method": "ea_llm_self_adaptive",
+      "game_number": 1372,
+      "target": "rhythm",
+      "target_source": "solved",
+      "provenance_hash": "bd9f2858283673a2",
+      "metrics": {
+        "which_realized": "first_proposed",
+        "words_total": 6,
+        "words_in_glove_vocab": 6,
+        "glove_vocab_coverage": 1.0,
+        "glove_vs_real": {
+          "rho": 0.7714285714285715,
+          "pvalue": 0.07239650145772594,
+          "n": 6
+        },
+        "closeness_vs_real": {
+          "rho": 0.0,
+          "pvalue": 1.0,
+          "n": 6
+        },
+        "closeness_vs_glove": {
+          "rho": -0.35309393180189985,
+          "pvalue": 0.4923701525912944,
+          "n": 6
+        }
+      }
+    },
+    "ea_llm_self_adaptive_api_1372_run4_20260722_191242.json": {
+      "method": "ea_llm_self_adaptive",
+      "game_number": 1372,
+      "target": "rhythm",
+      "target_source": "solved",
+      "provenance_hash": "bd9f2858283673a2",
+      "metrics": {
+        "which_realized": "first_proposed",
+        "words_total": 8,
+        "words_in_glove_vocab": 8,
+        "glove_vocab_coverage": 1.0,
+        "glove_vs_real": {
+          "rho": 0.9047619047619048,
+          "pvalue": 0.002008275505429469,
+          "n": 8
+        },
+        "closeness_vs_real": {
+          "rho": 0.06024533658898498,
+          "pvalue": 0.8873130218901896,
+          "n": 8
+        },
+        "closeness_vs_glove": {
+          "rho": -0.07229440390678199,
+          "pvalue": 0.8649195587700265,
+          "n": 8
+        }
+      }
+    },
+    "ea_llm_self_adaptive_api_1372_run5_20260722_193120.json": {
+      "method": "ea_llm_self_adaptive",
+      "game_number": 1372,
+      "target": "rhythm",
+      "target_source": "solved",
+      "provenance_hash": "bd9f2858283673a2",
+      "metrics": {
+        "which_realized": "first_proposed",
+        "words_total": 0,
+        "words_in_glove_vocab": 0,
+        "glove_vocab_coverage": null,
+        "glove_vs_real": {
+          "rho": null,
+          "pvalue": null,
+          "n": 0
+        },
+        "closeness_vs_real": {
+          "rho": null,
+          "pvalue": null,
+          "n": 0
+        },
+        "closeness_vs_glove": {
+          "rho": null,
+          "pvalue": null,
+          "n": 0
+        }
+      }
+    },
+    "ea_llm_self_adaptive_api_1384_run1_20260728_223943.json": {
+      "method": "ea_llm_self_adaptive",
+      "game_number": 1384,
+      "target": "gossip",
+      "target_source": "solved",
+      "provenance_hash": "bd9f2858283673a2",
+      "metrics": {
+        "which_realized": "first_proposed",
+        "words_total": 19,
+        "words_in_glove_vocab": 19,
+        "glove_vocab_coverage": 1.0,
+        "glove_vs_real": {
+          "rho": 0.6859649122807018,
+          "pvalue": 0.001184675353887611,
+          "n": 19
+        },
+        "closeness_vs_real": {
+          "rho": -0.3294423259209847,
+          "pvalue": 0.16841039645577938,
+          "n": 19
+        },
+        "closeness_vs_glove": {
+          "rho": -0.5672216355388855,
+          "pvalue": 0.011316646616205078,
+          "n": 19
+        }
+      }
+    },
+    "ea_llm_self_adaptive_api_1384_run2_20260728_235849.json": {
+      "method": "ea_llm_self_adaptive",
+      "game_number": 1384,
+      "target": "gossip",
+      "target_source": "solved",
+      "provenance_hash": "bd9f2858283673a2",
+      "metrics": {
+        "which_realized": "first_proposed",
+        "words_total": 24,
+        "words_in_glove_vocab": 24,
+        "glove_vocab_coverage": 1.0,
+        "glove_vs_real": {
+          "rho": 0.47542409743366676,
+          "pvalue": 0.01887628818583012,
+          "n": 24
+        },
+        "closeness_vs_real": {
+          "rho": -0.18548016427681094,
+          "pvalue": 0.38554722948289505,
+          "n": 24
+        },
+        "closeness_vs_glove": {
+          "rho": -0.38754079615881953,
+          "pvalue": 0.06133340520331283,
+          "n": 24
+        }
+      }
+    },
+    "ea_llm_self_adaptive_api_1384_run4_20260729_125300.json": {
+      "method": "ea_llm_self_adaptive",
+      "game_number": 1384,
+      "target": "gossip",
+      "target_source": "solved",
+      "provenance_hash": "bd9f2858283673a2",
+      "metrics": {
+        "which_realized": "first_proposed",
+        "words_total": 36,
+        "words_in_glove_vocab": 36,
+        "glove_vocab_coverage": 1.0,
+        "glove_vs_real": {
+          "rho": 0.6258529676837903,
+          "pvalue": 4.461768463601986e-05,
+          "n": 36
+        },
+        "closeness_vs_real": {
+          "rho": 0.2895776222185653,
+          "pvalue": 0.08669989853991275,
+          "n": 36
+        },
+        "closeness_vs_glove": {
+          "rho": 0.09200053723648548,
+          "pvalue": 0.593579493936136,
+          "n": 36
+        }
+      }
+    },
+    "ea_llm_self_adaptive_api_1384_run5_20260729_172325.json": {
+      "method": "ea_llm_self_adaptive",
+      "game_number": 1384,
+      "target": "gossip",
+      "target_source": "solved",
+      "provenance_hash": "bd9f2858283673a2",
+      "metrics": {
+        "which_realized": "first_proposed",
+        "words_total": 125,
+        "words_in_glove_vocab": 125,
+        "glove_vocab_coverage": 1.0,
+        "glove_vs_real": {
+          "rho": 0.5465761003609517,
+          "pvalue": 4.2854865127438066e-11,
+          "n": 125
+        },
+        "closeness_vs_real": {
+          "rho": 0.04117092639971221,
+          "pvalue": 0.6484806162050408,
+          "n": 125
+        },
+        "closeness_vs_glove": {
+          "rho": -0.011692889960176365,
+          "pvalue": 0.8970241026706743,
+          "n": 125
+        }
+      }
+    }
+  },
+  "pooled": {
+    "words_total": 1784,
+    "words_in_glove_vocab": 1783,
+    "glove_vocab_coverage": 0.999439461883408,
+    "glove_vs_real": {
+      "rho": 0.651363107203876,
+      "pvalue": 1.3639921676434904e-214,
+      "n": 1773
+    },
+    "closeness_vs_real": {
+      "rho": -0.2541832054322099,
+      "pvalue": 1.5260579612156262e-27,
+      "n": 1773
+    },
+    "closeness_vs_glove": {
+      "rho": -0.1986565778166654,
+      "pvalue": 2.517283100279866e-17,
+      "n": 1783
+    }
+  }
+}

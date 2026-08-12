@@ -2,13 +2,14 @@
 
 from __future__ import annotations
 
+import json
 from dataclasses import dataclass
 from typing import Any
 
 import numpy as np
 
 from ..hypothesis import Hypothesis
-from ..operators import OPERATOR_PROMPTS, assert_prompt_has_no_sigma_leak, perturb_sigma, sample_operator
+from ..operators import OPERATOR_PROMPTS, assert_prompt_has_no_sigma_leak, initial_sigma, perturb_sigma, sample_operator
 from .ea_core import BaseEALLMMethod, EALLMConfig, _words_from_category
 
 
@@ -19,6 +20,8 @@ class EALLMSelfAdaptiveConfig(EALLMConfig):
     sigma_floor: float = 0.02
     random_seed: int | None = None
     disable_local_search: bool = True
+    sigma_mode: str = "adaptive"
+    selection_mode: str = "tophalf"
 
 
 class EALLMSelfAdaptiveMethod(BaseEALLMMethod):
@@ -32,6 +35,53 @@ class EALLMSelfAdaptiveMethod(BaseEALLMMethod):
     def _after_initialize(self) -> None:
         self._log_sigma_trajectory()
 
+    def _mode_sigma(self, base_sigma: np.ndarray) -> np.ndarray:
+        if self.config.sigma_mode == "frozen_uniform":
+            return initial_sigma()
+        return perturb_sigma(
+            base_sigma,
+            concentration=self.config.concentration,
+            sigma_floor=self.config.sigma_floor,
+            rng=self.rng,
+        )
+
+    def _select(self) -> None:
+        """Survivor selection; ``selection_mode == "random"`` is the RQ3 control.
+
+        The default (``tophalf``) defers to the base top-half rank cull and is
+        byte-identical to prior behavior. ``random`` keeps the same survivor
+        count but draws survivors uniformly at random with the run's RNG; no
+        elite guarantee (that would reintroduce selection on fitness).
+        """
+        if self.config.selection_mode != "random":
+            super()._select()
+            return
+
+        ranked = sorted(self.hypotheses, key=lambda hypothesis: hypothesis.best_rank)
+        keep_count = min(max(1, len(ranked) // 2), self.config.max_active_hypotheses)
+        chosen = sorted(self.rng.choice(len(ranked), size=keep_count, replace=False).tolist())
+        kept_list = [ranked[index] for index in chosen]
+        kept_ids = set(id(hypothesis) for hypothesis in kept_list)
+        for hypothesis in self.hypotheses:
+            hypothesis.status = "active" if id(hypothesis) in kept_ids else "dormant"
+
+        self.logger.log(
+            self.generation,
+            "SELECT",
+            {
+                "kept": [hypothesis.category_name for hypothesis in kept_list],
+                "discarded": [
+                    hypothesis.category_name for hypothesis in ranked if id(hypothesis) not in kept_ids
+                ],
+                "elite": kept_list[0].category_name if kept_list else None,
+                "max_active_hypotheses": self.config.max_active_hypotheses,
+                "selection_mode": "random",
+                "best_word": self.best_word,
+                "best_rank": self.best_rank,
+                "total_guesses": self.game.total_guesses(),
+            },
+        )
+
     def _mutate(self) -> None:
         parents = sorted(self._active_hypotheses(), key=lambda hypothesis: hypothesis.best_rank)[: self.config.mu]
         children: list[dict[str, Any]] = []
@@ -40,6 +90,7 @@ class EALLMSelfAdaptiveMethod(BaseEALLMMethod):
             operator = sample_operator(parent.sigma, self.rng)
             prompt_template = OPERATOR_PROMPTS[operator]
             parent_sigma = parent.sigma.copy()
+            inheritance_block, inheritance_meta = self._rationale_inheritance_for_parent(parent)
             prompt = self.llm_client.build_operator_mutation_prompt(
                 prompt_template,
                 parent,
@@ -47,18 +98,15 @@ class EALLMSelfAdaptiveMethod(BaseEALLMMethod):
                 self.invalid_guesses,
                 n=self.config.starter_words_per_category,
                 active_categories=[hypothesis.category_name for hypothesis in self._active_hypotheses()],
+                rationale_inheritance_block=inheritance_block,
+                self_report_block=self._self_report_block(),
             )
             assert_prompt_has_no_sigma_leak(prompt, parent_sigma, operator)
-            category = self.llm_client.complete_json_prompt(prompt)
+            category, raw = self._complete_proposal(prompt)
             if not isinstance(category, dict):
                 continue
 
-            child_sigma = perturb_sigma(
-                parent_sigma,
-                concentration=self.config.concentration,
-                sigma_floor=self.config.sigma_floor,
-                rng=self.rng,
-            )
+            child_sigma = self._mode_sigma(parent_sigma)
             child = self._hypothesis_from_category(
                 category,
                 parent=parent.category_name,
@@ -67,20 +115,30 @@ class EALLMSelfAdaptiveMethod(BaseEALLMMethod):
                 sigma=child_sigma,
             )
             self.hypotheses.append(child)
+            if self.config.self_report:
+                proposed = _words_from_category(category)
+                self._attach_self_report(
+                    child,
+                    category,
+                    raw,
+                    prompt,
+                    proposed[0] if proposed else None,
+                    inheritance_meta=inheritance_meta if inheritance_block else None,
+                )
             children.append(child.to_dict())
-            self.logger.log(
-                self.generation,
-                "OPERATOR_SAMPLED",
-                {
-                    "parent_id": parent.hypothesis_id,
-                    "child_id": child.hypothesis_id,
-                    "sigma_snapshot": [float(value) for value in parent_sigma],
-                    "child_sigma": [float(value) for value in child.sigma],
-                    "child_hypothesis_name": child.category_name,
-                    "sampled_op": operator.value,
-                    "method": "self_adaptive",
-                },
-            )
+            operator_details: dict[str, Any] = {
+                "parent_id": parent.hypothesis_id,
+                "child_id": child.hypothesis_id,
+                "parent_rank": parent.best_rank,
+                "sigma_snapshot": [float(value) for value in parent_sigma],
+                "child_sigma": [float(value) for value in child.sigma],
+                "child_hypothesis_name": child.category_name,
+                "sampled_op": operator.value,
+                "method": "self_adaptive",
+            }
+            if self.config.self_report:
+                operator_details["self_report"] = child.self_report_dict()
+            self.logger.log(self.generation, "OPERATOR_SAMPLED", operator_details)
 
             for word in _words_from_category(category):
                 if word in self.invalid_guesses:
@@ -109,19 +167,9 @@ class EALLMSelfAdaptiveMethod(BaseEALLMMethod):
             return
 
         parent_a, parent_b = active[0], active[1]
-        category = self.llm_client.crossover(
-            parent_a.category_name,
-            parent_b.category_name,
-            parent_a.words_tried,
-            parent_b.words_tried,
-        )
+        category, raw, rendered_prompt = self._crossover_request(parent_a, parent_b)
         blended_sigma = 0.5 * (parent_a.sigma + parent_b.sigma)
-        child_sigma = perturb_sigma(
-            blended_sigma,
-            concentration=self.config.concentration,
-            sigma_floor=self.config.sigma_floor,
-            rng=self.rng,
-        )
+        child_sigma = self._mode_sigma(blended_sigma)
         child = self._hypothesis_from_category(
             category,
             parent=f"{parent_a.category_name}+{parent_b.category_name}",
@@ -129,6 +177,11 @@ class EALLMSelfAdaptiveMethod(BaseEALLMMethod):
             sigma=child_sigma,
         )
         self.hypotheses.append(child)
+        if self.config.self_report and isinstance(category, dict):
+            proposed = _words_from_category(category)
+            self._attach_self_report(
+                child, category, raw, rendered_prompt, proposed[0] if proposed else None
+            )
         for word in _words_from_category(category):
             if word in self.invalid_guesses:
                 continue
@@ -141,6 +194,8 @@ class EALLMSelfAdaptiveMethod(BaseEALLMMethod):
             "CROSSOVER",
             {
                 "parents": [parent_a.category_name, parent_b.category_name],
+                "parent_ids": [parent_a.hypothesis_id, parent_b.hypothesis_id],
+                "parent_ranks": [parent_a.best_rank, parent_b.best_rank],
                 "parent_a_sigma": [float(value) for value in parent_a.sigma],
                 "parent_b_sigma": [float(value) for value in parent_b.sigma],
                 "child_sigma_pre_perturbation": [float(value) for value in blended_sigma],

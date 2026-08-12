@@ -1,0 +1,928 @@
+{
+  "aggregate": {
+    "blind_spot_means": {
+      "recall@10": 0.44999999999999996,
+      "recall@25": 0.44,
+      "recall@50": 0.28
+    },
+    "decomposition_means": {
+      "DISTRIBUTIONAL": 29.857142857142858,
+      "MORPH": 0.7142857142857143,
+      "OTHER": 15.571428571428571,
+      "SYNONYM": 13.5
+    },
+    "embedding_vs_llm_overlap_mean": 2.0,
+    "excluded_from_embedding_means": [],
+    "excluded_from_llm_means": [
+      [
+        "blade",
+        "LLM_FAILED"
+      ],
+      [
+        "loyalty",
+        "LLM_FAILED"
+      ],
+      [
+        "otter",
+        "LLM_FAILED"
+      ],
+      [
+        "arrow",
+        "LLM_FAILED"
+      ],
+      [
+        "rhythm",
+        "LLM_FAILED"
+      ]
+    ],
+    "n_targets": 7,
+    "transferability_means": {
+      "median_emb_rank_real_top15": 169.14285714285714,
+      "median_emb_rank_real_top50": 301.2857142857143,
+      "recall@10": 0.7714285714285715,
+      "recall@25": 0.6742857142857143,
+      "recall@50": 0.6457142857142858,
+      "spearman_intersection": 0.3504245192746184
+    },
+    "usable_embedding_count": 7,
+    "usable_llm_count": 2
+  },
+  "input": "closeness_contexto_300_4.json",
+  "meta": {
+    "contexto_max_rank": 300,
+    "embedding_path": "data\\glove.6B.300d.txt",
+    "far_rank": 100,
+    "llm_model": "qwen3:14b",
+    "top_n": 300
+  },
+  "targets": {
+    "arrow": {
+      "blind_spots": {
+        "reason": "LLM_FAILED (status='cache')"
+      },
+      "decomposition": {
+        "counts": {
+          "DISTRIBUTIONAL": 25,
+          "MORPH": 0,
+          "OTHER": 25,
+          "SYNONYM": 0
+        },
+        "synonym_folded_into_other": true,
+        "synonym_reason": "LLM_FAILED (status='cache')",
+        "window": 50
+      },
+      "embedding_vs_llm": {
+        "reason": "LLM_FAILED (status='cache')"
+      },
+      "health": {
+        "contexto_available": true,
+        "contexto_word_count": 299,
+        "degenerate_embedding": false,
+        "embedding_top15_resolved_into_real_or_llm": 10,
+        "embedding_top5": [
+          "arrows",
+          "spear",
+          "bow",
+          "crossbow",
+          "cf-105"
+        ],
+        "embedding_word_count": 300,
+        "has_contexto": true,
+        "llm_failed": true,
+        "llm_status": "cache",
+        "llm_word_count": 82
+      },
+      "morphology": {
+        "emb_vs_real_overlap_raw": 80,
+        "emb_vs_real_overlap_stemmed": 80,
+        "embedding_top15_morph_count": 1,
+        "embedding_top15_morph_words": [
+          "arrows"
+        ],
+        "llm_morph_reason": "LLM_FAILED (status='cache')",
+        "llm_top15_morph_count": null,
+        "llm_top15_morph_words": [],
+        "llm_vs_real_overlap_raw": null,
+        "llm_vs_real_overlap_stemmed": null,
+        "llm_vs_real_reason": "LLM_FAILED (status='cache')"
+      },
+      "target": "arrow",
+      "transferability": {
+        "median_emb_rank_real_top15": 60.0,
+        "median_emb_rank_real_top15_n_resolved": 15,
+        "median_emb_rank_real_top15_n_unresolved": 0,
+        "median_emb_rank_real_top50": 286.5,
+        "median_emb_rank_real_top50_n_resolved": 50,
+        "median_emb_rank_real_top50_n_unresolved": 0,
+        "oov_count_real_top50": 0,
+        "oov_words": [],
+        "recall": {
+          "10": {
+            "capped": false,
+            "hits": 7,
+            "k": 10,
+            "rate": 0.7,
+            "requested_k": 10
+          },
+          "25": {
+            "capped": false,
+            "hits": 14,
+            "k": 25,
+            "rate": 0.56,
+            "requested_k": 25
+          },
+          "50": {
+            "capped": false,
+            "hits": 25,
+            "k": 50,
+            "rate": 0.5,
+            "requested_k": 50
+          }
+        },
+        "spearman_differs": false,
+        "spearman_intersection": 0.34772867071876745,
+        "spearman_n_shared": 80,
+        "spearman_stored": 0.34772867071876745,
+        "spearman_underpowered": false
+      }
+    },
+    "blackboard": {
+      "blind_spots": {
+        "llm_overreach": [
+          {
+            "real_rank": 15,
+            "word": "board"
+          },
+          {
+            "real_rank": 1,
+            "word": "chalkboard"
+          },
+          {
+            "real_rank": 9,
+            "word": "slate"
+          },
+          {
+            "real_rank": null,
+            "word": "surface"
+          },
+          {
+            "real_rank": 3,
+            "word": "chalk"
+          },
+          {
+            "real_rank": 66,
+            "word": "write"
+          },
+          {
+            "real_rank": null,
+            "word": "draw"
+          },
+          {
+            "real_rank": 17,
+            "word": "erase"
+          },
+          {
+            "real_rank": 4,
+            "word": "classroom"
+          },
+          {
+            "real_rank": 31,
+            "word": "teacher"
+          },
+          {
+            "real_rank": 25,
+            "word": "student"
+          },
+          {
+            "real_rank": 164,
+            "word": "lesson"
+          },
+          {
+            "real_rank": null,
+            "word": "study"
+          },
+          {
+            "real_rank": 233,
+            "word": "education"
+          },
+          {
+            "real_rank": 49,
+            "word": "learning"
+          }
+        ],
+        "real_top50_absent_from_llm": [
+          "whiteboard",
+          "easel",
+          "syllabus",
+          "corkboard",
+          "calendar",
+          "lunchroom",
+          "cafeteria",
+          "clipboard",
+          "curriculum",
+          "handout",
+          "scrawl",
+          "scribble",
+          "tutor",
+          "schoolhouse",
+          "schoolroom",
+          "rubric",
+          "webcasts",
+          "signboard",
+          "intranet",
+          "classmate",
+          "courseware",
+          "notepad",
+          "plaster",
+          "powerpoint",
+          "school"
+        ],
+        "real_top50_absent_from_llm_count": 34,
+        "real_top50_absent_total": 34,
+        "recall": {
+          "10": {
+            "capped": false,
+            "hits": 6,
+            "k": 10,
+            "rate": 0.6,
+            "requested_k": 10
+          },
+          "25": {
+            "capped": false,
+            "hits": 12,
+            "k": 25,
+            "rate": 0.48,
+            "requested_k": 25
+          },
+          "50": {
+            "capped": false,
+            "hits": 16,
+            "k": 50,
+            "rate": 0.32,
+            "requested_k": 50
+          }
+        }
+      },
+      "decomposition": {
+        "counts": {
+          "DISTRIBUTIONAL": 12,
+          "MORPH": 0,
+          "OTHER": 22,
+          "SYNONYM": 16
+        },
+        "synonym_folded_into_other": false,
+        "window": 50
+      },
+      "embedding_vs_llm": {
+        "cut": 15,
+        "overlap": 2,
+        "shared_words": [
+          "chalk",
+          "chalkboard"
+        ]
+      },
+      "health": {
+        "contexto_available": true,
+        "contexto_word_count": 299,
+        "degenerate_embedding": false,
+        "embedding_top15_resolved_into_real_or_llm": 7,
+        "embedding_top5": [
+          "chalkboard",
+          "whiteboard",
+          "blackboards",
+          "crayon",
+          "chalk"
+        ],
+        "embedding_word_count": 300,
+        "has_contexto": true,
+        "llm_failed": false,
+        "llm_status": "llm",
+        "llm_word_count": 219
+      },
+      "morphology": {
+        "emb_vs_real_overlap_raw": 40,
+        "emb_vs_real_overlap_stemmed": 40,
+        "embedding_top15_morph_count": 1,
+        "embedding_top15_morph_words": [
+          "blackboards"
+        ],
+        "llm_top15_morph_count": 0,
+        "llm_top15_morph_words": [],
+        "llm_vs_real_overlap_raw": 28,
+        "llm_vs_real_overlap_stemmed": 28
+      },
+      "target": "blackboard",
+      "transferability": {
+        "median_emb_rank_real_top15": 193.0,
+        "median_emb_rank_real_top15_n_resolved": 15,
+        "median_emb_rank_real_top15_n_unresolved": 0,
+        "median_emb_rank_real_top50": 1056.5,
+        "median_emb_rank_real_top50_n_resolved": 50,
+        "median_emb_rank_real_top50_n_unresolved": 0,
+        "oov_count_real_top50": 0,
+        "oov_words": [],
+        "recall": {
+          "10": {
+            "capped": false,
+            "hits": 7,
+            "k": 10,
+            "rate": 0.7,
+            "requested_k": 10
+          },
+          "25": {
+            "capped": false,
+            "hits": 12,
+            "k": 25,
+            "rate": 0.48,
+            "requested_k": 25
+          },
+          "50": {
+            "capped": false,
+            "hits": 19,
+            "k": 50,
+            "rate": 0.38,
+            "requested_k": 50
+          }
+        },
+        "spearman_differs": false,
+        "spearman_intersection": 0.2536007901187492,
+        "spearman_n_shared": 40,
+        "spearman_stored": 0.2536007901187492,
+        "spearman_underpowered": false
+      }
+    },
+    "blade": {
+      "blind_spots": {
+        "reason": "LLM_FAILED (status='cache')"
+      },
+      "decomposition": {
+        "counts": {
+          "DISTRIBUTIONAL": 37,
+          "MORPH": 1,
+          "OTHER": 12,
+          "SYNONYM": 0
+        },
+        "synonym_folded_into_other": true,
+        "synonym_reason": "LLM_FAILED (status='cache')",
+        "window": 50
+      },
+      "embedding_vs_llm": {
+        "reason": "LLM_FAILED (status='cache')"
+      },
+      "health": {
+        "contexto_available": true,
+        "contexto_word_count": 299,
+        "degenerate_embedding": false,
+        "embedding_top15_resolved_into_real_or_llm": 10,
+        "embedding_top5": [
+          "blades",
+          "knife",
+          "razor",
+          "sword",
+          "sling"
+        ],
+        "embedding_word_count": 300,
+        "has_contexto": true,
+        "llm_failed": true,
+        "llm_status": "cache",
+        "llm_word_count": 134
+      },
+      "morphology": {
+        "emb_vs_real_overlap_raw": 105,
+        "emb_vs_real_overlap_stemmed": 104,
+        "embedding_top15_morph_count": 2,
+        "embedding_top15_morph_words": [
+          "blades",
+          "bladed"
+        ],
+        "llm_morph_reason": "LLM_FAILED (status='cache')",
+        "llm_top15_morph_count": null,
+        "llm_top15_morph_words": [],
+        "llm_vs_real_overlap_raw": null,
+        "llm_vs_real_overlap_stemmed": null,
+        "llm_vs_real_reason": "LLM_FAILED (status='cache')"
+      },
+      "target": "blade",
+      "transferability": {
+        "median_emb_rank_real_top15": 45.0,
+        "median_emb_rank_real_top15_n_resolved": 15,
+        "median_emb_rank_real_top15_n_unresolved": 0,
+        "median_emb_rank_real_top50": 103.0,
+        "median_emb_rank_real_top50_n_resolved": 50,
+        "median_emb_rank_real_top50_n_unresolved": 0,
+        "oov_count_real_top50": 0,
+        "oov_words": [],
+        "recall": {
+          "10": {
+            "capped": false,
+            "hits": 9,
+            "k": 10,
+            "rate": 0.9,
+            "requested_k": 10
+          },
+          "25": {
+            "capped": false,
+            "hits": 20,
+            "k": 25,
+            "rate": 0.8,
+            "requested_k": 25
+          },
+          "50": {
+            "capped": false,
+            "hits": 38,
+            "k": 50,
+            "rate": 0.76,
+            "requested_k": 50
+          }
+        },
+        "spearman_differs": false,
+        "spearman_intersection": 0.25213388358923744,
+        "spearman_n_shared": 105,
+        "spearman_stored": 0.25213388358923744,
+        "spearman_underpowered": false
+      }
+    },
+    "loyalty": {
+      "blind_spots": {
+        "reason": "LLM_FAILED (status='cache')"
+      },
+      "decomposition": {
+        "counts": {
+          "DISTRIBUTIONAL": 42,
+          "MORPH": 1,
+          "OTHER": 7,
+          "SYNONYM": 0
+        },
+        "synonym_folded_into_other": true,
+        "synonym_reason": "LLM_FAILED (status='cache')",
+        "window": 50
+      },
+      "embedding_vs_llm": {
+        "reason": "LLM_FAILED (status='cache')"
+      },
+      "health": {
+        "contexto_available": true,
+        "contexto_word_count": 299,
+        "degenerate_embedding": false,
+        "embedding_top15_resolved_into_real_or_llm": 14,
+        "embedding_top5": [
+          "allegiance",
+          "devotion",
+          "patriotism",
+          "honesty",
+          "respect"
+        ],
+        "embedding_word_count": 300,
+        "has_contexto": true,
+        "llm_failed": true,
+        "llm_status": "cache",
+        "llm_word_count": 118
+      },
+      "morphology": {
+        "emb_vs_real_overlap_raw": 158,
+        "emb_vs_real_overlap_stemmed": 157,
+        "embedding_top15_morph_count": 2,
+        "embedding_top15_morph_words": [
+          "loyalties",
+          "loyal"
+        ],
+        "llm_morph_reason": "LLM_FAILED (status='cache')",
+        "llm_top15_morph_count": null,
+        "llm_top15_morph_words": [],
+        "llm_vs_real_overlap_raw": null,
+        "llm_vs_real_overlap_stemmed": null,
+        "llm_vs_real_reason": "LLM_FAILED (status='cache')"
+      },
+      "target": "loyalty",
+      "transferability": {
+        "median_emb_rank_real_top15": 15.0,
+        "median_emb_rank_real_top15_n_resolved": 15,
+        "median_emb_rank_real_top15_n_unresolved": 0,
+        "median_emb_rank_real_top50": 51.5,
+        "median_emb_rank_real_top50_n_resolved": 50,
+        "median_emb_rank_real_top50_n_unresolved": 0,
+        "oov_count_real_top50": 0,
+        "oov_words": [],
+        "recall": {
+          "10": {
+            "capped": false,
+            "hits": 9,
+            "k": 10,
+            "rate": 0.9,
+            "requested_k": 10
+          },
+          "25": {
+            "capped": false,
+            "hits": 21,
+            "k": 25,
+            "rate": 0.84,
+            "requested_k": 25
+          },
+          "50": {
+            "capped": false,
+            "hits": 43,
+            "k": 50,
+            "rate": 0.86,
+            "requested_k": 50
+          }
+        },
+        "spearman_differs": false,
+        "spearman_intersection": 0.48562833490048896,
+        "spearman_n_shared": 158,
+        "spearman_stored": 0.48562833490048896,
+        "spearman_underpowered": false
+      }
+    },
+    "otter": {
+      "blind_spots": {
+        "reason": "LLM_FAILED (status='cache')"
+      },
+      "decomposition": {
+        "counts": {
+          "DISTRIBUTIONAL": 34,
+          "MORPH": 0,
+          "OTHER": 16,
+          "SYNONYM": 0
+        },
+        "synonym_folded_into_other": true,
+        "synonym_reason": "LLM_FAILED (status='cache')",
+        "window": 50
+      },
+      "embedding_vs_llm": {
+        "reason": "LLM_FAILED (status='cache')"
+      },
+      "health": {
+        "contexto_available": true,
+        "contexto_word_count": 299,
+        "degenerate_embedding": false,
+        "embedding_top15_resolved_into_real_or_llm": 7,
+        "embedding_top5": [
+          "otters",
+          "beaver",
+          "dhc-6",
+          "c.l.",
+          "mink"
+        ],
+        "embedding_word_count": 300,
+        "has_contexto": true,
+        "llm_failed": true,
+        "llm_status": "cache",
+        "llm_word_count": 214
+      },
+      "morphology": {
+        "emb_vs_real_overlap_raw": 96,
+        "emb_vs_real_overlap_stemmed": 96,
+        "embedding_top15_morph_count": 1,
+        "embedding_top15_morph_words": [
+          "otters"
+        ],
+        "llm_morph_reason": "LLM_FAILED (status='cache')",
+        "llm_top15_morph_count": null,
+        "llm_top15_morph_words": [],
+        "llm_vs_real_overlap_raw": null,
+        "llm_vs_real_overlap_stemmed": null,
+        "llm_vs_real_reason": "LLM_FAILED (status='cache')"
+      },
+      "target": "otter",
+      "transferability": {
+        "median_emb_rank_real_top15": 51.0,
+        "median_emb_rank_real_top15_n_resolved": 15,
+        "median_emb_rank_real_top15_n_unresolved": 0,
+        "median_emb_rank_real_top50": 143.5,
+        "median_emb_rank_real_top50_n_resolved": 50,
+        "median_emb_rank_real_top50_n_unresolved": 0,
+        "oov_count_real_top50": 0,
+        "oov_words": [],
+        "recall": {
+          "10": {
+            "capped": false,
+            "hits": 9,
+            "k": 10,
+            "rate": 0.9,
+            "requested_k": 10
+          },
+          "25": {
+            "capped": false,
+            "hits": 20,
+            "k": 25,
+            "rate": 0.8,
+            "requested_k": 25
+          },
+          "50": {
+            "capped": false,
+            "hits": 34,
+            "k": 50,
+            "rate": 0.68,
+            "requested_k": 50
+          }
+        },
+        "spearman_differs": false,
+        "spearman_intersection": 0.2612279823079653,
+        "spearman_n_shared": 96,
+        "spearman_stored": 0.2612279823079653,
+        "spearman_underpowered": false
+      }
+    },
+    "rhythm": {
+      "blind_spots": {
+        "reason": "LLM_FAILED (status='cache')"
+      },
+      "decomposition": {
+        "counts": {
+          "DISTRIBUTIONAL": 45,
+          "MORPH": 1,
+          "OTHER": 4,
+          "SYNONYM": 0
+        },
+        "synonym_folded_into_other": true,
+        "synonym_reason": "LLM_FAILED (status='cache')",
+        "window": 50
+      },
+      "embedding_vs_llm": {
+        "reason": "LLM_FAILED (status='cache')"
+      },
+      "health": {
+        "contexto_available": true,
+        "contexto_word_count": 299,
+        "degenerate_embedding": false,
+        "embedding_top15_resolved_into_real_or_llm": 10,
+        "embedding_top5": [
+          "rhythms",
+          "melody",
+          "guitar",
+          "rhythmic",
+          "tempo"
+        ],
+        "embedding_word_count": 300,
+        "has_contexto": true,
+        "llm_failed": true,
+        "llm_status": "cache",
+        "llm_word_count": 137
+      },
+      "morphology": {
+        "emb_vs_real_overlap_raw": 154,
+        "emb_vs_real_overlap_stemmed": 152,
+        "embedding_top15_morph_count": 2,
+        "embedding_top15_morph_words": [
+          "rhythms",
+          "rhythmic"
+        ],
+        "llm_morph_reason": "LLM_FAILED (status='cache')",
+        "llm_top15_morph_count": null,
+        "llm_top15_morph_words": [],
+        "llm_vs_real_overlap_raw": null,
+        "llm_vs_real_overlap_stemmed": null,
+        "llm_vs_real_reason": "LLM_FAILED (status='cache')"
+      },
+      "target": "rhythm",
+      "transferability": {
+        "median_emb_rank_real_top15": 37.0,
+        "median_emb_rank_real_top15_n_resolved": 15,
+        "median_emb_rank_real_top15_n_unresolved": 0,
+        "median_emb_rank_real_top50": 53.5,
+        "median_emb_rank_real_top50_n_resolved": 50,
+        "median_emb_rank_real_top50_n_unresolved": 0,
+        "oov_count_real_top50": 0,
+        "oov_words": [],
+        "recall": {
+          "10": {
+            "capped": false,
+            "hits": 9,
+            "k": 10,
+            "rate": 0.9,
+            "requested_k": 10
+          },
+          "25": {
+            "capped": false,
+            "hits": 23,
+            "k": 25,
+            "rate": 0.92,
+            "requested_k": 25
+          },
+          "50": {
+            "capped": false,
+            "hits": 46,
+            "k": 50,
+            "rate": 0.92,
+            "requested_k": 50
+          }
+        },
+        "spearman_differs": false,
+        "spearman_intersection": 0.5546030489647594,
+        "spearman_n_shared": 154,
+        "spearman_stored": 0.5546030489647594,
+        "spearman_underpowered": false
+      }
+    },
+    "safe": {
+      "blind_spots": {
+        "llm_overreach": [
+          {
+            "real_rank": 5,
+            "word": "secure"
+          },
+          {
+            "real_rank": null,
+            "word": "protected"
+          },
+          {
+            "real_rank": null,
+            "word": "safeguard"
+          },
+          {
+            "real_rank": 143,
+            "word": "guard"
+          },
+          {
+            "real_rank": null,
+            "word": "shield"
+          },
+          {
+            "real_rank": null,
+            "word": "defend"
+          },
+          {
+            "real_rank": null,
+            "word": "preserve"
+          },
+          {
+            "real_rank": 14,
+            "word": "keep"
+          },
+          {
+            "real_rank": 35,
+            "word": "hold"
+          },
+          {
+            "real_rank": null,
+            "word": "retain"
+          },
+          {
+            "real_rank": 195,
+            "word": "maintain"
+          },
+          {
+            "real_rank": null,
+            "word": "assure"
+          },
+          {
+            "real_rank": 154,
+            "word": "reliable"
+          },
+          {
+            "real_rank": 222,
+            "word": "certain"
+          },
+          {
+            "real_rank": null,
+            "word": "confident"
+          }
+        ],
+        "real_top50_absent_from_llm": [
+          "lockbox",
+          "bank",
+          "access",
+          "lock",
+          "inside",
+          "place",
+          "open",
+          "door",
+          "room",
+          "store",
+          "facility",
+          "put",
+          "outside",
+          "key",
+          "cash",
+          "provide",
+          "shop",
+          "available",
+          "easy",
+          "go",
+          "safely",
+          "behind",
+          "money",
+          "opening",
+          "need"
+        ],
+        "real_top50_absent_from_llm_count": 38,
+        "real_top50_absent_total": 38,
+        "recall": {
+          "10": {
+            "capped": false,
+            "hits": 3,
+            "k": 10,
+            "rate": 0.3,
+            "requested_k": 10
+          },
+          "25": {
+            "capped": false,
+            "hits": 10,
+            "k": 25,
+            "rate": 0.4,
+            "requested_k": 25
+          },
+          "50": {
+            "capped": false,
+            "hits": 12,
+            "k": 50,
+            "rate": 0.24,
+            "requested_k": 50
+          }
+        }
+      },
+      "decomposition": {
+        "counts": {
+          "DISTRIBUTIONAL": 14,
+          "MORPH": 2,
+          "OTHER": 23,
+          "SYNONYM": 11
+        },
+        "synonym_folded_into_other": false,
+        "window": 50
+      },
+      "embedding_vs_llm": {
+        "cut": 15,
+        "overlap": 2,
+        "shared_words": [
+          "assure",
+          "secure"
+        ]
+      },
+      "health": {
+        "contexto_available": true,
+        "contexto_word_count": 299,
+        "degenerate_embedding": false,
+        "embedding_top15_resolved_into_real_or_llm": 11,
+        "embedding_top5": [
+          "safer",
+          "secure",
+          "ensure",
+          "sure",
+          "haven"
+        ],
+        "embedding_word_count": 300,
+        "has_contexto": true,
+        "llm_failed": false,
+        "llm_status": "llm",
+        "llm_word_count": 120
+      },
+      "morphology": {
+        "emb_vs_real_overlap_raw": 87,
+        "emb_vs_real_overlap_stemmed": 85,
+        "embedding_top15_morph_count": 4,
+        "embedding_top15_morph_words": [
+          "safer",
+          "safely",
+          "safety",
+          "safest"
+        ],
+        "llm_top15_morph_count": 1,
+        "llm_top15_morph_words": [
+          "safeguard"
+        ],
+        "llm_vs_real_overlap_raw": 20,
+        "llm_vs_real_overlap_stemmed": 19
+      },
+      "target": "safe",
+      "transferability": {
+        "median_emb_rank_real_top15": 783.0,
+        "median_emb_rank_real_top15_n_resolved": 15,
+        "median_emb_rank_real_top15_n_unresolved": 0,
+        "median_emb_rank_real_top50": 414.5,
+        "median_emb_rank_real_top50_n_resolved": 50,
+        "median_emb_rank_real_top50_n_unresolved": 0,
+        "oov_count_real_top50": 0,
+        "oov_words": [],
+        "recall": {
+          "10": {
+            "capped": false,
+            "hits": 4,
+            "k": 10,
+            "rate": 0.4,
+            "requested_k": 10
+          },
+          "25": {
+            "capped": false,
+            "hits": 8,
+            "k": 25,
+            "rate": 0.32,
+            "requested_k": 25
+          },
+          "50": {
+            "capped": false,
+            "hits": 21,
+            "k": 50,
+            "rate": 0.42,
+            "requested_k": 50
+          }
+        },
+        "spearman_differs": false,
+        "spearman_intersection": 0.2980489243223609,
+        "spearman_n_shared": 87,
+        "spearman_stored": 0.2980489243223609,
+        "spearman_underpowered": false
+      }
+    }
+  }
+}

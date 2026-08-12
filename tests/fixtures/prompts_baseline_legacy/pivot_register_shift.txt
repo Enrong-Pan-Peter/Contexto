@@ -1,0 +1,11 @@
+Return only JSON, no markdown or explanation.
+The hidden target is semantically close to shrub, which has rank 50, but it may be
+in a different lexical register: more technical, more general, more specific, or a
+different part of speech.
+Suggest 10 candidate single lowercase words across these registers.
+Every word must be one common lowercase dictionary word.
+Do not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.
+Avoid these already tried words: ["bush", "fern", "hedge", "shrub", "tree"]
+Do not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.
+JSON schema:
+{"words": ["word1", "word2", "word3"]}

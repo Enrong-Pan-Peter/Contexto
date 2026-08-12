@@ -501,3 +501,98 @@ caveats are recorded in
 [`docs/findings.md`](findings.md#2026-06-24--contexto-anchored-closeness-real-neighbors-are-mostly-associative)
 and
 [`docs/experiment_log.md`](experiment_log.md#2026-06-24--contexto-anchored-top-300-closeness-comparison).
+
+## Ollama `json_object` Response-Shape Normalization
+
+Decision: prompts that expect a JSON array now request a single-key object
+wrapper (for example `{"categories": [...]}` or `{"words": [...]}`), and
+`LLMClient` normalizes provider responses through `_normalize_json_list()` before
+returning them to solvers.
+
+Rationale: Ollama chat completions use `response_format: {"type": "json_object"}`,
+which forces a top-level JSON object. Several legacy prompts requested bare arrays
+(for example initial categories and word-list operators). When the model returned
+a single category dict instead of an array, callers that iterated the dict keys
+silently produced zero seeds or empty word lists. Git history shows this
+regression appeared when Ollama `json_object` enforcement and stricter JSON
+extraction landed (commit `b319a72` area); the array-shaped prompts themselves
+predate that change.
+
+Normalization policy:
+- Unwrap the expected key when present.
+- Accept bare top-level arrays from providers that do not force objects.
+- Tolerate alternate single-key wrappers and, for dict-element lists, wrap a bare
+  single category object.
+- Validate minimally (non-empty list of the expected element type), retry the LLM
+  call once on failure, then raise a clear error rather than continuing with a
+  degenerate seed set.
+
+Fail-fast initialization: EA-family methods and MAP-Elites now raise
+`RuntimeError` if initialization leaves an empty population or archive, instead
+of running empty generations.
+
+Research relevance: this is an infrastructure correctness fix, not a search
+algorithm change. Solver behavior with valid LLM responses should be unchanged;
+the main effect is surfacing broken init instead of logging misleading empty
+archives. Evidence: unit tests in `tests/test_initial_categories_parsing.py` and
+`tests/test_list_prompts_parsing.py`, plus a single-run pilot trace that exposed
+the empty-archive symptom before the fix
+([`traces/ea_llm_map_elites_aligned_ivory_run1_20260706_151900.json`](../traces/ea_llm_map_elites_aligned_ivory_run1_20260706_151900.json)).
+
+Code: [`contexto_solver/llm_client.py`](../contexto_solver/llm_client.py),
+[`contexto_solver/methods/ea_core.py`](../contexto_solver/methods/ea_core.py),
+[`contexto_solver/methods/ea_llm_map_elites.py`](../contexto_solver/methods/ea_llm_map_elites.py).
+
+## RQ1 Operator Self-Report Instrumentation (Logged-Only)
+
+Decision: add optional self-report fields to instrumented LLM proposal prompts,
+controlled by the global `SELF_REPORT` env flag (default off). When on, the model
+is asked for `predicted_closeness` in `[0, 1]` and a `rationale`
+(`basis_words` + `reason`) in the same JSON object as the proposal.
+
+Rationale: RQ1 asks whether operators can forecast semantic closeness to the
+hidden target from the information visible in their prompts. The measurement must
+not feed back into search, or it would confound operator and calibration
+experiments.
+
+Scope (instrumented vs not):
+- Instrumented: operator mutations (s/m/ml/l), crossover, pivot operators,
+  `specialize`, and `llm_only` `next_guess`.
+- Not instrumented: `propose_words`, `local_search`, `generate_initial_categories`,
+  and `place_word`. These paths either batch-propose candidates, refine around an
+  already-strong guess, seed the archive, or assign behavior coordinates rather
+  than making a single scored word proposal in the operator sense.
+
+Parse policy (never abort):
+- Strict parse from the proposal JSON (or raw text fallback).
+- One targeted follow-up asking only about the already-accepted proposed word if
+  `predicted_closeness` is missing.
+- On repeated failure, store null fields with `self_report_parse_failed=true`
+  and retain `self_report_raw` for offline re-parsing.
+
+Shared layer: all request text and parsing live in
+[`contexto_solver/self_report.py`](../contexto_solver/self_report.py). EA modes
+route instrumented calls through `BaseEALLMMethod._attach_self_report()`,
+`_complete_proposal()`, and `_crossover_request()`. `llm_only` uses
+`resolve_self_report()` directly because it has no `Hypothesis` object.
+
+Flag-off invariant: snapshot tests lock byte-identical prompts for every live
+mode's proposal call types (`tests/fixtures/prompts_baseline/`,
+`tests/fixtures/prompts_baseline_legacy/`, enforced by
+`tests/test_self_report_prompt.py` and `tests/test_legacy_prompt_snapshots.py`).
+
+Information isolation: operator/crossover prompts were audited for target-word,
+unguessed-rank, and sigma leakage (`tests/test_prompt_isolation.py`). Legacy
+non-operator prompts (`next_guess`, `specialize`, pivots, `propose_words`,
+`local_search`) received the same audit in the shared-layer follow-up; no leaks
+were found in the fixed fixture population used by those tests.
+
+Research relevance: the instrumentation is ready for audit runs, but paper
+claims about operator calibration require dedicated solver traces with
+`SELF_REPORT=1`, not unit tests alone. Current evidence quality is: unit/parser
+tests plus env-gated single-call Ollama smokes (`RUN_OLLAMA_SMOKE=1` in
+`tests/test_self_report_prompt.py` and related parsing tests). Full-run audit
+traces and batch calibration analysis remain future work. Verification tooling:
+[`scripts/verify_self_report_pilot.py`](../scripts/verify_self_report_pilot.py).
+
+Architecture detail: [`docs/architecture.md`](architecture.md#contexto_solverself_report).

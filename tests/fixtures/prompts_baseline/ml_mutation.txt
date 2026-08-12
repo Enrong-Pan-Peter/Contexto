@@ -1,0 +1,24 @@
+Return only JSON, no markdown or explanation.
+The current hypothesis is "types of plants".
+Description: plant taxonomy and related greenery
+Results so far in this hypothesis: {"fern": 120, "shrub": 50, "tree": 400}
+Best word so far: "shrub" with rank 50.
+
+Make a MEDIUM-LARGE mutation: produce a child hypothesis in an ADJACENT but
+distinct category that could still plausibly contain the hidden target given
+"shrub"'s rank. The child must NOT be a sub-category of "types of plants" - it
+should sit alongside "types of plants" in semantic space, not underneath it.
+
+For example, if the parent is "types of plants" and the best word is "shrub",
+an adjacent category could be "plant descriptors", "botanical terminology",
+"growth habits", or "ecological roles".
+
+Suggest one adjacent hypothesis. Include exactly 3 starter words that have
+not already been tried.
+Every word must be one common lowercase dictionary word.
+Do not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.
+Avoid these words: ["bush", "fern", "hedge", "shrub", "tree"]
+Avoid these invalid or unrecognized words: ["sourcream", "wildanimal"]
+Do not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.
+JSON schema:
+{"name": "category name", "description": "short description", "words": ["word1", "word2", "word3"]}

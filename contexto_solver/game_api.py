@@ -2,21 +2,118 @@
 
 from __future__ import annotations
 
+import math
+import statistics
 import time
+from typing import Any
 from urllib.parse import quote
 
 import requests
 
+from . import config
+from .rank_cache import INVALID_MARKER, RankCache
+
 
 class ContextoAPI:
-    def __init__(self, game_number: int, base_url: str, rate_limit: float = 0.5) -> None:
+    def __init__(
+        self,
+        game_number: int,
+        base_url: str,
+        rate_limit: float = 0.5,
+        *,
+        rank_cache_enabled: bool | None = None,
+        rank_cache_dir: str | None = None,
+    ) -> None:
         self.game_number = game_number
         self.base_url = base_url.rstrip("/")
         self.rate_limit = rate_limit
         self.guesses: dict[str, int] = {}
         self.invalid_guesses: set[str] = set()
+        use_cache = config.RANK_CACHE_ENABLED if rank_cache_enabled is None else rank_cache_enabled
+        self._rank_cache = (
+            RankCache(rank_cache_dir or config.RANK_CACHE_DIR, game_number, self.base_url)
+            if use_cache
+            else None
+        )
+        # Logging-only network telemetry: one record per HTTP call (cache hits
+        # never touch the network and are not recorded). Does not affect guess().
+        self.call_log: list[dict[str, Any]] = []
+        self._run_start_monotonic: float | None = None
+        self._run_end_monotonic: float | None = None
+
+    def _record_call(
+        self, word: str, *, status: int | None, outcome: str, latency_s: float, start_monotonic: float
+    ) -> None:
+        if self._run_start_monotonic is None:
+            self._run_start_monotonic = start_monotonic
+        self._run_end_monotonic = start_monotonic + latency_s
+        self.call_log.append(
+            {
+                "word": word,
+                "status": status,
+                "outcome": outcome,
+                "latency_s": round(latency_s, 4),
+                # No retry logic exists on this path; recorded for schema stability.
+                "retries": 0,
+            }
+        )
+
+    @property
+    def network_wall_clock_seconds(self) -> float | None:
+        """Wall-clock SPAN from the first HTTP call's start to the last call's end.
+
+        This is a span, NOT a sum of latencies: it includes everything that
+        happens between calls -- LLM generation, solver bookkeeping, and the
+        ``rate_limit`` sleep before each request. It therefore vastly exceeds the
+        summed round-trip time and MUST NOT be read as network cost. For the
+        actual network cost use ``total_latency_seconds`` from ``call_metrics``.
+        Returns ``None`` if no HTTP calls were made.
+        """
+        if self._run_start_monotonic is None or self._run_end_monotonic is None:
+            return None
+        return round(self._run_end_monotonic - self._run_start_monotonic, 4)
+
+    def call_metrics(self) -> dict[str, Any]:
+        """Aggregate per-call telemetry (logging-only; safe to call anytime).
+
+        Two latency figures are reported and must not be conflated:
+
+        - ``total_latency_seconds``: the SUM of per-call HTTP round-trip
+          latencies. This is the true network cost of the run.
+        - ``network_wall_clock_seconds``: the wall-clock SPAN from the first
+          call's start to the last call's end. It includes LLM generation and
+          per-call rate-limit sleeps between requests, so it is far larger than
+          ``total_latency_seconds`` and is NOT a measure of network cost.
+        """
+        latencies = [c["latency_s"] for c in self.call_log]
+        status_counts: dict[str, int] = {}
+        outcome_counts: dict[str, int] = {}
+        for call in self.call_log:
+            status_counts[str(call["status"])] = status_counts.get(str(call["status"]), 0) + 1
+            outcome_counts[call["outcome"]] = outcome_counts.get(call["outcome"], 0) + 1
+        return {
+            "network_calls": len(self.call_log),
+            "network_wall_clock_seconds": self.network_wall_clock_seconds,
+            "total_latency_seconds": round(sum(latencies), 4) if latencies else 0.0,
+            "mean_latency_seconds": round(sum(latencies) / len(latencies), 4) if latencies else None,
+            "median_latency_seconds": round(statistics.median(latencies), 4) if latencies else None,
+            "p95_latency_seconds": _percentile(latencies, 95),
+            "max_latency_seconds": max(latencies) if latencies else None,
+            "status_counts": status_counts,
+            "outcome_counts": outcome_counts,
+        }
 
     def guess(self, word: str) -> int:
+        """Return the 1-based rank of ``word``, or -1 for an invalid word.
+
+        Invalid-word caching is restricted to DEFINITIVE responses: only an HTTP
+        404 (the API's "unknown word" answer) marks a word invalid in the
+        persistent rank cache. Transport failures (connection errors, timeouts),
+        transient HTTP errors (non-404 >= 400), and malformed payloads are
+        retried once and then raised WITHOUT writing the cache, so a flaky
+        network can never poison the shared per-game cache. Valid-word behavior
+        is unchanged.
+        """
         cleaned_word = word.lower().strip()
         if not cleaned_word:
             return -1
@@ -25,28 +122,73 @@ class ContextoAPI:
         if cleaned_word in self.invalid_guesses:
             return -1
 
-        time.sleep(self.rate_limit)
+        if self._rank_cache is not None:
+            cached = self._rank_cache.lookup(cleaned_word)
+            if cached == INVALID_MARKER:
+                self.invalid_guesses.add(cleaned_word)
+                return -1
+            if isinstance(cached, int):
+                self.guesses[cleaned_word] = cached
+                return cached
+
         url = f"{self.base_url}/{self.game_number}/{quote(cleaned_word)}"
-        try:
-            response = requests.get(url, timeout=15)
-        except requests.RequestException:
-            self.invalid_guesses.add(cleaned_word)
-            return -1
+        last_error: Exception | None = None
+        for _attempt in range(2):
+            time.sleep(self.rate_limit)
+            start = time.monotonic()
+            try:
+                response = requests.get(url, timeout=15)
+            except requests.RequestException as exc:
+                self._record_call(
+                    cleaned_word, status=None, outcome="exception", latency_s=time.monotonic() - start, start_monotonic=start
+                )
+                last_error = exc
+                continue
 
-        if response.status_code >= 400:
-            self.invalid_guesses.add(cleaned_word)
-            return -1
+            latency_s = time.monotonic() - start
+            if response.status_code == 404:
+                # Definitive: the API does not know this word.
+                self._record_call(
+                    cleaned_word, status=response.status_code, outcome="http_error", latency_s=latency_s, start_monotonic=start
+                )
+                self.invalid_guesses.add(cleaned_word)
+                if self._rank_cache is not None:
+                    self._rank_cache.store(cleaned_word, rank=None, invalid=True)
+                return -1
 
-        try:
-            rank = int(response.json()["distance"])
-        except (KeyError, TypeError, ValueError):
-            self.invalid_guesses.add(cleaned_word)
-            return -1
+            if response.status_code >= 400:
+                self._record_call(
+                    cleaned_word, status=response.status_code, outcome="http_error", latency_s=latency_s, start_monotonic=start
+                )
+                last_error = requests.HTTPError(
+                    f"HTTP {response.status_code} for {url}", response=response
+                )
+                continue
 
-        # The public API returns 0 for the answer. The shared interface uses 1.
-        normalized_rank = rank + 1
-        self.guesses[cleaned_word] = normalized_rank
-        return normalized_rank
+            try:
+                rank = int(response.json()["distance"])
+            except (KeyError, TypeError, ValueError) as exc:
+                self._record_call(
+                    cleaned_word, status=response.status_code, outcome="bad_payload", latency_s=latency_s, start_monotonic=start
+                )
+                last_error = exc
+                continue
+
+            self._record_call(
+                cleaned_word, status=response.status_code, outcome="ok", latency_s=latency_s, start_monotonic=start
+            )
+            # The public API returns 0 for the answer. The shared interface uses 1.
+            normalized_rank = rank + 1
+            self.guesses[cleaned_word] = normalized_rank
+            if self._rank_cache is not None:
+                self._rank_cache.store(cleaned_word, rank=normalized_rank, invalid=False)
+            return normalized_rank
+
+        raise RuntimeError(
+            f"Contexto API request for {cleaned_word!r} (game {self.game_number}) "
+            f"failed after one retry: {last_error}. Nothing was written to the rank "
+            "cache, so the word can be retried later."
+        ) from last_error
 
     def total_guesses(self) -> int:
         return len(self.guesses)
@@ -59,3 +201,13 @@ class ContextoAPI:
 
     def is_solved(self) -> bool:
         return any(rank == 1 for rank in self.guesses.values())
+
+
+def _percentile(values: list[float], pct: float) -> float | None:
+    """Nearest-rank percentile of ``values`` in seconds, or ``None`` when empty."""
+    if not values:
+        return None
+    ordered = sorted(values)
+    rank = math.ceil(pct / 100 * len(ordered))
+    index = min(max(rank - 1, 0), len(ordered) - 1)
+    return round(ordered[index], 4)

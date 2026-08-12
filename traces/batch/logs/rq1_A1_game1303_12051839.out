@@ -1,0 +1,107 @@
+===== JOB INFORMATION =====
+Date: Tue Jul 21 23:02:52 EDT 2026
+Host: frnt190.frontenac.local
+Job ID: 12051839
+Python: /global/home/hpc6237/venvs/contexto/bin/python
+Python 3.11.5
+Tue Jul 21 23:02:52 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 580.167.08             Driver Version: 580.167.08     CUDA Version: 13.0     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100-SXM4-40GB          On  |   00000000:07:00.0 Off |                    0 |
+| N/A   57C    P0            350W /  400W |    1205MiB /  40960MiB |     98%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   1  NVIDIA A100-SXM4-40GB          On  |   00000000:0F:00.0 Off |                    0 |
+| N/A   56C    P0            349W /  400W |   15691MiB /  40960MiB |     98%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   2  NVIDIA A100-SXM4-40GB          On  |   00000000:47:00.0 Off |                    0 |
+| N/A   57C    P0            358W /  400W |   15691MiB /  40960MiB |     98%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   3  NVIDIA A100-SXM4-40GB          On  |   00000000:4E:00.0 Off |                    0 |
+| N/A   55C    P0            344W /  400W |    2343MiB /  40960MiB |     98%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   4  NVIDIA A100-SXM4-40GB          On  |   00000000:87:00.0 Off |                    0 |
+| N/A   65C    P0            294W /  400W |   11551MiB /  40960MiB |     99%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   5  NVIDIA A100-SXM4-40GB          On  |   00000000:90:00.0 Off |                    0 |
+| N/A   46C    P0             69W /  400W |       0MiB /  40960MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   6  NVIDIA A100-SXM4-40GB          On  |   00000000:B7:00.0 Off |                    0 |
+| N/A   38C    P0             58W /  400W |       0MiB /  40960MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   7  NVIDIA A100-SXM4-40GB          On  |   00000000:BD:00.0 Off |                    0 |
+| N/A   38C    P0             56W /  400W |       0MiB /  40960MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|    0   N/A  N/A         1045293      C   python                                 1196MiB |
+|    1   N/A  N/A          111239      C   python                                15682MiB |
+|    2   N/A  N/A          158153      C   python                                15682MiB |
+|    3   N/A  N/A          644852      C   python                                 2334MiB |
+|    4   N/A  N/A         1295077      C   python3.11                            11542MiB |
++-----------------------------------------------------------------------------------------+
+===== START NODE-LOCAL OLLAMA =====
+===== RECORD OLLAMA METADATA =====
+Metadata file: traces/rq1_A1/A1_game1303_ollama_metadata_job12051839.txt
+===== VERIFY REQUIRED MODEL =====
+===== RUN A1 GAME 1303 PILOT =====
+Generation 0: best word=sleep, best rank=97
+Generation 1: best word=cold, best rank=10
+Generation 2: best word=infection, best rank=8
+Generation 3: best word=infection, best rank=8
+Generation 4: best word=infection, best rank=8
+Generation 5: best word=fever, best rank=1
+Generation 0: best word=winter, best rank=279
+Generation 1: best word=period, best rank=135
+Generation 2: best word=fever, best rank=1
+Generation 0: best word=night, best rank=205
+Generation 1: best word=week, best rank=166
+Generation 2: best word=stomach, best rank=51
+Generation 3: best word=respiratory, best rank=38
+Generation 4: best word=respiratory, best rank=38
+Generation 5: best word=infection, best rank=8
+Generation 6: best word=infection, best rank=8
+Generation 7: best word=infection, best rank=8
+Generation 8: best word=fever, best rank=1
+Generation 0: best word=week, best rank=166
+Generation 1: best word=period, best rank=135
+Generation 2: best word=stomach, best rank=51
+Generation 3: best word=anxiety, best rank=44
+Generation 4: best word=anxiety, best rank=44
+Generation 5: best word=discomfort, best rank=19
+Generation 6: best word=temperature, best rank=2
+Generation 7: best word=fever, best rank=1
+Generation 0: best word=night, best rank=205
+Generation 1: best word=pain, best rank=5
+Generation 2: best word=fever, best rank=1
+Wrote JSON summary: traces/rq1_A1/A1_ea_llm_self_adaptive_game1303.json
+Wrote CSV summary: traces/rq1_A1/A1_ea_llm_self_adaptive_game1303.csv
+{
+  "total_runs": 5,
+  "solved_runs": 5,
+  "solve_rate": 1.0,
+  "average_guesses_solved": 229.2,
+  "average_best_rank": 1.0,
+  "average_generations": 4.8
+}
+===== PILOT FINISHED =====
+Exit status: 0
+Date: Wed Jul 22 03:42:12 EDT 2026
+Summary JSON: traces/rq1_A1/A1_ea_llm_self_adaptive_game1303.json
+Metadata: traces/rq1_A1/A1_game1303_ollama_metadata_job12051839.txt

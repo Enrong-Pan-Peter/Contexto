@@ -1,0 +1,12 @@
+Return only JSON, no markdown or explanation.
+The word shrub has rank 50 in a word similarity game, meaning it is close to the target.
+Suggest 3 words that could be even closer to the hidden target than shrub.
+Do not only return synonyms, group members, or subtypes of shrub.
+Explore multiple relation types: synonyms, common adjectives/descriptors, collocations,
+associated people or groups, causes/effects, and words that commonly appear near shrub.
+If shrub is a noun, include plausible adjectives or descriptors associated with it.
+Every word must be one common lowercase dictionary word.
+Avoid these already tried words: ["bush", "fern", "hedge", "shrub", "tree"]
+Do not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.
+JSON schema:
+{"words": ["word1", "word2", "word3"]}

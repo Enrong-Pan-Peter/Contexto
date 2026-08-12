@@ -68,6 +68,13 @@ class Solver:
                     self._log_solved()
                     return True
 
+        if not self._is_solved() and not self.hypotheses:
+            raise RuntimeError(
+                "Solver initialization produced an empty hypothesis population: "
+                f"none of the {len(categories)} initial categories were usable. "
+                "Refusing to run empty generations."
+            )
+
         self.logger.log(
             self.generation,
             "INIT",

@@ -1,0 +1,4129 @@
+[
+  {
+    "generation": -1,
+    "event": "RUN_CONFIG",
+    "timestamp": "2026-07-22T22:52:04",
+    "details": {
+      "game": "api",
+      "solver": "llm",
+      "method": "ea_llm_self_adaptive",
+      "mode": "api",
+      "target": null,
+      "game_number": 1303,
+      "run_index": 0,
+      "game_embedding_path": null,
+      "solver_embedding_path": null,
+      "embedding_backend": null,
+      "vocabulary_size": null,
+      "alignment": "api_unknown",
+      "trace_schema_version": 3,
+      "instrumentation_provenance_hash": "bd9f2858283673a2",
+      "self_report": true,
+      "rationale_inheritance": true,
+      "max_generations": 50,
+      "llm_provider": "ollama",
+      "llm_model": "gemma4:12b",
+      "llm_workers": 4,
+      "initial_categories": 15,
+      "max_active_hypotheses": null,
+      "local_search_rank_threshold": 100,
+      "self_adaptive_initial_categories": 15,
+      "self_adaptive_mu": 15,
+      "self_adaptive_concentration": 50.0,
+      "self_adaptive_sigma_floor": 0.02,
+      "self_adaptive_sigma_mode": "frozen_uniform",
+      "mapelites_grid_resolution": null,
+      "mapelites_mutations_per_gen": null,
+      "mapelites_crossovers_per_gen": null,
+      "mapelites_initial_categories": null,
+      "mapelites_concentration": null,
+      "mapelites_sigma_floor": null,
+      "mapelites_sigma_mode": null,
+      "mapelites_frozen_sigma": null,
+      "mapelites_ranked_context_k": null,
+      "rank_cache_enabled": true,
+      "enable_pivot": false,
+      "ea_llm_pivot_stall_no_improvement_generations": null,
+      "ea_llm_pivot_stall_close_rank_threshold": null,
+      "ea_llm_pivot_stall_close_generations_limit": null,
+      "ea_llm_pivot_max_attempts_per_run": null,
+      "ea_llm_pivot_candidate_words_per_operator": null,
+      "ea_llm_pivot_resolution_window": null,
+      "random_seed": 0
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:55:32",
+    "details": {
+      "word": "tree",
+      "rank": 2941,
+      "hypothesis": "nature",
+      "best_word": "tree",
+      "best_rank": 2941,
+      "total_guesses": 1
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:55:33",
+    "details": {
+      "word": "rock",
+      "rank": 2272,
+      "hypothesis": "nature",
+      "best_word": "rock",
+      "best_rank": 2272,
+      "total_guesses": 2
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:55:34",
+    "details": {
+      "word": "river",
+      "rank": 2976,
+      "hypothesis": "nature",
+      "best_word": "rock",
+      "best_rank": 2272,
+      "total_guesses": 3
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:55:34",
+    "details": {
+      "word": "apple",
+      "rank": 5069,
+      "hypothesis": "food",
+      "best_word": "rock",
+      "best_rank": 2272,
+      "total_guesses": 4
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:55:35",
+    "details": {
+      "word": "bread",
+      "rank": 4263,
+      "hypothesis": "food",
+      "best_word": "rock",
+      "best_rank": 2272,
+      "total_guesses": 5
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:55:36",
+    "details": {
+      "word": "cheese",
+      "rank": 3410,
+      "hypothesis": "food",
+      "best_word": "rock",
+      "best_rank": 2272,
+      "total_guesses": 6
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:55:37",
+    "details": {
+      "word": "phone",
+      "rank": 4602,
+      "hypothesis": "technology",
+      "best_word": "rock",
+      "best_rank": 2272,
+      "total_guesses": 7
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:55:37",
+    "details": {
+      "word": "camera",
+      "rank": 4451,
+      "hypothesis": "technology",
+      "best_word": "rock",
+      "best_rank": 2272,
+      "total_guesses": 8
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:55:38",
+    "details": {
+      "word": "laptop",
+      "rank": 6399,
+      "hypothesis": "technology",
+      "best_word": "rock",
+      "best_rank": 2272,
+      "total_guesses": 9
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:55:39",
+    "details": {
+      "word": "rain",
+      "rank": 443,
+      "hypothesis": "weather",
+      "best_word": "rain",
+      "best_rank": 443,
+      "total_guesses": 10
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:55:40",
+    "details": {
+      "word": "snow",
+      "rank": 1248,
+      "hypothesis": "weather",
+      "best_word": "rain",
+      "best_rank": 443,
+      "total_guesses": 11
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:55:40",
+    "details": {
+      "word": "storm",
+      "rank": 1252,
+      "hypothesis": "weather",
+      "best_word": "rain",
+      "best_rank": 443,
+      "total_guesses": 12
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:55:41",
+    "details": {
+      "word": "chair",
+      "rank": 6099,
+      "hypothesis": "furniture",
+      "best_word": "rain",
+      "best_rank": 443,
+      "total_guesses": 13
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:55:42",
+    "details": {
+      "word": "table",
+      "rank": 1407,
+      "hypothesis": "furniture",
+      "best_word": "rain",
+      "best_rank": 443,
+      "total_guesses": 14
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:55:43",
+    "details": {
+      "word": "lamp",
+      "rank": 3607,
+      "hypothesis": "furniture",
+      "best_word": "rain",
+      "best_rank": 443,
+      "total_guesses": 15
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:55:43",
+    "details": {
+      "word": "shirt",
+      "rank": 3608,
+      "hypothesis": "clothing",
+      "best_word": "rain",
+      "best_rank": 443,
+      "total_guesses": 16
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:55:44",
+    "details": {
+      "word": "coat",
+      "rank": 1780,
+      "hypothesis": "clothing",
+      "best_word": "rain",
+      "best_rank": 443,
+      "total_guesses": 17
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:55:45",
+    "details": {
+      "word": "dress",
+      "rank": 3500,
+      "hypothesis": "clothing",
+      "best_word": "rain",
+      "best_rank": 443,
+      "total_guesses": 18
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:55:45",
+    "details": {
+      "word": "soccer",
+      "rank": 4164,
+      "hypothesis": "sports",
+      "best_word": "rain",
+      "best_rank": 443,
+      "total_guesses": 19
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:55:46",
+    "details": {
+      "word": "tennis",
+      "rank": 7491,
+      "hypothesis": "sports",
+      "best_word": "rain",
+      "best_rank": 443,
+      "total_guesses": 20
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:55:47",
+    "details": {
+      "word": "dance",
+      "rank": 4134,
+      "hypothesis": "sports",
+      "best_word": "rain",
+      "best_rank": 443,
+      "total_guesses": 21
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:55:48",
+    "details": {
+      "word": "car",
+      "rank": 2849,
+      "hypothesis": "travel",
+      "best_word": "rain",
+      "best_rank": 443,
+      "total_guesses": 22
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:55:48",
+    "details": {
+      "word": "train",
+      "rank": 3217,
+      "hypothesis": "travel",
+      "best_word": "rain",
+      "best_rank": 443,
+      "total_guesses": 23
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:55:49",
+    "details": {
+      "word": "plane",
+      "rank": 2790,
+      "hypothesis": "travel",
+      "best_word": "rain",
+      "best_rank": 443,
+      "total_guesses": 24
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:55:50",
+    "details": {
+      "word": "hand",
+      "rank": 841,
+      "hypothesis": "anatomy",
+      "best_word": "rain",
+      "best_rank": 443,
+      "total_guesses": 25
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:55:51",
+    "details": {
+      "word": "foot",
+      "rank": 586,
+      "hypothesis": "anatomy",
+      "best_word": "rain",
+      "best_rank": 443,
+      "total_guesses": 26
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:55:51",
+    "details": {
+      "word": "head",
+      "rank": 587,
+      "hypothesis": "anatomy",
+      "best_word": "rain",
+      "best_rank": 443,
+      "total_guesses": 27
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:55:52",
+    "details": {
+      "word": "school",
+      "rank": 1906,
+      "hypothesis": "education",
+      "best_word": "rain",
+      "best_rank": 443,
+      "total_guesses": 28
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:55:53",
+    "details": {
+      "word": "book",
+      "rank": 2512,
+      "hypothesis": "education",
+      "best_word": "rain",
+      "best_rank": 443,
+      "total_guesses": 29
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:55:54",
+    "details": {
+      "word": "desk",
+      "rank": 4720,
+      "hypothesis": "education",
+      "best_word": "rain",
+      "best_rank": 443,
+      "total_guesses": 30
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:55:54",
+    "details": {
+      "word": "paint",
+      "rank": 2905,
+      "hypothesis": "art",
+      "best_word": "rain",
+      "best_rank": 443,
+      "total_guesses": 31
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:55:55",
+    "details": {
+      "word": "sketch",
+      "rank": 7359,
+      "hypothesis": "art",
+      "best_word": "rain",
+      "best_rank": 443,
+      "total_guesses": 32
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:55:56",
+    "details": {
+      "word": "craft",
+      "rank": 7896,
+      "hypothesis": "art",
+      "best_word": "rain",
+      "best_rank": 443,
+      "total_guesses": 33
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:55:56",
+    "details": {
+      "word": "star",
+      "rank": 2559,
+      "hypothesis": "space",
+      "best_word": "rain",
+      "best_rank": 443,
+      "total_guesses": 34
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:55:57",
+    "details": {
+      "word": "moon",
+      "rank": 1550,
+      "hypothesis": "space",
+      "best_word": "rain",
+      "best_rank": 443,
+      "total_guesses": 35
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:55:58",
+    "details": {
+      "word": "planet",
+      "rank": 2810,
+      "hypothesis": "space",
+      "best_word": "rain",
+      "best_rank": 443,
+      "total_guesses": 36
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:55:59",
+    "details": {
+      "word": "office",
+      "rank": 3987,
+      "hypothesis": "career",
+      "best_word": "rain",
+      "best_rank": 443,
+      "total_guesses": 37
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:55:59",
+    "details": {
+      "word": "money",
+      "rank": 2720,
+      "hypothesis": "career",
+      "best_word": "rain",
+      "best_rank": 443,
+      "total_guesses": 38
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:56:00",
+    "details": {
+      "word": "job",
+      "rank": 3107,
+      "hypothesis": "career",
+      "best_word": "rain",
+      "best_rank": 443,
+      "total_guesses": 39
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:56:01",
+    "details": {
+      "word": "happy",
+      "rank": 3118,
+      "hypothesis": "emotion",
+      "best_word": "rain",
+      "best_rank": 443,
+      "total_guesses": 40
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:56:02",
+    "details": {
+      "word": "angry",
+      "rank": 5204,
+      "hypothesis": "emotion",
+      "best_word": "rain",
+      "best_rank": 443,
+      "total_guesses": 41
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:56:02",
+    "details": {
+      "word": "afraid",
+      "rank": 3039,
+      "hypothesis": "emotion",
+      "best_word": "rain",
+      "best_rank": 443,
+      "total_guesses": 42
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:56:03",
+    "details": {
+      "word": "song",
+      "rank": 2434,
+      "hypothesis": "music",
+      "best_word": "rain",
+      "best_rank": 443,
+      "total_guesses": 43
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:56:04",
+    "details": {
+      "word": "note",
+      "rank": 773,
+      "hypothesis": "music",
+      "best_word": "rain",
+      "best_rank": 443,
+      "total_guesses": 44
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T22:56:05",
+    "details": {
+      "word": "drum",
+      "rank": 4905,
+      "hypothesis": "music",
+      "best_word": "rain",
+      "best_rank": 443,
+      "total_guesses": 45
+    }
+  },
+  {
+    "generation": 0,
+    "event": "INIT",
+    "timestamp": "2026-07-22T22:56:05",
+    "details": {
+      "hypotheses": [
+        {
+          "hypothesis_id": "66a9701504614d94998b57f5de38e060",
+          "category_name": "nature",
+          "description": "natural environment elements",
+          "words_tried": {
+            "rock": 2272,
+            "tree": 2941,
+            "river": 2976
+          },
+          "best_word": "rock",
+          "best_rank": 2272,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "17ba48bfa72342089aee805e778e5539",
+          "category_name": "food",
+          "description": "edible items and staples",
+          "words_tried": {
+            "cheese": 3410,
+            "bread": 4263,
+            "apple": 5069
+          },
+          "best_word": "cheese",
+          "best_rank": 3410,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "4d3729168df044ee931e5d97a14e3979",
+          "category_name": "technology",
+          "description": "electronic devices and tools",
+          "words_tried": {
+            "camera": 4451,
+            "phone": 4602,
+            "laptop": 6399
+          },
+          "best_word": "camera",
+          "best_rank": 4451,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "e2d11e44cb9d4c30b07a8ce88f047cd3",
+          "category_name": "weather",
+          "description": "atmospheric conditions",
+          "words_tried": {
+            "rain": 443,
+            "snow": 1248,
+            "storm": 1252
+          },
+          "best_word": "rain",
+          "best_rank": 443,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "25d4cf7e31bf429cb74b0bc272928289",
+          "category_name": "furniture",
+          "description": "household items",
+          "words_tried": {
+            "table": 1407,
+            "lamp": 3607,
+            "chair": 6099
+          },
+          "best_word": "table",
+          "best_rank": 1407,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "e95a644a4de4460fa4fa7f536077473a",
+          "category_name": "clothing",
+          "description": "items of apparel",
+          "words_tried": {
+            "coat": 1780,
+            "dress": 3500,
+            "shirt": 3608
+          },
+          "best_word": "coat",
+          "best_rank": 1780,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "61a77b1a15b04d75bb2fb3719e80ff52",
+          "category_name": "sports",
+          "description": "physical activities and games",
+          "words_tried": {
+            "dance": 4134,
+            "soccer": 4164,
+            "tennis": 7491
+          },
+          "best_word": "dance",
+          "best_rank": 4134,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "dc7c71fa45814e279c5e536a7bdf0cc7",
+          "category_name": "travel",
+          "description": "modes of transportation",
+          "words_tried": {
+            "plane": 2790,
+            "car": 2849,
+            "train": 3217
+          },
+          "best_word": "plane",
+          "best_rank": 2790,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "8cb2f91fcd73423fa80447beecfa16f5",
+          "category_name": "anatomy",
+          "description": "human body parts",
+          "words_tried": {
+            "foot": 586,
+            "head": 587,
+            "hand": 841
+          },
+          "best_word": "foot",
+          "best_rank": 586,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "19ba77edef114700b34fb65726ed3e3a",
+          "category_name": "education",
+          "description": "school and learning terms",
+          "words_tried": {
+            "school": 1906,
+            "book": 2512,
+            "desk": 4720
+          },
+          "best_word": "school",
+          "best_rank": 1906,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "060235204aaa4fc3af387afb3ab370a8",
+          "category_name": "art",
+          "description": "creative expressions",
+          "words_tried": {
+            "paint": 2905,
+            "sketch": 7359,
+            "craft": 7896
+          },
+          "best_word": "paint",
+          "best_rank": 2905,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "8af6ad84a2a34ad89dc2502ea2f2bdf1",
+          "category_name": "space",
+          "description": "celestial bodies",
+          "words_tried": {
+            "moon": 1550,
+            "star": 2559,
+            "planet": 2810
+          },
+          "best_word": "moon",
+          "best_rank": 1550,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "982e04ca99534f0d85700a34999e2c59",
+          "category_name": "career",
+          "description": "work and employment",
+          "words_tried": {
+            "money": 2720,
+            "job": 3107,
+            "office": 3987
+          },
+          "best_word": "money",
+          "best_rank": 2720,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "e1d8161588d44e8ba2662d73960228eb",
+          "category_name": "emotion",
+          "description": "feelings and moods",
+          "words_tried": {
+            "afraid": 3039,
+            "happy": 3118,
+            "angry": 5204
+          },
+          "best_word": "afraid",
+          "best_rank": 3039,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "ce434118104a497b91110e6c92da14ce",
+          "category_name": "music",
+          "description": "auditory expressions",
+          "words_tried": {
+            "note": 773,
+            "song": 2434,
+            "drum": 4905
+          },
+          "best_word": "note",
+          "best_rank": 773,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        }
+      ],
+      "best_word": "rain",
+      "best_rank": 443,
+      "total_guesses": 45
+    }
+  },
+  {
+    "generation": 0,
+    "event": "SIGMA_TRAJECTORY",
+    "timestamp": "2026-07-22T22:56:05",
+    "details": {
+      "mean_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "population_size": 15
+    }
+  },
+  {
+    "generation": 1,
+    "event": "CANDIDATES",
+    "timestamp": "2026-07-22T23:10:15",
+    "details": {
+      "count": 45,
+      "candidates": [
+        {
+          "hypothesis": "nature",
+          "word": "mountain"
+        },
+        {
+          "hypothesis": "nature",
+          "word": "forest"
+        },
+        {
+          "hypothesis": "nature",
+          "word": "grass"
+        },
+        {
+          "hypothesis": "food",
+          "word": "fruit"
+        },
+        {
+          "hypothesis": "food",
+          "word": "meat"
+        },
+        {
+          "hypothesis": "food",
+          "word": "milk"
+        },
+        {
+          "hypothesis": "technology",
+          "word": "computer"
+        },
+        {
+          "hypothesis": "technology",
+          "word": "internet"
+        },
+        {
+          "hypothesis": "technology",
+          "word": "software"
+        },
+        {
+          "hypothesis": "weather",
+          "word": "cloud"
+        },
+        {
+          "hypothesis": "weather",
+          "word": "wind"
+        },
+        {
+          "hypothesis": "weather",
+          "word": "climate"
+        },
+        {
+          "hypothesis": "furniture",
+          "word": "sofa"
+        },
+        {
+          "hypothesis": "furniture",
+          "word": "bed"
+        },
+        {
+          "hypothesis": "furniture",
+          "word": "cabinet"
+        },
+        {
+          "hypothesis": "clothing",
+          "word": "pants"
+        },
+        {
+          "hypothesis": "clothing",
+          "word": "skirt"
+        },
+        {
+          "hypothesis": "clothing",
+          "word": "suit"
+        },
+        {
+          "hypothesis": "sports",
+          "word": "golf"
+        },
+        {
+          "hypothesis": "sports",
+          "word": "hockey"
+        },
+        {
+          "hypothesis": "sports",
+          "word": "baseball"
+        },
+        {
+          "hypothesis": "travel",
+          "word": "bus"
+        },
+        {
+          "hypothesis": "travel",
+          "word": "truck"
+        },
+        {
+          "hypothesis": "travel",
+          "word": "boat"
+        },
+        {
+          "hypothesis": "anatomy",
+          "word": "arm"
+        },
+        {
+          "hypothesis": "anatomy",
+          "word": "leg"
+        },
+        {
+          "hypothesis": "anatomy",
+          "word": "face"
+        },
+        {
+          "hypothesis": "education",
+          "word": "study"
+        },
+        {
+          "hypothesis": "education",
+          "word": "student"
+        },
+        {
+          "hypothesis": "education",
+          "word": "teacher"
+        },
+        {
+          "hypothesis": "art",
+          "word": "drawing"
+        },
+        {
+          "hypothesis": "art",
+          "word": "sculpture"
+        },
+        {
+          "hypothesis": "art",
+          "word": "canvas"
+        },
+        {
+          "hypothesis": "space",
+          "word": "galaxy"
+        },
+        {
+          "hypothesis": "space",
+          "word": "universe"
+        },
+        {
+          "hypothesis": "space",
+          "word": "cosmos"
+        },
+        {
+          "hypothesis": "career",
+          "word": "work"
+        },
+        {
+          "hypothesis": "career",
+          "word": "career"
+        },
+        {
+          "hypothesis": "career",
+          "word": "salary"
+        },
+        {
+          "hypothesis": "emotion",
+          "word": "sad"
+        },
+        {
+          "hypothesis": "emotion",
+          "word": "joy"
+        },
+        {
+          "hypothesis": "emotion",
+          "word": "calm"
+        },
+        {
+          "hypothesis": "music",
+          "word": "melody"
+        },
+        {
+          "hypothesis": "music",
+          "word": "tune"
+        },
+        {
+          "hypothesis": "music",
+          "word": "harmony"
+        }
+      ]
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:10:16",
+    "details": {
+      "word": "mountain",
+      "rank": 3248,
+      "hypothesis": "nature",
+      "best_word": "rain",
+      "best_rank": 443,
+      "total_guesses": 46
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:10:17",
+    "details": {
+      "word": "forest",
+      "rank": 4273,
+      "hypothesis": "nature",
+      "best_word": "rain",
+      "best_rank": 443,
+      "total_guesses": 47
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:10:18",
+    "details": {
+      "word": "grass",
+      "rank": 4397,
+      "hypothesis": "nature",
+      "best_word": "rain",
+      "best_rank": 443,
+      "total_guesses": 48
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:10:18",
+    "details": {
+      "word": "fruit",
+      "rank": 2594,
+      "hypothesis": "food",
+      "best_word": "rain",
+      "best_rank": 443,
+      "total_guesses": 49
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:10:19",
+    "details": {
+      "word": "meat",
+      "rank": 1092,
+      "hypothesis": "food",
+      "best_word": "rain",
+      "best_rank": 443,
+      "total_guesses": 50
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:10:20",
+    "details": {
+      "word": "milk",
+      "rank": 670,
+      "hypothesis": "food",
+      "best_word": "rain",
+      "best_rank": 443,
+      "total_guesses": 51
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:10:21",
+    "details": {
+      "word": "computer",
+      "rank": 1416,
+      "hypothesis": "technology",
+      "best_word": "rain",
+      "best_rank": 443,
+      "total_guesses": 52
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:10:21",
+    "details": {
+      "word": "internet",
+      "rank": 2429,
+      "hypothesis": "technology",
+      "best_word": "rain",
+      "best_rank": 443,
+      "total_guesses": 53
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:10:22",
+    "details": {
+      "word": "software",
+      "rank": 3760,
+      "hypothesis": "technology",
+      "best_word": "rain",
+      "best_rank": 443,
+      "total_guesses": 54
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:10:23",
+    "details": {
+      "word": "cloud",
+      "rank": 2244,
+      "hypothesis": "weather",
+      "best_word": "rain",
+      "best_rank": 443,
+      "total_guesses": 55
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:10:23",
+    "details": {
+      "word": "wind",
+      "rank": 592,
+      "hypothesis": "weather",
+      "best_word": "rain",
+      "best_rank": 443,
+      "total_guesses": 56
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:10:24",
+    "details": {
+      "word": "climate",
+      "rank": 889,
+      "hypothesis": "weather",
+      "best_word": "rain",
+      "best_rank": 443,
+      "total_guesses": 57
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:10:25",
+    "details": {
+      "word": "sofa",
+      "rank": 9051,
+      "hypothesis": "furniture",
+      "best_word": "rain",
+      "best_rank": 443,
+      "total_guesses": 58
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:10:26",
+    "details": {
+      "word": "bed",
+      "rank": 1099,
+      "hypothesis": "furniture",
+      "best_word": "rain",
+      "best_rank": 443,
+      "total_guesses": 59
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:10:26",
+    "details": {
+      "word": "cabinet",
+      "rank": 7023,
+      "hypothesis": "furniture",
+      "best_word": "rain",
+      "best_rank": 443,
+      "total_guesses": 60
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:10:27",
+    "details": {
+      "word": "pants",
+      "rank": 5652,
+      "hypothesis": "clothing",
+      "best_word": "rain",
+      "best_rank": 443,
+      "total_guesses": 61
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:10:28",
+    "details": {
+      "word": "skirt",
+      "rank": 6014,
+      "hypothesis": "clothing",
+      "best_word": "rain",
+      "best_rank": 443,
+      "total_guesses": 62
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:10:29",
+    "details": {
+      "word": "suit",
+      "rank": 3305,
+      "hypothesis": "clothing",
+      "best_word": "rain",
+      "best_rank": 443,
+      "total_guesses": 63
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:10:29",
+    "details": {
+      "word": "golf",
+      "rank": 5721,
+      "hypothesis": "sports",
+      "best_word": "rain",
+      "best_rank": 443,
+      "total_guesses": 64
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:10:30",
+    "details": {
+      "word": "hockey",
+      "rank": 5640,
+      "hypothesis": "sports",
+      "best_word": "rain",
+      "best_rank": 443,
+      "total_guesses": 65
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:10:31",
+    "details": {
+      "word": "baseball",
+      "rank": 4891,
+      "hypothesis": "sports",
+      "best_word": "rain",
+      "best_rank": 443,
+      "total_guesses": 66
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:10:32",
+    "details": {
+      "word": "bus",
+      "rank": 3594,
+      "hypothesis": "travel",
+      "best_word": "rain",
+      "best_rank": 443,
+      "total_guesses": 67
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:10:32",
+    "details": {
+      "word": "truck",
+      "rank": 4615,
+      "hypothesis": "travel",
+      "best_word": "rain",
+      "best_rank": 443,
+      "total_guesses": 68
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:10:33",
+    "details": {
+      "word": "boat",
+      "rank": 4916,
+      "hypothesis": "travel",
+      "best_word": "rain",
+      "best_rank": 443,
+      "total_guesses": 69
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:10:34",
+    "details": {
+      "word": "arm",
+      "rank": 1860,
+      "hypothesis": "anatomy",
+      "best_word": "rain",
+      "best_rank": 443,
+      "total_guesses": 70
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:10:34",
+    "details": {
+      "word": "leg",
+      "rank": 255,
+      "hypothesis": "anatomy",
+      "best_word": "leg",
+      "best_rank": 255,
+      "total_guesses": 71
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:10:35",
+    "details": {
+      "word": "face",
+      "rank": 1299,
+      "hypothesis": "anatomy",
+      "best_word": "leg",
+      "best_rank": 255,
+      "total_guesses": 72
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:10:36",
+    "details": {
+      "word": "study",
+      "rank": 775,
+      "hypothesis": "education",
+      "best_word": "leg",
+      "best_rank": 255,
+      "total_guesses": 73
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:10:37",
+    "details": {
+      "word": "student",
+      "rank": 4323,
+      "hypothesis": "education",
+      "best_word": "leg",
+      "best_rank": 255,
+      "total_guesses": 74
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:10:37",
+    "details": {
+      "word": "teacher",
+      "rank": 4847,
+      "hypothesis": "education",
+      "best_word": "leg",
+      "best_rank": 255,
+      "total_guesses": 75
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:10:38",
+    "details": {
+      "word": "drawing",
+      "rank": 3918,
+      "hypothesis": "art",
+      "best_word": "leg",
+      "best_rank": 255,
+      "total_guesses": 76
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:10:39",
+    "details": {
+      "word": "sculpture",
+      "rank": 16186,
+      "hypothesis": "art",
+      "best_word": "leg",
+      "best_rank": 255,
+      "total_guesses": 77
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:10:40",
+    "details": {
+      "word": "canvas",
+      "rank": 9192,
+      "hypothesis": "art",
+      "best_word": "leg",
+      "best_rank": 255,
+      "total_guesses": 78
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:10:40",
+    "details": {
+      "word": "galaxy",
+      "rank": 7906,
+      "hypothesis": "space",
+      "best_word": "leg",
+      "best_rank": 255,
+      "total_guesses": 79
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:10:41",
+    "details": {
+      "word": "universe",
+      "rank": 5744,
+      "hypothesis": "space",
+      "best_word": "leg",
+      "best_rank": 255,
+      "total_guesses": 80
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:10:42",
+    "details": {
+      "word": "cosmos",
+      "rank": 15635,
+      "hypothesis": "space",
+      "best_word": "leg",
+      "best_rank": 255,
+      "total_guesses": 81
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:10:43",
+    "details": {
+      "word": "work",
+      "rank": 973,
+      "hypothesis": "career",
+      "best_word": "leg",
+      "best_rank": 255,
+      "total_guesses": 82
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:10:43",
+    "details": {
+      "word": "career",
+      "rank": 4604,
+      "hypothesis": "career",
+      "best_word": "leg",
+      "best_rank": 255,
+      "total_guesses": 83
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:10:44",
+    "details": {
+      "word": "salary",
+      "rank": 8344,
+      "hypothesis": "career",
+      "best_word": "leg",
+      "best_rank": 255,
+      "total_guesses": 84
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:10:45",
+    "details": {
+      "word": "sad",
+      "rank": 3673,
+      "hypothesis": "emotion",
+      "best_word": "leg",
+      "best_rank": 255,
+      "total_guesses": 85
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:10:46",
+    "details": {
+      "word": "joy",
+      "rank": 3609,
+      "hypothesis": "emotion",
+      "best_word": "leg",
+      "best_rank": 255,
+      "total_guesses": 86
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:10:46",
+    "details": {
+      "word": "calm",
+      "rank": 1384,
+      "hypothesis": "emotion",
+      "best_word": "leg",
+      "best_rank": 255,
+      "total_guesses": 87
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:10:47",
+    "details": {
+      "word": "melody",
+      "rank": 5880,
+      "hypothesis": "music",
+      "best_word": "leg",
+      "best_rank": 255,
+      "total_guesses": 88
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:10:48",
+    "details": {
+      "word": "tune",
+      "rank": 2255,
+      "hypothesis": "music",
+      "best_word": "leg",
+      "best_rank": 255,
+      "total_guesses": 89
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:10:48",
+    "details": {
+      "word": "harmony",
+      "rank": 6766,
+      "hypothesis": "music",
+      "best_word": "leg",
+      "best_rank": 255,
+      "total_guesses": 90
+    }
+  },
+  {
+    "generation": 1,
+    "event": "SELECT",
+    "timestamp": "2026-07-22T23:10:48",
+    "details": {
+      "kept": [
+        "anatomy",
+        "weather",
+        "food",
+        "music",
+        "education"
+      ],
+      "discarded": [
+        "career",
+        "furniture",
+        "emotion",
+        "technology",
+        "space",
+        "clothing",
+        "nature",
+        "travel",
+        "art",
+        "sports"
+      ],
+      "elite": "anatomy",
+      "max_active_hypotheses": 5,
+      "best_word": "leg",
+      "best_rank": 255,
+      "total_guesses": 90
+    }
+  },
+  {
+    "generation": 1,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-22T23:13:37",
+    "details": {
+      "parent_id": "8cb2f91fcd73423fa80447beecfa16f5",
+      "child_id": "aeccbb6d89974138a4452a9a91ad2684",
+      "parent_rank": 255,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "physiology",
+      "sampled_op": "ml_mutation",
+      "method": "self_adaptive",
+      "self_report": {
+        "predicted_closeness": 0.8,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "arm",
+            "face",
+            "foot",
+            "hand",
+            "head",
+            "leg"
+          ],
+          "reason": "Physiology is the functional companion to anatomy, moving from structure to the biological processes within those structures."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"name\": \"physiology\", \"description\": \"the study of how body parts and organ systems function\", \"words\": [\"muscle\", \"bone\", \"heart\"], \"basis_words\": [\"arm\", \"face\", \"foot\", \"hand\", \"head\", \"leg\"], \"reason\": \"Physiology is the functional companion to anatomy, moving from structure to the biological processes within those structures.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.8}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"anatomy\".\nDescription: human body parts\nResults so far in this hypothesis: {\"arm\": 1860, \"face\": 1299, \"foot\": 586, \"hand\": 841, \"head\": 587, \"leg\": 255}\nBest word so far: \"leg\" with rank 255.\n\nMake a MEDIUM-LARGE mutation: produce a child hypothesis in an ADJACENT but\ndistinct category that could still plausibly contain the hidden target given\n\"leg\"'s rank. The child must NOT be a sub-category of \"anatomy\" - it\nshould sit alongside \"anatomy\" in semantic space, not underneath it.\n\nFor example, if the parent is \"types of plants\" and the best word is \"shrub\",\nan adjacent category could be \"plant descriptors\", \"botanical terminology\",\n\"growth habits\", or \"ecological roles\".\n\nSuggest one adjacent hypothesis. Include exactly 3 starter words that have\nnot already been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"afraid\", \"angry\", \"apple\", \"arm\", \"baseball\", \"bed\", \"boat\", \"book\", \"bread\", \"bus\", \"cabinet\", \"calm\", \"camera\", \"canvas\", \"car\", \"career\", \"chair\", \"cheese\", \"climate\", \"cloud\", \"coat\", \"computer\", \"cosmos\", \"craft\", \"dance\", \"desk\", \"drawing\", \"dress\", \"drum\", \"face\", \"foot\", \"forest\", \"fruit\", \"galaxy\", \"golf\", \"grass\", \"hand\", \"happy\", \"harmony\", \"head\", \"hockey\", \"internet\", \"job\", \"joy\", \"lamp\", \"laptop\", \"leg\", \"meat\", \"melody\", \"milk\", \"money\", \"moon\", \"mountain\", \"note\", \"office\", \"paint\", \"pants\", \"phone\", \"plane\", \"planet\", \"rain\", \"river\", \"rock\", \"sad\", \"salary\", \"school\", \"sculpture\", \"shirt\", \"sketch\", \"skirt\", \"snow\", \"soccer\", \"sofa\", \"software\", \"song\", \"star\", \"storm\", \"student\", \"study\", \"suit\", \"table\", \"teacher\", \"tennis\", \"train\", \"tree\", \"truck\", \"tune\", \"universe\", \"wind\", \"work\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"category name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:13:41",
+    "details": {
+      "word": "muscle",
+      "rank": 248,
+      "hypothesis": "physiology",
+      "best_word": "muscle",
+      "best_rank": 248,
+      "total_guesses": 91
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:13:41",
+    "details": {
+      "word": "bone",
+      "rank": 453,
+      "hypothesis": "physiology",
+      "best_word": "muscle",
+      "best_rank": 248,
+      "total_guesses": 92
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:13:42",
+    "details": {
+      "word": "heart",
+      "rank": 253,
+      "hypothesis": "physiology",
+      "best_word": "muscle",
+      "best_rank": 248,
+      "total_guesses": 93
+    }
+  },
+  {
+    "generation": 1,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-22T23:16:24",
+    "details": {
+      "parent_id": "e2d11e44cb9d4c30b07a8ce88f047cd3",
+      "child_id": "217d10b9dc824038a2f666a7ad9ebfdf",
+      "parent_rank": 443,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "precipitation types",
+      "sampled_op": "m_mutation",
+      "method": "self_adaptive",
+      "self_report": {
+        "predicted_closeness": 0.7,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "rain",
+            "snow",
+            "storm"
+          ],
+          "reason": "Since 'rain' performed better than 'snow' and 'storm', this mutation focuses on the specific types/forms of precipitation to narrow down the category."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"name\": \"precipitation types\", \"description\": \"specific forms of falling moisture or precipitation\", \"words\": [\"mist\", \"drizzle\", \"shower\"], \"basis_words\": [\"rain\", \"snow\", \"storm\"], \"reason\": \"Since 'rain' performed better than 'snow' and 'storm', this mutation focuses on the specific types/forms of precipitation to narrow down the category.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.7}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"weather\".\nDescription: atmospheric conditions\nResults so far in this hypothesis: {\"climate\": 889, \"cloud\": 2244, \"rain\": 443, \"snow\": 1248, \"storm\": 1252, \"wind\": 592}\nBest word so far: \"rain\" with rank 443.\n\nMake a MEDIUM mutation: produce a child hypothesis that reinterprets why\n\"rain\" might have scored well, or shifts to a related sense, lexical\nregister, or part of speech. The child should still be semantically anchored\nto \"rain\" but approach it from a clearly different angle than \"weather\".\n\nFor example, if the parent is \"food\" and the best word is \"bite\", a medium\nmutation could be \"animals that bite\", \"physical sensations from biting\", or\n\"clinical terms for biting and chewing\" - each treats \"bite\" through a\ndifferent lens.\n\nSuggest one reframed hypothesis. Include exactly 3 starter words that have\nnot already been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"afraid\", \"angry\", \"apple\", \"arm\", \"baseball\", \"bed\", \"boat\", \"bone\", \"book\", \"bread\", \"bus\", \"cabinet\", \"calm\", \"camera\", \"canvas\", \"car\", \"career\", \"chair\", \"cheese\", \"climate\", \"cloud\", \"coat\", \"computer\", \"cosmos\", \"craft\", \"dance\", \"desk\", \"drawing\", \"dress\", \"drum\", \"face\", \"foot\", \"forest\", \"fruit\", \"galaxy\", \"golf\", \"grass\", \"hand\", \"happy\", \"harmony\", \"head\", \"heart\", \"hockey\", \"internet\", \"job\", \"joy\", \"lamp\", \"laptop\", \"leg\", \"meat\", \"melody\", \"milk\", \"money\", \"moon\", \"mountain\", \"muscle\", \"note\", \"office\", \"paint\", \"pants\", \"phone\", \"plane\", \"planet\", \"rain\", \"river\", \"rock\", \"sad\", \"salary\", \"school\", \"sculpture\", \"shirt\", \"sketch\", \"skirt\", \"snow\", \"soccer\", \"sofa\", \"software\", \"song\", \"star\", \"storm\", \"student\", \"study\", \"suit\", \"table\", \"teacher\", \"tennis\", \"train\", \"tree\", \"truck\", \"tune\", \"universe\", \"wind\", \"work\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"direction name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:16:25",
+    "details": {
+      "word": "mist",
+      "rank": 1288,
+      "hypothesis": "precipitation types",
+      "best_word": "muscle",
+      "best_rank": 248,
+      "total_guesses": 94
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:16:26",
+    "details": {
+      "word": "drizzle",
+      "rank": 4764,
+      "hypothesis": "precipitation types",
+      "best_word": "muscle",
+      "best_rank": 248,
+      "total_guesses": 95
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:16:27",
+    "details": {
+      "word": "shower",
+      "rank": 2172,
+      "hypothesis": "precipitation types",
+      "best_word": "muscle",
+      "best_rank": 248,
+      "total_guesses": 96
+    }
+  },
+  {
+    "generation": 1,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-22T23:17:27",
+    "details": {
+      "parent_id": "17ba48bfa72342089aee805e778e5539",
+      "child_id": "6225205eb1874dde8baa952bfac59d65",
+      "parent_rank": 670,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "dairy products",
+      "sampled_op": "s_mutation",
+      "method": "self_adaptive",
+      "self_report": {
+        "predicted_closeness": 0.8,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "milk"
+          ],
+          "reason": "Since 'milk' is the best word, moving toward dairy-specific items narrows the broad 'food' category."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"name\": \"dairy products\", \"description\": \"products derived from milk\", \"words\": [\"cream\", \"yogurt\", \"butter\"], \"basis_words\": [\"milk\"], \"reason\": \"Since 'milk' is the best word, moving toward dairy-specific items narrows the broad 'food' category.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.8}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"food\".\nDescription: edible items and staples\nResults so far in this hypothesis: {\"apple\": 5069, \"bread\": 4263, \"cheese\": 3410, \"fruit\": 2594, \"meat\": 1092, \"milk\": 670}\nBest word so far: \"milk\" with rank 670.\n\nMake a SMALL mutation: produce a child hypothesis that stays in the same\nconceptual neighborhood as \"food\" but narrows or refines it. The new starter\nwords should be close semantic neighbors of \"milk\" - synonyms, common\ndescriptors, or words that frequently co-occur with it.\n\nFor example, if the parent is \"types of plants\" and the best word is \"shrub\",\na small mutation could be \"woody plants\" with starters like bush, hedge, thicket.\n\nSuggest one refined hypothesis. Include exactly 3 starter words that have not\nalready been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"afraid\", \"angry\", \"apple\", \"arm\", \"baseball\", \"bed\", \"boat\", \"bone\", \"book\", \"bread\", \"bus\", \"cabinet\", \"calm\", \"camera\", \"canvas\", \"car\", \"career\", \"chair\", \"cheese\", \"climate\", \"cloud\", \"coat\", \"computer\", \"cosmos\", \"craft\", \"dance\", \"desk\", \"drawing\", \"dress\", \"drizzle\", \"drum\", \"face\", \"foot\", \"forest\", \"fruit\", \"galaxy\", \"golf\", \"grass\", \"hand\", \"happy\", \"harmony\", \"head\", \"heart\", \"hockey\", \"internet\", \"job\", \"joy\", \"lamp\", \"laptop\", \"leg\", \"meat\", \"melody\", \"milk\", \"mist\", \"money\", \"moon\", \"mountain\", \"muscle\", \"note\", \"office\", \"paint\", \"pants\", \"phone\", \"plane\", \"planet\", \"rain\", \"river\", \"rock\", \"sad\", \"salary\", \"school\", \"sculpture\", \"shirt\", \"shower\", \"sketch\", \"skirt\", \"snow\", \"soccer\", \"sofa\", \"software\", \"song\", \"star\", \"storm\", \"student\", \"study\", \"suit\", \"table\", \"teacher\", \"tennis\", \"train\", \"tree\", \"truck\", \"tune\", \"universe\", \"wind\", \"work\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"direction name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:17:31",
+    "details": {
+      "word": "cream",
+      "rank": 1861,
+      "hypothesis": "dairy products",
+      "best_word": "muscle",
+      "best_rank": 248,
+      "total_guesses": 97
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:17:31",
+    "details": {
+      "word": "yogurt",
+      "rank": 5575,
+      "hypothesis": "dairy products",
+      "best_word": "muscle",
+      "best_rank": 248,
+      "total_guesses": 98
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:17:32",
+    "details": {
+      "word": "butter",
+      "rank": 2232,
+      "hypothesis": "dairy products",
+      "best_word": "muscle",
+      "best_rank": 248,
+      "total_guesses": 99
+    }
+  },
+  {
+    "generation": 1,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-22T23:18:56",
+    "details": {
+      "parent_id": "ce434118104a497b91110e6c92da14ce",
+      "child_id": "ff757cf7b0054fb2b84d0f59fb9c8adb",
+      "parent_rank": 773,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "musical theory",
+      "sampled_op": "s_mutation",
+      "method": "self_adaptive",
+      "self_report": {
+        "predicted_closeness": 0.7,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "note"
+          ],
+          "reason": "Since 'note' was the closest word, this focuses on specific musical structures like chords and scales."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"name\": \"musical theory\", \"description\": \"technical elements of music and notation\", \"words\": [\"chord\", \"pitch\", \"scale\"], \"basis_words\": [\"note\"], \"reason\": \"Since 'note' was the closest word, this focuses on specific musical structures like chords and scales.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.7}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"music\".\nDescription: auditory expressions\nResults so far in this hypothesis: {\"drum\": 4905, \"harmony\": 6766, \"melody\": 5880, \"note\": 773, \"song\": 2434, \"tune\": 2255}\nBest word so far: \"note\" with rank 773.\n\nMake a SMALL mutation: produce a child hypothesis that stays in the same\nconceptual neighborhood as \"music\" but narrows or refines it. The new starter\nwords should be close semantic neighbors of \"note\" - synonyms, common\ndescriptors, or words that frequently co-occur with it.\n\nFor example, if the parent is \"types of plants\" and the best word is \"shrub\",\na small mutation could be \"woody plants\" with starters like bush, hedge, thicket.\n\nSuggest one refined hypothesis. Include exactly 3 starter words that have not\nalready been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"afraid\", \"angry\", \"apple\", \"arm\", \"baseball\", \"bed\", \"boat\", \"bone\", \"book\", \"bread\", \"bus\", \"butter\", \"cabinet\", \"calm\", \"camera\", \"canvas\", \"car\", \"career\", \"chair\", \"cheese\", \"climate\", \"cloud\", \"coat\", \"computer\", \"cosmos\", \"craft\", \"cream\", \"dance\", \"desk\", \"drawing\", \"dress\", \"drizzle\", \"drum\", \"face\", \"foot\", \"forest\", \"fruit\", \"galaxy\", \"golf\", \"grass\", \"hand\", \"happy\", \"harmony\", \"head\", \"heart\", \"hockey\", \"internet\", \"job\", \"joy\", \"lamp\", \"laptop\", \"leg\", \"meat\", \"melody\", \"milk\", \"mist\", \"money\", \"moon\", \"mountain\", \"muscle\", \"note\", \"office\", \"paint\", \"pants\", \"phone\", \"plane\", \"planet\", \"rain\", \"river\", \"rock\", \"sad\", \"salary\", \"school\", \"sculpture\", \"shirt\", \"shower\", \"sketch\", \"skirt\", \"snow\", \"soccer\", \"sofa\", \"software\", \"song\", \"star\", \"storm\", \"student\", \"study\", \"suit\", \"table\", \"teacher\", \"tennis\", \"train\", \"tree\", \"truck\", \"tune\", \"universe\", \"wind\", \"work\", \"yogurt\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"direction name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:18:59",
+    "details": {
+      "word": "chord",
+      "rank": 5168,
+      "hypothesis": "musical theory",
+      "best_word": "muscle",
+      "best_rank": 248,
+      "total_guesses": 100
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:18:59",
+    "details": {
+      "word": "pitch",
+      "rank": 1481,
+      "hypothesis": "musical theory",
+      "best_word": "muscle",
+      "best_rank": 248,
+      "total_guesses": 101
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:19:00",
+    "details": {
+      "word": "scale",
+      "rank": 494,
+      "hypothesis": "musical theory",
+      "best_word": "muscle",
+      "best_rank": 248,
+      "total_guesses": 102
+    }
+  },
+  {
+    "generation": 1,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-22T23:21:28",
+    "details": {
+      "parent_id": "19ba77edef114700b34fb65726ed3e3a",
+      "child_id": "9cac60e4b55a46d2a5ef587d0362c697",
+      "parent_rank": 775,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "scientific inquiry",
+      "sampled_op": "l_mutation",
+      "method": "self_adaptive",
+      "self_report": {
+        "predicted_closeness": 0.4,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "study"
+          ],
+          "reason": "Shifts the focus from the educational setting (school/learning) to the methodology of scientific investigation while remaining within an intellectual framework."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"name\": \"scientific inquiry\", \"description\": \"systematic research and analysis of data\", \"words\": [\"science\", \"method\", \"analysis\"], \"basis_words\": [\"study\"], \"reason\": \"Shifts the focus from the educational setting (school/learning) to the methodology of scientific investigation while remaining within an intellectual framework.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"education\".\nDescription: school and learning terms\nBest word so far: \"study\" with rank 775.\nOther active categories already being explored: [\"food\", \"weather\", \"anatomy\", \"education\", \"music\", \"physiology\", \"precipitation types\", \"dairy products\", \"musical theory\"]\n\nMake a LARGE mutation: produce a child hypothesis in a broad, semantically\nsubstantial new direction that is unlike \"education\" and unlike the other active\ncategories above. The goal is to escape the current semantic region and open\nup unexplored territory, while staying plausibly relevant given \"study\"'s\nrank - lower ranks mean the target is closer to \"study\", so the jump\nmust remain in the same broad semantic area even when reframed.\n\nFor example, if the parent is \"types of plants\" and \"shrub\" ranks 50, a large\nmutation could be \"outdoor environments\" or \"rural landscape features\" -\nclearly outside the plant taxonomy but still in a plausible neighborhood for\na target close to \"shrub\".\n\nSuggest one new hypothesis. Include exactly 3 starter words that have not\nalready been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"afraid\", \"angry\", \"apple\", \"arm\", \"baseball\", \"bed\", \"boat\", \"bone\", \"book\", \"bread\", \"bus\", \"butter\", \"cabinet\", \"calm\", \"camera\", \"canvas\", \"car\", \"career\", \"chair\", \"cheese\", \"chord\", \"climate\", \"cloud\", \"coat\", \"computer\", \"cosmos\", \"craft\", \"cream\", \"dance\", \"desk\", \"drawing\", \"dress\", \"drizzle\", \"drum\", \"face\", \"foot\", \"forest\", \"fruit\", \"galaxy\", \"golf\", \"grass\", \"hand\", \"happy\", \"harmony\", \"head\", \"heart\", \"hockey\", \"internet\", \"job\", \"joy\", \"lamp\", \"laptop\", \"leg\", \"meat\", \"melody\", \"milk\", \"mist\", \"money\", \"moon\", \"mountain\", \"muscle\", \"note\", \"office\", \"paint\", \"pants\", \"phone\", \"pitch\", \"plane\", \"planet\", \"rain\", \"river\", \"rock\", \"sad\", \"salary\", \"scale\", \"school\", \"sculpture\", \"shirt\", \"shower\", \"sketch\", \"skirt\", \"snow\", \"soccer\", \"sofa\", \"software\", \"song\", \"star\", \"storm\", \"student\", \"study\", \"suit\", \"table\", \"teacher\", \"tennis\", \"train\", \"tree\", \"truck\", \"tune\", \"universe\", \"wind\", \"work\", \"yogurt\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"direction name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:21:32",
+    "details": {
+      "word": "science",
+      "rank": 2737,
+      "hypothesis": "scientific inquiry",
+      "best_word": "muscle",
+      "best_rank": 248,
+      "total_guesses": 103
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:21:32",
+    "details": {
+      "word": "method",
+      "rank": 940,
+      "hypothesis": "scientific inquiry",
+      "best_word": "muscle",
+      "best_rank": 248,
+      "total_guesses": 104
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:21:33",
+    "details": {
+      "word": "analysis",
+      "rank": 957,
+      "hypothesis": "scientific inquiry",
+      "best_word": "muscle",
+      "best_rank": 248,
+      "total_guesses": 105
+    }
+  },
+  {
+    "generation": 1,
+    "event": "MUTATE",
+    "timestamp": "2026-07-22T23:21:33",
+    "details": {
+      "method": "self_adaptive",
+      "children": [
+        {
+          "hypothesis_id": "aeccbb6d89974138a4452a9a91ad2684",
+          "category_name": "physiology",
+          "description": "the study of how body parts and organ systems function",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "anatomy",
+          "parent_id": "8cb2f91fcd73423fa80447beecfa16f5",
+          "origin": "self_adaptive_ml_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "self_report": {
+            "predicted_closeness": 0.8,
+            "predicted_closeness_clamped": false,
+            "predicted_bucket": "top100",
+            "rationale": {
+              "basis_words": [
+                "arm",
+                "face",
+                "foot",
+                "hand",
+                "head",
+                "leg"
+              ],
+              "reason": "Physiology is the functional companion to anatomy, moving from structure to the biological processes within those structures."
+            },
+            "self_report_parse_failed": false,
+            "self_report_raw": "{\"name\": \"physiology\", \"description\": \"the study of how body parts and organ systems function\", \"words\": [\"muscle\", \"bone\", \"heart\"], \"basis_words\": [\"arm\", \"face\", \"foot\", \"hand\", \"head\", \"leg\"], \"reason\": \"Physiology is the functional companion to anatomy, moving from structure to the biological processes within those structures.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.8}",
+            "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"anatomy\".\nDescription: human body parts\nResults so far in this hypothesis: {\"arm\": 1860, \"face\": 1299, \"foot\": 586, \"hand\": 841, \"head\": 587, \"leg\": 255}\nBest word so far: \"leg\" with rank 255.\n\nMake a MEDIUM-LARGE mutation: produce a child hypothesis in an ADJACENT but\ndistinct category that could still plausibly contain the hidden target given\n\"leg\"'s rank. The child must NOT be a sub-category of \"anatomy\" - it\nshould sit alongside \"anatomy\" in semantic space, not underneath it.\n\nFor example, if the parent is \"types of plants\" and the best word is \"shrub\",\nan adjacent category could be \"plant descriptors\", \"botanical terminology\",\n\"growth habits\", or \"ecological roles\".\n\nSuggest one adjacent hypothesis. Include exactly 3 starter words that have\nnot already been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"afraid\", \"angry\", \"apple\", \"arm\", \"baseball\", \"bed\", \"boat\", \"book\", \"bread\", \"bus\", \"cabinet\", \"calm\", \"camera\", \"canvas\", \"car\", \"career\", \"chair\", \"cheese\", \"climate\", \"cloud\", \"coat\", \"computer\", \"cosmos\", \"craft\", \"dance\", \"desk\", \"drawing\", \"dress\", \"drum\", \"face\", \"foot\", \"forest\", \"fruit\", \"galaxy\", \"golf\", \"grass\", \"hand\", \"happy\", \"harmony\", \"head\", \"hockey\", \"internet\", \"job\", \"joy\", \"lamp\", \"laptop\", \"leg\", \"meat\", \"melody\", \"milk\", \"money\", \"moon\", \"mountain\", \"note\", \"office\", \"paint\", \"pants\", \"phone\", \"plane\", \"planet\", \"rain\", \"river\", \"rock\", \"sad\", \"salary\", \"school\", \"sculpture\", \"shirt\", \"sketch\", \"skirt\", \"snow\", \"soccer\", \"sofa\", \"software\", \"song\", \"star\", \"storm\", \"student\", \"study\", \"suit\", \"table\", \"teacher\", \"tennis\", \"train\", \"tree\", \"truck\", \"tune\", \"universe\", \"wind\", \"work\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"category name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+            "injected_rationale_hash": null,
+            "rationale_truncated": false
+          }
+        },
+        {
+          "hypothesis_id": "217d10b9dc824038a2f666a7ad9ebfdf",
+          "category_name": "precipitation types",
+          "description": "specific forms of falling moisture or precipitation",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "weather",
+          "parent_id": "e2d11e44cb9d4c30b07a8ce88f047cd3",
+          "origin": "self_adaptive_m_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "self_report": {
+            "predicted_closeness": 0.7,
+            "predicted_closeness_clamped": false,
+            "predicted_bucket": "top100",
+            "rationale": {
+              "basis_words": [
+                "rain",
+                "snow",
+                "storm"
+              ],
+              "reason": "Since 'rain' performed better than 'snow' and 'storm', this mutation focuses on the specific types/forms of precipitation to narrow down the category."
+            },
+            "self_report_parse_failed": false,
+            "self_report_raw": "{\"name\": \"precipitation types\", \"description\": \"specific forms of falling moisture or precipitation\", \"words\": [\"mist\", \"drizzle\", \"shower\"], \"basis_words\": [\"rain\", \"snow\", \"storm\"], \"reason\": \"Since 'rain' performed better than 'snow' and 'storm', this mutation focuses on the specific types/forms of precipitation to narrow down the category.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.7}",
+            "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"weather\".\nDescription: atmospheric conditions\nResults so far in this hypothesis: {\"climate\": 889, \"cloud\": 2244, \"rain\": 443, \"snow\": 1248, \"storm\": 1252, \"wind\": 592}\nBest word so far: \"rain\" with rank 443.\n\nMake a MEDIUM mutation: produce a child hypothesis that reinterprets why\n\"rain\" might have scored well, or shifts to a related sense, lexical\nregister, or part of speech. The child should still be semantically anchored\nto \"rain\" but approach it from a clearly different angle than \"weather\".\n\nFor example, if the parent is \"food\" and the best word is \"bite\", a medium\nmutation could be \"animals that bite\", \"physical sensations from biting\", or\n\"clinical terms for biting and chewing\" - each treats \"bite\" through a\ndifferent lens.\n\nSuggest one reframed hypothesis. Include exactly 3 starter words that have\nnot already been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"afraid\", \"angry\", \"apple\", \"arm\", \"baseball\", \"bed\", \"boat\", \"bone\", \"book\", \"bread\", \"bus\", \"cabinet\", \"calm\", \"camera\", \"canvas\", \"car\", \"career\", \"chair\", \"cheese\", \"climate\", \"cloud\", \"coat\", \"computer\", \"cosmos\", \"craft\", \"dance\", \"desk\", \"drawing\", \"dress\", \"drum\", \"face\", \"foot\", \"forest\", \"fruit\", \"galaxy\", \"golf\", \"grass\", \"hand\", \"happy\", \"harmony\", \"head\", \"heart\", \"hockey\", \"internet\", \"job\", \"joy\", \"lamp\", \"laptop\", \"leg\", \"meat\", \"melody\", \"milk\", \"money\", \"moon\", \"mountain\", \"muscle\", \"note\", \"office\", \"paint\", \"pants\", \"phone\", \"plane\", \"planet\", \"rain\", \"river\", \"rock\", \"sad\", \"salary\", \"school\", \"sculpture\", \"shirt\", \"sketch\", \"skirt\", \"snow\", \"soccer\", \"sofa\", \"software\", \"song\", \"star\", \"storm\", \"student\", \"study\", \"suit\", \"table\", \"teacher\", \"tennis\", \"train\", \"tree\", \"truck\", \"tune\", \"universe\", \"wind\", \"work\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"direction name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+            "injected_rationale_hash": null,
+            "rationale_truncated": false
+          }
+        },
+        {
+          "hypothesis_id": "6225205eb1874dde8baa952bfac59d65",
+          "category_name": "dairy products",
+          "description": "products derived from milk",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "food",
+          "parent_id": "17ba48bfa72342089aee805e778e5539",
+          "origin": "self_adaptive_s_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "self_report": {
+            "predicted_closeness": 0.8,
+            "predicted_closeness_clamped": false,
+            "predicted_bucket": "top100",
+            "rationale": {
+              "basis_words": [
+                "milk"
+              ],
+              "reason": "Since 'milk' is the best word, moving toward dairy-specific items narrows the broad 'food' category."
+            },
+            "self_report_parse_failed": false,
+            "self_report_raw": "{\"name\": \"dairy products\", \"description\": \"products derived from milk\", \"words\": [\"cream\", \"yogurt\", \"butter\"], \"basis_words\": [\"milk\"], \"reason\": \"Since 'milk' is the best word, moving toward dairy-specific items narrows the broad 'food' category.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.8}",
+            "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"food\".\nDescription: edible items and staples\nResults so far in this hypothesis: {\"apple\": 5069, \"bread\": 4263, \"cheese\": 3410, \"fruit\": 2594, \"meat\": 1092, \"milk\": 670}\nBest word so far: \"milk\" with rank 670.\n\nMake a SMALL mutation: produce a child hypothesis that stays in the same\nconceptual neighborhood as \"food\" but narrows or refines it. The new starter\nwords should be close semantic neighbors of \"milk\" - synonyms, common\ndescriptors, or words that frequently co-occur with it.\n\nFor example, if the parent is \"types of plants\" and the best word is \"shrub\",\na small mutation could be \"woody plants\" with starters like bush, hedge, thicket.\n\nSuggest one refined hypothesis. Include exactly 3 starter words that have not\nalready been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"afraid\", \"angry\", \"apple\", \"arm\", \"baseball\", \"bed\", \"boat\", \"bone\", \"book\", \"bread\", \"bus\", \"cabinet\", \"calm\", \"camera\", \"canvas\", \"car\", \"career\", \"chair\", \"cheese\", \"climate\", \"cloud\", \"coat\", \"computer\", \"cosmos\", \"craft\", \"dance\", \"desk\", \"drawing\", \"dress\", \"drizzle\", \"drum\", \"face\", \"foot\", \"forest\", \"fruit\", \"galaxy\", \"golf\", \"grass\", \"hand\", \"happy\", \"harmony\", \"head\", \"heart\", \"hockey\", \"internet\", \"job\", \"joy\", \"lamp\", \"laptop\", \"leg\", \"meat\", \"melody\", \"milk\", \"mist\", \"money\", \"moon\", \"mountain\", \"muscle\", \"note\", \"office\", \"paint\", \"pants\", \"phone\", \"plane\", \"planet\", \"rain\", \"river\", \"rock\", \"sad\", \"salary\", \"school\", \"sculpture\", \"shirt\", \"shower\", \"sketch\", \"skirt\", \"snow\", \"soccer\", \"sofa\", \"software\", \"song\", \"star\", \"storm\", \"student\", \"study\", \"suit\", \"table\", \"teacher\", \"tennis\", \"train\", \"tree\", \"truck\", \"tune\", \"universe\", \"wind\", \"work\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"direction name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+            "injected_rationale_hash": null,
+            "rationale_truncated": false
+          }
+        },
+        {
+          "hypothesis_id": "ff757cf7b0054fb2b84d0f59fb9c8adb",
+          "category_name": "musical theory",
+          "description": "technical elements of music and notation",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "music",
+          "parent_id": "ce434118104a497b91110e6c92da14ce",
+          "origin": "self_adaptive_s_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "self_report": {
+            "predicted_closeness": 0.7,
+            "predicted_closeness_clamped": false,
+            "predicted_bucket": "top100",
+            "rationale": {
+              "basis_words": [
+                "note"
+              ],
+              "reason": "Since 'note' was the closest word, this focuses on specific musical structures like chords and scales."
+            },
+            "self_report_parse_failed": false,
+            "self_report_raw": "{\"name\": \"musical theory\", \"description\": \"technical elements of music and notation\", \"words\": [\"chord\", \"pitch\", \"scale\"], \"basis_words\": [\"note\"], \"reason\": \"Since 'note' was the closest word, this focuses on specific musical structures like chords and scales.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.7}",
+            "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"music\".\nDescription: auditory expressions\nResults so far in this hypothesis: {\"drum\": 4905, \"harmony\": 6766, \"melody\": 5880, \"note\": 773, \"song\": 2434, \"tune\": 2255}\nBest word so far: \"note\" with rank 773.\n\nMake a SMALL mutation: produce a child hypothesis that stays in the same\nconceptual neighborhood as \"music\" but narrows or refines it. The new starter\nwords should be close semantic neighbors of \"note\" - synonyms, common\ndescriptors, or words that frequently co-occur with it.\n\nFor example, if the parent is \"types of plants\" and the best word is \"shrub\",\na small mutation could be \"woody plants\" with starters like bush, hedge, thicket.\n\nSuggest one refined hypothesis. Include exactly 3 starter words that have not\nalready been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"afraid\", \"angry\", \"apple\", \"arm\", \"baseball\", \"bed\", \"boat\", \"bone\", \"book\", \"bread\", \"bus\", \"butter\", \"cabinet\", \"calm\", \"camera\", \"canvas\", \"car\", \"career\", \"chair\", \"cheese\", \"climate\", \"cloud\", \"coat\", \"computer\", \"cosmos\", \"craft\", \"cream\", \"dance\", \"desk\", \"drawing\", \"dress\", \"drizzle\", \"drum\", \"face\", \"foot\", \"forest\", \"fruit\", \"galaxy\", \"golf\", \"grass\", \"hand\", \"happy\", \"harmony\", \"head\", \"heart\", \"hockey\", \"internet\", \"job\", \"joy\", \"lamp\", \"laptop\", \"leg\", \"meat\", \"melody\", \"milk\", \"mist\", \"money\", \"moon\", \"mountain\", \"muscle\", \"note\", \"office\", \"paint\", \"pants\", \"phone\", \"plane\", \"planet\", \"rain\", \"river\", \"rock\", \"sad\", \"salary\", \"school\", \"sculpture\", \"shirt\", \"shower\", \"sketch\", \"skirt\", \"snow\", \"soccer\", \"sofa\", \"software\", \"song\", \"star\", \"storm\", \"student\", \"study\", \"suit\", \"table\", \"teacher\", \"tennis\", \"train\", \"tree\", \"truck\", \"tune\", \"universe\", \"wind\", \"work\", \"yogurt\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"direction name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+            "injected_rationale_hash": null,
+            "rationale_truncated": false
+          }
+        },
+        {
+          "hypothesis_id": "9cac60e4b55a46d2a5ef587d0362c697",
+          "category_name": "scientific inquiry",
+          "description": "systematic research and analysis of data",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "education",
+          "parent_id": "19ba77edef114700b34fb65726ed3e3a",
+          "origin": "self_adaptive_l_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "self_report": {
+            "predicted_closeness": 0.4,
+            "predicted_closeness_clamped": false,
+            "predicted_bucket": "top500",
+            "rationale": {
+              "basis_words": [
+                "study"
+              ],
+              "reason": "Shifts the focus from the educational setting (school/learning) to the methodology of scientific investigation while remaining within an intellectual framework."
+            },
+            "self_report_parse_failed": false,
+            "self_report_raw": "{\"name\": \"scientific inquiry\", \"description\": \"systematic research and analysis of data\", \"words\": [\"science\", \"method\", \"analysis\"], \"basis_words\": [\"study\"], \"reason\": \"Shifts the focus from the educational setting (school/learning) to the methodology of scientific investigation while remaining within an intellectual framework.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}",
+            "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"education\".\nDescription: school and learning terms\nBest word so far: \"study\" with rank 775.\nOther active categories already being explored: [\"food\", \"weather\", \"anatomy\", \"education\", \"music\", \"physiology\", \"precipitation types\", \"dairy products\", \"musical theory\"]\n\nMake a LARGE mutation: produce a child hypothesis in a broad, semantically\nsubstantial new direction that is unlike \"education\" and unlike the other active\ncategories above. The goal is to escape the current semantic region and open\nup unexplored territory, while staying plausibly relevant given \"study\"'s\nrank - lower ranks mean the target is closer to \"study\", so the jump\nmust remain in the same broad semantic area even when reframed.\n\nFor example, if the parent is \"types of plants\" and \"shrub\" ranks 50, a large\nmutation could be \"outdoor environments\" or \"rural landscape features\" -\nclearly outside the plant taxonomy but still in a plausible neighborhood for\na target close to \"shrub\".\n\nSuggest one new hypothesis. Include exactly 3 starter words that have not\nalready been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"afraid\", \"angry\", \"apple\", \"arm\", \"baseball\", \"bed\", \"boat\", \"bone\", \"book\", \"bread\", \"bus\", \"butter\", \"cabinet\", \"calm\", \"camera\", \"canvas\", \"car\", \"career\", \"chair\", \"cheese\", \"chord\", \"climate\", \"cloud\", \"coat\", \"computer\", \"cosmos\", \"craft\", \"cream\", \"dance\", \"desk\", \"drawing\", \"dress\", \"drizzle\", \"drum\", \"face\", \"foot\", \"forest\", \"fruit\", \"galaxy\", \"golf\", \"grass\", \"hand\", \"happy\", \"harmony\", \"head\", \"heart\", \"hockey\", \"internet\", \"job\", \"joy\", \"lamp\", \"laptop\", \"leg\", \"meat\", \"melody\", \"milk\", \"mist\", \"money\", \"moon\", \"mountain\", \"muscle\", \"note\", \"office\", \"paint\", \"pants\", \"phone\", \"pitch\", \"plane\", \"planet\", \"rain\", \"river\", \"rock\", \"sad\", \"salary\", \"scale\", \"school\", \"sculpture\", \"shirt\", \"shower\", \"sketch\", \"skirt\", \"snow\", \"soccer\", \"sofa\", \"software\", \"song\", \"star\", \"storm\", \"student\", \"study\", \"suit\", \"table\", \"teacher\", \"tennis\", \"train\", \"tree\", \"truck\", \"tune\", \"universe\", \"wind\", \"work\", \"yogurt\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"direction name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+            "injected_rationale_hash": null,
+            "rationale_truncated": false
+          }
+        }
+      ],
+      "best_word": "muscle",
+      "best_rank": 248,
+      "total_guesses": 105
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:24:45",
+    "details": {
+      "word": "body",
+      "rank": 256,
+      "hypothesis": "bodily_systems",
+      "best_word": "muscle",
+      "best_rank": 248,
+      "total_guesses": 106
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:24:46",
+    "details": {
+      "word": "organ",
+      "rank": 1778,
+      "hypothesis": "bodily_systems",
+      "best_word": "muscle",
+      "best_rank": 248,
+      "total_guesses": 107
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:24:47",
+    "details": {
+      "word": "tissue",
+      "rank": 713,
+      "hypothesis": "bodily_systems",
+      "best_word": "muscle",
+      "best_rank": 248,
+      "total_guesses": 108
+    }
+  },
+  {
+    "generation": 1,
+    "event": "CROSSOVER",
+    "timestamp": "2026-07-22T23:24:47",
+    "details": {
+      "parents": [
+        "physiology",
+        "anatomy"
+      ],
+      "parent_ids": [
+        "aeccbb6d89974138a4452a9a91ad2684",
+        "8cb2f91fcd73423fa80447beecfa16f5"
+      ],
+      "parent_ranks": [
+        248,
+        255
+      ],
+      "parent_a_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "parent_b_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma_pre_perturbation": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child": {
+        "hypothesis_id": "f2eb35039728454a99877c2919d486fd",
+        "category_name": "bodily_systems",
+        "description": "Integration of anatomical structures and physiological functions.",
+        "words_tried": {
+          "body": 256,
+          "tissue": 713,
+          "organ": 1778
+        },
+        "best_word": "body",
+        "best_rank": 256,
+        "status": "active",
+        "parent": "physiology+anatomy",
+        "parent_id": null,
+        "origin": "crossover",
+        "sigma": [
+          0.25,
+          0.25,
+          0.25,
+          0.25
+        ],
+        "self_report": {
+          "predicted_closeness": 0.95,
+          "predicted_closeness_clamped": false,
+          "predicted_bucket": "top10",
+          "rationale": {
+            "basis_words": [
+              "bone",
+              "heart",
+              "muscle",
+              "arm",
+              "face",
+              "foot",
+              "hand",
+              "head",
+              "leg"
+            ],
+            "reason": "Both terms describe the physical components and functional units of a living organism. The intersection lies in the study of how structures like hearts or muscles function as parts of larger systems."
+          },
+          "self_report_parse_failed": false,
+          "self_report_raw": "{\"name\": \"bodily_systems\", \"description\": \"Integration of anatomical structures and physiological functions.\", \"words\": [\"body\", \"organ\", \"tissue\"], \"basis_words\": [\"bone\", \"heart\", \"muscle\", \"arm\", \"face\", \"foot\", \"hand\", \"head\", \"leg\"], \"reason\": \"Both terms describe the physical components and functional units of a living organism. The intersection lies in the study of how structures like hearts or muscles function as parts of larger systems.\", \"predicted_bucket\": \"top10\", \"predicted_closeness\": 0.95}",
+          "self_report_prompt": "Return only JSON, no markdown or explanation.\nCategory A is physiology with results {\"bone\": 453, \"heart\": 253, \"muscle\": 248}.\nCategory B is anatomy with results {\"arm\": 1860, \"face\": 1299, \"foot\": 586, \"hand\": 841, \"head\": 587, \"leg\": 255}.\nSuggest one new category that captures the intersection or overlap of A and B.\nInclude exactly 3 candidate words.\nEvery word must be one common lowercase dictionary word.\nJSON schema:\n{\"name\": \"category name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+          "injected_rationale_hash": null,
+          "rationale_truncated": false
+        }
+      },
+      "best_word": "muscle",
+      "best_rank": 248,
+      "total_guesses": 108
+    }
+  },
+  {
+    "generation": 1,
+    "event": "DEDUPLICATE",
+    "timestamp": "2026-07-22T23:24:47",
+    "details": {
+      "merged": [
+        {
+          "survivor": "musical theory",
+          "discarded": "music",
+          "survivor_best_rank": 494,
+          "discarded_best_rank": 773
+        }
+      ],
+      "remaining_hypotheses": 20,
+      "active_hypotheses": 10,
+      "best_word": "muscle",
+      "best_rank": 248,
+      "total_guesses": 108
+    }
+  },
+  {
+    "generation": 1,
+    "event": "SIGMA_TRAJECTORY",
+    "timestamp": "2026-07-22T23:24:47",
+    "details": {
+      "mean_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "population_size": 10
+    }
+  },
+  {
+    "generation": 2,
+    "event": "CANDIDATES",
+    "timestamp": "2026-07-22T23:34:25",
+    "details": {
+      "count": 30,
+      "candidates": [
+        {
+          "hypothesis": "physiology",
+          "word": "metabolism"
+        },
+        {
+          "hypothesis": "physiology",
+          "word": "anatomy"
+        },
+        {
+          "hypothesis": "physiology",
+          "word": "biology"
+        },
+        {
+          "hypothesis": "anatomy",
+          "word": "spine"
+        },
+        {
+          "hypothesis": "anatomy",
+          "word": "chest"
+        },
+        {
+          "hypothesis": "anatomy",
+          "word": "neck"
+        },
+        {
+          "hypothesis": "bodily_systems",
+          "word": "nerve"
+        },
+        {
+          "hypothesis": "bodily_systems",
+          "word": "blood"
+        },
+        {
+          "hypothesis": "bodily_systems",
+          "word": "skin"
+        },
+        {
+          "hypothesis": "weather",
+          "word": "temperature"
+        },
+        {
+          "hypothesis": "weather",
+          "word": "humidity"
+        },
+        {
+          "hypothesis": "weather",
+          "word": "forecast"
+        },
+        {
+          "hypothesis": "musical theory",
+          "word": "rhythm"
+        },
+        {
+          "hypothesis": "musical theory",
+          "word": "key"
+        },
+        {
+          "hypothesis": "musical theory",
+          "word": "tempo"
+        },
+        {
+          "hypothesis": "food",
+          "word": "flesh"
+        },
+        {
+          "hypothesis": "food",
+          "word": "beef"
+        },
+        {
+          "hypothesis": "food",
+          "word": "steak"
+        },
+        {
+          "hypothesis": "education",
+          "word": "college"
+        },
+        {
+          "hypothesis": "education",
+          "word": "lecture"
+        },
+        {
+          "hypothesis": "education",
+          "word": "university"
+        },
+        {
+          "hypothesis": "scientific inquiry",
+          "word": "research"
+        },
+        {
+          "hypothesis": "scientific inquiry",
+          "word": "experiment"
+        },
+        {
+          "hypothesis": "scientific inquiry",
+          "word": "theory"
+        },
+        {
+          "hypothesis": "precipitation types",
+          "word": "hail"
+        },
+        {
+          "hypothesis": "precipitation types",
+          "word": "sleet"
+        },
+        {
+          "hypothesis": "precipitation types",
+          "word": "flurry"
+        },
+        {
+          "hypothesis": "dairy products",
+          "word": "whey"
+        },
+        {
+          "hypothesis": "dairy products",
+          "word": "buttermilk"
+        },
+        {
+          "hypothesis": "dairy products",
+          "word": "kefir"
+        }
+      ]
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:34:29",
+    "details": {
+      "word": "metabolism",
+      "rank": 749,
+      "hypothesis": "physiology",
+      "best_word": "muscle",
+      "best_rank": 248,
+      "total_guesses": 109
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:34:30",
+    "details": {
+      "word": "anatomy",
+      "rank": 4454,
+      "hypothesis": "physiology",
+      "best_word": "muscle",
+      "best_rank": 248,
+      "total_guesses": 110
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:34:31",
+    "details": {
+      "word": "biology",
+      "rank": 4077,
+      "hypothesis": "physiology",
+      "best_word": "muscle",
+      "best_rank": 248,
+      "total_guesses": 111
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:34:31",
+    "details": {
+      "word": "spine",
+      "rank": 2473,
+      "hypothesis": "anatomy",
+      "best_word": "muscle",
+      "best_rank": 248,
+      "total_guesses": 112
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:34:32",
+    "details": {
+      "word": "chest",
+      "rank": 71,
+      "hypothesis": "anatomy",
+      "best_word": "chest",
+      "best_rank": 71,
+      "total_guesses": 113
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:34:33",
+    "details": {
+      "word": "neck",
+      "rank": 304,
+      "hypothesis": "anatomy",
+      "best_word": "chest",
+      "best_rank": 71,
+      "total_guesses": 114
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:34:34",
+    "details": {
+      "word": "nerve",
+      "rank": 885,
+      "hypothesis": "bodily_systems",
+      "best_word": "chest",
+      "best_rank": 71,
+      "total_guesses": 115
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:34:34",
+    "details": {
+      "word": "blood",
+      "rank": 43,
+      "hypothesis": "bodily_systems",
+      "best_word": "blood",
+      "best_rank": 43,
+      "total_guesses": 116
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:34:35",
+    "details": {
+      "word": "skin",
+      "rank": 87,
+      "hypothesis": "bodily_systems",
+      "best_word": "blood",
+      "best_rank": 43,
+      "total_guesses": 117
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:34:36",
+    "details": {
+      "word": "temperature",
+      "rank": 2,
+      "hypothesis": "weather",
+      "best_word": "temperature",
+      "best_rank": 2,
+      "total_guesses": 118
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:34:36",
+    "details": {
+      "word": "humidity",
+      "rank": 28,
+      "hypothesis": "weather",
+      "best_word": "temperature",
+      "best_rank": 2,
+      "total_guesses": 119
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:34:37",
+    "details": {
+      "word": "forecast",
+      "rank": 1359,
+      "hypothesis": "weather",
+      "best_word": "temperature",
+      "best_rank": 2,
+      "total_guesses": 120
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:34:38",
+    "details": {
+      "word": "rhythm",
+      "rank": 1189,
+      "hypothesis": "musical theory",
+      "best_word": "temperature",
+      "best_rank": 2,
+      "total_guesses": 121
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:34:39",
+    "details": {
+      "word": "key",
+      "rank": 1916,
+      "hypothesis": "musical theory",
+      "best_word": "temperature",
+      "best_rank": 2,
+      "total_guesses": 122
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:34:39",
+    "details": {
+      "word": "tempo",
+      "rank": 4519,
+      "hypothesis": "musical theory",
+      "best_word": "temperature",
+      "best_rank": 2,
+      "total_guesses": 123
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:34:40",
+    "details": {
+      "word": "flesh",
+      "rank": 2869,
+      "hypothesis": "food",
+      "best_word": "temperature",
+      "best_rank": 2,
+      "total_guesses": 124
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:34:41",
+    "details": {
+      "word": "beef",
+      "rank": 2369,
+      "hypothesis": "food",
+      "best_word": "temperature",
+      "best_rank": 2,
+      "total_guesses": 125
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:34:42",
+    "details": {
+      "word": "steak",
+      "rank": 7118,
+      "hypothesis": "food",
+      "best_word": "temperature",
+      "best_rank": 2,
+      "total_guesses": 126
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:34:42",
+    "details": {
+      "word": "college",
+      "rank": 4822,
+      "hypothesis": "education",
+      "best_word": "temperature",
+      "best_rank": 2,
+      "total_guesses": 127
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:34:43",
+    "details": {
+      "word": "lecture",
+      "rank": 7146,
+      "hypothesis": "education",
+      "best_word": "temperature",
+      "best_rank": 2,
+      "total_guesses": 128
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:34:44",
+    "details": {
+      "word": "university",
+      "rank": 5642,
+      "hypothesis": "education",
+      "best_word": "temperature",
+      "best_rank": 2,
+      "total_guesses": 129
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:34:45",
+    "details": {
+      "word": "research",
+      "rank": 1530,
+      "hypothesis": "scientific inquiry",
+      "best_word": "temperature",
+      "best_rank": 2,
+      "total_guesses": 130
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:34:45",
+    "details": {
+      "word": "experiment",
+      "rank": 1413,
+      "hypothesis": "scientific inquiry",
+      "best_word": "temperature",
+      "best_rank": 2,
+      "total_guesses": 131
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:34:46",
+    "details": {
+      "word": "theory",
+      "rank": 1983,
+      "hypothesis": "scientific inquiry",
+      "best_word": "temperature",
+      "best_rank": 2,
+      "total_guesses": 132
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:34:47",
+    "details": {
+      "word": "hail",
+      "rank": 9787,
+      "hypothesis": "precipitation types",
+      "best_word": "temperature",
+      "best_rank": 2,
+      "total_guesses": 133
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:34:47",
+    "details": {
+      "word": "sleet",
+      "rank": 8677,
+      "hypothesis": "precipitation types",
+      "best_word": "temperature",
+      "best_rank": 2,
+      "total_guesses": 134
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:34:48",
+    "details": {
+      "word": "flurry",
+      "rank": 8905,
+      "hypothesis": "precipitation types",
+      "best_word": "temperature",
+      "best_rank": 2,
+      "total_guesses": 135
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:34:49",
+    "details": {
+      "word": "whey",
+      "rank": 10357,
+      "hypothesis": "dairy products",
+      "best_word": "temperature",
+      "best_rank": 2,
+      "total_guesses": 136
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:34:50",
+    "details": {
+      "word": "buttermilk",
+      "rank": 12071,
+      "hypothesis": "dairy products",
+      "best_word": "temperature",
+      "best_rank": 2,
+      "total_guesses": 137
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:34:50",
+    "details": {
+      "word": "kefir",
+      "rank": 28701,
+      "hypothesis": "dairy products",
+      "best_word": "temperature",
+      "best_rank": 2,
+      "total_guesses": 138
+    }
+  },
+  {
+    "generation": 2,
+    "event": "LOCAL_SEARCH_DISABLED",
+    "timestamp": "2026-07-22T23:34:50",
+    "details": {
+      "center_word": "temperature",
+      "center_rank": 2,
+      "threshold": 100,
+      "reason": "self_adaptive_disable_local_search"
+    }
+  },
+  {
+    "generation": 2,
+    "event": "SELECT",
+    "timestamp": "2026-07-22T23:34:50",
+    "details": {
+      "kept": [
+        "weather",
+        "bodily_systems",
+        "anatomy",
+        "physiology",
+        "musical theory"
+      ],
+      "discarded": [
+        "food",
+        "education",
+        "scientific inquiry",
+        "career",
+        "furniture",
+        "precipitation types",
+        "emotion",
+        "technology",
+        "space",
+        "clothing",
+        "dairy products",
+        "nature",
+        "travel",
+        "art",
+        "sports"
+      ],
+      "elite": "weather",
+      "max_active_hypotheses": 5,
+      "best_word": "temperature",
+      "best_rank": 2,
+      "total_guesses": 138
+    }
+  },
+  {
+    "generation": 2,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-22T23:37:30",
+    "details": {
+      "parent_id": "e2d11e44cb9d4c30b07a8ce88f047cd3",
+      "child_id": "1a3e337767bf435f90c96ece6d095ac7",
+      "parent_rank": 2,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "thermodynamics",
+      "sampled_op": "l_mutation",
+      "method": "self_adaptive",
+      "self_report": {
+        "predicted_closeness": 0.8,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "temperature"
+          ],
+          "reason": "Since 'temperature' is ranked very highly, the target likely relates to core thermal properties or physics. Thermodynamics moves away from atmospheric weather while staying in the prime semantic area for temperature."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"name\": \"thermodynamics\", \"description\": \"study of heat and energy\", \"words\": [\"heat\", \"energy\", \"power\"], \"basis_words\": [\"temperature\"], \"reason\": \"Since 'temperature' is ranked very highly, the target likely relates to core thermal properties or physics. Thermodynamics moves away from atmospheric weather while staying in the prime semantic area for temperature.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.8}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"weather\".\nDescription: atmospheric conditions\nBest word so far: \"temperature\" with rank 2.\nOther active categories already being explored: [\"physiology\", \"anatomy\", \"bodily_systems\", \"weather\", \"musical theory\"]\n\nMake a LARGE mutation: produce a child hypothesis in a broad, semantically\nsubstantial new direction that is unlike \"weather\" and unlike the other active\ncategories above. The goal is to escape the current semantic region and open\nup unexplored territory, while staying plausibly relevant given \"temperature\"'s\nrank - lower ranks mean the target is closer to \"temperature\", so the jump\nmust remain in the same broad semantic area even when reframed.\n\nFor example, if the parent is \"types of plants\" and \"shrub\" ranks 50, a large\nmutation could be \"outdoor environments\" or \"rural landscape features\" -\nclearly outside the plant taxonomy but still in a plausible neighborhood for\na target close to \"shrub\".\n\nSuggest one new hypothesis. Include exactly 3 starter words that have not\nalready been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"afraid\", \"analysis\", \"anatomy\", \"angry\", \"apple\", \"arm\", \"baseball\", \"bed\", \"beef\", \"biology\", \"blood\", \"boat\", \"body\", \"bone\", \"book\", \"bread\", \"bus\", \"butter\", \"buttermilk\", \"cabinet\", \"calm\", \"camera\", \"canvas\", \"car\", \"career\", \"chair\", \"cheese\", \"chest\", \"chord\", \"climate\", \"cloud\", \"coat\", \"college\", \"computer\", \"cosmos\", \"craft\", \"cream\", \"dance\", \"desk\", \"drawing\", \"dress\", \"drizzle\", \"drum\", \"experiment\", \"face\", \"flesh\", \"flurry\", \"foot\", \"forecast\", \"forest\", \"fruit\", \"galaxy\", \"golf\", \"grass\", \"hail\", \"hand\", \"happy\", \"harmony\", \"head\", \"heart\", \"hockey\", \"humidity\", \"internet\", \"job\", \"joy\", \"kefir\", \"key\", \"lamp\", \"laptop\", \"lecture\", \"leg\", \"meat\", \"melody\", \"metabolism\", \"method\", \"milk\", \"mist\", \"money\", \"moon\", \"mountain\", \"muscle\", \"neck\", \"nerve\", \"note\", \"office\", \"organ\", \"paint\", \"pants\", \"phone\", \"pitch\", \"plane\", \"planet\", \"rain\", \"research\", \"rhythm\", \"river\", \"rock\", \"sad\", \"salary\", \"scale\", \"school\", \"science\", \"sculpture\", \"shirt\", \"shower\", \"sketch\", \"skin\", \"skirt\", \"sleet\", \"snow\", \"soccer\", \"sofa\", \"software\", \"song\", \"spine\", \"star\", \"steak\", \"storm\", \"student\", \"study\", \"suit\", \"table\", \"teacher\", \"temperature\", \"tempo\", \"tennis\", \"theory\", \"tissue\", \"train\", \"tree\", \"truck\", \"tune\", \"universe\", \"university\", \"whey\", \"wind\", \"work\", \"yogurt\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"direction name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:37:33",
+    "details": {
+      "word": "heat",
+      "rank": 17,
+      "hypothesis": "thermodynamics",
+      "best_word": "temperature",
+      "best_rank": 2,
+      "total_guesses": 139
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:37:34",
+    "details": {
+      "word": "energy",
+      "rank": 2171,
+      "hypothesis": "thermodynamics",
+      "best_word": "temperature",
+      "best_rank": 2,
+      "total_guesses": 140
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:37:35",
+    "details": {
+      "word": "power",
+      "rank": 2119,
+      "hypothesis": "thermodynamics",
+      "best_word": "temperature",
+      "best_rank": 2,
+      "total_guesses": 141
+    }
+  },
+  {
+    "generation": 2,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-22T23:41:27",
+    "details": {
+      "parent_id": "f2eb35039728454a99877c2919d486fd",
+      "child_id": "11a4a42613294a30bb33b1a09ca8f0e6",
+      "parent_rank": 43,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "biochemistry",
+      "sampled_op": "ml_mutation",
+      "method": "self_adaptive",
+      "self_report": {
+        "predicted_closeness": 0.8,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "blood",
+            "tissue"
+          ],
+          "reason": "While 'bodily_systems' focuses on anatomical structures and physiological functions, 'biochemistry' shifts the focus to the underlying molecular and chemical processes."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"name\": \"biochemistry\", \"description\": \"the study of chemical processes within living organisms\", \"words\": [\"protein\", \"enzyme\", \"molecule\"], \"basis_words\": [\"blood\", \"tissue\"], \"reason\": \"While 'bodily_systems' focuses on anatomical structures and physiological functions, 'biochemistry' shifts the focus to the underlying molecular and chemical processes.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.8}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"bodily_systems\".\nDescription: Integration of anatomical structures and physiological functions.\nResults so far in this hypothesis: {\"blood\": 43, \"body\": 256, \"nerve\": 885, \"organ\": 1778, \"skin\": 87, \"tissue\": 713}\nBest word so far: \"blood\" with rank 43.\n\nMake a MEDIUM-LARGE mutation: produce a child hypothesis in an ADJACENT but\ndistinct category that could still plausibly contain the hidden target given\n\"blood\"'s rank. The child must NOT be a sub-category of \"bodily_systems\" - it\nshould sit alongside \"bodily_systems\" in semantic space, not underneath it.\n\nFor example, if the parent is \"types of plants\" and the best word is \"shrub\",\nan adjacent category could be \"plant descriptors\", \"botanical terminology\",\n\"growth habits\", or \"ecological roles\".\n\nSuggest one adjacent hypothesis. Include exactly 3 starter words that have\nnot already been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"afraid\", \"analysis\", \"anatomy\", \"angry\", \"apple\", \"arm\", \"baseball\", \"bed\", \"beef\", \"biology\", \"blood\", \"boat\", \"body\", \"bone\", \"book\", \"bread\", \"bus\", \"butter\", \"buttermilk\", \"cabinet\", \"calm\", \"camera\", \"canvas\", \"car\", \"career\", \"chair\", \"cheese\", \"chest\", \"chord\", \"climate\", \"cloud\", \"coat\", \"college\", \"computer\", \"cosmos\", \"craft\", \"cream\", \"dance\", \"desk\", \"drawing\", \"dress\", \"drizzle\", \"drum\", \"energy\", \"experiment\", \"face\", \"flesh\", \"flurry\", \"foot\", \"forecast\", \"forest\", \"fruit\", \"galaxy\", \"golf\", \"grass\", \"hail\", \"hand\", \"happy\", \"harmony\", \"head\", \"heart\", \"heat\", \"hockey\", \"humidity\", \"internet\", \"job\", \"joy\", \"kefir\", \"key\", \"lamp\", \"laptop\", \"lecture\", \"leg\", \"meat\", \"melody\", \"metabolism\", \"method\", \"milk\", \"mist\", \"money\", \"moon\", \"mountain\", \"muscle\", \"neck\", \"nerve\", \"note\", \"office\", \"organ\", \"paint\", \"pants\", \"phone\", \"pitch\", \"plane\", \"planet\", \"power\", \"rain\", \"research\", \"rhythm\", \"river\", \"rock\", \"sad\", \"salary\", \"scale\", \"school\", \"science\", \"sculpture\", \"shirt\", \"shower\", \"sketch\", \"skin\", \"skirt\", \"sleet\", \"snow\", \"soccer\", \"sofa\", \"software\", \"song\", \"spine\", \"star\", \"steak\", \"storm\", \"student\", \"study\", \"suit\", \"table\", \"teacher\", \"temperature\", \"tempo\", \"tennis\", \"theory\", \"tissue\", \"train\", \"tree\", \"truck\", \"tune\", \"universe\", \"university\", \"whey\", \"wind\", \"work\", \"yogurt\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"category name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nThe parent hypothesis's prior rationale (for context only; do not copy blindly): basis_words=[\"bone\", \"heart\", \"muscle\", \"arm\", \"face\", \"foot\", \"hand\", \"head\"], reason=\"Both terms describe the physical components and functional units of a living organism. The intersection lies in the study of how structures like hearts or muscles function as parts of larger systems.\".\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": "72c86b2f7e3c2dd2",
+        "rationale_truncated": true
+      }
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:41:31",
+    "details": {
+      "word": "protein",
+      "rank": 1806,
+      "hypothesis": "biochemistry",
+      "best_word": "temperature",
+      "best_rank": 2,
+      "total_guesses": 142
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:41:31",
+    "details": {
+      "word": "enzyme",
+      "rank": 2179,
+      "hypothesis": "biochemistry",
+      "best_word": "temperature",
+      "best_rank": 2,
+      "total_guesses": 143
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:41:32",
+    "details": {
+      "word": "molecule",
+      "rank": 4886,
+      "hypothesis": "biochemistry",
+      "best_word": "temperature",
+      "best_rank": 2,
+      "total_guesses": 144
+    }
+  },
+  {
+    "generation": 2,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-22T23:45:39",
+    "details": {
+      "parent_id": "8cb2f91fcd73423fa80447beecfa16f5",
+      "child_id": "d0e2f969685b4405a6eeadf96fefd839",
+      "parent_rank": 71,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "physiology",
+      "sampled_op": "ml_mutation",
+      "method": "self_adaptive",
+      "self_report": {
+        "predicted_closeness": 0.8,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "chest",
+            "neck"
+          ],
+          "reason": "Chest and neck's proximity suggests a focus on the torso or internal systems. Physiology is an adjacent category that explores these bodily functions."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"name\": \"physiology\", \"description\": \"the study of biological functions and processes in humans\", \"words\": [\"respiration\", \"circulation\", \"digestion\"], \"basis_words\": [\"chest\", \"neck\"], \"reason\": \"Chest and neck's proximity suggests a focus on the torso or internal systems. Physiology is an adjacent category that explores these bodily functions.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.8}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"anatomy\".\nDescription: human body parts\nResults so far in this hypothesis: {\"arm\": 1860, \"chest\": 71, \"face\": 1299, \"foot\": 586, \"hand\": 841, \"head\": 587, \"leg\": 255, \"neck\": 304, \"spine\": 2473}\nBest word so far: \"chest\" with rank 71.\n\nMake a MEDIUM-LARGE mutation: produce a child hypothesis in an ADJACENT but\ndistinct category that could still plausibly contain the hidden target given\n\"chest\"'s rank. The child must NOT be a sub-category of \"anatomy\" - it\nshould sit alongside \"anatomy\" in semantic space, not underneath it.\n\nFor example, if the parent is \"types of plants\" and the best word is \"shrub\",\nan adjacent category could be \"plant descriptors\", \"botanical terminology\",\n\"growth habits\", or \"ecological roles\".\n\nSuggest one adjacent hypothesis. Include exactly 3 starter words that have\nnot already been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"afraid\", \"analysis\", \"anatomy\", \"angry\", \"apple\", \"arm\", \"baseball\", \"bed\", \"beef\", \"biology\", \"blood\", \"boat\", \"body\", \"bone\", \"book\", \"bread\", \"bus\", \"butter\", \"buttermilk\", \"cabinet\", \"calm\", \"camera\", \"canvas\", \"car\", \"career\", \"chair\", \"cheese\", \"chest\", \"chord\", \"climate\", \"cloud\", \"coat\", \"college\", \"computer\", \"cosmos\", \"craft\", \"cream\", \"dance\", \"desk\", \"drawing\", \"dress\", \"drizzle\", \"drum\", \"energy\", \"enzyme\", \"experiment\", \"face\", \"flesh\", \"flurry\", \"foot\", \"forecast\", \"forest\", \"fruit\", \"galaxy\", \"golf\", \"grass\", \"hail\", \"hand\", \"happy\", \"harmony\", \"head\", \"heart\", \"heat\", \"hockey\", \"humidity\", \"internet\", \"job\", \"joy\", \"kefir\", \"key\", \"lamp\", \"laptop\", \"lecture\", \"leg\", \"meat\", \"melody\", \"metabolism\", \"method\", \"milk\", \"mist\", \"molecule\", \"money\", \"moon\", \"mountain\", \"muscle\", \"neck\", \"nerve\", \"note\", \"office\", \"organ\", \"paint\", \"pants\", \"phone\", \"pitch\", \"plane\", \"planet\", \"power\", \"protein\", \"rain\", \"research\", \"rhythm\", \"river\", \"rock\", \"sad\", \"salary\", \"scale\", \"school\", \"science\", \"sculpture\", \"shirt\", \"shower\", \"sketch\", \"skin\", \"skirt\", \"sleet\", \"snow\", \"soccer\", \"sofa\", \"software\", \"song\", \"spine\", \"star\", \"steak\", \"storm\", \"student\", \"study\", \"suit\", \"table\", \"teacher\", \"temperature\", \"tempo\", \"tennis\", \"theory\", \"tissue\", \"train\", \"tree\", \"truck\", \"tune\", \"universe\", \"university\", \"whey\", \"wind\", \"work\", \"yogurt\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"category name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:45:42",
+    "details": {
+      "word": "respiration",
+      "rank": 849,
+      "hypothesis": "physiology",
+      "best_word": "temperature",
+      "best_rank": 2,
+      "total_guesses": 145
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:45:43",
+    "details": {
+      "word": "circulation",
+      "rank": 150,
+      "hypothesis": "physiology",
+      "best_word": "temperature",
+      "best_rank": 2,
+      "total_guesses": 146
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:45:44",
+    "details": {
+      "word": "digestion",
+      "rank": 812,
+      "hypothesis": "physiology",
+      "best_word": "temperature",
+      "best_rank": 2,
+      "total_guesses": 147
+    }
+  },
+  {
+    "generation": 2,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-22T23:48:12",
+    "details": {
+      "parent_id": "aeccbb6d89974138a4452a9a91ad2684",
+      "child_id": "8a75070456d9425e9098ebb19bf190a5",
+      "parent_rank": 248,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "morphology",
+      "sampled_op": "ml_mutation",
+      "method": "self_adaptive",
+      "self_report": {
+        "predicted_closeness": 0.8,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "heart",
+            "muscle"
+          ],
+          "reason": "Morphology is the sister field to physiology; while physiology focuses on function, morphology focuses on structure. Since 'heart' and 'muscle' are close, a structural focus remains highly relevant."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"name\": \"morphology\", \"description\": \"the study of the form and structure of organisms\", \"words\": [\"form\", \"shape\", \"structure\"], \"basis_words\": [\"heart\", \"muscle\"], \"reason\": \"Morphology is the sister field to physiology; while physiology focuses on function, morphology focuses on structure. Since 'heart' and 'muscle' are close, a structural focus remains highly relevant.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.8}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"physiology\".\nDescription: the study of how body parts and organ systems function\nResults so far in this hypothesis: {\"anatomy\": 4454, \"biology\": 4077, \"bone\": 453, \"heart\": 253, \"metabolism\": 749, \"muscle\": 248}\nBest word so far: \"muscle\" with rank 248.\n\nMake a MEDIUM-LARGE mutation: produce a child hypothesis in an ADJACENT but\ndistinct category that could still plausibly contain the hidden target given\n\"muscle\"'s rank. The child must NOT be a sub-category of \"physiology\" - it\nshould sit alongside \"physiology\" in semantic space, not underneath it.\n\nFor example, if the parent is \"types of plants\" and the best word is \"shrub\",\nan adjacent category could be \"plant descriptors\", \"botanical terminology\",\n\"growth habits\", or \"ecological roles\".\n\nSuggest one adjacent hypothesis. Include exactly 3 starter words that have\nnot already been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"afraid\", \"analysis\", \"anatomy\", \"angry\", \"apple\", \"arm\", \"baseball\", \"bed\", \"beef\", \"biology\", \"blood\", \"boat\", \"body\", \"bone\", \"book\", \"bread\", \"bus\", \"butter\", \"buttermilk\", \"cabinet\", \"calm\", \"camera\", \"canvas\", \"car\", \"career\", \"chair\", \"cheese\", \"chest\", \"chord\", \"circulation\", \"climate\", \"cloud\", \"coat\", \"college\", \"computer\", \"cosmos\", \"craft\", \"cream\", \"dance\", \"desk\", \"digestion\", \"drawing\", \"dress\", \"drizzle\", \"drum\", \"energy\", \"enzyme\", \"experiment\", \"face\", \"flesh\", \"flurry\", \"foot\", \"forecast\", \"forest\", \"fruit\", \"galaxy\", \"golf\", \"grass\", \"hail\", \"hand\", \"happy\", \"harmony\", \"head\", \"heart\", \"heat\", \"hockey\", \"humidity\", \"internet\", \"job\", \"joy\", \"kefir\", \"key\", \"lamp\", \"laptop\", \"lecture\", \"leg\", \"meat\", \"melody\", \"metabolism\", \"method\", \"milk\", \"mist\", \"molecule\", \"money\", \"moon\", \"mountain\", \"muscle\", \"neck\", \"nerve\", \"note\", \"office\", \"organ\", \"paint\", \"pants\", \"phone\", \"pitch\", \"plane\", \"planet\", \"power\", \"protein\", \"rain\", \"research\", \"respiration\", \"rhythm\", \"river\", \"rock\", \"sad\", \"salary\", \"scale\", \"school\", \"science\", \"sculpture\", \"shirt\", \"shower\", \"sketch\", \"skin\", \"skirt\", \"sleet\", \"snow\", \"soccer\", \"sofa\", \"software\", \"song\", \"spine\", \"star\", \"steak\", \"storm\", \"student\", \"study\", \"suit\", \"table\", \"teacher\", \"temperature\", \"tempo\", \"tennis\", \"theory\", \"tissue\", \"train\", \"tree\", \"truck\", \"tune\", \"universe\", \"university\", \"whey\", \"wind\", \"work\", \"yogurt\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"category name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nThe parent hypothesis's prior rationale (for context only; do not copy blindly): basis_words=[\"arm\", \"face\", \"foot\", \"hand\", \"head\", \"leg\"], reason=\"Physiology is the functional companion to anatomy, moving from structure to the biological processes within those structures.\".\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": "ff4e2c205da05886",
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:48:13",
+    "details": {
+      "word": "form",
+      "rank": 677,
+      "hypothesis": "morphology",
+      "best_word": "temperature",
+      "best_rank": 2,
+      "total_guesses": 148
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:48:14",
+    "details": {
+      "word": "shape",
+      "rank": 1261,
+      "hypothesis": "morphology",
+      "best_word": "temperature",
+      "best_rank": 2,
+      "total_guesses": 149
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:48:15",
+    "details": {
+      "word": "structure",
+      "rank": 1202,
+      "hypothesis": "morphology",
+      "best_word": "temperature",
+      "best_rank": 2,
+      "total_guesses": 150
+    }
+  },
+  {
+    "generation": 2,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-22T23:49:46",
+    "details": {
+      "parent_id": "ff757cf7b0054fb2b84d0f59fb9c8adb",
+      "child_id": "391df3523c294554873fc5adc54565ff",
+      "parent_rank": 494,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "spatial geometry",
+      "sampled_op": "l_mutation",
+      "method": "self_adaptive",
+      "self_report": {
+        "predicted_closeness": 0.4,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "scale"
+          ],
+          "reason": "While 'scale' functions as a musical progression, it also refers to proportional measurement. This jump moves from musical theory toward mathematical geometry while staying in the realm of structured proportions."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"name\": \"spatial geometry\", \"description\": \"the study of shapes, sizes, and properties of space\", \"words\": [\"polygon\", \"vertex\", \"volume\"], \"basis_words\": [\"scale\"], \"reason\": \"While 'scale' functions as a musical progression, it also refers to proportional measurement. This jump moves from musical theory toward mathematical geometry while staying in the realm of structured proportions.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"musical theory\".\nDescription: technical elements of music and notation\nBest word so far: \"scale\" with rank 494.\nOther active categories already being explored: [\"physiology\", \"anatomy\", \"bodily_systems\", \"weather\", \"musical theory\", \"thermodynamics\", \"biochemistry\", \"physiology\", \"morphology\"]\n\nMake a LARGE mutation: produce a child hypothesis in a broad, semantically\nsubstantial new direction that is unlike \"musical theory\" and unlike the other active\ncategories above. The goal is to escape the current semantic region and open\nup unexplored territory, while staying plausibly relevant given \"scale\"'s\nrank - lower ranks mean the target is closer to \"scale\", so the jump\nmust remain in the same broad semantic area even when reframed.\n\nFor example, if the parent is \"types of plants\" and \"shrub\" ranks 50, a large\nmutation could be \"outdoor environments\" or \"rural landscape features\" -\nclearly outside the plant taxonomy but still in a plausible neighborhood for\na target close to \"shrub\".\n\nSuggest one new hypothesis. Include exactly 3 starter words that have not\nalready been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"afraid\", \"analysis\", \"anatomy\", \"angry\", \"apple\", \"arm\", \"baseball\", \"bed\", \"beef\", \"biology\", \"blood\", \"boat\", \"body\", \"bone\", \"book\", \"bread\", \"bus\", \"butter\", \"buttermilk\", \"cabinet\", \"calm\", \"camera\", \"canvas\", \"car\", \"career\", \"chair\", \"cheese\", \"chest\", \"chord\", \"circulation\", \"climate\", \"cloud\", \"coat\", \"college\", \"computer\", \"cosmos\", \"craft\", \"cream\", \"dance\", \"desk\", \"digestion\", \"drawing\", \"dress\", \"drizzle\", \"drum\", \"energy\", \"enzyme\", \"experiment\", \"face\", \"flesh\", \"flurry\", \"foot\", \"forecast\", \"forest\", \"form\", \"fruit\", \"galaxy\", \"golf\", \"grass\", \"hail\", \"hand\", \"happy\", \"harmony\", \"head\", \"heart\", \"heat\", \"hockey\", \"humidity\", \"internet\", \"job\", \"joy\", \"kefir\", \"key\", \"lamp\", \"laptop\", \"lecture\", \"leg\", \"meat\", \"melody\", \"metabolism\", \"method\", \"milk\", \"mist\", \"molecule\", \"money\", \"moon\", \"mountain\", \"muscle\", \"neck\", \"nerve\", \"note\", \"office\", \"organ\", \"paint\", \"pants\", \"phone\", \"pitch\", \"plane\", \"planet\", \"power\", \"protein\", \"rain\", \"research\", \"respiration\", \"rhythm\", \"river\", \"rock\", \"sad\", \"salary\", \"scale\", \"school\", \"science\", \"sculpture\", \"shape\", \"shirt\", \"shower\", \"sketch\", \"skin\", \"skirt\", \"sleet\", \"snow\", \"soccer\", \"sofa\", \"software\", \"song\", \"spine\", \"star\", \"steak\", \"storm\", \"structure\", \"student\", \"study\", \"suit\", \"table\", \"teacher\", \"temperature\", \"tempo\", \"tennis\", \"theory\", \"tissue\", \"train\", \"tree\", \"truck\", \"tune\", \"universe\", \"university\", \"whey\", \"wind\", \"work\", \"yogurt\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"direction name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nThe parent hypothesis's prior rationale (for context only; do not copy blindly): basis_words=[\"note\"], reason=\"Since 'note' was the closest word, this focuses on specific musical structures like chords and scales.\".\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": "6bad734ebb722924",
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:49:50",
+    "details": {
+      "word": "polygon",
+      "rank": 23678,
+      "hypothesis": "spatial geometry",
+      "best_word": "temperature",
+      "best_rank": 2,
+      "total_guesses": 151
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:49:51",
+    "details": {
+      "word": "vertex",
+      "rank": 12079,
+      "hypothesis": "spatial geometry",
+      "best_word": "temperature",
+      "best_rank": 2,
+      "total_guesses": 152
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:49:52",
+    "details": {
+      "word": "volume",
+      "rank": 1347,
+      "hypothesis": "spatial geometry",
+      "best_word": "temperature",
+      "best_rank": 2,
+      "total_guesses": 153
+    }
+  },
+  {
+    "generation": 2,
+    "event": "MUTATE",
+    "timestamp": "2026-07-22T23:49:52",
+    "details": {
+      "method": "self_adaptive",
+      "children": [
+        {
+          "hypothesis_id": "1a3e337767bf435f90c96ece6d095ac7",
+          "category_name": "thermodynamics",
+          "description": "study of heat and energy",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "weather",
+          "parent_id": "e2d11e44cb9d4c30b07a8ce88f047cd3",
+          "origin": "self_adaptive_l_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "self_report": {
+            "predicted_closeness": 0.8,
+            "predicted_closeness_clamped": false,
+            "predicted_bucket": "top100",
+            "rationale": {
+              "basis_words": [
+                "temperature"
+              ],
+              "reason": "Since 'temperature' is ranked very highly, the target likely relates to core thermal properties or physics. Thermodynamics moves away from atmospheric weather while staying in the prime semantic area for temperature."
+            },
+            "self_report_parse_failed": false,
+            "self_report_raw": "{\"name\": \"thermodynamics\", \"description\": \"study of heat and energy\", \"words\": [\"heat\", \"energy\", \"power\"], \"basis_words\": [\"temperature\"], \"reason\": \"Since 'temperature' is ranked very highly, the target likely relates to core thermal properties or physics. Thermodynamics moves away from atmospheric weather while staying in the prime semantic area for temperature.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.8}",
+            "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"weather\".\nDescription: atmospheric conditions\nBest word so far: \"temperature\" with rank 2.\nOther active categories already being explored: [\"physiology\", \"anatomy\", \"bodily_systems\", \"weather\", \"musical theory\"]\n\nMake a LARGE mutation: produce a child hypothesis in a broad, semantically\nsubstantial new direction that is unlike \"weather\" and unlike the other active\ncategories above. The goal is to escape the current semantic region and open\nup unexplored territory, while staying plausibly relevant given \"temperature\"'s\nrank - lower ranks mean the target is closer to \"temperature\", so the jump\nmust remain in the same broad semantic area even when reframed.\n\nFor example, if the parent is \"types of plants\" and \"shrub\" ranks 50, a large\nmutation could be \"outdoor environments\" or \"rural landscape features\" -\nclearly outside the plant taxonomy but still in a plausible neighborhood for\na target close to \"shrub\".\n\nSuggest one new hypothesis. Include exactly 3 starter words that have not\nalready been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"afraid\", \"analysis\", \"anatomy\", \"angry\", \"apple\", \"arm\", \"baseball\", \"bed\", \"beef\", \"biology\", \"blood\", \"boat\", \"body\", \"bone\", \"book\", \"bread\", \"bus\", \"butter\", \"buttermilk\", \"cabinet\", \"calm\", \"camera\", \"canvas\", \"car\", \"career\", \"chair\", \"cheese\", \"chest\", \"chord\", \"climate\", \"cloud\", \"coat\", \"college\", \"computer\", \"cosmos\", \"craft\", \"cream\", \"dance\", \"desk\", \"drawing\", \"dress\", \"drizzle\", \"drum\", \"experiment\", \"face\", \"flesh\", \"flurry\", \"foot\", \"forecast\", \"forest\", \"fruit\", \"galaxy\", \"golf\", \"grass\", \"hail\", \"hand\", \"happy\", \"harmony\", \"head\", \"heart\", \"hockey\", \"humidity\", \"internet\", \"job\", \"joy\", \"kefir\", \"key\", \"lamp\", \"laptop\", \"lecture\", \"leg\", \"meat\", \"melody\", \"metabolism\", \"method\", \"milk\", \"mist\", \"money\", \"moon\", \"mountain\", \"muscle\", \"neck\", \"nerve\", \"note\", \"office\", \"organ\", \"paint\", \"pants\", \"phone\", \"pitch\", \"plane\", \"planet\", \"rain\", \"research\", \"rhythm\", \"river\", \"rock\", \"sad\", \"salary\", \"scale\", \"school\", \"science\", \"sculpture\", \"shirt\", \"shower\", \"sketch\", \"skin\", \"skirt\", \"sleet\", \"snow\", \"soccer\", \"sofa\", \"software\", \"song\", \"spine\", \"star\", \"steak\", \"storm\", \"student\", \"study\", \"suit\", \"table\", \"teacher\", \"temperature\", \"tempo\", \"tennis\", \"theory\", \"tissue\", \"train\", \"tree\", \"truck\", \"tune\", \"universe\", \"university\", \"whey\", \"wind\", \"work\", \"yogurt\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"direction name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+            "injected_rationale_hash": null,
+            "rationale_truncated": false
+          }
+        },
+        {
+          "hypothesis_id": "11a4a42613294a30bb33b1a09ca8f0e6",
+          "category_name": "biochemistry",
+          "description": "the study of chemical processes within living organisms",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "bodily_systems",
+          "parent_id": "f2eb35039728454a99877c2919d486fd",
+          "origin": "self_adaptive_ml_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "self_report": {
+            "predicted_closeness": 0.8,
+            "predicted_closeness_clamped": false,
+            "predicted_bucket": "top100",
+            "rationale": {
+              "basis_words": [
+                "blood",
+                "tissue"
+              ],
+              "reason": "While 'bodily_systems' focuses on anatomical structures and physiological functions, 'biochemistry' shifts the focus to the underlying molecular and chemical processes."
+            },
+            "self_report_parse_failed": false,
+            "self_report_raw": "{\"name\": \"biochemistry\", \"description\": \"the study of chemical processes within living organisms\", \"words\": [\"protein\", \"enzyme\", \"molecule\"], \"basis_words\": [\"blood\", \"tissue\"], \"reason\": \"While 'bodily_systems' focuses on anatomical structures and physiological functions, 'biochemistry' shifts the focus to the underlying molecular and chemical processes.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.8}",
+            "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"bodily_systems\".\nDescription: Integration of anatomical structures and physiological functions.\nResults so far in this hypothesis: {\"blood\": 43, \"body\": 256, \"nerve\": 885, \"organ\": 1778, \"skin\": 87, \"tissue\": 713}\nBest word so far: \"blood\" with rank 43.\n\nMake a MEDIUM-LARGE mutation: produce a child hypothesis in an ADJACENT but\ndistinct category that could still plausibly contain the hidden target given\n\"blood\"'s rank. The child must NOT be a sub-category of \"bodily_systems\" - it\nshould sit alongside \"bodily_systems\" in semantic space, not underneath it.\n\nFor example, if the parent is \"types of plants\" and the best word is \"shrub\",\nan adjacent category could be \"plant descriptors\", \"botanical terminology\",\n\"growth habits\", or \"ecological roles\".\n\nSuggest one adjacent hypothesis. Include exactly 3 starter words that have\nnot already been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"afraid\", \"analysis\", \"anatomy\", \"angry\", \"apple\", \"arm\", \"baseball\", \"bed\", \"beef\", \"biology\", \"blood\", \"boat\", \"body\", \"bone\", \"book\", \"bread\", \"bus\", \"butter\", \"buttermilk\", \"cabinet\", \"calm\", \"camera\", \"canvas\", \"car\", \"career\", \"chair\", \"cheese\", \"chest\", \"chord\", \"climate\", \"cloud\", \"coat\", \"college\", \"computer\", \"cosmos\", \"craft\", \"cream\", \"dance\", \"desk\", \"drawing\", \"dress\", \"drizzle\", \"drum\", \"energy\", \"experiment\", \"face\", \"flesh\", \"flurry\", \"foot\", \"forecast\", \"forest\", \"fruit\", \"galaxy\", \"golf\", \"grass\", \"hail\", \"hand\", \"happy\", \"harmony\", \"head\", \"heart\", \"heat\", \"hockey\", \"humidity\", \"internet\", \"job\", \"joy\", \"kefir\", \"key\", \"lamp\", \"laptop\", \"lecture\", \"leg\", \"meat\", \"melody\", \"metabolism\", \"method\", \"milk\", \"mist\", \"money\", \"moon\", \"mountain\", \"muscle\", \"neck\", \"nerve\", \"note\", \"office\", \"organ\", \"paint\", \"pants\", \"phone\", \"pitch\", \"plane\", \"planet\", \"power\", \"rain\", \"research\", \"rhythm\", \"river\", \"rock\", \"sad\", \"salary\", \"scale\", \"school\", \"science\", \"sculpture\", \"shirt\", \"shower\", \"sketch\", \"skin\", \"skirt\", \"sleet\", \"snow\", \"soccer\", \"sofa\", \"software\", \"song\", \"spine\", \"star\", \"steak\", \"storm\", \"student\", \"study\", \"suit\", \"table\", \"teacher\", \"temperature\", \"tempo\", \"tennis\", \"theory\", \"tissue\", \"train\", \"tree\", \"truck\", \"tune\", \"universe\", \"university\", \"whey\", \"wind\", \"work\", \"yogurt\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"category name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nThe parent hypothesis's prior rationale (for context only; do not copy blindly): basis_words=[\"bone\", \"heart\", \"muscle\", \"arm\", \"face\", \"foot\", \"hand\", \"head\"], reason=\"Both terms describe the physical components and functional units of a living organism. The intersection lies in the study of how structures like hearts or muscles function as parts of larger systems.\".\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+            "injected_rationale_hash": "72c86b2f7e3c2dd2",
+            "rationale_truncated": true
+          }
+        },
+        {
+          "hypothesis_id": "d0e2f969685b4405a6eeadf96fefd839",
+          "category_name": "physiology",
+          "description": "the study of biological functions and processes in humans",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "anatomy",
+          "parent_id": "8cb2f91fcd73423fa80447beecfa16f5",
+          "origin": "self_adaptive_ml_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "self_report": {
+            "predicted_closeness": 0.8,
+            "predicted_closeness_clamped": false,
+            "predicted_bucket": "top100",
+            "rationale": {
+              "basis_words": [
+                "chest",
+                "neck"
+              ],
+              "reason": "Chest and neck's proximity suggests a focus on the torso or internal systems. Physiology is an adjacent category that explores these bodily functions."
+            },
+            "self_report_parse_failed": false,
+            "self_report_raw": "{\"name\": \"physiology\", \"description\": \"the study of biological functions and processes in humans\", \"words\": [\"respiration\", \"circulation\", \"digestion\"], \"basis_words\": [\"chest\", \"neck\"], \"reason\": \"Chest and neck's proximity suggests a focus on the torso or internal systems. Physiology is an adjacent category that explores these bodily functions.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.8}",
+            "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"anatomy\".\nDescription: human body parts\nResults so far in this hypothesis: {\"arm\": 1860, \"chest\": 71, \"face\": 1299, \"foot\": 586, \"hand\": 841, \"head\": 587, \"leg\": 255, \"neck\": 304, \"spine\": 2473}\nBest word so far: \"chest\" with rank 71.\n\nMake a MEDIUM-LARGE mutation: produce a child hypothesis in an ADJACENT but\ndistinct category that could still plausibly contain the hidden target given\n\"chest\"'s rank. The child must NOT be a sub-category of \"anatomy\" - it\nshould sit alongside \"anatomy\" in semantic space, not underneath it.\n\nFor example, if the parent is \"types of plants\" and the best word is \"shrub\",\nan adjacent category could be \"plant descriptors\", \"botanical terminology\",\n\"growth habits\", or \"ecological roles\".\n\nSuggest one adjacent hypothesis. Include exactly 3 starter words that have\nnot already been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"afraid\", \"analysis\", \"anatomy\", \"angry\", \"apple\", \"arm\", \"baseball\", \"bed\", \"beef\", \"biology\", \"blood\", \"boat\", \"body\", \"bone\", \"book\", \"bread\", \"bus\", \"butter\", \"buttermilk\", \"cabinet\", \"calm\", \"camera\", \"canvas\", \"car\", \"career\", \"chair\", \"cheese\", \"chest\", \"chord\", \"climate\", \"cloud\", \"coat\", \"college\", \"computer\", \"cosmos\", \"craft\", \"cream\", \"dance\", \"desk\", \"drawing\", \"dress\", \"drizzle\", \"drum\", \"energy\", \"enzyme\", \"experiment\", \"face\", \"flesh\", \"flurry\", \"foot\", \"forecast\", \"forest\", \"fruit\", \"galaxy\", \"golf\", \"grass\", \"hail\", \"hand\", \"happy\", \"harmony\", \"head\", \"heart\", \"heat\", \"hockey\", \"humidity\", \"internet\", \"job\", \"joy\", \"kefir\", \"key\", \"lamp\", \"laptop\", \"lecture\", \"leg\", \"meat\", \"melody\", \"metabolism\", \"method\", \"milk\", \"mist\", \"molecule\", \"money\", \"moon\", \"mountain\", \"muscle\", \"neck\", \"nerve\", \"note\", \"office\", \"organ\", \"paint\", \"pants\", \"phone\", \"pitch\", \"plane\", \"planet\", \"power\", \"protein\", \"rain\", \"research\", \"rhythm\", \"river\", \"rock\", \"sad\", \"salary\", \"scale\", \"school\", \"science\", \"sculpture\", \"shirt\", \"shower\", \"sketch\", \"skin\", \"skirt\", \"sleet\", \"snow\", \"soccer\", \"sofa\", \"software\", \"song\", \"spine\", \"star\", \"steak\", \"storm\", \"student\", \"study\", \"suit\", \"table\", \"teacher\", \"temperature\", \"tempo\", \"tennis\", \"theory\", \"tissue\", \"train\", \"tree\", \"truck\", \"tune\", \"universe\", \"university\", \"whey\", \"wind\", \"work\", \"yogurt\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"category name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+            "injected_rationale_hash": null,
+            "rationale_truncated": false
+          }
+        },
+        {
+          "hypothesis_id": "8a75070456d9425e9098ebb19bf190a5",
+          "category_name": "morphology",
+          "description": "the study of the form and structure of organisms",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "physiology",
+          "parent_id": "aeccbb6d89974138a4452a9a91ad2684",
+          "origin": "self_adaptive_ml_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "self_report": {
+            "predicted_closeness": 0.8,
+            "predicted_closeness_clamped": false,
+            "predicted_bucket": "top100",
+            "rationale": {
+              "basis_words": [
+                "heart",
+                "muscle"
+              ],
+              "reason": "Morphology is the sister field to physiology; while physiology focuses on function, morphology focuses on structure. Since 'heart' and 'muscle' are close, a structural focus remains highly relevant."
+            },
+            "self_report_parse_failed": false,
+            "self_report_raw": "{\"name\": \"morphology\", \"description\": \"the study of the form and structure of organisms\", \"words\": [\"form\", \"shape\", \"structure\"], \"basis_words\": [\"heart\", \"muscle\"], \"reason\": \"Morphology is the sister field to physiology; while physiology focuses on function, morphology focuses on structure. Since 'heart' and 'muscle' are close, a structural focus remains highly relevant.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.8}",
+            "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"physiology\".\nDescription: the study of how body parts and organ systems function\nResults so far in this hypothesis: {\"anatomy\": 4454, \"biology\": 4077, \"bone\": 453, \"heart\": 253, \"metabolism\": 749, \"muscle\": 248}\nBest word so far: \"muscle\" with rank 248.\n\nMake a MEDIUM-LARGE mutation: produce a child hypothesis in an ADJACENT but\ndistinct category that could still plausibly contain the hidden target given\n\"muscle\"'s rank. The child must NOT be a sub-category of \"physiology\" - it\nshould sit alongside \"physiology\" in semantic space, not underneath it.\n\nFor example, if the parent is \"types of plants\" and the best word is \"shrub\",\nan adjacent category could be \"plant descriptors\", \"botanical terminology\",\n\"growth habits\", or \"ecological roles\".\n\nSuggest one adjacent hypothesis. Include exactly 3 starter words that have\nnot already been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"afraid\", \"analysis\", \"anatomy\", \"angry\", \"apple\", \"arm\", \"baseball\", \"bed\", \"beef\", \"biology\", \"blood\", \"boat\", \"body\", \"bone\", \"book\", \"bread\", \"bus\", \"butter\", \"buttermilk\", \"cabinet\", \"calm\", \"camera\", \"canvas\", \"car\", \"career\", \"chair\", \"cheese\", \"chest\", \"chord\", \"circulation\", \"climate\", \"cloud\", \"coat\", \"college\", \"computer\", \"cosmos\", \"craft\", \"cream\", \"dance\", \"desk\", \"digestion\", \"drawing\", \"dress\", \"drizzle\", \"drum\", \"energy\", \"enzyme\", \"experiment\", \"face\", \"flesh\", \"flurry\", \"foot\", \"forecast\", \"forest\", \"fruit\", \"galaxy\", \"golf\", \"grass\", \"hail\", \"hand\", \"happy\", \"harmony\", \"head\", \"heart\", \"heat\", \"hockey\", \"humidity\", \"internet\", \"job\", \"joy\", \"kefir\", \"key\", \"lamp\", \"laptop\", \"lecture\", \"leg\", \"meat\", \"melody\", \"metabolism\", \"method\", \"milk\", \"mist\", \"molecule\", \"money\", \"moon\", \"mountain\", \"muscle\", \"neck\", \"nerve\", \"note\", \"office\", \"organ\", \"paint\", \"pants\", \"phone\", \"pitch\", \"plane\", \"planet\", \"power\", \"protein\", \"rain\", \"research\", \"respiration\", \"rhythm\", \"river\", \"rock\", \"sad\", \"salary\", \"scale\", \"school\", \"science\", \"sculpture\", \"shirt\", \"shower\", \"sketch\", \"skin\", \"skirt\", \"sleet\", \"snow\", \"soccer\", \"sofa\", \"software\", \"song\", \"spine\", \"star\", \"steak\", \"storm\", \"student\", \"study\", \"suit\", \"table\", \"teacher\", \"temperature\", \"tempo\", \"tennis\", \"theory\", \"tissue\", \"train\", \"tree\", \"truck\", \"tune\", \"universe\", \"university\", \"whey\", \"wind\", \"work\", \"yogurt\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"category name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nThe parent hypothesis's prior rationale (for context only; do not copy blindly): basis_words=[\"arm\", \"face\", \"foot\", \"hand\", \"head\", \"leg\"], reason=\"Physiology is the functional companion to anatomy, moving from structure to the biological processes within those structures.\".\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+            "injected_rationale_hash": "ff4e2c205da05886",
+            "rationale_truncated": false
+          }
+        },
+        {
+          "hypothesis_id": "391df3523c294554873fc5adc54565ff",
+          "category_name": "spatial geometry",
+          "description": "the study of shapes, sizes, and properties of space",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "musical theory",
+          "parent_id": "ff757cf7b0054fb2b84d0f59fb9c8adb",
+          "origin": "self_adaptive_l_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "self_report": {
+            "predicted_closeness": 0.4,
+            "predicted_closeness_clamped": false,
+            "predicted_bucket": "top500",
+            "rationale": {
+              "basis_words": [
+                "scale"
+              ],
+              "reason": "While 'scale' functions as a musical progression, it also refers to proportional measurement. This jump moves from musical theory toward mathematical geometry while staying in the realm of structured proportions."
+            },
+            "self_report_parse_failed": false,
+            "self_report_raw": "{\"name\": \"spatial geometry\", \"description\": \"the study of shapes, sizes, and properties of space\", \"words\": [\"polygon\", \"vertex\", \"volume\"], \"basis_words\": [\"scale\"], \"reason\": \"While 'scale' functions as a musical progression, it also refers to proportional measurement. This jump moves from musical theory toward mathematical geometry while staying in the realm of structured proportions.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}",
+            "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"musical theory\".\nDescription: technical elements of music and notation\nBest word so far: \"scale\" with rank 494.\nOther active categories already being explored: [\"physiology\", \"anatomy\", \"bodily_systems\", \"weather\", \"musical theory\", \"thermodynamics\", \"biochemistry\", \"physiology\", \"morphology\"]\n\nMake a LARGE mutation: produce a child hypothesis in a broad, semantically\nsubstantial new direction that is unlike \"musical theory\" and unlike the other active\ncategories above. The goal is to escape the current semantic region and open\nup unexplored territory, while staying plausibly relevant given \"scale\"'s\nrank - lower ranks mean the target is closer to \"scale\", so the jump\nmust remain in the same broad semantic area even when reframed.\n\nFor example, if the parent is \"types of plants\" and \"shrub\" ranks 50, a large\nmutation could be \"outdoor environments\" or \"rural landscape features\" -\nclearly outside the plant taxonomy but still in a plausible neighborhood for\na target close to \"shrub\".\n\nSuggest one new hypothesis. Include exactly 3 starter words that have not\nalready been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"afraid\", \"analysis\", \"anatomy\", \"angry\", \"apple\", \"arm\", \"baseball\", \"bed\", \"beef\", \"biology\", \"blood\", \"boat\", \"body\", \"bone\", \"book\", \"bread\", \"bus\", \"butter\", \"buttermilk\", \"cabinet\", \"calm\", \"camera\", \"canvas\", \"car\", \"career\", \"chair\", \"cheese\", \"chest\", \"chord\", \"circulation\", \"climate\", \"cloud\", \"coat\", \"college\", \"computer\", \"cosmos\", \"craft\", \"cream\", \"dance\", \"desk\", \"digestion\", \"drawing\", \"dress\", \"drizzle\", \"drum\", \"energy\", \"enzyme\", \"experiment\", \"face\", \"flesh\", \"flurry\", \"foot\", \"forecast\", \"forest\", \"form\", \"fruit\", \"galaxy\", \"golf\", \"grass\", \"hail\", \"hand\", \"happy\", \"harmony\", \"head\", \"heart\", \"heat\", \"hockey\", \"humidity\", \"internet\", \"job\", \"joy\", \"kefir\", \"key\", \"lamp\", \"laptop\", \"lecture\", \"leg\", \"meat\", \"melody\", \"metabolism\", \"method\", \"milk\", \"mist\", \"molecule\", \"money\", \"moon\", \"mountain\", \"muscle\", \"neck\", \"nerve\", \"note\", \"office\", \"organ\", \"paint\", \"pants\", \"phone\", \"pitch\", \"plane\", \"planet\", \"power\", \"protein\", \"rain\", \"research\", \"respiration\", \"rhythm\", \"river\", \"rock\", \"sad\", \"salary\", \"scale\", \"school\", \"science\", \"sculpture\", \"shape\", \"shirt\", \"shower\", \"sketch\", \"skin\", \"skirt\", \"sleet\", \"snow\", \"soccer\", \"sofa\", \"software\", \"song\", \"spine\", \"star\", \"steak\", \"storm\", \"structure\", \"student\", \"study\", \"suit\", \"table\", \"teacher\", \"temperature\", \"tempo\", \"tennis\", \"theory\", \"tissue\", \"train\", \"tree\", \"truck\", \"tune\", \"universe\", \"university\", \"whey\", \"wind\", \"work\", \"yogurt\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"direction name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nThe parent hypothesis's prior rationale (for context only; do not copy blindly): basis_words=[\"note\"], reason=\"Since 'note' was the closest word, this focuses on specific musical structures like chords and scales.\".\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+            "injected_rationale_hash": "6bad734ebb722924",
+            "rationale_truncated": false
+          }
+        }
+      ],
+      "best_word": "temperature",
+      "best_rank": 2,
+      "total_guesses": 153
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:52:03",
+    "details": {
+      "word": "meteorology",
+      "rank": 12856,
+      "hypothesis": "atmospheric_physics",
+      "best_word": "temperature",
+      "best_rank": 2,
+      "total_guesses": 154
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:52:04",
+    "details": {
+      "word": "atmosphere",
+      "rank": 1499,
+      "hypothesis": "atmospheric_physics",
+      "best_word": "temperature",
+      "best_rank": 2,
+      "total_guesses": 155
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T23:52:04",
+    "details": {
+      "word": "dynamics",
+      "rank": 3005,
+      "hypothesis": "atmospheric_physics",
+      "best_word": "temperature",
+      "best_rank": 2,
+      "total_guesses": 156
+    }
+  },
+  {
+    "generation": 2,
+    "event": "CROSSOVER",
+    "timestamp": "2026-07-22T23:52:04",
+    "details": {
+      "parents": [
+        "weather",
+        "thermodynamics"
+      ],
+      "parent_ids": [
+        "e2d11e44cb9d4c30b07a8ce88f047cd3",
+        "1a3e337767bf435f90c96ece6d095ac7"
+      ],
+      "parent_ranks": [
+        2,
+        17
+      ],
+      "parent_a_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "parent_b_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma_pre_perturbation": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child": {
+        "hypothesis_id": "f0dad9d6791246dca00414c82446e9c7",
+        "category_name": "atmospheric_physics",
+        "description": "The study of the atmosphere and its physical processes including thermodynamics and meteorology.",
+        "words_tried": {
+          "atmosphere": 1499,
+          "dynamics": 3005,
+          "meteorology": 12856
+        },
+        "best_word": "atmosphere",
+        "best_rank": 1499,
+        "status": "active",
+        "parent": "weather+thermodynamics",
+        "parent_id": null,
+        "origin": "crossover",
+        "sigma": [
+          0.25,
+          0.25,
+          0.25,
+          0.25
+        ],
+        "self_report": {
+          "predicted_closeness": 0.9,
+          "predicted_closeness_clamped": false,
+          "predicted_bucket": "top100",
+          "rationale": {
+            "basis_words": [
+              "temperature",
+              "heat",
+              "wind",
+              "energy"
+            ],
+            "reason": "This category combines the thermodynamic properties of gases (heat, energy) with atmospheric phenomena (wind, temperature) to describe the physical science of weather."
+          },
+          "self_report_parse_failed": false,
+          "self_report_raw": "{\"name\": \"atmospheric_physics\", \"description\": \"The study of the atmosphere and its physical processes including thermodynamics and meteorology.\", \"words\": [\"meteorology\", \"atmosphere\", \"dynamics\"], \"basis_words\": [\"temperature\", \"heat\", \"wind\", \"energy\"], \"reason\": \"This category combines the thermodynamic properties of gases (heat, energy) with atmospheric phenomena (wind, temperature) to describe the physical science of weather.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.9}",
+          "self_report_prompt": "Return only JSON, no markdown or explanation.\nCategory A is weather with results {\"climate\": 889, \"cloud\": 2244, \"forecast\": 1359, \"humidity\": 28, \"rain\": 443, \"snow\": 1248, \"storm\": 1252, \"temperature\": 2, \"wind\": 592}.\nCategory B is thermodynamics with results {\"energy\": 2171, \"heat\": 17, \"power\": 2119}.\nSuggest one new category that captures the intersection or overlap of A and B.\nInclude exactly 3 candidate words.\nEvery word must be one common lowercase dictionary word.\nJSON schema:\n{\"name\": \"category name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+          "injected_rationale_hash": null,
+          "rationale_truncated": false
+        }
+      },
+      "best_word": "temperature",
+      "best_rank": 2,
+      "total_guesses": 156
+    }
+  },
+  {
+    "generation": 2,
+    "event": "DEDUPLICATE",
+    "timestamp": "2026-07-22T23:52:04",
+    "details": {
+      "merged": [
+        {
+          "survivor": "physiology",
+          "discarded": "physiology",
+          "survivor_best_rank": 150,
+          "discarded_best_rank": 248
+        }
+      ],
+      "remaining_hypotheses": 25,
+      "active_hypotheses": 10,
+      "best_word": "temperature",
+      "best_rank": 2,
+      "total_guesses": 156
+    }
+  },
+  {
+    "generation": 2,
+    "event": "SIGMA_TRAJECTORY",
+    "timestamp": "2026-07-22T23:52:04",
+    "details": {
+      "mean_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "population_size": 10
+    }
+  },
+  {
+    "generation": 3,
+    "event": "CANDIDATES",
+    "timestamp": "2026-07-23T00:13:33",
+    "details": {
+      "count": 26,
+      "candidates": [
+        {
+          "hypothesis": "weather",
+          "word": "weather"
+        },
+        {
+          "hypothesis": "weather",
+          "word": "pressure"
+        },
+        {
+          "hypothesis": "weather",
+          "word": "season"
+        },
+        {
+          "hypothesis": "thermodynamics",
+          "word": "entropy"
+        },
+        {
+          "hypothesis": "thermodynamics",
+          "word": "equilibrium"
+        },
+        {
+          "hypothesis": "bodily_systems",
+          "word": "pulse"
+        },
+        {
+          "hypothesis": "bodily_systems",
+          "word": "vein"
+        },
+        {
+          "hypothesis": "bodily_systems",
+          "word": "artery"
+        },
+        {
+          "hypothesis": "anatomy",
+          "word": "fever"
+        },
+        {
+          "hypothesis": "anatomy",
+          "word": "warmth"
+        },
+        {
+          "hypothesis": "anatomy",
+          "word": "degree"
+        },
+        {
+          "hypothesis": "physiology",
+          "word": "system"
+        },
+        {
+          "hypothesis": "physiology",
+          "word": "cell"
+        },
+        {
+          "hypothesis": "physiology",
+          "word": "organism"
+        },
+        {
+          "hypothesis": "musical theory",
+          "word": "cadence"
+        },
+        {
+          "hypothesis": "musical theory",
+          "word": "interval"
+        },
+        {
+          "hypothesis": "musical theory",
+          "word": "notation"
+        },
+        {
+          "hypothesis": "morphology",
+          "word": "morphology"
+        },
+        {
+          "hypothesis": "morphology",
+          "word": "physiology"
+        },
+        {
+          "hypothesis": "spatial geometry",
+          "word": "area"
+        },
+        {
+          "hypothesis": "spatial geometry",
+          "word": "distance"
+        },
+        {
+          "hypothesis": "spatial geometry",
+          "word": "dimension"
+        },
+        {
+          "hypothesis": "atmospheric_physics",
+          "word": "gas"
+        },
+        {
+          "hypothesis": "atmospheric_physics",
+          "word": "fluid"
+        },
+        {
+          "hypothesis": "biochemistry",
+          "word": "chemistry"
+        },
+        {
+          "hypothesis": "biochemistry",
+          "word": "reaction"
+        }
+      ]
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T00:13:37",
+    "details": {
+      "word": "weather",
+      "rank": 232,
+      "hypothesis": "weather",
+      "best_word": "temperature",
+      "best_rank": 2,
+      "total_guesses": 157
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T00:13:38",
+    "details": {
+      "word": "pressure",
+      "rank": 20,
+      "hypothesis": "weather",
+      "best_word": "temperature",
+      "best_rank": 2,
+      "total_guesses": 158
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T00:13:39",
+    "details": {
+      "word": "season",
+      "rank": 1065,
+      "hypothesis": "weather",
+      "best_word": "temperature",
+      "best_rank": 2,
+      "total_guesses": 159
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T00:13:39",
+    "details": {
+      "word": "entropy",
+      "rank": 5012,
+      "hypothesis": "thermodynamics",
+      "best_word": "temperature",
+      "best_rank": 2,
+      "total_guesses": 160
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T00:13:40",
+    "details": {
+      "word": "equilibrium",
+      "rank": 2236,
+      "hypothesis": "thermodynamics",
+      "best_word": "temperature",
+      "best_rank": 2,
+      "total_guesses": 161
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T00:13:41",
+    "details": {
+      "word": "pulse",
+      "rank": 315,
+      "hypothesis": "bodily_systems",
+      "best_word": "temperature",
+      "best_rank": 2,
+      "total_guesses": 162
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T00:13:42",
+    "details": {
+      "word": "vein",
+      "rank": 995,
+      "hypothesis": "bodily_systems",
+      "best_word": "temperature",
+      "best_rank": 2,
+      "total_guesses": 163
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T00:13:42",
+    "details": {
+      "word": "artery",
+      "rank": 2063,
+      "hypothesis": "bodily_systems",
+      "best_word": "temperature",
+      "best_rank": 2,
+      "total_guesses": 164
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T00:13:43",
+    "details": {
+      "word": "fever",
+      "rank": 1,
+      "hypothesis": "anatomy",
+      "best_word": "fever",
+      "best_rank": 1,
+      "total_guesses": 165
+    }
+  },
+  {
+    "generation": 3,
+    "event": "SOLVED",
+    "timestamp": "2026-07-23T00:13:43",
+    "details": {
+      "answer": "fever",
+      "rank": 1,
+      "total_guesses": 165
+    }
+  },
+  {
+    "generation": 3,
+    "event": "NETWORK_METRICS",
+    "timestamp": "2026-07-23T00:13:43",
+    "details": {
+      "network_calls": 165,
+      "network_wall_clock_seconds": 4693.9808,
+      "total_latency_seconds": 75.7054,
+      "mean_latency_seconds": 0.4588,
+      "median_latency_seconds": 0.227,
+      "p95_latency_seconds": 3.225,
+      "max_latency_seconds": 3.2396,
+      "status_counts": {
+        "200": 165
+      },
+      "outcome_counts": {
+        "ok": 165
+      }
+    }
+  }
+]

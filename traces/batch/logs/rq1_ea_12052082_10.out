@@ -1,0 +1,118 @@
+===== JOB INFORMATION =====
+Date: Wed Jul 22 19:31:25 EDT 2026
+Host: frnt191.frontenac.local
+Job ID: 12052330
+Array task: 10
+Arm: A3
+Game: 1307
+Python: /global/home/hpc6237/venvs/contexto/bin/python
+OLLAMA_HOST: 127.0.0.1:32330
+OLLAMA_BASE_URL: http://127.0.0.1:32330/v1
+RANK_CACHE_DIR: data/rank_cache_A3
+Command: python -m contexto_solver.experiment --game api --method ea_llm_self_adaptive --provider ollama --ollama-model qwen3:14b --game-numbers 1307 --runs-per-target 5 --random-seed 0 --max-generations 50 --output traces/rq1_A3/A3_ea_llm_self_adaptive_game1307.json
+Python 3.11.5
+Wed Jul 22 19:31:25 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 580.167.08             Driver Version: 580.167.08     CUDA Version: 13.0     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100-SXM4-40GB          On  |   00000000:07:00.0 Off |                    0 |
+| N/A   26C    P0             52W /  400W |     107MiB /  40960MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   1  NVIDIA A100-SXM4-40GB          On  |   00000000:0F:00.0 Off |                    0 |
+| N/A   52C    P0            301W /  400W |   15611MiB /  40960MiB |     96%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   2  NVIDIA A100-SXM4-40GB          On  |   00000000:47:00.0 Off |                    0 |
+| N/A   50C    P0            282W /  400W |   39892MiB /  40960MiB |    100%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   3  NVIDIA A100-SXM4-40GB          On  |   00000000:4E:00.0 Off |                    0 |
+| N/A   49C    P0            293W /  400W |   15611MiB /  40960MiB |     96%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   4  NVIDIA A100-SXM4-40GB          On  |   00000000:87:00.0 Off |                    0 |
+| N/A   56C    P0            315W /  400W |   14013MiB /  40960MiB |     95%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   5  NVIDIA A100-SXM4-40GB          On  |   00000000:90:00.0 Off |                    0 |
+| N/A   47C    P0             57W /  400W |       3MiB /  40960MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   6  NVIDIA A100-SXM4-40GB          On  |   00000000:B7:00.0 Off |                    0 |
+| N/A   37C    P0             62W /  400W |       1MiB /  40960MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   7  NVIDIA A100-SXM4-40GB          On  |   00000000:BD:00.0 Off |                    0 |
+| N/A   35C    P0             56W /  400W |       1MiB /  40960MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|    0   N/A  N/A         2995164      G   ...local/lib/ollama/llama-server          6MiB |
+|    0   N/A  N/A         2995167      G   ...local/lib/ollama/llama-server          6MiB |
+|    0   N/A  N/A         2995168      G   ...local/lib/ollama/llama-server          6MiB |
+|    0   N/A  N/A         2997134      G   ...local/lib/ollama/llama-server          6MiB |
+|    0   N/A  N/A         2997929      G   ...local/lib/ollama/llama-server          6MiB |
+|    0   N/A  N/A         2997933      G   ...local/lib/ollama/llama-server          6MiB |
+|    0   N/A  N/A         3020772      G   ...local/lib/ollama/llama-server          6MiB |
+|    1   N/A  N/A         3020772    C+G   ...local/lib/ollama/llama-server      15593MiB |
+|    2   N/A  N/A         2995164    C+G   ...local/lib/ollama/llama-server      15593MiB |
+|    2   N/A  N/A         2995168    C+G   ...local/lib/ollama/llama-server      15593MiB |
+|    2   N/A  N/A         2997134    C+G   ...local/lib/ollama/llama-server       8169MiB |
+|    2   N/A  N/A         2997929    C+G   ...local/lib/ollama/llama-server        467MiB |
+|    3   N/A  N/A         2995167    C+G   ...local/lib/ollama/llama-server      15593MiB |
+|    4   N/A  N/A         2997933    C+G   ...local/lib/ollama/llama-server      13995MiB |
++-----------------------------------------------------------------------------------------+
+===== START OLLAMA =====
+===== RUN EXPERIMENT =====
+Generation 0: best word=learn, best rank=444
+Generation 1: best word=respect, best rank=26
+Generation 2: best word=humility, best rank=6
+Generation 3: best word=integrity, best rank=3
+Generation 4: best word=honesty, best rank=1
+Generation 0: best word=sad, best rank=956
+Generation 1: best word=fear, best rank=302
+Generation 2: best word=shame, best rank=94
+Generation 3: best word=attitude, best rank=31
+Generation 4: best word=respect, best rank=26
+Generation 5: best word=integrity, best rank=3
+Generation 6: best word=integrity, best rank=3
+Generation 7: best word=honesty, best rank=1
+Generation 0: best word=work, best rank=745
+Generation 1: best word=insight, best rank=135
+Generation 2: best word=kindness, best rank=11
+Generation 3: best word=honesty, best rank=1
+Generation 0: best word=sad, best rank=956
+Generation 1: best word=accountability, best rank=37
+Generation 2: best word=commitment, best rank=27
+Generation 3: best word=commitment, best rank=27
+Generation 4: best word=integrity, best rank=3
+Generation 5: best word=honesty, best rank=1
+Generation 0: best word=dog, best rank=808
+Generation 1: best word=fairness, best rank=8
+Generation 2: best word=honesty, best rank=1
+Wrote JSON summary: traces/rq1_A3/A3_ea_llm_self_adaptive_game1307.json
+Wrote CSV summary: traces/rq1_A3/A3_ea_llm_self_adaptive_game1307.csv
+{
+  "total_runs": 5,
+  "solved_runs": 5,
+  "solve_rate": 1.0,
+  "average_guesses_solved": 222.6,
+  "average_best_rank": 1.0,
+  "average_generations": 4.2
+}
+===== FINISHED =====
+Arm: A3
+Game: 1307
+Exit status: 0
+Date: Wed Jul 22 23:12:45 EDT 2026
+Metadata: traces/rq1_A3/A3_game1307_ollama_metadata_job12052330.txt

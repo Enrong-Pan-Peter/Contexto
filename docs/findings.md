@@ -8,6 +8,71 @@ belongs in `docs/design_decisions.md`.
 Entries are in reverse chronological order. Claims are phrased according to the
 current evidence level; unresolved or incomplete results are marked explicitly.
 
+## 2026-07-06 — Ollama `json_object` Empty-Init Bug Confirmed and Fixed
+
+Evidence source:
+[`traces/ea_llm_map_elites_aligned_ivory_run1_20260706_151900.json`](../traces/ea_llm_map_elites_aligned_ivory_run1_20260706_151900.json)
+(single pilot run with `self_report: true`, 10 generations, zero guesses);
+normalization and fail-fast tests in
+[`tests/test_initial_categories_parsing.py`](../tests/test_initial_categories_parsing.py)
+and [`tests/test_list_prompts_parsing.py`](../tests/test_list_prompts_parsing.py);
+code in [`contexto_solver/llm_client.py`](../contexto_solver/llm_client.py).
+
+Evidence quality: single-run observation for the symptom (empty archive,
+`best_word=null` throughout); code-path and git-history analysis for the
+mechanism; unit-test and live single-call smoke evidence for the fix. No
+repeated-run or batch-level solver evidence after the fix yet.
+
+Finding: Ollama's forced top-level JSON object could collapse array-shaped LLM
+responses into a single category dict. Callers that iterated a dict as if it were
+a category list silently produced zero initial hypotheses, leaving MAP-Elites (and
+other EA modes) to run empty generations. The linked pilot trace is consistent
+with this failure mode (`INIT.hypotheses: []`, `occupied_cells: 0`, no
+`OPERATOR_SAMPLED` events).
+
+Status: [CONFIRMED] for the bug mechanism and fix implementation; [UNCERTAIN]
+for whether any historical successful Ollama runs were silently affected before
+detection, because older traces were not re-audited for empty-init signatures.
+
+Correction: this was an infrastructure regression around Ollama `json_object`
+enforcement, not poor MAP-Elites search performance on `ivory` in 10
+generations. Do not interpret the pilot's `solve_rate: 0.0` as a calibration
+result.
+
+## 2026-07-06 — RQ1 Self-Report Layer Ready for Audit Runs (Not Yet Batch-Validated)
+
+Evidence source: shared module
+[`contexto_solver/self_report.py`](../contexto_solver/self_report.py); routing
+in [`contexto_solver/methods/ea_core.py`](../contexto_solver/methods/ea_core.py);
+byte-identity snapshot tests
+([`tests/test_self_report_prompt.py`](../tests/test_self_report_prompt.py),
+[`tests/test_legacy_prompt_snapshots.py`](../tests/test_legacy_prompt_snapshots.py));
+isolation audit
+[`tests/test_prompt_isolation.py`](../tests/test_prompt_isolation.py); env-gated
+live single-call smokes in `tests/test_self_report_prompt.py` (Ollama
+`qwen3:14b`, `RUN_OLLAMA_SMOKE=1`); verification script
+[`scripts/verify_self_report_pilot.py`](../scripts/verify_self_report_pilot.py).
+
+Evidence quality: implementation and test-suite evidence only. The linked pilot
+trace had `self_report: true` in `RUN_CONFIG` but produced no instrumented
+operator events because initialization failed before any proposal calls ran.
+There is not yet a completed full solver audit trace with populated
+`self_report` fields across generations.
+
+Finding: all five live LLM modes can emit logged-only self-report fields on their
+instrumented proposal paths when `SELF_REPORT=1`, without changing flag-off
+prompt bytes or search mechanics. Instrumentation deliberately excludes
+`propose_words`, `local_search`, and initial category generation.
+
+Status: [CONFIRMED] for code wiring, flag-off byte identity, parse policy, and
+single-call live parseability; [UNCERTAIN] for operator calibration quality,
+cross-target generalization, and any paper claim until dedicated audit runs
+produce analyzable multi-generation traces.
+
+Open items: run instrumented pilots per mode and analyze with
+`scripts/verify_self_report_pilot.py`; do not treat unit-test smokes as
+substitutes for solver-run calibration evidence.
+
 ## 2026-06-24 — Sigma-Control Batch: Inherited Sigma Does Not Beat Controls
 
 Evidence source:

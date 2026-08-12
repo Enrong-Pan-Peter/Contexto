@@ -1,0 +1,58 @@
+Game: 1365
+Host: frnt143.frontenac.local
+Date: Mon Aug  3 15:15:17 EDT 2026
+Mon Aug  3 15:15:17 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 610.43.02              KMD Version: 610.43.02     CUDA UMD Version: 13.3     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A30                     On  |   00000000:21:00.0 Off |                    0 |
+| N/A   23C    P0             40W /  165W |       0MiB /  24576MiB |      1%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   1  NVIDIA A30                     On  |   00000000:81:00.0 Off |                    0 |
+| N/A   22C    P0             26W /  165W |       0MiB /  24576MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+ollama version is 0.32.1
+NAME          ID              SIZE      MODIFIED     
+gemma4:12b    4eb23ef187e2    7.6 GB    12 days ago     
+qwen3:14b     bdbd181c33f2    9.3 GB    5 weeks ago     
+qwen3:30b     ad815644918f    18 GB     2 months ago    
+Generation 0: best word=green, best rank=62
+Generation 1: best word=vegetable, best rank=58
+Generation 2: best word=peel, best rank=49
+Generation 3: best word=peel, best rank=49
+Generation 4: best word=lentil, best rank=40
+Generation 5: best word=pea, best rank=39
+Generation 6: best word=potato, best rank=17
+Generation 7: best word=carrot, best rank=5
+Generation 8: best word=carrot, best rank=5
+Generation 9: best word=carrot, best rank=5
+Generation 10: best word=carrot, best rank=5
+Generation 11: best word=carrot, best rank=5
+Generation 12: best word=parsnip, best rank=2
+Generation 13: best word=turnip, best rank=1
+Wrote JSON summary: traces/rq1_A1/A1_ea_llm_self_adaptive_game1365.json
+Wrote CSV summary: traces/rq1_A1/A1_ea_llm_self_adaptive_game1365.csv
+{
+  "total_runs": 5,
+  "solved_runs": 5,
+  "solve_rate": 1.0,
+  "average_guesses_solved": 520.8,
+  "average_best_rank": 1.0,
+  "average_generations": 16.0
+}
+Exit status: 0
+Finished: Mon Aug  3 18:07:24 EDT 2026

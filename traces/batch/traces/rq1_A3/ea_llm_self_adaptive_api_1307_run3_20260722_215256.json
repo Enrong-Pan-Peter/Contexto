@@ -1,0 +1,4568 @@
+[
+  {
+    "generation": -1,
+    "event": "RUN_CONFIG",
+    "timestamp": "2026-07-22T21:33:54",
+    "details": {
+      "game": "api",
+      "solver": "llm",
+      "method": "ea_llm_self_adaptive",
+      "mode": "api",
+      "target": null,
+      "game_number": 1307,
+      "run_index": 2,
+      "game_embedding_path": null,
+      "solver_embedding_path": null,
+      "embedding_backend": null,
+      "vocabulary_size": null,
+      "alignment": "api_unknown",
+      "trace_schema_version": 3,
+      "instrumentation_provenance_hash": "bd9f2858283673a2",
+      "self_report": false,
+      "rationale_inheritance": false,
+      "max_generations": 50,
+      "llm_provider": "ollama",
+      "llm_model": "qwen3:14b",
+      "llm_workers": 4,
+      "initial_categories": 15,
+      "max_active_hypotheses": null,
+      "local_search_rank_threshold": 100,
+      "self_adaptive_initial_categories": 15,
+      "self_adaptive_mu": 15,
+      "self_adaptive_concentration": 50.0,
+      "self_adaptive_sigma_floor": 0.02,
+      "self_adaptive_sigma_mode": "frozen_uniform",
+      "mapelites_grid_resolution": null,
+      "mapelites_mutations_per_gen": null,
+      "mapelites_crossovers_per_gen": null,
+      "mapelites_initial_categories": null,
+      "mapelites_concentration": null,
+      "mapelites_sigma_floor": null,
+      "mapelites_sigma_mode": null,
+      "mapelites_frozen_sigma": null,
+      "mapelites_ranked_context_k": null,
+      "rank_cache_enabled": true,
+      "enable_pivot": false,
+      "ea_llm_pivot_stall_no_improvement_generations": null,
+      "ea_llm_pivot_stall_close_rank_threshold": null,
+      "ea_llm_pivot_stall_close_generations_limit": null,
+      "ea_llm_pivot_max_attempts_per_run": null,
+      "ea_llm_pivot_candidate_words_per_operator": null,
+      "ea_llm_pivot_resolution_window": null,
+      "random_seed": 2
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:34:10",
+    "details": {
+      "word": "happy",
+      "rank": 1884,
+      "hypothesis": "emotions",
+      "best_word": "happy",
+      "best_rank": 1884,
+      "total_guesses": 1
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:34:10",
+    "details": {
+      "word": "sad",
+      "rank": 956,
+      "hypothesis": "emotions",
+      "best_word": "sad",
+      "best_rank": 956,
+      "total_guesses": 2
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:34:10",
+    "details": {
+      "word": "angry",
+      "rank": 3971,
+      "hypothesis": "emotions",
+      "best_word": "sad",
+      "best_rank": 956,
+      "total_guesses": 3
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:34:10",
+    "details": {
+      "word": "tree",
+      "rank": 8123,
+      "hypothesis": "nature",
+      "best_word": "sad",
+      "best_rank": 956,
+      "total_guesses": 4
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:34:10",
+    "details": {
+      "word": "river",
+      "rank": 13240,
+      "hypothesis": "nature",
+      "best_word": "sad",
+      "best_rank": 956,
+      "total_guesses": 5
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:34:10",
+    "details": {
+      "word": "mountain",
+      "rank": 11482,
+      "hypothesis": "nature",
+      "best_word": "sad",
+      "best_rank": 956,
+      "total_guesses": 6
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:34:10",
+    "details": {
+      "word": "work",
+      "rank": 745,
+      "hypothesis": "dailyactivities",
+      "best_word": "work",
+      "best_rank": 745,
+      "total_guesses": 7
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:34:10",
+    "details": {
+      "word": "sleep",
+      "rank": 4975,
+      "hypothesis": "dailyactivities",
+      "best_word": "work",
+      "best_rank": 745,
+      "total_guesses": 8
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:34:10",
+    "details": {
+      "word": "eat",
+      "rank": 3532,
+      "hypothesis": "dailyactivities",
+      "best_word": "work",
+      "best_rank": 745,
+      "total_guesses": 9
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:34:10",
+    "details": {
+      "word": "hand",
+      "rank": 1952,
+      "hypothesis": "bodyparts",
+      "best_word": "work",
+      "best_rank": 745,
+      "total_guesses": 10
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:34:10",
+    "details": {
+      "word": "foot",
+      "rank": 8968,
+      "hypothesis": "bodyparts",
+      "best_word": "work",
+      "best_rank": 745,
+      "total_guesses": 11
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:34:10",
+    "details": {
+      "word": "head",
+      "rank": 6591,
+      "hypothesis": "bodyparts",
+      "best_word": "work",
+      "best_rank": 745,
+      "total_guesses": 12
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:34:10",
+    "details": {
+      "word": "day",
+      "rank": 3118,
+      "hypothesis": "timeunits",
+      "best_word": "work",
+      "best_rank": 745,
+      "total_guesses": 13
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:34:14",
+    "details": {
+      "word": "night",
+      "rank": 5036,
+      "hypothesis": "timeunits",
+      "best_word": "work",
+      "best_rank": 745,
+      "total_guesses": 14
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:34:14",
+    "details": {
+      "word": "year",
+      "rank": 2671,
+      "hypothesis": "timeunits",
+      "best_word": "work",
+      "best_rank": 745,
+      "total_guesses": 15
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:34:14",
+    "details": {
+      "word": "red",
+      "rank": 13398,
+      "hypothesis": "colors",
+      "best_word": "work",
+      "best_rank": 745,
+      "total_guesses": 16
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:34:14",
+    "details": {
+      "word": "blue",
+      "rank": 7732,
+      "hypothesis": "colors",
+      "best_word": "work",
+      "best_rank": 745,
+      "total_guesses": 17
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:34:14",
+    "details": {
+      "word": "green",
+      "rank": 8584,
+      "hypothesis": "colors",
+      "best_word": "work",
+      "best_rank": 745,
+      "total_guesses": 18
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:34:14",
+    "details": {
+      "word": "apple",
+      "rank": 8375,
+      "hypothesis": "food",
+      "best_word": "work",
+      "best_rank": 745,
+      "total_guesses": 19
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:34:14",
+    "details": {
+      "word": "bread",
+      "rank": 9079,
+      "hypothesis": "food",
+      "best_word": "work",
+      "best_rank": 745,
+      "total_guesses": 20
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:34:15",
+    "details": {
+      "word": "cheese",
+      "rank": 7157,
+      "hypothesis": "food",
+      "best_word": "work",
+      "best_rank": 745,
+      "total_guesses": 21
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:34:16",
+    "details": {
+      "word": "knife",
+      "rank": 6946,
+      "hypothesis": "tools",
+      "best_word": "work",
+      "best_rank": 745,
+      "total_guesses": 22
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:34:16",
+    "details": {
+      "word": "hammer",
+      "rank": 7660,
+      "hypothesis": "tools",
+      "best_word": "work",
+      "best_rank": 745,
+      "total_guesses": 23
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:34:17",
+    "details": {
+      "word": "screwdriver",
+      "rank": 28686,
+      "hypothesis": "tools",
+      "best_word": "work",
+      "best_rank": 745,
+      "total_guesses": 24
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:34:17",
+    "details": {
+      "word": "car",
+      "rank": 8718,
+      "hypothesis": "transportation",
+      "best_word": "work",
+      "best_rank": 745,
+      "total_guesses": 25
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:34:18",
+    "details": {
+      "word": "bike",
+      "rank": 8621,
+      "hypothesis": "transportation",
+      "best_word": "work",
+      "best_rank": 745,
+      "total_guesses": 26
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:34:18",
+    "details": {
+      "word": "train",
+      "rank": 5687,
+      "hypothesis": "transportation",
+      "best_word": "work",
+      "best_rank": 745,
+      "total_guesses": 27
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:34:19",
+    "details": {
+      "word": "soccer",
+      "rank": 23505,
+      "hypothesis": "sports",
+      "best_word": "work",
+      "best_rank": 745,
+      "total_guesses": 28
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:34:19",
+    "details": {
+      "word": "basketball",
+      "rank": 12015,
+      "hypothesis": "sports",
+      "best_word": "work",
+      "best_rank": 745,
+      "total_guesses": 29
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:34:19",
+    "details": {
+      "word": "tennis",
+      "rank": 13967,
+      "hypothesis": "sports",
+      "best_word": "work",
+      "best_rank": 745,
+      "total_guesses": 30
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:34:19",
+    "details": {
+      "word": "rain",
+      "rank": 8390,
+      "hypothesis": "weather",
+      "best_word": "work",
+      "best_rank": 745,
+      "total_guesses": 31
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:34:19",
+    "details": {
+      "word": "snow",
+      "rank": 10064,
+      "hypothesis": "weather",
+      "best_word": "work",
+      "best_rank": 745,
+      "total_guesses": 32
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:34:19",
+    "details": {
+      "word": "sun",
+      "rank": 8443,
+      "hypothesis": "weather",
+      "best_word": "work",
+      "best_rank": 745,
+      "total_guesses": 33
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:34:19",
+    "details": {
+      "word": "father",
+      "rank": 2596,
+      "hypothesis": "family",
+      "best_word": "work",
+      "best_rank": 745,
+      "total_guesses": 34
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:34:19",
+    "details": {
+      "word": "mother",
+      "rank": 3858,
+      "hypothesis": "family",
+      "best_word": "work",
+      "best_rank": 745,
+      "total_guesses": 35
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:34:19",
+    "details": {
+      "word": "child",
+      "rank": 2685,
+      "hypothesis": "family",
+      "best_word": "work",
+      "best_rank": 745,
+      "total_guesses": 36
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:34:19",
+    "details": {
+      "word": "school",
+      "rank": 4250,
+      "hypothesis": "education",
+      "best_word": "work",
+      "best_rank": 745,
+      "total_guesses": 37
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:34:19",
+    "details": {
+      "word": "book",
+      "rank": 1801,
+      "hypothesis": "education",
+      "best_word": "work",
+      "best_rank": 745,
+      "total_guesses": 38
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:34:19",
+    "details": {
+      "word": "teacher",
+      "rank": 2012,
+      "hypothesis": "education",
+      "best_word": "work",
+      "best_rank": 745,
+      "total_guesses": 39
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:34:19",
+    "details": {
+      "word": "phone",
+      "rank": 7529,
+      "hypothesis": "technology",
+      "best_word": "work",
+      "best_rank": 745,
+      "total_guesses": 40
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:34:19",
+    "details": {
+      "word": "computer",
+      "rank": 6375,
+      "hypothesis": "technology",
+      "best_word": "work",
+      "best_rank": 745,
+      "total_guesses": 41
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:34:19",
+    "details": {
+      "word": "internet",
+      "rank": 2637,
+      "hypothesis": "technology",
+      "best_word": "work",
+      "best_rank": 745,
+      "total_guesses": 42
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:34:19",
+    "details": {
+      "word": "home",
+      "rank": 6830,
+      "hypothesis": "places",
+      "best_word": "work",
+      "best_rank": 745,
+      "total_guesses": 43
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:34:20",
+    "details": {
+      "word": "park",
+      "rank": 13299,
+      "hypothesis": "places",
+      "best_word": "work",
+      "best_rank": 745,
+      "total_guesses": 44
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:34:21",
+    "details": {
+      "word": "office",
+      "rank": 5244,
+      "hypothesis": "places",
+      "best_word": "work",
+      "best_rank": 745,
+      "total_guesses": 45
+    }
+  },
+  {
+    "generation": 0,
+    "event": "INIT",
+    "timestamp": "2026-07-22T21:34:21",
+    "details": {
+      "hypotheses": [
+        {
+          "hypothesis_id": "3333ec7a57454e159f69946fe6b23f6d",
+          "category_name": "emotions",
+          "description": "feelings experienced by humans",
+          "words_tried": {
+            "sad": 956,
+            "happy": 1884,
+            "angry": 3971
+          },
+          "best_word": "sad",
+          "best_rank": 956,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "dd4e0ad69fcc41c1bd614d022616d134",
+          "category_name": "nature",
+          "description": "elements found in the natural world",
+          "words_tried": {
+            "tree": 8123,
+            "mountain": 11482,
+            "river": 13240
+          },
+          "best_word": "tree",
+          "best_rank": 8123,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "f127413a81dc43469978c525b88da4dc",
+          "category_name": "dailyactivities",
+          "description": "routine tasks performed regularly",
+          "words_tried": {
+            "work": 745,
+            "eat": 3532,
+            "sleep": 4975
+          },
+          "best_word": "work",
+          "best_rank": 745,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "036da3c62cbc49f6a06a2e1e8d74f179",
+          "category_name": "bodyparts",
+          "description": "physical components of the human body",
+          "words_tried": {
+            "hand": 1952,
+            "head": 6591,
+            "foot": 8968
+          },
+          "best_word": "hand",
+          "best_rank": 1952,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "0c9db6bed4414031bbf0022b3a220b9d",
+          "category_name": "timeunits",
+          "description": "measures of time duration",
+          "words_tried": {
+            "year": 2671,
+            "day": 3118,
+            "night": 5036
+          },
+          "best_word": "year",
+          "best_rank": 2671,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "a2a314bafe3f422bb930cfbee41e261d",
+          "category_name": "colors",
+          "description": "visual properties distinguishing objects",
+          "words_tried": {
+            "blue": 7732,
+            "green": 8584,
+            "red": 13398
+          },
+          "best_word": "blue",
+          "best_rank": 7732,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "ed6c4c95330b47e8843e9608e4b4e822",
+          "category_name": "food",
+          "description": "substances consumed for nourishment",
+          "words_tried": {
+            "cheese": 7157,
+            "apple": 8375,
+            "bread": 9079
+          },
+          "best_word": "cheese",
+          "best_rank": 7157,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "ca67a5aeaef544bcbd9a2f72a1a814c7",
+          "category_name": "tools",
+          "description": "instruments used for specific tasks",
+          "words_tried": {
+            "knife": 6946,
+            "hammer": 7660,
+            "screwdriver": 28686
+          },
+          "best_word": "knife",
+          "best_rank": 6946,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "6a02514893bb4d5badf94c2229ad2684",
+          "category_name": "transportation",
+          "description": "methods of moving from one place to another",
+          "words_tried": {
+            "train": 5687,
+            "bike": 8621,
+            "car": 8718
+          },
+          "best_word": "train",
+          "best_rank": 5687,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "b224ab36cded41d39d208ee7f6176b3c",
+          "category_name": "sports",
+          "description": "physical activities played competitively",
+          "words_tried": {
+            "basketball": 12015,
+            "tennis": 13967,
+            "soccer": 23505
+          },
+          "best_word": "basketball",
+          "best_rank": 12015,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "38097da1cbf04fbca26121e82d2cc9c9",
+          "category_name": "weather",
+          "description": "atmospheric conditions in a given area",
+          "words_tried": {
+            "rain": 8390,
+            "sun": 8443,
+            "snow": 10064
+          },
+          "best_word": "rain",
+          "best_rank": 8390,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "1255edfc7e6d425d8b510b9a484258cb",
+          "category_name": "family",
+          "description": "relational group of people by blood or marriage",
+          "words_tried": {
+            "father": 2596,
+            "child": 2685,
+            "mother": 3858
+          },
+          "best_word": "father",
+          "best_rank": 2596,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "9faf325686f146e5a78d4763bd9a1b32",
+          "category_name": "education",
+          "description": "process of acquiring knowledge and skills",
+          "words_tried": {
+            "book": 1801,
+            "teacher": 2012,
+            "school": 4250
+          },
+          "best_word": "book",
+          "best_rank": 1801,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "eb086dfcbd6642aa9fb628c8c84206a0",
+          "category_name": "technology",
+          "description": "application of scientific knowledge for practical purposes",
+          "words_tried": {
+            "internet": 2637,
+            "computer": 6375,
+            "phone": 7529
+          },
+          "best_word": "internet",
+          "best_rank": 2637,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "b076531c009449ffa857417a343ef489",
+          "category_name": "places",
+          "description": "locations or areas of significance",
+          "words_tried": {
+            "office": 5244,
+            "home": 6830,
+            "park": 13299
+          },
+          "best_word": "office",
+          "best_rank": 5244,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        }
+      ],
+      "best_word": "work",
+      "best_rank": 745,
+      "total_guesses": 45
+    }
+  },
+  {
+    "generation": 0,
+    "event": "SIGMA_TRAJECTORY",
+    "timestamp": "2026-07-22T21:34:21",
+    "details": {
+      "mean_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "population_size": 15
+    }
+  },
+  {
+    "generation": 1,
+    "event": "CANDIDATES",
+    "timestamp": "2026-07-22T21:39:17",
+    "details": {
+      "count": 44,
+      "candidates": [
+        {
+          "hypothesis": "emotions",
+          "word": "love"
+        },
+        {
+          "hypothesis": "emotions",
+          "word": "fear"
+        },
+        {
+          "hypothesis": "emotions",
+          "word": "feeling"
+        },
+        {
+          "hypothesis": "nature",
+          "word": "forest"
+        },
+        {
+          "hypothesis": "nature",
+          "word": "ocean"
+        },
+        {
+          "hypothesis": "nature",
+          "word": "soil"
+        },
+        {
+          "hypothesis": "dailyactivities",
+          "word": "cook"
+        },
+        {
+          "hypothesis": "dailyactivities",
+          "word": "study"
+        },
+        {
+          "hypothesis": "dailyactivities",
+          "word": "shower"
+        },
+        {
+          "hypothesis": "bodyparts",
+          "word": "arm"
+        },
+        {
+          "hypothesis": "bodyparts",
+          "word": "leg"
+        },
+        {
+          "hypothesis": "bodyparts",
+          "word": "eye"
+        },
+        {
+          "hypothesis": "timeunits",
+          "word": "hour"
+        },
+        {
+          "hypothesis": "timeunits",
+          "word": "week"
+        },
+        {
+          "hypothesis": "timeunits",
+          "word": "month"
+        },
+        {
+          "hypothesis": "colors",
+          "word": "hue"
+        },
+        {
+          "hypothesis": "colors",
+          "word": "saturation"
+        },
+        {
+          "hypothesis": "colors",
+          "word": "tone"
+        },
+        {
+          "hypothesis": "food",
+          "word": "grain"
+        },
+        {
+          "hypothesis": "food",
+          "word": "meat"
+        },
+        {
+          "hypothesis": "food",
+          "word": "dairy"
+        },
+        {
+          "hypothesis": "tools",
+          "word": "chisel"
+        },
+        {
+          "hypothesis": "tools",
+          "word": "wrench"
+        },
+        {
+          "hypothesis": "tools",
+          "word": "drill"
+        },
+        {
+          "hypothesis": "transportation",
+          "word": "ship"
+        },
+        {
+          "hypothesis": "transportation",
+          "word": "bus"
+        },
+        {
+          "hypothesis": "transportation",
+          "word": "plane"
+        },
+        {
+          "hypothesis": "sports",
+          "word": "baseball"
+        },
+        {
+          "hypothesis": "sports",
+          "word": "golf"
+        },
+        {
+          "hypothesis": "sports",
+          "word": "boxing"
+        },
+        {
+          "hypothesis": "weather",
+          "word": "cloud"
+        },
+        {
+          "hypothesis": "weather",
+          "word": "wind"
+        },
+        {
+          "hypothesis": "weather",
+          "word": "storm"
+        },
+        {
+          "hypothesis": "family",
+          "word": "sibling"
+        },
+        {
+          "hypothesis": "family",
+          "word": "relative"
+        },
+        {
+          "hypothesis": "family",
+          "word": "kin"
+        },
+        {
+          "hypothesis": "education",
+          "word": "learn"
+        },
+        {
+          "hypothesis": "education",
+          "word": "teach"
+        },
+        {
+          "hypothesis": "technology",
+          "word": "science"
+        },
+        {
+          "hypothesis": "technology",
+          "word": "engineering"
+        },
+        {
+          "hypothesis": "technology",
+          "word": "innovation"
+        },
+        {
+          "hypothesis": "places",
+          "word": "building"
+        },
+        {
+          "hypothesis": "places",
+          "word": "city"
+        },
+        {
+          "hypothesis": "places",
+          "word": "region"
+        }
+      ]
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:39:17",
+    "details": {
+      "word": "love",
+      "rank": 148,
+      "hypothesis": "emotions",
+      "best_word": "love",
+      "best_rank": 148,
+      "total_guesses": 46
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:39:17",
+    "details": {
+      "word": "fear",
+      "rank": 302,
+      "hypothesis": "emotions",
+      "best_word": "love",
+      "best_rank": 148,
+      "total_guesses": 47
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:39:17",
+    "details": {
+      "word": "feeling",
+      "rank": 159,
+      "hypothesis": "emotions",
+      "best_word": "love",
+      "best_rank": 148,
+      "total_guesses": 48
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:39:17",
+    "details": {
+      "word": "forest",
+      "rank": 13009,
+      "hypothesis": "nature",
+      "best_word": "love",
+      "best_rank": 148,
+      "total_guesses": 49
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:39:17",
+    "details": {
+      "word": "ocean",
+      "rank": 10798,
+      "hypothesis": "nature",
+      "best_word": "love",
+      "best_rank": 148,
+      "total_guesses": 50
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:39:17",
+    "details": {
+      "word": "soil",
+      "rank": 10089,
+      "hypothesis": "nature",
+      "best_word": "love",
+      "best_rank": 148,
+      "total_guesses": 51
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:39:17",
+    "details": {
+      "word": "cook",
+      "rank": 8633,
+      "hypothesis": "dailyactivities",
+      "best_word": "love",
+      "best_rank": 148,
+      "total_guesses": 52
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:39:17",
+    "details": {
+      "word": "study",
+      "rank": 4158,
+      "hypothesis": "dailyactivities",
+      "best_word": "love",
+      "best_rank": 148,
+      "total_guesses": 53
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:39:18",
+    "details": {
+      "word": "shower",
+      "rank": 8920,
+      "hypothesis": "dailyactivities",
+      "best_word": "love",
+      "best_rank": 148,
+      "total_guesses": 54
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:39:18",
+    "details": {
+      "word": "arm",
+      "rank": 5315,
+      "hypothesis": "bodyparts",
+      "best_word": "love",
+      "best_rank": 148,
+      "total_guesses": 55
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:39:18",
+    "details": {
+      "word": "leg",
+      "rank": 9458,
+      "hypothesis": "bodyparts",
+      "best_word": "love",
+      "best_rank": 148,
+      "total_guesses": 56
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:39:18",
+    "details": {
+      "word": "eye",
+      "rank": 2189,
+      "hypothesis": "bodyparts",
+      "best_word": "love",
+      "best_rank": 148,
+      "total_guesses": 57
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:39:18",
+    "details": {
+      "word": "hour",
+      "rank": 4564,
+      "hypothesis": "timeunits",
+      "best_word": "love",
+      "best_rank": 148,
+      "total_guesses": 58
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:39:18",
+    "details": {
+      "word": "week",
+      "rank": 3820,
+      "hypothesis": "timeunits",
+      "best_word": "love",
+      "best_rank": 148,
+      "total_guesses": 59
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:39:18",
+    "details": {
+      "word": "month",
+      "rank": 5032,
+      "hypothesis": "timeunits",
+      "best_word": "love",
+      "best_rank": 148,
+      "total_guesses": 60
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:39:18",
+    "details": {
+      "word": "hue",
+      "rank": 14746,
+      "hypothesis": "colors",
+      "best_word": "love",
+      "best_rank": 148,
+      "total_guesses": 61
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:39:19",
+    "details": {
+      "word": "saturation",
+      "rank": 7161,
+      "hypothesis": "colors",
+      "best_word": "love",
+      "best_rank": 148,
+      "total_guesses": 62
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:39:19",
+    "details": {
+      "word": "tone",
+      "rank": 1545,
+      "hypothesis": "colors",
+      "best_word": "love",
+      "best_rank": 148,
+      "total_guesses": 63
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:39:19",
+    "details": {
+      "word": "grain",
+      "rank": 9441,
+      "hypothesis": "food",
+      "best_word": "love",
+      "best_rank": 148,
+      "total_guesses": 64
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:39:20",
+    "details": {
+      "word": "meat",
+      "rank": 5814,
+      "hypothesis": "food",
+      "best_word": "love",
+      "best_rank": 148,
+      "total_guesses": 65
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:39:20",
+    "details": {
+      "word": "dairy",
+      "rank": 9966,
+      "hypothesis": "food",
+      "best_word": "love",
+      "best_rank": 148,
+      "total_guesses": 66
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:39:21",
+    "details": {
+      "word": "chisel",
+      "rank": 20616,
+      "hypothesis": "tools",
+      "best_word": "love",
+      "best_rank": 148,
+      "total_guesses": 67
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:39:22",
+    "details": {
+      "word": "wrench",
+      "rank": 1893,
+      "hypothesis": "tools",
+      "best_word": "love",
+      "best_rank": 148,
+      "total_guesses": 68
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:39:23",
+    "details": {
+      "word": "drill",
+      "rank": 9057,
+      "hypothesis": "tools",
+      "best_word": "love",
+      "best_rank": 148,
+      "total_guesses": 69
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:39:23",
+    "details": {
+      "word": "ship",
+      "rank": 10145,
+      "hypothesis": "transportation",
+      "best_word": "love",
+      "best_rank": 148,
+      "total_guesses": 70
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:39:23",
+    "details": {
+      "word": "bus",
+      "rank": 16383,
+      "hypothesis": "transportation",
+      "best_word": "love",
+      "best_rank": 148,
+      "total_guesses": 71
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:39:23",
+    "details": {
+      "word": "plane",
+      "rank": 9430,
+      "hypothesis": "transportation",
+      "best_word": "love",
+      "best_rank": 148,
+      "total_guesses": 72
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:39:23",
+    "details": {
+      "word": "baseball",
+      "rank": 7063,
+      "hypothesis": "sports",
+      "best_word": "love",
+      "best_rank": 148,
+      "total_guesses": 73
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:39:24",
+    "details": {
+      "word": "golf",
+      "rank": 18109,
+      "hypothesis": "sports",
+      "best_word": "love",
+      "best_rank": 148,
+      "total_guesses": 74
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:39:25",
+    "details": {
+      "word": "boxing",
+      "rank": 6190,
+      "hypothesis": "sports",
+      "best_word": "love",
+      "best_rank": 148,
+      "total_guesses": 75
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:39:25",
+    "details": {
+      "word": "cloud",
+      "rank": 7999,
+      "hypothesis": "weather",
+      "best_word": "love",
+      "best_rank": 148,
+      "total_guesses": 76
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:39:25",
+    "details": {
+      "word": "wind",
+      "rank": 7457,
+      "hypothesis": "weather",
+      "best_word": "love",
+      "best_rank": 148,
+      "total_guesses": 77
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:39:25",
+    "details": {
+      "word": "storm",
+      "rank": 13667,
+      "hypothesis": "weather",
+      "best_word": "love",
+      "best_rank": 148,
+      "total_guesses": 78
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:39:25",
+    "details": {
+      "word": "sibling",
+      "rank": 5635,
+      "hypothesis": "family",
+      "best_word": "love",
+      "best_rank": 148,
+      "total_guesses": 79
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:39:25",
+    "details": {
+      "word": "relative",
+      "rank": 1903,
+      "hypothesis": "family",
+      "best_word": "love",
+      "best_rank": 148,
+      "total_guesses": 80
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:39:25",
+    "details": {
+      "word": "kin",
+      "rank": 10937,
+      "hypothesis": "family",
+      "best_word": "love",
+      "best_rank": 148,
+      "total_guesses": 81
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:39:25",
+    "details": {
+      "word": "learn",
+      "rank": 444,
+      "hypothesis": "education",
+      "best_word": "love",
+      "best_rank": 148,
+      "total_guesses": 82
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:39:25",
+    "details": {
+      "word": "teach",
+      "rank": 1042,
+      "hypothesis": "education",
+      "best_word": "love",
+      "best_rank": 148,
+      "total_guesses": 83
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:39:25",
+    "details": {
+      "word": "science",
+      "rank": 1778,
+      "hypothesis": "technology",
+      "best_word": "love",
+      "best_rank": 148,
+      "total_guesses": 84
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:39:26",
+    "details": {
+      "word": "engineering",
+      "rank": 6890,
+      "hypothesis": "technology",
+      "best_word": "love",
+      "best_rank": 148,
+      "total_guesses": 85
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:39:27",
+    "details": {
+      "word": "innovation",
+      "rank": 524,
+      "hypothesis": "technology",
+      "best_word": "love",
+      "best_rank": 148,
+      "total_guesses": 86
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:39:28",
+    "details": {
+      "word": "building",
+      "rank": 2713,
+      "hypothesis": "places",
+      "best_word": "love",
+      "best_rank": 148,
+      "total_guesses": 87
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:39:28",
+    "details": {
+      "word": "city",
+      "rank": 8227,
+      "hypothesis": "places",
+      "best_word": "love",
+      "best_rank": 148,
+      "total_guesses": 88
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:39:29",
+    "details": {
+      "word": "region",
+      "rank": 10806,
+      "hypothesis": "places",
+      "best_word": "love",
+      "best_rank": 148,
+      "total_guesses": 89
+    }
+  },
+  {
+    "generation": 1,
+    "event": "SELECT",
+    "timestamp": "2026-07-22T21:39:29",
+    "details": {
+      "kept": [
+        "emotions",
+        "education",
+        "technology",
+        "dailyactivities",
+        "colors"
+      ],
+      "discarded": [
+        "tools",
+        "family",
+        "bodyparts",
+        "timeunits",
+        "places",
+        "transportation",
+        "food",
+        "sports",
+        "weather",
+        "nature"
+      ],
+      "elite": "emotions",
+      "max_active_hypotheses": 5,
+      "best_word": "love",
+      "best_rank": 148,
+      "total_guesses": 89
+    }
+  },
+  {
+    "generation": 1,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-22T21:39:50",
+    "details": {
+      "parent_id": "3333ec7a57454e159f69946fe6b23f6d",
+      "child_id": "52cb4ee930f64885a4594a4e0c0f6802",
+      "parent_rank": 148,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "relationships",
+      "sampled_op": "m_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:39:50",
+    "details": {
+      "word": "bond",
+      "rank": 4633,
+      "hypothesis": "relationships",
+      "best_word": "love",
+      "best_rank": 148,
+      "total_guesses": 90
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:39:54",
+    "details": {
+      "word": "attachment",
+      "rank": 6169,
+      "hypothesis": "relationships",
+      "best_word": "love",
+      "best_rank": 148,
+      "total_guesses": 91
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:39:54",
+    "details": {
+      "word": "connection",
+      "rank": 1636,
+      "hypothesis": "relationships",
+      "best_word": "love",
+      "best_rank": 148,
+      "total_guesses": 92
+    }
+  },
+  {
+    "generation": 1,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-22T21:40:02",
+    "details": {
+      "parent_id": "9faf325686f146e5a78d4763bd9a1b32",
+      "child_id": "896a9ad6a06b462798f39411fb47475c",
+      "parent_rank": 444,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "cognitive processes",
+      "sampled_op": "m_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:40:06",
+    "details": {
+      "word": "cognition",
+      "rank": 6627,
+      "hypothesis": "cognitive processes",
+      "best_word": "love",
+      "best_rank": 148,
+      "total_guesses": 93
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:40:06",
+    "details": {
+      "word": "insight",
+      "rank": 135,
+      "hypothesis": "cognitive processes",
+      "best_word": "insight",
+      "best_rank": 135,
+      "total_guesses": 94
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:40:06",
+    "details": {
+      "word": "adapt",
+      "rank": 8510,
+      "hypothesis": "cognitive processes",
+      "best_word": "insight",
+      "best_rank": 135,
+      "total_guesses": 95
+    }
+  },
+  {
+    "generation": 1,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-22T21:40:31",
+    "details": {
+      "parent_id": "eb086dfcbd6642aa9fb628c8c84206a0",
+      "child_id": "eb5d9d1027964e0c8b9ee13e632996cf",
+      "parent_rank": 524,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "natural systems",
+      "sampled_op": "l_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:40:31",
+    "details": {
+      "word": "system",
+      "rank": 4738,
+      "hypothesis": "natural systems",
+      "best_word": "insight",
+      "best_rank": 135,
+      "total_guesses": 96
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:40:31",
+    "details": {
+      "word": "network",
+      "rank": 3246,
+      "hypothesis": "natural systems",
+      "best_word": "insight",
+      "best_rank": 135,
+      "total_guesses": 97
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:40:31",
+    "details": {
+      "word": "cycle",
+      "rank": 8677,
+      "hypothesis": "natural systems",
+      "best_word": "insight",
+      "best_rank": 135,
+      "total_guesses": 98
+    }
+  },
+  {
+    "generation": 1,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-22T21:40:43",
+    "details": {
+      "parent_id": "f127413a81dc43469978c525b88da4dc",
+      "child_id": "783602e1e6a04f0086f08606b18cbc48",
+      "parent_rank": 745,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "occupationaltasks",
+      "sampled_op": "s_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:40:47",
+    "details": {
+      "word": "labor",
+      "rank": 4937,
+      "hypothesis": "occupationaltasks",
+      "best_word": "insight",
+      "best_rank": 135,
+      "total_guesses": 99
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:40:48",
+    "details": {
+      "word": "task",
+      "rank": 2953,
+      "hypothesis": "occupationaltasks",
+      "best_word": "insight",
+      "best_rank": 135,
+      "total_guesses": 100
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:40:48",
+    "details": {
+      "word": "duty",
+      "rank": 1947,
+      "hypothesis": "occupationaltasks",
+      "best_word": "insight",
+      "best_rank": 135,
+      "total_guesses": 101
+    }
+  },
+  {
+    "generation": 1,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-22T21:41:16",
+    "details": {
+      "parent_id": "a2a314bafe3f422bb930cfbee41e261d",
+      "child_id": "8f6213d05dfd46be9d89c3566df48985",
+      "parent_rank": 1545,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "aesthetic properties",
+      "sampled_op": "ml_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:41:16",
+    "details": {
+      "word": "mood",
+      "rank": 2035,
+      "hypothesis": "aesthetic properties",
+      "best_word": "insight",
+      "best_rank": 135,
+      "total_guesses": 102
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:41:16",
+    "details": {
+      "word": "style",
+      "rank": 1290,
+      "hypothesis": "aesthetic properties",
+      "best_word": "insight",
+      "best_rank": 135,
+      "total_guesses": 103
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:41:17",
+    "details": {
+      "word": "texture",
+      "rank": 7043,
+      "hypothesis": "aesthetic properties",
+      "best_word": "insight",
+      "best_rank": 135,
+      "total_guesses": 104
+    }
+  },
+  {
+    "generation": 1,
+    "event": "MUTATE",
+    "timestamp": "2026-07-22T21:41:17",
+    "details": {
+      "method": "self_adaptive",
+      "children": [
+        {
+          "hypothesis_id": "52cb4ee930f64885a4594a4e0c0f6802",
+          "category_name": "relationships",
+          "description": "associations between people or entities",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "emotions",
+          "parent_id": "3333ec7a57454e159f69946fe6b23f6d",
+          "origin": "self_adaptive_m_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "896a9ad6a06b462798f39411fb47475c",
+          "category_name": "cognitive processes",
+          "description": "mental mechanisms underlying knowledge acquisition",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "education",
+          "parent_id": "9faf325686f146e5a78d4763bd9a1b32",
+          "origin": "self_adaptive_m_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "eb5d9d1027964e0c8b9ee13e632996cf",
+          "category_name": "natural systems",
+          "description": "interconnected processes in non-human environments",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "technology",
+          "parent_id": "eb086dfcbd6642aa9fb628c8c84206a0",
+          "origin": "self_adaptive_l_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "783602e1e6a04f0086f08606b18cbc48",
+          "category_name": "occupationaltasks",
+          "description": "work-related activities",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "dailyactivities",
+          "parent_id": "f127413a81dc43469978c525b88da4dc",
+          "origin": "self_adaptive_s_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "8f6213d05dfd46be9d89c3566df48985",
+          "category_name": "aesthetic properties",
+          "description": "qualities that contribute to visual appeal",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "colors",
+          "parent_id": "a2a314bafe3f422bb930cfbee41e261d",
+          "origin": "self_adaptive_ml_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        }
+      ],
+      "best_word": "insight",
+      "best_rank": 135,
+      "total_guesses": 104
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:41:29",
+    "details": {
+      "word": "reflect",
+      "rank": 364,
+      "hypothesis": "Emotional Cognition",
+      "best_word": "insight",
+      "best_rank": 135,
+      "total_guesses": 105
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:41:33",
+    "details": {
+      "word": "respond",
+      "rank": 1272,
+      "hypothesis": "Emotional Cognition",
+      "best_word": "insight",
+      "best_rank": 135,
+      "total_guesses": 106
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:41:33",
+    "details": {
+      "word": "perceive",
+      "rank": 632,
+      "hypothesis": "Emotional Cognition",
+      "best_word": "insight",
+      "best_rank": 135,
+      "total_guesses": 107
+    }
+  },
+  {
+    "generation": 1,
+    "event": "CROSSOVER",
+    "timestamp": "2026-07-22T21:41:33",
+    "details": {
+      "parents": [
+        "cognitive processes",
+        "emotions"
+      ],
+      "parent_ids": [
+        "896a9ad6a06b462798f39411fb47475c",
+        "3333ec7a57454e159f69946fe6b23f6d"
+      ],
+      "parent_ranks": [
+        135,
+        148
+      ],
+      "parent_a_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "parent_b_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma_pre_perturbation": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child": {
+        "hypothesis_id": "0acc14a24e764fffbfa3822e94286eb6",
+        "category_name": "Emotional Cognition",
+        "description": "Processes involving both cognitive and emotional aspects",
+        "words_tried": {
+          "reflect": 364,
+          "perceive": 632,
+          "respond": 1272
+        },
+        "best_word": "reflect",
+        "best_rank": 364,
+        "status": "active",
+        "parent": "cognitive processes+emotions",
+        "parent_id": null,
+        "origin": "crossover",
+        "sigma": [
+          0.25,
+          0.25,
+          0.25,
+          0.25
+        ]
+      },
+      "best_word": "insight",
+      "best_rank": 135,
+      "total_guesses": 107
+    }
+  },
+  {
+    "generation": 1,
+    "event": "SIGMA_TRAJECTORY",
+    "timestamp": "2026-07-22T21:41:33",
+    "details": {
+      "mean_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "population_size": 11
+    }
+  },
+  {
+    "generation": 2,
+    "event": "CANDIDATES",
+    "timestamp": "2026-07-22T21:45:54",
+    "details": {
+      "count": 32,
+      "candidates": [
+        {
+          "hypothesis": "cognitive processes",
+          "word": "reason"
+        },
+        {
+          "hypothesis": "cognitive processes",
+          "word": "memory"
+        },
+        {
+          "hypothesis": "cognitive processes",
+          "word": "think"
+        },
+        {
+          "hypothesis": "emotions",
+          "word": "empathy"
+        },
+        {
+          "hypothesis": "emotions",
+          "word": "compassion"
+        },
+        {
+          "hypothesis": "emotions",
+          "word": "sympathy"
+        },
+        {
+          "hypothesis": "Emotional Cognition",
+          "word": "intuition"
+        },
+        {
+          "hypothesis": "Emotional Cognition",
+          "word": "comprehend"
+        },
+        {
+          "hypothesis": "education",
+          "word": "knowledge"
+        },
+        {
+          "hypothesis": "education",
+          "word": "understanding"
+        },
+        {
+          "hypothesis": "education",
+          "word": "growth"
+        },
+        {
+          "hypothesis": "technology",
+          "word": "tool"
+        },
+        {
+          "hypothesis": "technology",
+          "word": "device"
+        },
+        {
+          "hypothesis": "technology",
+          "word": "machine"
+        },
+        {
+          "hypothesis": "dailyactivities",
+          "word": "exercise"
+        },
+        {
+          "hypothesis": "dailyactivities",
+          "word": "read"
+        },
+        {
+          "hypothesis": "dailyactivities",
+          "word": "chore"
+        },
+        {
+          "hypothesis": "aesthetic properties",
+          "word": "color"
+        },
+        {
+          "hypothesis": "aesthetic properties",
+          "word": "form"
+        },
+        {
+          "hypothesis": "aesthetic properties",
+          "word": "symmetry"
+        },
+        {
+          "hypothesis": "colors",
+          "word": "shade"
+        },
+        {
+          "hypothesis": "colors",
+          "word": "chroma"
+        },
+        {
+          "hypothesis": "colors",
+          "word": "tint"
+        },
+        {
+          "hypothesis": "relationships",
+          "word": "association"
+        },
+        {
+          "hypothesis": "relationships",
+          "word": "link"
+        },
+        {
+          "hypothesis": "relationships",
+          "word": "tie"
+        },
+        {
+          "hypothesis": "occupationaltasks",
+          "word": "function"
+        },
+        {
+          "hypothesis": "occupationaltasks",
+          "word": "role"
+        },
+        {
+          "hypothesis": "occupationaltasks",
+          "word": "assignment"
+        },
+        {
+          "hypothesis": "natural systems",
+          "word": "ecosystem"
+        },
+        {
+          "hypothesis": "natural systems",
+          "word": "web"
+        },
+        {
+          "hypothesis": "natural systems",
+          "word": "ecology"
+        }
+      ]
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:45:54",
+    "details": {
+      "word": "reason",
+      "rank": 267,
+      "hypothesis": "cognitive processes",
+      "best_word": "insight",
+      "best_rank": 135,
+      "total_guesses": 108
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:45:54",
+    "details": {
+      "word": "memory",
+      "rank": 3130,
+      "hypothesis": "cognitive processes",
+      "best_word": "insight",
+      "best_rank": 135,
+      "total_guesses": 109
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:45:54",
+    "details": {
+      "word": "think",
+      "rank": 324,
+      "hypothesis": "cognitive processes",
+      "best_word": "insight",
+      "best_rank": 135,
+      "total_guesses": 110
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:45:54",
+    "details": {
+      "word": "empathy",
+      "rank": 19,
+      "hypothesis": "emotions",
+      "best_word": "empathy",
+      "best_rank": 19,
+      "total_guesses": 111
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:45:54",
+    "details": {
+      "word": "compassion",
+      "rank": 13,
+      "hypothesis": "emotions",
+      "best_word": "compassion",
+      "best_rank": 13,
+      "total_guesses": 112
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:45:54",
+    "details": {
+      "word": "sympathy",
+      "rank": 383,
+      "hypothesis": "emotions",
+      "best_word": "compassion",
+      "best_rank": 13,
+      "total_guesses": 113
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:45:58",
+    "details": {
+      "word": "intuition",
+      "rank": 223,
+      "hypothesis": "Emotional Cognition",
+      "best_word": "compassion",
+      "best_rank": 13,
+      "total_guesses": 114
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:45:59",
+    "details": {
+      "word": "comprehend",
+      "rank": 1339,
+      "hypothesis": "Emotional Cognition",
+      "best_word": "compassion",
+      "best_rank": 13,
+      "total_guesses": 115
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:45:59",
+    "details": {
+      "word": "knowledge",
+      "rank": 132,
+      "hypothesis": "education",
+      "best_word": "compassion",
+      "best_rank": 13,
+      "total_guesses": 116
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:45:59",
+    "details": {
+      "word": "understanding",
+      "rank": 78,
+      "hypothesis": "education",
+      "best_word": "compassion",
+      "best_rank": 13,
+      "total_guesses": 117
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:45:59",
+    "details": {
+      "word": "growth",
+      "rank": 3825,
+      "hypothesis": "education",
+      "best_word": "compassion",
+      "best_rank": 13,
+      "total_guesses": 118
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:46:00",
+    "details": {
+      "word": "tool",
+      "rank": 3604,
+      "hypothesis": "technology",
+      "best_word": "compassion",
+      "best_rank": 13,
+      "total_guesses": 119
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:46:00",
+    "details": {
+      "word": "device",
+      "rank": 15473,
+      "hypothesis": "technology",
+      "best_word": "compassion",
+      "best_rank": 13,
+      "total_guesses": 120
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:46:01",
+    "details": {
+      "word": "machine",
+      "rank": 7012,
+      "hypothesis": "technology",
+      "best_word": "compassion",
+      "best_rank": 13,
+      "total_guesses": 121
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:46:01",
+    "details": {
+      "word": "exercise",
+      "rank": 2128,
+      "hypothesis": "dailyactivities",
+      "best_word": "compassion",
+      "best_rank": 13,
+      "total_guesses": 122
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:46:01",
+    "details": {
+      "word": "read",
+      "rank": 1812,
+      "hypothesis": "dailyactivities",
+      "best_word": "compassion",
+      "best_rank": 13,
+      "total_guesses": 123
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:46:01",
+    "details": {
+      "word": "chore",
+      "rank": 6821,
+      "hypothesis": "dailyactivities",
+      "best_word": "compassion",
+      "best_rank": 13,
+      "total_guesses": 124
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:46:02",
+    "details": {
+      "word": "color",
+      "rank": 3776,
+      "hypothesis": "aesthetic properties",
+      "best_word": "compassion",
+      "best_rank": 13,
+      "total_guesses": 125
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:46:03",
+    "details": {
+      "word": "form",
+      "rank": 3291,
+      "hypothesis": "aesthetic properties",
+      "best_word": "compassion",
+      "best_rank": 13,
+      "total_guesses": 126
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:46:04",
+    "details": {
+      "word": "symmetry",
+      "rank": 3770,
+      "hypothesis": "aesthetic properties",
+      "best_word": "compassion",
+      "best_rank": 13,
+      "total_guesses": 127
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:46:04",
+    "details": {
+      "word": "shade",
+      "rank": 9198,
+      "hypothesis": "colors",
+      "best_word": "compassion",
+      "best_rank": 13,
+      "total_guesses": 128
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:46:04",
+    "details": {
+      "word": "chroma",
+      "rank": 38555,
+      "hypothesis": "colors",
+      "best_word": "compassion",
+      "best_rank": 13,
+      "total_guesses": 129
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:46:04",
+    "details": {
+      "word": "tint",
+      "rank": 10653,
+      "hypothesis": "colors",
+      "best_word": "compassion",
+      "best_rank": 13,
+      "total_guesses": 130
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:46:04",
+    "details": {
+      "word": "association",
+      "rank": 7159,
+      "hypothesis": "relationships",
+      "best_word": "compassion",
+      "best_rank": 13,
+      "total_guesses": 131
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:46:05",
+    "details": {
+      "word": "link",
+      "rank": 4487,
+      "hypothesis": "relationships",
+      "best_word": "compassion",
+      "best_rank": 13,
+      "total_guesses": 132
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:46:06",
+    "details": {
+      "word": "tie",
+      "rank": 3058,
+      "hypothesis": "relationships",
+      "best_word": "compassion",
+      "best_rank": 13,
+      "total_guesses": 133
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:46:07",
+    "details": {
+      "word": "function",
+      "rank": 3561,
+      "hypothesis": "occupationaltasks",
+      "best_word": "compassion",
+      "best_rank": 13,
+      "total_guesses": 134
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:46:07",
+    "details": {
+      "word": "role",
+      "rank": 1793,
+      "hypothesis": "occupationaltasks",
+      "best_word": "compassion",
+      "best_rank": 13,
+      "total_guesses": 135
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:46:08",
+    "details": {
+      "word": "assignment",
+      "rank": 6336,
+      "hypothesis": "occupationaltasks",
+      "best_word": "compassion",
+      "best_rank": 13,
+      "total_guesses": 136
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:46:09",
+    "details": {
+      "word": "ecosystem",
+      "rank": 9255,
+      "hypothesis": "natural systems",
+      "best_word": "compassion",
+      "best_rank": 13,
+      "total_guesses": 137
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:46:10",
+    "details": {
+      "word": "web",
+      "rank": 4506,
+      "hypothesis": "natural systems",
+      "best_word": "compassion",
+      "best_rank": 13,
+      "total_guesses": 138
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:46:10",
+    "details": {
+      "word": "ecology",
+      "rank": 9585,
+      "hypothesis": "natural systems",
+      "best_word": "compassion",
+      "best_rank": 13,
+      "total_guesses": 139
+    }
+  },
+  {
+    "generation": 2,
+    "event": "LOCAL_SEARCH_DISABLED",
+    "timestamp": "2026-07-22T21:46:10",
+    "details": {
+      "center_word": "compassion",
+      "center_rank": 13,
+      "threshold": 100,
+      "reason": "self_adaptive_disable_local_search"
+    }
+  },
+  {
+    "generation": 2,
+    "event": "SELECT",
+    "timestamp": "2026-07-22T21:46:10",
+    "details": {
+      "kept": [
+        "emotions",
+        "education",
+        "cognitive processes",
+        "Emotional Cognition",
+        "technology"
+      ],
+      "discarded": [
+        "dailyactivities",
+        "aesthetic properties",
+        "colors",
+        "relationships",
+        "occupationaltasks",
+        "tools",
+        "family",
+        "bodyparts",
+        "timeunits",
+        "places",
+        "natural systems",
+        "transportation",
+        "food",
+        "sports",
+        "weather",
+        "nature"
+      ],
+      "elite": "emotions",
+      "max_active_hypotheses": 5,
+      "best_word": "compassion",
+      "best_rank": 13,
+      "total_guesses": 139
+    }
+  },
+  {
+    "generation": 2,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-22T21:46:25",
+    "details": {
+      "parent_id": "3333ec7a57454e159f69946fe6b23f6d",
+      "child_id": "447721b4e02a4231922bb6d64d304d73",
+      "parent_rank": 13,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "moral sentiments",
+      "sampled_op": "ml_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:46:25",
+    "details": {
+      "word": "kindness",
+      "rank": 11,
+      "hypothesis": "moral sentiments",
+      "best_word": "kindness",
+      "best_rank": 11,
+      "total_guesses": 140
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:46:25",
+    "details": {
+      "word": "honor",
+      "rank": 299,
+      "hypothesis": "moral sentiments",
+      "best_word": "kindness",
+      "best_rank": 11,
+      "total_guesses": 141
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:46:25",
+    "details": {
+      "word": "justice",
+      "rank": 388,
+      "hypothesis": "moral sentiments",
+      "best_word": "kindness",
+      "best_rank": 11,
+      "total_guesses": 142
+    }
+  },
+  {
+    "generation": 2,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-22T21:46:41",
+    "details": {
+      "parent_id": "9faf325686f146e5a78d4763bd9a1b32",
+      "child_id": "9e894047b8344d66b9ded180327a8831",
+      "parent_rank": 78,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "awareness",
+      "sampled_op": "s_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:46:45",
+    "details": {
+      "word": "awareness",
+      "rank": 559,
+      "hypothesis": "awareness",
+      "best_word": "kindness",
+      "best_rank": 11,
+      "total_guesses": 143
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:46:45",
+    "details": {
+      "word": "realization",
+      "rank": 362,
+      "hypothesis": "awareness",
+      "best_word": "kindness",
+      "best_rank": 11,
+      "total_guesses": 144
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:46:45",
+    "details": {
+      "word": "perception",
+      "rank": 329,
+      "hypothesis": "awareness",
+      "best_word": "kindness",
+      "best_rank": 11,
+      "total_guesses": 145
+    }
+  },
+  {
+    "generation": 2,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-22T21:47:15",
+    "details": {
+      "parent_id": "896a9ad6a06b462798f39411fb47475c",
+      "child_id": "eb41103a56c94e00af50fdee57fdd080",
+      "parent_rank": 135,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "epiphany comprehension",
+      "sampled_op": "s_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:47:18",
+    "details": {
+      "word": "comprehension",
+      "rank": 1090,
+      "hypothesis": "epiphany comprehension",
+      "best_word": "kindness",
+      "best_rank": 11,
+      "total_guesses": 146
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:47:19",
+    "details": {
+      "word": "epiphany",
+      "rank": 8188,
+      "hypothesis": "epiphany comprehension",
+      "best_word": "kindness",
+      "best_rank": 11,
+      "total_guesses": 147
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:47:19",
+    "details": {
+      "word": "discern",
+      "rank": 1342,
+      "hypothesis": "epiphany comprehension",
+      "best_word": "kindness",
+      "best_rank": 11,
+      "total_guesses": 148
+    }
+  },
+  {
+    "generation": 2,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-22T21:47:52",
+    "details": {
+      "parent_id": "0acc14a24e764fffbfa3822e94286eb6",
+      "child_id": "dc284b2b3a5b45da95c31f8320ecdbe8",
+      "parent_rank": 223,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "Physiological Basis",
+      "sampled_op": "m_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:47:53",
+    "details": {
+      "word": "gut",
+      "rank": 216,
+      "hypothesis": "Physiological Basis",
+      "best_word": "kindness",
+      "best_rank": 11,
+      "total_guesses": 149
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:47:54",
+    "details": {
+      "word": "heart",
+      "rank": 1255,
+      "hypothesis": "Physiological Basis",
+      "best_word": "kindness",
+      "best_rank": 11,
+      "total_guesses": 150
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:47:54",
+    "details": {
+      "word": "pulse",
+      "rank": 16865,
+      "hypothesis": "Physiological Basis",
+      "best_word": "kindness",
+      "best_rank": 11,
+      "total_guesses": 151
+    }
+  },
+  {
+    "generation": 2,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-22T21:48:16",
+    "details": {
+      "parent_id": "eb086dfcbd6642aa9fb628c8c84206a0",
+      "child_id": "d131dd4d6a2543f395f06b936fe01c7e",
+      "parent_rank": 524,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "creative processes",
+      "sampled_op": "ml_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:48:20",
+    "details": {
+      "word": "design",
+      "rank": 3808,
+      "hypothesis": "creative processes",
+      "best_word": "kindness",
+      "best_rank": 11,
+      "total_guesses": 152
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:48:21",
+    "details": {
+      "word": "idea",
+      "rank": 872,
+      "hypothesis": "creative processes",
+      "best_word": "kindness",
+      "best_rank": 11,
+      "total_guesses": 153
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:48:22",
+    "details": {
+      "word": "concept",
+      "rank": 1029,
+      "hypothesis": "creative processes",
+      "best_word": "kindness",
+      "best_rank": 11,
+      "total_guesses": 154
+    }
+  },
+  {
+    "generation": 2,
+    "event": "MUTATE",
+    "timestamp": "2026-07-22T21:48:22",
+    "details": {
+      "method": "self_adaptive",
+      "children": [
+        {
+          "hypothesis_id": "447721b4e02a4231922bb6d64d304d73",
+          "category_name": "moral sentiments",
+          "description": "feelings related to ethical considerations",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "emotions",
+          "parent_id": "3333ec7a57454e159f69946fe6b23f6d",
+          "origin": "self_adaptive_ml_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "9e894047b8344d66b9ded180327a8831",
+          "category_name": "awareness",
+          "description": "process of becoming conscious and realizing concepts",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "education",
+          "parent_id": "9faf325686f146e5a78d4763bd9a1b32",
+          "origin": "self_adaptive_s_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "eb41103a56c94e00af50fdee57fdd080",
+          "category_name": "epiphany comprehension",
+          "description": "mechanisms of sudden understanding",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "cognitive processes",
+          "parent_id": "896a9ad6a06b462798f39411fb47475c",
+          "origin": "self_adaptive_s_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "dc284b2b3a5b45da95c31f8320ecdbe8",
+          "category_name": "Physiological Basis",
+          "description": "Exploring bodily processes linked to intuitive decisions",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "Emotional Cognition",
+          "parent_id": "0acc14a24e764fffbfa3822e94286eb6",
+          "origin": "self_adaptive_m_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "d131dd4d6a2543f395f06b936fe01c7e",
+          "category_name": "creative processes",
+          "description": "the generation and development of new ideas",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "technology",
+          "parent_id": "eb086dfcbd6642aa9fb628c8c84206a0",
+          "origin": "self_adaptive_ml_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        }
+      ],
+      "best_word": "kindness",
+      "best_rank": 11,
+      "total_guesses": 154
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:48:25",
+    "details": {
+      "word": "compassion",
+      "rank": 13,
+      "hypothesis": "moral emotions",
+      "best_word": "kindness",
+      "best_rank": 11,
+      "total_guesses": 154
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:48:25",
+    "details": {
+      "word": "empathy",
+      "rank": 19,
+      "hypothesis": "moral emotions",
+      "best_word": "kindness",
+      "best_rank": 11,
+      "total_guesses": 154
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:48:25",
+    "details": {
+      "word": "kindness",
+      "rank": 11,
+      "hypothesis": "moral emotions",
+      "best_word": "kindness",
+      "best_rank": 11,
+      "total_guesses": 154
+    }
+  },
+  {
+    "generation": 2,
+    "event": "CROSSOVER",
+    "timestamp": "2026-07-22T21:48:25",
+    "details": {
+      "parents": [
+        "moral sentiments",
+        "emotions"
+      ],
+      "parent_ids": [
+        "447721b4e02a4231922bb6d64d304d73",
+        "3333ec7a57454e159f69946fe6b23f6d"
+      ],
+      "parent_ranks": [
+        11,
+        13
+      ],
+      "parent_a_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "parent_b_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma_pre_perturbation": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child": {
+        "hypothesis_id": "8fc86ed2c30b482aa23ede522492784c",
+        "category_name": "moral emotions",
+        "description": "Emotions tied to moral values and social behavior",
+        "words_tried": {
+          "kindness": 11,
+          "compassion": 13,
+          "empathy": 19
+        },
+        "best_word": "kindness",
+        "best_rank": 11,
+        "status": "active",
+        "parent": "moral sentiments+emotions",
+        "parent_id": null,
+        "origin": "crossover",
+        "sigma": [
+          0.25,
+          0.25,
+          0.25,
+          0.25
+        ]
+      },
+      "best_word": "kindness",
+      "best_rank": 11,
+      "total_guesses": 154
+    }
+  },
+  {
+    "generation": 2,
+    "event": "DEDUPLICATE",
+    "timestamp": "2026-07-22T21:48:25",
+    "details": {
+      "merged": [
+        {
+          "survivor": "moral emotions",
+          "discarded": "emotions",
+          "survivor_best_rank": 11,
+          "discarded_best_rank": 13
+        }
+      ],
+      "remaining_hypotheses": 26,
+      "active_hypotheses": 10,
+      "best_word": "kindness",
+      "best_rank": 11,
+      "total_guesses": 154
+    }
+  },
+  {
+    "generation": 2,
+    "event": "SIGMA_TRAJECTORY",
+    "timestamp": "2026-07-22T21:48:25",
+    "details": {
+      "mean_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "population_size": 10
+    }
+  },
+  {
+    "generation": 3,
+    "event": "CANDIDATES",
+    "timestamp": "2026-07-22T21:51:14",
+    "details": {
+      "count": 29,
+      "candidates": [
+        {
+          "hypothesis": "moral sentiments",
+          "word": "conscience"
+        },
+        {
+          "hypothesis": "moral sentiments",
+          "word": "integrity"
+        },
+        {
+          "hypothesis": "moral sentiments",
+          "word": "decency"
+        },
+        {
+          "hypothesis": "moral emotions",
+          "word": "guilt"
+        },
+        {
+          "hypothesis": "moral emotions",
+          "word": "shame"
+        },
+        {
+          "hypothesis": "moral emotions",
+          "word": "pride"
+        },
+        {
+          "hypothesis": "education",
+          "word": "mentor"
+        },
+        {
+          "hypothesis": "education",
+          "word": "instruct"
+        },
+        {
+          "hypothesis": "education",
+          "word": "curriculum"
+        },
+        {
+          "hypothesis": "cognitive processes",
+          "word": "analyze"
+        },
+        {
+          "hypothesis": "cognitive processes",
+          "word": "understand"
+        },
+        {
+          "hypothesis": "Physiological Basis",
+          "word": "brain"
+        },
+        {
+          "hypothesis": "Physiological Basis",
+          "word": "neuron"
+        },
+        {
+          "hypothesis": "Physiological Basis",
+          "word": "instinct"
+        },
+        {
+          "hypothesis": "Emotional Cognition",
+          "word": "affect"
+        },
+        {
+          "hypothesis": "Emotional Cognition",
+          "word": "integrate"
+        },
+        {
+          "hypothesis": "Emotional Cognition",
+          "word": "balance"
+        },
+        {
+          "hypothesis": "awareness",
+          "word": "consciousness"
+        },
+        {
+          "hypothesis": "awareness",
+          "word": "notice"
+        },
+        {
+          "hypothesis": "awareness",
+          "word": "grasp"
+        },
+        {
+          "hypothesis": "technology",
+          "word": "application"
+        },
+        {
+          "hypothesis": "technology",
+          "word": "development"
+        },
+        {
+          "hypothesis": "technology",
+          "word": "progress"
+        },
+        {
+          "hypothesis": "creative processes",
+          "word": "innovate"
+        },
+        {
+          "hypothesis": "creative processes",
+          "word": "imagine"
+        },
+        {
+          "hypothesis": "creative processes",
+          "word": "conceive"
+        },
+        {
+          "hypothesis": "epiphany comprehension",
+          "word": "breakthrough"
+        },
+        {
+          "hypothesis": "epiphany comprehension",
+          "word": "clarity"
+        },
+        {
+          "hypothesis": "epiphany comprehension",
+          "word": "revelation"
+        }
+      ]
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:51:15",
+    "details": {
+      "word": "conscience",
+      "rank": 123,
+      "hypothesis": "moral sentiments",
+      "best_word": "kindness",
+      "best_rank": 11,
+      "total_guesses": 155
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:51:15",
+    "details": {
+      "word": "integrity",
+      "rank": 3,
+      "hypothesis": "moral sentiments",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 156
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:51:15",
+    "details": {
+      "word": "decency",
+      "rank": 17,
+      "hypothesis": "moral sentiments",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 157
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:51:15",
+    "details": {
+      "word": "guilt",
+      "rank": 657,
+      "hypothesis": "moral emotions",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 158
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:51:15",
+    "details": {
+      "word": "shame",
+      "rank": 94,
+      "hypothesis": "moral emotions",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 159
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:51:15",
+    "details": {
+      "word": "pride",
+      "rank": 146,
+      "hypothesis": "moral emotions",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 160
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:51:15",
+    "details": {
+      "word": "mentor",
+      "rank": 2245,
+      "hypothesis": "education",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 161
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:51:15",
+    "details": {
+      "word": "instruct",
+      "rank": 7042,
+      "hypothesis": "education",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 162
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:51:16",
+    "details": {
+      "word": "curriculum",
+      "rank": 4374,
+      "hypothesis": "education",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 163
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:51:16",
+    "details": {
+      "word": "analyze",
+      "rank": 3890,
+      "hypothesis": "cognitive processes",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 164
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:51:17",
+    "details": {
+      "word": "understand",
+      "rank": 193,
+      "hypothesis": "cognitive processes",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 165
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:51:17",
+    "details": {
+      "word": "brain",
+      "rank": 2527,
+      "hypothesis": "Physiological Basis",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 166
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:51:18",
+    "details": {
+      "word": "neuron",
+      "rank": 31514,
+      "hypothesis": "Physiological Basis",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 167
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:51:19",
+    "details": {
+      "word": "instinct",
+      "rank": 712,
+      "hypothesis": "Physiological Basis",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 168
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:51:19",
+    "details": {
+      "word": "affect",
+      "rank": 2611,
+      "hypothesis": "Emotional Cognition",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 169
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:51:20",
+    "details": {
+      "word": "integrate",
+      "rank": 4032,
+      "hypothesis": "Emotional Cognition",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 170
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:51:20",
+    "details": {
+      "word": "balance",
+      "rank": 664,
+      "hypothesis": "Emotional Cognition",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 171
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:51:20",
+    "details": {
+      "word": "consciousness",
+      "rank": 2180,
+      "hypothesis": "awareness",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 172
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:51:21",
+    "details": {
+      "word": "notice",
+      "rank": 2691,
+      "hypothesis": "awareness",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 173
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:51:22",
+    "details": {
+      "word": "grasp",
+      "rank": 1026,
+      "hypothesis": "awareness",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 174
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:51:23",
+    "details": {
+      "word": "application",
+      "rank": 7153,
+      "hypothesis": "technology",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 175
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:51:23",
+    "details": {
+      "word": "development",
+      "rank": 5047,
+      "hypothesis": "technology",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 176
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:51:24",
+    "details": {
+      "word": "progress",
+      "rank": 1087,
+      "hypothesis": "technology",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 177
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:51:25",
+    "details": {
+      "word": "innovate",
+      "rank": 3580,
+      "hypothesis": "creative processes",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 178
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:51:25",
+    "details": {
+      "word": "imagine",
+      "rank": 1310,
+      "hypothesis": "creative processes",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 179
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:51:25",
+    "details": {
+      "word": "conceive",
+      "rank": 8475,
+      "hypothesis": "creative processes",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 180
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:51:26",
+    "details": {
+      "word": "breakthrough",
+      "rank": 4748,
+      "hypothesis": "epiphany comprehension",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 181
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:51:27",
+    "details": {
+      "word": "clarity",
+      "rank": 81,
+      "hypothesis": "epiphany comprehension",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 182
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:51:28",
+    "details": {
+      "word": "revelation",
+      "rank": 2692,
+      "hypothesis": "epiphany comprehension",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 183
+    }
+  },
+  {
+    "generation": 3,
+    "event": "SELECT",
+    "timestamp": "2026-07-22T21:51:28",
+    "details": {
+      "kept": [
+        "moral sentiments",
+        "moral emotions",
+        "education",
+        "epiphany comprehension",
+        "cognitive processes"
+      ],
+      "discarded": [
+        "Physiological Basis",
+        "Emotional Cognition",
+        "awareness",
+        "technology",
+        "dailyactivities",
+        "creative processes",
+        "aesthetic properties",
+        "colors",
+        "relationships",
+        "occupationaltasks",
+        "tools",
+        "family",
+        "bodyparts",
+        "timeunits",
+        "places",
+        "natural systems",
+        "transportation",
+        "food",
+        "sports",
+        "weather",
+        "nature"
+      ],
+      "elite": "moral sentiments",
+      "max_active_hypotheses": 5,
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 183
+    }
+  },
+  {
+    "generation": 3,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-22T21:51:36",
+    "details": {
+      "parent_id": "447721b4e02a4231922bb6d64d304d73",
+      "child_id": "0cef546d0d1e42fd8d8798a50ccd580d",
+      "parent_rank": 3,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "character traits",
+      "sampled_op": "ml_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:51:36",
+    "details": {
+      "word": "dignity",
+      "rank": 34,
+      "hypothesis": "character traits",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 184
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:51:36",
+    "details": {
+      "word": "courage",
+      "rank": 10,
+      "hypothesis": "character traits",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 185
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:51:36",
+    "details": {
+      "word": "humility",
+      "rank": 6,
+      "hypothesis": "character traits",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 186
+    }
+  },
+  {
+    "generation": 3,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-22T21:51:42",
+    "details": {
+      "parent_id": "8fc86ed2c30b482aa23ede522492784c",
+      "child_id": "5d1e171059404bd7818c604cc5150199",
+      "parent_rank": 11,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "altruistic emotions",
+      "sampled_op": "s_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:51:42",
+    "details": {
+      "word": "altruism",
+      "rank": 213,
+      "hypothesis": "altruistic emotions",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 187
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:51:42",
+    "details": {
+      "word": "generosity",
+      "rank": 15,
+      "hypothesis": "altruistic emotions",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 188
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:51:45",
+    "details": {
+      "word": "benevolence",
+      "rank": 205,
+      "hypothesis": "altruistic emotions",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 189
+    }
+  },
+  {
+    "generation": 3,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-22T21:51:59",
+    "details": {
+      "parent_id": "9faf325686f146e5a78d4763bd9a1b32",
+      "child_id": "24d33c2727814c28bb1d0d13a3b55302",
+      "parent_rank": 78,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "cognitive processes in interpreting information",
+      "sampled_op": "m_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:51:59",
+    "details": {
+      "word": "insight",
+      "rank": 135,
+      "hypothesis": "cognitive processes in interpreting information",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 189
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:52:00",
+    "details": {
+      "word": "interpret",
+      "rank": 3854,
+      "hypothesis": "cognitive processes in interpreting information",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 190
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:52:01",
+    "details": {
+      "word": "decipher",
+      "rank": 10957,
+      "hypothesis": "cognitive processes in interpreting information",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 191
+    }
+  },
+  {
+    "generation": 3,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-22T21:52:18",
+    "details": {
+      "parent_id": "eb41103a56c94e00af50fdee57fdd080",
+      "child_id": "285566296cc54a30913893080e9d62f3",
+      "parent_rank": 81,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "cognitive illumination",
+      "sampled_op": "ml_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:52:18",
+    "details": {
+      "word": "perception",
+      "rank": 329,
+      "hypothesis": "cognitive illumination",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 191
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:52:18",
+    "details": {
+      "word": "recognition",
+      "rank": 926,
+      "hypothesis": "cognitive illumination",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 192
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:52:22",
+    "details": {
+      "word": "illumination",
+      "rank": 14761,
+      "hypothesis": "cognitive illumination",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 193
+    }
+  },
+  {
+    "generation": 3,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-22T21:52:39",
+    "details": {
+      "parent_id": "896a9ad6a06b462798f39411fb47475c",
+      "child_id": "81b89279107b4171a8fb409a5f0a9ef6",
+      "parent_rank": 135,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "subjective revelations",
+      "sampled_op": "m_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:52:40",
+    "details": {
+      "word": "introspection",
+      "rank": 255,
+      "hypothesis": "subjective revelations",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 194
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:52:41",
+    "details": {
+      "word": "reflection",
+      "rank": 523,
+      "hypothesis": "subjective revelations",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 195
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:52:42",
+    "details": {
+      "word": "inspiration",
+      "rank": 566,
+      "hypothesis": "subjective revelations",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 196
+    }
+  },
+  {
+    "generation": 3,
+    "event": "MUTATE",
+    "timestamp": "2026-07-22T21:52:42",
+    "details": {
+      "method": "self_adaptive",
+      "children": [
+        {
+          "hypothesis_id": "0cef546d0d1e42fd8d8798a50ccd580d",
+          "category_name": "character traits",
+          "description": "traits that define a person's character",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "moral sentiments",
+          "parent_id": "447721b4e02a4231922bb6d64d304d73",
+          "origin": "self_adaptive_ml_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "5d1e171059404bd7818c604cc5150199",
+          "category_name": "altruistic emotions",
+          "description": "emotions linked to selfless concern for others",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "moral emotions",
+          "parent_id": "8fc86ed2c30b482aa23ede522492784c",
+          "origin": "self_adaptive_s_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "24d33c2727814c28bb1d0d13a3b55302",
+          "category_name": "cognitive processes in interpreting information",
+          "description": "how the mind deciphers and makes sense of complex concepts",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "education",
+          "parent_id": "9faf325686f146e5a78d4763bd9a1b32",
+          "origin": "self_adaptive_m_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "285566296cc54a30913893080e9d62f3",
+          "category_name": "cognitive illumination",
+          "description": "aspects of mental perception and cognitive processing",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "epiphany comprehension",
+          "parent_id": "eb41103a56c94e00af50fdee57fdd080",
+          "origin": "self_adaptive_ml_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "81b89279107b4171a8fb409a5f0a9ef6",
+          "category_name": "subjective revelations",
+          "description": "emotional and introspective moments leading to understanding",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "cognitive processes",
+          "parent_id": "896a9ad6a06b462798f39411fb47475c",
+          "origin": "self_adaptive_m_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        }
+      ],
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 196
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:52:56",
+    "details": {
+      "word": "integrity",
+      "rank": 3,
+      "hypothesis": "ethical character",
+      "best_word": "integrity",
+      "best_rank": 3,
+      "total_guesses": 196
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-22T21:52:56",
+    "details": {
+      "word": "honesty",
+      "rank": 1,
+      "hypothesis": "ethical character",
+      "best_word": "honesty",
+      "best_rank": 1,
+      "total_guesses": 197
+    }
+  },
+  {
+    "generation": 3,
+    "event": "CROSSOVER",
+    "timestamp": "2026-07-22T21:52:56",
+    "details": {
+      "parents": [
+        "moral sentiments",
+        "character traits"
+      ],
+      "parent_ids": [
+        "447721b4e02a4231922bb6d64d304d73",
+        "0cef546d0d1e42fd8d8798a50ccd580d"
+      ],
+      "parent_ranks": [
+        3,
+        6
+      ],
+      "parent_a_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "parent_b_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma_pre_perturbation": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child": {
+        "hypothesis_id": "e7583303d98d40ebb8f00c41b69fe137",
+        "category_name": "ethical character",
+        "description": "traits combining moral principles and personal virtues",
+        "words_tried": {
+          "honesty": 1,
+          "integrity": 3
+        },
+        "best_word": "honesty",
+        "best_rank": 1,
+        "status": "active",
+        "parent": "moral sentiments+character traits",
+        "parent_id": null,
+        "origin": "crossover",
+        "sigma": [
+          0.25,
+          0.25,
+          0.25,
+          0.25
+        ]
+      },
+      "best_word": "honesty",
+      "best_rank": 1,
+      "total_guesses": 197
+    }
+  },
+  {
+    "generation": 3,
+    "event": "SOLVED",
+    "timestamp": "2026-07-22T21:52:56",
+    "details": {
+      "answer": "honesty",
+      "rank": 1,
+      "total_guesses": 197
+    }
+  },
+  {
+    "generation": 3,
+    "event": "NETWORK_METRICS",
+    "timestamp": "2026-07-22T21:52:56",
+    "details": {
+      "network_calls": 85,
+      "network_wall_clock_seconds": 1110.7072,
+      "total_latency_seconds": 53.3919,
+      "mean_latency_seconds": 0.6281,
+      "median_latency_seconds": 0.2254,
+      "p95_latency_seconds": 3.2261,
+      "max_latency_seconds": 3.2294,
+      "status_counts": {
+        "200": 85
+      },
+      "outcome_counts": {
+        "ok": 85
+      }
+    }
+  }
+]

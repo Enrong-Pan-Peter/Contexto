@@ -1,0 +1,3005 @@
+[
+  {
+    "generation": -1,
+    "event": "RUN_CONFIG",
+    "timestamp": "2026-07-23T01:20:55",
+    "details": {
+      "game": "api",
+      "solver": "llm",
+      "method": "ea_llm_self_adaptive",
+      "mode": "api",
+      "target": null,
+      "game_number": 1335,
+      "run_index": 3,
+      "game_embedding_path": null,
+      "solver_embedding_path": null,
+      "embedding_backend": null,
+      "vocabulary_size": null,
+      "alignment": "api_unknown",
+      "trace_schema_version": 3,
+      "instrumentation_provenance_hash": "bd9f2858283673a2",
+      "self_report": false,
+      "rationale_inheritance": false,
+      "max_generations": 50,
+      "llm_provider": "ollama",
+      "llm_model": "qwen3:14b",
+      "llm_workers": 4,
+      "initial_categories": 15,
+      "max_active_hypotheses": null,
+      "local_search_rank_threshold": 100,
+      "self_adaptive_initial_categories": 15,
+      "self_adaptive_mu": 15,
+      "self_adaptive_concentration": 50.0,
+      "self_adaptive_sigma_floor": 0.02,
+      "self_adaptive_sigma_mode": "frozen_uniform",
+      "mapelites_grid_resolution": null,
+      "mapelites_mutations_per_gen": null,
+      "mapelites_crossovers_per_gen": null,
+      "mapelites_initial_categories": null,
+      "mapelites_concentration": null,
+      "mapelites_sigma_floor": null,
+      "mapelites_sigma_mode": null,
+      "mapelites_frozen_sigma": null,
+      "mapelites_ranked_context_k": null,
+      "rank_cache_enabled": true,
+      "enable_pivot": false,
+      "ea_llm_pivot_stall_no_improvement_generations": null,
+      "ea_llm_pivot_stall_close_rank_threshold": null,
+      "ea_llm_pivot_stall_close_generations_limit": null,
+      "ea_llm_pivot_max_attempts_per_run": null,
+      "ea_llm_pivot_candidate_words_per_operator": null,
+      "ea_llm_pivot_resolution_window": null,
+      "random_seed": 3
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:21:27",
+    "details": {
+      "word": "food",
+      "rank": 4344,
+      "hypothesis": "basic needs",
+      "best_word": "food",
+      "best_rank": 4344,
+      "total_guesses": 1
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:21:27",
+    "details": {
+      "word": "water",
+      "rank": 975,
+      "hypothesis": "basic needs",
+      "best_word": "water",
+      "best_rank": 975,
+      "total_guesses": 2
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:21:28",
+    "details": {
+      "word": "shelter",
+      "rank": 7253,
+      "hypothesis": "basic needs",
+      "best_word": "water",
+      "best_rank": 975,
+      "total_guesses": 3
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:21:28",
+    "details": {
+      "word": "love",
+      "rank": 4235,
+      "hypothesis": "emotions",
+      "best_word": "water",
+      "best_rank": 975,
+      "total_guesses": 4
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:21:28",
+    "details": {
+      "word": "fear",
+      "rank": 3171,
+      "hypothesis": "emotions",
+      "best_word": "water",
+      "best_rank": 975,
+      "total_guesses": 5
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:21:28",
+    "details": {
+      "word": "joy",
+      "rank": 9366,
+      "hypothesis": "emotions",
+      "best_word": "water",
+      "best_rank": 975,
+      "total_guesses": 6
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:21:28",
+    "details": {
+      "word": "earth",
+      "rank": 297,
+      "hypothesis": "natural elements",
+      "best_word": "earth",
+      "best_rank": 297,
+      "total_guesses": 7
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:21:29",
+    "details": {
+      "word": "air",
+      "rank": 1813,
+      "hypothesis": "natural elements",
+      "best_word": "earth",
+      "best_rank": 297,
+      "total_guesses": 8
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:21:30",
+    "details": {
+      "word": "fire",
+      "rank": 1364,
+      "hypothesis": "natural elements",
+      "best_word": "earth",
+      "best_rank": 297,
+      "total_guesses": 9
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:21:30",
+    "details": {
+      "word": "red",
+      "rank": 1461,
+      "hypothesis": "colors",
+      "best_word": "earth",
+      "best_rank": 297,
+      "total_guesses": 10
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:21:30",
+    "details": {
+      "word": "blue",
+      "rank": 957,
+      "hypothesis": "colors",
+      "best_word": "earth",
+      "best_rank": 297,
+      "total_guesses": 11
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:21:30",
+    "details": {
+      "word": "green",
+      "rank": 2895,
+      "hypothesis": "colors",
+      "best_word": "earth",
+      "best_rank": 297,
+      "total_guesses": 12
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:21:30",
+    "details": {
+      "word": "work",
+      "rank": 1369,
+      "hypothesis": "daily activities",
+      "best_word": "earth",
+      "best_rank": 297,
+      "total_guesses": 13
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:21:30",
+    "details": {
+      "word": "rest",
+      "rank": 694,
+      "hypothesis": "daily activities",
+      "best_word": "earth",
+      "best_rank": 297,
+      "total_guesses": 14
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:21:30",
+    "details": {
+      "word": "play",
+      "rank": 3145,
+      "hypothesis": "daily activities",
+      "best_word": "earth",
+      "best_rank": 297,
+      "total_guesses": 15
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:21:31",
+    "details": {
+      "word": "morning",
+      "rank": 9010,
+      "hypothesis": "time of day",
+      "best_word": "earth",
+      "best_rank": 297,
+      "total_guesses": 16
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:21:32",
+    "details": {
+      "word": "noon",
+      "rank": 9260,
+      "hypothesis": "time of day",
+      "best_word": "earth",
+      "best_rank": 297,
+      "total_guesses": 17
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:21:33",
+    "details": {
+      "word": "night",
+      "rank": 2330,
+      "hypothesis": "time of day",
+      "best_word": "earth",
+      "best_rank": 297,
+      "total_guesses": 18
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:21:34",
+    "details": {
+      "word": "room",
+      "rank": 1817,
+      "hypothesis": "parts of a house",
+      "best_word": "earth",
+      "best_rank": 297,
+      "total_guesses": 19
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:21:34",
+    "details": {
+      "word": "door",
+      "rank": 413,
+      "hypothesis": "parts of a house",
+      "best_word": "earth",
+      "best_rank": 297,
+      "total_guesses": 20
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:21:34",
+    "details": {
+      "word": "window",
+      "rank": 879,
+      "hypothesis": "parts of a house",
+      "best_word": "earth",
+      "best_rank": 297,
+      "total_guesses": 21
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:21:34",
+    "details": {
+      "word": "car",
+      "rank": 1375,
+      "hypothesis": "transportation",
+      "best_word": "earth",
+      "best_rank": 297,
+      "total_guesses": 22
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:21:34",
+    "details": {
+      "word": "train",
+      "rank": 2944,
+      "hypothesis": "transportation",
+      "best_word": "earth",
+      "best_rank": 297,
+      "total_guesses": 23
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:21:34",
+    "details": {
+      "word": "boat",
+      "rank": 358,
+      "hypothesis": "transportation",
+      "best_word": "earth",
+      "best_rank": 297,
+      "total_guesses": 24
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:21:34",
+    "details": {
+      "word": "hand",
+      "rank": 157,
+      "hypothesis": "body parts",
+      "best_word": "hand",
+      "best_rank": 157,
+      "total_guesses": 25
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:21:34",
+    "details": {
+      "word": "foot",
+      "rank": 3741,
+      "hypothesis": "body parts",
+      "best_word": "hand",
+      "best_rank": 157,
+      "total_guesses": 26
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:21:34",
+    "details": {
+      "word": "head",
+      "rank": 247,
+      "hypothesis": "body parts",
+      "best_word": "hand",
+      "best_rank": 157,
+      "total_guesses": 27
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:21:34",
+    "details": {
+      "word": "breathe",
+      "rank": 18548,
+      "hypothesis": "body functions",
+      "best_word": "hand",
+      "best_rank": 157,
+      "total_guesses": 28
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:21:34",
+    "details": {
+      "word": "eat",
+      "rank": 15539,
+      "hypothesis": "body functions",
+      "best_word": "hand",
+      "best_rank": 157,
+      "total_guesses": 29
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:21:34",
+    "details": {
+      "word": "sleep",
+      "rank": 2346,
+      "hypothesis": "body functions",
+      "best_word": "hand",
+      "best_rank": 157,
+      "total_guesses": 30
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:21:34",
+    "details": {
+      "word": "rain",
+      "rank": 2161,
+      "hypothesis": "weather",
+      "best_word": "hand",
+      "best_rank": 157,
+      "total_guesses": 31
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:21:34",
+    "details": {
+      "word": "snow",
+      "rank": 11539,
+      "hypothesis": "weather",
+      "best_word": "hand",
+      "best_rank": 157,
+      "total_guesses": 32
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:21:34",
+    "details": {
+      "word": "sun",
+      "rank": 1749,
+      "hypothesis": "weather",
+      "best_word": "hand",
+      "best_rank": 157,
+      "total_guesses": 33
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:21:34",
+    "details": {
+      "word": "year",
+      "rank": 4492,
+      "hypothesis": "time units",
+      "best_word": "hand",
+      "best_rank": 157,
+      "total_guesses": 34
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:21:34",
+    "details": {
+      "word": "month",
+      "rank": 14354,
+      "hypothesis": "time units",
+      "best_word": "hand",
+      "best_rank": 157,
+      "total_guesses": 35
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:21:34",
+    "details": {
+      "word": "week",
+      "rank": 7768,
+      "hypothesis": "time units",
+      "best_word": "hand",
+      "best_rank": 157,
+      "total_guesses": 36
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:21:35",
+    "details": {
+      "word": "rock",
+      "rank": 5290,
+      "hypothesis": "music types",
+      "best_word": "hand",
+      "best_rank": 157,
+      "total_guesses": 37
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:21:36",
+    "details": {
+      "word": "jazz",
+      "rank": 14669,
+      "hypothesis": "music types",
+      "best_word": "hand",
+      "best_rank": 157,
+      "total_guesses": 38
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:21:37",
+    "details": {
+      "word": "pop",
+      "rank": 27720,
+      "hypothesis": "music types",
+      "best_word": "hand",
+      "best_rank": 157,
+      "total_guesses": 39
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:21:37",
+    "details": {
+      "word": "read",
+      "rank": 1773,
+      "hypothesis": "education",
+      "best_word": "hand",
+      "best_rank": 157,
+      "total_guesses": 40
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:21:38",
+    "details": {
+      "word": "write",
+      "rank": 1311,
+      "hypothesis": "education",
+      "best_word": "hand",
+      "best_rank": 157,
+      "total_guesses": 41
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:21:39",
+    "details": {
+      "word": "learn",
+      "rank": 752,
+      "hypothesis": "education",
+      "best_word": "hand",
+      "best_rank": 157,
+      "total_guesses": 42
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:21:39",
+    "details": {
+      "word": "child",
+      "rank": 1521,
+      "hypothesis": "people types",
+      "best_word": "hand",
+      "best_rank": 157,
+      "total_guesses": 43
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:21:40",
+    "details": {
+      "word": "adult",
+      "rank": 8764,
+      "hypothesis": "people types",
+      "best_word": "hand",
+      "best_rank": 157,
+      "total_guesses": 44
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:21:41",
+    "details": {
+      "word": "senior",
+      "rank": 19290,
+      "hypothesis": "people types",
+      "best_word": "hand",
+      "best_rank": 157,
+      "total_guesses": 45
+    }
+  },
+  {
+    "generation": 0,
+    "event": "INIT",
+    "timestamp": "2026-07-23T01:21:41",
+    "details": {
+      "hypotheses": [
+        {
+          "hypothesis_id": "344058248e804056946a1e880e4d056a",
+          "category_name": "basic needs",
+          "description": "essential requirements for survival",
+          "words_tried": {
+            "water": 975,
+            "food": 4344,
+            "shelter": 7253
+          },
+          "best_word": "water",
+          "best_rank": 975,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "907511ca4e1e4ed2829884a84e34e7c3",
+          "category_name": "emotions",
+          "description": "feelings experienced by humans",
+          "words_tried": {
+            "fear": 3171,
+            "love": 4235,
+            "joy": 9366
+          },
+          "best_word": "fear",
+          "best_rank": 3171,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "0ba0fed82a0f4c888daf0df241af21a8",
+          "category_name": "natural elements",
+          "description": "fundamental components of nature",
+          "words_tried": {
+            "earth": 297,
+            "fire": 1364,
+            "air": 1813
+          },
+          "best_word": "earth",
+          "best_rank": 297,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "3c2bb6209e5e4be993b31cf267741a1f",
+          "category_name": "colors",
+          "description": "visual perceptions of light wavelengths",
+          "words_tried": {
+            "blue": 957,
+            "red": 1461,
+            "green": 2895
+          },
+          "best_word": "blue",
+          "best_rank": 957,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "9b25fcd96b5148289d383786d541e6ab",
+          "category_name": "daily activities",
+          "description": "routine actions performed regularly",
+          "words_tried": {
+            "rest": 694,
+            "work": 1369,
+            "play": 3145
+          },
+          "best_word": "rest",
+          "best_rank": 694,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "9991ea85267d4466877a6f8a3ae995e7",
+          "category_name": "time of day",
+          "description": "periods dividing a day into segments",
+          "words_tried": {
+            "night": 2330,
+            "morning": 9010,
+            "noon": 9260
+          },
+          "best_word": "night",
+          "best_rank": 2330,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "d43c9d69423e46ad9a6ec9b58147fe6f",
+          "category_name": "parts of a house",
+          "description": "structural components of a dwelling",
+          "words_tried": {
+            "door": 413,
+            "window": 879,
+            "room": 1817
+          },
+          "best_word": "door",
+          "best_rank": 413,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "b0f4865482114dc9bb9bb555d45e5ad2",
+          "category_name": "transportation",
+          "description": "means of moving from one place to another",
+          "words_tried": {
+            "boat": 358,
+            "car": 1375,
+            "train": 2944
+          },
+          "best_word": "boat",
+          "best_rank": 358,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "fb4a4a14f58740fa9554c31d188d5187",
+          "category_name": "body parts",
+          "description": "physical components of the human body",
+          "words_tried": {
+            "hand": 157,
+            "head": 247,
+            "foot": 3741
+          },
+          "best_word": "hand",
+          "best_rank": 157,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "392b671c15b743709d463d59da2d8139",
+          "category_name": "body functions",
+          "description": "physiological processes of the body",
+          "words_tried": {
+            "sleep": 2346,
+            "eat": 15539,
+            "breathe": 18548
+          },
+          "best_word": "sleep",
+          "best_rank": 2346,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "52ed15cc0a974dd28c0f13e49d301af6",
+          "category_name": "weather",
+          "description": "atmospheric conditions affecting the environment",
+          "words_tried": {
+            "sun": 1749,
+            "rain": 2161,
+            "snow": 11539
+          },
+          "best_word": "sun",
+          "best_rank": 1749,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "c8fd502393de437a8afe70fd7abb5b1e",
+          "category_name": "time units",
+          "description": "measurements used to quantify time",
+          "words_tried": {
+            "year": 4492,
+            "week": 7768,
+            "month": 14354
+          },
+          "best_word": "year",
+          "best_rank": 4492,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "5a1646c874874d79a0bf5e48177fd56e",
+          "category_name": "music types",
+          "description": "categories of musical genres",
+          "words_tried": {
+            "rock": 5290,
+            "jazz": 14669,
+            "pop": 27720
+          },
+          "best_word": "rock",
+          "best_rank": 5290,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "a05eb139ff854c198b0abd94f925a5ec",
+          "category_name": "education",
+          "description": "processes involved in learning and teaching",
+          "words_tried": {
+            "learn": 752,
+            "write": 1311,
+            "read": 1773
+          },
+          "best_word": "learn",
+          "best_rank": 752,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "06bc100847434082ad525dd98dc714bf",
+          "category_name": "people types",
+          "description": "categories of individuals based on age or role",
+          "words_tried": {
+            "child": 1521,
+            "adult": 8764,
+            "senior": 19290
+          },
+          "best_word": "child",
+          "best_rank": 1521,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        }
+      ],
+      "best_word": "hand",
+      "best_rank": 157,
+      "total_guesses": 45
+    }
+  },
+  {
+    "generation": 0,
+    "event": "SIGMA_TRAJECTORY",
+    "timestamp": "2026-07-23T01:21:41",
+    "details": {
+      "mean_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "population_size": 15
+    }
+  },
+  {
+    "generation": 1,
+    "event": "CANDIDATES",
+    "timestamp": "2026-07-23T01:24:31",
+    "details": {
+      "count": 44,
+      "candidates": [
+        {
+          "hypothesis": "basic needs",
+          "word": "clothing"
+        },
+        {
+          "hypothesis": "basic needs",
+          "word": "health"
+        },
+        {
+          "hypothesis": "basic needs",
+          "word": "safety"
+        },
+        {
+          "hypothesis": "emotions",
+          "word": "anger"
+        },
+        {
+          "hypothesis": "emotions",
+          "word": "sadness"
+        },
+        {
+          "hypothesis": "emotions",
+          "word": "surprise"
+        },
+        {
+          "hypothesis": "natural elements",
+          "word": "soil"
+        },
+        {
+          "hypothesis": "natural elements",
+          "word": "stone"
+        },
+        {
+          "hypothesis": "natural elements",
+          "word": "ocean"
+        },
+        {
+          "hypothesis": "colors",
+          "word": "hue"
+        },
+        {
+          "hypothesis": "colors",
+          "word": "spectrum"
+        },
+        {
+          "hypothesis": "colors",
+          "word": "palette"
+        },
+        {
+          "hypothesis": "daily activities",
+          "word": "brush"
+        },
+        {
+          "hypothesis": "daily activities",
+          "word": "cook"
+        },
+        {
+          "hypothesis": "daily activities",
+          "word": "walk"
+        },
+        {
+          "hypothesis": "time of day",
+          "word": "afternoon"
+        },
+        {
+          "hypothesis": "time of day",
+          "word": "dusk"
+        },
+        {
+          "hypothesis": "time of day",
+          "word": "evening"
+        },
+        {
+          "hypothesis": "parts of a house",
+          "word": "foundation"
+        },
+        {
+          "hypothesis": "parts of a house",
+          "word": "roof"
+        },
+        {
+          "hypothesis": "parts of a house",
+          "word": "wall"
+        },
+        {
+          "hypothesis": "transportation",
+          "word": "vehicle"
+        },
+        {
+          "hypothesis": "transportation",
+          "word": "plane"
+        },
+        {
+          "hypothesis": "transportation",
+          "word": "cycle"
+        },
+        {
+          "hypothesis": "body parts",
+          "word": "arm"
+        },
+        {
+          "hypothesis": "body parts",
+          "word": "leg"
+        },
+        {
+          "hypothesis": "body parts",
+          "word": "eye"
+        },
+        {
+          "hypothesis": "body functions",
+          "word": "digest"
+        },
+        {
+          "hypothesis": "body functions",
+          "word": "circulate"
+        },
+        {
+          "hypothesis": "body functions",
+          "word": "hydrate"
+        },
+        {
+          "hypothesis": "weather",
+          "word": "cloud"
+        },
+        {
+          "hypothesis": "weather",
+          "word": "wind"
+        },
+        {
+          "hypothesis": "weather",
+          "word": "storm"
+        },
+        {
+          "hypothesis": "time units",
+          "word": "day"
+        },
+        {
+          "hypothesis": "time units",
+          "word": "hour"
+        },
+        {
+          "hypothesis": "time units",
+          "word": "minute"
+        },
+        {
+          "hypothesis": "music types",
+          "word": "classical"
+        },
+        {
+          "hypothesis": "music types",
+          "word": "electronic"
+        },
+        {
+          "hypothesis": "education",
+          "word": "teach"
+        },
+        {
+          "hypothesis": "education",
+          "word": "study"
+        },
+        {
+          "hypothesis": "education",
+          "word": "guide"
+        },
+        {
+          "hypothesis": "people types",
+          "word": "student"
+        },
+        {
+          "hypothesis": "people types",
+          "word": "teacher"
+        },
+        {
+          "hypothesis": "people types",
+          "word": "parent"
+        }
+      ]
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:24:32",
+    "details": {
+      "word": "clothing",
+      "rank": 2043,
+      "hypothesis": "basic needs",
+      "best_word": "hand",
+      "best_rank": 157,
+      "total_guesses": 46
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:24:33",
+    "details": {
+      "word": "health",
+      "rank": 2903,
+      "hypothesis": "basic needs",
+      "best_word": "hand",
+      "best_rank": 157,
+      "total_guesses": 47
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:24:34",
+    "details": {
+      "word": "safety",
+      "rank": 202,
+      "hypothesis": "basic needs",
+      "best_word": "hand",
+      "best_rank": 157,
+      "total_guesses": 48
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:24:35",
+    "details": {
+      "word": "anger",
+      "rank": 9422,
+      "hypothesis": "emotions",
+      "best_word": "hand",
+      "best_rank": 157,
+      "total_guesses": 49
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:24:36",
+    "details": {
+      "word": "sadness",
+      "rank": 19714,
+      "hypothesis": "emotions",
+      "best_word": "hand",
+      "best_rank": 157,
+      "total_guesses": 50
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:24:36",
+    "details": {
+      "word": "surprise",
+      "rank": 15682,
+      "hypothesis": "emotions",
+      "best_word": "hand",
+      "best_rank": 157,
+      "total_guesses": 51
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:24:36",
+    "details": {
+      "word": "soil",
+      "rank": 9812,
+      "hypothesis": "natural elements",
+      "best_word": "hand",
+      "best_rank": 157,
+      "total_guesses": 52
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:24:36",
+    "details": {
+      "word": "stone",
+      "rank": 3433,
+      "hypothesis": "natural elements",
+      "best_word": "hand",
+      "best_rank": 157,
+      "total_guesses": 53
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:24:36",
+    "details": {
+      "word": "ocean",
+      "rank": 1787,
+      "hypothesis": "natural elements",
+      "best_word": "hand",
+      "best_rank": 157,
+      "total_guesses": 54
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:24:37",
+    "details": {
+      "word": "hue",
+      "rank": 10728,
+      "hypothesis": "colors",
+      "best_word": "hand",
+      "best_rank": 157,
+      "total_guesses": 55
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:24:38",
+    "details": {
+      "word": "spectrum",
+      "rank": 1314,
+      "hypothesis": "colors",
+      "best_word": "hand",
+      "best_rank": 157,
+      "total_guesses": 56
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:24:39",
+    "details": {
+      "word": "palette",
+      "rank": 5436,
+      "hypothesis": "colors",
+      "best_word": "hand",
+      "best_rank": 157,
+      "total_guesses": 57
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:24:39",
+    "details": {
+      "word": "brush",
+      "rank": 3701,
+      "hypothesis": "daily activities",
+      "best_word": "hand",
+      "best_rank": 157,
+      "total_guesses": 58
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:24:39",
+    "details": {
+      "word": "cook",
+      "rank": 2198,
+      "hypothesis": "daily activities",
+      "best_word": "hand",
+      "best_rank": 157,
+      "total_guesses": 59
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:24:39",
+    "details": {
+      "word": "walk",
+      "rank": 2206,
+      "hypothesis": "daily activities",
+      "best_word": "hand",
+      "best_rank": 157,
+      "total_guesses": 60
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:24:40",
+    "details": {
+      "word": "afternoon",
+      "rank": 14625,
+      "hypothesis": "time of day",
+      "best_word": "hand",
+      "best_rank": 157,
+      "total_guesses": 61
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:24:41",
+    "details": {
+      "word": "dusk",
+      "rank": 2344,
+      "hypothesis": "time of day",
+      "best_word": "hand",
+      "best_rank": 157,
+      "total_guesses": 62
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:24:42",
+    "details": {
+      "word": "evening",
+      "rank": 10095,
+      "hypothesis": "time of day",
+      "best_word": "hand",
+      "best_rank": 157,
+      "total_guesses": 63
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:24:43",
+    "details": {
+      "word": "foundation",
+      "rank": 3821,
+      "hypothesis": "parts of a house",
+      "best_word": "hand",
+      "best_rank": 157,
+      "total_guesses": 64
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:24:43",
+    "details": {
+      "word": "roof",
+      "rank": 332,
+      "hypothesis": "parts of a house",
+      "best_word": "hand",
+      "best_rank": 157,
+      "total_guesses": 65
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:24:43",
+    "details": {
+      "word": "wall",
+      "rank": 348,
+      "hypothesis": "parts of a house",
+      "best_word": "hand",
+      "best_rank": 157,
+      "total_guesses": 66
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:24:43",
+    "details": {
+      "word": "vehicle",
+      "rank": 854,
+      "hypothesis": "transportation",
+      "best_word": "hand",
+      "best_rank": 157,
+      "total_guesses": 67
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:24:43",
+    "details": {
+      "word": "plane",
+      "rank": 270,
+      "hypothesis": "transportation",
+      "best_word": "hand",
+      "best_rank": 157,
+      "total_guesses": 68
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:24:43",
+    "details": {
+      "word": "cycle",
+      "rank": 5292,
+      "hypothesis": "transportation",
+      "best_word": "hand",
+      "best_rank": 157,
+      "total_guesses": 69
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:24:43",
+    "details": {
+      "word": "arm",
+      "rank": 1379,
+      "hypothesis": "body parts",
+      "best_word": "hand",
+      "best_rank": 157,
+      "total_guesses": 70
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:24:43",
+    "details": {
+      "word": "leg",
+      "rank": 9102,
+      "hypothesis": "body parts",
+      "best_word": "hand",
+      "best_rank": 157,
+      "total_guesses": 71
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:24:43",
+    "details": {
+      "word": "eye",
+      "rank": 1010,
+      "hypothesis": "body parts",
+      "best_word": "hand",
+      "best_rank": 157,
+      "total_guesses": 72
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:24:43",
+    "details": {
+      "word": "digest",
+      "rank": 24654,
+      "hypothesis": "body functions",
+      "best_word": "hand",
+      "best_rank": 157,
+      "total_guesses": 73
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:24:44",
+    "details": {
+      "word": "circulate",
+      "rank": 35016,
+      "hypothesis": "body functions",
+      "best_word": "hand",
+      "best_rank": 157,
+      "total_guesses": 74
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:24:45",
+    "details": {
+      "word": "hydrate",
+      "rank": 39545,
+      "hypothesis": "body functions",
+      "best_word": "hand",
+      "best_rank": 157,
+      "total_guesses": 75
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:24:45",
+    "details": {
+      "word": "cloud",
+      "rank": 4081,
+      "hypothesis": "weather",
+      "best_word": "hand",
+      "best_rank": 157,
+      "total_guesses": 76
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:24:45",
+    "details": {
+      "word": "wind",
+      "rank": 534,
+      "hypothesis": "weather",
+      "best_word": "hand",
+      "best_rank": 157,
+      "total_guesses": 77
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:24:45",
+    "details": {
+      "word": "storm",
+      "rank": 4985,
+      "hypothesis": "weather",
+      "best_word": "hand",
+      "best_rank": 157,
+      "total_guesses": 78
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:24:45",
+    "details": {
+      "word": "day",
+      "rank": 2692,
+      "hypothesis": "time units",
+      "best_word": "hand",
+      "best_rank": 157,
+      "total_guesses": 79
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:24:45",
+    "details": {
+      "word": "hour",
+      "rank": 2253,
+      "hypothesis": "time units",
+      "best_word": "hand",
+      "best_rank": 157,
+      "total_guesses": 80
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:24:45",
+    "details": {
+      "word": "minute",
+      "rank": 6027,
+      "hypothesis": "time units",
+      "best_word": "hand",
+      "best_rank": 157,
+      "total_guesses": 81
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:24:46",
+    "details": {
+      "word": "classical",
+      "rank": 3759,
+      "hypothesis": "music types",
+      "best_word": "hand",
+      "best_rank": 157,
+      "total_guesses": 82
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:24:46",
+    "details": {
+      "word": "electronic",
+      "rank": 198,
+      "hypothesis": "music types",
+      "best_word": "hand",
+      "best_rank": 157,
+      "total_guesses": 83
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:24:47",
+    "details": {
+      "word": "teach",
+      "rank": 648,
+      "hypothesis": "education",
+      "best_word": "hand",
+      "best_rank": 157,
+      "total_guesses": 84
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:24:47",
+    "details": {
+      "word": "study",
+      "rank": 1898,
+      "hypothesis": "education",
+      "best_word": "hand",
+      "best_rank": 157,
+      "total_guesses": 85
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:24:48",
+    "details": {
+      "word": "guide",
+      "rank": 53,
+      "hypothesis": "education",
+      "best_word": "guide",
+      "best_rank": 53,
+      "total_guesses": 86
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:24:49",
+    "details": {
+      "word": "student",
+      "rank": 2141,
+      "hypothesis": "people types",
+      "best_word": "guide",
+      "best_rank": 53,
+      "total_guesses": 87
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:24:49",
+    "details": {
+      "word": "teacher",
+      "rank": 2733,
+      "hypothesis": "people types",
+      "best_word": "guide",
+      "best_rank": 53,
+      "total_guesses": 88
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:24:49",
+    "details": {
+      "word": "parent",
+      "rank": 4130,
+      "hypothesis": "people types",
+      "best_word": "guide",
+      "best_rank": 53,
+      "total_guesses": 89
+    }
+  },
+  {
+    "generation": 1,
+    "event": "LOCAL_SEARCH_DISABLED",
+    "timestamp": "2026-07-23T01:24:49",
+    "details": {
+      "center_word": "guide",
+      "center_rank": 53,
+      "threshold": 100,
+      "reason": "self_adaptive_disable_local_search"
+    }
+  },
+  {
+    "generation": 1,
+    "event": "SELECT",
+    "timestamp": "2026-07-23T01:24:49",
+    "details": {
+      "kept": [
+        "education",
+        "body parts",
+        "music types",
+        "basic needs",
+        "transportation"
+      ],
+      "discarded": [
+        "natural elements",
+        "parts of a house",
+        "weather",
+        "daily activities",
+        "colors",
+        "people types",
+        "time units",
+        "time of day",
+        "body functions",
+        "emotions"
+      ],
+      "elite": "education",
+      "max_active_hypotheses": 5,
+      "best_word": "guide",
+      "best_rank": 53,
+      "total_guesses": 89
+    }
+  },
+  {
+    "generation": 1,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-23T01:25:00",
+    "details": {
+      "parent_id": "a05eb139ff854c198b0abd94f925a5ec",
+      "child_id": "dd44c6064c39429f99bb751cecd790b8",
+      "parent_rank": 53,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "instruction",
+      "sampled_op": "s_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:25:04",
+    "details": {
+      "word": "mentor",
+      "rank": 2782,
+      "hypothesis": "instruction",
+      "best_word": "guide",
+      "best_rank": 53,
+      "total_guesses": 90
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:25:05",
+    "details": {
+      "word": "instruct",
+      "rank": 4143,
+      "hypothesis": "instruction",
+      "best_word": "guide",
+      "best_rank": 53,
+      "total_guesses": 91
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:25:06",
+    "details": {
+      "word": "direct",
+      "rank": 1325,
+      "hypothesis": "instruction",
+      "best_word": "guide",
+      "best_rank": 53,
+      "total_guesses": 92
+    }
+  },
+  {
+    "generation": 1,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-23T01:25:11",
+    "details": {
+      "parent_id": "fb4a4a14f58740fa9554c31d188d5187",
+      "child_id": "970b307bfc8f4e079917ed8418da7ae7",
+      "parent_rank": 157,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "parts of the hand",
+      "sampled_op": "s_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:25:11",
+    "details": {
+      "word": "fist",
+      "rank": 18242,
+      "hypothesis": "parts of the hand",
+      "best_word": "guide",
+      "best_rank": 53,
+      "total_guesses": 93
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:25:11",
+    "details": {
+      "word": "palm",
+      "rank": 1961,
+      "hypothesis": "parts of the hand",
+      "best_word": "guide",
+      "best_rank": 53,
+      "total_guesses": 94
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:25:11",
+    "details": {
+      "word": "wrist",
+      "rank": 319,
+      "hypothesis": "parts of the hand",
+      "best_word": "guide",
+      "best_rank": 53,
+      "total_guesses": 95
+    }
+  },
+  {
+    "generation": 1,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-23T01:25:26",
+    "details": {
+      "parent_id": "5a1646c874874d79a0bf5e48177fd56e",
+      "child_id": "9754418a995a4da8a619bfedd3d0c80c",
+      "parent_rank": 198,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "power sources",
+      "sampled_op": "l_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:25:30",
+    "details": {
+      "word": "solar",
+      "rank": 356,
+      "hypothesis": "power sources",
+      "best_word": "guide",
+      "best_rank": 53,
+      "total_guesses": 96
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:25:31",
+    "details": {
+      "word": "nuclear",
+      "rank": 25816,
+      "hypothesis": "power sources",
+      "best_word": "guide",
+      "best_rank": 53,
+      "total_guesses": 97
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:25:31",
+    "details": {
+      "word": "geothermal",
+      "rank": 17056,
+      "hypothesis": "power sources",
+      "best_word": "guide",
+      "best_rank": 53,
+      "total_guesses": 98
+    }
+  },
+  {
+    "generation": 1,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-23T01:25:52",
+    "details": {
+      "parent_id": "344058248e804056946a1e880e4d056a",
+      "child_id": "18a0d98afbb442a09091df700b8a9ec0",
+      "parent_rank": 202,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "security",
+      "sampled_op": "ml_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:25:56",
+    "details": {
+      "word": "lock",
+      "rank": 257,
+      "hypothesis": "security",
+      "best_word": "guide",
+      "best_rank": 53,
+      "total_guesses": 99
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:25:56",
+    "details": {
+      "word": "guard",
+      "rank": 2952,
+      "hypothesis": "security",
+      "best_word": "guide",
+      "best_rank": 53,
+      "total_guesses": 100
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:25:57",
+    "details": {
+      "word": "shield",
+      "rank": 1606,
+      "hypothesis": "security",
+      "best_word": "guide",
+      "best_rank": 53,
+      "total_guesses": 101
+    }
+  },
+  {
+    "generation": 1,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-23T01:26:16",
+    "details": {
+      "parent_id": "b0f4865482114dc9bb9bb555d45e5ad2",
+      "child_id": "ebaec3ed152d4fcb8835acab8de3f3f9",
+      "parent_rank": 270,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "aircraft",
+      "sampled_op": "s_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:26:16",
+    "details": {
+      "word": "aircraft",
+      "rank": 726,
+      "hypothesis": "aircraft",
+      "best_word": "guide",
+      "best_rank": 53,
+      "total_guesses": 102
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:26:16",
+    "details": {
+      "word": "jet",
+      "rank": 4270,
+      "hypothesis": "aircraft",
+      "best_word": "guide",
+      "best_rank": 53,
+      "total_guesses": 103
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:26:16",
+    "details": {
+      "word": "glider",
+      "rank": 5116,
+      "hypothesis": "aircraft",
+      "best_word": "guide",
+      "best_rank": 53,
+      "total_guesses": 104
+    }
+  },
+  {
+    "generation": 1,
+    "event": "MUTATE",
+    "timestamp": "2026-07-23T01:26:16",
+    "details": {
+      "method": "self_adaptive",
+      "children": [
+        {
+          "hypothesis_id": "dd44c6064c39429f99bb751cecd790b8",
+          "category_name": "instruction",
+          "description": "processes involved in directing learning",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "education",
+          "parent_id": "a05eb139ff854c198b0abd94f925a5ec",
+          "origin": "self_adaptive_s_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "970b307bfc8f4e079917ed8418da7ae7",
+          "category_name": "parts of the hand",
+          "description": "specific components of the hand",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "body parts",
+          "parent_id": "fb4a4a14f58740fa9554c31d188d5187",
+          "origin": "self_adaptive_s_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "9754418a995a4da8a619bfedd3d0c80c",
+          "category_name": "power sources",
+          "description": "categories of energy production methods",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "music types",
+          "parent_id": "5a1646c874874d79a0bf5e48177fd56e",
+          "origin": "self_adaptive_l_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "18a0d98afbb442a09091df700b8a9ec0",
+          "category_name": "security",
+          "description": "measures to ensure personal security",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "basic needs",
+          "parent_id": "344058248e804056946a1e880e4d056a",
+          "origin": "self_adaptive_ml_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "ebaec3ed152d4fcb8835acab8de3f3f9",
+          "category_name": "aircraft",
+          "description": "means of air transportation",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "transportation",
+          "parent_id": "b0f4865482114dc9bb9bb555d45e5ad2",
+          "origin": "self_adaptive_s_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        }
+      ],
+      "best_word": "guide",
+      "best_rank": 53,
+      "total_guesses": 104
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:26:26",
+    "details": {
+      "word": "eye",
+      "rank": 1010,
+      "hypothesis": "Educational Body Functions",
+      "best_word": "guide",
+      "best_rank": 53,
+      "total_guesses": 104
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:26:26",
+    "details": {
+      "word": "hand",
+      "rank": 157,
+      "hypothesis": "Educational Body Functions",
+      "best_word": "guide",
+      "best_rank": 53,
+      "total_guesses": 104
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:26:26",
+    "details": {
+      "word": "head",
+      "rank": 247,
+      "hypothesis": "Educational Body Functions",
+      "best_word": "guide",
+      "best_rank": 53,
+      "total_guesses": 104
+    }
+  },
+  {
+    "generation": 1,
+    "event": "CROSSOVER",
+    "timestamp": "2026-07-23T01:26:26",
+    "details": {
+      "parents": [
+        "education",
+        "body parts"
+      ],
+      "parent_ids": [
+        "a05eb139ff854c198b0abd94f925a5ec",
+        "fb4a4a14f58740fa9554c31d188d5187"
+      ],
+      "parent_ranks": [
+        53,
+        157
+      ],
+      "parent_a_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "parent_b_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma_pre_perturbation": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child": {
+        "hypothesis_id": "5c20d9ca9bb845df9e009e75d5bb0815",
+        "category_name": "Educational Body Functions",
+        "description": "Words related to both body parts and educational activities",
+        "words_tried": {
+          "hand": 157,
+          "head": 247,
+          "eye": 1010
+        },
+        "best_word": "hand",
+        "best_rank": 157,
+        "status": "active",
+        "parent": "education+body parts",
+        "parent_id": null,
+        "origin": "crossover",
+        "sigma": [
+          0.25,
+          0.25,
+          0.25,
+          0.25
+        ]
+      },
+      "best_word": "guide",
+      "best_rank": 53,
+      "total_guesses": 104
+    }
+  },
+  {
+    "generation": 1,
+    "event": "DEDUPLICATE",
+    "timestamp": "2026-07-23T01:26:26",
+    "details": {
+      "merged": [
+        {
+          "survivor": "education",
+          "discarded": "Educational Body Functions",
+          "survivor_best_rank": 53,
+          "discarded_best_rank": 157
+        }
+      ],
+      "remaining_hypotheses": 20,
+      "active_hypotheses": 10,
+      "best_word": "guide",
+      "best_rank": 53,
+      "total_guesses": 104
+    }
+  },
+  {
+    "generation": 1,
+    "event": "SIGMA_TRAJECTORY",
+    "timestamp": "2026-07-23T01:26:26",
+    "details": {
+      "mean_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "population_size": 10
+    }
+  },
+  {
+    "generation": 2,
+    "event": "CANDIDATES",
+    "timestamp": "2026-07-23T01:29:00",
+    "details": {
+      "count": 29,
+      "candidates": [
+        {
+          "hypothesis": "education",
+          "word": "coach"
+        },
+        {
+          "hypothesis": "education",
+          "word": "educate"
+        },
+        {
+          "hypothesis": "education",
+          "word": "inspire"
+        },
+        {
+          "hypothesis": "body parts",
+          "word": "heart"
+        },
+        {
+          "hypothesis": "body parts",
+          "word": "liver"
+        },
+        {
+          "hypothesis": "body parts",
+          "word": "brain"
+        },
+        {
+          "hypothesis": "music types",
+          "word": "folk"
+        },
+        {
+          "hypothesis": "music types",
+          "word": "country"
+        },
+        {
+          "hypothesis": "music types",
+          "word": "metal"
+        },
+        {
+          "hypothesis": "basic needs",
+          "word": "survival"
+        },
+        {
+          "hypothesis": "basic needs",
+          "word": "necessity"
+        },
+        {
+          "hypothesis": "basic needs",
+          "word": "fundamental"
+        },
+        {
+          "hypothesis": "security",
+          "word": "protect"
+        },
+        {
+          "hypothesis": "security",
+          "word": "ward"
+        },
+        {
+          "hypothesis": "security",
+          "word": "defend"
+        },
+        {
+          "hypothesis": "transportation",
+          "word": "transit"
+        },
+        {
+          "hypothesis": "transportation",
+          "word": "convey"
+        },
+        {
+          "hypothesis": "transportation",
+          "word": "transport"
+        },
+        {
+          "hypothesis": "parts of the hand",
+          "word": "fingers"
+        },
+        {
+          "hypothesis": "parts of the hand",
+          "word": "thumb"
+        },
+        {
+          "hypothesis": "parts of the hand",
+          "word": "knuckle"
+        },
+        {
+          "hypothesis": "power sources",
+          "word": "hydro"
+        },
+        {
+          "hypothesis": "power sources",
+          "word": "fossil"
+        },
+        {
+          "hypothesis": "power sources",
+          "word": "biomass"
+        },
+        {
+          "hypothesis": "aircraft",
+          "word": "drone"
+        },
+        {
+          "hypothesis": "aircraft",
+          "word": "helicopter"
+        },
+        {
+          "hypothesis": "aircraft",
+          "word": "airship"
+        },
+        {
+          "hypothesis": "instruction",
+          "word": "lead"
+        },
+        {
+          "hypothesis": "instruction",
+          "word": "orient"
+        }
+      ]
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:29:01",
+    "details": {
+      "word": "coach",
+      "rank": 1530,
+      "hypothesis": "education",
+      "best_word": "guide",
+      "best_rank": 53,
+      "total_guesses": 105
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:29:02",
+    "details": {
+      "word": "educate",
+      "rank": 16483,
+      "hypothesis": "education",
+      "best_word": "guide",
+      "best_rank": 53,
+      "total_guesses": 106
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:29:03",
+    "details": {
+      "word": "inspire",
+      "rank": 4434,
+      "hypothesis": "education",
+      "best_word": "guide",
+      "best_rank": 53,
+      "total_guesses": 107
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:29:03",
+    "details": {
+      "word": "heart",
+      "rank": 2620,
+      "hypothesis": "body parts",
+      "best_word": "guide",
+      "best_rank": 53,
+      "total_guesses": 108
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:29:03",
+    "details": {
+      "word": "liver",
+      "rank": 39280,
+      "hypothesis": "body parts",
+      "best_word": "guide",
+      "best_rank": 53,
+      "total_guesses": 109
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:29:03",
+    "details": {
+      "word": "brain",
+      "rank": 7078,
+      "hypothesis": "body parts",
+      "best_word": "guide",
+      "best_rank": 53,
+      "total_guesses": 110
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:29:03",
+    "details": {
+      "word": "folk",
+      "rank": 3533,
+      "hypothesis": "music types",
+      "best_word": "guide",
+      "best_rank": 53,
+      "total_guesses": 111
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:29:04",
+    "details": {
+      "word": "country",
+      "rank": 2858,
+      "hypothesis": "music types",
+      "best_word": "guide",
+      "best_rank": 53,
+      "total_guesses": 112
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:29:04",
+    "details": {
+      "word": "metal",
+      "rank": 1114,
+      "hypothesis": "music types",
+      "best_word": "guide",
+      "best_rank": 53,
+      "total_guesses": 113
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:29:05",
+    "details": {
+      "word": "survival",
+      "rank": 414,
+      "hypothesis": "basic needs",
+      "best_word": "guide",
+      "best_rank": 53,
+      "total_guesses": 114
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:29:06",
+    "details": {
+      "word": "necessity",
+      "rank": 2002,
+      "hypothesis": "basic needs",
+      "best_word": "guide",
+      "best_rank": 53,
+      "total_guesses": 115
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:29:07",
+    "details": {
+      "word": "fundamental",
+      "rank": 1580,
+      "hypothesis": "basic needs",
+      "best_word": "guide",
+      "best_rank": 53,
+      "total_guesses": 116
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:29:07",
+    "details": {
+      "word": "protect",
+      "rank": 6350,
+      "hypothesis": "security",
+      "best_word": "guide",
+      "best_rank": 53,
+      "total_guesses": 117
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:29:08",
+    "details": {
+      "word": "ward",
+      "rank": 20630,
+      "hypothesis": "security",
+      "best_word": "guide",
+      "best_rank": 53,
+      "total_guesses": 118
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:29:09",
+    "details": {
+      "word": "defend",
+      "rank": 15675,
+      "hypothesis": "security",
+      "best_word": "guide",
+      "best_rank": 53,
+      "total_guesses": 119
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:29:10",
+    "details": {
+      "word": "transit",
+      "rank": 1765,
+      "hypothesis": "transportation",
+      "best_word": "guide",
+      "best_rank": 53,
+      "total_guesses": 120
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:29:10",
+    "details": {
+      "word": "convey",
+      "rank": 10551,
+      "hypothesis": "transportation",
+      "best_word": "guide",
+      "best_rank": 53,
+      "total_guesses": 121
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:29:11",
+    "details": {
+      "word": "transport",
+      "rank": 7116,
+      "hypothesis": "transportation",
+      "best_word": "guide",
+      "best_rank": 53,
+      "total_guesses": 122
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:29:12",
+    "details": {
+      "word": "fingers",
+      "rank": 2601,
+      "hypothesis": "parts of the hand",
+      "best_word": "guide",
+      "best_rank": 53,
+      "total_guesses": 123
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:29:12",
+    "details": {
+      "word": "thumb",
+      "rank": 2052,
+      "hypothesis": "parts of the hand",
+      "best_word": "guide",
+      "best_rank": 53,
+      "total_guesses": 124
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:29:12",
+    "details": {
+      "word": "knuckle",
+      "rank": 7958,
+      "hypothesis": "parts of the hand",
+      "best_word": "guide",
+      "best_rank": 53,
+      "total_guesses": 125
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:29:13",
+    "details": {
+      "word": "hydro",
+      "rank": 20995,
+      "hypothesis": "power sources",
+      "best_word": "guide",
+      "best_rank": 53,
+      "total_guesses": 126
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:29:14",
+    "details": {
+      "word": "fossil",
+      "rank": 10713,
+      "hypothesis": "power sources",
+      "best_word": "guide",
+      "best_rank": 53,
+      "total_guesses": 127
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:29:14",
+    "details": {
+      "word": "biomass",
+      "rank": 50173,
+      "hypothesis": "power sources",
+      "best_word": "guide",
+      "best_rank": 53,
+      "total_guesses": 128
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:29:14",
+    "details": {
+      "word": "drone",
+      "rank": 7929,
+      "hypothesis": "aircraft",
+      "best_word": "guide",
+      "best_rank": 53,
+      "total_guesses": 129
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:29:14",
+    "details": {
+      "word": "helicopter",
+      "rank": 2046,
+      "hypothesis": "aircraft",
+      "best_word": "guide",
+      "best_rank": 53,
+      "total_guesses": 130
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:29:15",
+    "details": {
+      "word": "airship",
+      "rank": 3725,
+      "hypothesis": "aircraft",
+      "best_word": "guide",
+      "best_rank": 53,
+      "total_guesses": 131
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:29:16",
+    "details": {
+      "word": "lead",
+      "rank": 325,
+      "hypothesis": "instruction",
+      "best_word": "guide",
+      "best_rank": 53,
+      "total_guesses": 132
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:29:17",
+    "details": {
+      "word": "orient",
+      "rank": 191,
+      "hypothesis": "instruction",
+      "best_word": "guide",
+      "best_rank": 53,
+      "total_guesses": 133
+    }
+  },
+  {
+    "generation": 2,
+    "event": "SELECT",
+    "timestamp": "2026-07-23T01:29:17",
+    "details": {
+      "kept": [
+        "education",
+        "body parts",
+        "instruction",
+        "music types",
+        "basic needs"
+      ],
+      "discarded": [
+        "security",
+        "transportation",
+        "natural elements",
+        "parts of the hand",
+        "parts of a house",
+        "power sources",
+        "weather",
+        "daily activities",
+        "aircraft",
+        "colors",
+        "people types",
+        "time units",
+        "time of day",
+        "body functions",
+        "emotions"
+      ],
+      "elite": "education",
+      "max_active_hypotheses": 5,
+      "best_word": "guide",
+      "best_rank": 53,
+      "total_guesses": 133
+    }
+  },
+  {
+    "generation": 2,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-07-23T01:29:31",
+    "details": {
+      "parent_id": "a05eb139ff854c198b0abd94f925a5ec",
+      "child_id": "54ac1a2ca2284ca7aa7df3753d3a0db5",
+      "parent_rank": 53,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "navigation",
+      "sampled_op": "m_mutation",
+      "method": "self_adaptive"
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:29:35",
+    "details": {
+      "word": "route",
+      "rank": 1886,
+      "hypothesis": "navigation",
+      "best_word": "guide",
+      "best_rank": 53,
+      "total_guesses": 134
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-23T01:29:35",
+    "details": {
+      "word": "compass",
+      "rank": 1,
+      "hypothesis": "navigation",
+      "best_word": "compass",
+      "best_rank": 1,
+      "total_guesses": 135
+    }
+  },
+  {
+    "generation": 2,
+    "event": "MUTATE",
+    "timestamp": "2026-07-23T01:29:35",
+    "details": {
+      "method": "self_adaptive",
+      "children": [
+        {
+          "hypothesis_id": "54ac1a2ca2284ca7aa7df3753d3a0db5",
+          "category_name": "navigation",
+          "description": "direction and movement guidance",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "education",
+          "parent_id": "a05eb139ff854c198b0abd94f925a5ec",
+          "origin": "self_adaptive_m_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        }
+      ],
+      "best_word": "compass",
+      "best_rank": 1,
+      "total_guesses": 135
+    }
+  },
+  {
+    "generation": 2,
+    "event": "SOLVED",
+    "timestamp": "2026-07-23T01:29:35",
+    "details": {
+      "answer": "compass",
+      "rank": 1,
+      "total_guesses": 135
+    }
+  },
+  {
+    "generation": 2,
+    "event": "NETWORK_METRICS",
+    "timestamp": "2026-07-23T01:29:35",
+    "details": {
+      "network_calls": 71,
+      "network_wall_clock_seconds": 490.9396,
+      "total_latency_seconds": 34.9306,
+      "mean_latency_seconds": 0.492,
+      "median_latency_seconds": 0.2713,
+      "p95_latency_seconds": 3.2728,
+      "max_latency_seconds": 3.2748,
+      "status_counts": {
+        "200": 71
+      },
+      "outcome_counts": {
+        "ok": 71
+      }
+    }
+  }
+]

@@ -1,0 +1,730 @@
+{
+  "metadata": {
+    "created_at": "2026-08-09T12:12:01",
+    "seed": 0,
+    "events_per_trace": 5,
+    "arms": [
+      "genuine",
+      "wrong",
+      "filler",
+      "absent"
+    ],
+    "traces": [
+      {
+        "trace_file": "ea_llm_self_adaptive_api_1303_run1_20260721_233700.json",
+        "game_number": 1303,
+        "llm_model": "qwen3:14b",
+        "llm_provider": "ollama",
+        "provenance_hash": "bd9f2858283673a2",
+        "eligible_events": 7,
+        "sampled_events": 5,
+        "shortfall": 0,
+        "skipped": {}
+      }
+    ],
+    "total_events": 5,
+    "total_records": 20
+  },
+  "records": [
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1303_run1_20260721_233700.json",
+      "game_number": 1303,
+      "child_id": "72eacae4fc614f52bed0ae4f5032973e",
+      "generation": 2,
+      "parent_id": "63944195fae743948f2c10ae0bb1874d",
+      "parent_rank": 10,
+      "sampled_op": "l_mutation",
+      "arm": "genuine",
+      "prompt_sha256": "eaf9399a3082e81efbd34627b584c5ea34958126501d2f2fb0cf8e6c41bed1ae",
+      "prompt_chars": 3747,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "survival",
+      "proposed_words": [
+        "survival",
+        "resilience",
+        "adaptation"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 1128,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "cold"
+        ],
+        "reason": "Shifts focus from direct temperature states to overarching survival mechanisms, which are semantically distinct from existing categories but plausibly linked to 'cold' through environmental adaptation contexts"
+      },
+      "basis_words_count": 1,
+      "reason_chars": 209,
+      "raw_response": "{\"name\": \"survival_strategies\", \"description\": \"terms related to endurance and adaptation in cold conditions\", \"words\": [\"survival\", \"resilience\", \"adaptation\"], \"basis_words\": [\"cold\"], \"reason\": \"Shifts focus from direct temperature states to overarching survival mechanisms, which are semantically distinct from existing categories but plausibly linked to 'cold' through environmental adaptation contexts\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1303_run1_20260721_233700.json",
+      "game_number": 1303,
+      "child_id": "72eacae4fc614f52bed0ae4f5032973e",
+      "generation": 2,
+      "parent_id": "63944195fae743948f2c10ae0bb1874d",
+      "parent_rank": 10,
+      "sampled_op": "l_mutation",
+      "arm": "wrong",
+      "prompt_sha256": "e33437042ecb304f92cf11bd4fb08e2150f792d0a0067105663474668267f671",
+      "prompt_chars": 3681,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "calm",
+      "proposed_words": [
+        "calm",
+        "peace",
+        "serenity"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 1384,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "cold"
+        ],
+        "reason": "Emotional states can be metaphorically linked to temperature, offering a new direction while maintaining conceptual overlap."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 124,
+      "raw_response": "{\n  \"name\": \"emotional_states\",\n  \"description\": \"mood-related terms and feelings\",\n  \"words\": [\"calm\", \"peace\", \"serenity\"],\n  \"basis_words\": [\"cold\"],\n  \"reason\": \"Emotional states can be metaphorically linked to temperature, offering a new direction while maintaining conceptual overlap.\",\n  \"predicted_bucket\": \"top500\",\n  \"predicted_closeness\": 0.3\n}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1303_run1_20260721_233700.json",
+      "game_number": 1303,
+      "child_id": "72eacae4fc614f52bed0ae4f5032973e",
+      "generation": 2,
+      "parent_id": "63944195fae743948f2c10ae0bb1874d",
+      "parent_rank": 10,
+      "sampled_op": "l_mutation",
+      "arm": "filler",
+      "prompt_sha256": "5af81f6ff182f190f26af99c7d5d2e9362b4ecb9006e69363551f9d9095333c5",
+      "prompt_chars": 3717,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "calm",
+      "proposed_words": [
+        "calm",
+        "still",
+        "peace"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 1384,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "cold"
+        ],
+        "reason": "Shifting to emotional states provides a semantically distinct direction while maintaining plausible relevance to 'cold' as an emotional descriptor."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 147,
+      "raw_response": "{\"name\": \"emotional_states\", \"description\": \"basic emotional-related terms\", \"words\": [\"calm\", \"still\", \"peace\"], \"basis_words\": [\"cold\"], \"reason\": \"Shifting to emotional states provides a semantically distinct direction while maintaining plausible relevance to 'cold' as an emotional descriptor.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1303_run1_20260721_233700.json",
+      "game_number": 1303,
+      "child_id": "72eacae4fc614f52bed0ae4f5032973e",
+      "generation": 2,
+      "parent_id": "63944195fae743948f2c10ae0bb1874d",
+      "parent_rank": 10,
+      "sampled_op": "l_mutation",
+      "arm": "absent",
+      "prompt_sha256": "bf07d087f3bbe66ed00fe0b4548b40b1942e447b97b527f18e4057977ef9c530",
+      "prompt_chars": 3452,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "valley",
+      "proposed_words": [
+        "valley",
+        "plateau",
+        "delta"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 2705,
+      "predicted_closeness": 0.2,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "beyond",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "cold"
+        ],
+        "reason": "Expanding to natural landforms to explore spatial and environmental contexts beyond temperature-related terms, while staying in the broader vicinity of 'cold' as a descriptor of environmental conditions."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 203,
+      "raw_response": "{\n  \"name\": \"geographical_features\",\n  \"description\": \"natural landforms and environmental structures\",\n  \"words\": [\"valley\", \"plateau\", \"delta\"],\n  \"basis_words\": [\"cold\"],\n  \"reason\": \"Expanding to natural landforms to explore spatial and environmental contexts beyond temperature-related terms, while staying in the broader vicinity of 'cold' as a descriptor of environmental conditions.\",\n  \"predicted_bucket\": \"beyond\",\n  \"predicted_closeness\": 0.2\n}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1303_run1_20260721_233700.json",
+      "game_number": 1303,
+      "child_id": "35c9311f781f4856ae738676479c8c60",
+      "generation": 3,
+      "parent_id": "35e0bbb0b64846679664e3e587cdea13",
+      "parent_rank": 8,
+      "sampled_op": "l_mutation",
+      "arm": "genuine",
+      "prompt_sha256": "a94c46478774db6e72addb7f373a605f766b6f0eee711ead40a8d3f6d27ce131",
+      "prompt_chars": 4195,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "ecosystem",
+      "proposed_words": [
+        "ecosystem",
+        "habitat",
+        "microclimate"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 6327,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "infection"
+        ],
+        "reason": "Shifting focus from direct medical terms to environmental factors that could indirectly relate to infection spread, expanding the search beyond medical conditions into ecological contexts."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 188,
+      "raw_response": "{\"name\": \"environmental contexts\", \"description\": \"factors related to natural or human-made environments that may influence health\", \"words\": [\"ecosystem\", \"habitat\", \"microclimate\"], \"basis_words\": [\"infection\"], \"reason\": \"Shifting focus from direct medical terms to environmental factors that could indirectly relate to infection spread, expanding the search beyond medical conditions into ecological contexts.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1303_run1_20260721_233700.json",
+      "game_number": 1303,
+      "child_id": "35c9311f781f4856ae738676479c8c60",
+      "generation": 3,
+      "parent_id": "35e0bbb0b64846679664e3e587cdea13",
+      "parent_rank": 8,
+      "sampled_op": "l_mutation",
+      "arm": "wrong",
+      "prompt_sha256": "9548baf10baeef2d972b6f4a834b53248d4a3e3fb24765a00fc43e265f9e66ff",
+      "prompt_chars": 4188,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "contamination",
+      "proposed_words": [
+        "contamination",
+        "corrosion",
+        "erosion"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 795,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "infection"
+        ],
+        "reason": "Moving to a broader environmental context to explore non-medical processes that could involve spread or change, similar to infection but in different domains"
+      },
+      "basis_words_count": 1,
+      "reason_chars": 157,
+      "raw_response": "{\"name\": \"environmental processes\", \"description\": \"terms related to non-medical environmental changes\", \"words\": [\"contamination\", \"corrosion\", \"erosion\"], \"basis_words\": [\"infection\"], \"reason\": \"Moving to a broader environmental context to explore non-medical processes that could involve spread or change, similar to infection but in different domains\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1303_run1_20260721_233700.json",
+      "game_number": 1303,
+      "child_id": "35c9311f781f4856ae738676479c8c60",
+      "generation": 3,
+      "parent_id": "35e0bbb0b64846679664e3e587cdea13",
+      "parent_rank": 8,
+      "sampled_op": "l_mutation",
+      "arm": "filler",
+      "prompt_sha256": "86b4d1a5f85904a8fbb6521338183a581eb954b1d5e0f402f0e116bea421531c",
+      "prompt_chars": 4181,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "soil",
+      "proposed_words": [
+        "soil",
+        "moisture",
+        "nutrient"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 1439,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "infection"
+        ],
+        "reason": "These words relate to environmental conditions that can influence infection's spread or occurrence, exploring a new semantically distinct area while staying relevant to infection's context."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 189,
+      "raw_response": "{\"name\": \"ecological factors\", \"description\": \"elements influencing environmental interactions\", \"words\": [\"soil\", \"moisture\", \"nutrient\"], \"basis_words\": [\"infection\"], \"reason\": \"These words relate to environmental conditions that can influence infection's spread or occurrence, exploring a new semantically distinct area while staying relevant to infection's context.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1303_run1_20260721_233700.json",
+      "game_number": 1303,
+      "child_id": "35c9311f781f4856ae738676479c8c60",
+      "generation": 3,
+      "parent_id": "35e0bbb0b64846679664e3e587cdea13",
+      "parent_rank": 8,
+      "sampled_op": "l_mutation",
+      "arm": "absent",
+      "prompt_sha256": "b2d23bf6e2fefce0ba20f133851a89863d62d244d608d393794ce9f11c02c950",
+      "prompt_chars": 3953,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "contamination",
+      "proposed_words": [
+        "contamination",
+        "moisture",
+        "air"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 795,
+      "predicted_closeness": 0.35,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "infection"
+        ],
+        "reason": "Shifts from direct medical terms to environmental elements that indirectly relate to infection's context, avoiding existing categories while maintaining plausible relevance."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 173,
+      "raw_response": "{\"name\": \"environmental_factors\", \"description\": \"elements influencing infection spread outside medical terminology\", \"words\": [\"contamination\", \"moisture\", \"air\"], \"basis_words\": [\"infection\"], \"reason\": \"Shifts from direct medical terms to environmental elements that indirectly relate to infection's context, avoiding existing categories while maintaining plausible relevance.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.35}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1303_run1_20260721_233700.json",
+      "game_number": 1303,
+      "child_id": "f38d640eb6e14e048b8766e49da18305",
+      "generation": 4,
+      "parent_id": "63944195fae743948f2c10ae0bb1874d",
+      "parent_rank": 10,
+      "sampled_op": "l_mutation",
+      "arm": "genuine",
+      "prompt_sha256": "16f3683c46da3a62038b95863b88fc17b8915a0e100972fc5a89acf850d0713a",
+      "prompt_chars": 4711,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "solid",
+      "proposed_words": [
+        "solid",
+        "liquid",
+        "gas"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 1653,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "cold"
+        ],
+        "reason": "Material states offer a new semantic direction distinct from temperature states and existing categories, while 'solid' and 'liquid' are indirectly related to 'cold' through their physical properties and thermal behavior."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 220,
+      "raw_response": "{\"name\": \"material_states\", \"description\": \"physical states of matter influenced by temperature\", \"words\": [\"solid\", \"liquid\", \"gas\"], \"basis_words\": [\"cold\"], \"reason\": \"Material states offer a new semantic direction distinct from temperature states and existing categories, while 'solid' and 'liquid' are indirectly related to 'cold' through their physical properties and thermal behavior.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1303_run1_20260721_233700.json",
+      "game_number": 1303,
+      "child_id": "f38d640eb6e14e048b8766e49da18305",
+      "generation": 4,
+      "parent_id": "63944195fae743948f2c10ae0bb1874d",
+      "parent_rank": 10,
+      "sampled_op": "l_mutation",
+      "arm": "wrong",
+      "prompt_sha256": "a5b69252a8cd572f6d2e92c79d959e11adf629b962702550c3e9b2fa61a55f26",
+      "prompt_chars": 4627,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "loneliness",
+      "proposed_words": [
+        "loneliness",
+        "solitude",
+        "isolation"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 3256,
+      "predicted_closeness": 0.15,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "beyond",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "cold"
+        ],
+        "reason": "The words loneliness, solitude, and isolation are selected as they are emotional states that can be metaphorically linked to 'cold' while diverging from temperature-related categories."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 184,
+      "raw_response": "{\"name\": \"emotional_states\", \"description\": \"terms related to emotional experiences\", \"words\": [\"loneliness\", \"solitude\", \"isolation\"], \"basis_words\": [\"cold\"], \"reason\": \"The words loneliness, solitude, and isolation are selected as they are emotional states that can be metaphorically linked to 'cold' while diverging from temperature-related categories.\", \"predicted_bucket\": \"beyond\", \"predicted_closeness\": 0.15}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1303_run1_20260721_233700.json",
+      "game_number": 1303,
+      "child_id": "f38d640eb6e14e048b8766e49da18305",
+      "generation": 4,
+      "parent_id": "63944195fae743948f2c10ae0bb1874d",
+      "parent_rank": 10,
+      "sampled_op": "l_mutation",
+      "arm": "filler",
+      "prompt_sha256": "7eee1f27e228a8464fb401f647e81fadc92e27365415b44ba301668e1c277ad6",
+      "prompt_chars": 4681,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "emotion",
+      "proposed_words": [
+        "emotion",
+        "mood",
+        "feeling"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 1733,
+      "predicted_closeness": 0.2,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "beyond",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "cold"
+        ],
+        "reason": "Expanding to emotional states, which are semantically related to 'cold' through metaphorical contexts, but diverge from existing categories like temperature or medical conditions."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 179,
+      "raw_response": "{\"name\": \"emotional_states\", \"description\": \"common emotional feelings and states\", \"words\": [\"emotion\", \"mood\", \"feeling\"], \"basis_words\": [\"cold\"], \"reason\": \"Expanding to emotional states, which are semantically related to 'cold' through metaphorical contexts, but diverge from existing categories like temperature or medical conditions.\", \"predicted_bucket\": \"beyond\", \"predicted_closeness\": 0.2}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1303_run1_20260721_233700.json",
+      "game_number": 1303,
+      "child_id": "f38d640eb6e14e048b8766e49da18305",
+      "generation": 4,
+      "parent_id": "63944195fae743948f2c10ae0bb1874d",
+      "parent_rank": 10,
+      "sampled_op": "l_mutation",
+      "arm": "absent",
+      "prompt_sha256": "315a454b3bd44e6052423d49c6edc0457ecf36a3fad0cdb1b82c857acb8cda21",
+      "prompt_chars": 4416,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "fog",
+      "proposed_words": [
+        "fog",
+        "dew",
+        "mist"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 815,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "cold"
+        ],
+        "reason": "moves to weather effects not explicitly tied to temperature, diverging from temperature_states but staying in the broader environmental context implied by 'cold'."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 162,
+      "raw_response": "{\"name\": \"weather_phenomena\", \"description\": \"non-temperature-related weather terms\", \"words\": [\"fog\", \"dew\", \"mist\"], \"basis_words\": [\"cold\"], \"reason\": \"moves to weather effects not explicitly tied to temperature, diverging from temperature_states but staying in the broader environmental context implied by 'cold'.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1303_run1_20260721_233700.json",
+      "game_number": 1303,
+      "child_id": "6f638e7180d947258db28caaeb891968",
+      "generation": 2,
+      "parent_id": "8aef959ce40a403f8eff23dec59c95d4",
+      "parent_rank": 243,
+      "sampled_op": "l_mutation",
+      "arm": "genuine",
+      "prompt_sha256": "dd78921753ed9a7f422f4383934d1ec5d4b09374b84dc1256f80a6cb7e1467db",
+      "prompt_chars": 3926,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "existence",
+      "proposed_words": [
+        "existence",
+        "essence",
+        "being"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 1955,
+      "predicted_closeness": 0.2,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "beyond",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "thing"
+        ],
+        "reason": "Shifting from concrete singular terms to abstract existential concepts that define the nature of existence, a new semantic direction while remaining related to the target 'thing' through the concept of categorization and fundamental definitions."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 245,
+      "raw_response": "{\"name\": \"existential terms\", \"description\": \"fundamental aspects of existence\", \"words\": [\"existence\", \"essence\", \"being\"], \"basis_words\": [\"thing\"], \"reason\": \"Shifting from concrete singular terms to abstract existential concepts that define the nature of existence, a new semantic direction while remaining related to the target 'thing' through the concept of categorization and fundamental definitions.\", \"predicted_bucket\": \"beyond\", \"predicted_closeness\": 0.2}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1303_run1_20260721_233700.json",
+      "game_number": 1303,
+      "child_id": "6f638e7180d947258db28caaeb891968",
+      "generation": 2,
+      "parent_id": "8aef959ce40a403f8eff23dec59c95d4",
+      "parent_rank": 243,
+      "sampled_op": "l_mutation",
+      "arm": "wrong",
+      "prompt_sha256": "6a81524bc8056efa86de21cc62bd867261e3888c1dc70036373beb4eef7bd0b8",
+      "prompt_chars": 3887,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "entity",
+      "proposed_words": [
+        "entity",
+        "case",
+        "type"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 10218,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "beyond",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "thing"
+        ],
+        "reason": "Moving to a broader category of abstract classifications that are not yet explored, while staying related to the general noun 'thing'."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 134,
+      "raw_response": "{\n  \"name\": \"categories\",\n  \"description\": \"abstract classifications and groupings\",\n  \"words\": [\"entity\", \"case\", \"type\"],\n  \"basis_words\": [\"thing\"],\n  \"reason\": \"Moving to a broader category of abstract classifications that are not yet explored, while staying related to the general noun 'thing'.\",\n  \"predicted_bucket\": \"beyond\",\n  \"predicted_closeness\": 0.3\n}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1303_run1_20260721_233700.json",
+      "game_number": 1303,
+      "child_id": "6f638e7180d947258db28caaeb891968",
+      "generation": 2,
+      "parent_id": "8aef959ce40a403f8eff23dec59c95d4",
+      "parent_rank": 243,
+      "sampled_op": "l_mutation",
+      "arm": "filler",
+      "prompt_sha256": "95065233debece8892ccaf264625cc0555e5587b0ce50b181c55ecc75b04aedc",
+      "prompt_chars": 3918,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "location",
+      "proposed_words": [
+        "location",
+        "position",
+        "area"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 3589,
+      "predicted_closeness": 0.4,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "thing"
+        ],
+        "reason": "Expanding from 'thing' to spatial terms provides a new direction that's semantically distinct but still relevant to general nouns."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 130,
+      "raw_response": "{\"name\": \"spatial contexts\", \"description\": \"terms related to physical locations and spatial relationships\", \"words\": [\"location\", \"position\", \"area\"], \"basis_words\": [\"thing\"], \"reason\": \"Expanding from 'thing' to spatial terms provides a new direction that's semantically distinct but still relevant to general nouns.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1303_run1_20260721_233700.json",
+      "game_number": 1303,
+      "child_id": "6f638e7180d947258db28caaeb891968",
+      "generation": 2,
+      "parent_id": "8aef959ce40a403f8eff23dec59c95d4",
+      "parent_rank": 243,
+      "sampled_op": "l_mutation",
+      "arm": "absent",
+      "prompt_sha256": "23661c0cac5d8bd79ed4a394eadb3a03007241eb8e13cee09770d3d88d3e9c6c",
+      "prompt_chars": 3653,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "idea",
+      "proposed_words": [
+        "idea",
+        "principle",
+        "notion"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 840,
+      "predicted_closeness": 0.4,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "singular terms"
+        ],
+        "reason": "Expanding into abstract concepts to escape the current semantic region while remaining in the vicinity of 'thing' which is rank 243, indicating proximity to concrete nouns."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 172,
+      "raw_response": "{\"name\": \"abstract concepts\", \"description\": \"non-physical ideas or principles\", \"words\": [\"idea\", \"principle\", \"notion\"], \"basis_words\": [\"singular terms\"], \"reason\": \"Expanding into abstract concepts to escape the current semantic region while remaining in the vicinity of 'thing' which is rank 243, indicating proximity to concrete nouns.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1303_run1_20260721_233700.json",
+      "game_number": 1303,
+      "child_id": "0751a115cfb24b3d924ea614bde4f7fc",
+      "generation": 3,
+      "parent_id": "63944195fae743948f2c10ae0bb1874d",
+      "parent_rank": 10,
+      "sampled_op": "s_mutation",
+      "arm": "genuine",
+      "prompt_sha256": "29c7530014b258819e0e115a37a997a6ff425c2f8b255b70282e02641ce401b8",
+      "prompt_chars": 4045,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "chilly",
+      "proposed_words": [
+        "chilly",
+        "frost",
+        "frigid"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 1064,
+      "predicted_closeness": 0.8,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top100",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "cold"
+        ],
+        "reason": "These words are semantically close to 'cold', narrowing the focus to more precise temperature descriptors."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 106,
+      "raw_response": "{\"name\": \"cold_adjacent_states\", \"description\": \"refined temperature terms near 'cold'\", \"words\": [\"chilly\", \"frost\", \"frigid\"], \"basis_words\": [\"cold\"], \"reason\": \"These words are semantically close to 'cold', narrowing the focus to more precise temperature descriptors.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.8}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1303_run1_20260721_233700.json",
+      "game_number": 1303,
+      "child_id": "0751a115cfb24b3d924ea614bde4f7fc",
+      "generation": 3,
+      "parent_id": "63944195fae743948f2c10ae0bb1874d",
+      "parent_rank": 10,
+      "sampled_op": "s_mutation",
+      "arm": "wrong",
+      "prompt_sha256": "3a5ab8ef6b16138d6ce40d727ae7612cd6019dc5b1c2f1a28a2afe6d713e2ac4",
+      "prompt_chars": 3977,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "frigid",
+      "proposed_words": [
+        "frigid",
+        "frosty",
+        "icy"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 2111,
+      "predicted_closeness": 0.7,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top100",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "cold"
+        ],
+        "reason": "selected synonyms and semantic neighbors of 'cold' that narrow the focus while staying within the temperature concept"
+      },
+      "basis_words_count": 1,
+      "reason_chars": 117,
+      "raw_response": "{\"name\": \"cold_states\", \"description\": \"refined temperature terms focusing on coldness\", \"words\": [\"frigid\", \"frosty\", \"icy\"], \"basis_words\": [\"cold\"], \"reason\": \"selected synonyms and semantic neighbors of 'cold' that narrow the focus while staying within the temperature concept\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.7}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1303_run1_20260721_233700.json",
+      "game_number": 1303,
+      "child_id": "0751a115cfb24b3d924ea614bde4f7fc",
+      "generation": 3,
+      "parent_id": "63944195fae743948f2c10ae0bb1874d",
+      "parent_rank": 10,
+      "sampled_op": "s_mutation",
+      "arm": "filler",
+      "prompt_sha256": "94d729cd9796cdb5aac7016369eecb714ca1434f93548e38449dfd16c9a65f77",
+      "prompt_chars": 4015,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "frigid",
+      "proposed_words": [
+        "frigid",
+        "icy",
+        "frosty"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 2111,
+      "predicted_closeness": 0.8,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top100",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "cold"
+        ],
+        "reason": "selected synonyms and related terms to 'cold' that are not already in the hypothesis and are semantically close"
+      },
+      "basis_words_count": 1,
+      "reason_chars": 111,
+      "raw_response": "{\"name\": \"cold_intensity\", \"description\": \"refined temperature terms focusing on cold intensity\", \"words\": [\"frigid\", \"icy\", \"frosty\"], \"basis_words\": [\"cold\"], \"reason\": \"selected synonyms and related terms to 'cold' that are not already in the hypothesis and are semantically close\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.8}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1303_run1_20260721_233700.json",
+      "game_number": 1303,
+      "child_id": "0751a115cfb24b3d924ea614bde4f7fc",
+      "generation": 3,
+      "parent_id": "63944195fae743948f2c10ae0bb1874d",
+      "parent_rank": 10,
+      "sampled_op": "s_mutation",
+      "arm": "absent",
+      "prompt_sha256": "5aa5d9e3b82cb8b7b35f50b174c680650f085b0db9a957007a05850eae539eb1",
+      "prompt_chars": 3750,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "chilly",
+      "proposed_words": [
+        "chilly",
+        "frosty",
+        "icy"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 1064,
+      "predicted_closeness": 0.7,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top100",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "cold"
+        ],
+        "reason": "Narrowing focus to more specific cold-related descriptors that are semantically close to 'cold' but not previously included in the hypothesis."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 142,
+      "raw_response": "{\"name\": \"intense_cold_states\", \"description\": \"intense cold-related terms\", \"words\": [\"chilly\", \"frosty\", \"icy\"], \"basis_words\": [\"cold\"], \"reason\": \"Narrowing focus to more specific cold-related descriptors that are semantically close to 'cold' but not previously included in the hypothesis.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.7}"
+    }
+  ]
+}

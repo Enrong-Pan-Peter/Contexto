@@ -13,6 +13,13 @@ def _env_value(name: str, default: str) -> str:
     return value
 
 
+def _env_bool(name: str, default: bool = False) -> bool:
+    value = os.getenv(name)
+    if value is None or value.strip() == "":
+        return default
+    return value.strip().lower() in {"1", "true", "yes", "on"}
+
+
 def load_dotenv(path: str | Path = ".env") -> None:
     """Load simple KEY=VALUE pairs into the process environment if absent."""
     env_path = Path(path)
@@ -144,4 +151,41 @@ MAPELITES_RANKED_CONTEXT_K = int(os.getenv("MAPELITES_RANKED_CONTEXT_K", "0"))
 
 # Local game
 DEFAULT_TARGET = os.getenv("DEFAULT_TARGET", "ivory")
+
+# RQ1 operator self-report instrumentation (logged-only; never feeds selection).
+# When on, the operator/crossover prompts request predicted_closeness + rationale
+# fields and those are parsed and written to the trace. When off, prompts render
+# byte-identical to the pre-instrumentation prompts.
+SELF_REPORT = _env_bool("SELF_REPORT", False)
+
+# RQ1 parent-rationale inheritance (logged-only; default off). When on, s/m/ml/l
+# operator mutations and ea_llm specialize append the parent's prior rationale
+# to the prompt. Crossover and pivot operators are excluded.
+RATIONALE_INHERITANCE = _env_bool("RATIONALE_INHERITANCE", False)
+
+# Sigma-mode control for ea_llm_self_adaptive operator probabilities.
+# ``adaptive`` is the current behavior (Dirichlet perturbation of parent sigma).
+# ``frozen_uniform`` resets child sigma to ``initial_sigma()`` each proposal.
+SELF_ADAPTIVE_SIGMA_MODE = _env_value("SELF_ADAPTIVE_SIGMA_MODE", "adaptive")
+
+# Survivor-selection control for ea_llm_self_adaptive (RQ3 control arm).
+# ``tophalf`` is the existing behavior: keep the top half by best rank (capped
+# at max_active_hypotheses) plus the elite. ``random`` keeps the same number of
+# survivors but picks them uniformly at random with the run's RNG.
+SELF_ADAPTIVE_SELECTION_MODE = _env_value("SELF_ADAPTIVE_SELECTION_MODE", "tophalf")
+
+# Persistent read-through cache for real-game rank lookups (``ContextoAPI.guess``).
+RANK_CACHE_DIR = _env_value("RANK_CACHE_DIR", "data/rank_cache")
+RANK_CACHE_ENABLED = _env_bool("RANK_CACHE_ENABLED", True)
+
+# When on, the full per-call network log (one record per HTTP call) is embedded
+# in the NETWORK_METRICS trace event alongside the aggregate metrics. Off by
+# default: only the aggregate summary is persisted.
+PERSIST_CALL_LOG = _env_bool("PERSIST_CALL_LOG", False)
+
+# Trace schema version so instrumented traces are distinguishable from older ones.
+# 2: self-report instrumentation + richer run metadata landed.
+# 3: added predicted_bucket and pinned predicted_closeness semantics (top-100
+#    chance); self_report records now carry a predicted_bucket field.
+TRACE_SCHEMA_VERSION = 3
 

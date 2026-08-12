@@ -1,0 +1,16 @@
+Return only JSON, no markdown or explanation.
+Contexto ranks words by semantic closeness. Rank 1 is correct. Lower is better.
+Current hypothesis: types of plants
+Description: plant taxonomy and related greenery
+Words already tried in this hypothesis with ranks: {"shrub": 50, "tree": 400}
+Global best word: shrub
+Global best rank: 50
+Avoid all already tried words: ["shrub", "tree"]
+Avoid these invalid or unrecognized words: ["sourcream", "wildanimal"]
+Suggest 3 new single-word guesses for this hypothesis.
+Every guess must be one common lowercase dictionary word.
+Do not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.
+Do not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.
+Invalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.
+JSON schema:
+{"words": ["word1", "word2", "word3"]}

@@ -14,6 +14,12 @@ from typing import Any
 from ..hypothesis import Hypothesis
 from ..llm_client import LLMClient
 from ..logger import Logger
+from ..self_report import (
+    apply_self_report_to_hypothesis,
+    rationale_inheritance_block,
+    resolve_self_report,
+    self_report_block,
+)
 from .base import Game
 
 
@@ -29,6 +35,13 @@ class EALLMConfig:
     run_label: str
     llm_workers: int = 4
     local_search_rank_threshold: int = 100
+    # RQ1 operator self-report instrumentation. Only read by the operator-based
+    # methods (ea_llm_self_adaptive, ea_llm_map_elites); logged-only, never used
+    # in selection, fitness, or sigma adaptation.
+    self_report: bool = False
+    # RQ1 parent-rationale inheritance (logged-only). When on, s/m/ml/l mutations
+    # and ea_llm specialize append the parent's prior rationale to the prompt.
+    rationale_inheritance: bool = False
 
 
 class BaseEALLMMethod:
@@ -40,6 +53,94 @@ class BaseEALLMMethod:
         self.hypotheses: list[Hypothesis] = []
         self.invalid_guesses: set[str] = set()
         self.generation = 0
+
+    # --- RQ1 self-report instrumentation (logged-only; shared by every EA mode) ---
+
+    def _self_report_block(self) -> str:
+        """The appended self-report request block, or "" when the flag is off."""
+        return self_report_block(self.config.self_report)
+
+    def _rationale_inheritance_for_parent(self, parent: Hypothesis) -> tuple[str, dict[str, Any]]:
+        """Parent-rationale suffix for eligible operators, or ("", {})."""
+        if not self.config.rationale_inheritance:
+            return "", {}
+        return rationale_inheritance_block(parent.rationale)
+
+    def _self_report_context(self) -> str:
+        """Words the operator saw (guessed + invalid), for the follow-up prompt."""
+        return json.dumps(sorted(self._known_words()))
+
+    def _attach_self_report(
+        self,
+        child: Hypothesis,
+        source: Any,
+        raw: str | None,
+        rendered_prompt: str | None,
+        proposed_word: str | None,
+        inheritance_meta: dict[str, Any] | None = None,
+    ) -> None:
+        """Resolve and attach the logged-only self-report via the shared layer."""
+        record = resolve_self_report(
+            self.llm_client,
+            source=source,
+            raw=raw,
+            context=self._self_report_context(),
+            proposed_word=proposed_word,
+            rendered_prompt=rendered_prompt,
+        )
+        if inheritance_meta:
+            if inheritance_meta.get("hash"):
+                record["injected_rationale_hash"] = inheritance_meta["hash"]
+            record["rationale_truncated"] = bool(inheritance_meta.get("truncated"))
+        apply_self_report_to_hypothesis(child, record)
+
+    def _complete_proposal(self, prompt: str) -> tuple[Any, str | None]:
+        """Issue an operator/mutation proposal call, capturing raw text only when
+        the self-report flag is on.
+
+        Single routing point for the flag-gated raw capture so every operator
+        path shares identical request behavior. With the flag off this is exactly
+        ``complete_json_prompt`` (no raw), keeping behavior byte-identical.
+        """
+        if self.config.self_report:
+            return self.llm_client.complete_json_prompt_with_raw(prompt)
+        return self.llm_client.complete_json_prompt(prompt), None
+
+    def _crossover_request(
+        self, parent_a: Hypothesis, parent_b: Hypothesis
+    ) -> tuple[Any, str | None, str | None]:
+        """Issue the crossover proposal call, capturing the rendered prompt and raw
+        text only when the self-report flag is on.
+
+        Single routing point shared by every EA mode's crossover. With the flag
+        off this is exactly one ``crossover`` call (no prompt build, no raw),
+        keeping behavior byte-identical.
+        """
+        block = self._self_report_block()
+        if self.config.self_report:
+            rendered_prompt = self.llm_client.build_crossover_prompt(
+                parent_a.category_name,
+                parent_b.category_name,
+                parent_a.words_tried,
+                parent_b.words_tried,
+                block,
+            )
+            category, raw = self.llm_client.crossover(
+                parent_a.category_name,
+                parent_b.category_name,
+                parent_a.words_tried,
+                parent_b.words_tried,
+                self_report_block=block,
+                return_raw=True,
+            )
+            return category, raw, rendered_prompt
+        category = self.llm_client.crossover(
+            parent_a.category_name,
+            parent_b.category_name,
+            parent_a.words_tried,
+            parent_b.words_tried,
+        )
+        return category, None, None
 
     def initialize(self) -> bool:
         categories = self.llm_client.generate_initial_categories(
@@ -54,6 +155,13 @@ class BaseEALLMMethod:
                 if self.game.is_solved():
                     self._log_solved()
                     return True
+
+        if not self.game.is_solved() and not self.hypotheses:
+            raise RuntimeError(
+                "EA+LLM initialization produced an empty hypothesis population: "
+                f"none of the {len(categories)} initial categories were usable. "
+                "Refusing to run empty generations."
+            )
 
         self.logger.log(
             self.generation,
@@ -341,6 +449,8 @@ class BaseEALLMMethod:
     def _mutate(self) -> None:
         top_hypotheses = sorted(self._active_hypotheses(), key=lambda hypothesis: hypothesis.best_rank)[:2]
         max_workers = min(max(1, self.config.llm_workers), max(1, len(top_hypotheses)))
+        block = self._self_report_block()
+        want_raw = self.config.self_report
 
         with ThreadPoolExecutor(max_workers=max_workers) as executor:
             futures = [
@@ -352,18 +462,29 @@ class BaseEALLMMethod:
                         parent.words_tried,
                         self.invalid_guesses,
                         self.config.mutations_per_generation,
+                        rationale_inheritance_block=self._rationale_inheritance_for_parent(parent)[0],
+                        self_report_block=block,
+                        return_raw=want_raw,
                     ),
                 )
                 for parent in top_hypotheses
             ]
             specialization_results = [(parent, future.result()) for parent, future in futures]
 
-        for parent, subcategories in specialization_results:
+        for parent, result in specialization_results:
+            if want_raw:
+                subcategories, raw, rendered_prompt = result
+            else:
+                subcategories, raw, rendered_prompt = result, None, None
             children = []
+            first_child: Hypothesis | None = None
+            first_category: dict[str, Any] | None = None
             for category in subcategories:
                 child = self._hypothesis_from_category(category, parent=parent.category_name, origin="mutation")
                 self.hypotheses.append(child)
                 children.append(child.category_name)
+                if first_child is None:
+                    first_child, first_category = child, category
                 for word in _words_from_category(category):
                     if word in self.invalid_guesses:
                         continue
@@ -371,17 +492,28 @@ class BaseEALLMMethod:
                     if self.game.is_solved():
                         break
 
-            self.logger.log(
-                self.generation,
-                "MUTATE",
-                {
-                    "parent": parent.category_name,
-                    "children": children,
-                    "best_word": self.best_word,
-                    "best_rank": self.best_rank,
-                    "total_guesses": self.game.total_guesses(),
-                },
-            )
+            mutate_details: dict[str, Any] = {
+                "parent": parent.category_name,
+                "children": children,
+                "best_word": self.best_word,
+                "best_rank": self.best_rank,
+                "total_guesses": self.game.total_guesses(),
+            }
+            if want_raw and first_child is not None:
+                proposed = _words_from_category(first_category or {})
+                inheritance_block, inheritance_meta = self._rationale_inheritance_for_parent(parent)
+                # The self-report fields ride in the same top-level object as the
+                # "specializations" list, so parse from the raw response.
+                self._attach_self_report(
+                    first_child,
+                    raw,
+                    raw,
+                    rendered_prompt,
+                    proposed[0] if proposed else None,
+                    inheritance_meta=inheritance_meta if inheritance_block else None,
+                )
+                mutate_details["self_report"] = first_child.self_report_dict()
+            self.logger.log(self.generation, "MUTATE", mutate_details)
             if self.game.is_solved():
                 return
 
@@ -444,18 +576,18 @@ class BaseEALLMMethod:
             return
 
         parent_a, parent_b = active[0], active[1]
-        category = self.llm_client.crossover(
-            parent_a.category_name,
-            parent_b.category_name,
-            parent_a.words_tried,
-            parent_b.words_tried,
-        )
+        category, raw, rendered_prompt = self._crossover_request(parent_a, parent_b)
         child = self._hypothesis_from_category(
             category,
             parent=f"{parent_a.category_name}+{parent_b.category_name}",
             origin="crossover",
         )
         self.hypotheses.append(child)
+        if self.config.self_report and isinstance(category, dict):
+            proposed = _words_from_category(category)
+            self._attach_self_report(
+                child, category, raw, rendered_prompt, proposed[0] if proposed else None
+            )
         for word in _words_from_category(category):
             if word in self.invalid_guesses:
                 continue
@@ -612,6 +744,7 @@ class BaseEALLMMethod:
         )
 
     def _save_trace(self) -> Path:
+        self.logger.log_network_metrics(self.generation, self.game)
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         return self.logger.save(Path(self.config.trace_dir) / f"{self.config.run_label}_{timestamp}.json")
 

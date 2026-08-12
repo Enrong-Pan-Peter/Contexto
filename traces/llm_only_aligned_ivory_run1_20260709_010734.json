@@ -1,0 +1,1623 @@
+[
+  {
+    "generation": -1,
+    "event": "RUN_CONFIG",
+    "timestamp": "2026-07-09T00:28:01",
+    "details": {
+      "game": "local",
+      "solver": "llm",
+      "method": "llm_only",
+      "mode": "aligned",
+      "target": "ivory",
+      "run_index": 0,
+      "game_embedding_path": "data/glove.6B.300d.txt",
+      "solver_embedding_path": "data/glove.6B.300d.txt",
+      "embedding_backend": "glove.6B.300d",
+      "vocabulary_size": 400000,
+      "alignment": "aligned",
+      "trace_schema_version": 3,
+      "instrumentation_provenance_hash": "bd9f2858283673a2",
+      "self_report": true,
+      "rationale_inheritance": false,
+      "max_generations": 50,
+      "llm_provider": "ollama",
+      "llm_model": "qwen3:14b",
+      "random_seed": null,
+      "enable_pivot": null,
+      "initial_categories": null,
+      "max_active_hypotheses": null,
+      "self_adaptive_initial_categories": null,
+      "self_adaptive_mu": null,
+      "self_adaptive_concentration": null,
+      "self_adaptive_sigma_floor": null,
+      "self_adaptive_sigma_mode": null,
+      "mapelites_grid_resolution": null,
+      "mapelites_mutations_per_gen": null,
+      "mapelites_crossovers_per_gen": null,
+      "mapelites_initial_categories": null,
+      "mapelites_concentration": null,
+      "mapelites_sigma_floor": null,
+      "mapelites_sigma_mode": null,
+      "mapelites_frozen_sigma": null,
+      "mapelites_ranked_context_k": null,
+      "ea_llm_pivot_stall_no_improvement_generations": null,
+      "ea_llm_pivot_stall_close_rank_threshold": null,
+      "ea_llm_pivot_stall_close_generations_limit": null,
+      "ea_llm_pivot_max_attempts_per_run": null,
+      "ea_llm_pivot_candidate_words_per_operator": null,
+      "ea_llm_pivot_resolution_window": null
+    }
+  },
+  {
+    "generation": 0,
+    "event": "INIT",
+    "timestamp": "2026-07-09T00:28:01",
+    "details": {
+      "history": {},
+      "best_word": null,
+      "best_rank": null,
+      "total_guesses": 0
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-07-09T00:28:18",
+    "details": {
+      "word": "life",
+      "rank": 6049,
+      "best_word": "life",
+      "best_rank": 6049,
+      "total_guesses": 1,
+      "self_report": {
+        "predicted_closeness": 0.7,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [],
+          "reason": "Life is a common, general-purpose word that could fit many contexts."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"life\", \"basis_words\": [], \"reason\": \"Life is a common, general-purpose word that could fit many contexts.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.7}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-07-09T00:28:29",
+    "details": {
+      "word": "alive",
+      "rank": 15396,
+      "best_word": "life",
+      "best_rank": 6049,
+      "total_guesses": 2,
+      "self_report": {
+        "predicted_closeness": 0.3,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "life"
+          ],
+          "reason": "Alive is a close synonym and semantically related to life, likely to be closer to the target."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"alive\", \"basis_words\": [\"life\"], \"reason\": \"Alive is a close synonym and semantically related to life, likely to be closer to the target.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"life\": 6049}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-07-09T00:28:42",
+    "details": {
+      "word": "vital",
+      "rank": 1048,
+      "best_word": "vital",
+      "best_rank": 1048,
+      "total_guesses": 3,
+      "self_report": {
+        "predicted_closeness": 0.3,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "alive",
+            "life"
+          ],
+          "reason": "Vital is a synonym of life and related to being alive, potentially bridging the gap between the two previous guesses."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"vital\", \"basis_words\": [\"alive\", \"life\"], \"reason\": \"Vital is a synonym of life and related to being alive, potentially bridging the gap between the two previous guesses.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"alive\": 15396, \"life\": 6049}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 4,
+    "event": "GUESS",
+    "timestamp": "2026-07-09T00:28:57",
+    "details": {
+      "word": "exist",
+      "rank": 10916,
+      "best_word": "vital",
+      "best_rank": 1048,
+      "total_guesses": 4,
+      "self_report": {
+        "predicted_closeness": 0.3,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "alive",
+            "life",
+            "vital"
+          ],
+          "reason": "The words 'alive,' 'life,' and 'vital' all relate to existence or essentiality, suggesting the target may be a synonym of 'exist.'"
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"exist\", \"basis_words\": [\"alive\", \"life\", \"vital\"], \"reason\": \"The words 'alive,' 'life,' and 'vital' all relate to existence or essentiality, suggesting the target may be a synonym of 'exist.'\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"alive\": 15396, \"life\": 6049, \"vital\": 1048}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 5,
+    "event": "GUESS",
+    "timestamp": "2026-07-09T00:29:04",
+    "details": {
+      "word": "essential",
+      "rank": 994,
+      "best_word": "essential",
+      "best_rank": 994,
+      "total_guesses": 5,
+      "self_report": {
+        "predicted_closeness": 0.8,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "vital",
+            "exist"
+          ],
+          "reason": "The word 'essential' is closely related to 'vital' and 'exist,' which are already in the guess history, suggesting a thematic link to necessity and life. It is a common synonym that could bridge the gap to the hidden target."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"essential\", \"basis_words\": [\"vital\", \"exist\"], \"reason\": \"The word 'essential' is closely related to 'vital' and 'exist,' which are already in the guess history, suggesting a thematic link to necessity and life. It is a common synonym that could bridge the gap to the hidden target.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.8}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"alive\": 15396, \"exist\": 10916, \"life\": 6049, \"vital\": 1048}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 6,
+    "event": "GUESS",
+    "timestamp": "2026-07-09T00:29:17",
+    "details": {
+      "word": "crucial",
+      "rank": 1192,
+      "best_word": "essential",
+      "best_rank": 994,
+      "total_guesses": 6,
+      "self_report": {
+        "predicted_closeness": 0.7,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "essential",
+            "vital"
+          ],
+          "reason": "Crucial is a close synonym to 'essential' and 'vital', which have lower ranks, suggesting it might be closer to the hidden target."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"crucial\", \"basis_words\": [\"essential\", \"vital\"], \"reason\": \"Crucial is a close synonym to 'essential' and 'vital', which have lower ranks, suggesting it might be closer to the hidden target.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.7}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"alive\": 15396, \"essential\": 994, \"exist\": 10916, \"life\": 6049, \"vital\": 1048}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 7,
+    "event": "GUESS",
+    "timestamp": "2026-07-09T00:29:27",
+    "details": {
+      "word": "necessary",
+      "rank": 3668,
+      "best_word": "essential",
+      "best_rank": 994,
+      "total_guesses": 7,
+      "self_report": {
+        "predicted_closeness": 0.7,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "crucial",
+            "essential",
+            "vital"
+          ],
+          "reason": "Necessary is a close synonym to crucial, essential, and vital, which are all high-ranking guesses, suggesting it may be a more precise term near the target."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"necessary\", \"basis_words\": [\"crucial\", \"essential\", \"vital\"], \"reason\": \"Necessary is a close synonym to crucial, essential, and vital, which are all high-ranking guesses, suggesting it may be a more precise term near the target.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.7}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"alive\": 15396, \"crucial\": 1192, \"essential\": 994, \"exist\": 10916, \"life\": 6049, \"vital\": 1048}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 8,
+    "event": "GUESS",
+    "timestamp": "2026-07-09T00:29:44",
+    "details": {
+      "word": "key",
+      "rank": 512,
+      "best_word": "key",
+      "best_rank": 512,
+      "total_guesses": 8,
+      "self_report": {
+        "predicted_closeness": 0.6,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "crucial",
+            "essential",
+            "vital",
+            "necessary"
+          ],
+          "reason": "The target appears to be a synonym of words meaning 'important' or 'essential', and 'key' is a common synonym not yet attempted."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"key\", \"basis_words\": [\"crucial\", \"essential\", \"vital\", \"necessary\"], \"reason\": \"The target appears to be a synonym of words meaning 'important' or 'essential', and 'key' is a common synonym not yet attempted.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.6}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"alive\": 15396, \"crucial\": 1192, \"essential\": 994, \"exist\": 10916, \"life\": 6049, \"necessary\": 3668, \"vital\": 1048}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 9,
+    "event": "GUESS",
+    "timestamp": "2026-07-09T00:30:00",
+    "details": {
+      "word": "critical",
+      "rank": 15949,
+      "best_word": "key",
+      "best_rank": 512,
+      "total_guesses": 9,
+      "self_report": {
+        "predicted_closeness": 0.8,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "crucial",
+            "key",
+            "vital",
+            "essential"
+          ],
+          "reason": "The existing guesses focus on synonyms of importance and existence; 'critical' is a close synonym not yet tried."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"critical\", \"basis_words\": [\"crucial\", \"key\", \"vital\", \"essential\"], \"reason\": \"The existing guesses focus on synonyms of importance and existence; 'critical' is a close synonym not yet tried.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.8}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"alive\": 15396, \"crucial\": 1192, \"essential\": 994, \"exist\": 10916, \"key\": 512, \"life\": 6049, \"necessary\": 3668, \"vital\": 1048}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 10,
+    "event": "GUESS",
+    "timestamp": "2026-07-09T00:30:19",
+    "details": {
+      "word": "core",
+      "rank": 35371,
+      "best_word": "key",
+      "best_rank": 512,
+      "total_guesses": 10,
+      "self_report": {
+        "predicted_closeness": 0.75,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "crucial",
+            "key",
+            "vital",
+            "essential",
+            "necessary"
+          ],
+          "reason": "The target appears to be a synonym of importance/necessity, and 'core' is a strong, unused synonym that fits this theme."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"core\", \"basis_words\": [\"crucial\", \"key\", \"vital\", \"essential\", \"necessary\"], \"reason\": \"The target appears to be a synonym of importance/necessity, and 'core' is a strong, unused synonym that fits this theme.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.75}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"alive\": 15396, \"critical\": 15949, \"crucial\": 1192, \"essential\": 994, \"exist\": 10916, \"key\": 512, \"life\": 6049, \"necessary\": 3668, \"vital\": 1048}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 11,
+    "event": "GUESS",
+    "timestamp": "2026-07-09T00:30:28",
+    "details": {
+      "word": "prime",
+      "rank": 1071,
+      "best_word": "key",
+      "best_rank": 512,
+      "total_guesses": 11,
+      "self_report": {
+        "predicted_closeness": 0.4,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "crucial",
+            "essential",
+            "key",
+            "vital"
+          ],
+          "reason": "Prime is a synonym for crucial, essential, and key, and may be closer to the target based on the existing low ranks of similar terms."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"prime\", \"basis_words\": [\"crucial\", \"essential\", \"key\", \"vital\"], \"reason\": \"Prime is a synonym for crucial, essential, and key, and may be closer to the target based on the existing low ranks of similar terms.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"alive\": 15396, \"core\": 35371, \"critical\": 15949, \"crucial\": 1192, \"essential\": 994, \"exist\": 10916, \"key\": 512, \"life\": 6049, \"necessary\": 3668, \"vital\": 1048}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 12,
+    "event": "GUESS",
+    "timestamp": "2026-07-09T00:30:45",
+    "details": {
+      "word": "paramount",
+      "rank": 99407,
+      "best_word": "key",
+      "best_rank": 512,
+      "total_guesses": 12,
+      "self_report": {
+        "predicted_closeness": 0.6,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "crucial",
+            "essential",
+            "vital",
+            "key"
+          ],
+          "reason": "Synonym of crucial, essential, and vital, which are close to the target."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"paramount\", \"basis_words\": [\"crucial\", \"essential\", \"vital\", \"key\"], \"reason\": \"Synonym of crucial, essential, and vital, which are close to the target.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.6}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"alive\": 15396, \"core\": 35371, \"critical\": 15949, \"crucial\": 1192, \"essential\": 994, \"exist\": 10916, \"key\": 512, \"life\": 6049, \"necessary\": 3668, \"prime\": 1071, \"vital\": 1048}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 13,
+    "event": "GUESS",
+    "timestamp": "2026-07-09T00:31:06",
+    "details": {
+      "word": "indispensable",
+      "rank": 7303,
+      "best_word": "key",
+      "best_rank": 512,
+      "total_guesses": 13,
+      "self_report": {
+        "predicted_closeness": 0.75,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "crucial",
+            "essential",
+            "vital",
+            "key",
+            "necessary"
+          ],
+          "reason": "Synonyms for importance and necessity, with 'indispensable' being a strong, less commonly used synonym not yet guessed."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"indispensable\", \"basis_words\": [\"crucial\", \"essential\", \"vital\", \"key\", \"necessary\"], \"reason\": \"Synonyms for importance and necessity, with 'indispensable' being a strong, less commonly used synonym not yet guessed.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.75}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"alive\": 15396, \"core\": 35371, \"critical\": 15949, \"crucial\": 1192, \"essential\": 994, \"exist\": 10916, \"key\": 512, \"life\": 6049, \"necessary\": 3668, \"paramount\": 99407, \"prime\": 1071, \"vital\": 1048}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 14,
+    "event": "GUESS",
+    "timestamp": "2026-07-09T00:31:18",
+    "details": {
+      "word": "pivotal",
+      "rank": 7470,
+      "best_word": "key",
+      "best_rank": 512,
+      "total_guesses": 14,
+      "self_report": {
+        "predicted_closeness": 0.7,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "crucial",
+            "critical",
+            "key",
+            "vital",
+            "essential"
+          ],
+          "reason": "Pivotal is a strong synonym for crucial and vital, which have moderate ranks, suggesting it might be closer to the target than other untried synonyms."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"pivotal\", \"basis_words\": [\"crucial\", \"critical\", \"key\", \"vital\", \"essential\"], \"reason\": \"Pivotal is a strong synonym for crucial and vital, which have moderate ranks, suggesting it might be closer to the target than other untried synonyms.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.7}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"alive\": 15396, \"core\": 35371, \"critical\": 15949, \"crucial\": 1192, \"essential\": 994, \"exist\": 10916, \"indispensable\": 7303, \"key\": 512, \"life\": 6049, \"necessary\": 3668, \"paramount\": 99407, \"prime\": 1071, \"vital\": 1048}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 15,
+    "event": "GUESS",
+    "timestamp": "2026-07-09T00:31:37",
+    "details": {
+      "word": "primary",
+      "rank": 9422,
+      "best_word": "key",
+      "best_rank": 512,
+      "total_guesses": 15,
+      "self_report": {
+        "predicted_closeness": 0.3,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "key",
+            "crucial",
+            "essential",
+            "prime"
+          ],
+          "reason": "Primary is a synonym of key, crucial, and essential, and hasn't been tried yet, suggesting it could be closer to the target."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"primary\", \"basis_words\": [\"key\", \"crucial\", \"essential\", \"prime\"], \"reason\": \"Primary is a synonym of key, crucial, and essential, and hasn't been tried yet, suggesting it could be closer to the target.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"alive\": 15396, \"core\": 35371, \"critical\": 15949, \"crucial\": 1192, \"essential\": 994, \"exist\": 10916, \"indispensable\": 7303, \"key\": 512, \"life\": 6049, \"necessary\": 3668, \"paramount\": 99407, \"pivotal\": 7470, \"prime\": 1071, \"vital\": 1048}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 16,
+    "event": "GUESS",
+    "timestamp": "2026-07-09T00:31:55",
+    "details": {
+      "word": "central",
+      "rank": 860,
+      "best_word": "key",
+      "best_rank": 512,
+      "total_guesses": 16,
+      "self_report": {
+        "predicted_closeness": 0.6,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "key",
+            "crucial",
+            "essential",
+            "vital",
+            "prime"
+          ],
+          "reason": "Synonym analysis suggests 'central' fits the pattern of synonyms for importance, which aligns with existing low-ranked words like 'key' and 'essential'."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"central\", \"basis_words\": [\"key\", \"crucial\", \"essential\", \"vital\", \"prime\"], \"reason\": \"Synonym analysis suggests 'central' fits the pattern of synonyms for importance, which aligns with existing low-ranked words like 'key' and 'essential'.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.6}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"alive\": 15396, \"core\": 35371, \"critical\": 15949, \"crucial\": 1192, \"essential\": 994, \"exist\": 10916, \"indispensable\": 7303, \"key\": 512, \"life\": 6049, \"necessary\": 3668, \"paramount\": 99407, \"pivotal\": 7470, \"primary\": 9422, \"prime\": 1071, \"vital\": 1048}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 17,
+    "event": "GUESS",
+    "timestamp": "2026-07-09T00:32:13",
+    "details": {
+      "word": "fundamental",
+      "rank": 168016,
+      "best_word": "key",
+      "best_rank": 512,
+      "total_guesses": 17,
+      "self_report": {
+        "predicted_closeness": 0.7,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "essential",
+            "crucial",
+            "key",
+            "vital"
+          ],
+          "reason": "Fundamental is a close synonym of essential, crucial, key, and vital, which are already near the target."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"fundamental\", \"basis_words\": [\"essential\", \"crucial\", \"key\", \"vital\"], \"reason\": \"Fundamental is a close synonym of essential, crucial, key, and vital, which are already near the target.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.7}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"alive\": 15396, \"central\": 860, \"core\": 35371, \"critical\": 15949, \"crucial\": 1192, \"essential\": 994, \"exist\": 10916, \"indispensable\": 7303, \"key\": 512, \"life\": 6049, \"necessary\": 3668, \"paramount\": 99407, \"pivotal\": 7470, \"primary\": 9422, \"prime\": 1071, \"vital\": 1048}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 18,
+    "event": "GUESS",
+    "timestamp": "2026-07-09T00:32:30",
+    "details": {
+      "word": "basic",
+      "rank": 46857,
+      "best_word": "key",
+      "best_rank": 512,
+      "total_guesses": 18,
+      "self_report": {
+        "predicted_closeness": 0.7,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "essential",
+            "fundamental",
+            "indispensable",
+            "key",
+            "vital"
+          ],
+          "reason": "Basic is a synonym of essential and fundamental, which are close to the target, and has not been used yet."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"basic\", \"basis_words\": [\"essential\", \"fundamental\", \"indispensable\", \"key\", \"vital\"], \"reason\": \"Basic is a synonym of essential and fundamental, which are close to the target, and has not been used yet.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.7}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"alive\": 15396, \"central\": 860, \"core\": 35371, \"critical\": 15949, \"crucial\": 1192, \"essential\": 994, \"exist\": 10916, \"fundamental\": 168016, \"indispensable\": 7303, \"key\": 512, \"life\": 6049, \"necessary\": 3668, \"paramount\": 99407, \"pivotal\": 7470, \"primary\": 9422, \"prime\": 1071, \"vital\": 1048}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 19,
+    "event": "GUESS",
+    "timestamp": "2026-07-09T00:33:01",
+    "details": {
+      "word": "hub",
+      "rank": 3734,
+      "best_word": "key",
+      "best_rank": 512,
+      "total_guesses": 19,
+      "self_report": {
+        "predicted_closeness": 0.5,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "central",
+            "key",
+            "prime"
+          ],
+          "reason": "The target is likely a synonym for 'central' or 'key', and 'hub' is a common synonym not yet tried."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"hub\", \"basis_words\": [\"central\", \"key\", \"prime\"], \"reason\": \"The target is likely a synonym for 'central' or 'key', and 'hub' is a common synonym not yet tried.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.5}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"alive\": 15396, \"basic\": 46857, \"central\": 860, \"core\": 35371, \"critical\": 15949, \"crucial\": 1192, \"essential\": 994, \"exist\": 10916, \"fundamental\": 168016, \"indispensable\": 7303, \"key\": 512, \"life\": 6049, \"necessary\": 3668, \"paramount\": 99407, \"pivotal\": 7470, \"primary\": 9422, \"prime\": 1071, \"vital\": 1048}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 20,
+    "event": "GUESS",
+    "timestamp": "2026-07-09T00:33:22",
+    "details": {
+      "word": "main",
+      "rank": 834,
+      "best_word": "key",
+      "best_rank": 512,
+      "total_guesses": 20,
+      "self_report": {
+        "predicted_closeness": 0.6,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "key",
+            "central",
+            "prime"
+          ],
+          "reason": "Synonyms related to importance and centrality, not yet tried."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"main\", \"basis_words\": [\"key\", \"central\", \"prime\"], \"reason\": \"Synonyms related to importance and centrality, not yet tried.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.6}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"alive\": 15396, \"basic\": 46857, \"central\": 860, \"core\": 35371, \"critical\": 15949, \"crucial\": 1192, \"essential\": 994, \"exist\": 10916, \"fundamental\": 168016, \"hub\": 3734, \"indispensable\": 7303, \"key\": 512, \"life\": 6049, \"necessary\": 3668, \"paramount\": 99407, \"pivotal\": 7470, \"primary\": 9422, \"prime\": 1071, \"vital\": 1048}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 21,
+    "event": "GUESS",
+    "timestamp": "2026-07-09T00:33:43",
+    "details": {
+      "word": "center",
+      "rank": 12628,
+      "best_word": "key",
+      "best_rank": 512,
+      "total_guesses": 21,
+      "self_report": {
+        "predicted_closeness": 0.3,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "central",
+            "key",
+            "main",
+            "prime"
+          ],
+          "reason": "These words relate to centrality and importance, suggesting 'center' as a direct synonym may be closer."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"center\", \"basis_words\": [\"central\", \"key\", \"main\", \"prime\"], \"reason\": \"These words relate to centrality and importance, suggesting 'center' as a direct synonym may be closer.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"alive\": 15396, \"basic\": 46857, \"central\": 860, \"core\": 35371, \"critical\": 15949, \"crucial\": 1192, \"essential\": 994, \"exist\": 10916, \"fundamental\": 168016, \"hub\": 3734, \"indispensable\": 7303, \"key\": 512, \"life\": 6049, \"main\": 834, \"necessary\": 3668, \"paramount\": 99407, \"pivotal\": 7470, \"primary\": 9422, \"prime\": 1071, \"vital\": 1048}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 22,
+    "event": "GUESS",
+    "timestamp": "2026-07-09T00:33:54",
+    "details": {
+      "word": "heart",
+      "rank": 5815,
+      "best_word": "key",
+      "best_rank": 512,
+      "total_guesses": 22,
+      "self_report": {
+        "predicted_closeness": 0.7,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "central",
+            "core",
+            "key",
+            "vital",
+            "crucial"
+          ],
+          "reason": "Heart is a common synonym for centrality and importance, aligning with the theme of existing guesses like 'central' and 'core'."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"heart\", \"basis_words\": [\"central\", \"core\", \"key\", \"vital\", \"crucial\"], \"reason\": \"Heart is a common synonym for centrality and importance, aligning with the theme of existing guesses like 'central' and 'core'.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.7}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"alive\": 15396, \"basic\": 46857, \"center\": 12628, \"central\": 860, \"core\": 35371, \"critical\": 15949, \"crucial\": 1192, \"essential\": 994, \"exist\": 10916, \"fundamental\": 168016, \"hub\": 3734, \"indispensable\": 7303, \"key\": 512, \"life\": 6049, \"main\": 834, \"necessary\": 3668, \"paramount\": 99407, \"pivotal\": 7470, \"primary\": 9422, \"prime\": 1071, \"vital\": 1048}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 23,
+    "event": "GUESS",
+    "timestamp": "2026-07-09T00:34:22",
+    "details": {
+      "word": "pivot",
+      "rank": 13019,
+      "best_word": "key",
+      "best_rank": 512,
+      "total_guesses": 23,
+      "self_report": {
+        "predicted_closeness": 0.7,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "key",
+            "pivotal",
+            "central",
+            "main"
+          ],
+          "reason": "Pivot is a synonym for central or crucial, and related to pivotal (rank 7470), suggesting it may be closer to the target."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"pivot\", \"basis_words\": [\"key\", \"pivotal\", \"central\", \"main\"], \"reason\": \"Pivot is a synonym for central or crucial, and related to pivotal (rank 7470), suggesting it may be closer to the target.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.7}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"alive\": 15396, \"basic\": 46857, \"center\": 12628, \"central\": 860, \"core\": 35371, \"critical\": 15949, \"crucial\": 1192, \"essential\": 994, \"exist\": 10916, \"fundamental\": 168016, \"heart\": 5815, \"hub\": 3734, \"indispensable\": 7303, \"key\": 512, \"life\": 6049, \"main\": 834, \"necessary\": 3668, \"paramount\": 99407, \"pivotal\": 7470, \"primary\": 9422, \"prime\": 1071, \"vital\": 1048}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 24,
+    "event": "GUESS",
+    "timestamp": "2026-07-09T00:34:34",
+    "details": {
+      "word": "cornerstone",
+      "rank": 53038,
+      "best_word": "key",
+      "best_rank": 512,
+      "total_guesses": 24,
+      "self_report": {
+        "predicted_closeness": 0.7,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "central",
+            "key",
+            "essential",
+            "vital",
+            "crucial"
+          ],
+          "reason": "Synonym for 'central' and 'essential' with strong connotations of foundational importance, likely closer to the target than existing guesses."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"cornerstone\", \"basis_words\": [\"central\", \"key\", \"essential\", \"vital\", \"crucial\"], \"reason\": \"Synonym for 'central' and 'essential' with strong connotations of foundational importance, likely closer to the target than existing guesses.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.7}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"alive\": 15396, \"basic\": 46857, \"center\": 12628, \"central\": 860, \"core\": 35371, \"critical\": 15949, \"crucial\": 1192, \"essential\": 994, \"exist\": 10916, \"fundamental\": 168016, \"heart\": 5815, \"hub\": 3734, \"indispensable\": 7303, \"key\": 512, \"life\": 6049, \"main\": 834, \"necessary\": 3668, \"paramount\": 99407, \"pivot\": 13019, \"pivotal\": 7470, \"primary\": 9422, \"prime\": 1071, \"vital\": 1048}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 25,
+    "event": "GUESS",
+    "timestamp": "2026-07-09T00:35:04",
+    "details": {
+      "word": "nexus",
+      "rank": 233071,
+      "best_word": "key",
+      "best_rank": 512,
+      "total_guesses": 25,
+      "self_report": {
+        "predicted_closeness": 0.3,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "central",
+            "core",
+            "key",
+            "crucial",
+            "essential"
+          ],
+          "reason": "Nexus is a synonym for central point or connection, aligning with the theme of importance and centrality present in previous guesses. It is not yet in the guess history and may be closer to the target."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"nexus\", \"basis_words\": [\"central\", \"core\", \"key\", \"crucial\", \"essential\"], \"reason\": \"Nexus is a synonym for central point or connection, aligning with the theme of importance and centrality present in previous guesses. It is not yet in the guess history and may be closer to the target.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"alive\": 15396, \"basic\": 46857, \"center\": 12628, \"central\": 860, \"core\": 35371, \"cornerstone\": 53038, \"critical\": 15949, \"crucial\": 1192, \"essential\": 994, \"exist\": 10916, \"fundamental\": 168016, \"heart\": 5815, \"hub\": 3734, \"indispensable\": 7303, \"key\": 512, \"life\": 6049, \"main\": 834, \"necessary\": 3668, \"paramount\": 99407, \"pivot\": 13019, \"pivotal\": 7470, \"primary\": 9422, \"prime\": 1071, \"vital\": 1048}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 26,
+    "event": "GUESS",
+    "timestamp": "2026-07-09T00:35:26",
+    "details": {
+      "word": "principal",
+      "rank": 13908,
+      "best_word": "key",
+      "best_rank": 512,
+      "total_guesses": 26,
+      "self_report": {
+        "predicted_closeness": 0.8,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "central",
+            "key",
+            "crucial",
+            "essential",
+            "vital",
+            "core",
+            "critical",
+            "main",
+            "prime"
+          ],
+          "reason": "Principal is a strong synonym for key or central, and may occupy a position closer to the hidden target than existing guesses like 'main' (rank 834) or 'prime' (rank 1071)."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"principal\", \"basis_words\": [\"central\", \"key\", \"crucial\", \"essential\", \"vital\", \"core\", \"critical\", \"main\", \"prime\"], \"reason\": \"Principal is a strong synonym for key or central, and may occupy a position closer to the hidden target than existing guesses like 'main' (rank 834) or 'prime' (rank 1071).\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.8}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"alive\": 15396, \"basic\": 46857, \"center\": 12628, \"central\": 860, \"core\": 35371, \"cornerstone\": 53038, \"critical\": 15949, \"crucial\": 1192, \"essential\": 994, \"exist\": 10916, \"fundamental\": 168016, \"heart\": 5815, \"hub\": 3734, \"indispensable\": 7303, \"key\": 512, \"life\": 6049, \"main\": 834, \"necessary\": 3668, \"nexus\": 233071, \"paramount\": 99407, \"pivot\": 13019, \"pivotal\": 7470, \"primary\": 9422, \"prime\": 1071, \"vital\": 1048}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 27,
+    "event": "GUESS",
+    "timestamp": "2026-07-09T00:35:43",
+    "details": {
+      "word": "pillar",
+      "rank": 15365,
+      "best_word": "key",
+      "best_rank": 512,
+      "total_guesses": 27,
+      "self_report": {
+        "predicted_closeness": 0.3,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "central",
+            "core",
+            "key",
+            "crucial",
+            "essential"
+          ],
+          "reason": "Pillar is a strong synonym for foundational or central elements, aligning with existing guesses like 'key', 'central', and 'core', which have relatively low ranks. It hasn't been tried yet and could fill a gap in the synonym spectrum."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"pillar\", \"basis_words\": [\"central\", \"core\", \"key\", \"crucial\", \"essential\"], \"reason\": \"Pillar is a strong synonym for foundational or central elements, aligning with existing guesses like 'key', 'central', and 'core', which have relatively low ranks. It hasn't been tried yet and could fill a gap in the synonym spectrum.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"alive\": 15396, \"basic\": 46857, \"center\": 12628, \"central\": 860, \"core\": 35371, \"cornerstone\": 53038, \"critical\": 15949, \"crucial\": 1192, \"essential\": 994, \"exist\": 10916, \"fundamental\": 168016, \"heart\": 5815, \"hub\": 3734, \"indispensable\": 7303, \"key\": 512, \"life\": 6049, \"main\": 834, \"necessary\": 3668, \"nexus\": 233071, \"paramount\": 99407, \"pivot\": 13019, \"pivotal\": 7470, \"primary\": 9422, \"prime\": 1071, \"principal\": 13908, \"vital\": 1048}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 28,
+    "event": "GUESS",
+    "timestamp": "2026-07-09T00:36:14",
+    "details": {
+      "word": "axis",
+      "rank": 31362,
+      "best_word": "key",
+      "best_rank": 512,
+      "total_guesses": 28,
+      "self_report": {
+        "predicted_closeness": 0.3,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "key",
+            "central",
+            "hub",
+            "pivot"
+          ],
+          "reason": "Axis is a synonym for central importance or structure, similar to existing guesses like key, central, hub, and pivot but not yet tried."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"axis\", \"basis_words\": [\"key\", \"central\", \"hub\", \"pivot\"], \"reason\": \"Axis is a synonym for central importance or structure, similar to existing guesses like key, central, hub, and pivot but not yet tried.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"alive\": 15396, \"basic\": 46857, \"center\": 12628, \"central\": 860, \"core\": 35371, \"cornerstone\": 53038, \"critical\": 15949, \"crucial\": 1192, \"essential\": 994, \"exist\": 10916, \"fundamental\": 168016, \"heart\": 5815, \"hub\": 3734, \"indispensable\": 7303, \"key\": 512, \"life\": 6049, \"main\": 834, \"necessary\": 3668, \"nexus\": 233071, \"paramount\": 99407, \"pillar\": 15365, \"pivot\": 13019, \"pivotal\": 7470, \"primary\": 9422, \"prime\": 1071, \"principal\": 13908, \"vital\": 1048}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 29,
+    "event": "GUESS",
+    "timestamp": "2026-07-09T00:36:29",
+    "details": {
+      "word": "crux",
+      "rank": 218215,
+      "best_word": "key",
+      "best_rank": 512,
+      "total_guesses": 29,
+      "self_report": {
+        "predicted_closeness": 0.8,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "central",
+            "key",
+            "vital",
+            "essential",
+            "crucial"
+          ],
+          "reason": "Crux is a strong synonym for centrality and importance, not yet guessed, and fits the context of the existing high-ranking words."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"crux\", \"basis_words\": [\"central\", \"key\", \"vital\", \"essential\", \"crucial\"], \"reason\": \"Crux is a strong synonym for centrality and importance, not yet guessed, and fits the context of the existing high-ranking words.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.8}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"alive\": 15396, \"axis\": 31362, \"basic\": 46857, \"center\": 12628, \"central\": 860, \"core\": 35371, \"cornerstone\": 53038, \"critical\": 15949, \"crucial\": 1192, \"essential\": 994, \"exist\": 10916, \"fundamental\": 168016, \"heart\": 5815, \"hub\": 3734, \"indispensable\": 7303, \"key\": 512, \"life\": 6049, \"main\": 834, \"necessary\": 3668, \"nexus\": 233071, \"paramount\": 99407, \"pillar\": 15365, \"pivot\": 13019, \"pivotal\": 7470, \"primary\": 9422, \"prime\": 1071, \"principal\": 13908, \"vital\": 1048}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 30,
+    "event": "GUESS",
+    "timestamp": "2026-07-09T00:37:06",
+    "details": {
+      "word": "essence",
+      "rank": 19350,
+      "best_word": "key",
+      "best_rank": 512,
+      "total_guesses": 30,
+      "self_report": {
+        "predicted_closeness": 0.6,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "core",
+            "key",
+            "central",
+            "essential"
+          ],
+          "reason": "The hidden target may be a synonym of 'core' or 'essential', and 'essence' fits this context as a close synonym not yet guessed with a low rank."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"essence\", \"basis_words\": [\"core\", \"key\", \"central\", \"essential\"], \"reason\": \"The hidden target may be a synonym of 'core' or 'essential', and 'essence' fits this context as a close synonym not yet guessed with a low rank.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.6}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"alive\": 15396, \"axis\": 31362, \"basic\": 46857, \"center\": 12628, \"central\": 860, \"core\": 35371, \"cornerstone\": 53038, \"critical\": 15949, \"crucial\": 1192, \"crux\": 218215, \"essential\": 994, \"exist\": 10916, \"fundamental\": 168016, \"heart\": 5815, \"hub\": 3734, \"indispensable\": 7303, \"key\": 512, \"life\": 6049, \"main\": 834, \"necessary\": 3668, \"nexus\": 233071, \"paramount\": 99407, \"pillar\": 15365, \"pivot\": 13019, \"pivotal\": 7470, \"primary\": 9422, \"prime\": 1071, \"principal\": 13908, \"vital\": 1048}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 31,
+    "event": "GUESS",
+    "timestamp": "2026-07-09T00:37:20",
+    "details": {
+      "word": "keystone",
+      "rank": 61242,
+      "best_word": "key",
+      "best_rank": 512,
+      "total_guesses": 31,
+      "self_report": {
+        "predicted_closeness": 0.7,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "central",
+            "crucial",
+            "essential"
+          ],
+          "reason": "Keystone is a synonym for central or crucial, which are already close to the target, suggesting it may be a similarly ranked synonym."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"keystone\", \"basis_words\": [\"central\", \"crucial\", \"essential\"], \"reason\": \"Keystone is a synonym for central or crucial, which are already close to the target, suggesting it may be a similarly ranked synonym.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.7}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"alive\": 15396, \"axis\": 31362, \"basic\": 46857, \"center\": 12628, \"central\": 860, \"core\": 35371, \"cornerstone\": 53038, \"critical\": 15949, \"crucial\": 1192, \"crux\": 218215, \"essence\": 19350, \"essential\": 994, \"exist\": 10916, \"fundamental\": 168016, \"heart\": 5815, \"hub\": 3734, \"indispensable\": 7303, \"key\": 512, \"life\": 6049, \"main\": 834, \"necessary\": 3668, \"nexus\": 233071, \"paramount\": 99407, \"pillar\": 15365, \"pivot\": 13019, \"pivotal\": 7470, \"primary\": 9422, \"prime\": 1071, \"principal\": 13908, \"vital\": 1048}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 32,
+    "event": "GUESS",
+    "timestamp": "2026-07-09T00:37:40",
+    "details": {
+      "word": "bedrock",
+      "rank": 235259,
+      "best_word": "key",
+      "best_rank": 512,
+      "total_guesses": 32,
+      "self_report": {
+        "predicted_closeness": 0.6,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "central",
+            "core",
+            "essential",
+            "key",
+            "vital"
+          ],
+          "reason": "Bedrock is a synonym for something fundamental or foundational, aligning with the existing guesses like 'core', 'central', and 'vital' that have lower ranks."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"bedrock\", \"basis_words\": [\"central\", \"core\", \"essential\", \"key\", \"vital\"], \"reason\": \"Bedrock is a synonym for something fundamental or foundational, aligning with the existing guesses like 'core', 'central', and 'vital' that have lower ranks.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.6}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"alive\": 15396, \"axis\": 31362, \"basic\": 46857, \"center\": 12628, \"central\": 860, \"core\": 35371, \"cornerstone\": 53038, \"critical\": 15949, \"crucial\": 1192, \"crux\": 218215, \"essence\": 19350, \"essential\": 994, \"exist\": 10916, \"fundamental\": 168016, \"heart\": 5815, \"hub\": 3734, \"indispensable\": 7303, \"key\": 512, \"keystone\": 61242, \"life\": 6049, \"main\": 834, \"necessary\": 3668, \"nexus\": 233071, \"paramount\": 99407, \"pillar\": 15365, \"pivot\": 13019, \"pivotal\": 7470, \"primary\": 9422, \"prime\": 1071, \"principal\": 13908, \"vital\": 1048}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 33,
+    "event": "GUESS",
+    "timestamp": "2026-07-09T00:38:19",
+    "details": {
+      "word": "base",
+      "rank": 5762,
+      "best_word": "key",
+      "best_rank": 512,
+      "total_guesses": 33,
+      "self_report": {
+        "predicted_closeness": 0.4,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "key",
+            "core",
+            "main",
+            "central",
+            "vital"
+          ],
+          "reason": "The word 'base' is a synonym for fundamental or essential, aligning with low-ranked guesses like 'key' and 'core', but has not been tried yet. It may be closer to the target due to its semantic similarity to existing top-ranked guesses."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"base\", \"basis_words\": [\"key\", \"core\", \"main\", \"central\", \"vital\"], \"reason\": \"The word 'base' is a synonym for fundamental or essential, aligning with low-ranked guesses like 'key' and 'core', but has not been tried yet. It may be closer to the target due to its semantic similarity to existing top-ranked guesses.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"alive\": 15396, \"axis\": 31362, \"basic\": 46857, \"bedrock\": 235259, \"center\": 12628, \"central\": 860, \"core\": 35371, \"cornerstone\": 53038, \"critical\": 15949, \"crucial\": 1192, \"crux\": 218215, \"essence\": 19350, \"essential\": 994, \"exist\": 10916, \"fundamental\": 168016, \"heart\": 5815, \"hub\": 3734, \"indispensable\": 7303, \"key\": 512, \"keystone\": 61242, \"life\": 6049, \"main\": 834, \"necessary\": 3668, \"nexus\": 233071, \"paramount\": 99407, \"pillar\": 15365, \"pivot\": 13019, \"pivotal\": 7470, \"primary\": 9422, \"prime\": 1071, \"principal\": 13908, \"vital\": 1048}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 34,
+    "event": "GUESS",
+    "timestamp": "2026-07-09T00:38:50",
+    "details": {
+      "word": "foundational",
+      "rank": 334520,
+      "best_word": "key",
+      "best_rank": 512,
+      "total_guesses": 34,
+      "self_report": {
+        "predicted_closeness": 0.6,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "fundamental",
+            "essential",
+            "core",
+            "basic"
+          ],
+          "reason": "Foundational is a close synonym to words like 'fundamental' and 'essential', which have moderate ranks, suggesting it may be closer to the target. It is not among the previously tried words."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"foundational\", \"basis_words\": [\"fundamental\", \"essential\", \"core\", \"basic\"], \"reason\": \"Foundational is a close synonym to words like 'fundamental' and 'essential', which have moderate ranks, suggesting it may be closer to the target. It is not among the previously tried words.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.6}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"alive\": 15396, \"axis\": 31362, \"base\": 5762, \"basic\": 46857, \"bedrock\": 235259, \"center\": 12628, \"central\": 860, \"core\": 35371, \"cornerstone\": 53038, \"critical\": 15949, \"crucial\": 1192, \"crux\": 218215, \"essence\": 19350, \"essential\": 994, \"exist\": 10916, \"fundamental\": 168016, \"heart\": 5815, \"hub\": 3734, \"indispensable\": 7303, \"key\": 512, \"keystone\": 61242, \"life\": 6049, \"main\": 834, \"necessary\": 3668, \"nexus\": 233071, \"paramount\": 99407, \"pillar\": 15365, \"pivot\": 13019, \"pivotal\": 7470, \"primary\": 9422, \"prime\": 1071, \"principal\": 13908, \"vital\": 1048}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 35,
+    "event": "GUESS",
+    "timestamp": "2026-07-09T00:39:20",
+    "details": {
+      "word": "foundation",
+      "rank": 96186,
+      "best_word": "key",
+      "best_rank": 512,
+      "total_guesses": 35,
+      "self_report": {
+        "predicted_closeness": 0.7,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "essential",
+            "key",
+            "central",
+            "vital",
+            "core"
+          ],
+          "reason": "The hidden target likely relates to synonyms of 'central' or 'essential' concepts. 'Foundation' is a strong synonym not previously guessed and fits the context of being a base or core element."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"foundation\", \"basis_words\": [\"essential\", \"key\", \"central\", \"vital\", \"core\"], \"reason\": \"The hidden target likely relates to synonyms of 'central' or 'essential' concepts. 'Foundation' is a strong synonym not previously guessed and fits the context of being a base or core element.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.7}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"alive\": 15396, \"axis\": 31362, \"base\": 5762, \"basic\": 46857, \"bedrock\": 235259, \"center\": 12628, \"central\": 860, \"core\": 35371, \"cornerstone\": 53038, \"critical\": 15949, \"crucial\": 1192, \"crux\": 218215, \"essence\": 19350, \"essential\": 994, \"exist\": 10916, \"foundational\": 334520, \"fundamental\": 168016, \"heart\": 5815, \"hub\": 3734, \"indispensable\": 7303, \"key\": 512, \"keystone\": 61242, \"life\": 6049, \"main\": 834, \"necessary\": 3668, \"nexus\": 233071, \"paramount\": 99407, \"pillar\": 15365, \"pivot\": 13019, \"pivotal\": 7470, \"primary\": 9422, \"prime\": 1071, \"principal\": 13908, \"vital\": 1048}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 36,
+    "event": "GUESS",
+    "timestamp": "2026-07-09T00:39:42",
+    "details": {
+      "word": "top",
+      "rank": 1759,
+      "best_word": "key",
+      "best_rank": 512,
+      "total_guesses": 36,
+      "self_report": {
+        "predicted_closeness": 0.7,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "key",
+            "central",
+            "essential",
+            "prime"
+          ],
+          "reason": "The word 'top' is a common synonym for words like 'key' (rank 512) and 'prime' (rank 1071), which are semantically close to the target. It is not in the guess history and fits the criteria for a valid single-word guess."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"top\", \"basis_words\": [\"key\", \"central\", \"essential\", \"prime\"], \"reason\": \"The word 'top' is a common synonym for words like 'key' (rank 512) and 'prime' (rank 1071), which are semantically close to the target. It is not in the guess history and fits the criteria for a valid single-word guess.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.7}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"alive\": 15396, \"axis\": 31362, \"base\": 5762, \"basic\": 46857, \"bedrock\": 235259, \"center\": 12628, \"central\": 860, \"core\": 35371, \"cornerstone\": 53038, \"critical\": 15949, \"crucial\": 1192, \"crux\": 218215, \"essence\": 19350, \"essential\": 994, \"exist\": 10916, \"foundation\": 96186, \"foundational\": 334520, \"fundamental\": 168016, \"heart\": 5815, \"hub\": 3734, \"indispensable\": 7303, \"key\": 512, \"keystone\": 61242, \"life\": 6049, \"main\": 834, \"necessary\": 3668, \"nexus\": 233071, \"paramount\": 99407, \"pillar\": 15365, \"pivot\": 13019, \"pivotal\": 7470, \"primary\": 9422, \"prime\": 1071, \"principal\": 13908, \"vital\": 1048}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 37,
+    "event": "GUESS",
+    "timestamp": "2026-07-09T00:41:37",
+    "details": {
+      "word": "root",
+      "rank": 10889,
+      "best_word": "key",
+      "best_rank": 512,
+      "total_guesses": 37,
+      "self_report": {
+        "predicted_closeness": 0.4,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "core",
+            "foundation",
+            "bedrock"
+          ],
+          "reason": "Root is a synonym for core and foundation, which have ranks in the 1000s and 100,000s, suggesting a potential middle-tier proximity to the target."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"root\", \"basis_words\": [\"core\", \"foundation\", \"bedrock\"], \"reason\": \"Root is a synonym for core and foundation, which have ranks in the 1000s and 100,000s, suggesting a potential middle-tier proximity to the target.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"alive\": 15396, \"axis\": 31362, \"base\": 5762, \"basic\": 46857, \"bedrock\": 235259, \"center\": 12628, \"central\": 860, \"core\": 35371, \"cornerstone\": 53038, \"critical\": 15949, \"crucial\": 1192, \"crux\": 218215, \"essence\": 19350, \"essential\": 994, \"exist\": 10916, \"foundation\": 96186, \"foundational\": 334520, \"fundamental\": 168016, \"heart\": 5815, \"hub\": 3734, \"indispensable\": 7303, \"key\": 512, \"keystone\": 61242, \"life\": 6049, \"main\": 834, \"necessary\": 3668, \"nexus\": 233071, \"paramount\": 99407, \"pillar\": 15365, \"pivot\": 13019, \"pivotal\": 7470, \"primary\": 9422, \"prime\": 1071, \"principal\": 13908, \"top\": 1759, \"vital\": 1048}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 38,
+    "event": "GUESS",
+    "timestamp": "2026-07-09T00:42:27",
+    "details": {
+      "word": "soul",
+      "rank": 27411,
+      "best_word": "key",
+      "best_rank": 512,
+      "total_guesses": 38,
+      "self_report": {
+        "predicted_closeness": 0.2,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "beyond",
+        "rationale": {
+          "basis_words": [
+            "essence",
+            "heart",
+            "life"
+          ],
+          "reason": "The word 'soul' is a synonym for essence and core, similar to words like 'heart' and 'life' in the guess history, which are all related to fundamental or central concepts."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"soul\", \"basis_words\": [\"essence\", \"heart\", \"life\"], \"reason\": \"The word 'soul' is a synonym for essence and core, similar to words like 'heart' and 'life' in the guess history, which are all related to fundamental or central concepts.\", \"predicted_bucket\": \"beyond\", \"predicted_closeness\": 0.2}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"alive\": 15396, \"axis\": 31362, \"base\": 5762, \"basic\": 46857, \"bedrock\": 235259, \"center\": 12628, \"central\": 860, \"core\": 35371, \"cornerstone\": 53038, \"critical\": 15949, \"crucial\": 1192, \"crux\": 218215, \"essence\": 19350, \"essential\": 994, \"exist\": 10916, \"foundation\": 96186, \"foundational\": 334520, \"fundamental\": 168016, \"heart\": 5815, \"hub\": 3734, \"indispensable\": 7303, \"key\": 512, \"keystone\": 61242, \"life\": 6049, \"main\": 834, \"necessary\": 3668, \"nexus\": 233071, \"paramount\": 99407, \"pillar\": 15365, \"pivot\": 13019, \"pivotal\": 7470, \"primary\": 9422, \"prime\": 1071, \"principal\": 13908, \"root\": 10889, \"top\": 1759, \"vital\": 1048}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 39,
+    "event": "GUESS",
+    "timestamp": "2026-07-09T00:43:12",
+    "details": {
+      "word": "important",
+      "rank": 2073,
+      "best_word": "key",
+      "best_rank": 512,
+      "total_guesses": 39,
+      "self_report": {
+        "predicted_closeness": 0.7,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "key",
+            "crucial",
+            "vital",
+            "essential"
+          ],
+          "reason": "The target likely shares semantic similarity with low-ranked synonyms like 'key' and 'vital', and 'important' is a common synonym not yet guessed."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"important\", \"basis_words\": [\"key\", \"crucial\", \"vital\", \"essential\"], \"reason\": \"The target likely shares semantic similarity with low-ranked synonyms like 'key' and 'vital', and 'important' is a common synonym not yet guessed.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.7}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"alive\": 15396, \"axis\": 31362, \"base\": 5762, \"basic\": 46857, \"bedrock\": 235259, \"center\": 12628, \"central\": 860, \"core\": 35371, \"cornerstone\": 53038, \"critical\": 15949, \"crucial\": 1192, \"crux\": 218215, \"essence\": 19350, \"essential\": 994, \"exist\": 10916, \"foundation\": 96186, \"foundational\": 334520, \"fundamental\": 168016, \"heart\": 5815, \"hub\": 3734, \"indispensable\": 7303, \"key\": 512, \"keystone\": 61242, \"life\": 6049, \"main\": 834, \"necessary\": 3668, \"nexus\": 233071, \"paramount\": 99407, \"pillar\": 15365, \"pivot\": 13019, \"pivotal\": 7470, \"primary\": 9422, \"prime\": 1071, \"principal\": 13908, \"root\": 10889, \"soul\": 27411, \"top\": 1759, \"vital\": 1048}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 40,
+    "event": "GUESS",
+    "timestamp": "2026-07-09T00:44:23",
+    "details": {
+      "word": "existence",
+      "rank": 79235,
+      "best_word": "key",
+      "best_rank": 512,
+      "total_guesses": 40,
+      "self_report": {
+        "predicted_closeness": 0.3,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "essence",
+            "exist"
+          ],
+          "reason": "The word 'existence' is semantically related to 'essence' (rank 19350) and 'exist' (rank 10916), both of which are close to the target. It is a common synonym that may bridge the gap to the hidden target."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"existence\", \"basis_words\": [\"essence\", \"exist\"], \"reason\": \"The word 'existence' is semantically related to 'essence' (rank 19350) and 'exist' (rank 10916), both of which are close to the target. It is a common synonym that may bridge the gap to the hidden target.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"alive\": 15396, \"axis\": 31362, \"base\": 5762, \"basic\": 46857, \"bedrock\": 235259, \"center\": 12628, \"central\": 860, \"core\": 35371, \"cornerstone\": 53038, \"critical\": 15949, \"crucial\": 1192, \"crux\": 218215, \"essence\": 19350, \"essential\": 994, \"exist\": 10916, \"foundation\": 96186, \"foundational\": 334520, \"fundamental\": 168016, \"heart\": 5815, \"hub\": 3734, \"important\": 2073, \"indispensable\": 7303, \"key\": 512, \"keystone\": 61242, \"life\": 6049, \"main\": 834, \"necessary\": 3668, \"nexus\": 233071, \"paramount\": 99407, \"pillar\": 15365, \"pivot\": 13019, \"pivotal\": 7470, \"primary\": 9422, \"prime\": 1071, \"principal\": 13908, \"root\": 10889, \"soul\": 27411, \"top\": 1759, \"vital\": 1048}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 41,
+    "event": "GUESS",
+    "timestamp": "2026-07-09T00:44:48",
+    "details": {
+      "word": "kernel",
+      "rank": 221153,
+      "best_word": "key",
+      "best_rank": 512,
+      "total_guesses": 41,
+      "self_report": {
+        "predicted_closeness": 0.4,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "core",
+            "foundation",
+            "basic",
+            "essential",
+            "key",
+            "crucial",
+            "vital",
+            "central",
+            "critical"
+          ],
+          "reason": "Kernel is a synonym for core or central element, aligning with the pattern of guesses related to fundamentality and centrality in the existing data."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"kernel\", \"basis_words\": [\"core\", \"foundation\", \"basic\", \"essential\", \"key\", \"crucial\", \"vital\", \"central\", \"critical\"], \"reason\": \"Kernel is a synonym for core or central element, aligning with the pattern of guesses related to fundamentality and centrality in the existing data.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"alive\": 15396, \"axis\": 31362, \"base\": 5762, \"basic\": 46857, \"bedrock\": 235259, \"center\": 12628, \"central\": 860, \"core\": 35371, \"cornerstone\": 53038, \"critical\": 15949, \"crucial\": 1192, \"crux\": 218215, \"essence\": 19350, \"essential\": 994, \"exist\": 10916, \"existence\": 79235, \"foundation\": 96186, \"foundational\": 334520, \"fundamental\": 168016, \"heart\": 5815, \"hub\": 3734, \"important\": 2073, \"indispensable\": 7303, \"key\": 512, \"keystone\": 61242, \"life\": 6049, \"main\": 834, \"necessary\": 3668, \"nexus\": 233071, \"paramount\": 99407, \"pillar\": 15365, \"pivot\": 13019, \"pivotal\": 7470, \"primary\": 9422, \"prime\": 1071, \"principal\": 13908, \"root\": 10889, \"soul\": 27411, \"top\": 1759, \"vital\": 1048}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 42,
+    "event": "GUESS",
+    "timestamp": "2026-07-09T00:46:32",
+    "details": {
+      "word": "mainstay",
+      "rank": 16096,
+      "best_word": "key",
+      "best_rank": 512,
+      "total_guesses": 42,
+      "self_report": {
+        "predicted_closeness": 0.3,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "core",
+            "foundation",
+            "base",
+            "keystone"
+          ],
+          "reason": "Mainstay is a synonym for core or foundation, which are frequently used in contexts related to the target word. It hasn't been tried yet and is a common English word."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"mainstay\", \"basis_words\": [\"core\", \"foundation\", \"base\", \"keystone\"], \"reason\": \"Mainstay is a synonym for core or foundation, which are frequently used in contexts related to the target word. It hasn't been tried yet and is a common English word.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"alive\": 15396, \"axis\": 31362, \"base\": 5762, \"basic\": 46857, \"bedrock\": 235259, \"center\": 12628, \"central\": 860, \"core\": 35371, \"cornerstone\": 53038, \"critical\": 15949, \"crucial\": 1192, \"crux\": 218215, \"essence\": 19350, \"essential\": 994, \"exist\": 10916, \"existence\": 79235, \"foundation\": 96186, \"foundational\": 334520, \"fundamental\": 168016, \"heart\": 5815, \"hub\": 3734, \"important\": 2073, \"indispensable\": 7303, \"kernel\": 221153, \"key\": 512, \"keystone\": 61242, \"life\": 6049, \"main\": 834, \"necessary\": 3668, \"nexus\": 233071, \"paramount\": 99407, \"pillar\": 15365, \"pivot\": 13019, \"pivotal\": 7470, \"primary\": 9422, \"prime\": 1071, \"principal\": 13908, \"root\": 10889, \"soul\": 27411, \"top\": 1759, \"vital\": 1048}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 43,
+    "event": "GUESS",
+    "timestamp": "2026-07-09T00:47:24",
+    "details": {
+      "word": "principle",
+      "rank": 108512,
+      "best_word": "key",
+      "best_rank": 512,
+      "total_guesses": 43,
+      "self_report": {
+        "predicted_closeness": 0.3,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "essential",
+            "core",
+            "key",
+            "central",
+            "foundation"
+          ],
+          "reason": "The word 'principle' is closely related to concepts like 'essential', 'core', and 'foundation', which have lower ranks in the history, suggesting a focus on fundamental or critical concepts."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"principle\", \"basis_words\": [\"essential\", \"core\", \"key\", \"central\", \"foundation\"], \"reason\": \"The word 'principle' is closely related to concepts like 'essential', 'core', and 'foundation', which have lower ranks in the history, suggesting a focus on fundamental or critical concepts.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"alive\": 15396, \"axis\": 31362, \"base\": 5762, \"basic\": 46857, \"bedrock\": 235259, \"center\": 12628, \"central\": 860, \"core\": 35371, \"cornerstone\": 53038, \"critical\": 15949, \"crucial\": 1192, \"crux\": 218215, \"essence\": 19350, \"essential\": 994, \"exist\": 10916, \"existence\": 79235, \"foundation\": 96186, \"foundational\": 334520, \"fundamental\": 168016, \"heart\": 5815, \"hub\": 3734, \"important\": 2073, \"indispensable\": 7303, \"kernel\": 221153, \"key\": 512, \"keystone\": 61242, \"life\": 6049, \"main\": 834, \"mainstay\": 16096, \"necessary\": 3668, \"nexus\": 233071, \"paramount\": 99407, \"pillar\": 15365, \"pivot\": 13019, \"pivotal\": 7470, \"primary\": 9422, \"prime\": 1071, \"principal\": 13908, \"root\": 10889, \"soul\": 27411, \"top\": 1759, \"vital\": 1048}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 44,
+    "event": "GUESS",
+    "timestamp": "2026-07-09T00:48:00",
+    "details": {
+      "word": "stem",
+      "rank": 2145,
+      "best_word": "key",
+      "best_rank": 512,
+      "total_guesses": 44,
+      "self_report": {
+        "predicted_closeness": 0.3,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "core",
+            "foundation",
+            "root"
+          ],
+          "reason": "Stem is a synonym for core or root, which are related to fundamental aspects, and it's not already in the guess history."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"stem\", \"basis_words\": [\"core\", \"foundation\", \"root\"], \"reason\": \"Stem is a synonym for core or root, which are related to fundamental aspects, and it's not already in the guess history.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"alive\": 15396, \"axis\": 31362, \"base\": 5762, \"basic\": 46857, \"bedrock\": 235259, \"center\": 12628, \"central\": 860, \"core\": 35371, \"cornerstone\": 53038, \"critical\": 15949, \"crucial\": 1192, \"crux\": 218215, \"essence\": 19350, \"essential\": 994, \"exist\": 10916, \"existence\": 79235, \"foundation\": 96186, \"foundational\": 334520, \"fundamental\": 168016, \"heart\": 5815, \"hub\": 3734, \"important\": 2073, \"indispensable\": 7303, \"kernel\": 221153, \"key\": 512, \"keystone\": 61242, \"life\": 6049, \"main\": 834, \"mainstay\": 16096, \"necessary\": 3668, \"nexus\": 233071, \"paramount\": 99407, \"pillar\": 15365, \"pivot\": 13019, \"pivotal\": 7470, \"primary\": 9422, \"prime\": 1071, \"principal\": 13908, \"principle\": 108512, \"root\": 10889, \"soul\": 27411, \"top\": 1759, \"vital\": 1048}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 45,
+    "event": "GUESS",
+    "timestamp": "2026-07-09T00:48:34",
+    "details": {
+      "word": "origin",
+      "rank": 4019,
+      "best_word": "key",
+      "best_rank": 512,
+      "total_guesses": 45,
+      "self_report": {
+        "predicted_closeness": 0.3,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "root",
+            "source"
+          ],
+          "reason": "Origin is a synonym for root and source, which are in the history and have lower ranks, indicating a potential link to the hidden target."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"origin\", \"basis_words\": [\"root\", \"source\"], \"reason\": \"Origin is a synonym for root and source, which are in the history and have lower ranks, indicating a potential link to the hidden target.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"alive\": 15396, \"axis\": 31362, \"base\": 5762, \"basic\": 46857, \"bedrock\": 235259, \"center\": 12628, \"central\": 860, \"core\": 35371, \"cornerstone\": 53038, \"critical\": 15949, \"crucial\": 1192, \"crux\": 218215, \"essence\": 19350, \"essential\": 994, \"exist\": 10916, \"existence\": 79235, \"foundation\": 96186, \"foundational\": 334520, \"fundamental\": 168016, \"heart\": 5815, \"hub\": 3734, \"important\": 2073, \"indispensable\": 7303, \"kernel\": 221153, \"key\": 512, \"keystone\": 61242, \"life\": 6049, \"main\": 834, \"mainstay\": 16096, \"necessary\": 3668, \"nexus\": 233071, \"paramount\": 99407, \"pillar\": 15365, \"pivot\": 13019, \"pivotal\": 7470, \"primary\": 9422, \"prime\": 1071, \"principal\": 13908, \"principle\": 108512, \"root\": 10889, \"soul\": 27411, \"stem\": 2145, \"top\": 1759, \"vital\": 1048}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 46,
+    "event": "GUESS",
+    "timestamp": "2026-07-09T01:04:54",
+    "details": {
+      "word": "cardinal",
+      "rank": 44910,
+      "best_word": "key",
+      "best_rank": 512,
+      "total_guesses": 46,
+      "self_report": {
+        "predicted_closeness": 0.7,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "key",
+            "essential",
+            "vital",
+            "crucial",
+            "paramount"
+          ],
+          "reason": "Cardinal is a synonym for essential, vital, and crucial, which are close to the hidden target based on their low ranks. It's not in the guess history and is a common English word."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"cardinal\", \"basis_words\": [\"key\", \"essential\", \"vital\", \"crucial\", \"paramount\"], \"reason\": \"Cardinal is a synonym for essential, vital, and crucial, which are close to the hidden target based on their low ranks. It's not in the guess history and is a common English word.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.7}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"alive\": 15396, \"axis\": 31362, \"base\": 5762, \"basic\": 46857, \"bedrock\": 235259, \"center\": 12628, \"central\": 860, \"core\": 35371, \"cornerstone\": 53038, \"critical\": 15949, \"crucial\": 1192, \"crux\": 218215, \"essence\": 19350, \"essential\": 994, \"exist\": 10916, \"existence\": 79235, \"foundation\": 96186, \"foundational\": 334520, \"fundamental\": 168016, \"heart\": 5815, \"hub\": 3734, \"important\": 2073, \"indispensable\": 7303, \"kernel\": 221153, \"key\": 512, \"keystone\": 61242, \"life\": 6049, \"main\": 834, \"mainstay\": 16096, \"necessary\": 3668, \"nexus\": 233071, \"origin\": 4019, \"paramount\": 99407, \"pillar\": 15365, \"pivot\": 13019, \"pivotal\": 7470, \"primary\": 9422, \"prime\": 1071, \"principal\": 13908, \"principle\": 108512, \"root\": 10889, \"soul\": 27411, \"stem\": 2145, \"top\": 1759, \"vital\": 1048}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 47,
+    "event": "GUESS",
+    "timestamp": "2026-07-09T01:06:07",
+    "details": {
+      "word": "crucible",
+      "rank": 18218,
+      "best_word": "key",
+      "best_rank": 512,
+      "total_guesses": 47,
+      "self_report": {
+        "predicted_closeness": 0.1,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "beyond",
+        "rationale": {
+          "basis_words": [
+            "key",
+            "central",
+            "essential",
+            "crucial"
+          ],
+          "reason": "Crucible shares thematic elements of importance and centrality with existing low-ranked words like 'key' and 'central', suggesting it may be closer to the hidden target."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"crucible\", \"basis_words\": [\"key\", \"central\", \"essential\", \"crucial\"], \"reason\": \"Crucible shares thematic elements of importance and centrality with existing low-ranked words like 'key' and 'central', suggesting it may be closer to the hidden target.\", \"predicted_bucket\": \"beyond\", \"predicted_closeness\": 0.1}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"alive\": 15396, \"axis\": 31362, \"base\": 5762, \"basic\": 46857, \"bedrock\": 235259, \"cardinal\": 44910, \"center\": 12628, \"central\": 860, \"core\": 35371, \"cornerstone\": 53038, \"critical\": 15949, \"crucial\": 1192, \"crux\": 218215, \"essence\": 19350, \"essential\": 994, \"exist\": 10916, \"existence\": 79235, \"foundation\": 96186, \"foundational\": 334520, \"fundamental\": 168016, \"heart\": 5815, \"hub\": 3734, \"important\": 2073, \"indispensable\": 7303, \"kernel\": 221153, \"key\": 512, \"keystone\": 61242, \"life\": 6049, \"main\": 834, \"mainstay\": 16096, \"necessary\": 3668, \"nexus\": 233071, \"origin\": 4019, \"paramount\": 99407, \"pillar\": 15365, \"pivot\": 13019, \"pivotal\": 7470, \"primary\": 9422, \"prime\": 1071, \"principal\": 13908, \"principle\": 108512, \"root\": 10889, \"soul\": 27411, \"stem\": 2145, \"top\": 1759, \"vital\": 1048}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 48,
+    "event": "GUESS",
+    "timestamp": "2026-07-09T01:06:30",
+    "details": {
+      "word": "basis",
+      "rank": 27910,
+      "best_word": "key",
+      "best_rank": 512,
+      "total_guesses": 48,
+      "self_report": {
+        "predicted_closeness": 0.6,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "base",
+            "central",
+            "core",
+            "essential",
+            "key",
+            "vital"
+          ],
+          "reason": "Basis is a synonym for base and core, which are closely ranked, suggesting it may be semantically related to the target. It hasn't been tried yet and fits the theme of foundational concepts."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"basis\", \"basis_words\": [\"base\", \"central\", \"core\", \"essential\", \"key\", \"vital\"], \"reason\": \"Basis is a synonym for base and core, which are closely ranked, suggesting it may be semantically related to the target. It hasn't been tried yet and fits the theme of foundational concepts.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.6}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"alive\": 15396, \"axis\": 31362, \"base\": 5762, \"basic\": 46857, \"bedrock\": 235259, \"cardinal\": 44910, \"center\": 12628, \"central\": 860, \"core\": 35371, \"cornerstone\": 53038, \"critical\": 15949, \"crucial\": 1192, \"crucible\": 18218, \"crux\": 218215, \"essence\": 19350, \"essential\": 994, \"exist\": 10916, \"existence\": 79235, \"foundation\": 96186, \"foundational\": 334520, \"fundamental\": 168016, \"heart\": 5815, \"hub\": 3734, \"important\": 2073, \"indispensable\": 7303, \"kernel\": 221153, \"key\": 512, \"keystone\": 61242, \"life\": 6049, \"main\": 834, \"mainstay\": 16096, \"necessary\": 3668, \"nexus\": 233071, \"origin\": 4019, \"paramount\": 99407, \"pillar\": 15365, \"pivot\": 13019, \"pivotal\": 7470, \"primary\": 9422, \"prime\": 1071, \"principal\": 13908, \"principle\": 108512, \"root\": 10889, \"soul\": 27411, \"stem\": 2145, \"top\": 1759, \"vital\": 1048}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 49,
+    "event": "GUESS",
+    "timestamp": "2026-07-09T01:06:50",
+    "details": {
+      "word": "nucleus",
+      "rank": 91718,
+      "best_word": "key",
+      "best_rank": 512,
+      "total_guesses": 49,
+      "self_report": {
+        "predicted_closeness": 0.3,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "core",
+            "kernel",
+            "bedrock",
+            "foundation"
+          ],
+          "reason": "Nucleus is a synonym for core or central part, similar to existing low-ranked words like 'core' (35371) and 'kernel' (221153), suggesting it could be close to the target."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"nucleus\", \"basis_words\": [\"core\", \"kernel\", \"bedrock\", \"foundation\"], \"reason\": \"Nucleus is a synonym for core or central part, similar to existing low-ranked words like 'core' (35371) and 'kernel' (221153), suggesting it could be close to the target.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"alive\": 15396, \"axis\": 31362, \"base\": 5762, \"basic\": 46857, \"basis\": 27910, \"bedrock\": 235259, \"cardinal\": 44910, \"center\": 12628, \"central\": 860, \"core\": 35371, \"cornerstone\": 53038, \"critical\": 15949, \"crucial\": 1192, \"crucible\": 18218, \"crux\": 218215, \"essence\": 19350, \"essential\": 994, \"exist\": 10916, \"existence\": 79235, \"foundation\": 96186, \"foundational\": 334520, \"fundamental\": 168016, \"heart\": 5815, \"hub\": 3734, \"important\": 2073, \"indispensable\": 7303, \"kernel\": 221153, \"key\": 512, \"keystone\": 61242, \"life\": 6049, \"main\": 834, \"mainstay\": 16096, \"necessary\": 3668, \"nexus\": 233071, \"origin\": 4019, \"paramount\": 99407, \"pillar\": 15365, \"pivot\": 13019, \"pivotal\": 7470, \"primary\": 9422, \"prime\": 1071, \"principal\": 13908, \"principle\": 108512, \"root\": 10889, \"soul\": 27411, \"stem\": 2145, \"top\": 1759, \"vital\": 1048}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 50,
+    "event": "GUESS",
+    "timestamp": "2026-07-09T01:07:34",
+    "details": {
+      "word": "node",
+      "rank": 92211,
+      "best_word": "key",
+      "best_rank": 512,
+      "total_guesses": 50,
+      "self_report": {
+        "predicted_closeness": 0.4,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "central",
+            "key",
+            "core",
+            "hub"
+          ],
+          "reason": "Node is a synonym for a central or crucial point in a network, similar to 'hub' and 'core', which have lower ranks indicating proximity to the target."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"word\": \"node\", \"basis_words\": [\"central\", \"key\", \"core\", \"hub\"], \"reason\": \"Node is a synonym for a central or crucial point in a network, similar to 'hub' and 'core', which have lower ranks indicating proximity to the target.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nYou are playing Contexto. Rank 1 is correct. Lower ranks are closer to the hidden target.\nGuess history with ranks: {\"alive\": 15396, \"axis\": 31362, \"base\": 5762, \"basic\": 46857, \"basis\": 27910, \"bedrock\": 235259, \"cardinal\": 44910, \"center\": 12628, \"central\": 860, \"core\": 35371, \"cornerstone\": 53038, \"critical\": 15949, \"crucial\": 1192, \"crucible\": 18218, \"crux\": 218215, \"essence\": 19350, \"essential\": 994, \"exist\": 10916, \"existence\": 79235, \"foundation\": 96186, \"foundational\": 334520, \"fundamental\": 168016, \"heart\": 5815, \"hub\": 3734, \"important\": 2073, \"indispensable\": 7303, \"kernel\": 221153, \"key\": 512, \"keystone\": 61242, \"life\": 6049, \"main\": 834, \"mainstay\": 16096, \"necessary\": 3668, \"nexus\": 233071, \"nucleus\": 91718, \"origin\": 4019, \"paramount\": 99407, \"pillar\": 15365, \"pivot\": 13019, \"pivotal\": 7470, \"primary\": 9422, \"prime\": 1071, \"principal\": 13908, \"principle\": 108512, \"root\": 10889, \"soul\": 27411, \"stem\": 2145, \"top\": 1759, \"vital\": 1048}\nInvalid or unavailable guesses to avoid: []\n\nSuggest exactly one new single-word guess that could be closer to the hidden target.\nEvery guess must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nInvalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.\nJSON schema:\n{\"word\": \"guess\"}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 50,
+    "event": "FAILED",
+    "timestamp": "2026-07-09T01:07:34",
+    "details": {
+      "best_word": "key",
+      "best_rank": 512,
+      "total_guesses": 50
+    }
+  }
+]

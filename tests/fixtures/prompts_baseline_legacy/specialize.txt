@@ -1,0 +1,21 @@
+Return only JSON, no markdown or explanation.
+The category "types of plants" had these results: {"fern": 120, "shrub": 50, "tree": 400}.
+The word "shrub" scored best with rank 50.
+
+Suggest 3 new directions to explore. These should NOT all be sub-categories
+of "types of plants". At least one should be a genuinely different interpretation of
+why "shrub" might have scored well.
+
+For example, if the category was "food" and "bite" scored well, one direction
+could be "small food portions" but another could be "animals that bite" since
+"bite" has multiple meanings.
+
+Each direction must include exactly 3 starter words that have not already been tried.
+Every word must be one common lowercase dictionary word.
+Do not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.
+Avoid these words: ["shrub", "tree"]
+Avoid these invalid or unrecognized words: ["sourcream", "wildanimal"]
+Do not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.
+Invalid examples: up-to-date, sour cream, sourcream, wildanimal, dairyproduct.
+JSON schema:
+{"specializations": [{"name": "direction name", "description": "short description", "words": ["word1", "word2", "word3"]}]}

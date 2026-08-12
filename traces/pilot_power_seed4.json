@@ -1,0 +1,68 @@
+{
+  "metadata": {
+    "created_at": "2026-07-21T12:34:48",
+    "solver": "llm",
+    "method": "ea_llm_self_adaptive",
+    "game": "api",
+    "mode": "api",
+    "game_numbers": [
+      1392
+    ],
+    "runs_per_target": 1,
+    "api_base_url": "https://api.contexto.me/machado/en/game",
+    "api_rate_limit": 0.5,
+    "rank_cache_enabled": true,
+    "max_generations": 50,
+    "llm_provider": "ollama",
+    "llm_model": "qwen3:14b",
+    "random_seed": 0,
+    "trace_schema_version": 3,
+    "instrumentation_provenance_hash": "bd9f2858283673a2",
+    "self_report": true,
+    "rationale_inheritance": true,
+    "enable_pivot": false,
+    "self_adaptive_sigma_mode": "frozen_uniform",
+    "mapelites_sigma_mode": null
+  },
+  "aggregate": {
+    "total_runs": 1,
+    "solved_runs": 1,
+    "solve_rate": 1.0,
+    "average_guesses_solved": 236.0,
+    "average_best_rank": 1.0,
+    "average_generations": 5.0
+  },
+  "runs": [
+    {
+      "solver": "llm",
+      "method": "ea_llm_self_adaptive",
+      "mode": "api",
+      "game": "api",
+      "game_number": 1392,
+      "target": null,
+      "run_index": 0,
+      "solved": true,
+      "answer": "syrup",
+      "best_word": "syrup",
+      "best_rank": 1,
+      "total_guesses": 236,
+      "generations": 5,
+      "trace_path": "traces\\ea_llm_self_adaptive_api_1392_run1_20260721_123448.json",
+      "archive_occupancy": null,
+      "placement_cache_hit_rate": null,
+      "self_report": true,
+      "mapelites_sigma_mode": null,
+      "mapelites_ranked_context_k": null,
+      "final_archive_sigma_s": null,
+      "final_archive_sigma_m": null,
+      "final_archive_sigma_ml": null,
+      "final_archive_sigma_l": null,
+      "error": null,
+      "llm_provider": "ollama",
+      "llm_model": "qwen3:14b",
+      "game_embedding_path": null,
+      "solver_embedding_path": null,
+      "alignment": "api_unknown"
+    }
+  ]
+}

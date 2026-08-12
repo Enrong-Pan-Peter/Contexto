@@ -1,0 +1,15 @@
+Return only JSON, no markdown or explanation.
+The solver is stalled and needs a fresh semantic direction.
+Current best word: shrub
+Current best rank: 50
+Existing active categories: ["types of plants", "outdoor environments", "botanical terms"]
+
+Suggest one broad but relevant adjacent category that is unlike the existing active categories
+and could still lead toward the hidden target.
+Include exactly 10 candidate words for that category.
+Every word must be one common lowercase dictionary word.
+Do not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.
+Avoid these already tried words: ["bush", "fern", "hedge", "shrub", "tree"]
+Do not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.
+JSON schema:
+{"name": "category name", "description": "short description", "words": ["word1", "word2", "word3"]}

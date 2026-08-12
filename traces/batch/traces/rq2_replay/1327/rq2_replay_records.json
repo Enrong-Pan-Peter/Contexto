@@ -1,0 +1,214 @@
+{
+  "metadata": {
+    "created_at": "2026-08-09T16:40:19",
+    "seed": 0,
+    "events_per_trace": 40,
+    "arms": [
+      "genuine",
+      "wrong",
+      "filler",
+      "absent"
+    ],
+    "traces": [
+      {
+        "trace_file": "ea_llm_self_adaptive_api_1327_run1_20260803_160743.json",
+        "game_number": 1327,
+        "llm_model": "qwen3:14b",
+        "llm_provider": "ollama",
+        "provenance_hash": "bd9f2858283673a2",
+        "eligible_events": 0,
+        "sampled_events": 0,
+        "shortfall": 40,
+        "skipped": {}
+      },
+      {
+        "trace_file": "ea_llm_self_adaptive_api_1327_run2_20260803_170815.json",
+        "game_number": 1327,
+        "llm_model": "qwen3:14b",
+        "llm_provider": "ollama",
+        "provenance_hash": "bd9f2858283673a2",
+        "eligible_events": 0,
+        "sampled_events": 0,
+        "shortfall": 40,
+        "skipped": {}
+      },
+      {
+        "trace_file": "ea_llm_self_adaptive_api_1327_run3_20260803_173302.json",
+        "game_number": 1327,
+        "llm_model": "qwen3:14b",
+        "llm_provider": "ollama",
+        "provenance_hash": "bd9f2858283673a2",
+        "eligible_events": 1,
+        "sampled_events": 1,
+        "shortfall": 39,
+        "skipped": {}
+      },
+      {
+        "trace_file": "ea_llm_self_adaptive_api_1327_run4_20260803_173929.json",
+        "game_number": 1327,
+        "llm_model": "qwen3:14b",
+        "llm_provider": "ollama",
+        "provenance_hash": "bd9f2858283673a2",
+        "eligible_events": 0,
+        "sampled_events": 0,
+        "shortfall": 40,
+        "skipped": {}
+      },
+      {
+        "trace_file": "ea_llm_self_adaptive_api_1327_run5_20260803_181102.json",
+        "game_number": 1327,
+        "llm_model": "qwen3:14b",
+        "llm_provider": "ollama",
+        "provenance_hash": "bd9f2858283673a2",
+        "eligible_events": 0,
+        "sampled_events": 0,
+        "shortfall": 40,
+        "skipped": {}
+      }
+    ],
+    "total_events": 1,
+    "total_records": 4
+  },
+  "records": [
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1327_run3_20260803_173302.json",
+      "game_number": 1327,
+      "child_id": "a4f6c132e17241c586c6e027632db77d",
+      "generation": 2,
+      "parent_id": "7a18e06baeae4791bc8397a1844ecd14",
+      "parent_rank": 34,
+      "sampled_op": "s_mutation",
+      "arm": "genuine",
+      "prompt_sha256": "334c2b899ef86b49495dc8cd0b823f2c0f5572be46773753fb81b1b58283d991",
+      "prompt_chars": 3675,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "heritage",
+      "proposed_words": [
+        "heritage",
+        "tradition",
+        "echo"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 114,
+      "predicted_closeness": 0.6,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "legacy"
+        ],
+        "reason": "Focusing on terms that emphasize the persistence and transmission of cultural impact over time, building on 'legacy' as a foundation."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 133,
+      "raw_response": "{\"name\": \"cultural endurance\", \"description\": \"long-term preservation and transmission of artistic values\", \"words\": [\"heritage\", \"tradition\", \"echo\"], \"basis_words\": [\"legacy\"], \"reason\": \"Focusing on terms that emphasize the persistence and transmission of cultural impact over time, building on 'legacy' as a foundation.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.6}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1327_run3_20260803_173302.json",
+      "game_number": 1327,
+      "child_id": "a4f6c132e17241c586c6e027632db77d",
+      "generation": 2,
+      "parent_id": "7a18e06baeae4791bc8397a1844ecd14",
+      "parent_rank": 34,
+      "sampled_op": "s_mutation",
+      "arm": "wrong",
+      "prompt_sha256": "0a22c74dbb72c5a34c276392f460a92274d8ec4dc5685589d19e5d5c0733f692",
+      "prompt_chars": 3649,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "heritage",
+      "proposed_words": [
+        "heritage",
+        "enduring",
+        "echo"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 114,
+      "predicted_closeness": 0.65,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "legacy"
+        ],
+        "reason": "selected semantic neighbors of 'legacy' focusing on lasting effects and cultural transmission"
+      },
+      "basis_words_count": 1,
+      "reason_chars": 93,
+      "raw_response": "{\"name\": \"enduring influence\", \"description\": \"long-term impact of artistic expression on cultural values\", \"words\": [\"heritage\", \"enduring\", \"echo\"], \"basis_words\": [\"legacy\"], \"reason\": \"selected semantic neighbors of 'legacy' focusing on lasting effects and cultural transmission\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.65}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1327_run3_20260803_173302.json",
+      "game_number": 1327,
+      "child_id": "a4f6c132e17241c586c6e027632db77d",
+      "generation": 2,
+      "parent_id": "7a18e06baeae4791bc8397a1844ecd14",
+      "parent_rank": 34,
+      "sampled_op": "s_mutation",
+      "arm": "filler",
+      "prompt_sha256": "3c24f2848f6904d6a0e0384f3677c3c9feee2d12d4309906cf0487ae57d38c1d",
+      "prompt_chars": 3674,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "heritage",
+      "proposed_words": [
+        "heritage",
+        "tradition",
+        "continuity"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 114,
+      "predicted_closeness": 0.6,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "legacy"
+        ],
+        "reason": "These words are close semantic neighbors of 'legacy' and narrow the focus to cultural continuity, maintaining the conceptual neighborhood of 'creative influence'."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 162,
+      "raw_response": "{\"name\": \"cultural continuity\", \"description\": \"long-term impact of cultural practices and artifacts\", \"words\": [\"heritage\", \"tradition\", \"continuity\"], \"basis_words\": [\"legacy\"], \"reason\": \"These words are close semantic neighbors of 'legacy' and narrow the focus to cultural continuity, maintaining the conceptual neighborhood of 'creative influence'.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.6}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1327_run3_20260803_173302.json",
+      "game_number": 1327,
+      "child_id": "a4f6c132e17241c586c6e027632db77d",
+      "generation": 2,
+      "parent_id": "7a18e06baeae4791bc8397a1844ecd14",
+      "parent_rank": 34,
+      "sampled_op": "s_mutation",
+      "arm": "absent",
+      "prompt_sha256": "87cc1d09110c4fdf72021e2f1481f4a8340c081c763f375e532feab61911eb49",
+      "prompt_chars": 3409,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "heritage",
+      "proposed_words": [
+        "heritage",
+        "continuity",
+        "tradition"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 114,
+      "predicted_closeness": 0.75,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "legacy"
+        ],
+        "reason": "Narrows focus to lasting preservation aspects of legacy, using semantic neighbors related to continuity and tradition"
+      },
+      "basis_words_count": 1,
+      "reason_chars": 117,
+      "raw_response": "{\"name\": \"cultural endurance\", \"description\": \"long-term preservation of artistic contributions\", \"words\": [\"heritage\", \"continuity\", \"tradition\"], \"basis_words\": [\"legacy\"], \"reason\": \"Narrows focus to lasting preservation aspects of legacy, using semantic neighbors related to continuity and tradition\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.75}"
+    }
+  ]
+}
