@@ -11,6 +11,14 @@ Consumes one or more ``rq2_replay_records.json`` files produced by
 - per-run medians of the paired differences and a Wilcoxon signed-rank test on
   those per-run medians (events clustered by run), plus a pooled event-level
   Wilcoxon as a descriptive companion;
+- a cluster-aware percentile bootstrap 95% CI (``--bootstrap`` draws, seeded)
+  for the pooled rank difference per contrast -- Hodges-Lehmann pseudo-median
+  (headline), plain median, and mean (sensitivity) -- and for the
+  word-identity rate: runs (trace files) are resampled with replacement and
+  the pooled statistic recomputed per draw, so the CI respects the run-level
+  clustering.
+  This is what lets the paper bound a null ("any causal effect of the
+  rationale is within +/- X ranks") instead of only failing to reject;
 - parse-failure and invalid-word rates per arm.
 
 No network, no LLM, no writes to traces or caches. Outputs pgfplots-friendly
@@ -19,7 +27,7 @@ CSVs plus a summary JSON.
 Usage (PowerShell):
 
     python scripts/rq2_analysis.py traces/rq2_replay_batch1/rq2_replay_records.json `
-        --output traces/rq2_analysis_batch1
+        --output traces/rq2_analysis_batch1 [--bootstrap 10000] [--seed 0]
 """
 
 from __future__ import annotations
@@ -36,6 +44,7 @@ from typing import Any
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
+import numpy as np
 from scipy import stats
 
 CONTRASTS = ("wrong", "filler", "absent")
@@ -184,6 +193,149 @@ def contrast_tests(diff_rows: list[dict[str, Any]], medians: list[dict[str, Any]
     return tests
 
 
+# --- cluster bootstrap -------------------------------------------------------------
+
+
+def _identity_counts_by_run(
+    events: dict[tuple[str, str], dict[str, dict[str, Any]]], contrast: str
+) -> dict[str, tuple[int, int]]:
+    """trace_file -> (n identical first words, n eligible events) for a contrast.
+
+    Eligibility mirrors :func:`word_agreement` exactly: both the genuine and the
+    variant arm must be present with a non-null ``proposed_word``.
+    """
+    counts: dict[str, tuple[int, int]] = {}
+    for (trace_file, _child_id), arms in events.items():
+        genuine = arms.get("genuine")
+        variant = arms.get(contrast)
+        if genuine is None or variant is None:
+            continue
+        genuine_word = genuine.get("proposed_word")
+        variant_word = variant.get("proposed_word")
+        if genuine_word is None or variant_word is None:
+            continue
+        identical, n = counts.get(trace_file, (0, 0))
+        counts[trace_file] = (identical + (1 if genuine_word == variant_word else 0), n + 1)
+    return counts
+
+
+def _percentile_ci95(draws: list[float]) -> tuple[float, float]:
+    array = np.asarray(draws, dtype=np.float64)
+    return float(np.percentile(array, 2.5)), float(np.percentile(array, 97.5))
+
+
+def _hodges_lehmann(values: np.ndarray, triu_cache: dict[int, tuple[np.ndarray, np.ndarray]]) -> float:
+    """One-sample Hodges-Lehmann estimate: median of Walsh averages over i <= j."""
+    n = len(values)
+    if n not in triu_cache:
+        triu_cache[n] = np.triu_indices(n)
+    rows, cols = triu_cache[n]
+    walsh = (values[rows] + values[cols]) / 2.0
+    return float(np.median(walsh))
+
+
+def _bootstrap_pooled_diffs(
+    clusters: dict[str, list[float]], draws: int, rng: np.random.Generator
+) -> dict[str, Any]:
+    """Percentile CIs for the pooled median, Hodges-Lehmann pseudo-median, and
+    mean, resampling clusters with replacement.
+
+    All three statistics are computed from the same resampled pool per draw
+    (one RNG consumption per draw, so adding a statistic never changes the
+    others' CIs). The HL pseudo-median is the headline bound: it is not pinned
+    by the large atom at exactly zero (identical proposed words) the way the
+    plain median can be, and it is far less outlier-driven than the mean, which
+    is kept as a sensitivity companion.
+    """
+    empty = {"observed": None, "ci95_low": None, "ci95_high": None, "n_clusters": 0, "draws": 0}
+    keys = sorted(clusters)
+    arrays = [np.asarray(clusters[key], dtype=np.float64) for key in keys]
+    if not arrays:
+        return {"median": dict(empty), "hl": dict(empty), "mean": dict(empty)}
+    triu_cache: dict[int, tuple[np.ndarray, np.ndarray]] = {}
+    pooled = np.concatenate(arrays)
+    medians: list[float] = []
+    hls: list[float] = []
+    means: list[float] = []
+    for _draw in range(draws):
+        indices = rng.integers(0, len(arrays), size=len(arrays))
+        sample = np.concatenate([arrays[i] for i in indices])
+        medians.append(float(np.median(sample)))
+        hls.append(_hodges_lehmann(sample, triu_cache))
+        means.append(float(np.mean(sample)))
+    base = {"n_clusters": len(arrays), "draws": draws}
+
+    def entry(observed: float, draw_values: list[float]) -> dict[str, Any]:
+        low, high = _percentile_ci95(draw_values)
+        return {"observed": observed, "ci95_low": low, "ci95_high": high, **base}
+
+    return {
+        "median": entry(float(np.median(pooled)), medians),
+        "hl": entry(_hodges_lehmann(pooled, triu_cache), hls),
+        "mean": entry(float(np.mean(pooled)), means),
+    }
+
+
+def _bootstrap_pooled_rate(
+    counts: dict[str, tuple[int, int]], draws: int, rng: np.random.Generator
+) -> dict[str, Any]:
+    """Percentile CI for a pooled numerator/denominator rate, resampling clusters."""
+    keys = sorted(counts)
+    if not keys:
+        return {"observed": None, "ci95_low": None, "ci95_high": None, "n_clusters": 0, "draws": 0}
+    numerators = np.asarray([counts[key][0] for key in keys], dtype=np.float64)
+    denominators = np.asarray([counts[key][1] for key in keys], dtype=np.float64)
+    observed = float(numerators.sum() / denominators.sum())
+    index_matrix = rng.integers(0, len(keys), size=(draws, len(keys)))
+    rates = numerators[index_matrix].sum(axis=1) / denominators[index_matrix].sum(axis=1)
+    low, high = _percentile_ci95(list(rates))
+    return {
+        "observed": observed,
+        "ci95_low": low,
+        "ci95_high": high,
+        "n_clusters": len(keys),
+        "draws": draws,
+    }
+
+
+def bootstrap_cis(
+    diff_rows: list[dict[str, Any]],
+    events: dict[tuple[str, str], dict[str, dict[str, Any]]],
+    *,
+    draws: int,
+    seed: int,
+) -> dict[str, Any]:
+    """Per contrast: cluster (run-level) bootstrap CIs for the pooled median rank
+    difference and the word-identity rate.
+
+    Each (contrast, statistic) pair gets its own child generator seeded from
+    ``(seed, contrast index, statistic index)``, so every CI is individually
+    reproducible regardless of evaluation order.
+    """
+    results: dict[str, Any] = {}
+    for contrast_index, contrast in enumerate(CONTRASTS):
+        diff_clusters: dict[str, list[float]] = {}
+        for row in diff_rows:
+            if row["contrast"] == contrast:
+                diff_clusters.setdefault(row["trace_file"], []).append(
+                    float(row["diff_genuine_minus_variant"])
+                )
+        diff_cis = _bootstrap_pooled_diffs(
+            diff_clusters, draws, np.random.default_rng([seed, contrast_index, 0])
+        )
+        results[contrast] = {
+            "median_diff": diff_cis["median"],
+            "hl_diff": diff_cis["hl"],
+            "mean_diff": diff_cis["mean"],
+            "word_identity_rate": _bootstrap_pooled_rate(
+                _identity_counts_by_run(events, contrast),
+                draws,
+                np.random.default_rng([seed, contrast_index, 1]),
+            ),
+        }
+    return results
+
+
 def per_arm_rates(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
     rows: list[dict[str, Any]] = []
     for arm in ARMS:
@@ -221,15 +373,22 @@ def _write_csv(path: Path, rows: list[dict[str, Any]]) -> None:
         writer.writerows(rows)
 
 
-def analyze(records: list[dict[str, Any]]) -> dict[str, Any]:
+def analyze(
+    records: list[dict[str, Any]], *, bootstrap_draws: int = 10000, bootstrap_seed: int = 0
+) -> dict[str, Any]:
     events = group_by_event(records)
     diff_rows = paired_differences(events)
     medians = per_run_medians(diff_rows)
+    tests = contrast_tests(diff_rows, medians)
+    if bootstrap_draws > 0:
+        cis = bootstrap_cis(diff_rows, events, draws=bootstrap_draws, seed=bootstrap_seed)
+        for contrast in CONTRASTS:
+            tests[contrast]["cluster_bootstrap"] = cis[contrast]
     return {
         "paired_differences": diff_rows,
         "word_agreement": word_agreement(events),
         "per_run_medians": medians,
-        "tests": contrast_tests(diff_rows, medians),
+        "tests": tests,
         "per_arm_rates": per_arm_rates(records),
         "n_events": len(events),
         "n_records": len(records),
@@ -240,6 +399,13 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="RQ2 paired analysis over replay outputs (offline).")
     parser.add_argument("replay_outputs", nargs="+", help="rq2_replay_records.json path(s) or glob(s).")
     parser.add_argument("--output", required=True, help="Output directory for CSVs + summary JSON.")
+    parser.add_argument(
+        "--bootstrap",
+        type=int,
+        default=10000,
+        help="Cluster-bootstrap draws for the 95%% CIs (default 10000; 0 disables).",
+    )
+    parser.add_argument("--seed", type=int, default=0, help="Bootstrap RNG seed (default 0).")
     args = parser.parse_args()
 
     paths: list[str] = []
@@ -250,7 +416,7 @@ def main() -> None:
         raise SystemExit("No replay output files matched the given path(s).")
 
     records = load_replay_records(paths)
-    result = analyze(records)
+    result = analyze(records, bootstrap_draws=args.bootstrap, bootstrap_seed=args.seed)
 
     out_dir = Path(args.output)
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -263,6 +429,15 @@ def main() -> None:
         "inputs": [str(p) for p in paths],
         "n_events": result["n_events"],
         "n_records": result["n_records"],
+        "bootstrap": (
+            {
+                "draws": args.bootstrap,
+                "seed": args.seed,
+                "method": "percentile bootstrap resampling run-level clusters (trace files) with replacement",
+            }
+            if args.bootstrap > 0
+            else None
+        ),
         "tests": result["tests"],
         "word_agreement": result["word_agreement"],
         "per_arm_rates": result["per_arm_rates"],
@@ -272,10 +447,23 @@ def main() -> None:
     print(f"Events: {result['n_events']}  records: {result['n_records']}")
     for contrast, test in result["tests"].items():
         clustered = test["clustered_by_run"]
-        print(
+        line = (
             f"  genuine-{contrast}: median diff (pooled) = {test['pooled_descriptives']['median']} "
             f"| clustered Wilcoxon p = {clustered['pvalue']} (n runs = {clustered['n']})"
         )
+        bootstrap = test.get("cluster_bootstrap")
+        if bootstrap:
+            median_ci = bootstrap["median_diff"]
+            hl_ci = bootstrap["hl_diff"]
+            mean_ci = bootstrap["mean_diff"]
+            rate_ci = bootstrap["word_identity_rate"]
+            line += (
+                f"\n    bootstrap 95% CI: HL diff {hl_ci['observed']} [{hl_ci['ci95_low']}, {hl_ci['ci95_high']}] "
+                f"| median diff [{median_ci['ci95_low']}, {median_ci['ci95_high']}] "
+                f"| mean diff {mean_ci['observed']} [{mean_ci['ci95_low']}, {mean_ci['ci95_high']}] "
+                f"| identity rate {rate_ci['observed']} [{rate_ci['ci95_low']}, {rate_ci['ci95_high']}]"
+            )
+        print(line)
     print(f"Wrote outputs to {out_dir}")
 
 

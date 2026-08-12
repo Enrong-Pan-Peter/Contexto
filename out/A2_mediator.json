@@ -2,6 +2,9 @@
   "traces": [
     "llm_only_api_1303_run1_20260729_081254.json",
     "llm_only_api_1303_run2_20260730_033814.json",
+    "llm_only_api_1303_run3_20260805_155703.json",
+    "llm_only_api_1303_run4_20260807_071819.json",
+    "llm_only_api_1303_run5_20260808_010834.json",
     "llm_only_api_1307_run1_20260722_215349.json",
     "llm_only_api_1307_run2_20260722_222740.json",
     "llm_only_api_1307_run3_20260723_041806.json",
@@ -10,9 +13,13 @@
     "llm_only_api_1319_run1_20260729_004304.json",
     "llm_only_api_1319_run2_20260729_173750.json",
     "llm_only_api_1319_run3_20260730_120250.json",
+    "llm_only_api_1319_run4_20260805_062210.json",
+    "llm_only_api_1319_run5_20260806_033327.json",
     "llm_only_api_1335_run1_20260731_173724.json",
     "llm_only_api_1335_run2_20260801_045932.json",
     "llm_only_api_1335_run3_20260801_202239.json",
+    "llm_only_api_1335_run4_20260805_011613.json",
+    "llm_only_api_1335_run5_20260806_065622.json",
     "llm_only_api_1372_run1_20260731_004939.json",
     "llm_only_api_1372_run2_20260731_014232.json",
     "llm_only_api_1372_run3_20260731_171453.json",
@@ -21,7 +28,7 @@
   ],
   "which_realized": "first_proposed",
   "glove_path": "data/glove.6B.300d.txt",
-  "runs_scored": 9,
+  "runs_scored": 10,
   "runs_skipped": [
     {
       "trace": "llm_only_api_1303_run1_20260729_081254.json",
@@ -29,6 +36,18 @@
     },
     {
       "trace": "llm_only_api_1303_run2_20260730_033814.json",
+      "reason": "unrecoverable_target"
+    },
+    {
+      "trace": "llm_only_api_1303_run3_20260805_155703.json",
+      "reason": "unrecoverable_target"
+    },
+    {
+      "trace": "llm_only_api_1303_run4_20260807_071819.json",
+      "reason": "unrecoverable_target"
+    },
+    {
+      "trace": "llm_only_api_1303_run5_20260808_010834.json",
       "reason": "unrecoverable_target"
     },
     {
@@ -40,11 +59,23 @@
       "reason": "unrecoverable_target"
     },
     {
+      "trace": "llm_only_api_1319_run4_20260805_062210.json",
+      "reason": "unrecoverable_target"
+    },
+    {
+      "trace": "llm_only_api_1319_run5_20260806_033327.json",
+      "reason": "unrecoverable_target"
+    },
+    {
       "trace": "llm_only_api_1335_run1_20260731_173724.json",
       "reason": "unrecoverable_target"
     },
     {
       "trace": "llm_only_api_1335_run2_20260801_045932.json",
+      "reason": "unrecoverable_target"
+    },
+    {
+      "trace": "llm_only_api_1335_run5_20260806_065622.json",
       "reason": "unrecoverable_target"
     },
     {
@@ -257,6 +288,34 @@
         }
       }
     },
+    "llm_only_api_1335_run4_20260805_011613.json": {
+      "method": "llm_only",
+      "game_number": 1335,
+      "target": "compass",
+      "target_source": "solved",
+      "provenance_hash": "bd9f2858283673a2",
+      "metrics": {
+        "which_realized": "first_proposed",
+        "words_total": 200,
+        "words_in_glove_vocab": 200,
+        "glove_vocab_coverage": 1.0,
+        "glove_vs_real": {
+          "rho": 0.6829865746643666,
+          "pvalue": 8.032852485813925e-29,
+          "n": 200
+        },
+        "closeness_vs_real": {
+          "rho": -0.10876777910566669,
+          "pvalue": 0.12524650614367744,
+          "n": 200
+        },
+        "closeness_vs_glove": {
+          "rho": -0.019385516611414192,
+          "pvalue": 0.7852684892013517,
+          "n": 200
+        }
+      }
+    },
     "llm_only_api_1372_run2_20260731_014232.json": {
       "method": "llm_only",
       "game_number": 1372,
@@ -315,23 +374,23 @@
     }
   },
   "pooled": {
-    "words_total": 967,
-    "words_in_glove_vocab": 967,
+    "words_total": 1167,
+    "words_in_glove_vocab": 1167,
     "glove_vocab_coverage": 1.0,
     "glove_vs_real": {
-      "rho": 0.7160842502528223,
-      "pvalue": 7.637965921273359e-153,
-      "n": 967
+      "rho": 0.7131632392931005,
+      "pvalue": 5.95912611771525e-182,
+      "n": 1167
     },
     "closeness_vs_real": {
-      "rho": -0.17086894069849964,
-      "pvalue": 8.995109010460357e-08,
-      "n": 967
+      "rho": -0.15050874128935102,
+      "pvalue": 2.397613040135705e-07,
+      "n": 1167
     },
     "closeness_vs_glove": {
-      "rho": -0.1875278198813945,
-      "pvalue": 4.199300873080635e-09,
-      "n": 967
+      "rho": -0.15783648792653085,
+      "pvalue": 5.9551568707272575e-08,
+      "n": 1167
     }
   }
 }

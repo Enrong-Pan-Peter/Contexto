@@ -1,0 +1,40 @@
+Job ID: 12067638
+Array task: 0
+Game: 1303
+Host: frnt142.frontenac.local
+Date: Sun Aug  9 16:38:23 EDT 2026
+
+===== nvidia-smi =====
+Sun Aug  9 16:38:23 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 610.57.04              KMD Version: 610.57.04     CUDA UMD Version: 13.3     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A30                     On  |   00000000:21:00.0 Off |                    0 |
+| N/A   23C    P0             49W /  165W |       0MiB /  24576MiB |     12%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   1  NVIDIA A30                     On  |   00000000:81:00.0 Off |                    0 |
+| N/A   19C    P0             25W /  165W |       0MiB /  24576MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+
+===== ollama --version =====
+ollama version is 0.32.1
+
+===== ollama list =====
+NAME          ID              SIZE      MODIFIED     
+gemma4:12b    4eb23ef187e2    7.6 GB    2 weeks ago     
+qwen3:14b     bdbd181c33f2    9.3 GB    6 weeks ago     
+qwen3:30b     ad815644918f    18 GB     2 months ago    
