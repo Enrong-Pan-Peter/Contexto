@@ -1,0 +1,4037 @@
+[
+  {
+    "generation": -1,
+    "event": "RUN_CONFIG",
+    "timestamp": "2026-08-13T16:30:19",
+    "details": {
+      "game": "api",
+      "solver": "llm",
+      "method": "ea_llm_self_adaptive",
+      "mode": "api",
+      "target": null,
+      "game_number": 1327,
+      "run_index": 1,
+      "game_embedding_path": null,
+      "solver_embedding_path": null,
+      "embedding_backend": null,
+      "vocabulary_size": null,
+      "alignment": "api_unknown",
+      "trace_schema_version": 3,
+      "instrumentation_provenance_hash": "bd9f2858283673a2",
+      "self_report": true,
+      "rationale_inheritance": true,
+      "max_generations": 50,
+      "llm_provider": "ollama",
+      "llm_model": "gemma4:12b",
+      "llm_workers": 4,
+      "initial_categories": 15,
+      "max_active_hypotheses": null,
+      "local_search_rank_threshold": 100,
+      "self_adaptive_initial_categories": 15,
+      "self_adaptive_mu": 15,
+      "self_adaptive_concentration": 50.0,
+      "self_adaptive_sigma_floor": 0.02,
+      "self_adaptive_sigma_mode": "frozen_uniform",
+      "self_adaptive_selection_mode": "tophalf",
+      "mapelites_grid_resolution": null,
+      "mapelites_mutations_per_gen": null,
+      "mapelites_crossovers_per_gen": null,
+      "mapelites_initial_categories": null,
+      "mapelites_concentration": null,
+      "mapelites_sigma_floor": null,
+      "mapelites_sigma_mode": null,
+      "mapelites_frozen_sigma": null,
+      "mapelites_ranked_context_k": null,
+      "rank_cache_enabled": true,
+      "enable_pivot": false,
+      "ea_llm_pivot_stall_no_improvement_generations": null,
+      "ea_llm_pivot_stall_close_rank_threshold": null,
+      "ea_llm_pivot_stall_close_generations_limit": null,
+      "ea_llm_pivot_max_attempts_per_run": null,
+      "ea_llm_pivot_candidate_words_per_operator": null,
+      "ea_llm_pivot_resolution_window": null,
+      "random_seed": 1
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:31:18",
+    "details": {
+      "word": "forest",
+      "rank": 7838,
+      "hypothesis": "nature",
+      "best_word": "forest",
+      "best_rank": 7838,
+      "total_guesses": 1
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:31:18",
+    "details": {
+      "word": "river",
+      "rank": 2373,
+      "hypothesis": "nature",
+      "best_word": "river",
+      "best_rank": 2373,
+      "total_guesses": 2
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:31:18",
+    "details": {
+      "word": "mountain",
+      "rank": 7698,
+      "hypothesis": "nature",
+      "best_word": "river",
+      "best_rank": 2373,
+      "total_guesses": 3
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:31:18",
+    "details": {
+      "word": "bread",
+      "rank": 12341,
+      "hypothesis": "food",
+      "best_word": "river",
+      "best_rank": 2373,
+      "total_guesses": 4
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:31:18",
+    "details": {
+      "word": "fruit",
+      "rank": 6449,
+      "hypothesis": "food",
+      "best_word": "river",
+      "best_rank": 2373,
+      "total_guesses": 5
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:31:22",
+    "details": {
+      "word": "water",
+      "rank": 6228,
+      "hypothesis": "food",
+      "best_word": "river",
+      "best_rank": 2373,
+      "total_guesses": 6
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:31:22",
+    "details": {
+      "word": "tiger",
+      "rank": 4020,
+      "hypothesis": "animals",
+      "best_word": "river",
+      "best_rank": 2373,
+      "total_guesses": 7
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:31:23",
+    "details": {
+      "word": "whale",
+      "rank": 24759,
+      "hypothesis": "animals",
+      "best_word": "river",
+      "best_rank": 2373,
+      "total_guesses": 8
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:31:24",
+    "details": {
+      "word": "eagle",
+      "rank": 4206,
+      "hypothesis": "animals",
+      "best_word": "river",
+      "best_rank": 2373,
+      "total_guesses": 9
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:31:24",
+    "details": {
+      "word": "chair",
+      "rank": 3568,
+      "hypothesis": "home",
+      "best_word": "river",
+      "best_rank": 2373,
+      "total_guesses": 10
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:31:24",
+    "details": {
+      "word": "table",
+      "rank": 4416,
+      "hypothesis": "home",
+      "best_word": "river",
+      "best_rank": 2373,
+      "total_guesses": 11
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:31:24",
+    "details": {
+      "word": "lamp",
+      "rank": 7188,
+      "hypothesis": "home",
+      "best_word": "river",
+      "best_rank": 2373,
+      "total_guesses": 12
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:31:24",
+    "details": {
+      "word": "shirt",
+      "rank": 4774,
+      "hypothesis": "clothing",
+      "best_word": "river",
+      "best_rank": 2373,
+      "total_guesses": 13
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:31:24",
+    "details": {
+      "word": "dress",
+      "rank": 1955,
+      "hypothesis": "clothing",
+      "best_word": "dress",
+      "best_rank": 1955,
+      "total_guesses": 14
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:31:24",
+    "details": {
+      "word": "shoe",
+      "rank": 3032,
+      "hypothesis": "clothing",
+      "best_word": "dress",
+      "best_rank": 1955,
+      "total_guesses": 15
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:31:24",
+    "details": {
+      "word": "rain",
+      "rank": 5805,
+      "hypothesis": "weather",
+      "best_word": "dress",
+      "best_rank": 1955,
+      "total_guesses": 16
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:31:24",
+    "details": {
+      "word": "wind",
+      "rank": 6872,
+      "hypothesis": "weather",
+      "best_word": "dress",
+      "best_rank": 1955,
+      "total_guesses": 17
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:31:24",
+    "details": {
+      "word": "snow",
+      "rank": 7707,
+      "hypothesis": "weather",
+      "best_word": "dress",
+      "best_rank": 1955,
+      "total_guesses": 18
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:31:24",
+    "details": {
+      "word": "book",
+      "rank": 653,
+      "hypothesis": "education",
+      "best_word": "book",
+      "best_rank": 653,
+      "total_guesses": 19
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:31:25",
+    "details": {
+      "word": "desk",
+      "rank": 6070,
+      "hypothesis": "education",
+      "best_word": "book",
+      "best_rank": 653,
+      "total_guesses": 20
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:31:26",
+    "details": {
+      "word": "pencil",
+      "rank": 12421,
+      "hypothesis": "education",
+      "best_word": "book",
+      "best_rank": 653,
+      "total_guesses": 21
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:31:26",
+    "details": {
+      "word": "soccer",
+      "rank": 5809,
+      "hypothesis": "sports",
+      "best_word": "book",
+      "best_rank": 653,
+      "total_guesses": 22
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:31:26",
+    "details": {
+      "word": "tennis",
+      "rank": 6913,
+      "hypothesis": "sports",
+      "best_word": "book",
+      "best_rank": 653,
+      "total_guesses": 23
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:31:26",
+    "details": {
+      "word": "golf",
+      "rank": 9191,
+      "hypothesis": "sports",
+      "best_word": "book",
+      "best_rank": 653,
+      "total_guesses": 24
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:31:26",
+    "details": {
+      "word": "hammer",
+      "rank": 8572,
+      "hypothesis": "tools",
+      "best_word": "book",
+      "best_rank": 653,
+      "total_guesses": 25
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:31:27",
+    "details": {
+      "word": "drill",
+      "rank": 19710,
+      "hypothesis": "tools",
+      "best_word": "book",
+      "best_rank": 653,
+      "total_guesses": 26
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:31:27",
+    "details": {
+      "word": "wrench",
+      "rank": 9436,
+      "hypothesis": "tools",
+      "best_word": "book",
+      "best_rank": 653,
+      "total_guesses": 27
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:31:27",
+    "details": {
+      "word": "planet",
+      "rank": 1528,
+      "hypothesis": "space",
+      "best_word": "book",
+      "best_rank": 653,
+      "total_guesses": 28
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:31:27",
+    "details": {
+      "word": "star",
+      "rank": 807,
+      "hypothesis": "space",
+      "best_word": "book",
+      "best_rank": 653,
+      "total_guesses": 29
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:31:27",
+    "details": {
+      "word": "moon",
+      "rank": 4870,
+      "hypothesis": "space",
+      "best_word": "book",
+      "best_rank": 653,
+      "total_guesses": 30
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:31:27",
+    "details": {
+      "word": "piano",
+      "rank": 3314,
+      "hypothesis": "music",
+      "best_word": "book",
+      "best_rank": 653,
+      "total_guesses": 31
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:31:28",
+    "details": {
+      "word": "guitar",
+      "rank": 2354,
+      "hypothesis": "music",
+      "best_word": "book",
+      "best_rank": 653,
+      "total_guesses": 32
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:31:29",
+    "details": {
+      "word": "flute",
+      "rank": 10216,
+      "hypothesis": "music",
+      "best_word": "book",
+      "best_rank": 653,
+      "total_guesses": 33
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:31:29",
+    "details": {
+      "word": "head",
+      "rank": 2676,
+      "hypothesis": "anatomy",
+      "best_word": "book",
+      "best_rank": 653,
+      "total_guesses": 34
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:31:29",
+    "details": {
+      "word": "hand",
+      "rank": 1241,
+      "hypothesis": "anatomy",
+      "best_word": "book",
+      "best_rank": 653,
+      "total_guesses": 35
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:31:29",
+    "details": {
+      "word": "heart",
+      "rank": 2725,
+      "hypothesis": "anatomy",
+      "best_word": "book",
+      "best_rank": 653,
+      "total_guesses": 36
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:31:29",
+    "details": {
+      "word": "car",
+      "rank": 998,
+      "hypothesis": "transportation",
+      "best_word": "book",
+      "best_rank": 653,
+      "total_guesses": 37
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:31:29",
+    "details": {
+      "word": "plane",
+      "rank": 3454,
+      "hypothesis": "transportation",
+      "best_word": "book",
+      "best_rank": 653,
+      "total_guesses": 38
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:31:29",
+    "details": {
+      "word": "train",
+      "rank": 2025,
+      "hypothesis": "transportation",
+      "best_word": "book",
+      "best_rank": 653,
+      "total_guesses": 39
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:31:29",
+    "details": {
+      "word": "street",
+      "rank": 1873,
+      "hypothesis": "urban",
+      "best_word": "book",
+      "best_rank": 653,
+      "total_guesses": 40
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:31:29",
+    "details": {
+      "word": "bridge",
+      "rank": 3717,
+      "hypothesis": "urban",
+      "best_word": "book",
+      "best_rank": 653,
+      "total_guesses": 41
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:31:30",
+    "details": {
+      "word": "tower",
+      "rank": 2928,
+      "hypothesis": "urban",
+      "best_word": "book",
+      "best_rank": 653,
+      "total_guesses": 42
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:31:31",
+    "details": {
+      "word": "flower",
+      "rank": 5113,
+      "hypothesis": "botany",
+      "best_word": "book",
+      "best_rank": 653,
+      "total_guesses": 43
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:31:31",
+    "details": {
+      "word": "grass",
+      "rank": 19038,
+      "hypothesis": "botany",
+      "best_word": "book",
+      "best_rank": 653,
+      "total_guesses": 44
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:31:31",
+    "details": {
+      "word": "tree",
+      "rank": 7479,
+      "hypothesis": "botany",
+      "best_word": "book",
+      "best_rank": 653,
+      "total_guesses": 45
+    }
+  },
+  {
+    "generation": 0,
+    "event": "INIT",
+    "timestamp": "2026-08-13T16:31:31",
+    "details": {
+      "hypotheses": [
+        {
+          "hypothesis_id": "215bab4d5a284f1da123da1e3c8e993d",
+          "category_name": "nature",
+          "description": "natural landscapes and environments",
+          "words_tried": {
+            "river": 2373,
+            "mountain": 7698,
+            "forest": 7838
+          },
+          "best_word": "river",
+          "best_rank": 2373,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "cf24affab57849bc92a33af977eea641",
+          "category_name": "food",
+          "description": "common food and drink items",
+          "words_tried": {
+            "water": 6228,
+            "fruit": 6449,
+            "bread": 12341
+          },
+          "best_word": "water",
+          "best_rank": 6228,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "8a09f7fb1f604299be6fb5f4e3534d62",
+          "category_name": "animals",
+          "description": "wildlife and various creatures",
+          "words_tried": {
+            "tiger": 4020,
+            "eagle": 4206,
+            "whale": 24759
+          },
+          "best_word": "tiger",
+          "best_rank": 4020,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "ac9006139c6b4594893c16a9426e03ad",
+          "category_name": "home",
+          "description": "household furniture and objects",
+          "words_tried": {
+            "chair": 3568,
+            "table": 4416,
+            "lamp": 7188
+          },
+          "best_word": "chair",
+          "best_rank": 3568,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "a010f00a4b624604a1a38c3805809c89",
+          "category_name": "clothing",
+          "description": "garments worn by people",
+          "words_tried": {
+            "dress": 1955,
+            "shoe": 3032,
+            "shirt": 4774
+          },
+          "best_word": "dress",
+          "best_rank": 1955,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "ae2f5f272f634638aa7e836323783bbb",
+          "category_name": "weather",
+          "description": "atmospheric conditions and events",
+          "words_tried": {
+            "rain": 5805,
+            "wind": 6872,
+            "snow": 7707
+          },
+          "best_word": "rain",
+          "best_rank": 5805,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "fe805e670b294f72a223791c89609c5b",
+          "category_name": "education",
+          "description": "items related to school and learning",
+          "words_tried": {
+            "book": 653,
+            "desk": 6070,
+            "pencil": 12421
+          },
+          "best_word": "book",
+          "best_rank": 653,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "50abbc5cae77421b91dfbe6db4ae7d06",
+          "category_name": "sports",
+          "description": "athletic activities and games",
+          "words_tried": {
+            "soccer": 5809,
+            "tennis": 6913,
+            "golf": 9191
+          },
+          "best_word": "soccer",
+          "best_rank": 5809,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "6b1d0378baba4222aa539d6976b48521",
+          "category_name": "tools",
+          "description": "instruments for building or repair",
+          "words_tried": {
+            "hammer": 8572,
+            "wrench": 9436,
+            "drill": 19710
+          },
+          "best_word": "hammer",
+          "best_rank": 8572,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "e0ba964369724fa5b5a0efb7d2e85cab",
+          "category_name": "space",
+          "description": "celestial bodies and cosmic items",
+          "words_tried": {
+            "star": 807,
+            "planet": 1528,
+            "moon": 4870
+          },
+          "best_word": "star",
+          "best_rank": 807,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "513a4132174746ed959fa706572b09c7",
+          "category_name": "music",
+          "description": "musical instruments and performances",
+          "words_tried": {
+            "guitar": 2354,
+            "piano": 3314,
+            "flute": 10216
+          },
+          "best_word": "guitar",
+          "best_rank": 2354,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "2e647cb9152b4823a7a05773635c10ae",
+          "category_name": "anatomy",
+          "description": "parts of the human body",
+          "words_tried": {
+            "hand": 1241,
+            "head": 2676,
+            "heart": 2725
+          },
+          "best_word": "hand",
+          "best_rank": 1241,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "798dec5972e4495db54283f1e944875b",
+          "category_name": "transportation",
+          "description": "modes of travel and vehicles",
+          "words_tried": {
+            "car": 998,
+            "train": 2025,
+            "plane": 3454
+          },
+          "best_word": "car",
+          "best_rank": 998,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "a0f721be06514467ab34d591ec9555e4",
+          "category_name": "urban",
+          "description": "features found in a city environment",
+          "words_tried": {
+            "street": 1873,
+            "tower": 2928,
+            "bridge": 3717
+          },
+          "best_word": "street",
+          "best_rank": 1873,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "4a22d40ef5ed42ddb887f013dcbe5dce",
+          "category_name": "botany",
+          "description": "types of plants and vegetation",
+          "words_tried": {
+            "flower": 5113,
+            "tree": 7479,
+            "grass": 19038
+          },
+          "best_word": "flower",
+          "best_rank": 5113,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        }
+      ],
+      "best_word": "book",
+      "best_rank": 653,
+      "total_guesses": 45
+    }
+  },
+  {
+    "generation": 0,
+    "event": "SIGMA_TRAJECTORY",
+    "timestamp": "2026-08-13T16:31:31",
+    "details": {
+      "mean_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "population_size": 15
+    }
+  },
+  {
+    "generation": 1,
+    "event": "CANDIDATES",
+    "timestamp": "2026-08-13T16:38:44",
+    "details": {
+      "count": 45,
+      "candidates": [
+        {
+          "hypothesis": "nature",
+          "word": "lake"
+        },
+        {
+          "hypothesis": "nature",
+          "word": "ocean"
+        },
+        {
+          "hypothesis": "nature",
+          "word": "valley"
+        },
+        {
+          "hypothesis": "food",
+          "word": "milk"
+        },
+        {
+          "hypothesis": "food",
+          "word": "juice"
+        },
+        {
+          "hypothesis": "food",
+          "word": "cheese"
+        },
+        {
+          "hypothesis": "animals",
+          "word": "lion"
+        },
+        {
+          "hypothesis": "animals",
+          "word": "wolf"
+        },
+        {
+          "hypothesis": "animals",
+          "word": "bear"
+        },
+        {
+          "hypothesis": "home",
+          "word": "sofa"
+        },
+        {
+          "hypothesis": "home",
+          "word": "house"
+        },
+        {
+          "hypothesis": "home",
+          "word": "bed"
+        },
+        {
+          "hypothesis": "clothing",
+          "word": "pants"
+        },
+        {
+          "hypothesis": "clothing",
+          "word": "coat"
+        },
+        {
+          "hypothesis": "clothing",
+          "word": "hat"
+        },
+        {
+          "hypothesis": "weather",
+          "word": "storm"
+        },
+        {
+          "hypothesis": "weather",
+          "word": "cloud"
+        },
+        {
+          "hypothesis": "weather",
+          "word": "humidity"
+        },
+        {
+          "hypothesis": "education",
+          "word": "school"
+        },
+        {
+          "hypothesis": "education",
+          "word": "student"
+        },
+        {
+          "hypothesis": "education",
+          "word": "teacher"
+        },
+        {
+          "hypothesis": "sports",
+          "word": "baseball"
+        },
+        {
+          "hypothesis": "sports",
+          "word": "basketball"
+        },
+        {
+          "hypothesis": "sports",
+          "word": "hockey"
+        },
+        {
+          "hypothesis": "tools",
+          "word": "saw"
+        },
+        {
+          "hypothesis": "tools",
+          "word": "pliers"
+        },
+        {
+          "hypothesis": "tools",
+          "word": "chisel"
+        },
+        {
+          "hypothesis": "space",
+          "word": "galaxy"
+        },
+        {
+          "hypothesis": "space",
+          "word": "universe"
+        },
+        {
+          "hypothesis": "space",
+          "word": "cosmos"
+        },
+        {
+          "hypothesis": "music",
+          "word": "song"
+        },
+        {
+          "hypothesis": "music",
+          "word": "concert"
+        },
+        {
+          "hypothesis": "music",
+          "word": "melody"
+        },
+        {
+          "hypothesis": "anatomy",
+          "word": "body"
+        },
+        {
+          "hypothesis": "anatomy",
+          "word": "bone"
+        },
+        {
+          "hypothesis": "anatomy",
+          "word": "organ"
+        },
+        {
+          "hypothesis": "transportation",
+          "word": "bus"
+        },
+        {
+          "hypothesis": "transportation",
+          "word": "truck"
+        },
+        {
+          "hypothesis": "transportation",
+          "word": "ship"
+        },
+        {
+          "hypothesis": "urban",
+          "word": "city"
+        },
+        {
+          "hypothesis": "urban",
+          "word": "building"
+        },
+        {
+          "hypothesis": "urban",
+          "word": "subway"
+        },
+        {
+          "hypothesis": "botany",
+          "word": "plant"
+        },
+        {
+          "hypothesis": "botany",
+          "word": "leaf"
+        },
+        {
+          "hypothesis": "botany",
+          "word": "seed"
+        }
+      ]
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:38:44",
+    "details": {
+      "word": "lake",
+      "rank": 7693,
+      "hypothesis": "nature",
+      "best_word": "book",
+      "best_rank": 653,
+      "total_guesses": 46
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:38:44",
+    "details": {
+      "word": "ocean",
+      "rank": 4740,
+      "hypothesis": "nature",
+      "best_word": "book",
+      "best_rank": 653,
+      "total_guesses": 47
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:38:44",
+    "details": {
+      "word": "valley",
+      "rank": 2953,
+      "hypothesis": "nature",
+      "best_word": "book",
+      "best_rank": 653,
+      "total_guesses": 48
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:38:44",
+    "details": {
+      "word": "milk",
+      "rank": 9146,
+      "hypothesis": "food",
+      "best_word": "book",
+      "best_rank": 653,
+      "total_guesses": 49
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:38:45",
+    "details": {
+      "word": "juice",
+      "rank": 13957,
+      "hypothesis": "food",
+      "best_word": "book",
+      "best_rank": 653,
+      "total_guesses": 50
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:38:45",
+    "details": {
+      "word": "cheese",
+      "rank": 13615,
+      "hypothesis": "food",
+      "best_word": "book",
+      "best_rank": 653,
+      "total_guesses": 51
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:38:45",
+    "details": {
+      "word": "lion",
+      "rank": 11472,
+      "hypothesis": "animals",
+      "best_word": "book",
+      "best_rank": 653,
+      "total_guesses": 52
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:38:46",
+    "details": {
+      "word": "wolf",
+      "rank": 9015,
+      "hypothesis": "animals",
+      "best_word": "book",
+      "best_rank": 653,
+      "total_guesses": 53
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:38:47",
+    "details": {
+      "word": "bear",
+      "rank": 4399,
+      "hypothesis": "animals",
+      "best_word": "book",
+      "best_rank": 653,
+      "total_guesses": 54
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:38:47",
+    "details": {
+      "word": "sofa",
+      "rank": 11955,
+      "hypothesis": "home",
+      "best_word": "book",
+      "best_rank": 653,
+      "total_guesses": 55
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:38:47",
+    "details": {
+      "word": "house",
+      "rank": 1473,
+      "hypothesis": "home",
+      "best_word": "book",
+      "best_rank": 653,
+      "total_guesses": 56
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:38:47",
+    "details": {
+      "word": "bed",
+      "rank": 10638,
+      "hypothesis": "home",
+      "best_word": "book",
+      "best_rank": 653,
+      "total_guesses": 57
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:38:47",
+    "details": {
+      "word": "pants",
+      "rank": 9883,
+      "hypothesis": "clothing",
+      "best_word": "book",
+      "best_rank": 653,
+      "total_guesses": 58
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:38:47",
+    "details": {
+      "word": "coat",
+      "rank": 7396,
+      "hypothesis": "clothing",
+      "best_word": "book",
+      "best_rank": 653,
+      "total_guesses": 59
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:38:47",
+    "details": {
+      "word": "hat",
+      "rank": 1249,
+      "hypothesis": "clothing",
+      "best_word": "book",
+      "best_rank": 653,
+      "total_guesses": 60
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:38:47",
+    "details": {
+      "word": "storm",
+      "rank": 4480,
+      "hypothesis": "weather",
+      "best_word": "book",
+      "best_rank": 653,
+      "total_guesses": 61
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:38:47",
+    "details": {
+      "word": "cloud",
+      "rank": 4551,
+      "hypothesis": "weather",
+      "best_word": "book",
+      "best_rank": 653,
+      "total_guesses": 62
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:38:47",
+    "details": {
+      "word": "humidity",
+      "rank": 18798,
+      "hypothesis": "weather",
+      "best_word": "book",
+      "best_rank": 653,
+      "total_guesses": 63
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:38:47",
+    "details": {
+      "word": "school",
+      "rank": 1354,
+      "hypothesis": "education",
+      "best_word": "book",
+      "best_rank": 653,
+      "total_guesses": 64
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:38:47",
+    "details": {
+      "word": "student",
+      "rank": 2104,
+      "hypothesis": "education",
+      "best_word": "book",
+      "best_rank": 653,
+      "total_guesses": 65
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:38:47",
+    "details": {
+      "word": "teacher",
+      "rank": 3867,
+      "hypothesis": "education",
+      "best_word": "book",
+      "best_rank": 653,
+      "total_guesses": 66
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:38:47",
+    "details": {
+      "word": "baseball",
+      "rank": 182,
+      "hypothesis": "sports",
+      "best_word": "baseball",
+      "best_rank": 182,
+      "total_guesses": 67
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:38:47",
+    "details": {
+      "word": "basketball",
+      "rank": 3546,
+      "hypothesis": "sports",
+      "best_word": "baseball",
+      "best_rank": 182,
+      "total_guesses": 68
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:38:47",
+    "details": {
+      "word": "hockey",
+      "rank": 4033,
+      "hypothesis": "sports",
+      "best_word": "baseball",
+      "best_rank": 182,
+      "total_guesses": 69
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:38:47",
+    "details": {
+      "word": "saw",
+      "rank": 1011,
+      "hypothesis": "tools",
+      "best_word": "baseball",
+      "best_rank": 182,
+      "total_guesses": 70
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:38:47",
+    "details": {
+      "word": "pliers",
+      "rank": 70878,
+      "hypothesis": "tools",
+      "best_word": "baseball",
+      "best_rank": 182,
+      "total_guesses": 71
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:38:48",
+    "details": {
+      "word": "chisel",
+      "rank": 24934,
+      "hypothesis": "tools",
+      "best_word": "baseball",
+      "best_rank": 182,
+      "total_guesses": 72
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:38:49",
+    "details": {
+      "word": "galaxy",
+      "rank": 3420,
+      "hypothesis": "space",
+      "best_word": "baseball",
+      "best_rank": 182,
+      "total_guesses": 73
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:38:50",
+    "details": {
+      "word": "universe",
+      "rank": 799,
+      "hypothesis": "space",
+      "best_word": "baseball",
+      "best_rank": 182,
+      "total_guesses": 74
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:38:50",
+    "details": {
+      "word": "cosmos",
+      "rank": 6730,
+      "hypothesis": "space",
+      "best_word": "baseball",
+      "best_rank": 182,
+      "total_guesses": 75
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:38:50",
+    "details": {
+      "word": "song",
+      "rank": 176,
+      "hypothesis": "music",
+      "best_word": "song",
+      "best_rank": 176,
+      "total_guesses": 76
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:38:50",
+    "details": {
+      "word": "concert",
+      "rank": 2169,
+      "hypothesis": "music",
+      "best_word": "song",
+      "best_rank": 176,
+      "total_guesses": 77
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:38:50",
+    "details": {
+      "word": "melody",
+      "rank": 1744,
+      "hypothesis": "music",
+      "best_word": "song",
+      "best_rank": 176,
+      "total_guesses": 78
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:38:50",
+    "details": {
+      "word": "body",
+      "rank": 5014,
+      "hypothesis": "anatomy",
+      "best_word": "song",
+      "best_rank": 176,
+      "total_guesses": 79
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:38:51",
+    "details": {
+      "word": "bone",
+      "rank": 6184,
+      "hypothesis": "anatomy",
+      "best_word": "song",
+      "best_rank": 176,
+      "total_guesses": 80
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:38:52",
+    "details": {
+      "word": "organ",
+      "rank": 7440,
+      "hypothesis": "anatomy",
+      "best_word": "song",
+      "best_rank": 176,
+      "total_guesses": 81
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:38:52",
+    "details": {
+      "word": "bus",
+      "rank": 4335,
+      "hypothesis": "transportation",
+      "best_word": "song",
+      "best_rank": 176,
+      "total_guesses": 82
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:38:52",
+    "details": {
+      "word": "truck",
+      "rank": 5570,
+      "hypothesis": "transportation",
+      "best_word": "song",
+      "best_rank": 176,
+      "total_guesses": 83
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:38:52",
+    "details": {
+      "word": "ship",
+      "rank": 1476,
+      "hypothesis": "transportation",
+      "best_word": "song",
+      "best_rank": 176,
+      "total_guesses": 84
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:38:52",
+    "details": {
+      "word": "city",
+      "rank": 286,
+      "hypothesis": "urban",
+      "best_word": "song",
+      "best_rank": 176,
+      "total_guesses": 85
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:38:52",
+    "details": {
+      "word": "building",
+      "rank": 445,
+      "hypothesis": "urban",
+      "best_word": "song",
+      "best_rank": 176,
+      "total_guesses": 86
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:38:53",
+    "details": {
+      "word": "subway",
+      "rank": 8023,
+      "hypothesis": "urban",
+      "best_word": "song",
+      "best_rank": 176,
+      "total_guesses": 87
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:38:53",
+    "details": {
+      "word": "plant",
+      "rank": 6709,
+      "hypothesis": "botany",
+      "best_word": "song",
+      "best_rank": 176,
+      "total_guesses": 88
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:38:54",
+    "details": {
+      "word": "leaf",
+      "rank": 11065,
+      "hypothesis": "botany",
+      "best_word": "song",
+      "best_rank": 176,
+      "total_guesses": 89
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:38:55",
+    "details": {
+      "word": "seed",
+      "rank": 11930,
+      "hypothesis": "botany",
+      "best_word": "song",
+      "best_rank": 176,
+      "total_guesses": 90
+    }
+  },
+  {
+    "generation": 1,
+    "event": "SELECT",
+    "timestamp": "2026-08-13T16:38:55",
+    "details": {
+      "kept": [
+        "music",
+        "sports",
+        "urban",
+        "education",
+        "space"
+      ],
+      "discarded": [
+        "transportation",
+        "tools",
+        "anatomy",
+        "clothing",
+        "home",
+        "nature",
+        "animals",
+        "weather",
+        "botany",
+        "food"
+      ],
+      "elite": "music",
+      "max_active_hypotheses": 5,
+      "best_word": "song",
+      "best_rank": 176,
+      "total_guesses": 90
+    }
+  },
+  {
+    "generation": 1,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-08-13T16:39:49",
+    "details": {
+      "parent_id": "513a4132174746ed959fa706572b09c7",
+      "child_id": "bc9a37e388d7446cac117dbe167bd33c",
+      "parent_rank": 176,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "performing arts",
+      "sampled_op": "ml_mutation",
+      "method": "self_adaptive",
+      "self_report": {
+        "predicted_closeness": 0.7,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "song"
+          ],
+          "reason": "The rank of 'song' suggests a broad interest in performance and entertainment; performing arts is an adjacent category that includes music as one of its components."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"name\": \"performing arts\", \"description\": \"theatrical productions and dance performances\", \"words\": [\"dance\", \"drama\", \"opera\"], \"basis_words\": [\"song\"], \"reason\": \"The rank of 'song' suggests a broad interest in performance and entertainment; performing arts is an adjacent category that includes music as one of its components.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.7}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"music\".\nDescription: musical instruments and performances\nResults so far in this hypothesis: {\"concert\": 2169, \"flute\": 10216, \"guitar\": 2354, \"melody\": 1744, \"piano\": 3314, \"song\": 176}\nBest word so far: \"song\" with rank 176.\n\nMake a MEDIUM-LARGE mutation: produce a child hypothesis in an ADJACENT but\ndistinct category that could still plausibly contain the hidden target given\n\"song\"'s rank. The child must NOT be a sub-category of \"music\" - it\nshould sit alongside \"music\" in semantic space, not underneath it.\n\nFor example, if the parent is \"types of plants\" and the best word is \"shrub\",\nan adjacent category could be \"plant descriptors\", \"botanical terminology\",\n\"growth habits\", or \"ecological roles\".\n\nSuggest one adjacent hypothesis. Include exactly 3 starter words that have\nnot already been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"baseball\", \"basketball\", \"bear\", \"bed\", \"body\", \"bone\", \"book\", \"bread\", \"bridge\", \"building\", \"bus\", \"car\", \"chair\", \"cheese\", \"chisel\", \"city\", \"cloud\", \"coat\", \"concert\", \"cosmos\", \"desk\", \"dress\", \"drill\", \"eagle\", \"flower\", \"flute\", \"forest\", \"fruit\", \"galaxy\", \"golf\", \"grass\", \"guitar\", \"hammer\", \"hand\", \"hat\", \"head\", \"heart\", \"hockey\", \"house\", \"humidity\", \"juice\", \"lake\", \"lamp\", \"leaf\", \"lion\", \"melody\", \"milk\", \"moon\", \"mountain\", \"ocean\", \"organ\", \"pants\", \"pencil\", \"piano\", \"plane\", \"planet\", \"plant\", \"pliers\", \"rain\", \"river\", \"saw\", \"school\", \"seed\", \"ship\", \"shirt\", \"shoe\", \"snow\", \"soccer\", \"sofa\", \"song\", \"star\", \"storm\", \"street\", \"student\", \"subway\", \"table\", \"teacher\", \"tennis\", \"tiger\", \"tower\", \"train\", \"tree\", \"truck\", \"universe\", \"valley\", \"water\", \"whale\", \"wind\", \"wolf\", \"wrench\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"category name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:39:52",
+    "details": {
+      "word": "dance",
+      "rank": 856,
+      "hypothesis": "performing arts",
+      "best_word": "song",
+      "best_rank": 176,
+      "total_guesses": 91
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:39:53",
+    "details": {
+      "word": "drama",
+      "rank": 546,
+      "hypothesis": "performing arts",
+      "best_word": "song",
+      "best_rank": 176,
+      "total_guesses": 92
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:39:53",
+    "details": {
+      "word": "opera",
+      "rank": 1061,
+      "hypothesis": "performing arts",
+      "best_word": "song",
+      "best_rank": 176,
+      "total_guesses": 93
+    }
+  },
+  {
+    "generation": 1,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-08-13T16:41:14",
+    "details": {
+      "parent_id": "50abbc5cae77421b91dfbe6db4ae7d06",
+      "child_id": "b89608808b714a06926c1f7fa1cdaac5",
+      "parent_rank": 182,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "outdoor recreation",
+      "sampled_op": "l_mutation",
+      "method": "self_adaptive",
+      "self_report": {
+        "predicted_closeness": 0.6,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "sports"
+          ],
+          "reason": "Moves away from organized team sports while maintaining the outdoor, physical activity component of baseball."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"name\": \"outdoor recreation\", \"description\": \"activities and hobbies performed outdoors or in nature\", \"words\": [\"hike\", \"camp\", \"trail\"], \"basis_words\": [\"sports\"], \"reason\": \"Moves away from organized team sports while maintaining the outdoor, physical activity component of baseball.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.6}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"sports\".\nDescription: athletic activities and games\nBest word so far: \"baseball\" with rank 182.\nOther active categories already being explored: [\"education\", \"sports\", \"space\", \"music\", \"urban\", \"performing arts\"]\n\nMake a LARGE mutation: produce a child hypothesis in a broad, semantically\nsubstantial new direction that is unlike \"sports\" and unlike the other active\ncategories above. The goal is to escape the current semantic region and open\nup unexplored territory, while staying plausibly relevant given \"baseball\"'s\nrank - lower ranks mean the target is closer to \"baseball\", so the jump\nmust remain in the same broad semantic area even when reframed.\n\nFor example, if the parent is \"types of plants\" and \"shrub\" ranks 50, a large\nmutation could be \"outdoor environments\" or \"rural landscape features\" -\nclearly outside the plant taxonomy but still in a plausible neighborhood for\na target close to \"shrub\".\n\nSuggest one new hypothesis. Include exactly 3 starter words that have not\nalready been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"baseball\", \"basketball\", \"bear\", \"bed\", \"body\", \"bone\", \"book\", \"bread\", \"bridge\", \"building\", \"bus\", \"car\", \"chair\", \"cheese\", \"chisel\", \"city\", \"cloud\", \"coat\", \"concert\", \"cosmos\", \"dance\", \"desk\", \"drama\", \"dress\", \"drill\", \"eagle\", \"flower\", \"flute\", \"forest\", \"fruit\", \"galaxy\", \"golf\", \"grass\", \"guitar\", \"hammer\", \"hand\", \"hat\", \"head\", \"heart\", \"hockey\", \"house\", \"humidity\", \"juice\", \"lake\", \"lamp\", \"leaf\", \"lion\", \"melody\", \"milk\", \"moon\", \"mountain\", \"ocean\", \"opera\", \"organ\", \"pants\", \"pencil\", \"piano\", \"plane\", \"planet\", \"plant\", \"pliers\", \"rain\", \"river\", \"saw\", \"school\", \"seed\", \"ship\", \"shirt\", \"shoe\", \"snow\", \"soccer\", \"sofa\", \"song\", \"star\", \"storm\", \"street\", \"student\", \"subway\", \"table\", \"teacher\", \"tennis\", \"tiger\", \"tower\", \"train\", \"tree\", \"truck\", \"universe\", \"valley\", \"water\", \"whale\", \"wind\", \"wolf\", \"wrench\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"direction name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:41:18",
+    "details": {
+      "word": "hike",
+      "rank": 11465,
+      "hypothesis": "outdoor recreation",
+      "best_word": "song",
+      "best_rank": 176,
+      "total_guesses": 94
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:41:18",
+    "details": {
+      "word": "camp",
+      "rank": 2618,
+      "hypothesis": "outdoor recreation",
+      "best_word": "song",
+      "best_rank": 176,
+      "total_guesses": 95
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:41:19",
+    "details": {
+      "word": "trail",
+      "rank": 4705,
+      "hypothesis": "outdoor recreation",
+      "best_word": "song",
+      "best_rank": 176,
+      "total_guesses": 96
+    }
+  },
+  {
+    "generation": 1,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-08-13T16:42:33",
+    "details": {
+      "parent_id": "a0f721be06514467ab34d591ec9555e4",
+      "child_id": "d6909deb6af444a980ff6e9cb6b3304d",
+      "parent_rank": 286,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "metropolitan",
+      "sampled_op": "s_mutation",
+      "method": "self_adaptive",
+      "self_report": {
+        "predicted_closeness": 0.8,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "city",
+            "building"
+          ],
+          "reason": "Refines the broad 'urban' concept by focusing on specific metropolitan designations and subdivisions."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"name\": \"metropolitan\", \"description\": \"refining urban to metropolitan areas and city divisions\", \"words\": [\"metropolis\", \"district\", \"borough\"], \"basis_words\": [\"city\", \"building\"], \"reason\": \"Refines the broad 'urban' concept by focusing on specific metropolitan designations and subdivisions.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.8}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"urban\".\nDescription: features found in a city environment\nResults so far in this hypothesis: {\"bridge\": 3717, \"building\": 445, \"city\": 286, \"street\": 1873, \"subway\": 8023, \"tower\": 2928}\nBest word so far: \"city\" with rank 286.\n\nMake a SMALL mutation: produce a child hypothesis that stays in the same\nconceptual neighborhood as \"urban\" but narrows or refines it. The new starter\nwords should be close semantic neighbors of \"city\" - synonyms, common\ndescriptors, or words that frequently co-occur with it.\n\nFor example, if the parent is \"types of plants\" and the best word is \"shrub\",\na small mutation could be \"woody plants\" with starters like bush, hedge, thicket.\n\nSuggest one refined hypothesis. Include exactly 3 starter words that have not\nalready been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"baseball\", \"basketball\", \"bear\", \"bed\", \"body\", \"bone\", \"book\", \"bread\", \"bridge\", \"building\", \"bus\", \"camp\", \"car\", \"chair\", \"cheese\", \"chisel\", \"city\", \"cloud\", \"coat\", \"concert\", \"cosmos\", \"dance\", \"desk\", \"drama\", \"dress\", \"drill\", \"eagle\", \"flower\", \"flute\", \"forest\", \"fruit\", \"galaxy\", \"golf\", \"grass\", \"guitar\", \"hammer\", \"hand\", \"hat\", \"head\", \"heart\", \"hike\", \"hockey\", \"house\", \"humidity\", \"juice\", \"lake\", \"lamp\", \"leaf\", \"lion\", \"melody\", \"milk\", \"moon\", \"mountain\", \"ocean\", \"opera\", \"organ\", \"pants\", \"pencil\", \"piano\", \"plane\", \"planet\", \"plant\", \"pliers\", \"rain\", \"river\", \"saw\", \"school\", \"seed\", \"ship\", \"shirt\", \"shoe\", \"snow\", \"soccer\", \"sofa\", \"song\", \"star\", \"storm\", \"street\", \"student\", \"subway\", \"table\", \"teacher\", \"tennis\", \"tiger\", \"tower\", \"trail\", \"train\", \"tree\", \"truck\", \"universe\", \"valley\", \"water\", \"whale\", \"wind\", \"wolf\", \"wrench\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"direction name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:42:37",
+    "details": {
+      "word": "metropolis",
+      "rank": 1338,
+      "hypothesis": "metropolitan",
+      "best_word": "song",
+      "best_rank": 176,
+      "total_guesses": 97
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:42:38",
+    "details": {
+      "word": "district",
+      "rank": 2872,
+      "hypothesis": "metropolitan",
+      "best_word": "song",
+      "best_rank": 176,
+      "total_guesses": 98
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:42:39",
+    "details": {
+      "word": "borough",
+      "rank": 15345,
+      "hypothesis": "metropolitan",
+      "best_word": "song",
+      "best_rank": 176,
+      "total_guesses": 99
+    }
+  },
+  {
+    "generation": 1,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-08-13T16:43:30",
+    "details": {
+      "parent_id": "fe805e670b294f72a223791c89609c5b",
+      "child_id": "6e9dc43ff15a49d0b622b83fca3d0817",
+      "parent_rank": 653,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "historical records",
+      "sampled_op": "l_mutation",
+      "method": "self_adaptive",
+      "self_report": {
+        "predicted_closeness": 0.7,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "book"
+          ],
+          "reason": "This moves from the process of education to the preservation of information, exploring a different facet of knowledge while remaining in the same semantic sphere as 'book'."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"name\": \"historical records\", \"description\": \"items related to historical events and preserved information\", \"words\": [\"history\", \"record\", \"archive\"], \"basis_words\": [\"book\"], \"reason\": \"This moves from the process of education to the preservation of information, exploring a different facet of knowledge while remaining in the same semantic sphere as 'book'.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.7}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"education\".\nDescription: items related to school and learning\nBest word so far: \"book\" with rank 653.\nOther active categories already being explored: [\"education\", \"sports\", \"space\", \"music\", \"urban\", \"performing arts\", \"outdoor recreation\", \"metropolitan\"]\n\nMake a LARGE mutation: produce a child hypothesis in a broad, semantically\nsubstantial new direction that is unlike \"education\" and unlike the other active\ncategories above. The goal is to escape the current semantic region and open\nup unexplored territory, while staying plausibly relevant given \"book\"'s\nrank - lower ranks mean the target is closer to \"book\", so the jump\nmust remain in the same broad semantic area even when reframed.\n\nFor example, if the parent is \"types of plants\" and \"shrub\" ranks 50, a large\nmutation could be \"outdoor environments\" or \"rural landscape features\" -\nclearly outside the plant taxonomy but still in a plausible neighborhood for\na target close to \"shrub\".\n\nSuggest one new hypothesis. Include exactly 3 starter words that have not\nalready been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"baseball\", \"basketball\", \"bear\", \"bed\", \"body\", \"bone\", \"book\", \"borough\", \"bread\", \"bridge\", \"building\", \"bus\", \"camp\", \"car\", \"chair\", \"cheese\", \"chisel\", \"city\", \"cloud\", \"coat\", \"concert\", \"cosmos\", \"dance\", \"desk\", \"district\", \"drama\", \"dress\", \"drill\", \"eagle\", \"flower\", \"flute\", \"forest\", \"fruit\", \"galaxy\", \"golf\", \"grass\", \"guitar\", \"hammer\", \"hand\", \"hat\", \"head\", \"heart\", \"hike\", \"hockey\", \"house\", \"humidity\", \"juice\", \"lake\", \"lamp\", \"leaf\", \"lion\", \"melody\", \"metropolis\", \"milk\", \"moon\", \"mountain\", \"ocean\", \"opera\", \"organ\", \"pants\", \"pencil\", \"piano\", \"plane\", \"planet\", \"plant\", \"pliers\", \"rain\", \"river\", \"saw\", \"school\", \"seed\", \"ship\", \"shirt\", \"shoe\", \"snow\", \"soccer\", \"sofa\", \"song\", \"star\", \"storm\", \"street\", \"student\", \"subway\", \"table\", \"teacher\", \"tennis\", \"tiger\", \"tower\", \"trail\", \"train\", \"tree\", \"truck\", \"universe\", \"valley\", \"water\", \"whale\", \"wind\", \"wolf\", \"wrench\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"direction name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:43:30",
+    "details": {
+      "word": "history",
+      "rank": 5,
+      "hypothesis": "historical records",
+      "best_word": "history",
+      "best_rank": 5,
+      "total_guesses": 100
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:43:34",
+    "details": {
+      "word": "record",
+      "rank": 107,
+      "hypothesis": "historical records",
+      "best_word": "history",
+      "best_rank": 5,
+      "total_guesses": 101
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:43:34",
+    "details": {
+      "word": "archive",
+      "rank": 1536,
+      "hypothesis": "historical records",
+      "best_word": "history",
+      "best_rank": 5,
+      "total_guesses": 102
+    }
+  },
+  {
+    "generation": 1,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-08-13T16:44:18",
+    "details": {
+      "parent_id": "e0ba964369724fa5b5a0efb7d2e85cab",
+      "child_id": "b45c377d445b48999b86e9525600a534",
+      "parent_rank": 799,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "physical science",
+      "sampled_op": "m_mutation",
+      "method": "self_adaptive",
+      "self_report": {
+        "predicted_closeness": 0.7,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "universe"
+          ],
+          "reason": "shifts from looking at astronomical objects to the fundamental physics and components that define the universe's structure."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"name\": \"physical science\", \"description\": \"the physical properties and forces of matter in the universe\", \"words\": [\"matter\", \"gravity\", \"energy\"], \"basis_words\": [\"universe\"], \"reason\": \"shifts from looking at astronomical objects to the fundamental physics and components that define the universe's structure.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.7}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"space\".\nDescription: celestial bodies and cosmic items\nResults so far in this hypothesis: {\"cosmos\": 6730, \"galaxy\": 3420, \"moon\": 4870, \"planet\": 1528, \"star\": 807, \"universe\": 799}\nBest word so far: \"universe\" with rank 799.\n\nMake a MEDIUM mutation: produce a child hypothesis that reinterprets why\n\"universe\" might have scored well, or shifts to a related sense, lexical\nregister, or part of speech. The child should still be semantically anchored\nto \"universe\" but approach it from a clearly different angle than \"space\".\n\nFor example, if the parent is \"food\" and the best word is \"bite\", a medium\nmutation could be \"animals that bite\", \"physical sensations from biting\", or\n\"clinical terms for biting and chewing\" - each treats \"bite\" through a\ndifferent lens.\n\nSuggest one reframed hypothesis. Include exactly 3 starter words that have\nnot already been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"archive\", \"baseball\", \"basketball\", \"bear\", \"bed\", \"body\", \"bone\", \"book\", \"borough\", \"bread\", \"bridge\", \"building\", \"bus\", \"camp\", \"car\", \"chair\", \"cheese\", \"chisel\", \"city\", \"cloud\", \"coat\", \"concert\", \"cosmos\", \"dance\", \"desk\", \"district\", \"drama\", \"dress\", \"drill\", \"eagle\", \"flower\", \"flute\", \"forest\", \"fruit\", \"galaxy\", \"golf\", \"grass\", \"guitar\", \"hammer\", \"hand\", \"hat\", \"head\", \"heart\", \"hike\", \"history\", \"hockey\", \"house\", \"humidity\", \"juice\", \"lake\", \"lamp\", \"leaf\", \"lion\", \"melody\", \"metropolis\", \"milk\", \"moon\", \"mountain\", \"ocean\", \"opera\", \"organ\", \"pants\", \"pencil\", \"piano\", \"plane\", \"planet\", \"plant\", \"pliers\", \"rain\", \"record\", \"river\", \"saw\", \"school\", \"seed\", \"ship\", \"shirt\", \"shoe\", \"snow\", \"soccer\", \"sofa\", \"song\", \"star\", \"storm\", \"street\", \"student\", \"subway\", \"table\", \"teacher\", \"tennis\", \"tiger\", \"tower\", \"trail\", \"train\", \"tree\", \"truck\", \"universe\", \"valley\", \"water\", \"whale\", \"wind\", \"wolf\", \"wrench\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"direction name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:44:22",
+    "details": {
+      "word": "matter",
+      "rank": 609,
+      "hypothesis": "physical science",
+      "best_word": "history",
+      "best_rank": 5,
+      "total_guesses": 103
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:44:22",
+    "details": {
+      "word": "gravity",
+      "rank": 10833,
+      "hypothesis": "physical science",
+      "best_word": "history",
+      "best_rank": 5,
+      "total_guesses": 104
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:44:23",
+    "details": {
+      "word": "energy",
+      "rank": 3992,
+      "hypothesis": "physical science",
+      "best_word": "history",
+      "best_rank": 5,
+      "total_guesses": 105
+    }
+  },
+  {
+    "generation": 1,
+    "event": "MUTATE",
+    "timestamp": "2026-08-13T16:44:23",
+    "details": {
+      "method": "self_adaptive",
+      "children": [
+        {
+          "hypothesis_id": "bc9a37e388d7446cac117dbe167bd33c",
+          "category_name": "performing arts",
+          "description": "theatrical productions and dance performances",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "music",
+          "parent_id": "513a4132174746ed959fa706572b09c7",
+          "origin": "self_adaptive_ml_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "self_report": {
+            "predicted_closeness": 0.7,
+            "predicted_closeness_clamped": false,
+            "predicted_bucket": "top100",
+            "rationale": {
+              "basis_words": [
+                "song"
+              ],
+              "reason": "The rank of 'song' suggests a broad interest in performance and entertainment; performing arts is an adjacent category that includes music as one of its components."
+            },
+            "self_report_parse_failed": false,
+            "self_report_raw": "{\"name\": \"performing arts\", \"description\": \"theatrical productions and dance performances\", \"words\": [\"dance\", \"drama\", \"opera\"], \"basis_words\": [\"song\"], \"reason\": \"The rank of 'song' suggests a broad interest in performance and entertainment; performing arts is an adjacent category that includes music as one of its components.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.7}",
+            "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"music\".\nDescription: musical instruments and performances\nResults so far in this hypothesis: {\"concert\": 2169, \"flute\": 10216, \"guitar\": 2354, \"melody\": 1744, \"piano\": 3314, \"song\": 176}\nBest word so far: \"song\" with rank 176.\n\nMake a MEDIUM-LARGE mutation: produce a child hypothesis in an ADJACENT but\ndistinct category that could still plausibly contain the hidden target given\n\"song\"'s rank. The child must NOT be a sub-category of \"music\" - it\nshould sit alongside \"music\" in semantic space, not underneath it.\n\nFor example, if the parent is \"types of plants\" and the best word is \"shrub\",\nan adjacent category could be \"plant descriptors\", \"botanical terminology\",\n\"growth habits\", or \"ecological roles\".\n\nSuggest one adjacent hypothesis. Include exactly 3 starter words that have\nnot already been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"baseball\", \"basketball\", \"bear\", \"bed\", \"body\", \"bone\", \"book\", \"bread\", \"bridge\", \"building\", \"bus\", \"car\", \"chair\", \"cheese\", \"chisel\", \"city\", \"cloud\", \"coat\", \"concert\", \"cosmos\", \"desk\", \"dress\", \"drill\", \"eagle\", \"flower\", \"flute\", \"forest\", \"fruit\", \"galaxy\", \"golf\", \"grass\", \"guitar\", \"hammer\", \"hand\", \"hat\", \"head\", \"heart\", \"hockey\", \"house\", \"humidity\", \"juice\", \"lake\", \"lamp\", \"leaf\", \"lion\", \"melody\", \"milk\", \"moon\", \"mountain\", \"ocean\", \"organ\", \"pants\", \"pencil\", \"piano\", \"plane\", \"planet\", \"plant\", \"pliers\", \"rain\", \"river\", \"saw\", \"school\", \"seed\", \"ship\", \"shirt\", \"shoe\", \"snow\", \"soccer\", \"sofa\", \"song\", \"star\", \"storm\", \"street\", \"student\", \"subway\", \"table\", \"teacher\", \"tennis\", \"tiger\", \"tower\", \"train\", \"tree\", \"truck\", \"universe\", \"valley\", \"water\", \"whale\", \"wind\", \"wolf\", \"wrench\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"category name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+            "injected_rationale_hash": null,
+            "rationale_truncated": false
+          }
+        },
+        {
+          "hypothesis_id": "b89608808b714a06926c1f7fa1cdaac5",
+          "category_name": "outdoor recreation",
+          "description": "activities and hobbies performed outdoors or in nature",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "sports",
+          "parent_id": "50abbc5cae77421b91dfbe6db4ae7d06",
+          "origin": "self_adaptive_l_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "self_report": {
+            "predicted_closeness": 0.6,
+            "predicted_closeness_clamped": false,
+            "predicted_bucket": "top100",
+            "rationale": {
+              "basis_words": [
+                "sports"
+              ],
+              "reason": "Moves away from organized team sports while maintaining the outdoor, physical activity component of baseball."
+            },
+            "self_report_parse_failed": false,
+            "self_report_raw": "{\"name\": \"outdoor recreation\", \"description\": \"activities and hobbies performed outdoors or in nature\", \"words\": [\"hike\", \"camp\", \"trail\"], \"basis_words\": [\"sports\"], \"reason\": \"Moves away from organized team sports while maintaining the outdoor, physical activity component of baseball.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.6}",
+            "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"sports\".\nDescription: athletic activities and games\nBest word so far: \"baseball\" with rank 182.\nOther active categories already being explored: [\"education\", \"sports\", \"space\", \"music\", \"urban\", \"performing arts\"]\n\nMake a LARGE mutation: produce a child hypothesis in a broad, semantically\nsubstantial new direction that is unlike \"sports\" and unlike the other active\ncategories above. The goal is to escape the current semantic region and open\nup unexplored territory, while staying plausibly relevant given \"baseball\"'s\nrank - lower ranks mean the target is closer to \"baseball\", so the jump\nmust remain in the same broad semantic area even when reframed.\n\nFor example, if the parent is \"types of plants\" and \"shrub\" ranks 50, a large\nmutation could be \"outdoor environments\" or \"rural landscape features\" -\nclearly outside the plant taxonomy but still in a plausible neighborhood for\na target close to \"shrub\".\n\nSuggest one new hypothesis. Include exactly 3 starter words that have not\nalready been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"baseball\", \"basketball\", \"bear\", \"bed\", \"body\", \"bone\", \"book\", \"bread\", \"bridge\", \"building\", \"bus\", \"car\", \"chair\", \"cheese\", \"chisel\", \"city\", \"cloud\", \"coat\", \"concert\", \"cosmos\", \"dance\", \"desk\", \"drama\", \"dress\", \"drill\", \"eagle\", \"flower\", \"flute\", \"forest\", \"fruit\", \"galaxy\", \"golf\", \"grass\", \"guitar\", \"hammer\", \"hand\", \"hat\", \"head\", \"heart\", \"hockey\", \"house\", \"humidity\", \"juice\", \"lake\", \"lamp\", \"leaf\", \"lion\", \"melody\", \"milk\", \"moon\", \"mountain\", \"ocean\", \"opera\", \"organ\", \"pants\", \"pencil\", \"piano\", \"plane\", \"planet\", \"plant\", \"pliers\", \"rain\", \"river\", \"saw\", \"school\", \"seed\", \"ship\", \"shirt\", \"shoe\", \"snow\", \"soccer\", \"sofa\", \"song\", \"star\", \"storm\", \"street\", \"student\", \"subway\", \"table\", \"teacher\", \"tennis\", \"tiger\", \"tower\", \"train\", \"tree\", \"truck\", \"universe\", \"valley\", \"water\", \"whale\", \"wind\", \"wolf\", \"wrench\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"direction name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+            "injected_rationale_hash": null,
+            "rationale_truncated": false
+          }
+        },
+        {
+          "hypothesis_id": "d6909deb6af444a980ff6e9cb6b3304d",
+          "category_name": "metropolitan",
+          "description": "refining urban to metropolitan areas and city divisions",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "urban",
+          "parent_id": "a0f721be06514467ab34d591ec9555e4",
+          "origin": "self_adaptive_s_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "self_report": {
+            "predicted_closeness": 0.8,
+            "predicted_closeness_clamped": false,
+            "predicted_bucket": "top100",
+            "rationale": {
+              "basis_words": [
+                "city",
+                "building"
+              ],
+              "reason": "Refines the broad 'urban' concept by focusing on specific metropolitan designations and subdivisions."
+            },
+            "self_report_parse_failed": false,
+            "self_report_raw": "{\"name\": \"metropolitan\", \"description\": \"refining urban to metropolitan areas and city divisions\", \"words\": [\"metropolis\", \"district\", \"borough\"], \"basis_words\": [\"city\", \"building\"], \"reason\": \"Refines the broad 'urban' concept by focusing on specific metropolitan designations and subdivisions.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.8}",
+            "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"urban\".\nDescription: features found in a city environment\nResults so far in this hypothesis: {\"bridge\": 3717, \"building\": 445, \"city\": 286, \"street\": 1873, \"subway\": 8023, \"tower\": 2928}\nBest word so far: \"city\" with rank 286.\n\nMake a SMALL mutation: produce a child hypothesis that stays in the same\nconceptual neighborhood as \"urban\" but narrows or refines it. The new starter\nwords should be close semantic neighbors of \"city\" - synonyms, common\ndescriptors, or words that frequently co-occur with it.\n\nFor example, if the parent is \"types of plants\" and the best word is \"shrub\",\na small mutation could be \"woody plants\" with starters like bush, hedge, thicket.\n\nSuggest one refined hypothesis. Include exactly 3 starter words that have not\nalready been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"baseball\", \"basketball\", \"bear\", \"bed\", \"body\", \"bone\", \"book\", \"bread\", \"bridge\", \"building\", \"bus\", \"camp\", \"car\", \"chair\", \"cheese\", \"chisel\", \"city\", \"cloud\", \"coat\", \"concert\", \"cosmos\", \"dance\", \"desk\", \"drama\", \"dress\", \"drill\", \"eagle\", \"flower\", \"flute\", \"forest\", \"fruit\", \"galaxy\", \"golf\", \"grass\", \"guitar\", \"hammer\", \"hand\", \"hat\", \"head\", \"heart\", \"hike\", \"hockey\", \"house\", \"humidity\", \"juice\", \"lake\", \"lamp\", \"leaf\", \"lion\", \"melody\", \"milk\", \"moon\", \"mountain\", \"ocean\", \"opera\", \"organ\", \"pants\", \"pencil\", \"piano\", \"plane\", \"planet\", \"plant\", \"pliers\", \"rain\", \"river\", \"saw\", \"school\", \"seed\", \"ship\", \"shirt\", \"shoe\", \"snow\", \"soccer\", \"sofa\", \"song\", \"star\", \"storm\", \"street\", \"student\", \"subway\", \"table\", \"teacher\", \"tennis\", \"tiger\", \"tower\", \"trail\", \"train\", \"tree\", \"truck\", \"universe\", \"valley\", \"water\", \"whale\", \"wind\", \"wolf\", \"wrench\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"direction name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+            "injected_rationale_hash": null,
+            "rationale_truncated": false
+          }
+        },
+        {
+          "hypothesis_id": "6e9dc43ff15a49d0b622b83fca3d0817",
+          "category_name": "historical records",
+          "description": "items related to historical events and preserved information",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "education",
+          "parent_id": "fe805e670b294f72a223791c89609c5b",
+          "origin": "self_adaptive_l_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "self_report": {
+            "predicted_closeness": 0.7,
+            "predicted_closeness_clamped": false,
+            "predicted_bucket": "top100",
+            "rationale": {
+              "basis_words": [
+                "book"
+              ],
+              "reason": "This moves from the process of education to the preservation of information, exploring a different facet of knowledge while remaining in the same semantic sphere as 'book'."
+            },
+            "self_report_parse_failed": false,
+            "self_report_raw": "{\"name\": \"historical records\", \"description\": \"items related to historical events and preserved information\", \"words\": [\"history\", \"record\", \"archive\"], \"basis_words\": [\"book\"], \"reason\": \"This moves from the process of education to the preservation of information, exploring a different facet of knowledge while remaining in the same semantic sphere as 'book'.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.7}",
+            "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"education\".\nDescription: items related to school and learning\nBest word so far: \"book\" with rank 653.\nOther active categories already being explored: [\"education\", \"sports\", \"space\", \"music\", \"urban\", \"performing arts\", \"outdoor recreation\", \"metropolitan\"]\n\nMake a LARGE mutation: produce a child hypothesis in a broad, semantically\nsubstantial new direction that is unlike \"education\" and unlike the other active\ncategories above. The goal is to escape the current semantic region and open\nup unexplored territory, while staying plausibly relevant given \"book\"'s\nrank - lower ranks mean the target is closer to \"book\", so the jump\nmust remain in the same broad semantic area even when reframed.\n\nFor example, if the parent is \"types of plants\" and \"shrub\" ranks 50, a large\nmutation could be \"outdoor environments\" or \"rural landscape features\" -\nclearly outside the plant taxonomy but still in a plausible neighborhood for\na target close to \"shrub\".\n\nSuggest one new hypothesis. Include exactly 3 starter words that have not\nalready been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"baseball\", \"basketball\", \"bear\", \"bed\", \"body\", \"bone\", \"book\", \"borough\", \"bread\", \"bridge\", \"building\", \"bus\", \"camp\", \"car\", \"chair\", \"cheese\", \"chisel\", \"city\", \"cloud\", \"coat\", \"concert\", \"cosmos\", \"dance\", \"desk\", \"district\", \"drama\", \"dress\", \"drill\", \"eagle\", \"flower\", \"flute\", \"forest\", \"fruit\", \"galaxy\", \"golf\", \"grass\", \"guitar\", \"hammer\", \"hand\", \"hat\", \"head\", \"heart\", \"hike\", \"hockey\", \"house\", \"humidity\", \"juice\", \"lake\", \"lamp\", \"leaf\", \"lion\", \"melody\", \"metropolis\", \"milk\", \"moon\", \"mountain\", \"ocean\", \"opera\", \"organ\", \"pants\", \"pencil\", \"piano\", \"plane\", \"planet\", \"plant\", \"pliers\", \"rain\", \"river\", \"saw\", \"school\", \"seed\", \"ship\", \"shirt\", \"shoe\", \"snow\", \"soccer\", \"sofa\", \"song\", \"star\", \"storm\", \"street\", \"student\", \"subway\", \"table\", \"teacher\", \"tennis\", \"tiger\", \"tower\", \"trail\", \"train\", \"tree\", \"truck\", \"universe\", \"valley\", \"water\", \"whale\", \"wind\", \"wolf\", \"wrench\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"direction name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+            "injected_rationale_hash": null,
+            "rationale_truncated": false
+          }
+        },
+        {
+          "hypothesis_id": "b45c377d445b48999b86e9525600a534",
+          "category_name": "physical science",
+          "description": "the physical properties and forces of matter in the universe",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "space",
+          "parent_id": "e0ba964369724fa5b5a0efb7d2e85cab",
+          "origin": "self_adaptive_m_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "self_report": {
+            "predicted_closeness": 0.7,
+            "predicted_closeness_clamped": false,
+            "predicted_bucket": "top100",
+            "rationale": {
+              "basis_words": [
+                "universe"
+              ],
+              "reason": "shifts from looking at astronomical objects to the fundamental physics and components that define the universe's structure."
+            },
+            "self_report_parse_failed": false,
+            "self_report_raw": "{\"name\": \"physical science\", \"description\": \"the physical properties and forces of matter in the universe\", \"words\": [\"matter\", \"gravity\", \"energy\"], \"basis_words\": [\"universe\"], \"reason\": \"shifts from looking at astronomical objects to the fundamental physics and components that define the universe's structure.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.7}",
+            "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"space\".\nDescription: celestial bodies and cosmic items\nResults so far in this hypothesis: {\"cosmos\": 6730, \"galaxy\": 3420, \"moon\": 4870, \"planet\": 1528, \"star\": 807, \"universe\": 799}\nBest word so far: \"universe\" with rank 799.\n\nMake a MEDIUM mutation: produce a child hypothesis that reinterprets why\n\"universe\" might have scored well, or shifts to a related sense, lexical\nregister, or part of speech. The child should still be semantically anchored\nto \"universe\" but approach it from a clearly different angle than \"space\".\n\nFor example, if the parent is \"food\" and the best word is \"bite\", a medium\nmutation could be \"animals that bite\", \"physical sensations from biting\", or\n\"clinical terms for biting and chewing\" - each treats \"bite\" through a\ndifferent lens.\n\nSuggest one reframed hypothesis. Include exactly 3 starter words that have\nnot already been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"archive\", \"baseball\", \"basketball\", \"bear\", \"bed\", \"body\", \"bone\", \"book\", \"borough\", \"bread\", \"bridge\", \"building\", \"bus\", \"camp\", \"car\", \"chair\", \"cheese\", \"chisel\", \"city\", \"cloud\", \"coat\", \"concert\", \"cosmos\", \"dance\", \"desk\", \"district\", \"drama\", \"dress\", \"drill\", \"eagle\", \"flower\", \"flute\", \"forest\", \"fruit\", \"galaxy\", \"golf\", \"grass\", \"guitar\", \"hammer\", \"hand\", \"hat\", \"head\", \"heart\", \"hike\", \"history\", \"hockey\", \"house\", \"humidity\", \"juice\", \"lake\", \"lamp\", \"leaf\", \"lion\", \"melody\", \"metropolis\", \"milk\", \"moon\", \"mountain\", \"ocean\", \"opera\", \"organ\", \"pants\", \"pencil\", \"piano\", \"plane\", \"planet\", \"plant\", \"pliers\", \"rain\", \"record\", \"river\", \"saw\", \"school\", \"seed\", \"ship\", \"shirt\", \"shoe\", \"snow\", \"soccer\", \"sofa\", \"song\", \"star\", \"storm\", \"street\", \"student\", \"subway\", \"table\", \"teacher\", \"tennis\", \"tiger\", \"tower\", \"trail\", \"train\", \"tree\", \"truck\", \"universe\", \"valley\", \"water\", \"whale\", \"wind\", \"wolf\", \"wrench\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"direction name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+            "injected_rationale_hash": null,
+            "rationale_truncated": false
+          }
+        }
+      ],
+      "best_word": "history",
+      "best_rank": 5,
+      "total_guesses": 105
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:45:26",
+    "details": {
+      "word": "recording",
+      "rank": 401,
+      "hypothesis": "archived music",
+      "best_word": "history",
+      "best_rank": 5,
+      "total_guesses": 106
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:45:27",
+    "details": {
+      "word": "ballad",
+      "rank": 1065,
+      "hypothesis": "archived music",
+      "best_word": "history",
+      "best_rank": 5,
+      "total_guesses": 107
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:45:27",
+    "details": {
+      "word": "hymn",
+      "rank": 3444,
+      "hypothesis": "archived music",
+      "best_word": "history",
+      "best_rank": 5,
+      "total_guesses": 108
+    }
+  },
+  {
+    "generation": 1,
+    "event": "CROSSOVER",
+    "timestamp": "2026-08-13T16:45:27",
+    "details": {
+      "parents": [
+        "historical records",
+        "music"
+      ],
+      "parent_ids": [
+        "6e9dc43ff15a49d0b622b83fca3d0817",
+        "513a4132174746ed959fa706572b09c7"
+      ],
+      "parent_ranks": [
+        5,
+        176
+      ],
+      "parent_a_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "parent_b_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma_pre_perturbation": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child": {
+        "hypothesis_id": "0d6e29aaaaff4d578f8f3a6c78f9c0b3",
+        "category_name": "archived music",
+        "description": "musical works preserved in archives and historical records.",
+        "words_tried": {
+          "recording": 401,
+          "ballad": 1065,
+          "hymn": 3444
+        },
+        "best_word": "recording",
+        "best_rank": 401,
+        "status": "active",
+        "parent": "historical records+music",
+        "parent_id": null,
+        "origin": "crossover",
+        "sigma": [
+          0.25,
+          0.25,
+          0.25,
+          0.25
+        ],
+        "self_report": {
+          "predicted_closeness": 0.9,
+          "predicted_closeness_clamped": false,
+          "predicted_bucket": "top10",
+          "rationale": {
+            "basis_words": [
+              "record",
+              "song"
+            ],
+            "reason": "The word 'recording' directly captures the intersection of a physical record and musical content, while 'ballad' and 'hymn' represent specific forms of historically preserved music."
+          },
+          "self_report_parse_failed": false,
+          "self_report_raw": "{\"name\": \"archived music\", \"description\": \"musical works preserved in archives and historical records.\", \"words\": [\"recording\", \"ballad\", \"hymn\"], \"basis_words\": [\"record\", \"song\"], \"reason\": \"The word 'recording' directly captures the intersection of a physical record and musical content, while 'ballad' and 'hymn' represent specific forms of historically preserved music.\", \"predicted_bucket\": \"top10\", \"predicted_closeness\": 0.9}",
+          "self_report_prompt": "Return only JSON, no markdown or explanation.\nCategory A is historical records with results {\"archive\": 1536, \"history\": 5, \"record\": 107}.\nCategory B is music with results {\"concert\": 2169, \"flute\": 10216, \"guitar\": 2354, \"melody\": 1744, \"piano\": 3314, \"song\": 176}.\nSuggest one new category that captures the intersection or overlap of A and B.\nInclude exactly 3 candidate words.\nEvery word must be one common lowercase dictionary word.\nJSON schema:\n{\"name\": \"category name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+          "injected_rationale_hash": null,
+          "rationale_truncated": false
+        }
+      },
+      "best_word": "history",
+      "best_rank": 5,
+      "total_guesses": 108
+    }
+  },
+  {
+    "generation": 1,
+    "event": "DEDUPLICATE",
+    "timestamp": "2026-08-13T16:45:27",
+    "details": {
+      "merged": [
+        {
+          "survivor": "music",
+          "discarded": "archived music",
+          "survivor_best_rank": 176,
+          "discarded_best_rank": 401
+        }
+      ],
+      "remaining_hypotheses": 20,
+      "active_hypotheses": 10,
+      "best_word": "history",
+      "best_rank": 5,
+      "total_guesses": 108
+    }
+  },
+  {
+    "generation": 1,
+    "event": "SIGMA_TRAJECTORY",
+    "timestamp": "2026-08-13T16:45:27",
+    "details": {
+      "mean_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "population_size": 10
+    }
+  },
+  {
+    "generation": 2,
+    "event": "CANDIDATES",
+    "timestamp": "2026-08-13T16:52:14",
+    "details": {
+      "count": 30,
+      "candidates": [
+        {
+          "hypothesis": "historical records",
+          "word": "chronicle"
+        },
+        {
+          "hypothesis": "historical records",
+          "word": "past"
+        },
+        {
+          "hypothesis": "historical records",
+          "word": "document"
+        },
+        {
+          "hypothesis": "music",
+          "word": "rhythm"
+        },
+        {
+          "hypothesis": "music",
+          "word": "harmony"
+        },
+        {
+          "hypothesis": "music",
+          "word": "symphony"
+        },
+        {
+          "hypothesis": "sports",
+          "word": "game"
+        },
+        {
+          "hypothesis": "sports",
+          "word": "match"
+        },
+        {
+          "hypothesis": "sports",
+          "word": "league"
+        },
+        {
+          "hypothesis": "urban",
+          "word": "road"
+        },
+        {
+          "hypothesis": "urban",
+          "word": "park"
+        },
+        {
+          "hypothesis": "urban",
+          "word": "plaza"
+        },
+        {
+          "hypothesis": "performing arts",
+          "word": "theater"
+        },
+        {
+          "hypothesis": "performing arts",
+          "word": "play"
+        },
+        {
+          "hypothesis": "performing arts",
+          "word": "performance"
+        },
+        {
+          "hypothesis": "physical science",
+          "word": "atom"
+        },
+        {
+          "hypothesis": "physical science",
+          "word": "force"
+        },
+        {
+          "hypothesis": "physical science",
+          "word": "particle"
+        },
+        {
+          "hypothesis": "education",
+          "word": "university"
+        },
+        {
+          "hypothesis": "education",
+          "word": "college"
+        },
+        {
+          "hypothesis": "education",
+          "word": "study"
+        },
+        {
+          "hypothesis": "space",
+          "word": "nebula"
+        },
+        {
+          "hypothesis": "space",
+          "word": "asteroid"
+        },
+        {
+          "hypothesis": "space",
+          "word": "comet"
+        },
+        {
+          "hypothesis": "metropolitan",
+          "word": "municipality"
+        },
+        {
+          "hypothesis": "metropolitan",
+          "word": "suburb"
+        },
+        {
+          "hypothesis": "metropolitan",
+          "word": "neighborhood"
+        },
+        {
+          "hypothesis": "outdoor recreation",
+          "word": "climb"
+        },
+        {
+          "hypothesis": "outdoor recreation",
+          "word": "trek"
+        },
+        {
+          "hypothesis": "outdoor recreation",
+          "word": "explore"
+        }
+      ]
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:52:16",
+    "details": {
+      "word": "chronicle",
+      "rank": 622,
+      "hypothesis": "historical records",
+      "best_word": "history",
+      "best_rank": 5,
+      "total_guesses": 109
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:52:16",
+    "details": {
+      "word": "past",
+      "rank": 8,
+      "hypothesis": "historical records",
+      "best_word": "history",
+      "best_rank": 5,
+      "total_guesses": 110
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:52:17",
+    "details": {
+      "word": "document",
+      "rank": 1315,
+      "hypothesis": "historical records",
+      "best_word": "history",
+      "best_rank": 5,
+      "total_guesses": 111
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:52:17",
+    "details": {
+      "word": "rhythm",
+      "rank": 2768,
+      "hypothesis": "music",
+      "best_word": "history",
+      "best_rank": 5,
+      "total_guesses": 112
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:52:17",
+    "details": {
+      "word": "harmony",
+      "rank": 3887,
+      "hypothesis": "music",
+      "best_word": "history",
+      "best_rank": 5,
+      "total_guesses": 113
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:52:18",
+    "details": {
+      "word": "symphony",
+      "rank": 4088,
+      "hypothesis": "music",
+      "best_word": "history",
+      "best_rank": 5,
+      "total_guesses": 114
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:52:18",
+    "details": {
+      "word": "game",
+      "rank": 290,
+      "hypothesis": "sports",
+      "best_word": "history",
+      "best_rank": 5,
+      "total_guesses": 115
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:52:18",
+    "details": {
+      "word": "match",
+      "rank": 1606,
+      "hypothesis": "sports",
+      "best_word": "history",
+      "best_rank": 5,
+      "total_guesses": 116
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:52:18",
+    "details": {
+      "word": "league",
+      "rank": 193,
+      "hypothesis": "sports",
+      "best_word": "history",
+      "best_rank": 5,
+      "total_guesses": 117
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:52:19",
+    "details": {
+      "word": "road",
+      "rank": 3566,
+      "hypothesis": "urban",
+      "best_word": "history",
+      "best_rank": 5,
+      "total_guesses": 118
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:52:19",
+    "details": {
+      "word": "park",
+      "rank": 3762,
+      "hypothesis": "urban",
+      "best_word": "history",
+      "best_rank": 5,
+      "total_guesses": 119
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:52:19",
+    "details": {
+      "word": "plaza",
+      "rank": 5397,
+      "hypothesis": "urban",
+      "best_word": "history",
+      "best_rank": 5,
+      "total_guesses": 120
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:52:20",
+    "details": {
+      "word": "theater",
+      "rank": 1507,
+      "hypothesis": "performing arts",
+      "best_word": "history",
+      "best_rank": 5,
+      "total_guesses": 121
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:52:20",
+    "details": {
+      "word": "play",
+      "rank": 324,
+      "hypothesis": "performing arts",
+      "best_word": "history",
+      "best_rank": 5,
+      "total_guesses": 122
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:52:20",
+    "details": {
+      "word": "performance",
+      "rank": 540,
+      "hypothesis": "performing arts",
+      "best_word": "history",
+      "best_rank": 5,
+      "total_guesses": 123
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:52:21",
+    "details": {
+      "word": "atom",
+      "rank": 13746,
+      "hypothesis": "physical science",
+      "best_word": "history",
+      "best_rank": 5,
+      "total_guesses": 124
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:52:22",
+    "details": {
+      "word": "force",
+      "rank": 1057,
+      "hypothesis": "physical science",
+      "best_word": "history",
+      "best_rank": 5,
+      "total_guesses": 125
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:52:22",
+    "details": {
+      "word": "particle",
+      "rank": 17718,
+      "hypothesis": "physical science",
+      "best_word": "history",
+      "best_rank": 5,
+      "total_guesses": 126
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:52:22",
+    "details": {
+      "word": "university",
+      "rank": 1581,
+      "hypothesis": "education",
+      "best_word": "history",
+      "best_rank": 5,
+      "total_guesses": 127
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:52:22",
+    "details": {
+      "word": "college",
+      "rank": 1093,
+      "hypothesis": "education",
+      "best_word": "history",
+      "best_rank": 5,
+      "total_guesses": 128
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:52:22",
+    "details": {
+      "word": "study",
+      "rank": 562,
+      "hypothesis": "education",
+      "best_word": "history",
+      "best_rank": 5,
+      "total_guesses": 129
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:52:23",
+    "details": {
+      "word": "nebula",
+      "rank": 31311,
+      "hypothesis": "space",
+      "best_word": "history",
+      "best_rank": 5,
+      "total_guesses": 130
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:52:24",
+    "details": {
+      "word": "asteroid",
+      "rank": 16823,
+      "hypothesis": "space",
+      "best_word": "history",
+      "best_rank": 5,
+      "total_guesses": 131
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:52:24",
+    "details": {
+      "word": "comet",
+      "rank": 12168,
+      "hypothesis": "space",
+      "best_word": "history",
+      "best_rank": 5,
+      "total_guesses": 132
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:52:25",
+    "details": {
+      "word": "municipality",
+      "rank": 15957,
+      "hypothesis": "metropolitan",
+      "best_word": "history",
+      "best_rank": 5,
+      "total_guesses": 133
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:52:26",
+    "details": {
+      "word": "suburb",
+      "rank": 8470,
+      "hypothesis": "metropolitan",
+      "best_word": "history",
+      "best_rank": 5,
+      "total_guesses": 134
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:52:27",
+    "details": {
+      "word": "neighborhood",
+      "rank": 2811,
+      "hypothesis": "metropolitan",
+      "best_word": "history",
+      "best_rank": 5,
+      "total_guesses": 135
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:52:27",
+    "details": {
+      "word": "climb",
+      "rank": 12632,
+      "hypothesis": "outdoor recreation",
+      "best_word": "history",
+      "best_rank": 5,
+      "total_guesses": 136
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:52:28",
+    "details": {
+      "word": "trek",
+      "rank": 2053,
+      "hypothesis": "outdoor recreation",
+      "best_word": "history",
+      "best_rank": 5,
+      "total_guesses": 137
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:52:29",
+    "details": {
+      "word": "explore",
+      "rank": 461,
+      "hypothesis": "outdoor recreation",
+      "best_word": "history",
+      "best_rank": 5,
+      "total_guesses": 138
+    }
+  },
+  {
+    "generation": 2,
+    "event": "LOCAL_SEARCH_DISABLED",
+    "timestamp": "2026-08-13T16:52:29",
+    "details": {
+      "center_word": "history",
+      "center_rank": 5,
+      "threshold": 100,
+      "reason": "self_adaptive_disable_local_search"
+    }
+  },
+  {
+    "generation": 2,
+    "event": "SELECT",
+    "timestamp": "2026-08-13T16:52:29",
+    "details": {
+      "kept": [
+        "historical records",
+        "music",
+        "sports",
+        "urban",
+        "performing arts"
+      ],
+      "discarded": [
+        "outdoor recreation",
+        "education",
+        "physical science",
+        "space",
+        "transportation",
+        "tools",
+        "anatomy",
+        "clothing",
+        "metropolitan",
+        "home",
+        "nature",
+        "animals",
+        "weather",
+        "botany",
+        "food"
+      ],
+      "elite": "historical records",
+      "max_active_hypotheses": 5,
+      "best_word": "history",
+      "best_rank": 5,
+      "total_guesses": 138
+    }
+  },
+  {
+    "generation": 2,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-08-13T16:53:28",
+    "details": {
+      "parent_id": "6e9dc43ff15a49d0b622b83fca3d0817",
+      "child_id": "d66fb53ff51749b390f891e9ea5bfcaa",
+      "parent_rank": 5,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "lineage and heritage",
+      "sampled_op": "m_mutation",
+      "method": "self_adaptive",
+      "self_report": {
+        "predicted_closeness": 0.8,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "history"
+          ],
+          "reason": "This moves the focus from archival preservation to the continuity of lineage and inheritance."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"name\": \"lineage and heritage\", \"description\": \"shifting from physical records to ancestral lines and inherited identity\", \"words\": [\"ancestry\", \"lineage\", \"heritage\"], \"basis_words\": [\"history\"], \"reason\": \"This moves the focus from archival preservation to the continuity of lineage and inheritance.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.8}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"historical records\".\nDescription: items related to historical events and preserved information\nResults so far in this hypothesis: {\"archive\": 1536, \"chronicle\": 622, \"document\": 1315, \"history\": 5, \"past\": 8, \"record\": 107}\nBest word so far: \"history\" with rank 5.\n\nMake a MEDIUM mutation: produce a child hypothesis that reinterprets why\n\"history\" might have scored well, or shifts to a related sense, lexical\nregister, or part of speech. The child should still be semantically anchored\nto \"history\" but approach it from a clearly different angle than \"historical records\".\n\nFor example, if the parent is \"food\" and the best word is \"bite\", a medium\nmutation could be \"animals that bite\", \"physical sensations from biting\", or\n\"clinical terms for biting and chewing\" - each treats \"bite\" through a\ndifferent lens.\n\nSuggest one reframed hypothesis. Include exactly 3 starter words that have\nnot already been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"archive\", \"asteroid\", \"atom\", \"ballad\", \"baseball\", \"basketball\", \"bear\", \"bed\", \"body\", \"bone\", \"book\", \"borough\", \"bread\", \"bridge\", \"building\", \"bus\", \"camp\", \"car\", \"chair\", \"cheese\", \"chisel\", \"chronicle\", \"city\", \"climb\", \"cloud\", \"coat\", \"college\", \"comet\", \"concert\", \"cosmos\", \"dance\", \"desk\", \"district\", \"document\", \"drama\", \"dress\", \"drill\", \"eagle\", \"energy\", \"explore\", \"flower\", \"flute\", \"force\", \"forest\", \"fruit\", \"galaxy\", \"game\", \"golf\", \"grass\", \"gravity\", \"guitar\", \"hammer\", \"hand\", \"harmony\", \"hat\", \"head\", \"heart\", \"hike\", \"history\", \"hockey\", \"house\", \"humidity\", \"hymn\", \"juice\", \"lake\", \"lamp\", \"leaf\", \"league\", \"lion\", \"match\", \"matter\", \"melody\", \"metropolis\", \"milk\", \"moon\", \"mountain\", \"municipality\", \"nebula\", \"neighborhood\", \"ocean\", \"opera\", \"organ\", \"pants\", \"park\", \"particle\", \"past\", \"pencil\", \"performance\", \"piano\", \"plane\", \"planet\", \"plant\", \"play\", \"plaza\", \"pliers\", \"rain\", \"record\", \"recording\", \"rhythm\", \"river\", \"road\", \"saw\", \"school\", \"seed\", \"ship\", \"shirt\", \"shoe\", \"snow\", \"soccer\", \"sofa\", \"song\", \"star\", \"storm\", \"street\", \"student\", \"study\", \"suburb\", \"subway\", \"symphony\", \"table\", \"teacher\", \"tennis\", \"theater\", \"tiger\", \"tower\", \"trail\", \"train\", \"tree\", \"trek\", \"truck\", \"universe\", \"university\", \"valley\", \"water\", \"whale\", \"wind\", \"wolf\", \"wrench\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"direction name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nThe parent hypothesis's prior rationale (for context only; do not copy blindly): basis_words=[\"book\"], reason=\"This moves from the process of education to the preservation of information, exploring a different facet of knowledge while remaining in the same semantic sphere as 'book'.\".\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": "ed914ae92fd1f9f2",
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:53:31",
+    "details": {
+      "word": "ancestry",
+      "rank": 4491,
+      "hypothesis": "lineage and heritage",
+      "best_word": "history",
+      "best_rank": 5,
+      "total_guesses": 139
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:53:32",
+    "details": {
+      "word": "lineage",
+      "rank": 947,
+      "hypothesis": "lineage and heritage",
+      "best_word": "history",
+      "best_rank": 5,
+      "total_guesses": 140
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:53:32",
+    "details": {
+      "word": "heritage",
+      "rank": 114,
+      "hypothesis": "lineage and heritage",
+      "best_word": "history",
+      "best_rank": 5,
+      "total_guesses": 141
+    }
+  },
+  {
+    "generation": 2,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-08-13T16:55:15",
+    "details": {
+      "parent_id": "513a4132174746ed959fa706572b09c7",
+      "child_id": "9e73382a2cc94e849701f84bc005bf07",
+      "parent_rank": 176,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "literary arts",
+      "sampled_op": "l_mutation",
+      "method": "self_adaptive",
+      "self_report": {
+        "predicted_closeness": 0.7,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "music"
+          ],
+          "reason": "This moves the search from auditory performance to written artistic expression, which shares a common ground in creative storytelling and composition."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"name\": \"literary arts\", \"description\": \"written compositions such as novels and poems\", \"words\": [\"novel\", \"poem\", \"fable\"], \"basis_words\": [\"music\"], \"reason\": \"This moves the search from auditory performance to written artistic expression, which shares a common ground in creative storytelling and composition.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.7}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"music\".\nDescription: musical instruments and performances\nBest word so far: \"song\" with rank 176.\nOther active categories already being explored: [\"historical records\", \"music\", \"sports\", \"urban\", \"performing arts\", \"lineage and heritage\"]\n\nMake a LARGE mutation: produce a child hypothesis in a broad, semantically\nsubstantial new direction that is unlike \"music\" and unlike the other active\ncategories above. The goal is to escape the current semantic region and open\nup unexplored territory, while staying plausibly relevant given \"song\"'s\nrank - lower ranks mean the target is closer to \"song\", so the jump\nmust remain in the same broad semantic area even when reframed.\n\nFor example, if the parent is \"types of plants\" and \"shrub\" ranks 50, a large\nmutation could be \"outdoor environments\" or \"rural landscape features\" -\nclearly outside the plant taxonomy but still in a plausible neighborhood for\na target close to \"shrub\".\n\nSuggest one new hypothesis. Include exactly 3 starter words that have not\nalready been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"ancestry\", \"archive\", \"asteroid\", \"atom\", \"ballad\", \"baseball\", \"basketball\", \"bear\", \"bed\", \"body\", \"bone\", \"book\", \"borough\", \"bread\", \"bridge\", \"building\", \"bus\", \"camp\", \"car\", \"chair\", \"cheese\", \"chisel\", \"chronicle\", \"city\", \"climb\", \"cloud\", \"coat\", \"college\", \"comet\", \"concert\", \"cosmos\", \"dance\", \"desk\", \"district\", \"document\", \"drama\", \"dress\", \"drill\", \"eagle\", \"energy\", \"explore\", \"flower\", \"flute\", \"force\", \"forest\", \"fruit\", \"galaxy\", \"game\", \"golf\", \"grass\", \"gravity\", \"guitar\", \"hammer\", \"hand\", \"harmony\", \"hat\", \"head\", \"heart\", \"heritage\", \"hike\", \"history\", \"hockey\", \"house\", \"humidity\", \"hymn\", \"juice\", \"lake\", \"lamp\", \"leaf\", \"league\", \"lineage\", \"lion\", \"match\", \"matter\", \"melody\", \"metropolis\", \"milk\", \"moon\", \"mountain\", \"municipality\", \"nebula\", \"neighborhood\", \"ocean\", \"opera\", \"organ\", \"pants\", \"park\", \"particle\", \"past\", \"pencil\", \"performance\", \"piano\", \"plane\", \"planet\", \"plant\", \"play\", \"plaza\", \"pliers\", \"rain\", \"record\", \"recording\", \"rhythm\", \"river\", \"road\", \"saw\", \"school\", \"seed\", \"ship\", \"shirt\", \"shoe\", \"snow\", \"soccer\", \"sofa\", \"song\", \"star\", \"storm\", \"street\", \"student\", \"study\", \"suburb\", \"subway\", \"symphony\", \"table\", \"teacher\", \"tennis\", \"theater\", \"tiger\", \"tower\", \"trail\", \"train\", \"tree\", \"trek\", \"truck\", \"universe\", \"university\", \"valley\", \"water\", \"whale\", \"wind\", \"wolf\", \"wrench\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"direction name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:55:18",
+    "details": {
+      "word": "novel",
+      "rank": 454,
+      "hypothesis": "literary arts",
+      "best_word": "history",
+      "best_rank": 5,
+      "total_guesses": 142
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:55:19",
+    "details": {
+      "word": "poem",
+      "rank": 2219,
+      "hypothesis": "literary arts",
+      "best_word": "history",
+      "best_rank": 5,
+      "total_guesses": 143
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:55:20",
+    "details": {
+      "word": "fable",
+      "rank": 8784,
+      "hypothesis": "literary arts",
+      "best_word": "history",
+      "best_rank": 5,
+      "total_guesses": 144
+    }
+  },
+  {
+    "generation": 2,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-08-13T16:56:52",
+    "details": {
+      "parent_id": "50abbc5cae77421b91dfbe6db4ae7d06",
+      "child_id": "d2042114bc464e7895b7cb30b77d09ee",
+      "parent_rank": 182,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "baseball_equipment_and_terms",
+      "sampled_op": "m_mutation",
+      "method": "self_adaptive",
+      "self_report": {
+        "predicted_closeness": 0.8,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "baseball",
+            "league"
+          ],
+          "reason": "The proximity of 'baseball' and 'league' compared to other sports suggests the target is specific to baseball's unique rules or equipment rather than general sports."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"name\": \"baseball_equipment_and_terms\", \"description\": \"specialized terminology and equipment related specifically to baseball\", \"words\": [\"bat\", \"pitcher\", \"diamond\"], \"basis_words\": [\"baseball\", \"league\"], \"reason\": \"The proximity of 'baseball' and 'league' compared to other sports suggests the target is specific to baseball's unique rules or equipment rather than general sports.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.8}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"sports\".\nDescription: athletic activities and games\nResults so far in this hypothesis: {\"baseball\": 182, \"basketball\": 3546, \"game\": 290, \"golf\": 9191, \"hockey\": 4033, \"league\": 193, \"match\": 1606, \"soccer\": 5809, \"tennis\": 6913}\nBest word so far: \"baseball\" with rank 182.\n\nMake a MEDIUM mutation: produce a child hypothesis that reinterprets why\n\"baseball\" might have scored well, or shifts to a related sense, lexical\nregister, or part of speech. The child should still be semantically anchored\nto \"baseball\" but approach it from a clearly different angle than \"sports\".\n\nFor example, if the parent is \"food\" and the best word is \"bite\", a medium\nmutation could be \"animals that bite\", \"physical sensations from biting\", or\n\"clinical terms for biting and chewing\" - each treats \"bite\" through a\ndifferent lens.\n\nSuggest one reframed hypothesis. Include exactly 3 starter words that have\nnot already been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"ancestry\", \"archive\", \"asteroid\", \"atom\", \"ballad\", \"baseball\", \"basketball\", \"bear\", \"bed\", \"body\", \"bone\", \"book\", \"borough\", \"bread\", \"bridge\", \"building\", \"bus\", \"camp\", \"car\", \"chair\", \"cheese\", \"chisel\", \"chronicle\", \"city\", \"climb\", \"cloud\", \"coat\", \"college\", \"comet\", \"concert\", \"cosmos\", \"dance\", \"desk\", \"district\", \"document\", \"drama\", \"dress\", \"drill\", \"eagle\", \"energy\", \"explore\", \"fable\", \"flower\", \"flute\", \"force\", \"forest\", \"fruit\", \"galaxy\", \"game\", \"golf\", \"grass\", \"gravity\", \"guitar\", \"hammer\", \"hand\", \"harmony\", \"hat\", \"head\", \"heart\", \"heritage\", \"hike\", \"history\", \"hockey\", \"house\", \"humidity\", \"hymn\", \"juice\", \"lake\", \"lamp\", \"leaf\", \"league\", \"lineage\", \"lion\", \"match\", \"matter\", \"melody\", \"metropolis\", \"milk\", \"moon\", \"mountain\", \"municipality\", \"nebula\", \"neighborhood\", \"novel\", \"ocean\", \"opera\", \"organ\", \"pants\", \"park\", \"particle\", \"past\", \"pencil\", \"performance\", \"piano\", \"plane\", \"planet\", \"plant\", \"play\", \"plaza\", \"pliers\", \"poem\", \"rain\", \"record\", \"recording\", \"rhythm\", \"river\", \"road\", \"saw\", \"school\", \"seed\", \"ship\", \"shirt\", \"shoe\", \"snow\", \"soccer\", \"sofa\", \"song\", \"star\", \"storm\", \"street\", \"student\", \"study\", \"suburb\", \"subway\", \"symphony\", \"table\", \"teacher\", \"tennis\", \"theater\", \"tiger\", \"tower\", \"trail\", \"train\", \"tree\", \"trek\", \"truck\", \"universe\", \"university\", \"valley\", \"water\", \"whale\", \"wind\", \"wolf\", \"wrench\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"direction name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:56:52",
+    "details": {
+      "word": "bat",
+      "rank": 2784,
+      "hypothesis": "baseball_equipment_and_terms",
+      "best_word": "history",
+      "best_rank": 5,
+      "total_guesses": 145
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:56:56",
+    "details": {
+      "word": "pitcher",
+      "rank": 219,
+      "hypothesis": "baseball_equipment_and_terms",
+      "best_word": "history",
+      "best_rank": 5,
+      "total_guesses": 146
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:56:56",
+    "details": {
+      "word": "diamond",
+      "rank": 3638,
+      "hypothesis": "baseball_equipment_and_terms",
+      "best_word": "history",
+      "best_rank": 5,
+      "total_guesses": 147
+    }
+  },
+  {
+    "generation": 2,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-08-13T16:58:16",
+    "details": {
+      "parent_id": "a0f721be06514467ab34d591ec9555e4",
+      "child_id": "cb54ed73e021406686855a247296c8be",
+      "parent_rank": 286,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "civil infrastructure",
+      "sampled_op": "ml_mutation",
+      "method": "self_adaptive",
+      "self_report": {
+        "predicted_closeness": 0.7,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "city",
+            "building"
+          ],
+          "reason": "The proximity of 'city' (286) and 'building' (445) suggests the target is a structure or system within an urban environment. Moving to civil infrastructure explores physical structures beyond just the concept of a city."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"name\": \"civil infrastructure\", \"description\": \"physical systems and structures required for a functioning community\", \"words\": [\"tunnel\", \"station\", \"port\"], \"basis_words\": [\"city\", \"building\"], \"reason\": \"The proximity of 'city' (286) and 'building' (445) suggests the target is a structure or system within an urban environment. Moving to civil infrastructure explores physical structures beyond just the concept of a city.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.7}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"urban\".\nDescription: features found in a city environment\nResults so far in this hypothesis: {\"bridge\": 3717, \"building\": 445, \"city\": 286, \"park\": 3762, \"plaza\": 5397, \"road\": 3566, \"street\": 1873, \"subway\": 8023, \"tower\": 2928}\nBest word so far: \"city\" with rank 286.\n\nMake a MEDIUM-LARGE mutation: produce a child hypothesis in an ADJACENT but\ndistinct category that could still plausibly contain the hidden target given\n\"city\"'s rank. The child must NOT be a sub-category of \"urban\" - it\nshould sit alongside \"urban\" in semantic space, not underneath it.\n\nFor example, if the parent is \"types of plants\" and the best word is \"shrub\",\nan adjacent category could be \"plant descriptors\", \"botanical terminology\",\n\"growth habits\", or \"ecological roles\".\n\nSuggest one adjacent hypothesis. Include exactly 3 starter words that have\nnot already been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"ancestry\", \"archive\", \"asteroid\", \"atom\", \"ballad\", \"baseball\", \"basketball\", \"bat\", \"bear\", \"bed\", \"body\", \"bone\", \"book\", \"borough\", \"bread\", \"bridge\", \"building\", \"bus\", \"camp\", \"car\", \"chair\", \"cheese\", \"chisel\", \"chronicle\", \"city\", \"climb\", \"cloud\", \"coat\", \"college\", \"comet\", \"concert\", \"cosmos\", \"dance\", \"desk\", \"diamond\", \"district\", \"document\", \"drama\", \"dress\", \"drill\", \"eagle\", \"energy\", \"explore\", \"fable\", \"flower\", \"flute\", \"force\", \"forest\", \"fruit\", \"galaxy\", \"game\", \"golf\", \"grass\", \"gravity\", \"guitar\", \"hammer\", \"hand\", \"harmony\", \"hat\", \"head\", \"heart\", \"heritage\", \"hike\", \"history\", \"hockey\", \"house\", \"humidity\", \"hymn\", \"juice\", \"lake\", \"lamp\", \"leaf\", \"league\", \"lineage\", \"lion\", \"match\", \"matter\", \"melody\", \"metropolis\", \"milk\", \"moon\", \"mountain\", \"municipality\", \"nebula\", \"neighborhood\", \"novel\", \"ocean\", \"opera\", \"organ\", \"pants\", \"park\", \"particle\", \"past\", \"pencil\", \"performance\", \"piano\", \"pitcher\", \"plane\", \"planet\", \"plant\", \"play\", \"plaza\", \"pliers\", \"poem\", \"rain\", \"record\", \"recording\", \"rhythm\", \"river\", \"road\", \"saw\", \"school\", \"seed\", \"ship\", \"shirt\", \"shoe\", \"snow\", \"soccer\", \"sofa\", \"song\", \"star\", \"storm\", \"street\", \"student\", \"study\", \"suburb\", \"subway\", \"symphony\", \"table\", \"teacher\", \"tennis\", \"theater\", \"tiger\", \"tower\", \"trail\", \"train\", \"tree\", \"trek\", \"truck\", \"universe\", \"university\", \"valley\", \"water\", \"whale\", \"wind\", \"wolf\", \"wrench\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"category name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:58:17",
+    "details": {
+      "word": "tunnel",
+      "rank": 8223,
+      "hypothesis": "civil infrastructure",
+      "best_word": "history",
+      "best_rank": 5,
+      "total_guesses": 148
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:58:18",
+    "details": {
+      "word": "station",
+      "rank": 3549,
+      "hypothesis": "civil infrastructure",
+      "best_word": "history",
+      "best_rank": 5,
+      "total_guesses": 149
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T16:58:18",
+    "details": {
+      "word": "port",
+      "rank": 4818,
+      "hypothesis": "civil infrastructure",
+      "best_word": "history",
+      "best_rank": 5,
+      "total_guesses": 150
+    }
+  },
+  {
+    "generation": 2,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-08-13T17:00:19",
+    "details": {
+      "parent_id": "bc9a37e388d7446cac117dbe167bd33c",
+      "child_id": "d56b5a7406f242e099cf1c4591bc370a",
+      "parent_rank": 324,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "theatrical productions",
+      "sampled_op": "s_mutation",
+      "method": "self_adaptive",
+      "self_report": {
+        "predicted_closeness": 0.8,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "play"
+          ],
+          "reason": "The word 'play' suggests a strong focus on scripted theatrical content; 'script', 'cast', and 'scene' are specific components that refine this area."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"name\": \"theatrical productions\", \"description\": \"scripted works for the stage\", \"words\": [\"script\", \"cast\", \"scene\"], \"basis_words\": [\"play\"], \"reason\": \"The word 'play' suggests a strong focus on scripted theatrical content; 'script', 'cast', and 'scene' are specific components that refine this area.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.8}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"performing arts\".\nDescription: theatrical productions and dance performances\nResults so far in this hypothesis: {\"dance\": 856, \"drama\": 546, \"opera\": 1061, \"performance\": 540, \"play\": 324, \"theater\": 1507}\nBest word so far: \"play\" with rank 324.\n\nMake a SMALL mutation: produce a child hypothesis that stays in the same\nconceptual neighborhood as \"performing arts\" but narrows or refines it. The new starter\nwords should be close semantic neighbors of \"play\" - synonyms, common\ndescriptors, or words that frequently co-occur with it.\n\nFor example, if the parent is \"types of plants\" and the best word is \"shrub\",\na small mutation could be \"woody plants\" with starters like bush, hedge, thicket.\n\nSuggest one refined hypothesis. Include exactly 3 starter words that have not\nalready been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"ancestry\", \"archive\", \"asteroid\", \"atom\", \"ballad\", \"baseball\", \"basketball\", \"bat\", \"bear\", \"bed\", \"body\", \"bone\", \"book\", \"borough\", \"bread\", \"bridge\", \"building\", \"bus\", \"camp\", \"car\", \"chair\", \"cheese\", \"chisel\", \"chronicle\", \"city\", \"climb\", \"cloud\", \"coat\", \"college\", \"comet\", \"concert\", \"cosmos\", \"dance\", \"desk\", \"diamond\", \"district\", \"document\", \"drama\", \"dress\", \"drill\", \"eagle\", \"energy\", \"explore\", \"fable\", \"flower\", \"flute\", \"force\", \"forest\", \"fruit\", \"galaxy\", \"game\", \"golf\", \"grass\", \"gravity\", \"guitar\", \"hammer\", \"hand\", \"harmony\", \"hat\", \"head\", \"heart\", \"heritage\", \"hike\", \"history\", \"hockey\", \"house\", \"humidity\", \"hymn\", \"juice\", \"lake\", \"lamp\", \"leaf\", \"league\", \"lineage\", \"lion\", \"match\", \"matter\", \"melody\", \"metropolis\", \"milk\", \"moon\", \"mountain\", \"municipality\", \"nebula\", \"neighborhood\", \"novel\", \"ocean\", \"opera\", \"organ\", \"pants\", \"park\", \"particle\", \"past\", \"pencil\", \"performance\", \"piano\", \"pitcher\", \"plane\", \"planet\", \"plant\", \"play\", \"plaza\", \"pliers\", \"poem\", \"port\", \"rain\", \"record\", \"recording\", \"rhythm\", \"river\", \"road\", \"saw\", \"school\", \"seed\", \"ship\", \"shirt\", \"shoe\", \"snow\", \"soccer\", \"sofa\", \"song\", \"star\", \"station\", \"storm\", \"street\", \"student\", \"study\", \"suburb\", \"subway\", \"symphony\", \"table\", \"teacher\", \"tennis\", \"theater\", \"tiger\", \"tower\", \"trail\", \"train\", \"tree\", \"trek\", \"truck\", \"tunnel\", \"universe\", \"university\", \"valley\", \"water\", \"whale\", \"wind\", \"wolf\", \"wrench\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"direction name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nThe parent hypothesis's prior rationale (for context only; do not copy blindly): basis_words=[\"song\"], reason=\"The rank of 'song' suggests a broad interest in performance and entertainment; performing arts is an adjacent category that includes music as one of its components.\".\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": "85534ba84ea66fdf",
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T17:00:21",
+    "details": {
+      "word": "script",
+      "rank": 5316,
+      "hypothesis": "theatrical productions",
+      "best_word": "history",
+      "best_rank": 5,
+      "total_guesses": 151
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T17:00:21",
+    "details": {
+      "word": "cast",
+      "rank": 4607,
+      "hypothesis": "theatrical productions",
+      "best_word": "history",
+      "best_rank": 5,
+      "total_guesses": 152
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T17:00:22",
+    "details": {
+      "word": "scene",
+      "rank": 553,
+      "hypothesis": "theatrical productions",
+      "best_word": "history",
+      "best_rank": 5,
+      "total_guesses": 153
+    }
+  },
+  {
+    "generation": 2,
+    "event": "MUTATE",
+    "timestamp": "2026-08-13T17:00:22",
+    "details": {
+      "method": "self_adaptive",
+      "children": [
+        {
+          "hypothesis_id": "d66fb53ff51749b390f891e9ea5bfcaa",
+          "category_name": "lineage and heritage",
+          "description": "shifting from physical records to ancestral lines and inherited identity",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "historical records",
+          "parent_id": "6e9dc43ff15a49d0b622b83fca3d0817",
+          "origin": "self_adaptive_m_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "self_report": {
+            "predicted_closeness": 0.8,
+            "predicted_closeness_clamped": false,
+            "predicted_bucket": "top100",
+            "rationale": {
+              "basis_words": [
+                "history"
+              ],
+              "reason": "This moves the focus from archival preservation to the continuity of lineage and inheritance."
+            },
+            "self_report_parse_failed": false,
+            "self_report_raw": "{\"name\": \"lineage and heritage\", \"description\": \"shifting from physical records to ancestral lines and inherited identity\", \"words\": [\"ancestry\", \"lineage\", \"heritage\"], \"basis_words\": [\"history\"], \"reason\": \"This moves the focus from archival preservation to the continuity of lineage and inheritance.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.8}",
+            "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"historical records\".\nDescription: items related to historical events and preserved information\nResults so far in this hypothesis: {\"archive\": 1536, \"chronicle\": 622, \"document\": 1315, \"history\": 5, \"past\": 8, \"record\": 107}\nBest word so far: \"history\" with rank 5.\n\nMake a MEDIUM mutation: produce a child hypothesis that reinterprets why\n\"history\" might have scored well, or shifts to a related sense, lexical\nregister, or part of speech. The child should still be semantically anchored\nto \"history\" but approach it from a clearly different angle than \"historical records\".\n\nFor example, if the parent is \"food\" and the best word is \"bite\", a medium\nmutation could be \"animals that bite\", \"physical sensations from biting\", or\n\"clinical terms for biting and chewing\" - each treats \"bite\" through a\ndifferent lens.\n\nSuggest one reframed hypothesis. Include exactly 3 starter words that have\nnot already been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"archive\", \"asteroid\", \"atom\", \"ballad\", \"baseball\", \"basketball\", \"bear\", \"bed\", \"body\", \"bone\", \"book\", \"borough\", \"bread\", \"bridge\", \"building\", \"bus\", \"camp\", \"car\", \"chair\", \"cheese\", \"chisel\", \"chronicle\", \"city\", \"climb\", \"cloud\", \"coat\", \"college\", \"comet\", \"concert\", \"cosmos\", \"dance\", \"desk\", \"district\", \"document\", \"drama\", \"dress\", \"drill\", \"eagle\", \"energy\", \"explore\", \"flower\", \"flute\", \"force\", \"forest\", \"fruit\", \"galaxy\", \"game\", \"golf\", \"grass\", \"gravity\", \"guitar\", \"hammer\", \"hand\", \"harmony\", \"hat\", \"head\", \"heart\", \"hike\", \"history\", \"hockey\", \"house\", \"humidity\", \"hymn\", \"juice\", \"lake\", \"lamp\", \"leaf\", \"league\", \"lion\", \"match\", \"matter\", \"melody\", \"metropolis\", \"milk\", \"moon\", \"mountain\", \"municipality\", \"nebula\", \"neighborhood\", \"ocean\", \"opera\", \"organ\", \"pants\", \"park\", \"particle\", \"past\", \"pencil\", \"performance\", \"piano\", \"plane\", \"planet\", \"plant\", \"play\", \"plaza\", \"pliers\", \"rain\", \"record\", \"recording\", \"rhythm\", \"river\", \"road\", \"saw\", \"school\", \"seed\", \"ship\", \"shirt\", \"shoe\", \"snow\", \"soccer\", \"sofa\", \"song\", \"star\", \"storm\", \"street\", \"student\", \"study\", \"suburb\", \"subway\", \"symphony\", \"table\", \"teacher\", \"tennis\", \"theater\", \"tiger\", \"tower\", \"trail\", \"train\", \"tree\", \"trek\", \"truck\", \"universe\", \"university\", \"valley\", \"water\", \"whale\", \"wind\", \"wolf\", \"wrench\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"direction name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nThe parent hypothesis's prior rationale (for context only; do not copy blindly): basis_words=[\"book\"], reason=\"This moves from the process of education to the preservation of information, exploring a different facet of knowledge while remaining in the same semantic sphere as 'book'.\".\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+            "injected_rationale_hash": "ed914ae92fd1f9f2",
+            "rationale_truncated": false
+          }
+        },
+        {
+          "hypothesis_id": "9e73382a2cc94e849701f84bc005bf07",
+          "category_name": "literary arts",
+          "description": "written compositions such as novels and poems",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "music",
+          "parent_id": "513a4132174746ed959fa706572b09c7",
+          "origin": "self_adaptive_l_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "self_report": {
+            "predicted_closeness": 0.7,
+            "predicted_closeness_clamped": false,
+            "predicted_bucket": "top100",
+            "rationale": {
+              "basis_words": [
+                "music"
+              ],
+              "reason": "This moves the search from auditory performance to written artistic expression, which shares a common ground in creative storytelling and composition."
+            },
+            "self_report_parse_failed": false,
+            "self_report_raw": "{\"name\": \"literary arts\", \"description\": \"written compositions such as novels and poems\", \"words\": [\"novel\", \"poem\", \"fable\"], \"basis_words\": [\"music\"], \"reason\": \"This moves the search from auditory performance to written artistic expression, which shares a common ground in creative storytelling and composition.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.7}",
+            "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"music\".\nDescription: musical instruments and performances\nBest word so far: \"song\" with rank 176.\nOther active categories already being explored: [\"historical records\", \"music\", \"sports\", \"urban\", \"performing arts\", \"lineage and heritage\"]\n\nMake a LARGE mutation: produce a child hypothesis in a broad, semantically\nsubstantial new direction that is unlike \"music\" and unlike the other active\ncategories above. The goal is to escape the current semantic region and open\nup unexplored territory, while staying plausibly relevant given \"song\"'s\nrank - lower ranks mean the target is closer to \"song\", so the jump\nmust remain in the same broad semantic area even when reframed.\n\nFor example, if the parent is \"types of plants\" and \"shrub\" ranks 50, a large\nmutation could be \"outdoor environments\" or \"rural landscape features\" -\nclearly outside the plant taxonomy but still in a plausible neighborhood for\na target close to \"shrub\".\n\nSuggest one new hypothesis. Include exactly 3 starter words that have not\nalready been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"ancestry\", \"archive\", \"asteroid\", \"atom\", \"ballad\", \"baseball\", \"basketball\", \"bear\", \"bed\", \"body\", \"bone\", \"book\", \"borough\", \"bread\", \"bridge\", \"building\", \"bus\", \"camp\", \"car\", \"chair\", \"cheese\", \"chisel\", \"chronicle\", \"city\", \"climb\", \"cloud\", \"coat\", \"college\", \"comet\", \"concert\", \"cosmos\", \"dance\", \"desk\", \"district\", \"document\", \"drama\", \"dress\", \"drill\", \"eagle\", \"energy\", \"explore\", \"flower\", \"flute\", \"force\", \"forest\", \"fruit\", \"galaxy\", \"game\", \"golf\", \"grass\", \"gravity\", \"guitar\", \"hammer\", \"hand\", \"harmony\", \"hat\", \"head\", \"heart\", \"heritage\", \"hike\", \"history\", \"hockey\", \"house\", \"humidity\", \"hymn\", \"juice\", \"lake\", \"lamp\", \"leaf\", \"league\", \"lineage\", \"lion\", \"match\", \"matter\", \"melody\", \"metropolis\", \"milk\", \"moon\", \"mountain\", \"municipality\", \"nebula\", \"neighborhood\", \"ocean\", \"opera\", \"organ\", \"pants\", \"park\", \"particle\", \"past\", \"pencil\", \"performance\", \"piano\", \"plane\", \"planet\", \"plant\", \"play\", \"plaza\", \"pliers\", \"rain\", \"record\", \"recording\", \"rhythm\", \"river\", \"road\", \"saw\", \"school\", \"seed\", \"ship\", \"shirt\", \"shoe\", \"snow\", \"soccer\", \"sofa\", \"song\", \"star\", \"storm\", \"street\", \"student\", \"study\", \"suburb\", \"subway\", \"symphony\", \"table\", \"teacher\", \"tennis\", \"theater\", \"tiger\", \"tower\", \"trail\", \"train\", \"tree\", \"trek\", \"truck\", \"universe\", \"university\", \"valley\", \"water\", \"whale\", \"wind\", \"wolf\", \"wrench\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"direction name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+            "injected_rationale_hash": null,
+            "rationale_truncated": false
+          }
+        },
+        {
+          "hypothesis_id": "d2042114bc464e7895b7cb30b77d09ee",
+          "category_name": "baseball_equipment_and_terms",
+          "description": "specialized terminology and equipment related specifically to baseball",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "sports",
+          "parent_id": "50abbc5cae77421b91dfbe6db4ae7d06",
+          "origin": "self_adaptive_m_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "self_report": {
+            "predicted_closeness": 0.8,
+            "predicted_closeness_clamped": false,
+            "predicted_bucket": "top100",
+            "rationale": {
+              "basis_words": [
+                "baseball",
+                "league"
+              ],
+              "reason": "The proximity of 'baseball' and 'league' compared to other sports suggests the target is specific to baseball's unique rules or equipment rather than general sports."
+            },
+            "self_report_parse_failed": false,
+            "self_report_raw": "{\"name\": \"baseball_equipment_and_terms\", \"description\": \"specialized terminology and equipment related specifically to baseball\", \"words\": [\"bat\", \"pitcher\", \"diamond\"], \"basis_words\": [\"baseball\", \"league\"], \"reason\": \"The proximity of 'baseball' and 'league' compared to other sports suggests the target is specific to baseball's unique rules or equipment rather than general sports.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.8}",
+            "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"sports\".\nDescription: athletic activities and games\nResults so far in this hypothesis: {\"baseball\": 182, \"basketball\": 3546, \"game\": 290, \"golf\": 9191, \"hockey\": 4033, \"league\": 193, \"match\": 1606, \"soccer\": 5809, \"tennis\": 6913}\nBest word so far: \"baseball\" with rank 182.\n\nMake a MEDIUM mutation: produce a child hypothesis that reinterprets why\n\"baseball\" might have scored well, or shifts to a related sense, lexical\nregister, or part of speech. The child should still be semantically anchored\nto \"baseball\" but approach it from a clearly different angle than \"sports\".\n\nFor example, if the parent is \"food\" and the best word is \"bite\", a medium\nmutation could be \"animals that bite\", \"physical sensations from biting\", or\n\"clinical terms for biting and chewing\" - each treats \"bite\" through a\ndifferent lens.\n\nSuggest one reframed hypothesis. Include exactly 3 starter words that have\nnot already been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"ancestry\", \"archive\", \"asteroid\", \"atom\", \"ballad\", \"baseball\", \"basketball\", \"bear\", \"bed\", \"body\", \"bone\", \"book\", \"borough\", \"bread\", \"bridge\", \"building\", \"bus\", \"camp\", \"car\", \"chair\", \"cheese\", \"chisel\", \"chronicle\", \"city\", \"climb\", \"cloud\", \"coat\", \"college\", \"comet\", \"concert\", \"cosmos\", \"dance\", \"desk\", \"district\", \"document\", \"drama\", \"dress\", \"drill\", \"eagle\", \"energy\", \"explore\", \"fable\", \"flower\", \"flute\", \"force\", \"forest\", \"fruit\", \"galaxy\", \"game\", \"golf\", \"grass\", \"gravity\", \"guitar\", \"hammer\", \"hand\", \"harmony\", \"hat\", \"head\", \"heart\", \"heritage\", \"hike\", \"history\", \"hockey\", \"house\", \"humidity\", \"hymn\", \"juice\", \"lake\", \"lamp\", \"leaf\", \"league\", \"lineage\", \"lion\", \"match\", \"matter\", \"melody\", \"metropolis\", \"milk\", \"moon\", \"mountain\", \"municipality\", \"nebula\", \"neighborhood\", \"novel\", \"ocean\", \"opera\", \"organ\", \"pants\", \"park\", \"particle\", \"past\", \"pencil\", \"performance\", \"piano\", \"plane\", \"planet\", \"plant\", \"play\", \"plaza\", \"pliers\", \"poem\", \"rain\", \"record\", \"recording\", \"rhythm\", \"river\", \"road\", \"saw\", \"school\", \"seed\", \"ship\", \"shirt\", \"shoe\", \"snow\", \"soccer\", \"sofa\", \"song\", \"star\", \"storm\", \"street\", \"student\", \"study\", \"suburb\", \"subway\", \"symphony\", \"table\", \"teacher\", \"tennis\", \"theater\", \"tiger\", \"tower\", \"trail\", \"train\", \"tree\", \"trek\", \"truck\", \"universe\", \"university\", \"valley\", \"water\", \"whale\", \"wind\", \"wolf\", \"wrench\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"direction name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+            "injected_rationale_hash": null,
+            "rationale_truncated": false
+          }
+        },
+        {
+          "hypothesis_id": "cb54ed73e021406686855a247296c8be",
+          "category_name": "civil infrastructure",
+          "description": "physical systems and structures required for a functioning community",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "urban",
+          "parent_id": "a0f721be06514467ab34d591ec9555e4",
+          "origin": "self_adaptive_ml_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "self_report": {
+            "predicted_closeness": 0.7,
+            "predicted_closeness_clamped": false,
+            "predicted_bucket": "top100",
+            "rationale": {
+              "basis_words": [
+                "city",
+                "building"
+              ],
+              "reason": "The proximity of 'city' (286) and 'building' (445) suggests the target is a structure or system within an urban environment. Moving to civil infrastructure explores physical structures beyond just the concept of a city."
+            },
+            "self_report_parse_failed": false,
+            "self_report_raw": "{\"name\": \"civil infrastructure\", \"description\": \"physical systems and structures required for a functioning community\", \"words\": [\"tunnel\", \"station\", \"port\"], \"basis_words\": [\"city\", \"building\"], \"reason\": \"The proximity of 'city' (286) and 'building' (445) suggests the target is a structure or system within an urban environment. Moving to civil infrastructure explores physical structures beyond just the concept of a city.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.7}",
+            "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"urban\".\nDescription: features found in a city environment\nResults so far in this hypothesis: {\"bridge\": 3717, \"building\": 445, \"city\": 286, \"park\": 3762, \"plaza\": 5397, \"road\": 3566, \"street\": 1873, \"subway\": 8023, \"tower\": 2928}\nBest word so far: \"city\" with rank 286.\n\nMake a MEDIUM-LARGE mutation: produce a child hypothesis in an ADJACENT but\ndistinct category that could still plausibly contain the hidden target given\n\"city\"'s rank. The child must NOT be a sub-category of \"urban\" - it\nshould sit alongside \"urban\" in semantic space, not underneath it.\n\nFor example, if the parent is \"types of plants\" and the best word is \"shrub\",\nan adjacent category could be \"plant descriptors\", \"botanical terminology\",\n\"growth habits\", or \"ecological roles\".\n\nSuggest one adjacent hypothesis. Include exactly 3 starter words that have\nnot already been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"ancestry\", \"archive\", \"asteroid\", \"atom\", \"ballad\", \"baseball\", \"basketball\", \"bat\", \"bear\", \"bed\", \"body\", \"bone\", \"book\", \"borough\", \"bread\", \"bridge\", \"building\", \"bus\", \"camp\", \"car\", \"chair\", \"cheese\", \"chisel\", \"chronicle\", \"city\", \"climb\", \"cloud\", \"coat\", \"college\", \"comet\", \"concert\", \"cosmos\", \"dance\", \"desk\", \"diamond\", \"district\", \"document\", \"drama\", \"dress\", \"drill\", \"eagle\", \"energy\", \"explore\", \"fable\", \"flower\", \"flute\", \"force\", \"forest\", \"fruit\", \"galaxy\", \"game\", \"golf\", \"grass\", \"gravity\", \"guitar\", \"hammer\", \"hand\", \"harmony\", \"hat\", \"head\", \"heart\", \"heritage\", \"hike\", \"history\", \"hockey\", \"house\", \"humidity\", \"hymn\", \"juice\", \"lake\", \"lamp\", \"leaf\", \"league\", \"lineage\", \"lion\", \"match\", \"matter\", \"melody\", \"metropolis\", \"milk\", \"moon\", \"mountain\", \"municipality\", \"nebula\", \"neighborhood\", \"novel\", \"ocean\", \"opera\", \"organ\", \"pants\", \"park\", \"particle\", \"past\", \"pencil\", \"performance\", \"piano\", \"pitcher\", \"plane\", \"planet\", \"plant\", \"play\", \"plaza\", \"pliers\", \"poem\", \"rain\", \"record\", \"recording\", \"rhythm\", \"river\", \"road\", \"saw\", \"school\", \"seed\", \"ship\", \"shirt\", \"shoe\", \"snow\", \"soccer\", \"sofa\", \"song\", \"star\", \"storm\", \"street\", \"student\", \"study\", \"suburb\", \"subway\", \"symphony\", \"table\", \"teacher\", \"tennis\", \"theater\", \"tiger\", \"tower\", \"trail\", \"train\", \"tree\", \"trek\", \"truck\", \"universe\", \"university\", \"valley\", \"water\", \"whale\", \"wind\", \"wolf\", \"wrench\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"category name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+            "injected_rationale_hash": null,
+            "rationale_truncated": false
+          }
+        },
+        {
+          "hypothesis_id": "d56b5a7406f242e099cf1c4591bc370a",
+          "category_name": "theatrical productions",
+          "description": "scripted works for the stage",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "performing arts",
+          "parent_id": "bc9a37e388d7446cac117dbe167bd33c",
+          "origin": "self_adaptive_s_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "self_report": {
+            "predicted_closeness": 0.8,
+            "predicted_closeness_clamped": false,
+            "predicted_bucket": "top100",
+            "rationale": {
+              "basis_words": [
+                "play"
+              ],
+              "reason": "The word 'play' suggests a strong focus on scripted theatrical content; 'script', 'cast', and 'scene' are specific components that refine this area."
+            },
+            "self_report_parse_failed": false,
+            "self_report_raw": "{\"name\": \"theatrical productions\", \"description\": \"scripted works for the stage\", \"words\": [\"script\", \"cast\", \"scene\"], \"basis_words\": [\"play\"], \"reason\": \"The word 'play' suggests a strong focus on scripted theatrical content; 'script', 'cast', and 'scene' are specific components that refine this area.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.8}",
+            "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"performing arts\".\nDescription: theatrical productions and dance performances\nResults so far in this hypothesis: {\"dance\": 856, \"drama\": 546, \"opera\": 1061, \"performance\": 540, \"play\": 324, \"theater\": 1507}\nBest word so far: \"play\" with rank 324.\n\nMake a SMALL mutation: produce a child hypothesis that stays in the same\nconceptual neighborhood as \"performing arts\" but narrows or refines it. The new starter\nwords should be close semantic neighbors of \"play\" - synonyms, common\ndescriptors, or words that frequently co-occur with it.\n\nFor example, if the parent is \"types of plants\" and the best word is \"shrub\",\na small mutation could be \"woody plants\" with starters like bush, hedge, thicket.\n\nSuggest one refined hypothesis. Include exactly 3 starter words that have not\nalready been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"ancestry\", \"archive\", \"asteroid\", \"atom\", \"ballad\", \"baseball\", \"basketball\", \"bat\", \"bear\", \"bed\", \"body\", \"bone\", \"book\", \"borough\", \"bread\", \"bridge\", \"building\", \"bus\", \"camp\", \"car\", \"chair\", \"cheese\", \"chisel\", \"chronicle\", \"city\", \"climb\", \"cloud\", \"coat\", \"college\", \"comet\", \"concert\", \"cosmos\", \"dance\", \"desk\", \"diamond\", \"district\", \"document\", \"drama\", \"dress\", \"drill\", \"eagle\", \"energy\", \"explore\", \"fable\", \"flower\", \"flute\", \"force\", \"forest\", \"fruit\", \"galaxy\", \"game\", \"golf\", \"grass\", \"gravity\", \"guitar\", \"hammer\", \"hand\", \"harmony\", \"hat\", \"head\", \"heart\", \"heritage\", \"hike\", \"history\", \"hockey\", \"house\", \"humidity\", \"hymn\", \"juice\", \"lake\", \"lamp\", \"leaf\", \"league\", \"lineage\", \"lion\", \"match\", \"matter\", \"melody\", \"metropolis\", \"milk\", \"moon\", \"mountain\", \"municipality\", \"nebula\", \"neighborhood\", \"novel\", \"ocean\", \"opera\", \"organ\", \"pants\", \"park\", \"particle\", \"past\", \"pencil\", \"performance\", \"piano\", \"pitcher\", \"plane\", \"planet\", \"plant\", \"play\", \"plaza\", \"pliers\", \"poem\", \"port\", \"rain\", \"record\", \"recording\", \"rhythm\", \"river\", \"road\", \"saw\", \"school\", \"seed\", \"ship\", \"shirt\", \"shoe\", \"snow\", \"soccer\", \"sofa\", \"song\", \"star\", \"station\", \"storm\", \"street\", \"student\", \"study\", \"suburb\", \"subway\", \"symphony\", \"table\", \"teacher\", \"tennis\", \"theater\", \"tiger\", \"tower\", \"trail\", \"train\", \"tree\", \"trek\", \"truck\", \"tunnel\", \"universe\", \"university\", \"valley\", \"water\", \"whale\", \"wind\", \"wolf\", \"wrench\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"direction name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nThe parent hypothesis's prior rationale (for context only; do not copy blindly): basis_words=[\"song\"], reason=\"The rank of 'song' suggests a broad interest in performance and entertainment; performing arts is an adjacent category that includes music as one of its components.\".\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+            "injected_rationale_hash": "85534ba84ea66fdf",
+            "rationale_truncated": false
+          }
+        }
+      ],
+      "best_word": "history",
+      "best_rank": 5,
+      "total_guesses": 153
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T17:01:04",
+    "details": {
+      "word": "genealogy",
+      "rank": 3409,
+      "hypothesis": "heritage_records",
+      "best_word": "history",
+      "best_rank": 5,
+      "total_guesses": 154
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T17:01:05",
+    "details": {
+      "word": "pedigree",
+      "rank": 6042,
+      "hypothesis": "heritage_records",
+      "best_word": "history",
+      "best_rank": 5,
+      "total_guesses": 155
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T17:01:05",
+    "details": {
+      "word": "provenance",
+      "rank": 13311,
+      "hypothesis": "heritage_records",
+      "best_word": "history",
+      "best_rank": 5,
+      "total_guesses": 156
+    }
+  },
+  {
+    "generation": 2,
+    "event": "CROSSOVER",
+    "timestamp": "2026-08-13T17:01:05",
+    "details": {
+      "parents": [
+        "historical records",
+        "lineage and heritage"
+      ],
+      "parent_ids": [
+        "6e9dc43ff15a49d0b622b83fca3d0817",
+        "d66fb53ff51749b390f891e9ea5bfcaa"
+      ],
+      "parent_ranks": [
+        5,
+        114
+      ],
+      "parent_a_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "parent_b_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma_pre_perturbation": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child": {
+        "hypothesis_id": "23823da520a047879d6048b1638ceac6",
+        "category_name": "heritage_records",
+        "description": "The documented history and recorded lineage of families or individuals.",
+        "words_tried": {
+          "genealogy": 3409,
+          "pedigree": 6042,
+          "provenance": 13311
+        },
+        "best_word": "genealogy",
+        "best_rank": 3409,
+        "status": "active",
+        "parent": "historical records+lineage and heritage",
+        "parent_id": null,
+        "origin": "crossover",
+        "sigma": [
+          0.25,
+          0.25,
+          0.25,
+          0.25
+        ],
+        "self_report": {
+          "predicted_closeness": 0.85,
+          "predicted_closeness_clamped": false,
+          "predicted_bucket": "top100",
+          "rationale": {
+            "basis_words": [
+              "ancestry",
+              "heritage",
+              "lineage",
+              "history",
+              "record",
+              "chronicle"
+            ],
+            "reason": "These words combine the concept of historical documentation (Category A) with ancestral lineage and origin (Category B)."
+          },
+          "self_report_parse_failed": false,
+          "self_report_raw": "{\"name\": \"heritage_records\", \"description\": \"The documented history and recorded lineage of families or individuals.\", \"words\": [\"genealogy\", \"pedigree\", \"provenance\"], \"basis_words\": [\"ancestry\", \"heritage\", \"lineage\", \"history\", \"record\", \"chronicle\"], \"reason\": \"These words combine the concept of historical documentation (Category A) with ancestral lineage and origin (Category B).\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.85}",
+          "self_report_prompt": "Return only JSON, no markdown or explanation.\nCategory A is historical records with results {\"archive\": 1536, \"chronicle\": 622, \"document\": 1315, \"history\": 5, \"past\": 8, \"record\": 107}.\nCategory B is lineage and heritage with results {\"ancestry\": 4491, \"heritage\": 114, \"lineage\": 947}.\nSuggest one new category that captures the intersection or overlap of A and B.\nInclude exactly 3 candidate words.\nEvery word must be one common lowercase dictionary word.\nJSON schema:\n{\"name\": \"category name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+          "injected_rationale_hash": null,
+          "rationale_truncated": false
+        }
+      },
+      "best_word": "history",
+      "best_rank": 5,
+      "total_guesses": 156
+    }
+  },
+  {
+    "generation": 2,
+    "event": "SIGMA_TRAJECTORY",
+    "timestamp": "2026-08-13T17:01:05",
+    "details": {
+      "mean_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "population_size": 11
+    }
+  },
+  {
+    "generation": 3,
+    "event": "CANDIDATES",
+    "timestamp": "2026-08-13T17:12:10",
+    "details": {
+      "count": 32,
+      "candidates": [
+        {
+          "hypothesis": "historical records",
+          "word": "annals"
+        },
+        {
+          "hypothesis": "historical records",
+          "word": "epoch"
+        },
+        {
+          "hypothesis": "historical records",
+          "word": "era"
+        },
+        {
+          "hypothesis": "lineage and heritage",
+          "word": "descent"
+        },
+        {
+          "hypothesis": "lineage and heritage",
+          "word": "legacy"
+        },
+        {
+          "hypothesis": "lineage and heritage",
+          "word": "roots"
+        },
+        {
+          "hypothesis": "music",
+          "word": "tune"
+        },
+        {
+          "hypothesis": "music",
+          "word": "chorus"
+        },
+        {
+          "hypothesis": "music",
+          "word": "verse"
+        },
+        {
+          "hypothesis": "sports",
+          "word": "team"
+        },
+        {
+          "hypothesis": "sports",
+          "word": "tournament"
+        },
+        {
+          "hypothesis": "sports",
+          "word": "competition"
+        },
+        {
+          "hypothesis": "baseball_equipment_and_terms",
+          "word": "catcher"
+        },
+        {
+          "hypothesis": "baseball_equipment_and_terms",
+          "word": "batter"
+        },
+        {
+          "hypothesis": "baseball_equipment_and_terms",
+          "word": "mound"
+        },
+        {
+          "hypothesis": "urban",
+          "word": "apartment"
+        },
+        {
+          "hypothesis": "urban",
+          "word": "capital"
+        },
+        {
+          "hypothesis": "urban",
+          "word": "town"
+        },
+        {
+          "hypothesis": "performing arts",
+          "word": "ballet"
+        },
+        {
+          "hypothesis": "performing arts",
+          "word": "musical"
+        },
+        {
+          "hypothesis": "performing arts",
+          "word": "show"
+        },
+        {
+          "hypothesis": "literary arts",
+          "word": "fiction"
+        },
+        {
+          "hypothesis": "literary arts",
+          "word": "prose"
+        },
+        {
+          "hypothesis": "literary arts",
+          "word": "literature"
+        },
+        {
+          "hypothesis": "theatrical productions",
+          "word": "act"
+        },
+        {
+          "hypothesis": "theatrical productions",
+          "word": "stage"
+        },
+        {
+          "hypothesis": "theatrical productions",
+          "word": "monologue"
+        },
+        {
+          "hypothesis": "heritage_records",
+          "word": "biography"
+        },
+        {
+          "hypothesis": "heritage_records",
+          "word": "tradition"
+        },
+        {
+          "hypothesis": "civil infrastructure",
+          "word": "infrastructure"
+        },
+        {
+          "hypothesis": "civil infrastructure",
+          "word": "highway"
+        },
+        {
+          "hypothesis": "civil infrastructure",
+          "word": "facility"
+        }
+      ]
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T17:12:14",
+    "details": {
+      "word": "annals",
+      "rank": 1918,
+      "hypothesis": "historical records",
+      "best_word": "history",
+      "best_rank": 5,
+      "total_guesses": 157
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T17:12:15",
+    "details": {
+      "word": "epoch",
+      "rank": 15,
+      "hypothesis": "historical records",
+      "best_word": "history",
+      "best_rank": 5,
+      "total_guesses": 158
+    }
+  },
+  {
+    "generation": 3,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T17:12:15",
+    "details": {
+      "word": "era",
+      "rank": 1,
+      "hypothesis": "historical records",
+      "best_word": "era",
+      "best_rank": 1,
+      "total_guesses": 159
+    }
+  },
+  {
+    "generation": 3,
+    "event": "SOLVED",
+    "timestamp": "2026-08-13T17:12:15",
+    "details": {
+      "answer": "era",
+      "rank": 1,
+      "total_guesses": 159
+    }
+  },
+  {
+    "generation": 3,
+    "event": "NETWORK_METRICS",
+    "timestamp": "2026-08-13T17:12:15",
+    "details": {
+      "network_calls": 80,
+      "network_wall_clock_seconds": 2455.9557,
+      "total_latency_seconds": 54.9168,
+      "mean_latency_seconds": 0.6865,
+      "median_latency_seconds": 0.2211,
+      "p95_latency_seconds": 3.2226,
+      "max_latency_seconds": 3.2497,
+      "status_counts": {
+        "200": 80
+      },
+      "outcome_counts": {
+        "ok": 80
+      }
+    }
+  }
+]

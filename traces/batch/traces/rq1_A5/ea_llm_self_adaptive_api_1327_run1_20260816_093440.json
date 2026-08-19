@@ -1,0 +1,2533 @@
+[
+  {
+    "generation": -1,
+    "event": "RUN_CONFIG",
+    "timestamp": "2026-08-16T09:32:38",
+    "details": {
+      "game": "api",
+      "solver": "llm",
+      "method": "ea_llm_self_adaptive",
+      "mode": "api",
+      "target": null,
+      "game_number": 1327,
+      "run_index": 0,
+      "game_embedding_path": null,
+      "solver_embedding_path": null,
+      "embedding_backend": null,
+      "vocabulary_size": null,
+      "alignment": "api_unknown",
+      "trace_schema_version": 3,
+      "instrumentation_provenance_hash": "bd9f2858283673a2",
+      "self_report": true,
+      "rationale_inheritance": true,
+      "max_generations": 50,
+      "llm_provider": "ollama",
+      "llm_model": "ministral-3:14b",
+      "llm_workers": 4,
+      "initial_categories": 15,
+      "max_active_hypotheses": null,
+      "local_search_rank_threshold": 100,
+      "self_adaptive_initial_categories": 15,
+      "self_adaptive_mu": 15,
+      "self_adaptive_concentration": 50.0,
+      "self_adaptive_sigma_floor": 0.02,
+      "self_adaptive_sigma_mode": "frozen_uniform",
+      "self_adaptive_selection_mode": "tophalf",
+      "mapelites_grid_resolution": null,
+      "mapelites_mutations_per_gen": null,
+      "mapelites_crossovers_per_gen": null,
+      "mapelites_initial_categories": null,
+      "mapelites_concentration": null,
+      "mapelites_sigma_floor": null,
+      "mapelites_sigma_mode": null,
+      "mapelites_frozen_sigma": null,
+      "mapelites_ranked_context_k": null,
+      "rank_cache_enabled": true,
+      "enable_pivot": false,
+      "ea_llm_pivot_stall_no_improvement_generations": null,
+      "ea_llm_pivot_stall_close_rank_threshold": null,
+      "ea_llm_pivot_stall_close_generations_limit": null,
+      "ea_llm_pivot_max_attempts_per_run": null,
+      "ea_llm_pivot_candidate_words_per_operator": null,
+      "ea_llm_pivot_resolution_window": null,
+      "random_seed": 0
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:33:18",
+    "details": {
+      "word": "body",
+      "rank": 5014,
+      "hypothesis": "human_basics",
+      "best_word": "body",
+      "best_rank": 5014,
+      "total_guesses": 1
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:33:18",
+    "details": {
+      "word": "mind",
+      "rank": 643,
+      "hypothesis": "human_basics",
+      "best_word": "mind",
+      "best_rank": 643,
+      "total_guesses": 2
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:33:18",
+    "details": {
+      "word": "hand",
+      "rank": 1241,
+      "hypothesis": "human_basics",
+      "best_word": "mind",
+      "best_rank": 643,
+      "total_guesses": 3
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:33:18",
+    "details": {
+      "word": "tree",
+      "rank": 7479,
+      "hypothesis": "nature_elements",
+      "best_word": "mind",
+      "best_rank": 643,
+      "total_guesses": 4
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:33:19",
+    "details": {
+      "word": "water",
+      "rank": 6228,
+      "hypothesis": "nature_elements",
+      "best_word": "mind",
+      "best_rank": 643,
+      "total_guesses": 5
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:33:19",
+    "details": {
+      "word": "stone",
+      "rank": 2380,
+      "hypothesis": "nature_elements",
+      "best_word": "mind",
+      "best_rank": 643,
+      "total_guesses": 6
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:33:19",
+    "details": {
+      "word": "run",
+      "rank": 623,
+      "hypothesis": "actions_movements",
+      "best_word": "run",
+      "best_rank": 623,
+      "total_guesses": 7
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:33:20",
+    "details": {
+      "word": "build",
+      "rank": 680,
+      "hypothesis": "actions_movements",
+      "best_word": "run",
+      "best_rank": 623,
+      "total_guesses": 8
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:33:21",
+    "details": {
+      "word": "eat",
+      "rank": 9453,
+      "hypothesis": "actions_movements",
+      "best_word": "run",
+      "best_rank": 623,
+      "total_guesses": 9
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:33:21",
+    "details": {
+      "word": "bread",
+      "rank": 12341,
+      "hypothesis": "food_and_ingestion",
+      "best_word": "run",
+      "best_rank": 623,
+      "total_guesses": 10
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:33:21",
+    "details": {
+      "word": "salt",
+      "rank": 11998,
+      "hypothesis": "food_and_ingestion",
+      "best_word": "run",
+      "best_rank": 623,
+      "total_guesses": 11
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:33:22",
+    "details": {
+      "word": "chew",
+      "rank": 31474,
+      "hypothesis": "food_and_ingestion",
+      "best_word": "run",
+      "best_rank": 623,
+      "total_guesses": 12
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:33:22",
+    "details": {
+      "word": "hammer",
+      "rank": 8572,
+      "hypothesis": "tools_and_machinery",
+      "best_word": "run",
+      "best_rank": 623,
+      "total_guesses": 13
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:33:23",
+    "details": {
+      "word": "key",
+      "rank": 651,
+      "hypothesis": "tools_and_machinery",
+      "best_word": "run",
+      "best_rank": 623,
+      "total_guesses": 14
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:33:23",
+    "details": {
+      "word": "wheel",
+      "rank": 9647,
+      "hypothesis": "tools_and_machinery",
+      "best_word": "run",
+      "best_rank": 623,
+      "total_guesses": 15
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:33:23",
+    "details": {
+      "word": "joy",
+      "rank": 3162,
+      "hypothesis": "emotions_and_states",
+      "best_word": "run",
+      "best_rank": 623,
+      "total_guesses": 16
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:33:23",
+    "details": {
+      "word": "fear",
+      "rank": 3478,
+      "hypothesis": "emotions_and_states",
+      "best_word": "run",
+      "best_rank": 623,
+      "total_guesses": 17
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:33:24",
+    "details": {
+      "word": "tired",
+      "rank": 4209,
+      "hypothesis": "emotions_and_states",
+      "best_word": "run",
+      "best_rank": 623,
+      "total_guesses": 18
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:33:24",
+    "details": {
+      "word": "mountain",
+      "rank": 7698,
+      "hypothesis": "places_and_locations",
+      "best_word": "run",
+      "best_rank": 623,
+      "total_guesses": 19
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:33:24",
+    "details": {
+      "word": "house",
+      "rank": 1473,
+      "hypothesis": "places_and_locations",
+      "best_word": "run",
+      "best_rank": 623,
+      "total_guesses": 20
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:33:25",
+    "details": {
+      "word": "road",
+      "rank": 3566,
+      "hypothesis": "places_and_locations",
+      "best_word": "run",
+      "best_rank": 623,
+      "total_guesses": 21
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:33:26",
+    "details": {
+      "word": "sunrise",
+      "rank": 8672,
+      "hypothesis": "time_concepts",
+      "best_word": "run",
+      "best_rank": 623,
+      "total_guesses": 22
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:33:26",
+    "details": {
+      "word": "year",
+      "rank": 20,
+      "hypothesis": "time_concepts",
+      "best_word": "year",
+      "best_rank": 20,
+      "total_guesses": 23
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:33:27",
+    "details": {
+      "word": "wait",
+      "rank": 1656,
+      "hypothesis": "time_concepts",
+      "best_word": "year",
+      "best_rank": 20,
+      "total_guesses": 24
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:33:27",
+    "details": {
+      "word": "speak",
+      "rank": 2083,
+      "hypothesis": "communication",
+      "best_word": "year",
+      "best_rank": 20,
+      "total_guesses": 25
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:33:28",
+    "details": {
+      "word": "letter",
+      "rank": 2226,
+      "hypothesis": "communication",
+      "best_word": "year",
+      "best_rank": 20,
+      "total_guesses": 26
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:33:28",
+    "details": {
+      "word": "song",
+      "rank": 176,
+      "hypothesis": "communication",
+      "best_word": "year",
+      "best_rank": 20,
+      "total_guesses": 27
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:33:28",
+    "details": {
+      "word": "heart",
+      "rank": 2725,
+      "hypothesis": "health_and_medicine",
+      "best_word": "year",
+      "best_rank": 20,
+      "total_guesses": 28
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:33:29",
+    "details": {
+      "word": "cough",
+      "rank": 15924,
+      "hypothesis": "health_and_medicine",
+      "best_word": "year",
+      "best_rank": 20,
+      "total_guesses": 29
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:33:29",
+    "details": {
+      "word": "bandage",
+      "rank": 18778,
+      "hypothesis": "health_and_medicine",
+      "best_word": "year",
+      "best_rank": 20,
+      "total_guesses": 30
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:33:30",
+    "details": {
+      "word": "family",
+      "rank": 786,
+      "hypothesis": "society_and_culture",
+      "best_word": "year",
+      "best_rank": 20,
+      "total_guesses": 31
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:33:31",
+    "details": {
+      "word": "law",
+      "rank": 2431,
+      "hypothesis": "society_and_culture",
+      "best_word": "year",
+      "best_rank": 20,
+      "total_guesses": 32
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:33:32",
+    "details": {
+      "word": "dance",
+      "rank": 856,
+      "hypothesis": "society_and_culture",
+      "best_word": "year",
+      "best_rank": 20,
+      "total_guesses": 33
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:33:32",
+    "details": {
+      "word": "rain",
+      "rank": 5805,
+      "hypothesis": "weather_and_climate",
+      "best_word": "year",
+      "best_rank": 20,
+      "total_guesses": 34
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:33:32",
+    "details": {
+      "word": "wind",
+      "rank": 6872,
+      "hypothesis": "weather_and_climate",
+      "best_word": "year",
+      "best_rank": 20,
+      "total_guesses": 35
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:33:32",
+    "details": {
+      "word": "cloud",
+      "rank": 4551,
+      "hypothesis": "weather_and_climate",
+      "best_word": "year",
+      "best_rank": 20,
+      "total_guesses": 36
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:33:32",
+    "details": {
+      "word": "truth",
+      "rank": 1922,
+      "hypothesis": "abstract_concepts",
+      "best_word": "year",
+      "best_rank": 20,
+      "total_guesses": 37
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:33:33",
+    "details": {
+      "word": "dream",
+      "rank": 570,
+      "hypothesis": "abstract_concepts",
+      "best_word": "year",
+      "best_rank": 20,
+      "total_guesses": 38
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:33:34",
+    "details": {
+      "word": "light",
+      "rank": 2248,
+      "hypothesis": "abstract_concepts",
+      "best_word": "year",
+      "best_rank": 20,
+      "total_guesses": 39
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:33:35",
+    "details": {
+      "word": "cook",
+      "rank": 9225,
+      "hypothesis": "domestic_life",
+      "best_word": "year",
+      "best_rank": 20,
+      "total_guesses": 40
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:33:35",
+    "details": {
+      "word": "sleep",
+      "rank": 9935,
+      "hypothesis": "domestic_life",
+      "best_word": "year",
+      "best_rank": 20,
+      "total_guesses": 41
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:33:35",
+    "details": {
+      "word": "clean",
+      "rank": 7115,
+      "hypothesis": "domestic_life",
+      "best_word": "year",
+      "best_rank": 20,
+      "total_guesses": 42
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:33:36",
+    "details": {
+      "word": "paint",
+      "rank": 2529,
+      "hypothesis": "art_and_creation",
+      "best_word": "year",
+      "best_rank": 20,
+      "total_guesses": 43
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:33:37",
+    "details": {
+      "word": "draw",
+      "rank": 1097,
+      "hypothesis": "art_and_creation",
+      "best_word": "year",
+      "best_rank": 20,
+      "total_guesses": 44
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:33:37",
+    "details": {
+      "word": "music",
+      "rank": 201,
+      "hypothesis": "art_and_creation",
+      "best_word": "year",
+      "best_rank": 20,
+      "total_guesses": 45
+    }
+  },
+  {
+    "generation": 0,
+    "event": "INIT",
+    "timestamp": "2026-08-16T09:33:37",
+    "details": {
+      "hypotheses": [
+        {
+          "hypothesis_id": "183f3ed1e37649feb983a2eb91d07645",
+          "category_name": "human_basics",
+          "description": "Foundational aspects of human life and biology",
+          "words_tried": {
+            "mind": 643,
+            "hand": 1241,
+            "body": 5014
+          },
+          "best_word": "mind",
+          "best_rank": 643,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "0d361dc18c144d0da845d208593a1967",
+          "category_name": "nature_elements",
+          "description": "Physical components found in the natural world",
+          "words_tried": {
+            "stone": 2380,
+            "water": 6228,
+            "tree": 7479
+          },
+          "best_word": "stone",
+          "best_rank": 2380,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "7dd7bfeca03d440b8298c1946c993b95",
+          "category_name": "actions_movements",
+          "description": "Verbs describing physical or dynamic processes",
+          "words_tried": {
+            "run": 623,
+            "build": 680,
+            "eat": 9453
+          },
+          "best_word": "run",
+          "best_rank": 623,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "2cf5a95c69674e7ca77cac2c1f6514e1",
+          "category_name": "food_and_ingestion",
+          "description": "Nutrition, sustenance, and related concepts",
+          "words_tried": {
+            "salt": 11998,
+            "bread": 12341,
+            "chew": 31474
+          },
+          "best_word": "salt",
+          "best_rank": 11998,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "7698f5ef44c54e66af7fe08cd7aa72c4",
+          "category_name": "tools_and_machinery",
+          "description": "Objects used to perform tasks or create things",
+          "words_tried": {
+            "key": 651,
+            "hammer": 8572,
+            "wheel": 9647
+          },
+          "best_word": "key",
+          "best_rank": 651,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "140b406eff1f42f59423575441d52239",
+          "category_name": "emotions_and_states",
+          "description": "Mental or affective conditions people experience",
+          "words_tried": {
+            "joy": 3162,
+            "fear": 3478,
+            "tired": 4209
+          },
+          "best_word": "joy",
+          "best_rank": 3162,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "c8bcf3965f9d401786958e91be56aa89",
+          "category_name": "places_and_locations",
+          "description": "Geographic settings or built environments",
+          "words_tried": {
+            "house": 1473,
+            "road": 3566,
+            "mountain": 7698
+          },
+          "best_word": "house",
+          "best_rank": 1473,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "c8220130937047e39612fff6cca39ae9",
+          "category_name": "time_concepts",
+          "description": "Temporal ideas, durations, or periods",
+          "words_tried": {
+            "year": 20,
+            "wait": 1656,
+            "sunrise": 8672
+          },
+          "best_word": "year",
+          "best_rank": 20,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "5d415219b3b94df58cae54cba85b4de0",
+          "category_name": "communication",
+          "description": "Methods of exchanging information or expression",
+          "words_tried": {
+            "song": 176,
+            "speak": 2083,
+            "letter": 2226
+          },
+          "best_word": "song",
+          "best_rank": 176,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "38c348869334491eb8711a897c973a8d",
+          "category_name": "health_and_medicine",
+          "description": "Therapeutic, biological, or medical themes",
+          "words_tried": {
+            "heart": 2725,
+            "cough": 15924,
+            "bandage": 18778
+          },
+          "best_word": "heart",
+          "best_rank": 2725,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "703afd5d53874cb59bfdb52b658dd886",
+          "category_name": "society_and_culture",
+          "description": "Shared norms, roles, and collective activities",
+          "words_tried": {
+            "family": 786,
+            "dance": 856,
+            "law": 2431
+          },
+          "best_word": "family",
+          "best_rank": 786,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "d42e4cd9e9214927ac957531fbe32341",
+          "category_name": "weather_and_climate",
+          "description": "Atmospheric phenomena and weather patterns",
+          "words_tried": {
+            "cloud": 4551,
+            "rain": 5805,
+            "wind": 6872
+          },
+          "best_word": "cloud",
+          "best_rank": 4551,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "edb51bbb1ab449339109c51ace4d4592",
+          "category_name": "abstract_concepts",
+          "description": "Non-tangible ideas or philosophical themes",
+          "words_tried": {
+            "dream": 570,
+            "truth": 1922,
+            "light": 2248
+          },
+          "best_word": "dream",
+          "best_rank": 570,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "de9559b1a3f44971b0a0bda37c2848d3",
+          "category_name": "domestic_life",
+          "description": "Daily routines, home-based activities, and chores",
+          "words_tried": {
+            "clean": 7115,
+            "cook": 9225,
+            "sleep": 9935
+          },
+          "best_word": "clean",
+          "best_rank": 7115,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "683672e9f0734f66a70561bf077b43f2",
+          "category_name": "art_and_creation",
+          "description": "Aesthetic expression or crafted objects",
+          "words_tried": {
+            "music": 201,
+            "draw": 1097,
+            "paint": 2529
+          },
+          "best_word": "music",
+          "best_rank": 201,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        }
+      ],
+      "best_word": "year",
+      "best_rank": 20,
+      "total_guesses": 45
+    }
+  },
+  {
+    "generation": 0,
+    "event": "SIGMA_TRAJECTORY",
+    "timestamp": "2026-08-16T09:33:37",
+    "details": {
+      "mean_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "population_size": 15
+    }
+  },
+  {
+    "generation": 1,
+    "event": "CANDIDATES",
+    "timestamp": "2026-08-16T09:33:50",
+    "details": {
+      "count": 45,
+      "candidates": [
+        {
+          "hypothesis": "human_basics",
+          "word": "breath"
+        },
+        {
+          "hypothesis": "human_basics",
+          "word": "cell"
+        },
+        {
+          "hypothesis": "human_basics",
+          "word": "blood"
+        },
+        {
+          "hypothesis": "nature_elements",
+          "word": "river"
+        },
+        {
+          "hypothesis": "nature_elements",
+          "word": "soil"
+        },
+        {
+          "hypothesis": "nature_elements",
+          "word": "sky"
+        },
+        {
+          "hypothesis": "actions_movements",
+          "word": "jump"
+        },
+        {
+          "hypothesis": "actions_movements",
+          "word": "move"
+        },
+        {
+          "hypothesis": "actions_movements",
+          "word": "swim"
+        },
+        {
+          "hypothesis": "food_and_ingestion",
+          "word": "digest"
+        },
+        {
+          "hypothesis": "food_and_ingestion",
+          "word": "nutrient"
+        },
+        {
+          "hypothesis": "food_and_ingestion",
+          "word": "hunger"
+        },
+        {
+          "hypothesis": "tools_and_machinery",
+          "word": "saw"
+        },
+        {
+          "hypothesis": "tools_and_machinery",
+          "word": "drill"
+        },
+        {
+          "hypothesis": "tools_and_machinery",
+          "word": "forge"
+        },
+        {
+          "hypothesis": "emotions_and_states",
+          "word": "happy"
+        },
+        {
+          "hypothesis": "emotions_and_states",
+          "word": "sadness"
+        },
+        {
+          "hypothesis": "emotions_and_states",
+          "word": "calm"
+        },
+        {
+          "hypothesis": "places_and_locations",
+          "word": "ocean"
+        },
+        {
+          "hypothesis": "places_and_locations",
+          "word": "valley"
+        },
+        {
+          "hypothesis": "places_and_locations",
+          "word": "plain"
+        },
+        {
+          "hypothesis": "time_concepts",
+          "word": "moment"
+        },
+        {
+          "hypothesis": "time_concepts",
+          "word": "duration"
+        },
+        {
+          "hypothesis": "time_concepts",
+          "word": "decade"
+        },
+        {
+          "hypothesis": "communication",
+          "word": "language"
+        },
+        {
+          "hypothesis": "communication",
+          "word": "message"
+        },
+        {
+          "hypothesis": "communication",
+          "word": "dialogue"
+        },
+        {
+          "hypothesis": "health_and_medicine",
+          "word": "clinic"
+        },
+        {
+          "hypothesis": "health_and_medicine",
+          "word": "vaccine"
+        },
+        {
+          "hypothesis": "health_and_medicine",
+          "word": "nurse"
+        },
+        {
+          "hypothesis": "society_and_culture",
+          "word": "tradition"
+        },
+        {
+          "hypothesis": "society_and_culture",
+          "word": "ethics"
+        },
+        {
+          "hypothesis": "society_and_culture",
+          "word": "community"
+        },
+        {
+          "hypothesis": "weather_and_climate",
+          "word": "storm"
+        },
+        {
+          "hypothesis": "weather_and_climate",
+          "word": "temperature"
+        },
+        {
+          "hypothesis": "weather_and_climate",
+          "word": "season"
+        },
+        {
+          "hypothesis": "abstract_concepts",
+          "word": "essence"
+        },
+        {
+          "hypothesis": "abstract_concepts",
+          "word": "illusion"
+        },
+        {
+          "hypothesis": "abstract_concepts",
+          "word": "existence"
+        },
+        {
+          "hypothesis": "domestic_life",
+          "word": "meal"
+        },
+        {
+          "hypothesis": "domestic_life",
+          "word": "garden"
+        },
+        {
+          "hypothesis": "domestic_life",
+          "word": "homework"
+        },
+        {
+          "hypothesis": "art_and_creation",
+          "word": "craft"
+        },
+        {
+          "hypothesis": "art_and_creation",
+          "word": "poem"
+        },
+        {
+          "hypothesis": "art_and_creation",
+          "word": "sculpt"
+        }
+      ]
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:33:51",
+    "details": {
+      "word": "breath",
+      "rank": 10823,
+      "hypothesis": "human_basics",
+      "best_word": "year",
+      "best_rank": 20,
+      "total_guesses": 46
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:33:51",
+    "details": {
+      "word": "cell",
+      "rank": 4351,
+      "hypothesis": "human_basics",
+      "best_word": "year",
+      "best_rank": 20,
+      "total_guesses": 47
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:33:52",
+    "details": {
+      "word": "blood",
+      "rank": 7210,
+      "hypothesis": "human_basics",
+      "best_word": "year",
+      "best_rank": 20,
+      "total_guesses": 48
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:33:52",
+    "details": {
+      "word": "river",
+      "rank": 2373,
+      "hypothesis": "nature_elements",
+      "best_word": "year",
+      "best_rank": 20,
+      "total_guesses": 49
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:33:52",
+    "details": {
+      "word": "soil",
+      "rank": 12493,
+      "hypothesis": "nature_elements",
+      "best_word": "year",
+      "best_rank": 20,
+      "total_guesses": 50
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:33:52",
+    "details": {
+      "word": "sky",
+      "rank": 4037,
+      "hypothesis": "nature_elements",
+      "best_word": "year",
+      "best_rank": 20,
+      "total_guesses": 51
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:33:52",
+    "details": {
+      "word": "jump",
+      "rank": 6285,
+      "hypothesis": "actions_movements",
+      "best_word": "year",
+      "best_rank": 20,
+      "total_guesses": 52
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:33:52",
+    "details": {
+      "word": "move",
+      "rank": 911,
+      "hypothesis": "actions_movements",
+      "best_word": "year",
+      "best_rank": 20,
+      "total_guesses": 53
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:33:52",
+    "details": {
+      "word": "swim",
+      "rank": 16208,
+      "hypothesis": "actions_movements",
+      "best_word": "year",
+      "best_rank": 20,
+      "total_guesses": 54
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:33:53",
+    "details": {
+      "word": "digest",
+      "rank": 9822,
+      "hypothesis": "food_and_ingestion",
+      "best_word": "year",
+      "best_rank": 20,
+      "total_guesses": 55
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:33:53",
+    "details": {
+      "word": "nutrient",
+      "rank": 25015,
+      "hypothesis": "food_and_ingestion",
+      "best_word": "year",
+      "best_rank": 20,
+      "total_guesses": 56
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:33:54",
+    "details": {
+      "word": "hunger",
+      "rank": 22872,
+      "hypothesis": "food_and_ingestion",
+      "best_word": "year",
+      "best_rank": 20,
+      "total_guesses": 57
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:33:54",
+    "details": {
+      "word": "saw",
+      "rank": 1011,
+      "hypothesis": "tools_and_machinery",
+      "best_word": "year",
+      "best_rank": 20,
+      "total_guesses": 58
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:33:55",
+    "details": {
+      "word": "drill",
+      "rank": 19710,
+      "hypothesis": "tools_and_machinery",
+      "best_word": "year",
+      "best_rank": 20,
+      "total_guesses": 59
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:33:56",
+    "details": {
+      "word": "forge",
+      "rank": 5709,
+      "hypothesis": "tools_and_machinery",
+      "best_word": "year",
+      "best_rank": 20,
+      "total_guesses": 60
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:33:56",
+    "details": {
+      "word": "happy",
+      "rank": 2755,
+      "hypothesis": "emotions_and_states",
+      "best_word": "year",
+      "best_rank": 20,
+      "total_guesses": 61
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:33:56",
+    "details": {
+      "word": "sadness",
+      "rank": 4874,
+      "hypothesis": "emotions_and_states",
+      "best_word": "year",
+      "best_rank": 20,
+      "total_guesses": 62
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:33:57",
+    "details": {
+      "word": "calm",
+      "rank": 13103,
+      "hypothesis": "emotions_and_states",
+      "best_word": "year",
+      "best_rank": 20,
+      "total_guesses": 63
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:33:57",
+    "details": {
+      "word": "ocean",
+      "rank": 4740,
+      "hypothesis": "places_and_locations",
+      "best_word": "year",
+      "best_rank": 20,
+      "total_guesses": 64
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:33:58",
+    "details": {
+      "word": "valley",
+      "rank": 2953,
+      "hypothesis": "places_and_locations",
+      "best_word": "year",
+      "best_rank": 20,
+      "total_guesses": 65
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:33:59",
+    "details": {
+      "word": "plain",
+      "rank": 6956,
+      "hypothesis": "places_and_locations",
+      "best_word": "year",
+      "best_rank": 20,
+      "total_guesses": 66
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:33:59",
+    "details": {
+      "word": "moment",
+      "rank": 140,
+      "hypothesis": "time_concepts",
+      "best_word": "year",
+      "best_rank": 20,
+      "total_guesses": 67
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:33:59",
+    "details": {
+      "word": "duration",
+      "rank": 5099,
+      "hypothesis": "time_concepts",
+      "best_word": "year",
+      "best_rank": 20,
+      "total_guesses": 68
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:33:59",
+    "details": {
+      "word": "decade",
+      "rank": 3,
+      "hypothesis": "time_concepts",
+      "best_word": "decade",
+      "best_rank": 3,
+      "total_guesses": 69
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:34:00",
+    "details": {
+      "word": "language",
+      "rank": 1101,
+      "hypothesis": "communication",
+      "best_word": "decade",
+      "best_rank": 3,
+      "total_guesses": 70
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:34:01",
+    "details": {
+      "word": "message",
+      "rank": 4034,
+      "hypothesis": "communication",
+      "best_word": "decade",
+      "best_rank": 3,
+      "total_guesses": 71
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:34:04",
+    "details": {
+      "word": "dialogue",
+      "rank": 2067,
+      "hypothesis": "communication",
+      "best_word": "decade",
+      "best_rank": 3,
+      "total_guesses": 72
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:34:05",
+    "details": {
+      "word": "clinic",
+      "rank": 17876,
+      "hypothesis": "health_and_medicine",
+      "best_word": "decade",
+      "best_rank": 3,
+      "total_guesses": 73
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:34:06",
+    "details": {
+      "word": "vaccine",
+      "rank": 15106,
+      "hypothesis": "health_and_medicine",
+      "best_word": "decade",
+      "best_rank": 3,
+      "total_guesses": 74
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:34:06",
+    "details": {
+      "word": "nurse",
+      "rank": 11295,
+      "hypothesis": "health_and_medicine",
+      "best_word": "decade",
+      "best_rank": 3,
+      "total_guesses": 75
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:34:06",
+    "details": {
+      "word": "tradition",
+      "rank": 51,
+      "hypothesis": "society_and_culture",
+      "best_word": "decade",
+      "best_rank": 3,
+      "total_guesses": 76
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:34:07",
+    "details": {
+      "word": "ethics",
+      "rank": 1248,
+      "hypothesis": "society_and_culture",
+      "best_word": "decade",
+      "best_rank": 3,
+      "total_guesses": 77
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:34:07",
+    "details": {
+      "word": "community",
+      "rank": 1213,
+      "hypothesis": "society_and_culture",
+      "best_word": "decade",
+      "best_rank": 3,
+      "total_guesses": 78
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:34:07",
+    "details": {
+      "word": "storm",
+      "rank": 4480,
+      "hypothesis": "weather_and_climate",
+      "best_word": "decade",
+      "best_rank": 3,
+      "total_guesses": 79
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:34:07",
+    "details": {
+      "word": "temperature",
+      "rank": 4400,
+      "hypothesis": "weather_and_climate",
+      "best_word": "decade",
+      "best_rank": 3,
+      "total_guesses": 80
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:34:07",
+    "details": {
+      "word": "season",
+      "rank": 52,
+      "hypothesis": "weather_and_climate",
+      "best_word": "decade",
+      "best_rank": 3,
+      "total_guesses": 81
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:34:08",
+    "details": {
+      "word": "essence",
+      "rank": 1310,
+      "hypothesis": "abstract_concepts",
+      "best_word": "decade",
+      "best_rank": 3,
+      "total_guesses": 82
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:34:09",
+    "details": {
+      "word": "illusion",
+      "rank": 5872,
+      "hypothesis": "abstract_concepts",
+      "best_word": "decade",
+      "best_rank": 3,
+      "total_guesses": 83
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:34:09",
+    "details": {
+      "word": "existence",
+      "rank": 496,
+      "hypothesis": "abstract_concepts",
+      "best_word": "decade",
+      "best_rank": 3,
+      "total_guesses": 84
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:34:10",
+    "details": {
+      "word": "meal",
+      "rank": 9958,
+      "hypothesis": "domestic_life",
+      "best_word": "decade",
+      "best_rank": 3,
+      "total_guesses": 85
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:34:10",
+    "details": {
+      "word": "garden",
+      "rank": 5742,
+      "hypothesis": "domestic_life",
+      "best_word": "decade",
+      "best_rank": 3,
+      "total_guesses": 86
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:34:11",
+    "details": {
+      "word": "homework",
+      "rank": 14405,
+      "hypothesis": "domestic_life",
+      "best_word": "decade",
+      "best_rank": 3,
+      "total_guesses": 87
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:34:12",
+    "details": {
+      "word": "craft",
+      "rank": 2664,
+      "hypothesis": "art_and_creation",
+      "best_word": "decade",
+      "best_rank": 3,
+      "total_guesses": 88
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:34:13",
+    "details": {
+      "word": "poem",
+      "rank": 2219,
+      "hypothesis": "art_and_creation",
+      "best_word": "decade",
+      "best_rank": 3,
+      "total_guesses": 89
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:34:13",
+    "details": {
+      "word": "sculpt",
+      "rank": 11279,
+      "hypothesis": "art_and_creation",
+      "best_word": "decade",
+      "best_rank": 3,
+      "total_guesses": 90
+    }
+  },
+  {
+    "generation": 1,
+    "event": "LOCAL_SEARCH_DISABLED",
+    "timestamp": "2026-08-16T09:34:13",
+    "details": {
+      "center_word": "decade",
+      "center_rank": 3,
+      "threshold": 100,
+      "reason": "self_adaptive_disable_local_search"
+    }
+  },
+  {
+    "generation": 1,
+    "event": "SELECT",
+    "timestamp": "2026-08-16T09:34:13",
+    "details": {
+      "kept": [
+        "time_concepts",
+        "society_and_culture",
+        "weather_and_climate",
+        "communication",
+        "art_and_creation"
+      ],
+      "discarded": [
+        "abstract_concepts",
+        "actions_movements",
+        "human_basics",
+        "tools_and_machinery",
+        "places_and_locations",
+        "nature_elements",
+        "health_and_medicine",
+        "emotions_and_states",
+        "domestic_life",
+        "food_and_ingestion"
+      ],
+      "elite": "time_concepts",
+      "max_active_hypotheses": 5,
+      "best_word": "decade",
+      "best_rank": 3,
+      "total_guesses": 90
+    }
+  },
+  {
+    "generation": 1,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-08-16T09:34:17",
+    "details": {
+      "parent_id": "c8220130937047e39612fff6cca39ae9",
+      "child_id": "f6bb9304fd914d549534ecfcfbd4f345",
+      "parent_rank": 3,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "measurement_units",
+      "sampled_op": "ml_mutation",
+      "method": "self_adaptive",
+      "self_report": {
+        "predicted_closeness": 0.35,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "decade"
+          ],
+          "reason": "'Decade' is a unit of time, suggesting the hidden target could belong to semantic space of standardized measurement systems. Within this, sub-quantities like *century* (a time-based unit) or physical quantities (*meter*, *gram*) offer plausible adjacency while avoiding direct overlap with 'time_concepts'."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\n  \"name\": \"measurement_units\",\n  \"description\": \"Standardized quantities or systems for quantifying dimensions or values\",\n  \"words\": [\"century\", \"meter\", \"gram\"],\n  \"basis_words\": [\"decade\"],\n\n  \"reason\": \"'Decade' is a unit of time, suggesting the hidden target could belong to semantic space of standardized measurement systems. Within this, sub-quantities like *century* (a time-based unit) or physical quantities (*meter*, *gram*) offer plausible adjacency while avoiding direct overlap with 'time_concepts'.\",\n\n  \"predicted_bucket\": \"top100\",\n  \"predicted_closeness\": 0.35\n}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"time_concepts\".\nDescription: Temporal ideas, durations, or periods\nResults so far in this hypothesis: {\"decade\": 3, \"duration\": 5099, \"moment\": 140, \"sunrise\": 8672, \"wait\": 1656, \"year\": 20}\nBest word so far: \"decade\" with rank 3.\n\nMake a MEDIUM-LARGE mutation: produce a child hypothesis in an ADJACENT but\ndistinct category that could still plausibly contain the hidden target given\n\"decade\"'s rank. The child must NOT be a sub-category of \"time_concepts\" - it\nshould sit alongside \"time_concepts\" in semantic space, not underneath it.\n\nFor example, if the parent is \"types of plants\" and the best word is \"shrub\",\nan adjacent category could be \"plant descriptors\", \"botanical terminology\",\n\"growth habits\", or \"ecological roles\".\n\nSuggest one adjacent hypothesis. Include exactly 3 starter words that have\nnot already been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"bandage\", \"blood\", \"body\", \"bread\", \"breath\", \"build\", \"calm\", \"cell\", \"chew\", \"clean\", \"clinic\", \"cloud\", \"community\", \"cook\", \"cough\", \"craft\", \"dance\", \"decade\", \"dialogue\", \"digest\", \"draw\", \"dream\", \"drill\", \"duration\", \"eat\", \"essence\", \"ethics\", \"existence\", \"family\", \"fear\", \"forge\", \"garden\", \"hammer\", \"hand\", \"happy\", \"heart\", \"homework\", \"house\", \"hunger\", \"illusion\", \"joy\", \"jump\", \"key\", \"language\", \"law\", \"letter\", \"light\", \"meal\", \"message\", \"mind\", \"moment\", \"mountain\", \"move\", \"music\", \"nurse\", \"nutrient\", \"ocean\", \"paint\", \"plain\", \"poem\", \"rain\", \"river\", \"road\", \"run\", \"sadness\", \"salt\", \"saw\", \"sculpt\", \"season\", \"sky\", \"sleep\", \"soil\", \"song\", \"speak\", \"stone\", \"storm\", \"sunrise\", \"swim\", \"temperature\", \"tired\", \"tradition\", \"tree\", \"truth\", \"vaccine\", \"valley\", \"wait\", \"water\", \"wheel\", \"wind\", \"year\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"category name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:34:17",
+    "details": {
+      "word": "century",
+      "rank": 4,
+      "hypothesis": "measurement_units",
+      "best_word": "decade",
+      "best_rank": 3,
+      "total_guesses": 91
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:34:17",
+    "details": {
+      "word": "meter",
+      "rank": 10192,
+      "hypothesis": "measurement_units",
+      "best_word": "decade",
+      "best_rank": 3,
+      "total_guesses": 92
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:34:18",
+    "details": {
+      "word": "gram",
+      "rank": 21329,
+      "hypothesis": "measurement_units",
+      "best_word": "decade",
+      "best_rank": 3,
+      "total_guesses": 93
+    }
+  },
+  {
+    "generation": 1,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-08-16T09:34:21",
+    "details": {
+      "parent_id": "703afd5d53874cb59bfdb52b658dd886",
+      "child_id": "60cd2c12917a4459ba2130c2bc07926b",
+      "parent_rank": 51,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "cultural_transmission_mechanisms",
+      "sampled_op": "m_mutation",
+      "method": "self_adaptive",
+      "self_report": {
+        "predicted_closeness": 0.65,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "tradition"
+          ],
+          "reason": "Focuses on the tangibility of tradition as embodied in practices or artifacts rather than abstract norms."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\n  \"name\": \"cultural_transmission_mechanisms\",\n  \"description\": \"how and why traditions are passed down through material objects, symbolic acts, or embedded knowledge\",\n  \"words\": [\"ritual\", \"heritage\", \"emblem\"],\n  \"basis_words\": [\"tradition\"],\n  \"reason\": \"Focuses on the tangibility of tradition as embodied in practices or artifacts rather than abstract norms.\",\n  \"predicted_bucket\": \"top100\",\n  \"predicted_closeness\": 0.65\n}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"society_and_culture\".\nDescription: Shared norms, roles, and collective activities\nResults so far in this hypothesis: {\"community\": 1213, \"dance\": 856, \"ethics\": 1248, \"family\": 786, \"law\": 2431, \"tradition\": 51}\nBest word so far: \"tradition\" with rank 51.\n\nMake a MEDIUM mutation: produce a child hypothesis that reinterprets why\n\"tradition\" might have scored well, or shifts to a related sense, lexical\nregister, or part of speech. The child should still be semantically anchored\nto \"tradition\" but approach it from a clearly different angle than \"society_and_culture\".\n\nFor example, if the parent is \"food\" and the best word is \"bite\", a medium\nmutation could be \"animals that bite\", \"physical sensations from biting\", or\n\"clinical terms for biting and chewing\" - each treats \"bite\" through a\ndifferent lens.\n\nSuggest one reframed hypothesis. Include exactly 3 starter words that have\nnot already been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"bandage\", \"blood\", \"body\", \"bread\", \"breath\", \"build\", \"calm\", \"cell\", \"century\", \"chew\", \"clean\", \"clinic\", \"cloud\", \"community\", \"cook\", \"cough\", \"craft\", \"dance\", \"decade\", \"dialogue\", \"digest\", \"draw\", \"dream\", \"drill\", \"duration\", \"eat\", \"essence\", \"ethics\", \"existence\", \"family\", \"fear\", \"forge\", \"garden\", \"gram\", \"hammer\", \"hand\", \"happy\", \"heart\", \"homework\", \"house\", \"hunger\", \"illusion\", \"joy\", \"jump\", \"key\", \"language\", \"law\", \"letter\", \"light\", \"meal\", \"message\", \"meter\", \"mind\", \"moment\", \"mountain\", \"move\", \"music\", \"nurse\", \"nutrient\", \"ocean\", \"paint\", \"plain\", \"poem\", \"rain\", \"river\", \"road\", \"run\", \"sadness\", \"salt\", \"saw\", \"sculpt\", \"season\", \"sky\", \"sleep\", \"soil\", \"song\", \"speak\", \"stone\", \"storm\", \"sunrise\", \"swim\", \"temperature\", \"tired\", \"tradition\", \"tree\", \"truth\", \"vaccine\", \"valley\", \"wait\", \"water\", \"wheel\", \"wind\", \"year\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"direction name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:34:21",
+    "details": {
+      "word": "ritual",
+      "rank": 3489,
+      "hypothesis": "cultural_transmission_mechanisms",
+      "best_word": "decade",
+      "best_rank": 3,
+      "total_guesses": 94
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:34:21",
+    "details": {
+      "word": "heritage",
+      "rank": 114,
+      "hypothesis": "cultural_transmission_mechanisms",
+      "best_word": "decade",
+      "best_rank": 3,
+      "total_guesses": 95
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:34:22",
+    "details": {
+      "word": "emblem",
+      "rank": 4357,
+      "hypothesis": "cultural_transmission_mechanisms",
+      "best_word": "decade",
+      "best_rank": 3,
+      "total_guesses": 96
+    }
+  },
+  {
+    "generation": 1,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-08-16T09:34:26",
+    "details": {
+      "parent_id": "d42e4cd9e9214927ac957531fbe32341",
+      "child_id": "8ee850754fda41649f8fa8d2768313e5",
+      "parent_rank": 52,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "climatic_zones",
+      "sampled_op": "s_mutation",
+      "method": "self_adaptive",
+      "self_report": {
+        "predicted_closeness": 0.9,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top10",
+        "rationale": {
+          "basis_words": [
+            "season"
+          ],
+          "reason": "'Season' often correlates with geographic climate zones, which include **tropical**, **arid**, and **polar** as defining descriptors across various contexts (e.g., 'dry season,' 'temperate zone'). These terms are semantically tied to seasonal variations."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\n  \"name\": \"climatic_zones\",\n  \"description\": \"Regions and types of climates based on geographic distribution.\",\n  \"words\": [\"tropical\", \"arid\", \"polar\"],\n  \"basis_words\": [\"season\"],\n  \"reason\": \"'Season' often correlates with geographic climate zones, which include **tropical**, **arid**, and **polar** as defining descriptors across various contexts (e.g., 'dry season,' 'temperate zone'). These terms are semantically tied to seasonal variations.\",\n  \"predicted_bucket\": \"top10\",\n  \"predicted_closeness\": 0.9\n}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"weather_and_climate\".\nDescription: Atmospheric phenomena and weather patterns\nResults so far in this hypothesis: {\"cloud\": 4551, \"rain\": 5805, \"season\": 52, \"storm\": 4480, \"temperature\": 4400, \"wind\": 6872}\nBest word so far: \"season\" with rank 52.\n\nMake a SMALL mutation: produce a child hypothesis that stays in the same\nconceptual neighborhood as \"weather_and_climate\" but narrows or refines it. The new starter\nwords should be close semantic neighbors of \"season\" - synonyms, common\ndescriptors, or words that frequently co-occur with it.\n\nFor example, if the parent is \"types of plants\" and the best word is \"shrub\",\na small mutation could be \"woody plants\" with starters like bush, hedge, thicket.\n\nSuggest one refined hypothesis. Include exactly 3 starter words that have not\nalready been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"bandage\", \"blood\", \"body\", \"bread\", \"breath\", \"build\", \"calm\", \"cell\", \"century\", \"chew\", \"clean\", \"clinic\", \"cloud\", \"community\", \"cook\", \"cough\", \"craft\", \"dance\", \"decade\", \"dialogue\", \"digest\", \"draw\", \"dream\", \"drill\", \"duration\", \"eat\", \"emblem\", \"essence\", \"ethics\", \"existence\", \"family\", \"fear\", \"forge\", \"garden\", \"gram\", \"hammer\", \"hand\", \"happy\", \"heart\", \"heritage\", \"homework\", \"house\", \"hunger\", \"illusion\", \"joy\", \"jump\", \"key\", \"language\", \"law\", \"letter\", \"light\", \"meal\", \"message\", \"meter\", \"mind\", \"moment\", \"mountain\", \"move\", \"music\", \"nurse\", \"nutrient\", \"ocean\", \"paint\", \"plain\", \"poem\", \"rain\", \"ritual\", \"river\", \"road\", \"run\", \"sadness\", \"salt\", \"saw\", \"sculpt\", \"season\", \"sky\", \"sleep\", \"soil\", \"song\", \"speak\", \"stone\", \"storm\", \"sunrise\", \"swim\", \"temperature\", \"tired\", \"tradition\", \"tree\", \"truth\", \"vaccine\", \"valley\", \"wait\", \"water\", \"wheel\", \"wind\", \"year\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"direction name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:34:26",
+    "details": {
+      "word": "tropical",
+      "rank": 4270,
+      "hypothesis": "climatic_zones",
+      "best_word": "decade",
+      "best_rank": 3,
+      "total_guesses": 97
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:34:27",
+    "details": {
+      "word": "arid",
+      "rank": 12362,
+      "hypothesis": "climatic_zones",
+      "best_word": "decade",
+      "best_rank": 3,
+      "total_guesses": 98
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:34:28",
+    "details": {
+      "word": "polar",
+      "rank": 13090,
+      "hypothesis": "climatic_zones",
+      "best_word": "decade",
+      "best_rank": 3,
+      "total_guesses": 99
+    }
+  },
+  {
+    "generation": 1,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-08-16T09:34:31",
+    "details": {
+      "parent_id": "5d415219b3b94df58cae54cba85b4de0",
+      "child_id": "ea7d20a09f40465bb943dd0c7f689363",
+      "parent_rank": 176,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "vocal_artistry",
+      "sampled_op": "s_mutation",
+      "method": "self_adaptive",
+      "self_report": {
+        "predicted_closeness": 0.65,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "song"
+          ],
+          "reason": "\"Chorus\", \"harmony\", and \"tune\" are semantically linked to the artistic and vocal aspects of 'song,' focusing on its layered, melodic, or performance-driven qualities rather than just lyrics."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\n  \"name\": \"vocal_artistry\",\n  \"description\": \"creative use of voice as a medium for expression or art\",\n  \"words\": [\"chorus\", \"harmony\", \"tune\"],\n  \"basis_words\": [\"song\"],\n  \"reason\": \"\\\"Chorus\\\", \\\"harmony\\\", and \\\"tune\\\" are semantically linked to the artistic and vocal aspects of 'song,' focusing on its layered, melodic, or performance-driven qualities rather than just lyrics.\",\n  \"predicted_bucket\": \"top100\",\n  \"predicted_closeness\": 0.65\n}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"communication\".\nDescription: Methods of exchanging information or expression\nResults so far in this hypothesis: {\"dialogue\": 2067, \"language\": 1101, \"letter\": 2226, \"message\": 4034, \"song\": 176, \"speak\": 2083}\nBest word so far: \"song\" with rank 176.\n\nMake a SMALL mutation: produce a child hypothesis that stays in the same\nconceptual neighborhood as \"communication\" but narrows or refines it. The new starter\nwords should be close semantic neighbors of \"song\" - synonyms, common\ndescriptors, or words that frequently co-occur with it.\n\nFor example, if the parent is \"types of plants\" and the best word is \"shrub\",\na small mutation could be \"woody plants\" with starters like bush, hedge, thicket.\n\nSuggest one refined hypothesis. Include exactly 3 starter words that have not\nalready been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"arid\", \"bandage\", \"blood\", \"body\", \"bread\", \"breath\", \"build\", \"calm\", \"cell\", \"century\", \"chew\", \"clean\", \"clinic\", \"cloud\", \"community\", \"cook\", \"cough\", \"craft\", \"dance\", \"decade\", \"dialogue\", \"digest\", \"draw\", \"dream\", \"drill\", \"duration\", \"eat\", \"emblem\", \"essence\", \"ethics\", \"existence\", \"family\", \"fear\", \"forge\", \"garden\", \"gram\", \"hammer\", \"hand\", \"happy\", \"heart\", \"heritage\", \"homework\", \"house\", \"hunger\", \"illusion\", \"joy\", \"jump\", \"key\", \"language\", \"law\", \"letter\", \"light\", \"meal\", \"message\", \"meter\", \"mind\", \"moment\", \"mountain\", \"move\", \"music\", \"nurse\", \"nutrient\", \"ocean\", \"paint\", \"plain\", \"poem\", \"polar\", \"rain\", \"ritual\", \"river\", \"road\", \"run\", \"sadness\", \"salt\", \"saw\", \"sculpt\", \"season\", \"sky\", \"sleep\", \"soil\", \"song\", \"speak\", \"stone\", \"storm\", \"sunrise\", \"swim\", \"temperature\", \"tired\", \"tradition\", \"tree\", \"tropical\", \"truth\", \"vaccine\", \"valley\", \"wait\", \"water\", \"wheel\", \"wind\", \"year\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"direction name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:34:31",
+    "details": {
+      "word": "chorus",
+      "rank": 4903,
+      "hypothesis": "vocal_artistry",
+      "best_word": "decade",
+      "best_rank": 3,
+      "total_guesses": 100
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:34:31",
+    "details": {
+      "word": "harmony",
+      "rank": 3887,
+      "hypothesis": "vocal_artistry",
+      "best_word": "decade",
+      "best_rank": 3,
+      "total_guesses": 101
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:34:31",
+    "details": {
+      "word": "tune",
+      "rank": 726,
+      "hypothesis": "vocal_artistry",
+      "best_word": "decade",
+      "best_rank": 3,
+      "total_guesses": 102
+    }
+  },
+  {
+    "generation": 1,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-08-16T09:34:35",
+    "details": {
+      "parent_id": "683672e9f0734f66a70561bf077b43f2",
+      "child_id": "fb51508a9fab4f3c8899435493e71752",
+      "parent_rank": 201,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "biological_resonance_and_synchronization",
+      "sampled_op": "l_mutation",
+      "method": "self_adaptive",
+      "self_report": {
+        "predicted_closeness": 0.3,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "music"
+          ],
+          "reason": "Leverages the concept of music\u2019s inherent connection to rhythm and vibration while shifting focus to broader biological synchronization phenomena, which are semantically proximal but entirely distinct from art or cultural categories like those already explored."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\n  \"name\": \"biological_resonance_and_synchronization\",\n  \"description\": \"Natural phenomena involving synchronized or interconnected oscillatory behaviors in biological systems, including physical, chemical, and acoustic interactions\",\n\n  \"words\": [\"rhythm\", \"vibration\", \"sync\"],\n\n  \"basis_words\": [\"music\"],\n  \"reason\": \"Leverages the concept of music\u2019s inherent connection to rhythm and vibration while shifting focus to broader biological synchronization phenomena, which are semantically proximal but entirely distinct from art or cultural categories like those already explored.\",\n  \"predicted_bucket\": \"top500\",\n  \"predicted_closeness\": 0.3\n}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"art_and_creation\".\nDescription: Aesthetic expression or crafted objects\nBest word so far: \"music\" with rank 201.\nOther active categories already being explored: [\"time_concepts\", \"communication\", \"society_and_culture\", \"weather_and_climate\", \"art_and_creation\", \"measurement_units\", \"cultural_transmission_mechanisms\", \"climatic_zones\", \"vocal_artistry\"]\n\nMake a LARGE mutation: produce a child hypothesis in a broad, semantically\nsubstantial new direction that is unlike \"art_and_creation\" and unlike the other active\ncategories above. The goal is to escape the current semantic region and open\nup unexplored territory, while staying plausibly relevant given \"music\"'s\nrank - lower ranks mean the target is closer to \"music\", so the jump\nmust remain in the same broad semantic area even when reframed.\n\nFor example, if the parent is \"types of plants\" and \"shrub\" ranks 50, a large\nmutation could be \"outdoor environments\" or \"rural landscape features\" -\nclearly outside the plant taxonomy but still in a plausible neighborhood for\na target close to \"shrub\".\n\nSuggest one new hypothesis. Include exactly 3 starter words that have not\nalready been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"arid\", \"bandage\", \"blood\", \"body\", \"bread\", \"breath\", \"build\", \"calm\", \"cell\", \"century\", \"chew\", \"chorus\", \"clean\", \"clinic\", \"cloud\", \"community\", \"cook\", \"cough\", \"craft\", \"dance\", \"decade\", \"dialogue\", \"digest\", \"draw\", \"dream\", \"drill\", \"duration\", \"eat\", \"emblem\", \"essence\", \"ethics\", \"existence\", \"family\", \"fear\", \"forge\", \"garden\", \"gram\", \"hammer\", \"hand\", \"happy\", \"harmony\", \"heart\", \"heritage\", \"homework\", \"house\", \"hunger\", \"illusion\", \"joy\", \"jump\", \"key\", \"language\", \"law\", \"letter\", \"light\", \"meal\", \"message\", \"meter\", \"mind\", \"moment\", \"mountain\", \"move\", \"music\", \"nurse\", \"nutrient\", \"ocean\", \"paint\", \"plain\", \"poem\", \"polar\", \"rain\", \"ritual\", \"river\", \"road\", \"run\", \"sadness\", \"salt\", \"saw\", \"sculpt\", \"season\", \"sky\", \"sleep\", \"soil\", \"song\", \"speak\", \"stone\", \"storm\", \"sunrise\", \"swim\", \"temperature\", \"tired\", \"tradition\", \"tree\", \"tropical\", \"truth\", \"tune\", \"vaccine\", \"valley\", \"wait\", \"water\", \"wheel\", \"wind\", \"year\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"direction name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:34:35",
+    "details": {
+      "word": "rhythm",
+      "rank": 2768,
+      "hypothesis": "biological_resonance_and_synchronization",
+      "best_word": "decade",
+      "best_rank": 3,
+      "total_guesses": 103
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:34:36",
+    "details": {
+      "word": "vibration",
+      "rank": 19622,
+      "hypothesis": "biological_resonance_and_synchronization",
+      "best_word": "decade",
+      "best_rank": 3,
+      "total_guesses": 104
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:34:36",
+    "details": {
+      "word": "sync",
+      "rank": 9513,
+      "hypothesis": "biological_resonance_and_synchronization",
+      "best_word": "decade",
+      "best_rank": 3,
+      "total_guesses": 105
+    }
+  },
+  {
+    "generation": 1,
+    "event": "MUTATE",
+    "timestamp": "2026-08-16T09:34:36",
+    "details": {
+      "method": "self_adaptive",
+      "children": [
+        {
+          "hypothesis_id": "f6bb9304fd914d549534ecfcfbd4f345",
+          "category_name": "measurement_units",
+          "description": "Standardized quantities or systems for quantifying dimensions or values",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "time_concepts",
+          "parent_id": "c8220130937047e39612fff6cca39ae9",
+          "origin": "self_adaptive_ml_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "self_report": {
+            "predicted_closeness": 0.35,
+            "predicted_closeness_clamped": false,
+            "predicted_bucket": "top100",
+            "rationale": {
+              "basis_words": [
+                "decade"
+              ],
+              "reason": "'Decade' is a unit of time, suggesting the hidden target could belong to semantic space of standardized measurement systems. Within this, sub-quantities like *century* (a time-based unit) or physical quantities (*meter*, *gram*) offer plausible adjacency while avoiding direct overlap with 'time_concepts'."
+            },
+            "self_report_parse_failed": false,
+            "self_report_raw": "{\n  \"name\": \"measurement_units\",\n  \"description\": \"Standardized quantities or systems for quantifying dimensions or values\",\n  \"words\": [\"century\", \"meter\", \"gram\"],\n  \"basis_words\": [\"decade\"],\n\n  \"reason\": \"'Decade' is a unit of time, suggesting the hidden target could belong to semantic space of standardized measurement systems. Within this, sub-quantities like *century* (a time-based unit) or physical quantities (*meter*, *gram*) offer plausible adjacency while avoiding direct overlap with 'time_concepts'.\",\n\n  \"predicted_bucket\": \"top100\",\n  \"predicted_closeness\": 0.35\n}",
+            "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"time_concepts\".\nDescription: Temporal ideas, durations, or periods\nResults so far in this hypothesis: {\"decade\": 3, \"duration\": 5099, \"moment\": 140, \"sunrise\": 8672, \"wait\": 1656, \"year\": 20}\nBest word so far: \"decade\" with rank 3.\n\nMake a MEDIUM-LARGE mutation: produce a child hypothesis in an ADJACENT but\ndistinct category that could still plausibly contain the hidden target given\n\"decade\"'s rank. The child must NOT be a sub-category of \"time_concepts\" - it\nshould sit alongside \"time_concepts\" in semantic space, not underneath it.\n\nFor example, if the parent is \"types of plants\" and the best word is \"shrub\",\nan adjacent category could be \"plant descriptors\", \"botanical terminology\",\n\"growth habits\", or \"ecological roles\".\n\nSuggest one adjacent hypothesis. Include exactly 3 starter words that have\nnot already been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"bandage\", \"blood\", \"body\", \"bread\", \"breath\", \"build\", \"calm\", \"cell\", \"chew\", \"clean\", \"clinic\", \"cloud\", \"community\", \"cook\", \"cough\", \"craft\", \"dance\", \"decade\", \"dialogue\", \"digest\", \"draw\", \"dream\", \"drill\", \"duration\", \"eat\", \"essence\", \"ethics\", \"existence\", \"family\", \"fear\", \"forge\", \"garden\", \"hammer\", \"hand\", \"happy\", \"heart\", \"homework\", \"house\", \"hunger\", \"illusion\", \"joy\", \"jump\", \"key\", \"language\", \"law\", \"letter\", \"light\", \"meal\", \"message\", \"mind\", \"moment\", \"mountain\", \"move\", \"music\", \"nurse\", \"nutrient\", \"ocean\", \"paint\", \"plain\", \"poem\", \"rain\", \"river\", \"road\", \"run\", \"sadness\", \"salt\", \"saw\", \"sculpt\", \"season\", \"sky\", \"sleep\", \"soil\", \"song\", \"speak\", \"stone\", \"storm\", \"sunrise\", \"swim\", \"temperature\", \"tired\", \"tradition\", \"tree\", \"truth\", \"vaccine\", \"valley\", \"wait\", \"water\", \"wheel\", \"wind\", \"year\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"category name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+            "injected_rationale_hash": null,
+            "rationale_truncated": false
+          }
+        },
+        {
+          "hypothesis_id": "60cd2c12917a4459ba2130c2bc07926b",
+          "category_name": "cultural_transmission_mechanisms",
+          "description": "how and why traditions are passed down through material objects, symbolic acts, or embedded knowledge",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "society_and_culture",
+          "parent_id": "703afd5d53874cb59bfdb52b658dd886",
+          "origin": "self_adaptive_m_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "self_report": {
+            "predicted_closeness": 0.65,
+            "predicted_closeness_clamped": false,
+            "predicted_bucket": "top100",
+            "rationale": {
+              "basis_words": [
+                "tradition"
+              ],
+              "reason": "Focuses on the tangibility of tradition as embodied in practices or artifacts rather than abstract norms."
+            },
+            "self_report_parse_failed": false,
+            "self_report_raw": "{\n  \"name\": \"cultural_transmission_mechanisms\",\n  \"description\": \"how and why traditions are passed down through material objects, symbolic acts, or embedded knowledge\",\n  \"words\": [\"ritual\", \"heritage\", \"emblem\"],\n  \"basis_words\": [\"tradition\"],\n  \"reason\": \"Focuses on the tangibility of tradition as embodied in practices or artifacts rather than abstract norms.\",\n  \"predicted_bucket\": \"top100\",\n  \"predicted_closeness\": 0.65\n}",
+            "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"society_and_culture\".\nDescription: Shared norms, roles, and collective activities\nResults so far in this hypothesis: {\"community\": 1213, \"dance\": 856, \"ethics\": 1248, \"family\": 786, \"law\": 2431, \"tradition\": 51}\nBest word so far: \"tradition\" with rank 51.\n\nMake a MEDIUM mutation: produce a child hypothesis that reinterprets why\n\"tradition\" might have scored well, or shifts to a related sense, lexical\nregister, or part of speech. The child should still be semantically anchored\nto \"tradition\" but approach it from a clearly different angle than \"society_and_culture\".\n\nFor example, if the parent is \"food\" and the best word is \"bite\", a medium\nmutation could be \"animals that bite\", \"physical sensations from biting\", or\n\"clinical terms for biting and chewing\" - each treats \"bite\" through a\ndifferent lens.\n\nSuggest one reframed hypothesis. Include exactly 3 starter words that have\nnot already been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"bandage\", \"blood\", \"body\", \"bread\", \"breath\", \"build\", \"calm\", \"cell\", \"century\", \"chew\", \"clean\", \"clinic\", \"cloud\", \"community\", \"cook\", \"cough\", \"craft\", \"dance\", \"decade\", \"dialogue\", \"digest\", \"draw\", \"dream\", \"drill\", \"duration\", \"eat\", \"essence\", \"ethics\", \"existence\", \"family\", \"fear\", \"forge\", \"garden\", \"gram\", \"hammer\", \"hand\", \"happy\", \"heart\", \"homework\", \"house\", \"hunger\", \"illusion\", \"joy\", \"jump\", \"key\", \"language\", \"law\", \"letter\", \"light\", \"meal\", \"message\", \"meter\", \"mind\", \"moment\", \"mountain\", \"move\", \"music\", \"nurse\", \"nutrient\", \"ocean\", \"paint\", \"plain\", \"poem\", \"rain\", \"river\", \"road\", \"run\", \"sadness\", \"salt\", \"saw\", \"sculpt\", \"season\", \"sky\", \"sleep\", \"soil\", \"song\", \"speak\", \"stone\", \"storm\", \"sunrise\", \"swim\", \"temperature\", \"tired\", \"tradition\", \"tree\", \"truth\", \"vaccine\", \"valley\", \"wait\", \"water\", \"wheel\", \"wind\", \"year\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"direction name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+            "injected_rationale_hash": null,
+            "rationale_truncated": false
+          }
+        },
+        {
+          "hypothesis_id": "8ee850754fda41649f8fa8d2768313e5",
+          "category_name": "climatic_zones",
+          "description": "Regions and types of climates based on geographic distribution.",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "weather_and_climate",
+          "parent_id": "d42e4cd9e9214927ac957531fbe32341",
+          "origin": "self_adaptive_s_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "self_report": {
+            "predicted_closeness": 0.9,
+            "predicted_closeness_clamped": false,
+            "predicted_bucket": "top10",
+            "rationale": {
+              "basis_words": [
+                "season"
+              ],
+              "reason": "'Season' often correlates with geographic climate zones, which include **tropical**, **arid**, and **polar** as defining descriptors across various contexts (e.g., 'dry season,' 'temperate zone'). These terms are semantically tied to seasonal variations."
+            },
+            "self_report_parse_failed": false,
+            "self_report_raw": "{\n  \"name\": \"climatic_zones\",\n  \"description\": \"Regions and types of climates based on geographic distribution.\",\n  \"words\": [\"tropical\", \"arid\", \"polar\"],\n  \"basis_words\": [\"season\"],\n  \"reason\": \"'Season' often correlates with geographic climate zones, which include **tropical**, **arid**, and **polar** as defining descriptors across various contexts (e.g., 'dry season,' 'temperate zone'). These terms are semantically tied to seasonal variations.\",\n  \"predicted_bucket\": \"top10\",\n  \"predicted_closeness\": 0.9\n}",
+            "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"weather_and_climate\".\nDescription: Atmospheric phenomena and weather patterns\nResults so far in this hypothesis: {\"cloud\": 4551, \"rain\": 5805, \"season\": 52, \"storm\": 4480, \"temperature\": 4400, \"wind\": 6872}\nBest word so far: \"season\" with rank 52.\n\nMake a SMALL mutation: produce a child hypothesis that stays in the same\nconceptual neighborhood as \"weather_and_climate\" but narrows or refines it. The new starter\nwords should be close semantic neighbors of \"season\" - synonyms, common\ndescriptors, or words that frequently co-occur with it.\n\nFor example, if the parent is \"types of plants\" and the best word is \"shrub\",\na small mutation could be \"woody plants\" with starters like bush, hedge, thicket.\n\nSuggest one refined hypothesis. Include exactly 3 starter words that have not\nalready been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"bandage\", \"blood\", \"body\", \"bread\", \"breath\", \"build\", \"calm\", \"cell\", \"century\", \"chew\", \"clean\", \"clinic\", \"cloud\", \"community\", \"cook\", \"cough\", \"craft\", \"dance\", \"decade\", \"dialogue\", \"digest\", \"draw\", \"dream\", \"drill\", \"duration\", \"eat\", \"emblem\", \"essence\", \"ethics\", \"existence\", \"family\", \"fear\", \"forge\", \"garden\", \"gram\", \"hammer\", \"hand\", \"happy\", \"heart\", \"heritage\", \"homework\", \"house\", \"hunger\", \"illusion\", \"joy\", \"jump\", \"key\", \"language\", \"law\", \"letter\", \"light\", \"meal\", \"message\", \"meter\", \"mind\", \"moment\", \"mountain\", \"move\", \"music\", \"nurse\", \"nutrient\", \"ocean\", \"paint\", \"plain\", \"poem\", \"rain\", \"ritual\", \"river\", \"road\", \"run\", \"sadness\", \"salt\", \"saw\", \"sculpt\", \"season\", \"sky\", \"sleep\", \"soil\", \"song\", \"speak\", \"stone\", \"storm\", \"sunrise\", \"swim\", \"temperature\", \"tired\", \"tradition\", \"tree\", \"truth\", \"vaccine\", \"valley\", \"wait\", \"water\", \"wheel\", \"wind\", \"year\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"direction name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+            "injected_rationale_hash": null,
+            "rationale_truncated": false
+          }
+        },
+        {
+          "hypothesis_id": "ea7d20a09f40465bb943dd0c7f689363",
+          "category_name": "vocal_artistry",
+          "description": "creative use of voice as a medium for expression or art",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "communication",
+          "parent_id": "5d415219b3b94df58cae54cba85b4de0",
+          "origin": "self_adaptive_s_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "self_report": {
+            "predicted_closeness": 0.65,
+            "predicted_closeness_clamped": false,
+            "predicted_bucket": "top100",
+            "rationale": {
+              "basis_words": [
+                "song"
+              ],
+              "reason": "\"Chorus\", \"harmony\", and \"tune\" are semantically linked to the artistic and vocal aspects of 'song,' focusing on its layered, melodic, or performance-driven qualities rather than just lyrics."
+            },
+            "self_report_parse_failed": false,
+            "self_report_raw": "{\n  \"name\": \"vocal_artistry\",\n  \"description\": \"creative use of voice as a medium for expression or art\",\n  \"words\": [\"chorus\", \"harmony\", \"tune\"],\n  \"basis_words\": [\"song\"],\n  \"reason\": \"\\\"Chorus\\\", \\\"harmony\\\", and \\\"tune\\\" are semantically linked to the artistic and vocal aspects of 'song,' focusing on its layered, melodic, or performance-driven qualities rather than just lyrics.\",\n  \"predicted_bucket\": \"top100\",\n  \"predicted_closeness\": 0.65\n}",
+            "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"communication\".\nDescription: Methods of exchanging information or expression\nResults so far in this hypothesis: {\"dialogue\": 2067, \"language\": 1101, \"letter\": 2226, \"message\": 4034, \"song\": 176, \"speak\": 2083}\nBest word so far: \"song\" with rank 176.\n\nMake a SMALL mutation: produce a child hypothesis that stays in the same\nconceptual neighborhood as \"communication\" but narrows or refines it. The new starter\nwords should be close semantic neighbors of \"song\" - synonyms, common\ndescriptors, or words that frequently co-occur with it.\n\nFor example, if the parent is \"types of plants\" and the best word is \"shrub\",\na small mutation could be \"woody plants\" with starters like bush, hedge, thicket.\n\nSuggest one refined hypothesis. Include exactly 3 starter words that have not\nalready been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"arid\", \"bandage\", \"blood\", \"body\", \"bread\", \"breath\", \"build\", \"calm\", \"cell\", \"century\", \"chew\", \"clean\", \"clinic\", \"cloud\", \"community\", \"cook\", \"cough\", \"craft\", \"dance\", \"decade\", \"dialogue\", \"digest\", \"draw\", \"dream\", \"drill\", \"duration\", \"eat\", \"emblem\", \"essence\", \"ethics\", \"existence\", \"family\", \"fear\", \"forge\", \"garden\", \"gram\", \"hammer\", \"hand\", \"happy\", \"heart\", \"heritage\", \"homework\", \"house\", \"hunger\", \"illusion\", \"joy\", \"jump\", \"key\", \"language\", \"law\", \"letter\", \"light\", \"meal\", \"message\", \"meter\", \"mind\", \"moment\", \"mountain\", \"move\", \"music\", \"nurse\", \"nutrient\", \"ocean\", \"paint\", \"plain\", \"poem\", \"polar\", \"rain\", \"ritual\", \"river\", \"road\", \"run\", \"sadness\", \"salt\", \"saw\", \"sculpt\", \"season\", \"sky\", \"sleep\", \"soil\", \"song\", \"speak\", \"stone\", \"storm\", \"sunrise\", \"swim\", \"temperature\", \"tired\", \"tradition\", \"tree\", \"tropical\", \"truth\", \"vaccine\", \"valley\", \"wait\", \"water\", \"wheel\", \"wind\", \"year\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"direction name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+            "injected_rationale_hash": null,
+            "rationale_truncated": false
+          }
+        },
+        {
+          "hypothesis_id": "fb51508a9fab4f3c8899435493e71752",
+          "category_name": "biological_resonance_and_synchronization",
+          "description": "Natural phenomena involving synchronized or interconnected oscillatory behaviors in biological systems, including physical, chemical, and acoustic interactions",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "art_and_creation",
+          "parent_id": "683672e9f0734f66a70561bf077b43f2",
+          "origin": "self_adaptive_l_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "self_report": {
+            "predicted_closeness": 0.3,
+            "predicted_closeness_clamped": false,
+            "predicted_bucket": "top500",
+            "rationale": {
+              "basis_words": [
+                "music"
+              ],
+              "reason": "Leverages the concept of music\u2019s inherent connection to rhythm and vibration while shifting focus to broader biological synchronization phenomena, which are semantically proximal but entirely distinct from art or cultural categories like those already explored."
+            },
+            "self_report_parse_failed": false,
+            "self_report_raw": "{\n  \"name\": \"biological_resonance_and_synchronization\",\n  \"description\": \"Natural phenomena involving synchronized or interconnected oscillatory behaviors in biological systems, including physical, chemical, and acoustic interactions\",\n\n  \"words\": [\"rhythm\", \"vibration\", \"sync\"],\n\n  \"basis_words\": [\"music\"],\n  \"reason\": \"Leverages the concept of music\u2019s inherent connection to rhythm and vibration while shifting focus to broader biological synchronization phenomena, which are semantically proximal but entirely distinct from art or cultural categories like those already explored.\",\n  \"predicted_bucket\": \"top500\",\n  \"predicted_closeness\": 0.3\n}",
+            "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"art_and_creation\".\nDescription: Aesthetic expression or crafted objects\nBest word so far: \"music\" with rank 201.\nOther active categories already being explored: [\"time_concepts\", \"communication\", \"society_and_culture\", \"weather_and_climate\", \"art_and_creation\", \"measurement_units\", \"cultural_transmission_mechanisms\", \"climatic_zones\", \"vocal_artistry\"]\n\nMake a LARGE mutation: produce a child hypothesis in a broad, semantically\nsubstantial new direction that is unlike \"art_and_creation\" and unlike the other active\ncategories above. The goal is to escape the current semantic region and open\nup unexplored territory, while staying plausibly relevant given \"music\"'s\nrank - lower ranks mean the target is closer to \"music\", so the jump\nmust remain in the same broad semantic area even when reframed.\n\nFor example, if the parent is \"types of plants\" and \"shrub\" ranks 50, a large\nmutation could be \"outdoor environments\" or \"rural landscape features\" -\nclearly outside the plant taxonomy but still in a plausible neighborhood for\na target close to \"shrub\".\n\nSuggest one new hypothesis. Include exactly 3 starter words that have not\nalready been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"arid\", \"bandage\", \"blood\", \"body\", \"bread\", \"breath\", \"build\", \"calm\", \"cell\", \"century\", \"chew\", \"chorus\", \"clean\", \"clinic\", \"cloud\", \"community\", \"cook\", \"cough\", \"craft\", \"dance\", \"decade\", \"dialogue\", \"digest\", \"draw\", \"dream\", \"drill\", \"duration\", \"eat\", \"emblem\", \"essence\", \"ethics\", \"existence\", \"family\", \"fear\", \"forge\", \"garden\", \"gram\", \"hammer\", \"hand\", \"happy\", \"harmony\", \"heart\", \"heritage\", \"homework\", \"house\", \"hunger\", \"illusion\", \"joy\", \"jump\", \"key\", \"language\", \"law\", \"letter\", \"light\", \"meal\", \"message\", \"meter\", \"mind\", \"moment\", \"mountain\", \"move\", \"music\", \"nurse\", \"nutrient\", \"ocean\", \"paint\", \"plain\", \"poem\", \"polar\", \"rain\", \"ritual\", \"river\", \"road\", \"run\", \"sadness\", \"salt\", \"saw\", \"sculpt\", \"season\", \"sky\", \"sleep\", \"soil\", \"song\", \"speak\", \"stone\", \"storm\", \"sunrise\", \"swim\", \"temperature\", \"tired\", \"tradition\", \"tree\", \"tropical\", \"truth\", \"tune\", \"vaccine\", \"valley\", \"wait\", \"water\", \"wheel\", \"wind\", \"year\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"direction name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+            "injected_rationale_hash": null,
+            "rationale_truncated": false
+          }
+        }
+      ],
+      "best_word": "decade",
+      "best_rank": 3,
+      "total_guesses": 105
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:34:40",
+    "details": {
+      "word": "epoch",
+      "rank": 15,
+      "hypothesis": "temporal_measurements",
+      "best_word": "decade",
+      "best_rank": 3,
+      "total_guesses": 106
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-16T09:34:40",
+    "details": {
+      "word": "era",
+      "rank": 1,
+      "hypothesis": "temporal_measurements",
+      "best_word": "era",
+      "best_rank": 1,
+      "total_guesses": 107
+    }
+  },
+  {
+    "generation": 1,
+    "event": "CROSSOVER",
+    "timestamp": "2026-08-16T09:34:40",
+    "details": {
+      "parents": [
+        "time_concepts",
+        "measurement_units"
+      ],
+      "parent_ids": [
+        "c8220130937047e39612fff6cca39ae9",
+        "f6bb9304fd914d549534ecfcfbd4f345"
+      ],
+      "parent_ranks": [
+        3,
+        4
+      ],
+      "parent_a_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "parent_b_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma_pre_perturbation": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child": {
+        "hypothesis_id": "5d1d4ac9c8bd4ed3b22f67c5a2474896",
+        "category_name": "temporal_measurements",
+        "description": "Measurement units tied to concepts of time duration or progression.",
+        "words_tried": {
+          "era": 1,
+          "epoch": 15
+        },
+        "best_word": "era",
+        "best_rank": 1,
+        "status": "active",
+        "parent": "time_concepts+measurement_units",
+        "parent_id": null,
+        "origin": "crossover",
+        "sigma": [
+          0.25,
+          0.25,
+          0.25,
+          0.25
+        ],
+        "self_report": {
+          "predicted_closeness": 0.5,
+          "predicted_closeness_clamped": false,
+          "predicted_bucket": "top100",
+          "rationale": {
+            "basis_words": [
+              "decade",
+              "year",
+              "century",
+              "duration"
+            ],
+            "reason": "Combines words from time_concepts (like 'decade', 'year') and measurement_units ('meter' implies standardized units) to focus on quantifiable temporal spans or tools."
+          },
+          "self_report_parse_failed": false,
+          "self_report_raw": "{\n  \"name\": \"temporal_measurements\",\n  \"description\": \"Measurement units tied to concepts of time duration or progression.\",\n  \"words\": [\"epoch\", \"era\", \"chronometer\"],\n  \"basis_words\": [\"decade\", \"year\", \"century\", \"duration\"],\n  \"reason\": \"Combines words from time_concepts (like 'decade', 'year') and measurement_units ('meter' implies standardized units) to focus on quantifiable temporal spans or tools.\",\n  \"predicted_bucket\": \"top100\",\n  \"predicted_closeness\": 0.5\n}",
+          "self_report_prompt": "Return only JSON, no markdown or explanation.\nCategory A is time_concepts with results {\"decade\": 3, \"duration\": 5099, \"moment\": 140, \"sunrise\": 8672, \"wait\": 1656, \"year\": 20}.\nCategory B is measurement_units with results {\"century\": 4, \"gram\": 21329, \"meter\": 10192}.\nSuggest one new category that captures the intersection or overlap of A and B.\nInclude exactly 3 candidate words.\nEvery word must be one common lowercase dictionary word.\nJSON schema:\n{\"name\": \"category name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+          "injected_rationale_hash": null,
+          "rationale_truncated": false
+        }
+      },
+      "best_word": "era",
+      "best_rank": 1,
+      "total_guesses": 107
+    }
+  },
+  {
+    "generation": 1,
+    "event": "SOLVED",
+    "timestamp": "2026-08-16T09:34:40",
+    "details": {
+      "answer": "era",
+      "rank": 1,
+      "total_guesses": 107
+    }
+  },
+  {
+    "generation": 1,
+    "event": "NETWORK_METRICS",
+    "timestamp": "2026-08-16T09:34:40",
+    "details": {
+      "network_calls": 63,
+      "network_wall_clock_seconds": 81.291,
+      "total_latency_seconds": 16.8734,
+      "mean_latency_seconds": 0.2678,
+      "median_latency_seconds": 0.2201,
+      "p95_latency_seconds": 0.2228,
+      "max_latency_seconds": 3.2099,
+      "status_counts": {
+        "200": 63
+      },
+      "outcome_counts": {
+        "ok": 63
+      }
+    }
+  }
+]

@@ -1,0 +1,3203 @@
+[
+  {
+    "generation": -1,
+    "event": "RUN_CONFIG",
+    "timestamp": "2026-08-13T19:15:04",
+    "details": {
+      "game": "api",
+      "solver": "llm",
+      "method": "ea_llm_self_adaptive",
+      "mode": "api",
+      "target": null,
+      "game_number": 1365,
+      "run_index": 4,
+      "game_embedding_path": null,
+      "solver_embedding_path": null,
+      "embedding_backend": null,
+      "vocabulary_size": null,
+      "alignment": "api_unknown",
+      "trace_schema_version": 3,
+      "instrumentation_provenance_hash": "bd9f2858283673a2",
+      "self_report": true,
+      "rationale_inheritance": true,
+      "max_generations": 50,
+      "llm_provider": "ollama",
+      "llm_model": "gemma4:12b",
+      "llm_workers": 4,
+      "initial_categories": 15,
+      "max_active_hypotheses": null,
+      "local_search_rank_threshold": 100,
+      "self_adaptive_initial_categories": 15,
+      "self_adaptive_mu": 15,
+      "self_adaptive_concentration": 50.0,
+      "self_adaptive_sigma_floor": 0.02,
+      "self_adaptive_sigma_mode": "frozen_uniform",
+      "self_adaptive_selection_mode": "tophalf",
+      "mapelites_grid_resolution": null,
+      "mapelites_mutations_per_gen": null,
+      "mapelites_crossovers_per_gen": null,
+      "mapelites_initial_categories": null,
+      "mapelites_concentration": null,
+      "mapelites_sigma_floor": null,
+      "mapelites_sigma_mode": null,
+      "mapelites_frozen_sigma": null,
+      "mapelites_ranked_context_k": null,
+      "rank_cache_enabled": true,
+      "enable_pivot": false,
+      "ea_llm_pivot_stall_no_improvement_generations": null,
+      "ea_llm_pivot_stall_close_rank_threshold": null,
+      "ea_llm_pivot_stall_close_generations_limit": null,
+      "ea_llm_pivot_max_attempts_per_run": null,
+      "ea_llm_pivot_candidate_words_per_operator": null,
+      "ea_llm_pivot_resolution_window": null,
+      "random_seed": 4
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:16:52",
+    "details": {
+      "word": "forest",
+      "rank": 18882,
+      "hypothesis": "nature",
+      "best_word": "forest",
+      "best_rank": 18882,
+      "total_guesses": 1
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:16:52",
+    "details": {
+      "word": "river",
+      "rank": 30789,
+      "hypothesis": "nature",
+      "best_word": "forest",
+      "best_rank": 18882,
+      "total_guesses": 2
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:16:52",
+    "details": {
+      "word": "mountain",
+      "rank": 20451,
+      "hypothesis": "nature",
+      "best_word": "forest",
+      "best_rank": 18882,
+      "total_guesses": 3
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:16:52",
+    "details": {
+      "word": "bread",
+      "rank": 364,
+      "hypothesis": "food",
+      "best_word": "bread",
+      "best_rank": 364,
+      "total_guesses": 4
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:16:52",
+    "details": {
+      "word": "apple",
+      "rank": 70,
+      "hypothesis": "food",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 5
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:16:52",
+    "details": {
+      "word": "cheese",
+      "rank": 240,
+      "hypothesis": "food",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 6
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:16:52",
+    "details": {
+      "word": "chair",
+      "rank": 32892,
+      "hypothesis": "household",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 7
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:16:52",
+    "details": {
+      "word": "table",
+      "rank": 13469,
+      "hypothesis": "household",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 8
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:16:52",
+    "details": {
+      "word": "lamp",
+      "rank": 23508,
+      "hypothesis": "household",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 9
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:16:52",
+    "details": {
+      "word": "rain",
+      "rank": 9430,
+      "hypothesis": "weather",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 10
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:16:52",
+    "details": {
+      "word": "snow",
+      "rank": 2125,
+      "hypothesis": "weather",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 11
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:16:52",
+    "details": {
+      "word": "wind",
+      "rank": 27558,
+      "hypothesis": "weather",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 12
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:16:52",
+    "details": {
+      "word": "hand",
+      "rank": 9786,
+      "hypothesis": "anatomy",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 13
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:16:52",
+    "details": {
+      "word": "foot",
+      "rank": 16097,
+      "hypothesis": "anatomy",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 14
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:16:52",
+    "details": {
+      "word": "head",
+      "rank": 3530,
+      "hypothesis": "anatomy",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 15
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:16:52",
+    "details": {
+      "word": "star",
+      "rank": 63738,
+      "hypothesis": "space",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 16
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:16:52",
+    "details": {
+      "word": "moon",
+      "rank": 8803,
+      "hypothesis": "space",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 17
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:16:52",
+    "details": {
+      "word": "planet",
+      "rank": 65167,
+      "hypothesis": "space",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 18
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:16:52",
+    "details": {
+      "word": "shirt",
+      "rank": 32416,
+      "hypothesis": "clothing",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 19
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:16:52",
+    "details": {
+      "word": "coat",
+      "rank": 11876,
+      "hypothesis": "clothing",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 20
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:16:52",
+    "details": {
+      "word": "hat",
+      "rank": 15538,
+      "hypothesis": "clothing",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 21
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:16:52",
+    "details": {
+      "word": "car",
+      "rank": 14997,
+      "hypothesis": "transport",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 22
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:16:52",
+    "details": {
+      "word": "train",
+      "rank": 21109,
+      "hypothesis": "transport",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 23
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:16:52",
+    "details": {
+      "word": "plane",
+      "rank": 32214,
+      "hypothesis": "transport",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 24
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:16:52",
+    "details": {
+      "word": "dog",
+      "rank": 18486,
+      "hypothesis": "animals",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 25
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:16:52",
+    "details": {
+      "word": "cat",
+      "rank": 37273,
+      "hypothesis": "animals",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 26
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:16:52",
+    "details": {
+      "word": "bird",
+      "rank": 17394,
+      "hypothesis": "animals",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 27
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:16:52",
+    "details": {
+      "word": "doctor",
+      "rank": 8611,
+      "hypothesis": "careers",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 28
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:16:52",
+    "details": {
+      "word": "teacher",
+      "rank": 73224,
+      "hypothesis": "careers",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 29
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:16:52",
+    "details": {
+      "word": "pilot",
+      "rank": 74536,
+      "hypothesis": "careers",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 30
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:16:52",
+    "details": {
+      "word": "soccer",
+      "rank": 58774,
+      "hypothesis": "sports",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 31
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:16:52",
+    "details": {
+      "word": "tennis",
+      "rank": 33593,
+      "hypothesis": "sports",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 32
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:16:52",
+    "details": {
+      "word": "golf",
+      "rank": 26219,
+      "hypothesis": "sports",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 33
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:16:52",
+    "details": {
+      "word": "day",
+      "rank": 12332,
+      "hypothesis": "time",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 34
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:16:52",
+    "details": {
+      "word": "night",
+      "rank": 22327,
+      "hypothesis": "time",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 35
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:16:52",
+    "details": {
+      "word": "week",
+      "rank": 12619,
+      "hypothesis": "time",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 36
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:16:52",
+    "details": {
+      "word": "book",
+      "rank": 26199,
+      "hypothesis": "education",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 37
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:16:55",
+    "details": {
+      "word": "pen",
+      "rank": 13487,
+      "hypothesis": "education",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 38
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:16:55",
+    "details": {
+      "word": "desk",
+      "rank": 66460,
+      "hypothesis": "education",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 39
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:16:55",
+    "details": {
+      "word": "wood",
+      "rank": 16882,
+      "hypothesis": "materials",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 40
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:16:55",
+    "details": {
+      "word": "metal",
+      "rank": 48441,
+      "hypothesis": "materials",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 41
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:16:55",
+    "details": {
+      "word": "glass",
+      "rank": 31622,
+      "hypothesis": "materials",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 42
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:16:55",
+    "details": {
+      "word": "land",
+      "rank": 15545,
+      "hypothesis": "geography",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 43
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:16:55",
+    "details": {
+      "word": "sea",
+      "rank": 12307,
+      "hypothesis": "geography",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 44
+    }
+  },
+  {
+    "generation": 0,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:16:55",
+    "details": {
+      "word": "lake",
+      "rank": 39419,
+      "hypothesis": "geography",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 45
+    }
+  },
+  {
+    "generation": 0,
+    "event": "INIT",
+    "timestamp": "2026-08-13T19:16:55",
+    "details": {
+      "hypotheses": [
+        {
+          "hypothesis_id": "20d20cc896fb439b96e146d0b41b774c",
+          "category_name": "nature",
+          "description": "natural landscapes and features",
+          "words_tried": {
+            "forest": 18882,
+            "mountain": 20451,
+            "river": 30789
+          },
+          "best_word": "forest",
+          "best_rank": 18882,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "d99d81b29f6d4955a52c8cd11d1152c0",
+          "category_name": "food",
+          "description": "common items for eating",
+          "words_tried": {
+            "apple": 70,
+            "cheese": 240,
+            "bread": 364
+          },
+          "best_word": "apple",
+          "best_rank": 70,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "168f42fc19574ff3890f615d04396c1b",
+          "category_name": "household",
+          "description": "common furniture and fixtures",
+          "words_tried": {
+            "table": 13469,
+            "lamp": 23508,
+            "chair": 32892
+          },
+          "best_word": "table",
+          "best_rank": 13469,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "4fced32a6e6c40eaa4984379ffda0c67",
+          "category_name": "weather",
+          "description": "atmospheric conditions",
+          "words_tried": {
+            "snow": 2125,
+            "rain": 9430,
+            "wind": 27558
+          },
+          "best_word": "snow",
+          "best_rank": 2125,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "19a9286fd73f461d914bff9601c8ae30",
+          "category_name": "anatomy",
+          "description": "parts of the human body",
+          "words_tried": {
+            "head": 3530,
+            "hand": 9786,
+            "foot": 16097
+          },
+          "best_word": "head",
+          "best_rank": 3530,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "f1e43488c61d4c349795b51dce72493f",
+          "category_name": "space",
+          "description": "celestial bodies and regions",
+          "words_tried": {
+            "moon": 8803,
+            "star": 63738,
+            "planet": 65167
+          },
+          "best_word": "moon",
+          "best_rank": 8803,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "36f6cca0b3b442eda2f5b96f9b5702b9",
+          "category_name": "clothing",
+          "description": "garments worn by people",
+          "words_tried": {
+            "coat": 11876,
+            "hat": 15538,
+            "shirt": 32416
+          },
+          "best_word": "coat",
+          "best_rank": 11876,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "06623e597dcd4b0f84397393b356b8c8",
+          "category_name": "transport",
+          "description": "vehicles for travel",
+          "words_tried": {
+            "car": 14997,
+            "train": 21109,
+            "plane": 32214
+          },
+          "best_word": "car",
+          "best_rank": 14997,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "45e08512e0f34ca8a4bcf47b3a36e3ae",
+          "category_name": "animals",
+          "description": "common species of fauna",
+          "words_tried": {
+            "bird": 17394,
+            "dog": 18486,
+            "cat": 37273
+          },
+          "best_word": "bird",
+          "best_rank": 17394,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "774377f08e8b4479aa2d62fc8cdc2b35",
+          "category_name": "careers",
+          "description": "common professional roles",
+          "words_tried": {
+            "doctor": 8611,
+            "teacher": 73224,
+            "pilot": 74536
+          },
+          "best_word": "doctor",
+          "best_rank": 8611,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "c9032eb0e7054f7ebfbc7168b1f9a7d9",
+          "category_name": "sports",
+          "description": "popular athletic activities",
+          "words_tried": {
+            "golf": 26219,
+            "tennis": 33593,
+            "soccer": 58774
+          },
+          "best_word": "golf",
+          "best_rank": 26219,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "929c705c99194778aaa5e4e36a061dea",
+          "category_name": "time",
+          "description": "units and periods of time",
+          "words_tried": {
+            "day": 12332,
+            "week": 12619,
+            "night": 22327
+          },
+          "best_word": "day",
+          "best_rank": 12332,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "a60021f9fff446c796bbd87452177418",
+          "category_name": "education",
+          "description": "tools for learning",
+          "words_tried": {
+            "pen": 13487,
+            "book": 26199,
+            "desk": 66460
+          },
+          "best_word": "pen",
+          "best_rank": 13487,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "c5b4913f20f548d0a5a5b078649f9c14",
+          "category_name": "materials",
+          "description": "basic physical substances",
+          "words_tried": {
+            "wood": 16882,
+            "glass": 31622,
+            "metal": 48441
+          },
+          "best_word": "wood",
+          "best_rank": 16882,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "hypothesis_id": "160104103a13488582225b3e5e5b7eb8",
+          "category_name": "geography",
+          "description": "features of the earth surface",
+          "words_tried": {
+            "sea": 12307,
+            "land": 15545,
+            "lake": 39419
+          },
+          "best_word": "sea",
+          "best_rank": 12307,
+          "status": "active",
+          "parent": null,
+          "parent_id": null,
+          "origin": "init",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        }
+      ],
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 45
+    }
+  },
+  {
+    "generation": 0,
+    "event": "SIGMA_TRAJECTORY",
+    "timestamp": "2026-08-13T19:16:55",
+    "details": {
+      "mean_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "population_size": 15
+    }
+  },
+  {
+    "generation": 1,
+    "event": "CANDIDATES",
+    "timestamp": "2026-08-13T19:29:46",
+    "details": {
+      "count": 44,
+      "candidates": [
+        {
+          "hypothesis": "nature",
+          "word": "valley"
+        },
+        {
+          "hypothesis": "nature",
+          "word": "meadow"
+        },
+        {
+          "hypothesis": "nature",
+          "word": "desert"
+        },
+        {
+          "hypothesis": "food",
+          "word": "fruit"
+        },
+        {
+          "hypothesis": "food",
+          "word": "orange"
+        },
+        {
+          "hypothesis": "food",
+          "word": "banana"
+        },
+        {
+          "hypothesis": "household",
+          "word": "house"
+        },
+        {
+          "hypothesis": "household",
+          "word": "home"
+        },
+        {
+          "hypothesis": "household",
+          "word": "kitchen"
+        },
+        {
+          "hypothesis": "weather",
+          "word": "cloud"
+        },
+        {
+          "hypothesis": "weather",
+          "word": "storm"
+        },
+        {
+          "hypothesis": "weather",
+          "word": "sky"
+        },
+        {
+          "hypothesis": "anatomy",
+          "word": "face"
+        },
+        {
+          "hypothesis": "anatomy",
+          "word": "arm"
+        },
+        {
+          "hypothesis": "anatomy",
+          "word": "leg"
+        },
+        {
+          "hypothesis": "space",
+          "word": "galaxy"
+        },
+        {
+          "hypothesis": "space",
+          "word": "universe"
+        },
+        {
+          "hypothesis": "space",
+          "word": "orbit"
+        },
+        {
+          "hypothesis": "clothing",
+          "word": "dress"
+        },
+        {
+          "hypothesis": "clothing",
+          "word": "skirt"
+        },
+        {
+          "hypothesis": "clothing",
+          "word": "shoes"
+        },
+        {
+          "hypothesis": "transport",
+          "word": "bus"
+        },
+        {
+          "hypothesis": "transport",
+          "word": "truck"
+        },
+        {
+          "hypothesis": "transport",
+          "word": "ship"
+        },
+        {
+          "hypothesis": "animals",
+          "word": "pear"
+        },
+        {
+          "hypothesis": "animals",
+          "word": "grape"
+        },
+        {
+          "hypothesis": "careers",
+          "word": "nurse"
+        },
+        {
+          "hypothesis": "careers",
+          "word": "surgeon"
+        },
+        {
+          "hypothesis": "careers",
+          "word": "medic"
+        },
+        {
+          "hypothesis": "sports",
+          "word": "ball"
+        },
+        {
+          "hypothesis": "sports",
+          "word": "game"
+        },
+        {
+          "hypothesis": "sports",
+          "word": "match"
+        },
+        {
+          "hypothesis": "time",
+          "word": "hour"
+        },
+        {
+          "hypothesis": "time",
+          "word": "minute"
+        },
+        {
+          "hypothesis": "time",
+          "word": "second"
+        },
+        {
+          "hypothesis": "education",
+          "word": "school"
+        },
+        {
+          "hypothesis": "education",
+          "word": "student"
+        },
+        {
+          "hypothesis": "education",
+          "word": "study"
+        },
+        {
+          "hypothesis": "materials",
+          "word": "rock"
+        },
+        {
+          "hypothesis": "materials",
+          "word": "stone"
+        },
+        {
+          "hypothesis": "materials",
+          "word": "clay"
+        },
+        {
+          "hypothesis": "geography",
+          "word": "ocean"
+        },
+        {
+          "hypothesis": "geography",
+          "word": "beach"
+        },
+        {
+          "hypothesis": "geography",
+          "word": "island"
+        }
+      ]
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:29:46",
+    "details": {
+      "word": "valley",
+      "rank": 19128,
+      "hypothesis": "nature",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 46
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:29:46",
+    "details": {
+      "word": "meadow",
+      "rank": 4579,
+      "hypothesis": "nature",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 47
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:29:46",
+    "details": {
+      "word": "desert",
+      "rank": 8648,
+      "hypothesis": "nature",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 48
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:29:46",
+    "details": {
+      "word": "fruit",
+      "rank": 498,
+      "hypothesis": "food",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 49
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:29:46",
+    "details": {
+      "word": "orange",
+      "rank": 128,
+      "hypothesis": "food",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 50
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:29:46",
+    "details": {
+      "word": "banana",
+      "rank": 221,
+      "hypothesis": "food",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 51
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:29:47",
+    "details": {
+      "word": "house",
+      "rank": 31192,
+      "hypothesis": "household",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 52
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:29:47",
+    "details": {
+      "word": "home",
+      "rank": 39446,
+      "hypothesis": "household",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 53
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:29:47",
+    "details": {
+      "word": "kitchen",
+      "rank": 11645,
+      "hypothesis": "household",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 54
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:29:47",
+    "details": {
+      "word": "cloud",
+      "rank": 30050,
+      "hypothesis": "weather",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 55
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:29:47",
+    "details": {
+      "word": "storm",
+      "rank": 10866,
+      "hypothesis": "weather",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 56
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:29:47",
+    "details": {
+      "word": "sky",
+      "rank": 8688,
+      "hypothesis": "weather",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 57
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:29:47",
+    "details": {
+      "word": "face",
+      "rank": 23968,
+      "hypothesis": "anatomy",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 58
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:29:47",
+    "details": {
+      "word": "arm",
+      "rank": 46576,
+      "hypothesis": "anatomy",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 59
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:29:47",
+    "details": {
+      "word": "leg",
+      "rank": 16135,
+      "hypothesis": "anatomy",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 60
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:29:47",
+    "details": {
+      "word": "galaxy",
+      "rank": 65356,
+      "hypothesis": "space",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 61
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:29:47",
+    "details": {
+      "word": "universe",
+      "rank": 54456,
+      "hypothesis": "space",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 62
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:29:47",
+    "details": {
+      "word": "orbit",
+      "rank": 50343,
+      "hypothesis": "space",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 63
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:29:47",
+    "details": {
+      "word": "dress",
+      "rank": 2119,
+      "hypothesis": "clothing",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 64
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:29:47",
+    "details": {
+      "word": "skirt",
+      "rank": 10039,
+      "hypothesis": "clothing",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 65
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:29:47",
+    "details": {
+      "word": "shoes",
+      "rank": 7803,
+      "hypothesis": "clothing",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 66
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:29:47",
+    "details": {
+      "word": "bus",
+      "rank": 9410,
+      "hypothesis": "transport",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 67
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:29:47",
+    "details": {
+      "word": "truck",
+      "rank": 7721,
+      "hypothesis": "transport",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 68
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:29:47",
+    "details": {
+      "word": "ship",
+      "rank": 38838,
+      "hypothesis": "transport",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 69
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:29:47",
+    "details": {
+      "word": "pear",
+      "rank": 112,
+      "hypothesis": "animals",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 70
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:29:47",
+    "details": {
+      "word": "grape",
+      "rank": 298,
+      "hypothesis": "animals",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 71
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:29:47",
+    "details": {
+      "word": "nurse",
+      "rank": 8615,
+      "hypothesis": "careers",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 72
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:29:47",
+    "details": {
+      "word": "surgeon",
+      "rank": 48033,
+      "hypothesis": "careers",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 73
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:29:48",
+    "details": {
+      "word": "medic",
+      "rank": 33887,
+      "hypothesis": "careers",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 74
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:29:48",
+    "details": {
+      "word": "ball",
+      "rank": 1383,
+      "hypothesis": "sports",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 75
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:29:48",
+    "details": {
+      "word": "game",
+      "rank": 24609,
+      "hypothesis": "sports",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 76
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:29:48",
+    "details": {
+      "word": "match",
+      "rank": 32239,
+      "hypothesis": "sports",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 77
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:29:48",
+    "details": {
+      "word": "hour",
+      "rank": 32172,
+      "hypothesis": "time",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 78
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:29:48",
+    "details": {
+      "word": "minute",
+      "rank": 15455,
+      "hypothesis": "time",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 79
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:29:48",
+    "details": {
+      "word": "second",
+      "rank": 31110,
+      "hypothesis": "time",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 80
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:29:48",
+    "details": {
+      "word": "school",
+      "rank": 41986,
+      "hypothesis": "education",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 81
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:29:48",
+    "details": {
+      "word": "student",
+      "rank": 70969,
+      "hypothesis": "education",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 82
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:29:48",
+    "details": {
+      "word": "study",
+      "rank": 57914,
+      "hypothesis": "education",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 83
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:29:48",
+    "details": {
+      "word": "rock",
+      "rank": 27771,
+      "hypothesis": "materials",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 84
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:29:48",
+    "details": {
+      "word": "stone",
+      "rank": 1431,
+      "hypothesis": "materials",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 85
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:29:48",
+    "details": {
+      "word": "clay",
+      "rank": 21236,
+      "hypothesis": "materials",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 86
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:29:48",
+    "details": {
+      "word": "ocean",
+      "rank": 61114,
+      "hypothesis": "geography",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 87
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:29:48",
+    "details": {
+      "word": "beach",
+      "rank": 8207,
+      "hypothesis": "geography",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 88
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:29:48",
+    "details": {
+      "word": "island",
+      "rank": 67562,
+      "hypothesis": "geography",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 89
+    }
+  },
+  {
+    "generation": 1,
+    "event": "LOCAL_SEARCH_DISABLED",
+    "timestamp": "2026-08-13T19:29:48",
+    "details": {
+      "center_word": "apple",
+      "center_rank": 70,
+      "threshold": 100,
+      "reason": "self_adaptive_disable_local_search"
+    }
+  },
+  {
+    "generation": 1,
+    "event": "SELECT",
+    "timestamp": "2026-08-13T19:29:48",
+    "details": {
+      "kept": [
+        "food",
+        "animals",
+        "sports",
+        "materials",
+        "clothing"
+      ],
+      "discarded": [
+        "weather",
+        "anatomy",
+        "nature",
+        "transport",
+        "geography",
+        "careers",
+        "space",
+        "household",
+        "time",
+        "education"
+      ],
+      "elite": "food",
+      "max_active_hypotheses": 5,
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 89
+    }
+  },
+  {
+    "generation": 1,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-08-13T19:31:23",
+    "details": {
+      "parent_id": "d99d81b29f6d4955a52c8cd11d1152c0",
+      "child_id": "1095d04cc465448b97c38c8155ce5653",
+      "parent_rank": 70,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "garden features",
+      "sampled_op": "l_mutation",
+      "method": "self_adaptive",
+      "self_report": {
+        "predicted_closeness": 0.4,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "apple"
+          ],
+          "reason": "This moves away from food while staying within a tangible, outdoor-related realm that could be related to the botanical nature of an apple."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"name\": \"garden features\", \"description\": \"structures and elements found in garden or backyard settings\", \"words\": [\"gate\", \"fence\", \"hedge\"], \"basis_words\": [\"apple\"], \"reason\": \"This moves away from food while staying within a tangible, outdoor-related realm that could be related to the botanical nature of an apple.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"food\".\nDescription: common items for eating\nBest word so far: \"apple\" with rank 70.\nOther active categories already being explored: [\"food\", \"clothing\", \"animals\", \"sports\", \"materials\"]\n\nMake a LARGE mutation: produce a child hypothesis in a broad, semantically\nsubstantial new direction that is unlike \"food\" and unlike the other active\ncategories above. The goal is to escape the current semantic region and open\nup unexplored territory, while staying plausibly relevant given \"apple\"'s\nrank - lower ranks mean the target is closer to \"apple\", so the jump\nmust remain in the same broad semantic area even when reframed.\n\nFor example, if the parent is \"types of plants\" and \"shrub\" ranks 50, a large\nmutation could be \"outdoor environments\" or \"rural landscape features\" -\nclearly outside the plant taxonomy but still in a plausible neighborhood for\na target close to \"shrub\".\n\nSuggest one new hypothesis. Include exactly 3 starter words that have not\nalready been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"apple\", \"arm\", \"ball\", \"banana\", \"beach\", \"bird\", \"book\", \"bread\", \"bus\", \"car\", \"cat\", \"chair\", \"cheese\", \"clay\", \"cloud\", \"coat\", \"day\", \"desert\", \"desk\", \"doctor\", \"dog\", \"dress\", \"face\", \"foot\", \"forest\", \"fruit\", \"galaxy\", \"game\", \"glass\", \"golf\", \"grape\", \"hand\", \"hat\", \"head\", \"home\", \"hour\", \"house\", \"island\", \"kitchen\", \"lake\", \"lamp\", \"land\", \"leg\", \"match\", \"meadow\", \"medic\", \"metal\", \"minute\", \"moon\", \"mountain\", \"night\", \"nurse\", \"ocean\", \"orange\", \"orbit\", \"pear\", \"pen\", \"pilot\", \"plane\", \"planet\", \"rain\", \"river\", \"rock\", \"school\", \"sea\", \"second\", \"ship\", \"shirt\", \"shoes\", \"skirt\", \"sky\", \"snow\", \"soccer\", \"star\", \"stone\", \"storm\", \"student\", \"study\", \"surgeon\", \"table\", \"teacher\", \"tennis\", \"train\", \"truck\", \"universe\", \"valley\", \"week\", \"wind\", \"wood\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"direction name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:31:27",
+    "details": {
+      "word": "gate",
+      "rank": 41258,
+      "hypothesis": "garden features",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 90
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:31:27",
+    "details": {
+      "word": "fence",
+      "rank": 13595,
+      "hypothesis": "garden features",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 91
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:31:27",
+    "details": {
+      "word": "hedge",
+      "rank": 2854,
+      "hypothesis": "garden features",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 92
+    }
+  },
+  {
+    "generation": 1,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-08-13T19:32:10",
+    "details": {
+      "parent_id": "45e08512e0f34ca8a4bcf47b3a36e3ae",
+      "child_id": "8fda36edae9d44e1a59f04a1fe40e268",
+      "parent_rank": 112,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "garden produce",
+      "sampled_op": "ml_mutation",
+      "method": "self_adaptive",
+      "self_report": {
+        "predicted_closeness": 0.8,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "pear",
+            "grape"
+          ],
+          "reason": "The low ranking of 'pear' and 'grape' suggests the target is a fruit or similar agricultural product."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"name\": \"garden produce\", \"description\": \"common fruits and vegetables grown for consumption\", \"words\": [\"melon\", \"peach\", \"cherry\"], \"basis_words\": [\"pear\", \"grape\"], \"reason\": \"The low ranking of 'pear' and 'grape' suggests the target is a fruit or similar agricultural product.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.8}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"animals\".\nDescription: common species of fauna\nResults so far in this hypothesis: {\"bird\": 17394, \"cat\": 37273, \"dog\": 18486, \"grape\": 298, \"pear\": 112}\nBest word so far: \"pear\" with rank 112.\n\nMake a MEDIUM-LARGE mutation: produce a child hypothesis in an ADJACENT but\ndistinct category that could still plausibly contain the hidden target given\n\"pear\"'s rank. The child must NOT be a sub-category of \"animals\" - it\nshould sit alongside \"animals\" in semantic space, not underneath it.\n\nFor example, if the parent is \"types of plants\" and the best word is \"shrub\",\nan adjacent category could be \"plant descriptors\", \"botanical terminology\",\n\"growth habits\", or \"ecological roles\".\n\nSuggest one adjacent hypothesis. Include exactly 3 starter words that have\nnot already been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"apple\", \"arm\", \"ball\", \"banana\", \"beach\", \"bird\", \"book\", \"bread\", \"bus\", \"car\", \"cat\", \"chair\", \"cheese\", \"clay\", \"cloud\", \"coat\", \"day\", \"desert\", \"desk\", \"doctor\", \"dog\", \"dress\", \"face\", \"fence\", \"foot\", \"forest\", \"fruit\", \"galaxy\", \"game\", \"gate\", \"glass\", \"golf\", \"grape\", \"hand\", \"hat\", \"head\", \"hedge\", \"home\", \"hour\", \"house\", \"island\", \"kitchen\", \"lake\", \"lamp\", \"land\", \"leg\", \"match\", \"meadow\", \"medic\", \"metal\", \"minute\", \"moon\", \"mountain\", \"night\", \"nurse\", \"ocean\", \"orange\", \"orbit\", \"pear\", \"pen\", \"pilot\", \"plane\", \"planet\", \"rain\", \"river\", \"rock\", \"school\", \"sea\", \"second\", \"ship\", \"shirt\", \"shoes\", \"skirt\", \"sky\", \"snow\", \"soccer\", \"star\", \"stone\", \"storm\", \"student\", \"study\", \"surgeon\", \"table\", \"teacher\", \"tennis\", \"train\", \"truck\", \"universe\", \"valley\", \"week\", \"wind\", \"wood\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"category name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:32:10",
+    "details": {
+      "word": "melon",
+      "rank": 189,
+      "hypothesis": "garden produce",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 93
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:32:10",
+    "details": {
+      "word": "peach",
+      "rank": 187,
+      "hypothesis": "garden produce",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 94
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:32:10",
+    "details": {
+      "word": "cherry",
+      "rank": 279,
+      "hypothesis": "garden produce",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 95
+    }
+  },
+  {
+    "generation": 1,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-08-13T19:34:30",
+    "details": {
+      "parent_id": "c9032eb0e7054f7ebfbc7168b1f9a7d9",
+      "child_id": "b1358b87e22b41ae8725fe082785451d",
+      "parent_rank": 1383,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "toy products",
+      "sampled_op": "l_mutation",
+      "method": "self_adaptive",
+      "self_report": {
+        "predicted_closeness": 0.4,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top500",
+        "rationale": {
+          "basis_words": [
+            "ball"
+          ],
+          "reason": "This moves away from 'sports' while remaining in the realm of recreational items, specifically focusing on objects (like balls) used for play."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"name\": \"toy products\", \"description\": \"objects for children to use in play\", \"words\": [\"doll\", \"block\", \"yoyo\"], \"basis_words\": [\"ball\"], \"reason\": \"This moves away from 'sports' while remaining in the realm of recreational items, specifically focusing on objects (like balls) used for play.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"sports\".\nDescription: popular athletic activities\nBest word so far: \"ball\" with rank 1383.\nOther active categories already being explored: [\"food\", \"clothing\", \"animals\", \"sports\", \"materials\", \"garden features\", \"garden produce\"]\n\nMake a LARGE mutation: produce a child hypothesis in a broad, semantically\nsubstantial new direction that is unlike \"sports\" and unlike the other active\ncategories above. The goal is to escape the current semantic region and open\nup unexplored territory, while staying plausibly relevant given \"ball\"'s\nrank - lower ranks mean the target is closer to \"ball\", so the jump\nmust remain in the same broad semantic area even when reframed.\n\nFor example, if the parent is \"types of plants\" and \"shrub\" ranks 50, a large\nmutation could be \"outdoor environments\" or \"rural landscape features\" -\nclearly outside the plant taxonomy but still in a plausible neighborhood for\na target close to \"shrub\".\n\nSuggest one new hypothesis. Include exactly 3 starter words that have not\nalready been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"apple\", \"arm\", \"ball\", \"banana\", \"beach\", \"bird\", \"book\", \"bread\", \"bus\", \"car\", \"cat\", \"chair\", \"cheese\", \"cherry\", \"clay\", \"cloud\", \"coat\", \"day\", \"desert\", \"desk\", \"doctor\", \"dog\", \"dress\", \"face\", \"fence\", \"foot\", \"forest\", \"fruit\", \"galaxy\", \"game\", \"gate\", \"glass\", \"golf\", \"grape\", \"hand\", \"hat\", \"head\", \"hedge\", \"home\", \"hour\", \"house\", \"island\", \"kitchen\", \"lake\", \"lamp\", \"land\", \"leg\", \"match\", \"meadow\", \"medic\", \"melon\", \"metal\", \"minute\", \"moon\", \"mountain\", \"night\", \"nurse\", \"ocean\", \"orange\", \"orbit\", \"peach\", \"pear\", \"pen\", \"pilot\", \"plane\", \"planet\", \"rain\", \"river\", \"rock\", \"school\", \"sea\", \"second\", \"ship\", \"shirt\", \"shoes\", \"skirt\", \"sky\", \"snow\", \"soccer\", \"star\", \"stone\", \"storm\", \"student\", \"study\", \"surgeon\", \"table\", \"teacher\", \"tennis\", \"train\", \"truck\", \"universe\", \"valley\", \"week\", \"wind\", \"wood\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"direction name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:34:34",
+    "details": {
+      "word": "doll",
+      "rank": 7613,
+      "hypothesis": "toy products",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 96
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:34:34",
+    "details": {
+      "word": "block",
+      "rank": 56289,
+      "hypothesis": "toy products",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 97
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:34:35",
+    "details": {
+      "word": "yoyo",
+      "rank": 48250,
+      "hypothesis": "toy products",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 98
+    }
+  },
+  {
+    "generation": 1,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-08-13T19:35:25",
+    "details": {
+      "parent_id": "c5b4913f20f548d0a5a5b078649f9c14",
+      "child_id": "43ec594e39cc42d692afb6c394e55d0f",
+      "parent_rank": 1431,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "minerals",
+      "sampled_op": "s_mutation",
+      "method": "self_adaptive",
+      "self_report": {
+        "predicted_closeness": 0.75,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "stone",
+            "rock"
+          ],
+          "reason": "Since 'stone' was the closest result, focusing on geological minerals narrows the search from general construction materials to earth-based stone types."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"name\": \"minerals\", \"description\": \"geological substances and mineral materials\", \"words\": [\"pebble\", \"marble\", \"granite\"], \"basis_words\": [\"stone\", \"rock\"], \"reason\": \"Since 'stone' was the closest result, focusing on geological minerals narrows the search from general construction materials to earth-based stone types.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.75}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"materials\".\nDescription: basic physical substances\nResults so far in this hypothesis: {\"clay\": 21236, \"glass\": 31622, \"metal\": 48441, \"rock\": 27771, \"stone\": 1431, \"wood\": 16882}\nBest word so far: \"stone\" with rank 1431.\n\nMake a SMALL mutation: produce a child hypothesis that stays in the same\nconceptual neighborhood as \"materials\" but narrows or refines it. The new starter\nwords should be close semantic neighbors of \"stone\" - synonyms, common\ndescriptors, or words that frequently co-occur with it.\n\nFor example, if the parent is \"types of plants\" and the best word is \"shrub\",\na small mutation could be \"woody plants\" with starters like bush, hedge, thicket.\n\nSuggest one refined hypothesis. Include exactly 3 starter words that have not\nalready been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"apple\", \"arm\", \"ball\", \"banana\", \"beach\", \"bird\", \"block\", \"book\", \"bread\", \"bus\", \"car\", \"cat\", \"chair\", \"cheese\", \"cherry\", \"clay\", \"cloud\", \"coat\", \"day\", \"desert\", \"desk\", \"doctor\", \"dog\", \"doll\", \"dress\", \"face\", \"fence\", \"foot\", \"forest\", \"fruit\", \"galaxy\", \"game\", \"gate\", \"glass\", \"golf\", \"grape\", \"hand\", \"hat\", \"head\", \"hedge\", \"home\", \"hour\", \"house\", \"island\", \"kitchen\", \"lake\", \"lamp\", \"land\", \"leg\", \"match\", \"meadow\", \"medic\", \"melon\", \"metal\", \"minute\", \"moon\", \"mountain\", \"night\", \"nurse\", \"ocean\", \"orange\", \"orbit\", \"peach\", \"pear\", \"pen\", \"pilot\", \"plane\", \"planet\", \"rain\", \"river\", \"rock\", \"school\", \"sea\", \"second\", \"ship\", \"shirt\", \"shoes\", \"skirt\", \"sky\", \"snow\", \"soccer\", \"star\", \"stone\", \"storm\", \"student\", \"study\", \"surgeon\", \"table\", \"teacher\", \"tennis\", \"train\", \"truck\", \"universe\", \"valley\", \"week\", \"wind\", \"wood\", \"yoyo\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"direction name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:35:28",
+    "details": {
+      "word": "pebble",
+      "rank": 6530,
+      "hypothesis": "minerals",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 99
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:35:29",
+    "details": {
+      "word": "marble",
+      "rank": 7687,
+      "hypothesis": "minerals",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 100
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:35:30",
+    "details": {
+      "word": "granite",
+      "rank": 35441,
+      "hypothesis": "minerals",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 101
+    }
+  },
+  {
+    "generation": 1,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-08-13T19:37:03",
+    "details": {
+      "parent_id": "36f6cca0b3b442eda2f5b96f9b5702b9",
+      "child_id": "f0cd5fda5985481ca1b49014cede915e",
+      "parent_rank": 2119,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "jewelry",
+      "sampled_op": "ml_mutation",
+      "method": "self_adaptive",
+      "self_report": {
+        "predicted_closeness": 0.6,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top100",
+        "rationale": {
+          "basis_words": [
+            "dress"
+          ],
+          "reason": "Given that 'dress' is the best performing word in the clothing category, it suggests the target may be related to personal appearance or fashion. Jewelry is an adjacent but distinct category from clothing."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"name\": \"jewelry\", \"description\": \"decorative items worn for personal adornment\", \"words\": [\"necklace\", \"ring\", \"bracelet\"], \"basis_words\": [\"dress\"], \"reason\": \"Given that 'dress' is the best performing word in the clothing category, it suggests the target may be related to personal appearance or fashion. Jewelry is an adjacent but distinct category from clothing.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.6}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"clothing\".\nDescription: garments worn by people\nResults so far in this hypothesis: {\"coat\": 11876, \"dress\": 2119, \"hat\": 15538, \"shirt\": 32416, \"shoes\": 7803, \"skirt\": 10039}\nBest word so far: \"dress\" with rank 2119.\n\nMake a MEDIUM-LARGE mutation: produce a child hypothesis in an ADJACENT but\ndistinct category that could still plausibly contain the hidden target given\n\"dress\"'s rank. The child must NOT be a sub-category of \"clothing\" - it\nshould sit alongside \"clothing\" in semantic space, not underneath it.\n\nFor example, if the parent is \"types of plants\" and the best word is \"shrub\",\nan adjacent category could be \"plant descriptors\", \"botanical terminology\",\n\"growth habits\", or \"ecological roles\".\n\nSuggest one adjacent hypothesis. Include exactly 3 starter words that have\nnot already been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"apple\", \"arm\", \"ball\", \"banana\", \"beach\", \"bird\", \"block\", \"book\", \"bread\", \"bus\", \"car\", \"cat\", \"chair\", \"cheese\", \"cherry\", \"clay\", \"cloud\", \"coat\", \"day\", \"desert\", \"desk\", \"doctor\", \"dog\", \"doll\", \"dress\", \"face\", \"fence\", \"foot\", \"forest\", \"fruit\", \"galaxy\", \"game\", \"gate\", \"glass\", \"golf\", \"granite\", \"grape\", \"hand\", \"hat\", \"head\", \"hedge\", \"home\", \"hour\", \"house\", \"island\", \"kitchen\", \"lake\", \"lamp\", \"land\", \"leg\", \"marble\", \"match\", \"meadow\", \"medic\", \"melon\", \"metal\", \"minute\", \"moon\", \"mountain\", \"night\", \"nurse\", \"ocean\", \"orange\", \"orbit\", \"peach\", \"pear\", \"pebble\", \"pen\", \"pilot\", \"plane\", \"planet\", \"rain\", \"river\", \"rock\", \"school\", \"sea\", \"second\", \"ship\", \"shirt\", \"shoes\", \"skirt\", \"sky\", \"snow\", \"soccer\", \"star\", \"stone\", \"storm\", \"student\", \"study\", \"surgeon\", \"table\", \"teacher\", \"tennis\", \"train\", \"truck\", \"universe\", \"valley\", \"week\", \"wind\", \"wood\", \"yoyo\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"category name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": null,
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:37:07",
+    "details": {
+      "word": "necklace",
+      "rank": 12856,
+      "hypothesis": "jewelry",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 102
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:37:08",
+    "details": {
+      "word": "ring",
+      "rank": 5663,
+      "hypothesis": "jewelry",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 103
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:37:09",
+    "details": {
+      "word": "bracelet",
+      "rank": 39255,
+      "hypothesis": "jewelry",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 104
+    }
+  },
+  {
+    "generation": 1,
+    "event": "MUTATE",
+    "timestamp": "2026-08-13T19:37:09",
+    "details": {
+      "method": "self_adaptive",
+      "children": [
+        {
+          "hypothesis_id": "1095d04cc465448b97c38c8155ce5653",
+          "category_name": "garden features",
+          "description": "structures and elements found in garden or backyard settings",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "food",
+          "parent_id": "d99d81b29f6d4955a52c8cd11d1152c0",
+          "origin": "self_adaptive_l_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "self_report": {
+            "predicted_closeness": 0.4,
+            "predicted_closeness_clamped": false,
+            "predicted_bucket": "top500",
+            "rationale": {
+              "basis_words": [
+                "apple"
+              ],
+              "reason": "This moves away from food while staying within a tangible, outdoor-related realm that could be related to the botanical nature of an apple."
+            },
+            "self_report_parse_failed": false,
+            "self_report_raw": "{\"name\": \"garden features\", \"description\": \"structures and elements found in garden or backyard settings\", \"words\": [\"gate\", \"fence\", \"hedge\"], \"basis_words\": [\"apple\"], \"reason\": \"This moves away from food while staying within a tangible, outdoor-related realm that could be related to the botanical nature of an apple.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}",
+            "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"food\".\nDescription: common items for eating\nBest word so far: \"apple\" with rank 70.\nOther active categories already being explored: [\"food\", \"clothing\", \"animals\", \"sports\", \"materials\"]\n\nMake a LARGE mutation: produce a child hypothesis in a broad, semantically\nsubstantial new direction that is unlike \"food\" and unlike the other active\ncategories above. The goal is to escape the current semantic region and open\nup unexplored territory, while staying plausibly relevant given \"apple\"'s\nrank - lower ranks mean the target is closer to \"apple\", so the jump\nmust remain in the same broad semantic area even when reframed.\n\nFor example, if the parent is \"types of plants\" and \"shrub\" ranks 50, a large\nmutation could be \"outdoor environments\" or \"rural landscape features\" -\nclearly outside the plant taxonomy but still in a plausible neighborhood for\na target close to \"shrub\".\n\nSuggest one new hypothesis. Include exactly 3 starter words that have not\nalready been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"apple\", \"arm\", \"ball\", \"banana\", \"beach\", \"bird\", \"book\", \"bread\", \"bus\", \"car\", \"cat\", \"chair\", \"cheese\", \"clay\", \"cloud\", \"coat\", \"day\", \"desert\", \"desk\", \"doctor\", \"dog\", \"dress\", \"face\", \"foot\", \"forest\", \"fruit\", \"galaxy\", \"game\", \"glass\", \"golf\", \"grape\", \"hand\", \"hat\", \"head\", \"home\", \"hour\", \"house\", \"island\", \"kitchen\", \"lake\", \"lamp\", \"land\", \"leg\", \"match\", \"meadow\", \"medic\", \"metal\", \"minute\", \"moon\", \"mountain\", \"night\", \"nurse\", \"ocean\", \"orange\", \"orbit\", \"pear\", \"pen\", \"pilot\", \"plane\", \"planet\", \"rain\", \"river\", \"rock\", \"school\", \"sea\", \"second\", \"ship\", \"shirt\", \"shoes\", \"skirt\", \"sky\", \"snow\", \"soccer\", \"star\", \"stone\", \"storm\", \"student\", \"study\", \"surgeon\", \"table\", \"teacher\", \"tennis\", \"train\", \"truck\", \"universe\", \"valley\", \"week\", \"wind\", \"wood\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"direction name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+            "injected_rationale_hash": null,
+            "rationale_truncated": false
+          }
+        },
+        {
+          "hypothesis_id": "8fda36edae9d44e1a59f04a1fe40e268",
+          "category_name": "garden produce",
+          "description": "common fruits and vegetables grown for consumption",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "animals",
+          "parent_id": "45e08512e0f34ca8a4bcf47b3a36e3ae",
+          "origin": "self_adaptive_ml_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "self_report": {
+            "predicted_closeness": 0.8,
+            "predicted_closeness_clamped": false,
+            "predicted_bucket": "top100",
+            "rationale": {
+              "basis_words": [
+                "pear",
+                "grape"
+              ],
+              "reason": "The low ranking of 'pear' and 'grape' suggests the target is a fruit or similar agricultural product."
+            },
+            "self_report_parse_failed": false,
+            "self_report_raw": "{\"name\": \"garden produce\", \"description\": \"common fruits and vegetables grown for consumption\", \"words\": [\"melon\", \"peach\", \"cherry\"], \"basis_words\": [\"pear\", \"grape\"], \"reason\": \"The low ranking of 'pear' and 'grape' suggests the target is a fruit or similar agricultural product.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.8}",
+            "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"animals\".\nDescription: common species of fauna\nResults so far in this hypothesis: {\"bird\": 17394, \"cat\": 37273, \"dog\": 18486, \"grape\": 298, \"pear\": 112}\nBest word so far: \"pear\" with rank 112.\n\nMake a MEDIUM-LARGE mutation: produce a child hypothesis in an ADJACENT but\ndistinct category that could still plausibly contain the hidden target given\n\"pear\"'s rank. The child must NOT be a sub-category of \"animals\" - it\nshould sit alongside \"animals\" in semantic space, not underneath it.\n\nFor example, if the parent is \"types of plants\" and the best word is \"shrub\",\nan adjacent category could be \"plant descriptors\", \"botanical terminology\",\n\"growth habits\", or \"ecological roles\".\n\nSuggest one adjacent hypothesis. Include exactly 3 starter words that have\nnot already been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"apple\", \"arm\", \"ball\", \"banana\", \"beach\", \"bird\", \"book\", \"bread\", \"bus\", \"car\", \"cat\", \"chair\", \"cheese\", \"clay\", \"cloud\", \"coat\", \"day\", \"desert\", \"desk\", \"doctor\", \"dog\", \"dress\", \"face\", \"fence\", \"foot\", \"forest\", \"fruit\", \"galaxy\", \"game\", \"gate\", \"glass\", \"golf\", \"grape\", \"hand\", \"hat\", \"head\", \"hedge\", \"home\", \"hour\", \"house\", \"island\", \"kitchen\", \"lake\", \"lamp\", \"land\", \"leg\", \"match\", \"meadow\", \"medic\", \"metal\", \"minute\", \"moon\", \"mountain\", \"night\", \"nurse\", \"ocean\", \"orange\", \"orbit\", \"pear\", \"pen\", \"pilot\", \"plane\", \"planet\", \"rain\", \"river\", \"rock\", \"school\", \"sea\", \"second\", \"ship\", \"shirt\", \"shoes\", \"skirt\", \"sky\", \"snow\", \"soccer\", \"star\", \"stone\", \"storm\", \"student\", \"study\", \"surgeon\", \"table\", \"teacher\", \"tennis\", \"train\", \"truck\", \"universe\", \"valley\", \"week\", \"wind\", \"wood\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"category name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+            "injected_rationale_hash": null,
+            "rationale_truncated": false
+          }
+        },
+        {
+          "hypothesis_id": "b1358b87e22b41ae8725fe082785451d",
+          "category_name": "toy products",
+          "description": "objects for children to use in play",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "sports",
+          "parent_id": "c9032eb0e7054f7ebfbc7168b1f9a7d9",
+          "origin": "self_adaptive_l_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "self_report": {
+            "predicted_closeness": 0.4,
+            "predicted_closeness_clamped": false,
+            "predicted_bucket": "top500",
+            "rationale": {
+              "basis_words": [
+                "ball"
+              ],
+              "reason": "This moves away from 'sports' while remaining in the realm of recreational items, specifically focusing on objects (like balls) used for play."
+            },
+            "self_report_parse_failed": false,
+            "self_report_raw": "{\"name\": \"toy products\", \"description\": \"objects for children to use in play\", \"words\": [\"doll\", \"block\", \"yoyo\"], \"basis_words\": [\"ball\"], \"reason\": \"This moves away from 'sports' while remaining in the realm of recreational items, specifically focusing on objects (like balls) used for play.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}",
+            "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"sports\".\nDescription: popular athletic activities\nBest word so far: \"ball\" with rank 1383.\nOther active categories already being explored: [\"food\", \"clothing\", \"animals\", \"sports\", \"materials\", \"garden features\", \"garden produce\"]\n\nMake a LARGE mutation: produce a child hypothesis in a broad, semantically\nsubstantial new direction that is unlike \"sports\" and unlike the other active\ncategories above. The goal is to escape the current semantic region and open\nup unexplored territory, while staying plausibly relevant given \"ball\"'s\nrank - lower ranks mean the target is closer to \"ball\", so the jump\nmust remain in the same broad semantic area even when reframed.\n\nFor example, if the parent is \"types of plants\" and \"shrub\" ranks 50, a large\nmutation could be \"outdoor environments\" or \"rural landscape features\" -\nclearly outside the plant taxonomy but still in a plausible neighborhood for\na target close to \"shrub\".\n\nSuggest one new hypothesis. Include exactly 3 starter words that have not\nalready been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"apple\", \"arm\", \"ball\", \"banana\", \"beach\", \"bird\", \"book\", \"bread\", \"bus\", \"car\", \"cat\", \"chair\", \"cheese\", \"cherry\", \"clay\", \"cloud\", \"coat\", \"day\", \"desert\", \"desk\", \"doctor\", \"dog\", \"dress\", \"face\", \"fence\", \"foot\", \"forest\", \"fruit\", \"galaxy\", \"game\", \"gate\", \"glass\", \"golf\", \"grape\", \"hand\", \"hat\", \"head\", \"hedge\", \"home\", \"hour\", \"house\", \"island\", \"kitchen\", \"lake\", \"lamp\", \"land\", \"leg\", \"match\", \"meadow\", \"medic\", \"melon\", \"metal\", \"minute\", \"moon\", \"mountain\", \"night\", \"nurse\", \"ocean\", \"orange\", \"orbit\", \"peach\", \"pear\", \"pen\", \"pilot\", \"plane\", \"planet\", \"rain\", \"river\", \"rock\", \"school\", \"sea\", \"second\", \"ship\", \"shirt\", \"shoes\", \"skirt\", \"sky\", \"snow\", \"soccer\", \"star\", \"stone\", \"storm\", \"student\", \"study\", \"surgeon\", \"table\", \"teacher\", \"tennis\", \"train\", \"truck\", \"universe\", \"valley\", \"week\", \"wind\", \"wood\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"direction name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+            "injected_rationale_hash": null,
+            "rationale_truncated": false
+          }
+        },
+        {
+          "hypothesis_id": "43ec594e39cc42d692afb6c394e55d0f",
+          "category_name": "minerals",
+          "description": "geological substances and mineral materials",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "materials",
+          "parent_id": "c5b4913f20f548d0a5a5b078649f9c14",
+          "origin": "self_adaptive_s_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "self_report": {
+            "predicted_closeness": 0.75,
+            "predicted_closeness_clamped": false,
+            "predicted_bucket": "top100",
+            "rationale": {
+              "basis_words": [
+                "stone",
+                "rock"
+              ],
+              "reason": "Since 'stone' was the closest result, focusing on geological minerals narrows the search from general construction materials to earth-based stone types."
+            },
+            "self_report_parse_failed": false,
+            "self_report_raw": "{\"name\": \"minerals\", \"description\": \"geological substances and mineral materials\", \"words\": [\"pebble\", \"marble\", \"granite\"], \"basis_words\": [\"stone\", \"rock\"], \"reason\": \"Since 'stone' was the closest result, focusing on geological minerals narrows the search from general construction materials to earth-based stone types.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.75}",
+            "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"materials\".\nDescription: basic physical substances\nResults so far in this hypothesis: {\"clay\": 21236, \"glass\": 31622, \"metal\": 48441, \"rock\": 27771, \"stone\": 1431, \"wood\": 16882}\nBest word so far: \"stone\" with rank 1431.\n\nMake a SMALL mutation: produce a child hypothesis that stays in the same\nconceptual neighborhood as \"materials\" but narrows or refines it. The new starter\nwords should be close semantic neighbors of \"stone\" - synonyms, common\ndescriptors, or words that frequently co-occur with it.\n\nFor example, if the parent is \"types of plants\" and the best word is \"shrub\",\na small mutation could be \"woody plants\" with starters like bush, hedge, thicket.\n\nSuggest one refined hypothesis. Include exactly 3 starter words that have not\nalready been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"apple\", \"arm\", \"ball\", \"banana\", \"beach\", \"bird\", \"block\", \"book\", \"bread\", \"bus\", \"car\", \"cat\", \"chair\", \"cheese\", \"cherry\", \"clay\", \"cloud\", \"coat\", \"day\", \"desert\", \"desk\", \"doctor\", \"dog\", \"doll\", \"dress\", \"face\", \"fence\", \"foot\", \"forest\", \"fruit\", \"galaxy\", \"game\", \"gate\", \"glass\", \"golf\", \"grape\", \"hand\", \"hat\", \"head\", \"hedge\", \"home\", \"hour\", \"house\", \"island\", \"kitchen\", \"lake\", \"lamp\", \"land\", \"leg\", \"match\", \"meadow\", \"medic\", \"melon\", \"metal\", \"minute\", \"moon\", \"mountain\", \"night\", \"nurse\", \"ocean\", \"orange\", \"orbit\", \"peach\", \"pear\", \"pen\", \"pilot\", \"plane\", \"planet\", \"rain\", \"river\", \"rock\", \"school\", \"sea\", \"second\", \"ship\", \"shirt\", \"shoes\", \"skirt\", \"sky\", \"snow\", \"soccer\", \"star\", \"stone\", \"storm\", \"student\", \"study\", \"surgeon\", \"table\", \"teacher\", \"tennis\", \"train\", \"truck\", \"universe\", \"valley\", \"week\", \"wind\", \"wood\", \"yoyo\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"direction name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+            "injected_rationale_hash": null,
+            "rationale_truncated": false
+          }
+        },
+        {
+          "hypothesis_id": "f0cd5fda5985481ca1b49014cede915e",
+          "category_name": "jewelry",
+          "description": "decorative items worn for personal adornment",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "clothing",
+          "parent_id": "36f6cca0b3b442eda2f5b96f9b5702b9",
+          "origin": "self_adaptive_ml_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "self_report": {
+            "predicted_closeness": 0.6,
+            "predicted_closeness_clamped": false,
+            "predicted_bucket": "top100",
+            "rationale": {
+              "basis_words": [
+                "dress"
+              ],
+              "reason": "Given that 'dress' is the best performing word in the clothing category, it suggests the target may be related to personal appearance or fashion. Jewelry is an adjacent but distinct category from clothing."
+            },
+            "self_report_parse_failed": false,
+            "self_report_raw": "{\"name\": \"jewelry\", \"description\": \"decorative items worn for personal adornment\", \"words\": [\"necklace\", \"ring\", \"bracelet\"], \"basis_words\": [\"dress\"], \"reason\": \"Given that 'dress' is the best performing word in the clothing category, it suggests the target may be related to personal appearance or fashion. Jewelry is an adjacent but distinct category from clothing.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.6}",
+            "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"clothing\".\nDescription: garments worn by people\nResults so far in this hypothesis: {\"coat\": 11876, \"dress\": 2119, \"hat\": 15538, \"shirt\": 32416, \"shoes\": 7803, \"skirt\": 10039}\nBest word so far: \"dress\" with rank 2119.\n\nMake a MEDIUM-LARGE mutation: produce a child hypothesis in an ADJACENT but\ndistinct category that could still plausibly contain the hidden target given\n\"dress\"'s rank. The child must NOT be a sub-category of \"clothing\" - it\nshould sit alongside \"clothing\" in semantic space, not underneath it.\n\nFor example, if the parent is \"types of plants\" and the best word is \"shrub\",\nan adjacent category could be \"plant descriptors\", \"botanical terminology\",\n\"growth habits\", or \"ecological roles\".\n\nSuggest one adjacent hypothesis. Include exactly 3 starter words that have\nnot already been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"apple\", \"arm\", \"ball\", \"banana\", \"beach\", \"bird\", \"block\", \"book\", \"bread\", \"bus\", \"car\", \"cat\", \"chair\", \"cheese\", \"cherry\", \"clay\", \"cloud\", \"coat\", \"day\", \"desert\", \"desk\", \"doctor\", \"dog\", \"doll\", \"dress\", \"face\", \"fence\", \"foot\", \"forest\", \"fruit\", \"galaxy\", \"game\", \"gate\", \"glass\", \"golf\", \"granite\", \"grape\", \"hand\", \"hat\", \"head\", \"hedge\", \"home\", \"hour\", \"house\", \"island\", \"kitchen\", \"lake\", \"lamp\", \"land\", \"leg\", \"marble\", \"match\", \"meadow\", \"medic\", \"melon\", \"metal\", \"minute\", \"moon\", \"mountain\", \"night\", \"nurse\", \"ocean\", \"orange\", \"orbit\", \"peach\", \"pear\", \"pebble\", \"pen\", \"pilot\", \"plane\", \"planet\", \"rain\", \"river\", \"rock\", \"school\", \"sea\", \"second\", \"ship\", \"shirt\", \"shoes\", \"skirt\", \"sky\", \"snow\", \"soccer\", \"star\", \"stone\", \"storm\", \"student\", \"study\", \"surgeon\", \"table\", \"teacher\", \"tennis\", \"train\", \"truck\", \"universe\", \"valley\", \"week\", \"wind\", \"wood\", \"yoyo\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"category name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+            "injected_rationale_hash": null,
+            "rationale_truncated": false
+          }
+        }
+      ],
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 104
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:38:32",
+    "details": {
+      "word": "berry",
+      "rank": 253,
+      "hypothesis": "fruit_variety",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 105
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:38:32",
+    "details": {
+      "word": "melon",
+      "rank": 189,
+      "hypothesis": "fruit_variety",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 105
+    }
+  },
+  {
+    "generation": 1,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:38:32",
+    "details": {
+      "word": "peach",
+      "rank": 187,
+      "hypothesis": "fruit_variety",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 105
+    }
+  },
+  {
+    "generation": 1,
+    "event": "CROSSOVER",
+    "timestamp": "2026-08-13T19:38:32",
+    "details": {
+      "parents": [
+        "food",
+        "animals"
+      ],
+      "parent_ids": [
+        "d99d81b29f6d4955a52c8cd11d1152c0",
+        "45e08512e0f34ca8a4bcf47b3a36e3ae"
+      ],
+      "parent_ranks": [
+        70,
+        112
+      ],
+      "parent_a_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "parent_b_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma_pre_perturbation": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child": {
+        "hypothesis_id": "a47515e6996b40df856bb9f8174f758f",
+        "category_name": "fruit_variety",
+        "description": "types of edible fruits found in nature",
+        "words_tried": {
+          "peach": 187,
+          "melon": 189,
+          "berry": 253
+        },
+        "best_word": "peach",
+        "best_rank": 187,
+        "status": "active",
+        "parent": "food+animals",
+        "parent_id": null,
+        "origin": "crossover",
+        "sigma": [
+          0.25,
+          0.25,
+          0.25,
+          0.25
+        ],
+        "self_report": {
+          "predicted_closeness": 0.85,
+          "predicted_closeness_clamped": false,
+          "predicted_bucket": "top100",
+          "rationale": {
+            "basis_words": [
+              "fruit",
+              "grape",
+              "pear"
+            ],
+            "reason": "Both categories contain items that are classified as fruit; these words represent common types of botanical produce."
+          },
+          "self_report_parse_failed": false,
+          "self_report_raw": "{\"name\": \"fruit_variety\", \"description\": \"types of edible fruits found in nature\", \"words\": [\"berry\", \"melon\", \"peach\"], \"basis_words\": [\"fruit\", \"grape\", \"pear\"], \"reason\": \"Both categories contain items that are classified as fruit; these words represent common types of botanical produce.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.85}",
+          "self_report_prompt": "Return only JSON, no markdown or explanation.\nCategory A is food with results {\"apple\": 70, \"banana\": 221, \"bread\": 364, \"cheese\": 240, \"fruit\": 498, \"orange\": 128}.\nCategory B is animals with results {\"bird\": 17394, \"cat\": 37273, \"dog\": 18486, \"grape\": 298, \"pear\": 112}.\nSuggest one new category that captures the intersection or overlap of A and B.\nInclude exactly 3 candidate words.\nEvery word must be one common lowercase dictionary word.\nJSON schema:\n{\"name\": \"category name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+          "injected_rationale_hash": null,
+          "rationale_truncated": false
+        }
+      },
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 105
+    }
+  },
+  {
+    "generation": 1,
+    "event": "DEDUPLICATE",
+    "timestamp": "2026-08-13T19:38:32",
+    "details": {
+      "merged": [
+        {
+          "survivor": "garden produce",
+          "discarded": "fruit_variety",
+          "survivor_best_rank": 187,
+          "discarded_best_rank": 187
+        }
+      ],
+      "remaining_hypotheses": 20,
+      "active_hypotheses": 10,
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 105
+    }
+  },
+  {
+    "generation": 1,
+    "event": "SIGMA_TRAJECTORY",
+    "timestamp": "2026-08-13T19:38:32",
+    "details": {
+      "mean_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "population_size": 10
+    }
+  },
+  {
+    "generation": 2,
+    "event": "CANDIDATES",
+    "timestamp": "2026-08-13T19:46:36",
+    "details": {
+      "count": 28,
+      "candidates": [
+        {
+          "hypothesis": "food",
+          "word": "lemon"
+        },
+        {
+          "hypothesis": "food",
+          "word": "mango"
+        },
+        {
+          "hypothesis": "food",
+          "word": "pineapple"
+        },
+        {
+          "hypothesis": "animals",
+          "word": "plum"
+        },
+        {
+          "hypothesis": "garden produce",
+          "word": "carrot"
+        },
+        {
+          "hypothesis": "garden produce",
+          "word": "potato"
+        },
+        {
+          "hypothesis": "garden produce",
+          "word": "tomato"
+        },
+        {
+          "hypothesis": "sports",
+          "word": "track"
+        },
+        {
+          "hypothesis": "sports",
+          "word": "athlete"
+        },
+        {
+          "hypothesis": "sports",
+          "word": "team"
+        },
+        {
+          "hypothesis": "materials",
+          "word": "sand"
+        },
+        {
+          "hypothesis": "materials",
+          "word": "brick"
+        },
+        {
+          "hypothesis": "materials",
+          "word": "soil"
+        },
+        {
+          "hypothesis": "clothing",
+          "word": "pants"
+        },
+        {
+          "hypothesis": "clothing",
+          "word": "gown"
+        },
+        {
+          "hypothesis": "clothing",
+          "word": "suit"
+        },
+        {
+          "hypothesis": "garden features",
+          "word": "bush"
+        },
+        {
+          "hypothesis": "garden features",
+          "word": "shrub"
+        },
+        {
+          "hypothesis": "garden features",
+          "word": "flower"
+        },
+        {
+          "hypothesis": "jewelry",
+          "word": "earring"
+        },
+        {
+          "hypothesis": "jewelry",
+          "word": "brooch"
+        },
+        {
+          "hypothesis": "jewelry",
+          "word": "pendant"
+        },
+        {
+          "hypothesis": "minerals",
+          "word": "crystal"
+        },
+        {
+          "hypothesis": "minerals",
+          "word": "diamond"
+        },
+        {
+          "hypothesis": "minerals",
+          "word": "quartz"
+        },
+        {
+          "hypothesis": "toy products",
+          "word": "toy"
+        },
+        {
+          "hypothesis": "toy products",
+          "word": "puzzle"
+        },
+        {
+          "hypothesis": "toy products",
+          "word": "robot"
+        }
+      ]
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:46:36",
+    "details": {
+      "word": "lemon",
+      "rank": 212,
+      "hypothesis": "food",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 106
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:46:36",
+    "details": {
+      "word": "mango",
+      "rank": 141,
+      "hypothesis": "food",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 107
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:46:36",
+    "details": {
+      "word": "pineapple",
+      "rank": 254,
+      "hypothesis": "food",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 108
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:46:36",
+    "details": {
+      "word": "plum",
+      "rank": 130,
+      "hypothesis": "animals",
+      "best_word": "apple",
+      "best_rank": 70,
+      "total_guesses": 109
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:46:36",
+    "details": {
+      "word": "carrot",
+      "rank": 5,
+      "hypothesis": "garden produce",
+      "best_word": "carrot",
+      "best_rank": 5,
+      "total_guesses": 110
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:46:36",
+    "details": {
+      "word": "potato",
+      "rank": 17,
+      "hypothesis": "garden produce",
+      "best_word": "carrot",
+      "best_rank": 5,
+      "total_guesses": 111
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:46:36",
+    "details": {
+      "word": "tomato",
+      "rank": 35,
+      "hypothesis": "garden produce",
+      "best_word": "carrot",
+      "best_rank": 5,
+      "total_guesses": 112
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:46:37",
+    "details": {
+      "word": "track",
+      "rank": 60177,
+      "hypothesis": "sports",
+      "best_word": "carrot",
+      "best_rank": 5,
+      "total_guesses": 113
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:46:37",
+    "details": {
+      "word": "athlete",
+      "rank": 47583,
+      "hypothesis": "sports",
+      "best_word": "carrot",
+      "best_rank": 5,
+      "total_guesses": 114
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:46:37",
+    "details": {
+      "word": "team",
+      "rank": 45393,
+      "hypothesis": "sports",
+      "best_word": "carrot",
+      "best_rank": 5,
+      "total_guesses": 115
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:46:37",
+    "details": {
+      "word": "sand",
+      "rank": 20897,
+      "hypothesis": "materials",
+      "best_word": "carrot",
+      "best_rank": 5,
+      "total_guesses": 116
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:46:37",
+    "details": {
+      "word": "brick",
+      "rank": 20360,
+      "hypothesis": "materials",
+      "best_word": "carrot",
+      "best_rank": 5,
+      "total_guesses": 117
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:46:37",
+    "details": {
+      "word": "soil",
+      "rank": 2402,
+      "hypothesis": "materials",
+      "best_word": "carrot",
+      "best_rank": 5,
+      "total_guesses": 118
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:46:37",
+    "details": {
+      "word": "pants",
+      "rank": 16234,
+      "hypothesis": "clothing",
+      "best_word": "carrot",
+      "best_rank": 5,
+      "total_guesses": 119
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:46:37",
+    "details": {
+      "word": "gown",
+      "rank": 8685,
+      "hypothesis": "clothing",
+      "best_word": "carrot",
+      "best_rank": 5,
+      "total_guesses": 120
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:46:37",
+    "details": {
+      "word": "suit",
+      "rank": 37307,
+      "hypothesis": "clothing",
+      "best_word": "carrot",
+      "best_rank": 5,
+      "total_guesses": 121
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:46:37",
+    "details": {
+      "word": "bush",
+      "rank": 5834,
+      "hypothesis": "garden features",
+      "best_word": "carrot",
+      "best_rank": 5,
+      "total_guesses": 122
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:46:37",
+    "details": {
+      "word": "shrub",
+      "rank": 1048,
+      "hypothesis": "garden features",
+      "best_word": "carrot",
+      "best_rank": 5,
+      "total_guesses": 123
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:46:37",
+    "details": {
+      "word": "flower",
+      "rank": 526,
+      "hypothesis": "garden features",
+      "best_word": "carrot",
+      "best_rank": 5,
+      "total_guesses": 124
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:46:38",
+    "details": {
+      "word": "earring",
+      "rank": 9446,
+      "hypothesis": "jewelry",
+      "best_word": "carrot",
+      "best_rank": 5,
+      "total_guesses": 125
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:46:39",
+    "details": {
+      "word": "brooch",
+      "rank": 21688,
+      "hypothesis": "jewelry",
+      "best_word": "carrot",
+      "best_rank": 5,
+      "total_guesses": 126
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:46:39",
+    "details": {
+      "word": "pendant",
+      "rank": 37021,
+      "hypothesis": "jewelry",
+      "best_word": "carrot",
+      "best_rank": 5,
+      "total_guesses": 127
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:46:39",
+    "details": {
+      "word": "crystal",
+      "rank": 24433,
+      "hypothesis": "minerals",
+      "best_word": "carrot",
+      "best_rank": 5,
+      "total_guesses": 128
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:46:39",
+    "details": {
+      "word": "diamond",
+      "rank": 32715,
+      "hypothesis": "minerals",
+      "best_word": "carrot",
+      "best_rank": 5,
+      "total_guesses": 129
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:46:39",
+    "details": {
+      "word": "quartz",
+      "rank": 9176,
+      "hypothesis": "minerals",
+      "best_word": "carrot",
+      "best_rank": 5,
+      "total_guesses": 130
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:46:40",
+    "details": {
+      "word": "toy",
+      "rank": 19591,
+      "hypothesis": "toy products",
+      "best_word": "carrot",
+      "best_rank": 5,
+      "total_guesses": 131
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:46:41",
+    "details": {
+      "word": "puzzle",
+      "rank": 41381,
+      "hypothesis": "toy products",
+      "best_word": "carrot",
+      "best_rank": 5,
+      "total_guesses": 132
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:46:41",
+    "details": {
+      "word": "robot",
+      "rank": 52340,
+      "hypothesis": "toy products",
+      "best_word": "carrot",
+      "best_rank": 5,
+      "total_guesses": 133
+    }
+  },
+  {
+    "generation": 2,
+    "event": "SELECT",
+    "timestamp": "2026-08-13T19:46:41",
+    "details": {
+      "kept": [
+        "garden produce",
+        "food",
+        "animals",
+        "garden features",
+        "sports"
+      ],
+      "discarded": [
+        "materials",
+        "clothing",
+        "weather",
+        "anatomy",
+        "nature",
+        "jewelry",
+        "minerals",
+        "toy products",
+        "transport",
+        "geography",
+        "careers",
+        "space",
+        "household",
+        "time",
+        "education"
+      ],
+      "elite": "garden produce",
+      "max_active_hypotheses": 5,
+      "best_word": "carrot",
+      "best_rank": 5,
+      "total_guesses": 133
+    }
+  },
+  {
+    "generation": 2,
+    "event": "OPERATOR_SAMPLED",
+    "timestamp": "2026-08-13T19:47:42",
+    "details": {
+      "parent_id": "8fda36edae9d44e1a59f04a1fe40e268",
+      "child_id": "2e8b0eccb70c476bb5d672f411d91309",
+      "parent_rank": 5,
+      "sigma_snapshot": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_sigma": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "child_hypothesis_name": "root vegetable crops",
+      "sampled_op": "m_mutation",
+      "method": "self_adaptive",
+      "self_report": {
+        "predicted_closeness": 0.9,
+        "predicted_closeness_clamped": false,
+        "predicted_bucket": "top10",
+        "rationale": {
+          "basis_words": [
+            "carrot"
+          ],
+          "reason": "The success of carrot (rank 5) and potato (rank 17) suggests the target is a root vegetable rather than fruit."
+        },
+        "self_report_parse_failed": false,
+        "self_report_raw": "{\"name\": \"root vegetable crops\", \"description\": \"edible vegetables that grow primarily underground\", \"words\": [\"radish\", \"turnip\", \"onion\"], \"basis_words\": [\"carrot\"], \"reason\": \"The success of carrot (rank 5) and potato (rank 17) suggests the target is a root vegetable rather than fruit.\", \"predicted_bucket\": \"top10\", \"predicted_closeness\": 0.9}",
+        "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"garden produce\".\nDescription: common fruits and vegetables grown for consumption\nResults so far in this hypothesis: {\"berry\": 253, \"carrot\": 5, \"cherry\": 279, \"melon\": 189, \"peach\": 187, \"potato\": 17, \"tomato\": 35}\nBest word so far: \"carrot\" with rank 5.\n\nMake a MEDIUM mutation: produce a child hypothesis that reinterprets why\n\"carrot\" might have scored well, or shifts to a related sense, lexical\nregister, or part of speech. The child should still be semantically anchored\nto \"carrot\" but approach it from a clearly different angle than \"garden produce\".\n\nFor example, if the parent is \"food\" and the best word is \"bite\", a medium\nmutation could be \"animals that bite\", \"physical sensations from biting\", or\n\"clinical terms for biting and chewing\" - each treats \"bite\" through a\ndifferent lens.\n\nSuggest one reframed hypothesis. Include exactly 3 starter words that have\nnot already been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"apple\", \"arm\", \"athlete\", \"ball\", \"banana\", \"beach\", \"berry\", \"bird\", \"block\", \"book\", \"bracelet\", \"bread\", \"brick\", \"brooch\", \"bus\", \"bush\", \"car\", \"carrot\", \"cat\", \"chair\", \"cheese\", \"cherry\", \"clay\", \"cloud\", \"coat\", \"crystal\", \"day\", \"desert\", \"desk\", \"diamond\", \"doctor\", \"dog\", \"doll\", \"dress\", \"earring\", \"face\", \"fence\", \"flower\", \"foot\", \"forest\", \"fruit\", \"galaxy\", \"game\", \"gate\", \"glass\", \"golf\", \"gown\", \"granite\", \"grape\", \"hand\", \"hat\", \"head\", \"hedge\", \"home\", \"hour\", \"house\", \"island\", \"kitchen\", \"lake\", \"lamp\", \"land\", \"leg\", \"lemon\", \"mango\", \"marble\", \"match\", \"meadow\", \"medic\", \"melon\", \"metal\", \"minute\", \"moon\", \"mountain\", \"necklace\", \"night\", \"nurse\", \"ocean\", \"orange\", \"orbit\", \"pants\", \"peach\", \"pear\", \"pebble\", \"pen\", \"pendant\", \"pilot\", \"pineapple\", \"plane\", \"planet\", \"plum\", \"potato\", \"puzzle\", \"quartz\", \"rain\", \"ring\", \"river\", \"robot\", \"rock\", \"sand\", \"school\", \"sea\", \"second\", \"ship\", \"shirt\", \"shoes\", \"shrub\", \"skirt\", \"sky\", \"snow\", \"soccer\", \"soil\", \"star\", \"stone\", \"storm\", \"student\", \"study\", \"suit\", \"surgeon\", \"table\", \"teacher\", \"team\", \"tennis\", \"tomato\", \"toy\", \"track\", \"train\", \"truck\", \"universe\", \"valley\", \"week\", \"wind\", \"wood\", \"yoyo\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"direction name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nThe parent hypothesis's prior rationale (for context only; do not copy blindly): basis_words=[\"pear\", \"grape\"], reason=\"The low ranking of 'pear' and 'grape' suggests the target is a fruit or similar agricultural product.\".\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+        "injected_rationale_hash": "1f788f255cff2720",
+        "rationale_truncated": false
+      }
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:47:42",
+    "details": {
+      "word": "radish",
+      "rank": 4,
+      "hypothesis": "root vegetable crops",
+      "best_word": "radish",
+      "best_rank": 4,
+      "total_guesses": 134
+    }
+  },
+  {
+    "generation": 2,
+    "event": "GUESS",
+    "timestamp": "2026-08-13T19:47:42",
+    "details": {
+      "word": "turnip",
+      "rank": 1,
+      "hypothesis": "root vegetable crops",
+      "best_word": "turnip",
+      "best_rank": 1,
+      "total_guesses": 135
+    }
+  },
+  {
+    "generation": 2,
+    "event": "MUTATE",
+    "timestamp": "2026-08-13T19:47:42",
+    "details": {
+      "method": "self_adaptive",
+      "children": [
+        {
+          "hypothesis_id": "2e8b0eccb70c476bb5d672f411d91309",
+          "category_name": "root vegetable crops",
+          "description": "edible vegetables that grow primarily underground",
+          "words_tried": {},
+          "best_word": null,
+          "best_rank": 1000000000,
+          "status": "active",
+          "parent": "garden produce",
+          "parent_id": "8fda36edae9d44e1a59f04a1fe40e268",
+          "origin": "self_adaptive_m_mutation",
+          "sigma": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "self_report": {
+            "predicted_closeness": 0.9,
+            "predicted_closeness_clamped": false,
+            "predicted_bucket": "top10",
+            "rationale": {
+              "basis_words": [
+                "carrot"
+              ],
+              "reason": "The success of carrot (rank 5) and potato (rank 17) suggests the target is a root vegetable rather than fruit."
+            },
+            "self_report_parse_failed": false,
+            "self_report_raw": "{\"name\": \"root vegetable crops\", \"description\": \"edible vegetables that grow primarily underground\", \"words\": [\"radish\", \"turnip\", \"onion\"], \"basis_words\": [\"carrot\"], \"reason\": \"The success of carrot (rank 5) and potato (rank 17) suggests the target is a root vegetable rather than fruit.\", \"predicted_bucket\": \"top10\", \"predicted_closeness\": 0.9}",
+            "self_report_prompt": "Return only JSON, no markdown or explanation.\nThe current hypothesis is \"garden produce\".\nDescription: common fruits and vegetables grown for consumption\nResults so far in this hypothesis: {\"berry\": 253, \"carrot\": 5, \"cherry\": 279, \"melon\": 189, \"peach\": 187, \"potato\": 17, \"tomato\": 35}\nBest word so far: \"carrot\" with rank 5.\n\nMake a MEDIUM mutation: produce a child hypothesis that reinterprets why\n\"carrot\" might have scored well, or shifts to a related sense, lexical\nregister, or part of speech. The child should still be semantically anchored\nto \"carrot\" but approach it from a clearly different angle than \"garden produce\".\n\nFor example, if the parent is \"food\" and the best word is \"bite\", a medium\nmutation could be \"animals that bite\", \"physical sensations from biting\", or\n\"clinical terms for biting and chewing\" - each treats \"bite\" through a\ndifferent lens.\n\nSuggest one reframed hypothesis. Include exactly 3 starter words that have\nnot already been tried.\nEvery word must be one common lowercase dictionary word.\nDo not use spaces, punctuation, hyphens, proper nouns, brands, obscure foreign words, plural-only forms, or phrases joined together.\nAvoid these words: [\"apple\", \"arm\", \"athlete\", \"ball\", \"banana\", \"beach\", \"berry\", \"bird\", \"block\", \"book\", \"bracelet\", \"bread\", \"brick\", \"brooch\", \"bus\", \"bush\", \"car\", \"carrot\", \"cat\", \"chair\", \"cheese\", \"cherry\", \"clay\", \"cloud\", \"coat\", \"crystal\", \"day\", \"desert\", \"desk\", \"diamond\", \"doctor\", \"dog\", \"doll\", \"dress\", \"earring\", \"face\", \"fence\", \"flower\", \"foot\", \"forest\", \"fruit\", \"galaxy\", \"game\", \"gate\", \"glass\", \"golf\", \"gown\", \"granite\", \"grape\", \"hand\", \"hat\", \"head\", \"hedge\", \"home\", \"hour\", \"house\", \"island\", \"kitchen\", \"lake\", \"lamp\", \"land\", \"leg\", \"lemon\", \"mango\", \"marble\", \"match\", \"meadow\", \"medic\", \"melon\", \"metal\", \"minute\", \"moon\", \"mountain\", \"necklace\", \"night\", \"nurse\", \"ocean\", \"orange\", \"orbit\", \"pants\", \"peach\", \"pear\", \"pebble\", \"pen\", \"pendant\", \"pilot\", \"pineapple\", \"plane\", \"planet\", \"plum\", \"potato\", \"puzzle\", \"quartz\", \"rain\", \"ring\", \"river\", \"robot\", \"rock\", \"sand\", \"school\", \"sea\", \"second\", \"ship\", \"shirt\", \"shoes\", \"shrub\", \"skirt\", \"sky\", \"snow\", \"soccer\", \"soil\", \"star\", \"stone\", \"storm\", \"student\", \"study\", \"suit\", \"surgeon\", \"table\", \"teacher\", \"team\", \"tennis\", \"tomato\", \"toy\", \"track\", \"train\", \"truck\", \"universe\", \"valley\", \"week\", \"wind\", \"wood\", \"yoyo\"]\nAvoid these invalid or unrecognized words: []\nDo not suggest singular or plural forms of already tried words; Contexto treats them as the same guess.\nJSON schema:\n{\"name\": \"direction name\", \"description\": \"short description\", \"words\": [\"word1\", \"word2\", \"word3\"]}\nThe parent hypothesis's prior rationale (for context only; do not copy blindly): basis_words=[\"pear\", \"grape\"], reason=\"The low ranking of 'pear' and 'grape' suggests the target is a fruit or similar agricultural product.\".\nIn the SAME JSON object, also include these four keys, in this order: \"basis_words\" (a list of words taken from the context above that your choice relied on), \"reason\" (a one or two sentence explanation), \"predicted_bucket\" (exactly one of \"top10\", \"top100\", \"top500\", or \"beyond\", estimating how close your best proposed word is to the hidden target: \"top10\" = within the 10 closest words, \"top100\" = within the 100 closest, \"top500\" = within the 500 closest, \"beyond\" = farther than the 500 closest), and \"predicted_closeness\" (a number from 0 to 1 giving your estimated chance that your best proposed word ranks within the top 100 closest words to the hidden target, where 1 means you are certain it ranks that close).",
+            "injected_rationale_hash": "1f788f255cff2720",
+            "rationale_truncated": false
+          }
+        }
+      ],
+      "best_word": "turnip",
+      "best_rank": 1,
+      "total_guesses": 135
+    }
+  },
+  {
+    "generation": 2,
+    "event": "SOLVED",
+    "timestamp": "2026-08-13T19:47:42",
+    "details": {
+      "answer": "turnip",
+      "rank": 1,
+      "total_guesses": 135
+    }
+  },
+  {
+    "generation": 2,
+    "event": "NETWORK_METRICS",
+    "timestamp": "2026-08-13T19:47:42",
+    "details": {
+      "network_calls": 19,
+      "network_wall_clock_seconds": 1788.7082,
+      "total_latency_seconds": 19.1872,
+      "mean_latency_seconds": 1.0099,
+      "median_latency_seconds": 0.2205,
+      "p95_latency_seconds": 3.2231,
+      "max_latency_seconds": 3.2231,
+      "status_counts": {
+        "200": 19
+      },
+      "outcome_counts": {
+        "ok": 19
+      }
+    }
+  }
+]
