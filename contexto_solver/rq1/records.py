@@ -48,6 +48,15 @@ TIDY_COLUMNS = [
     "proposed_word_invalid",
     "child_best_word",
     "child_best_rank",
+    # the operator's own proposed words and the event the report prompt names
+    "proposed_words",
+    "n_proposed_words",
+    "n_proposed_graded",
+    "best_proposed_word",
+    "best_proposed_rank",
+    "proposed_all_invalid",
+    "best_proposed_reproposed",
+    "best_new_word_rank",
 ]
 
 
@@ -82,6 +91,14 @@ def to_tidy_row(individual: Individual) -> dict[str, Any]:
         "proposed_word_invalid": individual.proposed_word_invalid,
         "child_best_word": individual.child_best_word,
         "child_best_rank": individual.child_best_rank,
+        "proposed_words": " ".join(individual.proposed_words),
+        "n_proposed_words": len(individual.proposed_words),
+        "n_proposed_graded": sum(1 for rank in individual.proposed_word_ranks.values() if rank is not None),
+        "best_proposed_word": individual.best_proposed_word,
+        "best_proposed_rank": individual.best_proposed_rank,
+        "proposed_all_invalid": individual.proposed_all_invalid,
+        "best_proposed_reproposed": individual.best_proposed_reproposed,
+        "best_new_word_rank": individual.best_new_word_rank,
     }
 
 

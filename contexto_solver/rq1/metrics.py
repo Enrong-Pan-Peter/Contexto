@@ -12,10 +12,24 @@ records produced by the reader. Two facts pin the semantics:
   same cut points.
 
 The "realized rank" used for a record is selected by ``which``:
-``"child_best"`` (default) uses the child's realized best rank across all words
-it guessed -- the most faithful realization of "best proposed word"; falls back
-to the first proposed word's rank when the child logged no valid guess.
-``"first_proposed"`` uses only the first evaluated word's rank.
+
+- ``"best_proposed"`` (the camera-ready rule, and the event the report prompt
+  names): the best rank among the words the operator itself proposed, matched
+  word by word to their graded outcomes. A word the run had already guessed
+  keeps the rank the run returned (the solver re-grades it from its cache and
+  counts it toward the child); a proposal whose every word was invalid counts
+  as outside the top 100 and beyond the top 500 (rank stand-in
+  :data:`~contexto_solver.rq1.reader.ALL_INVALID_RANK`); a proposal with no
+  graded word for any other reason (unusable reply, grading stopped at the
+  solve) has no realized rank and is excluded.
+- ``"best_proposed_new_only"``: sensitivity variant of the above restricted to
+  words new to the run (no rank when none of the proposed words was new).
+- ``"child_best"``: the child's realized best rank across all words it guessed,
+  matched by hypothesis name (the pre-camera-ready default; a same-name child in
+  the same generation could pool in); falls back to the first proposed word's
+  rank when the child logged no valid guess.
+- ``"first_proposed"``: only the first evaluated word's rank (the rule the
+  submitted paper used in Sections 3-4).
 
 Only numpy + scipy are used (both are project dependencies). No network, LLM, or
 writes.
@@ -28,9 +42,11 @@ from typing import Any, Callable, Iterable, Sequence
 import numpy as np
 from scipy import stats
 
-from .reader import Individual
+from .reader import ALL_INVALID_RANK, Individual
 
 BUCKET_ORDER = ("top10", "top100", "top500", "beyond")
+REALIZED_RANK_RULES = ("best_proposed", "best_proposed_new_only", "child_best", "first_proposed")
+DEFAULT_RULE = "best_proposed"
 _BUCKET_ORDINAL = {bucket: index for index, bucket in enumerate(BUCKET_ORDER)}
 # predicted_closeness is P(rank within top 100); the positive class is top-100.
 POSITIVE_RANK_THRESHOLD = 100
@@ -38,8 +54,14 @@ POSITIVE_RANK_THRESHOLD = 100
 _BUCKET_CUTS = ((10, "top10"), (100, "top100"), (500, "top500"))
 
 
-def realized_rank(individual: Individual, which: str = "child_best") -> int | None:
-    """Select a record's realized rank per the ``which`` policy."""
+def realized_rank(individual: Individual, which: str = DEFAULT_RULE) -> int | None:
+    """Select a record's realized rank per the ``which`` policy (see the module docstring)."""
+    if which == "best_proposed":
+        if individual.best_proposed_rank is not None:
+            return individual.best_proposed_rank
+        return ALL_INVALID_RANK if individual.proposed_all_invalid else None
+    if which == "best_proposed_new_only":
+        return individual.best_new_word_rank
     if which == "first_proposed":
         return individual.realized_rank
     if which == "child_best":
@@ -75,7 +97,7 @@ def _pairs(individuals: Iterable[Individual], which: str) -> tuple[list[float], 
     return closeness, ranks
 
 
-def spearman(individuals: Sequence[Individual], which: str = "child_best") -> dict[str, Any]:
+def spearman(individuals: Sequence[Individual], which: str = DEFAULT_RULE) -> dict[str, Any]:
     """Spearman rho between predicted_closeness and realized rank.
 
     Higher closeness should mean a smaller (better) rank, so a well-calibrated
@@ -89,7 +111,7 @@ def spearman(individuals: Sequence[Individual], which: str = "child_best") -> di
     return {"rho": float(rho), "pvalue": float(pvalue), "n": n}
 
 
-def bucket_metrics(individuals: Sequence[Individual], which: str = "child_best") -> dict[str, Any]:
+def bucket_metrics(individuals: Sequence[Individual], which: str = DEFAULT_RULE) -> dict[str, Any]:
     """Accuracy, confusion matrix, mean signed error, and off-by-one rate.
 
     Uses records with a parsed ``predicted_bucket`` and a known realized rank.
@@ -132,7 +154,7 @@ def _labels_and_scores(individuals: Iterable[Individual], which: str) -> tuple[n
 
 
 def reliability_curve(
-    individuals: Sequence[Individual], which: str = "child_best", n_bins: int = 10
+    individuals: Sequence[Individual], which: str = DEFAULT_RULE, n_bins: int = 10
 ) -> dict[str, Any]:
     """Binned reliability curve + ECE for P(realized_rank <= 100).
 
@@ -175,7 +197,7 @@ def reliability_curve(
     return {"n": total, "bins": bins, "ece": ece if total else None}
 
 
-def brier_score(individuals: Sequence[Individual], which: str = "child_best") -> dict[str, Any]:
+def brier_score(individuals: Sequence[Individual], which: str = DEFAULT_RULE) -> dict[str, Any]:
     """Mean squared error of predicted_closeness against the top-100 label."""
     scores, labels = _labels_and_scores(individuals, which)
     if scores.size == 0:
@@ -184,7 +206,7 @@ def brier_score(individuals: Sequence[Individual], which: str = "child_best") ->
     return {"brier": brier, "n": int(scores.size), "positive_rate": float(labels.mean())}
 
 
-def auroc(individuals: Sequence[Individual], which: str = "child_best") -> dict[str, Any]:
+def auroc(individuals: Sequence[Individual], which: str = DEFAULT_RULE) -> dict[str, Any]:
     """Tie-aware AUROC for predicted_closeness predicting realized_rank <= 100.
 
     Computed from the Mann-Whitney U statistic with average ranks for ties
@@ -236,7 +258,7 @@ def realized_agreement(individuals: Sequence[Individual]) -> dict[str, Any]:
     return result
 
 
-def metrics_summary(individuals: Sequence[Individual], which: str = "child_best") -> dict[str, Any]:
+def metrics_summary(individuals: Sequence[Individual], which: str = DEFAULT_RULE) -> dict[str, Any]:
     """All RQ1 calibration metrics for one group of individuals."""
     individuals = list(individuals)
     return {
@@ -284,7 +306,7 @@ def split_by(individuals: Iterable[Individual], key: Callable[[Individual], Any]
 
 def metrics_with_splits(
     individuals: Sequence[Individual],
-    which: str = "child_best",
+    which: str = DEFAULT_RULE,
     *,
     splits: Sequence[str] = tuple(_SPLIT_KEYS),
 ) -> dict[str, Any]:

@@ -322,3 +322,107 @@ class LoadTraceTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+# --- camera-ready rule: best of the operator's own proposed words ------------------------
+
+
+def _sr_words(pc, bucket, words, **kwargs):
+    """A self-report whose raw reply lists ``words`` (what the reader recovers them from)."""
+    report = _sr(pc, bucket, **kwargs)
+    report["self_report_raw"] = json.dumps({"name": "n", "words": list(words), "predicted_closeness": pc})
+    return report
+
+
+# Two children share the hypothesis name "dup" in generation 2 (a real collision seen in the
+# study), one re-proposes a word the run already guessed in generation 1 (re-graded from the
+# cache and logged again), one proposes a word the run already knows to be invalid (skipped
+# silently, no event), and one proposes only invalid words.
+BEST_PROPOSED_TRACE = [
+    {"generation": -1, "event": "RUN_CONFIG", "details": {
+        "game": "api", "method": "ea_llm_self_adaptive", "target": None, "game_number": 7,
+        "instrumentation_provenance_hash": "hashA", "trace_schema_version": 3}},
+    {"generation": 1, "event": "OPERATOR_SAMPLED", "details": {
+        "sampled_op": "s_mutation", "child_hypothesis_name": "first", "parent_id": "p0", "parent_rank": 900,
+        "self_report": _sr_words(0.5, "top500", ["river", "LAKE ", "bad-word"])}},
+    {"generation": 1, "event": "GUESS", "details": {"word": "river", "rank": 300, "hypothesis": "first"}},
+    {"generation": 1, "event": "GUESS", "details": {"word": "lake", "rank": 40, "hypothesis": "first"}},
+    {"generation": 1, "event": "SKIP_INVALID_GUESS", "details": {"word": "zzqx", "hypothesis": "first"}},
+    # generation 2: collision between two children named "dup"
+    {"generation": 2, "event": "OPERATOR_SAMPLED", "details": {
+        "sampled_op": "m_mutation", "child_hypothesis_name": "dup", "parent_id": "p1", "parent_rank": 40,
+        "self_report": _sr_words(0.8, "top100", ["pond", "lake", "zzqx"])}},
+    {"generation": 2, "event": "GUESS", "details": {"word": "pond", "rank": 120, "hypothesis": "dup"}},
+    {"generation": 2, "event": "GUESS", "details": {"word": "lake", "rank": 40, "hypothesis": "dup"}},
+    {"generation": 2, "event": "OPERATOR_SAMPLED", "details": {
+        "sampled_op": "l_mutation", "child_hypothesis_name": "dup", "parent_id": "p1", "parent_rank": 40,
+        "self_report": _sr_words(0.3, "beyond", ["stone", "cliff"])}},
+    {"generation": 2, "event": "GUESS", "details": {"word": "stone", "rank": 2000, "hypothesis": "dup"}},
+    {"generation": 2, "event": "GUESS", "details": {"word": "cliff", "rank": 700, "hypothesis": "dup"}},
+    # generation 3: every proposed word invalid
+    {"generation": 3, "event": "OPERATOR_SAMPLED", "details": {
+        "sampled_op": "s_mutation", "child_hypothesis_name": "junk", "parent_id": "p1", "parent_rank": 40,
+        "self_report": _sr_words(0.9, "top10", ["qqq", "zzqx"])}},
+    {"generation": 3, "event": "SKIP_INVALID_GUESS", "details": {"word": "qqq", "hypothesis": "junk"}},
+    {"generation": 3, "event": "FAILED", "details": {}},
+]
+
+
+class BestProposedRuleTests(unittest.TestCase):
+    def setUp(self):
+        self.inds = extract_individuals(BEST_PROPOSED_TRACE, trace_file="t.json")
+
+    def test_words_are_recovered_with_solver_cleaning(self):
+        first = self.inds[0]
+        self.assertEqual(first.proposed_words, ("river", "lake"))  # "LAKE " is cleaned, "bad-word" fails the solver's cleaning
+        self.assertEqual(first.proposed_word_ranks, {"river": 300, "lake": 40})
+        self.assertEqual((first.best_proposed_word, first.best_proposed_rank), ("lake", 40))
+        self.assertFalse(first.best_proposed_reproposed)
+        self.assertEqual(first.best_new_word_rank, 40)
+
+    def test_name_collision_no_longer_pools_the_other_child(self):
+        a, b = self.inds[1], self.inds[2]
+        self.assertEqual(a.hypothesis_name, b.hypothesis_name)
+        # old name-based join pooled both children's guesses: best 40 for both
+        self.assertEqual(a.child_best_rank, 40)
+        self.assertEqual(b.child_best_rank, 40)
+        # word-level join keeps each child's own words
+        self.assertEqual(a.best_proposed_rank, 40)
+        self.assertEqual(b.best_proposed_rank, 700)
+        self.assertEqual(b.proposed_word_ranks, {"stone": 2000, "cliff": 700})
+
+    def test_reproposed_and_known_invalid_words(self):
+        a = self.inds[1]
+        # "lake" was guessed in generation 1; the run re-graded it, so it keeps rank 40 and counts
+        self.assertTrue(a.best_proposed_reproposed)
+        self.assertEqual(a.best_new_word_rank, 120)  # "pond" is the only new graded word
+        # "zzqx" was known invalid: skipped silently, no event of its own, still recorded as ungraded
+        self.assertIsNone(a.proposed_word_ranks["zzqx"])
+        self.assertFalse(a.proposed_all_invalid)
+
+    def test_all_invalid_proposal_counts_as_a_miss(self):
+        junk = self.inds[3]
+        self.assertEqual(junk.proposed_words, ("qqq", "zzqx"))
+        self.assertIsNone(junk.best_proposed_rank)
+        self.assertTrue(junk.proposed_all_invalid)
+        self.assertEqual(M.realized_rank(junk, "best_proposed"), M.ALL_INVALID_RANK)
+        self.assertEqual(M.realized_bucket(M.realized_rank(junk, "best_proposed")), "beyond")
+        self.assertIsNone(M.realized_rank(junk, "best_proposed_new_only"))
+
+    def test_rules_differ_as_documented(self):
+        # positive (top-100) labels per rule: first (lake 40 counts under child "first"; a: pond 120 first -> 0)
+        labels = {which: [int(M.realized_rank(i, which) <= 100) for i in self.inds if M.realized_rank(i, which) is not None]
+                  for which in M.REALIZED_RANK_RULES}
+        self.assertEqual(labels["best_proposed"], [1, 1, 0, 0])
+        self.assertEqual(labels["best_proposed_new_only"], [1, 0, 0])  # junk has no new graded word
+        self.assertEqual(labels["first_proposed"], [0, 0, 0])  # river 300, pond 120, stone 2000; junk has no GUESS
+        self.assertEqual(labels["child_best"], [1, 1, 1])  # the collision credits child b with lake 40
+        self.assertEqual(M.DEFAULT_RULE, "best_proposed")
+
+    def test_tidy_row_carries_the_new_columns(self):
+        row = to_tidy_row(self.inds[1])
+        for column in ("proposed_words", "best_proposed_rank", "proposed_all_invalid", "best_proposed_reproposed", "best_new_word_rank"):
+            self.assertIn(column, TIDY_COLUMNS)
+        self.assertEqual(row["proposed_words"], "pond lake zzqx")
+        self.assertEqual(row["n_proposed_graded"], 2)
+        self.assertEqual(row["best_proposed_rank"], 40)

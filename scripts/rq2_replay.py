@@ -9,7 +9,12 @@ parent-rationale inheritance block swapped across four arms:
   cites the real parent words;
 - ``filler``: same block skeleton with ``basis_words=[]`` and a fixed generic
   sentence of comparable length (no parent-derived tokens);
-- ``absent``: block removed entirely (remove-and-check).
+- ``absent``: block removed entirely (remove-and-check);
+- ``genuine_resample`` (camera-ready addition, run separately with
+  ``--arms genuine_resample``): the stored prompt again, byte-identical to
+  ``genuine``, as one more fresh call. Two genuine samples of the same prompt
+  show how much the proposal and its rank move from sampling alone (temperature
+  0.8, unseeded), which is the reference every replacement is read against.
 
 Each arm is one fresh LLM call with run-matched decoding (the same
 ``LLMClient`` code path as the original runs: temperature 0.8, json_object,
@@ -57,7 +62,9 @@ from contexto_solver.self_report import (
 )
 from scripts.rq2_templates import filler_reason, wrong_content_reason
 
-ARMS = ("genuine", "wrong", "filler", "absent")
+ARMS = ("genuine", "wrong", "filler", "absent")          # the submitted study's four conditions
+RESAMPLE_ARM = "genuine_resample"                            # camera-ready: a second genuine sample
+ALL_ARMS = ARMS + (RESAMPLE_ARM,)
 BLOCK_PREFIX = "\nThe parent hypothesis's prior rationale"
 BASIS_MARKER = "basis_words="
 REASON_SEPARATOR = ", reason="
@@ -242,6 +249,7 @@ def build_arm_prompts(event: ReplayEvent, seed: int) -> dict[str, str]:
         "filler": event.base_prompt + filler_block + SELF_REPORT_BLOCK,
         "absent": event.base_prompt + SELF_REPORT_BLOCK,
     }
+    prompts[RESAMPLE_ARM] = prompts["genuine"]
     assert prompts["genuine"] == event.stored_prompt, "genuine arm must be byte-identical to the stored prompt"
 
     # Same admissibility guard the solver ran on the genuine prompt at run time.
@@ -421,8 +429,17 @@ def run_replay(
     seed: int,
     client_factory: Callable[[str | None, str | None], Any],
     grader: Any,
+    arms: tuple[str, ...] = ARMS,
 ) -> dict[str, Any]:
-    """Replay sampled events from each trace; returns {metadata, records}."""
+    """Replay sampled events from each trace; returns {metadata, records}.
+
+    ``arms`` selects the conditions to call; the event sample depends only on
+    ``seed`` and ``events_per_trace``, so a later run with other arms (the
+    second genuine sample) lands on the same stored calls.
+    """
+    unknown = [arm for arm in arms if arm not in ALL_ARMS]
+    if unknown:
+        raise ValueError(f"unknown arm(s): {unknown}; choose from {ALL_ARMS}")
     records: list[dict[str, Any]] = []
     per_trace_meta: list[dict[str, Any]] = []
     clients: dict[tuple[str | None, str | None], Any] = {}
@@ -458,7 +475,7 @@ def run_replay(
                 client = client_factory(event.llm_provider, event.llm_model)
                 clients[client_key] = client
             prompts = build_arm_prompts(event, seed)
-            for arm in ARMS:
+            for arm in arms:
                 call = replay_call(client, prompts[arm])
                 word = call.get("proposed_word")
                 realized = grader.grade(event.game_number, word) if word else (None, False)
@@ -468,7 +485,7 @@ def run_replay(
         "created_at": datetime.now().isoformat(timespec="seconds"),
         "seed": seed,
         "events_per_trace": events_per_trace,
-        "arms": list(ARMS),
+        "arms": list(arms),
         "traces": per_trace_meta,
         "total_events": sum(m["sampled_events"] for m in per_trace_meta),
         "total_records": len(records),
@@ -519,7 +536,10 @@ def main() -> None:
     parser.add_argument("--seed", type=int, default=0, help="Sampling/template seed (default 0).")
     parser.add_argument("--output", default=None, help="Output directory (default traces/rq2_replay_<timestamp>).")
     parser.add_argument("--dry-run", action="store_true", help="Deterministic mocks; no network.")
+    parser.add_argument("--arms", default=",".join(ARMS),
+                        help=f"Comma-separated conditions to call (default the study's four; '{RESAMPLE_ARM}' for the second genuine sample).")
     args = parser.parse_args()
+    arms = tuple(arm.strip() for arm in args.arms.split(",") if arm.strip())
 
     paths = _expand_paths(args.traces)
     if not paths:
@@ -533,6 +553,7 @@ def main() -> None:
             seed=args.seed,
             client_factory=lambda provider, model: MockLLMClient(),
             grader=MockGrader(),
+            arms=arms,
         )
     else:
         result = run_replay(
@@ -541,6 +562,7 @@ def main() -> None:
             seed=args.seed,
             client_factory=_real_client_factory,
             grader=RankCacheGrader(),
+            arms=arms,
         )
 
     json_path, csv_path = write_outputs(result, output_dir)

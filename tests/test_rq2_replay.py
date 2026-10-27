@@ -317,3 +317,54 @@ class DryRunReplayTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class GenuineResampleArmTests(unittest.TestCase):
+    """Camera-ready addition: a second genuine sample on the same stored calls."""
+
+    def test_resample_prompt_is_the_stored_prompt_and_runs_alone(self):
+        from scripts import rq2_replay as R
+
+        self.assertEqual(R.ALL_ARMS, R.ARMS + ("genuine_resample",))
+        trace = Path(__file__).resolve().parent.parent / "traces" / "batch" / "traces" / "rq1_A1"
+        paths = sorted(str(p) for p in trace.glob("ea_llm_self_adaptive_api_1303_run1_*.json"))
+        if not paths:
+            self.skipTest("study traces not checked out")
+        base = R.run_replay(paths, events_per_trace=3, seed=0,
+                            client_factory=lambda provider, model: R.MockLLMClient(), grader=R.MockGrader())
+        again = R.run_replay(paths, events_per_trace=3, seed=0,
+                             client_factory=lambda provider, model: R.MockLLMClient(), grader=R.MockGrader(),
+                             arms=("genuine_resample",))
+        self.assertEqual(base["metadata"]["arms"], list(R.ARMS))
+        self.assertEqual(again["metadata"]["arms"], ["genuine_resample"])
+        base_keys = {(r["trace_file"], r["child_id"]) for r in base["records"]}
+        again_keys = {(r["trace_file"], r["child_id"]) for r in again["records"]}
+        self.assertEqual(base_keys, again_keys)  # same seeded event sample
+        genuine_hash = {(r["trace_file"], r["child_id"]): r["prompt_sha256"] for r in base["records"] if r["arm"] == "genuine"}
+        for record in again["records"]:
+            self.assertEqual(record["prompt_sha256"], genuine_hash[(record["trace_file"], record["child_id"])])
+        with self.assertRaises(ValueError):
+            R.run_replay(paths, events_per_trace=3, seed=0, client_factory=lambda p, m: R.MockLLMClient(),
+                         grader=R.MockGrader(), arms=("genuine", "nonsense"))
+
+    def test_analysis_adds_the_resample_contrast_only_when_present(self):
+        from scripts import rq2_analysis as A
+
+        def rec(child, arm, word, rank):
+            return {"trace_file": "t.json", "child_id": child, "generation": 1, "parent_rank": 10, "arm": arm,
+                    "proposed_word": word, "proposed_words": [word], "realized_rank": rank}
+
+        records = [rec("c1", "genuine", "a", 10), rec("c1", "wrong", "b", 30), rec("c1", "absent", "a", 12),
+                   rec("c2", "genuine", "x", 100), rec("c2", "wrong", "x", 90), rec("c2", "absent", "y", 400)]
+        self.assertEqual(A.active_contrasts(records), ("wrong", "absent"))
+        result = A.analyze(records, bootstrap_draws=0)
+        self.assertEqual(result["contrasts"], ["wrong", "absent"])
+        self.assertEqual([row["contrast"] for row in result["word_agreement"]], ["wrong", "absent"])
+        records += [rec("c1", "genuine_resample", "a", 11), rec("c2", "genuine_resample", "z", 150)]
+        result = A.analyze(records, bootstrap_draws=50)
+        self.assertEqual(result["contrasts"], ["wrong", "absent", "genuine_resample"])
+        agreement = {row["contrast"]: row for row in result["word_agreement"]}
+        self.assertEqual(agreement["genuine_resample"]["word_identity_rate"], 0.5)
+        diffs = [r["diff_genuine_minus_variant"] for r in result["paired_differences"] if r["contrast"] == "genuine_resample"]
+        self.assertEqual(diffs, [10 - 11, 100 - 150])
+        self.assertIn("cluster_bootstrap", result["tests"]["genuine_resample"])

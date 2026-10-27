@@ -13,6 +13,18 @@ Facts respected here (verified against the solver code):
   the categorical companion. Both are read via the normalized
   :func:`contexto_solver.self_report.read_self_report` defaults so old traces
   open unchanged.
+- The proposed words themselves are not a trace field; they are recovered from
+  the operator's raw JSON (``self_report_raw``, key ``words``) with the solver's
+  own word cleaning. Each proposed word is then matched to its own GUESS /
+  SKIP_INVALID_GUESS event (same generation, same hypothesis name, same word),
+  so two children that happen to share a name in one generation can no longer
+  pool each other's words. The solver grades proposed words in list order,
+  skips a word already known to be invalid without logging, re-grades a word
+  already guessed earlier in the run from its cache (logging a GUESS with the
+  earlier rank, and counting it toward the child), and stops grading once the
+  game is solved. ``best_proposed_rank`` therefore is the best rank among the
+  words the operator proposed, exactly as the search itself saw them: this is
+  the event the self-report prompt asks about.
 - Realized ranks are stored under ``GUESS.details.rank`` for BOTH api and local
   traces (the api path normalizes the raw ``distance`` to ``distance + 1`` before
   logging, so ranks are 1-based in every trace).
@@ -30,6 +42,7 @@ No network, no LLM, no solver, no writes.
 from __future__ import annotations
 
 import json
+import re
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
@@ -38,6 +51,12 @@ from ..self_report import read_self_report
 
 # Event names that carry a realized guess with a rank (or an invalid marker).
 _GUESS_EVENTS = frozenset({"GUESS", "SKIP_INVALID_GUESS"})
+# Same cleaning as the solver (``ea_core._clean_word``): lower-case ASCII letters only.
+_WORD_RE = re.compile(r"[a-z]+")
+# Rank stand-in for a proposal whose every word was invalid: the solver assigns such
+# an individual sentinel fitness 10**9 (Appendix C); here it means "not in the
+# vocabulary, so certainly not within the top 100 and beyond the top 500".
+ALL_INVALID_RANK = 10**9
 
 
 @dataclass(frozen=True)
@@ -67,6 +86,17 @@ class Individual:
     ``child_best_word``/``child_best_rank`` are the child's realized best across
     every word it guessed. They coincide for single-guess modes (llm_only,
     MAP-Elites) and can differ for the multi-word EA operators.
+
+    ``proposed_words`` are the words the operator listed in its own JSON (solver
+    cleaning applied, duplicates dropped, order kept); ``proposed_word_ranks``
+    maps each of them to its rank, or ``None`` when the word was invalid or never
+    graded. ``best_proposed_word``/``best_proposed_rank`` is the best of those
+    ranks: the event the report prompt names ("your best proposed word").
+    ``proposed_all_invalid`` marks a proposal none of whose words could be graded
+    because every one was invalid. ``best_proposed_reproposed`` is True when that
+    best rank came through a word the run had already guessed before this call
+    (the prompt had shown its rank); ``best_new_word_rank`` is the best rank
+    among the words that were new to the run (``None`` when there is none).
     """
 
     trace_file: str
@@ -97,6 +127,13 @@ class Individual:
     proposed_word_invalid: bool
     child_best_word: str | None
     child_best_rank: int | None
+    proposed_words: tuple[str, ...] = ()
+    proposed_word_ranks: dict[str, int | None] = field(default_factory=dict)
+    best_proposed_word: str | None = None
+    best_proposed_rank: int | None = None
+    proposed_all_invalid: bool = False
+    best_proposed_reproposed: bool = False
+    best_new_word_rank: int | None = None
 
 
 def load_trace(path: str | Path) -> list[dict[str, Any]]:
@@ -229,6 +266,129 @@ def _proposed_from_events(guess_events: list[dict[str, Any]]) -> tuple[str | Non
     return (str(word) if word else None), (int(rank) if isinstance(rank, int) else None), False
 
 
+def clean_word(word: Any) -> str:
+    """The solver's word cleaning: lower-case, stripped, ASCII letters only, else ``""``."""
+    cleaned = str(word).lower().strip()
+    return cleaned if _WORD_RE.fullmatch(cleaned) else ""
+
+
+def proposed_words_from_report(self_report: dict[str, Any]) -> tuple[str, ...]:
+    """The operator's proposed words, recovered from its raw JSON answer.
+
+    The trace keeps the model's whole reply in ``self_report_raw``; the words are
+    its ``words`` list (``word`` for the single-guess operator). Cleaned with the
+    solver's rule, duplicates dropped, order kept. Empty when the reply cannot be
+    parsed or holds no usable word (Ministral occasionally writes keys such as
+    ``"**words**"``; those replies yield no words and no best-proposed rank).
+    """
+    raw = self_report.get("self_report_raw")
+    if not isinstance(raw, str) or not raw.strip():
+        return ()
+    from ..llm_client import _first_json_object, _strip_code_fences  # local import: analysis-only module
+
+    text = raw.strip()
+    parsed: Any = None
+    try:
+        parsed = json.loads(_strip_code_fences(text))
+    except (json.JSONDecodeError, ValueError):
+        extracted = _first_json_object(text)
+        if extracted is not None:
+            try:
+                parsed = json.loads(extracted)
+            except (json.JSONDecodeError, ValueError):
+                parsed = None
+    if not isinstance(parsed, dict):
+        return ()
+    if isinstance(parsed.get("words"), list):
+        candidates = parsed["words"]
+    elif parsed.get("word") is not None:
+        candidates = [parsed["word"]]
+    else:
+        return ()
+    words: list[str] = []
+    for candidate in candidates:
+        cleaned = clean_word(candidate)
+        if cleaned and cleaned not in words:
+            words.append(cleaned)
+    return tuple(words)
+
+
+class _GuessIndex:
+    """Per-trace index of GUESS / SKIP_INVALID_GUESS events for word-level matching.
+
+    ``by_child[(generation, hypothesis)]`` lists ``(word, rank_or_None, position)``
+    in trace order; ``first_guess[word]`` is the position of the first GUESS of a
+    word anywhere in the run; ``invalid`` holds every word ever logged invalid.
+    """
+
+    def __init__(self, events: list[dict[str, Any]]) -> None:
+        self.by_child: dict[tuple[Any, str | None], list[tuple[str, int | None, int]]] = {}
+        self.first_guess: dict[str, int] = {}
+        self.invalid: set[str] = set()
+        for position, event in enumerate(events):
+            name = event.get("event")
+            if name not in _GUESS_EVENTS:
+                continue
+            details = event.get("details", {}) or {}
+            word = clean_word(details.get("word") or "")
+            if not word:
+                continue
+            key = (event.get("generation"), details.get("hypothesis"))
+            if name == "GUESS":
+                rank = details.get("rank")
+                rank_value = int(rank) if isinstance(rank, int) and rank > 0 else None
+                self.first_guess.setdefault(word, position)
+                self.by_child.setdefault(key, []).append((word, rank_value, position))
+            else:
+                self.invalid.add(word)
+                self.by_child.setdefault(key, []).append((word, None, position))
+
+
+def _proposed_outcomes(
+    index: _GuessIndex | None,
+    generation: Any,
+    hypothesis_name: str | None,
+    words: tuple[str, ...],
+) -> dict[str, Any]:
+    """Join each proposed word to its own graded outcome and summarise the best.
+
+    A word is looked up among this child's own GUESS/SKIP events (same generation
+    and hypothesis name); a word with no event of its own is invalid when the run
+    had already logged it invalid (the solver skips such words silently), and
+    otherwise ungraded (grading stopped because the game was solved, or the reply
+    was unusable). Returns the fields documented on :class:`Individual`.
+    """
+    ranks: dict[str, int | None] = {word: None for word in words}
+    reproposed: dict[str, bool] = {}
+    invalid_count = 0
+    if index is not None and words:
+        own = index.by_child.get((generation, hypothesis_name), [])
+        for word in words:
+            hit = next(((rank, position) for candidate, rank, position in own if candidate == word), None)
+            if hit is None:
+                if word in index.invalid:
+                    invalid_count += 1
+                continue
+            rank, position = hit
+            if rank is None:
+                invalid_count += 1
+                continue
+            ranks[word] = rank
+            reproposed[word] = index.first_guess.get(word, position) < position
+    graded = {word: rank for word, rank in ranks.items() if rank is not None}
+    best_word = min(graded, key=graded.__getitem__) if graded else None
+    new_ranks = [rank for word, rank in graded.items() if not reproposed.get(word)]
+    return {
+        "proposed_words": words,
+        "proposed_word_ranks": ranks,
+        "best_proposed_word": best_word,
+        "best_proposed_rank": graded[best_word] if best_word else None,
+        "proposed_all_invalid": bool(words) and not graded and invalid_count == len(words),
+        "best_proposed_reproposed": bool(best_word) and bool(reproposed.get(best_word)),
+        "best_new_word_rank": min(new_ranks) if new_ranks else None,
+    }
+
+
 def _basis_count(self_report: dict[str, Any]) -> int:
     rationale = self_report.get("rationale")
     if isinstance(rationale, dict) and isinstance(rationale.get("basis_words"), list):
@@ -254,9 +414,11 @@ def _make_individual(
     target: str | None,
     target_source: str | None,
     trace_file: str,
+    proposed: dict[str, Any] | None = None,
 ) -> Individual:
     report = read_self_report({"self_report": self_report})
     injected = report.get("injected_rationale_hash")
+    proposed = proposed or {}
     return Individual(
         trace_file=trace_file,
         game=config.game,
@@ -286,6 +448,13 @@ def _make_individual(
         proposed_word_invalid=proposed_word_invalid,
         child_best_word=child_best_word,
         child_best_rank=child_best_rank,
+        proposed_words=tuple(proposed.get("proposed_words", ())),
+        proposed_word_ranks=dict(proposed.get("proposed_word_ranks", {})),
+        best_proposed_word=proposed.get("best_proposed_word"),
+        best_proposed_rank=proposed.get("best_proposed_rank"),
+        proposed_all_invalid=bool(proposed.get("proposed_all_invalid", False)),
+        best_proposed_reproposed=bool(proposed.get("best_proposed_reproposed", False)),
+        best_new_word_rank=proposed.get("best_new_word_rank"),
     )
 
 
@@ -307,6 +476,7 @@ def extract_individuals(
     target, target_source = recover_target(events, config)
     seen_op_sampled = False
     individuals: list[Individual] = []
+    guess_index = _GuessIndex(events)
 
     for index, event in enumerate(events):
         name = event.get("event")
@@ -319,6 +489,7 @@ def extract_individuals(
             guesses = _named_guess_events(events, child_name, generation)
             proposed_word, realized_rank, invalid = _proposed_from_events(guesses)
             best_word, best_rank = _first_valid(guesses)
+            proposed = _proposed_outcomes(guess_index, generation, child_name, proposed_words_from_report(details["self_report"]))
             individuals.append(
                 _make_individual(
                     self_report=details["self_report"],
@@ -337,6 +508,7 @@ def extract_individuals(
                     target=target,
                     target_source=target_source,
                     trace_file=trace_file,
+                    proposed=proposed,
                 )
             )
         elif name == "CROSSOVER":
@@ -352,6 +524,7 @@ def extract_individuals(
                     best_rank = _int_or_none(child.get("best_rank"))
                 parent_ids = details.get("parent_ids") or details.get("parents")
                 parent_ranks = details.get("parent_ranks")
+                proposed = _proposed_outcomes(guess_index, generation, child_name, proposed_words_from_report(child["self_report"]))
                 individuals.append(
                     _make_individual(
                         self_report=child["self_report"],
@@ -370,12 +543,23 @@ def extract_individuals(
                         target=target,
                         target_source=target_source,
                         trace_file=trace_file,
+                        proposed=proposed,
                     )
                 )
         elif name == "GUESS" and isinstance(details.get("self_report"), dict):
             # llm_only: the guessed word and its realized rank are on the event.
             word = details.get("word")
             rank = _int_or_none(details.get("rank"))
+            single = clean_word(word or "")
+            proposed = {
+                "proposed_words": (single,) if single else (),
+                "proposed_word_ranks": {single: rank} if single else {},
+                "best_proposed_word": single if (single and rank is not None) else None,
+                "best_proposed_rank": rank if single else None,
+                "proposed_all_invalid": bool(single) and rank is None,
+                "best_proposed_reproposed": False,
+                "best_new_word_rank": rank if single else None,
+            }
             individuals.append(
                 _make_individual(
                     self_report=details["self_report"],
@@ -394,6 +578,7 @@ def extract_individuals(
                     target=target,
                     target_source=target_source,
                     trace_file=trace_file,
+                    proposed=proposed,
                 )
             )
         elif name == "MUTATE" and isinstance(details.get("self_report"), dict) and not seen_op_sampled:
@@ -408,6 +593,7 @@ def extract_individuals(
             guesses = _named_guess_events(events, child_name, generation)
             proposed_word, realized_rank, invalid = _proposed_from_events(guesses)
             best_word, best_rank = _first_valid(guesses)
+            proposed = _proposed_outcomes(guess_index, generation, child_name, proposed_words_from_report(details["self_report"]))
             individuals.append(
                 _make_individual(
                     self_report=details["self_report"],
@@ -426,6 +612,7 @@ def extract_individuals(
                     target=target,
                     target_source=target_source,
                     trace_file=trace_file,
+                    proposed=proposed,
                 )
             )
 

@@ -10,6 +10,8 @@ survival -> extreme gap, small p).
 
 from __future__ import annotations
 
+import json
+
 import unittest
 from typing import Any
 
@@ -50,7 +52,10 @@ def _child(
     bucket: str | None,
     parent_rank: int = 50,
     parent_id: str | None = None,
+    words: list[str] | None = None,
 ) -> dict[str, Any]:
+    # The reader recovers the proposed words from the operator's raw JSON reply.
+    raw = json.dumps({"name": name, "words": list(words or []), "predicted_closeness": closeness, "predicted_bucket": bucket})
     return {
         "generation": generation,
         "event": "OPERATOR_SAMPLED",
@@ -69,13 +74,18 @@ def _child(
                 "predicted_bucket": bucket,
                 "rationale": {"basis_words": ["x"], "reason": "r"},
                 "self_report_parse_failed": False,
-                "self_report_raw": "{}",
+                "self_report_raw": raw,
                 "self_report_prompt": None,
                 "injected_rationale_hash": None,
                 "rationale_truncated": False,
             },
         },
     }
+
+
+def _w(name: str) -> str:
+    """A letters-only word for a fixture name (the solver's cleaning drops digits)."""
+    return "word" + name.translate(str.maketrans("0123456789", "abcdefghij"))
 
 
 def _guess(generation: int, name: str, word: str, rank: int) -> dict[str, Any]:
@@ -117,20 +127,20 @@ def _fixture_a() -> list[dict[str, Any]]:
     """
     return [
         _run_config_event(),
-        _child(1, "a", "alpha", 0.9, "top100"),
+        _child(1, "a", "alpha", 0.9, "top100", words=["worda"]),
         _guess(1, "alpha", "worda", 50),
-        _child(1, "b", "beta", 0.2, "top500"),
+        _child(1, "b", "beta", 0.2, "top500", words=["wordb"]),
         _guess(1, "beta", "wordb", 500),
-        _child(1, "c", "gamma", 0.6, "top100"),
+        _child(1, "c", "gamma", 0.6, "top100", words=["wordc"]),
         _guess(1, "gamma", "wordc", 800),
-        _child(1, "d", "delta", 0.5, "top100"),
+        _child(1, "d", "delta", 0.5, "top100", words=["wordd"]),
         _guess(1, "delta", "wordd", 90),
-        _child(1, "f1", "fern", 0.5, "top100"),
-        _child(1, "f2", "fern", 0.5, "top100"),
+        _child(1, "f1", "fern", 0.5, "top100", words=["wordf"]),
+        _child(1, "f2", "fern", 0.5, "top100", words=["wordf"]),
         _dedup(1, [("alpha", "delta")]),
         _select(2, ["alpha"], ["beta", "gamma"]),
         _select(3, ["beta"], ["alpha"]),
-        _child(3, "e", "epsilon", 0.5, "top100"),
+        _child(3, "e", "epsilon", 0.5, "top100", words=["worde"]),
         _guess(3, "epsilon", "worde", 60),
     ]
 
@@ -202,11 +212,11 @@ def _permutation_fixture(survivor_closeness: float, culled_closeness: float) -> 
     survivors = [f"s{i}" for i in range(4)]
     culled = [f"c{i}" for i in range(4)]
     for name in survivors:
-        events.append(_child(1, name, name, survivor_closeness, "top100"))
-        events.append(_guess(1, name, "word" + name, 50))
+        events.append(_child(1, name, name, survivor_closeness, "top100", words=[_w(name)]))
+        events.append(_guess(1, name, _w(name), 50))
     for name in culled:
-        events.append(_child(1, name, name, culled_closeness, "top100"))
-        events.append(_guess(1, name, "word" + name, 50))
+        events.append(_child(1, name, name, culled_closeness, "top100", words=[_w(name)]))
+        events.append(_guess(1, name, _w(name), 50))
     events.append(_select(2, survivors, culled))
     return events
 
@@ -239,11 +249,11 @@ class TransmissionTests(unittest.TestCase):
         parent_closeness = {"p1": 0.9, "p2": 0.7, "p3": 0.5}
         child_closeness = {"q1": 0.8, "q2": 0.6, "q3": 0.4}
         for parent_id, closeness in parent_closeness.items():
-            events.append(_child(1, parent_id, "name" + parent_id, closeness, "top100"))
-            events.append(_guess(1, "name" + parent_id, "word" + parent_id, 50))
+            events.append(_child(1, parent_id, "name" + parent_id, closeness, "top100", words=[_w(parent_id)]))
+            events.append(_guess(1, "name" + parent_id, _w(parent_id), 50))
         for index, (child_id, closeness) in enumerate(child_closeness.items(), start=1):
-            events.append(_child(2, child_id, "name" + child_id, closeness, "top100", parent_id=f"p{index}"))
-            events.append(_guess(2, "name" + child_id, "word" + child_id, 50))
+            events.append(_child(2, child_id, "name" + child_id, closeness, "top100", parent_id=f"p{index}", words=[_w(child_id)]))
+            events.append(_guess(2, "name" + child_id, _w(child_id), 50))
         return events
 
     def test_pairs_follow_parent_id_links(self) -> None:
@@ -263,3 +273,41 @@ class TransmissionTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class RunBootstrapTests(unittest.TestCase):
+    def test_intervals_cover_the_observed_values_and_tag_replicates(self) -> None:
+        from scripts.rq3_lineage import bootstrap_intervals
+
+        # Two runs with opposite gaps: resampling runs must move the gap between them.
+        individuals, _meta = extract_lineage(_permutation_fixture(1.0, 0.0), "run_a.json")
+        individuals_b, _meta_b = extract_lineage(_permutation_fixture(0.0, 1.0), "run_b.json")
+        pooled = individuals + individuals_b
+        result = bootstrap_intervals(pooled, "binary_error", draws=200, rng=np.random.default_rng(1))
+        self.assertEqual(result["n_runs"], 2)
+        self.assertEqual(result["gap_ci95"]["completed"], 200)
+        self.assertLessEqual(result["gap_ci95"]["low"], 0.0)
+        self.assertGreaterEqual(result["gap_ci95"]["high"], 0.0)
+        self.assertAlmostEqual(result["gap_ci95"]["low"], -1.0)   # both draws = run_a
+        self.assertAlmostEqual(result["gap_ci95"]["high"], 1.0)   # both draws = run_b
+        # no lineage links in this fixture: transmission undefined in every draw
+        self.assertEqual(result["transmission_ci95"]["completed"], 0)
+        # the observed individuals keep their trace names (copies were tagged, originals untouched)
+        self.assertEqual({i.trace_file for i in pooled}, {"run_a.json", "run_b.json"})
+
+    def test_analyze_traces_reports_intervals(self) -> None:
+        import tempfile
+        from pathlib import Path
+        from scripts.rq3_lineage import analyze_traces
+
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "t.json"
+            path.write_text(json.dumps(_permutation_fixture(1.0, 0.0)))
+            result = analyze_traces([str(path)], seed=0, permutations=20, bootstrap=50)
+        tests = result["summary_tests"]["binary_error"]
+        self.assertEqual(result["which"], "best_proposed")
+        self.assertIn("ci95", tests["gap_permutation"])
+        self.assertEqual(tests["run_bootstrap"]["n_runs"], 1)
+        # a single run resampled with itself: the gap is always the observed -1.0
+        self.assertAlmostEqual(tests["gap_permutation"]["ci95"]["low"], -1.0)
+        self.assertAlmostEqual(tests["gap_permutation"]["ci95"]["high"], -1.0)

@@ -2,7 +2,9 @@
 
 Consumes one or more ``rq2_replay_records.json`` files produced by
 ``scripts/rq2_replay.py`` and computes, per intervention contrast
-(genuine-wrong, genuine-filler, genuine-absent):
+(genuine-wrong, genuine-filler, genuine-absent, and, when a second genuine
+sample was run, genuine-genuine_resample: the sampling-only reference every
+replacement is read against):
 
 - within-event paired differences on realized rank (genuine minus variant;
   negative = genuine ranked closer);
@@ -47,8 +49,14 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 import numpy as np
 from scipy import stats
 
-CONTRASTS = ("wrong", "filler", "absent")
-ARMS = ("genuine", "wrong", "filler", "absent")
+CONTRASTS = ("wrong", "filler", "absent", "genuine_resample")
+ARMS = ("genuine", "wrong", "filler", "absent", "genuine_resample")
+
+
+def active_contrasts(records: list[dict[str, Any]]) -> tuple[str, ...]:
+    """The contrasts whose variant arm appears in the records, in CONTRASTS order."""
+    present = {record.get("arm") for record in records}
+    return tuple(contrast for contrast in CONTRASTS if contrast in present)
 
 
 # --- loading -------------------------------------------------------------------
@@ -76,7 +84,9 @@ def group_by_event(records: list[dict[str, Any]]) -> dict[tuple[str, str], dict[
 # --- paired differences ----------------------------------------------------------
 
 
-def paired_differences(events: dict[tuple[str, str], dict[str, dict[str, Any]]]) -> list[dict[str, Any]]:
+def paired_differences(
+    events: dict[tuple[str, str], dict[str, dict[str, Any]]], contrasts: tuple[str, ...] = CONTRASTS
+) -> list[dict[str, Any]]:
     """One row per (event, contrast) where both arms have a realized rank."""
     rows: list[dict[str, Any]] = []
     for (trace_file, child_id), arms in sorted(events.items()):
@@ -84,7 +94,7 @@ def paired_differences(events: dict[tuple[str, str], dict[str, dict[str, Any]]])
         if genuine is None:
             continue
         genuine_rank = genuine.get("realized_rank")
-        for contrast in CONTRASTS:
+        for contrast in contrasts:
             variant = arms.get(contrast)
             if variant is None:
                 continue
@@ -106,10 +116,12 @@ def paired_differences(events: dict[tuple[str, str], dict[str, dict[str, Any]]])
     return rows
 
 
-def word_agreement(events: dict[tuple[str, str], dict[str, dict[str, Any]]]) -> list[dict[str, Any]]:
+def word_agreement(
+    events: dict[tuple[str, str], dict[str, dict[str, Any]]], contrasts: tuple[str, ...] = CONTRASTS
+) -> list[dict[str, Any]]:
     """Per contrast: word-identity rate (first word) and mean Jaccard overlap."""
     rows: list[dict[str, Any]] = []
-    for contrast in CONTRASTS:
+    for contrast in contrasts:
         identical = 0
         jaccards: list[float] = []
         n = 0
@@ -174,9 +186,11 @@ def _wilcoxon(values: list[float]) -> dict[str, Any]:
     }
 
 
-def contrast_tests(diff_rows: list[dict[str, Any]], medians: list[dict[str, Any]]) -> dict[str, Any]:
+def contrast_tests(
+    diff_rows: list[dict[str, Any]], medians: list[dict[str, Any]], contrasts: tuple[str, ...] = CONTRASTS
+) -> dict[str, Any]:
     tests: dict[str, Any] = {}
-    for contrast in CONTRASTS:
+    for contrast in contrasts:
         event_diffs = [float(r["diff_genuine_minus_variant"]) for r in diff_rows if r["contrast"] == contrast]
         run_medians = [float(r["median_diff"]) for r in medians if r["contrast"] == contrast]
         tests[contrast] = {
@@ -304,6 +318,7 @@ def bootstrap_cis(
     *,
     draws: int,
     seed: int,
+    contrasts: tuple[str, ...] = CONTRASTS,
 ) -> dict[str, Any]:
     """Per contrast: cluster (run-level) bootstrap CIs for the pooled median rank
     difference and the word-identity rate.
@@ -313,7 +328,8 @@ def bootstrap_cis(
     reproducible regardless of evaluation order.
     """
     results: dict[str, Any] = {}
-    for contrast_index, contrast in enumerate(CONTRASTS):
+    for contrast in contrasts:
+        contrast_index = CONTRASTS.index(contrast)  # seeds stay tied to the contrast name, not to the subset
         diff_clusters: dict[str, list[float]] = {}
         for row in diff_rows:
             if row["contrast"] == contrast:
@@ -377,16 +393,18 @@ def analyze(
     records: list[dict[str, Any]], *, bootstrap_draws: int = 10000, bootstrap_seed: int = 0
 ) -> dict[str, Any]:
     events = group_by_event(records)
-    diff_rows = paired_differences(events)
+    contrasts = active_contrasts(records)
+    diff_rows = paired_differences(events, contrasts)
     medians = per_run_medians(diff_rows)
-    tests = contrast_tests(diff_rows, medians)
+    tests = contrast_tests(diff_rows, medians, contrasts)
     if bootstrap_draws > 0:
-        cis = bootstrap_cis(diff_rows, events, draws=bootstrap_draws, seed=bootstrap_seed)
-        for contrast in CONTRASTS:
+        cis = bootstrap_cis(diff_rows, events, draws=bootstrap_draws, seed=bootstrap_seed, contrasts=contrasts)
+        for contrast in contrasts:
             tests[contrast]["cluster_bootstrap"] = cis[contrast]
     return {
+        "contrasts": list(contrasts),
         "paired_differences": diff_rows,
-        "word_agreement": word_agreement(events),
+        "word_agreement": word_agreement(events, contrasts),
         "per_run_medians": medians,
         "tests": tests,
         "per_arm_rates": per_arm_rates(records),
@@ -427,6 +445,7 @@ def main() -> None:
     summary = {
         "created_at": datetime.now().isoformat(timespec="seconds"),
         "inputs": [str(p) for p in paths],
+        "contrasts": result["contrasts"],
         "n_events": result["n_events"],
         "n_records": result["n_records"],
         "bootstrap": (

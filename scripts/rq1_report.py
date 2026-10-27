@@ -25,6 +25,7 @@ from typing import Any
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
+from contexto_solver.rq1 import metrics as rq1_metrics
 from contexto_solver.rq1 import report as rq1_report
 from contexto_solver.rq1.reader import Individual, extract_individuals, load_trace, run_config
 from contexto_solver.rq1.records import provenance_hashes
@@ -63,7 +64,7 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="Cross-run RQ1 report and power gate.")
     parser.add_argument("traces", nargs="+", help="Raw trace JSON path(s) or glob(s).")
     parser.add_argument("--output-dir", required=True, help="Directory for the report CSVs and JSON.")
-    parser.add_argument("--which", choices=["child_best", "first_proposed"], default="child_best")
+    parser.add_argument("--which", choices=list(rq1_metrics.REALIZED_RANK_RULES), default=rq1_metrics.DEFAULT_RULE)
     parser.add_argument("--arm-key", choices=sorted(_ARM_KEYS), help="Run attribute defining arms.")
     parser.add_argument("--arm-a", help="Arm A label (value of --arm-key).")
     parser.add_argument("--arm-b", help="Arm B label (value of --arm-key).")

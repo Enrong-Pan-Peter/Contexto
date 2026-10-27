@@ -22,7 +22,16 @@ Analyses:
   selection-on-outcome mechanically shifting agreement among survivors;
 - transmission: parent-child correlation of agreement along parent_id ->
   child_id lineage links, against the same within-cell permutation baseline;
-- generation trend of agreement at matched parent-rank bins.
+- generation trend of agreement at matched parent-rank bins;
+- 95 % intervals for the pooled matched gap and the transmission correlation
+  from a percentile bootstrap that resamples whole runs (trace files) with
+  replacement (``--bootstrap`` draws, seeded), so events of one run stay
+  together; the permutation p answers "is there a difference", the interval
+  says how large a difference the data still allow.
+
+The realized rank of a child follows ``--which`` (default ``best_proposed``:
+the best of the words the operator itself proposed, the event the report
+prompt names; ``child_best`` reproduces the submitted analysis).
 
 No network, no LLM, no writes to traces or caches.
 
@@ -35,6 +44,7 @@ Usage (PowerShell):
 from __future__ import annotations
 
 import argparse
+import copy
 import csv
 import glob
 import json
@@ -56,15 +66,25 @@ from contexto_solver.rq1.metrics import (
     realized_bucket,
 )
 from contexto_solver.rq1.reader import (
+    ALL_INVALID_RANK,
     _first_valid,
+    _GuessIndex,
     _named_guess_events,
     _proposed_from_events,
+    _proposed_outcomes,
     load_trace,
+    proposed_words_from_report,
     run_config,
 )
 from contexto_solver.self_report import read_self_report
 
 MEASURES = ("binary_error", "bucket_distance")
+# Realized-rank rules (same names as contexto_solver.rq1.metrics): "best_proposed" is the
+# camera-ready rule (best of the operator's own proposed words; an all-invalid proposal counts
+# as a miss), "child_best" the pre-camera-ready one (child's best by hypothesis name, first-word
+# fallback).
+RULES = ("best_proposed", "child_best")
+DEFAULT_RULE = "best_proposed"
 
 EXCLUSION_DEDUP = "dedup_merged_before_select"
 EXCLUSION_FINAL_GEN = "no_subsequent_select"
@@ -89,7 +109,7 @@ class LineageIndividual:
     self_report_parse_failed: bool
     realized_rank_first: int | None
     child_best_rank: int | None
-    realized_rank_used: int | None  # child_best policy with first-proposed fallback
+    realized_rank_used: int | None  # per --which: best_proposed (default) or child_best with first-word fallback
     proposed_word_invalid: bool
     label: str | None = None  # "survivor" | "culled" | None (excluded)
     exclusion_reason: str | None = None
@@ -125,10 +145,15 @@ class LineageIndividual:
 # --- extraction ------------------------------------------------------------------
 
 
-def extract_lineage(events: list[dict[str, Any]], trace_file: str) -> tuple[list[LineageIndividual], dict[str, Any]]:
+def extract_lineage(
+    events: list[dict[str, Any]], trace_file: str, which: str = DEFAULT_RULE
+) -> tuple[list[LineageIndividual], dict[str, Any]]:
     """All self-reported mutation children with survivor labels for one trace."""
+    if which not in RULES:
+        raise ValueError(f"unknown realized-rank rule: {which!r}")
     trace_config = run_config(events)
     individuals: list[LineageIndividual] = []
+    guess_index = _GuessIndex(events)
 
     select_by_gen: dict[int, tuple[list[str], list[str]]] = {}
     dedup_discarded_by_gen: dict[int, list[str]] = {}
@@ -159,6 +184,15 @@ def extract_lineage(events: list[dict[str, Any]], trace_file: str) -> tuple[list
         guesses = _named_guess_events(events, child_name, generation)
         first_word, first_rank, invalid = _proposed_from_events(guesses)
         _best_word, best_rank = _first_valid(guesses)
+        if which == "best_proposed":
+            proposed = _proposed_outcomes(
+                guess_index, generation, child_name, proposed_words_from_report(details["self_report"])
+            )
+            rank_used = proposed["best_proposed_rank"]
+            if rank_used is None and proposed["proposed_all_invalid"]:
+                rank_used = ALL_INVALID_RANK
+        else:
+            rank_used = best_rank if best_rank is not None else first_rank
         parent_rank = details.get("parent_rank") if isinstance(details.get("parent_rank"), int) else None
         individuals.append(
             LineageIndividual(
@@ -175,7 +209,7 @@ def extract_lineage(events: list[dict[str, Any]], trace_file: str) -> tuple[list
                 self_report_parse_failed=bool(report.get("self_report_parse_failed")),
                 realized_rank_first=first_rank,
                 child_best_rank=best_rank,
-                realized_rank_used=best_rank if best_rank is not None else first_rank,
+                realized_rank_used=rank_used,
                 proposed_word_invalid=bool(invalid),
             )
         )
@@ -453,6 +487,73 @@ def transmission_test(
     return {"n_pairs": len(pairs), "observed_rho": observed, "pvalue": pvalue, "permutations": completed}
 
 
+# --- run-resampling intervals -----------------------------------------------------------
+
+
+def _retag(individual: LineageIndividual, copy_index: int) -> LineageIndividual:
+    """A shallow copy whose trace_file carries the replicate index, so lineage keys stay distinct."""
+    clone = copy.copy(individual)
+    clone.trace_file = f"{individual.trace_file}#{copy_index}"
+    return clone
+
+
+def _pairs_spearman(individuals: list[LineageIndividual], measure: str) -> float | None:
+    pairs = [
+        (parent.measure(measure), child.measure(measure))
+        for parent, child in lineage_pairs(individuals)
+    ]
+    pairs = [(x, y) for x, y in pairs if x is not None and y is not None]
+    return _spearman([x for x, _y in pairs], [y for _x, y in pairs])
+
+
+def bootstrap_intervals(
+    individuals: list[LineageIndividual],
+    measure: str,
+    draws: int,
+    rng: np.random.Generator,
+) -> dict[str, Any]:
+    """Percentile 95 % intervals for the pooled matched gap and the transmission rho.
+
+    The resampling unit is the run (trace file), drawn with replacement ``draws``
+    times; every individual of a drawn run enters the replicate (tagged so that a
+    run drawn twice contributes two independent copies). The two statistics are
+    recomputed on each replicate exactly as on the observed data. Draws in which
+    a statistic is undefined (no matched bin with both labels, or no variation
+    among pairs) are skipped and counted.
+    """
+    runs = sorted({individual.trace_file for individual in individuals})
+    by_run: dict[str, list[LineageIndividual]] = {run: [] for run in runs}
+    for individual in individuals:
+        by_run[individual.trace_file].append(individual)
+    gaps: list[float] = []
+    rhos: list[float] = []
+    for _draw in range(draws):
+        chosen = rng.choice(len(runs), size=len(runs), replace=True)
+        replicate: list[LineageIndividual] = []
+        for copy_index, run_index in enumerate(chosen):
+            replicate.extend(_retag(individual, copy_index) for individual in by_run[runs[run_index]])
+        gap, _rows = matched_gap(replicate, measure)
+        if gap is not None:
+            gaps.append(gap)
+        rho = _pairs_spearman(replicate, measure)
+        if rho is not None:
+            rhos.append(rho)
+
+    def interval(values: list[float]) -> dict[str, Any]:
+        if not values:
+            return {"low": None, "high": None, "completed": 0}
+        low, high = np.percentile(values, [2.5, 97.5])
+        return {"low": float(low), "high": float(high), "completed": len(values)}
+
+    return {
+        "unit": "run (trace file), resampled with replacement",
+        "draws": draws,
+        "n_runs": len(runs),
+        "gap_ci95": interval(gaps),
+        "transmission_ci95": interval(rhos),
+    }
+
+
 # --- generation trend ---------------------------------------------------------------
 
 
@@ -518,13 +619,13 @@ def _write_csv(path: Path, rows: list[dict[str, Any]]) -> None:
 
 
 def analyze_traces(
-    trace_paths: list[str], *, seed: int, permutations: int
+    trace_paths: list[str], *, seed: int, permutations: int, which: str = DEFAULT_RULE, bootstrap: int = 10000
 ) -> dict[str, Any]:
     all_individuals: list[LineageIndividual] = []
     trace_metas: list[dict[str, Any]] = []
     for path in trace_paths:
         events = load_trace(path)
-        individuals, meta = extract_lineage(events, Path(path).name)
+        individuals, meta = extract_lineage(events, Path(path).name, which)
         all_individuals.extend(individuals)
         trace_metas.append(meta)
 
@@ -546,11 +647,19 @@ def analyze_traces(
             gap_rows.append({"scope": "pooled", "trace_file": None, **row})
         gap_test = permutation_gap_test(all_individuals, measure, permutations, rng)
         trans_test = transmission_test(all_individuals, measure, permutations, rng)
-        transmission_rows.append({"scope": "pooled", "trace_file": None, "measure": measure, **trans_test})
+        intervals = bootstrap_intervals(all_individuals, measure, bootstrap, rng) if bootstrap > 0 else None
+        if intervals is not None:
+            gap_test = {**gap_test, "ci95": intervals["gap_ci95"]}
+            trans_test = {**trans_test, "ci95": intervals["transmission_ci95"]}
+        transmission_rows.append({"scope": "pooled", "trace_file": None, "measure": measure,
+                                  **{k: v for k, v in trans_test.items() if k != "ci95"},
+                                  "ci95_low": (trans_test.get("ci95") or {}).get("low"),
+                                  "ci95_high": (trans_test.get("ci95") or {}).get("high")})
         summary_tests[measure] = {
             "pooled_matched_gap": pooled_overall,
             "gap_permutation": gap_test,
             "transmission": trans_test,
+            "run_bootstrap": intervals,
         }
 
     return {
@@ -562,6 +671,8 @@ def analyze_traces(
         "summary_tests": summary_tests,
         "seed": seed,
         "permutations": permutations,
+        "which": which,
+        "bootstrap": bootstrap,
     }
 
 
@@ -581,6 +692,9 @@ def write_outputs(result: dict[str, Any], output_dir: str | Path) -> Path:
         "created_at": datetime.now().isoformat(timespec="seconds"),
         "seed": result["seed"],
         "permutations": result["permutations"],
+        "which_realized": result.get("which", DEFAULT_RULE),
+        "bootstrap_draws": result.get("bootstrap", 0),
+        "n_runs": len(result["trace_metas"]),
         "traces": result["trace_metas"],
         "counts_total": counts_total,
         "tests": result["summary_tests"],
@@ -601,6 +715,10 @@ def main() -> None:
     parser.add_argument("--output", required=True, help="Output directory for CSVs + summary JSON.")
     parser.add_argument("--seed", type=int, default=0, help="Permutation RNG seed (default 0).")
     parser.add_argument("--permutations", type=int, default=1000, help="Permutation draws B (default 1000).")
+    parser.add_argument("--which", choices=list(RULES), default=DEFAULT_RULE,
+                        help="Realized-rank rule for the report error (default best_proposed; child_best reproduces the submitted analysis).")
+    parser.add_argument("--bootstrap", type=int, default=10000,
+                        help="Run-resampling draws for the 95%% intervals (default 10000; 0 disables).")
     args = parser.parse_args()
 
     paths: list[str] = []
@@ -610,7 +728,7 @@ def main() -> None:
     if not paths:
         raise SystemExit("No trace files matched the given path(s).")
 
-    result = analyze_traces(paths, seed=args.seed, permutations=args.permutations)
+    result = analyze_traces(paths, seed=args.seed, permutations=args.permutations, which=args.which, bootstrap=args.bootstrap)
     out_dir = write_outputs(result, args.output)
 
     counts: dict[str, int] = {}
@@ -627,9 +745,13 @@ def main() -> None:
     for measure, tests in result["summary_tests"].items():
         gap = tests["gap_permutation"]
         trans = tests["transmission"]
+        gap_ci = gap.get("ci95") or {}
+        trans_ci = trans.get("ci95") or {}
         print(
-            f"  {measure}: matched gap = {gap['observed_gap']} (perm p = {gap['pvalue']}), "
-            f"transmission rho = {trans['observed_rho']} (perm p = {trans['pvalue']}, pairs = {trans['n_pairs']})"
+            f"  {measure}: matched gap = {gap['observed_gap']} (perm p = {gap['pvalue']}; "
+            f"95% run-resampled [{gap_ci.get('low')}, {gap_ci.get('high')}]), "
+            f"transmission rho = {trans['observed_rho']} (perm p = {trans['pvalue']}, pairs = {trans['n_pairs']}; "
+            f"95% [{trans_ci.get('low')}, {trans_ci.get('high')}])"
         )
     print(f"Wrote outputs to {out_dir}")
 

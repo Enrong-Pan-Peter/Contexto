@@ -25,7 +25,7 @@ from typing import Any, Sequence
 import numpy as np
 from scipy import stats
 
-from .metrics import metrics_summary, reliability_curve
+from .metrics import DEFAULT_RULE, metrics_summary, reliability_curve
 from .reader import Individual
 
 # Scalar metrics carried per run into the cross-run tables. Order is stable.
@@ -42,7 +42,7 @@ SCALAR_METRICS = [
 ]
 
 
-def run_scalars(individuals: Sequence[Individual], which: str = "child_best") -> dict[str, Any]:
+def run_scalars(individuals: Sequence[Individual], which: str = DEFAULT_RULE) -> dict[str, Any]:
     """Reduce one run's individuals to the scalar metrics in :data:`SCALAR_METRICS`."""
     summary = metrics_summary(individuals, which)
     return {
@@ -59,7 +59,7 @@ def run_scalars(individuals: Sequence[Individual], which: str = "child_best") ->
 
 
 def scalars_by_run(
-    individuals_by_run: dict[str, Sequence[Individual]], which: str = "child_best"
+    individuals_by_run: dict[str, Sequence[Individual]], which: str = DEFAULT_RULE
 ) -> dict[str, dict[str, Any]]:
     return {run: run_scalars(individuals, which) for run, individuals in individuals_by_run.items()}
 
@@ -316,7 +316,7 @@ def save_reliability_image(reliability: dict[str, Any], path: str | Path, *, tit
 
 
 def pooled_reliability(
-    individuals_by_run: dict[str, Sequence[Individual]], which: str = "child_best", n_bins: int = 10
+    individuals_by_run: dict[str, Sequence[Individual]], which: str = DEFAULT_RULE, n_bins: int = 10
 ) -> dict[str, Any]:
     """Reliability curve over all individuals pooled across runs."""
     pooled: list[Individual] = []

@@ -91,9 +91,9 @@ def main() -> None:
     parser.add_argument("--output", help="Path to write the metrics JSON (also printed to stdout).")
     parser.add_argument(
         "--which",
-        choices=["child_best", "first_proposed"],
-        default="child_best",
-        help="Which realized rank to calibrate against.",
+        choices=list(rq1_metrics.REALIZED_RANK_RULES),
+        default=rq1_metrics.DEFAULT_RULE,
+        help="Which realized rank to calibrate against (best_proposed = the event the report prompt names).",
     )
     parser.add_argument("--augmented-csv", help="Optional path to write the per-individual augmented rows.")
     parser.add_argument(
