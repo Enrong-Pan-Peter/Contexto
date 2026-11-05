@@ -1,0 +1,1620 @@
+{
+  "metadata": {
+    "created_at": "2026-10-31T11:59:40",
+    "seed": 0,
+    "events_per_trace": 40,
+    "arms": [
+      "genuine_resample"
+    ],
+    "traces": [
+      {
+        "trace_file": "ea_llm_self_adaptive_api_1303_run1_20260721_233700.json",
+        "game_number": 1303,
+        "llm_model": "qwen3:14b",
+        "llm_provider": "ollama",
+        "provenance_hash": "bd9f2858283673a2",
+        "eligible_events": 7,
+        "sampled_events": 7,
+        "shortfall": 33,
+        "skipped": {}
+      },
+      {
+        "trace_file": "ea_llm_self_adaptive_api_1303_run2_20260721_235308.json",
+        "game_number": 1303,
+        "llm_model": "qwen3:14b",
+        "llm_provider": "ollama",
+        "provenance_hash": "bd9f2858283673a2",
+        "eligible_events": 0,
+        "sampled_events": 0,
+        "shortfall": 40,
+        "skipped": {}
+      },
+      {
+        "trace_file": "ea_llm_self_adaptive_api_1303_run3_20260722_015443.json",
+        "game_number": 1303,
+        "llm_model": "qwen3:14b",
+        "llm_provider": "ollama",
+        "provenance_hash": "bd9f2858283673a2",
+        "eligible_events": 21,
+        "sampled_events": 21,
+        "shortfall": 19,
+        "skipped": {}
+      },
+      {
+        "trace_file": "ea_llm_self_adaptive_api_1303_run4_20260722_032823.json",
+        "game_number": 1303,
+        "llm_model": "qwen3:14b",
+        "llm_provider": "ollama",
+        "provenance_hash": "bd9f2858283673a2",
+        "eligible_events": 16,
+        "sampled_events": 16,
+        "shortfall": 24,
+        "skipped": {}
+      },
+      {
+        "trace_file": "ea_llm_self_adaptive_api_1303_run5_20260722_034211.json",
+        "game_number": 1303,
+        "llm_model": "qwen3:14b",
+        "llm_provider": "ollama",
+        "provenance_hash": "bd9f2858283673a2",
+        "eligible_events": 0,
+        "sampled_events": 0,
+        "shortfall": 40,
+        "skipped": {}
+      }
+    ],
+    "total_events": 44,
+    "total_records": 44
+  },
+  "records": [
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1303_run1_20260721_233700.json",
+      "game_number": 1303,
+      "child_id": "72eacae4fc614f52bed0ae4f5032973e",
+      "generation": 2,
+      "parent_id": "63944195fae743948f2c10ae0bb1874d",
+      "parent_rank": 10,
+      "sampled_op": "l_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "eaf9399a3082e81efbd34627b584c5ea34958126501d2f2fb0cf8e6c41bed1ae",
+      "prompt_chars": 3747,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "mountain",
+      "proposed_words": [
+        "mountain",
+        "valley",
+        "plain"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 3248,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "beyond",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "cold"
+        ],
+        "reason": "Geographical features offer a new semantic direction distinct from temperature and existing categories, while remaining in a plausible neighborhood for a target close to 'cold' in terms of physical environments."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 211,
+      "raw_response": "{\n  \"name\": \"geographical_features\",\n  \"description\": \"common geographical terms\",\n  \"words\": [\"mountain\", \"valley\", \"plain\"],\n  \"basis_words\": [\"cold\"],\n  \"reason\": \"Geographical features offer a new semantic direction distinct from temperature and existing categories, while remaining in a plausible neighborhood for a target close to 'cold' in terms of physical environments.\",\n  \"predicted_bucket\": \"beyond\",\n  \"predicted_closeness\": 0.3\n}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1303_run1_20260721_233700.json",
+      "game_number": 1303,
+      "child_id": "6f638e7180d947258db28caaeb891968",
+      "generation": 2,
+      "parent_id": "8aef959ce40a403f8eff23dec59c95d4",
+      "parent_rank": 243,
+      "sampled_op": "l_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "dd78921753ed9a7f422f4383934d1ec5d4b09374b84dc1256f80a6cb7e1467db",
+      "prompt_chars": 3926,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "concept",
+      "proposed_words": [
+        "concept",
+        "entity",
+        "realm"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 2484,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "beyond",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "thing"
+        ],
+        "reason": "Shifting from concrete singular terms to abstract entities, which is a distinct semantic area but still related to the general notion of 'thing'."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 145,
+      "raw_response": "{\"name\": \"abstract concepts\", \"description\": \"abstract entities and ideas\", \"words\": [\"concept\", \"entity\", \"realm\"], \"basis_words\": [\"thing\"], \"reason\": \"Shifting from concrete singular terms to abstract entities, which is a distinct semantic area but still related to the general notion of 'thing'.\", \"predicted_bucket\": \"beyond\", \"predicted_closeness\": 0.3}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1303_run1_20260721_233700.json",
+      "game_number": 1303,
+      "child_id": "35c9311f781f4856ae738676479c8c60",
+      "generation": 3,
+      "parent_id": "35e0bbb0b64846679664e3e587cdea13",
+      "parent_rank": 8,
+      "sampled_op": "l_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "a94c46478774db6e72addb7f373a605f766b6f0eee711ead40a8d3f6d27ce131",
+      "prompt_chars": 4195,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "ecosystem",
+      "proposed_words": [
+        "ecosystem",
+        "environment",
+        "microbe"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 6327,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "infection"
+        ],
+        "reason": "Expanding to ecological terms provides a new semantic area related to infection's environmental context."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 104,
+      "raw_response": "{\"name\": \"ecological_factors\", \"description\": \"terms related to environmental and biological interactions\", \"words\": [\"ecosystem\", \"environment\", \"microbe\"], \"basis_words\": [\"infection\"], \"reason\": \"Expanding to ecological terms provides a new semantic area related to infection's environmental context.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1303_run1_20260721_233700.json",
+      "game_number": 1303,
+      "child_id": "0751a115cfb24b3d924ea614bde4f7fc",
+      "generation": 3,
+      "parent_id": "63944195fae743948f2c10ae0bb1874d",
+      "parent_rank": 10,
+      "sampled_op": "s_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "29c7530014b258819e0e115a37a997a6ff425c2f8b255b70282e02641ce401b8",
+      "prompt_chars": 4045,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "chilly",
+      "proposed_words": [
+        "chilly",
+        "frigid",
+        "icy"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 1064,
+      "predicted_closeness": 0.7,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top100",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "cold"
+        ],
+        "reason": "Narrowing focus to synonyms and intensifiers of 'cold' to explore more specific temperature states."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 99,
+      "raw_response": "{\"name\": \"cold_intensities\", \"description\": \"intense cold-related terms\", \"words\": [\"chilly\", \"frigid\", \"icy\"], \"basis_words\": [\"cold\"], \"reason\": \"Narrowing focus to synonyms and intensifiers of 'cold' to explore more specific temperature states.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.7}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1303_run1_20260721_233700.json",
+      "game_number": 1303,
+      "child_id": "1bc868f73f374ee1a13083e3bb9ad656",
+      "generation": 4,
+      "parent_id": "35e0bbb0b64846679664e3e587cdea13",
+      "parent_rank": 8,
+      "sampled_op": "s_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "539fb8334084121a3b97d2eaddc8ec12e5cabe87f5a53bcb15531d322e755033",
+      "prompt_chars": 4430,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "sepsis",
+      "proposed_words": [
+        "sepsis",
+        "fever",
+        "toxemia"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 1163,
+      "predicted_closeness": 0.6,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "infection"
+        ],
+        "reason": "Narrowing focus to infectious conditions with terms closely related to infection."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 81,
+      "raw_response": "{\"name\": \"infectious diseases\", \"description\": \"medical terms related to infectious conditions\", \"words\": [\"sepsis\", \"fever\", \"toxemia\"], \"basis_words\": [\"infection\"], \"reason\": \"Narrowing focus to infectious conditions with terms closely related to infection.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.6}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1303_run1_20260721_233700.json",
+      "game_number": 1303,
+      "child_id": "f38d640eb6e14e048b8766e49da18305",
+      "generation": 4,
+      "parent_id": "63944195fae743948f2c10ae0bb1874d",
+      "parent_rank": 10,
+      "sampled_op": "l_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "16f3683c46da3a62038b95863b88fc17b8915a0e100972fc5a89acf850d0713a",
+      "prompt_chars": 4711,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "solitary",
+      "proposed_words": [
+        "solitary",
+        "lonely",
+        "isolate"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 5728,
+      "predicted_closeness": 0.2,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "beyond",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "cold"
+        ],
+        "reason": "Emotional states offer a new semantic direction distinct from temperature and existing categories, while 'solitary' and 'lonely' are semantically related to 'cold' in terms of metaphorical associations with isolation."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 217,
+      "raw_response": "{\"name\": \"emotional_states\", \"description\": \"basic emotional-related terms\", \"words\": [\"solitary\", \"lonely\", \"isolate\"], \"basis_words\": [\"cold\"], \"reason\": \"Emotional states offer a new semantic direction distinct from temperature and existing categories, while 'solitary' and 'lonely' are semantically related to 'cold' in terms of metaphorical associations with isolation.\", \"predicted_bucket\": \"beyond\", \"predicted_closeness\": 0.2}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1303_run1_20260721_233700.json",
+      "game_number": 1303,
+      "child_id": "4295b960c78343ccb760090cee32343a",
+      "generation": 4,
+      "parent_id": "fec6c4c384a74907a283729ac3df683d",
+      "parent_rank": 77,
+      "sampled_op": "m_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "1303b0e05817720232145f98a012591984d22390c656dfd652019f1e198c5bdb",
+      "prompt_chars": 4498,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "rank",
+      "proposed_words": [
+        "rank",
+        "tier",
+        "status"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 4578,
+      "predicted_closeness": 0.7,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top100",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "level"
+        ],
+        "reason": "reinterpreting 'level' through the lens of hierarchy and position rather than process stages"
+      },
+      "basis_words_count": 1,
+      "reason_chars": 92,
+      "raw_response": "{\"name\": \"hierarchy\", \"description\": \"hierarchical positions or rankings\", \"words\": [\"rank\", \"tier\", \"status\"], \"basis_words\": [\"level\"], \"reason\": \"reinterpreting 'level' through the lens of hierarchy and position rather than process stages\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.7}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1303_run3_20260722_015443.json",
+      "game_number": 1303,
+      "child_id": "d34190c7c0c144e3b8e6af8b17aa5dc1",
+      "generation": 2,
+      "parent_id": "87cb2f1713dc48118c552236deb96574",
+      "parent_rank": 170,
+      "sampled_op": "s_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "72faf7d066c2db39bd7aef454e5f571ff85e24cbcfed91a2d45332d0d47eb889",
+      "prompt_chars": 3560,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "glyph",
+      "proposed_words": [
+        "glyph",
+        "token",
+        "marker"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 16517,
+      "predicted_closeness": 0.6,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "sign"
+        ],
+        "reason": "Marker, token, and glyph are close semantic neighbors of 'sign', focusing on specific types of visual symbols."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 110,
+      "raw_response": "{\"name\": \"markers\", \"description\": \"visual markers or tokens\", \"words\": [\"glyph\", \"token\", \"marker\"], \"basis_words\": [\"sign\"], \"reason\": \"Marker, token, and glyph are close semantic neighbors of 'sign', focusing on specific types of visual symbols.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.6}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1303_run3_20260722_015443.json",
+      "game_number": 1303,
+      "child_id": "2b2746b0357d4e9c8047250d460e0815",
+      "generation": 2,
+      "parent_id": "a3cd375ea3b84ae08bae54ba8238c3f6",
+      "parent_rank": 341,
+      "sampled_op": "m_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "24cc17c38a6eb0f2da7d11602a3914d28199e16e8deda39462c6689aed1d7557",
+      "prompt_chars": 3761,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "metabolism",
+      "proposed_words": [
+        "metabolism",
+        "rotation",
+        "orbit"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 749,
+      "predicted_closeness": 0.4,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "cycle"
+        ],
+        "reason": "Reinterpreting 'cycle' through the lens of biological processes and natural movements, emphasizing recurring phenomena in living organisms and celestial mechanics."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 163,
+      "raw_response": "{\"name\": \"biological cycles\", \"description\": \"focus on cycles inherent in living systems and their processes\", \"words\": [\"metabolism\", \"rotation\", \"orbit\"], \"basis_words\": [\"cycle\"], \"reason\": \"Reinterpreting 'cycle' through the lens of biological processes and natural movements, emphasizing recurring phenomena in living organisms and celestial mechanics.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1303_run3_20260722_015443.json",
+      "game_number": 1303,
+      "child_id": "f29f23f57fe64071b1072eb83269f33e",
+      "generation": 3,
+      "parent_id": "38e2b159bf06441587e17db5ffd4b153",
+      "parent_rank": 135,
+      "sampled_op": "s_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "ff4c8233b75b90a908f42470e45928e8cb66bf284b224cf788f4ce443a0871ac",
+      "prompt_chars": 4064,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "phase",
+      "proposed_words": [
+        "phase",
+        "epoch",
+        "stage"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 483,
+      "predicted_closeness": 0.7,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "period"
+        ],
+        "reason": "These words are semantic neighbors of 'period', representing narrower or more specific divisions of time."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 105,
+      "raw_response": "{\"name\": \"refined time segments\", \"description\": \"narrower temporal divisions\", \"words\": [\"phase\", \"epoch\", \"stage\"], \"basis_words\": [\"period\"], \"reason\": \"These words are semantic neighbors of 'period', representing narrower or more specific divisions of time.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.7}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1303_run3_20260722_015443.json",
+      "game_number": 1303,
+      "child_id": "dc2023ec38094b86a214aa9b4cd08541",
+      "generation": 3,
+      "parent_id": "87cb2f1713dc48118c552236deb96574",
+      "parent_rank": 170,
+      "sampled_op": "m_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "b06624bda9e2a28c6b3871352172a58ec61fc153f2030ec4a40468eceb9c5aa7",
+      "prompt_chars": 4086,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "gesture",
+      "proposed_words": [
+        "gesture",
+        "expression",
+        "cue"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 13667,
+      "predicted_closeness": 0.4,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "sign"
+        ],
+        "reason": "Reinterpreting 'sign' as a form of non-verbal communication, focusing on physical cues and expressions rather than abstract visual symbols."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 139,
+      "raw_response": "{\"name\": \"gestural communication\", \"description\": \"non-verbal communication through gestures and expressions\", \"words\": [\"gesture\", \"expression\", \"cue\"], \"basis_words\": [\"sign\"], \"reason\": \"Reinterpreting 'sign' as a form of non-verbal communication, focusing on physical cues and expressions rather than abstract visual symbols.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1303_run3_20260722_015443.json",
+      "game_number": 1303,
+      "child_id": "f758fb3ee1df44c0bc49c6e0f61d4b05",
+      "generation": 3,
+      "parent_id": "a3cd375ea3b84ae08bae54ba8238c3f6",
+      "parent_rank": 341,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "2084490b8e80e8c2349e7180a3c530ef931984000e31f03dbbd28b175f91af7a",
+      "prompt_chars": 4170,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "form",
+      "proposed_words": [
+        "form",
+        "motif",
+        "schema"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 677,
+      "predicted_closeness": 0.7,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "cycle"
+        ],
+        "reason": "Focusing on structural motifs that recur in physical or conceptual designs, adjacent to cyclical patterns but emphasizing spatial or constructional repetition rather than temporal cycles."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 187,
+      "raw_response": "{\"name\": \"repeating forms\", \"description\": \"structural motifs that recur in design or construction\", \"words\": [\"form\", \"motif\", \"schema\"], \"basis_words\": [\"cycle\"], \"reason\": \"Focusing on structural motifs that recur in physical or conceptual designs, adjacent to cyclical patterns but emphasizing spatial or constructional repetition rather than temporal cycles.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.7}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1303_run3_20260722_015443.json",
+      "game_number": 1303,
+      "child_id": "1bf2c139d13248908fcf2b8c969967a3",
+      "generation": 4,
+      "parent_id": "a49a604b9ee5491194c8efc76f2d4a46",
+      "parent_rank": 38,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "ff7f2437b105b144368d9444ab6ce21ab9576e13e4966cb3d5dda386ac6d862a",
+      "prompt_chars": 4485,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "muscle",
+      "proposed_words": [
+        "muscle",
+        "bone",
+        "skin"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 248,
+      "predicted_closeness": 0.7,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top100",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "respiratory"
+        ],
+        "reason": "Body parts are adjacent to organ systems and contain related terms, making it a plausible category for the hidden target."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 121,
+      "raw_response": "{\n  \"name\": \"body parts\",\n  \"description\": \"components of the human body\",\n  \"words\": [\"muscle\", \"bone\", \"skin\"],\n  \"basis_words\": [\"respiratory\"],\n  \"reason\": \"Body parts are adjacent to organ systems and contain related terms, making it a plausible category for the hidden target.\",\n  \"predicted_bucket\": \"top100\",\n  \"predicted_closeness\": 0.7\n}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1303_run3_20260722_015443.json",
+      "game_number": 1303,
+      "child_id": "060c7c8751f74346b31fb7175271a889",
+      "generation": 4,
+      "parent_id": "dc2023ec38094b86a214aa9b4cd08541",
+      "parent_rank": 78,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "b7033f8732e96c1d57f03cceb5692c7f89dea6e6d5ef05f7dc29d01bdbec98cf",
+      "prompt_chars": 4503,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "symbol",
+      "proposed_words": [
+        "symbol",
+        "signal",
+        "token"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 3732,
+      "predicted_closeness": 0.75,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top100",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "indication",
+          "sign"
+        ],
+        "reason": "Expanding from 'indication' and 'sign' to broader non-verbal signals that may include symbolic or contextual cues beyond physical gestures."
+      },
+      "basis_words_count": 2,
+      "reason_chars": 139,
+      "raw_response": "{\"name\": \"signals\", \"description\": \"non-verbal cues and signals used in communication\", \"words\": [\"symbol\", \"signal\", \"token\"], \"basis_words\": [\"indication\", \"sign\"], \"reason\": \"Expanding from 'indication' and 'sign' to broader non-verbal signals that may include symbolic or contextual cues beyond physical gestures.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.75}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1303_run3_20260722_015443.json",
+      "game_number": 1303,
+      "child_id": "3f1f406561b14bd2bedd3e4b4348a838",
+      "generation": 4,
+      "parent_id": "38e2b159bf06441587e17db5ffd4b153",
+      "parent_rank": 135,
+      "sampled_op": "m_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "14156774b8c4610126141217c777bc44b0a3febe9000e728c09744808aef5d66",
+      "prompt_chars": 4734,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "point",
+      "proposed_words": [
+        "point",
+        "segment",
+        "step"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 338,
+      "predicted_closeness": 0.2,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "period"
+        ],
+        "reason": "Reinterpreting 'period' as a marker in a progression, shifting focus to points, segments, and steps that denote stages or divisions."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 132,
+      "raw_response": "{\"name\": \"progression markers\", \"description\": \"points and steps in progression or segmentation\", \"words\": [\"point\", \"segment\", \"step\"], \"basis_words\": [\"period\"], \"reason\": \"Reinterpreting 'period' as a marker in a progression, shifting focus to points, segments, and steps that denote stages or divisions.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.2}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1303_run3_20260722_015443.json",
+      "game_number": 1303,
+      "child_id": "c969cb711f6c473c93593732e30affba",
+      "generation": 4,
+      "parent_id": "f758fb3ee1df44c0bc49c6e0f61d4b05",
+      "parent_rank": 169,
+      "sampled_op": "s_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "c43757c56de172c6702e35bc2a0337bde86e040598ef6f08165e72540c9a9ba9",
+      "prompt_chars": 4615,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "manifestation",
+      "proposed_words": [
+        "manifestation",
+        "episode",
+        "incident"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 582,
+      "predicted_closeness": 0.8,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top100",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "occurrence"
+        ],
+        "reason": "Narrowing focus to the emergence or appearance of recurring phenomena rather than their repetition alone, emphasizing how they become evident"
+      },
+      "basis_words_count": 1,
+      "reason_chars": 141,
+      "raw_response": "{\"name\": \"manifesting events\", \"description\": \"emergent appearances of patterns or events that recur without fixed timing\", \"words\": [\"manifestation\", \"episode\", \"incident\"], \"basis_words\": [\"occurrence\"], \"reason\": \"Narrowing focus to the emergence or appearance of recurring phenomena rather than their repetition alone, emphasizing how they become evident\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.8}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1303_run3_20260722_015443.json",
+      "game_number": 1303,
+      "child_id": "5283c340d948451784a633d34e189594",
+      "generation": 5,
+      "parent_id": "a49a604b9ee5491194c8efc76f2d4a46",
+      "parent_rank": 38,
+      "sampled_op": "m_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "ba4b594f8e6ddd8ebd13d59dbbe4f87e370155c6024945e8d2ff021838634952",
+      "prompt_chars": 5041,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "respiration",
+      "proposed_words": [
+        "respiration",
+        "ventilation",
+        "oxygen"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 849,
+      "predicted_closeness": 0.7,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top100",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "respiratory"
+        ],
+        "reason": "Shifting focus from organ systems to the specific physiological processes of respiration, such as gas exchange and oxygen transport, which may have different contextual relationships."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 183,
+      "raw_response": "{\"name\": \"respiratory functions\", \"description\": \"medical processes related to breathing\", \"words\": [\"respiration\", \"ventilation\", \"oxygen\"], \"basis_words\": [\"respiratory\"], \"reason\": \"Shifting focus from organ systems to the specific physiological processes of respiration, such as gas exchange and oxygen transport, which may have different contextual relationships.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.7}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1303_run3_20260722_015443.json",
+      "game_number": 1303,
+      "child_id": "91a64f141c2a47f98791ea571b6fd613",
+      "generation": 5,
+      "parent_id": "dc2023ec38094b86a214aa9b4cd08541",
+      "parent_rank": 78,
+      "sampled_op": "l_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "09df39995cfa50932387877cfdfa3d64dd95e2eae6f0777d6b4f3be3cfd6da67",
+      "prompt_chars": 5219,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "orientation",
+      "proposed_words": [
+        "orientation",
+        "route",
+        "compass"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 3777,
+      "predicted_closeness": 0.4,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "indication"
+        ],
+        "reason": "Reinterpreting 'indication' as guidance or direction, focusing on navigation systems and related terms."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 103,
+      "raw_response": "{\"name\": \"navigation\", \"description\": \"system for determining and following direction or path\", \"words\": [\"orientation\", \"route\", \"compass\"], \"basis_words\": [\"indication\"], \"reason\": \"Reinterpreting 'indication' as guidance or direction, focusing on navigation systems and related terms.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1303_run3_20260722_015443.json",
+      "game_number": 1303,
+      "child_id": "cf9b6610236c412da5f038c1bcea879a",
+      "generation": 5,
+      "parent_id": "060c7c8751f74346b31fb7175271a889",
+      "parent_rank": 103,
+      "sampled_op": "l_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "8607f70cd9bc2318a7aca3f62158d8830ba7d4a3a0e624b509fbc34720fdb953",
+      "prompt_chars": 5315,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "navigation",
+      "proposed_words": [
+        "navigation",
+        "route",
+        "map"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 5920,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "indicate"
+        ],
+        "reason": "Navigation methods involve guiding or indicating direction but are not subcategories of gestures or directional terms, offering a new semantic area while staying relevant to the target word 'indicate'."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 201,
+      "raw_response": "{\"name\": \"navigation methods\", \"description\": \"terms related to methods of finding or following a path\", \"words\": [\"navigation\", \"route\", \"map\"], \"basis_words\": [\"indicate\"], \"reason\": \"Navigation methods involve guiding or indicating direction but are not subcategories of gestures or directional terms, offering a new semantic area while staying relevant to the target word 'indicate'.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1303_run3_20260722_015443.json",
+      "game_number": 1303,
+      "child_id": "3e7b17e17d294b8d8b67a65bb9f9a6b0",
+      "generation": 5,
+      "parent_id": "38e2b159bf06441587e17db5ffd4b153",
+      "parent_rank": 135,
+      "sampled_op": "m_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "99f7ab433ee3ee94f359ab172e726d2556035d7190d173d5ae48dbcc3a430e27",
+      "prompt_chars": 5261,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "phase",
+      "proposed_words": [
+        "phase",
+        "stage",
+        "segment"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 483,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "period"
+        ],
+        "reason": "Exploring 'period' as a stage or phase in a process rather than a time interval, focusing on its role in sequences and development."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 131,
+      "raw_response": "{\"name\": \"stages in a process\", \"description\": \"stages or phases of a process or development\", \"words\": [\"phase\", \"stage\", \"segment\"], \"basis_words\": [\"period\"], \"reason\": \"Exploring 'period' as a stage or phase in a process rather than a time interval, focusing on its role in sequences and development.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1303_run3_20260722_015443.json",
+      "game_number": 1303,
+      "child_id": "8b5d1951dffc4b9ebad0af9253b285ea",
+      "generation": 6,
+      "parent_id": "8c5f709fdb7246ebb1025f979af1c348",
+      "parent_rank": 8,
+      "sampled_op": "l_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "523bbf69da2980ecaf8c744ae93eadcd66e2634c77ac7009ac34df20b42b1a27",
+      "prompt_chars": 5600,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "microbial",
+      "proposed_words": [
+        "microbial",
+        "ecosystem",
+        "habitat"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 2966,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "infection"
+        ],
+        "reason": "Explores environments related to infection's spread, diverging from direct medical conditions but staying semantically connected through microbial contexts."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 156,
+      "raw_response": "{\"name\": \"microbial_interactions\", \"description\": \"ecological contexts where microorganisms interact\", \"words\": [\"microbial\", \"ecosystem\", \"habitat\"], \"basis_words\": [\"infection\"], \"reason\": \"Explores environments related to infection's spread, diverging from direct medical conditions but staying semantically connected through microbial contexts.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1303_run3_20260722_015443.json",
+      "game_number": 1303,
+      "child_id": "015dc352b13c44dd973b44d459c6e32e",
+      "generation": 6,
+      "parent_id": "7ddf06d5c49847fbac1c5cd9c0f26ae9",
+      "parent_rank": 8,
+      "sampled_op": "m_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "dbc7fea9ddfb17545879fb3836d4dcc0f365c08cc2adcda0284e3d52c9fce812",
+      "prompt_chars": 5696,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "bacteria",
+      "proposed_words": [
+        "bacteria",
+        "virus",
+        "fungi"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 386,
+      "predicted_closeness": 0.7,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top100",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "infection"
+        ],
+        "reason": "Shifts focus from systemic organ involvement to the microorganisms that cause infection."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 88,
+      "raw_response": "{\"name\": \"pathogens\", \"description\": \"focus on infectious agents rather than organ systems\", \"words\": [\"bacteria\", \"virus\", \"fungi\"], \"basis_words\": [\"infection\"], \"reason\": \"Shifts focus from systemic organ involvement to the microorganisms that cause infection.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.7}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1303_run3_20260722_015443.json",
+      "game_number": 1303,
+      "child_id": "110b50d754ae4c369fe0b78f568dd4d1",
+      "generation": 6,
+      "parent_id": "dc2023ec38094b86a214aa9b4cd08541",
+      "parent_rank": 78,
+      "sampled_op": "s_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "946c92e1814fb7f1872470a3c01488a503f9a22d57ec8b348eaa7f9603c18882",
+      "prompt_chars": 5477,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "hint",
+      "proposed_words": [
+        "hint",
+        "pointer",
+        "clue"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 3059,
+      "predicted_closeness": 0.6,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top100",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "indication"
+        ],
+        "reason": "Refining 'gestures' to focus on subtle cues and signals that indicate meaning without direct verbal communication."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 114,
+      "raw_response": "{\"name\": \"indicative signs\", \"description\": \"non-verbal communication through subtle cues and signals\", \"words\": [\"hint\", \"pointer\", \"clue\"], \"basis_words\": [\"indication\"], \"reason\": \"Refining 'gestures' to focus on subtle cues and signals that indicate meaning without direct verbal communication.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.6}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1303_run3_20260722_015443.json",
+      "game_number": 1303,
+      "child_id": "839b1d83d83440f2b34a5353825d838d",
+      "generation": 6,
+      "parent_id": "060c7c8751f74346b31fb7175271a889",
+      "parent_rank": 103,
+      "sampled_op": "s_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "9a2a2384704352aaec75daa8c48b6d36065f1f0ad7e6ab03de05ec6256bc0a47",
+      "prompt_chars": 5490,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "signal",
+      "proposed_words": [
+        "signal",
+        "suggest",
+        "designate"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 776,
+      "predicted_closeness": 0.7,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "indicate"
+        ],
+        "reason": "Signal, suggest, and designate are synonyms or close semantic neighbors of 'indicate' and relate to the concept of indicating direction."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 136,
+      "raw_response": "{\"name\": \"directional signals\", \"description\": \"terms that signal or show direction\", \"words\": [\"signal\", \"suggest\", \"designate\"], \"basis_words\": [\"indicate\"], \"reason\": \"Signal, suggest, and designate are synonyms or close semantic neighbors of 'indicate' and relate to the concept of indicating direction.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.7}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1303_run3_20260722_015443.json",
+      "game_number": 1303,
+      "child_id": "1bdabf8043524b659a210d5cdb05d3cc",
+      "generation": 7,
+      "parent_id": "8c5f709fdb7246ebb1025f979af1c348",
+      "parent_rank": 8,
+      "sampled_op": "s_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "0159440c6f13b034c4a78e068b35f55835b22e9f19b405993eb45a6648a19fed",
+      "prompt_chars": 5813,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "contagion",
+      "proposed_words": [
+        "contagion",
+        "sepsis",
+        "pathogen"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 5053,
+      "predicted_closeness": 0.7,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top100",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "infection"
+        ],
+        "reason": "Narrowing focus to infection-related terms that are semantic neighbors of 'infection' such as contagion, sepsis, and pathogen, which are closely associated with infectious processes."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 182,
+      "raw_response": "{\"name\": \"infectious diseases\", \"description\": \"health issues caused by pathogens\", \"words\": [\"contagion\", \"sepsis\", \"pathogen\"], \"basis_words\": [\"infection\"], \"reason\": \"Narrowing focus to infection-related terms that are semantic neighbors of 'infection' such as contagion, sepsis, and pathogen, which are closely associated with infectious processes.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.7}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1303_run3_20260722_015443.json",
+      "game_number": 1303,
+      "child_id": "f7be243844e14196a21faab6ca588ed5",
+      "generation": 7,
+      "parent_id": "7ddf06d5c49847fbac1c5cd9c0f26ae9",
+      "parent_rank": 8,
+      "sampled_op": "l_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "593c3788246502d5d7812f39ca3d46c6abc747cf6d8fb6e7bf694212f04f258b",
+      "prompt_chars": 6172,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "moisture",
+      "proposed_words": [
+        "moisture",
+        "temperature",
+        "humidity"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 307,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "infection",
+          "circulatory",
+          "immune"
+        ],
+        "reason": "This hypothesis explores environmental factors that interact with the immune and circulatory systems to influence infection, expanding beyond direct medical conditions."
+      },
+      "basis_words_count": 3,
+      "reason_chars": 168,
+      "raw_response": "{\n  \"name\": \"environmental_conditions\",\n  \"description\": \"environmental factors influencing infection\",\n  \"words\": [\"moisture\", \"temperature\", \"humidity\"],\n  \"basis_words\": [\"infection\", \"circulatory\", \"immune\"],\n  \"reason\": \"This hypothesis explores environmental factors that interact with the immune and circulatory systems to influence infection, expanding beyond direct medical conditions.\",\n  \"predicted_bucket\": \"top500\",\n  \"predicted_closeness\": 0.3\n}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1303_run3_20260722_015443.json",
+      "game_number": 1303,
+      "child_id": "3e130ed11e084038af017710055a72ec",
+      "generation": 7,
+      "parent_id": "dc2023ec38094b86a214aa9b4cd08541",
+      "parent_rank": 78,
+      "sampled_op": "l_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "ffa8a45a97eb73dc235ba2d1ae3132655aa383683e86999a63e7f829e5f3da55",
+      "prompt_chars": 6126,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "spatial",
+      "proposed_words": [
+        "spatial",
+        "cues",
+        "orientation"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 4644,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "sign"
+        ],
+        "reason": "Expanding 'sign' to include spatial indicators and environmental cues, moving beyond physical gestures to broader environmental and spatial signals."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 148,
+      "raw_response": "{\n  \"name\": \"spatial cues\",\n  \"description\": \"non-verbal communication through spatial arrangements and environmental indicators\",\n  \"words\": [\"spatial\", \"cues\", \"orientation\"],\n  \"basis_words\": [\"sign\"],\n  \"reason\": \"Expanding 'sign' to include spatial indicators and environmental cues, moving beyond physical gestures to broader environmental and spatial signals.\",\n  \"predicted_bucket\": \"top500\",\n  \"predicted_closeness\": 0.3\n}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1303_run3_20260722_015443.json",
+      "game_number": 1303,
+      "child_id": "a7ec5f236903478d818f0e72edaa85da",
+      "generation": 7,
+      "parent_id": "060c7c8751f74346b31fb7175271a889",
+      "parent_rank": 103,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "5ab424bbde42305e1e438db7d371e371d1ec3e5a223cf639968f3b75543e7ec3",
+      "prompt_chars": 5977,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "emblem",
+      "proposed_words": [
+        "emblem",
+        "glyph",
+        "icon"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 11198,
+      "predicted_closeness": 0.6,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "indicate"
+        ],
+        "reason": "Symbolic terms can function as non-verbal indicators, similar to 'indicate', but are not subcategories of gestures or directional terms themselves."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 147,
+      "raw_response": "{\"name\": \"symbolic terms\", \"description\": \"terms related to symbols or representations\", \"words\": [\"emblem\", \"glyph\", \"icon\"], \"basis_words\": [\"indicate\"], \"reason\": \"Symbolic terms can function as non-verbal indicators, similar to 'indicate', but are not subcategories of gestures or directional terms themselves.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.6}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1303_run4_20260722_032823.json",
+      "game_number": 1303,
+      "child_id": "178217e8d281459b849855a36d5f0dcb",
+      "generation": 2,
+      "parent_id": "5e5eb7c06c8543e0bf7640eea3cdb16b",
+      "parent_rank": 135,
+      "sampled_op": "m_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "dd3a28c1231e8df9693530647574d7bd7a27b49653abac72b006b39edd687ca6",
+      "prompt_chars": 3740,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "section",
+      "proposed_words": [
+        "section",
+        "segment",
+        "stage"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 2264,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "beyond",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "period"
+        ],
+        "reason": "period can also refer to a defined segment within a larger structure, such as a section in a document or a stage in a process"
+      },
+      "basis_words_count": 1,
+      "reason_chars": 125,
+      "raw_response": "{\"name\": \"segments in structured works\", \"description\": \"parts of larger structures or processes\", \"words\": [\"section\", \"segment\", \"stage\"], \"basis_words\": [\"period\"], \"reason\": \"period can also refer to a defined segment within a larger structure, such as a section in a document or a stage in a process\", \"predicted_bucket\": \"beyond\", \"predicted_closeness\": 0.3}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1303_run4_20260722_032823.json",
+      "game_number": 1303,
+      "child_id": "42f5764ca72746a49f89a8053ef4c77f",
+      "generation": 2,
+      "parent_id": "4a22d48249ea4d418699d0c820e45772",
+      "parent_rank": 310,
+      "sampled_op": "s_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "72100fcc58bfe4450c89935bd869f149856781c367890bd5c911835ab2d29642",
+      "prompt_chars": 3687,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "extent",
+      "proposed_words": [
+        "extent",
+        "length",
+        "scope"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 668,
+      "predicted_closeness": 0.8,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top100",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "span",
+          "interval",
+          "period"
+        ],
+        "reason": "Narrows focus to synonyms of 'duration' that emphasize measurable time spans, building on existing temporal interval concepts."
+      },
+      "basis_words_count": 3,
+      "reason_chars": 126,
+      "raw_response": "{\n  \"name\": \"temporal_extent\",\n  \"description\": \"terms focusing on the measurement or span of time\",\n  \"words\": [\"extent\", \"length\", \"scope\"],\n  \"basis_words\": [\"span\", \"interval\", \"period\"],\n  \"reason\": \"Narrows focus to synonyms of 'duration' that emphasize measurable time spans, building on existing temporal interval concepts.\",\n  \"predicted_bucket\": \"top100\",\n  \"predicted_closeness\": 0.8\n}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1303_run4_20260722_032823.json",
+      "game_number": 1303,
+      "child_id": "a42d79a5204a4b2fa209e4db5a3b26f9",
+      "generation": 3,
+      "parent_id": "5e5eb7c06c8543e0bf7640eea3cdb16b",
+      "parent_rank": 135,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "8e52fed7a3910e65842f7babc7f2397c8f8f769ab45f6136882a061616e20cf3",
+      "prompt_chars": 4206,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "segment",
+      "proposed_words": [
+        "segment",
+        "slice",
+        "frame"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 3635,
+      "predicted_closeness": 0.6,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "period"
+        ],
+        "reason": "Temporal terminology includes terms that describe time in a general sense, such as 'segment', 'slice', and 'frame', which are related to 'period' but not strictly time intervals."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 178,
+      "raw_response": "{\"name\": \"temporal terminology\", \"description\": \"terms related to time but not specific intervals\", \"words\": [\"segment\", \"slice\", \"frame\"], \"basis_words\": [\"period\"], \"reason\": \"Temporal terminology includes terms that describe time in a general sense, such as 'segment', 'slice', and 'frame', which are related to 'period' but not strictly time intervals.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.6}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1303_run4_20260722_032823.json",
+      "game_number": 1303,
+      "child_id": "ec93464133d748c08395f6a6a53b0f5e",
+      "generation": 3,
+      "parent_id": "4a22d48249ea4d418699d0c820e45772",
+      "parent_rank": 310,
+      "sampled_op": "m_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "257b146f1b6bce28497d8bbbc5e07ce49db90eef5f8251d51713db0b1ff25cbe",
+      "prompt_chars": 4280,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "episode",
+      "proposed_words": [
+        "episode",
+        "stretch",
+        "run"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 1016,
+      "predicted_closeness": 0.4,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "interval",
+          "period"
+        ],
+        "reason": "Shifts focus from specific time units to events or processes that have a duration, using terms like 'episode', 'stretch', and 'run' to capture this concept."
+      },
+      "basis_words_count": 2,
+      "reason_chars": 156,
+      "raw_response": "{\"name\": \"event_durations\", \"description\": \"events or processes characterized by their temporal extent\", \"words\": [\"episode\", \"stretch\", \"run\"], \"basis_words\": [\"interval\", \"period\"], \"reason\": \"Shifts focus from specific time units to events or processes that have a duration, using terms like 'episode', 'stretch', and 'run' to capture this concept.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1303_run4_20260722_032823.json",
+      "game_number": 1303,
+      "child_id": "615c43698ba74a1b9b7b96deec4307f3",
+      "generation": 4,
+      "parent_id": "5f2dc76e6e6b4e4e845e269cd0dfab4e",
+      "parent_rank": 44,
+      "sampled_op": "l_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "38ec10af6750e70302aa2234b3f032435a0bafb36472969ad6ac38d2d7b5e846",
+      "prompt_chars": 4849,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "context",
+      "proposed_words": [
+        "context",
+        "social",
+        "setting"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 3210,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "stomach",
+          "anxiety"
+        ],
+        "reason": "Shifts focus to social contexts and environments that may influence emotional states, diverging from direct physiological correlations."
+      },
+      "basis_words_count": 2,
+      "reason_chars": 135,
+      "raw_response": "{\"name\": \"social_contexts\", \"description\": \"social contexts that affect emotional states\", \"words\": [\"context\", \"social\", \"setting\"], \"basis_words\": [\"stomach\", \"anxiety\"], \"reason\": \"Shifts focus to social contexts and environments that may influence emotional states, diverging from direct physiological correlations.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1303_run4_20260722_032823.json",
+      "game_number": 1303,
+      "child_id": "a053087282204bd8aec3f3f5e5356da3",
+      "generation": 4,
+      "parent_id": "5e5eb7c06c8543e0bf7640eea3cdb16b",
+      "parent_rank": 135,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "826f07b0fbd493a614dcfbe5efc851599b7f6251050541f93db8b10344a3c8d3",
+      "prompt_chars": 4698,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "moment",
+      "proposed_words": [
+        "moment",
+        "point",
+        "part"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 521,
+      "predicted_closeness": 0.4,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "period"
+        ],
+        "reason": "period can be a part of a larger temporal system, but this category also includes non-temporal parts, making it adjacent but distinct from time intervals"
+      },
+      "basis_words_count": 1,
+      "reason_chars": 153,
+      "raw_response": "{\"name\": \"components of a system\", \"description\": \"elements that constitute a larger whole\", \"words\": [\"moment\", \"point\", \"part\"], \"basis_words\": [\"period\"], \"reason\": \"period can be a part of a larger temporal system, but this category also includes non-temporal parts, making it adjacent but distinct from time intervals\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1303_run4_20260722_032823.json",
+      "game_number": 1303,
+      "child_id": "d45c45e04b6e44338b4889b9f1dd3e96",
+      "generation": 4,
+      "parent_id": "ec93464133d748c08395f6a6a53b0f5e",
+      "parent_rank": 165,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "9c4eaf48cc0c1ba3a28f81b4cedf235c4ed7b554b7719afc82de2d36130b3bad",
+      "prompt_chars": 4617,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "scope",
+      "proposed_words": [
+        "scope",
+        "aspect",
+        "stage"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 3940,
+      "predicted_closeness": 0.5,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "interval",
+          "span"
+        ],
+        "reason": "Shifts focus from the methods of quantifying duration to the contexts or situations where time is experienced or applied, such as different scenarios or environments involving time perception."
+      },
+      "basis_words_count": 2,
+      "reason_chars": 192,
+      "raw_response": "{\"name\": \"temporal contexts\", \"description\": \"terms related to the contexts or situations in which time is perceived or experienced\", \"words\": [\"scope\", \"aspect\", \"stage\"], \"basis_words\": [\"interval\", \"span\"], \"reason\": \"Shifts focus from the methods of quantifying duration to the contexts or situations where time is experienced or applied, such as different scenarios or environments involving time perception.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.5}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1303_run4_20260722_032823.json",
+      "game_number": 1303,
+      "child_id": "344b9d6d6dae489e985d1ec5e1aa0d57",
+      "generation": 4,
+      "parent_id": "4a22d48249ea4d418699d0c820e45772",
+      "parent_rank": 310,
+      "sampled_op": "m_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "5dffbe11c131d01559135b507531e58d30e9ae35a063733674f952d9c7fe1d34",
+      "prompt_chars": 4803,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "pulse",
+      "proposed_words": [
+        "pulse",
+        "vibration",
+        "flow"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 315,
+      "predicted_closeness": 0.4,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "interval",
+          "span"
+        ],
+        "reason": "Shifts focus to physical manifestations that inherently involve duration, such as vibrations or pulses, which have measurable time spans."
+      },
+      "basis_words_count": 2,
+      "reason_chars": 137,
+      "raw_response": "{\"name\": \"physical_persistence\", \"description\": \"physical phenomena involving time-based persistence\", \"words\": [\"pulse\", \"vibration\", \"flow\"], \"basis_words\": [\"interval\", \"span\"], \"reason\": \"Shifts focus to physical manifestations that inherently involve duration, such as vibrations or pulses, which have measurable time spans.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1303_run4_20260722_032823.json",
+      "game_number": 1303,
+      "child_id": "329aca617eb04080ac92c9f887d0d53e",
+      "generation": 5,
+      "parent_id": "5f2dc76e6e6b4e4e845e269cd0dfab4e",
+      "parent_rank": 19,
+      "sampled_op": "s_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "ce76e7722e47fdced3fba77193ead03ca2c4a84cc49912d0317d602e756a1c41",
+      "prompt_chars": 5031,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "soreness",
+      "proposed_words": [
+        "soreness",
+        "irritation",
+        "ache"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 199,
+      "predicted_closeness": 0.75,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top100",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "discomfort"
+        ],
+        "reason": "Narrowing focus to synonyms of 'discomfort' to explore more specific emotional stomach-related sensations not yet heavily sampled"
+      },
+      "basis_words_count": 1,
+      "reason_chars": 129,
+      "raw_response": "{\"name\": \"emotional_discomfort_variants\", \"description\": \"refined emotional states focusing on physical discomfort sensations\", \"words\": [\"soreness\", \"irritation\", \"ache\"], \"basis_words\": [\"discomfort\"], \"reason\": \"Narrowing focus to synonyms of 'discomfort' to explore more specific emotional stomach-related sensations not yet heavily sampled\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.75}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1303_run4_20260722_032823.json",
+      "game_number": 1303,
+      "child_id": "6e606be339a84cb2b31ca7e7bbb6506f",
+      "generation": 5,
+      "parent_id": "5e5eb7c06c8543e0bf7640eea3cdb16b",
+      "parent_rank": 135,
+      "sampled_op": "m_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "c34d40a7feb1f0dfffa718b4219ac2b95358af12977fd2a2357e8a3364f2b4b7",
+      "prompt_chars": 5136,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "oscillation",
+      "proposed_words": [
+        "oscillation",
+        "amplitude",
+        "frequency"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 1752,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "period"
+        ],
+        "reason": "reinterprets 'period' as a concept in physics, focusing on wave properties rather than time intervals"
+      },
+      "basis_words_count": 1,
+      "reason_chars": 101,
+      "raw_response": "{\"name\": \"scientific measurements in physics\", \"description\": \"period as a term in wave mechanics\", \"words\": [\"oscillation\", \"amplitude\", \"frequency\"], \"basis_words\": [\"period\"], \"reason\": \"reinterprets 'period' as a concept in physics, focusing on wave properties rather than time intervals\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1303_run4_20260722_032823.json",
+      "game_number": 1303,
+      "child_id": "bb97745bd881424cb212cd0a186c481f",
+      "generation": 5,
+      "parent_id": "ec93464133d748c08395f6a6a53b0f5e",
+      "parent_rank": 165,
+      "sampled_op": "m_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "04ee3782cc9e654dcf28129bfe936476badcc1513fbc2fc7ad3d42d25bf25037",
+      "prompt_chars": 5063,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "wait",
+      "proposed_words": [
+        "wait",
+        "hurry",
+        "delay"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 890,
+      "predicted_closeness": 0.4,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "time"
+        ],
+        "reason": "Shifts focus from the measurement of time to the actions or experiences that involve waiting, hurrying, or delaying, which are temporal but not directly related to quantification."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 179,
+      "raw_response": "{\"name\": \"temporal_actions\", \"description\": \"focuses on actions or behaviors that involve waiting, delaying, or hurrying, which are related to the experience of time but not measurement terms\", \"words\": [\"wait\", \"hurry\", \"delay\"], \"basis_words\": [\"time\"], \"reason\": \"Shifts focus from the measurement of time to the actions or experiences that involve waiting, hurrying, or delaying, which are temporal but not directly related to quantification.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1303_run4_20260722_032823.json",
+      "game_number": 1303,
+      "child_id": "a0a5c3bc06a74ca389359d310fe00b7d",
+      "generation": 5,
+      "parent_id": "615c43698ba74a1b9b7b96deec4307f3",
+      "parent_rank": 232,
+      "sampled_op": "l_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "36880ca29dc226994264f454d6201b91082242659a91bdc877874b73cc37780a",
+      "prompt_chars": 5508,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "sound",
+      "proposed_words": [
+        "sound",
+        "acoustic",
+        "vibration"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 1167,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "external_influences_on_mood"
+        ],
+        "reason": "Explores auditory factors that could influence emotional states, diverging from direct environmental factors like weather but remaining within the broader context of external influences."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 186,
+      "raw_response": "{\"name\": \"acoustic_influences_on_mood\", \"description\": \"auditory factors that may affect emotional states\", \"words\": [\"sound\", \"acoustic\", \"vibration\"], \"basis_words\": [\"external_influences_on_mood\"], \"reason\": \"Explores auditory factors that could influence emotional states, diverging from direct environmental factors like weather but remaining within the broader context of external influences.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1303_run4_20260722_032823.json",
+      "game_number": 1303,
+      "child_id": "f444cade4fc14228bcabaf33765bf0e3",
+      "generation": 6,
+      "parent_id": "615c43698ba74a1b9b7b96deec4307f3",
+      "parent_rank": 2,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "3460fbf7969f7214929e89d746ab8ba4a40db806712fa06ddc29975cc86bdd0d",
+      "prompt_chars": 5556,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "heart",
+      "proposed_words": [
+        "heart",
+        "pulse",
+        "blood"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 253,
+      "predicted_closeness": 0.8,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top100",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "temperature"
+        ],
+        "reason": "This hypothesis explores internal physiological states that may be linked to emotional well-being, adjacent to external influences but distinct in origin"
+      },
+      "basis_words_count": 1,
+      "reason_chars": 153,
+      "raw_response": "{\"name\": \"physiological_indicators\", \"description\": \"internal bodily states that may correlate with emotional well-being\", \"words\": [\"heart\", \"pulse\", \"blood\"], \"basis_words\": [\"temperature\"], \"reason\": \"This hypothesis explores internal physiological states that may be linked to emotional well-being, adjacent to external influences but distinct in origin\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.8}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1303_run4_20260722_032823.json",
+      "game_number": 1303,
+      "child_id": "992d850c4f3747fdb16693331c0c1b4d",
+      "generation": 6,
+      "parent_id": "5f2dc76e6e6b4e4e845e269cd0dfab4e",
+      "parent_rank": 12,
+      "sampled_op": "m_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "27db6fe3753bebc382990f14822ad352bbd2960a4caae8f0ffeacd23346db480",
+      "prompt_chars": 5646,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "retch",
+      "proposed_words": [
+        "retch",
+        "vomit",
+        "sickness"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 13676,
+      "predicted_closeness": 0.7,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top100",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "nausea"
+        ],
+        "reason": "This hypothesis reinterprets nausea through the lens of physical bodily reactions rather than emotional states, focusing on symptoms like vomiting or retching that directly follow nausea."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 187,
+      "raw_response": "{\"name\": \"physiological_responses_to_nausea\", \"description\": \"bodily reactions linked to nausea\", \"words\": [\"retch\", \"vomit\", \"sickness\"], \"basis_words\": [\"nausea\"], \"reason\": \"This hypothesis reinterprets nausea through the lens of physical bodily reactions rather than emotional states, focusing on symptoms like vomiting or retching that directly follow nausea.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.7}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1303_run4_20260722_032823.json",
+      "game_number": 1303,
+      "child_id": "86d454f99f924e02899f5a33826415f1",
+      "generation": 6,
+      "parent_id": "329aca617eb04080ac92c9f887d0d53e",
+      "parent_rank": 61,
+      "sampled_op": "s_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "203bab29aade2aef5c6cbe74e80d5a1840245c6ebc17785e9acdda0605a80397",
+      "prompt_chars": 5409,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "pang",
+      "proposed_words": [
+        "pang",
+        "soreness",
+        "twinge"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 5905,
+      "predicted_closeness": 0.7,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "discomfort"
+        ],
+        "reason": "Focusing on acute pain-related terms closely associated with 'ache' to better capture localized stomach discomfort nuances"
+      },
+      "basis_words_count": 1,
+      "reason_chars": 122,
+      "raw_response": "{\n  \"name\": \"stomach_pain_specific_terms\",\n  \"description\": \"narrowing focus to sharp or localized stomach pain descriptors\",\n  \"words\": [\"pang\", \"soreness\", \"twinge\"],\n  \"basis_words\": [\"discomfort\"],\n  \"reason\": \"Focusing on acute pain-related terms closely associated with 'ache' to better capture localized stomach discomfort nuances\",\n  \"predicted_bucket\": \"top500\",\n  \"predicted_closeness\": 0.7\n}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1303_run4_20260722_032823.json",
+      "game_number": 1303,
+      "child_id": "29d87d5f08684372a4ab07ccc67427c7",
+      "generation": 6,
+      "parent_id": "bb97745bd881424cb212cd0a186c481f",
+      "parent_rank": 106,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "a0c151e37a37fb644a2d9aa42fb0fdef8e6cd6c882784457001d6e5d11af0c9d",
+      "prompt_chars": 5491,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "mood",
+      "proposed_words": [
+        "mood",
+        "thought",
+        "emotion"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 224,
+      "predicted_closeness": 0.6,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "experience"
+        ],
+        "reason": "Shifts focus from time-specific experiences to broader internal mental states that could still relate to how time is perceived subjectively."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 140,
+      "raw_response": "{\"name\": \"subjective_states\", \"description\": \"terms related to internal mental states and feelings\", \"words\": [\"mood\", \"thought\", \"emotion\"], \"basis_words\": [\"experience\"], \"reason\": \"Shifts focus from time-specific experiences to broader internal mental states that could still relate to how time is perceived subjectively.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.6}"
+    }
+  ]
+}

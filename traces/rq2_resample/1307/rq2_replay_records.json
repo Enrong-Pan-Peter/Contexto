@@ -1,0 +1,2992 @@
+{
+  "metadata": {
+    "created_at": "2026-10-31T12:22:04",
+    "seed": 0,
+    "events_per_trace": 40,
+    "arms": [
+      "genuine_resample"
+    ],
+    "traces": [
+      {
+        "trace_file": "ea_llm_self_adaptive_api_1307_run1_20260722_160312.json",
+        "game_number": 1307,
+        "llm_model": "qwen3:14b",
+        "llm_provider": "ollama",
+        "provenance_hash": "bd9f2858283673a2",
+        "eligible_events": 12,
+        "sampled_events": 12,
+        "shortfall": 28,
+        "skipped": {}
+      },
+      {
+        "trace_file": "ea_llm_self_adaptive_api_1307_run2_20260722_171316.json",
+        "game_number": 1307,
+        "llm_model": "qwen3:14b",
+        "llm_provider": "ollama",
+        "provenance_hash": "bd9f2858283673a2",
+        "eligible_events": 20,
+        "sampled_events": 20,
+        "shortfall": 20,
+        "skipped": {}
+      },
+      {
+        "trace_file": "ea_llm_self_adaptive_api_1307_run3_20260722_181845.json",
+        "game_number": 1307,
+        "llm_model": "qwen3:14b",
+        "llm_provider": "ollama",
+        "provenance_hash": "bd9f2858283673a2",
+        "eligible_events": 32,
+        "sampled_events": 32,
+        "shortfall": 8,
+        "skipped": {}
+      },
+      {
+        "trace_file": "ea_llm_self_adaptive_api_1307_run4_20260722_184920.json",
+        "game_number": 1307,
+        "llm_model": "qwen3:14b",
+        "llm_provider": "ollama",
+        "provenance_hash": "bd9f2858283673a2",
+        "eligible_events": 9,
+        "sampled_events": 9,
+        "shortfall": 31,
+        "skipped": {}
+      },
+      {
+        "trace_file": "ea_llm_self_adaptive_api_1307_run5_20260722_201412.json",
+        "game_number": 1307,
+        "llm_model": "qwen3:14b",
+        "llm_provider": "ollama",
+        "provenance_hash": "bd9f2858283673a2",
+        "eligible_events": 10,
+        "sampled_events": 10,
+        "shortfall": 30,
+        "skipped": {}
+      }
+    ],
+    "total_events": 83,
+    "total_records": 83
+  },
+  "records": [
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1307_run1_20260722_160312.json",
+      "game_number": 1307,
+      "child_id": "9b216c7dfced42d7b7a030b603800112",
+      "generation": 2,
+      "parent_id": "d034c643037147d5b81b845c2d4e1963",
+      "parent_rank": 111,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "7ff2223c9448a406e7628b0fae53b21a8edce81af4ae615554bf394ccc1c1795",
+      "prompt_chars": 3662,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "trust",
+      "proposed_words": [
+        "trust",
+        "support",
+        "care"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 96,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "beyond",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "love",
+          "friendship"
+        ],
+        "reason": "The category 'emotions' is adjacent to 'relationships' as it involves concepts like love and friendship but focuses on internal feelings rather than interpersonal connections."
+      },
+      "basis_words_count": 2,
+      "reason_chars": 175,
+      "raw_response": "{\"name\": \"emotions\", \"description\": \"types of feelings or emotional states\", \"words\": [\"trust\", \"support\", \"care\"], \"basis_words\": [\"love\", \"friendship\"], \"reason\": \"The category 'emotions' is adjacent to 'relationships' as it involves concepts like love and friendship but focuses on internal feelings rather than interpersonal connections.\", \"predicted_bucket\": \"beyond\", \"predicted_closeness\": 0.3}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1307_run1_20260722_160312.json",
+      "game_number": 1307,
+      "child_id": "064bbbf7e99c4f39bfb53636ae710051",
+      "generation": 3,
+      "parent_id": "dd354cd07b094a2ba7f602fc0ac45e3b",
+      "parent_rank": 13,
+      "sampled_op": "l_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "586166f7b744deb381c14b5dd0f7e625d288cde55af68e9de2fcd5f8317436de",
+      "prompt_chars": 4397,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "nurture",
+      "proposed_words": [
+        "nurture",
+        "sustain",
+        "nourish"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 761,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "compassion"
+        ],
+        "reason": "shifts focus from human emotional dynamics to broader mechanisms of care that can apply to ecosystems or inanimate systems, maintaining a loose semantic link to compassion through the concept of support"
+      },
+      "basis_words_count": 1,
+      "reason_chars": 202,
+      "raw_response": "{\n  \"name\": \"nurturing_systems\",\n  \"description\": \"mechanisms that sustain growth and care in non-human contexts\",\n  \"words\": [\"nurture\", \"sustain\", \"nourish\"],\n  \"basis_words\": [\"compassion\"],\n  \"reason\": \"shifts focus from human emotional dynamics to broader mechanisms of care that can apply to ecosystems or inanimate systems, maintaining a loose semantic link to compassion through the concept of support\",\n  \"predicted_bucket\": \"top500\",\n  \"predicted_closeness\": 0.3\n}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1307_run1_20260722_160312.json",
+      "game_number": 1307,
+      "child_id": "b0c22dcaeb974d258d69f024020128a2",
+      "generation": 3,
+      "parent_id": "9b216c7dfced42d7b7a030b603800112",
+      "parent_rank": 62,
+      "sampled_op": "l_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "2b494a8684df273d55af097e62b44ceb4b968c98c4e7c81929190bf74f462046",
+      "prompt_chars": 4622,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "technology",
+      "proposed_words": [
+        "technology",
+        "interface",
+        "tools"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 4870,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "cooperation"
+        ],
+        "reason": "This category explores the technological tools and interfaces that enable collaboration, diverging from direct types of cooperation to focus on external supports, yet remains relevant to the context of teamwork."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 211,
+      "raw_response": "{\"name\": \"technological interfaces\", \"description\": \"technological tools and interfaces that support collaborative efforts\", \"words\": [\"technology\", \"interface\", \"tools\"], \"basis_words\": [\"cooperation\"], \"reason\": \"This category explores the technological tools and interfaces that enable collaboration, diverging from direct types of cooperation to focus on external supports, yet remains relevant to the context of teamwork.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1307_run1_20260722_160312.json",
+      "game_number": 1307,
+      "child_id": "6255e2fd41ae4b9ea3dcd678406bc2c9",
+      "generation": 3,
+      "parent_id": "d034c643037147d5b81b845c2d4e1963",
+      "parent_rank": 111,
+      "sampled_op": "s_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "42fc35d5d2d4df65be976113d907d8fd30d6a6265c645b39e84f2ce2274f3125",
+      "prompt_chars": 4284,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "camaraderie",
+      "proposed_words": [
+        "camaraderie",
+        "companionship",
+        "fellowship"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 214,
+      "predicted_closeness": 0.8,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "friendship"
+        ],
+        "reason": "Narrowing 'relationships' to focus on close, non-romantic interpersonal bonds similar to 'friendship'"
+      },
+      "basis_words_count": 1,
+      "reason_chars": 101,
+      "raw_response": "{\"name\": \"close associations\", \"description\": \"types of close personal associations\", \"words\": [\"camaraderie\", \"companionship\", \"fellowship\"], \"basis_words\": [\"friendship\"], \"reason\": \"Narrowing 'relationships' to focus on close, non-romantic interpersonal bonds similar to 'friendship'\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.8}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1307_run1_20260722_160312.json",
+      "game_number": 1307,
+      "child_id": "851762e95d304bdf804510848900910b",
+      "generation": 3,
+      "parent_id": "076ea155a3d94644b881f39210a61a92",
+      "parent_rank": 329,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "2f81a15f5c2e3a13a4b5877a2c75c770d49bb4271df53456a2c1773e9de8d770",
+      "prompt_chars": 4411,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "engagement",
+      "proposed_words": [
+        "engagement",
+        "focus",
+        "attention"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 1830,
+      "predicted_closeness": 0.6,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "perception"
+        ],
+        "reason": "shifts focus from interpreting external cues to how mental engagement and attention relate to them, providing a distinct but adjacent category"
+      },
+      "basis_words_count": 1,
+      "reason_chars": 142,
+      "raw_response": "{\n  \"name\": \"cognitive engagement\",\n  \"description\": \"ways of mentally interacting with external information\",\n  \"words\": [\"engagement\", \"focus\", \"attention\"],\n  \"basis_words\": [\"perception\"],\n  \"reason\": \"shifts focus from interpreting external cues to how mental engagement and attention relate to them, providing a distinct but adjacent category\",\n  \"predicted_bucket\": \"top500\",\n  \"predicted_closeness\": 0.6\n}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1307_run1_20260722_160312.json",
+      "game_number": 1307,
+      "child_id": "86669229bdc54f00a4ea18048b59e0f2",
+      "generation": 4,
+      "parent_id": "dd354cd07b094a2ba7f602fc0ac45e3b",
+      "parent_rank": 13,
+      "sampled_op": "s_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "9d246d136b12f846c5f470fd63fd7a0ad8620e23b56858115c49a631eecaad05",
+      "prompt_chars": 4652,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "mercy",
+      "proposed_words": [
+        "mercy",
+        "kindness",
+        "tenderness"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 820,
+      "predicted_closeness": 0.6,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "collaboration",
+          "compassion"
+        ],
+        "reason": "mercy, kindness, and tenderness are semantic neighbors of compassion, refining the emotional_cooperation hypothesis to emphasize acts of care and gentleness"
+      },
+      "basis_words_count": 2,
+      "reason_chars": 156,
+      "raw_response": "{\"name\": \"emotional_mercy\", \"description\": \"narrow focus on compassionate acts within cooperation\", \"words\": [\"mercy\", \"kindness\", \"tenderness\"], \"basis_words\": [\"collaboration\", \"compassion\"], \"reason\": \"mercy, kindness, and tenderness are semantic neighbors of compassion, refining the emotional_cooperation hypothesis to emphasize acts of care and gentleness\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.6}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1307_run1_20260722_160312.json",
+      "game_number": 1307,
+      "child_id": "75a94fee00a64734a2d677287cbb63f3",
+      "generation": 4,
+      "parent_id": "9b216c7dfced42d7b7a030b603800112",
+      "parent_rank": 62,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "aead40fed1a5330901b380a30fbde5af3ab2ff2037a85f995fd10f0ae9da6edc",
+      "prompt_chars": 4879,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "dialogue",
+      "proposed_words": [
+        "dialogue",
+        "exchange",
+        "engagement"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 453,
+      "predicted_closeness": 0.4,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "cooperation"
+        ],
+        "reason": "The category 'types of interaction' is adjacent to 'types of cooperation' as both involve mutual actions but focus on the nature of exchanges rather than collaborative processes themselves."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 189,
+      "raw_response": "{\"name\": \"types of interaction\", \"description\": \"forms of interaction among individuals or groups\", \"words\": [\"dialogue\", \"exchange\", \"engagement\"], \"basis_words\": [\"cooperation\"], \"reason\": \"The category 'types of interaction' is adjacent to 'types of cooperation' as both involve mutual actions but focus on the nature of exchanges rather than collaborative processes themselves.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1307_run1_20260722_160312.json",
+      "game_number": 1307,
+      "child_id": "57b26838559c40b9956d60e8d6f0a2cd",
+      "generation": 4,
+      "parent_id": "5676de5998654201a500a3cb0f8fe1c9",
+      "parent_rank": 78,
+      "sampled_op": "m_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "a7d5aa49cf35ac26675236cf2d33c5f4e64082b928d0278f0d2f519247f76944",
+      "prompt_chars": 4717,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "grasp",
+      "proposed_words": [
+        "grasp",
+        "decipher",
+        "interpret"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 1026,
+      "predicted_closeness": 0.2,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "beyond",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "understanding"
+        ],
+        "reason": "shifts focus from emotional resonance to the intellectual process of interpreting and analyzing information"
+      },
+      "basis_words_count": 1,
+      "reason_chars": 107,
+      "raw_response": "{\"name\": \"Understanding via Cognition\", \"description\": \"cognitive process of interpreting information\", \"words\": [\"grasp\", \"decipher\", \"interpret\"], \"basis_words\": [\"understanding\"], \"reason\": \"shifts focus from emotional resonance to the intellectual process of interpreting and analyzing information\", \"predicted_bucket\": \"beyond\", \"predicted_closeness\": 0.2}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1307_run1_20260722_160312.json",
+      "game_number": 1307,
+      "child_id": "1797bf736f20441188d30c7b6335173b",
+      "generation": 4,
+      "parent_id": "d034c643037147d5b81b845c2d4e1963",
+      "parent_rank": 111,
+      "sampled_op": "m_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "4311f805c53eadf5fc595049c15452835209a8d291e03c5da9307ab746cb8c19",
+      "prompt_chars": 4897,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "ally",
+      "proposed_words": [
+        "ally",
+        "aid",
+        "companion"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 3945,
+      "predicted_closeness": 0.4,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "friendship"
+        ],
+        "reason": "This hypothesis reframes 'friendship' through the lens of direct support and cooperation, focusing on actionable assistance rather than abstract interpersonal connections."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 171,
+      "raw_response": "{\"name\": \"mutual aid\", \"description\": \"forms of reciprocal support\", \"words\": [\"ally\", \"aid\", \"companion\"], \"basis_words\": [\"friendship\"], \"reason\": \"This hypothesis reframes 'friendship' through the lens of direct support and cooperation, focusing on actionable assistance rather than abstract interpersonal connections.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1307_run1_20260722_160312.json",
+      "game_number": 1307,
+      "child_id": "6a6624b21973472c86e5d542f664bd50",
+      "generation": 5,
+      "parent_id": "86669229bdc54f00a4ea18048b59e0f2",
+      "parent_rank": 11,
+      "sampled_op": "s_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "1ae85e1cdafeb88ec1b0254ba10de97ee155ffd7b7a8d3e9c606a50476d2e67e",
+      "prompt_chars": 5060,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "generosity",
+      "proposed_words": [
+        "generosity",
+        "consideration",
+        "courtesy"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 15,
+      "predicted_closeness": 0.8,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top100",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "kindness"
+        ],
+        "reason": "these words are synonyms or closely related to kindness, focusing on the compassionate aspects of cooperative interactions"
+      },
+      "basis_words_count": 1,
+      "reason_chars": 122,
+      "raw_response": "{\"name\": \"empathetic_support\", \"description\": \"supportive actions rooted in kindness\", \"words\": [\"generosity\", \"consideration\", \"courtesy\"], \"basis_words\": [\"kindness\"], \"reason\": \"these words are synonyms or closely related to kindness, focusing on the compassionate aspects of cooperative interactions\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.8}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1307_run1_20260722_160312.json",
+      "game_number": 1307,
+      "child_id": "d64aea8efe184d24bb55b990b1dcfa78",
+      "generation": 5,
+      "parent_id": "dd354cd07b094a2ba7f602fc0ac45e3b",
+      "parent_rank": 13,
+      "sampled_op": "s_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "09bf6008658dd25ab9d9ad67a1224e440382e9bb0dca06ce21833dbb775fd19a",
+      "prompt_chars": 5235,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "understanding",
+      "proposed_words": [
+        "understanding",
+        "concern",
+        "attentiveness"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 78,
+      "predicted_closeness": 0.7,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "compassion",
+          "empathy"
+        ],
+        "reason": "narrowing emotional cooperation to emphasize understanding and attentive care, which are semantically close to compassion but underexplored"
+      },
+      "basis_words_count": 2,
+      "reason_chars": 139,
+      "raw_response": "{\n  \"name\": \"empathic_concern\",\n  \"description\": \"focused emotional support and understanding in collaboration\",\n  \"words\": [\"understanding\", \"concern\", \"attentiveness\"],\n  \"basis_words\": [\"compassion\", \"empathy\"],\n  \"reason\": \"narrowing emotional cooperation to emphasize understanding and attentive care, which are semantically close to compassion but underexplored\",\n  \"predicted_bucket\": \"top500\",\n  \"predicted_closeness\": 0.7\n}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1307_run1_20260722_160312.json",
+      "game_number": 1307,
+      "child_id": "53699d5dd37a49ee952394c9ea002eb8",
+      "generation": 5,
+      "parent_id": "d034c643037147d5b81b845c2d4e1963",
+      "parent_rank": 33,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "803c38bca7c30d7156ec67b47365eb17eda008ae46ad2322294f2ce17a864dcc",
+      "prompt_chars": 5302,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "honor",
+      "proposed_words": [
+        "honor",
+        "integrity",
+        "courage"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 299,
+      "predicted_closeness": 0.7,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top100",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "loyalty"
+        ],
+        "reason": "The category 'virtues' is adjacent to 'relationships' as both involve human behavior and social norms, but 'virtues' focuses on moral qualities rather than interpersonal connections."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 182,
+      "raw_response": "{\"name\": \"virtues\", \"description\": \"ethical principles and moral qualities\", \"words\": [\"honor\", \"integrity\", \"courage\"], \"basis_words\": [\"loyalty\"], \"reason\": \"The category 'virtues' is adjacent to 'relationships' as both involve human behavior and social norms, but 'virtues' focuses on moral qualities rather than interpersonal connections.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.7}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1307_run2_20260722_171316.json",
+      "game_number": 1307,
+      "child_id": "17b939056cac46efa3737de464fca2a0",
+      "generation": 2,
+      "parent_id": "72a0008c46304e56af0e4c73fb7c509e",
+      "parent_rank": 76,
+      "sampled_op": "m_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "58f87a3b3ffdf50eeffcb128e037f45657b9f9be484f2a1cf3d949f86c307d43",
+      "prompt_chars": 3707,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "touch",
+      "proposed_words": [
+        "touch",
+        "care",
+        "comfort"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 612,
+      "predicted_closeness": 0.6,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "affection"
+        ],
+        "reason": "Shifts focus to physical expressions of affection rather than abstract relational concepts, exploring how affection is experienced through bodily interactions."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 159,
+      "raw_response": "{\"name\": \"physical manifestations of affection\", \"description\": \"terms related to the physical expression of affection\", \"words\": [\"touch\", \"care\", \"comfort\"], \"basis_words\": [\"affection\"], \"reason\": \"Shifts focus to physical expressions of affection rather than abstract relational concepts, exploring how affection is experienced through bodily interactions.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.6}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1307_run2_20260722_171316.json",
+      "game_number": 1307,
+      "child_id": "f0a3f96909f34ef28f6be98b2c384bee",
+      "generation": 2,
+      "parent_id": "25c445810f7947b7aad2410df452e5a2",
+      "parent_rank": 751,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "ffbd3a703350648f1db749bc8e7b65d7659deec13db1aaa0554059ea1bd463d6",
+      "prompt_chars": 3742,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "peer",
+      "proposed_words": [
+        "peer",
+        "comrade",
+        "fellow"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 586,
+      "predicted_closeness": 0.6,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "colleague"
+        ],
+        "reason": "reframing 'colleague' through terms that denote equals in a professional setting rather than roles"
+      },
+      "basis_words_count": 1,
+      "reason_chars": 98,
+      "raw_response": "{\"name\": \"professional peers\", \"description\": \"terms for individuals working together in a professional setting\", \"words\": [\"peer\", \"comrade\", \"fellow\"], \"basis_words\": [\"colleague\"], \"reason\": \"reframing 'colleague' through terms that denote equals in a professional setting rather than roles\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.6}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1307_run2_20260722_171316.json",
+      "game_number": 1307,
+      "child_id": "a3e48a24c43a45de97856f75dc64693a",
+      "generation": 3,
+      "parent_id": "17b939056cac46efa3737de464fca2a0",
+      "parent_rank": 11,
+      "sampled_op": "l_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "978de0468def0ff64797ee9f38394efb306a6c014f761d3d8cefa12caa2bb2c3",
+      "prompt_chars": 4322,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "earth",
+      "proposed_words": [
+        "earth",
+        "water",
+        "air"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 5768,
+      "predicted_closeness": 0.2,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "beyond",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "kindness"
+        ],
+        "reason": "Shifts focus from human-centered emotional and relational concepts to universal physical components, exploring how kindness might interact with or be influenced by natural phenomena."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 182,
+      "raw_response": "{\"name\": \"natural elements\", \"description\": \"terms related to fundamental components of the physical world\", \"words\": [\"earth\", \"water\", \"air\"], \"basis_words\": [\"kindness\"], \"reason\": \"Shifts focus from human-centered emotional and relational concepts to universal physical components, exploring how kindness might interact with or be influenced by natural phenomena.\", \"predicted_bucket\": \"beyond\", \"predicted_closeness\": 0.2}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1307_run2_20260722_171316.json",
+      "game_number": 1307,
+      "child_id": "f99173763c2c4b5ebfec8c937d29c384",
+      "generation": 3,
+      "parent_id": "72a0008c46304e56af0e4c73fb7c509e",
+      "parent_rank": 76,
+      "sampled_op": "m_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "4d5d8bfbe0ef8d91b50bcbf03b6d183f030f0d2bfca623475075544adf49375d",
+      "prompt_chars": 4292,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "embrace",
+      "proposed_words": [
+        "embrace",
+        "nurture",
+        "tender"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 212,
+      "predicted_closeness": 0.7,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top100",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "affection"
+        ],
+        "reason": "Reinterpreting 'affection' as emotional expressions rather than relational concepts, focusing on feelings and states rather than entity relationships."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 150,
+      "raw_response": "{\"name\": \"emotional expressions\", \"description\": \"terms describing feelings or emotional states associated with affection\", \"words\": [\"embrace\", \"nurture\", \"tender\"], \"basis_words\": [\"affection\"], \"reason\": \"Reinterpreting 'affection' as emotional expressions rather than relational concepts, focusing on feelings and states rather than entity relationships.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.7}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1307_run2_20260722_171316.json",
+      "game_number": 1307,
+      "child_id": "6af82d2f3e0d4a87907692d5de04af71",
+      "generation": 3,
+      "parent_id": "f8878399c9c24b67a5cefe6b79f4719d",
+      "parent_rank": 329,
+      "sampled_op": "l_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "9abf57bef56f32f4f3aa916bc39acf968b1b2c4f5b0c6b7dd95f0f81eca6126e",
+      "prompt_chars": 4503,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "stimulus",
+      "proposed_words": [
+        "stimulus",
+        "context",
+        "input"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 9432,
+      "predicted_closeness": 0.6,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "perception"
+        ],
+        "reason": "Shifts focus from internal bodily reactions to external elements that modulate how perceptions are formed and interpreted."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 122,
+      "raw_response": "{\"name\": \"environmental_influence\", \"description\": \"external factors shaping perceptual processes\", \"words\": [\"stimulus\", \"context\", \"input\"], \"basis_words\": [\"perception\"], \"reason\": \"Shifts focus from internal bodily reactions to external elements that modulate how perceptions are formed and interpreted.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.6}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1307_run2_20260722_171316.json",
+      "game_number": 1307,
+      "child_id": "b6b828c83677488ebae134752bb76c86",
+      "generation": 3,
+      "parent_id": "aceb92b2e52a49be816c0984bf82f188",
+      "parent_rank": 555,
+      "sampled_op": "m_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "d9ab9b7b0f6bfb5a61f97ba72f6faa88ce6892741e6b919021482b900b9237e1",
+      "prompt_chars": 4320,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "continuity",
+      "proposed_words": [
+        "continuity",
+        "legacy",
+        "heritage"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 823,
+      "predicted_closeness": 0.6,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "tradition"
+        ],
+        "reason": "Reframes tradition through the lens of intergenerational transmission and preservation rather than symbolic abstraction, using terms that emphasize temporal and historical continuity"
+      },
+      "basis_words_count": 1,
+      "reason_chars": 182,
+      "raw_response": "{\n  \"name\": \"continuity of custom\",\n  \"description\": \"Focuses on the persistence and transmission of customs through generations, emphasizing temporal continuity over symbolic representation\",\n  \"words\": [\"continuity\", \"legacy\", \"heritage\"],\n  \"basis_words\": [\"tradition\"],\n  \"reason\": \"Reframes tradition through the lens of intergenerational transmission and preservation rather than symbolic abstraction, using terms that emphasize temporal and historical continuity\",\n  \"predicted_bucket\": \"top500\",\n  \"predicted_closeness\": 0.6\n}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1307_run2_20260722_171316.json",
+      "game_number": 1307,
+      "child_id": "cf2b519a06104572a524f3237cf4d44a",
+      "generation": 4,
+      "parent_id": "17b939056cac46efa3737de464fca2a0",
+      "parent_rank": 11,
+      "sampled_op": "m_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "8535fe02291168213aeb90c14c9fe8d238059c9d6dd445220b8b4db5e1405164",
+      "prompt_chars": 4814,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "help",
+      "proposed_words": [
+        "help",
+        "support",
+        "share"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 2056,
+      "predicted_closeness": 0.7,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "kindness"
+        ],
+        "reason": "Shifts focus from internal emotional states to observable actions that embody kindness in social contexts."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 106,
+      "raw_response": "{\"name\": \"social behaviors\", \"description\": \"actions that benefit others without expectation of reward\", \"words\": [\"help\", \"support\", \"share\"], \"basis_words\": [\"kindness\"], \"reason\": \"Shifts focus from internal emotional states to observable actions that embody kindness in social contexts.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.7}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1307_run2_20260722_171316.json",
+      "game_number": 1307,
+      "child_id": "941a1f177c094370820d6f41b673bd29",
+      "generation": 4,
+      "parent_id": "8ddb997fe151465398b2b14e2d980ca1",
+      "parent_rank": 31,
+      "sampled_op": "s_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "c047ddea2ca14e4bbbe1984013b03de5cb878035d7ee146a87b4af743dcca8e0",
+      "prompt_chars": 4536,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "stance",
+      "proposed_words": [
+        "stance",
+        "orientation",
+        "frame"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 1223,
+      "predicted_closeness": 0.7,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top100",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "attitude"
+        ],
+        "reason": "Refines 'mental attitudes' by focusing on directional or structural aspects of thinking, using closely related terms like 'stance' and 'frame' which are semantically adjacent to 'attitude'."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 189,
+      "raw_response": "{\"name\": \"mental orientation\", \"description\": \"direction of thought or approach\", \"words\": [\"stance\", \"orientation\", \"frame\"], \"basis_words\": [\"attitude\"], \"reason\": \"Refines 'mental attitudes' by focusing on directional or structural aspects of thinking, using closely related terms like 'stance' and 'frame' which are semantically adjacent to 'attitude'.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.7}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1307_run2_20260722_171316.json",
+      "game_number": 1307,
+      "child_id": "1fb61abdb62d414399ac8f42967b898c",
+      "generation": 4,
+      "parent_id": "72a0008c46304e56af0e4c73fb7c509e",
+      "parent_rank": 76,
+      "sampled_op": "s_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "e573e9a6c8e9a0cba02ff2342eb0a6bbcf1b4b4241a147e0cd0be554dbc47807",
+      "prompt_chars": 4774,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "attachment",
+      "proposed_words": [
+        "attachment",
+        "devotion",
+        "closeness"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 6169,
+      "predicted_closeness": 0.7,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top100",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "affection"
+        ],
+        "reason": "Attachment, devotion, and closeness are synonyms or close semantic neighbors of affection, narrowing the focus to emotional aspects of relational terms."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 152,
+      "raw_response": "{\"name\": \"emotional bonds\", \"description\": \"terms describing emotional closeness\", \"words\": [\"attachment\", \"devotion\", \"closeness\"], \"basis_words\": [\"affection\"], \"reason\": \"Attachment, devotion, and closeness are synonyms or close semantic neighbors of affection, narrowing the focus to emotional aspects of relational terms.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.7}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1307_run2_20260722_171316.json",
+      "game_number": 1307,
+      "child_id": "32fbfc4a1a5d4da39912abfed7d0f197",
+      "generation": 4,
+      "parent_id": "f99173763c2c4b5ebfec8c937d29c384",
+      "parent_rank": 79,
+      "sampled_op": "m_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "af1295eb7ed1312286305bb1c4ca83cfcf24928c45b2b6250d4247b19a6461ad",
+      "prompt_chars": 4835,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "softness",
+      "proposed_words": [
+        "softness",
+        "smoothness",
+        "tact"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 2069,
+      "predicted_closeness": 0.6,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top100",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "gentleness"
+        ],
+        "reason": "This hypothesis reframes 'gentleness' through the lens of physical sensations and tactile experiences, exploring how gentleness manifests in non-emotional, sensory contexts."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 173,
+      "raw_response": "{\"name\": \"physical sensations related to gentleness\", \"description\": \"terms describing tactile or physical experiences associated with gentleness\", \"words\": [\"softness\", \"smoothness\", \"tact\"], \"basis_words\": [\"gentleness\"], \"reason\": \"This hypothesis reframes 'gentleness' through the lens of physical sensations and tactile experiences, exploring how gentleness manifests in non-emotional, sensory contexts.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.6}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1307_run2_20260722_171316.json",
+      "game_number": 1307,
+      "child_id": "4b2301c900454eabb517384b7b1d6234",
+      "generation": 5,
+      "parent_id": "17b939056cac46efa3737de464fca2a0",
+      "parent_rank": 11,
+      "sampled_op": "l_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "4447bacc12431ef8138632ebeced573bd83783163696d7d0c597bfb4567c5f30",
+      "prompt_chars": 5273,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "stillness",
+      "proposed_words": [
+        "stillness",
+        "light",
+        "balance"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 1358,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "kindness"
+        ],
+        "reason": "Shifts focus from direct emotional expressions to environmental and physical conditions that may be indirectly related to kindness through their calming or supportive presence."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 176,
+      "raw_response": "{\"name\": \"ambient harmony\", \"description\": \"aspects of physical and environmental conditions that may be influenced by or relate to kindness\", \"words\": [\"stillness\", \"light\", \"balance\"], \"basis_words\": [\"kindness\"], \"reason\": \"Shifts focus from direct emotional expressions to environmental and physical conditions that may be indirectly related to kindness through their calming or supportive presence.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1307_run2_20260722_171316.json",
+      "game_number": 1307,
+      "child_id": "574430b071ac4e208ee55410bd37cc5e",
+      "generation": 5,
+      "parent_id": "cf2b519a06104572a524f3237cf4d44a",
+      "parent_rank": 15,
+      "sampled_op": "m_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "d364f0255cb16bcf0935166edb453e9a1d51835566ac3c3bc1f22e2951013a97",
+      "prompt_chars": 5127,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "abundance",
+      "proposed_words": [
+        "abundance",
+        "offer",
+        "share"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 1082,
+      "predicted_closeness": 0.6,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "generosity"
+        ],
+        "reason": "Shifts emphasis from the emotional trait of generosity to the concrete availability or act of giving resources"
+      },
+      "basis_words_count": 1,
+      "reason_chars": 110,
+      "raw_response": "{\"name\": \"resource availability\", \"description\": \"focuses on the presence or willingness to provide resources rather than the act of helping\", \"words\": [\"abundance\", \"offer\", \"share\"], \"basis_words\": [\"generosity\"], \"reason\": \"Shifts emphasis from the emotional trait of generosity to the concrete availability or act of giving resources\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.6}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1307_run2_20260722_171316.json",
+      "game_number": 1307,
+      "child_id": "ad97bc537c414339865cb511638f39e3",
+      "generation": 5,
+      "parent_id": "8ddb997fe151465398b2b14e2d980ca1",
+      "parent_rank": 31,
+      "sampled_op": "m_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "cb50b298dd5cf7e57ac3ac9457f34ab14ed68c8e40891853d986bec9936de988",
+      "prompt_chars": 5166,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "posture",
+      "proposed_words": [
+        "posture",
+        "expression",
+        "stance"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 4161,
+      "predicted_closeness": 0.4,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "attitude"
+        ],
+        "reason": "Shifts focus from abstract mental states to observable physical cues that convey attitude"
+      },
+      "basis_words_count": 1,
+      "reason_chars": 89,
+      "raw_response": "{\"name\": \"physical manifestations\", \"description\": \"external expressions of internal states\", \"words\": [\"posture\", \"expression\", \"stance\"], \"basis_words\": [\"attitude\"], \"reason\": \"Shifts focus from abstract mental states to observable physical cues that convey attitude\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1307_run2_20260722_171316.json",
+      "game_number": 1307,
+      "child_id": "8e2cbd3193274c3aa29db5bd9a37b415",
+      "generation": 5,
+      "parent_id": "1fb61abdb62d414399ac8f42967b898c",
+      "parent_rank": 33,
+      "sampled_op": "l_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "7c425e3b860d313e692cddf74d79ea3e85f7a4d22f964ec5e82a1008a88a1228",
+      "prompt_chars": 5421,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "covenant",
+      "proposed_words": [
+        "covenant",
+        "oath",
+        "pledge"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 5023,
+      "predicted_closeness": 0.35,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "loyalty"
+        ],
+        "reason": "These words represent structured, symbolic representations of commitment that diverge from emotional terminology while maintaining a conceptual link to fidelity and dedication."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 176,
+      "raw_response": "{\"name\": \"institutional commitments\", \"description\": \"formalized expressions of loyalty and adherence\", \"words\": [\"covenant\", \"oath\", \"pledge\"], \"basis_words\": [\"loyalty\"], \"reason\": \"These words represent structured, symbolic representations of commitment that diverge from emotional terminology while maintaining a conceptual link to fidelity and dedication.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.35}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1307_run2_20260722_171316.json",
+      "game_number": 1307,
+      "child_id": "4221e9a017c64a9481b2fff5a3421d04",
+      "generation": 6,
+      "parent_id": "17b939056cac46efa3737de464fca2a0",
+      "parent_rank": 11,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "f5ce0b8699cf7197ef58a19cb897f5d77674410a0c87e26e3a395f89ea5b94e3",
+      "prompt_chars": 5866,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "virtue",
+      "proposed_words": [
+        "virtue",
+        "integrity",
+        "honesty"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 43,
+      "predicted_closeness": 0.6,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top100",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "kindness"
+        ],
+        "reason": "Shifts focus from emotional states to ethical traits that align with kindness but are not strictly emotional expressions"
+      },
+      "basis_words_count": 1,
+      "reason_chars": 120,
+      "raw_response": "{\"name\": \"moral virtues\", \"description\": \"traits associated with ethical behavior and personal conduct\", \"words\": [\"virtue\", \"integrity\", \"honesty\"], \"basis_words\": [\"kindness\"], \"reason\": \"Shifts focus from emotional states to ethical traits that align with kindness but are not strictly emotional expressions\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.6}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1307_run2_20260722_171316.json",
+      "game_number": 1307,
+      "child_id": "7ccc2d9460944e118e7a8c2475201e86",
+      "generation": 6,
+      "parent_id": "574430b071ac4e208ee55410bd37cc5e",
+      "parent_rank": 12,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "2007850c17cd2ca6ccaffd97bd3b4ac9b260d5795e4c2dfad1823b409dec93e8",
+      "prompt_chars": 5557,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "curiosity",
+      "proposed_words": [
+        "curiosity",
+        "inquisitiveness",
+        "exploration"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 170,
+      "predicted_closeness": 0.7,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top100",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "generosity",
+          "openness"
+        ],
+        "reason": "Shifts focus to descriptors of individual traits that encompass openness, aligning with the broader semantic space of personality and disposition-related qualities."
+      },
+      "basis_words_count": 2,
+      "reason_chars": 164,
+      "raw_response": "{\"name\": \"trait descriptors\", \"description\": \"qualities that describe individual characteristics and dispositions\", \"words\": [\"curiosity\", \"inquisitiveness\", \"exploration\"], \"basis_words\": [\"generosity\", \"openness\"], \"reason\": \"Shifts focus to descriptors of individual traits that encompass openness, aligning with the broader semantic space of personality and disposition-related qualities.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.7}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1307_run2_20260722_171316.json",
+      "game_number": 1307,
+      "child_id": "67a916039a6b44bdbd15579bf20df2bd",
+      "generation": 6,
+      "parent_id": "cf2b519a06104572a524f3237cf4d44a",
+      "parent_rank": 15,
+      "sampled_op": "m_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "93036a9a34b8c5056a48a069b4ab78842645add3505db89770209caae2684edb",
+      "prompt_chars": 5646,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "contentment",
+      "proposed_words": [
+        "contentment",
+        "grace",
+        "influence"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 245,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "beyond",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "generosity"
+        ],
+        "reason": "Shifts focus from the act of giving to the emotional and social outcomes associated with generosity"
+      },
+      "basis_words_count": 1,
+      "reason_chars": 99,
+      "raw_response": "{\"name\": \"emotional states linked to generosity\", \"description\": \"focuses on the internal feelings or social effects that result from generous behavior\", \"words\": [\"contentment\", \"grace\", \"influence\"], \"basis_words\": [\"generosity\"], \"reason\": \"Shifts focus from the act of giving to the emotional and social outcomes associated with generosity\", \"predicted_bucket\": \"beyond\", \"predicted_closeness\": 0.3}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1307_run2_20260722_171316.json",
+      "game_number": 1307,
+      "child_id": "39fa5531b16842bab67802dc9219e4c1",
+      "generation": 6,
+      "parent_id": "8ddb997fe151465398b2b14e2d980ca1",
+      "parent_rank": 31,
+      "sampled_op": "s_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "ea23b58f4c89e6a20ae9881e44a5fc06f4668e6e71191008ab05400a41462520",
+      "prompt_chars": 5652,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "schema",
+      "proposed_words": [
+        "schema",
+        "template",
+        "model"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 22858,
+      "predicted_closeness": 0.6,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "frame"
+        ],
+        "reason": "Refines mental attitudes by focusing on cognitive structures that shape interpretation and understanding"
+      },
+      "basis_words_count": 1,
+      "reason_chars": 104,
+      "raw_response": "{\"name\": \"cognitive frames\", \"description\": \"mental schemas influencing perception\", \"words\": [\"schema\", \"template\", \"model\"], \"basis_words\": [\"frame\"], \"reason\": \"Refines mental attitudes by focusing on cognitive structures that shape interpretation and understanding\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.6}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1307_run2_20260722_171316.json",
+      "game_number": 1307,
+      "child_id": "3d172ae53c0445ef8ae75ebd84e6e899",
+      "generation": 6,
+      "parent_id": "1fb61abdb62d414399ac8f42967b898c",
+      "parent_rank": 33,
+      "sampled_op": "l_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "7c220dcf9ac24c3ed2f23ba236ca7f0499996ba68a7d49c1a0ba3016130993ca",
+      "prompt_chars": 6019,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "coherence",
+      "proposed_words": [
+        "coherence",
+        "integrity",
+        "consistency"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 3010,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "loyalty"
+        ],
+        "reason": "These words shift focus from direct emotional ties to structural frameworks that underpin stable, enduring relationships, aligning with loyalty's core but expanding into systemic concepts unexplored by current categories."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 221,
+      "raw_response": "{\"name\": \"systemic coherence\", \"description\": \"terms describing structural consistency in systems or relationships\", \"words\": [\"coherence\", \"integrity\", \"consistency\"], \"basis_words\": [\"loyalty\"], \"reason\": \"These words shift focus from direct emotional ties to structural frameworks that underpin stable, enduring relationships, aligning with loyalty's core but expanding into systemic concepts unexplored by current categories.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1307_run2_20260722_171316.json",
+      "game_number": 1307,
+      "child_id": "c3842e67998b4613bf774046a1581a27",
+      "generation": 7,
+      "parent_id": "7ccc2d9460944e118e7a8c2475201e86",
+      "parent_rank": 3,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "ac6da675f026503f2f911992846f3b767fe5ee06ac4c5d8f43b5d6cbb2f85602",
+      "prompt_chars": 5976,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "honesty",
+      "proposed_words": [
+        "honesty",
+        "duty",
+        "honor"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 1,
+      "predicted_closeness": 0.6,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "integrity"
+        ],
+        "reason": "Shifts focus to ethical attributes that overlap with personality traits but emphasize moral dimensions distinct from general character definitions."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 147,
+      "raw_response": "{\"name\": \"moral virtues\", \"description\": \"attributes related to ethical behavior and principles\", \"words\": [\"honesty\", \"duty\", \"honor\"], \"basis_words\": [\"integrity\"], \"reason\": \"Shifts focus to ethical attributes that overlap with personality traits but emphasize moral dimensions distinct from general character definitions.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.6}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1307_run3_20260722_181845.json",
+      "game_number": 1307,
+      "child_id": "054f49ea8a234fe3853d48a6ea0b0935",
+      "generation": 2,
+      "parent_id": "f57123d070414ea68ebf894fe8486bf2",
+      "parent_rank": 483,
+      "sampled_op": "s_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "8f789a2f4dcf82d727748102b1e3bfec96faafa5f6e7c720621a0695103ddfdf",
+      "prompt_chars": 3710,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "sustain",
+      "proposed_words": [
+        "sustain",
+        "preserve",
+        "repair"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 2514,
+      "predicted_closeness": 0.7,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "maintain"
+        ],
+        "reason": "narrows focus to synonyms of 'maintain' emphasizing continuation and preservation of system operation"
+      },
+      "basis_words_count": 1,
+      "reason_chars": 101,
+      "raw_response": "{\"name\": \"sustaining_aspects\", \"description\": \"aspects of preserving or continuing system functionality\", \"words\": [\"sustain\", \"preserve\", \"repair\"], \"basis_words\": [\"maintain\"], \"reason\": \"narrows focus to synonyms of 'maintain' emphasizing continuation and preservation of system operation\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.7}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1307_run3_20260722_181845.json",
+      "game_number": 1307,
+      "child_id": "04cbe8d2527645988c5f5d03b3a88712",
+      "generation": 2,
+      "parent_id": "821b9a64e9a94e8e975f500dfe5e2b54",
+      "parent_rank": 712,
+      "sampled_op": "s_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "98303629bb08db2511b52e00a74d6be846629615a415f2b7e90b61a3fbbf23d4",
+      "prompt_chars": 3659,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "impulse",
+      "proposed_words": [
+        "impulse",
+        "innate",
+        "drive"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 3586,
+      "predicted_closeness": 0.6,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "instinct"
+        ],
+        "reason": "narrows focus from general survival to automatic, inborn reactions closely linked to instinct"
+      },
+      "basis_words_count": 1,
+      "reason_chars": 93,
+      "raw_response": "{\"name\": \"innate responses\", \"description\": \"biological responses rooted in innate behaviors\", \"words\": [\"impulse\", \"innate\", \"drive\"], \"basis_words\": [\"instinct\"], \"reason\": \"narrows focus from general survival to automatic, inborn reactions closely linked to instinct\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.6}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1307_run3_20260722_181845.json",
+      "game_number": 1307,
+      "child_id": "ab4138ebc3e0449789654fc83558b83d",
+      "generation": 3,
+      "parent_id": "04cbe8d2527645988c5f5d03b3a88712",
+      "parent_rank": 206,
+      "sampled_op": "s_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "14c75762e8dac0d3da5900dd40395d567ad1b09bd65f70112a74de4960d7dad2",
+      "prompt_chars": 4069,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "congenital",
+      "proposed_words": [
+        "congenital",
+        "inborn",
+        "essential"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 22280,
+      "predicted_closeness": 0.7,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "inherent"
+        ],
+        "reason": "selects synonyms of 'inherent' (congenital, inborn) and related terms (essential) to narrow focus to innate, birth-related characteristics"
+      },
+      "basis_words_count": 1,
+      "reason_chars": 138,
+      "raw_response": "{\"name\": \"congenital traits\", \"description\": \"biological traits present from birth\", \"words\": [\"congenital\", \"inborn\", \"essential\"], \"basis_words\": [\"inherent\"], \"reason\": \"selects synonyms of 'inherent' (congenital, inborn) and related terms (essential) to narrow focus to innate, birth-related characteristics\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.7}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1307_run3_20260722_181845.json",
+      "game_number": 1307,
+      "child_id": "8f0e268bfb08449597d138e20dfd689c",
+      "generation": 3,
+      "parent_id": "2f6493809ed346ea93a1a0f4dce36f2a",
+      "parent_rank": 324,
+      "sampled_op": "m_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "6d9a3474fad68db80e3bfd5ad0022712f7933e9e0a813609f7dc420d2d232c37",
+      "prompt_chars": 4236,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "brain",
+      "proposed_words": [
+        "brain",
+        "neuron",
+        "cortex"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 2527,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "think"
+        ],
+        "reason": "Shifts focus from the abstract concept of thinking to its physiological and neurological underpinnings, such as brain structures and neural activity."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 149,
+      "raw_response": "{\"name\": \"neurological_basis_of_thinking\", \"description\": \"biological processes underlying cognitive functions\", \"words\": [\"brain\", \"neuron\", \"cortex\"], \"basis_words\": [\"think\"], \"reason\": \"Shifts focus from the abstract concept of thinking to its physiological and neurological underpinnings, such as brain structures and neural activity.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1307_run3_20260722_181845.json",
+      "game_number": 1307,
+      "child_id": "3b6da0f7c0844aa2835848130c72152b",
+      "generation": 3,
+      "parent_id": "f57123d070414ea68ebf894fe8486bf2",
+      "parent_rank": 329,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "abbf7bd8090a2752fc4ebe3309a5c2fb48d48f4dd3f35f537a17f20ec25094d8",
+      "prompt_chars": 4337,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "awareness",
+      "proposed_words": [
+        "awareness",
+        "understanding",
+        "interpretation"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 559,
+      "predicted_closeness": 0.7,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "perception"
+        ],
+        "reason": "This hypothesis shifts focus from operational mechanics to how entities are perceived or interpreted, which could explain 'perception' as a term related to cognitive processing."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 177,
+      "raw_response": "{\"name\": \"cognitive_aspects\", \"description\": \"aspects of how entities are perceived or understood\", \"words\": [\"awareness\", \"understanding\", \"interpretation\"], \"basis_words\": [\"perception\"], \"reason\": \"This hypothesis shifts focus from operational mechanics to how entities are perceived or interpreted, which could explain 'perception' as a term related to cognitive processing.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.7}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1307_run3_20260722_181845.json",
+      "game_number": 1307,
+      "child_id": "0ad4a432e58649fd87e1eece3e83b4e0",
+      "generation": 3,
+      "parent_id": "054f49ea8a234fe3853d48a6ea0b0935",
+      "parent_rank": 337,
+      "sampled_op": "m_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "2ba758f300ab8df0110a5570c1687db09518f60f4f178e46251dc946060acfaa",
+      "prompt_chars": 4345,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "defend",
+      "proposed_words": [
+        "defend",
+        "protect",
+        "advocate"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 1377,
+      "predicted_closeness": 0.6,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "uphold"
+        ],
+        "reason": "This hypothesis shifts focus to the legal and moral dimensions of upholding, exploring terms associated with defense and protection of principles."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 146,
+      "raw_response": "{\"name\": \"legal_principles\", \"description\": \"terms related to defending and protecting laws, rights, and ethical standards\", \"words\": [\"defend\", \"protect\", \"advocate\"], \"basis_words\": [\"uphold\"], \"reason\": \"This hypothesis shifts focus to the legal and moral dimensions of upholding, exploring terms associated with defense and protection of principles.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.6}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1307_run3_20260722_181845.json",
+      "game_number": 1307,
+      "child_id": "60a7bf65e8e2410dabeb8d18e1ca6670",
+      "generation": 4,
+      "parent_id": "3b6da0f7c0844aa2835848130c72152b",
+      "parent_rank": 38,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "703f722adcd16ae4f964a3324fad3c445b296148d28065112298f73cb0c990cf",
+      "prompt_chars": 4689,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "interpret",
+      "proposed_words": [
+        "interpret",
+        "comprehend",
+        "understand"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 3854,
+      "predicted_closeness": 0.6,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "perception"
+        ],
+        "reason": "This hypothesis shifts focus to cognitive processes involved in interpreting and understanding sensory input, which are distinct from sensory experiences themselves but related through perception."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 196,
+      "raw_response": "{\"name\": \"cognitive_processing\", \"description\": \"aspects related to the mental processes of interpreting and understanding sensory input\", \"words\": [\"interpret\", \"comprehend\", \"understand\"], \"basis_words\": [\"perception\"], \"reason\": \"This hypothesis shifts focus to cognitive processes involved in interpreting and understanding sensory input, which are distinct from sensory experiences themselves but related through perception.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.6}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1307_run3_20260722_181845.json",
+      "game_number": 1307,
+      "child_id": "a4e157032b624126b454e2e396db121f",
+      "generation": 4,
+      "parent_id": "fad4f71cb1424356aca92e3e68063a5f",
+      "parent_rank": 70,
+      "sampled_op": "l_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "b58aea1d1996b55a44ec42b939baa8a44a2a8af48649bba0160fd62f1d1c1d25",
+      "prompt_chars": 4993,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "value",
+      "proposed_words": [
+        "value",
+        "trust",
+        "conviction"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 296,
+      "predicted_closeness": 0.4,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "belief"
+        ],
+        "reason": "Shifting to cultural and social foundations that underpin belief, expanding beyond psychological terminology to related domains."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 128,
+      "raw_response": "{\"name\": \"value concepts\", \"description\": \"terms related to principles and convictions\", \"words\": [\"value\", \"trust\", \"conviction\"], \"basis_words\": [\"belief\"], \"reason\": \"Shifting to cultural and social foundations that underpin belief, expanding beyond psychological terminology to related domains.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1307_run3_20260722_181845.json",
+      "game_number": 1307,
+      "child_id": "f28e3bcdc9c04bffb32f64414372e1b6",
+      "generation": 4,
+      "parent_id": "04cbe8d2527645988c5f5d03b3a88712",
+      "parent_rank": 206,
+      "sampled_op": "m_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "476ccf325698004e77570181e73f28a63330be42a79bdd161009d6f81e5a1a2b",
+      "prompt_chars": 4789,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "trait",
+      "proposed_words": [
+        "trait",
+        "core",
+        "essential"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 658,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "inherent"
+        ],
+        "reason": "shifts focus from biological responses to inherent characteristics of entities or systems, using related but distinct terms not previously tried"
+      },
+      "basis_words_count": 1,
+      "reason_chars": 144,
+      "raw_response": "{\"name\": \"inherent properties\", \"description\": \"focus on characteristics inherent to entities or systems\", \"words\": [\"trait\", \"core\", \"essential\"], \"basis_words\": [\"inherent\"], \"reason\": \"shifts focus from biological responses to inherent characteristics of entities or systems, using related but distinct terms not previously tried\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1307_run3_20260722_181845.json",
+      "game_number": 1307,
+      "child_id": "0feb32be3ea44ea1918173e4f3dd0be3",
+      "generation": 4,
+      "parent_id": "8f0e268bfb08449597d138e20dfd689c",
+      "parent_rank": 267,
+      "sampled_op": "s_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "d08cc9df4f1ebf8d685bcf63d269b39ce9c784c94bdedebab1e57133ea72f340",
+      "prompt_chars": 4737,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "infer",
+      "proposed_words": [
+        "infer",
+        "conclude",
+        "deliberate"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 11045,
+      "predicted_closeness": 0.7,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "reason"
+        ],
+        "reason": "Refines 'analytical thinking' by narrowing focus to the specific processes involved in reaching conclusions through structured thought."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 135,
+      "raw_response": "{\"name\": \"logical reasoning\", \"description\": \"focuses on the process of drawing conclusions and making decisions through systematic thought\", \"words\": [\"infer\", \"conclude\", \"deliberate\"], \"basis_words\": [\"reason\"], \"reason\": \"Refines 'analytical thinking' by narrowing focus to the specific processes involved in reaching conclusions through structured thought.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.7}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1307_run3_20260722_181845.json",
+      "game_number": 1307,
+      "child_id": "f9f831d95735481bb65b77072bbcaa76",
+      "generation": 5,
+      "parent_id": "fad4f71cb1424356aca92e3e68063a5f",
+      "parent_rank": 31,
+      "sampled_op": "m_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "cee0beedd57a28db80e46c2f3456a9e51065926f50463eb27375842ab8d86bca",
+      "prompt_chars": 5348,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "posture",
+      "proposed_words": [
+        "posture",
+        "stance",
+        "position"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 4161,
+      "predicted_closeness": 0.5,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "attitude"
+        ],
+        "reason": "Reinterpreting 'attitude' as physical posture and spatial alignment, shifting focus from psychological terminology to bodily orientation."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 137,
+      "raw_response": "{\"name\": \"physical orientation\", \"description\": \"terms related to body position and spatial alignment\", \"words\": [\"posture\", \"stance\", \"position\"], \"basis_words\": [\"attitude\"], \"reason\": \"Reinterpreting 'attitude' as physical posture and spatial alignment, shifting focus from psychological terminology to bodily orientation.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.5}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1307_run3_20260722_181845.json",
+      "game_number": 1307,
+      "child_id": "4426a14c4c374a779c6bc575a7099ed6",
+      "generation": 5,
+      "parent_id": "3b6da0f7c0844aa2835848130c72152b",
+      "parent_rank": 38,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "74dc67f0bb6836779b9c35167f2e8f2ae2fcbe26eaeb054e75a2988efb89c663",
+      "prompt_chars": 5310,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "mind",
+      "proposed_words": [
+        "mind",
+        "mental",
+        "cognitive"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 343,
+      "predicted_closeness": 0.4,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "perception",
+          "sense"
+        ],
+        "reason": "This hypothesis shifts focus to mental functions and thought processes, which are closely related to sensory experiences but distinct in their emphasis on internal cognition rather than direct sensory input."
+      },
+      "basis_words_count": 2,
+      "reason_chars": 207,
+      "raw_response": "{\"name\": \"cognitive_processes\", \"description\": \"aspects related to mental functions and thought processes\", \"words\": [\"mind\", \"mental\", \"cognitive\"], \"basis_words\": [\"perception\", \"sense\"], \"reason\": \"This hypothesis shifts focus to mental functions and thought processes, which are closely related to sensory experiences but distinct in their emphasis on internal cognition rather than direct sensory input.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1307_run3_20260722_181845.json",
+      "game_number": 1307,
+      "child_id": "7319b9f5623e4f8abf641cd23880624a",
+      "generation": 5,
+      "parent_id": "f28e3bcdc9c04bffb32f64414372e1b6",
+      "parent_rank": 75,
+      "sampled_op": "l_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "8d5e63401bc451c969e8eaca5b123c2a083d85cff3c3413b9db4d44a757a9360",
+      "prompt_chars": 5548,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "principle",
+      "proposed_words": [
+        "principle",
+        "law",
+        "rule"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 161,
+      "predicted_closeness": 0.4,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "inherent"
+        ],
+        "reason": "shifts focus from natural characteristics to abstract principles that govern phenomena, exploring a different semantic angle"
+      },
+      "basis_words_count": 1,
+      "reason_chars": 124,
+      "raw_response": "{\"name\": \"abstract_principles\", \"description\": \"fundamental principles or laws that govern phenomena\", \"words\": [\"principle\", \"law\", \"rule\"], \"basis_words\": [\"inherent\"], \"reason\": \"shifts focus from natural characteristics to abstract principles that govern phenomena, exploring a different semantic angle\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1307_run3_20260722_181845.json",
+      "game_number": 1307,
+      "child_id": "b848982c964742bfa793c41f941329bb",
+      "generation": 5,
+      "parent_id": "a4e157032b624126b454e2e396db121f",
+      "parent_rank": 161,
+      "sampled_op": "m_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "41d91aea537bf1234c93d0764e26f0478fd8532c0b5a7348e9b14957e6474bd8",
+      "prompt_chars": 5364,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "axioms",
+      "proposed_words": [
+        "axioms",
+        "tenets",
+        "doctrines"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 6598,
+      "predicted_closeness": 0.6,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "principles"
+        ],
+        "reason": "Shifting from societal frameworks to abstract foundational elements that underpin systems or ideologies, offering a distinct yet semantically connected perspective."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 164,
+      "raw_response": "{\"name\": \"foundational_truths\", \"description\": \"terms related to abstract underpinnings of systems or beliefs\", \"words\": [\"axioms\", \"tenets\", \"doctrines\"], \"basis_words\": [\"principles\"], \"reason\": \"Shifting from societal frameworks to abstract foundational elements that underpin systems or ideologies, offering a distinct yet semantically connected perspective.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.6}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1307_run3_20260722_181845.json",
+      "game_number": 1307,
+      "child_id": "9223dc553dca4eae92a3bbe9c42de624",
+      "generation": 6,
+      "parent_id": "fad4f71cb1424356aca92e3e68063a5f",
+      "parent_rank": 31,
+      "sampled_op": "l_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "9179be54473cbfd6fec625c0f250d07df8ccca698b4cf7dde98670b0658413c8",
+      "prompt_chars": 5933,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "slope",
+      "proposed_words": [
+        "slope",
+        "valley",
+        "ridge"
+      ],
+      "proposed_word_invalid": true,
+      "realized_rank": null,
+      "predicted_closeness": 0.2,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "beyond",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "attitude"
+        ],
+        "reason": "Shifts to physical geography, a broad semantic area distinct from psychology but plausible near 'attitude' through related concepts like posture or orientation."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 160,
+      "raw_response": "{\"name\": \"geographical_features\", \"description\": \"terms related to physical landforms and natural landscapes\", \"words\": [\"slope\", \"valley\", \"ridge\"], \"basis_words\": [\"attitude\"], \"reason\": \"Shifts to physical geography, a broad semantic area distinct from psychology but plausible near 'attitude' through related concepts like posture or orientation.\", \"predicted_bucket\": \"beyond\", \"predicted_closeness\": 0.2}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1307_run3_20260722_181845.json",
+      "game_number": 1307,
+      "child_id": "f437b777edc942d6b0bcd791c36c2f59",
+      "generation": 6,
+      "parent_id": "3b6da0f7c0844aa2835848130c72152b",
+      "parent_rank": 38,
+      "sampled_op": "m_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "c376811fa6a589928e5b2e853dc950f38a4b9269ebc6693f3c2d74bf4b0d12e6",
+      "prompt_chars": 5861,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "aware",
+      "proposed_words": [
+        "aware",
+        "alert",
+        "responsive"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 775,
+      "predicted_closeness": 0.4,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "sense",
+          "aware"
+        ],
+        "reason": "This hypothesis shifts focus to the cognitive and mental mechanisms underlying sensing, which are related to 'sense' but distinct from sensory attributes."
+      },
+      "basis_words_count": 2,
+      "reason_chars": 154,
+      "raw_response": "{\"name\": \"cognitive_sensing\", \"description\": \"explores the mental processes and awareness related to sensing\", \"words\": [\"aware\", \"alert\", \"responsive\"], \"basis_words\": [\"sense\", \"aware\"], \"reason\": \"This hypothesis shifts focus to the cognitive and mental mechanisms underlying sensing, which are related to 'sense' but distinct from sensory attributes.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1307_run3_20260722_181845.json",
+      "game_number": 1307,
+      "child_id": "92b0e7774a214023aae5327c3ba83bcd",
+      "generation": 6,
+      "parent_id": "f28e3bcdc9c04bffb32f64414372e1b6",
+      "parent_rank": 75,
+      "sampled_op": "s_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "e23a8466e98d22e6a627a66265fc40edd95907141373a9c71c9ab38016f9968a",
+      "prompt_chars": 5787,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "innate",
+      "proposed_words": [
+        "innate",
+        "intrinsic",
+        "core"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 567,
+      "predicted_closeness": 0.4,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "inherent"
+        ],
+        "reason": "narrows focus to more specific terms related to inherent qualities, emphasizing fundamental and essential aspects"
+      },
+      "basis_words_count": 1,
+      "reason_chars": 113,
+      "raw_response": "{\"name\": \"inherent essence\", \"description\": \"qualities or characteristics that are naturally present and fundamental to an entity's composition\", \"words\": [\"innate\", \"intrinsic\", \"core\"], \"basis_words\": [\"inherent\"], \"reason\": \"narrows focus to more specific terms related to inherent qualities, emphasizing fundamental and essential aspects\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1307_run3_20260722_181845.json",
+      "game_number": 1307,
+      "child_id": "e2c85d95acc844ce948cb464d51d75d1",
+      "generation": 6,
+      "parent_id": "a4e157032b624126b454e2e396db121f",
+      "parent_rank": 161,
+      "sampled_op": "s_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "dc510b78d0a2f94dfb4b7f949118ac31b63aa50c1a33cb0b85c54462cd53488a",
+      "prompt_chars": 5766,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "tenets",
+      "proposed_words": [
+        "tenets",
+        "doctrines",
+        "standards"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 645,
+      "predicted_closeness": 0.6,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "principles"
+        ],
+        "reason": "Narrowing focus to foundational elements of societal frameworks, closely related to 'principles' but more specific."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 115,
+      "raw_response": "{\"name\": \"core tenets\", \"description\": \"foundational elements of societal frameworks\", \"words\": [\"tenets\", \"doctrines\", \"standards\"], \"basis_words\": [\"principles\"], \"reason\": \"Narrowing focus to foundational elements of societal frameworks, closely related to 'principles' but more specific.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.6}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1307_run3_20260722_181845.json",
+      "game_number": 1307,
+      "child_id": "ab3293994db1442daddc45714ca7eb3f",
+      "generation": 7,
+      "parent_id": "fad4f71cb1424356aca92e3e68063a5f",
+      "parent_rank": 31,
+      "sampled_op": "l_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "dc84c24683b5b35eefbf1b4bb7a2d2eb0abe66d5ac36e1fd8cd6986caeb744b7",
+      "prompt_chars": 6435,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "physical",
+      "proposed_words": [
+        "physical",
+        "objects",
+        "materials"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 1948,
+      "predicted_closeness": 0.2,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "beyond",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "attitude"
+        ],
+        "reason": "Moving to physical objects provides a new direction outside psychological terminology while remaining plausibly related to 'attitude's broader semantic neighborhood."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 165,
+      "raw_response": "{\"name\": \"physical objects\", \"description\": \"objects and materials in the physical world\", \"words\": [\"physical\", \"objects\", \"materials\"], \"basis_words\": [\"attitude\"], \"reason\": \"Moving to physical objects provides a new direction outside psychological terminology while remaining plausibly related to 'attitude's broader semantic neighborhood.\", \"predicted_bucket\": \"beyond\", \"predicted_closeness\": 0.2}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1307_run3_20260722_181845.json",
+      "game_number": 1307,
+      "child_id": "351693555bf84e3eac6a6ab255b94d3d",
+      "generation": 7,
+      "parent_id": "3b6da0f7c0844aa2835848130c72152b",
+      "parent_rank": 38,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "ac00a54690fdd50ce22b68f3a34b32a80d85cb48000f7348c32563923a274ce4",
+      "prompt_chars": 6368,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "health",
+      "proposed_words": [
+        "health",
+        "condition",
+        "state"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 2496,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "sense",
+          "temperature"
+        ],
+        "reason": "This hypothesis shifts focus to physical aspects of the body, which are related to 'sense' but distinct from sensory experiences."
+      },
+      "basis_words_count": 2,
+      "reason_chars": 129,
+      "raw_response": "{\"name\": \"physical_states\", \"description\": \"aspects related to bodily conditions and physical states\", \"words\": [\"health\", \"condition\", \"state\"], \"basis_words\": [\"sense\", \"temperature\"], \"reason\": \"This hypothesis shifts focus to physical aspects of the body, which are related to 'sense' but distinct from sensory experiences.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1307_run3_20260722_181845.json",
+      "game_number": 1307,
+      "child_id": "cc80bcd197c44239a447711e2053b9a0",
+      "generation": 7,
+      "parent_id": "f28e3bcdc9c04bffb32f64414372e1b6",
+      "parent_rank": 75,
+      "sampled_op": "l_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "f2719b973c7920113e48bc0473cd6b252ca2b1eb1f42c20e636e58f1688c5fa1",
+      "prompt_chars": 6538,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "abstraction",
+      "proposed_words": [
+        "abstraction",
+        "concept",
+        "state"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 2523,
+      "predicted_closeness": 0.4,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "inherent",
+          "qualities"
+        ],
+        "reason": "shifts focus from inherent characteristics to abstract concepts, exploring a different semantic angle that is less tied to tangible or sensory attributes"
+      },
+      "basis_words_count": 2,
+      "reason_chars": 153,
+      "raw_response": "{\"name\": \"abstractions\", \"description\": \"abstract concepts or non-physical attributes that are not tied to tangible existence\", \"words\": [\"abstraction\", \"concept\", \"state\"], \"basis_words\": [\"inherent\", \"qualities\"], \"reason\": \"shifts focus from inherent characteristics to abstract concepts, exploring a different semantic angle that is less tied to tangible or sensory attributes\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1307_run3_20260722_181845.json",
+      "game_number": 1307,
+      "child_id": "74e53c8971db43f581c8467c71740e65",
+      "generation": 7,
+      "parent_id": "92b0e7774a214023aae5327c3ba83bcd",
+      "parent_rank": 153,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "9a61aa493c090c443c41fb10c7ef6d1e0547376f8c120484c109d83b8fe0f062",
+      "prompt_chars": 6186,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "trait",
+      "proposed_words": [
+        "trait",
+        "feature",
+        "quality"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 658,
+      "predicted_closeness": 0.4,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "inherent"
+        ],
+        "reason": "explores attributes that define intrinsic nature without overlapping directly with forms or core structures"
+      },
+      "basis_words_count": 1,
+      "reason_chars": 107,
+      "raw_response": "{\"name\": \"inherent qualities\", \"description\": \"qualities that are naturally part of something's essence\", \"words\": [\"trait\", \"feature\", \"quality\"], \"basis_words\": [\"inherent\"], \"reason\": \"explores attributes that define intrinsic nature without overlapping directly with forms or core structures\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1307_run3_20260722_181845.json",
+      "game_number": 1307,
+      "child_id": "bcce89a85bba46668140a0e9affd2134",
+      "generation": 8,
+      "parent_id": "b711f3e774234e93bdcca1957fe5c65d",
+      "parent_rank": 11,
+      "sampled_op": "m_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "5278febb45efb1bb37c04566ab1282728bea0ced8b2dd2be438a6a066b84fcb0",
+      "prompt_chars": 6545,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "gentle",
+      "proposed_words": [
+        "gentle",
+        "grace",
+        "support"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 1736,
+      "predicted_closeness": 0.4,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "kindness"
+        ],
+        "reason": "Reframing kindness as a moral disposition, focusing on actions and behaviors aligned with ethical or social standards rather than emotional states."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 147,
+      "raw_response": "{\"name\": \"moral conduct\", \"description\": \"the tendency to act in accordance with societal or personal ethical standards\", \"words\": [\"gentle\", \"grace\", \"support\"], \"basis_words\": [\"kindness\"], \"reason\": \"Reframing kindness as a moral disposition, focusing on actions and behaviors aligned with ethical or social standards rather than emotional states.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1307_run3_20260722_181845.json",
+      "game_number": 1307,
+      "child_id": "210bb515c96744b5851499d80383f869",
+      "generation": 8,
+      "parent_id": "fad4f71cb1424356aca92e3e68063a5f",
+      "parent_rank": 31,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "a78b97da36ac850441033cfa3ab64d3b6298ba4798c4866c43d4633b70e0c618",
+      "prompt_chars": 6787,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "trait",
+      "proposed_words": [
+        "trait",
+        "stance",
+        "viewpoint"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 658,
+      "predicted_closeness": 0.7,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top100",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "attitude"
+        ],
+        "reason": "Considering the high rank of 'attitude', 'personal traits' offers related concepts focusing on individual characteristics without being a sub-category of psychological terminology."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 180,
+      "raw_response": "{\"name\": \"personal traits\", \"description\": \"characteristics and tendencies of individuals\", \"words\": [\"trait\", \"stance\", \"viewpoint\"], \"basis_words\": [\"attitude\"], \"reason\": \"Considering the high rank of 'attitude', 'personal traits' offers related concepts focusing on individual characteristics without being a sub-category of psychological terminology.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.7}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1307_run3_20260722_181845.json",
+      "game_number": 1307,
+      "child_id": "37389d819b05443b9d8b17832ca45c97",
+      "generation": 8,
+      "parent_id": "3b6da0f7c0844aa2835848130c72152b",
+      "parent_rank": 38,
+      "sampled_op": "l_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "0a09c95195719ddf69d06134a3c4f01df4cc3afb80e6edc7fe2831fa199af834",
+      "prompt_chars": 6864,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "spatial",
+      "proposed_words": [
+        "spatial",
+        "motor",
+        "dynamic"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 13703,
+      "predicted_closeness": 0.5,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top100",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "perception"
+        ],
+        "reason": "This hypothesis shifts focus from sensory attributes to aspects of spatial and motor dynamics, which are related to perception but distinct from existing categories."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 165,
+      "raw_response": "{\"name\": \"spatial_interactions\", \"description\": \"aspects related to spatial movement and dynamic interactions\", \"words\": [\"spatial\", \"motor\", \"dynamic\"], \"basis_words\": [\"perception\"], \"reason\": \"This hypothesis shifts focus from sensory attributes to aspects of spatial and motor dynamics, which are related to perception but distinct from existing categories.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.5}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1307_run3_20260722_181845.json",
+      "game_number": 1307,
+      "child_id": "fa49c69d0ee6481bbd8362aec02028b7",
+      "generation": 8,
+      "parent_id": "f28e3bcdc9c04bffb32f64414372e1b6",
+      "parent_rank": 75,
+      "sampled_op": "m_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "aeeb19aafa03431a98b27b99d7096c27beb9ea8f17e8c24bbb2b02f2ae34ad9a",
+      "prompt_chars": 6806,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "rate",
+      "proposed_words": [
+        "rate",
+        "measure",
+        "criterion"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 6886,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "quality"
+        ],
+        "reason": "shifts focus from inherent traits to the evaluation and measurement of quality"
+      },
+      "basis_words_count": 1,
+      "reason_chars": 78,
+      "raw_response": "{\"name\": \"Judgment of Quality\", \"description\": \"approaches quality through the lens of evaluation and measurement\", \"words\": [\"rate\", \"measure\", \"criterion\"], \"basis_words\": [\"quality\"], \"reason\": \"shifts focus from inherent traits to the evaluation and measurement of quality\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1307_run3_20260722_181845.json",
+      "game_number": 1307,
+      "child_id": "35a24e35b8b9455983610daa3de8d268",
+      "generation": 9,
+      "parent_id": "b711f3e774234e93bdcca1957fe5c65d",
+      "parent_rank": 11,
+      "sampled_op": "l_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "af6c63d5255bd7f81c2fb04e5d6587eaad535b3f9617cd504a632e4bd11bb215",
+      "prompt_chars": 7119,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "harmony",
+      "proposed_words": [
+        "harmony",
+        "balance",
+        "ecology"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 787,
+      "predicted_closeness": 0.2,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "beyond",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "empathy"
+        ],
+        "reason": "Shifting focus from human emotional states to broader ecological and natural systems, exploring how non-human balance might relate to kindness through environmental interdependence."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 181,
+      "raw_response": "{\"name\": \"natural harmony\", \"description\": \"balance and coexistence in non-human systems\", \"words\": [\"harmony\", \"balance\", \"ecology\"], \"basis_words\": [\"empathy\"], \"reason\": \"Shifting focus from human emotional states to broader ecological and natural systems, exploring how non-human balance might relate to kindness through environmental interdependence.\", \"predicted_bucket\": \"beyond\", \"predicted_closeness\": 0.2}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1307_run3_20260722_181845.json",
+      "game_number": 1307,
+      "child_id": "2f27ac295686413788adc1b50630780d",
+      "generation": 9,
+      "parent_id": "210bb515c96744b5851499d80383f869",
+      "parent_rank": 26,
+      "sampled_op": "l_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "394e710b4882cd7867c759ca40c8e684213487c55adfa66429066e111fc03e9e",
+      "prompt_chars": 7303,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "rhythm",
+      "proposed_words": [
+        "rhythm",
+        "pattern",
+        "cycle"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 4262,
+      "predicted_closeness": 0.1,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "beyond",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "respect"
+        ],
+        "reason": "Temporal structures introduce a focus on repetitive or cyclical phenomena, diverging from direct social interaction terms but maintaining relevance to behavioral rhythms that could underlie respect or social norms."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 214,
+      "raw_response": "{\"name\": \"temporal structures\", \"description\": \"terms describing recurring patterns or sequences in behavior or events\", \"words\": [\"rhythm\", \"pattern\", \"cycle\"], \"basis_words\": [\"respect\"], \"reason\": \"Temporal structures introduce a focus on repetitive or cyclical phenomena, diverging from direct social interaction terms but maintaining relevance to behavioral rhythms that could underlie respect or social norms.\", \"predicted_bucket\": \"beyond\", \"predicted_closeness\": 0.1}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1307_run3_20260722_181845.json",
+      "game_number": 1307,
+      "child_id": "617fd817be1d44b1b7b398b20e60c88b",
+      "generation": 9,
+      "parent_id": "fad4f71cb1424356aca92e3e68063a5f",
+      "parent_rank": 31,
+      "sampled_op": "m_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "dd659ad5f9eef5b4ac0bc95fea366ff431be510815a7ed1a070ef06a871f0df0",
+      "prompt_chars": 7328,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "stance",
+      "proposed_words": [
+        "stance",
+        "pose",
+        "direction"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 1223,
+      "predicted_closeness": 0.2,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "beyond",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "attitude"
+        ],
+        "reason": "Reinterpreting 'attitude' through physical posture and spatial orientation, shifting from mental states to bodily alignment"
+      },
+      "basis_words_count": 1,
+      "reason_chars": 123,
+      "raw_response": "{\"name\": \"physical orientation\", \"description\": \"terms related to bodily posture and direction\", \"words\": [\"stance\", \"pose\", \"direction\"], \"basis_words\": [\"attitude\"], \"reason\": \"Reinterpreting 'attitude' through physical posture and spatial orientation, shifting from mental states to bodily alignment\", \"predicted_bucket\": \"beyond\", \"predicted_closeness\": 0.2}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1307_run3_20260722_181845.json",
+      "game_number": 1307,
+      "child_id": "608656bafa974b97a1ce367c60ea7221",
+      "generation": 9,
+      "parent_id": "3b6da0f7c0844aa2835848130c72152b",
+      "parent_rank": 38,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "52a66482310050d732c6548323de0c25304313196b674e40d7eb96e9e4c9f431",
+      "prompt_chars": 7280,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "mind",
+      "proposed_words": [
+        "mind",
+        "intellect",
+        "process"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 343,
+      "predicted_closeness": 0.7,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top100",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "sense",
+          "perception"
+        ],
+        "reason": "This hypothesis shifts focus to cognitive functions and mental processes, which are closely related to 'sense' but distinct from sensory attributes."
+      },
+      "basis_words_count": 2,
+      "reason_chars": 148,
+      "raw_response": "{\"name\": \"cognitive_processes\", \"description\": \"aspects related to mental functions and cognitive operations\", \"words\": [\"mind\", \"intellect\", \"process\"], \"basis_words\": [\"sense\", \"perception\"], \"reason\": \"This hypothesis shifts focus to cognitive functions and mental processes, which are closely related to 'sense' but distinct from sensory attributes.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.7}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1307_run3_20260722_181845.json",
+      "game_number": 1307,
+      "child_id": "2318fa5763404c0d854c649bfb0ef703",
+      "generation": 10,
+      "parent_id": "210bb515c96744b5851499d80383f869",
+      "parent_rank": 8,
+      "sampled_op": "m_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "ea99b3dd89f2380abe0bd3274aaee80e04b0272e68800b7358e62fa1667748d9",
+      "prompt_chars": 7439,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "justice",
+      "proposed_words": [
+        "justice",
+        "equity",
+        "impartiality"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 388,
+      "predicted_closeness": 0.6,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top100",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "fairness"
+        ],
+        "reason": "This hypothesis reframes fairness through the lens of moral and legal justice, shifting focus from social interaction norms to broader ethical principles."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 154,
+      "raw_response": "{\"name\": \"principles of justice and equity\", \"description\": \"terms describing moral or legal standards of just treatment and balance\", \"words\": [\"justice\", \"equity\", \"impartiality\"], \"basis_words\": [\"fairness\"], \"reason\": \"This hypothesis reframes fairness through the lens of moral and legal justice, shifting focus from social interaction norms to broader ethical principles.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.6}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1307_run3_20260722_181845.json",
+      "game_number": 1307,
+      "child_id": "87342e8a59174c41aa6574efd955dd66",
+      "generation": 10,
+      "parent_id": "fad4f71cb1424356aca92e3e68063a5f",
+      "parent_rank": 10,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "cf918a2dac16e9488ee9de66052a7c35b821a017914e40dde747f4dd40d3fbb9",
+      "prompt_chars": 7563,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "dignity",
+      "proposed_words": [
+        "dignity",
+        "integrity",
+        "perseverance"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 34,
+      "predicted_closeness": 0.4,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "courage"
+        ],
+        "reason": "Moral virtues are distinct from psychological terminology but share conceptual overlap, particularly with courage, which is a key virtue. This category offers plausible proximity to the hidden target."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 200,
+      "raw_response": "{\"name\": \"moral virtues\", \"description\": \"traits associated with ethical behavior and personal integrity\", \"words\": [\"dignity\", \"integrity\", \"perseverance\"], \"basis_words\": [\"courage\"], \"reason\": \"Moral virtues are distinct from psychological terminology but share conceptual overlap, particularly with courage, which is a key virtue. This category offers plausible proximity to the hidden target.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1307_run4_20260722_184920.json",
+      "game_number": 1307,
+      "child_id": "88bbcece9ec742c9abeec06be3754a58",
+      "generation": 2,
+      "parent_id": "7a7c6cd0476940b5b6a74f9c6384acae",
+      "parent_rank": 181,
+      "sampled_op": "s_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "86a7982be07283644ee4d41e0bb887ac2eb95e362897cc69517a61deffba34b8",
+      "prompt_chars": 3624,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "delicacy",
+      "proposed_words": [
+        "delicacy",
+        "refinement",
+        "finesse"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 1074,
+      "predicted_closeness": 0.6,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "subtlety"
+        ],
+        "reason": "Selected synonyms and related terms to 'subtlety' that refine the color hypothesis without overlapping with existing tried words."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 129,
+      "raw_response": "{\"name\": \"Refined Nuances\", \"description\": \"subtle color distinctions\", \"words\": [\"delicacy\", \"refinement\", \"finesse\"], \"basis_words\": [\"subtlety\"], \"reason\": \"Selected synonyms and related terms to 'subtlety' that refine the color hypothesis without overlapping with existing tried words.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.6}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1307_run4_20260722_184920.json",
+      "game_number": 1307,
+      "child_id": "e7e47b4bef444a9c93aa14d5cc235661",
+      "generation": 2,
+      "parent_id": "9dda2b7ea732465ebeece9b50fce94c1",
+      "parent_rank": 606,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "a52d5443517c80ef4378a511074f57947ca3a79ee530a36ce82de6c698fe3f01",
+      "prompt_chars": 3721,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "sustain",
+      "proposed_words": [
+        "sustain",
+        "maintain",
+        "preserve"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 2514,
+      "predicted_closeness": 0.6,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "care",
+          "maintenance"
+        ],
+        "reason": "selected synonyms of 'care' that emphasize preservation and upkeep, expanding beyond active maintenance to include broader forms of maintenance"
+      },
+      "basis_words_count": 2,
+      "reason_chars": 143,
+      "raw_response": "{\"name\": \"sustenancefocus\", \"description\": \"preservation and upkeep\", \"words\": [\"sustain\", \"maintain\", \"preserve\"], \"basis_words\": [\"care\", \"maintenance\"], \"reason\": \"selected synonyms of 'care' that emphasize preservation and upkeep, expanding beyond active maintenance to include broader forms of maintenance\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.6}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1307_run4_20260722_184920.json",
+      "game_number": 1307,
+      "child_id": "7746807a216745d0bd3912819ad94156",
+      "generation": 3,
+      "parent_id": "8237b52109674fa0a672fe8bf3b43fe5",
+      "parent_rank": 77,
+      "sampled_op": "m_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "a53b96d82265b9c70846f6d66ccd47da48756b8a1e6155cf7320ef2684a5f0ed",
+      "prompt_chars": 4156,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "ethic",
+      "proposed_words": [
+        "ethic",
+        "obligation",
+        "integrity"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 36,
+      "predicted_closeness": 0.4,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "responsibility"
+        ],
+        "reason": "shifted focus to personal ethical obligations, selecting terms related to moral duties and integrity not previously tested in this context."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 139,
+      "raw_response": "{\"name\": \"moralobligations\", \"description\": \"ethical duties and personal accountability\", \"words\": [\"ethic\", \"obligation\", \"integrity\"], \"basis_words\": [\"responsibility\"], \"reason\": \"shifted focus to personal ethical obligations, selecting terms related to moral duties and integrity not previously tested in this context.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1307_run4_20260722_184920.json",
+      "game_number": 1307,
+      "child_id": "04b37a5879424aadb98f04e9fb407d78",
+      "generation": 3,
+      "parent_id": "3216b3423503493e8143ada5061ce4b6",
+      "parent_rank": 98,
+      "sampled_op": "m_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "62565208b3b428b39da99cf53b520f90274859497f72e48de560361af8efbc10",
+      "prompt_chars": 4170,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "status",
+      "proposed_words": [
+        "status",
+        "perception",
+        "esteem"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 3986,
+      "predicted_closeness": 0.7,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top100",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "reputation"
+        ],
+        "reason": "Reframing reputation through lenses of social status, public perception, and personal esteem rather than direct social consequences."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 132,
+      "raw_response": "{\"name\": \"social standing\", \"description\": \"how reputation is maintained through perception and esteem\", \"words\": [\"status\", \"perception\", \"esteem\"], \"basis_words\": [\"reputation\"], \"reason\": \"Reframing reputation through lenses of social status, public perception, and personal esteem rather than direct social consequences.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.7}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1307_run4_20260722_184920.json",
+      "game_number": 1307,
+      "child_id": "69395820c75843b693ffcb026e50b503",
+      "generation": 3,
+      "parent_id": "7a7c6cd0476940b5b6a74f9c6384acae",
+      "parent_rank": 181,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "0109c458c971ec46455a85094f3281ab170c490fad1a43d93b265e3d1d687807",
+      "prompt_chars": 4274,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "refinement",
+      "proposed_words": [
+        "refinement",
+        "adjust",
+        "tweak"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 1212,
+      "predicted_closeness": 0.6,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "subtlety"
+        ],
+        "reason": "Selected terms related to subtle adjustments and improvements in color, which are adjacent to 'nuances' but not subcategories."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 126,
+      "raw_response": "{\n  \"name\": \"refinements\",\n  \"description\": \"subtle improvements or adjustments in color\",\n  \"words\": [\"refinement\", \"adjust\", \"tweak\"],\n  \"basis_words\": [\"subtlety\"],\n  \"reason\": \"Selected terms related to subtle adjustments and improvements in color, which are adjacent to 'nuances' but not subcategories.\",\n  \"predicted_bucket\": \"top500\",\n  \"predicted_closeness\": 0.6\n}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1307_run4_20260722_184920.json",
+      "game_number": 1307,
+      "child_id": "33d8a272fa36462c98f86128fc73b09a",
+      "generation": 4,
+      "parent_id": "2d57463193f641bca563455b8271f557",
+      "parent_rank": 3,
+      "sampled_op": "l_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "afbbedc10a084b889f39584cadf5087021cfbf3438496b2a2cff687e960e398a",
+      "prompt_chars": 4970,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "framework",
+      "proposed_words": [
+        "framework",
+        "matrix",
+        "schema"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 4168,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "stewardship",
+          "obligation",
+          "accountability"
+        ],
+        "reason": "expands from moral duties to underlying structural systems that enable ethical consistency, using terms like framework and matrix which are foundational but not explicitly ethical"
+      },
+      "basis_words_count": 3,
+      "reason_chars": 179,
+      "raw_response": "{\n  \"name\": \"systemic_foundations\",\n  \"description\": \"the structural frameworks enabling ethical coherence\",\n  \"words\": [\"framework\", \"matrix\", \"schema\"],\n  \"basis_words\": [\"stewardship\", \"obligation\", \"accountability\"],\n  \"reason\": \"expands from moral duties to underlying structural systems that enable ethical consistency, using terms like framework and matrix which are foundational but not explicitly ethical\",\n  \"predicted_bucket\": \"top500\",\n  \"predicted_closeness\": 0.3\n}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1307_run4_20260722_184920.json",
+      "game_number": 1307,
+      "child_id": "7174441ce11747c7bc70b7b40020854c",
+      "generation": 4,
+      "parent_id": "b252716442a64180940089175c75b55b",
+      "parent_rank": 6,
+      "sampled_op": "m_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "c5bec41ac6ccab9c7ed4c7a44ab7cd49ad64170309650f1ec70ee8692dbffe9d",
+      "prompt_chars": 4729,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "modesty",
+      "proposed_words": [
+        "modesty",
+        "humble",
+        "modest"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 50,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "humility"
+        ],
+        "reason": "Shifts focus from social evaluation to individual self-perception and behavioral restraint, exploring humility through personal rather than interpersonal lenses."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 161,
+      "raw_response": "{\n  \"name\": \"personal modesty\",\n  \"description\": \"internal qualities of self-awareness and restraint\",\n  \"words\": [\"modesty\", \"humble\", \"modest\"],\n  \"basis_words\": [\"humility\"],\n  \"reason\": \"Shifts focus from social evaluation to individual self-perception and behavioral restraint, exploring humility through personal rather than interpersonal lenses.\",\n  \"predicted_bucket\": \"top500\",\n  \"predicted_closeness\": 0.3\n}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1307_run4_20260722_184920.json",
+      "game_number": 1307,
+      "child_id": "d1832b6a7cad4ce4aa97ba9881f42bd9",
+      "generation": 4,
+      "parent_id": "7746807a216745d0bd3912819ad94156",
+      "parent_rank": 37,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "15bbca46865a1d6608e12ae79d091e139192b4bbbc5cccb1d86ea0a4c0fcf130",
+      "prompt_chars": 4751,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "transparency",
+      "proposed_words": [
+        "transparency",
+        "liability",
+        "commitment"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 48,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "work"
+        ],
+        "reason": "Expanding the scope from direct ethical duties to the frameworks and principles that underpin accountability and obligation in various contexts."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 144,
+      "raw_response": "{\"name\": \"ethical frameworks\", \"description\": \"systems or structures guiding moral behavior\", \"words\": [\"transparency\", \"liability\", \"commitment\"], \"basis_words\": [\"work\"], \"reason\": \"Expanding the scope from direct ethical duties to the frameworks and principles that underpin accountability and obligation in various contexts.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1307_run4_20260722_184920.json",
+      "game_number": 1307,
+      "child_id": "8ebf4728894049f99b70414cecfb64de",
+      "generation": 4,
+      "parent_id": "04b37a5879424aadb98f04e9fb407d78",
+      "parent_rank": 52,
+      "sampled_op": "m_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "7f70d3c1771cba9f212011452d87974f1a10ab304615f4f44dc36434159018c9",
+      "prompt_chars": 4861,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "authenticity",
+      "proposed_words": [
+        "authenticity",
+        "veracity",
+        "consistency"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 63,
+      "predicted_closeness": 0.4,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "credibility"
+        ],
+        "reason": "Reframing credibility through the lens of objective verification and authenticity rather than social perception or trust dynamics."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 130,
+      "raw_response": "{\n  \"name\": \"authenticity verification process\",\n  \"description\": \"the role of authenticity and veracity in establishing credibility\",\n  \"words\": [\"authenticity\", \"veracity\", \"consistency\"],\n  \"basis_words\": [\"credibility\"],\n  \"reason\": \"Reframing credibility through the lens of objective verification and authenticity rather than social perception or trust dynamics.\",\n  \"predicted_bucket\": \"top500\",\n  \"predicted_closeness\": 0.4\n}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1307_run5_20260722_201412.json",
+      "game_number": 1307,
+      "child_id": "4864d3a654f54a5c899e5326a795fcf9",
+      "generation": 2,
+      "parent_id": "e472a5bd3c85453b900e01423585843b",
+      "parent_rank": 445,
+      "sampled_op": "l_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "4f61dd73861527f645bbbd857f78aca2f0fcdf1b3d9ececac047756ca8ea32d7",
+      "prompt_chars": 4020,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "vortex",
+      "proposed_words": [
+        "vortex",
+        "current",
+        "tide"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 33846,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "balance",
+          "harmony"
+        ],
+        "reason": "Dynamic natural forces introduce a new semantic area related to movement and environmental influences, expanding beyond emotional and design principles while maintaining a connection to grace through fluidity and motion."
+      },
+      "basis_words_count": 2,
+      "reason_chars": 220,
+      "raw_response": "{\"name\": \"dynamic_natural_forces\", \"description\": \"interplay of natural forces and emotional dynamics\", \"words\": [\"vortex\", \"current\", \"tide\"], \"basis_words\": [\"balance\", \"harmony\"], \"reason\": \"Dynamic natural forces introduce a new semantic area related to movement and environmental influences, expanding beyond emotional and design principles while maintaining a connection to grace through fluidity and motion.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1307_run5_20260722_201412.json",
+      "game_number": 1307,
+      "child_id": "f8f345f0a12b4d278b85733962f4c8b3",
+      "generation": 2,
+      "parent_id": "c76821108e9d4261b874c55960226d1d",
+      "parent_rank": 664,
+      "sampled_op": "s_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "0cda35bdc2fc56c6b1c74c17b8a7120816ff48e9ff90430c4f2cf35fcfe5f378",
+      "prompt_chars": 3753,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "equilibrium",
+      "proposed_words": [
+        "equilibrium",
+        "stability",
+        "distribution"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 6247,
+      "predicted_closeness": 0.7,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "harmony"
+        ],
+        "reason": "Equilibrium and stability are closely related to balance, refining the focus on structural balance concepts that may overlap with musical harmony."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 146,
+      "raw_response": "{\"name\": \"structural equilibrium\", \"description\": \"principles related to stability and even distribution of elements\", \"words\": [\"equilibrium\", \"stability\", \"distribution\"], \"basis_words\": [\"harmony\"], \"reason\": \"Equilibrium and stability are closely related to balance, refining the focus on structural balance concepts that may overlap with musical harmony.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.7}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1307_run5_20260722_201412.json",
+      "game_number": 1307,
+      "child_id": "e1a7bbc3e972477cbafffe5fe7d1df9f",
+      "generation": 3,
+      "parent_id": "e3cc5829608244fb9b6ad27652d013a8",
+      "parent_rank": 98,
+      "sampled_op": "m_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "d16863ebc5f253baae8ecb8ea78ad0182b7dffe737c21257ee5b7c1cc6e22bf0",
+      "prompt_chars": 4295,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "trust",
+      "proposed_words": [
+        "trust",
+        "status",
+        "credibility"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 96,
+      "predicted_closeness": 0.4,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "reputation"
+        ],
+        "reason": "shifts focus from shame's social repercussions to how reputation is built and sustained through trust and perceived status"
+      },
+      "basis_words_count": 1,
+      "reason_chars": 122,
+      "raw_response": "{\"name\": \"foundations_of_social_standing\", \"description\": \"constructs and maintenance of reputation through trust and status\", \"words\": [\"trust\", \"status\", \"credibility\"], \"basis_words\": [\"reputation\"], \"reason\": \"shifts focus from shame's social repercussions to how reputation is built and sustained through trust and perceived status\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1307_run5_20260722_201412.json",
+      "game_number": 1307,
+      "child_id": "00a14f765b444b8da1855238d6d8445e",
+      "generation": 3,
+      "parent_id": "fd7dc4b4745944939b2242cd3921368f",
+      "parent_rank": 293,
+      "sampled_op": "m_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "bcfa70d8e02557daf7072731d18de27833651087703dc167e7c8ff3a74502cb6",
+      "prompt_chars": 4405,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "material",
+      "proposed_words": [
+        "material",
+        "structure",
+        "flexibility"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 2998,
+      "predicted_closeness": 0.4,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "resilience"
+        ],
+        "reason": "Shifts focus from ecological interdependence to physical structural attributes that enable resilience"
+      },
+      "basis_words_count": 1,
+      "reason_chars": 101,
+      "raw_response": "{\"name\": \"material_resilience\", \"description\": \"structural properties contributing to resilience in systems\", \"words\": [\"material\", \"structure\", \"flexibility\"], \"basis_words\": [\"resilience\"], \"reason\": \"Shifts focus from ecological interdependence to physical structural attributes that enable resilience\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1307_run5_20260722_201412.json",
+      "game_number": 1307,
+      "child_id": "5ab9b0a296ed43e3b4351ce86de01448",
+      "generation": 3,
+      "parent_id": "e472a5bd3c85453b900e01423585843b",
+      "parent_rank": 445,
+      "sampled_op": "l_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "30a38de67f1462c5f2fc91b2c93171bb4cccb446137e0558cf2fc222d686fecb",
+      "prompt_chars": 4699,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "temporal",
+      "proposed_words": [
+        "temporal",
+        "elegance",
+        "movement"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 8885,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "elegance",
+          "movement"
+        ],
+        "reason": "explores the fusion of grace with time-based dynamics, diverging from emotional and structural categories while retaining semantic ties to grace's essence"
+      },
+      "basis_words_count": 2,
+      "reason_chars": 154,
+      "raw_response": "{\"name\": \"temporal_elegance_movement\", \"description\": \"interplay of elegance and movement over time\", \"words\": [\"temporal\", \"elegance\", \"movement\"], \"basis_words\": [\"elegance\", \"movement\"], \"reason\": \"explores the fusion of grace with time-based dynamics, diverging from emotional and structural categories while retaining semantic ties to grace's essence\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1307_run5_20260722_201412.json",
+      "game_number": 1307,
+      "child_id": "97c635aa52ba459eb0209fe1f139c2bd",
+      "generation": 3,
+      "parent_id": "c76821108e9d4261b874c55960226d1d",
+      "parent_rank": 664,
+      "sampled_op": "l_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "6ffb995ec058a249abac131852c506799b1371c48471adfaec8e98228dda4b6f",
+      "prompt_chars": 4740,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "distribution",
+      "proposed_words": [
+        "distribution",
+        "configuration",
+        "layout"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 10595,
+      "predicted_closeness": 0.5,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "balance"
+        ],
+        "reason": "Distribution, configuration, and layout are spatial concepts that relate to balance but differ from existing categories like design principles and structural resilience."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 169,
+      "raw_response": "{\"name\": \"spatial configurations\", \"description\": \"exploring how elements are spread and arranged in space\", \"words\": [\"distribution\", \"configuration\", \"layout\"], \"basis_words\": [\"balance\"], \"reason\": \"Distribution, configuration, and layout are spatial concepts that relate to balance but differ from existing categories like design principles and structural resilience.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.5}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1307_run5_20260722_201412.json",
+      "game_number": 1307,
+      "child_id": "f6e9f5fbc8ea41cfb9c331a4e76973f0",
+      "generation": 4,
+      "parent_id": "e1a7bbc3e972477cbafffe5fe7d1df9f",
+      "parent_rank": 3,
+      "sampled_op": "m_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "73a10fd76fbfd1953812f37e9d6336e7800f57461faed93dd7bcba23e03f9475",
+      "prompt_chars": 4766,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "material",
+      "proposed_words": [
+        "material",
+        "resilience",
+        "durability"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 2998,
+      "predicted_closeness": 0.4,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "integrity"
+        ],
+        "reason": "shifts focus from trust-building mechanisms to the physical and material attributes that symbolize integrity"
+      },
+      "basis_words_count": 1,
+      "reason_chars": 108,
+      "raw_response": "{\"name\": \"structural material properties\", \"description\": \"examines how physical and material characteristics embody integrity\", \"words\": [\"material\", \"resilience\", \"durability\"], \"basis_words\": [\"integrity\"], \"reason\": \"shifts focus from trust-building mechanisms to the physical and material attributes that symbolize integrity\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1307_run5_20260722_201412.json",
+      "game_number": 1307,
+      "child_id": "960f173303d24a6a92a562950c523c62",
+      "generation": 4,
+      "parent_id": "e472a5bd3c85453b900e01423585843b",
+      "parent_rank": 81,
+      "sampled_op": "l_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "7e9c95a5e6861ffe7fa67623be2a76e79a06e1c4ca126d64c9507fb08930cc23",
+      "prompt_chars": 5078,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "perception",
+      "proposed_words": [
+        "perception",
+        "cognition",
+        "nuance"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 329,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "balance",
+          "symmetry"
+        ],
+        "reason": "shifting focus from emotional states to cognitive and perceptual mechanisms, while maintaining ties to structural principles through 'balance' and 'symmetry'"
+      },
+      "basis_words_count": 2,
+      "reason_chars": 157,
+      "raw_response": "{\"name\": \"cognitive_perceptual_flow\", \"description\": \"intersection of mental processing and sensory interpretation in design\", \"words\": [\"perception\", \"cognition\", \"nuance\"], \"basis_words\": [\"balance\", \"symmetry\"], \"reason\": \"shifting focus from emotional states to cognitive and perceptual mechanisms, while maintaining ties to structural principles through 'balance' and 'symmetry'\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1307_run5_20260722_201412.json",
+      "game_number": 1307,
+      "child_id": "9e4e9452e10b4060ab6c13b8ac5d5ede",
+      "generation": 4,
+      "parent_id": "e3cc5829608244fb9b6ad27652d013a8",
+      "parent_rank": 98,
+      "sampled_op": "s_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "088c34819e3d5800529e88ef297393cd59722cb4901d1f6943fd011c3b86827a",
+      "prompt_chars": 4788,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "credibility",
+      "proposed_words": [
+        "credibility",
+        "status",
+        "standing"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 52,
+      "predicted_closeness": 0.7,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "reputation"
+        ],
+        "reason": "narrows focus to elements of societal perception and trust directly tied to shame"
+      },
+      "basis_words_count": 1,
+      "reason_chars": 81,
+      "raw_response": "{\"name\": \"social credibility and status\", \"description\": \"aspects of social standing and trustworthiness related to shame\", \"words\": [\"credibility\", \"status\", \"standing\"], \"basis_words\": [\"reputation\"], \"reason\": \"narrows focus to elements of societal perception and trust directly tied to shame\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.7}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1307_run5_20260722_201412.json",
+      "game_number": 1307,
+      "child_id": "f5f59e65522941ba80d778baa769ccf3",
+      "generation": 4,
+      "parent_id": "00a14f765b444b8da1855238d6d8445e",
+      "parent_rank": 254,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "8b4c875ecbd283377277ec83f21afa817ee8cd374b244876a5285c0137defea5",
+      "prompt_chars": 4913,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "elasticity",
+      "proposed_words": [
+        "elasticity",
+        "ductility",
+        "viscosity"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 7804,
+      "predicted_closeness": 0.4,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "strength",
+          "resilience"
+        ],
+        "reason": "Expands focus from structural resilience under stress to general mechanical properties of materials, maintaining relevance to engineered systems while exploring a distinct category of material behavior."
+      },
+      "basis_words_count": 2,
+      "reason_chars": 202,
+      "raw_response": "{\"name\": \"mechanical_properties\", \"description\": \"mechanical properties of materials in engineered systems\", \"words\": [\"elasticity\", \"ductility\", \"viscosity\"], \"basis_words\": [\"strength\", \"resilience\"], \"reason\": \"Expands focus from structural resilience under stress to general mechanical properties of materials, maintaining relevance to engineered systems while exploring a distinct category of material behavior.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}"
+    }
+  ]
+}

@@ -1,0 +1,2856 @@
+{
+  "metadata": {
+    "created_at": "2026-10-31T12:23:31",
+    "seed": 0,
+    "events_per_trace": 40,
+    "arms": [
+      "genuine_resample"
+    ],
+    "traces": [
+      {
+        "trace_file": "ea_llm_self_adaptive_api_1352_run1_20260722_182747.json",
+        "game_number": 1352,
+        "llm_model": "qwen3:14b",
+        "llm_provider": "ollama",
+        "provenance_hash": "bd9f2858283673a2",
+        "eligible_events": 23,
+        "sampled_events": 23,
+        "shortfall": 17,
+        "skipped": {}
+      },
+      {
+        "trace_file": "ea_llm_self_adaptive_api_1352_run2_20260722_195659.json",
+        "game_number": 1352,
+        "llm_model": "qwen3:14b",
+        "llm_provider": "ollama",
+        "provenance_hash": "bd9f2858283673a2",
+        "eligible_events": 13,
+        "sampled_events": 13,
+        "shortfall": 27,
+        "skipped": {}
+      },
+      {
+        "trace_file": "ea_llm_self_adaptive_api_1352_run3_20260722_204210.json",
+        "game_number": 1352,
+        "llm_model": "qwen3:14b",
+        "llm_provider": "ollama",
+        "provenance_hash": "bd9f2858283673a2",
+        "eligible_events": 2,
+        "sampled_events": 2,
+        "shortfall": 38,
+        "skipped": {}
+      },
+      {
+        "trace_file": "ea_llm_self_adaptive_api_1352_run4_20260722_224638.json",
+        "game_number": 1352,
+        "llm_model": "qwen3:14b",
+        "llm_provider": "ollama",
+        "provenance_hash": "bd9f2858283673a2",
+        "eligible_events": 10,
+        "sampled_events": 10,
+        "shortfall": 30,
+        "skipped": {}
+      },
+      {
+        "trace_file": "ea_llm_self_adaptive_api_1352_run5_20260723_010249.json",
+        "game_number": 1352,
+        "llm_model": "qwen3:14b",
+        "llm_provider": "ollama",
+        "provenance_hash": "bd9f2858283673a2",
+        "eligible_events": 31,
+        "sampled_events": 31,
+        "shortfall": 9,
+        "skipped": {}
+      }
+    ],
+    "total_events": 79,
+    "total_records": 79
+  },
+  "records": [
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1352_run1_20260722_182747.json",
+      "game_number": 1352,
+      "child_id": "01ad9dd30b8a41f6b4fc8773798f71f8",
+      "generation": 2,
+      "parent_id": "f3b281fe2902415bb0726356f5cf9ac9",
+      "parent_rank": 54,
+      "sampled_op": "l_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "b6ef4bcd7e53078c16aebb7e70a5a5be78b1686c052f21ac63aa5aa41c91bfe0",
+      "prompt_chars": 3921,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "limestone",
+      "proposed_words": [
+        "limestone",
+        "sediment",
+        "clay"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 1708,
+      "predicted_closeness": 0.4,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "stone"
+        ],
+        "reason": "shifts focus from botanical structures to geological materials, which are structurally and compositionally related to stone but represent a distinct semantic domain."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 165,
+      "raw_response": "{\"name\": \"geological components\", \"description\": \"natural materials formed through geological processes\", \"words\": [\"limestone\", \"sediment\", \"clay\"], \"basis_words\": [\"stone\"], \"reason\": \"shifts focus from botanical structures to geological materials, which are structurally and compositionally related to stone but represent a distinct semantic domain.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1352_run1_20260722_182747.json",
+      "game_number": 1352,
+      "child_id": "0dba47f2a80e4ff79c5731b4ab8693b9",
+      "generation": 2,
+      "parent_id": "f70b7038b82a4045bc82d91cbe9fae4c",
+      "parent_rank": 117,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "7b5d1675e3bb37115fc8ba761c42ba1a7d212e26ed371f1779c4921f3aa3b321",
+      "prompt_chars": 3677,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "symmetry",
+      "proposed_words": [
+        "symmetry",
+        "angle",
+        "edge"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 3159,
+      "predicted_closeness": 0.5,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "octagon"
+        ],
+        "reason": "This category focuses on attributes associated with geometric shapes, which are closely related to polygon types but represent a distinct semantic category."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 156,
+      "raw_response": "{\"name\": \"geometric properties\", \"description\": \"characteristics of shapes and forms\", \"words\": [\"symmetry\", \"angle\", \"edge\"], \"basis_words\": [\"octagon\"], \"reason\": \"This category focuses on attributes associated with geometric shapes, which are closely related to polygon types but represent a distinct semantic category.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.5}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1352_run1_20260722_182747.json",
+      "game_number": 1352,
+      "child_id": "9ceaa7ffd157471892599b059c51800e",
+      "generation": 2,
+      "parent_id": "420fadd3cc6a4d168ff626bf3dfa21eb",
+      "parent_rank": 198,
+      "sampled_op": "l_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "343df1aa50b5b64a73675b08be6c17f55c5071f0a60024699a5f3c3ed5ec625a",
+      "prompt_chars": 4031,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "refraction",
+      "proposed_words": [
+        "refraction",
+        "reflection",
+        "light"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 2199,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "color",
+          "polygon"
+        ],
+        "reason": "Moves to the domain of light properties, which are visually related to color and can interact with polygonal shapes, but is distinct from existing categories."
+      },
+      "basis_words_count": 2,
+      "reason_chars": 158,
+      "raw_response": "{\"name\": \"light interactions\", \"description\": \"properties and behaviors of light\", \"words\": [\"refraction\", \"reflection\", \"light\"], \"basis_words\": [\"color\", \"polygon\"], \"reason\": \"Moves to the domain of light properties, which are visually related to color and can interact with polygonal shapes, but is distinct from existing categories.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1352_run1_20260722_182747.json",
+      "game_number": 1352,
+      "child_id": "d5f754e487c34aeebff881a732f04459",
+      "generation": 3,
+      "parent_id": "01ad9dd30b8a41f6b4fc8773798f71f8",
+      "parent_rank": 32,
+      "sampled_op": "l_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "92b8ab65f2cd016736a3153e9d8b0dab140187bd4147b39043e50933418b68b6",
+      "prompt_chars": 4401,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "synthetic",
+      "proposed_words": [
+        "synthetic",
+        "fiber",
+        "resin"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 1610,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "quartz"
+        ],
+        "reason": "shifts focus from naturally occurring geological substances to human-made synthetic counterparts, maintaining a connection to the target word 'quartz' by exploring related material types"
+      },
+      "basis_words_count": 1,
+      "reason_chars": 186,
+      "raw_response": "{\"name\": \"synthetic materials\", \"description\": \"man-made substances and compounds produced industrially\", \"words\": [\"synthetic\", \"fiber\", \"resin\"], \"basis_words\": [\"quartz\"], \"reason\": \"shifts focus from naturally occurring geological substances to human-made synthetic counterparts, maintaining a connection to the target word 'quartz' by exploring related material types\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1352_run1_20260722_182747.json",
+      "game_number": 1352,
+      "child_id": "69b3d4a6adc943a298701e1d2c7f79ab",
+      "generation": 3,
+      "parent_id": "f3b281fe2902415bb0726356f5cf9ac9",
+      "parent_rank": 54,
+      "sampled_op": "s_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "9df3bfe40b8a8e07ca7d2da1eeb8797ad24e8a4673aecc6acbbf30a78fac0c71",
+      "prompt_chars": 4179,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "endocarp",
+      "proposed_words": [
+        "endocarp",
+        "pericarp",
+        "exocarp"
+      ],
+      "proposed_word_invalid": true,
+      "realized_rank": null,
+      "predicted_closeness": 0.4,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "stone"
+        ],
+        "reason": "narrows focus to the internal structural layers of the peach stone, using specialized botanical terminology that is semantically close to 'stone' but more specific"
+      },
+      "basis_words_count": 1,
+      "reason_chars": 163,
+      "raw_response": "{\"name\": \"structural layers of peach stones\", \"description\": \"focus on specific layers or components of the peach stone\", \"words\": [\"endocarp\", \"pericarp\", \"exocarp\"], \"basis_words\": [\"stone\"], \"reason\": \"narrows focus to the internal structural layers of the peach stone, using specialized botanical terminology that is semantically close to 'stone' but more specific\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1352_run1_20260722_182747.json",
+      "game_number": 1352,
+      "child_id": "2a46aab57bdc497184db1261cc901399",
+      "generation": 3,
+      "parent_id": "f70b7038b82a4045bc82d91cbe9fae4c",
+      "parent_rank": 117,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "00c966406060144be7507de25de1bb5e10a0d3ae07845dd94ea47c7f722ac7c4",
+      "prompt_chars": 4230,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "symmetry",
+      "proposed_words": [
+        "symmetry",
+        "convex",
+        "concave"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 3159,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "octagon"
+        ],
+        "reason": "These are properties that describe geometric shapes, sitting alongside polygon types in the semantic space but focusing on attributes rather than specific shapes."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 162,
+      "raw_response": "{\"name\": \"geometric properties\", \"description\": \"attributes describing geometric shapes and their characteristics\", \"words\": [\"symmetry\", \"convex\", \"concave\"], \"basis_words\": [\"octagon\"], \"reason\": \"These are properties that describe geometric shapes, sitting alongside polygon types in the semantic space but focusing on attributes rather than specific shapes.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1352_run1_20260722_182747.json",
+      "game_number": 1352,
+      "child_id": "3c852a0cf1104bd6bb2729063d5974f4",
+      "generation": 4,
+      "parent_id": "01ad9dd30b8a41f6b4fc8773798f71f8",
+      "parent_rank": 32,
+      "sampled_op": "s_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "3ee35d10326c3aa1b2a1d57c1d036e72a1b8a18fb4120e2b582299f63862efdd",
+      "prompt_chars": 4618,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "silica",
+      "proposed_words": [
+        "silica",
+        "flint",
+        "chert"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 2783,
+      "predicted_closeness": 0.7,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "quartz"
+        ],
+        "reason": "narrows focus to silica-based materials, which are closely related to quartz and include minerals and rocks formed from silica"
+      },
+      "basis_words_count": 1,
+      "reason_chars": 126,
+      "raw_response": "{\"name\": \"silica-based materials\", \"description\": \"materials primarily composed of silica, including quartz and related substances\", \"words\": [\"silica\", \"flint\", \"chert\"], \"basis_words\": [\"quartz\"], \"reason\": \"narrows focus to silica-based materials, which are closely related to quartz and include minerals and rocks formed from silica\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.7}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1352_run1_20260722_182747.json",
+      "game_number": 1352,
+      "child_id": "a1b08121d7724c3fad74b17eeeadc44d",
+      "generation": 4,
+      "parent_id": "d5f754e487c34aeebff881a732f04459",
+      "parent_rank": 42,
+      "sampled_op": "l_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "89aa4ae1130292a2f934ff6e7f0089d8f67147706d60425f37d50f1b357a8987",
+      "prompt_chars": 4868,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "matrix",
+      "proposed_words": [
+        "matrix",
+        "lattice",
+        "network"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 16612,
+      "predicted_closeness": 0.4,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "crystal"
+        ],
+        "reason": "shifts focus from chemical composition to structural organization, maintaining relevance through the interconnected nature of crystals"
+      },
+      "basis_words_count": 1,
+      "reason_chars": 134,
+      "raw_response": "{\"name\": \"structural elements\", \"description\": \"arrangements of interconnected components forming a coherent whole\", \"words\": [\"matrix\", \"lattice\", \"network\"], \"basis_words\": [\"crystal\"], \"reason\": \"shifts focus from chemical composition to structural organization, maintaining relevance through the interconnected nature of crystals\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1352_run1_20260722_182747.json",
+      "game_number": 1352,
+      "child_id": "ee31131af83c4cd29d2fd520dcce14fd",
+      "generation": 4,
+      "parent_id": "f3b281fe2902415bb0726356f5cf9ac9",
+      "parent_rank": 54,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "8f12850e4604082386da3bb5c43cd5f74bf83472bd56c1340d4eea9ee0bba431",
+      "prompt_chars": 4741,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "morphology",
+      "proposed_words": [
+        "morphology",
+        "anatomy",
+        "physiology"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 34886,
+      "predicted_closeness": 0.6,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "stone"
+        ],
+        "reason": "shifts focus from specific parts of peaches to broader botanical terminology that may include related terms like 'stone', which is a common term in plant anatomy."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 162,
+      "raw_response": "{\"name\": \"botanical terminology\", \"description\": \"terms related to the study of plant structures and functions\", \"words\": [\"morphology\", \"anatomy\", \"physiology\"], \"basis_words\": [\"stone\"], \"reason\": \"shifts focus from specific parts of peaches to broader botanical terminology that may include related terms like 'stone', which is a common term in plant anatomy.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.6}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1352_run1_20260722_182747.json",
+      "game_number": 1352,
+      "child_id": "3ac6d360f0ca4086a57bc4772d6bac38",
+      "generation": 5,
+      "parent_id": "3c852a0cf1104bd6bb2729063d5974f4",
+      "parent_rank": 23,
+      "sampled_op": "s_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "9ff3c312ea665b1bcadae65e20f5446a22f4e79b171c6d29cd90f7fba197bdde",
+      "prompt_chars": 5070,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "chalcedony",
+      "proposed_words": [
+        "chalcedony",
+        "jasper",
+        "agate"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 10,
+      "predicted_closeness": 0.7,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "opal"
+        ],
+        "reason": "narrowing focus to silica-based minerals that are closely related to opal and commonly occur in geological settings, maintaining specificity within the silica-containing materials category"
+      },
+      "basis_words_count": 1,
+      "reason_chars": 188,
+      "raw_response": "{\"name\": \"silica-rich minerals and gemstones\", \"description\": \"specific silica-based minerals and gemstones found in geological contexts\", \"words\": [\"chalcedony\", \"jasper\", \"agate\"], \"basis_words\": [\"opal\"], \"reason\": \"narrowing focus to silica-based minerals that are closely related to opal and commonly occur in geological settings, maintaining specificity within the silica-containing materials category\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.7}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1352_run1_20260722_182747.json",
+      "game_number": 1352,
+      "child_id": "0e7d9f26ff66490d8eb3aadb9e5e475b",
+      "generation": 5,
+      "parent_id": "01ad9dd30b8a41f6b4fc8773798f71f8",
+      "parent_rank": 32,
+      "sampled_op": "s_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "9bd5314535bd6299e9795c31720eccc6e4fa662ae5e9e25a81bcd8fda98931ed",
+      "prompt_chars": 5153,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "corundum",
+      "proposed_words": [
+        "corundum",
+        "diamond",
+        "topaz"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 154,
+      "predicted_closeness": 0.2,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "beyond",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "quartz"
+        ],
+        "reason": "focuses on minerals with high hardness, narrowing the search to those similar in properties to quartz, which is a hard mineral"
+      },
+      "basis_words_count": 1,
+      "reason_chars": 126,
+      "raw_response": "{\"name\": \"hard minerals\", \"description\": \"minerals known for their hardness and durability\", \"words\": [\"corundum\", \"diamond\", \"topaz\"], \"basis_words\": [\"quartz\"], \"reason\": \"focuses on minerals with high hardness, narrowing the search to those similar in properties to quartz, which is a hard mineral\", \"predicted_bucket\": \"beyond\", \"predicted_closeness\": 0.2}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1352_run1_20260722_182747.json",
+      "game_number": 1352,
+      "child_id": "05544942f8ed4204bb989438c7c91f8c",
+      "generation": 5,
+      "parent_id": "d5f754e487c34aeebff881a732f04459",
+      "parent_rank": 42,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "d195bde43712abc39e67e38f19285597dc236a463ec3f9cf5e3bf17fc32cb366",
+      "prompt_chars": 5162,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "shape",
+      "proposed_words": [
+        "shape",
+        "form",
+        "structure"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 220,
+      "predicted_closeness": 0.4,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "crystal"
+        ],
+        "reason": "shifts focus from chemical composition to structural characteristics, maintaining relevance through the physical form of crystals"
+      },
+      "basis_words_count": 1,
+      "reason_chars": 129,
+      "raw_response": "{\"name\": \"structural descriptors\", \"description\": \"terms describing the physical arrangement or form of substances\", \"words\": [\"shape\", \"form\", \"structure\"], \"basis_words\": [\"crystal\"], \"reason\": \"shifts focus from chemical composition to structural characteristics, maintaining relevance through the physical form of crystals\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1352_run1_20260722_182747.json",
+      "game_number": 1352,
+      "child_id": "73bc3fd7c5f745f2ada58d35a826e69c",
+      "generation": 5,
+      "parent_id": "f3b281fe2902415bb0726356f5cf9ac9",
+      "parent_rank": 54,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "8254aae2153da2e6bba53fc815b09fa31eb770d2fe7c46808f30c6092114ec9d",
+      "prompt_chars": 5231,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "structure",
+      "proposed_words": [
+        "structure",
+        "size",
+        "pattern"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 31676,
+      "predicted_closeness": 0.2,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "beyond",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "peach",
+          "stone"
+        ],
+        "reason": "shifts focus from specific peach components to general characteristics that describe plant structures and features"
+      },
+      "basis_words_count": 2,
+      "reason_chars": 114,
+      "raw_response": "{\"name\": \"plant descriptors\", \"description\": \"attributes used to characterize plant structures\", \"words\": [\"structure\", \"size\", \"pattern\"], \"basis_words\": [\"peach\", \"stone\"], \"reason\": \"shifts focus from specific peach components to general characteristics that describe plant structures and features\", \"predicted_bucket\": \"beyond\", \"predicted_closeness\": 0.2}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1352_run1_20260722_182747.json",
+      "game_number": 1352,
+      "child_id": "bb07dc1da6d54adf8372f8c57b20b3e4",
+      "generation": 6,
+      "parent_id": "0e7d9f26ff66490d8eb3aadb9e5e475b",
+      "parent_rank": 5,
+      "sampled_op": "m_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "6b846feeb5d508dc036718f666456198a2b5415feae45433ffa41bd849e6646b",
+      "prompt_chars": 5468,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "jewelry",
+      "proposed_words": [
+        "jewelry",
+        "durability",
+        "healing"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 55,
+      "predicted_closeness": 0.7,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top100",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "topaz"
+        ],
+        "reason": "shifts focus from mineral classification to functional or descriptive qualities linked to topaz"
+      },
+      "basis_words_count": 1,
+      "reason_chars": 95,
+      "raw_response": "{\"name\": \"properties of topaz\", \"description\": \"explores attributes and characteristics associated with topaz, such as hardness or optical qualities\", \"words\": [\"jewelry\", \"durability\", \"healing\"], \"basis_words\": [\"topaz\"], \"reason\": \"shifts focus from mineral classification to functional or descriptive qualities linked to topaz\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.7}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1352_run1_20260722_182747.json",
+      "game_number": 1352,
+      "child_id": "9f0c1b5375e34c5482a65c239b6f41fd",
+      "generation": 6,
+      "parent_id": "3ac6d360f0ca4086a57bc4772d6bac38",
+      "parent_rank": 10,
+      "sampled_op": "l_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "339154e3fe043bddc7767a3c81481d167122b54cb2e516dd1bfca563559fde18",
+      "prompt_chars": 5883,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "formation",
+      "proposed_words": [
+        "formation",
+        "structure",
+        "texture"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 4295,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "chalcedony"
+        ],
+        "reason": "shifting focus from specific silica minerals to broader natural structures and formations that may include or relate to chalcedony's geological context"
+      },
+      "basis_words_count": 1,
+      "reason_chars": 151,
+      "raw_response": "{\"name\": \"natural formations\", \"description\": \"geological and natural structures formed through various processes\", \"words\": [\"formation\", \"structure\", \"texture\"], \"basis_words\": [\"chalcedony\"], \"reason\": \"shifting focus from specific silica minerals to broader natural structures and formations that may include or relate to chalcedony's geological context\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1352_run1_20260722_182747.json",
+      "game_number": 1352,
+      "child_id": "72dc6850c469462b9762f81556a7267a",
+      "generation": 6,
+      "parent_id": "3c852a0cf1104bd6bb2729063d5974f4",
+      "parent_rank": 23,
+      "sampled_op": "l_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "6404ec9b014e7a16d5e35ca9e3de6d18fcb0ea2e89ea8e5bf0df3a62c2d75195",
+      "prompt_chars": 5928,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "subsurface",
+      "proposed_words": [
+        "subsurface",
+        "cavernous",
+        "underground"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 45534,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "opal"
+        ],
+        "reason": "shifting focus from the materials themselves to their subsurface geological environments, exploring less conventional contexts where such materials might be found"
+      },
+      "basis_words_count": 1,
+      "reason_chars": 162,
+      "raw_response": "{\"name\": \"subsurface formations\", \"description\": \"geological features and structures located beneath the Earth's surface\", \"words\": [\"subsurface\", \"cavernous\", \"underground\"], \"basis_words\": [\"opal\"], \"reason\": \"shifting focus from the materials themselves to their subsurface geological environments, exploring less conventional contexts where such materials might be found\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1352_run1_20260722_182747.json",
+      "game_number": 1352,
+      "child_id": "65662eed8e894e3e8c97a0fc713461a9",
+      "generation": 6,
+      "parent_id": "01ad9dd30b8a41f6b4fc8773798f71f8",
+      "parent_rank": 32,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "ac822e95c929dfe7ee1407518fd810339a3f4a3397f95384e2596b92cccc3afb",
+      "prompt_chars": 5783,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "luster",
+      "proposed_words": [
+        "luster",
+        "streak",
+        "cleavage"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 132,
+      "predicted_closeness": 0.7,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top100",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "quartz"
+        ],
+        "reason": "shifts focus from material types to their inherent properties, expanding the search to characteristics that define minerals while maintaining a connection to the target word 'quartz'"
+      },
+      "basis_words_count": 1,
+      "reason_chars": 182,
+      "raw_response": "{\"name\": \"mineral properties\", \"description\": \"attributes and characteristics of minerals\", \"words\": [\"luster\", \"streak\", \"cleavage\"], \"basis_words\": [\"quartz\"], \"reason\": \"shifts focus from material types to their inherent properties, expanding the search to characteristics that define minerals while maintaining a connection to the target word 'quartz'\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.7}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1352_run1_20260722_182747.json",
+      "game_number": 1352,
+      "child_id": "7598f8afb84b4adc856524b868ecb8a4",
+      "generation": 6,
+      "parent_id": "d5f754e487c34aeebff881a732f04459",
+      "parent_rank": 42,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "c22f3081f13572cf1f68fbc8d0c25fa249674398da0661953c47001aa2d2fd0b",
+      "prompt_chars": 5719,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "structure",
+      "proposed_words": [
+        "structure",
+        "arrangement",
+        "pattern"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 31676,
+      "predicted_closeness": 0.4,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "crystal"
+        ],
+        "reason": "shifts focus from composition to structural characteristics, maintaining relevance through the structural nature of crystals"
+      },
+      "basis_words_count": 1,
+      "reason_chars": 124,
+      "raw_response": "{\n  \"name\": \"material structure\",\n  \"description\": \"terms describing the arrangement and form of matter\",\n  \"words\": [\"structure\", \"arrangement\", \"pattern\"],\n  \"basis_words\": [\"crystal\"],\n  \"reason\": \"shifts focus from composition to structural characteristics, maintaining relevance through the structural nature of crystals\",\n  \"predicted_bucket\": \"top500\",\n  \"predicted_closeness\": 0.4\n}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1352_run1_20260722_182747.json",
+      "game_number": 1352,
+      "child_id": "d828b8eb2e334abcba7d59cc17d104ea",
+      "generation": 7,
+      "parent_id": "0e7d9f26ff66490d8eb3aadb9e5e475b",
+      "parent_rank": 5,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "53a0481a251dffeea273b7241170da29b900f22684411ce26a88391aa677ff82",
+      "prompt_chars": 5815,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "clarity",
+      "proposed_words": [
+        "clarity",
+        "sheen",
+        "texture"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 199,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "quartz",
+          "topaz"
+        ],
+        "reason": "mineral descriptors are properties that could be related to the hidden target, considering that topaz's rank suggests properties might be close"
+      },
+      "basis_words_count": 2,
+      "reason_chars": 143,
+      "raw_response": "{\"name\": \"mineral descriptors\", \"description\": \"adjectives that describe properties of minerals\", \"words\": [\"clarity\", \"sheen\", \"texture\"], \"basis_words\": [\"quartz\", \"topaz\"], \"reason\": \"mineral descriptors are properties that could be related to the hidden target, considering that topaz's rank suggests properties might be close\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1352_run1_20260722_182747.json",
+      "game_number": 1352,
+      "child_id": "0722467670014cac825efcaff18ad132",
+      "generation": 7,
+      "parent_id": "3ac6d360f0ca4086a57bc4772d6bac38",
+      "parent_rank": 10,
+      "sampled_op": "m_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "d53d6954bfed4c45e952f17085bb8e42f06ff7e4cd8ef99ecedc593fc5195e98",
+      "prompt_chars": 6043,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "waxy",
+      "proposed_words": [
+        "waxy",
+        "smooth",
+        "shard"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 2988,
+      "predicted_closeness": 0.6,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top100",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "chalcedony"
+        ],
+        "reason": "shifting focus from the mineral's classification to its physical and sensory properties, which may explain its high score through alternative contextual relevance"
+      },
+      "basis_words_count": 1,
+      "reason_chars": 162,
+      "raw_response": "{\"name\": \"textural characteristics of chalcedony\", \"description\": \"focus on the tactile and surface properties of chalcedony, such as smoothness, waxy luster, and other physical traits that distinguish it from similar minerals\", \"words\": [\"waxy\", \"smooth\", \"shard\"], \"basis_words\": [\"chalcedony\"], \"reason\": \"shifting focus from the mineral's classification to its physical and sensory properties, which may explain its high score through alternative contextual relevance\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.6}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1352_run1_20260722_182747.json",
+      "game_number": 1352,
+      "child_id": "e0f8a4f0ebde4c92a05c6417ec0962ba",
+      "generation": 7,
+      "parent_id": "9f0c1b5375e34c5482a65c239b6f41fd",
+      "parent_rank": 12,
+      "sampled_op": "s_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "e7f0a3148eb7cd2d6c390ba967c37ceae28a981ef112137dc7386a4911647135",
+      "prompt_chars": 5873,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "jade",
+      "proposed_words": [
+        "jade",
+        "sapphire",
+        "emerald"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 53,
+      "predicted_closeness": 0.4,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "lapis"
+        ],
+        "reason": "narrowing the focus to specific types of precious stones that are commonly associated with ceremonial and symbolic uses, similar to lapis"
+      },
+      "basis_words_count": 1,
+      "reason_chars": 137,
+      "raw_response": "{\"name\": \"precious stones\", \"description\": \"types of precious stones used in rituals or symbolic contexts\", \"words\": [\"jade\", \"sapphire\", \"emerald\"], \"basis_words\": [\"lapis\"], \"reason\": \"narrowing the focus to specific types of precious stones that are commonly associated with ceremonial and symbolic uses, similar to lapis\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1352_run1_20260722_182747.json",
+      "game_number": 1352,
+      "child_id": "b48b92230ba94c06b8043894359d64b8",
+      "generation": 7,
+      "parent_id": "3c852a0cf1104bd6bb2729063d5974f4",
+      "parent_rank": 23,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "0bf5e71c7d4de07bffa07a11d397a0dcf99748092ba42dae10b9f1540afce2c1",
+      "prompt_chars": 6032,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "color",
+      "proposed_words": [
+        "color",
+        "luster",
+        "transparency"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 198,
+      "predicted_closeness": 0.4,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "quartz",
+          "opal"
+        ],
+        "reason": "focusing on attributes commonly associated with minerals that often co-occur with silica and quartz, such as optical and physical properties that are relevant in geological contexts"
+      },
+      "basis_words_count": 2,
+      "reason_chars": 181,
+      "raw_response": "{\"name\": \"mineral properties\", \"description\": \"optical and physical characteristics of minerals observed in geological contexts\", \"words\": [\"color\", \"luster\", \"transparency\"], \"basis_words\": [\"quartz\", \"opal\"], \"reason\": \"focusing on attributes commonly associated with minerals that often co-occur with silica and quartz, such as optical and physical properties that are relevant in geological contexts\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1352_run1_20260722_182747.json",
+      "game_number": 1352,
+      "child_id": "06e62b6fc2384754b1092f172c6d48b6",
+      "generation": 7,
+      "parent_id": "01ad9dd30b8a41f6b4fc8773798f71f8",
+      "parent_rank": 31,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "02f78a8c85fd355937007f1e667e04fbf83a4ddb65987d5595314687980d1b7d",
+      "prompt_chars": 6096,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "luster",
+      "proposed_words": [
+        "luster",
+        "streak",
+        "hardness"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 132,
+      "predicted_closeness": 0.7,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top100",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "hematite"
+        ],
+        "reason": "shifts focus from materials to their identifying characteristics, which are closely related but distinct from geological materials themselves"
+      },
+      "basis_words_count": 1,
+      "reason_chars": 141,
+      "raw_response": "{\"name\": \"mineral properties\", \"description\": \"characteristics used to identify and classify minerals\", \"words\": [\"luster\", \"streak\", \"hardness\"], \"basis_words\": [\"hematite\"], \"reason\": \"shifts focus from materials to their identifying characteristics, which are closely related but distinct from geological materials themselves\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.7}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1352_run2_20260722_195659.json",
+      "game_number": 1352,
+      "child_id": "31f4d28d55a548fface55e0c7597f27f",
+      "generation": 2,
+      "parent_id": "0ea6f8e775c6442faf184f1b59c74166",
+      "parent_rank": 179,
+      "sampled_op": "m_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "713c8086e170254315f7fdcf990ada0a25182c8815880e5b72713fe35d1f4ca4",
+      "prompt_chars": 3714,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "pitch",
+      "proposed_words": [
+        "pitch",
+        "volume",
+        "resonance"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 36349,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "beyond",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "colors"
+        ],
+        "reason": "Hue relates to color, which can be analogously connected to sound properties, providing a different sensory angle."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 114,
+      "raw_response": "{\"name\": \"sound descriptors\", \"description\": \"terms describing auditory qualities\", \"words\": [\"pitch\", \"volume\", \"resonance\"], \"basis_words\": [\"colors\"], \"reason\": \"Hue relates to color, which can be analogously connected to sound properties, providing a different sensory angle.\", \"predicted_bucket\": \"beyond\", \"predicted_closeness\": 0.3}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1352_run2_20260722_195659.json",
+      "game_number": 1352,
+      "child_id": "319a72fd9c9b4da98120b331cd747966",
+      "generation": 2,
+      "parent_id": "bc10983976244c2eae9fb3276730a549",
+      "parent_rank": 279,
+      "sampled_op": "s_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "e43a4b19bd23d187d5892525cfa6b4dd4733ca822a269da1956e7589aa1822be",
+      "prompt_chars": 3670,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "bunch",
+      "proposed_words": [
+        "bunch",
+        "heap",
+        "mass"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 2323,
+      "predicted_closeness": 0.6,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "cluster"
+        ],
+        "reason": "Selected synonyms and related terms to 'cluster' that are not in the excluded list and are semantically close."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 110,
+      "raw_response": "{\"name\": \"compact groupings\", \"description\": \"a closely packed collection of entities\", \"words\": [\"bunch\", \"heap\", \"mass\"], \"basis_words\": [\"cluster\"], \"reason\": \"Selected synonyms and related terms to 'cluster' that are not in the excluded list and are semantically close.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.6}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1352_run2_20260722_195659.json",
+      "game_number": 1352,
+      "child_id": "d884ce3544dd4b298877d4ac25dde8fa",
+      "generation": 3,
+      "parent_id": "419a54029dde4a38a023d71c65c74e8c",
+      "parent_rank": 68,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "ad5950a67f106d3370d2c03c7557b900505590bdfe170ab2a247e431813e5caa",
+      "prompt_chars": 4092,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "sapphire",
+      "proposed_words": [
+        "sapphire",
+        "platinum",
+        "jade"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 8,
+      "predicted_closeness": 0.4,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "gold"
+        ],
+        "reason": "Gold's association with wealth and status motivates exploration of other materials historically linked to value and prestige."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 125,
+      "raw_response": "{\"name\": \"precious materials\", \"description\": \"substances valued for rarity and symbolic significance\", \"words\": [\"sapphire\", \"platinum\", \"jade\"], \"basis_words\": [\"gold\"], \"reason\": \"Gold's association with wealth and status motivates exploration of other materials historically linked to value and prestige.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1352_run2_20260722_195659.json",
+      "game_number": 1352,
+      "child_id": "fabb5237bcab49e5abc392c25123a716",
+      "generation": 3,
+      "parent_id": "0ea6f8e775c6442faf184f1b59c74166",
+      "parent_rank": 179,
+      "sampled_op": "l_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "0fb7e765ddc3599ade1352b84e8ebef258f1d5d5c50ffc1d12d23d665c1c5f9f",
+      "prompt_chars": 4357,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "perception",
+      "proposed_words": [
+        "perception",
+        "awareness",
+        "interpretation"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 31876,
+      "predicted_closeness": 0.4,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "hue",
+          "visual descriptors"
+        ],
+        "reason": "Cognitive processes relate to how we perceive and interpret visual qualities, expanding into mental mechanisms while maintaining a plausible connection to visual descriptors."
+      },
+      "basis_words_count": 2,
+      "reason_chars": 174,
+      "raw_response": "{\"name\": \"cognitive processes\", \"description\": \"mental processes involved in understanding and interpreting sensory information\", \"words\": [\"perception\", \"awareness\", \"interpretation\"], \"basis_words\": [\"hue\", \"visual descriptors\"], \"reason\": \"Cognitive processes relate to how we perceive and interpret visual qualities, expanding into mental mechanisms while maintaining a plausible connection to visual descriptors.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1352_run2_20260722_195659.json",
+      "game_number": 1352,
+      "child_id": "007890d761b6484f89a26584112bc26a",
+      "generation": 4,
+      "parent_id": "419a54029dde4a38a023d71c65c74e8c",
+      "parent_rank": 68,
+      "sampled_op": "m_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "bb4c1978cc816bda5f9373fc4dff028344f79e5171c524e8ebfeed47c90185d4",
+      "prompt_chars": 4613,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "ore",
+      "proposed_words": [
+        "ore",
+        "metal",
+        "luster"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 713,
+      "predicted_closeness": 0.4,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "gold"
+        ],
+        "reason": "Gold's high rank might stem from its material attributes and natural forms rather than symbolic associations with power or royalty"
+      },
+      "basis_words_count": 1,
+      "reason_chars": 130,
+      "raw_response": "{\"name\": \"material properties and natural occurrence\", \"description\": \"physical characteristics and geological sources of gold\", \"words\": [\"ore\", \"metal\", \"luster\"], \"basis_words\": [\"gold\"], \"reason\": \"Gold's high rank might stem from its material attributes and natural forms rather than symbolic associations with power or royalty\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1352_run2_20260722_195659.json",
+      "game_number": 1352,
+      "child_id": "0ecbacce0b954a2db671bfc737ecf422",
+      "generation": 4,
+      "parent_id": "0ea6f8e775c6442faf184f1b59c74166",
+      "parent_rank": 179,
+      "sampled_op": "s_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "bdfd5f4759b741151e66fa159a914d75c186486b2c59566580d749db8a3611c9",
+      "prompt_chars": 4519,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "tint",
+      "proposed_words": [
+        "tint",
+        "tone",
+        "value"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 934,
+      "predicted_closeness": 0.7,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "hue"
+        ],
+        "reason": "Tint, tone, and value are specific color-related terms that refine the concept of hue by focusing on variations in color intensity and lightness."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 145,
+      "raw_response": "{\"name\": \"color qualities\", \"description\": \"words related to specific color attributes and variations\", \"words\": [\"tint\", \"tone\", \"value\"], \"basis_words\": [\"hue\"], \"reason\": \"Tint, tone, and value are specific color-related terms that refine the concept of hue by focusing on variations in color intensity and lightness.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.7}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1352_run2_20260722_195659.json",
+      "game_number": 1352,
+      "child_id": "afc02d3230bb4912893c39a356abebba",
+      "generation": 5,
+      "parent_id": "419a54029dde4a38a023d71c65c74e8c",
+      "parent_rank": 68,
+      "sampled_op": "m_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "b4638712f1b2e01cb08c48d5e7f37b58df402bce597873fd467f90dc6e1da170",
+      "prompt_chars": 5036,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "value",
+      "proposed_words": [
+        "value",
+        "luster",
+        "metal"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 1640,
+      "predicted_closeness": 0.6,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top100",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "gold"
+        ],
+        "reason": "Gold is a precious metal with strong associations with economic value and material wealth, which could be a different angle than the original focus on power and royalty."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 169,
+      "raw_response": "{\"name\": \"material value and luxury\", \"description\": \"associations with material wealth and economic value\", \"words\": [\"value\", \"luster\", \"metal\"], \"basis_words\": [\"gold\"], \"reason\": \"Gold is a precious metal with strong associations with economic value and material wealth, which could be a different angle than the original focus on power and royalty.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.6}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1352_run2_20260722_195659.json",
+      "game_number": 1352,
+      "child_id": "75cc7c51877e478290fa7c88c23c2bc2",
+      "generation": 5,
+      "parent_id": "360a66cfa963472d8dced7dba64d5a4a",
+      "parent_rank": 123,
+      "sampled_op": "l_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "8eb449d5ee8f3ee688902333216da8125175b5efc9cb4d7aa05167b1145626f4",
+      "prompt_chars": 5197,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "socket",
+      "proposed_words": [
+        "socket",
+        "plug",
+        "interface"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 3788,
+      "predicted_closeness": 0.4,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "clasp"
+        ],
+        "reason": "Shifting from fastening mechanisms to broader concepts of interlocking components, exploring how parts connect in a structural or functional context."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 149,
+      "raw_response": "{\"name\": \"connection points\", \"description\": \"ways in which components interlock or attach\", \"words\": [\"socket\", \"plug\", \"interface\"], \"basis_words\": [\"clasp\"], \"reason\": \"Shifting from fastening mechanisms to broader concepts of interlocking components, exploring how parts connect in a structural or functional context.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1352_run2_20260722_195659.json",
+      "game_number": 1352,
+      "child_id": "571356a5a519418dbe3469ed1aa05c0b",
+      "generation": 5,
+      "parent_id": "007890d761b6484f89a26584112bc26a",
+      "parent_rank": 132,
+      "sampled_op": "l_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "d6603a95e3030e6ad65bdbdc97b07f37560e666e7b2d9ed43125a8bb5b950d97",
+      "prompt_chars": 5424,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "optics",
+      "proposed_words": [
+        "optics",
+        "interaction",
+        "medium"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 15617,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "luster"
+        ],
+        "reason": "Shifting focus to the optical behavior of metallic substances in various environments, which could reveal new insights related to light interaction that are distinct from traditional material properties but still connected to visual attributes."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 244,
+      "raw_response": "{\"name\": \"optical interactions\", \"description\": \"how light interacts with metallic substances in different mediums\", \"words\": [\"optics\", \"interaction\", \"medium\"], \"basis_words\": [\"luster\"], \"reason\": \"Shifting focus to the optical behavior of metallic substances in various environments, which could reveal new insights related to light interaction that are distinct from traditional material properties but still connected to visual attributes.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1352_run2_20260722_195659.json",
+      "game_number": 1352,
+      "child_id": "38e4b3f0856446e5b163a7d95438c267",
+      "generation": 6,
+      "parent_id": "419a54029dde4a38a023d71c65c74e8c",
+      "parent_rank": 68,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "3760c1b1ed31930bc8c002be93dc5e58aa22bbc3fd31910f9f3b30c71c248333",
+      "prompt_chars": 5435,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "hard",
+      "proposed_words": [
+        "hard",
+        "shiny",
+        "polished"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 5191,
+      "predicted_closeness": 0.6,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "gold"
+        ],
+        "reason": "Gold is a material, so exploring material attributes provides an adjacent category that could still relate to the hidden target through its physical properties."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 160,
+      "raw_response": "{\"name\": \"material descriptors\", \"description\": \"attributes and qualities of materials\", \"words\": [\"hard\", \"shiny\", \"polished\"], \"basis_words\": [\"gold\"], \"reason\": \"Gold is a material, so exploring material attributes provides an adjacent category that could still relate to the hidden target through its physical properties.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.6}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1352_run2_20260722_195659.json",
+      "game_number": 1352,
+      "child_id": "39ce9166842f4af3ac34acdb58f248d5",
+      "generation": 6,
+      "parent_id": "a082e22534d3486fab2af6a27866119e",
+      "parent_rank": 71,
+      "sampled_op": "m_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "df79b1a09492b88b595e90d47da0c8ea055e19d2ef7d69b21f63790cf19ba1bc",
+      "prompt_chars": 5327,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "plant",
+      "proposed_words": [
+        "plant",
+        "herb",
+        "perfume"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 3877,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "lilac"
+        ],
+        "reason": "shifting focus from visual associations to olfactory properties linked to lilac"
+      },
+      "basis_words_count": 1,
+      "reason_chars": 79,
+      "raw_response": "{\"name\": \"scented materials\", \"description\": \"materials known for their lilac-like fragrance\", \"words\": [\"plant\", \"herb\", \"perfume\"], \"basis_words\": [\"lilac\"], \"reason\": \"shifting focus from visual associations to olfactory properties linked to lilac\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1352_run2_20260722_195659.json",
+      "game_number": 1352,
+      "child_id": "d8a6ef5fc3ea437191276a953a2b986e",
+      "generation": 6,
+      "parent_id": "360a66cfa963472d8dced7dba64d5a4a",
+      "parent_rank": 123,
+      "sampled_op": "s_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "938039544cbb07e877a9b5001ad5a9f5c0cc7c32969642c9198ad5b5d0b95bf2",
+      "prompt_chars": 5253,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "secure",
+      "proposed_words": [
+        "secure",
+        "catch",
+        "toggle"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 16774,
+      "predicted_closeness": 0.7,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top100",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "clasp"
+        ],
+        "reason": "Refining 'binding methods' to focus on specific securement mechanisms, using synonyms and related terms of 'clasp' such as 'secure' and 'catch' to narrow the conceptual neighborhood."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 182,
+      "raw_response": "{\"name\": \"securement methods\", \"description\": \"ways to fasten or secure using specific mechanisms\", \"words\": [\"secure\", \"catch\", \"toggle\"], \"basis_words\": [\"clasp\"], \"reason\": \"Refining 'binding methods' to focus on specific securement mechanisms, using synonyms and related terms of 'clasp' such as 'secure' and 'catch' to narrow the conceptual neighborhood.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.7}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1352_run2_20260722_195659.json",
+      "game_number": 1352,
+      "child_id": "d38c7bb5c00443e3ab1927da747fd03f",
+      "generation": 6,
+      "parent_id": "007890d761b6484f89a26584112bc26a",
+      "parent_rank": 132,
+      "sampled_op": "l_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "d2fbf3db2d12fa343548b346cbc21114be2359dbe678d51eec9b9b98b65fbd6d",
+      "prompt_chars": 5848,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "sheen",
+      "proposed_words": [
+        "sheen",
+        "radiance",
+        "glint"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 6163,
+      "predicted_closeness": 0.4,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "gold"
+        ],
+        "reason": "Shifting toward the sensory and visual aesthetic impacts of gold moves beyond physical properties into perceptual experiences, maintaining relevance to luster while expanding into new semantic territory."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 203,
+      "raw_response": "{\n  \"name\": \"aesthetic resonance of metallic substances\",\n  \"description\": \"explore visual and sensory impacts of gold in artistic and functional contexts\",\n  \"words\": [\"sheen\", \"radiance\", \"glint\"],\n  \"basis_words\": [\"gold\"],\n  \"reason\": \"Shifting toward the sensory and visual aesthetic impacts of gold moves beyond physical properties into perceptual experiences, maintaining relevance to luster while expanding into new semantic territory.\",\n  \"predicted_bucket\": \"top500\",\n  \"predicted_closeness\": 0.4\n}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1352_run3_20260722_204210.json",
+      "game_number": 1352,
+      "child_id": "829ec5e7b80f498990fa8f924f71e5c4",
+      "generation": 2,
+      "parent_id": "f6201e2fe7e3499bb74c599fc0877463",
+      "parent_rank": 62,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "c1269fecc461d3a38a81502793a85a8755694381d1227844295600c03a0e9ddb",
+      "prompt_chars": 3572,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "sweet",
+      "proposed_words": [
+        "sweet",
+        "juicy",
+        "ripe"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 3965,
+      "predicted_closeness": 0.6,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "pear"
+        ],
+        "reason": "selected descriptors commonly associated with fruits that could relate to the hidden target through sensory attributes"
+      },
+      "basis_words_count": 1,
+      "reason_chars": 118,
+      "raw_response": "{\"name\": \"fruit characteristics\", \"description\": \"attributes describing the taste and texture of fruits\", \"words\": [\"sweet\", \"juicy\", \"ripe\"], \"basis_words\": [\"pear\"], \"reason\": \"selected descriptors commonly associated with fruits that could relate to the hidden target through sensory attributes\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.6}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1352_run3_20260722_204210.json",
+      "game_number": 1352,
+      "child_id": "7bb8a001c66b407ebfedfac71f814025",
+      "generation": 2,
+      "parent_id": "ba26e69b0f124d939d99290c941089c2",
+      "parent_rank": 863,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "2a83a879a00e0bce50b2c5386244808189db530157abc38edcf72332bfed3463",
+      "prompt_chars": 3793,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "heritage",
+      "proposed_words": [
+        "heritage",
+        "lineage",
+        "clan"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 13059,
+      "predicted_closeness": 0.4,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "noble"
+        ],
+        "reason": "Shifts focus from direct noble status to concepts of familial history and legacy, which are culturally linked to nobility without being synonyms for it."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 152,
+      "raw_response": "{\"name\": \"social_lineage_terms\", \"description\": \"terms related to family heritage and ancestry\", \"words\": [\"heritage\", \"lineage\", \"clan\"], \"basis_words\": [\"noble\"], \"reason\": \"Shifts focus from direct noble status to concepts of familial history and legacy, which are culturally linked to nobility without being synonyms for it.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1352_run4_20260722_224638.json",
+      "game_number": 1352,
+      "child_id": "93bae6be0b3d43bcaf912379f48e8c7b",
+      "generation": 2,
+      "parent_id": "3e9b79be159e4d6d92bbd36154755a3e",
+      "parent_rank": 65,
+      "sampled_op": "m_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "15a2899794660fcd1d8bf407e48aa99adc3add0fa59ecf70f0fd651c0cb309bd",
+      "prompt_chars": 3672,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "royal",
+      "proposed_words": [
+        "royal",
+        "regal",
+        "vibrant"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 1111,
+      "predicted_closeness": 0.4,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "purple"
+        ],
+        "reason": "Shifts focus from color shades to symbolic associations with royalty, which historically ties to purple through regal and vibrant connotations."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 143,
+      "raw_response": "{\"name\": \"regal associations\", \"description\": \"terms associated with royalty or regal attributes, linked to the color purple\", \"words\": [\"royal\", \"regal\", \"vibrant\"], \"basis_words\": [\"purple\"], \"reason\": \"Shifts focus from color shades to symbolic associations with royalty, which historically ties to purple through regal and vibrant connotations.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1352_run4_20260722_224638.json",
+      "game_number": 1352,
+      "child_id": "8e4b77d451014563823bba80118d0fff",
+      "generation": 2,
+      "parent_id": "bddc9fa31c2e48bf8210fb963bd30722",
+      "parent_rank": 170,
+      "sampled_op": "s_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "520b89e73f789ae331f41d5de9e51a5550b2ab77ba448d3b36d41fa7364fbca1",
+      "prompt_chars": 3614,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "blossom",
+      "proposed_words": [
+        "blossom",
+        "petal",
+        "bud"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 399,
+      "predicted_closeness": 0.7,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "flower"
+        ],
+        "reason": "Narrowing focus to floral terminology to explore more specific botanical characteristics."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 89,
+      "raw_response": "{\"name\": \"Floral Terms\", \"description\": \"terms related to flower structure and development\", \"words\": [\"blossom\", \"petal\", \"bud\"], \"basis_words\": [\"flower\"], \"reason\": \"Narrowing focus to floral terminology to explore more specific botanical characteristics.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.7}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1352_run4_20260722_224638.json",
+      "game_number": 1352,
+      "child_id": "47bc2a37483c466eb5c421f4ccab70c3",
+      "generation": 3,
+      "parent_id": "3e9b79be159e4d6d92bbd36154755a3e",
+      "parent_rank": 65,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "7c65a88870085d7f67792939ebca2d3e98189ff717e8013b268c770addfee9d2",
+      "prompt_chars": 4160,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "palette",
+      "proposed_words": [
+        "palette",
+        "spectrum",
+        "chroma"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 2117,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "purple",
+          "indigo",
+          "lavender",
+          "violet"
+        ],
+        "reason": "The adjacent category focuses on general color terminology, expanding beyond specific shades to include broader color-related terms that could intersect with the hidden target."
+      },
+      "basis_words_count": 4,
+      "reason_chars": 176,
+      "raw_response": "{\"name\": \"color terms\", \"description\": \"terms related to color description and categorization\", \"words\": [\"palette\", \"spectrum\", \"chroma\"], \"basis_words\": [\"purple\", \"indigo\", \"lavender\", \"violet\"], \"reason\": \"The adjacent category focuses on general color terminology, expanding beyond specific shades to include broader color-related terms that could intersect with the hidden target.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1352_run4_20260722_224638.json",
+      "game_number": 1352,
+      "child_id": "f6f338518ed54842b1e917ce7d5533d8",
+      "generation": 3,
+      "parent_id": "bddc9fa31c2e48bf8210fb963bd30722",
+      "parent_rank": 170,
+      "sampled_op": "m_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "880c95489f525fb1fd4fbdf5e0d8a6b5bc2a6f673d32a80ac30b36e141e01b30",
+      "prompt_chars": 4195,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "pattern",
+      "proposed_words": [
+        "pattern",
+        "decoration",
+        "image"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 1422,
+      "predicted_closeness": 0.4,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "flower"
+        ],
+        "reason": "Explores the visual and decorative aspects of 'flower' beyond botanical classification, focusing on artistic and design contexts."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 129,
+      "raw_response": "{\"name\": \"artistic and decorative elements in visual media\", \"description\": \"terms related to visual and artistic representations often associated with flowers\", \"words\": [\"pattern\", \"decoration\", \"image\"], \"basis_words\": [\"flower\"], \"reason\": \"Explores the visual and decorative aspects of 'flower' beyond botanical classification, focusing on artistic and design contexts.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1352_run4_20260722_224638.json",
+      "game_number": 1352,
+      "child_id": "da953cec0d8d4de6af22e2cd443f20a8",
+      "generation": 3,
+      "parent_id": "8e4b77d451014563823bba80118d0fff",
+      "parent_rank": 177,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "f059b9ac097cefa5da5dc470db01853f2ad97393b2527f6aebb840406db2f6b1",
+      "prompt_chars": 4268,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "dye",
+      "proposed_words": [
+        "dye",
+        "etch",
+        "render"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 190,
+      "predicted_closeness": 0.2,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "beyond",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "draw",
+          "paint",
+          "sketch"
+        ],
+        "reason": "These terms are related to artistic methods that could involve floral subjects, thus being adjacent but distinct from flower parts and stages."
+      },
+      "basis_words_count": 3,
+      "reason_chars": 142,
+      "raw_response": "{\"name\": \"artistic techniques\", \"description\": \"terms related to artistic methods and processes\", \"words\": [\"dye\", \"etch\", \"render\"], \"basis_words\": [\"draw\", \"paint\", \"sketch\"], \"reason\": \"These terms are related to artistic methods that could involve floral subjects, thus being adjacent but distinct from flower parts and stages.\", \"predicted_bucket\": \"beyond\", \"predicted_closeness\": 0.2}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1352_run4_20260722_224638.json",
+      "game_number": 1352,
+      "child_id": "2d2fae35aa354e66bc1091194858785c",
+      "generation": 3,
+      "parent_id": "93bae6be0b3d43bcaf912379f48e8c7b",
+      "parent_rank": 195,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "de4b6cee12cee4f22183dbeffc79fcf32aaff6d85383a1010ce945795cd988e5",
+      "prompt_chars": 4224,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "esoteric",
+      "proposed_words": [
+        "esoteric",
+        "occult",
+        "mythic"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 4232,
+      "predicted_closeness": 0.6,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top100",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "mystic"
+        ],
+        "reason": "Shifts focus from the color purple's symbolic meanings to broader mystical and esoteric concepts, maintaining a thematic link through shared associations with the arcane and symbolic."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 183,
+      "raw_response": "{\"name\": \"mystical concepts\", \"description\": \"abstract and esoteric ideas linked to mystery and symbolism\", \"words\": [\"esoteric\", \"occult\", \"mythic\"], \"basis_words\": [\"mystic\"], \"reason\": \"Shifts focus from the color purple's symbolic meanings to broader mystical and esoteric concepts, maintaining a thematic link through shared associations with the arcane and symbolic.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.6}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1352_run4_20260722_224638.json",
+      "game_number": 1352,
+      "child_id": "64fb7dccbce6444fbdc70d43416fd554",
+      "generation": 4,
+      "parent_id": "3e9b79be159e4d6d92bbd36154755a3e",
+      "parent_rank": 65,
+      "sampled_op": "m_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "dcbc358218022e733e3116e3d4fe466a820fff92d21eb214a2fb679f1082d08b",
+      "prompt_chars": 4707,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "royal",
+      "proposed_words": [
+        "royal",
+        "noble",
+        "status"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 1111,
+      "predicted_closeness": 0.7,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top100",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "purple"
+        ],
+        "reason": "Shifts focus from color shades to the symbolic and cultural meanings associated with purple, such as royalty and nobility."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 122,
+      "raw_response": "{\"name\": \"symbolic associations\", \"description\": \"symbolic meanings and cultural significance of purple\", \"words\": [\"royal\", \"noble\", \"status\"], \"basis_words\": [\"purple\"], \"reason\": \"Shifts focus from color shades to the symbolic and cultural meanings associated with purple, such as royalty and nobility.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.7}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1352_run4_20260722_224638.json",
+      "game_number": 1352,
+      "child_id": "d314d72ae6304c69a7f3c79209978e40",
+      "generation": 4,
+      "parent_id": "47bc2a37483c466eb5c421f4ccab70c3",
+      "parent_rank": 129,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "a374223262b5ac0b6aaf32f4241babf1d2fc8585cda35aac5f3bb4eaab607226",
+      "prompt_chars": 4618,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "canopy",
+      "proposed_words": [
+        "canopy",
+        "branch",
+        "foliage"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 16322,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "rose"
+        ],
+        "reason": "The category focuses on plant-related adjectives and descriptors that are semantically adjacent to 'rose' as a plant, expanding to other botanical terms that might share contextual proximity with the target."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 207,
+      "raw_response": "{\n  \"name\": \"plant descriptors\",\n  \"description\": \"terms used to describe plant features and characteristics\",\n  \"words\": [\"canopy\", \"branch\", \"foliage\"],\n  \"basis_words\": [\"rose\"],\n  \"reason\": \"The category focuses on plant-related adjectives and descriptors that are semantically adjacent to 'rose' as a plant, expanding to other botanical terms that might share contextual proximity with the target.\",\n  \"predicted_bucket\": \"top500\",\n  \"predicted_closeness\": 0.3\n}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1352_run4_20260722_224638.json",
+      "game_number": 1352,
+      "child_id": "1fa30af56c3549788735fb45e355aabe",
+      "generation": 4,
+      "parent_id": "bddc9fa31c2e48bf8210fb963bd30722",
+      "parent_rank": 170,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "9caa1a813f77bf59de5c2c3d59f5447845c710ede91844a0f3cb4e88b6548054",
+      "prompt_chars": 4647,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "color",
+      "proposed_words": [
+        "color",
+        "texture",
+        "shape"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 198,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "flower"
+        ],
+        "reason": "Plant descriptors are adjacent to botanical terms as they relate to visual and physical attributes of plants, but are not a sub-category of botanical taxonomy itself."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 166,
+      "raw_response": "{\"name\": \"plant descriptors\", \"description\": \"terms used to describe plant appearance and features\", \"words\": [\"color\", \"texture\", \"shape\"], \"basis_words\": [\"flower\"], \"reason\": \"Plant descriptors are adjacent to botanical terms as they relate to visual and physical attributes of plants, but are not a sub-category of botanical taxonomy itself.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1352_run4_20260722_224638.json",
+      "game_number": 1352,
+      "child_id": "5b8ea3efce9e4107a95f818f3b8b6c3f",
+      "generation": 4,
+      "parent_id": "8e4b77d451014563823bba80118d0fff",
+      "parent_rank": 177,
+      "sampled_op": "m_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "aa9372118e6906c2160f244d416a6a90def3370d780d91e527efd0ccba300aa9",
+      "prompt_chars": 4821,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "texture",
+      "proposed_words": [
+        "texture",
+        "symmetry",
+        "form"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 1036,
+      "predicted_closeness": 0.5,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "petal"
+        ],
+        "reason": "This hypothesis shifts focus from botanical anatomy to the visual and structural attributes of petals, exploring how they are perceived and described in artistic or design contexts."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 181,
+      "raw_response": "{\"name\": \"aesthetic qualities of petal\", \"description\": \"terms related to the visual and structural characteristics of petals\", \"words\": [\"texture\", \"symmetry\", \"form\"], \"basis_words\": [\"petal\"], \"reason\": \"This hypothesis shifts focus from botanical anatomy to the visual and structural attributes of petals, exploring how they are perceived and described in artistic or design contexts.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.5}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1352_run5_20260723_010249.json",
+      "game_number": 1352,
+      "child_id": "bd0306df0f954a78a00ece42b654d4a8",
+      "generation": 2,
+      "parent_id": "3c5964cf8b984c23bf022a30c6d0c48b",
+      "parent_rank": 190,
+      "sampled_op": "l_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "66af0b17112ab7c16d9d3e7004ea95bf02581443e762c94a3107c23dde6a9897",
+      "prompt_chars": 3959,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "treat",
+      "proposed_words": [
+        "treat",
+        "soak",
+        "blend"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 24454,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "materials"
+        ],
+        "reason": "Focuses on processes that modify materials rather than describing inherent properties, expanding beyond direct material or color attributes"
+      },
+      "basis_words_count": 1,
+      "reason_chars": 139,
+      "raw_response": "{\"name\": \"textile_treatment_terms\", \"description\": \"methods of altering material properties through chemical or physical processes\", \"words\": [\"treat\", \"soak\", \"blend\"], \"basis_words\": [\"materials\"], \"reason\": \"Focuses on processes that modify materials rather than describing inherent properties, expanding beyond direct material or color attributes\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1352_run5_20260723_010249.json",
+      "game_number": 1352,
+      "child_id": "62b05888725e4730b9d8c7d44533085a",
+      "generation": 2,
+      "parent_id": "1c07f72bc2374a918fac1e5246c01084",
+      "parent_rank": 220,
+      "sampled_op": "s_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "284d763d6b72ac32d8b44b41b54aecdc7e615d091d89a75ea3029c4bc9efd236",
+      "prompt_chars": 3702,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "form",
+      "proposed_words": [
+        "form",
+        "contour",
+        "outline"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 6258,
+      "predicted_closeness": 0.75,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "shape"
+        ],
+        "reason": "Focuses on synonyms and related terms of 'shape' to refine the concept of geometric features, emphasizing form and structural attributes."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 137,
+      "raw_response": "{\"name\": \"form and structure\", \"description\": \"attributes related to the form and structure of geometric entities\", \"words\": [\"form\", \"contour\", \"outline\"], \"basis_words\": [\"shape\"], \"reason\": \"Focuses on synonyms and related terms of 'shape' to refine the concept of geometric features, emphasizing form and structural attributes.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.75}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1352_run5_20260723_010249.json",
+      "game_number": 1352,
+      "child_id": "90f5eb39416b4f93a2910922a278b0d6",
+      "generation": 2,
+      "parent_id": "078095a1d0d14015b82374a6df5d1464",
+      "parent_rank": 349,
+      "sampled_op": "l_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "6e46b52e97360aa33e0edcb4bcd4d6e2b302ac629b1cff8a28354e3a140a6959",
+      "prompt_chars": 4070,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "formation",
+      "proposed_words": [
+        "formation",
+        "structure",
+        "texture"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 4295,
+      "predicted_closeness": 0.4,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "glass"
+        ],
+        "reason": "Shifts from material properties to geological and morphological features, which are indirectly related to glass's physical form but distinct from existing categories"
+      },
+      "basis_words_count": 1,
+      "reason_chars": 165,
+      "raw_response": "{\"name\": \"natural formations\", \"description\": \"types of natural structures and their characteristics\", \"words\": [\"formation\", \"structure\", \"texture\"], \"basis_words\": [\"glass\"], \"reason\": \"Shifts from material properties to geological and morphological features, which are indirectly related to glass's physical form but distinct from existing categories\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1352_run5_20260723_010249.json",
+      "game_number": 1352,
+      "child_id": "b7cdd6141c374e0cb16c05f70ba7c46c",
+      "generation": 3,
+      "parent_id": "078095a1d0d14015b82374a6df5d1464",
+      "parent_rank": 54,
+      "sampled_op": "l_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "aaca98323d479dd8a2dfb7d45f1fd517fd09e035e81cbc1f36421395657a02c9",
+      "prompt_chars": 4399,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "formation",
+      "proposed_words": [
+        "formation",
+        "stratum",
+        "layer"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 4295,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "stone"
+        ],
+        "reason": "Shifts from material taxonomy to geological structures, which are tangibly related to stone's context but distinct from existing categories"
+      },
+      "basis_words_count": 1,
+      "reason_chars": 139,
+      "raw_response": "{\"name\": \"natural formations\", \"description\": \"types of natural structures and their characteristics\", \"words\": [\"formation\", \"stratum\", \"layer\"], \"basis_words\": [\"stone\"], \"reason\": \"Shifts from material taxonomy to geological structures, which are tangibly related to stone's context but distinct from existing categories\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1352_run5_20260723_010249.json",
+      "game_number": 1352,
+      "child_id": "0d745a92a0494fd2acd6ed8d8415bfa2",
+      "generation": 3,
+      "parent_id": "3c5964cf8b984c23bf022a30c6d0c48b",
+      "parent_rank": 190,
+      "sampled_op": "m_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "0c526d63946e242555d57ee515336e30d31f3b08c44fbad08ed5b8119d005e29",
+      "prompt_chars": 4339,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "solvent",
+      "proposed_words": [
+        "solvent",
+        "solution",
+        "soak"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 44473,
+      "predicted_closeness": 0.6,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "colors",
+          "materials"
+        ],
+        "reason": "This hypothesis shifts focus to the practical application of dye rather than its color or material properties, exploring terms associated with how dye is used in processes like soaking or dissolving."
+      },
+      "basis_words_count": 2,
+      "reason_chars": 199,
+      "raw_response": "{\n  \"name\": \"dye_application_terms\",\n  \"description\": \"terms related to the application and use of dye\",\n  \"words\": [\"solvent\", \"solution\", \"soak\"],\n  \"basis_words\": [\"colors\", \"materials\"],\n  \"reason\": \"This hypothesis shifts focus to the practical application of dye rather than its color or material properties, exploring terms associated with how dye is used in processes like soaking or dissolving.\",\n  \"predicted_bucket\": \"top500\",\n  \"predicted_closeness\": 0.6\n}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1352_run5_20260723_010249.json",
+      "game_number": 1352,
+      "child_id": "f4853767d84e423ab29a0cdab456444a",
+      "generation": 3,
+      "parent_id": "1c07f72bc2374a918fac1e5246c01084",
+      "parent_rank": 220,
+      "sampled_op": "l_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "408bd048d7c2d07f593fd15d67b1c0fa73c2dbbc2dfa0baf4fcb4859da5cb6af",
+      "prompt_chars": 4530,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "arrangement",
+      "proposed_words": [
+        "arrangement",
+        "formation",
+        "layout"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 8634,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "circle"
+        ],
+        "reason": "Shifts focus from intrinsic shape properties to how shapes relate and are positioned in space, opening a new direction while remaining semantically adjacent to geometric concepts."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 179,
+      "raw_response": "{\"name\": \"spatial relationships\", \"description\": \"how spatial elements interact and are positioned\", \"words\": [\"arrangement\", \"formation\", \"layout\"], \"basis_words\": [\"circle\"], \"reason\": \"Shifts focus from intrinsic shape properties to how shapes relate and are positioned in space, opening a new direction while remaining semantically adjacent to geometric concepts.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1352_run5_20260723_010249.json",
+      "game_number": 1352,
+      "child_id": "4ef416cbbdde4e9b8e99ae72c824d608",
+      "generation": 3,
+      "parent_id": "90f5eb39416b4f93a2910922a278b0d6",
+      "parent_rank": 333,
+      "sampled_op": "l_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "6c5ae560e581f4751f15ccfd9408efb8b3e556d3d271ebc23ced12f19bd667c5",
+      "prompt_chars": 4577,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "smell",
+      "proposed_words": [
+        "smell",
+        "scent",
+        "fragrance"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 15777,
+      "predicted_closeness": 0.2,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "beyond",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "substances",
+          "interact"
+        ],
+        "reason": "Shifts from sound-based interactions to olfactory properties, a distinct sensory modality not covered by existing categories"
+      },
+      "basis_words_count": 2,
+      "reason_chars": 124,
+      "raw_response": "{\"name\": \"olfactory interactions\", \"description\": \"how substances relate to smell\", \"words\": [\"smell\", \"scent\", \"fragrance\"], \"basis_words\": [\"substances\", \"interact\"], \"reason\": \"Shifts from sound-based interactions to olfactory properties, a distinct sensory modality not covered by existing categories\", \"predicted_bucket\": \"beyond\", \"predicted_closeness\": 0.2}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1352_run5_20260723_010249.json",
+      "game_number": 1352,
+      "child_id": "40a31eba47444b47b336e2f11ee80cbe",
+      "generation": 4,
+      "parent_id": "078095a1d0d14015b82374a6df5d1464",
+      "parent_rank": 54,
+      "sampled_op": "m_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "908154abe99ad2ca92ee669940b5d6c6c8c1220d54e9c21e91eeec2c768cbaf8",
+      "prompt_chars": 4739,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "geology",
+      "proposed_words": [
+        "geology",
+        "symbol",
+        "monument"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 18767,
+      "predicted_closeness": 0.4,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "stone"
+        ],
+        "reason": "Shifts from material properties to the geological formation and cultural symbolism of stone, exploring its role in nature and human contexts"
+      },
+      "basis_words_count": 1,
+      "reason_chars": 140,
+      "raw_response": "{\"name\": \"geological significance\", \"description\": \"focus on natural occurrences and symbolic roles of stone in landscapes and culture\", \"words\": [\"geology\", \"symbol\", \"monument\"], \"basis_words\": [\"stone\"], \"reason\": \"Shifts from material properties to the geological formation and cultural symbolism of stone, exploring its role in nature and human contexts\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1352_run5_20260723_010249.json",
+      "game_number": 1352,
+      "child_id": "013c83394c5b49adbce78b41cd397070",
+      "generation": 4,
+      "parent_id": "3c5964cf8b984c23bf022a30c6d0c48b",
+      "parent_rank": 190,
+      "sampled_op": "l_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "688a4ee96b3524fde652a37c67272e9e277540c3740e691ff83426f72b0f51dd",
+      "prompt_chars": 4931,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "artisan",
+      "proposed_words": [
+        "artisan",
+        "handcraft",
+        "technique"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 860,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "beyond",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "colors",
+          "materials"
+        ],
+        "reason": "Artisan methods focus on creative processes that use materials and produce color effects, diverging from direct color/material terms but remaining related through application context"
+      },
+      "basis_words_count": 2,
+      "reason_chars": 182,
+      "raw_response": "{\"name\": \"artisan methods\", \"description\": \"craft techniques involving material manipulation and color application\", \"words\": [\"artisan\", \"handcraft\", \"technique\"], \"basis_words\": [\"colors\", \"materials\"], \"reason\": \"Artisan methods focus on creative processes that use materials and produce color effects, diverging from direct color/material terms but remaining related through application context\", \"predicted_bucket\": \"beyond\", \"predicted_closeness\": 0.3}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1352_run5_20260723_010249.json",
+      "game_number": 1352,
+      "child_id": "c806833384564212b7c359ef97b82b9e",
+      "generation": 4,
+      "parent_id": "1c07f72bc2374a918fac1e5246c01084",
+      "parent_rank": 220,
+      "sampled_op": "s_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "b0651c8aa644592a9f433bf3fd15024ddcc78d684a21b121280802a9e46857df",
+      "prompt_chars": 4722,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "configuration",
+      "proposed_words": [
+        "configuration",
+        "polygon",
+        "silhouette"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 32225,
+      "predicted_closeness": 0.4,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "shape"
+        ],
+        "reason": "Focuses on specific geometric configurations and forms related to shape, narrowing the scope to more defined characteristics."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 125,
+      "raw_response": "{\"name\": \"geometric configurations\", \"description\": \"specific arrangements and forms of shapes\", \"words\": [\"configuration\", \"polygon\", \"silhouette\"], \"basis_words\": [\"shape\"], \"reason\": \"Focuses on specific geometric configurations and forms related to shape, narrowing the scope to more defined characteristics.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1352_run5_20260723_010249.json",
+      "game_number": 1352,
+      "child_id": "463df7532fe44b64a4ed7b946d990163",
+      "generation": 4,
+      "parent_id": "90f5eb39416b4f93a2910922a278b0d6",
+      "parent_rank": 333,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "9f00d1b387158386ce2ae1919b0b03132aac4cc406f64c86d8599a2640309fa7",
+      "prompt_chars": 4798,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "pitch",
+      "proposed_words": [
+        "pitch",
+        "quality",
+        "harmony"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 36349,
+      "predicted_closeness": 0.4,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "tone",
+          "sound"
+        ],
+        "reason": "Shifts from physical acoustic properties to how sound is perceived qualitatively, a related but distinct perceptual dimension"
+      },
+      "basis_words_count": 2,
+      "reason_chars": 125,
+      "raw_response": "{\"name\": \"auditory descriptors\", \"description\": \"qualitative characteristics of sound as perceived\", \"words\": [\"pitch\", \"quality\", \"harmony\"], \"basis_words\": [\"tone\", \"sound\"], \"reason\": \"Shifts from physical acoustic properties to how sound is perceived qualitatively, a related but distinct perceptual dimension\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1352_run5_20260723_010249.json",
+      "game_number": 1352,
+      "child_id": "278522552be74ac6a3c1891914effc8f",
+      "generation": 5,
+      "parent_id": "078095a1d0d14015b82374a6df5d1464",
+      "parent_rank": 54,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "93ddd6eb381add91f7b0edc3e229d475f51eae1e08a93fe38e0c4e4fa181a3d8",
+      "prompt_chars": 5202,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "texture",
+      "proposed_words": [
+        "texture",
+        "color",
+        "shape"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 1036,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "stone"
+        ],
+        "reason": "Shifts focus from material types to their physical attributes, which are closely related to the properties of materials like 'stone' but form a distinct category."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 162,
+      "raw_response": "{\"name\": \"physical characteristics\", \"description\": \"describes attributes like texture, color, and shape\", \"words\": [\"texture\", \"color\", \"shape\"], \"basis_words\": [\"stone\"], \"reason\": \"Shifts focus from material types to their physical attributes, which are closely related to the properties of materials like 'stone' but form a distinct category.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1352_run5_20260723_010249.json",
+      "game_number": 1352,
+      "child_id": "f5f26ba427a54137869f4f2dacef9812",
+      "generation": 5,
+      "parent_id": "3c5964cf8b984c23bf022a30c6d0c48b",
+      "parent_rank": 190,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "de2fcbfde39c90dd91807b36d69014dc1433f65018e5067c1a4b44207282a528",
+      "prompt_chars": 5240,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "bleach",
+      "proposed_words": [
+        "bleach",
+        "sulfur",
+        "tannin"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 5641,
+      "predicted_closeness": 0.6,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "materials"
+        ],
+        "reason": "Surface treatments involve processes that modify material properties, often interacting with color (e.g., bleaching, tanning) without being strictly color or material terms themselves"
+      },
+      "basis_words_count": 1,
+      "reason_chars": 183,
+      "raw_response": "{\"name\": \"surface_treatments\", \"description\": \"methods for altering the surface properties of materials\", \"words\": [\"bleach\", \"sulfur\", \"tannin\"], \"basis_words\": [\"materials\"], \"reason\": \"Surface treatments involve processes that modify material properties, often interacting with color (e.g., bleaching, tanning) without being strictly color or material terms themselves\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.6}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1352_run5_20260723_010249.json",
+      "game_number": 1352,
+      "child_id": "a4a17668da574b0997726a6f4a47c172",
+      "generation": 5,
+      "parent_id": "1c07f72bc2374a918fac1e5246c01084",
+      "parent_rank": 220,
+      "sampled_op": "s_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "c1c9d7a17574a81e43973c0ca19377b9000d3518df2ecc3035aefc135a0d8107",
+      "prompt_chars": 5209,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "curvature",
+      "proposed_words": [
+        "curvature",
+        "proportion",
+        "model"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 28399,
+      "predicted_closeness": 0.6,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "shape"
+        ],
+        "reason": "Focuses on specific properties like curvature and proportion, refining the original hypothesis to emphasize shape-related characteristics."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 138,
+      "raw_response": "{\"name\": \"geometric properties\", \"description\": \"attributes related to shape characteristics\", \"words\": [\"curvature\", \"proportion\", \"model\"], \"basis_words\": [\"shape\"], \"reason\": \"Focuses on specific properties like curvature and proportion, refining the original hypothesis to emphasize shape-related characteristics.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.6}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1352_run5_20260723_010249.json",
+      "game_number": 1352,
+      "child_id": "ea471ff773264b4f886e525b9063e6aa",
+      "generation": 5,
+      "parent_id": "90f5eb39416b4f93a2910922a278b0d6",
+      "parent_rank": 333,
+      "sampled_op": "m_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "83339cabf47caeade1991e3018b23684c1c90494cd7fd48ac5456532a72dc144",
+      "prompt_chars": 5281,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "quality",
+      "proposed_words": [
+        "quality",
+        "character",
+        "manner"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 2321,
+      "predicted_closeness": 0.7,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "tone"
+        ],
+        "reason": "Shifts from acoustic interaction to qualitative aspects of expression, exploring tone as a descriptor of character or style rather than physical sound properties."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 162,
+      "raw_response": "{\n  \"name\": \"expressive qualities\",\n  \"description\": \"how expressions convey meaning through qualitative characteristics\",\n  \"words\": [\"quality\", \"character\", \"manner\"],\n  \"basis_words\": [\"tone\"],\n  \"reason\": \"Shifts from acoustic interaction to qualitative aspects of expression, exploring tone as a descriptor of character or style rather than physical sound properties.\",\n  \"predicted_bucket\": \"top500\",\n  \"predicted_closeness\": 0.7\n}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1352_run5_20260723_010249.json",
+      "game_number": 1352,
+      "child_id": "3326c417a5da45d09eaa4bc5006c8931",
+      "generation": 6,
+      "parent_id": "078095a1d0d14015b82374a6df5d1464",
+      "parent_rank": 32,
+      "sampled_op": "m_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "dd565c1d82444bd9c311c223b808c98cc6d91d632e5c476a41e4e624dd05ef09",
+      "prompt_chars": 5711,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "crystal",
+      "proposed_words": [
+        "crystal",
+        "silica",
+        "mineral"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 42,
+      "predicted_closeness": 0.4,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "quartz"
+        ],
+        "reason": "Shifts focus from material properties to geological contexts where quartz is a key component, exploring its presence in natural formations and mineral composition."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 163,
+      "raw_response": "{\"name\": \"geological composition\", \"description\": \"types of natural formations and their mineral components\", \"words\": [\"crystal\", \"silica\", \"mineral\"], \"basis_words\": [\"quartz\"], \"reason\": \"Shifts focus from material properties to geological contexts where quartz is a key component, exploring its presence in natural formations and mineral composition.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1352_run5_20260723_010249.json",
+      "game_number": 1352,
+      "child_id": "839247d83aa2410e83508b1bedea4929",
+      "generation": 6,
+      "parent_id": "d63bb6afc9244c22b46208fc5cd576cf",
+      "parent_rank": 90,
+      "sampled_op": "l_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "a558bd7ae4c344fc56d99661a43dd9bb37726126dac3c93d22148d2804e3dd6d",
+      "prompt_chars": 5853,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "movement",
+      "proposed_words": [
+        "movement",
+        "vibrancy",
+        "rhythm"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 12664,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "shimmer"
+        ],
+        "reason": "Shimmer is a visual effect related to light and movement, so exploring dynamic movement and rhythm offers a new yet related direction."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 134,
+      "raw_response": "{\"name\": \"dynamic visual rhythm\", \"description\": \"movement and rhythmic patterns in visual phenomena\", \"words\": [\"movement\", \"vibrancy\", \"rhythm\"], \"basis_words\": [\"shimmer\"], \"reason\": \"Shimmer is a visual effect related to light and movement, so exploring dynamic movement and rhythm offers a new yet related direction.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1352_run5_20260723_010249.json",
+      "game_number": 1352,
+      "child_id": "6191a748306c488195d788fddfe08e51",
+      "generation": 6,
+      "parent_id": "f5f26ba427a54137869f4f2dacef9812",
+      "parent_rank": 183,
+      "sampled_op": "m_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "83f380e782d3a0fc9f65d0481e47eb952602a75c84b46c721d9d02e4fd4d6c22",
+      "prompt_chars": 5672,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "honing",
+      "proposed_words": [
+        "honing",
+        "refine",
+        "sharpen"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 2534,
+      "predicted_closeness": 0.4,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "materials",
+          "finish"
+        ],
+        "reason": "This hypothesis shifts focus from surface characteristics to the techniques and processes involved in improving objects, leveraging 'polish' as a verb associated with enhancement and refinement."
+      },
+      "basis_words_count": 2,
+      "reason_chars": 194,
+      "raw_response": "{\"name\": \"methods of enhancing objects\", \"description\": \"processes or techniques used to improve the quality or appearance of objects\", \"words\": [\"honing\", \"refine\", \"sharpen\"], \"basis_words\": [\"materials\", \"finish\"], \"reason\": \"This hypothesis shifts focus from surface characteristics to the techniques and processes involved in improving objects, leveraging 'polish' as a verb associated with enhancement and refinement.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1352_run5_20260723_010249.json",
+      "game_number": 1352,
+      "child_id": "03124fe9b36d477f98a2aa0f5c875b02",
+      "generation": 6,
+      "parent_id": "3c5964cf8b984c23bf022a30c6d0c48b",
+      "parent_rank": 190,
+      "sampled_op": "s_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "37c9e9f9caac97c0fcdef27b42a378a79c37ca2c4a66b9ffb51a4bfbc4183b9b",
+      "prompt_chars": 5681,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "colorant",
+      "proposed_words": [
+        "colorant",
+        "ink",
+        "coloring"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 13236,
+      "predicted_closeness": 0.7,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "colors",
+          "materials"
+        ],
+        "reason": "These terms are closely related to 'dye' as they all describe substances or processes that alter color and material properties, but with more specific focus on application methods."
+      },
+      "basis_words_count": 2,
+      "reason_chars": 180,
+      "raw_response": "{\"name\": \"colorant_ink_coloring\", \"description\": \"terms related to both color application and material alteration\", \"words\": [\"colorant\", \"ink\", \"coloring\"], \"basis_words\": [\"colors\", \"materials\"], \"reason\": \"These terms are closely related to 'dye' as they all describe substances or processes that alter color and material properties, but with more specific focus on application methods.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.7}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1352_run5_20260723_010249.json",
+      "game_number": 1352,
+      "child_id": "526985c881ca46a7a744ccbd9d48f0f2",
+      "generation": 7,
+      "parent_id": "3c5964cf8b984c23bf022a30c6d0c48b",
+      "parent_rank": 12,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "1efd1669e6984bf89fad0b15bc89b2d5cb4a579f3cd03ad4f66a882a5119438a",
+      "prompt_chars": 6050,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "amethyst",
+      "proposed_words": [
+        "amethyst",
+        "quartz",
+        "sapphire"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 1,
+      "predicted_closeness": 0.7,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top100",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "materials",
+          "colors"
+        ],
+        "reason": "Gemstones are materials that are often associated with specific colors, making them semantically adjacent to color_material_terms but distinct as a category focused on mineral-based stones."
+      },
+      "basis_words_count": 2,
+      "reason_chars": 189,
+      "raw_response": "{\n  \"name\": \"gemstones\",\n  \"description\": \"types of precious or semi-precious stones\",\n  \"words\": [\"amethyst\", \"quartz\", \"sapphire\"],\n  \"basis_words\": [\"materials\", \"colors\"],\n  \"reason\": \"Gemstones are materials that are often associated with specific colors, making them semantically adjacent to color_material_terms but distinct as a category focused on mineral-based stones.\",\n  \"predicted_bucket\": \"top100\",\n  \"predicted_closeness\": 0.7\n}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1352_run5_20260723_010249.json",
+      "game_number": 1352,
+      "child_id": "981bf393a15d435aae36d25c8ba8ffe2",
+      "generation": 7,
+      "parent_id": "078095a1d0d14015b82374a6df5d1464",
+      "parent_rank": 32,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "3ad12d3f1230558a7fc5157ae8949b62d1537888096c9bc8f044d0b6c6d355c6",
+      "prompt_chars": 6114,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "smoothness",
+      "proposed_words": [
+        "smoothness",
+        "flexibility",
+        "resilience"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 11068,
+      "predicted_closeness": 0.5,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "quartz"
+        ],
+        "reason": "Shifts from material types to their physical descriptors, which are semantically adjacent but distinct from substance classifications"
+      },
+      "basis_words_count": 1,
+      "reason_chars": 133,
+      "raw_response": "{\n  \"name\": \"material properties\",\n  \"description\": \"descriptors of material characteristics\",\n  \"words\": [\"smoothness\", \"flexibility\", \"resilience\"],\n  \"basis_words\": [\"quartz\"],\n  \"reason\": \"Shifts from material types to their physical descriptors, which are semantically adjacent but distinct from substance classifications\",\n  \"predicted_bucket\": \"top500\",\n  \"predicted_closeness\": 0.5\n}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1352_run5_20260723_010249.json",
+      "game_number": 1352,
+      "child_id": "8f502a7d4f824dd0be3f1a81ec9626d2",
+      "generation": 7,
+      "parent_id": "3326c417a5da45d09eaa4bc5006c8931",
+      "parent_rank": 42,
+      "sampled_op": "l_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "94dc10c33ef3dcdc475ae954aa9dfe810e79572acf5fcc11836f12877a68cc7d",
+      "prompt_chars": 6314,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "celestial",
+      "proposed_words": [
+        "celestial",
+        "cosmic",
+        "stellar"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 1935,
+      "predicted_closeness": 0.2,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "beyond",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "crystal"
+        ],
+        "reason": "Shifts from Earth-based geological contexts to celestial phenomena, focusing on space-related structures and formations that share ordered patterns with crystal but exist in an entirely new semantic domain."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 206,
+      "raw_response": "{\"name\": \"celestial structures\", \"description\": \"cosmic formations and spatial arrangements of matter beyond Earth\", \"words\": [\"celestial\", \"cosmic\", \"stellar\"], \"basis_words\": [\"crystal\"], \"reason\": \"Shifts from Earth-based geological contexts to celestial phenomena, focusing on space-related structures and formations that share ordered patterns with crystal but exist in an entirely new semantic domain.\", \"predicted_bucket\": \"beyond\", \"predicted_closeness\": 0.2}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1352_run5_20260723_010249.json",
+      "game_number": 1352,
+      "child_id": "901aa82c26a949f4afba7cfbed0a1a73",
+      "generation": 7,
+      "parent_id": "d63bb6afc9244c22b46208fc5cd576cf",
+      "parent_rank": 90,
+      "sampled_op": "m_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "27b7729a540a4c2fc49c61036b7d35d27353b97f534f9fb0580b6984fc2c5fd7",
+      "prompt_chars": 6135,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "filter",
+      "proposed_words": [
+        "filter",
+        "reflect",
+        "vibrant"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 3768,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "shimmer"
+        ],
+        "reason": "Exploring material characteristics that cause shimmering effects provides a semantically distinct yet related direction to the current light-based hypothesis."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 158,
+      "raw_response": "{\"name\": \"material properties affecting light\", \"description\": \"qualities of materials that influence shimmering effects\", \"words\": [\"filter\", \"reflect\", \"vibrant\"], \"basis_words\": [\"shimmer\"], \"reason\": \"Exploring material characteristics that cause shimmering effects provides a semantically distinct yet related direction to the current light-based hypothesis.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1352_run5_20260723_010249.json",
+      "game_number": 1352,
+      "child_id": "fec5144ae611419abfb329476d73a773",
+      "generation": 8,
+      "parent_id": "3c5964cf8b984c23bf022a30c6d0c48b",
+      "parent_rank": 12,
+      "sampled_op": "l_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "6656840705949408814bcd29371614e3dda357ad49febe0eac81e92f7561a4dc",
+      "prompt_chars": 6427,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "artifact",
+      "proposed_words": [
+        "artifact",
+        "myth",
+        "ritual"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 2575,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "colors",
+          "materials"
+        ],
+        "reason": "These words explore the cultural and symbolic meanings associated with materials, diverging from direct material and color terms but remaining within the same broad semantic neighborhood as 'lapis'."
+      },
+      "basis_words_count": 2,
+      "reason_chars": 198,
+      "raw_response": "{\n  \"name\": \"cultural contexts of materials\",\n  \"description\": \"terms related to the symbolic or cultural significance of materials\",\n  \"words\": [\"artifact\", \"myth\", \"ritual\"],\n  \"basis_words\": [\"colors\", \"materials\"],\n  \"reason\": \"These words explore the cultural and symbolic meanings associated with materials, diverging from direct material and color terms but remaining within the same broad semantic neighborhood as 'lapis'.\",\n  \"predicted_bucket\": \"top500\",\n  \"predicted_closeness\": 0.3\n}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1352_run5_20260723_010249.json",
+      "game_number": 1352,
+      "child_id": "d42450a1a5774fbda7e09322582f01df",
+      "generation": 8,
+      "parent_id": "078095a1d0d14015b82374a6df5d1464",
+      "parent_rank": 32,
+      "sampled_op": "m_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "fa439df27f29703215869407b17667bb85bad78bc4458554f0401b777ca84feb",
+      "prompt_chars": 6483,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "silicon",
+      "proposed_words": [
+        "silicon",
+        "oxide",
+        "silica"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 8182,
+      "predicted_closeness": 0.4,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "quartz"
+        ],
+        "reason": "Shifts from material properties to chemical composition, leveraging quartz's relation to silicon and silica, which are fundamental to its structure and properties."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 163,
+      "raw_response": "{\"name\": \"chemical elements and compounds\", \"description\": \"focus on the chemical composition and properties of substances\", \"words\": [\"silicon\", \"oxide\", \"silica\"], \"basis_words\": [\"quartz\"], \"reason\": \"Shifts from material properties to chemical composition, leveraging quartz's relation to silicon and silica, which are fundamental to its structure and properties.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1352_run5_20260723_010249.json",
+      "game_number": 1352,
+      "child_id": "392e6f9a3990487190b4196501fd1b7c",
+      "generation": 8,
+      "parent_id": "3326c417a5da45d09eaa4bc5006c8931",
+      "parent_rank": 42,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "aa2825359e5c5349f495d71b4279986eef176ce818f732ca797103dfc055f12e",
+      "prompt_chars": 6381,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "clarity",
+      "proposed_words": [
+        "clarity",
+        "luminosity",
+        "reflectivity"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 199,
+      "predicted_closeness": 0.7,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top100",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "crystal"
+        ],
+        "reason": "Shifts focus from geological classifications to visual and light-related attributes, maintaining semantic adjacency through crystal's inherent optical qualities"
+      },
+      "basis_words_count": 1,
+      "reason_chars": 160,
+      "raw_response": "{\"name\": \"optical properties\", \"description\": \"properties related to light interaction and visual characteristics\", \"words\": [\"clarity\", \"luminosity\", \"reflectivity\"], \"basis_words\": [\"crystal\"], \"reason\": \"Shifts focus from geological classifications to visual and light-related attributes, maintaining semantic adjacency through crystal's inherent optical qualities\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.7}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1352_run5_20260723_010249.json",
+      "game_number": 1352,
+      "child_id": "0050fe10e6ef44168d6641292f3c47df",
+      "generation": 8,
+      "parent_id": "901aa82c26a949f4afba7cfbed0a1a73",
+      "parent_rank": 70,
+      "sampled_op": "s_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "ab6734eb97913f11740ed797840d089b4db519861bbb351e1aefd748f537b889",
+      "prompt_chars": 6291,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "glitter",
+      "proposed_words": [
+        "glitter",
+        "flash",
+        "twinkle"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 206,
+      "predicted_closeness": 0.7,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top100",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "shimmer"
+        ],
+        "reason": "Narrowing focus to specific visual effects like glitter, flash, and twinkle, which are closely related to shimmer but more specific in describing surface qualities that produce sparkle."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 185,
+      "raw_response": "{\"name\": \"sparkling surface effects\", \"description\": \"visual effects from surface features that produce a sparkling appearance\", \"words\": [\"glitter\", \"flash\", \"twinkle\"], \"basis_words\": [\"shimmer\"], \"reason\": \"Narrowing focus to specific visual effects like glitter, flash, and twinkle, which are closely related to shimmer but more specific in describing surface qualities that produce sparkle.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.7}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1352_run5_20260723_010249.json",
+      "game_number": 1352,
+      "child_id": "e06f93ab92004cd587323d6e423472c0",
+      "generation": 9,
+      "parent_id": "3c5964cf8b984c23bf022a30c6d0c48b",
+      "parent_rank": 8,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "402914a532b87040e2c38cc109b862d62e84dae7a22153df6d4aeb0838f2157c",
+      "prompt_chars": 6774,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "emerald",
+      "proposed_words": [
+        "emerald",
+        "amethyst",
+        "topaz"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 11,
+      "predicted_closeness": 0.7,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top100",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "gemstones",
+          "precious stones"
+        ],
+        "reason": "These terms refer to types of gemstones, which are often described by both their color and material properties, similar to the parent category but focused on gemstone types rather than general material and color terms"
+      },
+      "basis_words_count": 2,
+      "reason_chars": 217,
+      "raw_response": "{\"name\": \"gemstone_types\", \"description\": \"types of precious stones\", \"words\": [\"emerald\", \"amethyst\", \"topaz\"], \"basis_words\": [\"gemstones\", \"precious stones\"], \"reason\": \"These terms refer to types of gemstones, which are often described by both their color and material properties, similar to the parent category but focused on gemstone types rather than general material and color terms\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.7}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1352_run5_20260723_010249.json",
+      "game_number": 1352,
+      "child_id": "1d392259977341b981dda9d5a1a24238",
+      "generation": 9,
+      "parent_id": "078095a1d0d14015b82374a6df5d1464",
+      "parent_rank": 32,
+      "sampled_op": "l_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "c6d199ca7a10490509e003d2eac09c7cbe0bd0246a4dce548465468dcee1a836",
+      "prompt_chars": 6789,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "formation",
+      "proposed_words": [
+        "formation",
+        "structure",
+        "landform"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 4295,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "quartz"
+        ],
+        "reason": "Shifts from material properties to the natural environments and structures where materials like quartz are found, expanding beyond existing categories to explore geological and environmental contexts."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 200,
+      "raw_response": "{\"name\": \"natural formations\", \"description\": \"types of natural structures and landforms\", \"words\": [\"formation\", \"structure\", \"landform\"], \"basis_words\": [\"quartz\"], \"reason\": \"Shifts from material properties to the natural environments and structures where materials like quartz are found, expanding beyond existing categories to explore geological and environmental contexts.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1352_run5_20260723_010249.json",
+      "game_number": 1352,
+      "child_id": "1f83d185b6ae4a3190f6dc826a98cf03",
+      "generation": 9,
+      "parent_id": "3326c417a5da45d09eaa4bc5006c8931",
+      "parent_rank": 42,
+      "sampled_op": "s_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "e3d5eba2581985c1f2d52e2a70e5eea8c4d06aa5b7c908ca9a84fd8a97ff2f5e",
+      "prompt_chars": 6683,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "glass",
+      "proposed_words": [
+        "glass",
+        "prism",
+        "luster"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 349,
+      "predicted_closeness": 0.5,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "crystal"
+        ],
+        "reason": "Focuses on visual and structural attributes commonly associated with crystals, narrowing the hypothesis to specific properties rather than general geological contexts."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 167,
+      "raw_response": "{\"name\": \"crystal properties\", \"description\": \"optical and structural characteristics of crystalline materials\", \"words\": [\"glass\", \"prism\", \"luster\"], \"basis_words\": [\"crystal\"], \"reason\": \"Focuses on visual and structural attributes commonly associated with crystals, narrowing the hypothesis to specific properties rather than general geological contexts.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.5}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1352_run5_20260723_010249.json",
+      "game_number": 1352,
+      "child_id": "6a87993f258249a7af4af5ad3cb9f6dc",
+      "generation": 9,
+      "parent_id": "901aa82c26a949f4afba7cfbed0a1a73",
+      "parent_rank": 70,
+      "sampled_op": "m_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "efcf3366eff3f2ca69825a64473f32cfdad882382e6f14f39bcea59d77dbee08",
+      "prompt_chars": 6758,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "twinkle",
+      "proposed_words": [
+        "twinkle",
+        "flame",
+        "luminous"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 496,
+      "predicted_closeness": 0.7,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top100",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "sparkle",
+          "shimmer"
+        ],
+        "reason": "Shifts focus from material surface properties to light sources and celestial phenomena that produce sparkle"
+      },
+      "basis_words_count": 2,
+      "reason_chars": 107,
+      "raw_response": "{\"name\": \"celestial phenomena producing sparkle\", \"description\": \"light effects caused by celestial bodies or phenomena\", \"words\": [\"twinkle\", \"flame\", \"luminous\"], \"basis_words\": [\"sparkle\", \"shimmer\"], \"reason\": \"Shifts focus from material surface properties to light sources and celestial phenomena that produce sparkle\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.7}"
+    }
+  ]
+}

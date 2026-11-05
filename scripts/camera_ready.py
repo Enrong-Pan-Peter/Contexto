@@ -236,7 +236,81 @@ def rq2(out: Path, resample_dir: Path | None, bootstrap: int) -> None:
         }
         hl["identity"][key] = {"rate": identity.get("observed"), "ci_lo": identity.get("ci95_low"), "ci_hi": identity.get("ci95_high")}
     (out / "rq2_hl_bootstrap.json").write_text(json.dumps(hl, indent=2), encoding="utf-8")
+    comparison = resample_comparison(out, inputs, bootstrap)
+    if comparison:
+        g = comparison["genuine_vs_genuine_resample"]["first_word_agreement"]
+        print(f"  genuine vs genuine (second sample): first-word agreement {g['observed']:.3f} [{g['ci95_low']:.3f}, {g['ci95_high']:.3f}] over {comparison['n_events']} events")
     print(f"  wrote {out / 'rq2_hl_bootstrap.json'} with conditions {[k for k in hl if k != 'identity']}")
+
+
+def resample_comparison(out: Path, inputs: list[str], draws: int, seed: int = 0) -> dict[str, Any] | None:
+    """Agreement between the two genuine samples against agreement with each replacement, paired per event.
+
+    For every stored event with both genuine samples: first-word agreement and three-word
+    overlap (Jaccard) of genuine vs genuine-resample, of each genuine sample vs each
+    replacement, and the paired difference agreement(g1, g2) - agreement(g1, replacement).
+    95 % intervals resample runs. Written to rq2_resample_comparison.json.
+    """
+    records: list[dict[str, Any]] = []
+    for path in inputs:
+        records += json.loads(Path(path).read_text(encoding="utf-8"))["records"]
+    events: dict[tuple[str, str], dict[str, dict[str, Any]]] = {}
+    for record in records:
+        events.setdefault((record["trace_file"], record["child_id"]), {})[record["arm"]] = record
+    if not any("genuine_resample" in arms for arms in events.values()):
+        return None
+
+    def jaccard(a: Any, b: Any) -> float | None:
+        sa, sb = set(a or []), set(b or [])
+        return len(sa & sb) / len(sa | sb) if (sa | sb) else None
+
+    rows: list[dict[str, Any]] = []
+    for (trace_file, _child), arms in events.items():
+        g1, g2 = arms.get("genuine"), arms.get("genuine_resample")
+        if not g1 or not g2 or g1.get("proposed_word") is None or g2.get("proposed_word") is None:
+            continue
+        row: dict[str, Any] = {"run": trace_file, "g1g2": float(g1["proposed_word"] == g2["proposed_word"]),
+                               "j_g1g2": jaccard(g1.get("proposed_words"), g2.get("proposed_words"))}
+        for condition in ("wrong", "filler", "absent"):
+            other = arms.get(condition)
+            if other and other.get("proposed_word") is not None:
+                row[f"g1_{condition}"] = float(g1["proposed_word"] == other["proposed_word"])
+                row[f"g2_{condition}"] = float(g2["proposed_word"] == other["proposed_word"])
+                row[f"j_g1_{condition}"] = jaccard(g1.get("proposed_words"), other.get("proposed_words"))
+        rows.append(row)
+    runs = sorted({row["run"] for row in rows})
+    by_run = {run: [row for row in rows if row["run"] == run] for run in runs}
+    rng = np.random.default_rng(seed)
+
+    def mean_of(subset: list[dict[str, Any]], key_fn) -> float | None:
+        values = [v for v in (key_fn(row) for row in subset) if v is not None]
+        return float(np.mean(values)) if values else None
+
+    def interval(key_fn) -> dict[str, Any]:
+        observed = mean_of(rows, key_fn)
+        draws_out = []
+        for _ in range(draws):
+            pick = rng.choice(len(runs), len(runs), replace=True)
+            value = mean_of([row for i in pick for row in by_run[runs[i]]], key_fn)
+            if value is not None:
+                draws_out.append(value)
+        low, high = (np.percentile(draws_out, [2.5, 97.5]) if draws_out else (None, None))
+        return {"observed": observed, "ci95_low": (float(low) if low is not None else None), "ci95_high": (float(high) if high is not None else None)}
+
+    result: dict[str, Any] = {
+        "n_events": len(rows), "n_runs": len(runs), "draws": draws,
+        "genuine_vs_genuine_resample": {"first_word_agreement": interval(lambda r: r["g1g2"]), "jaccard": interval(lambda r: r["j_g1g2"])},
+        "conditions": {},
+    }
+    for condition in ("wrong", "filler", "absent"):
+        result["conditions"][condition] = {
+            "first_word_agreement_genuine1": interval(lambda r, c=condition: r.get(f"g1_{c}")),
+            "first_word_agreement_genuine2": interval(lambda r, c=condition: r.get(f"g2_{c}")),
+            "paired_difference_g1g2_minus_g1condition": interval(lambda r, c=condition: (r["g1g2"] - r[f"g1_{c}"]) if f"g1_{c}" in r else None),
+            "jaccard_genuine1": interval(lambda r, c=condition: r.get(f"j_g1_{c}")),
+        }
+    (out / "rq2_resample_comparison.json").write_text(json.dumps(result, indent=2), encoding="utf-8")
+    return result
 
 
 # ---------------------------------------------------------------- 5. Direct-Qwen reweighting
@@ -388,6 +462,15 @@ def changes(out: Path, submitted: Path, reweight: dict[str, Any] | None) -> None
                 continue
             lines.append(f"- {item['label']}: n {item['n_events']}, HL {item['hl']:+.0f} [{item['ci_lo']:+.0f}, {item['ci_hi']:+.0f}], "
                          f"first-word agreement {item['identity_rate']:.3f} [{item['identity_ci_lo']:.3f}, {item['identity_ci_hi']:.3f}], Jaccard {item['jaccard']:.3f}")
+    cmp_path = out / "rq2_resample_comparison.json"
+    if cmp_path.is_file():
+        cmp = json.loads(cmp_path.read_text(encoding="utf-8"))
+        g, j = cmp["genuine_vs_genuine_resample"]["first_word_agreement"], cmp["genuine_vs_genuine_resample"]["jaccard"]
+        lines += ["", f"Two genuine samples of the same prompt ({cmp['n_events']} events): first-word agreement {g['observed']:.3f} [{g['ci95_low']:.3f}, {g['ci95_high']:.3f}], "
+                  f"three-word overlap {j['observed']:.3f} [{j['ci95_low']:.3f}, {j['ci95_high']:.3f}]. Paired difference agreement(genuine, genuine) minus agreement(genuine, condition):"]
+        for condition, block in cmp["conditions"].items():
+            d = block["paired_difference_g1g2_minus_g1condition"]
+            lines.append(f"- {condition}: {d['observed']:+.3f} [{d['ci95_low']:+.3f}, {d['ci95_high']:+.3f}]")
     (out / "CHANGES.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
     print("\n".join(lines))
 

@@ -1,0 +1,387 @@
+{
+  "metadata": {
+    "created_at": "2026-10-31T11:31:07",
+    "seed": 0,
+    "events_per_trace": 40,
+    "arms": [
+      "genuine_resample"
+    ],
+    "traces": [
+      {
+        "trace_file": "ea_llm_self_adaptive_api_1372_run1_20260722_173926.json",
+        "game_number": 1372,
+        "llm_model": "qwen3:14b",
+        "llm_provider": "ollama",
+        "provenance_hash": "bd9f2858283673a2",
+        "eligible_events": 6,
+        "sampled_events": 6,
+        "shortfall": 34,
+        "skipped": {}
+      },
+      {
+        "trace_file": "ea_llm_self_adaptive_api_1372_run2_20260722_181616.json",
+        "game_number": 1372,
+        "llm_model": "qwen3:14b",
+        "llm_provider": "ollama",
+        "provenance_hash": "bd9f2858283673a2",
+        "eligible_events": 3,
+        "sampled_events": 3,
+        "shortfall": 37,
+        "skipped": {}
+      },
+      {
+        "trace_file": "ea_llm_self_adaptive_api_1372_run3_20260722_184837.json",
+        "game_number": 1372,
+        "llm_model": "qwen3:14b",
+        "llm_provider": "ollama",
+        "provenance_hash": "bd9f2858283673a2",
+        "eligible_events": 0,
+        "sampled_events": 0,
+        "shortfall": 40,
+        "skipped": {}
+      },
+      {
+        "trace_file": "ea_llm_self_adaptive_api_1372_run4_20260722_191242.json",
+        "game_number": 1372,
+        "llm_model": "qwen3:14b",
+        "llm_provider": "ollama",
+        "provenance_hash": "bd9f2858283673a2",
+        "eligible_events": 0,
+        "sampled_events": 0,
+        "shortfall": 40,
+        "skipped": {}
+      },
+      {
+        "trace_file": "ea_llm_self_adaptive_api_1372_run5_20260722_193120.json",
+        "game_number": 1372,
+        "llm_model": "qwen3:14b",
+        "llm_provider": "ollama",
+        "provenance_hash": "bd9f2858283673a2",
+        "eligible_events": 0,
+        "sampled_events": 0,
+        "shortfall": 40,
+        "skipped": {}
+      }
+    ],
+    "total_events": 9,
+    "total_records": 9
+  },
+  "records": [
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1372_run1_20260722_173926.json",
+      "game_number": 1372,
+      "child_id": "0dc4cbd319f94c37b83c34333cb41d8e",
+      "generation": 2,
+      "parent_id": "3eed6bbf7e48430c9d1adc1c97757523",
+      "parent_rank": 108,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "ec225b06f1632d24a1a55356c59407970b28b3b1b08e7a8348a5bb05d6e08fcf",
+      "prompt_chars": 3624,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "stance",
+      "proposed_words": [
+        "stance",
+        "position",
+        "orientation"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 3100,
+      "predicted_closeness": 0.5,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "movement"
+        ],
+        "reason": "body positioning is a related but distinct category focusing on static postures and orientations, which may share some semantic overlap with movement but are not subcategories of gestures"
+      },
+      "basis_words_count": 1,
+      "reason_chars": 187,
+      "raw_response": "{\"name\": \"body positioning\", \"description\": \"ways the body is oriented or positioned\", \"words\": [\"stance\", \"position\", \"orientation\"], \"basis_words\": [\"movement\"], \"reason\": \"body positioning is a related but distinct category focusing on static postures and orientations, which may share some semantic overlap with movement but are not subcategories of gestures\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.5}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1372_run1_20260722_173926.json",
+      "game_number": 1372,
+      "child_id": "e580cec7e9a341628394b718e796d058",
+      "generation": 2,
+      "parent_id": "7f66418b21d643d4ab343c2ae7b0e06f",
+      "parent_rank": 335,
+      "sampled_op": "l_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "3b3fcdbcfa51d2faa6cac5feb384313c87a17ccde46f4cbb3b8d9b0531dcc865",
+      "prompt_chars": 3982,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "foggy",
+      "proposed_words": [
+        "foggy",
+        "misty",
+        "hazy"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 11346,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "muted"
+        ],
+        "reason": "Atmospheric conditions relate to visual perception through terms like fog and mist, which share muted, low-contrast qualities but focus on environmental rather than color-specific attributes."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 191,
+      "raw_response": "{\"name\": \"atmospheric conditions\", \"description\": \"terms describing environmental visual states\", \"words\": [\"foggy\", \"misty\", \"hazy\"], \"basis_words\": [\"muted\"], \"reason\": \"Atmospheric conditions relate to visual perception through terms like fog and mist, which share muted, low-contrast qualities but focus on environmental rather than color-specific attributes.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1372_run1_20260722_173926.json",
+      "game_number": 1372,
+      "child_id": "bf27cfee737e4e7ea1ffa108fbd921ef",
+      "generation": 3,
+      "parent_id": "3eed6bbf7e48430c9d1adc1c97757523",
+      "parent_rank": 108,
+      "sampled_op": "l_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "434cd5ff245dfd903b15cbf128b373210469d63dd7b9ff7f0c765b8f728a6d87",
+      "prompt_chars": 4226,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "space",
+      "proposed_words": [
+        "space",
+        "area",
+        "region"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 1545,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "movement"
+        ],
+        "reason": "shifting from the movement itself to the environments in which movement occurs, a new direction but still semantically related to 'movement'"
+      },
+      "basis_words_count": 1,
+      "reason_chars": 140,
+      "raw_response": "{\"name\": \"spaces\", \"description\": \"areas or environments where movement can occur\", \"words\": [\"space\", \"area\", \"region\"], \"basis_words\": [\"movement\"], \"reason\": \"shifting from the movement itself to the environments in which movement occurs, a new direction but still semantically related to 'movement'\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1372_run1_20260722_173926.json",
+      "game_number": 1372,
+      "child_id": "f4338b851f974fd3862a38ac7dd9740d",
+      "generation": 3,
+      "parent_id": "0dc4cbd319f94c37b83c34333cb41d8e",
+      "parent_rank": 183,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "9bdc7ed4ad92af41211815badb97cf645c830d989fda42bab1fc7f2498b376c9",
+      "prompt_chars": 4147,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "dodge",
+      "proposed_words": [
+        "dodge",
+        "swerve",
+        "vault"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 11509,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "move"
+        ],
+        "reason": "verbs of movement are a distinct category from locomotion but related, as they describe specific actions involving movement which could be adjacent to the hidden target."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 169,
+      "raw_response": "{\"name\": \"verbs of movement\", \"description\": \"actions that involve moving\", \"words\": [\"dodge\", \"swerve\", \"vault\"], \"basis_words\": [\"move\"], \"reason\": \"verbs of movement are a distinct category from locomotion but related, as they describe specific actions involving movement which could be adjacent to the hidden target.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1372_run1_20260722_173926.json",
+      "game_number": 1372,
+      "child_id": "b31d570813c9407db8a8863bdb109afd",
+      "generation": 4,
+      "parent_id": "3eed6bbf7e48430c9d1adc1c97757523",
+      "parent_rank": 108,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "9695f3021675097ecbcbdd8c0b9b90f0c0653488bc9a0035465b8284b9b02712",
+      "prompt_chars": 4512,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "balance",
+      "proposed_words": [
+        "balance",
+        "tilt",
+        "shift"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 178,
+      "predicted_closeness": 0.6,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "movement",
+          "posture"
+        ],
+        "reason": "body balance and stability are related to movement but represent a distinct category focusing on equilibrium and spatial orientation rather than gestures themselves"
+      },
+      "basis_words_count": 2,
+      "reason_chars": 164,
+      "raw_response": "{\"name\": \"body balance and stability\", \"description\": \"aspects of body balance and spatial stability\", \"words\": [\"balance\", \"tilt\", \"shift\"], \"basis_words\": [\"movement\", \"posture\"], \"reason\": \"body balance and stability are related to movement but represent a distinct category focusing on equilibrium and spatial orientation rather than gestures themselves\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.6}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1372_run1_20260722_173926.json",
+      "game_number": 1372,
+      "child_id": "b2d2a7541a784127b24ffa0667ae09a8",
+      "generation": 4,
+      "parent_id": "0dc4cbd319f94c37b83c34333cb41d8e",
+      "parent_rank": 183,
+      "sampled_op": "m_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "4e891a330d68caeb456221dd6070c78bcd6361689188ab8e28fb44c4a95c4c8c",
+      "prompt_chars": 4613,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "alter",
+      "proposed_words": [
+        "alter",
+        "modify",
+        "adjust"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 787,
+      "predicted_closeness": 0.4,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "move"
+        ],
+        "reason": "shifting focus from physical movement to conceptual changes, which could relate to the hidden target through abstract transformations rather than locomotion"
+      },
+      "basis_words_count": 1,
+      "reason_chars": 156,
+      "raw_response": "{\"name\": \"change\", \"description\": \"modifications or alterations\", \"words\": [\"alter\", \"modify\", \"adjust\"], \"basis_words\": [\"move\"], \"reason\": \"shifting focus from physical movement to conceptual changes, which could relate to the hidden target through abstract transformations rather than locomotion\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1372_run2_20260722_181616.json",
+      "game_number": 1372,
+      "child_id": "59143e8b472149b1b4c3f7212201203d",
+      "generation": 2,
+      "parent_id": "5a351e2bc33c49de87657a1aa6caaed3",
+      "parent_rank": 228,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "15ef92b391936dbac7a861b31ebbb6d6dab145d6fed6953d0fa0300d8483427a",
+      "prompt_chars": 3749,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "honesty",
+      "proposed_words": [
+        "honesty",
+        "justice",
+        "duty"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 1813,
+      "predicted_closeness": 0.6,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "good"
+        ],
+        "reason": "Ethical terminology is an adjacent category to moral correctness, focusing on vocabulary related to ethics, which may include terms closely associated with the hidden target."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 174,
+      "raw_response": "{\"name\": \"ethical terminology\", \"description\": \"terms used to describe ethical concepts\", \"words\": [\"honesty\", \"justice\", \"duty\"], \"basis_words\": [\"good\"], \"reason\": \"Ethical terminology is an adjacent category to moral correctness, focusing on vocabulary related to ethics, which may include terms closely associated with the hidden target.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.6}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1372_run2_20260722_181616.json",
+      "game_number": 1372,
+      "child_id": "ae3e970b5da6479fb6d6819e359af9f1",
+      "generation": 3,
+      "parent_id": "5a351e2bc33c49de87657a1aa6caaed3",
+      "parent_rank": 228,
+      "sampled_op": "l_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "8b4e5cf95d65a56b55221f35add79d97fb978c235906fbb93ae89ca956ae8455",
+      "prompt_chars": 4450,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "cell",
+      "proposed_words": [
+        "cell",
+        "organ",
+        "metabolism"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 3942,
+      "predicted_closeness": 0.15,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "beyond",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "good"
+        ],
+        "reason": "Moving from ethical concepts to fundamental biological functions offers a novel framework for exploring terms related to 'good' in the context of life processes."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 161,
+      "raw_response": "{\n  \"name\": \"biological processes\",\n  \"description\": \"functions and mechanisms in living organisms\",\n  \"words\": [\"cell\", \"organ\", \"metabolism\"],\n  \"basis_words\": [\"good\"],\n  \"reason\": \"Moving from ethical concepts to fundamental biological functions offers a novel framework for exploring terms related to 'good' in the context of life processes.\",\n  \"predicted_bucket\": \"beyond\",\n  \"predicted_closeness\": 0.15\n}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1372_run2_20260722_181616.json",
+      "game_number": 1372,
+      "child_id": "87e4c9393d0644a4869a6919de97eb99",
+      "generation": 4,
+      "parent_id": "449aac771c3a41a5bc65a82e48c8a392",
+      "parent_rank": 17,
+      "sampled_op": "m_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "aa74640a3746a67468c210cba9978be6a18d067c0d8f48b8d1a02eb19bb37d73",
+      "prompt_chars": 4558,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "rhythm",
+      "proposed_words": [
+        "rhythm",
+        "note",
+        "vibration"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 1,
+      "predicted_closeness": 0.4,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "music"
+        ],
+        "reason": "Music's success may be linked to its physical and structural components, such as rhythmic patterns, individual notes, and vibrational properties underlying sound production."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 173,
+      "raw_response": "{\"name\": \"sound_components\", \"description\": \"elements of musical structure and acoustics\", \"words\": [\"rhythm\", \"note\", \"vibration\"], \"basis_words\": [\"music\"], \"reason\": \"Music's success may be linked to its physical and structural components, such as rhythmic patterns, individual notes, and vibrational properties underlying sound production.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}"
+    }
+  ]
+}

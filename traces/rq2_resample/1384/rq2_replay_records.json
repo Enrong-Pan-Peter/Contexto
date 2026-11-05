@@ -1,0 +1,3724 @@
+{
+  "metadata": {
+    "created_at": "2026-10-31T12:37:41",
+    "seed": 0,
+    "events_per_trace": 40,
+    "arms": [
+      "genuine_resample"
+    ],
+    "traces": [
+      {
+        "trace_file": "ea_llm_self_adaptive_api_1384_run1_20260728_223943.json",
+        "game_number": 1384,
+        "llm_model": "qwen3:14b",
+        "llm_provider": "ollama",
+        "provenance_hash": "bd9f2858283673a2",
+        "eligible_events": 4,
+        "sampled_events": 4,
+        "shortfall": 36,
+        "skipped": {}
+      },
+      {
+        "trace_file": "ea_llm_self_adaptive_api_1384_run2_20260728_235849.json",
+        "game_number": 1384,
+        "llm_model": "qwen3:14b",
+        "llm_provider": "ollama",
+        "provenance_hash": "bd9f2858283673a2",
+        "eligible_events": 8,
+        "sampled_events": 8,
+        "shortfall": 32,
+        "skipped": {}
+      },
+      {
+        "trace_file": "ea_llm_self_adaptive_api_1384_run3_20260729_114104.json",
+        "game_number": 1384,
+        "llm_model": "qwen3:14b",
+        "llm_provider": "ollama",
+        "provenance_hash": "bd9f2858283673a2",
+        "eligible_events": 211,
+        "sampled_events": 40,
+        "shortfall": 0,
+        "skipped": {}
+      },
+      {
+        "trace_file": "ea_llm_self_adaptive_api_1384_run4_20260729_125300.json",
+        "game_number": 1384,
+        "llm_model": "qwen3:14b",
+        "llm_provider": "ollama",
+        "provenance_hash": "bd9f2858283673a2",
+        "eligible_events": 12,
+        "sampled_events": 12,
+        "shortfall": 28,
+        "skipped": {}
+      },
+      {
+        "trace_file": "ea_llm_self_adaptive_api_1384_run5_20260729_172325.json",
+        "game_number": 1384,
+        "llm_model": "qwen3:14b",
+        "llm_provider": "ollama",
+        "provenance_hash": "bd9f2858283673a2",
+        "eligible_events": 48,
+        "sampled_events": 40,
+        "shortfall": 0,
+        "skipped": {}
+      }
+    ],
+    "total_events": 104,
+    "total_records": 104
+  },
+  "records": [
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run1_20260728_223943.json",
+      "game_number": 1384,
+      "child_id": "99bda7ae21394ad7ac6f36bfb238c20c",
+      "generation": 2,
+      "parent_id": "5c4e62300ea446f4921df65f743a7558",
+      "parent_rank": 164,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "4c2350e58aef1a6e4b9dd334da5870cdaf5aa031e5b0f2d5ccf8e088d8b3c1f5",
+      "prompt_chars": 3716,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "empathy",
+      "proposed_words": [
+        "empathy",
+        "compassion",
+        "sympathy"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 25675,
+      "predicted_closeness": 0.7,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "love",
+          "grief"
+        ],
+        "reason": "These nouns are closely associated with emotional states (love, grief) and represent relationships or connections formed through them."
+      },
+      "basis_words_count": 2,
+      "reason_chars": 134,
+      "raw_response": "{\"name\": \"emotional_relations\", \"description\": \"nouns representing relationships or connections formed through emotional states\", \"words\": [\"empathy\", \"compassion\", \"sympathy\"], \"basis_words\": [\"love\", \"grief\"], \"reason\": \"These nouns are closely associated with emotional states (love, grief) and represent relationships or connections formed through them.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.7}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run1_20260728_223943.json",
+      "game_number": 1384,
+      "child_id": "567f33841c114426b38294440db48cda",
+      "generation": 2,
+      "parent_id": "80c2f8bc162c43fd81a8c4d0b025d8fd",
+      "parent_rank": 170,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "fb1c30ce12acb15c050b0f6d4dfb1549a7eb6cdcba563e2600ab20043fcbddcb",
+      "prompt_chars": 3694,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "assess",
+      "proposed_words": [
+        "assess",
+        "evaluate",
+        "appraise"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 24455,
+      "predicted_closeness": 0.6,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "review"
+        ],
+        "reason": "Selected evaluation-related actions that are distinct from reading but share semantic proximity with 'review'."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 110,
+      "raw_response": "{\"name\": \"evaluation_activities\", \"description\": \"activities related to assessing and evaluating\", \"words\": [\"assess\", \"evaluate\", \"appraise\"], \"basis_words\": [\"review\"], \"reason\": \"Selected evaluation-related actions that are distinct from reading but share semantic proximity with 'review'.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.6}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run1_20260728_223943.json",
+      "game_number": 1384,
+      "child_id": "46bf68d6f81b45978ef142fe3cec9b8e",
+      "generation": 3,
+      "parent_id": "07326e6774ef40bdab08c833b9faae1e",
+      "parent_rank": 109,
+      "sampled_op": "l_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "016adb434ec41e2f70363c26bacb9bb980a9081530c920af43b20d3b6af50af4",
+      "prompt_chars": 4343,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "structure",
+      "proposed_words": [
+        "structure",
+        "system",
+        "framework"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 37040,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "link"
+        ],
+        "reason": "Shifting focus from emotional connections to abstract or physical constructs that inherently form links or networks, which may relate to the concept of 'link' in a broader structural sense."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 189,
+      "raw_response": "{\"name\": \"interconnected systems\", \"description\": \"abstract frameworks that form connections\", \"words\": [\"structure\", \"system\", \"framework\"], \"basis_words\": [\"link\"], \"reason\": \"Shifting focus from emotional connections to abstract or physical constructs that inherently form links or networks, which may relate to the concept of 'link' in a broader structural sense.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run1_20260728_223943.json",
+      "game_number": 1384,
+      "child_id": "1b8e3636f49540bd9dd30ba467cb0a3b",
+      "generation": 3,
+      "parent_id": "5c4e62300ea446f4921df65f743a7558",
+      "parent_rank": 164,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "f18ea460a2fb1a2403c558df967832f39afb480668cdbbe8e5171a41d39093b3",
+      "prompt_chars": 4317,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "sympathy",
+      "proposed_words": [
+        "sympathy",
+        "fondness",
+        "regard"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 8024,
+      "predicted_closeness": 0.7,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "love"
+        ],
+        "reason": "Emotional states are closely related to emotional actions, as they both pertain to emotional experiences, but focus on the conditions rather than the actions themselves."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 169,
+      "raw_response": "{\n  \"name\": \"emotional_states\",\n  \"description\": \"nouns that describe emotional conditions\",\n  \"words\": [\"sympathy\", \"fondness\", \"regard\"],\n  \"basis_words\": [\"love\"],\n  \"reason\": \"Emotional states are closely related to emotional actions, as they both pertain to emotional experiences, but focus on the conditions rather than the actions themselves.\",\n  \"predicted_bucket\": \"top500\",\n  \"predicted_closeness\": 0.7\n}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run2_20260728_235849.json",
+      "game_number": 1384,
+      "child_id": "d0b0a67f0d684c1fb6ffeb69101b4451",
+      "generation": 2,
+      "parent_id": "0ffae012c59e4ad3b36408af9f202524",
+      "parent_rank": 303,
+      "sampled_op": "m_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "1a16500cac77ea407a7c8a9e58cf5d798ea34f6f62ef9afb3011f0c4edec03bd",
+      "prompt_chars": 3845,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "announce",
+      "proposed_words": [
+        "announce",
+        "reveal",
+        "share"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 2968,
+      "predicted_closeness": 0.6,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "publish"
+        ],
+        "reason": "This hypothesis reframes 'publish' as a verb related to sharing or revealing information, shifting from logistical contexts to informational dissemination."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 155,
+      "raw_response": "{\"name\": \"disclosure and dissemination\", \"description\": \"the act of making information public or available\", \"words\": [\"announce\", \"reveal\", \"share\"], \"basis_words\": [\"publish\"], \"reason\": \"This hypothesis reframes 'publish' as a verb related to sharing or revealing information, shifting from logistical contexts to informational dissemination.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.6}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run2_20260728_235849.json",
+      "game_number": 1384,
+      "child_id": "bbcc7573c1ea4eb6b42d98cdd2d0a8c9",
+      "generation": 2,
+      "parent_id": "5246b9d11d4a42e18264f191ad8a3738",
+      "parent_rank": 328,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "ba24e36da39ad45533e183a23e66063bf3b1a2f25bfb7972a9316b41d86102f1",
+      "prompt_chars": 3831,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "greet",
+      "proposed_words": [
+        "greet",
+        "shake",
+        "applaud"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 4427,
+      "predicted_closeness": 0.5,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "grief",
+          "work",
+          "eat"
+        ],
+        "reason": "social interactions often involve emotional contexts but are distinct from the activities themselves, making them a plausible adjacent category"
+      },
+      "basis_words_count": 3,
+      "reason_chars": 143,
+      "raw_response": "{\"name\": \"social_interactions\", \"description\": \"interactions between individuals influenced by emotional contexts\", \"words\": [\"greet\", \"shake\", \"applaud\"], \"basis_words\": [\"grief\", \"work\", \"eat\"], \"reason\": \"social interactions often involve emotional contexts but are distinct from the activities themselves, making them a plausible adjacent category\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.5}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run2_20260728_235849.json",
+      "game_number": 1384,
+      "child_id": "c2c6a313f7ac40f6b007fa3c05b1f7cf",
+      "generation": 3,
+      "parent_id": "bbcc7573c1ea4eb6b42d98cdd2d0a8c9",
+      "parent_rank": 32,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "7eb59987ecb181e10c6ec74a80bc60247556139180199160331d679847e230d8",
+      "prompt_chars": 4172,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "collaborate",
+      "proposed_words": [
+        "collaborate",
+        "negotiate",
+        "cooperate"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 5396,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "talk"
+        ],
+        "reason": "group dynamics involves collective behaviors that may include talking but focuses on group-level interactions rather than individual social actions"
+      },
+      "basis_words_count": 1,
+      "reason_chars": 147,
+      "raw_response": "{\"name\": \"group_dynamics\", \"description\": \"study of interactions within groups\", \"words\": [\"collaborate\", \"negotiate\", \"cooperate\"], \"basis_words\": [\"talk\"], \"reason\": \"group dynamics involves collective behaviors that may include talking but focuses on group-level interactions rather than individual social actions\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run2_20260728_235849.json",
+      "game_number": 1384,
+      "child_id": "4e37f26fb8164aae897aa2eae85cd096",
+      "generation": 3,
+      "parent_id": "a6d74ef120b7467b8fdc80f5a36dd3f1",
+      "parent_rank": 211,
+      "sampled_op": "l_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "70e125020fa56e0605f2d697c72822f6ef31427f135b1942eb24c5f1e93adb9a",
+      "prompt_chars": 4529,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "agency",
+      "proposed_words": [
+        "agency",
+        "autonomy",
+        "initiative"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 5516,
+      "predicted_closeness": 0.4,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "personality"
+        ],
+        "reason": "Moves to a concept focused on individual capacity for independent action, diverging from identity and social interactions but linked to personality traits like autonomy and proactivity."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 185,
+      "raw_response": "{\"name\": \"agency\", \"description\": \"capacity for independent action and decision-making\", \"words\": [\"agency\", \"autonomy\", \"initiative\"], \"basis_words\": [\"personality\"], \"reason\": \"Moves to a concept focused on individual capacity for independent action, diverging from identity and social interactions but linked to personality traits like autonomy and proactivity.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run2_20260728_235849.json",
+      "game_number": 1384,
+      "child_id": "96a11f8a40bf4690907e1455fe3b189c",
+      "generation": 3,
+      "parent_id": "0ffae012c59e4ad3b36408af9f202524",
+      "parent_rank": 303,
+      "sampled_op": "m_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "511f3d10d5b5eda3a04f04725dc874b145987ccfcc1db37419397a902b6bab8e",
+      "prompt_chars": 4417,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "media",
+      "proposed_words": [
+        "media",
+        "print",
+        "release"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 73,
+      "predicted_closeness": 0.4,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "publish"
+        ],
+        "reason": "This hypothesis reframes 'publish' as a verb related to media and information sharing, shifting from logistical contexts to communication and publicity domains."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 160,
+      "raw_response": "{\"name\": \"dissemination and publicity\", \"description\": \"process of making information public through media channels\", \"words\": [\"media\", \"print\", \"release\"], \"basis_words\": [\"publish\"], \"reason\": \"This hypothesis reframes 'publish' as a verb related to media and information sharing, shifting from logistical contexts to communication and publicity domains.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run2_20260728_235849.json",
+      "game_number": 1384,
+      "child_id": "a3353ab51d604745ad64dbcf2da152eb",
+      "generation": 4,
+      "parent_id": "5f5af88626134e0294cee978b6cca206",
+      "parent_rank": 28,
+      "sampled_op": "s_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "486e007030d10583636c460d9e48adeda1cd7cb0cc6713cbd0508012c3cdd0ab",
+      "prompt_chars": 4671,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "converse",
+      "proposed_words": [
+        "converse",
+        "chatter",
+        "banter"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 2594,
+      "predicted_closeness": 0.8,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top100",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "chat"
+        ],
+        "reason": "These words are close synonyms to 'chat' and represent more specific forms of verbal interaction within social contexts."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 120,
+      "raw_response": "{\"name\": \"social_conversation\", \"description\": \"verbal interactions focused on communication and dialogue\", \"words\": [\"converse\", \"chatter\", \"banter\"], \"basis_words\": [\"chat\"], \"reason\": \"These words are close synonyms to 'chat' and represent more specific forms of verbal interaction within social contexts.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.8}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run2_20260728_235849.json",
+      "game_number": 1384,
+      "child_id": "ca720dab42b64bbcb10b86d0fa9e560b",
+      "generation": 4,
+      "parent_id": "d4cc77f384b9487ca37a1e05c9a83cd6",
+      "parent_rank": 56,
+      "sampled_op": "m_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "c324b002da0bdd1700cced62905024f93b251d5663f53cbcafa208a1fd009230",
+      "prompt_chars": 4705,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "connectivity",
+      "proposed_words": [
+        "connectivity",
+        "nodes",
+        "data"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 15793,
+      "predicted_closeness": 0.6,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top100",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "internet"
+        ],
+        "reason": "Shifts focus from media channels to the technical infrastructure and data flow aspects of the internet"
+      },
+      "basis_words_count": 1,
+      "reason_chars": 102,
+      "raw_response": "{\"name\": \"technical infrastructure\", \"description\": \"technical components and connectivity of the internet\", \"words\": [\"connectivity\", \"nodes\", \"data\"], \"basis_words\": [\"internet\"], \"reason\": \"Shifts focus from media channels to the technical infrastructure and data flow aspects of the internet\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.6}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run2_20260728_235849.json",
+      "game_number": 1384,
+      "child_id": "bbd4eb3b56f44f1ca3cc444f5d8e9e10",
+      "generation": 4,
+      "parent_id": "a6d74ef120b7467b8fdc80f5a36dd3f1",
+      "parent_rank": 211,
+      "sampled_op": "m_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "61fcaabd71ed041576f981cfa53a1b12d8a9aad08e883064941edb686c49c30c",
+      "prompt_chars": 4831,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "manner",
+      "proposed_words": [
+        "manner",
+        "habit",
+        "disposition"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 2202,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "personality"
+        ],
+        "reason": "Explores the external behaviors and patterns that result from personality, shifting focus from internal identity to observable actions."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 135,
+      "raw_response": "{\n  \"name\": \"behavioral expressions\",\n  \"description\": \"how personality is manifested through actions and social interactions\",\n  \"words\": [\"manner\", \"habit\", \"disposition\"],\n  \"basis_words\": [\"personality\"],\n  \"reason\": \"Explores the external behaviors and patterns that result from personality, shifting focus from internal identity to observable actions.\",\n  \"predicted_bucket\": \"top500\",\n  \"predicted_closeness\": 0.3\n}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run3_20260729_114104.json",
+      "game_number": 1384,
+      "child_id": "6a26cde295094c97a4c54bdf35e5a8a3",
+      "generation": 2,
+      "parent_id": "9f4dc0002a5a4447bb056701719b1803",
+      "parent_rank": 274,
+      "sampled_op": "s_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "e4e483ce62a1447380aed59697cc4e4db1549aaac663a90a4ccccabdad46a7da",
+      "prompt_chars": 3496,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "common",
+      "proposed_words": [
+        "common",
+        "typical",
+        "normal"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 1254,
+      "predicted_closeness": 0.7,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "usual"
+        ],
+        "reason": "Refines the 'frequency' hypothesis by focusing on synonyms of 'usual' that directly describe regularity and common occurrence."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 126,
+      "raw_response": "{\"name\": \"commonality\", \"description\": \"synonyms and close semantic neighbors of 'usual' related to frequency\", \"words\": [\"common\", \"typical\", \"normal\"], \"basis_words\": [\"usual\"], \"reason\": \"Refines the 'frequency' hypothesis by focusing on synonyms of 'usual' that directly describe regularity and common occurrence.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.7}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run3_20260729_114104.json",
+      "game_number": 1384,
+      "child_id": "803f155915e24292aa0ed66e0c6ab225",
+      "generation": 3,
+      "parent_id": "2a8795256b904fefbaf369da7e01eca9",
+      "parent_rank": 363,
+      "sampled_op": "m_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "8ce40a93548efe8fc1727c27f07e857e9da4e0fb0617b94cc953132441a2be76",
+      "prompt_chars": 4096,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "rotate",
+      "proposed_words": [
+        "rotate",
+        "revolve",
+        "orbit"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 14353,
+      "predicted_closeness": 0.4,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "beyond",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "spin"
+        ],
+        "reason": "Reinterpreting 'spin' as mechanical rotational movements rather than fluid physical motions."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 92,
+      "raw_response": "{\"name\": \"rotational motion in machinery\", \"description\": \"mechanical spinning actions\", \"words\": [\"rotate\", \"revolve\", \"orbit\"], \"basis_words\": [\"spin\"], \"reason\": \"Reinterpreting 'spin' as mechanical rotational movements rather than fluid physical motions.\", \"predicted_bucket\": \"beyond\", \"predicted_closeness\": 0.4}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run3_20260729_114104.json",
+      "game_number": 1384,
+      "child_id": "36c1ba354a32451aaa6467f57f1aaa93",
+      "generation": 4,
+      "parent_id": "2a8795256b904fefbaf369da7e01eca9",
+      "parent_rank": 363,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "86563f48d8993933301b991923be85cb69742cb4e41f2436db4e5b1deab37c20",
+      "prompt_chars": 4538,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "twirl",
+      "proposed_words": [
+        "twirl",
+        "pirouette",
+        "vortex"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 8323,
+      "predicted_closeness": 0.15,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "beyond",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "spin",
+          "graceful movements"
+        ],
+        "reason": "Selected terms related to rotational motion that are distinct from the parent category but share semantic proximity through physical motion concepts"
+      },
+      "basis_words_count": 2,
+      "reason_chars": 148,
+      "raw_response": "{\n  \"name\": \"rotational actions\",\n  \"description\": \"verbs describing spinning or turning motions\",\n  \"words\": [\"twirl\", \"pirouette\", \"vortex\"],\n  \"basis_words\": [\"spin\", \"graceful movements\"],\n  \"reason\": \"Selected terms related to rotational motion that are distinct from the parent category but share semantic proximity through physical motion concepts\",\n  \"predicted_bucket\": \"beyond\",\n  \"predicted_closeness\": 0.15\n}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run3_20260729_114104.json",
+      "game_number": 1384,
+      "child_id": "bcaab425f32e435aaa702b51d46b0be4",
+      "generation": 5,
+      "parent_id": "9f4dc0002a5a4447bb056701719b1803",
+      "parent_rank": 274,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "c5f088c680161b07e4af6e724ec7ad903f0f8eac1976b4412680d5ce6fbfa2e7",
+      "prompt_chars": 5105,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "custom",
+      "proposed_words": [
+        "custom",
+        "norm",
+        "habit"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 15859,
+      "predicted_closeness": 0.6,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "usual"
+        ],
+        "reason": "Customs and norms relate to typical behaviors and standards, which are conceptually adjacent to frequency terms but form a distinct category."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 141,
+      "raw_response": "{\n  \"name\": \"customs_and_norms\",\n  \"description\": \"common customs and norms\",\n  \"words\": [\"custom\", \"norm\", \"habit\"],\n  \"basis_words\": [\"usual\"],\n  \"reason\": \"Customs and norms relate to typical behaviors and standards, which are conceptually adjacent to frequency terms but form a distinct category.\",\n  \"predicted_bucket\": \"top500\",\n  \"predicted_closeness\": 0.6\n}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run3_20260729_114104.json",
+      "game_number": 1384,
+      "child_id": "e8ac9942724c4026b352de3f684e24b3",
+      "generation": 6,
+      "parent_id": "424b09edaee4403cab4241c9d7c62f86",
+      "parent_rank": 305,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "81d679423aff27165731e8ea6a0381068fc1b63db7b69a24f2494be0e852907a",
+      "prompt_chars": 5501,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "descriptor",
+      "proposed_words": [
+        "descriptor",
+        "trait",
+        "attribute"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 55204,
+      "predicted_closeness": 0.4,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "feature"
+        ],
+        "reason": "Expands from geological structures to general descriptors of natural elements, maintaining conceptual overlap through 'feature' while exploring linguistic categorization."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 170,
+      "raw_response": "{\"name\": \"natural descriptors\", \"description\": \"terms describing natural characteristics\", \"words\": [\"descriptor\", \"trait\", \"attribute\"], \"basis_words\": [\"feature\"], \"reason\": \"Expands from geological structures to general descriptors of natural elements, maintaining conceptual overlap through 'feature' while exploring linguistic categorization.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run3_20260729_114104.json",
+      "game_number": 1384,
+      "child_id": "cc1c439809694a1d87e907a039a8e764",
+      "generation": 7,
+      "parent_id": "424b09edaee4403cab4241c9d7c62f86",
+      "parent_rank": 305,
+      "sampled_op": "l_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "25589f0f1a7a9b98d64ec85034bbb1085ed26e1b3791ff0f32d3640214353184",
+      "prompt_chars": 5994,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "celestial",
+      "proposed_words": [
+        "celestial",
+        "alignment",
+        "event"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 13553,
+      "predicted_closeness": 0.4,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "feature"
+        ],
+        "reason": "Shifts focus from terrestrial landforms to cosmic phenomena, introducing a new semantic domain while retaining relevance through the concept of observable features and patterns."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 177,
+      "raw_response": "{\"name\": \"celestial patterns\", \"description\": \"arrangements and occurrences in the cosmos\", \"words\": [\"celestial\", \"alignment\", \"event\"], \"basis_words\": [\"feature\"], \"reason\": \"Shifts focus from terrestrial landforms to cosmic phenomena, introducing a new semantic domain while retaining relevance through the concept of observable features and patterns.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run3_20260729_114104.json",
+      "game_number": 1384,
+      "child_id": "d85a0766f8204f37bdec2cd4ab02d3f4",
+      "generation": 8,
+      "parent_id": "2a8795256b904fefbaf369da7e01eca9",
+      "parent_rank": 363,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "ace7b5dae9664d8a155cd9d13f3aa0c599385ce0659a49d5e90c6213d9a09eed",
+      "prompt_chars": 6221,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "orbit",
+      "proposed_words": [
+        "orbit",
+        "revolve",
+        "spiral"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 17578,
+      "predicted_closeness": 0.6,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "dance",
+          "movement"
+        ],
+        "reason": "Selected terms related to rotational or circular movements, which are distinct from graceful motions but share a connection to physical motion."
+      },
+      "basis_words_count": 2,
+      "reason_chars": 143,
+      "raw_response": "{\"name\": \"rotational motions\", \"description\": \"circular or spinning physical actions\", \"words\": [\"orbit\", \"revolve\", \"spiral\"], \"basis_words\": [\"dance\", \"movement\"], \"reason\": \"Selected terms related to rotational or circular movements, which are distinct from graceful motions but share a connection to physical motion.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.6}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run3_20260729_114104.json",
+      "game_number": 1384,
+      "child_id": "96005a0c912546b1bc6dfe5a6b211c59",
+      "generation": 9,
+      "parent_id": "2a8795256b904fefbaf369da7e01eca9",
+      "parent_rank": 363,
+      "sampled_op": "l_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "6f7f1779dd3e08f632fd2d8e93dd3904e62cc7b25e24e047e7ff9f8817815b5b",
+      "prompt_chars": 6572,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "vortex",
+      "proposed_words": [
+        "vortex",
+        "orbit",
+        "pulse"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 28451,
+      "predicted_closeness": 0.4,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "movement"
+        ],
+        "reason": "Explored celestial phenomena to diverge from physical motion while maintaining a connection to dynamic processes"
+      },
+      "basis_words_count": 1,
+      "reason_chars": 112,
+      "raw_response": "{\"name\": \"celestial dynamics\", \"description\": \"natural cosmic events and motions\", \"words\": [\"vortex\", \"orbit\", \"pulse\"], \"basis_words\": [\"movement\"], \"reason\": \"Explored celestial phenomena to diverge from physical motion while maintaining a connection to dynamic processes\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run3_20260729_114104.json",
+      "game_number": 1384,
+      "child_id": "8964d88fa0184fb289827020d9a0ed80",
+      "generation": 10,
+      "parent_id": "c8f2895f0de9415c91522f31ebcf6904",
+      "parent_rank": 109,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "f715e88386529f78043e5bb5898df164d4d9f275397125a6f802e0cf3aaa6df9",
+      "prompt_chars": 6962,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "system",
+      "proposed_words": [
+        "system",
+        "component",
+        "element"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 28534,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "link"
+        ],
+        "reason": "System components are related to connections but focus on the building blocks of systems, making them an adjacent category."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 123,
+      "raw_response": "{\"name\": \"system components\", \"description\": \"elements that form a system\", \"words\": [\"system\", \"component\", \"element\"], \"basis_words\": [\"link\"], \"reason\": \"System components are related to connections but focus on the building blocks of systems, making them an adjacent category.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run3_20260729_114104.json",
+      "game_number": 1384,
+      "child_id": "b7f641dcbdac4f8792a872c541f94b76",
+      "generation": 11,
+      "parent_id": "257d076a0b934de6b5f55bb975ec982d",
+      "parent_rank": 73,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "ebe200babb281f6a74c31b3d026641b2ef521ea560b49785144c38edb4cb8c0d",
+      "prompt_chars": 6998,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "carrier",
+      "proposed_words": [
+        "carrier",
+        "path",
+        "conduit"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 22826,
+      "predicted_closeness": 0.6,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "medium",
+          "communication"
+        ],
+        "reason": "frames communication through various transmission methods rather than focusing on cultural aspects alone"
+      },
+      "basis_words_count": 2,
+      "reason_chars": 104,
+      "raw_response": "{\"name\": \"communication methods\", \"description\": \"ways of transmitting information or messages\", \"words\": [\"carrier\", \"path\", \"conduit\"], \"basis_words\": [\"medium\", \"communication\"], \"reason\": \"frames communication through various transmission methods rather than focusing on cultural aspects alone\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.6}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run3_20260729_114104.json",
+      "game_number": 1384,
+      "child_id": "3817255408994120b7342910225c2ee9",
+      "generation": 12,
+      "parent_id": "c8f2895f0de9415c91522f31ebcf6904",
+      "parent_rank": 109,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "bcf925a3327f8e0e7eb0aacb9797c75c02ca8765776b398fe2e26aa506b72fe5",
+      "prompt_chars": 7473,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "channel",
+      "proposed_words": [
+        "channel",
+        "medium",
+        "conduit"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 1779,
+      "predicted_closeness": 0.4,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "link"
+        ],
+        "reason": "Communication channels are closely related to social bonds as both involve connecting people, but focus on the mechanisms of transmission rather than the relationships themselves."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 179,
+      "raw_response": "{\"name\": \"communication channels\", \"description\": \"methods of transmitting information or connecting entities\", \"words\": [\"channel\", \"medium\", \"conduit\"], \"basis_words\": [\"link\"], \"reason\": \"Communication channels are closely related to social bonds as both involve connecting people, but focus on the mechanisms of transmission rather than the relationships themselves.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run3_20260729_114104.json",
+      "game_number": 1384,
+      "child_id": "b53fc5ad60b446068777c67b009f9ba3",
+      "generation": 13,
+      "parent_id": "9411e99e9f5a4cb08013189baabba2f1",
+      "parent_rank": 345,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "bba22dc43fd197fefcd31562ccddee25c2068f13d8405de82b4a567195a1e3c9",
+      "prompt_chars": 7604,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "weave",
+      "proposed_words": [
+        "weave",
+        "loom",
+        "thread"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 11376,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "web"
+        ],
+        "reason": "Textile structures share conceptual ties to 'web' through interwoven patterns and connectivity, but focus on physical materials and manufacturing rather than abstract or technical network systems."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 196,
+      "raw_response": "{\"name\": \"textile structures\", \"description\": \"interwoven materials or patterns\", \"words\": [\"weave\", \"loom\", \"thread\"], \"basis_words\": [\"web\"], \"reason\": \"Textile structures share conceptual ties to 'web' through interwoven patterns and connectivity, but focus on physical materials and manufacturing rather than abstract or technical network systems.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run3_20260729_114104.json",
+      "game_number": 1384,
+      "child_id": "655130dc582145d89fc83b12fde79297",
+      "generation": 14,
+      "parent_id": "257d076a0b934de6b5f55bb975ec982d",
+      "parent_rank": 73,
+      "sampled_op": "l_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "9cc9f7cb7525298bf548828a0d444d81f86cb0bd758a40617c1ce230e4e2c15f",
+      "prompt_chars": 7782,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "wave",
+      "proposed_words": [
+        "wave",
+        "current",
+        "tide"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 8608,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "dance"
+        ],
+        "reason": "explores physical phenomena not covered by current categories but relates to 'medium' through transmission contexts"
+      },
+      "basis_words_count": 1,
+      "reason_chars": 115,
+      "raw_response": "{\"name\": \"natural forces\", \"description\": \"physical phenomena and their interactions\", \"words\": [\"wave\", \"current\", \"tide\"], \"basis_words\": [\"dance\"], \"reason\": \"explores physical phenomena not covered by current categories but relates to 'medium' through transmission contexts\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run3_20260729_114104.json",
+      "game_number": 1384,
+      "child_id": "b78de136f5784fcfb4d64c240f78fc42",
+      "generation": 15,
+      "parent_id": "9411e99e9f5a4cb08013189baabba2f1",
+      "parent_rank": 345,
+      "sampled_op": "l_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "db0e5046f7933da557d0c7dce1483e5be9a094465bc0e7dff1870ee51f268ea1",
+      "prompt_chars": 8152,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "tendrils",
+      "proposed_words": [
+        "tendrils",
+        "veins",
+        "spiral"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 30004,
+      "predicted_closeness": 0.4,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "link"
+        ],
+        "reason": "Shifts focus from technical systems to biological structures, diverging from abstract connections while maintaining semantic ties through shared imagery of interconnectedness in natural forms."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 192,
+      "raw_response": "{\"name\": \"organic structures\", \"description\": \"natural interwoven elements\", \"words\": [\"tendrils\", \"veins\", \"spiral\"], \"basis_words\": [\"link\"], \"reason\": \"Shifts focus from technical systems to biological structures, diverging from abstract connections while maintaining semantic ties through shared imagery of interconnectedness in natural forms.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run3_20260729_114104.json",
+      "game_number": 1384,
+      "child_id": "e4e3fb13359f4400863fb0032b967781",
+      "generation": 16,
+      "parent_id": "9411e99e9f5a4cb08013189baabba2f1",
+      "parent_rank": 345,
+      "sampled_op": "s_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "b7e118d0071ced37e7272611b3da8a61f313c77572d46c9b9852467c1ed8a52f",
+      "prompt_chars": 8147,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "weave",
+      "proposed_words": [
+        "weave",
+        "tangle",
+        "lattice"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 11376,
+      "predicted_closeness": 0.7,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "web"
+        ],
+        "reason": "The hypothesis narrows from abstract 'network structures' to more physically interwoven systems, using synonyms of 'web' that emphasize tangible, interconnected forms like weaving or latticing."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 193,
+      "raw_response": "{\"name\": \"interwoven structures\", \"description\": \"tangible, interconnected forms resembling woven or entangled systems\", \"words\": [\"weave\", \"tangle\", \"lattice\"], \"basis_words\": [\"web\"], \"reason\": \"The hypothesis narrows from abstract 'network structures' to more physically interwoven systems, using synonyms of 'web' that emphasize tangible, interconnected forms like weaving or latticing.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.7}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run3_20260729_114104.json",
+      "game_number": 1384,
+      "child_id": "c40c55bad1324c3d998c14d30fd3ff32",
+      "generation": 17,
+      "parent_id": "760c73dc73754e76a9510a6e2e195eaa",
+      "parent_rank": 60,
+      "sampled_op": "m_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "ec51aea8630fd9c3d0f1766b2cdfb18b8ef230ebebae20c7f0628d665a37e883",
+      "prompt_chars": 10411,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "tension",
+      "proposed_words": [
+        "tension",
+        "climax",
+        "resolution"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 2306,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "drama"
+        ],
+        "reason": "Drama involves storytelling elements like tension, climax, and resolution, which are structural aspects distinct from performance types."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 136,
+      "raw_response": "{\"name\": \"narrative structures in drama\", \"description\": \"components of storytelling within dramatic contexts\", \"words\": [\"tension\", \"climax\", \"resolution\"], \"basis_words\": [\"drama\"], \"reason\": \"Drama involves storytelling elements like tension, climax, and resolution, which are structural aspects distinct from performance types.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run3_20260729_114104.json",
+      "game_number": 1384,
+      "child_id": "4a80090a6b264c14a93ccac8a65db27c",
+      "generation": 18,
+      "parent_id": "eab2097227f14457b63ff18b826a91ea",
+      "parent_rank": 30,
+      "sampled_op": "m_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "1ff7eda78ab493dbd699b2316df6449ef102c72ad55ee18ad0158f88a96d59fa",
+      "prompt_chars": 10745,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "myth",
+      "proposed_words": [
+        "myth",
+        "saga",
+        "legend"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 974,
+      "predicted_closeness": 0.4,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "story"
+        ],
+        "reason": "Cultural storytelling traditions encompass various forms of narratives, which may explain the high rank of 'story' as a central element in these traditions."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 156,
+      "raw_response": "{\"name\": \"cultural storytelling traditions\", \"description\": \"traditions and forms of stories passed down through culture\", \"words\": [\"myth\", \"saga\", \"legend\"], \"basis_words\": [\"story\"], \"reason\": \"Cultural storytelling traditions encompass various forms of narratives, which may explain the high rank of 'story' as a central element in these traditions.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run3_20260729_114104.json",
+      "game_number": 1384,
+      "child_id": "2280405f89db4470a857033f9556667c",
+      "generation": 19,
+      "parent_id": "c94bc28dd6de4b8bb740d3c229fa7a43",
+      "parent_rank": 69,
+      "sampled_op": "m_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "fb4a009184feb058e8303ebbeda5f2b5ece7c69b5db07b5f82f554b8eb3cd296",
+      "prompt_chars": 8782,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "existence",
+      "proposed_words": [
+        "existence",
+        "substance",
+        "manifestation"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 3625,
+      "predicted_closeness": 0.4,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "reality"
+        ],
+        "reason": "Shifts focus from abstract philosophical notions to the tangible and physical dimensions that underpin the concept of reality."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 126,
+      "raw_response": "{\"name\": \"material existence\", \"description\": \"physical and tangible aspects of being\", \"words\": [\"existence\", \"substance\", \"manifestation\"], \"basis_words\": [\"reality\"], \"reason\": \"Shifts focus from abstract philosophical notions to the tangible and physical dimensions that underpin the concept of reality.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run3_20260729_114104.json",
+      "game_number": 1384,
+      "child_id": "70b9e92f28764ffcb694b9470758cc44",
+      "generation": 20,
+      "parent_id": "c94bc28dd6de4b8bb740d3c229fa7a43",
+      "parent_rank": 69,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "68c019d78116cdc7d639d3217349861f8e972e3ca0611d531907a033618813cc",
+      "prompt_chars": 9073,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "universe",
+      "proposed_words": [
+        "universe",
+        "space",
+        "time"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 3654,
+      "predicted_closeness": 0.7,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "reality"
+        ],
+        "reason": "Moves to terms related to the structure of the universe, which are semantically connected to reality but exist in a distinct category outside philosophical concepts."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 165,
+      "raw_response": "{\"name\": \"cosmic terms\", \"description\": \"terms related to the universe and its structure\", \"words\": [\"universe\", \"space\", \"time\"], \"basis_words\": [\"reality\"], \"reason\": \"Moves to terms related to the structure of the universe, which are semantically connected to reality but exist in a distinct category outside philosophical concepts.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.7}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run3_20260729_114104.json",
+      "game_number": 1384,
+      "child_id": "cd328f34e5ec4f42b9d7c91a43670acf",
+      "generation": 21,
+      "parent_id": "e2b7a2ef43974930a4a69ecfe8a357e4",
+      "parent_rank": 185,
+      "sampled_op": "l_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "9925612bdcc8a04032be8317e579517c6939d0d81f506d02a4a56b1fb2b48f0b",
+      "prompt_chars": 9518,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "perception",
+      "proposed_words": [
+        "perception",
+        "resonance",
+        "vibration"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 9673,
+      "predicted_closeness": 0.6,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "truth"
+        ],
+        "reason": "Shifts focus to how truth is experienced and interpreted through sensory and perceptual frameworks, diverging from abstract epistemological and ontological categories while maintaining semantic proximity to 'truth' through resonance and vibration as metaphorical links to evidence and alignment."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 295,
+      "raw_response": "{\"name\": \"Perceptual Resonance\", \"description\": \"The interplay between sensory experiences and their alignment with perceived reality\", \"words\": [\"perception\", \"resonance\", \"vibration\"], \"basis_words\": [\"truth\"], \"reason\": \"Shifts focus to how truth is experienced and interpreted through sensory and perceptual frameworks, diverging from abstract epistemological and ontological categories while maintaining semantic proximity to 'truth' through resonance and vibration as metaphorical links to evidence and alignment.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.6}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run3_20260729_114104.json",
+      "game_number": 1384,
+      "child_id": "8ae45ebc6e32440e86247b281934ade0",
+      "generation": 22,
+      "parent_id": "eab2097227f14457b63ff18b826a91ea",
+      "parent_rank": 30,
+      "sampled_op": "l_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "3e4becdf58abb8d69f03d7b2218e27163f9914c7bb75e3504b3d8f440d15661f",
+      "prompt_chars": 9509,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "space",
+      "proposed_words": [
+        "space",
+        "time",
+        "motion"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 8434,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "story"
+        ],
+        "reason": "Moves to foundational dimensions of experience, distinct from narrative structure but essential to story context and plausibly related to the hidden target."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 156,
+      "raw_response": "{\"name\": \"temporal and spatial dimensions\", \"description\": \"fundamental aspects of existence and storytelling context\", \"words\": [\"space\", \"time\", \"motion\"], \"basis_words\": [\"story\"], \"reason\": \"Moves to foundational dimensions of experience, distinct from narrative structure but essential to story context and plausibly related to the hidden target.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run3_20260729_114104.json",
+      "game_number": 1384,
+      "child_id": "6e6dea6d8fc24253aa1927317af2cb43",
+      "generation": 23,
+      "parent_id": "e2b7a2ef43974930a4a69ecfe8a357e4",
+      "parent_rank": 185,
+      "sampled_op": "l_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "4b05236d5ee37870eacd9f62c26e5757f0760fc6263e3a781500e955b678e8ae",
+      "prompt_chars": 9916,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "resonance",
+      "proposed_words": [
+        "resonance",
+        "vibration",
+        "echo"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 40626,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "truth"
+        ],
+        "reason": "Moves to the concept of resonance, focusing on vibrational interactions that underlie reality, diverging from epistemology and existing categories while remaining plausibly related to truth's semantic neighborhood."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 214,
+      "raw_response": "{\"name\": \"Resonance\", \"description\": \"The interplay of vibrations and echoes in the fabric of reality\", \"words\": [\"resonance\", \"vibration\", \"echo\"], \"basis_words\": [\"truth\"], \"reason\": \"Moves to the concept of resonance, focusing on vibrational interactions that underlie reality, diverging from epistemology and existing categories while remaining plausibly related to truth's semantic neighborhood.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run3_20260729_114104.json",
+      "game_number": 1384,
+      "child_id": "60765b3dea794c42aa7a6d8890628007",
+      "generation": 24,
+      "parent_id": "e2b7a2ef43974930a4a69ecfe8a357e4",
+      "parent_rank": 185,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "4adbcf7b48c1a2fa8af4ddcc58aab41c5c2619f9d7f70a542365c8282edd370a",
+      "prompt_chars": 9842,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "reality",
+      "proposed_words": [
+        "reality",
+        "essence",
+        "principle"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 69,
+      "predicted_closeness": 0.6,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "truth"
+        ],
+        "reason": "Expands focus to the fundamental nature of existence and reality, using synonyms and related terms close to 'truth' but not previously explored."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 144,
+      "raw_response": "{\"name\": \"Metaphysical Reality\", \"description\": \"The fundamental nature of existence beyond empirical evidence\", \"words\": [\"reality\", \"essence\", \"principle\"], \"basis_words\": [\"truth\"], \"reason\": \"Expands focus to the fundamental nature of existence and reality, using synonyms and related terms close to 'truth' but not previously explored.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.6}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run3_20260729_114104.json",
+      "game_number": 1384,
+      "child_id": "709a55467996441ba201b92125305c73",
+      "generation": 25,
+      "parent_id": "e2b7a2ef43974930a4a69ecfe8a357e4",
+      "parent_rank": 185,
+      "sampled_op": "m_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "b0f0c7660fee7a75303ce93d69b7473a3a7d2cb36120e9745bc2f9647207ad15",
+      "prompt_chars": 9988,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "proof",
+      "proposed_words": [
+        "proof",
+        "validity",
+        "veracity"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 5335,
+      "predicted_closeness": 0.4,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "truth"
+        ],
+        "reason": "Shifts focus to the verification and validation mechanisms that establish truth, using related terms not previously explored."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 125,
+      "raw_response": "{\"name\": \"Verificational Anchors\", \"description\": \"Examining the verification and validation processes that anchor truth in epistemology.\", \"words\": [\"proof\", \"validity\", \"veracity\"], \"basis_words\": [\"truth\"], \"reason\": \"Shifts focus to the verification and validation mechanisms that establish truth, using related terms not previously explored.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run3_20260729_114104.json",
+      "game_number": 1384,
+      "child_id": "068898148c7c4bd99dc7cbca5351811d",
+      "generation": 26,
+      "parent_id": "680e79ae3edc44ecb2fa7ea856a16527",
+      "parent_rank": 114,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "9f2649f8ae31f482216cdce39fa51f50ee489e8e6e35bcfcf87db5bca14174c7",
+      "prompt_chars": 9992,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "certainty",
+      "proposed_words": [
+        "certainty",
+        "assurance",
+        "confirmation"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 9596,
+      "predicted_closeness": 0.8,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top100",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "fact"
+        ],
+        "reason": "Explores concepts related to verification and assurance, which are closely linked to the high-ranking word 'fact' but form a distinct category focusing on the confirmation of information."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 187,
+      "raw_response": "{\"name\": \"certainty\", \"description\": \"concepts related to assurance and verification of information\", \"words\": [\"certainty\", \"assurance\", \"confirmation\"], \"basis_words\": [\"fact\"], \"reason\": \"Explores concepts related to verification and assurance, which are closely linked to the high-ranking word 'fact' but form a distinct category focusing on the confirmation of information.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.8}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run3_20260729_114104.json",
+      "game_number": 1384,
+      "child_id": "c95c9bfb488741e3a3aeffe3cbfbad08",
+      "generation": 27,
+      "parent_id": "e2b7a2ef43974930a4a69ecfe8a357e4",
+      "parent_rank": 185,
+      "sampled_op": "s_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "4cc1e143c6c1ba5f0a176d7bc7e4fff230ff3baac3a07b7efbd44697884ed9b9",
+      "prompt_chars": 10196,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "veracity",
+      "proposed_words": [
+        "veracity",
+        "certainty",
+        "fidelity"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 8542,
+      "predicted_closeness": 0.6,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "truth"
+        ],
+        "reason": "Narrows focus to synonyms of 'truth' that emphasize accuracy and reliability, using words not previously explored in this context"
+      },
+      "basis_words_count": 1,
+      "reason_chars": 129,
+      "raw_response": "{\"name\": \"Veracity Core\", \"description\": \"Fundamental truths and evidence underlying existence, focusing on veracity and certainty\", \"words\": [\"veracity\", \"certainty\", \"fidelity\"], \"basis_words\": [\"truth\"], \"reason\": \"Narrows focus to synonyms of 'truth' that emphasize accuracy and reliability, using words not previously explored in this context\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.6}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run3_20260729_114104.json",
+      "game_number": 1384,
+      "child_id": "efb26104c5a841fc97bd01bf7e332e69",
+      "generation": 28,
+      "parent_id": "e2b7a2ef43974930a4a69ecfe8a357e4",
+      "parent_rank": 185,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "32fe1d5c67ecababc29f3c9124eb0d6a114d9ff2aacd964a8e376a7ccec284e3",
+      "prompt_chars": 10499,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "essence",
+      "proposed_words": [
+        "essence",
+        "reality",
+        "nature"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 8158,
+      "predicted_closeness": 0.25,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "truth"
+        ],
+        "reason": "Explores abstract principles underlying existence that are distinct from empirical epistemology but conceptually adjacent through their foundational role in understanding reality."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 179,
+      "raw_response": "{\"name\": \"Metaphysical Constructs\", \"description\": \"Fundamental frameworks and concepts shaping the nature of reality\", \"words\": [\"essence\", \"reality\", \"nature\"], \"basis_words\": [\"truth\"], \"reason\": \"Explores abstract principles underlying existence that are distinct from empirical epistemology but conceptually adjacent through their foundational role in understanding reality.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.25}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run3_20260729_114104.json",
+      "game_number": 1384,
+      "child_id": "0c844da4ad77416886f76137ace22b5e",
+      "generation": 29,
+      "parent_id": "b6be3d460d7d461b89c3bafcce0af41f",
+      "parent_rank": 188,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "8f12e40facf14fb24819bf32ceb303ae537ff4f1c32f8a4c6d6050393e5c6627",
+      "prompt_chars": 10372,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "plot",
+      "proposed_words": [
+        "plot",
+        "character",
+        "setting"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 1117,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "story"
+        ],
+        "reason": "Explores fundamental components of storytelling that are distinct from narrative forms themselves but essential to the construction of stories."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 143,
+      "raw_response": "{\"name\": \"narrative elements\", \"description\": \"key components found in stories\", \"words\": [\"plot\", \"character\", \"setting\"], \"basis_words\": [\"story\"], \"reason\": \"Explores fundamental components of storytelling that are distinct from narrative forms themselves but essential to the construction of stories.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run3_20260729_114104.json",
+      "game_number": 1384,
+      "child_id": "26786304f9834e35b725793bae334fc3",
+      "generation": 30,
+      "parent_id": "b6be3d460d7d461b89c3bafcce0af41f",
+      "parent_rank": 188,
+      "sampled_op": "l_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "7f77be60a342d82c2db34705c58cb5a02aa6a236dc9de524657537fc262a16e8",
+      "prompt_chars": 10581,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "area",
+      "proposed_words": [
+        "area",
+        "moment",
+        "flow"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 3588,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "episode",
+          "story"
+        ],
+        "reason": "Explores spatial and temporal aspects of storytelling not directly covered by existing categories, focusing on how physical and temporal contexts influence narrative structures."
+      },
+      "basis_words_count": 2,
+      "reason_chars": 177,
+      "raw_response": "{\"name\": \"spatial dynamics\", \"description\": \"analysis of spatial relationships in storytelling\", \"words\": [\"area\", \"moment\", \"flow\"], \"basis_words\": [\"episode\", \"story\"], \"reason\": \"Explores spatial and temporal aspects of storytelling not directly covered by existing categories, focusing on how physical and temporal contexts influence narrative structures.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run3_20260729_114104.json",
+      "game_number": 1384,
+      "child_id": "8fb58a563c2e4210826ae5a8532c55d5",
+      "generation": 31,
+      "parent_id": "9411e99e9f5a4cb08013189baabba2f1",
+      "parent_rank": 345,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "007f6b4cddd5c3e5e030dff381e57eb24eaeeba4b1709a27d893d6cb580a0669",
+      "prompt_chars": 10901,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "weave",
+      "proposed_words": [
+        "weave",
+        "tapestry",
+        "thread"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 11376,
+      "predicted_closeness": 0.4,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "web"
+        ],
+        "reason": "The child hypothesis focuses on terms related to weaving and fabric, which are conceptually adjacent to 'network structures' through shared imagery of interconnectedness, but are distinct in their focus on physical materials and craftsmanship."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 243,
+      "raw_response": "{\n  \"name\": \"textile terms\",\n  \"description\": \"descriptive terms for woven materials\",\n  \"words\": [\"weave\", \"tapestry\", \"thread\"],\n  \"basis_words\": [\"web\"],\n  \"reason\": \"The child hypothesis focuses on terms related to weaving and fabric, which are conceptually adjacent to 'network structures' through shared imagery of interconnectedness, but are distinct in their focus on physical materials and craftsmanship.\",\n  \"predicted_bucket\": \"top500\",\n  \"predicted_closeness\": 0.4\n}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run3_20260729_114104.json",
+      "game_number": 1384,
+      "child_id": "6ffa8d9682594cc6b05218f453468e11",
+      "generation": 32,
+      "parent_id": "8ae45ebc6e32440e86247b281934ade0",
+      "parent_rank": 226,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "13ae1357ec2b21e5bc970822391b0476d0c5f59cbccdf5d0ab1da5cc9aec959d",
+      "prompt_chars": 10790,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "trajectory",
+      "proposed_words": [
+        "trajectory",
+        "progression",
+        "flux"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 18971,
+      "predicted_closeness": 0.6,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "trend"
+        ],
+        "reason": "Trend relates to change over time, so exploring related concepts like trajectory, progression, and flux could yield adjacent categories."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 136,
+      "raw_response": "{\"name\": \"change indicators\", \"description\": \"patterns of change and progression over time\", \"words\": [\"trajectory\", \"progression\", \"flux\"], \"basis_words\": [\"trend\"], \"reason\": \"Trend relates to change over time, so exploring related concepts like trajectory, progression, and flux could yield adjacent categories.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.6}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run3_20260729_114104.json",
+      "game_number": 1384,
+      "child_id": "092fdd302b54482bb9c605966f5bb540",
+      "generation": 33,
+      "parent_id": "eab2097227f14457b63ff18b826a91ea",
+      "parent_rank": 30,
+      "sampled_op": "s_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "e3500fa13237aacec58034d1c3cec3fb7fbd958f3f6d1d4cecef91a7662a7517",
+      "prompt_chars": 14662,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "saga",
+      "proposed_words": [
+        "saga",
+        "legend",
+        "epic"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 1956,
+      "predicted_closeness": 0.6,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "story"
+        ],
+        "reason": "These terms are synonyms or related to 'story' and represent distinct forms of narrative structures not previously explored in the hypothesis."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 142,
+      "raw_response": "{\"name\": \"story variations\", \"description\": \"different forms and types of stories\", \"words\": [\"saga\", \"legend\", \"epic\"], \"basis_words\": [\"story\"], \"reason\": \"These terms are synonyms or related to 'story' and represent distinct forms of narrative structures not previously explored in the hypothesis.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.6}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run3_20260729_114104.json",
+      "game_number": 1384,
+      "child_id": "dec03eb78da6415c83b6842166a6ed13",
+      "generation": 34,
+      "parent_id": "b6be3d460d7d461b89c3bafcce0af41f",
+      "parent_rank": 143,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "8de59b453f60a7c9aae05a1f4876dd09b5ee34a564209134ed70bf884428fff9",
+      "prompt_chars": 10972,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "symbol",
+      "proposed_words": [
+        "symbol",
+        "prose",
+        "lyric"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 20313,
+      "predicted_closeness": 0.4,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "romance"
+        ],
+        "reason": "Expands on 'narrative forms' by exploring terms that describe literary elements and styles, which may include the hidden target related to 'romance'."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 149,
+      "raw_response": "{\"name\": \"literary terminology\", \"description\": \"terms used in literature to describe elements and styles\", \"words\": [\"symbol\", \"prose\", \"lyric\"], \"basis_words\": [\"romance\"], \"reason\": \"Expands on 'narrative forms' by exploring terms that describe literary elements and styles, which may include the hidden target related to 'romance'.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run3_20260729_114104.json",
+      "game_number": 1384,
+      "child_id": "a769edacfaae4465b2279f11c95e73c5",
+      "generation": 35,
+      "parent_id": "eab2097227f14457b63ff18b826a91ea",
+      "parent_rank": 30,
+      "sampled_op": "m_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "ec75f6a10662f35cb39cb4e4b115c75a3b44cd5b45dde7cc72213ec0255ce062",
+      "prompt_chars": 15014,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "genre",
+      "proposed_words": [
+        "genre",
+        "fable",
+        "myth"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 2171,
+      "predicted_closeness": 0.7,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top100",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "story"
+        ],
+        "reason": "Exploring different categories of stories (genre, fable, myth) offers a distinct perspective from the original focus on narrative elements."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 139,
+      "raw_response": "{\"name\": \"types of stories\", \"description\": \"categories or genres that define different kinds of stories\", \"words\": [\"genre\", \"fable\", \"myth\"], \"basis_words\": [\"story\"], \"reason\": \"Exploring different categories of stories (genre, fable, myth) offers a distinct perspective from the original focus on narrative elements.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.7}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run3_20260729_114104.json",
+      "game_number": 1384,
+      "child_id": "a7776a4a1fc042d6952840ff5d447966",
+      "generation": 36,
+      "parent_id": "b6be3d460d7d461b89c3bafcce0af41f",
+      "parent_rank": 143,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "3628a24f623e704efd9133f4e6eeebd16465494f9c26cc290296565c6f67ef98",
+      "prompt_chars": 11253,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "liaison",
+      "proposed_words": [
+        "liaison",
+        "partnership",
+        "union"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 4342,
+      "predicted_closeness": 0.7,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top100",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "romance"
+        ],
+        "reason": "Expands from 'narrative forms' to human interaction models, which may contain the hidden target as 'romance' is a type of relationship."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 135,
+      "raw_response": "{\"name\": \"types of relationships\", \"description\": \"common interpersonal connections\", \"words\": [\"liaison\", \"partnership\", \"union\"], \"basis_words\": [\"romance\"], \"reason\": \"Expands from 'narrative forms' to human interaction models, which may contain the hidden target as 'romance' is a type of relationship.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.7}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run3_20260729_114104.json",
+      "game_number": 1384,
+      "child_id": "af71db073aac4b6894f7b4e19eaa7093",
+      "generation": 37,
+      "parent_id": "8ae45ebc6e32440e86247b281934ade0",
+      "parent_rank": 226,
+      "sampled_op": "s_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "b46d7c789395f85eae36aaac10797f9be0f300892cddd864b5261a303ef1e1b4",
+      "prompt_chars": 11361,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "direction",
+      "proposed_words": [
+        "direction",
+        "trajectory",
+        "course"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 3223,
+      "predicted_closeness": 0.6,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "trend"
+        ],
+        "reason": "These words are semantic neighbors of 'trend' and focus on directional progression through time"
+      },
+      "basis_words_count": 1,
+      "reason_chars": 95,
+      "raw_response": "{\"name\": \"temporal directionality\", \"description\": \"aspects of time and sequence focusing on directional change\", \"words\": [\"direction\", \"trajectory\", \"course\"], \"basis_words\": [\"trend\"], \"reason\": \"These words are semantic neighbors of 'trend' and focus on directional progression through time\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.6}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run3_20260729_114104.json",
+      "game_number": 1384,
+      "child_id": "c9f5ef7965234ecf8a0ab00088efd320",
+      "generation": 38,
+      "parent_id": "9411e99e9f5a4cb08013189baabba2f1",
+      "parent_rank": 345,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "e206b45c9607dbef353c8a2a9e4afaa6ff728109d3eb7f46fac7819aaec7ae9e",
+      "prompt_chars": 11758,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "weave",
+      "proposed_words": [
+        "weave",
+        "texture",
+        "pattern"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 11376,
+      "predicted_closeness": 0.5,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "web"
+        ],
+        "reason": "Shifts focus from the systems themselves to the characteristics of interconnected materials, maintaining semantic ties through shared notions of interwoven structures."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 167,
+      "raw_response": "{\"name\": \"textile properties\", \"description\": \"characteristics of woven and interconnected materials\", \"words\": [\"weave\", \"texture\", \"pattern\"], \"basis_words\": [\"web\"], \"reason\": \"Shifts focus from the systems themselves to the characteristics of interconnected materials, maintaining semantic ties through shared notions of interwoven structures.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.5}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run3_20260729_114104.json",
+      "game_number": 1384,
+      "child_id": "d6459c09eff948cb96fc5726ad42cbe9",
+      "generation": 39,
+      "parent_id": "8ae45ebc6e32440e86247b281934ade0",
+      "parent_rank": 226,
+      "sampled_op": "m_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "a2e7c59c4c2ee2e9ddaf9e98eedb59c743a0d50910fdc15dc4f4e58115a7e8e5",
+      "prompt_chars": 11673,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "vector",
+      "proposed_words": [
+        "vector",
+        "axis",
+        "gradient"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 16068,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "beyond",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "trend"
+        ],
+        "reason": "Reinterpreting 'trend' as a directional movement or inclination rather than a temporal sequence."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 96,
+      "raw_response": "{\"name\": \"direction\", \"description\": \"aspects of direction and inclination in processes\", \"words\": [\"vector\", \"axis\", \"gradient\"], \"basis_words\": [\"trend\"], \"reason\": \"Reinterpreting 'trend' as a directional movement or inclination rather than a temporal sequence.\", \"predicted_bucket\": \"beyond\", \"predicted_closeness\": 0.3}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run3_20260729_114104.json",
+      "game_number": 1384,
+      "child_id": "ad0d3c95c16a45f082af22a493c01486",
+      "generation": 40,
+      "parent_id": "ddf86ed6928a44749061a02c3a4f8be0",
+      "parent_rank": 73,
+      "sampled_op": "s_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "f16a755eceeb7a3bb054fb4e166047bcca7f35123b4fc27fd3d17ac52f873ecc",
+      "prompt_chars": 11340,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "matrix",
+      "proposed_words": [
+        "matrix",
+        "material",
+        "substance"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 16639,
+      "predicted_closeness": 0.7,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "medium"
+        ],
+        "reason": "Focuses on specific properties and forms of cosmic material, using synonyms and related terms that are closely associated with medium in scientific contexts."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 157,
+      "raw_response": "{\n  \"name\": \"cosmic matrix aspects\",\n  \"description\": \"specific properties and forms of cosmic material\",\n  \"words\": [\"matrix\", \"material\", \"substance\"],\n  \"basis_words\": [\"medium\"],\n  \"reason\": \"Focuses on specific properties and forms of cosmic material, using synonyms and related terms that are closely associated with medium in scientific contexts.\",\n  \"predicted_bucket\": \"top500\",\n  \"predicted_closeness\": 0.7\n}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run3_20260729_114104.json",
+      "game_number": 1384,
+      "child_id": "6f942c90de6f42dc9f650f3ff0636f37",
+      "generation": 41,
+      "parent_id": "e8ac9942724c4026b352de3f684e24b3",
+      "parent_rank": 476,
+      "sampled_op": "m_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "8697af66621e3ef8d9aad22609a75b962247bb2b9497eb82fdb9e5289b3d8d69",
+      "prompt_chars": 11552,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "outline",
+      "proposed_words": [
+        "outline",
+        "line",
+        "silhouette"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 32478,
+      "predicted_closeness": 0.5,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "profile",
+          "visual"
+        ],
+        "reason": "Shifts focus from landform features to visual elements commonly depicted in art, maintaining a connection through the shared concept of outlines and shapes."
+      },
+      "basis_words_count": 2,
+      "reason_chars": 156,
+      "raw_response": "{\"name\": \"visual characteristics in art\", \"description\": \"terms related to outlines and shapes in artistic contexts\", \"words\": [\"outline\", \"line\", \"silhouette\"], \"basis_words\": [\"profile\", \"visual\"], \"reason\": \"Shifts focus from landform features to visual elements commonly depicted in art, maintaining a connection through the shared concept of outlines and shapes.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.5}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run4_20260729_125300.json",
+      "game_number": 1384,
+      "child_id": "e0c40dbe94bd4cb8a516147ac6421f54",
+      "generation": 2,
+      "parent_id": "e34253c1388b40a5a1fefc1472b3a3ea",
+      "parent_rank": 363,
+      "sampled_op": "s_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "0abe50cfe2eb47e56d0d2b7d95b490df41b566b2e6473a67c3de9f45d4a013ca",
+      "prompt_chars": 3515,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "revolve",
+      "proposed_words": [
+        "revolve",
+        "rotate",
+        "swirl"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 1197,
+      "predicted_closeness": 0.6,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "spin"
+        ],
+        "reason": "these words are synonyms or related to spinning motions within dance contexts"
+      },
+      "basis_words_count": 1,
+      "reason_chars": 77,
+      "raw_response": "{\"name\": \"rotational movements\", \"description\": \"specific spinning-related motions\", \"words\": [\"revolve\", \"rotate\", \"swirl\"], \"basis_words\": [\"spin\"], \"reason\": \"these words are synonyms or related to spinning motions within dance contexts\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.6}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run4_20260729_125300.json",
+      "game_number": 1384,
+      "child_id": "e4f993e4d80f4037a47a093a3c016d2f",
+      "generation": 3,
+      "parent_id": "f042af52f393401c953cbf66aaf8117d",
+      "parent_rank": 216,
+      "sampled_op": "m_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "cb39812b0766a3800815957721d8567c9510e9d9384250b033c664460bea7a35",
+      "prompt_chars": 4049,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "perceive",
+      "proposed_words": [
+        "perceive",
+        "understand",
+        "discern"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 5302,
+      "predicted_closeness": 0.5,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "hear"
+        ],
+        "reason": "Reframing 'hear' as the cognitive processing of sounds into meaning rather than mere perception"
+      },
+      "basis_words_count": 1,
+      "reason_chars": 95,
+      "raw_response": "{\"name\": \"Cognitive Interpretation\", \"description\": \"Mental processing of auditory information into meaning\", \"words\": [\"perceive\", \"understand\", \"discern\"], \"basis_words\": [\"hear\"], \"reason\": \"Reframing 'hear' as the cognitive processing of sounds into meaning rather than mere perception\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.5}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run4_20260729_125300.json",
+      "game_number": 1384,
+      "child_id": "734bbf06b61b4bff8fcb1470bbd88ae7",
+      "generation": 3,
+      "parent_id": "e34253c1388b40a5a1fefc1472b3a3ea",
+      "parent_rank": 363,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "d03391c00532a6f4600587c5dd3a755e35437f371bf4ea07bc484c81e907060a",
+      "prompt_chars": 4027,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "formation",
+      "proposed_words": [
+        "formation",
+        "routine",
+        "choreography"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 35398,
+      "predicted_closeness": 0.2,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "beyond",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "dance"
+        ],
+        "reason": "these words describe structural and procedural aspects of dance that are distinct from specific movements but related to the overall practice"
+      },
+      "basis_words_count": 1,
+      "reason_chars": 141,
+      "raw_response": "{\"name\": \"dance elements\", \"description\": \"aspects of dance structure and execution\", \"words\": [\"formation\", \"routine\", \"choreography\"], \"basis_words\": [\"dance\"], \"reason\": \"these words describe structural and procedural aspects of dance that are distinct from specific movements but related to the overall practice\", \"predicted_bucket\": \"beyond\", \"predicted_closeness\": 0.2}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run4_20260729_125300.json",
+      "game_number": 1384,
+      "child_id": "56fea8accf824796a3380a5aa7337b6c",
+      "generation": 4,
+      "parent_id": "f042af52f393401c953cbf66aaf8117d",
+      "parent_rank": 216,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "6ae1b748f0a55c69e89cb2dfa0dff2c385ec9a4e555763de55785d2c45932165",
+      "prompt_chars": 4472,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "grasp",
+      "proposed_words": [
+        "grasp",
+        "discern",
+        "recognize"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 15343,
+      "predicted_closeness": 0.6,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "hear"
+        ],
+        "reason": "Focusing on the cognitive processing of sounds rather than the act of hearing itself, exploring how sounds are understood or decoded mentally."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 142,
+      "raw_response": "{\"name\": \"Perceptual Interpretation\", \"description\": \"Processes of mentally interpreting sounds\", \"words\": [\"grasp\", \"discern\", \"recognize\"], \"basis_words\": [\"hear\"], \"reason\": \"Focusing on the cognitive processing of sounds rather than the act of hearing itself, exploring how sounds are understood or decoded mentally.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.6}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run4_20260729_125300.json",
+      "game_number": 1384,
+      "child_id": "af6f7b3fb02d4238882e3d387bcd7b1d",
+      "generation": 4,
+      "parent_id": "3d13d87624f04765afcfe529f0279a97",
+      "parent_rank": 216,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "ca1edaee73030546655d0377418fcd0b8e7e35c3351cf2c8fa02e88fa09ce00e",
+      "prompt_chars": 4442,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "tune",
+      "proposed_words": [
+        "tune",
+        "hum",
+        "echo"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 2666,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "hear"
+        ],
+        "reason": "Shifts focus to specific auditory-related terminology that could describe aspects of hearing without directly overlapping with the core perceptual process."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 155,
+      "raw_response": "{\"name\": \"auditory terms\", \"description\": \"terms related to auditory phenomena and experiences\", \"words\": [\"tune\", \"hum\", \"echo\"], \"basis_words\": [\"hear\"], \"reason\": \"Shifts focus to specific auditory-related terminology that could describe aspects of hearing without directly overlapping with the core perceptual process.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run4_20260729_125300.json",
+      "game_number": 1384,
+      "child_id": "a83822c351eb4c3a8f43b98e0c53bd25",
+      "generation": 4,
+      "parent_id": "e34253c1388b40a5a1fefc1472b3a3ea",
+      "parent_rank": 363,
+      "sampled_op": "m_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "4a83bbc3e61c9ac2cee262d5142f6fdde4db03bf035f7c747d39e7eff86b5afe",
+      "prompt_chars": 4514,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "orbit",
+      "proposed_words": [
+        "orbit",
+        "swivel",
+        "spiral"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 17578,
+      "predicted_closeness": 0.4,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "spin"
+        ],
+        "reason": "reinterpreting 'spin' as a mechanical or physical rotation rather than a dance movement"
+      },
+      "basis_words_count": 1,
+      "reason_chars": 87,
+      "raw_response": "{\"name\": \"rotational mechanics\", \"description\": \"physical rotations and spinning motions\", \"words\": [\"orbit\", \"swivel\", \"spiral\"], \"basis_words\": [\"spin\"], \"reason\": \"reinterpreting 'spin' as a mechanical or physical rotation rather than a dance movement\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run4_20260729_125300.json",
+      "game_number": 1384,
+      "child_id": "49c6afa5f7f8477dafe10028767414ad",
+      "generation": 5,
+      "parent_id": "28483ef7f7cd46fa810591b6078c193c",
+      "parent_rank": 28,
+      "sampled_op": "l_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "bd9f45611f9808f66d2a767992a0256f5aafd33d470c870819c14bd5301b7dda",
+      "prompt_chars": 5107,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "space",
+      "proposed_words": [
+        "space",
+        "layout",
+        "setup"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 8434,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "platform",
+          "medium"
+        ],
+        "reason": "shifts focus from the communication activity itself to the spatial and environmental contexts that facilitate interaction, exploring a new but related dimension."
+      },
+      "basis_words_count": 2,
+      "reason_chars": 161,
+      "raw_response": "{\"name\": \"spatial configurations\", \"description\": \"environmental contexts for interaction\", \"words\": [\"space\", \"layout\", \"setup\"], \"basis_words\": [\"platform\", \"medium\"], \"reason\": \"shifts focus from the communication activity itself to the spatial and environmental contexts that facilitate interaction, exploring a new but related dimension.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run4_20260729_125300.json",
+      "game_number": 1384,
+      "child_id": "d261a0ff990147489418748f4670454b",
+      "generation": 5,
+      "parent_id": "f530163c0e1d43a99d7221dcc98510f1",
+      "parent_rank": 109,
+      "sampled_op": "m_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "b1f656dbb4b469779931251ba6d79039a246ca694b6f153802ac0746b54eef2f",
+      "prompt_chars": 5013,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "node",
+      "proposed_words": [
+        "node",
+        "port",
+        "cable"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 36136,
+      "predicted_closeness": 0.5,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "link"
+        ],
+        "reason": "Shifts focus to technical infrastructure components that facilitate connectivity, diverging from interpersonal relationships."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 125,
+      "raw_response": "{\"name\": \"technical connections\", \"description\": \"components that enable system connectivity\", \"words\": [\"node\", \"port\", \"cable\"], \"basis_words\": [\"link\"], \"reason\": \"Shifts focus to technical infrastructure components that facilitate connectivity, diverging from interpersonal relationships.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.5}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run4_20260729_125300.json",
+      "game_number": 1384,
+      "child_id": "ab3d86e24a9342a49ac6f96ad1143d71",
+      "generation": 5,
+      "parent_id": "f042af52f393401c953cbf66aaf8117d",
+      "parent_rank": 216,
+      "sampled_op": "l_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "4eca0e15494f5654df251f059e13729ac9f7c3ba549253d66cc26eeaba38c0a4",
+      "prompt_chars": 5244,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "cue",
+      "proposed_words": [
+        "cue",
+        "signal",
+        "trigger"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 11105,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "hear"
+        ],
+        "reason": "Shifting focus from direct auditory perception to broader environmental signals that may include visual, tactile, or other non-auditory cues, expanding the scope beyond sound while maintaining relevance to perceptual awareness."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 227,
+      "raw_response": "{\"name\": \"Environmental Cues\", \"description\": \"Mental focus on non-auditory environmental signals\", \"words\": [\"cue\", \"signal\", \"trigger\"], \"basis_words\": [\"hear\"], \"reason\": \"Shifting focus from direct auditory perception to broader environmental signals that may include visual, tactile, or other non-auditory cues, expanding the scope beyond sound while maintaining relevance to perceptual awareness.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run4_20260729_125300.json",
+      "game_number": 1384,
+      "child_id": "6e338c079ac74fc7a87fe921143cadf3",
+      "generation": 6,
+      "parent_id": "28483ef7f7cd46fa810591b6078c193c",
+      "parent_rank": 28,
+      "sampled_op": "m_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "6c216f4ee62ebaa6d8e7e1de7720566ae8fb321a5f60ac77dc785199b724f63c",
+      "prompt_chars": 5494,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "linger",
+      "proposed_words": [
+        "linger",
+        "tarry",
+        "pause"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 4206,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "chat"
+        ],
+        "reason": "shifts focus from communication mediums to the duration of interaction, emphasizing how long conversations last"
+      },
+      "basis_words_count": 1,
+      "reason_chars": 111,
+      "raw_response": "{\"name\": \"duration of communication\", \"description\": \"focuses on the time spent in conversation rather than the mediums used for communication\", \"words\": [\"linger\", \"tarry\", \"pause\"], \"basis_words\": [\"chat\"], \"reason\": \"shifts focus from communication mediums to the duration of interaction, emphasizing how long conversations last\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run4_20260729_125300.json",
+      "game_number": 1384,
+      "child_id": "2affdb1913f44deb84fbf01947d785ba",
+      "generation": 6,
+      "parent_id": "f530163c0e1d43a99d7221dcc98510f1",
+      "parent_rank": 109,
+      "sampled_op": "l_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "720a58f3c295ef1a81ed41a19f51e28e6c4a3a305262f7914879a6a88fff0e7d",
+      "prompt_chars": 5578,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "arrange",
+      "proposed_words": [
+        "arrange",
+        "configure",
+        "position"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 21254,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "link"
+        ],
+        "reason": "Shifts focus from interpersonal relationships to structural organization in space, diverging from existing categories while maintaining a plausible connection to 'link' through spatial connectivity concepts"
+      },
+      "basis_words_count": 1,
+      "reason_chars": 206,
+      "raw_response": "{\"name\": \"spatial arrangements\", \"description\": \"organization and positioning of elements in space\", \"words\": [\"arrange\", \"configure\", \"position\"], \"basis_words\": [\"link\"], \"reason\": \"Shifts focus from interpersonal relationships to structural organization in space, diverging from existing categories while maintaining a plausible connection to 'link' through spatial connectivity concepts\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run4_20260729_125300.json",
+      "game_number": 1384,
+      "child_id": "677f9115ac214c16b2051660ebd7d8c5",
+      "generation": 6,
+      "parent_id": "f042af52f393401c953cbf66aaf8117d",
+      "parent_rank": 216,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "fde9754c953d40a23da034b195683100524f5dfa0e1fce1fcd03a35fbafcac7a",
+      "prompt_chars": 5494,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "monitor",
+      "proposed_words": [
+        "monitor",
+        "trace",
+        "gauge"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 9980,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "hear"
+        ],
+        "reason": "Expanding from auditory focus to general attentional processes, capturing states where mental resources are directed toward external cues without specific reference to sound."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 174,
+      "raw_response": "{\"name\": \"Attention States\", \"description\": \"States of mental focus on external stimuli\", \"words\": [\"monitor\", \"trace\", \"gauge\"], \"basis_words\": [\"hear\"], \"reason\": \"Expanding from auditory focus to general attentional processes, capturing states where mental resources are directed toward external cues without specific reference to sound.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run5_20260729_172325.json",
+      "game_number": 1384,
+      "child_id": "2cf1525f8ba44ce3af0d8f755517cab6",
+      "generation": 2,
+      "parent_id": "c5d66994b38b435697129172cd1089ba",
+      "parent_rank": 506,
+      "sampled_op": "l_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "66869cdf7638bfa734c3fb0f948e0e0de0bf6148fd40f7123cf57e79293f71ef",
+      "prompt_chars": 3971,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "stigma",
+      "proposed_words": [
+        "stigma",
+        "rejection",
+        "exclusion"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 3772,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "beyond",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "shame"
+        ],
+        "reason": "Shame has social repercussions, so exploring related effects could expand the semantic area while maintaining proximity to the target."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 134,
+      "raw_response": "{\"name\": \"social_consequences\", \"description\": \"effects of interpersonal judgments on individuals\", \"words\": [\"stigma\", \"rejection\", \"exclusion\"], \"basis_words\": [\"shame\"], \"reason\": \"Shame has social repercussions, so exploring related effects could expand the semantic area while maintaining proximity to the target.\", \"predicted_bucket\": \"beyond\", \"predicted_closeness\": 0.3}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run5_20260729_172325.json",
+      "game_number": 1384,
+      "child_id": "9b1cf05e5389446fbd231fa89cd37064",
+      "generation": 3,
+      "parent_id": "c5d66994b38b435697129172cd1089ba",
+      "parent_rank": 506,
+      "sampled_op": "l_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "fa21b47147f4794260152e21942440ce8794da7bf9479c50db9b8629f765d832",
+      "prompt_chars": 4407,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "identity",
+      "proposed_words": [
+        "identity",
+        "role",
+        "position"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 10106,
+      "predicted_closeness": 0.6,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "shame"
+        ],
+        "reason": "Social roles and identities are broader social constructs that may share semantic proximity with shame but are distinct from existing categories like emotions and physical states."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 179,
+      "raw_response": "{\"name\": \"social roles\", \"description\": \"roles and identities within social contexts\", \"words\": [\"identity\", \"role\", \"position\"], \"basis_words\": [\"shame\"], \"reason\": \"Social roles and identities are broader social constructs that may share semantic proximity with shame but are distinct from existing categories like emotions and physical states.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.6}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run5_20260729_172325.json",
+      "game_number": 1384,
+      "child_id": "ba8acc38b7194559bfee1c27c3fcac28",
+      "generation": 4,
+      "parent_id": "c5d66994b38b435697129172cd1089ba",
+      "parent_rank": 110,
+      "sampled_op": "l_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "29ee8de6437967698ded6879f0b590410b0b14a9ed1775dc97e97583ec907aca",
+      "prompt_chars": 4751,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "awkward",
+      "proposed_words": [
+        "awkward",
+        "public",
+        "attention"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 1461,
+      "predicted_closeness": 0.4,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "embarrassed"
+        ],
+        "reason": "Social situations are contexts where transient feelings like embarrassment may occur, diverging from direct emotional states while maintaining semantic relevance."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 162,
+      "raw_response": "{\"name\": \"social_situations\", \"description\": \"scenarios involving human interaction and context\", \"words\": [\"awkward\", \"public\", \"attention\"], \"basis_words\": [\"embarrassed\"], \"reason\": \"Social situations are contexts where transient feelings like embarrassment may occur, diverging from direct emotional states while maintaining semantic relevance.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run5_20260729_172325.json",
+      "game_number": 1384,
+      "child_id": "d7187258579a4f11a982006c912c6e2d",
+      "generation": 5,
+      "parent_id": "c5d66994b38b435697129172cd1089ba",
+      "parent_rank": 110,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "08148327d9a768e90beab21044cdd6f70d97d6cffee1a742224c2a5dfb053374",
+      "prompt_chars": 5180,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "awkward",
+      "proposed_words": [
+        "awkward",
+        "shy",
+        "humiliated"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 1461,
+      "predicted_closeness": 0.6,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "embarrassed"
+        ],
+        "reason": "Embarrassed is a social discomfort, making this category adjacent to emotional_states but focused on interpersonal contexts rather than abstract emotional experiences."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 167,
+      "raw_response": "{\"name\": \"social_discomforts\", \"description\": \"transient feelings arising from interpersonal interactions\", \"words\": [\"awkward\", \"shy\", \"humiliated\"], \"basis_words\": [\"embarrassed\"], \"reason\": \"Embarrassed is a social discomfort, making this category adjacent to emotional_states but focused on interpersonal contexts rather than abstract emotional experiences.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.6}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run5_20260729_172325.json",
+      "game_number": 1384,
+      "child_id": "0be48b5fd1194a4fa2741cf55ba341dd",
+      "generation": 6,
+      "parent_id": "3b2862a89c1a4534a1b038d833cd7777",
+      "parent_rank": 70,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "c3273ab752a20327db4f759fb8ea0badb5ec085cf2b1345f5533151c5f14c9aa",
+      "prompt_chars": 5622,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "magnitude",
+      "proposed_words": [
+        "magnitude",
+        "spectrum",
+        "binary"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 27161,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "star"
+        ],
+        "reason": "Celestial descriptors represent a semantically adjacent category to celestial objects, focusing on characteristics and measurements that could be associated with stars."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 168,
+      "raw_response": "{\"name\": \"celestial descriptors\", \"description\": \"terms used to describe celestial entities and phenomena\", \"words\": [\"magnitude\", \"spectrum\", \"binary\"], \"basis_words\": [\"star\"], \"reason\": \"Celestial descriptors represent a semantically adjacent category to celestial objects, focusing on characteristics and measurements that could be associated with stars.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run5_20260729_172325.json",
+      "game_number": 1384,
+      "child_id": "438c4f1df09e459f9b998820d3960cda",
+      "generation": 7,
+      "parent_id": "ba8acc38b7194559bfee1c27c3fcac28",
+      "parent_rank": 146,
+      "sampled_op": "l_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "e7ba6c5c557539afd2e68c9d0a92765c6862ca02e25ce8112bd657fa6f1e1578",
+      "prompt_chars": 6115,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "spatial",
+      "proposed_words": [
+        "spatial",
+        "layout",
+        "configuration"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 61735,
+      "predicted_closeness": 0.4,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "scene"
+        ],
+        "reason": "Shifting focus from emotional contexts to structural and physical organization of spaces, offering a novel yet contextually relevant direction."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 143,
+      "raw_response": "{\"name\": \"spatial_layout\", \"description\": \"arrangement and configuration of physical spaces\", \"words\": [\"spatial\", \"layout\", \"configuration\"], \"basis_words\": [\"scene\"], \"reason\": \"Shifting focus from emotional contexts to structural and physical organization of spaces, offering a novel yet contextually relevant direction.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run5_20260729_172325.json",
+      "game_number": 1384,
+      "child_id": "efc1a69beaa24f168759c7d9282e6964",
+      "generation": 8,
+      "parent_id": "c5d66994b38b435697129172cd1089ba",
+      "parent_rank": 110,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "d72899a1d5a6aeb566267e643f92660665e8ee8c33d7228fdfc1feaabfb65cb9",
+      "prompt_chars": 6623,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "humbled",
+      "proposed_words": [
+        "humbled",
+        "timid",
+        "reserved"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 6784,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "embarrassed"
+        ],
+        "reason": "Social Reactions are closely related to emotional experiences but represent distinct categories focusing on outward responses rather than internal states."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 154,
+      "raw_response": "{\"name\": \"Social Reactions\", \"description\": \"responses to social interactions\", \"words\": [\"humbled\", \"timid\", \"reserved\"], \"basis_words\": [\"embarrassed\"], \"reason\": \"Social Reactions are closely related to emotional experiences but represent distinct categories focusing on outward responses rather than internal states.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run5_20260729_172325.json",
+      "game_number": 1384,
+      "child_id": "7cf5b8c56386490f988a5b996811012d",
+      "generation": 9,
+      "parent_id": "c5d66994b38b435697129172cd1089ba",
+      "parent_rank": 110,
+      "sampled_op": "s_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "800a6abea8e70d1247ba7985c4d9ff68184f7835c2ef2c22ce838fd83d58bfb5",
+      "prompt_chars": 7028,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "mortified",
+      "proposed_words": [
+        "mortified",
+        "flustered",
+        "shy"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 11306,
+      "predicted_closeness": 0.6,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "embarrassed"
+        ],
+        "reason": "These words are semantic neighbors of 'embarrassed', focusing on related emotions of social discomfort and self-consciousness."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 126,
+      "raw_response": "{\n  \"name\": \"shame_states\",\n  \"description\": \"transient feelings closely related to feelings of shame or social discomfort\",\n  \"words\": [\"mortified\", \"flustered\", \"shy\"],\n  \"basis_words\": [\"embarrassed\"],\n  \"reason\": \"These words are semantic neighbors of 'embarrassed', focusing on related emotions of social discomfort and self-consciousness.\",\n  \"predicted_bucket\": \"top500\",\n  \"predicted_closeness\": 0.6\n}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run5_20260729_172325.json",
+      "game_number": 1384,
+      "child_id": "32f575c09f934d898fe7e8e95171c0ed",
+      "generation": 10,
+      "parent_id": "ba8acc38b7194559bfee1c27c3fcac28",
+      "parent_rank": 146,
+      "sampled_op": "l_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "e500593b5d98ee2f89c66dfffc56f3afdec438a464501b22f775082e3e83c371",
+      "prompt_chars": 7224,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "silhouette",
+      "proposed_words": [
+        "silhouette",
+        "contour",
+        "profile"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 18163,
+      "predicted_closeness": 0.4,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "scene"
+        ],
+        "reason": "Focusing on physical outlines provides a new direction outside the current categories but remains related to scenes as they define visual aspects of contexts."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 158,
+      "raw_response": "{\"name\": \"Environmental Silhouettes\", \"description\": \"physical characteristics or outlines of environments that define their appearance\", \"words\": [\"silhouette\", \"contour\", \"profile\"], \"basis_words\": [\"scene\"], \"reason\": \"Focusing on physical outlines provides a new direction outside the current categories but remains related to scenes as they define visual aspects of contexts.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run5_20260729_172325.json",
+      "game_number": 1384,
+      "child_id": "a7bc6e77aa1441bb8eda7b7974b87aef",
+      "generation": 11,
+      "parent_id": "ba8acc38b7194559bfee1c27c3fcac28",
+      "parent_rank": 146,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "1dcfd2b82ae4e610f8e89723382908c5888378cfb1dc97593e4896a0207ac8ac",
+      "prompt_chars": 7555,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "feature",
+      "proposed_words": [
+        "feature",
+        "trait",
+        "characteristic"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 305,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "context",
+          "environment",
+          "scene"
+        ],
+        "reason": "Environmental features are attributes that describe settings, offering a distinct yet related category that could contain the hidden target."
+      },
+      "basis_words_count": 3,
+      "reason_chars": 140,
+      "raw_response": "{\"name\": \"environmental features\", \"description\": \"attributes or characteristics of environments\", \"words\": [\"feature\", \"trait\", \"characteristic\"], \"basis_words\": [\"context\", \"environment\", \"scene\"], \"reason\": \"Environmental features are attributes that describe settings, offering a distinct yet related category that could contain the hidden target.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run5_20260729_172325.json",
+      "game_number": 1384,
+      "child_id": "506a0b4a969141289b1b4c8fe5a5b092",
+      "generation": 12,
+      "parent_id": "72b7cee1f1364037bfff25c3560b1c28",
+      "parent_rank": 50,
+      "sampled_op": "m_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "57c8e173b72e58752d8dffa93163d9dd9759855ca2dd181c51b008aa0e9061f0",
+      "prompt_chars": 7674,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "laugh",
+      "proposed_words": [
+        "laugh",
+        "skip",
+        "hum"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 328,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "glee"
+        ],
+        "reason": "Shifts focus from the emotional experience of glee to its outward physical or behavioral manifestations, such as vocalizations or movements associated with happiness."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 166,
+      "raw_response": "{\"name\": \"physical expressions of joy\", \"description\": \"actions or behaviors that manifest happiness\", \"words\": [\"laugh\", \"skip\", \"hum\"], \"basis_words\": [\"glee\"], \"reason\": \"Shifts focus from the emotional experience of glee to its outward physical or behavioral manifestations, such as vocalizations or movements associated with happiness.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run5_20260729_172325.json",
+      "game_number": 1384,
+      "child_id": "fa93945e66024753937422d5d86837cd",
+      "generation": 13,
+      "parent_id": "c5d66994b38b435697129172cd1089ba",
+      "parent_rank": 110,
+      "sampled_op": "m_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "b462b90bdea23cbacfbd02538b92b2bbbaf2a3af6f7f87bf07b3751c8d3f1899",
+      "prompt_chars": 8554,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "slip",
+      "proposed_words": [
+        "slip",
+        "gaffe",
+        "error"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 1873,
+      "predicted_closeness": 0.4,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "embarrassed"
+        ],
+        "reason": "This hypothesis reframes 'embarrassed' by focusing on external factors that trigger the emotion, such as mistakes or awkward social interactions, rather than the emotion itself."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 177,
+      "raw_response": "{\"name\": \"social_discomfort_triggers\", \"description\": \"actions or circumstances that provoke feelings of social discomfort or embarrassment\", \"words\": [\"slip\", \"gaffe\", \"error\"], \"basis_words\": [\"embarrassed\"], \"reason\": \"This hypothesis reframes 'embarrassed' by focusing on external factors that trigger the emotion, such as mistakes or awkward social interactions, rather than the emotion itself.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run5_20260729_172325.json",
+      "game_number": 1384,
+      "child_id": "16fa89968b3f4464b94d8f21d763591b",
+      "generation": 14,
+      "parent_id": "813554e4a92042f592ddeea73e3188d9",
+      "parent_rank": 18,
+      "sampled_op": "s_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "2b4f8bee4b9d3e2ab4e86bd9b0304f26a5bd5a6d7cdd8b21796a81b526f761f9",
+      "prompt_chars": 8164,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "newest",
+      "proposed_words": [
+        "newest",
+        "recent",
+        "modern"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 362,
+      "predicted_closeness": 0.7,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top100",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "latest"
+        ],
+        "reason": "Refining 'current_trends' by selecting synonyms of 'latest' to emphasize immediacy and novelty in trends"
+      },
+      "basis_words_count": 1,
+      "reason_chars": 104,
+      "raw_response": "{\"name\": \"immediate_updates\", \"description\": \"Narrowing focus to words synonymous with 'latest' indicating immediacy and novelty\", \"words\": [\"newest\", \"recent\", \"modern\"], \"basis_words\": [\"latest\"], \"reason\": \"Refining 'current_trends' by selecting synonyms of 'latest' to emphasize immediacy and novelty in trends\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.7}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run5_20260729_172325.json",
+      "game_number": 1384,
+      "child_id": "f5fa2d129fb648be8b4bd2fdbe55124a",
+      "generation": 15,
+      "parent_id": "c5d66994b38b435697129172cd1089ba",
+      "parent_rank": 110,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "d155f8980ea3cd2f39a1198cd3ed02768459d5ecdf0ff0ef3a259695d6bd5f0d",
+      "prompt_chars": 9063,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "timid",
+      "proposed_words": [
+        "timid",
+        "modest",
+        "bashful"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 20530,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "embarrassed"
+        ],
+        "reason": "Social dispositions like timidity or bashfulness could be related to the hidden target's context, as they are interpersonal traits that may overlap with emotional experiences."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 175,
+      "raw_response": "{\"name\": \"social_dispositions\", \"description\": \"traits related to social behavior and personal demeanor\", \"words\": [\"timid\", \"modest\", \"bashful\"], \"basis_words\": [\"embarrassed\"], \"reason\": \"Social dispositions like timidity or bashfulness could be related to the hidden target's context, as they are interpersonal traits that may overlap with emotional experiences.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run5_20260729_172325.json",
+      "game_number": 1384,
+      "child_id": "b1ba047507194fbaa96a473057c8ff89",
+      "generation": 16,
+      "parent_id": "ba8acc38b7194559bfee1c27c3fcac28",
+      "parent_rank": 146,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "5d974f74eaaff73afeef335b4a22cb64015460b210acc9dcffee6807017ea5b2",
+      "prompt_chars": 9175,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "view",
+      "proposed_words": [
+        "view",
+        "vista",
+        "panorama"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 3120,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "scene"
+        ],
+        "reason": "Scenes can be described through visual perspectives, offering a new direction outside the settings category."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 108,
+      "raw_response": "{\"name\": \"visual perspectives\", \"description\": \"descriptions of visual perspectives\", \"words\": [\"view\", \"vista\", \"panorama\"], \"basis_words\": [\"scene\"], \"reason\": \"Scenes can be described through visual perspectives, offering a new direction outside the settings category.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run5_20260729_172325.json",
+      "game_number": 1384,
+      "child_id": "f48267719aef4857944bf5c543a1509b",
+      "generation": 17,
+      "parent_id": "ba8acc38b7194559bfee1c27c3fcac28",
+      "parent_rank": 146,
+      "sampled_op": "m_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "c961fc26e9d80c9861dd367098d93f382b3a2c2e18eea035dec8d52ded11fe46",
+      "prompt_chars": 9415,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "vista",
+      "proposed_words": [
+        "vista",
+        "view",
+        "stage"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 17452,
+      "predicted_closeness": 0.4,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "scene"
+        ],
+        "reason": "Reinterpreting 'scene' through its visual and structural components in narratives or performances, shifting from the context of environments to visual framing and stages."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 170,
+      "raw_response": "{\"name\": \"visual_and_structural_components_of_scenes\", \"description\": \"visual elements and structural aspects of scenes in narratives or performances\", \"words\": [\"vista\", \"view\", \"stage\"], \"basis_words\": [\"scene\"], \"reason\": \"Reinterpreting 'scene' through its visual and structural components in narratives or performances, shifting from the context of environments to visual framing and stages.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run5_20260729_172325.json",
+      "game_number": 1384,
+      "child_id": "28e9d4f84ac44e09bf18d45744ed8954",
+      "generation": 18,
+      "parent_id": "72b7cee1f1364037bfff25c3560b1c28",
+      "parent_rank": 50,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "5414ca65ad83d0872039720973c91a727d2414609a681c8515a2a182e7578561",
+      "prompt_chars": 9412,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "humor",
+      "proposed_words": [
+        "humor",
+        "laughter",
+        "spark"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 200,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "glee"
+        ],
+        "reason": "Humor-related terms are semantically adjacent to emotional states like 'glee', as both involve positive, light-hearted expressions."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 131,
+      "raw_response": "{\n  \"name\": \"humor expressions\",\n  \"description\": \"words related to humorous or lighthearted behaviors\",\n  \"words\": [\"humor\", \"laughter\", \"spark\"],\n  \"basis_words\": [\"glee\"],\n  \"reason\": \"Humor-related terms are semantically adjacent to emotional states like 'glee', as both involve positive, light-hearted expressions.\",\n  \"predicted_bucket\": \"top500\",\n  \"predicted_closeness\": 0.3\n}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run5_20260729_172325.json",
+      "game_number": 1384,
+      "child_id": "92d96c3bd93f4b0b8ab074eadc682ba7",
+      "generation": 19,
+      "parent_id": "72b7cee1f1364037bfff25c3560b1c28",
+      "parent_rank": 50,
+      "sampled_op": "m_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "e9b623eba36c477c6d1d00a98368d3a0950b21263144837675d70fc87190625a",
+      "prompt_chars": 9575,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "leap",
+      "proposed_words": [
+        "leap",
+        "sparkle",
+        "party"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 27852,
+      "predicted_closeness": 0.4,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "glee"
+        ],
+        "reason": "Shifting focus from emotional states to physical actions and expressions that embody joy, such as sudden movements (leap), visual signs of happiness (sparkle), or social gatherings (party)."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 189,
+      "raw_response": "{\"name\": \"Physical Manifestations of Joy\", \"description\": \"actions and physical expressions that convey joy and happiness\", \"words\": [\"leap\", \"sparkle\", \"party\"], \"basis_words\": [\"glee\"], \"reason\": \"Shifting focus from emotional states to physical actions and expressions that embody joy, such as sudden movements (leap), visual signs of happiness (sparkle), or social gatherings (party).\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run5_20260729_172325.json",
+      "game_number": 1384,
+      "child_id": "7fe1015e3dec424c9ff94e281d42fab8",
+      "generation": 20,
+      "parent_id": "c5d66994b38b435697129172cd1089ba",
+      "parent_rank": 110,
+      "sampled_op": "l_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "b230e43317cca3f399f25226c7d60c1e489adeb3ff1e122c8dc6de1ef0673860",
+      "prompt_chars": 9888,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "gesture",
+      "proposed_words": [
+        "gesture",
+        "protocol",
+        "exchange"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 15968,
+      "predicted_closeness": 0.2,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "beyond",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "love"
+        ],
+        "reason": "Explores transient social behaviors and structured exchanges that may relate to emotional states but diverge into uncharted social dynamics territory"
+      },
+      "basis_words_count": 1,
+      "reason_chars": 149,
+      "raw_response": "{\"name\": \"social_interactions\", \"description\": \"forms of human interaction and communication not covered by existing categories\", \"words\": [\"gesture\", \"protocol\", \"exchange\"], \"basis_words\": [\"love\"], \"reason\": \"Explores transient social behaviors and structured exchanges that may relate to emotional states but diverge into uncharted social dynamics territory\", \"predicted_bucket\": \"beyond\", \"predicted_closeness\": 0.2}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run5_20260729_172325.json",
+      "game_number": 1384,
+      "child_id": "a96e60112c3244c993b9b6fbf36b4c0e",
+      "generation": 21,
+      "parent_id": "c5d66994b38b435697129172cd1089ba",
+      "parent_rank": 110,
+      "sampled_op": "l_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "94e80c78694265a5e81997c78e64510d2ea1bb235922ddb8e958ec559941f21a",
+      "prompt_chars": 10096,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "cue",
+      "proposed_words": [
+        "cue",
+        "signal",
+        "indicator"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 11105,
+      "predicted_closeness": 0.4,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "embarrassed"
+        ],
+        "reason": "Embarrassment often involves external signals or cues (like blushing or body language), so exploring environmental cues offers a new direction while remaining semantically connected to transient emotional experiences."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 217,
+      "raw_response": "{\"name\": \"environmental_cues\", \"description\": \"signals or indicators in physical or social environments that convey information\", \"words\": [\"cue\", \"signal\", \"indicator\"], \"basis_words\": [\"embarrassed\"], \"reason\": \"Embarrassment often involves external signals or cues (like blushing or body language), so exploring environmental cues offers a new direction while remaining semantically connected to transient emotional experiences.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run5_20260729_172325.json",
+      "game_number": 1384,
+      "child_id": "58b75c3e619f4de3898db542e8871fbb",
+      "generation": 5,
+      "parent_id": "ba8acc38b7194559bfee1c27c3fcac28",
+      "parent_rank": 146,
+      "sampled_op": "s_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "7975a656db4a572d5d6c815568776451083b5ec6a100d9167356a64a608120d9",
+      "prompt_chars": 4967,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "stage",
+      "proposed_words": [
+        "stage",
+        "view",
+        "arena"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 5455,
+      "predicted_closeness": 0.6,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "scene"
+        ],
+        "reason": "Refining 'settings' to focus on specific contexts where events unfold, such as stages, views, or arenas, which are more concrete than general settings."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 151,
+      "raw_response": "{\"name\": \"staged contexts\", \"description\": \"specific locations or frameworks where events are enacted or observed\", \"words\": [\"stage\", \"view\", \"arena\"], \"basis_words\": [\"scene\"], \"reason\": \"Refining 'settings' to focus on specific contexts where events unfold, such as stages, views, or arenas, which are more concrete than general settings.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.6}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run5_20260729_172325.json",
+      "game_number": 1384,
+      "child_id": "b289db0787414b0b86036bf485d167e0",
+      "generation": 6,
+      "parent_id": "c5d66994b38b435697129172cd1089ba",
+      "parent_rank": 110,
+      "sampled_op": "l_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "d91f905f6d76f431b45fb24e1eb8667784f5698c4592f053f2dc985bae5ee0f9",
+      "prompt_chars": 5762,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "interaction",
+      "proposed_words": [
+        "interaction",
+        "presence",
+        "situation"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 6748,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "embarrassed"
+        ],
+        "reason": "Social situations are contexts where transient emotions like embarrassment occur, moving the hypothesis to a related but distinct semantic area focusing on environmental and interactive contexts rather than emotions themselves."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 227,
+      "raw_response": "{\"name\": \"social_situations\", \"description\": \"transient contexts involving human interaction\", \"words\": [\"interaction\", \"presence\", \"situation\"], \"basis_words\": [\"embarrassed\"], \"reason\": \"Social situations are contexts where transient emotions like embarrassment occur, moving the hypothesis to a related but distinct semantic area focusing on environmental and interactive contexts rather than emotions themselves.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run5_20260729_172325.json",
+      "game_number": 1384,
+      "child_id": "b77188e8b09e4797a122a097ff3aa110",
+      "generation": 7,
+      "parent_id": "c5d66994b38b435697129172cd1089ba",
+      "parent_rank": 110,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "637b7129217643c8fdd72150a2766a9dc8e4573758e65f12e1d52f1fc618064e",
+      "prompt_chars": 6148,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "humiliated",
+      "proposed_words": [
+        "humiliated",
+        "mortified",
+        "shameful"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 3230,
+      "predicted_closeness": 0.7,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top100",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "embarrassed"
+        ],
+        "reason": "Social discomfort is related to emotional states as it involves feelings experienced in social contexts, but it's a distinct category focusing on specific types of unease rather than general emotions."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 200,
+      "raw_response": "{\"name\": \"social_discomfort\", \"description\": \"states of unease in social situations\", \"words\": [\"humiliated\", \"mortified\", \"shameful\"], \"basis_words\": [\"embarrassed\"], \"reason\": \"Social discomfort is related to emotional states as it involves feelings experienced in social contexts, but it's a distinct category focusing on specific types of unease rather than general emotions.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.7}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run5_20260729_172325.json",
+      "game_number": 1384,
+      "child_id": "1cc67da0201b410fb49367e9a0b0fcb1",
+      "generation": 8,
+      "parent_id": "ba8acc38b7194559bfee1c27c3fcac28",
+      "parent_rank": 146,
+      "sampled_op": "m_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "bfa312a89b5f748263872db89b73adc0a672f15f1b58f67c8bbe9e71888e435b",
+      "prompt_chars": 6488,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "mood",
+      "proposed_words": [
+        "mood",
+        "view",
+        "tone"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 4180,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "scene"
+        ],
+        "reason": "Shifts focus from contextual environments to the visual or emotional attributes that make a scene distinct, such as mood, tone, or perspective."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 143,
+      "raw_response": "{\"name\": \"scene_characteristics\", \"description\": \"visual or emotional qualities that define a scene\", \"words\": [\"mood\", \"view\", \"tone\"], \"basis_words\": [\"scene\"], \"reason\": \"Shifts focus from contextual environments to the visual or emotional attributes that make a scene distinct, such as mood, tone, or perspective.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run5_20260729_172325.json",
+      "game_number": 1384,
+      "child_id": "14d6afba1dbc4584a2b45c222825a0d5",
+      "generation": 9,
+      "parent_id": "ba8acc38b7194559bfee1c27c3fcac28",
+      "parent_rank": 146,
+      "sampled_op": "m_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "fc5aedf1b48697c9f684574a9a6755c203bb21a45f4d569a7bcb1d5ea0f8f041",
+      "prompt_chars": 6894,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "view",
+      "proposed_words": [
+        "view",
+        "narrative",
+        "plot"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 3120,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "beyond",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "scene"
+        ],
+        "reason": "Reinterpreting 'scene' through its connection to visual or narrative elements rather than environments."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 103,
+      "raw_response": "{\"name\": \"visual context\", \"description\": \"aspects of scenes related to visual elements or framing\", \"words\": [\"view\", \"narrative\", \"plot\"], \"basis_words\": [\"scene\"], \"reason\": \"Reinterpreting 'scene' through its connection to visual or narrative elements rather than environments.\", \"predicted_bucket\": \"beyond\", \"predicted_closeness\": 0.3}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run5_20260729_172325.json",
+      "game_number": 1384,
+      "child_id": "dadc4bbd3e074dbd9a1bd52fa626720c",
+      "generation": 10,
+      "parent_id": "c5d66994b38b435697129172cd1089ba",
+      "parent_rank": 110,
+      "sampled_op": "l_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "0d76b34273ff3231ab0a455e2c8b9f4876ab46e36bddac56c69f7376eb707ab4",
+      "prompt_chars": 7234,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "interaction",
+      "proposed_words": [
+        "interaction",
+        "communication",
+        "dialogue"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 6748,
+      "predicted_closeness": 0.2,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "beyond",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "embarrassed"
+        ],
+        "reason": "Social interactions are contexts where embarrassment might occur, but they encompass broader human exchanges beyond transient emotions."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 135,
+      "raw_response": "{\"name\": \"social_interactions\", \"description\": \"exchanges and behaviors between individuals\", \"words\": [\"interaction\", \"communication\", \"dialogue\"], \"basis_words\": [\"embarrassed\"], \"reason\": \"Social interactions are contexts where embarrassment might occur, but they encompass broader human exchanges beyond transient emotions.\", \"predicted_bucket\": \"beyond\", \"predicted_closeness\": 0.2}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run5_20260729_172325.json",
+      "game_number": 1384,
+      "child_id": "15ee66059b0447139ffdd03fd37d2b10",
+      "generation": 11,
+      "parent_id": "c5d66994b38b435697129172cd1089ba",
+      "parent_rank": 110,
+      "sampled_op": "l_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "1d6584bcd0b04a0d5e2bbb46cd865081bd4b6cb58c9891902617f4dbea29c58e",
+      "prompt_chars": 7625,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "responses",
+      "proposed_words": [
+        "responses",
+        "signals",
+        "movements"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 2249,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "embarrassed"
+        ],
+        "reason": "Physical responses are a distinct category from emotional states but are closely related through the experience of embarrassment, which often manifests in bodily reactions."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 172,
+      "raw_response": "{\"name\": \"physical_responses\", \"description\": \"bodily reactions to emotional states\", \"words\": [\"responses\", \"signals\", \"movements\"], \"basis_words\": [\"embarrassed\"], \"reason\": \"Physical responses are a distinct category from emotional states but are closely related through the experience of embarrassment, which often manifests in bodily reactions.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run5_20260729_172325.json",
+      "game_number": 1384,
+      "child_id": "9e3584a0e47a43f2acf4c5774fc77d69",
+      "generation": 12,
+      "parent_id": "ba8acc38b7194559bfee1c27c3fcac28",
+      "parent_rank": 146,
+      "sampled_op": "m_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "4e10ea0bac82675b0ad840f2e75a04db9bbd56a694072d929de87106b3c71e36",
+      "prompt_chars": 7988,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "stage",
+      "proposed_words": [
+        "stage",
+        "frame",
+        "set"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 5455,
+      "predicted_closeness": 0.5,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "scene"
+        ],
+        "reason": "Refocusing on the structural or visual elements that constitute a scene, such as stages or sets, rather than the broader context of settings."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 141,
+      "raw_response": "{\"name\": \"visual_components\", \"description\": \"elements that form the visual structure of a scene\", \"words\": [\"stage\", \"frame\", \"set\"], \"basis_words\": [\"scene\"], \"reason\": \"Refocusing on the structural or visual elements that constitute a scene, such as stages or sets, rather than the broader context of settings.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.5}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run5_20260729_172325.json",
+      "game_number": 1384,
+      "child_id": "8907ca83fed04032876513870be2c837",
+      "generation": 13,
+      "parent_id": "72b7cee1f1364037bfff25c3560b1c28",
+      "parent_rank": 50,
+      "sampled_op": "l_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "c7b9cee03e7a1606ae1a80b57bbb00317c4986fb85b32db3901c4fb608d58626",
+      "prompt_chars": 8143,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "glow",
+      "proposed_words": [
+        "glow",
+        "shine",
+        "twinkle"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 5235,
+      "predicted_closeness": 0.4,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "glee"
+        ],
+        "reason": "Luminous phenomena like glow and shine can metaphorically represent the bright, positive energy associated with glee, opening a new semantic direction beyond emotional states."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 175,
+      "raw_response": "{\"name\": \"luminous phenomena\", \"description\": \"descriptors of light-related occurrences and their effects\", \"words\": [\"glow\", \"shine\", \"twinkle\"], \"basis_words\": [\"glee\"], \"reason\": \"Luminous phenomena like glow and shine can metaphorically represent the bright, positive energy associated with glee, opening a new semantic direction beyond emotional states.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run5_20260729_172325.json",
+      "game_number": 1384,
+      "child_id": "20269452e7f44eb3bf9eb66ba6b50671",
+      "generation": 14,
+      "parent_id": "c5d66994b38b435697129172cd1089ba",
+      "parent_rank": 110,
+      "sampled_op": "l_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "cf71133bcd7d015437a22e0f3ec421917fc605776a70dc5b0df257bb7bee3801",
+      "prompt_chars": 8633,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "gossip",
+      "proposed_words": [
+        "gossip",
+        "murmur",
+        "whisper"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 1,
+      "predicted_closeness": 0.6,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "embarrassed"
+        ],
+        "reason": "Shifts focus from the emotion itself to the contextual mechanisms of communication that may trigger or express similar transient feelings, maintaining proximity through social interaction scenarios."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 198,
+      "raw_response": "{\"name\": \"verbal_interactions\", \"description\": \"informal communication patterns in social settings\", \"words\": [\"gossip\", \"murmur\", \"whisper\"], \"basis_words\": [\"embarrassed\"], \"reason\": \"Shifts focus from the emotion itself to the contextual mechanisms of communication that may trigger or express similar transient feelings, maintaining proximity through social interaction scenarios.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.6}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run5_20260729_172325.json",
+      "game_number": 1384,
+      "child_id": "c996e0109a5e40459eda23ea2f8282fb",
+      "generation": 15,
+      "parent_id": "ba8acc38b7194559bfee1c27c3fcac28",
+      "parent_rank": 146,
+      "sampled_op": "s_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "ab54b4bc6584fe483424cf7b323d666a378f9b92b8769271e9b111e22cecfff3",
+      "prompt_chars": 8758,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "stage",
+      "proposed_words": [
+        "stage",
+        "frame",
+        "spot"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 5455,
+      "predicted_closeness": 0.4,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "scene"
+        ],
+        "reason": "Narrowing focus to tangible elements that define a scene's structure or composition, such as stage (a setting for action), frame (a visual boundary), and spot (a specific location within a scene)."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 196,
+      "raw_response": "{\"name\": \"scene elements\", \"description\": \"specific components or aspects that compose a scene\", \"words\": [\"stage\", \"frame\", \"spot\"], \"basis_words\": [\"scene\"], \"reason\": \"Narrowing focus to tangible elements that define a scene's structure or composition, such as stage (a setting for action), frame (a visual boundary), and spot (a specific location within a scene).\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run5_20260729_172325.json",
+      "game_number": 1384,
+      "child_id": "88017d5d558c4966b2bfb1768170d9ef",
+      "generation": 16,
+      "parent_id": "c5d66994b38b435697129172cd1089ba",
+      "parent_rank": 110,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "272bf50376f9edee8623ecdefcb6e28732220fbe44b953d94c2e7e54340bc23f",
+      "prompt_chars": 9456,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "shocked",
+      "proposed_words": [
+        "shocked",
+        "apprehensive",
+        "modest"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 77,
+      "predicted_closeness": 0.5,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "embarrassed"
+        ],
+        "reason": "Social dispositions encompass transient states that arise in social contexts, which may share proximity with 'embarrassed' as both relate to temporary social feelings without being subcategories of emotional experiences."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 220,
+      "raw_response": "{\"name\": \"social_dispositions\", \"description\": \"temporary states related to social interactions and personal feelings in social contexts\", \"words\": [\"shocked\", \"apprehensive\", \"modest\"], \"basis_words\": [\"embarrassed\"], \"reason\": \"Social dispositions encompass transient states that arise in social contexts, which may share proximity with 'embarrassed' as both relate to temporary social feelings without being subcategories of emotional experiences.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.5}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run5_20260729_172325.json",
+      "game_number": 1384,
+      "child_id": "687ca57b138041dcaf89e77ab4795266",
+      "generation": 17,
+      "parent_id": "c5d66994b38b435697129172cd1089ba",
+      "parent_rank": 110,
+      "sampled_op": "m_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "e4b36d8390af2e37d3233b468ac3cd5cb0648fb3eb45847972d1a2f9cb7a9139",
+      "prompt_chars": 9671,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "flush",
+      "proposed_words": [
+        "flush",
+        "sweat",
+        "stutter"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 20501,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "beyond",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "embarrassed"
+        ],
+        "reason": "Examining physical manifestations of embarrassment provides a distinct perspective from emotional states, focusing on bodily responses rather than internal feelings."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 165,
+      "raw_response": "{\"name\": \"physical reactions to embarrassment\", \"description\": \"physical responses associated with feeling embarrassed\", \"words\": [\"flush\", \"sweat\", \"stutter\"], \"basis_words\": [\"embarrassed\"], \"reason\": \"Examining physical manifestations of embarrassment provides a distinct perspective from emotional states, focusing on bodily responses rather than internal feelings.\", \"predicted_bucket\": \"beyond\", \"predicted_closeness\": 0.3}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run5_20260729_172325.json",
+      "game_number": 1384,
+      "child_id": "0daba85999af418893cd0f151a4ac660",
+      "generation": 18,
+      "parent_id": "c5d66994b38b435697129172cd1089ba",
+      "parent_rank": 110,
+      "sampled_op": "s_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "e4a5855f31707c1aeab01e89278728e22c504086e1c133cec2792e9a9018171d",
+      "prompt_chars": 9790,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "abashed",
+      "proposed_words": [
+        "abashed",
+        "chagrined",
+        "chastened"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 57470,
+      "predicted_closeness": 0.7,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "embarrassed"
+        ],
+        "reason": "These words are close semantic neighbors of 'embarrassed', focusing on specific social discomfort emotions that refine the broader 'emotional_states' hypothesis."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 161,
+      "raw_response": "{\"name\": \"social_discomfort_states\", \"description\": \"emotions related to social embarrassment and discomfort\", \"words\": [\"abashed\", \"chagrined\", \"chastened\"], \"basis_words\": [\"embarrassed\"], \"reason\": \"These words are close semantic neighbors of 'embarrassed', focusing on specific social discomfort emotions that refine the broader 'emotional_states' hypothesis.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.7}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run5_20260729_172325.json",
+      "game_number": 1384,
+      "child_id": "0fcdb41324ab42abacb202edf307e60d",
+      "generation": 19,
+      "parent_id": "c5d66994b38b435697129172cd1089ba",
+      "parent_rank": 110,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "55ffa3e9c638981cc6ed98527179f8d8ea5e70245d1f598fc85ddc97ddf551e6",
+      "prompt_chars": 10004,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "shy",
+      "proposed_words": [
+        "shy",
+        "timid",
+        "humble"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 1326,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "embarrassed"
+        ],
+        "reason": "Social dispositions relate to how individuals behave in social contexts, which can include feelings like embarrassment but are not strictly emotional states themselves."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 168,
+      "raw_response": "{\"name\": \"social_dispositions\", \"description\": \"traits related to social behavior and interpersonal interactions\", \"words\": [\"shy\", \"timid\", \"humble\"], \"basis_words\": [\"embarrassed\"], \"reason\": \"Social dispositions relate to how individuals behave in social contexts, which can include feelings like embarrassment but are not strictly emotional states themselves.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run5_20260729_172325.json",
+      "game_number": 1384,
+      "child_id": "1162b60df9af4d2c8715fc5edae22eb6",
+      "generation": 20,
+      "parent_id": "ba8acc38b7194559bfee1c27c3fcac28",
+      "parent_rank": 73,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "ea3a93318d874ac56e9316749d4de73cdcd3ac95e18a13e158aa3951429fe6f9",
+      "prompt_chars": 9961,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "texture",
+      "proposed_words": [
+        "texture",
+        "substance",
+        "state"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 26212,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "medium"
+        ],
+        "reason": "Medium refers to the substance or medium through which something is conveyed, suggesting properties that define materials or contexts."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 134,
+      "raw_response": "{\"name\": \"properties\", \"description\": \"characteristics or attributes of things\", \"words\": [\"texture\", \"substance\", \"state\"], \"basis_words\": [\"medium\"], \"reason\": \"Medium refers to the substance or medium through which something is conveyed, suggesting properties that define materials or contexts.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run5_20260729_172325.json",
+      "game_number": 1384,
+      "child_id": "ec6af9b576f34a43904defd927c1f193",
+      "generation": 21,
+      "parent_id": "ba8acc38b7194559bfee1c27c3fcac28",
+      "parent_rank": 73,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "90896ebb960cce8effdc7bfc39105e965bc610dfa44e6ce7d46d7f1b117ba1f6",
+      "prompt_chars": 10205,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "mode",
+      "proposed_words": [
+        "mode",
+        "means",
+        "channel"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 12338,
+      "predicted_closeness": 0.5,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top100",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "medium"
+        ],
+        "reason": "Medium refers to a means or channel, so the adjacent category of modes (ways or methods) could plausibly contain the hidden target."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 131,
+      "raw_response": "{\"name\": \"modes\", \"description\": \"ways or methods of doing something\", \"words\": [\"mode\", \"means\", \"channel\"], \"basis_words\": [\"medium\"], \"reason\": \"Medium refers to a means or channel, so the adjacent category of modes (ways or methods) could plausibly contain the hidden target.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.5}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run5_20260729_172325.json",
+      "game_number": 1384,
+      "child_id": "adc8a1acbbf8409b949e5ea3f0ec76d8",
+      "generation": 5,
+      "parent_id": "3b2862a89c1a4534a1b038d833cd7777",
+      "parent_rank": 70,
+      "sampled_op": "l_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "499cf1f304b43d87318376d713eba3493cd92cf5a65c4353406b7d5fafd2b3ee",
+      "prompt_chars": 5222,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "radiation",
+      "proposed_words": [
+        "radiation",
+        "energy",
+        "light"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 24638,
+      "predicted_closeness": 0.5,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "star",
+          "radiation",
+          "energy"
+        ],
+        "reason": "Shifts focus from celestial entities to the physical processes and emissions associated with cosmic energy, maintaining relevance to 'star' through its radiant properties."
+      },
+      "basis_words_count": 3,
+      "reason_chars": 171,
+      "raw_response": "{\"name\": \"cosmic phenomena\", \"description\": \"physical processes involving energy and radiation from space\", \"words\": [\"radiation\", \"energy\", \"light\"], \"basis_words\": [\"star\", \"radiation\", \"energy\"], \"reason\": \"Shifts focus from celestial entities to the physical processes and emissions associated with cosmic energy, maintaining relevance to 'star' through its radiant properties.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.5}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run5_20260729_172325.json",
+      "game_number": 1384,
+      "child_id": "8a1f1ae468da4ed79f3948bfa981dd4f",
+      "generation": 6,
+      "parent_id": "ba8acc38b7194559bfee1c27c3fcac28",
+      "parent_rank": 146,
+      "sampled_op": "m_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "140dac1421712b6c39fc8590b2ce007ded5213fddabba1fc22e2d20ecf268a68",
+      "prompt_chars": 5580,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "framing",
+      "proposed_words": [
+        "framing",
+        "perspective",
+        "aspect"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 17853,
+      "predicted_closeness": 0.4,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "scene"
+        ],
+        "reason": "This hypothesis reframes 'scene' through its visual and structural components, focusing on how scenes are composed or viewed rather than the environments they occur in."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 168,
+      "raw_response": "{\"name\": \"visual_components\", \"description\": \"elements that compose or frame a visual scene\", \"words\": [\"framing\", \"perspective\", \"aspect\"], \"basis_words\": [\"scene\"], \"reason\": \"This hypothesis reframes 'scene' through its visual and structural components, focusing on how scenes are composed or viewed rather than the environments they occur in.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1384_run5_20260729_172325.json",
+      "game_number": 1384,
+      "child_id": "3ea1f68f064e4006a41631eaaa0c07cf",
+      "generation": 7,
+      "parent_id": "d56afff95c384344ba60e688b0715f09",
+      "parent_rank": 170,
+      "sampled_op": "m_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "79bb7c3db4b48a854881bb1b781ce64e1a2ef6220c0ee919bb977d1a7f05f782",
+      "prompt_chars": 5964,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "assess",
+      "proposed_words": [
+        "assess",
+        "evaluate",
+        "examine"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 24455,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "review"
+        ],
+        "reason": "This hypothesis reinterprets 'review' as part of assessment processes, focusing on evaluation rather than reading activities."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 125,
+      "raw_response": "{\"name\": \"evaluation contexts\", \"description\": \"ways of assessing performance or quality\", \"words\": [\"assess\", \"evaluate\", \"examine\"], \"basis_words\": [\"review\"], \"reason\": \"This hypothesis reinterprets 'review' as part of assessment processes, focusing on evaluation rather than reading activities.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}"
+    }
+  ]
+}

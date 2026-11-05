@@ -1,0 +1,106 @@
+{
+  "metadata": {
+    "created_at": "2026-10-31T11:22:56",
+    "seed": 0,
+    "events_per_trace": 40,
+    "arms": [
+      "genuine_resample"
+    ],
+    "traces": [
+      {
+        "trace_file": "ea_llm_self_adaptive_api_1327_run1_20260803_160743.json",
+        "game_number": 1327,
+        "llm_model": "qwen3:14b",
+        "llm_provider": "ollama",
+        "provenance_hash": "bd9f2858283673a2",
+        "eligible_events": 0,
+        "sampled_events": 0,
+        "shortfall": 40,
+        "skipped": {}
+      },
+      {
+        "trace_file": "ea_llm_self_adaptive_api_1327_run2_20260803_170815.json",
+        "game_number": 1327,
+        "llm_model": "qwen3:14b",
+        "llm_provider": "ollama",
+        "provenance_hash": "bd9f2858283673a2",
+        "eligible_events": 0,
+        "sampled_events": 0,
+        "shortfall": 40,
+        "skipped": {}
+      },
+      {
+        "trace_file": "ea_llm_self_adaptive_api_1327_run3_20260803_173302.json",
+        "game_number": 1327,
+        "llm_model": "qwen3:14b",
+        "llm_provider": "ollama",
+        "provenance_hash": "bd9f2858283673a2",
+        "eligible_events": 1,
+        "sampled_events": 1,
+        "shortfall": 39,
+        "skipped": {}
+      },
+      {
+        "trace_file": "ea_llm_self_adaptive_api_1327_run4_20260803_173929.json",
+        "game_number": 1327,
+        "llm_model": "qwen3:14b",
+        "llm_provider": "ollama",
+        "provenance_hash": "bd9f2858283673a2",
+        "eligible_events": 0,
+        "sampled_events": 0,
+        "shortfall": 40,
+        "skipped": {}
+      },
+      {
+        "trace_file": "ea_llm_self_adaptive_api_1327_run5_20260803_181102.json",
+        "game_number": 1327,
+        "llm_model": "qwen3:14b",
+        "llm_provider": "ollama",
+        "provenance_hash": "bd9f2858283673a2",
+        "eligible_events": 0,
+        "sampled_events": 0,
+        "shortfall": 40,
+        "skipped": {}
+      }
+    ],
+    "total_events": 1,
+    "total_records": 1
+  },
+  "records": [
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1327_run3_20260803_173302.json",
+      "game_number": 1327,
+      "child_id": "a4f6c132e17241c586c6e027632db77d",
+      "generation": 2,
+      "parent_id": "7a18e06baeae4791bc8397a1844ecd14",
+      "parent_rank": 34,
+      "sampled_op": "s_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "334c2b899ef86b49495dc8cd0b823f2c0f5572be46773753fb81b1b58283d991",
+      "prompt_chars": 3675,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "heritage",
+      "proposed_words": [
+        "heritage",
+        "tradition",
+        "continuity"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 114,
+      "predicted_closeness": 0.6,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "legacy"
+        ],
+        "reason": "Focusing on the enduring transmission of cultural elements, emphasizing continuity and inherited practices rather than broad creative impact."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 141,
+      "raw_response": "{\"name\": \"cultural continuity\", \"description\": \"transmission of cultural values and practices across generations\", \"words\": [\"heritage\", \"tradition\", \"continuity\"], \"basis_words\": [\"legacy\"], \"reason\": \"Focusing on the enduring transmission of cultural elements, emphasizing continuity and inherited practices rather than broad creative impact.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.6}"
+    }
+  ]
+}

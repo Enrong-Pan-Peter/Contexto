@@ -1,0 +1,527 @@
+{
+  "metadata": {
+    "created_at": "2026-10-31T11:31:20",
+    "seed": 0,
+    "events_per_trace": 40,
+    "arms": [
+      "genuine_resample"
+    ],
+    "traces": [
+      {
+        "trace_file": "ea_llm_self_adaptive_api_1335_run1_20260803_153531.json",
+        "game_number": 1335,
+        "llm_model": "qwen3:14b",
+        "llm_provider": "ollama",
+        "provenance_hash": "bd9f2858283673a2",
+        "eligible_events": 1,
+        "sampled_events": 1,
+        "shortfall": 39,
+        "skipped": {}
+      },
+      {
+        "trace_file": "ea_llm_self_adaptive_api_1335_run2_20260803_175422.json",
+        "game_number": 1335,
+        "llm_model": "qwen3:14b",
+        "llm_provider": "ollama",
+        "provenance_hash": "bd9f2858283673a2",
+        "eligible_events": 7,
+        "sampled_events": 7,
+        "shortfall": 33,
+        "skipped": {}
+      },
+      {
+        "trace_file": "ea_llm_self_adaptive_api_1335_run3_20260803_185819.json",
+        "game_number": 1335,
+        "llm_model": "qwen3:14b",
+        "llm_provider": "ollama",
+        "provenance_hash": "bd9f2858283673a2",
+        "eligible_events": 5,
+        "sampled_events": 5,
+        "shortfall": 35,
+        "skipped": {}
+      },
+      {
+        "trace_file": "ea_llm_self_adaptive_api_1335_run4_20260803_191631.json",
+        "game_number": 1335,
+        "llm_model": "qwen3:14b",
+        "llm_provider": "ollama",
+        "provenance_hash": "bd9f2858283673a2",
+        "eligible_events": 0,
+        "sampled_events": 0,
+        "shortfall": 40,
+        "skipped": {}
+      },
+      {
+        "trace_file": "ea_llm_self_adaptive_api_1335_run5_20260803_192702.json",
+        "game_number": 1335,
+        "llm_model": "qwen3:14b",
+        "llm_provider": "ollama",
+        "provenance_hash": "bd9f2858283673a2",
+        "eligible_events": 0,
+        "sampled_events": 0,
+        "shortfall": 40,
+        "skipped": {}
+      }
+    ],
+    "total_events": 13,
+    "total_records": 13
+  },
+  "records": [
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1335_run1_20260803_153531.json",
+      "game_number": 1335,
+      "child_id": "b5e430591caf4ce09b9424a89168af59",
+      "generation": 2,
+      "parent_id": "a39f9bb1e4c24552b10262efdf6738e1",
+      "parent_rank": 146,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "5feab5f2931a40f5637b7bdd89cec40fbc91600e3a14d9242e5ab0014340ea4c",
+      "prompt_chars": 3655,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "script",
+      "proposed_words": [
+        "script",
+        "cursive",
+        "print"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 9946,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "pencil"
+        ],
+        "reason": "Writing styles are adjacent to writing tools as they describe different ways of writing but are not subcategories of tools themselves."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 134,
+      "raw_response": "{\"name\": \"writing styles\", \"description\": \"styles of writing\", \"words\": [\"script\", \"cursive\", \"print\"], \"basis_words\": [\"pencil\"], \"reason\": \"Writing styles are adjacent to writing tools as they describe different ways of writing but are not subcategories of tools themselves.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1335_run2_20260803_175422.json",
+      "game_number": 1335,
+      "child_id": "126b0cb3f3a04df6805e3ad35825e275",
+      "generation": 2,
+      "parent_id": "3bc15640b62d466d839331f658ec74cd",
+      "parent_rank": 124,
+      "sampled_op": "m_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "0bbdcab998db8d27a6b8123379880fd5a2efbd236bd68e19e770d3557b928e2e",
+      "prompt_chars": 3599,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "utility",
+      "proposed_words": [
+        "utility",
+        "aid",
+        "medium"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 3905,
+      "predicted_closeness": 0.4,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "hand"
+        ],
+        "reason": "This hypothesis reframes 'tool' by focusing on its abstract functional roles rather than direct physical interaction with body parts, offering a different semantic angle while maintaining conceptual ties to the original hypothesis."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 231,
+      "raw_response": "{\"name\": \"functional_purposes\", \"description\": \"tools considered in terms of their functional roles or purposes rather than their physical association with body parts\", \"words\": [\"utility\", \"aid\", \"medium\"], \"basis_words\": [\"hand\"], \"reason\": \"This hypothesis reframes 'tool' by focusing on its abstract functional roles rather than direct physical interaction with body parts, offering a different semantic angle while maintaining conceptual ties to the original hypothesis.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1335_run2_20260803_175422.json",
+      "game_number": 1335,
+      "child_id": "ed9b1f644daf437294c2edf13395d052",
+      "generation": 3,
+      "parent_id": "3bc15640b62d466d839331f658ec74cd",
+      "parent_rank": 124,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "dada284ba0bef51e4f3ecdf20c9b1cee5f37db49dee1c8494e8c6f2a2278df8d",
+      "prompt_chars": 4128,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "anatomy",
+      "proposed_words": [
+        "anatomy",
+        "muscle",
+        "bone"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 2086,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "body parts"
+        ],
+        "reason": "Anatomy terms are related to body parts but are not tools themselves, making this an adjacent category that could plausibly include the hidden target."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 150,
+      "raw_response": "{\"name\": \"anatomy terms\", \"description\": \"terms related to body parts\", \"words\": [\"anatomy\", \"muscle\", \"bone\"], \"basis_words\": [\"body parts\"], \"reason\": \"Anatomy terms are related to body parts but are not tools themselves, making this an adjacent category that could plausibly include the hidden target.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1335_run2_20260803_175422.json",
+      "game_number": 1335,
+      "child_id": "a838ae5f2ab84c3093eded06bfef1dc1",
+      "generation": 4,
+      "parent_id": "07876c3917af4dd9a6aba721b116cd9e",
+      "parent_rank": 36,
+      "sampled_op": "m_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "d4c0215c4f93636de8f6bd5c01ff48012f5b25d7600fb44ee84b67ac3d0efb22",
+      "prompt_chars": 4529,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "assess",
+      "proposed_words": [
+        "assess",
+        "audit",
+        "gauge"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 5117,
+      "predicted_closeness": 0.6,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "survey"
+        ],
+        "reason": "Shifts focus from discovery to evaluation, maintaining semantic connection through the act of examining or judging"
+      },
+      "basis_words_count": 1,
+      "reason_chars": 114,
+      "raw_response": "{\"name\": \"assessment\", \"description\": \"evaluation methods\", \"words\": [\"assess\", \"audit\", \"gauge\"], \"basis_words\": [\"survey\"], \"reason\": \"Shifts focus from discovery to evaluation, maintaining semantic connection through the act of examining or judging\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.6}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1335_run2_20260803_175422.json",
+      "game_number": 1335,
+      "child_id": "f7f191fdbd39416ba32ddda5a80a9d26",
+      "generation": 4,
+      "parent_id": "3bc15640b62d466d839331f658ec74cd",
+      "parent_rank": 124,
+      "sampled_op": "m_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "4d2890f0e04c41fb60deaa06710085ada21919075c3e9adf18a51293350164ff",
+      "prompt_chars": 4673,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "function",
+      "proposed_words": [
+        "function",
+        "process",
+        "task"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 422,
+      "predicted_closeness": 0.4,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "tool"
+        ],
+        "reason": "Shifting focus from physical objects to their abstract functions and tasks, which 'tool' might have been associated with in a broader sense."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 140,
+      "raw_response": "{\"name\": \"conceptual functions\", \"description\": \"abstract purposes and processes associated with tools\", \"words\": [\"function\", \"process\", \"task\"], \"basis_words\": [\"tool\"], \"reason\": \"Shifting focus from physical objects to their abstract functions and tasks, which 'tool' might have been associated with in a broader sense.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1335_run2_20260803_175422.json",
+      "game_number": 1335,
+      "child_id": "a768e27aa0fa4a9588581fd2368586ba",
+      "generation": 5,
+      "parent_id": "8c10b215259a47f78e5f0cea87520c66",
+      "parent_rank": 13,
+      "sampled_op": "l_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "c3ada14c7558f43c579b39d6f536c09bd440cc85cd181cde5abbc97d56e33f5f",
+      "prompt_chars": 5127,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "indicator",
+      "proposed_words": [
+        "indicator",
+        "signal",
+        "sign"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 22,
+      "predicted_closeness": 0.4,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "gauge"
+        ],
+        "reason": "Shifts focus from mechanical tools to natural or observable signs that convey information, expanding the search beyond engineered devices to phenomena that can be measured or interpreted."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 187,
+      "raw_response": "{\"name\": \"natural indicators\", \"description\": \"signs of environmental or material properties\", \"words\": [\"indicator\", \"signal\", \"sign\"], \"basis_words\": [\"gauge\"], \"reason\": \"Shifts focus from mechanical tools to natural or observable signs that convey information, expanding the search beyond engineered devices to phenomena that can be measured or interpreted.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1335_run2_20260803_175422.json",
+      "game_number": 1335,
+      "child_id": "f88e8a6617944b27bfb9c13fb8c5174b",
+      "generation": 5,
+      "parent_id": "a838ae5f2ab84c3093eded06bfef1dc1",
+      "parent_rank": 20,
+      "sampled_op": "m_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "235810990a8bdbe5cd970d4bb8af6667254a17b6b1b9eb111957133eb889460b",
+      "prompt_chars": 4964,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "guide",
+      "proposed_words": [
+        "guide",
+        "territory",
+        "route"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 53,
+      "predicted_closeness": 0.5,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "map"
+        ],
+        "reason": "Shifts focus from the act of mapping to the resulting spatial guides and routes that maps can provide, maintaining the connection through their role in navigation and territorial understanding."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 193,
+      "raw_response": "{\"name\": \"Spatial Guides\", \"description\": \"Alternative interpretations of map as a form of representation or depiction.\", \"words\": [\"guide\", \"territory\", \"route\"], \"basis_words\": [\"map\"], \"reason\": \"Shifts focus from the act of mapping to the resulting spatial guides and routes that maps can provide, maintaining the connection through their role in navigation and territorial understanding.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.5}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1335_run2_20260803_175422.json",
+      "game_number": 1335,
+      "child_id": "bd0872ff7a45473b800a39bb11b72aa1",
+      "generation": 5,
+      "parent_id": "07876c3917af4dd9a6aba721b116cd9e",
+      "parent_rank": 36,
+      "sampled_op": "m_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "fe8f6f125845bef600c21c164c7300458eab698eac854c35dbca6bdec7163b73",
+      "prompt_chars": 5036,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "assess",
+      "proposed_words": [
+        "assess",
+        "audit",
+        "evaluate"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 5117,
+      "predicted_closeness": 0.4,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "survey"
+        ],
+        "reason": "shifts focus from exploration to evaluation processes, using related but distinct lexical territory"
+      },
+      "basis_words_count": 1,
+      "reason_chars": 99,
+      "raw_response": "{\"name\": \"assessment methods\", \"description\": \"focuses on evaluation techniques rather than discovery\", \"words\": [\"assess\", \"audit\", \"evaluate\"], \"basis_words\": [\"survey\"], \"reason\": \"shifts focus from exploration to evaluation processes, using related but distinct lexical territory\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.4}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1335_run3_20260803_185819.json",
+      "game_number": 1335,
+      "child_id": "ea219ba74ef1450f833f28319786c30d",
+      "generation": 2,
+      "parent_id": "e69c6bcb656c4de39b106fad8ac7037b",
+      "parent_rank": 73,
+      "sampled_op": "s_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "4f6061c930fec93d36ac547f384b8f608b1baa2cbdf99148e65dbe4d2bfaee85",
+      "prompt_chars": 3474,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "prong",
+      "proposed_words": [
+        "prong",
+        "nub",
+        "spike"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 8792,
+      "predicted_closeness": 0.6,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "point"
+        ],
+        "reason": "Focuses on specialized terminal features of cutting tools that refine the concept of 'point' into more specific morphological elements."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 135,
+      "raw_response": "{\"name\": \"precision tips and projections\", \"description\": \"specific features of cutting instruments\", \"words\": [\"prong\", \"nub\", \"spike\"], \"basis_words\": [\"point\"], \"reason\": \"Focuses on specialized terminal features of cutting tools that refine the concept of 'point' into more specific morphological elements.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.6}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1335_run3_20260803_185819.json",
+      "game_number": 1335,
+      "child_id": "ae71c4ff9d144115909f302cc5c399fa",
+      "generation": 3,
+      "parent_id": "e69c6bcb656c4de39b106fad8ac7037b",
+      "parent_rank": 73,
+      "sampled_op": "s_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "6346ff4ca9c801bf39b2f937e08723e0d9643d41f0df7dfc447694e9023d5bd2",
+      "prompt_chars": 3910,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "end",
+      "proposed_words": [
+        "end",
+        "puncture",
+        "pierce"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 1356,
+      "predicted_closeness": 0.5,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "point"
+        ],
+        "reason": "Focuses on the specific end features of cutting instruments, such as the point, which is critical for precision and effectiveness in cutting."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 141,
+      "raw_response": "{\"name\": \"piercing ends\", \"description\": \"specific end features of cutting instruments\", \"words\": [\"end\", \"puncture\", \"pierce\"], \"basis_words\": [\"point\"], \"reason\": \"Focuses on the specific end features of cutting instruments, such as the point, which is critical for precision and effectiveness in cutting.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.5}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1335_run3_20260803_185819.json",
+      "game_number": 1335,
+      "child_id": "8cc132c8d7f548c78966bcd63f035921",
+      "generation": 3,
+      "parent_id": "47823f34594646c8b5830363b01a96f8",
+      "parent_rank": 125,
+      "sampled_op": "m_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "77d42f5709490236dafbc5d89fe6b14c2b46c4d06b6c521110083101f9502778",
+      "prompt_chars": 4166,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "beacon",
+      "proposed_words": [
+        "beacon",
+        "guide",
+        "channel"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 58,
+      "predicted_closeness": 0.6,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "reflector"
+        ],
+        "reason": "The hypothesis shifts focus from the reflective property to the function of directing or controlling light, which is a different angle but still related to the original concept."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 177,
+      "raw_response": "{\"name\": \"light_directing_mechanisms\", \"description\": \"objects that guide or control the direction of light\", \"words\": [\"beacon\", \"guide\", \"channel\"], \"basis_words\": [\"reflector\"], \"reason\": \"The hypothesis shifts focus from the reflective property to the function of directing or controlling light, which is a different angle but still related to the original concept.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.6}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1335_run3_20260803_185819.json",
+      "game_number": 1335,
+      "child_id": "70fb909aaf8244f1bef483c21f050a13",
+      "generation": 4,
+      "parent_id": "8cc132c8d7f548c78966bcd63f035921",
+      "parent_rank": 22,
+      "sampled_op": "ml_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "099002779c147ba9555f72afb15e2306a79f3542b58ea77e130afd3cf6d57722",
+      "prompt_chars": 4359,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "bearing",
+      "proposed_words": [
+        "bearing",
+        "route",
+        "path"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 277,
+      "predicted_closeness": 0.6,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top100",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "indicator"
+        ],
+        "reason": "The term 'indicator' relates to direction, suggesting exploration of terms that describe direction without being physical devices."
+      },
+      "basis_words_count": 1,
+      "reason_chars": 130,
+      "raw_response": "{\"name\": \"directional_terms\", \"description\": \"terms related to direction and navigation\", \"words\": [\"bearing\", \"route\", \"path\"], \"basis_words\": [\"indicator\"], \"reason\": \"The term 'indicator' relates to direction, suggesting exploration of terms that describe direction without being physical devices.\", \"predicted_bucket\": \"top100\", \"predicted_closeness\": 0.6}"
+    },
+    {
+      "trace_file": "ea_llm_self_adaptive_api_1335_run3_20260803_185819.json",
+      "game_number": 1335,
+      "child_id": "490fa60db89e442180125389711f17ca",
+      "generation": 4,
+      "parent_id": "0db78adbf0584ea89f748c2e045b6497",
+      "parent_rank": 57,
+      "sampled_op": "m_mutation",
+      "arm": "genuine_resample",
+      "prompt_sha256": "beb75c831e36c9ba73aabdee72553e117c29cd4530a1ba4b824456082fcad9b6",
+      "prompt_chars": 4456,
+      "llm_parse_failed": false,
+      "llm_error": null,
+      "proposed_word": "cluster",
+      "proposed_words": [
+        "cluster",
+        "arrangement",
+        "formation"
+      ],
+      "proposed_word_invalid": false,
+      "realized_rank": 1853,
+      "predicted_closeness": 0.3,
+      "predicted_closeness_clamped": false,
+      "predicted_bucket": "top500",
+      "self_report_parse_failed": false,
+      "rationale": {
+        "basis_words": [
+          "saturn",
+          "orbit"
+        ],
+        "reason": "The hypothesis shifts focus from celestial objects to the concept of groupings and patterns, reinterpreting 'constellation' as a metaphor for structured arrangements in various domains, such as biology, art, or social systems."
+      },
+      "basis_words_count": 2,
+      "reason_chars": 226,
+      "raw_response": "{\"name\": \"patterns in grouping\", \"description\": \"focuses on structured arrangements and clusters in various contexts\", \"words\": [\"cluster\", \"arrangement\", \"formation\"], \"basis_words\": [\"saturn\", \"orbit\"], \"reason\": \"The hypothesis shifts focus from celestial objects to the concept of groupings and patterns, reinterpreting 'constellation' as a metaphor for structured arrangements in various domains, such as biology, art, or social systems.\", \"predicted_bucket\": \"top500\", \"predicted_closeness\": 0.3}"
+    }
+  ]
+}
